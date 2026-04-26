@@ -1,0 +1,43 @@
+# Build output
+bin/
+obj/
+out/
+TestResults/
+artifacts/
+
+# User and IDE files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# .NET tooling
+*.nupkg
+*.snupkg
+project.lock.json
+project.assets.json
+*.nuget.g.props
+*.nuget.g.targets
+
+# Coverage and test reports
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+*.trx
+*.opencover.xml
+*.cobertura.xml
+
+# Logs and local settings
+*.log
+logs/
+appsettings.*.local.json
+appsettings.Local.json
+
+# OS files
+.DS_Store
+Thumbs.db

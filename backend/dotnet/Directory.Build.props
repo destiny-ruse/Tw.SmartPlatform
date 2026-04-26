@@ -1,0 +1,25 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>Nullable</WarningsAsErrors>
+	  <LangVersion>latest</LangVersion>
+	
+    <IsTestProject Condition="$(MSBuildProjectName.EndsWith('.Tests')) or $(MSBuildProjectName.EndsWith('.TestBase'))">true</IsTestProject>
+    
+    <!-- 开启 NuGet 锁定文件 -->
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    
+    <!-- 仅在 CI 环境中强制使用锁定文件 (防止 CI 偷偷自动升级) -->
+    <RestoreLockedMode Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</RestoreLockedMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Condition="'$(IsTestProject)' == 'true'" Include="coverlet.collector">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

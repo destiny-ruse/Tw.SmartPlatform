@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <!-- 开启中央包管理 -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- 允许浮动版本 -->
+    <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
+    <!-- 开启传递依赖固定 -->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <!-- 核心：引入 Build 目录下的分类配置 -->
+  <Import Project="Build/Packages.Microsoft.props" />
+  <Import Project="Build/Packages.ThirdParty.props" />
+  <Import Project="Build/Packages.Tests.props" />
+  <Import Project="Build/Packages.Internal.props" />
+
+  <ItemGroup>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+<!-- 用途: 管理社区第三方包 (Nuget.org 上的开源库) -->
+<Project>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

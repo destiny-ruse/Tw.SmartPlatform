@@ -1,0 +1,8 @@
+<!-- 用途: 专门管理微软官方、System、AspNetCore 等核心包 -->
+<Project>
+  <ItemGroup>
+    <!-- Microsoft.Extensions 核心包 -->
+
+    <!-- System 包 -->
+  </ItemGroup>
+</Project>

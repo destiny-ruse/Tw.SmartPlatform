@@ -1,0 +1,42 @@
+<Solution>
+  <Folder Name="/Aspire/" />
+  <Folder Name="/BuildingBlocks/" />
+  <Folder Name="/BuildingBlocks/src/">
+    <Project Path="BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj" />
+    <Project Path="BuildingBlocks/src/Tw.Core/Tw.Core.csproj" />
+    <Project Path="BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj" Id="3c29f089-7fa9-4059-960d-1181805e7b26" />
+    <Project Path="BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj" Id="61fbef08-7518-4645-9041-de06236ecfec" />
+    <Project Path="BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj" />
+    <Project Path="BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj" />
+    <Project Path="BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj" Id="09e2ff96-0c54-4000-81c1-13323e7e8b89" />
+    <Project Path="BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj" Id="b2504380-c352-4359-95bc-edacb65a130b" />
+    <Project Path="BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj" Id="00d55dcc-01eb-48b8-97f9-f4c6dc77a685" />
+    <Project Path="BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj" Id="e0e0367f-47d2-4e79-854c-0bf93cd9b3e8" />
+    <Project Path="BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj" />
+    <Project Path="Tw.AspNetCore/Tw.AspNetCore.csproj" Id="254c7393-f49f-4c61-b278-effcecda9a0f" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Ddd/">
+    <Project Path="BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj" />
+    <Project Path="BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj" Id="8447080a-a7eb-40c0-8810-c20837987cff" />
+    <Project Path="BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj" Id="78570cdc-239e-4f64-bdec-50060c3bc9f7" />
+    <Project Path="BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj" Id="d449ed2f-7ccf-498b-a2ae-b79b5ce56c53" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/tests/" />
+  <Folder Name="/Services/" />
+  <Folder Name="/Services/Authentication/" />
+  <Folder Name="/Services/Authentication/src/" />
+  <Folder Name="/Services/Authentication/tests/" />
+  <Folder Name="/Services/Authorization/" />
+  <Folder Name="/Services/Authorization/src/" />
+  <Folder Name="/Services/Authorization/tests/" />
+  <Folder Name="/Services/Notice/" />
+  <Folder Name="/Services/Notice/src/" />
+  <Folder Name="/Services/Notice/tests/" />
+  <Folder Name="/Services/OSS/" />
+  <Folder Name="/Services/OSS/src/" />
+  <Folder Name="/Services/OSS/tests/" />
+  <Folder Name="/Services/System/" />
+  <Folder Name="/Services/System/src/">
+  </Folder>
+  <Folder Name="/Services/System/tests/" />
+</Solution>
