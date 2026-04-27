@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:44:23Z",
+  "generated_at": "2026-04-27T05:45:20Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -128,6 +128,29 @@
       "sections_index": "docs/standards/_index/sections/references.glossary.generated.json"
     },
     {
+      "id": "rules.ci-pipeline",
+      "title": "CI ?????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/ci-pipeline.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.ci-pipeline.generated.json"
+    },
+    {
       "id": "rules.code-review",
       "title": "??????",
       "doc_type": "rule",
@@ -175,6 +198,107 @@
       "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
     },
     {
+      "id": "rules.configuration",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/configuration.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.configuration.generated.json"
+    },
+    {
+      "id": "rules.container-image",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/container-image.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.container-image.generated.json"
+    },
+    {
+      "id": "rules.dependency-policy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/dependency-policy.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.dependency-policy.generated.json"
+    },
+    {
+      "id": "rules.deploy-rollback",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/deploy-rollback.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.deploy-rollback.generated.json"
+    },
+    {
       "id": "rules.editorconfig",
       "title": "EditorConfig ??",
       "doc_type": "rule",
@@ -196,6 +320,55 @@
       ],
       "summary": "??????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.editorconfig.generated.json"
+    },
+    {
+      "id": "rules.env-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/env-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.env-strategy.generated.json"
+    },
+    {
+      "id": "rules.error-handling",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/error-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.error-handling.generated.json"
     },
     {
       "id": "rules.git-commit",
@@ -221,6 +394,159 @@
       "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json"
     },
     {
+      "id": "rules.health-checks",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/health-checks.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.health-checks.generated.json"
+    },
+    {
+      "id": "rules.idempotency",
+      "title": "?????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/idempotency.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.idempotency.generated.json"
+    },
+    {
+      "id": "rules.input-validation",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/input-validation.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.input-validation.generated.json"
+    },
+    {
+      "id": "rules.k8s-resource-naming",
+      "title": "Kubernetes ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/k8s-resource-naming.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.k8s-resource-naming.generated.json"
+    },
+    {
+      "id": "rules.logging",
+      "title": "????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/logging.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.logging.generated.json"
+    },
+    {
+      "id": "rules.metrics",
+      "title": "????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/metrics.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.metrics.generated.json"
+    },
+    {
       "id": "rules.naming-common",
       "title": "??????",
       "doc_type": "rule",
@@ -241,6 +567,35 @@
       ],
       "summary": "???????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
+    },
+    {
+      "id": "rules.pii-handling",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/pii-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.pii-handling.generated.json"
     },
     {
       "id": "rules.repo-layout",
@@ -264,6 +619,112 @@
       ],
       "summary": "????????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.repo-layout.generated.json"
+    },
+    {
+      "id": "rules.resilience",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/resilience.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.resilience.generated.json"
+    },
+    {
+      "id": "rules.secrets-management",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/secrets-management.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.secrets-management.generated.json"
+    },
+    {
+      "id": "rules.slo",
+      "title": "SLO ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/slo.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.slo.generated.json"
+    },
+    {
+      "id": "rules.tracing",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/tracing.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "?? trace/span ??????????????",
+      "sections_index": "docs/standards/_index/sections/rules.tracing.generated.json"
     }
   ]
 }

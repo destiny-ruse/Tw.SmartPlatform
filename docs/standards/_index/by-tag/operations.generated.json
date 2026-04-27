@@ -1,0 +1,227 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:45:20Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "operations",
+  "standards": [
+    {
+      "id": "rules.ci-pipeline",
+      "title": "CI ?????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/ci-pipeline.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.ci-pipeline.generated.json"
+    },
+    {
+      "id": "rules.container-image",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/container-image.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.container-image.generated.json"
+    },
+    {
+      "id": "rules.deploy-rollback",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/deploy-rollback.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.deploy-rollback.generated.json"
+    },
+    {
+      "id": "rules.env-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/env-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.env-strategy.generated.json"
+    },
+    {
+      "id": "rules.health-checks",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/health-checks.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.health-checks.generated.json"
+    },
+    {
+      "id": "rules.k8s-resource-naming",
+      "title": "Kubernetes ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/k8s-resource-naming.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.k8s-resource-naming.generated.json"
+    },
+    {
+      "id": "rules.logging",
+      "title": "????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/logging.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.logging.generated.json"
+    },
+    {
+      "id": "rules.metrics",
+      "title": "????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/metrics.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.metrics.generated.json"
+    },
+    {
+      "id": "rules.tracing",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/tracing.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "?? trace/span ??????????????",
+      "sections_index": "docs/standards/_index/sections/rules.tracing.generated.json"
+    }
+  ]
+}

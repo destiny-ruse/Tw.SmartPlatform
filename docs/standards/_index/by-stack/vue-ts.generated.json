@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:44:23Z",
+  "generated_at": "2026-04-27T05:45:20Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -228,6 +228,35 @@
       "sections_index": "docs/standards/_index/sections/rules.data-formats.generated.json"
     },
     {
+      "id": "rules.dependency-policy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/dependency-policy.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.dependency-policy.generated.json"
+    },
+    {
       "id": "rules.fe-a11y",
       "title": "????????",
       "doc_type": "rule",
@@ -418,6 +447,35 @@
       "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
     },
     {
+      "id": "rules.input-validation",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/input-validation.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.input-validation.generated.json"
+    },
+    {
       "id": "rules.messaging-patterns",
       "title": "??????",
       "doc_type": "rule",
@@ -467,6 +525,145 @@
       ],
       "summary": "?? TypeScript?Vue ????????????????",
       "sections_index": "docs/standards/_index/sections/rules.naming-ts-vue.generated.json"
+    },
+    {
+      "id": "rules.pii-handling",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/pii-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.pii-handling.generated.json"
+    },
+    {
+      "id": "rules.secrets-management",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/secrets-management.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.secrets-management.generated.json"
+    },
+    {
+      "id": "rules.test-coverage",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-coverage.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-coverage.generated.json"
+    },
+    {
+      "id": "rules.test-data-mock",
+      "title": "????? Mock ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-data-mock.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????Mock ????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-data-mock.generated.json"
+    },
+    {
+      "id": "rules.test-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-strategy.generated.json"
     }
   ]
 }

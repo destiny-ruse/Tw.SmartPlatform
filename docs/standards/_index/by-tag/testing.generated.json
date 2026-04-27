@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:44:23Z",
+  "generated_at": "2026-04-27T05:45:20Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -36,6 +36,87 @@
       ],
       "summary": "??????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
+    },
+    {
+      "id": "rules.test-coverage",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-coverage.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-coverage.generated.json"
+    },
+    {
+      "id": "rules.test-data-mock",
+      "title": "????? Mock ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-data-mock.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????Mock ????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-data-mock.generated.json"
+    },
+    {
+      "id": "rules.test-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-strategy.generated.json"
     }
   ]
 }

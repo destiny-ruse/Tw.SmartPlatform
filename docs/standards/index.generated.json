@@ -4,7 +4,7 @@
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
   },
-  "generated_at": "2026-04-27T05:44:23Z",
+  "generated_at": "2026-04-27T05:45:20Z",
   "standards": [
     {
       "id": "decisions.0001-adopt-standards-blueprint",
@@ -578,6 +578,79 @@
       ]
     },
     {
+      "id": "rules.cache-conventions",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/cache-conventions.md",
+      "roles": [
+        "backend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "data",
+        "storage",
+        "caching",
+        "framework"
+      ],
+      "summary": "??????TTL???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.cache-conventions.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/caching.generated.json",
+        "docs/standards/_index/by-tag/data.generated.json",
+        "docs/standards/_index/by-tag/framework.generated.json",
+        "docs/standards/_index/by-tag/storage.generated.json"
+      ]
+    },
+    {
+      "id": "rules.ci-pipeline",
+      "title": "CI ?????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/ci-pipeline.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.ci-pipeline.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/cicd.generated.json",
+        "docs/standards/_index/by-tag/deployment.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
+      ]
+    },
+    {
       "id": "rules.code-review",
       "title": "??????",
       "doc_type": "rule",
@@ -772,6 +845,79 @@
       ]
     },
     {
+      "id": "rules.configuration",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/configuration.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.configuration.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/backend.generated.json",
+        "docs/standards/_index/by-tag/framework.generated.json"
+      ]
+    },
+    {
+      "id": "rules.container-image",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/container-image.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.container-image.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/cicd.generated.json",
+        "docs/standards/_index/by-tag/deployment.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
+      ]
+    },
+    {
       "id": "rules.contract-testing",
       "title": "??????",
       "doc_type": "rule",
@@ -862,6 +1008,190 @@
       ]
     },
     {
+      "id": "rules.db-audit-fields",
+      "title": "?????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/db-audit-fields.md",
+      "roles": [
+        "backend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "data",
+        "storage"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.db-audit-fields.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/data.generated.json",
+        "docs/standards/_index/by-tag/storage.generated.json"
+      ]
+    },
+    {
+      "id": "rules.db-migration",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/db-migration.md",
+      "roles": [
+        "backend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "data",
+        "storage"
+      ],
+      "summary": "?? schema ??????????????",
+      "sections_index": "docs/standards/_index/sections/rules.db-migration.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/data.generated.json",
+        "docs/standards/_index/by-tag/storage.generated.json"
+      ]
+    },
+    {
+      "id": "rules.db-naming",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/db-naming.md",
+      "roles": [
+        "backend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "data",
+        "storage"
+      ],
+      "summary": "????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.db-naming.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/data.generated.json",
+        "docs/standards/_index/by-tag/storage.generated.json"
+      ]
+    },
+    {
+      "id": "rules.dependency-policy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/dependency-policy.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.dependency-policy.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/compliance.generated.json",
+        "docs/standards/_index/by-tag/security.generated.json"
+      ]
+    },
+    {
+      "id": "rules.deploy-rollback",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/deploy-rollback.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.deploy-rollback.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/cicd.generated.json",
+        "docs/standards/_index/by-tag/deployment.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
+      ]
+    },
+    {
       "id": "rules.editorconfig",
       "title": "EditorConfig ??",
       "doc_type": "rule",
@@ -893,6 +1223,79 @@
         "docs/standards/_index/by-role/qa.generated.json",
         "docs/standards/_index/by-tag/editorconfig.generated.json",
         "docs/standards/_index/by-tag/governance.generated.json"
+      ]
+    },
+    {
+      "id": "rules.env-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/env-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.env-strategy.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/cicd.generated.json",
+        "docs/standards/_index/by-tag/deployment.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
+      ]
+    },
+    {
+      "id": "rules.error-handling",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/error-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.error-handling.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/backend.generated.json",
+        "docs/standards/_index/by-tag/framework.generated.json"
       ]
     },
     {
@@ -1237,6 +1640,198 @@
       ]
     },
     {
+      "id": "rules.health-checks",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/health-checks.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.health-checks.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/observability.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
+      ]
+    },
+    {
+      "id": "rules.idempotency",
+      "title": "?????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/idempotency.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.idempotency.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/backend.generated.json",
+        "docs/standards/_index/by-tag/framework.generated.json"
+      ]
+    },
+    {
+      "id": "rules.input-validation",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/input-validation.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.input-validation.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/compliance.generated.json",
+        "docs/standards/_index/by-tag/security.generated.json"
+      ]
+    },
+    {
+      "id": "rules.k8s-resource-naming",
+      "title": "Kubernetes ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/k8s-resource-naming.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.k8s-resource-naming.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/cicd.generated.json",
+        "docs/standards/_index/by-tag/deployment.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
+      ]
+    },
+    {
+      "id": "rules.logging",
+      "title": "????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/logging.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.logging.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/observability.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
+      ]
+    },
+    {
       "id": "rules.messaging-patterns",
       "title": "??????",
       "doc_type": "rule",
@@ -1279,6 +1874,43 @@
         "docs/standards/_index/by-tag/idempotency.generated.json",
         "docs/standards/_index/by-tag/messaging.generated.json",
         "docs/standards/_index/by-tag/reliability.generated.json"
+      ]
+    },
+    {
+      "id": "rules.metrics",
+      "title": "????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/metrics.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.metrics.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/observability.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
       ]
     },
     {
@@ -1469,6 +2101,51 @@
       ]
     },
     {
+      "id": "rules.pii-handling",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/pii-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.pii-handling.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/compliance.generated.json",
+        "docs/standards/_index/by-tag/security.generated.json"
+      ]
+    },
+    {
       "id": "rules.repo-layout",
       "title": "????????",
       "doc_type": "rule",
@@ -1500,6 +2177,289 @@
         "docs/standards/_index/by-role/qa.generated.json",
         "docs/standards/_index/by-tag/governance.generated.json",
         "docs/standards/_index/by-tag/repo-layout.generated.json"
+      ]
+    },
+    {
+      "id": "rules.resilience",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/resilience.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.resilience.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/backend.generated.json",
+        "docs/standards/_index/by-tag/framework.generated.json"
+      ]
+    },
+    {
+      "id": "rules.secrets-management",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/secrets-management.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.secrets-management.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/compliance.generated.json",
+        "docs/standards/_index/by-tag/security.generated.json"
+      ]
+    },
+    {
+      "id": "rules.slo",
+      "title": "SLO ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/slo.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.slo.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/backend.generated.json",
+        "docs/standards/_index/by-tag/framework.generated.json"
+      ]
+    },
+    {
+      "id": "rules.test-coverage",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-coverage.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-coverage.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/quality.generated.json",
+        "docs/standards/_index/by-tag/testing.generated.json"
+      ]
+    },
+    {
+      "id": "rules.test-data-mock",
+      "title": "????? Mock ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-data-mock.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????Mock ????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-data-mock.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/quality.generated.json",
+        "docs/standards/_index/by-tag/testing.generated.json"
+      ]
+    },
+    {
+      "id": "rules.test-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-strategy.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/quality.generated.json",
+        "docs/standards/_index/by-tag/testing.generated.json"
+      ]
+    },
+    {
+      "id": "rules.tracing",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/tracing.md",
+      "roles": [
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "observability",
+        "operations"
+      ],
+      "summary": "?? trace/span ??????????????",
+      "sections_index": "docs/standards/_index/sections/rules.tracing.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-tag/observability.generated.json",
+        "docs/standards/_index/by-tag/operations.generated.json"
       ]
     },
     {

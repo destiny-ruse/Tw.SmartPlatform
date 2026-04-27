@@ -1,0 +1,38 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:45:20Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "caching",
+  "standards": [
+    {
+      "id": "rules.cache-conventions",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/cache-conventions.md",
+      "roles": [
+        "backend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "data",
+        "storage",
+        "caching",
+        "framework"
+      ],
+      "summary": "??????TTL???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.cache-conventions.generated.json"
+    }
+  ]
+}

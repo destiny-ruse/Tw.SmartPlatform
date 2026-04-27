@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:44:23Z",
+  "generated_at": "2026-04-27T05:45:20Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -293,6 +293,32 @@
       "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
     },
     {
+      "id": "rules.configuration",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/configuration.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.configuration.generated.json"
+    },
+    {
       "id": "rules.contract-testing",
       "title": "??????",
       "doc_type": "rule",
@@ -351,6 +377,35 @@
       "sections_index": "docs/standards/_index/sections/rules.data-formats.generated.json"
     },
     {
+      "id": "rules.dependency-policy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/dependency-policy.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.dependency-policy.generated.json"
+    },
+    {
       "id": "rules.editorconfig",
       "title": "EditorConfig ??",
       "doc_type": "rule",
@@ -372,6 +427,32 @@
       ],
       "summary": "??????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.editorconfig.generated.json"
+    },
+    {
+      "id": "rules.error-handling",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/error-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.error-handling.generated.json"
     },
     {
       "id": "rules.git-commit",
@@ -455,6 +536,61 @@
       "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
     },
     {
+      "id": "rules.idempotency",
+      "title": "?????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/idempotency.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.idempotency.generated.json"
+    },
+    {
+      "id": "rules.input-validation",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/input-validation.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.input-validation.generated.json"
+    },
+    {
       "id": "rules.messaging-patterns",
       "title": "??????",
       "doc_type": "rule",
@@ -484,6 +620,35 @@
       "sections_index": "docs/standards/_index/sections/rules.messaging-patterns.generated.json"
     },
     {
+      "id": "rules.pii-handling",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/pii-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.pii-handling.generated.json"
+    },
+    {
       "id": "rules.repo-layout",
       "title": "????????",
       "doc_type": "rule",
@@ -505,6 +670,87 @@
       ],
       "summary": "????????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.repo-layout.generated.json"
+    },
+    {
+      "id": "rules.resilience",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/resilience.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.resilience.generated.json"
+    },
+    {
+      "id": "rules.secrets-management",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/secrets-management.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.secrets-management.generated.json"
+    },
+    {
+      "id": "rules.slo",
+      "title": "SLO ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/slo.md",
+      "roles": [
+        "architect",
+        "backend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python"
+      ],
+      "tags": [
+        "backend",
+        "framework"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.slo.generated.json"
     },
     {
       "id": "standards.authoring",

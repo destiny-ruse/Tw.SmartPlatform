@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:44:23Z",
+  "generated_at": "2026-04-27T05:45:20Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -333,6 +333,29 @@
       "sections_index": "docs/standards/_index/sections/rules.auth-oauth-oidc.generated.json"
     },
     {
+      "id": "rules.ci-pipeline",
+      "title": "CI ?????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/ci-pipeline.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.ci-pipeline.generated.json"
+    },
+    {
       "id": "rules.code-review",
       "title": "??????",
       "doc_type": "rule",
@@ -402,6 +425,29 @@
       "sections_index": "docs/standards/_index/sections/rules.comments-ts.generated.json"
     },
     {
+      "id": "rules.container-image",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/container-image.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.container-image.generated.json"
+    },
+    {
       "id": "rules.contract-testing",
       "title": "??????",
       "doc_type": "rule",
@@ -460,6 +506,58 @@
       "sections_index": "docs/standards/_index/sections/rules.data-formats.generated.json"
     },
     {
+      "id": "rules.dependency-policy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/dependency-policy.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.dependency-policy.generated.json"
+    },
+    {
+      "id": "rules.deploy-rollback",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/deploy-rollback.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.deploy-rollback.generated.json"
+    },
+    {
       "id": "rules.editorconfig",
       "title": "EditorConfig ??",
       "doc_type": "rule",
@@ -481,6 +579,29 @@
       ],
       "summary": "??????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.editorconfig.generated.json"
+    },
+    {
+      "id": "rules.env-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/env-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.env-strategy.generated.json"
     },
     {
       "id": "rules.fe-a11y",
@@ -718,6 +839,58 @@
       "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
     },
     {
+      "id": "rules.input-validation",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/input-validation.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.input-validation.generated.json"
+    },
+    {
+      "id": "rules.k8s-resource-naming",
+      "title": "Kubernetes ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/k8s-resource-naming.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "cicd",
+        "deployment",
+        "operations"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.k8s-resource-naming.generated.json"
+    },
+    {
       "id": "rules.messaging-patterns",
       "title": "??????",
       "doc_type": "rule",
@@ -813,6 +986,35 @@
       "sections_index": "docs/standards/_index/sections/rules.naming-uniapp.generated.json"
     },
     {
+      "id": "rules.pii-handling",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/pii-handling.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.pii-handling.generated.json"
+    },
+    {
       "id": "rules.repo-layout",
       "title": "????????",
       "doc_type": "rule",
@@ -834,6 +1036,116 @@
       ],
       "summary": "????????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.repo-layout.generated.json"
+    },
+    {
+      "id": "rules.secrets-management",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/secrets-management.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.secrets-management.generated.json"
+    },
+    {
+      "id": "rules.test-coverage",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-coverage.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-coverage.generated.json"
+    },
+    {
+      "id": "rules.test-data-mock",
+      "title": "????? Mock ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-data-mock.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "?????????Mock ????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-data-mock.generated.json"
+    },
+    {
+      "id": "rules.test-strategy",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/test-strategy.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.test-strategy.generated.json"
     }
   ]
 }
