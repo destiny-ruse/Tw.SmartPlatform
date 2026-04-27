@@ -892,6 +892,10 @@ def build_edges(nodes: list[GraphNode]) -> list[dict[str, str]]:
             if callee:
                 edges.add((str(node_id), "callee", str(callee)))
 
+            contract = data.get("contract")
+            if contract:
+                edges.add((str(node_id), "contract", str(contract)))
+
             tooling = data.get("tooling")
             if isinstance(tooling, dict) and isinstance(tooling.get("required_capabilities"), list):
                 for capability_id in tooling["required_capabilities"]:

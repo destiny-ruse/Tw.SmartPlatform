@@ -810,6 +810,7 @@ class KnowledgeToolTests(unittest.TestCase):
             write_module(root)
             write_notice_module(root)
             write_remote_service_capability(root)
+            write_contract(root)
             write_file(
                 root,
                 "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
@@ -829,6 +830,7 @@ class KnowledgeToolTests(unittest.TestCase):
                   - service-integration
                 caller: backend.dotnet.services.notice
                 callee: backend.dotnet.services.authentication
+                contract: contracts.grpc.authentication-v1
                 tooling:
                   required_capabilities:
                     - backend.capability.remote-service
@@ -863,6 +865,14 @@ class KnowledgeToolTests(unittest.TestCase):
                     "from": "backend.integration.notice-authentication",
                     "type": "callee",
                     "to": "backend.dotnet.services.authentication",
+                },
+                edges,
+            )
+            self.assertIn(
+                {
+                    "from": "backend.integration.notice-authentication",
+                    "type": "contract",
+                    "to": "contracts.grpc.authentication-v1",
                 },
                 edges,
             )
