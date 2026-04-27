@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T09:18:27Z",
+  "generated_at": "2026-04-27T09:35:41Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -37,7 +37,7 @@
       "title": "OAuth 与 OIDC 认证规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/auth-oauth-oidc.md",
       "roles": [
         "architect",
@@ -124,7 +124,7 @@
       "title": "个人信息处理规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/pii-handling.md",
       "roles": [
         "architect",
@@ -153,7 +153,7 @@
       "title": "密钥管理规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/secrets-management.md",
       "roles": [
         "architect",
