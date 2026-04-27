@@ -479,6 +479,22 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertTrue((root / "docs/knowledge/generated/memory.generated.json").exists())
             self.assertTrue((root / "docs/knowledge/generated/edges.generated.json").exists())
 
+    def test_query_returns_ranked_summaries_and_read_targets(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_module(root)
+
+            results = knowledge.query_nodes("当前用户", limit=5)
+
+            self.assertEqual(1, len(results))
+            self.assertEqual("backend.dotnet.services.authentication", results[0]["id"])
+            self.assertIn("docs/knowledge/generated/_index/sections/backend.dotnet.services.authentication.generated.json", results[0]["read"][0])
+            self.assertEqual({"id", "kind", "name", "summary", "read"}, set(results[0]))
+            self.assertNotIn("source", results[0])
+            self.assertNotIn("provenance", results[0])
+            self.assertNotIn("provides", results[0])
+
 
 if __name__ == "__main__":
     unittest.main()

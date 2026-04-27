@@ -245,6 +245,85 @@ def load_taxonomy() -> dict[str, Any]:
     return load_yaml_file(TAXONOMY_PATH)
 
 
+def tokenize_query(text: str, taxonomy: dict[str, Any]) -> list[str]:
+    query_text = text.strip().lower()
+    tokens: list[str] = []
+    seen: set[str] = set()
+
+    def add_token(value: Any) -> None:
+        token = str(value).strip().lower()
+        if token and token not in seen:
+            seen.add(token)
+            tokens.append(token)
+
+    query_aliases = taxonomy.get("query_aliases")
+    if isinstance(query_aliases, dict):
+        for alias, values in query_aliases.items():
+            alias_text = str(alias).strip().lower()
+            if alias_text and alias_text in query_text:
+                if isinstance(values, list):
+                    for value in values:
+                        add_token(value)
+                else:
+                    add_token(values)
+
+    for token in re.findall(r"[a-z0-9][a-z0-9-]*", query_text):
+        add_token(token)
+    if query_text:
+        add_token(query_text)
+    return tokens
+
+
+def append_search_value(parts: list[str], value: Any) -> None:
+    if isinstance(value, list):
+        for item in value:
+            append_search_value(parts, item)
+        return
+    if value not in (None, "", [], {}):
+        parts.append(str(value).lower())
+
+
+def node_search_text(node: GraphNode) -> str:
+    data = node.data
+    parts: list[str] = []
+    for key in ["id", "name", "summary", "tags", "aliases"]:
+        append_search_value(parts, data.get(key))
+    return " ".join(parts)
+
+
+def query_nodes(text: str, limit: int = 5) -> list[dict[str, Any]]:
+    taxonomy = load_taxonomy()
+    tokens = tokenize_query(text, taxonomy)
+    if not tokens:
+        return []
+
+    nodes, _messages = load_graph_nodes()
+    ranked: list[tuple[int, str, GraphNode]] = []
+    for node in nodes:
+        search_text = node_search_text(node)
+        score = sum(1 for token in tokens if token in search_text)
+        if score:
+            ranked.append((score, str(node.data.get("id", "")), node))
+
+    results: list[dict[str, Any]] = []
+    for _score, _node_id, node in sorted(ranked, key=lambda item: (-item[0], item[1]))[:limit]:
+        data = node.data
+        node_id = str(data.get("id", ""))
+        results.append(
+            {
+                "id": node_id,
+                "kind": data.get("kind"),
+                "name": data.get("name"),
+                "summary": data.get("summary"),
+                "read": [
+                    generated_path("_index", "sections", f"{node_id}.generated.json"),
+                    rel_path(node.path),
+                ],
+            }
+        )
+    return results
+
+
 def load_graph_nodes() -> tuple[list[GraphNode], list[Diagnostic]]:
     nodes: list[GraphNode] = []
     messages: list[Diagnostic] = []
@@ -735,6 +814,25 @@ def command_check(_args: argparse.Namespace) -> int:
     return 0
 
 
+def command_query(args: argparse.Namespace) -> int:
+    results = query_nodes(args.text, args.limit)
+    if not results:
+        print("未找到匹配的知识图谱节点。")
+        return 1
+
+    for index, result in enumerate(results):
+        if index:
+            print()
+        print(f"{result['id']}")
+        print(f"类型: {result.get('kind', '')}")
+        print(f"名称: {result.get('name', '')}")
+        print(f"摘要: {result.get('summary', '')}")
+        print("建议读取:")
+        for path in result["read"]:
+            print(f"- {path}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Knowledge graph maintenance tool")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -742,6 +840,10 @@ def build_parser() -> argparse.ArgumentParser:
     generate_parser.set_defaults(func=command_generate)
     check_parser = subparsers.add_parser("check", help="validate knowledge graph nodes")
     check_parser.set_defaults(func=command_check)
+    query_parser = subparsers.add_parser("query", help="query knowledge graph summaries")
+    query_parser.add_argument("--text", required=True, help="query text")
+    query_parser.add_argument("--limit", type=int, default=5, help="maximum result count")
+    query_parser.set_defaults(func=command_query)
     return parser
 
 
