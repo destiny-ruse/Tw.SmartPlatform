@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "frontend.apps.tw-app-owner",
+      "kind": "module",
+      "name": "业主端 App",
+      "path": "docs/knowledge/graph/modules/frontend.apps.tw-app-owner.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/frontend.apps.tw-app-owner.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/frontend.generated.json",
+        "docs/knowledge/generated/_index/by-stack/vue-ts.generated.json",
+        "docs/knowledge/generated/_index/by-tag/frontend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/uniapp.generated.json",
+        "docs/knowledge/generated/_index/by-tag/vue-ts.generated.json"
+      ],
+      "summary": "承载业主端移动应用的前端代码与交互入口。",
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "uniapp"
+      ]
+    },
+    {
+      "id": "frontend.apps.tw-app-staff",
+      "kind": "module",
+      "name": "员工端 App",
+      "path": "docs/knowledge/graph/modules/frontend.apps.tw-app-staff.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/frontend.apps.tw-app-staff.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/frontend.generated.json",
+        "docs/knowledge/generated/_index/by-stack/vue-ts.generated.json",
+        "docs/knowledge/generated/_index/by-tag/frontend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/uniapp.generated.json",
+        "docs/knowledge/generated/_index/by-tag/vue-ts.generated.json"
+      ],
+      "summary": "承载员工端移动应用的前端代码与交互入口。",
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "uniapp"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

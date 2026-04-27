@@ -387,6 +387,158 @@
           "backend.capability.remote-service"
         ]
       }
+    },
+    {
+      "id": "frontend.apps.tw-app-owner",
+      "kind": "module",
+      "module_type": "frontend-app",
+      "name": "业主端 App",
+      "owners": [
+        "frontend"
+      ],
+      "path": "frontend/apps/tw.app.owner",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/frontend.apps.tw-app-owner.yaml",
+        "evidence": [
+          "frontend/apps/tw.app.owner/README.md"
+        ]
+      },
+      "stack": "vue-ts",
+      "status": "draft",
+      "summary": "承载业主端移动应用的前端代码与交互入口。",
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "uniapp"
+      ]
+    },
+    {
+      "id": "frontend.apps.tw-app-staff",
+      "kind": "module",
+      "module_type": "frontend-app",
+      "name": "员工端 App",
+      "owners": [
+        "frontend"
+      ],
+      "path": "frontend/apps/tw.app.staff",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/frontend.apps.tw-app-staff.yaml",
+        "evidence": [
+          "frontend/apps/tw.app.staff/README.md"
+        ]
+      },
+      "stack": "vue-ts",
+      "status": "draft",
+      "summary": "承载员工端移动应用的前端代码与交互入口。",
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "uniapp"
+      ]
+    },
+    {
+      "id": "frontend.apps.tw-web-client",
+      "kind": "module",
+      "module_type": "frontend-app",
+      "name": "客户 Web 端",
+      "owners": [
+        "frontend"
+      ],
+      "path": "frontend/apps/tw.web.client",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/frontend.apps.tw-web-client.yaml",
+        "evidence": [
+          "frontend/apps/tw.web.client/README.md"
+        ]
+      },
+      "stack": "vue-ts",
+      "status": "draft",
+      "summary": "承载客户 Web 端应用的前端代码与交互入口。",
+      "tags": [
+        "frontend",
+        "vue-ts"
+      ]
+    },
+    {
+      "id": "frontend.apps.tw-web-ops",
+      "kind": "module",
+      "module_type": "frontend-app",
+      "name": "运营 Web 端",
+      "owners": [
+        "frontend"
+      ],
+      "path": "frontend/apps/tw.web.ops",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/frontend.apps.tw-web-ops.yaml",
+        "evidence": [
+          "frontend/apps/tw.web.ops/README.md"
+        ]
+      },
+      "stack": "vue-ts",
+      "status": "draft",
+      "summary": "承载运营 Web 端应用的前端代码与交互入口。",
+      "tags": [
+        "frontend",
+        "vue-ts"
+      ]
+    },
+    {
+      "id": "frontend.apps.tw-web-portal",
+      "kind": "module",
+      "module_type": "frontend-app",
+      "name": "门户 Web 端",
+      "owners": [
+        "frontend"
+      ],
+      "path": "frontend/apps/tw.web.portal",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/frontend.apps.tw-web-portal.yaml",
+        "evidence": [
+          "frontend/apps/tw.web.portal/README.md"
+        ]
+      },
+      "stack": "vue-ts",
+      "status": "draft",
+      "summary": "承载门户 Web 端应用的前端代码与交互入口。",
+      "tags": [
+        "frontend",
+        "vue-ts"
+      ]
     }
   ],
   "schema_version": "1.0.0"

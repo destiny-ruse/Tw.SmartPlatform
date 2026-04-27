@@ -1635,6 +1635,24 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertEqual("WARN", diagnostics[0].level)
             self.assertEqual("knowledge.contract-outdated", diagnostics[0].code)
 
+    def test_frontend_app_seed_nodes_are_valid_modules(self):
+        expected = {
+            "frontend.apps.tw-app-owner": "frontend/apps/tw.app.owner",
+            "frontend.apps.tw-app-staff": "frontend/apps/tw.app.staff",
+            "frontend.apps.tw-web-client": "frontend/apps/tw.web.client",
+            "frontend.apps.tw-web-ops": "frontend/apps/tw.web.ops",
+            "frontend.apps.tw-web-portal": "frontend/apps/tw.web.portal",
+        }
+        nodes, messages = knowledge.load_graph_nodes()
+        self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
+        modules = {node.data.get("id"): node.data for node in nodes if node.data.get("kind") == "module"}
+
+        for node_id, path in expected.items():
+            self.assertIn(node_id, modules)
+            self.assertEqual("frontend-app", modules[node_id]["module_type"])
+            self.assertEqual("vue-ts", modules[node_id]["stack"])
+            self.assertEqual(path, modules[node_id]["path"])
+
 
 if __name__ == "__main__":
     unittest.main()
