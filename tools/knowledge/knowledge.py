@@ -381,6 +381,7 @@ def collect_validation_messages() -> list[Diagnostic]:
     messages.extend(load_messages)
     valid_kinds = set(taxonomy.get("valid_kinds") or [])
     valid_statuses = set(taxonomy.get("valid_statuses") or [])
+    valid_module_types = set(taxonomy.get("valid_module_types") or [])
     seen_ids: dict[str, Path] = {}
 
     for node in nodes:
@@ -451,6 +452,17 @@ def collect_validation_messages() -> list[Diagnostic]:
                     location,
                     f"status 不在 taxonomy.yaml 允许范围内: {status}",
                     "请使用 taxonomy.yaml valid_statuses 中声明的状态。",
+                )
+            )
+
+        module_type = data.get("module_type")
+        if kind == "module" and module_type and valid_module_types and module_type not in valid_module_types:
+            messages.append(
+                error(
+                    "knowledge.invalid-module-type",
+                    location,
+                    f"module_type 不在 taxonomy.yaml 允许范围内: {module_type}",
+                    "请使用 taxonomy.yaml valid_module_types 中声明的模块类型。",
                 )
             )
 
@@ -1115,14 +1127,14 @@ def path_rule_diagnostic(
     if kind != "module":
         return None
 
-    if rule.get("module_type") == "building-block":
+    if rule.get("module_type") in {"building-block", "framework-package"}:
         return taxonomy_diagnostic(
             taxonomy,
             "knowledge.missing-capability",
             "WARN",
             location,
-            "新增 BuildingBlock 尚未声明能力或模块图谱节点。",
-            "新增对应 module 图谱节点并关联 capability，或在 taxonomy.yaml 中声明忽略规则。",
+            "新增公共构件目录可能暴露可复用能力，但尚未声明 capability 图谱节点。",
+            "新增对应 module 图谱节点并关联 capability，或说明该公共构件不对外提供复用能力。",
         )
 
     return taxonomy_diagnostic(

@@ -57,6 +57,26 @@ def write_taxonomy(root: Path) -> None:
           - draft
           - deprecated
           - superseded
+        valid_stacks:
+          - dotnet
+          - java
+          - python
+          - vue-ts
+          - uniapp
+          - go
+        valid_domains:
+          - security
+          - integration
+          - platform
+          - frontend
+          - contracts
+          - operations
+        valid_module_types:
+          - microservice
+          - building-block
+          - framework-package
+          - frontend-app
+          - frontend-package
         path_rules:
           - pattern: backend/dotnet/Services/*/**
             kind: module
@@ -66,22 +86,81 @@ def write_taxonomy(root: Path) -> None:
             kind: module
             module_type: building-block
             stack: dotnet
+          - pattern: backend/java/services/*/**
+            kind: module
+            module_type: microservice
+            stack: java
+          - pattern: backend/java/packages/*/**
+            kind: module
+            module_type: framework-package
+            stack: java
+          - pattern: backend/python/services/*/**
+            kind: module
+            module_type: microservice
+            stack: python
+          - pattern: backend/python/packages/*/**
+            kind: module
+            module_type: framework-package
+            stack: python
+          - pattern: backend/go/services/*/**
+            kind: module
+            module_type: microservice
+            stack: go
+          - pattern: backend/go/packages/*/**
+            kind: module
+            module_type: framework-package
+            stack: go
+          - pattern: frontend/apps/*/**
+            kind: module
+            module_type: frontend-app
+            stack: vue-ts
           - pattern: frontend/packages/*/**
             kind: module
             module_type: frontend-package
             stack: vue-ts
-          - pattern: contracts/protos/**/*
+          - pattern: contracts/protos/**/*.proto
             kind: contract
             contract_type: grpc
+          - pattern: contracts/openapi/**/*.yaml
+            kind: contract
+            contract_type: openapi
         diagnostics:
           knowledge.missing-module:
             severity: error
             message_zh: 新增服务或模块目录尚未声明 module 图谱节点。
             suggestion_zh: 新增对应 module 图谱节点，或在 taxonomy.yaml 中声明忽略规则。
+          knowledge.missing-capability:
+            severity: warning
+            message_zh: 新增公共构件目录可能暴露可复用能力，但尚未声明 capability 图谱节点。
+            suggestion_zh: 为该公共构件声明 capability，或说明它不对外提供复用能力。
+          knowledge.contract-drift:
+            severity: error
+            message_zh: 公共契约发生变更，但对应 contract 图谱节点未更新。
+            suggestion_zh: 更新 contract 节点的版本、兼容性说明或变更证据。
+          knowledge.contract-outdated:
+            severity: warning
+            message_zh: 契约文件发生变更，对应 contract 图谱节点可能未同步更新。
+            suggestion_zh: 检查 contract 节点版本、兼容性说明和变更证据是否已更新。
         query_aliases:
           当前用户:
             - auth
+            - authentication
             - user
+          授权:
+            - auth
+            - authorization
+            - permission
+          远程调用:
+            - remote-call
+            - service-integration
+          Spring Boot:
+            - java
+            - spring
+            - packages
+          前端:
+            - vue
+            - frontend
+            - apps
         """,
     )
 
@@ -218,6 +297,96 @@ def diagnostic_text(messages):
 
 
 class KnowledgeToolTests(unittest.TestCase):
+    def test_taxonomy_contains_plan_a_cross_stack_rules(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            taxonomy = knowledge.load_taxonomy()
+
+            patterns = {rule["pattern"] for rule in taxonomy["path_rules"]}
+            self.assertIn("backend/java/services/*/**", patterns)
+            self.assertIn("backend/java/packages/*/**", patterns)
+            self.assertIn("backend/python/services/*/**", patterns)
+            self.assertIn("backend/python/packages/*/**", patterns)
+            self.assertIn("backend/go/services/*/**", patterns)
+            self.assertIn("backend/go/packages/*/**", patterns)
+            self.assertIn("frontend/apps/*/**", patterns)
+            self.assertIn("contracts/openapi/**/*.yaml", patterns)
+            self.assertIn("go", taxonomy["valid_stacks"])
+            self.assertIn("framework-package", taxonomy["valid_module_types"])
+            self.assertIn("frontend-app", taxonomy["valid_module_types"])
+            self.assertIn("knowledge.contract-outdated", taxonomy["diagnostics"])
+
+    def test_production_taxonomy_contains_plan_a_cross_stack_rules(self):
+        taxonomy_path = Path(__file__).resolve().parents[2] / "docs" / "knowledge" / "taxonomy.yaml"
+        taxonomy = knowledge.load_yaml_file(taxonomy_path)
+
+        patterns = {rule["pattern"] for rule in taxonomy["path_rules"]}
+        self.assertIn("backend/java/services/*/**", patterns)
+        self.assertIn("backend/java/packages/*/**", patterns)
+        self.assertIn("backend/python/services/*/**", patterns)
+        self.assertIn("backend/python/packages/*/**", patterns)
+        self.assertIn("backend/go/services/*/**", patterns)
+        self.assertIn("backend/go/packages/*/**", patterns)
+        self.assertIn("frontend/apps/*/**", patterns)
+        self.assertIn("contracts/openapi/**/*.yaml", patterns)
+        self.assertIn("go", taxonomy["valid_stacks"])
+        self.assertIn("valid_module_types", taxonomy)
+        self.assertIn("framework-package", taxonomy["valid_module_types"])
+        self.assertIn("frontend-app", taxonomy["valid_module_types"])
+        self.assertIn("knowledge.contract-outdated", taxonomy["diagnostics"])
+        self.assertEqual(["java", "spring", "packages"], taxonomy["query_aliases"]["Spring Boot"])
+        self.assertEqual(["vue", "frontend", "apps"], taxonomy["query_aliases"]["前端"])
+
+    def test_validation_rejects_invalid_module_type(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/java/services/user/README.md", "# 用户服务\n")
+            write_file(
+                root,
+                "docs/knowledge/graph/modules/backend.java.services.user.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.java.services.user
+                kind: module
+                name: 用户服务
+                status: draft
+                summary: 承载 Java 用户服务代码。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - java
+                module_type: bad-type
+                stack: java
+                path: backend/java/services/user
+                source:
+                  declared_in: docs/knowledge/graph/modules/backend.java.services.user.yaml
+                  evidence:
+                    - backend/java/services/user/README.md
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-28
+                  updated_by: human
+                  updated_at: 2026-04-28
+                """,
+            )
+
+            messages = knowledge.collect_validation_messages()
+
+            self.assertIn("knowledge.invalid-module-type", [message.code for message in messages])
+            self.assertIn("bad-type", diagnostic_text(messages))
+
+    def test_framework_package_drift_is_warning(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/java/packages/common/README.md", "# common\n")
+
+            diagnostics = knowledge.detect_drift_from_paths(["backend/java/packages/common/README.md"])
+
+            self.assertEqual("WARN", diagnostics[0].level)
+            self.assertEqual("knowledge.missing-capability", diagnostics[0].code)
+            self.assertEqual("backend/java/packages/common", diagnostics[0].location)
+
     def test_parse_yaml_subset_supports_nested_maps_and_lists(self):
         payload = knowledge.parse_yaml_subset(
             textwrap.dedent(

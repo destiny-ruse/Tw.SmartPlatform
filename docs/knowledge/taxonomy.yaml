@@ -16,6 +16,7 @@ valid_stacks:
   - python
   - vue-ts
   - uniapp
+  - go
 valid_domains:
   - security
   - integration
@@ -23,6 +24,12 @@ valid_domains:
   - frontend
   - contracts
   - operations
+valid_module_types:
+  - microservice
+  - building-block
+  - framework-package
+  - frontend-app
+  - frontend-package
 path_rules:
   - pattern: backend/dotnet/Services/*/**
     kind: module
@@ -32,13 +39,44 @@ path_rules:
     kind: module
     module_type: building-block
     stack: dotnet
+  - pattern: backend/java/services/*/**
+    kind: module
+    module_type: microservice
+    stack: java
+  - pattern: backend/java/packages/*/**
+    kind: module
+    module_type: framework-package
+    stack: java
+  - pattern: backend/python/services/*/**
+    kind: module
+    module_type: microservice
+    stack: python
+  - pattern: backend/python/packages/*/**
+    kind: module
+    module_type: framework-package
+    stack: python
+  - pattern: backend/go/services/*/**
+    kind: module
+    module_type: microservice
+    stack: go
+  - pattern: backend/go/packages/*/**
+    kind: module
+    module_type: framework-package
+    stack: go
+  - pattern: frontend/apps/*/**
+    kind: module
+    module_type: frontend-app
+    stack: vue-ts
   - pattern: frontend/packages/*/**
     kind: module
     module_type: frontend-package
     stack: vue-ts
-  - pattern: contracts/protos/**/*
+  - pattern: contracts/protos/**/*.proto
     kind: contract
     contract_type: grpc
+  - pattern: contracts/openapi/**/*.yaml
+    kind: contract
+    contract_type: openapi
 diagnostics:
   knowledge.missing-module:
     severity: error
@@ -52,6 +90,10 @@ diagnostics:
     severity: error
     message_zh: 公共契约发生变更，但对应 contract 图谱节点未更新。
     suggestion_zh: 更新 contract 节点的版本、兼容性说明或变更证据。
+  knowledge.contract-outdated:
+    severity: warning
+    message_zh: 契约文件发生变更，对应 contract 图谱节点可能未同步更新。
+    suggestion_zh: 检查 contract 节点版本、兼容性说明和变更证据是否已更新。
 query_aliases:
   当前用户:
     - auth
@@ -64,3 +106,11 @@ query_aliases:
   远程调用:
     - remote-call
     - service-integration
+  Spring Boot:
+    - java
+    - spring
+    - packages
+  前端:
+    - vue
+    - frontend
+    - apps
