@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T16:15:30Z",
+  "generated_at": "2026-04-27T16:26:27Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"
@@ -157,6 +157,27 @@
         "dotnet",
         "auth",
         "authorization"
+      ]
+    },
+    {
+      "id": "backend.dotnet.services.notice",
+      "kind": "module",
+      "name": "通知服务",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.services.notice.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.services.notice.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/notice.generated.json"
+      ],
+      "summary": "承载通知服务相关代码与认证服务集成边界，当前仅声明为集成关系的调用方模块。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "notice"
       ]
     },
     {

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import fnmatch
 import json
 import re
 import subprocess
@@ -63,6 +64,15 @@ class Diagnostic:
         if self.suggestion_zh:
             lines.append(f"建议: {self.suggestion_zh}")
         return "\n".join(lines)
+
+    def to_json(self) -> dict[str, str]:
+        return {
+            "level": self.level,
+            "code": self.code,
+            "location": self.location,
+            "message_zh": self.message_zh,
+            "suggestion_zh": self.suggestion_zh,
+        }
 
 
 @dataclass(frozen=True)
@@ -531,6 +541,112 @@ def collect_validation_messages() -> list[Diagnostic]:
                 )
             )
 
+    messages.extend(validate_graph_references(nodes))
+    return messages
+
+
+def append_dangling_reference(
+    messages: list[Diagnostic],
+    node: GraphNode,
+    field_path: str,
+    expected_kind: str,
+    referenced_id: Any,
+) -> None:
+    messages.append(
+        error(
+            "knowledge.dangling-reference",
+            node.path,
+            f"{field_path} 引用未声明的 {expected_kind} 图谱节点: {referenced_id}",
+            f"请新增对应 {expected_kind} 节点，或从 {field_path} 中移除无效引用。",
+        )
+    )
+
+
+def validate_graph_references(nodes: list[GraphNode]) -> list[Diagnostic]:
+    messages: list[Diagnostic] = []
+    ids_by_kind: dict[str, set[str]] = {}
+    for node in nodes:
+        node_id = node.data.get("id")
+        kind = node.data.get("kind")
+        if node_id and kind:
+            ids_by_kind.setdefault(str(kind), set()).add(str(node_id))
+
+    module_ids = ids_by_kind.get("module", set())
+    capability_ids = ids_by_kind.get("capability", set())
+
+    def require_many(
+        node: GraphNode,
+        field_path: str,
+        expected_kind: str,
+        valid_ids: set[str],
+        values: Any,
+    ) -> None:
+        if not isinstance(values, list):
+            return
+        for value in values:
+            if value and str(value) not in valid_ids:
+                append_dangling_reference(messages, node, field_path, expected_kind, value)
+
+    def require_one(
+        node: GraphNode,
+        field_path: str,
+        expected_kind: str,
+        valid_ids: set[str],
+        value: Any,
+    ) -> None:
+        if value and str(value) not in valid_ids:
+            append_dangling_reference(messages, node, field_path, expected_kind, value)
+
+    for node in nodes:
+        data = node.data
+        kind = data.get("kind")
+
+        if kind == "capability":
+            provided_by = data.get("provided_by")
+            if isinstance(provided_by, dict):
+                require_many(
+                    node,
+                    "provided_by.modules",
+                    "module",
+                    module_ids,
+                    provided_by.get("modules"),
+                )
+
+        if kind == "module":
+            provides = data.get("provides")
+            if isinstance(provides, dict):
+                require_many(
+                    node,
+                    "provides.capabilities",
+                    "capability",
+                    capability_ids,
+                    provides.get("capabilities"),
+                )
+
+        if kind == "decision":
+            applies_to = data.get("applies_to")
+            if isinstance(applies_to, dict):
+                require_many(
+                    node,
+                    "applies_to.capabilities",
+                    "capability",
+                    capability_ids,
+                    applies_to.get("capabilities"),
+                )
+
+        if kind == "integration":
+            require_one(node, "caller", "module", module_ids, data.get("caller"))
+            require_one(node, "callee", "module", module_ids, data.get("callee"))
+            tooling = data.get("tooling")
+            if isinstance(tooling, dict):
+                require_many(
+                    node,
+                    "tooling.required_capabilities",
+                    "capability",
+                    capability_ids,
+                    tooling.get("required_capabilities"),
+                )
+
     return messages
 
 
@@ -718,6 +834,10 @@ def build_indexes(existing_generated_at: str | None = None) -> tuple[dict[str, A
         generated_path("edges.generated.json"): {
             **generator_metadata(generated_at),
             "edges": edges,
+        },
+        generated_path("diagnostics.generated.json"): {
+            **generator_metadata(generated_at),
+            "diagnostics": [message.to_json() for message in messages],
         },
     }
 
@@ -936,8 +1056,77 @@ def taxonomy_diagnostic(
     return error(code, location, message_zh, suggestion_zh)
 
 
+def taxonomy_parse_diagnostic(exc: YamlSubsetError) -> Diagnostic:
+    return error(
+        "knowledge.taxonomy-parse",
+        TAXONOMY_PATH,
+        f"无法解析知识分类配置: {exc}",
+        "请检查 taxonomy.yaml 的缩进、列表和映射结构。",
+    )
+
+
+def path_matches_rule(pattern: str, path: str) -> bool:
+    normalized_pattern = normalized_repo_path(pattern)
+    return fnmatch.fnmatchcase(path, normalized_pattern)
+
+
+def path_rule_location(rule: dict[str, Any], changed_path: str) -> str:
+    if rule.get("kind") == "contract":
+        return changed_path
+
+    pattern_parts = normalized_repo_path(str(rule.get("pattern") or "")).split("/")
+    path_parts = normalized_repo_path(changed_path).split("/")
+    for index, part in enumerate(pattern_parts):
+        if part == "*" and len(path_parts) > index:
+            return "/".join(path_parts[: index + 1])
+    return changed_path
+
+
+def path_rule_diagnostic(
+    taxonomy: dict[str, Any],
+    rule: dict[str, Any],
+    location: str,
+) -> Diagnostic | None:
+    kind = rule.get("kind")
+    if kind == "contract":
+        return taxonomy_diagnostic(
+            taxonomy,
+            "knowledge.contract-drift",
+            "ERROR",
+            location,
+            "契约文件变更尚未声明 contract 图谱节点。",
+            "新增或更新 path 精确匹配该契约文件的 contract 图谱节点。",
+        )
+
+    if kind != "module":
+        return None
+
+    if rule.get("module_type") == "building-block":
+        return taxonomy_diagnostic(
+            taxonomy,
+            "knowledge.missing-capability",
+            "WARN",
+            location,
+            "新增 BuildingBlock 尚未声明能力或模块图谱节点。",
+            "新增对应 module 图谱节点并关联 capability，或在 taxonomy.yaml 中声明忽略规则。",
+        )
+
+    return taxonomy_diagnostic(
+        taxonomy,
+        "knowledge.missing-module",
+        "ERROR",
+        location,
+        "新增服务或模块目录尚未声明 module 图谱节点。",
+        "新增对应 module 图谱节点，或在 taxonomy.yaml 中声明忽略规则。",
+    )
+
+
 def detect_drift_from_paths(paths: list[str]) -> list[Diagnostic]:
-    taxonomy = load_taxonomy()
+    try:
+        taxonomy = load_taxonomy()
+    except YamlSubsetError as exc:
+        return [taxonomy_parse_diagnostic(exc)]
+
     nodes, load_messages = load_graph_nodes()
     messages = list(load_messages)
     module_paths = existing_module_paths(nodes)
@@ -954,51 +1143,32 @@ def detect_drift_from_paths(paths: list[str]) -> list[Diagnostic]:
             reported.add(key)
             messages.append(diagnostic)
 
+    path_rules = taxonomy.get("path_rules")
+    if not isinstance(path_rules, list):
+        path_rules = []
+
     for changed_path in sorted(normalized_repo_path(path) for path in paths if path):
-        service = first_path_segment_after("backend/dotnet/Services", changed_path)
-        if service:
-            module_path = f"backend/dotnet/Services/{service}"
-            if module_path not in module_paths:
-                add_once(
-                    taxonomy_diagnostic(
-                        taxonomy,
-                        "knowledge.missing-module",
-                        "ERROR",
-                        module_path,
-                        "新增服务或模块目录尚未声明 module 图谱节点。",
-                        "新增对应 module 图谱节点，或在 taxonomy.yaml 中声明忽略规则。",
-                    )
-                )
-            continue
+        for rule in path_rules:
+            if not isinstance(rule, dict):
+                continue
+            pattern = rule.get("pattern")
+            if not pattern or not path_matches_rule(str(pattern), changed_path):
+                continue
 
-        block = first_path_segment_after("backend/dotnet/BuildingBlocks/src", changed_path)
-        if block:
-            module_path = f"backend/dotnet/BuildingBlocks/src/{block}"
-            if module_path not in module_paths:
-                add_once(
-                    taxonomy_diagnostic(
-                        taxonomy,
-                        "knowledge.missing-capability",
-                        "WARN",
-                        module_path,
-                        "新增 BuildingBlock 尚未声明能力或模块图谱节点。",
-                        "新增对应 module 图谱节点并关联 capability，或在 taxonomy.yaml 中声明忽略规则。",
-                    )
-                )
-            continue
+            location = path_rule_location(rule, changed_path)
+            if rule.get("kind") == "contract":
+                if changed_path in contract_paths:
+                    continue
+            elif rule.get("kind") == "module":
+                if location in module_paths:
+                    continue
+            else:
+                continue
 
-        if first_path_segment_after("contracts/protos", changed_path):
-            if changed_path not in contract_paths:
-                add_once(
-                    taxonomy_diagnostic(
-                        taxonomy,
-                        "knowledge.contract-drift",
-                        "ERROR",
-                        changed_path,
-                        "契约文件变更尚未声明 contract 图谱节点。",
-                        "新增或更新 path 精确匹配该契约文件的 contract 图谱节点。",
-                    )
-                )
+            diagnostic = path_rule_diagnostic(taxonomy, rule, location)
+            if diagnostic:
+                add_once(diagnostic)
+            break
 
     return messages
 
@@ -1096,6 +1266,12 @@ def command_sync_skills(args: argparse.Namespace) -> int:
 
 
 def command_query(args: argparse.Namespace) -> int:
+    messages = collect_validation_messages()
+    errors = [message for message in messages if message.level == "ERROR"]
+    if errors:
+        emit(errors)
+        return 1
+
     results = query_nodes(args.text, args.limit)
     if not results:
         print("未找到匹配的知识图谱节点。")

@@ -56,6 +56,22 @@ def write_taxonomy(root: Path) -> None:
           - draft
           - deprecated
           - superseded
+        path_rules:
+          - pattern: backend/dotnet/Services/*/**
+            kind: module
+            module_type: microservice
+            stack: dotnet
+          - pattern: backend/dotnet/BuildingBlocks/src/*/**
+            kind: module
+            module_type: building-block
+            stack: dotnet
+          - pattern: frontend/packages/*/**
+            kind: module
+            module_type: frontend-package
+            stack: vue-ts
+          - pattern: contracts/protos/**/*
+            kind: contract
+            contract_type: grpc
         diagnostics:
           knowledge.missing-module:
             severity: error
@@ -93,6 +109,100 @@ def write_module(root: Path) -> None:
           declared_in: docs/knowledge/graph/modules/backend.dotnet.services.authentication.yaml
           evidence:
             - backend/dotnet/Services/Authentication/README.md
+        provenance:
+          created_by: human
+          created_at: 2026-04-27
+          updated_by: human
+          updated_at: 2026-04-27
+        """,
+    )
+
+
+def write_capability(root: Path) -> None:
+    write_file(
+        root,
+        "docs/knowledge/graph/capabilities/backend.capability.authentication.yaml",
+        """
+        schema_version: 1.0.0
+        id: backend.capability.authentication
+        kind: capability
+        name: 用户认证能力
+        status: active
+        summary: 提供用户登录、令牌签发和认证主体解析能力。
+        owners:
+          - platform
+        tags:
+          - backend
+          - auth
+        domain: security
+        provided_by:
+          modules:
+            - backend.dotnet.services.authentication
+        source:
+          declared_in: docs/knowledge/graph/capabilities/backend.capability.authentication.yaml
+          evidence:
+            - backend/dotnet/Services/Authentication/README.md
+        provenance:
+          created_by: human
+          created_at: 2026-04-27
+          updated_by: human
+          updated_at: 2026-04-27
+        """,
+    )
+
+
+def write_notice_module(root: Path) -> None:
+    write_file(
+        root,
+        "docs/knowledge/graph/modules/backend.dotnet.services.notice.yaml",
+        """
+        schema_version: 1.0.0
+        id: backend.dotnet.services.notice
+        kind: module
+        name: 通知服务
+        status: draft
+        summary: 承载通知服务相关代码与集成边界。
+        owners:
+          - platform
+        tags:
+          - backend
+          - notice
+        module_type: microservice
+        stack: dotnet
+        path: backend/dotnet/Services/Notice
+        source:
+          declared_in: docs/knowledge/graph/modules/backend.dotnet.services.notice.yaml
+          evidence:
+            - backend/dotnet/Services/Notice/README.md
+        provenance:
+          created_by: human
+          created_at: 2026-04-27
+          updated_by: human
+          updated_at: 2026-04-27
+        """,
+    )
+
+
+def write_remote_service_capability(root: Path) -> None:
+    write_file(
+        root,
+        "docs/knowledge/graph/capabilities/backend.capability.remote-service.yaml",
+        """
+        schema_version: 1.0.0
+        id: backend.capability.remote-service
+        kind: capability
+        name: 远程服务调用能力
+        status: active
+        summary: 提供服务间远程调用能力。
+        owners:
+          - platform
+        tags:
+          - backend
+          - remote-call
+        source:
+          declared_in: docs/knowledge/graph/capabilities/backend.capability.remote-service.yaml
+          evidence:
+            - backend/dotnet/Services/Notice/README.md
         provenance:
           created_by: human
           created_at: 2026-04-27
@@ -377,15 +487,18 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertIn("docs/knowledge/generated/index.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/memory.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/edges.generated.json", payloads)
+            self.assertIn("docs/knowledge/generated/diagnostics.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/_index/by-kind/module.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/_index/by-kind/capability.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/_index/by-tag/auth.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json", payloads)
+            self.assertEqual([], payloads["docs/knowledge/generated/diagnostics.generated.json"]["diagnostics"])
 
             for path in [
                 "docs/knowledge/generated/index.generated.json",
                 "docs/knowledge/generated/memory.generated.json",
                 "docs/knowledge/generated/edges.generated.json",
+                "docs/knowledge/generated/diagnostics.generated.json",
                 "docs/knowledge/generated/_index/by-kind/capability.generated.json",
                 "docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json",
             ]:
@@ -435,6 +548,9 @@ class KnowledgeToolTests(unittest.TestCase):
     def test_build_edges_includes_decision_applied_capabilities(self):
         with isolated_repo() as root:
             write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_module(root)
+            write_capability(root)
             write_file(
                 root,
                 "docs/knowledge/graph/decisions/backend.decision.authentication-ownership.yaml",
@@ -485,6 +601,11 @@ class KnowledgeToolTests(unittest.TestCase):
     def test_build_edges_includes_integration_relationships(self):
         with isolated_repo() as root:
             write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_file(root, "backend/dotnet/Services/Notice/README.md", "# 通知服务\n")
+            write_module(root)
+            write_notice_module(root)
+            write_remote_service_capability(root)
             write_file(
                 root,
                 "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
@@ -595,6 +716,22 @@ class KnowledgeToolTests(unittest.TestCase):
             messages = knowledge.collect_index_messages()
             self.assertIn("生成索引不是最新", diagnostic_text(messages))
 
+    def test_check_detects_missing_diagnostics_generated_file(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_module(root)
+
+            payloads, messages = knowledge.build_indexes(existing_generated_at="2026-04-27T00:00:00Z")
+            self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
+            knowledge.write_indexes(payloads)
+            (root / "docs/knowledge/generated/diagnostics.generated.json").unlink()
+
+            messages = knowledge.collect_index_messages()
+
+            self.assertIn("knowledge.index-missing", [message.code for message in messages])
+            self.assertIn("diagnostics.generated.json", diagnostic_text(messages))
+
     def test_command_generate_writes_empty_generated_indexes(self):
         with isolated_repo() as root:
             write_taxonomy(root)
@@ -605,6 +742,7 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertTrue((root / "docs/knowledge/generated/index.generated.json").exists())
             self.assertTrue((root / "docs/knowledge/generated/memory.generated.json").exists())
             self.assertTrue((root / "docs/knowledge/generated/edges.generated.json").exists())
+            self.assertTrue((root / "docs/knowledge/generated/diagnostics.generated.json").exists())
 
     def test_query_returns_ranked_summaries_and_read_targets(self):
         with isolated_repo() as root:
@@ -621,6 +759,25 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertNotIn("source", results[0])
             self.assertNotIn("provenance", results[0])
             self.assertNotIn("provides", results[0])
+
+    def test_command_query_reports_validation_diagnostics(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(
+                root,
+                "docs/knowledge/graph/modules/broken.yaml",
+                """
+                id: backend.dotnet.services.broken
+                  invalid: value
+                """,
+            )
+            stdout = io.StringIO()
+
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_query(argparse.Namespace(text="auth", limit=5))
+
+            self.assertEqual(1, exit_code)
+            self.assertIn("knowledge.yaml-parse", stdout.getvalue())
 
     def test_detect_drift_reports_new_service_without_module_node(self):
         with isolated_repo() as root:
@@ -654,6 +811,17 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertEqual("ERROR", diagnostics[0].level)
             self.assertEqual("knowledge.contract-drift", diagnostics[0].code)
 
+    def test_detect_drift_reports_frontend_package_from_path_rule(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "frontend/packages/orders/src/index.ts", "export {}\n")
+
+            diagnostics = knowledge.detect_drift_from_paths(["frontend/packages/orders/src/index.ts"])
+
+            self.assertEqual("ERROR", diagnostics[0].level)
+            self.assertEqual("knowledge.missing-module", diagnostics[0].code)
+            self.assertEqual("frontend/packages/orders", diagnostics[0].location)
+
     def test_detect_drift_ignores_existing_module_path(self):
         with isolated_repo() as root:
             write_taxonomy(root)
@@ -665,6 +833,65 @@ class KnowledgeToolTests(unittest.TestCase):
             )
 
             self.assertEqual([], diagnostics)
+
+    def test_detect_drift_reports_malformed_taxonomy_instead_of_raising(self):
+        with isolated_repo() as root:
+            write_file(
+                root,
+                "docs/knowledge/taxonomy.yaml",
+                """
+                schema_version: 1.0.0
+                  invalid: value
+                """,
+            )
+
+            diagnostics = knowledge.detect_drift_from_paths(["frontend/packages/orders/src/index.ts"])
+
+            self.assertEqual(1, len(diagnostics), diagnostic_text(diagnostics))
+            self.assertEqual("ERROR", diagnostics[0].level)
+            self.assertEqual("knowledge.taxonomy-parse", diagnostics[0].code)
+            self.assertIn("无法解析知识分类配置", diagnostics[0].message_zh)
+
+    def test_validation_reports_dangling_graph_references(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_file(
+                root,
+                "docs/knowledge/graph/capabilities/backend.capability.authentication.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.capability.authentication
+                kind: capability
+                name: 用户认证能力
+                status: active
+                summary: 提供用户登录、令牌签发和认证主体解析能力。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - auth
+                provided_by:
+                  modules:
+                    - backend.dotnet.services.missing
+                source:
+                  declared_in: docs/knowledge/graph/capabilities/backend.capability.authentication.yaml
+                  evidence:
+                    - backend/dotnet/Services/Authentication/README.md
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-27
+                  updated_by: human
+                  updated_at: 2026-04-27
+                """,
+            )
+
+            messages = knowledge.collect_validation_messages()
+
+            dangling = [message for message in messages if message.code == "knowledge.dangling-reference"]
+            self.assertEqual(1, len(dangling), diagnostic_text(messages))
+            self.assertEqual("ERROR", dangling[0].level)
+            self.assertIn("backend.dotnet.services.missing", dangling[0].message_zh)
 
     def test_claude_skill_links_use_relative_targets(self):
         with isolated_repo() as root:
