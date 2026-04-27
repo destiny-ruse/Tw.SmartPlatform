@@ -4,7 +4,7 @@
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
   },
-  "generated_at": "2026-04-27T09:46:50Z",
+  "generated_at": "2026-04-27T09:55:26Z",
   "standards": [
     {
       "id": "decisions.0001-adopt-standards-blueprint",
@@ -1680,7 +1680,7 @@
       "title": "健康检查规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/health-checks.md",
       "roles": [
         "backend",
@@ -1835,7 +1835,7 @@
       "title": "日志规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/logging.md",
       "roles": [
         "backend",
@@ -1917,7 +1917,7 @@
       "title": "指标规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/metrics.md",
       "roles": [
         "backend",
@@ -2220,7 +2220,7 @@
       "title": "韧性设计规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/resilience.md",
       "roles": [
         "architect",
@@ -2304,7 +2304,7 @@
       "title": "SLO 规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/slo.md",
       "roles": [
         "architect",
@@ -2466,7 +2466,7 @@
       "title": "链路追踪规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/tracing.md",
       "roles": [
         "backend",
