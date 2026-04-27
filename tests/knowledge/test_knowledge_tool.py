@@ -202,6 +202,122 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertIn("错误 [knowledge.declared-in]", text)
             self.assertIn("source.declared_in", text)
 
+    def test_validation_requires_source_evidence(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(
+                root,
+                "docs/knowledge/graph/modules/backend.dotnet.services.authentication.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.dotnet.services.authentication
+                kind: module
+                name: 认证服务
+                status: active
+                summary: 承载用户身份认证、登录流程、令牌签发和认证测试相关服务代码。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - dotnet
+                  - auth
+                source:
+                  declared_in: docs/knowledge/graph/modules/backend.dotnet.services.authentication.yaml
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-27
+                  updated_by: human
+                  updated_at: 2026-04-27
+                """,
+            )
+
+            messages = knowledge.collect_validation_messages()
+            text = diagnostic_text(messages)
+            self.assertIn("错误 [knowledge.required-field]", text)
+            self.assertIn("source.evidence", text)
+
+    def test_validation_requires_provenance_fields(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_file(
+                root,
+                "docs/knowledge/graph/modules/backend.dotnet.services.authentication.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.dotnet.services.authentication
+                kind: module
+                name: 认证服务
+                status: active
+                summary: 承载用户身份认证、登录流程、令牌签发和认证测试相关服务代码。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - dotnet
+                  - auth
+                source:
+                  declared_in: docs/knowledge/graph/modules/backend.dotnet.services.authentication.yaml
+                  evidence:
+                    - backend/dotnet/Services/Authentication/README.md
+                provenance:
+                  created_at: 2026-04-27
+                """,
+            )
+
+            messages = knowledge.collect_validation_messages()
+            text = diagnostic_text(messages)
+            self.assertIn("错误 [knowledge.required-field]", text)
+            self.assertIn("provenance.created_by", text)
+            self.assertIn("provenance.updated_by", text)
+            self.assertIn("provenance.updated_at", text)
+
+    def test_validation_reports_mismatched_source_declared_in(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_file(
+                root,
+                "docs/knowledge/graph/modules/backend.dotnet.services.authentication.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.dotnet.services.authentication
+                kind: module
+                name: 认证服务
+                status: active
+                summary: 承载用户身份认证、登录流程、令牌签发和认证测试相关服务代码。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - dotnet
+                  - auth
+                source:
+                  declared_in: docs/knowledge/graph/modules/wrong.yaml
+                  evidence:
+                    - backend/dotnet/Services/Authentication/README.md
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-27
+                  updated_by: human
+                  updated_at: 2026-04-27
+                """,
+            )
+
+            messages = knowledge.collect_validation_messages()
+            text = diagnostic_text(messages)
+            self.assertIn("错误 [knowledge.declared-in]", text)
+            self.assertIn("source.declared_in", text)
+
+    def test_validation_reports_missing_evidence_file_as_warning(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_module(root)
+
+            messages = knowledge.collect_validation_messages()
+            self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
+            self.assertIn("警告 [knowledge.missing-evidence]", diagnostic_text(messages))
+
     def test_validation_accepts_minimal_module_node(self):
         with isolated_repo() as root:
             write_taxonomy(root)

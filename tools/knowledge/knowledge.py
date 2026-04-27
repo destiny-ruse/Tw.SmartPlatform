@@ -377,6 +377,25 @@ def collect_validation_messages() -> list[Diagnostic]:
                     )
                 )
             evidence = source.get("evidence")
+            if not evidence:
+                messages.append(
+                    error(
+                        "knowledge.required-field",
+                        location,
+                        "缺少必填字段 source.evidence",
+                        "请补齐知识图谱节点的必填元数据。",
+                    )
+                )
+            elif not isinstance(evidence, list):
+                messages.append(
+                    error(
+                        "knowledge.source-format",
+                        location,
+                        "source.evidence 必须是证据路径列表",
+                        "请按模板修正 source.evidence 字段结构。",
+                    )
+                )
+                evidence = []
             if isinstance(evidence, list):
                 for item in evidence:
                     evidence_path = REPO_ROOT / str(item)
@@ -396,6 +415,29 @@ def collect_validation_messages() -> list[Diagnostic]:
                     location,
                     "source 必须是包含 declared_in 和 evidence 的映射",
                     "请按模板修正 source 字段结构。",
+                )
+            )
+
+        provenance = data.get("provenance")
+        if isinstance(provenance, dict):
+            for field in ["created_by", "created_at", "updated_by", "updated_at"]:
+                field_path = f"provenance.{field}"
+                if field not in provenance or provenance[field] in (None, "", [], {}):
+                    messages.append(
+                        error(
+                            "knowledge.required-field",
+                            location,
+                            f"缺少必填字段 {field_path}",
+                            "请补齐知识图谱节点的必填元数据。",
+                        )
+                    )
+        elif "provenance" in data:
+            messages.append(
+                error(
+                    "knowledge.provenance-format",
+                    location,
+                    "provenance 必须是包含创建和更新信息的映射",
+                    "请按模板修正 provenance 字段结构。",
                 )
             )
 
