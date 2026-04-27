@@ -601,9 +601,27 @@ def markdown_files_for_link_check() -> list[Path]:
     return files
 
 
+def build_standard_reference_lookup() -> tuple[dict[str, dict[str, set[str]]], list[Diagnostic]]:
+    docs, messages = load_standard_docs()
+    lookup: dict[str, dict[str, set[str]]] = {}
+    for doc in docs:
+        standard_id = doc.metadata.get("id")
+        if not isinstance(standard_id, str):
+            continue
+        section_payload, section_messages = build_section_index(doc)
+        messages.extend(section_messages)
+        section_map: dict[str, set[str]] = {}
+        for section in section_payload["sections"]:
+            section_map[section["anchor"]] = {region["id"] for region in section["regions"]}
+        lookup[standard_id] = section_map
+    return lookup, messages
+
+
 def collect_link_messages() -> list[Diagnostic]:
     messages: list[Diagnostic] = []
     anchor_cache: dict[Path, set[str]] = {}
+    standard_lookup, lookup_messages = build_standard_reference_lookup()
+    messages.extend(lookup_messages)
 
     for path in markdown_files_for_link_check():
         text = read_text(path)
@@ -650,6 +668,27 @@ def collect_link_messages() -> list[Diagnostic]:
                             f'anchor "#{anchor}" does not exist in {rel_path(target_path)}',
                         )
                     )
+
+        for match in STANDARD_REF_PATTERN.finditer(text):
+            standard_id, anchor, region = match.groups()
+            anchors = standard_lookup.get(standard_id)
+            if anchors is None:
+                messages.append(
+                    error("doc-link", path, f'unknown standard reference "{match.group(0)}"')
+                )
+                continue
+
+            regions = anchors.get(anchor)
+            if regions is None:
+                messages.append(
+                    error("doc-link", path, f'unknown standard reference "{match.group(0)}"')
+                )
+                continue
+
+            if region and region not in regions:
+                messages.append(
+                    error("doc-link", path, f'unknown standard reference "{match.group(0)}"')
+                )
 
     return messages
 
