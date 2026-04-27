@@ -1,5 +1,5 @@
 ---
-name: engineering-standards
+name: tw-engineering-standards
 description: Use when adding or modifying code, docs, contracts, configuration, CI, reviewing implementation compliance, or answering questions about repository engineering standards such as naming, comments, APIs, errors, auth, gRPC, AsyncAPI, Git commits, testing, deployment, and observability.
 ---
 

@@ -1,10 +1,10 @@
 *
 !.gitignore
 !brainstorming
-!directory-structure-documenter
+!tw-directory-structure-documenter
 !dispatching-parallel-agents
 !documentation-writer
-!engineering-standards
+!tw-engineering-standards
 !executing-plans
 !find-skills
 !finishing-a-development-branch
