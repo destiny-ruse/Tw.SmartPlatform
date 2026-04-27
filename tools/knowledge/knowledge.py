@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import re
 import sys
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -442,6 +444,182 @@ def collect_validation_messages() -> list[Diagnostic]:
             )
 
     return messages
+
+
+def utc_now() -> str:
+    return datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def generated_path(*parts: str) -> str:
+    return (GENERATED_DIR.joinpath(*parts)).resolve().relative_to(REPO_ROOT.resolve()).as_posix()
+
+
+def generator_metadata(generated_at: str) -> dict[str, Any]:
+    return {
+        "generator": {
+            "name": "tools/knowledge/knowledge.py",
+            "version": GENERATOR_VERSION,
+        },
+        "generated_at": generated_at,
+    }
+
+
+def section_index(node: GraphNode, generated_at: str) -> dict[str, Any]:
+    fields: list[dict[str, Any]] = []
+    current: dict[str, Any] | None = None
+    for line_number, raw_line in enumerate(node.lines, start=1):
+        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
+            continue
+        indent = len(raw_line) - len(raw_line.lstrip(" "))
+        if indent != 0 or ":" not in raw_line:
+            continue
+        if current:
+            current["end_line"] = line_number - 1
+            fields.append(current)
+        field_name = raw_line.split(":", 1)[0].strip()
+        current = {
+            "field": field_name,
+            "start_line": line_number,
+            "end_line": line_number,
+        }
+    if current:
+        current["end_line"] = len(node.lines)
+        fields.append(current)
+
+    return {
+        **generator_metadata(generated_at),
+        "id": node.data.get("id"),
+        "path": rel_path(node.path),
+        "fields": fields,
+    }
+
+
+def shard_paths(data: dict[str, Any]) -> list[str]:
+    paths: list[str] = []
+    for key, directory in [
+        ("kind", "by-kind"),
+        ("domain", "by-domain"),
+        ("stack", "by-stack"),
+    ]:
+        value = data.get(key)
+        if value:
+            paths.append(generated_path("_index", directory, f"{value}.generated.json"))
+    for key, directory in [
+        ("tags", "by-tag"),
+        ("owners", "by-owner"),
+    ]:
+        values = data.get(key)
+        if isinstance(values, list):
+            for value in values:
+                if value:
+                    paths.append(generated_path("_index", directory, f"{value}.generated.json"))
+    return sorted(set(paths))
+
+
+def light_node(node: GraphNode) -> dict[str, Any]:
+    data = node.data
+    result: dict[str, Any] = {}
+    for key in [
+        "id",
+        "kind",
+        "name",
+        "status",
+        "summary",
+        "owners",
+        "tags",
+        "domain",
+        "stack",
+        "module_type",
+        "path",
+    ]:
+        if key in data:
+            result[key] = copy.deepcopy(data[key])
+    node_id = str(data.get("id"))
+    result["source_path"] = rel_path(node.path)
+    result["sections_index"] = generated_path("_index", "sections", f"{node_id}.generated.json")
+    result["shards"] = shard_paths(data)
+    return result
+
+
+def build_edges(nodes: list[GraphNode]) -> list[dict[str, str]]:
+    edges: set[tuple[str, str, str]] = set()
+    for node in nodes:
+        data = node.data
+        node_id = data.get("id")
+        if not node_id:
+            continue
+
+        if data.get("kind") == "capability":
+            provided_by = data.get("provided_by")
+            if isinstance(provided_by, dict) and isinstance(provided_by.get("modules"), list):
+                for module_id in provided_by["modules"]:
+                    if module_id:
+                        edges.add((str(module_id), "provides", str(node_id)))
+
+        if data.get("kind") == "module":
+            provides = data.get("provides")
+            if isinstance(provides, dict) and isinstance(provides.get("capabilities"), list):
+                for capability_id in provides["capabilities"]:
+                    if capability_id:
+                        edges.add((str(node_id), "provides", str(capability_id)))
+
+    return [
+        {"from": source, "type": edge_type, "to": target}
+        for source, edge_type, target in sorted(edges)
+    ]
+
+
+def add_shard(
+    shards: dict[str, list[dict[str, Any]]],
+    path: str,
+    node: dict[str, Any],
+) -> None:
+    shards.setdefault(path, []).append(node)
+
+
+def build_indexes(existing_generated_at: str | None = None) -> tuple[dict[str, Any], list[Diagnostic]]:
+    generated_at = existing_generated_at or utc_now()
+    messages = collect_validation_messages()
+    nodes, _load_messages = load_graph_nodes()
+    sorted_nodes = sorted(nodes, key=lambda item: str(item.data.get("id", "")))
+    light_nodes = [light_node(node) for node in sorted_nodes]
+    full_nodes = [copy.deepcopy(node.data) for node in sorted_nodes]
+    edges = build_edges(sorted_nodes)
+
+    payloads: dict[str, Any] = {
+        generated_path("index.generated.json"): {
+            **generator_metadata(generated_at),
+            "nodes": light_nodes,
+        },
+        generated_path("memory.generated.json"): {
+            **generator_metadata(generated_at),
+            "nodes": full_nodes,
+        },
+        generated_path("edges.generated.json"): {
+            **generator_metadata(generated_at),
+            "edges": edges,
+        },
+    }
+
+    shards: dict[str, list[dict[str, Any]]] = {}
+    for node in light_nodes:
+        for path in node["shards"]:
+            add_shard(shards, path, node)
+
+    for path in sorted(shards):
+        payloads[path] = {
+            **generator_metadata(generated_at),
+            "nodes": sorted(shards[path], key=lambda item: str(item.get("id", ""))),
+        }
+
+    for node in sorted_nodes:
+        node_id = str(node.data.get("id"))
+        payloads[generated_path("_index", "sections", f"{node_id}.generated.json")] = section_index(
+            node,
+            generated_at,
+        )
+
+    return payloads, messages
 
 
 def command_check(_args: argparse.Namespace) -> int:

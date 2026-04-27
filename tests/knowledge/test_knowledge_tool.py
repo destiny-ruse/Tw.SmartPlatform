@@ -327,6 +327,70 @@ class KnowledgeToolTests(unittest.TestCase):
             messages = knowledge.collect_validation_messages()
             self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
 
+    def test_build_indexes_creates_l0_l1_l2_memory_and_edges(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_module(root)
+            write_file(
+                root,
+                "docs/knowledge/graph/capabilities/backend.capability.authentication.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.capability.authentication
+                kind: capability
+                name: 用户认证能力
+                status: active
+                summary: 提供用户登录、令牌签发和认证主体解析能力。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - auth
+                domain: security
+                provided_by:
+                  modules:
+                    - backend.dotnet.services.authentication
+                reuse:
+                  use_when:
+                    - 需要用户登录或令牌签发
+                  do_not_reimplement:
+                    - 不要在业务服务中自行签发访问令牌
+                source:
+                  declared_in: docs/knowledge/graph/capabilities/backend.capability.authentication.yaml
+                  evidence:
+                    - backend/dotnet/Services/Authentication/README.md
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-27
+                  updated_by: human
+                  updated_at: 2026-04-27
+                """,
+            )
+
+            payloads, messages = knowledge.build_indexes(existing_generated_at="2026-04-27T00:00:00Z")
+            self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
+            self.assertIn("docs/knowledge/generated/index.generated.json", payloads)
+            self.assertIn("docs/knowledge/generated/memory.generated.json", payloads)
+            self.assertIn("docs/knowledge/generated/edges.generated.json", payloads)
+            self.assertIn("docs/knowledge/generated/_index/by-kind/module.generated.json", payloads)
+            self.assertIn("docs/knowledge/generated/_index/by-kind/capability.generated.json", payloads)
+            self.assertIn("docs/knowledge/generated/_index/by-tag/auth.generated.json", payloads)
+            self.assertIn("docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json", payloads)
+
+            l0_node = payloads["docs/knowledge/generated/index.generated.json"]["nodes"][0]
+            self.assertNotIn("reuse", l0_node)
+            self.assertIn("sections_index", l0_node)
+            edges = payloads["docs/knowledge/generated/edges.generated.json"]["edges"]
+            self.assertIn(
+                {
+                    "from": "backend.dotnet.services.authentication",
+                    "type": "provides",
+                    "to": "backend.capability.authentication",
+                },
+                edges,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
