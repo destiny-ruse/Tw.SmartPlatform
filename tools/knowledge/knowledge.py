@@ -465,7 +465,7 @@ def generator_metadata(generated_at: str) -> dict[str, Any]:
 
 
 def section_index(node: GraphNode, generated_at: str) -> dict[str, Any]:
-    fields: list[dict[str, Any]] = []
+    sections: list[dict[str, Any]] = []
     current: dict[str, Any] | None = None
     for line_number, raw_line in enumerate(node.lines, start=1):
         if not raw_line.strip() or raw_line.lstrip().startswith("#"):
@@ -475,22 +475,22 @@ def section_index(node: GraphNode, generated_at: str) -> dict[str, Any]:
             continue
         if current:
             current["end_line"] = line_number - 1
-            fields.append(current)
-        field_name = raw_line.split(":", 1)[0].strip()
+            sections.append(current)
+        key = raw_line.split(":", 1)[0].strip()
         current = {
-            "field": field_name,
+            "key": key,
             "start_line": line_number,
             "end_line": line_number,
         }
     if current:
         current["end_line"] = len(node.lines)
-        fields.append(current)
+        sections.append(current)
 
     return {
         **generator_metadata(generated_at),
         "id": node.data.get("id"),
         "path": rel_path(node.path),
-        "fields": fields,
+        "sections": sections,
     }
 
 
@@ -523,19 +523,13 @@ def light_node(node: GraphNode) -> dict[str, Any]:
         "id",
         "kind",
         "name",
-        "status",
         "summary",
-        "owners",
         "tags",
-        "domain",
-        "stack",
-        "module_type",
-        "path",
     ]:
         if key in data:
             result[key] = copy.deepcopy(data[key])
     node_id = str(data.get("id"))
-    result["source_path"] = rel_path(node.path)
+    result["path"] = rel_path(node.path)
     result["sections_index"] = generated_path("_index", "sections", f"{node_id}.generated.json")
     result["shards"] = shard_paths(data)
     return result

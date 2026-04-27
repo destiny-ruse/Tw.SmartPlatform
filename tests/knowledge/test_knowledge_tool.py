@@ -379,8 +379,28 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertIn("docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json", payloads)
 
             l0_node = payloads["docs/knowledge/generated/index.generated.json"]["nodes"][0]
+            self.assertEqual(
+                {"id", "kind", "name", "summary", "tags", "path", "sections_index", "shards"},
+                set(l0_node),
+            )
+            self.assertEqual(
+                "docs/knowledge/graph/capabilities/backend.capability.authentication.yaml",
+                l0_node["path"],
+            )
             self.assertNotIn("reuse", l0_node)
+            self.assertNotIn("status", l0_node)
+            self.assertNotIn("owners", l0_node)
+            self.assertNotIn("domain", l0_node)
+            self.assertNotIn("stack", l0_node)
+            self.assertNotIn("module_type", l0_node)
+            self.assertNotIn("source_path", l0_node)
             self.assertIn("sections_index", l0_node)
+            section_payload = payloads["docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json"]
+            self.assertIn("sections", section_payload)
+            self.assertNotIn("fields", section_payload)
+            summary_section = next(section for section in section_payload["sections"] if section["key"] == "summary")
+            self.assertIn("key", summary_section)
+            self.assertNotIn("field", summary_section)
             edges = payloads["docs/knowledge/generated/edges.generated.json"]["edges"]
             self.assertIn(
                 {
