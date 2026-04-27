@@ -35,13 +35,6 @@ REQUIRED_FIELDS = [
     "source",
     "provenance",
 ]
-KNOWLEDGE_SKILLS = [
-    "tw-requirement-router",
-    "tw-knowledge-discovery",
-    "tw-service-integration",
-    "tw-knowledge-maintenance",
-    "tw-skill-linker",
-]
 KIND_DIRECTORIES = {
     "capability": "capabilities",
     "module": "modules",
@@ -1079,10 +1072,21 @@ def collect_index_messages() -> list[Diagnostic]:
     return messages
 
 
+def repository_skill_names(root: Path = REPO_ROOT) -> list[str]:
+    source_root = root / ".agents" / "skills"
+    if not source_root.exists():
+        return []
+    return sorted(
+        path.name
+        for path in source_root.iterdir()
+        if path.is_dir() and (path / "SKILL.md").exists()
+    )
+
+
 def claude_skill_link_plan(root: Path = REPO_ROOT) -> dict[str, str]:
     return {
         skill: f"../../.agents/skills/{skill}"
-        for skill in KNOWLEDGE_SKILLS
+        for skill in repository_skill_names(root)
     }
 
 

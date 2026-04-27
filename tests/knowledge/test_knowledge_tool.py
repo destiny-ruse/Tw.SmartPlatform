@@ -1114,6 +1114,11 @@ class KnowledgeToolTests(unittest.TestCase):
 
     def test_claude_skill_links_use_relative_targets(self):
         with isolated_repo() as root:
+            for skill in ["tw-requirement-router", "tw-knowledge-maintenance"]:
+                path = root / ".agents" / "skills" / skill
+                path.mkdir(parents=True)
+                (path / "SKILL.md").write_text("---\nname: test\n---\n", encoding="utf-8")
+
             expected = knowledge.claude_skill_link_plan(root)
 
             self.assertEqual(
@@ -1125,17 +1130,44 @@ class KnowledgeToolTests(unittest.TestCase):
                 expected["tw-knowledge-maintenance"],
             )
 
-    def test_sync_claude_skills_reports_missing_source_skill(self):
-        with isolated_repo():
-            messages = knowledge.sync_claude_skills()
+    def test_claude_skill_link_plan_scans_all_repository_skills(self):
+        with isolated_repo() as root:
+            for skill in ["tw-requirement-router", "brainstorming"]:
+                path = root / ".agents" / "skills" / skill
+                path.mkdir(parents=True)
+                (path / "SKILL.md").write_text("---\nname: test\n---\n", encoding="utf-8")
 
-            self.assertEqual("knowledge.skill-missing", messages[0].code)
+            expected = knowledge.claude_skill_link_plan(root)
+
+            self.assertEqual(
+                "../../.agents/skills/tw-requirement-router",
+                expected["tw-requirement-router"],
+            )
+            self.assertEqual(
+                "../../.agents/skills/brainstorming",
+                expected["brainstorming"],
+            )
+
+    def test_sync_claude_skills_reports_missing_source_skill(self):
+        original_claude_skill_link_plan = knowledge.claude_skill_link_plan
+        knowledge.claude_skill_link_plan = lambda root: {
+            "tw-requirement-router": "../../.agents/skills/tw-requirement-router"
+        }
+        try:
+            with isolated_repo():
+                messages = knowledge.sync_claude_skills()
+
+                self.assertEqual("knowledge.skill-missing", messages[0].code)
             self.assertEqual("仓库 Skill 不存在: tw-requirement-router。", messages[0].message_zh)
+
+        finally:
+            knowledge.claude_skill_link_plan = original_claude_skill_link_plan
 
     def test_sync_claude_skills_reports_conflicting_destination(self):
         with isolated_repo() as root:
             source = root / ".agents" / "skills" / "tw-requirement-router"
             source.mkdir(parents=True)
+            (source / "SKILL.md").write_text("---\nname: test\n---\n", encoding="utf-8")
             destination = root / ".claude" / "skills" / "tw-requirement-router"
             destination.parent.mkdir(parents=True)
             destination.write_text("not a symlink\n", encoding="utf-8")
