@@ -358,7 +358,16 @@ def collect_validation_messages() -> list[Diagnostic]:
         if isinstance(source, dict):
             declared_in = source.get("declared_in")
             actual_path = rel_path(node.path)
-            if declared_in and declared_in != actual_path:
+            if not declared_in:
+                messages.append(
+                    error(
+                        "knowledge.declared-in",
+                        location,
+                        f"source.declared_in 必须声明为实际路径 {actual_path}",
+                        "请补充 source.declared_in，使其与文件路径保持一致。",
+                    )
+                )
+            elif declared_in != actual_path:
                 messages.append(
                     error(
                         "knowledge.declared-in",
