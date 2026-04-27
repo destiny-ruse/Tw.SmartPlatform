@@ -540,6 +540,64 @@ class KnowledgeToolTests(unittest.TestCase):
 
             self.assertEqual([], diagnostics)
 
+    def test_claude_skill_links_use_relative_targets(self):
+        with isolated_repo() as root:
+            expected = knowledge.claude_skill_link_plan(root)
+
+            self.assertEqual(
+                "../../.agents/skills/tw-requirement-router",
+                expected["tw-requirement-router"],
+            )
+            self.assertEqual(
+                "../../.agents/skills/tw-knowledge-maintenance",
+                expected["tw-knowledge-maintenance"],
+            )
+
+    def test_sync_claude_skills_reports_missing_source_skill(self):
+        with isolated_repo():
+            messages = knowledge.sync_claude_skills()
+
+            self.assertEqual("knowledge.skill-missing", messages[0].code)
+            self.assertEqual("仓库 Skill 不存在: tw-requirement-router。", messages[0].message_zh)
+
+    def test_sync_claude_skills_reports_conflicting_destination(self):
+        with isolated_repo() as root:
+            source = root / ".agents" / "skills" / "tw-requirement-router"
+            source.mkdir(parents=True)
+            destination = root / ".claude" / "skills" / "tw-requirement-router"
+            destination.parent.mkdir(parents=True)
+            destination.write_text("not a symlink\n", encoding="utf-8")
+
+            messages = knowledge.sync_claude_skills()
+
+            conflicts = [message for message in messages if message.code == "knowledge.skill-link-conflict"]
+            self.assertEqual(1, len(conflicts), diagnostic_text(messages))
+            self.assertEqual(
+                "Claude Skill 目标已存在且不是预期相对符号链接。",
+                conflicts[0].message_zh,
+            )
+
+    def test_command_sync_skills_rejects_unsupported_target(self):
+        stdout = io.StringIO()
+        with contextlib.redirect_stdout(stdout):
+            exit_code = knowledge.command_sync_skills(argparse.Namespace(target="other"))
+
+        self.assertEqual(1, exit_code)
+        self.assertIn("错误 [knowledge.unsupported-target]", stdout.getvalue())
+
+    def test_command_sync_skills_prints_ok_for_claude_target(self):
+        original_sync_claude_skills = knowledge.sync_claude_skills
+        knowledge.sync_claude_skills = lambda: []
+        stdout = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_sync_skills(argparse.Namespace(target="claude"))
+        finally:
+            knowledge.sync_claude_skills = original_sync_claude_skills
+
+        self.assertEqual(0, exit_code)
+        self.assertIn("OK Claude Code Skill 相对符号链接已同步", stdout.getvalue())
+
 
     def test_changed_current_paths_from_name_status_ignores_deleted_paths(self):
         paths = knowledge.changed_current_paths_from_name_status(

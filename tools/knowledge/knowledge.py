@@ -32,6 +32,13 @@ REQUIRED_FIELDS = [
     "source",
     "provenance",
 ]
+KNOWLEDGE_SKILLS = [
+    "tw-requirement-router",
+    "tw-knowledge-discovery",
+    "tw-service-integration",
+    "tw-knowledge-maintenance",
+    "tw-skill-linker",
+]
 ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*)+$")
 VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 TOKEN_PATTERN = re.compile(r"^[a-z][a-z0-9-]*$")
@@ -795,6 +802,66 @@ def collect_index_messages() -> list[Diagnostic]:
     return messages
 
 
+def claude_skill_link_plan(root: Path = REPO_ROOT) -> dict[str, str]:
+    return {
+        skill: f"../../.agents/skills/{skill}"
+        for skill in KNOWLEDGE_SKILLS
+    }
+
+
+def expected_claude_skill_link(destination: Path, target: str) -> bool:
+    if not destination.is_symlink():
+        return False
+    return destination.readlink().as_posix() == target
+
+
+def sync_claude_skills() -> list[Diagnostic]:
+    messages: list[Diagnostic] = []
+    source_root = REPO_ROOT / ".agents" / "skills"
+    destination_root = REPO_ROOT / ".claude" / "skills"
+    plan = claude_skill_link_plan(REPO_ROOT)
+    destination_root.mkdir(parents=True, exist_ok=True)
+
+    for skill, target in plan.items():
+        source = source_root / skill
+        destination = destination_root / skill
+        if not source.is_dir():
+            messages.append(
+                error(
+                    "knowledge.skill-missing",
+                    source,
+                    f"仓库 Skill 不存在: {skill}。",
+                )
+            )
+            continue
+
+        if destination.exists() or destination.is_symlink():
+            if expected_claude_skill_link(destination, target):
+                continue
+            messages.append(
+                error(
+                    "knowledge.skill-link-conflict",
+                    destination,
+                    "Claude Skill 目标已存在且不是预期相对符号链接。",
+                )
+            )
+            continue
+
+        try:
+            destination.symlink_to(target, target_is_directory=True)
+        except OSError as exc:
+            messages.append(
+                error(
+                    "knowledge.symlink-failed",
+                    destination,
+                    f"创建 Claude Skill 相对符号链接失败: {skill}。{exc}",
+                    "在支持符号链接的终端重试，或启用系统开发者模式后重试。",
+                )
+            )
+
+    return messages
+
+
 def normalized_repo_path(path: str) -> str:
     return Path(path.replace("\\", "/")).as_posix().strip("/")
 
@@ -986,6 +1053,20 @@ def command_check(_args: argparse.Namespace) -> int:
     return 0
 
 
+def command_sync_skills(args: argparse.Namespace) -> int:
+    if args.target != "claude":
+        print("错误 [knowledge.unsupported-target]")
+        print(f"说明: 不支持的 Skill 同步目标: {args.target}")
+        return 1
+
+    messages = sync_claude_skills()
+    emit(messages)
+    if has_errors(messages):
+        return 1
+    print("OK Claude Code Skill 相对符号链接已同步")
+    return 0
+
+
 def command_query(args: argparse.Namespace) -> int:
     results = query_nodes(args.text, args.limit)
     if not results:
@@ -1016,6 +1097,9 @@ def build_parser() -> argparse.ArgumentParser:
     drift_parser.add_argument("--from", dest="base", required=True, help="base ref for git diff")
     drift_parser.add_argument("--to", dest="head", required=True, help="head ref for git diff")
     drift_parser.set_defaults(func=command_check_drift)
+    sync_skills_parser = subparsers.add_parser("sync-skills", help="sync knowledge skills to tool targets")
+    sync_skills_parser.add_argument("--target", required=True, help="skill target to sync")
+    sync_skills_parser.set_defaults(func=command_sync_skills)
     query_parser = subparsers.add_parser("query", help="query knowledge graph summaries")
     query_parser.add_argument("--text", required=True, help="query text")
     query_parser.add_argument("--limit", type=int, default=5, help="maximum result count")
