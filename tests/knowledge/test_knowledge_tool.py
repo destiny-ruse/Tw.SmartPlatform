@@ -495,6 +495,50 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertNotIn("provenance", results[0])
             self.assertNotIn("provides", results[0])
 
+    def test_detect_drift_reports_new_service_without_module_node(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/User/README.md", "# 用户服务\n")
+
+            diagnostics = knowledge.detect_drift_from_paths(["backend/dotnet/Services/User/README.md"])
+
+            self.assertEqual("knowledge.missing-module", diagnostics[0].code)
+            self.assertIn("新增服务或模块目录尚未声明 module 图谱节点", diagnostics[0].message_zh)
+
+    def test_detect_drift_reports_building_block_without_capability_node(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/BuildingBlocks/src/Caching/README.md", "# Caching\n")
+
+            diagnostics = knowledge.detect_drift_from_paths(
+                ["backend/dotnet/BuildingBlocks/src/Caching/README.md"]
+            )
+
+            self.assertEqual("WARN", diagnostics[0].level)
+            self.assertEqual("knowledge.missing-capability", diagnostics[0].code)
+
+    def test_detect_drift_reports_proto_without_contract_node(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "contracts/protos/user/user.proto", 'syntax = "proto3";\n')
+
+            diagnostics = knowledge.detect_drift_from_paths(["contracts/protos/user/user.proto"])
+
+            self.assertEqual("ERROR", diagnostics[0].level)
+            self.assertEqual("knowledge.contract-drift", diagnostics[0].code)
+
+    def test_detect_drift_ignores_existing_module_path(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 璁よ瘉鏈嶅姟\n")
+            write_module(root)
+
+            diagnostics = knowledge.detect_drift_from_paths(
+                ["backend/dotnet/Services/Authentication/README.md"]
+            )
+
+            self.assertEqual([], diagnostics)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -5,6 +5,7 @@ import argparse
 import copy
 import json
 import re
+import subprocess
 import sys
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -794,6 +795,148 @@ def collect_index_messages() -> list[Diagnostic]:
     return messages
 
 
+def normalized_repo_path(path: str) -> str:
+    return Path(path.replace("\\", "/")).as_posix().strip("/")
+
+
+def first_path_segment_after(prefix: str, path: str) -> str | None:
+    prefix_parts = normalized_repo_path(prefix).split("/")
+    path_parts = normalized_repo_path(path).split("/")
+    if len(path_parts) <= len(prefix_parts):
+        return None
+    if path_parts[: len(prefix_parts)] != prefix_parts:
+        return None
+    return path_parts[len(prefix_parts)]
+
+
+def existing_module_paths(nodes: list[GraphNode]) -> set[str]:
+    return {
+        normalized_repo_path(str(node.data.get("path")))
+        for node in nodes
+        if node.data.get("kind") == "module" and node.data.get("path")
+    }
+
+
+def taxonomy_diagnostic(
+    taxonomy: dict[str, Any],
+    code: str,
+    level: str,
+    location: str,
+    message_zh: str,
+    suggestion_zh: str = "",
+) -> Diagnostic:
+    diagnostics = taxonomy.get("diagnostics")
+    if isinstance(diagnostics, dict):
+        configured = diagnostics.get(code)
+        if isinstance(configured, dict):
+            configured_level = str(configured.get("severity") or level).upper()
+            if configured_level == "WARNING":
+                configured_level = "WARN"
+            message_zh = str(configured.get("message_zh") or message_zh)
+            suggestion_zh = str(configured.get("suggestion_zh") or suggestion_zh)
+            level = configured_level
+
+    if level == "WARN":
+        return warn(code, location, message_zh, suggestion_zh)
+    return error(code, location, message_zh, suggestion_zh)
+
+
+def detect_drift_from_paths(paths: list[str]) -> list[Diagnostic]:
+    taxonomy = load_taxonomy()
+    nodes, load_messages = load_graph_nodes()
+    messages = list(load_messages)
+    module_paths = existing_module_paths(nodes)
+    contract_paths = {
+        normalized_repo_path(str(node.data.get("path")))
+        for node in nodes
+        if node.data.get("kind") == "contract" and node.data.get("path")
+    }
+    reported: set[tuple[str, str]] = set()
+
+    def add_once(diagnostic: Diagnostic) -> None:
+        key = (diagnostic.code, diagnostic.location)
+        if key not in reported:
+            reported.add(key)
+            messages.append(diagnostic)
+
+    for changed_path in sorted(normalized_repo_path(path) for path in paths if path):
+        service = first_path_segment_after("backend/dotnet/Services", changed_path)
+        if service:
+            module_path = f"backend/dotnet/Services/{service}"
+            if module_path not in module_paths:
+                add_once(
+                    taxonomy_diagnostic(
+                        taxonomy,
+                        "knowledge.missing-module",
+                        "ERROR",
+                        module_path,
+                        "新增服务或模块目录尚未声明 module 图谱节点。",
+                        "新增对应 module 图谱节点，或在 taxonomy.yaml 中声明忽略规则。",
+                    )
+                )
+            continue
+
+        block = first_path_segment_after("backend/dotnet/BuildingBlocks/src", changed_path)
+        if block:
+            module_path = f"backend/dotnet/BuildingBlocks/src/{block}"
+            if module_path not in module_paths:
+                add_once(
+                    taxonomy_diagnostic(
+                        taxonomy,
+                        "knowledge.missing-capability",
+                        "WARN",
+                        module_path,
+                        "新增 BuildingBlock 尚未声明能力或模块图谱节点。",
+                        "新增对应 module 图谱节点并关联 capability，或在 taxonomy.yaml 中声明忽略规则。",
+                    )
+                )
+            continue
+
+        if first_path_segment_after("contracts/protos", changed_path):
+            if changed_path not in contract_paths:
+                add_once(
+                    taxonomy_diagnostic(
+                        taxonomy,
+                        "knowledge.contract-drift",
+                        "ERROR",
+                        changed_path,
+                        "契约文件变更尚未声明 contract 图谱节点。",
+                        "新增或更新 path 精确匹配该契约文件的 contract 图谱节点。",
+                    )
+                )
+
+    return messages
+
+
+def changed_files_from_git(base: str, head: str) -> list[str]:
+    result = subprocess.run(
+        ["git", "diff", "--name-only", base, head],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        check=False,
+        text=True,
+    )
+    if result.returncode != 0:
+        stderr = result.stderr.strip()
+        raise RuntimeError(stderr or "git diff failed")
+    return [line.strip() for line in result.stdout.splitlines() if line.strip()]
+
+
+def command_check_drift(args: argparse.Namespace) -> int:
+    try:
+        changed_paths = changed_files_from_git(args.base, args.head)
+    except RuntimeError as exc:
+        print("错误 [knowledge.git-diff]")
+        print(f"说明: {exc}")
+        return 1
+
+    messages = detect_drift_from_paths(changed_paths)
+    emit(messages)
+    if has_errors(messages):
+        return 1
+    return 0
+
+
 def command_generate(_args: argparse.Namespace) -> int:
     payloads, messages = build_indexes()
     emit(messages)
@@ -840,6 +983,10 @@ def build_parser() -> argparse.ArgumentParser:
     generate_parser.set_defaults(func=command_generate)
     check_parser = subparsers.add_parser("check", help="validate knowledge graph nodes")
     check_parser.set_defaults(func=command_check)
+    drift_parser = subparsers.add_parser("check-drift", help="detect knowledge graph drift from git diff")
+    drift_parser.add_argument("--from", dest="base", required=True, help="base ref for git diff")
+    drift_parser.add_argument("--to", dest="head", required=True, help="head ref for git diff")
+    drift_parser.set_defaults(func=command_check_drift)
     query_parser = subparsers.add_parser("query", help="query knowledge graph summaries")
     query_parser.add_argument("--text", required=True, help="query text")
     query_parser.add_argument("--limit", type=int, default=5, help="maximum result count")
