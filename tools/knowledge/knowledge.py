@@ -21,6 +21,7 @@ KNOWLEDGE_DIR = REPO_ROOT / "docs" / "knowledge"
 GRAPH_DIR = KNOWLEDGE_DIR / "graph"
 GENERATED_DIR = KNOWLEDGE_DIR / "generated"
 TAXONOMY_PATH = KNOWLEDGE_DIR / "taxonomy.yaml"
+TEMPLATE_DIR = Path(__file__).resolve().parent / "templates"
 
 REQUIRED_FIELDS = [
     "schema_version",
@@ -41,6 +42,13 @@ KNOWLEDGE_SKILLS = [
     "tw-knowledge-maintenance",
     "tw-skill-linker",
 ]
+KIND_DIRECTORIES = {
+    "capability": "capabilities",
+    "module": "modules",
+    "contract": "contracts",
+    "integration": "integrations",
+    "decision": "decisions",
+}
 ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*)+$")
 VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 TOKEN_PATTERN = re.compile(r"^[a-z][a-z0-9-]*$")
@@ -132,6 +140,91 @@ def read_text(path: Path) -> str:
 def write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8", newline="\n")
+
+
+def graph_path_for_kind_id(kind: str, node_id: str) -> Path:
+    directory = KIND_DIRECTORIES.get(kind)
+    if not directory:
+        raise RuntimeError(f"unsupported graph kind: {kind}")
+    return GRAPH_DIR / directory / f"{node_id}.yaml"
+
+
+def display_name_from_id(node_id: str) -> str:
+    return node_id.split(".")[-1].replace("-", " ").title()
+
+
+def pascal_name_from_token(token: str) -> str:
+    return "".join(part.title() for part in token.split("-"))
+
+
+def default_module_path(node_id: str) -> str:
+    parts = node_id.split(".")
+    if len(parts) >= 4 and parts[:3] == ["backend", "dotnet", "services"]:
+        return f"backend/dotnet/Services/{pascal_name_from_token(parts[3])}"
+    if len(parts) >= 4 and parts[:3] in (
+        ["backend", "dotnet", "building-blocks"],
+        ["backend", "dotnet", "packages"],
+    ):
+        return f"backend/dotnet/BuildingBlocks/src/Tw.{pascal_name_from_token(parts[3])}"
+    if len(parts) >= 4 and parts[0] == "backend" and parts[2] in {"services", "packages"}:
+        return "/".join(parts[:3] + [parts[3]])
+    if len(parts) >= 3 and parts[0] == "frontend" and parts[1] == "apps":
+        return f"frontend/apps/{parts[2].replace('-', '.')}"
+    if len(parts) >= 3 and parts[0] == "frontend" and parts[1] == "packages":
+        return f"frontend/packages/{parts[2]}"
+    return ""
+
+
+def default_module_type(node_id: str) -> str:
+    parts = node_id.split(".")
+    if len(parts) >= 3 and parts[0] == "frontend" and parts[1] == "apps":
+        return "frontend-app"
+    if len(parts) >= 3 and parts[0] == "frontend" and parts[1] == "packages":
+        return "frontend-package"
+    if len(parts) >= 3 and parts[:3] in (
+        ["backend", "dotnet", "building-blocks"],
+        ["backend", "dotnet", "packages"],
+    ):
+        return "building-block"
+    if ".services." in node_id:
+        return "microservice"
+    return "framework-package"
+
+
+def default_contract_path(node_id: str) -> str:
+    parts = node_id.split(".")
+    if len(parts) >= 3 and parts[0] == "contracts" and parts[1] == "openapi":
+        return f"contracts/openapi/{parts[2]}.yaml"
+    if len(parts) >= 3 and parts[0] == "contracts" and parts[1] == "grpc":
+        return f"contracts/protos/{parts[2]}.proto"
+    return ""
+
+
+def init_template_values(kind: str, node_id: str) -> dict[str, str]:
+    target = graph_path_for_kind_id(kind, node_id)
+    today = datetime.now(UTC).date().isoformat()
+    module_path = default_module_path(node_id) if kind == "module" else ""
+    contract_path = default_contract_path(node_id) if kind == "contract" else ""
+    return {
+        "id": node_id,
+        "kind": kind,
+        "name": display_name_from_id(node_id),
+        "summary": f"{display_name_from_id(node_id)} 的知识图谱节点。",
+        "declared_in": rel_path(target),
+        "today": today,
+        "path": module_path or contract_path,
+        "evidence": module_path or contract_path or rel_path(target),
+        "module_type": default_module_type(node_id),
+        "stack": node_id.split(".")[1] if node_id.startswith("backend.") else "vue-ts",
+        "contract_type": "openapi" if node_id.startswith("contracts.openapi.") else "grpc",
+    }
+
+
+def render_template(template: str, values: dict[str, str]) -> str:
+    rendered = template
+    for key, value in values.items():
+        rendered = rendered.replace(f"{{{{{key}}}}}", value)
+    return rendered
 
 
 def parse_scalar(raw_value: str) -> Any:
@@ -1360,6 +1453,35 @@ def command_check(_args: argparse.Namespace) -> int:
     return 0
 
 
+def command_init(args: argparse.Namespace) -> int:
+    kind = args.kind
+    node_id = args.node_id
+    if kind not in KIND_DIRECTORIES:
+        print("错误 [knowledge.unsupported-kind]")
+        print(f"说明: 不支持的图谱节点类型: {kind}")
+        return 1
+    if not ID_PATTERN.match(node_id):
+        print("错误 [knowledge.id-format]")
+        print(f"说明: id 格式无效: {node_id}")
+        return 1
+
+    template_path = TEMPLATE_DIR / f"{kind}.yaml"
+    target_path = graph_path_for_kind_id(kind, node_id)
+    if target_path.exists():
+        print("错误 [knowledge.init-exists]")
+        print(f"说明: 目标图谱节点已存在: {rel_path(target_path)}")
+        return 1
+    if not template_path.exists():
+        print("错误 [knowledge.template-missing]")
+        print(f"说明: 模板不存在: {rel_path(template_path)}")
+        return 1
+
+    content = render_template(read_text(template_path), init_template_values(kind, node_id))
+    write_text(target_path, content)
+    print(f"Created {rel_path(target_path)}")
+    return 0
+
+
 def command_sync_skills(args: argparse.Namespace) -> int:
     if args.target != "claude":
         print("错误 [knowledge.unsupported-target]")
@@ -1408,6 +1530,10 @@ def build_parser() -> argparse.ArgumentParser:
     check_parser.set_defaults(func=command_check)
     scan_parser = subparsers.add_parser("scan", help="scan filesystem paths for knowledge graph drift")
     scan_parser.set_defaults(func=command_scan)
+    init_parser = subparsers.add_parser("init", help="initialize a knowledge graph node from template")
+    init_parser.add_argument("--kind", required=True, choices=sorted(KIND_DIRECTORIES))
+    init_parser.add_argument("--id", dest="node_id", required=True)
+    init_parser.set_defaults(func=command_init)
     drift_parser = subparsers.add_parser("check-drift", help="detect knowledge graph drift from git diff")
     drift_parser.add_argument("--from", dest="base", required=True, help="base ref for git diff")
     drift_parser.add_argument("--to", dest="head", required=True, help="head ref for git diff")

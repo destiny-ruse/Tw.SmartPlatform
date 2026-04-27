@@ -18,6 +18,7 @@ def isolated_repo():
         "GRAPH_DIR": knowledge.GRAPH_DIR,
         "GENERATED_DIR": knowledge.GENERATED_DIR,
         "TAXONOMY_PATH": knowledge.TAXONOMY_PATH,
+        "TEMPLATE_DIR": knowledge.TEMPLATE_DIR,
     }
     with tempfile.TemporaryDirectory() as temp:
         root = Path(temp)
@@ -1169,6 +1170,116 @@ class KnowledgeToolTests(unittest.TestCase):
         self.assertEqual(0, exit_code)
         self.assertIn("OK Claude Code Skill 相对符号链接已同步", stdout.getvalue())
 
+
+    def test_init_writes_module_from_template_without_overwrite(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            exit_code = knowledge.command_init(
+                argparse.Namespace(kind="module", node_id="backend.java.services.user")
+            )
+
+            target = root / "docs/knowledge/graph/modules/backend.java.services.user.yaml"
+            self.assertEqual(0, exit_code)
+            self.assertTrue(target.exists())
+            content = target.read_text(encoding="utf-8")
+            self.assertIn("id: backend.java.services.user", content)
+            self.assertIn("path: backend/java/services/user", content)
+            self.assertNotIn("{{", content)
+            self.assertNotIn("}}", content)
+            node = knowledge.load_yaml_file(target)
+            self.assertEqual("backend.java.services.user", node["id"])
+            self.assertEqual("backend/java/services/user", node["path"])
+
+            second_exit = knowledge.command_init(
+                argparse.Namespace(kind="module", node_id="backend.java.services.user")
+            )
+            self.assertEqual(1, second_exit)
+
+    def test_init_renders_parseable_templates_for_all_supported_kinds(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+
+            for kind, node_id, directory in [
+                ("capability", "backend.capability.authentication", "capabilities"),
+                ("module", "backend.java.services.user", "modules"),
+                ("contract", "contracts.openapi.authentication", "contracts"),
+                ("integration", "backend.integration.notice-authentication", "integrations"),
+                ("decision", "backend.decision.authentication-ownership", "decisions"),
+            ]:
+                exit_code = knowledge.command_init(argparse.Namespace(kind=kind, node_id=node_id))
+                target = root / "docs" / "knowledge" / "graph" / directory / f"{node_id}.yaml"
+                self.assertEqual(0, exit_code)
+                self.assertTrue(target.exists())
+                content = target.read_text(encoding="utf-8")
+                self.assertNotIn("{{", content)
+                self.assertNotIn("}}", content)
+                node = knowledge.load_yaml_file(target)
+                self.assertEqual(kind, node["kind"])
+                self.assertEqual(node_id, node["id"])
+
+    def test_init_infers_module_paths_and_types_from_taxonomy_conventions(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+
+            cases = [
+                (
+                    "backend.dotnet.services.billing",
+                    "backend/dotnet/Services/Billing",
+                    "microservice",
+                ),
+                (
+                    "backend.dotnet.building-blocks.remote-service",
+                    "backend/dotnet/BuildingBlocks/src/Tw.RemoteService",
+                    "building-block",
+                ),
+                (
+                    "frontend.apps.tw-web-client",
+                    "frontend/apps/tw.web.client",
+                    "frontend-app",
+                ),
+                (
+                    "frontend.packages.shared-ui",
+                    "frontend/packages/shared-ui",
+                    "frontend-package",
+                ),
+            ]
+
+            for node_id, expected_path, expected_module_type in cases:
+                exit_code = knowledge.command_init(argparse.Namespace(kind="module", node_id=node_id))
+                target = root / "docs" / "knowledge" / "graph" / "modules" / f"{node_id}.yaml"
+                self.assertEqual(0, exit_code)
+                node = knowledge.load_yaml_file(target)
+                self.assertEqual(expected_path, node["path"])
+                self.assertEqual(expected_module_type, node["module_type"])
+
+    def test_init_rejects_invalid_id(self):
+        stdout = io.StringIO()
+        with contextlib.redirect_stdout(stdout):
+            exit_code = knowledge.command_init(argparse.Namespace(kind="module", node_id="Backend.Bad"))
+
+        self.assertEqual(1, exit_code)
+        self.assertIn("knowledge.id-format", stdout.getvalue())
+
+    def test_init_rejects_unsupported_kind(self):
+        stdout = io.StringIO()
+        with contextlib.redirect_stdout(stdout):
+            exit_code = knowledge.command_init(argparse.Namespace(kind="unknown", node_id="backend.java.services.user"))
+
+        self.assertEqual(1, exit_code)
+        self.assertIn("knowledge.unsupported-kind", stdout.getvalue())
+
+    def test_init_reports_missing_template(self):
+        with isolated_repo() as root:
+            knowledge.TEMPLATE_DIR = root / "missing-templates"
+            stdout = io.StringIO()
+
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_init(
+                    argparse.Namespace(kind="module", node_id="backend.java.services.user")
+                )
+
+            self.assertEqual(1, exit_code)
+            self.assertIn("knowledge.template-missing", stdout.getvalue())
 
     def test_filesystem_scan_collects_taxonomy_roots_without_git(self):
         with isolated_repo() as root:

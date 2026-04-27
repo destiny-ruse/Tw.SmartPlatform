@@ -1,12 +1,13 @@
 schema_version: 1.0.0
 id: {{id}}
-kind: capability
+kind: contract
 name: {{name}}
 status: draft
 summary: {{summary}}
 owners: [platform]
-tags: [platform]
-domain: platform
+tags: [contracts]
+contract_type: {{contract_type}}
+path: {{path}}
 source:
   declared_in: {{declared_in}}
   evidence:

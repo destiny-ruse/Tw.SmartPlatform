@@ -2,10 +2,10 @@ schema_version: 1.0.0
 id: {{id}}
 kind: module
 name: {{name}}
-status: active
+status: draft
 summary: {{summary}}
 owners: [platform]
-tags: [{{tags}}]
+tags: [{{stack}}]
 module_type: {{module_type}}
 stack: {{stack}}
 path: {{path}}

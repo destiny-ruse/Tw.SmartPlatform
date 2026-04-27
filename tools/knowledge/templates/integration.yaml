@@ -1,12 +1,14 @@
 schema_version: 1.0.0
 id: {{id}}
-kind: capability
+kind: integration
 name: {{name}}
 status: draft
 summary: {{summary}}
 owners: [platform]
-tags: [platform]
-domain: platform
+tags: [service-integration]
+caller:
+callee:
+contract:
 source:
   declared_in: {{declared_in}}
   evidence:

@@ -1,12 +1,12 @@
 schema_version: 1.0.0
 id: {{id}}
-kind: capability
+kind: decision
 name: {{name}}
 status: draft
 summary: {{summary}}
 owners: [platform]
-tags: [platform]
-domain: platform
+tags: [decision]
+decision: {{summary}}
 source:
   declared_in: {{declared_in}}
   evidence:
