@@ -26,6 +26,11 @@
       "type": "governed_by"
     },
     {
+      "from": "backend.decision.authentication-ownership",
+      "to": "backend.capability.authentication",
+      "type": "applies_to"
+    },
+    {
       "from": "backend.dotnet.building-blocks.remote-service",
       "to": "backend.capability.remote-service",
       "type": "provides"
@@ -39,9 +44,39 @@
       "from": "backend.dotnet.services.authorization",
       "to": "backend.capability.authorization",
       "type": "provides"
+    },
+    {
+      "from": "backend.integration.notice-authentication",
+      "to": "backend.dotnet.services.authentication",
+      "type": "callee"
+    },
+    {
+      "from": "backend.integration.notice-authentication",
+      "to": "backend.dotnet.services.notice",
+      "type": "caller"
+    },
+    {
+      "from": "backend.integration.notice-authentication",
+      "to": "rules.auth-oauth-oidc#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.integration.notice-authentication",
+      "to": "rules.resilience#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.integration.notice-authentication",
+      "to": "rules.tracing#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.integration.notice-authentication",
+      "to": "backend.capability.remote-service",
+      "type": "requires"
     }
   ],
-  "generated_at": "2026-04-27T15:58:39Z",
+  "generated_at": "2026-04-27T16:05:30Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"

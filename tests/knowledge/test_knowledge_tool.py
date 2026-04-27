@@ -432,6 +432,132 @@ class KnowledgeToolTests(unittest.TestCase):
                 edges,
             )
 
+    def test_build_edges_includes_decision_applied_capabilities(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(
+                root,
+                "docs/knowledge/graph/decisions/backend.decision.authentication-ownership.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.decision.authentication-ownership
+                kind: decision
+                name: 认证能力归属决策
+                status: active
+                summary: 用户身份认证能力由 Authentication 服务统一提供。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - auth
+                  - decision
+                applies_to:
+                  capabilities:
+                    - backend.capability.authentication
+                decision: 用户身份认证能力由 Authentication 服务统一提供。
+                consequences:
+                  - 业务服务不得自行签发用户访问令牌。
+                source:
+                  declared_in: docs/knowledge/graph/decisions/backend.decision.authentication-ownership.yaml
+                  evidence:
+                    - backend/dotnet/Services/Authentication/README.md
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-27
+                  updated_by: human
+                  updated_at: 2026-04-27
+                """,
+            )
+
+            payloads, messages = knowledge.build_indexes(existing_generated_at="2026-04-27T00:00:00Z")
+            self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
+
+            edges = payloads["docs/knowledge/generated/edges.generated.json"]["edges"]
+            self.assertIn(
+                {
+                    "from": "backend.decision.authentication-ownership",
+                    "type": "applies_to",
+                    "to": "backend.capability.authentication",
+                },
+                edges,
+            )
+
+    def test_build_edges_includes_integration_relationships(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(
+                root,
+                "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.integration.notice-authentication
+                kind: integration
+                name: 通知服务到认证服务集成
+                status: draft
+                summary: 记录通知服务需要认证主体或用户身份信息时应走契约和统一远程调用能力。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - auth
+                  - notice
+                  - service-integration
+                caller: backend.dotnet.services.notice
+                callee: backend.dotnet.services.authentication
+                tooling:
+                  required_capabilities:
+                    - backend.capability.remote-service
+                standards:
+                  - rules.auth-oauth-oidc#rules
+                source:
+                  declared_in: docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml
+                  evidence:
+                    - backend/dotnet/Services/Notice/README.md
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-27
+                  updated_by: human
+                  updated_at: 2026-04-27
+                """,
+            )
+
+            payloads, messages = knowledge.build_indexes(existing_generated_at="2026-04-27T00:00:00Z")
+            self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
+
+            edges = payloads["docs/knowledge/generated/edges.generated.json"]["edges"]
+            self.assertIn(
+                {
+                    "from": "backend.integration.notice-authentication",
+                    "type": "caller",
+                    "to": "backend.dotnet.services.notice",
+                },
+                edges,
+            )
+            self.assertIn(
+                {
+                    "from": "backend.integration.notice-authentication",
+                    "type": "callee",
+                    "to": "backend.dotnet.services.authentication",
+                },
+                edges,
+            )
+            self.assertIn(
+                {
+                    "from": "backend.integration.notice-authentication",
+                    "type": "requires",
+                    "to": "backend.capability.remote-service",
+                },
+                edges,
+            )
+            self.assertIn(
+                {
+                    "from": "backend.integration.notice-authentication",
+                    "type": "governed_by",
+                    "to": "rules.auth-oauth-oidc#rules",
+                },
+                edges,
+            )
+
     def test_build_indexes_returns_empty_payloads_when_validation_has_errors(self):
         with isolated_repo() as root:
             write_taxonomy(root)

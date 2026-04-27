@@ -652,6 +652,34 @@ def build_edges(nodes: list[GraphNode]) -> list[dict[str, str]]:
                     if capability_id:
                         edges.add((str(node_id), "provides", str(capability_id)))
 
+        if data.get("kind") == "decision":
+            applies_to = data.get("applies_to")
+            if isinstance(applies_to, dict) and isinstance(applies_to.get("capabilities"), list):
+                for capability_id in applies_to["capabilities"]:
+                    if capability_id:
+                        edges.add((str(node_id), "applies_to", str(capability_id)))
+
+        if data.get("kind") == "integration":
+            caller = data.get("caller")
+            if caller:
+                edges.add((str(node_id), "caller", str(caller)))
+
+            callee = data.get("callee")
+            if callee:
+                edges.add((str(node_id), "callee", str(callee)))
+
+            tooling = data.get("tooling")
+            if isinstance(tooling, dict) and isinstance(tooling.get("required_capabilities"), list):
+                for capability_id in tooling["required_capabilities"]:
+                    if capability_id:
+                        edges.add((str(node_id), "requires", str(capability_id)))
+
+            standards = data.get("standards")
+            if isinstance(standards, list):
+                for standard_id in standards:
+                    if standard_id:
+                        edges.add((str(node_id), "governed_by", str(standard_id)))
+
     return [
         {"from": source, "type": edge_type, "to": target}
         for source, edge_type, target in sorted(edges)

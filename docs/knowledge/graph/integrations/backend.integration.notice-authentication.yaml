@@ -11,11 +11,9 @@ tags:
   - auth
   - notice
   - service-integration
+domain: integration
 caller: backend.dotnet.services.notice
 callee: backend.dotnet.services.authentication
-protocol: http
-auth:
-  mode: client-credentials
 tooling:
   required_capabilities:
     - backend.capability.remote-service
@@ -23,6 +21,8 @@ standards:
   - rules.auth-oauth-oidc#rules
   - rules.resilience#rules
   - rules.tracing#rules
+notes:
+  - 尚未声明具体契约、协议或认证模式；落地前必须补充 contract 与 integration 细节。
 source:
   declared_in: docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml
   evidence:

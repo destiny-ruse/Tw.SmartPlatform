@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T15:58:39Z",
+  "generated_at": "2026-04-27T16:05:30Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"
@@ -50,33 +50,33 @@
     },
     {
       "end_line": 14,
-      "key": "caller",
+      "key": "domain",
       "start_line": 14
     },
     {
       "end_line": 15,
-      "key": "callee",
+      "key": "caller",
       "start_line": 15
     },
     {
       "end_line": 16,
-      "key": "protocol",
+      "key": "callee",
       "start_line": 16
     },
     {
-      "end_line": 18,
-      "key": "auth",
+      "end_line": 19,
+      "key": "tooling",
       "start_line": 17
     },
     {
-      "end_line": 21,
-      "key": "tooling",
-      "start_line": 19
+      "end_line": 23,
+      "key": "standards",
+      "start_line": 20
     },
     {
       "end_line": 25,
-      "key": "standards",
-      "start_line": 22
+      "key": "notes",
+      "start_line": 24
     },
     {
       "end_line": 30,

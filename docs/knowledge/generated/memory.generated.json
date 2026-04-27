@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T15:58:39Z",
+  "generated_at": "2026-04-27T16:05:30Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"
@@ -312,18 +312,18 @@
       ]
     },
     {
-      "auth": {
-        "mode": "client-credentials"
-      },
       "callee": "backend.dotnet.services.authentication",
       "caller": "backend.dotnet.services.notice",
+      "domain": "integration",
       "id": "backend.integration.notice-authentication",
       "kind": "integration",
       "name": "通知服务到认证服务集成",
+      "notes": [
+        "尚未声明具体契约、协议或认证模式；落地前必须补充 contract 与 integration 细节。"
+      ],
       "owners": [
         "platform"
       ],
-      "protocol": "http",
       "provenance": {
         "created_at": "2026-04-27",
         "created_by": "human",

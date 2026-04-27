@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T15:58:39Z",
+  "generated_at": "2026-04-27T16:05:30Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"
@@ -120,6 +120,7 @@
       "path": "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
       "sections_index": "docs/knowledge/generated/_index/sections/backend.integration.notice-authentication.generated.json",
       "shards": [
+        "docs/knowledge/generated/_index/by-domain/integration.generated.json",
         "docs/knowledge/generated/_index/by-kind/integration.generated.json",
         "docs/knowledge/generated/_index/by-owner/platform.generated.json",
         "docs/knowledge/generated/_index/by-tag/auth.generated.json",
