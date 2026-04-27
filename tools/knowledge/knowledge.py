@@ -456,6 +456,7 @@ def generated_path(*parts: str) -> str:
 
 def generator_metadata(generated_at: str) -> dict[str, Any]:
     return {
+        "schema_version": "1.0.0",
         "generator": {
             "name": "tools/knowledge/knowledge.py",
             "version": GENERATOR_VERSION,
@@ -544,6 +545,12 @@ def build_edges(nodes: list[GraphNode]) -> list[dict[str, str]]:
             continue
 
         if data.get("kind") == "capability":
+            standards = data.get("standards")
+            if isinstance(standards, list):
+                for standard_id in standards:
+                    if standard_id:
+                        edges.add((str(node_id), "governed_by", str(standard_id)))
+
             provided_by = data.get("provided_by")
             if isinstance(provided_by, dict) and isinstance(provided_by.get("modules"), list):
                 for module_id in provided_by["modules"]:
@@ -574,6 +581,9 @@ def add_shard(
 def build_indexes(existing_generated_at: str | None = None) -> tuple[dict[str, Any], list[Diagnostic]]:
     generated_at = existing_generated_at or utc_now()
     messages = collect_validation_messages()
+    if has_errors(messages):
+        return {}, messages
+
     nodes, _load_messages = load_graph_nodes()
     sorted_nodes = sorted(nodes, key=lambda item: str(item.data.get("id", "")))
     light_nodes = [light_node(node) for node in sorted_nodes]

@@ -348,6 +348,8 @@ class KnowledgeToolTests(unittest.TestCase):
                   - backend
                   - auth
                 domain: security
+                standards:
+                  - rules.auth-oauth-oidc#rules
                 provided_by:
                   modules:
                     - backend.dotnet.services.authentication
@@ -377,6 +379,15 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertIn("docs/knowledge/generated/_index/by-kind/capability.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/_index/by-tag/auth.generated.json", payloads)
             self.assertIn("docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json", payloads)
+
+            for path in [
+                "docs/knowledge/generated/index.generated.json",
+                "docs/knowledge/generated/memory.generated.json",
+                "docs/knowledge/generated/edges.generated.json",
+                "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+                "docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json",
+            ]:
+                self.assertEqual("1.0.0", payloads[path]["schema_version"])
 
             l0_node = payloads["docs/knowledge/generated/index.generated.json"]["nodes"][0]
             self.assertEqual(
@@ -410,6 +421,34 @@ class KnowledgeToolTests(unittest.TestCase):
                 },
                 edges,
             )
+            self.assertIn(
+                {
+                    "from": "backend.capability.authentication",
+                    "type": "governed_by",
+                    "to": "rules.auth-oauth-oidc#rules",
+                },
+                edges,
+            )
+
+    def test_build_indexes_returns_empty_payloads_when_validation_has_errors(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(
+                root,
+                "docs/knowledge/graph/modules/broken.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.dotnet.services.broken
+                kind: module
+                name: Broken
+                status: active
+                """,
+            )
+
+            payloads, messages = knowledge.build_indexes(existing_generated_at="2026-04-27T00:00:00Z")
+
+            self.assertEqual({}, payloads)
+            self.assertNotEqual([], [message for message in messages if message.level == "ERROR"])
 
 
 if __name__ == "__main__":
