@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-04-27T15:58:39Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.capability.authorization",
+      "kind": "capability",
+      "name": "访问授权能力",
+      "path": "docs/knowledge/graph/capabilities/backend.capability.authorization.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.authorization.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-domain/security.generated.json",
+        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
+        "docs/knowledge/generated/_index/by-tag/authorization.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/security.generated.json"
+      ],
+      "summary": "提供权限校验、访问控制、角色授权和授权测试相关能力。",
+      "tags": [
+        "backend",
+        "auth",
+        "authorization",
+        "security"
+      ]
+    },
+    {
+      "id": "backend.dotnet.services.authorization",
+      "kind": "module",
+      "name": "授权服务",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.services.authorization.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.services.authorization.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
+        "docs/knowledge/generated/_index/by-tag/authorization.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json"
+      ],
+      "summary": "承载权限校验、访问控制、角色授权和授权测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "auth",
+        "authorization"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

@@ -50,29 +50,6 @@
       ]
     },
     {
-      "id": "backend.capability.remote-service",
-      "kind": "capability",
-      "name": "远程服务调用能力",
-      "path": "docs/knowledge/graph/capabilities/backend.capability.remote-service.yaml",
-      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.remote-service.generated.json",
-      "shards": [
-        "docs/knowledge/generated/_index/by-domain/integration.generated.json",
-        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
-        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
-        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
-        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
-        "docs/knowledge/generated/_index/by-tag/remote-call.generated.json",
-        "docs/knowledge/generated/_index/by-tag/service-integration.generated.json"
-      ],
-      "summary": "提供服务间调用、客户端代理、接口转发和远程服务集成支持能力。",
-      "tags": [
-        "backend",
-        "dotnet",
-        "service-integration",
-        "remote-call"
-      ]
-    },
-    {
       "id": "backend.decision.authentication-ownership",
       "kind": "decision",
       "name": "认证能力归属决策",
@@ -90,29 +67,6 @@
         "backend",
         "auth",
         "decision"
-      ]
-    },
-    {
-      "id": "backend.dotnet.building-blocks.remote-service",
-      "kind": "module",
-      "name": "远程服务调用公共构件",
-      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.remote-service.yaml",
-      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.remote-service.generated.json",
-      "shards": [
-        "docs/knowledge/generated/_index/by-kind/module.generated.json",
-        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
-        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
-        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
-        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
-        "docs/knowledge/generated/_index/by-tag/remote-call.generated.json",
-        "docs/knowledge/generated/_index/by-tag/service-integration.generated.json"
-      ],
-      "summary": "承载远程服务调用、客户端代理、接口转发和服务间通信支持能力。",
-      "tags": [
-        "backend",
-        "dotnet",
-        "service-integration",
-        "remote-call"
       ]
     },
     {

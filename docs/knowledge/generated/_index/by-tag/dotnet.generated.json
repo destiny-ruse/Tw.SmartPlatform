@@ -6,50 +6,6 @@
   },
   "nodes": [
     {
-      "id": "backend.capability.authentication",
-      "kind": "capability",
-      "name": "用户认证能力",
-      "path": "docs/knowledge/graph/capabilities/backend.capability.authentication.yaml",
-      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.authentication.generated.json",
-      "shards": [
-        "docs/knowledge/generated/_index/by-domain/security.generated.json",
-        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
-        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
-        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
-        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
-        "docs/knowledge/generated/_index/by-tag/security.generated.json"
-      ],
-      "summary": "提供用户登录、令牌签发和认证主体解析相关能力。",
-      "tags": [
-        "backend",
-        "auth",
-        "security"
-      ]
-    },
-    {
-      "id": "backend.capability.authorization",
-      "kind": "capability",
-      "name": "访问授权能力",
-      "path": "docs/knowledge/graph/capabilities/backend.capability.authorization.yaml",
-      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.authorization.generated.json",
-      "shards": [
-        "docs/knowledge/generated/_index/by-domain/security.generated.json",
-        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
-        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
-        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
-        "docs/knowledge/generated/_index/by-tag/authorization.generated.json",
-        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
-        "docs/knowledge/generated/_index/by-tag/security.generated.json"
-      ],
-      "summary": "提供权限校验、访问控制、角色授权和授权测试相关能力。",
-      "tags": [
-        "backend",
-        "auth",
-        "authorization",
-        "security"
-      ]
-    },
-    {
       "id": "backend.capability.remote-service",
       "kind": "capability",
       "name": "远程服务调用能力",
@@ -70,26 +26,6 @@
         "dotnet",
         "service-integration",
         "remote-call"
-      ]
-    },
-    {
-      "id": "backend.decision.authentication-ownership",
-      "kind": "decision",
-      "name": "认证能力归属决策",
-      "path": "docs/knowledge/graph/decisions/backend.decision.authentication-ownership.yaml",
-      "sections_index": "docs/knowledge/generated/_index/sections/backend.decision.authentication-ownership.generated.json",
-      "shards": [
-        "docs/knowledge/generated/_index/by-kind/decision.generated.json",
-        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
-        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
-        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
-        "docs/knowledge/generated/_index/by-tag/decision.generated.json"
-      ],
-      "summary": "用户身份认证能力由 Authentication 服务统一提供，业务服务不得重复签发用户令牌。",
-      "tags": [
-        "backend",
-        "auth",
-        "decision"
       ]
     },
     {
@@ -157,28 +93,6 @@
         "dotnet",
         "auth",
         "authorization"
-      ]
-    },
-    {
-      "id": "backend.integration.notice-authentication",
-      "kind": "integration",
-      "name": "通知服务到认证服务集成",
-      "path": "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
-      "sections_index": "docs/knowledge/generated/_index/sections/backend.integration.notice-authentication.generated.json",
-      "shards": [
-        "docs/knowledge/generated/_index/by-kind/integration.generated.json",
-        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
-        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
-        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
-        "docs/knowledge/generated/_index/by-tag/notice.generated.json",
-        "docs/knowledge/generated/_index/by-tag/service-integration.generated.json"
-      ],
-      "summary": "记录通知服务需要认证主体或用户身份信息时应走契约和统一远程调用能力。",
-      "tags": [
-        "backend",
-        "auth",
-        "notice",
-        "service-integration"
       ]
     }
   ],

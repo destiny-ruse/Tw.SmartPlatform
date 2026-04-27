@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-04-27T15:58:39Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.integration.notice-authentication",
+      "kind": "integration",
+      "name": "通知服务到认证服务集成",
+      "path": "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.integration.notice-authentication.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/integration.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/notice.generated.json",
+        "docs/knowledge/generated/_index/by-tag/service-integration.generated.json"
+      ],
+      "summary": "记录通知服务需要认证主体或用户身份信息时应走契约和统一远程调用能力。",
+      "tags": [
+        "backend",
+        "auth",
+        "notice",
+        "service-integration"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

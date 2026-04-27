@@ -1,0 +1,37 @@
+schema_version: 1.0.0
+id: backend.capability.authentication
+kind: capability
+name: 用户认证能力
+status: active
+summary: 提供用户登录、令牌签发和认证主体解析相关能力。
+owners:
+  - platform
+tags:
+  - backend
+  - auth
+  - security
+domain: security
+provided_by:
+  modules:
+    - backend.dotnet.services.authentication
+reuse:
+  use_when:
+    - 需要用户登录、访问令牌签发或认证主体解析
+  do_not_reimplement:
+    - 不要在业务服务中自行签发用户访问令牌
+    - 不要用存在用户 ID 替代资源授权判断
+aliases:
+  - 登录
+  - token
+  - 当前用户
+standards:
+  - rules.auth-oauth-oidc#rules
+source:
+  declared_in: docs/knowledge/graph/capabilities/backend.capability.authentication.yaml
+  evidence:
+    - backend/dotnet/Services/Authentication/README.md
+provenance:
+  created_by: human
+  created_at: 2026-04-27
+  updated_by: human
+  updated_at: 2026-04-27

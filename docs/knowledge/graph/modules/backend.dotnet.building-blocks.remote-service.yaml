@@ -1,0 +1,28 @@
+schema_version: 1.0.0
+id: backend.dotnet.building-blocks.remote-service
+kind: module
+name: 远程服务调用公共构件
+status: active
+summary: 承载远程服务调用、客户端代理、接口转发和服务间通信支持能力。
+owners:
+  - platform
+tags:
+  - backend
+  - dotnet
+  - service-integration
+  - remote-call
+module_type: building-block
+stack: dotnet
+path: backend/dotnet/BuildingBlocks/src/Tw.RemoteService
+provides:
+  capabilities:
+    - backend.capability.remote-service
+source:
+  declared_in: docs/knowledge/graph/modules/backend.dotnet.building-blocks.remote-service.yaml
+  evidence:
+    - backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md
+provenance:
+  created_by: human
+  created_at: 2026-04-27
+  updated_by: human
+  updated_at: 2026-04-27

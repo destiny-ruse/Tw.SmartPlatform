@@ -1,6 +1,47 @@
 {
-  "edges": [],
-  "generated_at": "2026-04-27T15:30:22Z",
+  "edges": [
+    {
+      "from": "backend.capability.authentication",
+      "to": "rules.auth-oauth-oidc#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.capability.authorization",
+      "to": "rules.auth-oauth-oidc#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.capability.remote-service",
+      "to": "rules.auth-oauth-oidc#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.capability.remote-service",
+      "to": "rules.resilience#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.capability.remote-service",
+      "to": "rules.tracing#rules",
+      "type": "governed_by"
+    },
+    {
+      "from": "backend.dotnet.building-blocks.remote-service",
+      "to": "backend.capability.remote-service",
+      "type": "provides"
+    },
+    {
+      "from": "backend.dotnet.services.authentication",
+      "to": "backend.capability.authentication",
+      "type": "provides"
+    },
+    {
+      "from": "backend.dotnet.services.authorization",
+      "to": "backend.capability.authorization",
+      "type": "provides"
+    }
+  ],
+  "generated_at": "2026-04-27T15:58:39Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"

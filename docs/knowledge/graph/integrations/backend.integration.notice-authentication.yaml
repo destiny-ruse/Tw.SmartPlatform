@@ -1,0 +1,35 @@
+schema_version: 1.0.0
+id: backend.integration.notice-authentication
+kind: integration
+name: 通知服务到认证服务集成
+status: draft
+summary: 记录通知服务需要认证主体或用户身份信息时应走契约和统一远程调用能力。
+owners:
+  - platform
+tags:
+  - backend
+  - auth
+  - notice
+  - service-integration
+caller: backend.dotnet.services.notice
+callee: backend.dotnet.services.authentication
+protocol: http
+auth:
+  mode: client-credentials
+tooling:
+  required_capabilities:
+    - backend.capability.remote-service
+standards:
+  - rules.auth-oauth-oidc#rules
+  - rules.resilience#rules
+  - rules.tracing#rules
+source:
+  declared_in: docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml
+  evidence:
+    - backend/dotnet/Services/Notice/README.md
+    - backend/dotnet/Services/Authentication/README.md
+provenance:
+  created_by: human
+  created_at: 2026-04-27
+  updated_by: human
+  updated_at: 2026-04-27

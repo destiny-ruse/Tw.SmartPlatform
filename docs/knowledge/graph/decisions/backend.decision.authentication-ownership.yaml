@@ -1,0 +1,28 @@
+schema_version: 1.0.0
+id: backend.decision.authentication-ownership
+kind: decision
+name: 认证能力归属决策
+status: active
+summary: 用户身份认证能力由 Authentication 服务统一提供，业务服务不得重复签发用户令牌。
+owners:
+  - platform
+tags:
+  - backend
+  - auth
+  - decision
+applies_to:
+  capabilities:
+    - backend.capability.authentication
+decision: 用户身份认证能力由 Authentication 服务统一提供。
+consequences:
+  - 业务服务不得自行签发用户访问令牌。
+  - 需要身份信息时必须通过契约或统一上下文能力获取。
+source:
+  declared_in: docs/knowledge/graph/decisions/backend.decision.authentication-ownership.yaml
+  evidence:
+    - backend/dotnet/Services/Authentication/README.md
+provenance:
+  created_by: human
+  created_at: 2026-04-27
+  updated_by: human
+  updated_at: 2026-04-27

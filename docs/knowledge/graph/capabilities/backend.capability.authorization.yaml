@@ -1,0 +1,38 @@
+schema_version: 1.0.0
+id: backend.capability.authorization
+kind: capability
+name: 访问授权能力
+status: active
+summary: 提供权限校验、访问控制、角色授权和授权测试相关能力。
+owners:
+  - platform
+tags:
+  - backend
+  - auth
+  - authorization
+  - security
+domain: security
+provided_by:
+  modules:
+    - backend.dotnet.services.authorization
+reuse:
+  use_when:
+    - 需要判断主体是否可以访问资源或执行操作
+  do_not_reimplement:
+    - 不要在业务服务中复制角色授权规则
+    - 不要把前端可见性控制当作最终访问权限
+aliases:
+  - 授权
+  - 权限
+  - 角色
+standards:
+  - rules.auth-oauth-oidc#rules
+source:
+  declared_in: docs/knowledge/graph/capabilities/backend.capability.authorization.yaml
+  evidence:
+    - backend/dotnet/Services/Authorization/README.md
+provenance:
+  created_by: human
+  created_at: 2026-04-27
+  updated_by: human
+  updated_at: 2026-04-27

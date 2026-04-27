@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-04-27T15:58:39Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.decision.authentication-ownership",
+      "kind": "decision",
+      "name": "认证能力归属决策",
+      "path": "docs/knowledge/graph/decisions/backend.decision.authentication-ownership.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.decision.authentication-ownership.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/decision.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/auth.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/decision.generated.json"
+      ],
+      "summary": "用户身份认证能力由 Authentication 服务统一提供，业务服务不得重复签发用户令牌。",
+      "tags": [
+        "backend",
+        "auth",
+        "decision"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

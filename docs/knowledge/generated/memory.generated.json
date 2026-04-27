@@ -1,9 +1,362 @@
 {
-  "generated_at": "2026-04-27T15:30:22Z",
+  "generated_at": "2026-04-27T15:58:39Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"
   },
-  "nodes": [],
+  "nodes": [
+    {
+      "aliases": [
+        "登录",
+        "token",
+        "当前用户"
+      ],
+      "domain": "security",
+      "id": "backend.capability.authentication",
+      "kind": "capability",
+      "name": "用户认证能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.services.authentication"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在业务服务中自行签发用户访问令牌",
+          "不要用存在用户 ID 替代资源授权判断"
+        ],
+        "use_when": [
+          "需要用户登录、访问令牌签发或认证主体解析"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.authentication.yaml",
+        "evidence": [
+          "backend/dotnet/Services/Authentication/README.md"
+        ]
+      },
+      "standards": [
+        "rules.auth-oauth-oidc#rules"
+      ],
+      "status": "active",
+      "summary": "提供用户登录、令牌签发和认证主体解析相关能力。",
+      "tags": [
+        "backend",
+        "auth",
+        "security"
+      ]
+    },
+    {
+      "aliases": [
+        "授权",
+        "权限",
+        "角色"
+      ],
+      "domain": "security",
+      "id": "backend.capability.authorization",
+      "kind": "capability",
+      "name": "访问授权能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.services.authorization"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在业务服务中复制角色授权规则",
+          "不要把前端可见性控制当作最终访问权限"
+        ],
+        "use_when": [
+          "需要判断主体是否可以访问资源或执行操作"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.authorization.yaml",
+        "evidence": [
+          "backend/dotnet/Services/Authorization/README.md"
+        ]
+      },
+      "standards": [
+        "rules.auth-oauth-oidc#rules"
+      ],
+      "status": "active",
+      "summary": "提供权限校验、访问控制、角色授权和授权测试相关能力。",
+      "tags": [
+        "backend",
+        "auth",
+        "authorization",
+        "security"
+      ]
+    },
+    {
+      "aliases": [
+        "远程调用",
+        "服务间调用",
+        "客户端代理"
+      ],
+      "domain": "integration",
+      "id": "backend.capability.remote-service",
+      "kind": "capability",
+      "name": "远程服务调用能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.remote-service"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在业务服务中手写一套远程调用客户端工厂",
+          "不要绕过统一超时、追踪和错误处理策略"
+        ],
+        "use_when": [
+          "需要调用其他微服务公开接口",
+          "需要封装服务间客户端代理"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.remote-service.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md"
+        ]
+      },
+      "standards": [
+        "rules.auth-oauth-oidc#rules",
+        "rules.resilience#rules",
+        "rules.tracing#rules"
+      ],
+      "status": "active",
+      "summary": "提供服务间调用、客户端代理、接口转发和远程服务集成支持能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "service-integration",
+        "remote-call"
+      ]
+    },
+    {
+      "applies_to": {
+        "capabilities": [
+          "backend.capability.authentication"
+        ]
+      },
+      "consequences": [
+        "业务服务不得自行签发用户访问令牌。",
+        "需要身份信息时必须通过契约或统一上下文能力获取。"
+      ],
+      "decision": "用户身份认证能力由 Authentication 服务统一提供。",
+      "id": "backend.decision.authentication-ownership",
+      "kind": "decision",
+      "name": "认证能力归属决策",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/decisions/backend.decision.authentication-ownership.yaml",
+        "evidence": [
+          "backend/dotnet/Services/Authentication/README.md"
+        ]
+      },
+      "status": "active",
+      "summary": "用户身份认证能力由 Authentication 服务统一提供，业务服务不得重复签发用户令牌。",
+      "tags": [
+        "backend",
+        "auth",
+        "decision"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.remote-service",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "远程服务调用公共构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService",
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.remote-service"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.remote-service.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载远程服务调用、客户端代理、接口转发和服务间通信支持能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "service-integration",
+        "remote-call"
+      ]
+    },
+    {
+      "id": "backend.dotnet.services.authentication",
+      "kind": "module",
+      "module_type": "microservice",
+      "name": "认证服务",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/Services/Authentication",
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.authentication"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.services.authentication.yaml",
+        "evidence": [
+          "backend/dotnet/Services/Authentication/README.md"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载用户身份认证、登录流程、令牌签发和认证测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "auth"
+      ]
+    },
+    {
+      "id": "backend.dotnet.services.authorization",
+      "kind": "module",
+      "module_type": "microservice",
+      "name": "授权服务",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/Services/Authorization",
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.authorization"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.services.authorization.yaml",
+        "evidence": [
+          "backend/dotnet/Services/Authorization/README.md"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载权限校验、访问控制、角色授权和授权测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "auth",
+        "authorization"
+      ]
+    },
+    {
+      "auth": {
+        "mode": "client-credentials"
+      },
+      "callee": "backend.dotnet.services.authentication",
+      "caller": "backend.dotnet.services.notice",
+      "id": "backend.integration.notice-authentication",
+      "kind": "integration",
+      "name": "通知服务到认证服务集成",
+      "owners": [
+        "platform"
+      ],
+      "protocol": "http",
+      "provenance": {
+        "created_at": "2026-04-27",
+        "created_by": "human",
+        "updated_at": "2026-04-27",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
+        "evidence": [
+          "backend/dotnet/Services/Notice/README.md",
+          "backend/dotnet/Services/Authentication/README.md"
+        ]
+      },
+      "standards": [
+        "rules.auth-oauth-oidc#rules",
+        "rules.resilience#rules",
+        "rules.tracing#rules"
+      ],
+      "status": "draft",
+      "summary": "记录通知服务需要认证主体或用户身份信息时应走契约和统一远程调用能力。",
+      "tags": [
+        "backend",
+        "auth",
+        "notice",
+        "service-integration"
+      ],
+      "tooling": {
+        "required_capabilities": [
+          "backend.capability.remote-service"
+        ]
+      }
+    }
+  ],
   "schema_version": "1.0.0"
 }
