@@ -47,9 +47,9 @@ gRPC 版本演进规范用于降低字段号复用、包版本混乱和服务升
 ```proto
 message Order {
   string id = 1;
-  string legacy_status = 2 [deprecated = true];
-  reserved 4;
-  reserved "legacy_note";
+  reserved 2;
+  reserved "legacy_status";
+  OrderStatus status = 3;
 }
 ```
 

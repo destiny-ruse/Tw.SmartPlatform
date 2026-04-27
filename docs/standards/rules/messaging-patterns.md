@@ -47,10 +47,10 @@ review_after: 2026-10-27
 ```python
 def handle_order_paid(message):
     key = message["messageId"]
-    if processed_messages.exists(key):
-        return
-    mark_invoice_paid(message["data"]["orderId"])
-    processed_messages.insert(key)
+    with transaction():
+        if not processed_messages.insert_if_absent(key):
+            return
+        mark_invoice_paid(message["data"]["orderId"])
 ```
 
 反例：

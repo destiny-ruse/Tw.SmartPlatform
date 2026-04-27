@@ -4,7 +4,7 @@
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
   },
-  "generated_at": "2026-04-27T09:04:06Z",
+  "generated_at": "2026-04-27T09:11:28Z",
   "standards": [
     {
       "id": "decisions.0001-adopt-standards-blueprint",
