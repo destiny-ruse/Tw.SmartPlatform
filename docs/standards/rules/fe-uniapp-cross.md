@@ -52,7 +52,7 @@ export async function chooseAvatar(): Promise<string | null> {
   // #endif
 
   // #ifdef H5
-  showToast("当前端暂不支持上传头像");
+  showToast(t("profile.avatar.unsupportedOnCurrentPlatform"));
   return null;
   // #endif
 }

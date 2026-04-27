@@ -47,10 +47,9 @@ review_after: 2026-10-27
 ```json
 {
   "order": {
-    "detail": {
-      "title": "订单详情",
-      "submit": "提交订单",
-      "itemCount": "共 {count} 件商品"
+    "receiver": {
+      "label": "收货人",
+      "placeholder": "请输入收货人"
     }
   }
 }

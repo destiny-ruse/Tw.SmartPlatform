@@ -56,10 +56,10 @@ type OrderView = {
   paidAtText: string;
 };
 
-function toOrderView(dto: OrderDto): OrderView {
+function toOrderView(dto: OrderDto, t: (key: string) => string): OrderView {
   return {
     id: dto.id,
-    paidAtText: dto.paidAt ? formatDate(dto.paidAt) : "未支付",
+    paidAtText: dto.paidAt ? formatDate(dto.paidAt) : t("order.status.unpaid"),
   };
 }
 

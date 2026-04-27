@@ -53,7 +53,7 @@ if (canShare()) {
   await navigator.share({ title, url });
 } else {
   copyLink(url);
-  showToast("链接已复制");
+  showToast(t("common.linkCopied"));
 }
 ```
 

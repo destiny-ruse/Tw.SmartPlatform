@@ -32,31 +32,31 @@
       "title": "示例",
       "level": 2,
       "start_line": 43,
-      "end_line": 72,
+      "end_line": 71,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 73,
-      "end_line": 82,
+      "start_line": 72,
+      "end_line": 81,
       "regions": []
     },
     {
       "anchor": "relations",
       "title": "相关规范",
       "level": 2,
-      "start_line": 83,
-      "end_line": 89,
+      "start_line": 82,
+      "end_line": 88,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 90,
-      "end_line": 95,
+      "start_line": 89,
+      "end_line": 94,
       "regions": []
     }
   ]

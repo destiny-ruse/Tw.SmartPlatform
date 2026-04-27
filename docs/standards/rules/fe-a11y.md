@@ -45,11 +45,11 @@ review_after: 2026-10-27
 正例：
 
 ```vue
-<button type="button" aria-label="关闭弹窗" @click="closeDialog">
+<button type="button" :aria-label="t('dialog.close')" @click="closeDialog">
   <CloseIcon aria-hidden="true" />
 </button>
 
-<label for="mobile">手机号</label>
+<label for="mobile">{{ t("profile.mobile.label") }}</label>
 <input id="mobile" v-model="mobile" aria-describedby="mobile-error" />
 <p v-if="mobileError" id="mobile-error" role="alert">{{ mobileError }}</p>
 ```
