@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T06:01:54Z",
+  "generated_at": "2026-04-27T06:56:07Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -620,6 +620,30 @@
       ],
       "summary": "规定异常分类、错误码映射和恢复策略。",
       "sections_index": "docs/standards/_index/sections/rules.error-handling.generated.json"
+    },
+    {
+      "id": "rules.git-branching",
+      "title": "分支与发布管理规范",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/git-branching.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "git",
+        "governance",
+        "release"
+      ],
+      "summary": "规定分支模型、命名约定、合并策略和发布流程，确保历史可审查、回滚可执行。",
+      "sections_index": "docs/standards/_index/sections/rules.git-branching.generated.json"
     },
     {
       "id": "rules.git-commit",
