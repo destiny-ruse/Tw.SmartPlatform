@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T06:56:07Z",
+  "generated_at": "2026-04-27T09:04:06Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -258,7 +258,7 @@
       "title": "API 错误响应规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/api-error-response.md",
       "roles": [
         "backend",
@@ -285,7 +285,7 @@
       "title": "API 统一响应结构",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/api-response-shape.md",
       "roles": [
         "backend",
@@ -312,7 +312,7 @@
       "title": "REST API 设计规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/api-rest-design.md",
       "roles": [
         "backend",
@@ -339,7 +339,7 @@
       "title": "AsyncAPI 约定规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/asyncapi-conventions.md",
       "roles": [
         "architect",
@@ -659,7 +659,7 @@
       "title": "数据格式规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/data-formats.md",
       "roles": [
         "architect",
@@ -858,7 +858,7 @@
       "title": "错误处理规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/error-handling.md",
       "roles": [
         "architect",
@@ -1085,7 +1085,7 @@
       "title": "gRPC Proto 风格规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/grpc-proto-style.md",
       "roles": [
         "architect",
@@ -1114,7 +1114,7 @@
       "title": "gRPC 版本演进规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/grpc-versioning.md",
       "roles": [
         "architect",
@@ -1168,7 +1168,7 @@
       "title": "幂等性规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/idempotency.md",
       "roles": [
         "architect",
@@ -1194,7 +1194,7 @@
       "title": "输入校验规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/input-validation.md",
       "roles": [
         "architect",
@@ -1271,7 +1271,7 @@
       "title": "消息模式规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/messaging-patterns.md",
       "roles": [
         "architect",

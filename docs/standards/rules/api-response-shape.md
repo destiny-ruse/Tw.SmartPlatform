@@ -3,7 +3,7 @@ id: rules.api-response-shape
 title: API 统一响应结构
 doc_type: rule
 status: active
-version: 1.0.0
+version: 1.1.0
 owners: [architecture-team]
 roles: [backend, frontend, ai]
 stacks: [dotnet, java, python, vue-ts, uniapp]
@@ -20,38 +20,74 @@ review_after: 2026-10-27
 <!-- anchor: goal -->
 ## 目标
 
-让客户端能够稳定解析成功响应、空集合、分页结果和错误响应。
+API 统一响应结构用于降低客户端针对成功、空集合、分页和错误结果编写大量特殊分支的风险。响应契约必须在字段、类型和空值表达上保持稳定，使 Web、移动端、测试和自动化客户端可以用同一解析模型处理。该规范同时承接 REST 响应字段禁止返回 `null` 的决策。
 
 <!-- anchor: scope -->
 ## 适用范围
 
-适用于对外和内部 REST API 的 JSON 响应。
+本规范适用于 `apps/`、`services/`、`src/`、`backend/`、`frontend/`、`mobile/` 中 REST JSON API 的成功响应、列表响应、分页响应、空结果响应、错误响应引用、OpenAPI 示例和前端 API 类型定义。它不适用于静态文件下载、流式二进制响应、WebSocket 帧、gRPC 消息和异步事件载荷。
 
 <!-- anchor: rules -->
 ## 规则
 
-1. 成功响应必须保持稳定对象结构，不得随数据状态改变顶层类型。
-2. 空集合使用空数组，空对象使用省略字段或明确的空对象，不使用 `null` 表示集合。
+1. 成功响应必须返回稳定 JSON 对象；同一端点的顶层结构不得在对象、数组、字符串或布尔值之间切换。
+2. 表示业务数据的字段应当使用 `data`、`items`、`pagination` 等可预测命名；不得让客户端通过动态字段名识别资源类型。
 <!-- region: no-null -->
-3. REST API 响应字段不得返回 `null`；无法提供值时应使用缺省值、空集合、字段省略或明确错误。
+3. REST API 响应字段不得返回 `null`；无法提供值时必须使用缺省值、空集合、字段省略或明确错误响应。
 <!-- endregion: no-null -->
-4. 分页响应必须包含数据列表和分页元数据。
+4. 空集合必须返回 `[]`，不得返回 `null`；空对象应当返回 `{}` 或省略可选对象字段，并在契约中说明。
+5. 分页响应必须同时包含 `items` 和 `pagination`；`pagination` 必须包含当前页或游标、页大小或限制、是否还有后续数据等信息。
+6. 错误响应必须使用 `rules.api-error-response` 的结构，不得混入成功响应的 `data` 字段伪装成业务失败。
+7. 新增响应字段必须保持向后兼容，已有字段的含义、类型、单位、枚举值语义不得在同一版本中改变。
+8. 金额、时间、枚举、ID 和布尔字段必须遵守数据格式规范；不得用字符串 `"true"`、`"null"` 或本地化日期替代契约类型。
 
 <!-- anchor: examples -->
 ## 示例
 
-正例：`items: []` 表示无数据。
+正例：
 
-反例：`items: null` 让客户端必须额外分支处理。
+```json
+{
+  "items": [],
+  "pagination": {
+    "page": 1,
+    "pageSize": 20,
+    "hasNext": false
+  }
+}
+```
+
+反例：
+
+```json
+{
+  "items": null,
+  "totalAmount": null,
+  "createdAt": "2026/04/27 12:00"
+}
+```
+
+<!-- anchor: checklist -->
+## 检查清单
+
+- 同一端点的成功响应顶层结构是否稳定，且没有对象和数组切换。
+- 响应字段是否避免 `null`，空集合、可选字段和默认值是否表达清晰。
+- 分页响应是否包含 `items` 和足够的 `pagination` 元数据。
+- 错误响应是否引用统一错误响应结构，而不是自定义错误对象。
+- 时间、金额、枚举、ID 等字段是否符合数据格式规范。
 
 <!-- anchor: relations -->
 ## 相关规范
 
-错误响应应与 `rules.api-error-response` 和 `references.error-codes` 保持一致。
+- rules.api-error-response
+- rules.api-rest-design
+- rules.data-formats
+- decisions.0002-rest-response-shape-no-null
 
 <!-- anchor: changelog -->
 ## 变更记录
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| 1.1.0 | 2026-04-27 | 补充执行级规则、示例、检查清单和相关规范。 |
 | 1.0.0 | 2026-04-27 | 建立统一响应结构和 no-null 区域。 |

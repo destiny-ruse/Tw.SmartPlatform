@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T06:56:07Z",
+  "generated_at": "2026-04-27T09:04:06Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -13,7 +13,7 @@
       "title": "API 统一响应结构",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/api-response-shape.md",
       "roles": [
         "backend",

@@ -3,7 +3,7 @@ id: rules.api-rest-design
 title: REST API 设计规范
 doc_type: rule
 status: active
-version: 1.0.0
+version: 1.1.0
 owners: [architecture-team]
 roles: [backend, frontend, ai]
 stacks: [dotnet, java, python, vue-ts, uniapp]
@@ -20,45 +20,77 @@ review_after: 2026-10-27
 <!-- anchor: goal -->
 ## 目标
 
-让 REST API 在资源建模、方法语义、版本演进和客户端集成上保持一致。
+REST API 设计规范用于降低资源命名混乱、HTTP 方法语义不一致、版本演进破坏客户端和输入边界不清的风险。所有 REST API 必须用一致的资源模型、状态码、响应结构和兼容性策略对外表达能力。这样前端、移动端、后端调用方和自动化工具可以稳定生成、测试和维护契约。
 
 <!-- anchor: scope -->
 ## 适用范围
 
-适用于 HTTP JSON API、网关 API、前后端契约和自动化客户端生成。
+本规范适用于 `apps/`、`services/`、`src/`、`backend/`、`frontend/`、`mobile/` 中 HTTP JSON API、网关路由、OpenAPI 契约、接口 Mock、SDK 生成、前后端联调和 API 评审。它不适用于 gRPC 服务定义、异步消息主题、静态资源下载、服务内部函数调用或数据库表设计。
+
+<!-- anchor: rules -->
+## 规则
+
+1. API 路径必须表达业务资源，使用名词复数和稳定标识符；不得使用 `getOrder`、`doCreate` 等动词式 RPC 路径。
+2. HTTP 方法必须遵守语义：`GET` 只读，`POST` 创建或触发非幂等动作，`PUT` 整体替换，`PATCH` 局部更新，`DELETE` 删除或关闭资源。
+3. `GET`、`PUT`、`DELETE` 和声明幂等的 `POST` 必须可安全重试；非幂等写操作必须说明是否支持 `Idempotency-Key`。
+4. HTTP 状态码必须与资源状态和操作结果一致；客户端输入错误使用 4xx，服务端不可预期失败使用 5xx，异步受理可以使用 `202 Accepted`。
+5. 请求体、查询参数、路径参数和请求头必须在信任边界入口校验；不得依赖前端校验或数据库约束作为唯一输入验证。
+6. 响应必须遵守统一响应结构和数据格式规范；不得在 REST 层暴露内部实体、数据库字段名或临时调试字段。
+7. 删除字段、改变字段类型、改变枚举含义、改变分页语义或改变错误码必须引入新版本或明确迁移策略。
+8. 版本必须在路径或协商机制中保持可发现，且同一 API 集合应当使用一致策略；不得让客户端通过部署环境或隐藏配置推断版本。
 
 <!-- anchor: resources -->
 ## 资源
 
-资源路径使用名词复数，表达业务资源而不是内部表名或方法名。嵌套资源不得超过两级，复杂查询应使用查询参数。
+资源路径使用名词复数，表达业务资源而不是内部表名、类名或方法名。嵌套资源不得超过两级；复杂查询应当使用查询参数或明确的搜索资源，并定义分页、排序和过滤字段。
 
 <!-- anchor: methods -->
 ## 方法
 
-GET 只读，POST 创建或触发非幂等动作，PUT 替换整体资源，PATCH 修改部分字段，DELETE 删除或关闭资源。
+`GET` 只能读取资源，不得产生业务副作用。`POST` 用于创建资源或触发非幂等动作，`PUT` 用于替换整体资源，`PATCH` 用于修改部分字段，`DELETE` 用于删除、撤销或关闭资源。方法选择必须与幂等性、缓存、状态码和审计语义一致。
 
 <!-- anchor: versioning -->
 ## 版本
 
-破坏性变更必须引入新版本路径或协商机制；兼容新增字段不得改变既有字段含义。
+破坏性变更必须引入新版本路径或协商机制；兼容新增字段不得改变已有字段含义。版本策略必须在契约、路由和客户端生成配置中一致，并为迁移期间的旧客户端保留可验证行为。
 
 <!-- anchor: examples -->
 ## 示例
 
-正例：`GET /api/v1/orders/{id}` 查询订单。
+正例：
 
-反例：`POST /api/v1/getOrder` 用动词模拟 RPC。
+```http
+GET /api/v1/orders/ord_01HZY8K7R6
+```
+
+反例：
+
+```http
+POST /api/v1/getOrder
+```
 
 <!-- anchor: checklist -->
 ## 检查清单
 
-- 路径是否表达资源。
-- 方法是否符合 HTTP 语义。
-- 版本策略是否说明兼容性。
+- 路径是否表达稳定业务资源，且没有动词式 RPC 命名。
+- HTTP 方法、幂等性、状态码和重试行为是否一致。
+- 路径参数、查询参数、请求头和请求体是否在入口完成校验。
+- 响应结构、错误响应和数据格式是否引用对应规范。
+- 兼容性影响是否被识别，破坏性变更是否有版本或迁移策略。
+
+<!-- anchor: relations -->
+## 相关规范
+
+- rules.api-response-shape
+- rules.input-validation
+- rules.idempotency
+- references.http-status
+- rules.data-formats
 
 <!-- anchor: changelog -->
 ## 变更记录
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| 1.1.0 | 2026-04-27 | 补充执行级规则、示例、检查清单和相关规范。 |
 | 1.0.0 | 2026-04-27 | 建立 REST API 设计规范。 |

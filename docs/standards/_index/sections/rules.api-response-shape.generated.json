@@ -1,7 +1,7 @@
 {
   "id": "rules.api-response-shape",
   "path": "docs/standards/rules/api-response-shape.md",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sections": [
     {
       "anchor": "goal",
@@ -24,7 +24,7 @@
       "title": "规则",
       "level": 2,
       "start_line": 31,
-      "end_line": 40,
+      "end_line": 44,
       "regions": [
         {
           "id": "no-null",
@@ -37,24 +37,32 @@
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 41,
-      "end_line": 47,
+      "start_line": 45,
+      "end_line": 70,
+      "regions": []
+    },
+    {
+      "anchor": "checklist",
+      "title": "检查清单",
+      "level": 2,
+      "start_line": 71,
+      "end_line": 79,
       "regions": []
     },
     {
       "anchor": "relations",
       "title": "相关规范",
       "level": 2,
-      "start_line": 48,
-      "end_line": 52,
+      "start_line": 80,
+      "end_line": 87,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 53,
-      "end_line": 57,
+      "start_line": 88,
+      "end_line": 93,
       "regions": []
     }
   ]
