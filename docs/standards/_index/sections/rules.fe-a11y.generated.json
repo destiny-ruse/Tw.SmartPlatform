@@ -1,7 +1,7 @@
 {
   "id": "rules.fe-a11y",
   "path": "docs/standards/rules/fe-a11y.md",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sections": [
     {
       "anchor": "goal",
@@ -24,31 +24,39 @@
       "title": "规则",
       "level": 2,
       "start_line": 31,
-      "end_line": 37,
+      "end_line": 42,
       "regions": []
     },
     {
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 38,
-      "end_line": 44,
+      "start_line": 43,
+      "end_line": 64,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 45,
-      "end_line": 51,
+      "start_line": 65,
+      "end_line": 74,
+      "regions": []
+    },
+    {
+      "anchor": "relations",
+      "title": "相关规范",
+      "level": 2,
+      "start_line": 75,
+      "end_line": 81,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 52,
-      "end_line": 56,
+      "start_line": 82,
+      "end_line": 87,
       "regions": []
     }
   ]

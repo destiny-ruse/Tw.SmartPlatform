@@ -4,7 +4,7 @@
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
   },
-  "generated_at": "2026-04-27T09:55:26Z",
+  "generated_at": "2026-04-27T10:06:26Z",
   "standards": [
     {
       "id": "decisions.0001-adopt-standards-blueprint",
@@ -818,7 +818,7 @@
       "title": "TypeScript 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-ts.md",
       "roles": [
         "frontend",
@@ -1303,7 +1303,7 @@
       "title": "前端可访问性规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/fe-a11y.md",
       "roles": [
         "frontend",
@@ -1334,7 +1334,7 @@
       "title": "前端兼容性规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/fe-compat.md",
       "roles": [
         "frontend",
@@ -1365,7 +1365,7 @@
       "title": "前端国际化规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/fe-i18n.md",
       "roles": [
         "frontend",
@@ -1396,7 +1396,7 @@
       "title": "前端样式规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/fe-styles.md",
       "roles": [
         "frontend",
@@ -1427,7 +1427,7 @@
       "title": "前端 TypeScript 规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/fe-typescript.md",
       "roles": [
         "frontend",
@@ -1458,7 +1458,7 @@
       "title": "uni-app 跨端规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/fe-uniapp-cross.md",
       "roles": [
         "frontend",
@@ -1489,7 +1489,7 @@
       "title": "Vue TypeScript 项目规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/fe-vue-ts-project.md",
       "roles": [
         "frontend",
@@ -2079,7 +2079,7 @@
       "title": "TypeScript 与 Vue 命名规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/naming-ts-vue.md",
       "roles": [
         "frontend",
@@ -2110,7 +2110,7 @@
       "title": "uni-app 命名规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/naming-uniapp.md",
       "roles": [
         "frontend",

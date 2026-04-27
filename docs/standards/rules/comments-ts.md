@@ -3,7 +3,7 @@ id: rules.comments-ts
 title: TypeScript 注释规范
 doc_type: rule
 status: active
-version: 1.0.0
+version: 1.1.0
 owners: [architecture-team]
 roles: [frontend, ai]
 stacks: [vue-ts]
@@ -20,38 +20,76 @@ review_after: 2026-10-27
 <!-- anchor: goal -->
 ## 目标
 
-让 TypeScript 注释解释意图、约束和取舍，而不是重复代码表面行为。
+让 TypeScript 注释解释意图、约束和取舍，而不是重复代码表面行为。注释必须降低 API 契约、兼容分支和复杂业务规则的误读风险，使维护者在评审和重构时能判断哪些行为不能随意改变。
 
 <!-- anchor: scope -->
 ## 适用范围
 
-适用于 TypeScript 源码、测试、配置示例和公共 API 文档注释。
+适用于 `src/**/*.ts`、`src/**/*.tsx`、`src/**/*.vue`、测试代码、类型声明、配置示例和公共 API 文档注释。公共组件、组合式函数、导出的类型、请求封装、兼容性分支和临时迁移逻辑均在本规范范围内；纯局部变量、显而易见的表达式和可通过命名直接表达的逻辑不应依赖注释。
 
 <!-- anchor: rules -->
 ## 规则
 
-1. 注释应解释为什么这样做、边界条件、兼容性约束或安全注意事项。
-2. 公共 API 的注释必须说明输入、输出、异常和副作用。
-3. 删除过期注释，禁止让注释与代码产生冲突。
-4. 不得用注释掩盖复杂代码；优先通过命名和结构降低复杂度。
+1. 注释必须解释代码无法直接表达的意图、业务约束、兼容原因、安全注意事项或历史迁移背景。
+2. 注释不得复述语句表面行为，例如在 `count++` 上方写“数量加一”。
+3. 导出的函数、组合式函数、类型、组件 props 和 emits 的注释应当说明输入边界、返回值、异常条件、副作用和调用时机。
+4. 对异步 API 调用的注释必须说明重试、取消、幂等、缓存或错误吞吐策略中至少一项实际存在的约束。
+5. 对 `null`、`undefined`、空数组、空字符串等特殊值的注释必须说明其业务含义，不得只写“可能为空”。
+6. TODO、FIXME、临时兼容注释必须包含可追踪条件，例如版本、接口字段、缺陷编号或删除触发条件。
+7. 注释与代码不一致时必须先更新或删除注释，不得让过期注释留在提交中。
+8. 复杂逻辑应当优先通过拆分函数、命名类型或显式状态表达；只有仍需说明取舍时才可以增加注释。
 
 <!-- anchor: examples -->
 ## 示例
 
-正例：`// 保留旧字段名以兼容 2025 版移动端客户端。`
+正例：
 
-反例：`// i 加 1` 出现在 `i++` 上方，只是在复述代码。
+```typescript
+/**
+ * 保留 legacyStatus 是为了兼容仍返回旧字段的移动端 WebView。
+ * 当 /orders/detail 响应稳定只返回 status 后可以删除。
+ */
+export interface OrderStatusPayload {
+  status?: OrderStatus;
+  legacyStatus?: OrderStatus;
+}
+
+// undefined 表示尚未请求，null 表示接口确认无当前用户。
+const currentUser = ref<User | null | undefined>(undefined);
+```
+
+反例：
+
+```typescript
+// 调用接口
+const result = await queryOrder();
+
+// i 加 1
+i++;
+```
 
 <!-- anchor: checklist -->
 ## 检查清单
 
-- 注释是否解释了代码看不出的原因。
-- 注释是否仍然准确。
-- 复杂逻辑是否优先通过重构变清晰。
+- 注释是否解释了代码看不出的意图、约束或取舍。
+- 公共 API、props、emits、导出类型和组合式函数是否说明了调用边界。
+- 空值、异步调用和兼容分支是否写明业务含义或删除条件。
+- TODO、FIXME 和临时注释是否可追踪、可删除。
+- 注释是否与当前代码、类型和示例保持一致。
+- 是否避免用注释掩盖可通过命名或结构改善的复杂度。
+
+<!-- anchor: relations -->
+## 相关规范
+
+- rules.comments-common
+- rules.fe-typescript
+- rules.fe-vue-ts-project
+- rules.naming-ts-vue
 
 <!-- anchor: changelog -->
 ## 变更记录
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| 1.1.0 | 2026-04-27 | 补充执行级规则、示例、检查清单和相关规范。 |
 | 1.0.0 | 2026-04-27 | 建立初始规范。 |
