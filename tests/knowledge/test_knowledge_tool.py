@@ -1402,6 +1402,108 @@ class KnowledgeToolTests(unittest.TestCase):
 
         self.assertEqual(["contracts/protos/new/path.proto"], paths)
 
+    def test_diff_groups_changed_paths_by_taxonomy_kind(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            groups = knowledge.diff_groups_from_paths(
+                [
+                    ("A", "backend/java/services/user/README.md"),
+                    ("M", "contracts/openapi/authentication.yaml"),
+                    ("M", "docs/knowledge/README.md"),
+                ]
+            )
+
+            self.assertIn("module [java microservice]", groups)
+            self.assertIn("contract [openapi]", groups)
+            self.assertIn("其他文件（不在 taxonomy 规则内）", groups)
+            self.assertEqual(["新增: backend/java/services/user/README.md"], groups["module [java microservice]"])
+            self.assertEqual(["修改: contracts/openapi/authentication.yaml"], groups["contract [openapi]"])
+
+    def test_command_diff_prints_deleted_paths(self):
+        original_run = knowledge.subprocess.run
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            knowledge.subprocess.run = lambda *_args, **_kwargs: argparse.Namespace(
+                returncode=0,
+                stdout="D\tbackend/java/services/user/README.md\n",
+                stderr="",
+            )
+            stdout = io.StringIO()
+            try:
+                with contextlib.redirect_stdout(stdout):
+                    exit_code = knowledge.command_diff(argparse.Namespace(base="main", head="HEAD"))
+            finally:
+                knowledge.subprocess.run = original_run
+
+            self.assertEqual(0, exit_code)
+            self.assertIn("module [java microservice]", stdout.getvalue())
+            self.assertIn("删除: backend/java/services/user/README.md", stdout.getvalue())
+
+    def test_save_drift_messages_writes_yearly_json(self):
+        with isolated_repo() as root:
+            message = knowledge.warn(
+                "knowledge.contract-outdated",
+                "contracts/protos/authentication/v1/authentication.proto",
+                "契约文件发生变更",
+            )
+
+            path = knowledge.save_drift_messages([message], "main", "HEAD", today="2026-04-28")
+
+            self.assertEqual(
+                root / "docs/knowledge/changes/2026/2026-04-28-main-HEAD.json",
+                path,
+            )
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual("main", payload["from_ref"])
+            self.assertEqual("HEAD", payload["to_ref"])
+            self.assertEqual("knowledge.contract-outdated", payload["diagnostics"][0]["code"])
+
+    def test_save_drift_messages_preserves_existing_generated_at(self):
+        original_utc_now = knowledge.utc_now
+        with isolated_repo():
+            message = knowledge.warn(
+                "knowledge.contract-outdated",
+                "contracts/protos/authentication/v1/authentication.proto",
+                "契约文件发生变更",
+            )
+            try:
+                knowledge.utc_now = lambda: "2026-04-28T00:00:00Z"
+                path = knowledge.save_drift_messages([message], "main", "HEAD", today="2026-04-28")
+                knowledge.utc_now = lambda: "2026-04-28T01:00:00Z"
+                knowledge.save_drift_messages([message], "main", "HEAD", today="2026-04-28")
+            finally:
+                knowledge.utc_now = original_utc_now
+
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual("2026-04-28T00:00:00Z", payload["generated_at"])
+
+    def test_command_diff_reports_malformed_taxonomy(self):
+        original_run = knowledge.subprocess.run
+        with isolated_repo() as root:
+            write_file(
+                root,
+                "docs/knowledge/taxonomy.yaml",
+                """
+                schema_version: 1.0.0
+                  invalid: value
+                """,
+            )
+            knowledge.subprocess.run = lambda *_args, **_kwargs: argparse.Namespace(
+                returncode=0,
+                stdout="M\tbackend/java/services/user/README.md\n",
+                stderr="",
+            )
+            stdout = io.StringIO()
+            try:
+                with contextlib.redirect_stdout(stdout):
+                    exit_code = knowledge.command_diff(argparse.Namespace(base="main", head="HEAD"))
+            finally:
+                knowledge.subprocess.run = original_run
+
+            self.assertEqual(1, exit_code)
+            self.assertIn("knowledge.taxonomy-parse", stdout.getvalue())
+            self.assertNotIn("Traceback", stdout.getvalue())
+
     def test_changed_files_from_git_rejects_option_like_base_ref(self):
         with self.assertRaisesRegex(RuntimeError, "must not start with '-'"):
             knowledge.changed_files_from_git("-bad", "HEAD")

@@ -53,6 +53,13 @@ ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*)+$")
 VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 TOKEN_PATTERN = re.compile(r"^[a-z][a-z0-9-]*$")
 GENERATED_SUFFIX = ".generated"
+STATUS_LABELS = {
+    "A": "新增",
+    "M": "修改",
+    "D": "删除",
+    "R": "重命名",
+    "C": "复制",
+}
 
 
 @dataclass(frozen=True)
@@ -1241,7 +1248,13 @@ def taxonomy_parse_diagnostic(exc: YamlSubsetError) -> Diagnostic:
 
 def path_matches_rule(pattern: str, path: str) -> bool:
     normalized_pattern = normalized_repo_path(pattern)
-    return fnmatch.fnmatchcase(path, normalized_pattern)
+    normalized_path = normalized_repo_path(path)
+    if fnmatch.fnmatchcase(normalized_path, normalized_pattern):
+        return True
+    if "/**/" in normalized_pattern:
+        direct_pattern = normalized_pattern.replace("/**/", "/")
+        return fnmatch.fnmatchcase(normalized_path, direct_pattern)
+    return False
 
 
 def path_rule_location(rule: dict[str, Any], changed_path: str) -> str:
@@ -1375,6 +1388,82 @@ def changed_current_paths_from_name_status(output: str) -> list[str]:
     return paths
 
 
+def changed_entries_from_name_status(output: str) -> list[tuple[str, str]]:
+    entries: list[tuple[str, str]] = []
+    for raw_line in output.splitlines():
+        if not raw_line.strip():
+            continue
+        parts = raw_line.split("\t")
+        status = parts[0]
+        if status.startswith("D") and len(parts) >= 2:
+            entries.append((status[0], normalized_repo_path(parts[1])))
+            continue
+        if status.startswith(("R", "C")) and len(parts) >= 3:
+            entries.append((status[0], normalized_repo_path(parts[2])))
+            continue
+        if len(parts) >= 2:
+            entries.append((status[0], normalized_repo_path(parts[1])))
+    return entries
+
+
+def diff_label_for_rule(rule: dict[str, Any]) -> str:
+    kind = str(rule.get("kind") or "unknown")
+    if kind == "module":
+        return f"module [{rule.get('stack')} {rule.get('module_type')}]"
+    if kind == "contract":
+        return f"contract [{rule.get('contract_type')}]"
+    return kind
+
+
+def diff_groups_from_paths(entries: list[tuple[str, str]]) -> dict[str, list[str]]:
+    taxonomy = load_taxonomy()
+    path_rules = taxonomy.get("path_rules")
+    rules = path_rules if isinstance(path_rules, list) else []
+    groups: dict[str, list[str]] = {}
+    other_label = "其他文件（不在 taxonomy 规则内）"
+    for status, path in entries:
+        label = other_label
+        normalized_path = normalized_repo_path(path)
+        for rule in rules:
+            if isinstance(rule, dict) and path_matches_rule(str(rule.get("pattern") or ""), normalized_path):
+                label = diff_label_for_rule(rule)
+                break
+        verb = STATUS_LABELS.get(status[0], "修改")
+        groups.setdefault(label, []).append(f"{verb}: {normalized_path}")
+    return {key: sorted(value) for key, value in sorted(groups.items())}
+
+
+def safe_ref_name(value: str) -> str:
+    return re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-") or "ref"
+
+
+def save_drift_messages(
+    messages: list[Diagnostic],
+    base: str,
+    head: str,
+    today: str | None = None,
+) -> Path:
+    current_day = today or datetime.now(UTC).date().isoformat()
+    year = current_day.split("-", 1)[0]
+    target = KNOWLEDGE_DIR / "changes" / year / f"{current_day}-{safe_ref_name(base)}-{safe_ref_name(head)}.json"
+    generated_at = utc_now()
+    if target.exists():
+        try:
+            existing_payload = json.loads(read_text(target))
+        except (OSError, json.JSONDecodeError):
+            existing_payload = {}
+        if isinstance(existing_payload, dict) and isinstance(existing_payload.get("generated_at"), str):
+            generated_at = existing_payload["generated_at"]
+    payload = {
+        **generator_metadata(generated_at),
+        "from_ref": base,
+        "to_ref": head,
+        "diagnostics": [message.to_json() for message in messages],
+    }
+    write_text(target, json_text(payload))
+    return target
+
+
 def reject_option_like_ref(name: str, value: str) -> None:
     if value.startswith("-"):
         raise RuntimeError(f"{name} ref must not start with '-'")
@@ -1405,6 +1494,9 @@ def command_check_drift(args: argparse.Namespace) -> int:
         return 1
 
     messages = detect_drift_from_paths(changed_paths)
+    if getattr(args, "save", False):
+        saved_path = save_drift_messages(messages, args.base, args.head)
+        print(f"Saved {rel_path(saved_path)}")
     emit(messages)
     if has_errors(messages):
         return 1
@@ -1412,6 +1504,42 @@ def command_check_drift(args: argparse.Namespace) -> int:
         print("OK knowledge drift check passed with warnings")
     else:
         print("OK knowledge drift check passed")
+    return 0
+
+
+def command_diff(args: argparse.Namespace) -> int:
+    try:
+        reject_option_like_ref("base", args.base)
+        reject_option_like_ref("head", args.head)
+        result = subprocess.run(
+            ["git", "diff", "--name-status", args.base, args.head],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            check=False,
+            text=True,
+        )
+        if result.returncode != 0:
+            raise RuntimeError(result.stderr.strip() or "git diff failed")
+    except RuntimeError as exc:
+        print("错误 [knowledge.git-diff]")
+        print(f"说明: {exc}")
+        return 1
+
+    try:
+        groups = diff_groups_from_paths(changed_entries_from_name_status(result.stdout))
+    except YamlSubsetError as exc:
+        emit([taxonomy_parse_diagnostic(exc)])
+        return 1
+
+    print(f"变更概览（{args.base} -> {args.head}）")
+    if not groups:
+        print("无变更。")
+        return 0
+    for label, items in groups.items():
+        print()
+        print(label)
+        for item in items:
+            print(f"  {item}")
     return 0
 
 
@@ -1537,7 +1665,12 @@ def build_parser() -> argparse.ArgumentParser:
     drift_parser = subparsers.add_parser("check-drift", help="detect knowledge graph drift from git diff")
     drift_parser.add_argument("--from", dest="base", required=True, help="base ref for git diff")
     drift_parser.add_argument("--to", dest="head", required=True, help="head ref for git diff")
+    drift_parser.add_argument("--save", action="store_true", help="save diagnostics under docs/knowledge/changes")
     drift_parser.set_defaults(func=command_check_drift)
+    diff_parser = subparsers.add_parser("diff", help="summarize changed paths by knowledge taxonomy")
+    diff_parser.add_argument("--from", dest="base", required=True, help="base ref for git diff")
+    diff_parser.add_argument("--to", dest="head", required=True, help="head ref for git diff")
+    diff_parser.set_defaults(func=command_diff)
     sync_skills_parser = subparsers.add_parser("sync-skills", help="sync knowledge skills to tool targets")
     sync_skills_parser.add_argument("--target", required=True, help="skill target to sync")
     sync_skills_parser.set_defaults(func=command_sync_skills)
