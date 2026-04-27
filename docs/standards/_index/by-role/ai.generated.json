@@ -1062,7 +1062,7 @@
       "title": "Git 提交规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/git-commit.md",
       "roles": [
         "architect",
@@ -1077,7 +1077,7 @@
         "git",
         "governance"
       ],
-      "summary": "规定提交信息格式、提交粒度和可审查历史要求。",
+      "summary": "规定提交信息格式、提交粒度、忽略文件边界和可审查历史要求。",
       "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json"
     },
     {
