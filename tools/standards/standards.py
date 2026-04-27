@@ -704,40 +704,116 @@ def make_anchor(title: str, counts: dict[str, int]) -> str:
     return f"{base}-{count}"
 
 
-def build_index(existing_generated_at: str | None = None) -> tuple[dict[str, Any], list[Diagnostic]]:
+def section_index_path(standard_id: str) -> str:
+    return f"docs/standards/_index/sections/{standard_id}.generated.json"
+
+
+def shard_path(kind: str, value: str) -> str:
+    return f"docs/standards/_index/by-{kind}/{value}.generated.json"
+
+
+def standard_entry(doc: StandardDocument) -> dict[str, Any]:
+    metadata = doc.metadata
+    standard_id = metadata.get("id")
+    shards: list[str] = []
+    for role in metadata.get("roles") or []:
+        shards.append(shard_path("role", role))
+    for stack in metadata.get("stacks") or []:
+        shards.append(shard_path("stack", stack))
+    shards.append(shard_path("doc-type", metadata.get("doc_type")))
+    for tag in metadata.get("tags") or []:
+        shards.append(shard_path("tag", tag))
+
+    return {
+        "id": standard_id,
+        "title": metadata.get("title"),
+        "doc_type": metadata.get("doc_type"),
+        "status": metadata.get("status"),
+        "version": metadata.get("version"),
+        "path": rel_path(doc.path),
+        "roles": metadata.get("roles") or [],
+        "stacks": metadata.get("stacks") or [],
+        "tags": metadata.get("tags") or [],
+        "summary": metadata.get("summary"),
+        "sections_index": section_index_path(standard_id),
+        "shards": sorted(shards),
+    }
+
+
+def build_l1_payload(
+    kind: str,
+    value: str,
+    entries: list[dict[str, Any]],
+    generated_at: str,
+) -> dict[str, Any]:
+    return {
+        "schema_version": "2.0.0",
+        "generated_at": generated_at,
+        "generator": {"name": "tools/standards/standards.py", "version": GENERATOR_VERSION},
+        "kind": kind,
+        "value": value,
+        "standards": sorted(
+            [
+                {
+                    "id": entry["id"],
+                    "title": entry["title"],
+                    "doc_type": entry["doc_type"],
+                    "status": entry["status"],
+                    "version": entry["version"],
+                    "path": entry["path"],
+                    "roles": entry["roles"],
+                    "stacks": entry["stacks"],
+                    "tags": entry["tags"],
+                    "summary": entry["summary"],
+                    "sections_index": entry["sections_index"],
+                }
+                for entry in entries
+            ],
+            key=lambda item: item["id"],
+        ),
+    }
+
+
+def build_indexes(
+    existing_generated_at: str | None = None,
+) -> tuple[dict[str, dict[str, Any]], list[Diagnostic]]:
     docs, messages = load_standard_docs()
-    standards: list[dict[str, Any]] = []
+    generated_at = existing_generated_at or current_utc_timestamp()
+    payloads: dict[str, dict[str, Any]] = {}
+    entries: list[dict[str, Any]] = []
+    shard_entries: dict[tuple[str, str], list[dict[str, Any]]] = {}
 
     for doc in sorted(docs, key=lambda item: str(item.metadata.get("id", rel_path(item.path)))):
-        metadata = doc.metadata
-        standards.append(
-            {
-                "id": metadata.get("id"),
-                "title": metadata.get("title"),
-                "status": metadata.get("status"),
-                "version": metadata.get("version"),
-                "path": rel_path(doc.path),
-                "owners": metadata.get("owners") or [],
-                "applies_to": metadata.get("applies_to") or [],
-                "review_after": metadata.get("review_after"),
-                "machine_rules": metadata.get("machine_rules") or [],
-                "supersedes": metadata.get("supersedes") or [],
-                "superseded_by": metadata.get("superseded_by"),
-                "sections": extract_sections(doc),
-            }
+        entry = standard_entry(doc)
+        entries.append(entry)
+        section_payload, section_messages = build_section_index(doc)
+        messages.extend(section_messages)
+        payloads[entry["sections_index"]] = section_payload
+
+        for role in entry["roles"]:
+            shard_entries.setdefault(("role", role), []).append(entry)
+        for stack in entry["stacks"]:
+            shard_entries.setdefault(("stack", stack), []).append(entry)
+        shard_entries.setdefault(("doc-type", entry["doc_type"]), []).append(entry)
+        for tag in entry["tags"]:
+            shard_entries.setdefault(("tag", tag), []).append(entry)
+
+    payloads["docs/standards/index.generated.json"] = {
+        "schema_version": "2.0.0",
+        "generator": {"name": "tools/standards/standards.py", "version": GENERATOR_VERSION},
+        "generated_at": generated_at,
+        "standards": entries,
+    }
+
+    for (kind, value), shard_standards in sorted(shard_entries.items()):
+        payloads[shard_path(kind, value)] = build_l1_payload(
+            kind,
+            value,
+            shard_standards,
+            generated_at,
         )
 
-    generated_at = existing_generated_at or current_utc_timestamp()
-    payload = {
-        "schema_version": "1.0.0",
-        "generator": {
-            "name": "tools/standards/standards.py",
-            "version": GENERATOR_VERSION,
-        },
-        "generated_at": generated_at,
-        "standards": standards,
-    }
-    return payload, messages
+    return dict(sorted(payloads.items())), messages
 
 
 def current_utc_timestamp() -> str:
@@ -940,9 +1016,25 @@ def section_summary(lines: list[str], start_line: int, end_line: int) -> str:
     return ""
 
 
-def write_index(payload: dict[str, Any]) -> None:
-    content = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
-    write_text(INDEX_PATH, content)
+def generated_index_files() -> list[Path]:
+    files: list[Path] = []
+    if INDEX_PATH.exists():
+        files.append(INDEX_PATH)
+    index_dir = STANDARDS_DIR / "_index"
+    if index_dir.exists():
+        files.extend(sorted(index_dir.rglob("*.generated.json")))
+    return files
+
+
+def write_indexes(payloads: dict[str, dict[str, Any]]) -> None:
+    expected_paths = {(REPO_ROOT / relative_path).resolve() for relative_path in payloads}
+    for existing_path in generated_index_files():
+        if existing_path.resolve() not in expected_paths:
+            existing_path.unlink()
+
+    for relative_path, payload in sorted(payloads.items()):
+        content = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+        write_text(REPO_ROOT / relative_path, content)
 
 
 def collect_index_messages() -> list[Diagnostic]:
@@ -961,32 +1053,66 @@ def collect_index_messages() -> list[Diagnostic]:
     except json.JSONDecodeError as exc:
         return [error("standard-index", INDEX_PATH, f"index is not valid JSON: {exc.msg}")]
 
-    generated, build_messages = build_index(existing.get("generated_at"))
+    generated, build_messages = build_indexes(existing.get("generated_at"))
     messages.extend(build_messages)
     if has_errors(messages):
         return messages
 
-    if existing != generated:
-        existing_text = json.dumps(existing, ensure_ascii=False, indent=2, sort_keys=True).splitlines()
-        generated_text = json.dumps(
-            generated,
-            ensure_ascii=False,
-            indent=2,
-            sort_keys=True,
-        ).splitlines()
-        diff = "\n".join(
-            difflib.unified_diff(
-                existing_text,
-                generated_text,
-                fromfile="index.generated.json",
-                tofile="generated",
-                lineterm="",
+    for relative_path, expected_payload in generated.items():
+        path = REPO_ROOT / relative_path
+        if not path.exists():
+            messages.append(
+                error(
+                    "standard-index",
+                    path,
+                    "generated index file does not exist; run generate-index",
+                )
             )
-        )
-        hint = "index is out of date; run generate-index"
-        if diff:
-            hint += "\n" + diff
-        messages.append(error("standard-index", INDEX_PATH, hint))
+            continue
+
+        try:
+            existing_payload = json.loads(read_text(path))
+        except json.JSONDecodeError as exc:
+            messages.append(error("standard-index", path, f"index is not valid JSON: {exc.msg}"))
+            continue
+
+        if existing_payload != expected_payload:
+            existing_text = json.dumps(
+                existing_payload,
+                ensure_ascii=False,
+                indent=2,
+                sort_keys=True,
+            ).splitlines()
+            generated_text = json.dumps(
+                expected_payload,
+                ensure_ascii=False,
+                indent=2,
+                sort_keys=True,
+            ).splitlines()
+            diff = "\n".join(
+                difflib.unified_diff(
+                    existing_text,
+                    generated_text,
+                    fromfile=relative_path,
+                    tofile="generated",
+                    lineterm="",
+                )
+            )
+            hint = "index is out of date; run generate-index"
+            if diff:
+                hint += "\n" + diff
+            messages.append(error("standard-index", path, hint))
+
+    expected_paths = {(REPO_ROOT / relative_path).resolve() for relative_path in generated}
+    for existing_path in generated_index_files():
+        if existing_path.resolve() not in expected_paths:
+            messages.append(
+                error(
+                    "standard-index",
+                    existing_path,
+                    "obsolete generated index file; run generate-index",
+                )
+            )
 
     return messages
 
@@ -1039,13 +1165,13 @@ def command_generate_index(_: argparse.Namespace) -> int:
     if has_errors(messages):
         return 1
 
-    payload, build_messages = build_index()
+    payloads, build_messages = build_indexes()
     emit(build_messages)
     if has_errors(build_messages):
         return 1
 
-    write_index(payload)
-    print(f"Generated {rel_path(INDEX_PATH)}")
+    write_indexes(payloads)
+    print(f"Generated {len(payloads)} standards index files")
     return 0
 
 
