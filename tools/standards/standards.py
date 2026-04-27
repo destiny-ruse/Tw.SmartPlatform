@@ -41,14 +41,14 @@ VALID_DOC_TYPES = {"rule", "reference", "process", "decision"}
 VALID_STATUSES = {"draft", "active", "deprecated", "superseded"}
 VALID_ROLES = {"architect", "backend", "frontend", "qa", "devops", "ai"}
 VALID_STACKS = {"dotnet", "java", "python", "vue-ts", "uniapp"}
-ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*(\.[a-z][a-z0-9-]*)+$")
+ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*)+$")
 VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 TOKEN_PATTERN = re.compile(r"^[a-z][a-z0-9-]*$")
 ANCHOR_PATTERN = re.compile(r"^<!--\s*anchor:\s*([a-z][a-z0-9-]*)\s*-->$")
 REGION_START_PATTERN = re.compile(r"^<!--\s*region:\s*([a-z][a-z0-9-]*)\s*-->$")
 REGION_END_PATTERN = re.compile(r"^<!--\s*endregion:\s*([a-z][a-z0-9-]*)\s*-->$")
 STANDARD_REF_PATTERN = re.compile(
-    r"(?<![A-Za-z0-9_.-])([a-z][a-z0-9-]*(?:\.[a-z][a-z0-9-]*)+)#([a-z][a-z0-9-]*)(?::([a-z][a-z0-9-]*))?"
+    r"(?<![A-Za-z0-9_.-])([a-z][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)+)#([a-z][a-z0-9-]*)(?::([a-z][a-z0-9-]*))?"
 )
 HEADING_PATTERN = re.compile(r"^(#{1,6})\s+(.+?)\s*#*\s*$")
 LINK_PATTERN = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")

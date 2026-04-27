@@ -144,6 +144,41 @@ class StandardsToolV2Tests(unittest.TestCase):
             self.assertIn('missing required field "tags"', text)
             self.assertIn('missing required field "summary"', text)
 
+    def test_v2_metadata_accepts_numbered_decision_ids(self):
+        with isolated_repo() as root:
+            write_file(
+                root,
+                "docs/standards/decisions/0001-adopt-standards-blueprint.md",
+                """
+                ---
+                id: decisions.0001-adopt-standards-blueprint
+                title: 采用工程规范蓝图
+                doc_type: decision
+                status: active
+                version: 1.0.0
+                owners: [architecture-team]
+                roles: [architect, ai]
+                stacks: []
+                tags: [decision, standards, governance]
+                summary: 记录采用工程规范蓝图的架构决策。
+                machine_rules: []
+                supersedes: []
+                superseded_by:
+                review_after: 2026-10-27
+                ---
+
+                # 采用工程规范蓝图
+
+                <!-- anchor: context -->
+                ## 背景
+
+                需要统一工程规范的检索方式。
+                """,
+            )
+
+            messages = standards.collect_validation_messages()
+            self.assertEqual([], error_messages(messages), diagnostic_text(messages))
+
     def test_explicit_anchor_and_region_index(self):
         with isolated_repo() as root:
             write_standard(
