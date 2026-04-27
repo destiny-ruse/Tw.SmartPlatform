@@ -459,6 +459,9 @@ def collect_validation_messages() -> list[Diagnostic]:
                             )
                         )
 
+        _, section_messages = build_section_index(doc)
+        messages.extend(section_messages)
+
     return messages
 
 
@@ -779,6 +782,144 @@ def extract_sections(doc: StandardDocument) -> list[dict[str, Any]]:
             }
         )
     return sections
+
+
+def build_section_index(doc: StandardDocument) -> tuple[dict[str, Any], list[Diagnostic]]:
+    messages: list[Diagnostic] = []
+    sections: list[dict[str, Any]] = []
+    pending_anchor: tuple[str, int] | None = None
+    current_section: dict[str, Any] | None = None
+    open_region: tuple[str, int] | None = None
+    in_fence = False
+
+    for line_number, line in enumerate(doc.lines, start=1):
+        stripped = line.strip()
+        if stripped.startswith(("```", "~~~")):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+
+        anchor_match = ANCHOR_PATTERN.match(stripped)
+        if anchor_match:
+            pending_anchor = (anchor_match.group(1), line_number)
+            continue
+
+        heading_match = HEADING_PATTERN.match(stripped)
+        if heading_match and pending_anchor:
+            if current_section is not None:
+                current_section["end_line"] = line_number - 1
+            anchor, _anchor_line = pending_anchor
+            current_section = {
+                "anchor": anchor,
+                "title": heading_match.group(2).strip(),
+                "level": len(heading_match.group(1)),
+                "start_line": line_number,
+                "end_line": len(doc.lines),
+                "regions": [],
+            }
+            sections.append(current_section)
+            pending_anchor = None
+            continue
+
+        if heading_match and pending_anchor is None:
+            continue
+
+        region_start = REGION_START_PATTERN.match(stripped)
+        if region_start:
+            if current_section is None:
+                messages.append(
+                    error(
+                        "standard-anchor",
+                        doc.path,
+                        f'region "{region_start.group(1)}" appears before any anchored section',
+                    )
+                )
+            elif open_region is not None:
+                messages.append(
+                    error(
+                        "standard-anchor",
+                        doc.path,
+                        f'region "{region_start.group(1)}" starts before region "{open_region[0]}" ends',
+                    )
+                )
+            else:
+                open_region = (region_start.group(1), line_number)
+            continue
+
+        region_end = REGION_END_PATTERN.match(stripped)
+        if region_end:
+            if open_region is None:
+                messages.append(
+                    error(
+                        "standard-anchor",
+                        doc.path,
+                        f'endregion "{region_end.group(1)}" has no matching region start',
+                    )
+                )
+            elif region_end.group(1) != open_region[0]:
+                messages.append(
+                    error(
+                        "standard-anchor",
+                        doc.path,
+                        f'endregion "{region_end.group(1)}" does not match region "{open_region[0]}"',
+                    )
+                )
+                open_region = None
+            else:
+                assert current_section is not None
+                current_section["regions"].append(
+                    {
+                        "id": open_region[0],
+                        "start_line": open_region[1],
+                        "end_line": line_number,
+                    }
+                )
+                open_region = None
+
+    if pending_anchor is not None:
+        messages.append(
+            error(
+                "standard-anchor",
+                doc.path,
+                f'anchor "{pending_anchor[0]}" is not followed by a Markdown heading',
+            )
+        )
+    if open_region is not None:
+        messages.append(
+            error("standard-anchor", doc.path, f'region "{open_region[0]}" is not closed')
+        )
+    if not sections:
+        messages.append(
+            error("standard-anchor", doc.path, "standard must contain at least one explicit anchor")
+        )
+
+    seen_anchors: set[str] = set()
+    for section in sections:
+        anchor = section["anchor"]
+        if anchor in seen_anchors:
+            messages.append(error("standard-anchor", doc.path, f'duplicate anchor "{anchor}"'))
+        seen_anchors.add(anchor)
+
+        seen_regions: set[str] = set()
+        for region in section["regions"]:
+            region_id = region["id"]
+            if region_id in seen_regions:
+                messages.append(
+                    error(
+                        "standard-anchor",
+                        doc.path,
+                        f'duplicate region "{region_id}" in anchor "{anchor}"',
+                    )
+                )
+            seen_regions.add(region_id)
+
+    return {
+        "id": doc.metadata.get("id"),
+        "path": rel_path(doc.path),
+        "version": doc.metadata.get("version"),
+        "sections": sections,
+    }, messages
 
 
 def section_summary(lines: list[str], start_line: int, end_line: int) -> str:
