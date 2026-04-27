@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "docs/knowledge/memory.schema.json",
+  "$comment": "本文件仅作文档参考，实际校验由 tools/knowledge/knowledge.py 执行；两者不一致时以 Python 实现为准。",
   "title": "Tw.SmartPlatform Memory Graph Node",
   "type": "object",
   "required": [

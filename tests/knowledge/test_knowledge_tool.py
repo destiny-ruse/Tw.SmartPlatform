@@ -2,6 +2,7 @@ import argparse
 import contextlib
 import io
 import json
+import re
 import tempfile
 import textwrap
 import unittest
@@ -1684,6 +1685,34 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertEqual("frontend-app", modules[node_id]["module_type"])
             self.assertEqual("vue-ts", modules[node_id]["stack"])
             self.assertEqual(path, modules[node_id]["path"])
+
+    def test_schema_declares_python_validation_as_authority(self):
+        schema = json.loads((knowledge.KNOWLEDGE_DIR / "memory.schema.json").read_text(encoding="utf-8"))
+
+        self.assertIn("$comment", schema)
+        self.assertIn("tools/knowledge/knowledge.py", schema["$comment"])
+
+    def test_knowledge_readme_documents_new_stack_protocol(self):
+        content = (knowledge.KNOWLEDGE_DIR / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("新栈接入协议", content)
+        self.assertIn("taxonomy.yaml 的变更必须先于新栈代码提交", content)
+        self.assertIn("python tools/knowledge/knowledge.py scan", content)
+        self.assertIn("python tools/knowledge/knowledge.py diff --from main --to HEAD", content)
+        self.assertIn("python tools/knowledge/knowledge.py check-drift --from main --to HEAD --save", content)
+
+    def test_diagnostics_rules_document_all_emitted_codes(self):
+        code_pattern = re.compile(r"knowledge\.[a-z0-9]+(?:-[a-z0-9]+)+")
+        emitted_codes = set(
+            code_pattern.findall((knowledge.REPO_ROOT / "tools" / "knowledge" / "knowledge.py").read_text(encoding="utf-8"))
+        )
+        docs_content = (knowledge.REPO_ROOT / "tools" / "knowledge" / "rules" / "knowledge-diagnostics.md").read_text(
+            encoding="utf-8"
+        )
+
+        missing_codes = sorted(code for code in emitted_codes if code not in docs_content)
+
+        self.assertEqual([], missing_codes)
 
 
 if __name__ == "__main__":
