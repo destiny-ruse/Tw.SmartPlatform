@@ -908,9 +908,34 @@ def detect_drift_from_paths(paths: list[str]) -> list[Diagnostic]:
     return messages
 
 
+def changed_current_paths_from_name_status(output: str) -> list[str]:
+    paths: list[str] = []
+    for raw_line in output.splitlines():
+        if not raw_line.strip():
+            continue
+        parts = raw_line.split("\t")
+        status = parts[0]
+        if status.startswith("D"):
+            continue
+        if status.startswith(("R", "C")):
+            if len(parts) >= 3:
+                paths.append(parts[2])
+            continue
+        if len(parts) >= 2:
+            paths.append(parts[1])
+    return paths
+
+
+def reject_option_like_ref(name: str, value: str) -> None:
+    if value.startswith("-"):
+        raise RuntimeError(f"{name} ref must not start with '-'")
+
+
 def changed_files_from_git(base: str, head: str) -> list[str]:
+    reject_option_like_ref("base", base)
+    reject_option_like_ref("head", head)
     result = subprocess.run(
-        ["git", "diff", "--name-only", base, head],
+        ["git", "diff", "--name-status", base, head],
         cwd=REPO_ROOT,
         capture_output=True,
         check=False,
@@ -919,7 +944,7 @@ def changed_files_from_git(base: str, head: str) -> list[str]:
     if result.returncode != 0:
         stderr = result.stderr.strip()
         raise RuntimeError(stderr or "git diff failed")
-    return [line.strip() for line in result.stdout.splitlines() if line.strip()]
+    return changed_current_paths_from_name_status(result.stdout)
 
 
 def command_check_drift(args: argparse.Namespace) -> int:
@@ -934,6 +959,10 @@ def command_check_drift(args: argparse.Namespace) -> int:
     emit(messages)
     if has_errors(messages):
         return 1
+    if messages:
+        print("OK knowledge drift check passed with warnings")
+    else:
+        print("OK knowledge drift check passed")
     return 0
 
 

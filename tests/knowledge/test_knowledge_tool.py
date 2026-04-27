@@ -1,5 +1,6 @@
 import argparse
 import contextlib
+import io
 import tempfile
 import textwrap
 import unittest
@@ -538,6 +539,93 @@ class KnowledgeToolTests(unittest.TestCase):
             )
 
             self.assertEqual([], diagnostics)
+
+
+    def test_changed_current_paths_from_name_status_ignores_deleted_paths(self):
+        paths = knowledge.changed_current_paths_from_name_status(
+            "D\tbackend/dotnet/Services/User/README.md\n"
+        )
+
+        self.assertEqual([], paths)
+
+    def test_changed_current_paths_from_name_status_uses_rename_new_path(self):
+        paths = knowledge.changed_current_paths_from_name_status(
+            "R100\told/path.proto\tcontracts/protos/new/path.proto\n"
+        )
+
+        self.assertEqual(["contracts/protos/new/path.proto"], paths)
+
+    def test_changed_files_from_git_rejects_option_like_base_ref(self):
+        with self.assertRaisesRegex(RuntimeError, "must not start with '-'"):
+            knowledge.changed_files_from_git("-bad", "HEAD")
+
+    def test_command_check_drift_prints_ok_for_no_diagnostics(self):
+        original_changed_files_from_git = knowledge.changed_files_from_git
+        original_detect_drift_from_paths = knowledge.detect_drift_from_paths
+        knowledge.changed_files_from_git = lambda _base, _head: []
+        knowledge.detect_drift_from_paths = lambda _paths: []
+        stdout = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_check_drift(argparse.Namespace(base="HEAD", head="HEAD"))
+        finally:
+            knowledge.changed_files_from_git = original_changed_files_from_git
+            knowledge.detect_drift_from_paths = original_detect_drift_from_paths
+
+        self.assertEqual(0, exit_code)
+        self.assertIn("OK knowledge drift check passed", stdout.getvalue())
+
+    def test_command_check_drift_prints_ok_with_warnings(self):
+        original_changed_files_from_git = knowledge.changed_files_from_git
+        original_detect_drift_from_paths = knowledge.detect_drift_from_paths
+        knowledge.changed_files_from_git = lambda _base, _head: [
+            "backend/dotnet/BuildingBlocks/src/Caching/README.md"
+        ]
+        knowledge.detect_drift_from_paths = lambda _paths: [
+            knowledge.warn("knowledge.missing-capability", "backend/dotnet/BuildingBlocks/src/Caching", "warning")
+        ]
+        stdout = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_check_drift(argparse.Namespace(base="HEAD", head="HEAD"))
+        finally:
+            knowledge.changed_files_from_git = original_changed_files_from_git
+            knowledge.detect_drift_from_paths = original_detect_drift_from_paths
+
+        self.assertEqual(0, exit_code)
+        self.assertIn("OK knowledge drift check passed with warnings", stdout.getvalue())
+
+    def test_command_check_drift_returns_one_for_errors(self):
+        original_changed_files_from_git = knowledge.changed_files_from_git
+        original_detect_drift_from_paths = knowledge.detect_drift_from_paths
+        knowledge.changed_files_from_git = lambda _base, _head: ["contracts/protos/user/user.proto"]
+        knowledge.detect_drift_from_paths = lambda _paths: [
+            knowledge.error("knowledge.contract-drift", "contracts/protos/user/user.proto", "error")
+        ]
+        stdout = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_check_drift(argparse.Namespace(base="HEAD", head="HEAD"))
+        finally:
+            knowledge.changed_files_from_git = original_changed_files_from_git
+            knowledge.detect_drift_from_paths = original_detect_drift_from_paths
+
+        self.assertEqual(1, exit_code)
+        self.assertNotIn("OK knowledge drift check passed", stdout.getvalue())
+
+    def test_command_check_drift_prints_git_failure(self):
+        original_changed_files_from_git = knowledge.changed_files_from_git
+        knowledge.changed_files_from_git = lambda _base, _head: (_ for _ in ()).throw(RuntimeError("bad ref"))
+        stdout = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_check_drift(argparse.Namespace(base="-bad", head="HEAD"))
+        finally:
+            knowledge.changed_files_from_git = original_changed_files_from_git
+
+        self.assertEqual(1, exit_code)
+        self.assertIn("错误 [knowledge.git-diff]", stdout.getvalue())
+        self.assertIn("bad ref", stdout.getvalue())
 
 
 if __name__ == "__main__":
