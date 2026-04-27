@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -626,8 +627,107 @@ def build_indexes(existing_generated_at: str | None = None) -> tuple[dict[str, A
     return payloads, messages
 
 
+def json_text(payload: Any) -> str:
+    return json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+
+
+def generated_index_files() -> list[Path]:
+    if not GENERATED_DIR.exists():
+        return []
+    return sorted(GENERATED_DIR.rglob("*.generated.json"))
+
+
+def write_indexes(payloads: dict[str, Any]) -> None:
+    expected_paths = {(REPO_ROOT / relative_path).resolve() for relative_path in payloads}
+    for existing_path in generated_index_files():
+        if existing_path.resolve() not in expected_paths:
+            existing_path.unlink()
+
+    for relative_path, payload in sorted(payloads.items()):
+        write_text(REPO_ROOT / relative_path, json_text(payload))
+
+
+def normalize_generated_at(payload: Any, generated_at: str) -> Any:
+    if isinstance(payload, dict):
+        return {
+            key: generated_at if key == "generated_at" else normalize_generated_at(value, generated_at)
+            for key, value in payload.items()
+        }
+    if isinstance(payload, list):
+        return [normalize_generated_at(value, generated_at) for value in payload]
+    return payload
+
+
+def collect_index_messages() -> list[Diagnostic]:
+    fixed_generated_at = "2026-04-27T00:00:00Z"
+    generated, messages = build_indexes(existing_generated_at=fixed_generated_at)
+    if has_errors(messages):
+        return messages
+
+    for relative_path, expected_payload in generated.items():
+        path = REPO_ROOT / relative_path
+        if not path.exists():
+            messages.append(
+                error(
+                    "knowledge.index-missing",
+                    path,
+                    "生成索引文件不存在。",
+                    "请运行 python tools/knowledge/knowledge.py generate。",
+                )
+            )
+            continue
+
+        try:
+            existing_payload = json.loads(read_text(path))
+        except json.JSONDecodeError:
+            messages.append(
+                error(
+                    "knowledge.index-invalid-json",
+                    path,
+                    "生成索引不是有效 JSON。",
+                    "请运行 python tools/knowledge/knowledge.py generate。",
+                )
+            )
+            continue
+
+        if normalize_generated_at(existing_payload, fixed_generated_at) != expected_payload:
+            messages.append(
+                error(
+                    "knowledge.index-stale",
+                    path,
+                    "生成索引不是最新。",
+                    "请运行 python tools/knowledge/knowledge.py generate。",
+                )
+            )
+
+    expected_paths = {(REPO_ROOT / relative_path).resolve() for relative_path in generated}
+    for existing_path in generated_index_files():
+        if existing_path.resolve() not in expected_paths:
+            messages.append(
+                error(
+                    "knowledge.index-obsolete",
+                    existing_path,
+                    "存在过期生成索引。",
+                    "请运行 python tools/knowledge/knowledge.py generate。",
+                )
+            )
+
+    return messages
+
+
+def command_generate(_args: argparse.Namespace) -> int:
+    payloads, messages = build_indexes()
+    emit(messages)
+    if has_errors(messages):
+        return 1
+
+    write_indexes(payloads)
+    print(f"Generated {len(payloads)} knowledge index files")
+    return 0
+
+
 def command_check(_args: argparse.Namespace) -> int:
-    messages = collect_validation_messages()
+    messages = collect_index_messages()
     emit(messages)
     if has_errors(messages):
         return 1
@@ -638,6 +738,8 @@ def command_check(_args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Knowledge graph maintenance tool")
     subparsers = parser.add_subparsers(dest="command", required=True)
+    generate_parser = subparsers.add_parser("generate", help="generate knowledge indexes")
+    generate_parser.set_defaults(func=command_generate)
     check_parser = subparsers.add_parser("check", help="validate knowledge graph nodes")
     check_parser.set_defaults(func=command_check)
     return parser

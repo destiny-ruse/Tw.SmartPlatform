@@ -1,0 +1,9 @@
+{
+  "edges": [],
+  "generated_at": "2026-04-27T15:30:22Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "schema_version": "1.0.0"
+}

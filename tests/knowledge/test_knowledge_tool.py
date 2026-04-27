@@ -1,3 +1,4 @@
+import argparse
 import contextlib
 import tempfile
 import textwrap
@@ -449,6 +450,34 @@ class KnowledgeToolTests(unittest.TestCase):
 
             self.assertEqual({}, payloads)
             self.assertNotEqual([], [message for message in messages if message.level == "ERROR"])
+
+    def test_generate_writes_indexes_and_check_detects_stale_generated_file(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_module(root)
+
+            payloads, messages = knowledge.build_indexes(existing_generated_at="2026-04-27T00:00:00Z")
+            self.assertEqual([], [message for message in messages if message.level == "ERROR"], diagnostic_text(messages))
+            knowledge.write_indexes(payloads)
+
+            index_path = root / "docs/knowledge/generated/index.generated.json"
+            self.assertTrue(index_path.exists())
+            index_path.write_text('{"broken": true}\n', encoding="utf-8")
+
+            messages = knowledge.collect_index_messages()
+            self.assertIn("生成索引不是最新", diagnostic_text(messages))
+
+    def test_command_generate_writes_empty_generated_indexes(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+
+            exit_code = knowledge.command_generate(argparse.Namespace())
+
+            self.assertEqual(0, exit_code)
+            self.assertTrue((root / "docs/knowledge/generated/index.generated.json").exists())
+            self.assertTrue((root / "docs/knowledge/generated/memory.generated.json").exists())
+            self.assertTrue((root / "docs/knowledge/generated/edges.generated.json").exists())
 
 
 if __name__ == "__main__":
