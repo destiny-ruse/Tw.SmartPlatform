@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:42:29Z",
+  "generated_at": "2026-04-27T05:43:29Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -117,6 +117,50 @@
       ],
       "summary": "?? OAuth2/OIDC ????????????????",
       "sections_index": "docs/standards/_index/sections/rules.auth-oauth-oidc.generated.json"
+    },
+    {
+      "id": "rules.comments-python",
+      "title": "Python ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-python.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "python"
+      ],
+      "tags": [
+        "comments",
+        "python",
+        "code-style"
+      ],
+      "summary": "?? Python docstring???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-python.generated.json"
+    },
+    {
+      "id": "rules.naming-python",
+      "title": "Python ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-python.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "python"
+      ],
+      "tags": [
+        "naming",
+        "python",
+        "code-style"
+      ],
+      "summary": "?? Python ??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-python.generated.json"
     }
   ]
 }

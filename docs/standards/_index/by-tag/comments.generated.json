@@ -1,0 +1,101 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:43:29Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "comments",
+  "standards": [
+    {
+      "id": "rules.comments-common",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-common.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "comments",
+        "governance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
+    },
+    {
+      "id": "rules.comments-dotnet",
+      "title": ".NET ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-dotnet.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet"
+      ],
+      "tags": [
+        "comments",
+        "dotnet",
+        "code-style"
+      ],
+      "summary": "?? .NET XML ????? API ????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-dotnet.generated.json"
+    },
+    {
+      "id": "rules.comments-java",
+      "title": "Java ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-java.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "java"
+      ],
+      "tags": [
+        "comments",
+        "java",
+        "code-style"
+      ],
+      "summary": "?? Java ???Javadoc ??????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-java.generated.json"
+    },
+    {
+      "id": "rules.comments-python",
+      "title": "Python ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-python.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "python"
+      ],
+      "tags": [
+        "comments",
+        "python",
+        "code-style"
+      ],
+      "summary": "?? Python docstring???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-python.generated.json"
+    }
+  ]
+}

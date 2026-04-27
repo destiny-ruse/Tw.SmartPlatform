@@ -1,0 +1,55 @@
+{
+  "id": "rules.naming-ts-vue",
+  "path": "docs/standards/rules/naming-ts-vue.md",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "anchor": "goal",
+      "title": "??",
+      "level": 2,
+      "start_line": 21,
+      "end_line": 25,
+      "regions": []
+    },
+    {
+      "anchor": "scope",
+      "title": "????",
+      "level": 2,
+      "start_line": 26,
+      "end_line": 30,
+      "regions": []
+    },
+    {
+      "anchor": "rules",
+      "title": "??",
+      "level": 2,
+      "start_line": 31,
+      "end_line": 45,
+      "regions": []
+    },
+    {
+      "anchor": "examples",
+      "title": "??",
+      "level": 2,
+      "start_line": 46,
+      "end_line": 52,
+      "regions": []
+    },
+    {
+      "anchor": "checklist",
+      "title": "????",
+      "level": 2,
+      "start_line": 53,
+      "end_line": 59,
+      "regions": []
+    },
+    {
+      "anchor": "changelog",
+      "title": "????",
+      "level": 2,
+      "start_line": 60,
+      "end_line": 64,
+      "regions": []
+    }
+  ]
+}

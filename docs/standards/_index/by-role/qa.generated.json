@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:42:29Z",
+  "generated_at": "2026-04-27T05:43:29Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -103,6 +103,52 @@
       "sections_index": "docs/standards/_index/sections/rules.code-review.generated.json"
     },
     {
+      "id": "rules.comments-common",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-common.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "comments",
+        "governance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
+    },
+    {
+      "id": "rules.editorconfig",
+      "title": "EditorConfig ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/editorconfig.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "editorconfig",
+        "governance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.editorconfig.generated.json"
+    },
+    {
       "id": "rules.git-commit",
       "title": "Git ????",
       "doc_type": "rule",
@@ -146,6 +192,29 @@
       ],
       "summary": "???????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
+    },
+    {
+      "id": "rules.repo-layout",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/repo-layout.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "repo-layout",
+        "governance"
+      ],
+      "summary": "????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.repo-layout.generated.json"
     }
   ]
 }

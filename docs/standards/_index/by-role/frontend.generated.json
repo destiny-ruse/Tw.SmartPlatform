@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:42:29Z",
+  "generated_at": "2026-04-27T05:43:29Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -213,6 +213,228 @@
       "sections_index": "docs/standards/_index/sections/rules.code-review.generated.json"
     },
     {
+      "id": "rules.comments-common",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-common.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "comments",
+        "governance"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
+    },
+    {
+      "id": "rules.comments-ts",
+      "title": "TypeScript ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-ts.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?? TypeScript?Vue ??????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-ts.generated.json"
+    },
+    {
+      "id": "rules.editorconfig",
+      "title": "EditorConfig ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/editorconfig.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "editorconfig",
+        "governance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.editorconfig.generated.json"
+    },
+    {
+      "id": "rules.fe-a11y",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-a11y.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-a11y.generated.json"
+    },
+    {
+      "id": "rules.fe-compat",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-compat.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?????????WebView ??????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-compat.generated.json"
+    },
+    {
+      "id": "rules.fe-i18n",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-i18n.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-i18n.generated.json"
+    },
+    {
+      "id": "rules.fe-styles",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-styles.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-styles.generated.json"
+    },
+    {
+      "id": "rules.fe-typescript",
+      "title": "?? TypeScript ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-typescript.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-typescript.generated.json"
+    },
+    {
+      "id": "rules.fe-uniapp-cross",
+      "title": "uni-app ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-uniapp-cross.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "uniapp"
+      ],
+      "tags": [
+        "frontend",
+        "uniapp",
+        "cross-platform"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-uniapp-cross.generated.json"
+    },
+    {
+      "id": "rules.fe-vue-ts-project",
+      "title": "Vue TypeScript ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-vue-ts-project.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?? Vue TypeScript ????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-vue-ts-project.generated.json"
+    },
+    {
       "id": "rules.git-commit",
       "title": "Git ????",
       "doc_type": "rule",
@@ -256,6 +478,73 @@
       ],
       "summary": "???????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
+    },
+    {
+      "id": "rules.naming-ts-vue",
+      "title": "TypeScript ? Vue ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-ts-vue.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?? TypeScript?Vue ????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-ts-vue.generated.json"
+    },
+    {
+      "id": "rules.naming-uniapp",
+      "title": "uni-app ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-uniapp.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "uniapp"
+      ],
+      "tags": [
+        "frontend",
+        "uniapp",
+        "cross-platform"
+      ],
+      "summary": "?? uni-app ??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-uniapp.generated.json"
+    },
+    {
+      "id": "rules.repo-layout",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/repo-layout.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "repo-layout",
+        "governance"
+      ],
+      "summary": "????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.repo-layout.generated.json"
     }
   ]
 }

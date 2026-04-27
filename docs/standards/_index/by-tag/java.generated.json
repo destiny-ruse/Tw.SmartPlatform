@@ -1,0 +1,56 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:43:29Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "java",
+  "standards": [
+    {
+      "id": "rules.comments-java",
+      "title": "Java ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-java.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "java"
+      ],
+      "tags": [
+        "comments",
+        "java",
+        "code-style"
+      ],
+      "summary": "?? Java ???Javadoc ??????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-java.generated.json"
+    },
+    {
+      "id": "rules.naming-java",
+      "title": "Java ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-java.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "java"
+      ],
+      "tags": [
+        "naming",
+        "java",
+        "code-style"
+      ],
+      "summary": "?? Java ??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-java.generated.json"
+    }
+  ]
+}

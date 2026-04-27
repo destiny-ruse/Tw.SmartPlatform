@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:42:29Z",
+  "generated_at": "2026-04-27T05:43:29Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -117,6 +117,50 @@
       ],
       "summary": "?? OAuth2/OIDC ????????????????",
       "sections_index": "docs/standards/_index/sections/rules.auth-oauth-oidc.generated.json"
+    },
+    {
+      "id": "rules.fe-uniapp-cross",
+      "title": "uni-app ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-uniapp-cross.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "uniapp"
+      ],
+      "tags": [
+        "frontend",
+        "uniapp",
+        "cross-platform"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-uniapp-cross.generated.json"
+    },
+    {
+      "id": "rules.naming-uniapp",
+      "title": "uni-app ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-uniapp.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "uniapp"
+      ],
+      "tags": [
+        "frontend",
+        "uniapp",
+        "cross-platform"
+      ],
+      "summary": "?? uni-app ??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-uniapp.generated.json"
     }
   ]
 }

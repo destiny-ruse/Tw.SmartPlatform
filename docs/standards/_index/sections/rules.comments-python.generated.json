@@ -1,0 +1,55 @@
+{
+  "id": "rules.comments-python",
+  "path": "docs/standards/rules/comments-python.md",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "anchor": "goal",
+      "title": "??",
+      "level": 2,
+      "start_line": 21,
+      "end_line": 25,
+      "regions": []
+    },
+    {
+      "anchor": "scope",
+      "title": "????",
+      "level": 2,
+      "start_line": 26,
+      "end_line": 30,
+      "regions": []
+    },
+    {
+      "anchor": "rules",
+      "title": "??",
+      "level": 2,
+      "start_line": 31,
+      "end_line": 38,
+      "regions": []
+    },
+    {
+      "anchor": "examples",
+      "title": "??",
+      "level": 2,
+      "start_line": 39,
+      "end_line": 45,
+      "regions": []
+    },
+    {
+      "anchor": "checklist",
+      "title": "????",
+      "level": 2,
+      "start_line": 46,
+      "end_line": 52,
+      "regions": []
+    },
+    {
+      "anchor": "changelog",
+      "title": "????",
+      "level": 2,
+      "start_line": 53,
+      "end_line": 57,
+      "regions": []
+    }
+  ]
+}

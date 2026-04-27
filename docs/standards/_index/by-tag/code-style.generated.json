@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:42:29Z",
+  "generated_at": "2026-04-27T05:43:29Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -8,6 +8,226 @@
   "kind": "tag",
   "value": "code-style",
   "standards": [
+    {
+      "id": "rules.comments-dotnet",
+      "title": ".NET ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-dotnet.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet"
+      ],
+      "tags": [
+        "comments",
+        "dotnet",
+        "code-style"
+      ],
+      "summary": "?? .NET XML ????? API ????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-dotnet.generated.json"
+    },
+    {
+      "id": "rules.comments-java",
+      "title": "Java ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-java.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "java"
+      ],
+      "tags": [
+        "comments",
+        "java",
+        "code-style"
+      ],
+      "summary": "?? Java ???Javadoc ??????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-java.generated.json"
+    },
+    {
+      "id": "rules.comments-python",
+      "title": "Python ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-python.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "python"
+      ],
+      "tags": [
+        "comments",
+        "python",
+        "code-style"
+      ],
+      "summary": "?? Python docstring???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-python.generated.json"
+    },
+    {
+      "id": "rules.comments-ts",
+      "title": "TypeScript ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/comments-ts.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?? TypeScript?Vue ??????????",
+      "sections_index": "docs/standards/_index/sections/rules.comments-ts.generated.json"
+    },
+    {
+      "id": "rules.fe-a11y",
+      "title": "????????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-a11y.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-a11y.generated.json"
+    },
+    {
+      "id": "rules.fe-compat",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-compat.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?????????WebView ??????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-compat.generated.json"
+    },
+    {
+      "id": "rules.fe-i18n",
+      "title": "???????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-i18n.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-i18n.generated.json"
+    },
+    {
+      "id": "rules.fe-styles",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-styles.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-styles.generated.json"
+    },
+    {
+      "id": "rules.fe-typescript",
+      "title": "?? TypeScript ??",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-typescript.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-typescript.generated.json"
+    },
+    {
+      "id": "rules.fe-vue-ts-project",
+      "title": "Vue TypeScript ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/fe-vue-ts-project.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?? Vue TypeScript ????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.fe-vue-ts-project.generated.json"
+    },
     {
       "id": "rules.naming-common",
       "title": "??????",
@@ -29,6 +249,94 @@
       ],
       "summary": "???????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
+    },
+    {
+      "id": "rules.naming-dotnet",
+      "title": ".NET ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-dotnet.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet"
+      ],
+      "tags": [
+        "naming",
+        "dotnet",
+        "code-style"
+      ],
+      "summary": "?? .NET ?????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-dotnet.generated.json"
+    },
+    {
+      "id": "rules.naming-java",
+      "title": "Java ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-java.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "java"
+      ],
+      "tags": [
+        "naming",
+        "java",
+        "code-style"
+      ],
+      "summary": "?? Java ??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-java.generated.json"
+    },
+    {
+      "id": "rules.naming-python",
+      "title": "Python ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-python.md",
+      "roles": [
+        "backend",
+        "ai"
+      ],
+      "stacks": [
+        "python"
+      ],
+      "tags": [
+        "naming",
+        "python",
+        "code-style"
+      ],
+      "summary": "?? Python ??????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-python.generated.json"
+    },
+    {
+      "id": "rules.naming-ts-vue",
+      "title": "TypeScript ? Vue ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-ts-vue.md",
+      "roles": [
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "vue-ts"
+      ],
+      "tags": [
+        "frontend",
+        "vue-ts",
+        "code-style"
+      ],
+      "summary": "?? TypeScript?Vue ????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-ts-vue.generated.json"
     }
   ]
 }
