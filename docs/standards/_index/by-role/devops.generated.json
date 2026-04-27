@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:43:29Z",
+  "generated_at": "2026-04-27T05:44:23Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -33,6 +33,54 @@
       "sections_index": "docs/standards/_index/sections/processes.change-governance.generated.json"
     },
     {
+      "id": "processes.dependency-onboarding",
+      "title": "??????",
+      "doc_type": "process",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/processes/dependency-onboarding.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "dependency",
+        "security",
+        "process"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/processes.dependency-onboarding.generated.json"
+    },
+    {
+      "id": "processes.doc-authoring",
+      "title": "??????",
+      "doc_type": "process",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/processes/doc-authoring.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "standards",
+        "authoring",
+        "process"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/processes.doc-authoring.generated.json"
+    },
+    {
       "id": "processes.rfc-flow",
       "title": "RFC ????",
       "doc_type": "process",
@@ -55,6 +103,29 @@
       ],
       "summary": "???? RFC ???????????????",
       "sections_index": "docs/standards/_index/sections/processes.rfc-flow.generated.json"
+    },
+    {
+      "id": "references.glossary",
+      "title": "?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/glossary.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "reference",
+        "terminology"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/references.glossary.generated.json"
     },
     {
       "id": "rules.code-review",

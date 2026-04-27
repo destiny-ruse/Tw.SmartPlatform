@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:43:29Z",
+  "generated_at": "2026-04-27T05:44:23Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -8,6 +8,28 @@
   "kind": "doc-type",
   "value": "reference",
   "standards": [
+    {
+      "id": "references.datetime",
+      "title": "??????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/datetime.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "datetime",
+        "timezone",
+        "reference"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/references.datetime.generated.json"
+    },
     {
       "id": "references.error-codes",
       "title": "?????",
@@ -29,6 +51,51 @@
       ],
       "summary": "????????????????????",
       "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json"
+    },
+    {
+      "id": "references.glossary",
+      "title": "?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/glossary.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "reference",
+        "terminology"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/references.glossary.generated.json"
+    },
+    {
+      "id": "references.http-status",
+      "title": "HTTP ?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/http-status.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "api",
+        "http",
+        "reference"
+      ],
+      "summary": "???? HTTP ??????????????",
+      "sections_index": "docs/standards/_index/sections/references.http-status.generated.json"
     }
   ]
 }

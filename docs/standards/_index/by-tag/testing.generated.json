@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:44:23Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "testing",
+  "standards": [
+    {
+      "id": "rules.contract-testing",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/contract-testing.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "contract",
+        "api"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
+    }
+  ]
+}

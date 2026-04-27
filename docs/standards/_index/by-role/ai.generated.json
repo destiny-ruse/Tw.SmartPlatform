@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:43:29Z",
+  "generated_at": "2026-04-27T05:44:23Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -8,6 +8,66 @@
   "kind": "role",
   "value": "ai",
   "standards": [
+    {
+      "id": "decisions.0001-adopt-standards-blueprint",
+      "title": "????????",
+      "doc_type": "decision",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/decisions/0001-adopt-standards-blueprint.md",
+      "roles": [
+        "architect",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "decision",
+        "standards",
+        "governance"
+      ],
+      "summary": "???? v2 ????????????????",
+      "sections_index": "docs/standards/_index/sections/decisions.0001-adopt-standards-blueprint.generated.json"
+    },
+    {
+      "id": "decisions.0002-rest-response-shape-no-null",
+      "title": "REST ?????? null",
+      "doc_type": "decision",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "roles": [
+        "architect",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "decision",
+        "standards",
+        "governance"
+      ],
+      "summary": "API ???????????????? rules.api-response-shape#rules:no-null ?????",
+      "sections_index": "docs/standards/_index/sections/decisions.0002-rest-response-shape-no-null.generated.json"
+    },
+    {
+      "id": "decisions.0003-section-level-retrieval",
+      "title": "???????",
+      "doc_type": "decision",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/decisions/0003-section-level-retrieval.md",
+      "roles": [
+        "architect",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "decision",
+        "standards",
+        "governance"
+      ],
+      "summary": "AI ?????????????? standards.authoring#retrieval ????????",
+      "sections_index": "docs/standards/_index/sections/decisions.0003-section-level-retrieval.generated.json"
+    },
     {
       "id": "processes.change-governance",
       "title": "??????",
@@ -31,6 +91,54 @@
       ],
       "summary": "???????????????????????",
       "sections_index": "docs/standards/_index/sections/processes.change-governance.generated.json"
+    },
+    {
+      "id": "processes.dependency-onboarding",
+      "title": "??????",
+      "doc_type": "process",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/processes/dependency-onboarding.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "dependency",
+        "security",
+        "process"
+      ],
+      "summary": "?????????????????????",
+      "sections_index": "docs/standards/_index/sections/processes.dependency-onboarding.generated.json"
+    },
+    {
+      "id": "processes.doc-authoring",
+      "title": "??????",
+      "doc_type": "process",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/processes/doc-authoring.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "standards",
+        "authoring",
+        "process"
+      ],
+      "summary": "???????????????????",
+      "sections_index": "docs/standards/_index/sections/processes.doc-authoring.generated.json"
     },
     {
       "id": "processes.rfc-flow",
@@ -57,6 +165,28 @@
       "sections_index": "docs/standards/_index/sections/processes.rfc-flow.generated.json"
     },
     {
+      "id": "references.datetime",
+      "title": "??????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/datetime.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "datetime",
+        "timezone",
+        "reference"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/references.datetime.generated.json"
+    },
+    {
       "id": "references.error-codes",
       "title": "?????",
       "doc_type": "reference",
@@ -77,6 +207,51 @@
       ],
       "summary": "????????????????????",
       "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json"
+    },
+    {
+      "id": "references.glossary",
+      "title": "?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/glossary.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "reference",
+        "terminology"
+      ],
+      "summary": "?????????????????",
+      "sections_index": "docs/standards/_index/sections/references.glossary.generated.json"
+    },
+    {
+      "id": "references.http-status",
+      "title": "HTTP ?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/http-status.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "api",
+        "http",
+        "reference"
+      ],
+      "summary": "???? HTTP ??????????????",
+      "sections_index": "docs/standards/_index/sections/references.http-status.generated.json"
     },
     {
       "id": "rules.api-error-response",
@@ -158,6 +333,35 @@
       ],
       "summary": "?? REST ???????????????",
       "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json"
+    },
+    {
+      "id": "rules.asyncapi-conventions",
+      "title": "AsyncAPI ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/asyncapi-conventions.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "asyncapi",
+        "messaging",
+        "contract"
+      ],
+      "summary": "???????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.asyncapi-conventions.generated.json"
     },
     {
       "id": "rules.auth-oauth-oidc",
@@ -322,6 +526,64 @@
       ],
       "summary": "?? TypeScript?Vue ??????????",
       "sections_index": "docs/standards/_index/sections/rules.comments-ts.generated.json"
+    },
+    {
+      "id": "rules.contract-testing",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/contract-testing.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "contract",
+        "api"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
+    },
+    {
+      "id": "rules.data-formats",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/data-formats.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "data-format",
+        "compatibility"
+      ],
+      "summary": "??JSON????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.data-formats.generated.json"
     },
     {
       "id": "rules.editorconfig",
@@ -522,6 +784,93 @@
       ],
       "summary": "??????????????????????",
       "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json"
+    },
+    {
+      "id": "rules.grpc-proto-style",
+      "title": "gRPC Proto ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/grpc-proto-style.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "grpc",
+        "contract",
+        "versioning"
+      ],
+      "summary": "??gRPC proto ??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.grpc-proto-style.generated.json"
+    },
+    {
+      "id": "rules.grpc-versioning",
+      "title": "gRPC ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/grpc-versioning.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "grpc",
+        "compatibility",
+        "versioning"
+      ],
+      "summary": "??gRPC ???????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
+    },
+    {
+      "id": "rules.messaging-patterns",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/messaging-patterns.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "messaging",
+        "reliability",
+        "idempotency"
+      ],
+      "summary": "??????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.messaging-patterns.generated.json"
     },
     {
       "id": "rules.naming-common",

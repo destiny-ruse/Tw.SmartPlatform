@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:44:23Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "idempotency",
+  "standards": [
+    {
+      "id": "rules.messaging-patterns",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/messaging-patterns.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "messaging",
+        "reliability",
+        "idempotency"
+      ],
+      "summary": "??????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.messaging-patterns.generated.json"
+    }
+  ]
+}

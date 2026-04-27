@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:43:29Z",
+  "generated_at": "2026-04-27T05:44:23Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -90,6 +90,35 @@
       "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json"
     },
     {
+      "id": "rules.asyncapi-conventions",
+      "title": "AsyncAPI ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/asyncapi-conventions.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "asyncapi",
+        "messaging",
+        "contract"
+      ],
+      "summary": "???????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.asyncapi-conventions.generated.json"
+    },
+    {
       "id": "rules.auth-oauth-oidc",
       "title": "OAuth ? OIDC ????",
       "doc_type": "rule",
@@ -139,6 +168,64 @@
       ],
       "summary": "?? TypeScript?Vue ??????????",
       "sections_index": "docs/standards/_index/sections/rules.comments-ts.generated.json"
+    },
+    {
+      "id": "rules.contract-testing",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/contract-testing.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "contract",
+        "api"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
+    },
+    {
+      "id": "rules.data-formats",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/data-formats.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "data-format",
+        "compatibility"
+      ],
+      "summary": "??JSON????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.data-formats.generated.json"
     },
     {
       "id": "rules.fe-a11y",
@@ -271,6 +358,93 @@
       ],
       "summary": "?? Vue TypeScript ????????????????",
       "sections_index": "docs/standards/_index/sections/rules.fe-vue-ts-project.generated.json"
+    },
+    {
+      "id": "rules.grpc-proto-style",
+      "title": "gRPC Proto ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/grpc-proto-style.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "grpc",
+        "contract",
+        "versioning"
+      ],
+      "summary": "??gRPC proto ??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.grpc-proto-style.generated.json"
+    },
+    {
+      "id": "rules.grpc-versioning",
+      "title": "gRPC ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/grpc-versioning.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "grpc",
+        "compatibility",
+        "versioning"
+      ],
+      "summary": "??gRPC ???????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
+    },
+    {
+      "id": "rules.messaging-patterns",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/messaging-patterns.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "messaging",
+        "reliability",
+        "idempotency"
+      ],
+      "summary": "??????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.messaging-patterns.generated.json"
     },
     {
       "id": "rules.naming-ts-vue",

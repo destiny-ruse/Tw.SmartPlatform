@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:43:29Z",
+  "generated_at": "2026-04-27T05:44:23Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -31,6 +31,64 @@
       ],
       "summary": "???????????????????????",
       "sections_index": "docs/standards/_index/sections/processes.change-governance.generated.json"
+    },
+    {
+      "id": "rules.grpc-proto-style",
+      "title": "gRPC Proto ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/grpc-proto-style.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "grpc",
+        "contract",
+        "versioning"
+      ],
+      "summary": "??gRPC proto ??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.grpc-proto-style.generated.json"
+    },
+    {
+      "id": "rules.grpc-versioning",
+      "title": "gRPC ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/grpc-versioning.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "grpc",
+        "compatibility",
+        "versioning"
+      ],
+      "summary": "??gRPC ???????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
     }
   ]
 }

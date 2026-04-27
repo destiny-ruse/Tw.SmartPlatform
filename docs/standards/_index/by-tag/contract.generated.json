@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:43:29Z",
+  "generated_at": "2026-04-27T05:44:23Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -88,6 +88,93 @@
       ],
       "summary": "?? REST ???????????????",
       "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json"
+    },
+    {
+      "id": "rules.asyncapi-conventions",
+      "title": "AsyncAPI ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/asyncapi-conventions.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "asyncapi",
+        "messaging",
+        "contract"
+      ],
+      "summary": "???????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.asyncapi-conventions.generated.json"
+    },
+    {
+      "id": "rules.contract-testing",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/contract-testing.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "testing",
+        "contract",
+        "api"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
+    },
+    {
+      "id": "rules.grpc-proto-style",
+      "title": "gRPC Proto ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/grpc-proto-style.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "grpc",
+        "contract",
+        "versioning"
+      ],
+      "summary": "??gRPC proto ??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.grpc-proto-style.generated.json"
     }
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "id": "references.datetime",
+  "path": "docs/standards/references/datetime.md",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "anchor": "goal",
+      "title": "??",
+      "level": 2,
+      "start_line": 21,
+      "end_line": 25,
+      "regions": []
+    },
+    {
+      "anchor": "scope",
+      "title": "????",
+      "level": 2,
+      "start_line": 26,
+      "end_line": 30,
+      "regions": []
+    },
+    {
+      "anchor": "catalog",
+      "title": "??",
+      "level": 2,
+      "start_line": 31,
+      "end_line": 39,
+      "regions": []
+    },
+    {
+      "anchor": "examples",
+      "title": "??",
+      "level": 2,
+      "start_line": 40,
+      "end_line": 46,
+      "regions": []
+    },
+    {
+      "anchor": "changelog",
+      "title": "????",
+      "level": 2,
+      "start_line": 47,
+      "end_line": 51,
+      "regions": []
+    }
+  ]
+}

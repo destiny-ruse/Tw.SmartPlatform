@@ -1,0 +1,47 @@
+{
+  "id": "decisions.0003-section-level-retrieval",
+  "path": "docs/standards/decisions/0003-section-level-retrieval.md",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "anchor": "context",
+      "title": "??",
+      "level": 2,
+      "start_line": 21,
+      "end_line": 25,
+      "regions": []
+    },
+    {
+      "anchor": "decision",
+      "title": "??",
+      "level": 2,
+      "start_line": 26,
+      "end_line": 30,
+      "regions": []
+    },
+    {
+      "anchor": "consequences",
+      "title": "??",
+      "level": 2,
+      "start_line": 31,
+      "end_line": 35,
+      "regions": []
+    },
+    {
+      "anchor": "alternatives",
+      "title": "????",
+      "level": 2,
+      "start_line": 36,
+      "end_line": 40,
+      "regions": []
+    },
+    {
+      "anchor": "changelog",
+      "title": "????",
+      "level": 2,
+      "start_line": 41,
+      "end_line": 45,
+      "regions": []
+    }
+  ]
+}

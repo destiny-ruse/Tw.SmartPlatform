@@ -1,0 +1,72 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:44:23Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "decision",
+  "standards": [
+    {
+      "id": "decisions.0001-adopt-standards-blueprint",
+      "title": "????????",
+      "doc_type": "decision",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/decisions/0001-adopt-standards-blueprint.md",
+      "roles": [
+        "architect",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "decision",
+        "standards",
+        "governance"
+      ],
+      "summary": "???? v2 ????????????????",
+      "sections_index": "docs/standards/_index/sections/decisions.0001-adopt-standards-blueprint.generated.json"
+    },
+    {
+      "id": "decisions.0002-rest-response-shape-no-null",
+      "title": "REST ?????? null",
+      "doc_type": "decision",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "roles": [
+        "architect",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "decision",
+        "standards",
+        "governance"
+      ],
+      "summary": "API ???????????????? rules.api-response-shape#rules:no-null ?????",
+      "sections_index": "docs/standards/_index/sections/decisions.0002-rest-response-shape-no-null.generated.json"
+    },
+    {
+      "id": "decisions.0003-section-level-retrieval",
+      "title": "???????",
+      "doc_type": "decision",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/decisions/0003-section-level-retrieval.md",
+      "roles": [
+        "architect",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "decision",
+        "standards",
+        "governance"
+      ],
+      "summary": "AI ?????????????? standards.authoring#retrieval ????????",
+      "sections_index": "docs/standards/_index/sections/decisions.0003-section-level-retrieval.generated.json"
+    }
+  ]
+}
