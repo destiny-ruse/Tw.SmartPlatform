@@ -5,6 +5,7 @@ import argparse
 import copy
 import fnmatch
 import json
+import os
 import re
 import subprocess
 import sys
@@ -1042,6 +1043,58 @@ def normalized_repo_path(path: str) -> str:
     return Path(path.replace("\\", "/")).as_posix().strip("/")
 
 
+IGNORED_SCAN_DIRS = {
+    ".git",
+    ".claude",
+    ".codex",
+    ".idea",
+    ".vs",
+    "bin",
+    "obj",
+    "node_modules",
+    "dist",
+    "build",
+    "__pycache__",
+}
+
+
+def taxonomy_scan_roots(taxonomy: dict[str, Any]) -> list[str]:
+    path_rules = taxonomy.get("path_rules")
+    if not isinstance(path_rules, list):
+        return []
+    roots: set[str] = set()
+    for rule in path_rules:
+        if not isinstance(rule, dict):
+            continue
+        pattern = str(rule.get("pattern") or "").strip()
+        if not pattern:
+            continue
+        static_parts: list[str] = []
+        for part in normalized_repo_path(pattern).split("/"):
+            if any(marker in part for marker in "*?["):
+                break
+            static_parts.append(part)
+        root = "/".join(static_parts)
+        if root:
+            roots.add(root)
+    return sorted(roots)
+
+
+def filesystem_scan_paths() -> list[str]:
+    taxonomy = load_taxonomy()
+
+    paths: list[str] = []
+    for root_name in taxonomy_scan_roots(taxonomy):
+        root = REPO_ROOT / root_name
+        if not root.exists():
+            continue
+        for dirpath, dirnames, filenames in os.walk(root):
+            dirnames[:] = [name for name in dirnames if name not in IGNORED_SCAN_DIRS]
+            for filename in filenames:
+                paths.append(rel_path(Path(dirpath) / filename))
+    return sorted(paths)
+
+
 def first_path_segment_after(prefix: str, path: str) -> str | None:
     prefix_parts = normalized_repo_path(prefix).split("/")
     path_parts = normalized_repo_path(path).split("/")
@@ -1269,6 +1322,24 @@ def command_check_drift(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_scan(_args: argparse.Namespace) -> int:
+    try:
+        paths = filesystem_scan_paths()
+    except YamlSubsetError as exc:
+        emit([taxonomy_parse_diagnostic(exc)])
+        return 1
+
+    messages = detect_drift_from_paths(paths)
+    emit(messages)
+    if has_errors(messages):
+        return 1
+    if messages:
+        print("OK knowledge scan passed with warnings")
+    else:
+        print("OK knowledge scan passed")
+    return 0
+
+
 def command_generate(_args: argparse.Namespace) -> int:
     payloads, messages = build_indexes(existing_generated_at=existing_generated_at())
     emit(messages)
@@ -1335,6 +1406,8 @@ def build_parser() -> argparse.ArgumentParser:
     generate_parser.set_defaults(func=command_generate)
     check_parser = subparsers.add_parser("check", help="validate knowledge graph nodes")
     check_parser.set_defaults(func=command_check)
+    scan_parser = subparsers.add_parser("scan", help="scan filesystem paths for knowledge graph drift")
+    scan_parser.set_defaults(func=command_scan)
     drift_parser = subparsers.add_parser("check-drift", help="detect knowledge graph drift from git diff")
     drift_parser.add_argument("--from", dest="base", required=True, help="base ref for git diff")
     drift_parser.add_argument("--to", dest="head", required=True, help="head ref for git diff")

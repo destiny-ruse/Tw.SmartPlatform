@@ -1170,6 +1170,113 @@ class KnowledgeToolTests(unittest.TestCase):
         self.assertIn("OK Claude Code Skill 相对符号链接已同步", stdout.getvalue())
 
 
+    def test_filesystem_scan_collects_taxonomy_roots_without_git(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "frontend/apps/tw.web.client/README.md", "# 客户 Web 端\n")
+            write_file(root, "backend/java/services/user/README.md", "# 用户服务\n")
+            write_file(root, ".git/ignored", "ignored\n")
+
+            paths = knowledge.filesystem_scan_paths()
+
+            self.assertIn("frontend/apps/tw.web.client/README.md", paths)
+            self.assertIn("backend/java/services/user/README.md", paths)
+            self.assertNotIn(".git/ignored", paths)
+
+    def test_taxonomy_scan_roots_use_longest_static_prefixes(self):
+        with isolated_repo():
+            write_taxonomy(knowledge.REPO_ROOT)
+
+            roots = knowledge.taxonomy_scan_roots(knowledge.load_taxonomy())
+
+            self.assertIn("backend/dotnet/Services", roots)
+            self.assertIn("backend/java/services", roots)
+            self.assertIn("frontend/apps", roots)
+            self.assertIn("contracts/protos", roots)
+            self.assertIn("contracts/openapi", roots)
+            self.assertNotIn("backend", roots)
+            self.assertNotIn("frontend", roots)
+            self.assertNotIn("contracts", roots)
+
+    def test_filesystem_scan_prunes_ignored_directories_before_descent(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            frontend_apps_root = root / "frontend" / "apps"
+            app_root = root / "frontend" / "apps" / "tw.web.client"
+            app_root.mkdir(parents=True)
+            original_os = getattr(knowledge, "os", None)
+            calls = []
+            pruned_dirnames = []
+
+            def fake_walk(scan_root):
+                calls.append(scan_root)
+                dirnames = ["tw.web.client"]
+                yield scan_root, dirnames, []
+                if "tw.web.client" not in dirnames:
+                    return
+                child_names = ["node_modules", "src"]
+                yield app_root, child_names, ["README.md"]
+                pruned_dirnames.append(list(child_names))
+                if "node_modules" in child_names:
+                    yield app_root / "node_modules", [], ["index.js"]
+                if "src" in child_names:
+                    yield app_root / "src", [], ["main.ts"]
+
+            class FakeOs:
+                walk = staticmethod(fake_walk)
+
+            knowledge.os = FakeOs
+            try:
+                paths = knowledge.filesystem_scan_paths()
+            finally:
+                if original_os is None:
+                    delattr(knowledge, "os")
+                else:
+                    knowledge.os = original_os
+
+            self.assertEqual([frontend_apps_root], calls)
+            self.assertEqual([["src"]], pruned_dirnames)
+            self.assertIn("frontend/apps/tw.web.client/README.md", paths)
+            self.assertIn("frontend/apps/tw.web.client/src/main.ts", paths)
+            self.assertNotIn("frontend/apps/tw.web.client/node_modules/index.js", paths)
+
+    def test_command_scan_uses_drift_detection_without_git_refs(self):
+        original_filesystem_scan_paths = knowledge.filesystem_scan_paths
+        original_detect_drift_from_paths = knowledge.detect_drift_from_paths
+        knowledge.filesystem_scan_paths = lambda: ["frontend/apps/tw.web.client/README.md"]
+        knowledge.detect_drift_from_paths = lambda paths: [
+            knowledge.error("knowledge.missing-module", paths[0], "missing")
+        ]
+        stdout = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_scan(argparse.Namespace())
+        finally:
+            knowledge.filesystem_scan_paths = original_filesystem_scan_paths
+            knowledge.detect_drift_from_paths = original_detect_drift_from_paths
+
+        self.assertEqual(1, exit_code)
+        self.assertIn("knowledge.missing-module", stdout.getvalue())
+
+    def test_command_scan_reports_malformed_taxonomy_diagnostic(self):
+        with isolated_repo() as root:
+            write_file(
+                root,
+                "docs/knowledge/taxonomy.yaml",
+                """
+                schema_version: 1.0.0
+                  invalid: value
+                """,
+            )
+            stdout = io.StringIO()
+
+            with contextlib.redirect_stdout(stdout):
+                exit_code = knowledge.command_scan(argparse.Namespace())
+
+            self.assertEqual(1, exit_code)
+            self.assertIn("knowledge.taxonomy-parse", stdout.getvalue())
+            self.assertNotIn("knowledge.scan", stdout.getvalue())
+
     def test_changed_current_paths_from_name_status_ignores_deleted_paths(self):
         paths = knowledge.changed_current_paths_from_name_status(
             "D\tbackend/dotnet/Services/User/README.md\n"
