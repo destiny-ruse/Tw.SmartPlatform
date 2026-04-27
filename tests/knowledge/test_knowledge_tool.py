@@ -292,6 +292,38 @@ def write_remote_service_capability(root: Path) -> None:
     )
 
 
+def write_contract(root: Path) -> None:
+    write_file(root, "contracts/protos/authentication/v1/authentication.proto", 'syntax = "proto3";\n')
+    write_file(
+        root,
+        "docs/knowledge/graph/contracts/contracts.grpc.authentication-v1.yaml",
+        """
+        schema_version: 1.0.0
+        id: contracts.grpc.authentication-v1
+        kind: contract
+        name: 认证 gRPC 契约
+        status: draft
+        summary: 描述认证服务对外暴露的 gRPC 契约。
+        owners:
+          - platform
+        tags:
+          - grpc
+          - contracts
+        contract_type: grpc
+        path: contracts/protos/authentication/v1/authentication.proto
+        source:
+          declared_in: docs/knowledge/graph/contracts/contracts.grpc.authentication-v1.yaml
+          evidence:
+            - contracts/protos/authentication/v1/authentication.proto
+        provenance:
+          created_by: human
+          created_at: 2026-04-28
+          updated_by: human
+          updated_at: 2026-04-28
+        """,
+    )
+
+
 def diagnostic_text(messages):
     return "\n".join(message.format() for message in messages)
 
@@ -1223,6 +1255,65 @@ class KnowledgeToolTests(unittest.TestCase):
         self.assertEqual(1, exit_code)
         self.assertIn("错误 [knowledge.git-diff]", stdout.getvalue())
         self.assertIn("bad ref", stdout.getvalue())
+
+    def test_validation_checks_integration_contract_reference(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_file(root, "backend/dotnet/Services/Notice/README.md", "# 通知服务\n")
+            write_file(root, "backend/dotnet/Services/Authentication/README.md", "# 认证服务\n")
+            write_notice_module(root)
+            write_module(root)
+            write_remote_service_capability(root)
+            write_file(
+                root,
+                "docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml",
+                """
+                schema_version: 1.0.0
+                id: backend.integration.notice-authentication
+                kind: integration
+                name: 通知服务到认证服务集成
+                status: draft
+                summary: 记录通知服务调用认证服务的集成边界。
+                owners:
+                  - platform
+                tags:
+                  - backend
+                  - service-integration
+                caller: backend.dotnet.services.notice
+                callee: backend.dotnet.services.authentication
+                contract: contracts.grpc.missing
+                tooling:
+                  required_capabilities:
+                    - backend.capability.remote-service
+                source:
+                  declared_in: docs/knowledge/graph/integrations/backend.integration.notice-authentication.yaml
+                  evidence:
+                    - backend/dotnet/Services/Notice/README.md
+                provenance:
+                  created_by: human
+                  created_at: 2026-04-28
+                  updated_by: human
+                  updated_at: 2026-04-28
+                """,
+            )
+
+            messages = knowledge.collect_validation_messages()
+
+            self.assertIn("knowledge.dangling-reference", [message.code for message in messages])
+            self.assertIn("contract 引用未声明的 contract 图谱节点", diagnostic_text(messages))
+
+    def test_detect_drift_warns_when_existing_contract_file_changes(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            write_contract(root)
+
+            diagnostics = knowledge.detect_drift_from_paths(
+                ["contracts/protos/authentication/v1/authentication.proto"]
+            )
+
+            self.assertEqual(1, len(diagnostics), diagnostic_text(diagnostics))
+            self.assertEqual("WARN", diagnostics[0].level)
+            self.assertEqual("knowledge.contract-outdated", diagnostics[0].code)
 
 
 if __name__ == "__main__":

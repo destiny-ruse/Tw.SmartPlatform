@@ -585,6 +585,7 @@ def validate_graph_references(nodes: list[GraphNode]) -> list[Diagnostic]:
 
     module_ids = ids_by_kind.get("module", set())
     capability_ids = ids_by_kind.get("capability", set())
+    contract_ids = ids_by_kind.get("contract", set())
 
     def require_many(
         node: GraphNode,
@@ -649,6 +650,7 @@ def validate_graph_references(nodes: list[GraphNode]) -> list[Diagnostic]:
         if kind == "integration":
             require_one(node, "caller", "module", module_ids, data.get("caller"))
             require_one(node, "callee", "module", module_ids, data.get("callee"))
+            require_one(node, "contract", "contract", contract_ids, data.get("contract"))
             tooling = data.get("tooling")
             if isinstance(tooling, dict):
                 require_many(
@@ -1184,7 +1186,17 @@ def detect_drift_from_paths(paths: list[str]) -> list[Diagnostic]:
             location = path_rule_location(rule, changed_path)
             if rule.get("kind") == "contract":
                 if changed_path in contract_paths:
-                    continue
+                    add_once(
+                        taxonomy_diagnostic(
+                            taxonomy,
+                            "knowledge.contract-outdated",
+                            "WARN",
+                            changed_path,
+                            "契约文件发生变更，对应 contract 图谱节点可能未同步更新。",
+                            "检查 contract 节点版本、兼容性说明和变更证据是否已更新。",
+                        )
+                    )
+                    break
             elif rule.get("kind") == "module":
                 if location in module_paths:
                     continue
