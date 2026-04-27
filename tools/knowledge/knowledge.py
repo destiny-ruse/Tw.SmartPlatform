@@ -893,6 +893,20 @@ def normalize_generated_at(payload: Any, generated_at: str) -> Any:
     return payload
 
 
+def existing_generated_at() -> str | None:
+    index_path = GENERATED_DIR / "index.generated.json"
+    if not index_path.exists():
+        return None
+    try:
+        payload = json.loads(read_text(index_path))
+    except json.JSONDecodeError:
+        return None
+    generated_at = payload.get("generated_at") if isinstance(payload, dict) else None
+    if generated_at:
+        return str(generated_at)
+    return None
+
+
 def collect_index_messages() -> list[Diagnostic]:
     fixed_generated_at = "2026-04-27T00:00:00Z"
     generated, messages = build_indexes(existing_generated_at=fixed_generated_at)
@@ -1232,7 +1246,7 @@ def command_check_drift(args: argparse.Namespace) -> int:
 
 
 def command_generate(_args: argparse.Namespace) -> int:
-    payloads, messages = build_indexes()
+    payloads, messages = build_indexes(existing_generated_at=existing_generated_at())
     emit(messages)
     if has_errors(messages):
         return 1

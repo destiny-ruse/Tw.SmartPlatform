@@ -76,7 +76,7 @@
       "type": "requires"
     }
   ],
-  "generated_at": "2026-04-27T16:26:27Z",
+  "generated_at": "2026-04-27T16:28:27Z",
   "generator": {
     "name": "tools/knowledge/knowledge.py",
     "version": "1.0.0"

@@ -1,6 +1,7 @@
 import argparse
 import contextlib
 import io
+import json
 import tempfile
 import textwrap
 import unittest
@@ -743,6 +744,22 @@ class KnowledgeToolTests(unittest.TestCase):
             self.assertTrue((root / "docs/knowledge/generated/memory.generated.json").exists())
             self.assertTrue((root / "docs/knowledge/generated/edges.generated.json").exists())
             self.assertTrue((root / "docs/knowledge/generated/diagnostics.generated.json").exists())
+
+    def test_command_generate_preserves_existing_generated_at(self):
+        with isolated_repo() as root:
+            write_taxonomy(root)
+            generated_dir = root / "docs/knowledge/generated"
+            generated_dir.mkdir(parents=True)
+            (generated_dir / "index.generated.json").write_text(
+                '{"generated_at": "2026-04-27T12:00:00Z"}\n',
+                encoding="utf-8",
+            )
+
+            exit_code = knowledge.command_generate(argparse.Namespace())
+
+            self.assertEqual(0, exit_code)
+            payload = json.loads((generated_dir / "index.generated.json").read_text(encoding="utf-8"))
+            self.assertEqual("2026-04-27T12:00:00Z", payload["generated_at"])
 
     def test_query_returns_ranked_summaries_and_read_targets(self):
         with isolated_repo() as root:
