@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T09:11:28Z",
+  "generated_at": "2026-04-27T09:18:27Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -13,7 +13,7 @@
       "title": "缓存约定规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/cache-conventions.md",
       "roles": [
         "backend",
@@ -39,7 +39,7 @@
       "title": "配置管理规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/configuration.md",
       "roles": [
         "architect",
