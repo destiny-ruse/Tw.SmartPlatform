@@ -1,0 +1,122 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:42:29Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "stack",
+  "value": "uniapp",
+  "standards": [
+    {
+      "id": "rules.api-error-response",
+      "title": "API ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-error-response.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "error-handling",
+        "contract"
+      ],
+      "summary": "????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-error-response.generated.json"
+    },
+    {
+      "id": "rules.api-response-shape",
+      "title": "API ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-response-shape.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "response",
+        "contract"
+      ],
+      "summary": "?? REST API ?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-response-shape.generated.json"
+    },
+    {
+      "id": "rules.api-rest-design",
+      "title": "REST API ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-rest-design.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "rest",
+        "contract"
+      ],
+      "summary": "?? REST ???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json"
+    },
+    {
+      "id": "rules.auth-oauth-oidc",
+      "title": "OAuth ? OIDC ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/auth-oauth-oidc.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "auth",
+        "oauth",
+        "oidc"
+      ],
+      "summary": "?? OAuth2/OIDC ????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.auth-oauth-oidc.generated.json"
+    }
+  ]
+}

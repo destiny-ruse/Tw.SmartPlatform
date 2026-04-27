@@ -5,7 +5,7 @@
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
   },
-  "kind": "doc-type",
+  "kind": "tag",
   "value": "process",
   "standards": [
     {
@@ -55,26 +55,6 @@
       ],
       "summary": "???? RFC ???????????????",
       "sections_index": "docs/standards/_index/sections/processes.rfc-flow.generated.json"
-    },
-    {
-      "id": "standards.authoring",
-      "title": "规范撰写规范",
-      "doc_type": "process",
-      "status": "active",
-      "version": "2.0.0",
-      "path": "docs/standards/processes/standard-authoring.md",
-      "roles": [
-        "architect",
-        "ai"
-      ],
-      "stacks": [],
-      "tags": [
-        "standards",
-        "governance",
-        "ai"
-      ],
-      "summary": "规定工程规范文档的元数据、章节结构、索引生成、AI 按需引用和机器规则绑定方式。",
-      "sections_index": "docs/standards/_index/sections/standards.authoring.generated.json"
     }
   ]
 }

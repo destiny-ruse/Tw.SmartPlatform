@@ -1,0 +1,61 @@
+{
+  "id": "rules.api-response-shape",
+  "path": "docs/standards/rules/api-response-shape.md",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "anchor": "goal",
+      "title": "??",
+      "level": 2,
+      "start_line": 21,
+      "end_line": 25,
+      "regions": []
+    },
+    {
+      "anchor": "scope",
+      "title": "????",
+      "level": 2,
+      "start_line": 26,
+      "end_line": 30,
+      "regions": []
+    },
+    {
+      "anchor": "rules",
+      "title": "??",
+      "level": 2,
+      "start_line": 31,
+      "end_line": 40,
+      "regions": [
+        {
+          "id": "no-null",
+          "start_line": 35,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "anchor": "examples",
+      "title": "??",
+      "level": 2,
+      "start_line": 41,
+      "end_line": 47,
+      "regions": []
+    },
+    {
+      "anchor": "relations",
+      "title": "????",
+      "level": 2,
+      "start_line": 48,
+      "end_line": 52,
+      "regions": []
+    },
+    {
+      "anchor": "changelog",
+      "title": "????",
+      "level": 2,
+      "start_line": 53,
+      "end_line": 57,
+      "regions": []
+    }
+  ]
+}

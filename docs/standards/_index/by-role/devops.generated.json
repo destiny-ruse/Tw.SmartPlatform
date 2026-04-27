@@ -5,8 +5,8 @@
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
   },
-  "kind": "tag",
-  "value": "governance",
+  "kind": "role",
+  "value": "devops",
   "standards": [
     {
       "id": "processes.change-governance",
@@ -104,24 +104,26 @@
       "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json"
     },
     {
-      "id": "standards.authoring",
-      "title": "规范撰写规范",
-      "doc_type": "process",
+      "id": "rules.naming-common",
+      "title": "??????",
+      "doc_type": "rule",
       "status": "active",
-      "version": "2.0.0",
-      "path": "docs/standards/processes/standard-authoring.md",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-common.md",
       "roles": [
-        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
         "ai"
       ],
       "stacks": [],
       "tags": [
-        "standards",
-        "governance",
-        "ai"
+        "naming",
+        "code-style"
       ],
-      "summary": "规定工程规范文档的元数据、章节结构、索引生成、AI 按需引用和机器规则绑定方式。",
-      "sections_index": "docs/standards/_index/sections/standards.authoring.generated.json"
+      "summary": "???????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
     }
   ]
 }

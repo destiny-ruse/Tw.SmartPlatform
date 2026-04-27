@@ -1,0 +1,55 @@
+{
+  "id": "processes.rfc-flow",
+  "path": "docs/standards/processes/rfc-flow.md",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "anchor": "goal",
+      "title": "??",
+      "level": 2,
+      "start_line": 21,
+      "end_line": 25,
+      "regions": []
+    },
+    {
+      "anchor": "scope",
+      "title": "????",
+      "level": 2,
+      "start_line": 26,
+      "end_line": 30,
+      "regions": []
+    },
+    {
+      "anchor": "flow",
+      "title": "??",
+      "level": 2,
+      "start_line": 31,
+      "end_line": 38,
+      "regions": []
+    },
+    {
+      "anchor": "template",
+      "title": "??",
+      "level": 2,
+      "start_line": 39,
+      "end_line": 43,
+      "regions": []
+    },
+    {
+      "anchor": "checklist",
+      "title": "????",
+      "level": 2,
+      "start_line": 44,
+      "end_line": 50,
+      "regions": []
+    },
+    {
+      "anchor": "changelog",
+      "title": "????",
+      "level": 2,
+      "start_line": 51,
+      "end_line": 55,
+      "regions": []
+    }
+  ]
+}

@@ -6,7 +6,7 @@
     "version": "2.0.0"
   },
   "kind": "role",
-  "value": "architect",
+  "value": "frontend",
   "standards": [
     {
       "id": "processes.change-governance",
@@ -55,6 +55,109 @@
       ],
       "summary": "???? RFC ???????????????",
       "sections_index": "docs/standards/_index/sections/processes.rfc-flow.generated.json"
+    },
+    {
+      "id": "references.error-codes",
+      "title": "?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/error-codes.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "api",
+        "error-handling",
+        "reference"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json"
+    },
+    {
+      "id": "rules.api-error-response",
+      "title": "API ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-error-response.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "error-handling",
+        "contract"
+      ],
+      "summary": "????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-error-response.generated.json"
+    },
+    {
+      "id": "rules.api-response-shape",
+      "title": "API ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-response-shape.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "response",
+        "contract"
+      ],
+      "summary": "?? REST API ?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-response-shape.generated.json"
+    },
+    {
+      "id": "rules.api-rest-design",
+      "title": "REST API ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-rest-design.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "rest",
+        "contract"
+      ],
+      "summary": "?? REST ???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json"
     },
     {
       "id": "rules.auth-oauth-oidc",
@@ -133,24 +236,26 @@
       "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json"
     },
     {
-      "id": "standards.authoring",
-      "title": "规范撰写规范",
-      "doc_type": "process",
+      "id": "rules.naming-common",
+      "title": "??????",
+      "doc_type": "rule",
       "status": "active",
-      "version": "2.0.0",
-      "path": "docs/standards/processes/standard-authoring.md",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-common.md",
       "roles": [
-        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
         "ai"
       ],
       "stacks": [],
       "tags": [
-        "standards",
-        "governance",
-        "ai"
+        "naming",
+        "code-style"
       ],
-      "summary": "规定工程规范文档的元数据、章节结构、索引生成、AI 按需引用和机器规则绑定方式。",
-      "sections_index": "docs/standards/_index/sections/standards.authoring.generated.json"
+      "summary": "???????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
     }
   ]
 }

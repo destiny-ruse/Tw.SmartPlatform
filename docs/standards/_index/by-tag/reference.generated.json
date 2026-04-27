@@ -1,0 +1,34 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:42:29Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "reference",
+  "standards": [
+    {
+      "id": "references.error-codes",
+      "title": "?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/error-codes.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "api",
+        "error-handling",
+        "reference"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json"
+    }
+  ]
+}

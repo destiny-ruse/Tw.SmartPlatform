@@ -1,0 +1,36 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:42:29Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "versioning",
+  "standards": [
+    {
+      "id": "processes.change-governance",
+      "title": "??????",
+      "doc_type": "process",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/processes/change-governance.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "governance",
+        "versioning",
+        "process"
+      ],
+      "summary": "???????????????????????",
+      "sections_index": "docs/standards/_index/sections/processes.change-governance.generated.json"
+    }
+  ]
+}

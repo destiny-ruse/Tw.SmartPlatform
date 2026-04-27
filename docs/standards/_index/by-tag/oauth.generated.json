@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-27T05:42:29Z",
+  "generator": {
+    "name": "tools/standards/standards.py",
+    "version": "2.0.0"
+  },
+  "kind": "tag",
+  "value": "oauth",
+  "standards": [
+    {
+      "id": "rules.auth-oauth-oidc",
+      "title": "OAuth ? OIDC ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/auth-oauth-oidc.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "auth",
+        "oauth",
+        "oidc"
+      ],
+      "summary": "?? OAuth2/OIDC ????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.auth-oauth-oidc.generated.json"
+    }
+  ]
+}

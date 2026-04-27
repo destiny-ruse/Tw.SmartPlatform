@@ -4,8 +4,382 @@
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
   },
-  "generated_at": "2026-04-27T05:39:00Z",
+  "generated_at": "2026-04-27T05:42:29Z",
   "standards": [
+    {
+      "id": "processes.change-governance",
+      "title": "??????",
+      "doc_type": "process",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/processes/change-governance.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "governance",
+        "versioning",
+        "process"
+      ],
+      "summary": "???????????????????????",
+      "sections_index": "docs/standards/_index/sections/processes.change-governance.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/process.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/governance.generated.json",
+        "docs/standards/_index/by-tag/process.generated.json",
+        "docs/standards/_index/by-tag/versioning.generated.json"
+      ]
+    },
+    {
+      "id": "processes.rfc-flow",
+      "title": "RFC ????",
+      "doc_type": "process",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/processes/rfc-flow.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "governance",
+        "rfc",
+        "process"
+      ],
+      "summary": "???? RFC ???????????????",
+      "sections_index": "docs/standards/_index/sections/processes.rfc-flow.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/process.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/governance.generated.json",
+        "docs/standards/_index/by-tag/process.generated.json",
+        "docs/standards/_index/by-tag/rfc.generated.json"
+      ]
+    },
+    {
+      "id": "references.error-codes",
+      "title": "?????",
+      "doc_type": "reference",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/references/error-codes.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "api",
+        "error-handling",
+        "reference"
+      ],
+      "summary": "????????????????????",
+      "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/reference.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/api.generated.json",
+        "docs/standards/_index/by-tag/error-handling.generated.json",
+        "docs/standards/_index/by-tag/reference.generated.json"
+      ]
+    },
+    {
+      "id": "rules.api-error-response",
+      "title": "API ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-error-response.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "error-handling",
+        "contract"
+      ],
+      "summary": "????????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-error-response.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/api.generated.json",
+        "docs/standards/_index/by-tag/contract.generated.json",
+        "docs/standards/_index/by-tag/error-handling.generated.json"
+      ]
+    },
+    {
+      "id": "rules.api-response-shape",
+      "title": "API ??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-response-shape.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "response",
+        "contract"
+      ],
+      "summary": "?? REST API ?????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-response-shape.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/api.generated.json",
+        "docs/standards/_index/by-tag/contract.generated.json",
+        "docs/standards/_index/by-tag/response.generated.json"
+      ]
+    },
+    {
+      "id": "rules.api-rest-design",
+      "title": "REST API ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/api-rest-design.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "api",
+        "rest",
+        "contract"
+      ],
+      "summary": "?? REST ???????????????",
+      "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/api.generated.json",
+        "docs/standards/_index/by-tag/contract.generated.json",
+        "docs/standards/_index/by-tag/rest.generated.json"
+      ]
+    },
+    {
+      "id": "rules.auth-oauth-oidc",
+      "title": "OAuth ? OIDC ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/auth-oauth-oidc.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "ai"
+      ],
+      "stacks": [
+        "dotnet",
+        "java",
+        "python",
+        "vue-ts",
+        "uniapp"
+      ],
+      "tags": [
+        "security",
+        "auth",
+        "oauth",
+        "oidc"
+      ],
+      "summary": "?? OAuth2/OIDC ????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.auth-oauth-oidc.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-stack/dotnet.generated.json",
+        "docs/standards/_index/by-stack/java.generated.json",
+        "docs/standards/_index/by-stack/python.generated.json",
+        "docs/standards/_index/by-stack/uniapp.generated.json",
+        "docs/standards/_index/by-stack/vue-ts.generated.json",
+        "docs/standards/_index/by-tag/auth.generated.json",
+        "docs/standards/_index/by-tag/oauth.generated.json",
+        "docs/standards/_index/by-tag/oidc.generated.json",
+        "docs/standards/_index/by-tag/security.generated.json"
+      ]
+    },
+    {
+      "id": "rules.code-review",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/code-review.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "review",
+        "governance",
+        "quality"
+      ],
+      "summary": "???????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.code-review.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/governance.generated.json",
+        "docs/standards/_index/by-tag/quality.generated.json",
+        "docs/standards/_index/by-tag/review.generated.json"
+      ]
+    },
+    {
+      "id": "rules.git-commit",
+      "title": "Git ????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/git-commit.md",
+      "roles": [
+        "architect",
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "git",
+        "governance"
+      ],
+      "summary": "??????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/architect.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/git.generated.json",
+        "docs/standards/_index/by-tag/governance.generated.json"
+      ]
+    },
+    {
+      "id": "rules.naming-common",
+      "title": "??????",
+      "doc_type": "rule",
+      "status": "active",
+      "version": "1.0.0",
+      "path": "docs/standards/rules/naming-common.md",
+      "roles": [
+        "backend",
+        "frontend",
+        "qa",
+        "devops",
+        "ai"
+      ],
+      "stacks": [],
+      "tags": [
+        "naming",
+        "code-style"
+      ],
+      "summary": "???????????????????????",
+      "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json",
+      "shards": [
+        "docs/standards/_index/by-doc-type/rule.generated.json",
+        "docs/standards/_index/by-role/ai.generated.json",
+        "docs/standards/_index/by-role/backend.generated.json",
+        "docs/standards/_index/by-role/devops.generated.json",
+        "docs/standards/_index/by-role/frontend.generated.json",
+        "docs/standards/_index/by-role/qa.generated.json",
+        "docs/standards/_index/by-tag/code-style.generated.json",
+        "docs/standards/_index/by-tag/naming.generated.json"
+      ]
+    },
     {
       "id": "standards.authoring",
       "title": "规范撰写规范",
