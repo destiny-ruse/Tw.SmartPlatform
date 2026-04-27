@@ -1,0 +1,20 @@
+schema_version: 1.0.0
+id: {{id}}
+kind: module
+name: {{name}}
+status: active
+summary: {{summary}}
+owners: [platform]
+tags: [{{tags}}]
+module_type: {{module_type}}
+stack: {{stack}}
+path: {{path}}
+source:
+  declared_in: {{declared_in}}
+  evidence:
+    - {{evidence}}
+provenance:
+  created_by: human
+  created_at: {{today}}
+  updated_by: human
+  updated_at: {{today}}

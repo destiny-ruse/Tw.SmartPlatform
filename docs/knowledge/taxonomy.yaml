@@ -1,0 +1,66 @@
+schema_version: 1.0.0
+valid_kinds:
+  - capability
+  - module
+  - contract
+  - integration
+  - decision
+valid_statuses:
+  - active
+  - draft
+  - deprecated
+  - superseded
+valid_stacks:
+  - dotnet
+  - java
+  - python
+  - vue-ts
+  - uniapp
+valid_domains:
+  - security
+  - integration
+  - platform
+  - frontend
+  - contracts
+  - operations
+path_rules:
+  - pattern: backend/dotnet/Services/*/**
+    kind: module
+    module_type: microservice
+    stack: dotnet
+  - pattern: backend/dotnet/BuildingBlocks/src/*/**
+    kind: module
+    module_type: building-block
+    stack: dotnet
+  - pattern: frontend/packages/*/**
+    kind: module
+    module_type: frontend-package
+    stack: vue-ts
+  - pattern: contracts/protos/**/*
+    kind: contract
+    contract_type: grpc
+diagnostics:
+  knowledge.missing-module:
+    severity: error
+    message_zh: 新增服务或模块目录尚未声明 module 图谱节点。
+    suggestion_zh: 新增对应 module 图谱节点，或在 taxonomy.yaml 中声明忽略规则。
+  knowledge.missing-capability:
+    severity: warning
+    message_zh: 新增公共构件目录可能暴露可复用能力，但尚未声明 capability 图谱节点。
+    suggestion_zh: 为该公共构件声明 capability，或说明它不对外提供复用能力。
+  knowledge.contract-drift:
+    severity: error
+    message_zh: 公共契约发生变更，但对应 contract 图谱节点未更新。
+    suggestion_zh: 更新 contract 节点的版本、兼容性说明或变更证据。
+query_aliases:
+  当前用户:
+    - auth
+    - authentication
+    - user
+  授权:
+    - auth
+    - authorization
+    - permission
+  远程调用:
+    - remote-call
+    - service-integration

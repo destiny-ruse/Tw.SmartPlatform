@@ -1,0 +1,26 @@
+schema_version: 1.0.0
+id: {{id}}
+kind: capability
+name: {{name}}
+status: active
+summary: {{summary}}
+owners: [platform]
+tags: [{{tags}}]
+domain: {{domain}}
+provided_by:
+  modules:
+    - {{module_id}}
+reuse:
+  use_when:
+    - {{use_when}}
+  do_not_reimplement:
+    - {{do_not_reimplement}}
+source:
+  declared_in: {{declared_in}}
+  evidence:
+    - {{evidence}}
+provenance:
+  created_by: human
+  created_at: {{today}}
+  updated_by: human
+  updated_at: {{today}}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/knowledge/memory.schema.json",
+  "title": "Tw.SmartPlatform Memory Graph Node",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "kind",
+    "name",
+    "status",
+    "summary",
+    "owners",
+    "tags",
+    "source",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+$" },
+    "kind": { "enum": ["capability", "module", "contract", "integration", "decision"] },
+    "name": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["active", "draft", "deprecated", "superseded"] },
+    "summary": { "type": "string", "minLength": 1 },
+    "owners": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "source": {
+      "type": "object",
+      "required": ["declared_in", "evidence"]
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["created_by", "created_at", "updated_by", "updated_at"]
+    }
+  }
+}
