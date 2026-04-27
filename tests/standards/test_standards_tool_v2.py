@@ -1,4 +1,5 @@
 import contextlib
+import io
 import json
 import tempfile
 import textwrap
@@ -260,6 +261,65 @@ class StandardsToolV2Tests(unittest.TestCase):
             text = diagnostic_text(messages)
             self.assertIn('unknown standard reference "rules.api-response-shape#rules:missing"', text)
             self.assertNotIn('rules.api-response-shape#rules:no-null"', text)
+
+    def test_new_standard_uses_v2_template_fields(self):
+        with isolated_repo() as root:
+            write_file(
+                root,
+                "tools/standards/templates/standard.md",
+                """
+                ---
+                id: {{id}}
+                title: {{title}}
+                doc_type: {{doc_type}}
+                status: {{status}}
+                version: 0.1.0
+                owners: [{{owner}}]
+                roles: [{{roles}}]
+                stacks: [{{stacks}}]
+                tags: [{{tags}}]
+                summary: {{summary}}
+                machine_rules: []
+                supersedes: []
+                superseded_by:
+                review_after: {{review_after}}
+                ---
+
+                # {{title}}
+                """,
+            )
+
+            args = standards.build_parser().parse_args(
+                [
+                    "new-standard",
+                    "--id",
+                    "rules.example",
+                    "--title",
+                    "示例规范",
+                    "--doc-type",
+                    "rule",
+                    "--roles",
+                    "backend,ai",
+                    "--stacks",
+                    "dotnet",
+                    "--tags",
+                    "api,contract",
+                    "--summary",
+                    "用于验证 v2 模板。",
+                    "--path",
+                    "docs/standards/rules/example.md",
+                ]
+            )
+
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(0, args.func(args))
+            content = (root / "docs/standards/rules/example.md").read_text(encoding="utf-8")
+            self.assertIn("doc_type: rule", content)
+            self.assertIn("roles: [backend, ai]", content)
+            self.assertIn("stacks: [dotnet]", content)
+            self.assertIn("tags: [api, contract]", content)
+            self.assertIn("summary: 用于验证 v2 模板。", content)
+            self.assertNotIn("applies_to:", content)
 
 
 if __name__ == "__main__":

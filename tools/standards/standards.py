@@ -601,6 +601,14 @@ def markdown_files_for_link_check() -> list[Path]:
     return files
 
 
+def is_under_directory(path: Path, directory: Path) -> bool:
+    try:
+        path.resolve().relative_to(directory.resolve())
+        return True
+    except ValueError:
+        return False
+
+
 def build_standard_reference_lookup() -> tuple[dict[str, dict[str, set[str]]], list[Diagnostic]]:
     docs, messages = load_standard_docs()
     lookup: dict[str, dict[str, set[str]]] = {}
@@ -668,6 +676,9 @@ def collect_link_messages() -> list[Diagnostic]:
                             f'anchor "#{anchor}" does not exist in {rel_path(target_path)}',
                         )
                     )
+
+        if is_under_directory(path, STANDARDS_DIR / "_meta"):
+            continue
 
         for match in STANDARD_REF_PATTERN.finditer(text):
             standard_id, anchor, region = match.groups()
@@ -741,6 +752,10 @@ def make_anchor(title: str, counts: dict[str, int]) -> str:
     if count == 0:
         return base
     return f"{base}-{count}"
+
+
+def format_inline_list_items(value: str) -> str:
+    return ", ".join(item.strip() for item in value.split(",") if item.strip())
 
 
 def section_index_path(standard_id: str) -> str:
@@ -1183,9 +1198,13 @@ def command_new_standard(args: argparse.Namespace) -> int:
     replacements = {
         "{{id}}": args.id,
         "{{title}}": args.title,
+        "{{doc_type}}": args.doc_type,
         "{{status}}": args.status,
         "{{owner}}": args.owner,
-        "{{applies_to}}": args.applies_to,
+        "{{roles}}": format_inline_list_items(args.roles),
+        "{{stacks}}": format_inline_list_items(args.stacks),
+        "{{tags}}": format_inline_list_items(args.tags),
+        "{{summary}}": args.summary,
         "{{review_after}}": (today + timedelta(days=args.review_days)).isoformat(),
         "{{today}}": today.isoformat(),
     }
@@ -1264,9 +1283,13 @@ def build_parser() -> argparse.ArgumentParser:
     new_standard = subparsers.add_parser("new-standard", help="Create a standard skeleton")
     new_standard.add_argument("--id", required=True, help="Dotted standard id")
     new_standard.add_argument("--title", required=True, help="Standard title")
+    new_standard.add_argument("--doc-type", required=True, choices=sorted(VALID_DOC_TYPES))
     new_standard.add_argument("--status", default="draft", choices=sorted(VALID_STATUSES))
     new_standard.add_argument("--owner", default="architecture-team")
-    new_standard.add_argument("--applies-to", default="standards")
+    new_standard.add_argument("--roles", required=True, help="Comma-separated role tokens")
+    new_standard.add_argument("--stacks", default="", help="Comma-separated stack tokens")
+    new_standard.add_argument("--tags", required=True, help="Comma-separated tag tokens")
+    new_standard.add_argument("--summary", required=True, help="One-sentence routing summary")
     new_standard.add_argument("--review-days", type=int, default=180)
     new_standard.add_argument("--path", help="Repo-relative target path under docs/standards")
     new_standard.set_defaults(func=command_new_standard)

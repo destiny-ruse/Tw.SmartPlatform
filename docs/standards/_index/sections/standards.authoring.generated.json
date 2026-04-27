@@ -1,0 +1,79 @@
+{
+  "id": "standards.authoring",
+  "path": "docs/standards/processes/standard-authoring.md",
+  "version": "2.0.0",
+  "sections": [
+    {
+      "anchor": "goal",
+      "title": "目标",
+      "level": 2,
+      "start_line": 24,
+      "end_line": 28,
+      "regions": []
+    },
+    {
+      "anchor": "scope",
+      "title": "适用范围",
+      "level": 2,
+      "start_line": 29,
+      "end_line": 39,
+      "regions": []
+    },
+    {
+      "anchor": "structure",
+      "title": "文档结构",
+      "level": 2,
+      "start_line": 40,
+      "end_line": 52,
+      "regions": []
+    },
+    {
+      "anchor": "metadata",
+      "title": "元数据要求",
+      "level": 2,
+      "start_line": 53,
+      "end_line": 74,
+      "regions": []
+    },
+    {
+      "anchor": "lifecycle",
+      "title": "状态管理",
+      "level": 2,
+      "start_line": 75,
+      "end_line": 86,
+      "regions": []
+    },
+    {
+      "anchor": "retrieval",
+      "title": "AI 引用要求",
+      "level": 2,
+      "start_line": 87,
+      "end_line": 100,
+      "regions": []
+    },
+    {
+      "anchor": "machine-rules",
+      "title": "机器规则绑定",
+      "level": 2,
+      "start_line": 101,
+      "end_line": 113,
+      "regions": []
+    },
+    {
+      "anchor": "governance",
+      "title": "变更流程",
+      "level": 2,
+      "start_line": 114,
+      "end_line": 125,
+      "regions": []
+    },
+    {
+      "anchor": "changelog",
+      "title": "变更记录",
+      "level": 2,
+      "start_line": 126,
+      "end_line": 131,
+      "regions": []
+    }
+  ]
+}

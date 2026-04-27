@@ -1,0 +1,54 @@
+{
+  "id": "standard-authoring.rules",
+  "standard_id": "standards.authoring",
+  "type": "schema",
+  "version": "2.0.0",
+  "status": "active",
+  "description": "规范撰写规范的机器可读绑定示例，用于校验 v2 元数据、显式 anchor 和分片检索契约。",
+  "required_metadata": [
+    "id",
+    "title",
+    "doc_type",
+    "status",
+    "version",
+    "owners",
+    "roles",
+    "stacks",
+    "tags",
+    "summary",
+    "machine_rules",
+    "supersedes",
+    "superseded_by",
+    "review_after"
+  ],
+  "forbidden_metadata": [
+    "applies_to"
+  ],
+  "allowed_doc_types": [
+    "rule",
+    "reference",
+    "process",
+    "decision"
+  ],
+  "allowed_statuses": [
+    "draft",
+    "active",
+    "deprecated",
+    "superseded"
+  ],
+  "allowed_roles": [
+    "architect",
+    "backend",
+    "frontend",
+    "qa",
+    "devops",
+    "ai"
+  ],
+  "allowed_stacks": [
+    "dotnet",
+    "java",
+    "python",
+    "vue-ts",
+    "uniapp"
+  ]
+}
