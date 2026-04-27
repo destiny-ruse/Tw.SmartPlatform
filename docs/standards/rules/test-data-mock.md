@@ -3,7 +3,7 @@ id: rules.test-data-mock
 title: 测试数据与 Mock 规范
 doc_type: rule
 status: active
-version: 1.0.0
+version: 1.1.0
 owners: [architecture-team]
 roles: [backend, frontend, qa, ai]
 stacks: [dotnet, java, python, vue-ts, uniapp]
@@ -20,45 +20,75 @@ review_after: 2026-10-27
 <!-- anchor: goal -->
 ## 目标
 
-测试数据与 Mock 规范用于让工程实践在安全性、可维护性和可验证性上保持一致。
+测试数据与 Mock 规范用于降低测试不稳定、环境耦合、真实个人信息泄露和过度 Mock 导致行为失真的风险。
+测试数据必须可重复、可理解、可最小化，Mock 必须只隔离不可控边界。
+一致的数据和 Mock 规则可以让测试失败指向真实行为差异，而不是随机输入、共享状态或伪造实现。
 
 <!-- anchor: scope -->
 ## 适用范围
 
-适用于功能开发、缺陷修复、重构、契约变更和发布验证。
+适用于单元测试、集成测试、契约测试、端到端测试、seed 数据、fixture、factory、snapshot、测试数据库迁移、Mock server、stub、fake、spy 和外部依赖替身。
+本规范覆盖测试数据构造、确定性、PII 安全、Mock 边界、共享 fixture 维护和数据库状态隔离。
+它不适用于生产数据修复、生产脱敏流程或正式数据迁移审批；这些内容应当引用安全和数据库迁移规范。
 
 <!-- anchor: rules -->
 ## 规则
 
-1. 测试必须覆盖正常路径、失败路径和边界条件。
-2. Mock 只能替代不可控外部依赖，不得测试 Mock 自身行为。
-3. 覆盖率目标必须服务风险，不得用无意义断言凑数。
-4. 缺陷修复必须先补回归测试。
+1. 测试数据必须确定性生成，固定时间、随机数、排序、ID 和 locale 相关输入，不得依赖当前日期、真实网络响应或执行顺序。
+2. fixture 必须只包含测试断言需要的字段和值；不得复制整段生产 payload、数据库导出或含噪声的大型对象。
+3. 测试数据不得包含真实 PII、密钥、令牌、连接串或可关联到个人的标识；需要个人信息形态时必须使用合成数据或脱敏样例。
+4. Mock 只能替代不可控外部依赖、慢依赖、付费依赖、时间、随机数或失败注入点；不得 Mock 被测模块自身的核心逻辑。
+5. 集成测试应当优先使用真实数据库、真实序列化和真实配置解析；使用 Mock 时必须说明被隔离的边界和剩余未验证风险。
+6. 共享 fixture、factory 和 Mock server 响应必须随契约或 schema 变更同步更新，不得让测试数据与公共契约漂移。
+7. 数据库测试必须隔离状态，使用事务回滚、临时 schema、唯一测试 ID 或重建策略，避免测试之间互相污染。
+8. Mock 断言必须服务业务结果或边界交互，不得只验证内部调用次数作为通过条件。
 
 <!-- anchor: examples -->
 ## 示例
 
-正例：先编写失败的回归测试，再修复缺陷。
+正例：
 
-反例：只验证 Mock 被调用而不验证真实行为。
+```json
+{
+  "id": "user_test_001",
+  "email": "user001@example.test",
+  "createdAt": "2026-04-27T00:00:00Z",
+  "role": "viewer"
+}
+```
 
-验证命令示例：`python -m unittest discover -s tests -p "test_*.py" -v`
+反例：
+
+```json
+{
+  "name": "真实姓名",
+  "phone": "13800138000",
+  "token": "copied-production-token",
+  "createdAt": "now"
+}
+```
 
 <!-- anchor: checklist -->
 ## 检查清单
 
-- 是否覆盖失败路径。
-- 是否能在本地重复执行。
-- 是否给出验证命令。
+- 是否固定时间、随机数、ID、排序和外部响应。
+- 是否确认 fixture 不含真实 PII、密钥、令牌或生产导出数据。
+- 是否只 Mock 不可控边界，并保留核心业务逻辑的真实执行。
+- 是否说明 Mock 后未覆盖的风险和对应测试层级。
+- 是否让测试数据库状态可隔离、可清理、可重复运行。
+- 是否随契约、schema 或迁移变更同步更新 fixture 和 Mock 响应。
 
 <!-- anchor: relations -->
 ## 相关规范
 
-关联契约测试、代码评审、CI 流水线和测试数据规范。
+- rules.test-strategy
+- rules.pii-handling
+- rules.db-migration
 
 <!-- anchor: changelog -->
 ## 变更记录
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| 1.1.0 | 2026-04-27 | 补充执行级规则、示例、检查清单和相关规范。 |
 | 1.0.0 | 2026-04-27 | 建立初始规范。 |

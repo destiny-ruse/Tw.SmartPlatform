@@ -3,7 +3,7 @@ id: rules.test-coverage
 title: 测试覆盖规范
 doc_type: rule
 status: active
-version: 1.0.0
+version: 1.1.0
 owners: [architecture-team]
 roles: [backend, frontend, qa, ai]
 stacks: [dotnet, java, python, vue-ts, uniapp]
@@ -20,45 +20,75 @@ review_after: 2026-10-27
 <!-- anchor: goal -->
 ## 目标
 
-测试覆盖规范用于让工程实践在安全性、可维护性和可验证性上保持一致。
+测试覆盖规范用于降低关键路径、边界条件和回归场景在变更后无人验证的风险。
+覆盖率是风险信号而不是质量本身，必须结合业务影响、变更类型和缺陷历史解释。
+一致的覆盖要求可以让提交者说明已验证内容，让评审者发现缺口，并让例外具备可追溯理由。
 
 <!-- anchor: scope -->
 ## 适用范围
 
-适用于功能开发、缺陷修复、重构、契约变更和发布验证。
+适用于 `tests/`、`src/**/__tests__`、后端测试项目、前端组件测试、契约测试、端到端测试、覆盖率报告、CI 覆盖门禁和与缺陷修复相关的回归测试。
+本规范覆盖新增功能、缺陷修复、重构、数据库迁移、API 契约变更和发布前验证中的覆盖判断。
+它不把生成代码、纯声明文件、快照基线更新或无法稳定自动化的手工探索测试等同于覆盖率目标；这些边界必须在变更说明中记录。
 
 <!-- anchor: rules -->
 ## 规则
 
-1. 测试必须覆盖正常路径、失败路径和边界条件。
-2. Mock 只能替代不可控外部依赖，不得测试 Mock 自身行为。
-3. 覆盖率目标必须服务风险，不得用无意义断言凑数。
-4. 缺陷修复必须先补回归测试。
+1. 新增或修改业务行为必须覆盖正常路径、失败路径、边界条件和权限或状态转换，不得只验证最容易通过的 happy path。
+2. 关键路径必须有比普通路径更强的覆盖，包括订单、支付、认证、授权、数据迁移、消息投递、外部 API 集成和不可逆写入。
+3. 缺陷修复必须补充能复现原问题的回归测试；如果无法自动化，必须记录人工复现步骤、验证结果和后续自动化条件。
+4. 覆盖率门禁应当作为风险信号使用，必须结合未覆盖行的业务含义评审；不得用无断言测试、只执行不校验的测试或无意义快照凑覆盖率。
+5. 重构不得降低既有行为覆盖；如果删除测试，必须说明被删除测试为何重复、失效或由更合适的测试层级替代。
+6. 契约、序列化、数据库迁移和配置解析变更必须有面向兼容性或迁移结果的覆盖，不得只依赖单元测试覆盖内部 helper。
+7. 覆盖例外必须写明未覆盖风险、原因、人工验证方式、责任人或后续跟踪项，并在代码评审中显式确认。
+8. AI assistant 生成测试时必须验证断言针对真实行为，不得仅断言 Mock 调用次数或实现细节。
 
 <!-- anchor: examples -->
 ## 示例
 
-正例：先编写失败的回归测试，再修复缺陷。
+正例：
 
-反例：只验证 Mock 被调用而不验证真实行为。
+```typescript
+it("rejects checkout when inventory reservation fails", async () => {
+  inventory.reserve.mockRejectedValue(new Error("sold out"));
 
-验证命令示例：`python -m unittest discover -s tests -p "test_*.py" -v`
+  await expect(checkout(cart)).rejects.toThrow("sold out");
+  expect(orderRepository.save).not.toHaveBeenCalled();
+});
+```
+
+反例：
+
+```typescript
+it("calls reserve", async () => {
+  await checkout(cart);
+  expect(inventory.reserve).toHaveBeenCalled();
+});
+```
+
+验证命令示例：`npm test -- --coverage`
 
 <!-- anchor: checklist -->
 ## 检查清单
 
-- 是否覆盖失败路径。
-- 是否能在本地重复执行。
-- 是否给出验证命令。
+- 是否覆盖正常路径、失败路径、边界条件和权限或状态转换。
+- 是否识别并覆盖关键路径和高风险变更。
+- 是否为缺陷修复补充回归测试或记录无法自动化的原因。
+- 是否检查覆盖率变化背后的未覆盖风险，而不是只看百分比。
+- 是否避免无断言测试、无意义快照和只验证 Mock 的测试。
+- 是否记录覆盖例外、人工验证和后续跟踪。
 
 <!-- anchor: relations -->
 ## 相关规范
 
-关联契约测试、代码评审、CI 流水线和测试数据规范。
+- rules.test-strategy
+- rules.code-review
+- rules.contract-testing
 
 <!-- anchor: changelog -->
 ## 变更记录
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| 1.1.0 | 2026-04-27 | 补充执行级规则、示例、检查清单和相关规范。 |
 | 1.0.0 | 2026-04-27 | 建立初始规范。 |

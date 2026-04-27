@@ -1,54 +1,62 @@
 {
   "id": "rules.contract-testing",
   "path": "docs/standards/rules/contract-testing.md",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sections": [
     {
       "anchor": "goal",
       "title": "目标",
       "level": 2,
       "start_line": 21,
-      "end_line": 25,
+      "end_line": 27,
       "regions": []
     },
     {
       "anchor": "scope",
       "title": "适用范围",
       "level": 2,
-      "start_line": 26,
-      "end_line": 30,
+      "start_line": 28,
+      "end_line": 34,
       "regions": []
     },
     {
       "anchor": "rules",
       "title": "规则",
       "level": 2,
-      "start_line": 31,
-      "end_line": 38,
+      "start_line": 35,
+      "end_line": 46,
       "regions": []
     },
     {
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 39,
-      "end_line": 45,
+      "start_line": 47,
+      "end_line": 73,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 46,
-      "end_line": 52,
+      "start_line": 74,
+      "end_line": 83,
+      "regions": []
+    },
+    {
+      "anchor": "relations",
+      "title": "相关规范",
+      "level": 2,
+      "start_line": 84,
+      "end_line": 91,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 53,
-      "end_line": 57,
+      "start_line": 92,
+      "end_line": 97,
       "regions": []
     }
   ]

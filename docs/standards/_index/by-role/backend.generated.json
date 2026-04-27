@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T09:35:41Z",
+  "generated_at": "2026-04-27T09:46:50Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -386,7 +386,7 @@
       "title": "代码评审规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/code-review.md",
       "roles": [
         "architect",
@@ -548,7 +548,7 @@
       "title": "契约测试规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/contract-testing.md",
       "roles": [
         "architect",
@@ -1310,7 +1310,7 @@
       "title": "测试覆盖规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/test-coverage.md",
       "roles": [
         "backend",
@@ -1337,7 +1337,7 @@
       "title": "测试数据与 Mock 规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/test-data-mock.md",
       "roles": [
         "backend",
@@ -1364,7 +1364,7 @@
       "title": "测试策略规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/test-strategy.md",
       "roles": [
         "backend",
