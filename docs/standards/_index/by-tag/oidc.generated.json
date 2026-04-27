@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.auth-oauth-oidc",
-      "title": "OAuth ? OIDC ????",
+      "title": "OAuth 与 OIDC 认证规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -34,7 +34,7 @@
         "oauth",
         "oidc"
       ],
-      "summary": "?? OAuth2/OIDC ????????????????",
+      "summary": "规定 OAuth2/OIDC 登录、令牌、刷新和权限边界要求。",
       "sections_index": "docs/standards/_index/sections/rules.auth-oauth-oidc.generated.json"
     }
   ]

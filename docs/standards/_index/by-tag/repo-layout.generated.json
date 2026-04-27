@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.repo-layout",
-      "title": "????????",
+      "title": "仓库目录布局规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -28,7 +28,7 @@
         "repo-layout",
         "governance"
       ],
-      "summary": "????????????????????????",
+      "summary": "规定源码、测试、文档、工具和生成产物的目录职责。",
       "sections_index": "docs/standards/_index/sections/rules.repo-layout.generated.json"
     }
   ]

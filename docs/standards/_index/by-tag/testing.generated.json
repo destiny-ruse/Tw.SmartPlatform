@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.contract-testing",
-      "title": "??????",
+      "title": "契约测试规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -34,12 +34,12 @@
         "contract",
         "api"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定提供方和消费方契约测试的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
     },
     {
       "id": "rules.test-coverage",
-      "title": "??????",
+      "title": "测试覆盖规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -61,12 +61,12 @@
         "testing",
         "quality"
       ],
-      "summary": "?????????????????",
+      "summary": "规定覆盖目标、风险例外和质量门禁。",
       "sections_index": "docs/standards/_index/sections/rules.test-coverage.generated.json"
     },
     {
       "id": "rules.test-data-mock",
-      "title": "????? Mock ??",
+      "title": "测试数据与 Mock 规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -88,12 +88,12 @@
         "testing",
         "quality"
       ],
-      "summary": "?????????Mock ????????",
+      "summary": "规定测试数据构造、Mock 使用和隔离策略。",
       "sections_index": "docs/standards/_index/sections/rules.test-data-mock.generated.json"
     },
     {
       "id": "rules.test-strategy",
-      "title": "??????",
+      "title": "测试策略规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -115,7 +115,7 @@
         "testing",
         "quality"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定单元、集成、契约、端到端和人工验证边界。",
       "sections_index": "docs/standards/_index/sections/rules.test-strategy.generated.json"
     }
   ]

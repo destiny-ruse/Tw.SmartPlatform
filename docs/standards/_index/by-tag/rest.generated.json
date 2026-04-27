@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.api-rest-design",
-      "title": "REST API ????",
+      "title": "REST API 设计规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -32,7 +32,7 @@
         "rest",
         "contract"
       ],
-      "summary": "?? REST ???????????????",
+      "summary": "规定 REST 资源、方法、版本和兼容性约定。",
       "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json"
     }
   ]

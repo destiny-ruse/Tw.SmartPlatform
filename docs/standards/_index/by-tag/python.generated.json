@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.comments-python",
-      "title": "Python ????",
+      "title": "Python 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "python",
         "code-style"
       ],
-      "summary": "?? Python docstring???????????????",
+      "summary": "规定 Python docstring、类型说明和复杂逻辑注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-python.generated.json"
     },
     {
       "id": "rules.naming-python",
-      "title": "Python ????",
+      "title": "Python 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -49,7 +49,7 @@
         "python",
         "code-style"
       ],
-      "summary": "?? Python ??????????????????",
+      "summary": "规定 Python 模块、类、函数、变量和常量命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-python.generated.json"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.cache-conventions",
-      "title": "??????",
+      "title": "缓存约定规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -31,12 +31,12 @@
         "caching",
         "framework"
       ],
-      "summary": "??????TTL???????????????",
+      "summary": "规定缓存键、TTL、失效、穿透保护和一致性边界。",
       "sections_index": "docs/standards/_index/sections/rules.cache-conventions.generated.json"
     },
     {
       "id": "rules.configuration",
-      "title": "??????",
+      "title": "配置管理规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -57,12 +57,12 @@
         "backend",
         "framework"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定配置来源、优先级、密钥引用和环境差异。",
       "sections_index": "docs/standards/_index/sections/rules.configuration.generated.json"
     },
     {
       "id": "rules.error-handling",
-      "title": "??????",
+      "title": "错误处理规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -83,12 +83,12 @@
         "backend",
         "framework"
       ],
-      "summary": "??????????????????",
+      "summary": "规定异常分类、错误码映射和恢复策略。",
       "sections_index": "docs/standards/_index/sections/rules.error-handling.generated.json"
     },
     {
       "id": "rules.idempotency",
-      "title": "?????",
+      "title": "幂等性规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -109,12 +109,12 @@
         "backend",
         "framework"
       ],
-      "summary": "??????????????????",
+      "summary": "规定请求去重、幂等键和重复消息处理。",
       "sections_index": "docs/standards/_index/sections/rules.idempotency.generated.json"
     },
     {
       "id": "rules.resilience",
-      "title": "??????",
+      "title": "韧性设计规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -135,12 +135,12 @@
         "backend",
         "framework"
       ],
-      "summary": "?????????????????",
+      "summary": "规定超时、重试、限流、熔断和降级。",
       "sections_index": "docs/standards/_index/sections/rules.resilience.generated.json"
     },
     {
       "id": "rules.slo",
-      "title": "SLO ??",
+      "title": "SLO 规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -161,7 +161,7 @@
         "backend",
         "framework"
       ],
-      "summary": "?????????????????",
+      "summary": "规定服务目标、错误预算和告警口径。",
       "sections_index": "docs/standards/_index/sections/rules.slo.generated.json"
     }
   ]

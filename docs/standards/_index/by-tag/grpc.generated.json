@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.grpc-proto-style",
-      "title": "gRPC Proto ????",
+      "title": "gRPC Proto 风格规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -34,12 +34,12 @@
         "contract",
         "versioning"
       ],
-      "summary": "??gRPC proto ??????????????????????",
+      "summary": "规定gRPC proto 文件、消息、服务和字段风格的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.grpc-proto-style.generated.json"
     },
     {
       "id": "rules.grpc-versioning",
-      "title": "gRPC ??????",
+      "title": "gRPC 版本演进规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -63,7 +63,7 @@
         "compatibility",
         "versioning"
       ],
-      "summary": "??gRPC ???????????????????????",
+      "summary": "规定gRPC 服务版本、字段兼容和废弃流程的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
     }
   ]

@@ -5,7 +5,7 @@
   "sections": [
     {
       "anchor": "goal",
-      "title": "??",
+      "title": "目标",
       "level": 2,
       "start_line": 21,
       "end_line": 25,
@@ -13,7 +13,7 @@
     },
     {
       "anchor": "scope",
-      "title": "????",
+      "title": "适用范围",
       "level": 2,
       "start_line": 26,
       "end_line": 30,
@@ -21,7 +21,7 @@
     },
     {
       "anchor": "catalog",
-      "title": "??",
+      "title": "目录",
       "level": 2,
       "start_line": 31,
       "end_line": 40,
@@ -29,7 +29,7 @@
     },
     {
       "anchor": "examples",
-      "title": "??",
+      "title": "示例",
       "level": 2,
       "start_line": 41,
       "end_line": 47,
@@ -37,7 +37,7 @@
     },
     {
       "anchor": "changelog",
-      "title": "????",
+      "title": "变更记录",
       "level": 2,
       "start_line": 48,
       "end_line": 52,

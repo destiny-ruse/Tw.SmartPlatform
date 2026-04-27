@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.messaging-patterns",
-      "title": "??????",
+      "title": "消息模式规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -34,7 +34,7 @@
         "reliability",
         "idempotency"
       ],
-      "summary": "??????????????????????????",
+      "summary": "规定消息可靠性、幂等消费和重试策略的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.messaging-patterns.generated.json"
     }
   ]

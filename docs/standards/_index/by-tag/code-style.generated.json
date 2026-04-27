@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.comments-dotnet",
-      "title": ".NET ????",
+      "title": ".NET 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "dotnet",
         "code-style"
       ],
-      "summary": "?? .NET XML ????? API ????????????",
+      "summary": "规定 .NET XML 注释、公共 API 说明和复杂逻辑注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-dotnet.generated.json"
     },
     {
       "id": "rules.comments-java",
-      "title": "Java ????",
+      "title": "Java 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -49,12 +49,12 @@
         "java",
         "code-style"
       ],
-      "summary": "?? Java ???Javadoc ??????????",
+      "summary": "规定 Java 注释、Javadoc 和复杂逻辑说明方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-java.generated.json"
     },
     {
       "id": "rules.comments-python",
-      "title": "Python ????",
+      "title": "Python 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -71,12 +71,12 @@
         "python",
         "code-style"
       ],
-      "summary": "?? Python docstring???????????????",
+      "summary": "规定 Python docstring、类型说明和复杂逻辑注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-python.generated.json"
     },
     {
       "id": "rules.comments-ts",
-      "title": "TypeScript ????",
+      "title": "TypeScript 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -93,12 +93,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?? TypeScript?Vue ??????????",
+      "summary": "规定 TypeScript、Vue 和前端契约注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-ts.generated.json"
     },
     {
       "id": "rules.fe-a11y",
-      "title": "????????",
+      "title": "前端可访问性规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -115,12 +115,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "????????????????????",
+      "summary": "规定语义、键盘操作、焦点和辅助技术支持。",
       "sections_index": "docs/standards/_index/sections/rules.fe-a11y.generated.json"
     },
     {
       "id": "rules.fe-compat",
-      "title": "???????",
+      "title": "前端兼容性规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -137,12 +137,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?????????WebView ??????",
+      "summary": "规定浏览器、设备、WebView 和降级策略。",
       "sections_index": "docs/standards/_index/sections/rules.fe-compat.generated.json"
     },
     {
       "id": "rules.fe-i18n",
-      "title": "???????",
+      "title": "前端国际化规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -159,12 +159,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "???????????????????",
+      "summary": "规定文案键、语言包、占位符和回退策略。",
       "sections_index": "docs/standards/_index/sections/rules.fe-i18n.generated.json"
     },
     {
       "id": "rules.fe-styles",
-      "title": "??????",
+      "title": "前端样式规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -181,12 +181,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "???????????????????",
+      "summary": "规定样式组织、变量、响应式和主题边界。",
       "sections_index": "docs/standards/_index/sections/rules.fe-styles.generated.json"
     },
     {
       "id": "rules.fe-typescript",
-      "title": "?? TypeScript ??",
+      "title": "前端 TypeScript 规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -203,12 +203,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定类型声明、空值处理、异步调用和模块边界。",
       "sections_index": "docs/standards/_index/sections/rules.fe-typescript.generated.json"
     },
     {
       "id": "rules.fe-vue-ts-project",
-      "title": "Vue TypeScript ????",
+      "title": "Vue TypeScript 项目规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -225,12 +225,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?? Vue TypeScript ????????????????",
+      "summary": "规定 Vue TypeScript 项目的目录、组件边界和构建配置。",
       "sections_index": "docs/standards/_index/sections/rules.fe-vue-ts-project.generated.json"
     },
     {
       "id": "rules.naming-common",
-      "title": "??????",
+      "title": "通用命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -247,12 +247,12 @@
         "naming",
         "code-style"
       ],
-      "summary": "???????????????????????",
+      "summary": "规定跨语言命名的可读性、一致性和领域表达原则。",
       "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
     },
     {
       "id": "rules.naming-dotnet",
-      "title": ".NET ????",
+      "title": ".NET 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -269,12 +269,12 @@
         "dotnet",
         "code-style"
       ],
-      "summary": "?? .NET ?????????????????????",
+      "summary": "规定 .NET 项目的类型、成员、异步方法和配置命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-dotnet.generated.json"
     },
     {
       "id": "rules.naming-java",
-      "title": "Java ????",
+      "title": "Java 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -291,12 +291,12 @@
         "java",
         "code-style"
       ],
-      "summary": "?? Java ??????????????????",
+      "summary": "规定 Java 项目的类型、方法、变量和包命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-java.generated.json"
     },
     {
       "id": "rules.naming-python",
-      "title": "Python ????",
+      "title": "Python 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -313,12 +313,12 @@
         "python",
         "code-style"
       ],
-      "summary": "?? Python ??????????????????",
+      "summary": "规定 Python 模块、类、函数、变量和常量命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-python.generated.json"
     },
     {
       "id": "rules.naming-ts-vue",
-      "title": "TypeScript ? Vue ????",
+      "title": "TypeScript 与 Vue 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -335,7 +335,7 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?? TypeScript?Vue ????????????????",
+      "summary": "规定 TypeScript、Vue 组件、组合式函数和路由命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-ts-vue.generated.json"
     }
   ]

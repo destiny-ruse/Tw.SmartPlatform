@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.git-commit",
-      "title": "Git ????",
+      "title": "Git 提交规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -28,7 +28,7 @@
         "git",
         "governance"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定提交信息格式、提交粒度和可审查历史要求。",
       "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json"
     }
   ]

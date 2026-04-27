@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "references.error-codes",
-      "title": "?????",
+      "title": "错误码目录",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "error-handling",
         "reference"
       ],
-      "summary": "????????????????????",
+      "summary": "定义通用错误码分类、命名方式和使用场景。",
       "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json"
     },
     {
       "id": "rules.api-error-response",
-      "title": "API ??????",
+      "title": "API 错误响应规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -54,7 +54,7 @@
         "error-handling",
         "contract"
       ],
-      "summary": "????????????????????????",
+      "summary": "规定错误码、错误消息、追踪标识和客户端处理契约。",
       "sections_index": "docs/standards/_index/sections/rules.api-error-response.generated.json"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.comments-common",
-      "title": "??????",
+      "title": "通用注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -28,12 +28,12 @@
         "comments",
         "governance"
       ],
-      "summary": "????????????????????",
+      "summary": "规定跨语言注释的意图、准确性和维护要求。",
       "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
     },
     {
       "id": "rules.comments-dotnet",
-      "title": ".NET ????",
+      "title": ".NET 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -50,12 +50,12 @@
         "dotnet",
         "code-style"
       ],
-      "summary": "?? .NET XML ????? API ????????????",
+      "summary": "规定 .NET XML 注释、公共 API 说明和复杂逻辑注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-dotnet.generated.json"
     },
     {
       "id": "rules.comments-java",
-      "title": "Java ????",
+      "title": "Java 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -72,12 +72,12 @@
         "java",
         "code-style"
       ],
-      "summary": "?? Java ???Javadoc ??????????",
+      "summary": "规定 Java 注释、Javadoc 和复杂逻辑说明方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-java.generated.json"
     },
     {
       "id": "rules.comments-python",
-      "title": "Python ????",
+      "title": "Python 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -94,7 +94,7 @@
         "python",
         "code-style"
       ],
-      "summary": "?? Python docstring???????????????",
+      "summary": "规定 Python docstring、类型说明和复杂逻辑注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-python.generated.json"
     }
   ]

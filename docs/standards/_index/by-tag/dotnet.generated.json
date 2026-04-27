@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.comments-dotnet",
-      "title": ".NET ????",
+      "title": ".NET 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "dotnet",
         "code-style"
       ],
-      "summary": "?? .NET XML ????? API ????????????",
+      "summary": "规定 .NET XML 注释、公共 API 说明和复杂逻辑注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-dotnet.generated.json"
     },
     {
       "id": "rules.naming-dotnet",
-      "title": ".NET ????",
+      "title": ".NET 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -49,7 +49,7 @@
         "dotnet",
         "code-style"
       ],
-      "summary": "?? .NET ?????????????????????",
+      "summary": "规定 .NET 项目的类型、成员、异步方法和配置命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-dotnet.generated.json"
     }
   ]

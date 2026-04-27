@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.ci-pipeline",
-      "title": "CI ?????",
+      "title": "CI 流水线规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -28,12 +28,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "???????????????????",
+      "summary": "规定流水线阶段、缓存、并发和质量门禁。",
       "sections_index": "docs/standards/_index/sections/rules.ci-pipeline.generated.json"
     },
     {
       "id": "rules.container-image",
-      "title": "??????",
+      "title": "容器镜像规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -51,12 +51,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "????????????????????",
+      "summary": "规定镜像构建、标签、安全扫描和基础镜像。",
       "sections_index": "docs/standards/_index/sections/rules.container-image.generated.json"
     },
     {
       "id": "rules.deploy-rollback",
-      "title": "???????",
+      "title": "部署与回滚规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -74,12 +74,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "??????????????????",
+      "summary": "规定发布步骤、验证、回滚和事故记录。",
       "sections_index": "docs/standards/_index/sections/rules.deploy-rollback.generated.json"
     },
     {
       "id": "rules.env-strategy",
-      "title": "??????",
+      "title": "环境策略规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -97,12 +97,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定开发、测试、预发、生产环境的职责和隔离。",
       "sections_index": "docs/standards/_index/sections/rules.env-strategy.generated.json"
     },
     {
       "id": "rules.health-checks",
-      "title": "??????",
+      "title": "健康检查规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -122,12 +122,12 @@
         "observability",
         "operations"
       ],
-      "summary": "????????????????",
+      "summary": "规定存活、就绪和依赖检查的语义。",
       "sections_index": "docs/standards/_index/sections/rules.health-checks.generated.json"
     },
     {
       "id": "rules.k8s-resource-naming",
-      "title": "Kubernetes ??????",
+      "title": "Kubernetes 资源命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -145,12 +145,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定命名空间、工作负载、服务和配置资源命名。",
       "sections_index": "docs/standards/_index/sections/rules.k8s-resource-naming.generated.json"
     },
     {
       "id": "rules.logging",
-      "title": "????",
+      "title": "日志规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -170,12 +170,12 @@
         "observability",
         "operations"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定日志级别、字段、脱敏、采样和查询要求。",
       "sections_index": "docs/standards/_index/sections/rules.logging.generated.json"
     },
     {
       "id": "rules.metrics",
-      "title": "????",
+      "title": "指标规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -195,12 +195,12 @@
         "observability",
         "operations"
       ],
-      "summary": "????????????????????",
+      "summary": "规定业务指标、技术指标、标签和聚合方式。",
       "sections_index": "docs/standards/_index/sections/rules.metrics.generated.json"
     },
     {
       "id": "rules.tracing",
-      "title": "??????",
+      "title": "链路追踪规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -220,7 +220,7 @@
         "observability",
         "operations"
       ],
-      "summary": "?? trace/span ??????????????",
+      "summary": "规定 trace/span 命名、上下文传播和采样策略。",
       "sections_index": "docs/standards/_index/sections/rules.tracing.generated.json"
     }
   ]

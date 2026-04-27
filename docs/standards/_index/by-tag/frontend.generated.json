@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.comments-ts",
-      "title": "TypeScript ????",
+      "title": "TypeScript 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?? TypeScript?Vue ??????????",
+      "summary": "规定 TypeScript、Vue 和前端契约注释方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-ts.generated.json"
     },
     {
       "id": "rules.fe-a11y",
-      "title": "????????",
+      "title": "前端可访问性规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -49,12 +49,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "????????????????????",
+      "summary": "规定语义、键盘操作、焦点和辅助技术支持。",
       "sections_index": "docs/standards/_index/sections/rules.fe-a11y.generated.json"
     },
     {
       "id": "rules.fe-compat",
-      "title": "???????",
+      "title": "前端兼容性规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -71,12 +71,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?????????WebView ??????",
+      "summary": "规定浏览器、设备、WebView 和降级策略。",
       "sections_index": "docs/standards/_index/sections/rules.fe-compat.generated.json"
     },
     {
       "id": "rules.fe-i18n",
-      "title": "???????",
+      "title": "前端国际化规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -93,12 +93,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "???????????????????",
+      "summary": "规定文案键、语言包、占位符和回退策略。",
       "sections_index": "docs/standards/_index/sections/rules.fe-i18n.generated.json"
     },
     {
       "id": "rules.fe-styles",
-      "title": "??????",
+      "title": "前端样式规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -115,12 +115,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "???????????????????",
+      "summary": "规定样式组织、变量、响应式和主题边界。",
       "sections_index": "docs/standards/_index/sections/rules.fe-styles.generated.json"
     },
     {
       "id": "rules.fe-typescript",
-      "title": "?? TypeScript ??",
+      "title": "前端 TypeScript 规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -137,12 +137,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定类型声明、空值处理、异步调用和模块边界。",
       "sections_index": "docs/standards/_index/sections/rules.fe-typescript.generated.json"
     },
     {
       "id": "rules.fe-uniapp-cross",
-      "title": "uni-app ????",
+      "title": "uni-app 跨端规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -159,12 +159,12 @@
         "uniapp",
         "cross-platform"
       ],
-      "summary": "???????????????????",
+      "summary": "规定多端条件编译、能力差异和兼容策略。",
       "sections_index": "docs/standards/_index/sections/rules.fe-uniapp-cross.generated.json"
     },
     {
       "id": "rules.fe-vue-ts-project",
-      "title": "Vue TypeScript ????",
+      "title": "Vue TypeScript 项目规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -181,12 +181,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?? Vue TypeScript ????????????????",
+      "summary": "规定 Vue TypeScript 项目的目录、组件边界和构建配置。",
       "sections_index": "docs/standards/_index/sections/rules.fe-vue-ts-project.generated.json"
     },
     {
       "id": "rules.naming-ts-vue",
-      "title": "TypeScript ? Vue ????",
+      "title": "TypeScript 与 Vue 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -203,12 +203,12 @@
         "vue-ts",
         "code-style"
       ],
-      "summary": "?? TypeScript?Vue ????????????????",
+      "summary": "规定 TypeScript、Vue 组件、组合式函数和路由命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-ts-vue.generated.json"
     },
     {
       "id": "rules.naming-uniapp",
-      "title": "uni-app ????",
+      "title": "uni-app 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -225,7 +225,7 @@
         "uniapp",
         "cross-platform"
       ],
-      "summary": "?? uni-app ??????????????????",
+      "summary": "规定 uni-app 页面、组件、平台条件和资源命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-uniapp.generated.json"
     }
   ]

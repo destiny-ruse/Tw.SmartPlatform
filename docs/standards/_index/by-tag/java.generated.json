@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.comments-java",
-      "title": "Java ????",
+      "title": "Java 注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "java",
         "code-style"
       ],
-      "summary": "?? Java ???Javadoc ??????????",
+      "summary": "规定 Java 注释、Javadoc 和复杂逻辑说明方式。",
       "sections_index": "docs/standards/_index/sections/rules.comments-java.generated.json"
     },
     {
       "id": "rules.naming-java",
-      "title": "Java ????",
+      "title": "Java 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -49,7 +49,7 @@
         "java",
         "code-style"
       ],
-      "summary": "?? Java ??????????????????",
+      "summary": "规定 Java 项目的类型、方法、变量和包命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-java.generated.json"
     }
   ]

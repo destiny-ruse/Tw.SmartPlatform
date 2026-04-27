@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.naming-common",
-      "title": "??????",
+      "title": "通用命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "naming",
         "code-style"
       ],
-      "summary": "???????????????????????",
+      "summary": "规定跨语言命名的可读性、一致性和领域表达原则。",
       "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
     },
     {
       "id": "rules.naming-dotnet",
-      "title": ".NET ????",
+      "title": ".NET 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -49,12 +49,12 @@
         "dotnet",
         "code-style"
       ],
-      "summary": "?? .NET ?????????????????????",
+      "summary": "规定 .NET 项目的类型、成员、异步方法和配置命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-dotnet.generated.json"
     },
     {
       "id": "rules.naming-java",
-      "title": "Java ????",
+      "title": "Java 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -71,12 +71,12 @@
         "java",
         "code-style"
       ],
-      "summary": "?? Java ??????????????????",
+      "summary": "规定 Java 项目的类型、方法、变量和包命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-java.generated.json"
     },
     {
       "id": "rules.naming-python",
-      "title": "Python ????",
+      "title": "Python 命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -93,7 +93,7 @@
         "python",
         "code-style"
       ],
-      "summary": "?? Python ??????????????????",
+      "summary": "规定 Python 模块、类、函数、变量和常量命名方式。",
       "sections_index": "docs/standards/_index/sections/rules.naming-python.generated.json"
     }
   ]

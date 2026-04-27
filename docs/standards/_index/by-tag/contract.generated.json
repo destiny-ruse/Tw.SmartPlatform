@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.api-error-response",
-      "title": "API ??????",
+      "title": "API 错误响应规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -32,12 +32,12 @@
         "error-handling",
         "contract"
       ],
-      "summary": "????????????????????????",
+      "summary": "规定错误码、错误消息、追踪标识和客户端处理契约。",
       "sections_index": "docs/standards/_index/sections/rules.api-error-response.generated.json"
     },
     {
       "id": "rules.api-response-shape",
-      "title": "API ??????",
+      "title": "API 统一响应结构",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -59,12 +59,12 @@
         "response",
         "contract"
       ],
-      "summary": "?? REST API ?????????????????",
+      "summary": "规定 REST API 响应结构、空值表达和错误响应关系。",
       "sections_index": "docs/standards/_index/sections/rules.api-response-shape.generated.json"
     },
     {
       "id": "rules.api-rest-design",
-      "title": "REST API ????",
+      "title": "REST API 设计规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -86,12 +86,12 @@
         "rest",
         "contract"
       ],
-      "summary": "?? REST ???????????????",
+      "summary": "规定 REST 资源、方法、版本和兼容性约定。",
       "sections_index": "docs/standards/_index/sections/rules.api-rest-design.generated.json"
     },
     {
       "id": "rules.asyncapi-conventions",
-      "title": "AsyncAPI ????",
+      "title": "AsyncAPI 约定规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -115,12 +115,12 @@
         "messaging",
         "contract"
       ],
-      "summary": "???????????????????????????",
+      "summary": "规定异步消息接口、事件主题和消息结构的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.asyncapi-conventions.generated.json"
     },
     {
       "id": "rules.contract-testing",
-      "title": "??????",
+      "title": "契约测试规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -144,12 +144,12 @@
         "contract",
         "api"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定提供方和消费方契约测试的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
     },
     {
       "id": "rules.grpc-proto-style",
-      "title": "gRPC Proto ????",
+      "title": "gRPC Proto 风格规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -173,7 +173,7 @@
         "contract",
         "versioning"
       ],
-      "summary": "??gRPC proto ??????????????????????",
+      "summary": "规定gRPC proto 文件、消息、服务和字段风格的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.grpc-proto-style.generated.json"
     }
   ]

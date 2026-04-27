@@ -5,7 +5,7 @@
   "sections": [
     {
       "anchor": "context",
-      "title": "??",
+      "title": "背景",
       "level": 2,
       "start_line": 21,
       "end_line": 25,
@@ -13,7 +13,7 @@
     },
     {
       "anchor": "decision",
-      "title": "??",
+      "title": "决策",
       "level": 2,
       "start_line": 26,
       "end_line": 30,
@@ -21,7 +21,7 @@
     },
     {
       "anchor": "consequences",
-      "title": "??",
+      "title": "影响",
       "level": 2,
       "start_line": 31,
       "end_line": 35,
@@ -29,7 +29,7 @@
     },
     {
       "anchor": "alternatives",
-      "title": "????",
+      "title": "备选方案",
       "level": 2,
       "start_line": 36,
       "end_line": 40,
@@ -37,7 +37,7 @@
     },
     {
       "anchor": "changelog",
-      "title": "????",
+      "title": "变更记录",
       "level": 2,
       "start_line": 41,
       "end_line": 45,

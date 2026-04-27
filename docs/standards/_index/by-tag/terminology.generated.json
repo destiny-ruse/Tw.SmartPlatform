@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "references.glossary",
-      "title": "?????",
+      "title": "工程术语表",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -28,7 +28,7 @@
         "reference",
         "terminology"
       ],
-      "summary": "?????????????????",
+      "summary": "定义工程规范中常用术语的统一含义。",
       "sections_index": "docs/standards/_index/sections/references.glossary.generated.json"
     }
   ]

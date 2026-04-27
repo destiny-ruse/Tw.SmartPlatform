@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "references.http-status",
-      "title": "HTTP ?????",
+      "title": "HTTP 状态码参考",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -27,7 +27,7 @@
         "http",
         "reference"
       ],
-      "summary": "???? HTTP ??????????????",
+      "summary": "定义常用 HTTP 状态码的工程语义和使用边界。",
       "sections_index": "docs/standards/_index/sections/references.http-status.generated.json"
     }
   ]

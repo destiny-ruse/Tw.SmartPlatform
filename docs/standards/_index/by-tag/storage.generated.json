@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.cache-conventions",
-      "title": "??????",
+      "title": "缓存约定规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -31,12 +31,12 @@
         "caching",
         "framework"
       ],
-      "summary": "??????TTL???????????????",
+      "summary": "规定缓存键、TTL、失效、穿透保护和一致性边界。",
       "sections_index": "docs/standards/_index/sections/rules.cache-conventions.generated.json"
     },
     {
       "id": "rules.db-audit-fields",
-      "title": "?????????",
+      "title": "数据库审计字段规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -55,12 +55,12 @@
         "data",
         "storage"
       ],
-      "summary": "??????????????????",
+      "summary": "规定创建、更新、删除和租户审计字段。",
       "sections_index": "docs/standards/_index/sections/rules.db-audit-fields.generated.json"
     },
     {
       "id": "rules.db-migration",
-      "title": "???????",
+      "title": "数据库迁移规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -79,12 +79,12 @@
         "data",
         "storage"
       ],
-      "summary": "?? schema ??????????????",
+      "summary": "规定 schema 变更、回滚、灰度和数据修复。",
       "sections_index": "docs/standards/_index/sections/rules.db-migration.generated.json"
     },
     {
       "id": "rules.db-naming",
-      "title": "???????",
+      "title": "数据库命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -103,7 +103,7 @@
         "data",
         "storage"
       ],
-      "summary": "????????????????",
+      "summary": "规定库、表、列、索引和约束命名。",
       "sections_index": "docs/standards/_index/sections/rules.db-naming.generated.json"
     }
   ]

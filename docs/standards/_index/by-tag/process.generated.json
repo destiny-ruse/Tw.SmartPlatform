@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "processes.change-governance",
-      "title": "??????",
+      "title": "变更治理规范",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -29,12 +29,12 @@
         "versioning",
         "process"
       ],
-      "summary": "???????????????????????",
+      "summary": "规定规范、契约和公共能力变更的版本化治理方式。",
       "sections_index": "docs/standards/_index/sections/processes.change-governance.generated.json"
     },
     {
       "id": "processes.dependency-onboarding",
-      "title": "??????",
+      "title": "依赖引入流程",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -53,12 +53,12 @@
         "security",
         "process"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定新增第三方依赖的评估、批准和维护流程。",
       "sections_index": "docs/standards/_index/sections/processes.dependency-onboarding.generated.json"
     },
     {
       "id": "processes.doc-authoring",
-      "title": "??????",
+      "title": "文档撰写流程",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -77,12 +77,12 @@
         "authoring",
         "process"
       ],
-      "summary": "???????????????????",
+      "summary": "规定工程文档从草稿、评审到发布的流程。",
       "sections_index": "docs/standards/_index/sections/processes.doc-authoring.generated.json"
     },
     {
       "id": "processes.rfc-flow",
-      "title": "RFC ????",
+      "title": "RFC 流程规范",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -101,7 +101,7 @@
         "rfc",
         "process"
       ],
-      "summary": "???? RFC ???????????????",
+      "summary": "规定工程 RFC 的提出、评审、决策和归档流程。",
       "sections_index": "docs/standards/_index/sections/processes.rfc-flow.generated.json"
     }
   ]

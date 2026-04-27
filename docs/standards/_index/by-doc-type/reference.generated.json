@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "references.datetime",
-      "title": "??????",
+      "title": "日期时间参考",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -27,12 +27,12 @@
         "timezone",
         "reference"
       ],
-      "summary": "??????????????????????",
+      "summary": "定义日期、时间、时区和序列化格式的统一约定。",
       "sections_index": "docs/standards/_index/sections/references.datetime.generated.json"
     },
     {
       "id": "references.error-codes",
-      "title": "?????",
+      "title": "错误码目录",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -49,12 +49,12 @@
         "error-handling",
         "reference"
       ],
-      "summary": "????????????????????",
+      "summary": "定义通用错误码分类、命名方式和使用场景。",
       "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json"
     },
     {
       "id": "references.glossary",
-      "title": "?????",
+      "title": "工程术语表",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -72,12 +72,12 @@
         "reference",
         "terminology"
       ],
-      "summary": "?????????????????",
+      "summary": "定义工程规范中常用术语的统一含义。",
       "sections_index": "docs/standards/_index/sections/references.glossary.generated.json"
     },
     {
       "id": "references.http-status",
-      "title": "HTTP ?????",
+      "title": "HTTP 状态码参考",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -94,7 +94,7 @@
         "http",
         "reference"
       ],
-      "summary": "???? HTTP ??????????????",
+      "summary": "定义常用 HTTP 状态码的工程语义和使用边界。",
       "sections_index": "docs/standards/_index/sections/references.http-status.generated.json"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.cache-conventions",
-      "title": "??????",
+      "title": "缓存约定规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -31,7 +31,7 @@
         "caching",
         "framework"
       ],
-      "summary": "??????TTL???????????????",
+      "summary": "规定缓存键、TTL、失效、穿透保护和一致性边界。",
       "sections_index": "docs/standards/_index/sections/rules.cache-conventions.generated.json"
     }
   ]

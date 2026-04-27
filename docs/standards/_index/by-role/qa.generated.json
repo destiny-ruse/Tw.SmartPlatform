@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "processes.change-governance",
-      "title": "??????",
+      "title": "变更治理规范",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -29,12 +29,12 @@
         "versioning",
         "process"
       ],
-      "summary": "???????????????????????",
+      "summary": "规定规范、契约和公共能力变更的版本化治理方式。",
       "sections_index": "docs/standards/_index/sections/processes.change-governance.generated.json"
     },
     {
       "id": "processes.dependency-onboarding",
-      "title": "??????",
+      "title": "依赖引入流程",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -53,12 +53,12 @@
         "security",
         "process"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定新增第三方依赖的评估、批准和维护流程。",
       "sections_index": "docs/standards/_index/sections/processes.dependency-onboarding.generated.json"
     },
     {
       "id": "processes.doc-authoring",
-      "title": "??????",
+      "title": "文档撰写流程",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -77,12 +77,12 @@
         "authoring",
         "process"
       ],
-      "summary": "???????????????????",
+      "summary": "规定工程文档从草稿、评审到发布的流程。",
       "sections_index": "docs/standards/_index/sections/processes.doc-authoring.generated.json"
     },
     {
       "id": "processes.rfc-flow",
-      "title": "RFC ????",
+      "title": "RFC 流程规范",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -101,12 +101,12 @@
         "rfc",
         "process"
       ],
-      "summary": "???? RFC ???????????????",
+      "summary": "规定工程 RFC 的提出、评审、决策和归档流程。",
       "sections_index": "docs/standards/_index/sections/processes.rfc-flow.generated.json"
     },
     {
       "id": "references.datetime",
-      "title": "??????",
+      "title": "日期时间参考",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -123,12 +123,12 @@
         "timezone",
         "reference"
       ],
-      "summary": "??????????????????????",
+      "summary": "定义日期、时间、时区和序列化格式的统一约定。",
       "sections_index": "docs/standards/_index/sections/references.datetime.generated.json"
     },
     {
       "id": "references.error-codes",
-      "title": "?????",
+      "title": "错误码目录",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -145,12 +145,12 @@
         "error-handling",
         "reference"
       ],
-      "summary": "????????????????????",
+      "summary": "定义通用错误码分类、命名方式和使用场景。",
       "sections_index": "docs/standards/_index/sections/references.error-codes.generated.json"
     },
     {
       "id": "references.glossary",
-      "title": "?????",
+      "title": "工程术语表",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -168,12 +168,12 @@
         "reference",
         "terminology"
       ],
-      "summary": "?????????????????",
+      "summary": "定义工程规范中常用术语的统一含义。",
       "sections_index": "docs/standards/_index/sections/references.glossary.generated.json"
     },
     {
       "id": "references.http-status",
-      "title": "HTTP ?????",
+      "title": "HTTP 状态码参考",
       "doc_type": "reference",
       "status": "active",
       "version": "1.0.0",
@@ -190,12 +190,12 @@
         "http",
         "reference"
       ],
-      "summary": "???? HTTP ??????????????",
+      "summary": "定义常用 HTTP 状态码的工程语义和使用边界。",
       "sections_index": "docs/standards/_index/sections/references.http-status.generated.json"
     },
     {
       "id": "rules.asyncapi-conventions",
-      "title": "AsyncAPI ????",
+      "title": "AsyncAPI 约定规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -219,12 +219,12 @@
         "messaging",
         "contract"
       ],
-      "summary": "???????????????????????????",
+      "summary": "规定异步消息接口、事件主题和消息结构的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.asyncapi-conventions.generated.json"
     },
     {
       "id": "rules.cache-conventions",
-      "title": "??????",
+      "title": "缓存约定规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -245,12 +245,12 @@
         "caching",
         "framework"
       ],
-      "summary": "??????TTL???????????????",
+      "summary": "规定缓存键、TTL、失效、穿透保护和一致性边界。",
       "sections_index": "docs/standards/_index/sections/rules.cache-conventions.generated.json"
     },
     {
       "id": "rules.ci-pipeline",
-      "title": "CI ?????",
+      "title": "CI 流水线规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -268,12 +268,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "???????????????????",
+      "summary": "规定流水线阶段、缓存、并发和质量门禁。",
       "sections_index": "docs/standards/_index/sections/rules.ci-pipeline.generated.json"
     },
     {
       "id": "rules.code-review",
-      "title": "??????",
+      "title": "代码评审规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -292,12 +292,12 @@
         "governance",
         "quality"
       ],
-      "summary": "???????????????????????",
+      "summary": "规定代码评审关注点、反馈方式和合并前质量门禁。",
       "sections_index": "docs/standards/_index/sections/rules.code-review.generated.json"
     },
     {
       "id": "rules.comments-common",
-      "title": "??????",
+      "title": "通用注释规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -315,12 +315,12 @@
         "comments",
         "governance"
       ],
-      "summary": "????????????????????",
+      "summary": "规定跨语言注释的意图、准确性和维护要求。",
       "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
     },
     {
       "id": "rules.configuration",
-      "title": "??????",
+      "title": "配置管理规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -341,12 +341,12 @@
         "backend",
         "framework"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定配置来源、优先级、密钥引用和环境差异。",
       "sections_index": "docs/standards/_index/sections/rules.configuration.generated.json"
     },
     {
       "id": "rules.container-image",
-      "title": "??????",
+      "title": "容器镜像规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -364,12 +364,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "????????????????????",
+      "summary": "规定镜像构建、标签、安全扫描和基础镜像。",
       "sections_index": "docs/standards/_index/sections/rules.container-image.generated.json"
     },
     {
       "id": "rules.contract-testing",
-      "title": "??????",
+      "title": "契约测试规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -393,12 +393,12 @@
         "contract",
         "api"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定提供方和消费方契约测试的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.contract-testing.generated.json"
     },
     {
       "id": "rules.data-formats",
-      "title": "??????",
+      "title": "数据格式规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -422,12 +422,12 @@
         "data-format",
         "compatibility"
       ],
-      "summary": "??JSON????????????????????????",
+      "summary": "规定JSON、枚举、日期、金额和标识符格式的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.data-formats.generated.json"
     },
     {
       "id": "rules.db-audit-fields",
-      "title": "?????????",
+      "title": "数据库审计字段规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -446,12 +446,12 @@
         "data",
         "storage"
       ],
-      "summary": "??????????????????",
+      "summary": "规定创建、更新、删除和租户审计字段。",
       "sections_index": "docs/standards/_index/sections/rules.db-audit-fields.generated.json"
     },
     {
       "id": "rules.db-migration",
-      "title": "???????",
+      "title": "数据库迁移规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -470,12 +470,12 @@
         "data",
         "storage"
       ],
-      "summary": "?? schema ??????????????",
+      "summary": "规定 schema 变更、回滚、灰度和数据修复。",
       "sections_index": "docs/standards/_index/sections/rules.db-migration.generated.json"
     },
     {
       "id": "rules.db-naming",
-      "title": "???????",
+      "title": "数据库命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -494,12 +494,12 @@
         "data",
         "storage"
       ],
-      "summary": "????????????????",
+      "summary": "规定库、表、列、索引和约束命名。",
       "sections_index": "docs/standards/_index/sections/rules.db-naming.generated.json"
     },
     {
       "id": "rules.dependency-policy",
-      "title": "??????",
+      "title": "依赖安全策略",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -523,12 +523,12 @@
         "security",
         "compliance"
       ],
-      "summary": "????????????????????",
+      "summary": "规定第三方依赖准入、漏洞处理和版本维护。",
       "sections_index": "docs/standards/_index/sections/rules.dependency-policy.generated.json"
     },
     {
       "id": "rules.deploy-rollback",
-      "title": "???????",
+      "title": "部署与回滚规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -546,12 +546,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "??????????????????",
+      "summary": "规定发布步骤、验证、回滚和事故记录。",
       "sections_index": "docs/standards/_index/sections/rules.deploy-rollback.generated.json"
     },
     {
       "id": "rules.editorconfig",
-      "title": "EditorConfig ??",
+      "title": "EditorConfig 规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -569,12 +569,12 @@
         "editorconfig",
         "governance"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定跨编辑器缩进、换行、编码和文件末尾行为。",
       "sections_index": "docs/standards/_index/sections/rules.editorconfig.generated.json"
     },
     {
       "id": "rules.env-strategy",
-      "title": "??????",
+      "title": "环境策略规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -592,12 +592,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定开发、测试、预发、生产环境的职责和隔离。",
       "sections_index": "docs/standards/_index/sections/rules.env-strategy.generated.json"
     },
     {
       "id": "rules.error-handling",
-      "title": "??????",
+      "title": "错误处理规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -618,12 +618,12 @@
         "backend",
         "framework"
       ],
-      "summary": "??????????????????",
+      "summary": "规定异常分类、错误码映射和恢复策略。",
       "sections_index": "docs/standards/_index/sections/rules.error-handling.generated.json"
     },
     {
       "id": "rules.git-commit",
-      "title": "Git ????",
+      "title": "Git 提交规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -641,12 +641,12 @@
         "git",
         "governance"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定提交信息格式、提交粒度和可审查历史要求。",
       "sections_index": "docs/standards/_index/sections/rules.git-commit.generated.json"
     },
     {
       "id": "rules.grpc-proto-style",
-      "title": "gRPC Proto ????",
+      "title": "gRPC Proto 风格规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -670,12 +670,12 @@
         "contract",
         "versioning"
       ],
-      "summary": "??gRPC proto ??????????????????????",
+      "summary": "规定gRPC proto 文件、消息、服务和字段风格的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.grpc-proto-style.generated.json"
     },
     {
       "id": "rules.grpc-versioning",
-      "title": "gRPC ??????",
+      "title": "gRPC 版本演进规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -699,12 +699,12 @@
         "compatibility",
         "versioning"
       ],
-      "summary": "??gRPC ???????????????????????",
+      "summary": "规定gRPC 服务版本、字段兼容和废弃流程的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.grpc-versioning.generated.json"
     },
     {
       "id": "rules.health-checks",
-      "title": "??????",
+      "title": "健康检查规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -724,12 +724,12 @@
         "observability",
         "operations"
       ],
-      "summary": "????????????????",
+      "summary": "规定存活、就绪和依赖检查的语义。",
       "sections_index": "docs/standards/_index/sections/rules.health-checks.generated.json"
     },
     {
       "id": "rules.idempotency",
-      "title": "?????",
+      "title": "幂等性规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -750,12 +750,12 @@
         "backend",
         "framework"
       ],
-      "summary": "??????????????????",
+      "summary": "规定请求去重、幂等键和重复消息处理。",
       "sections_index": "docs/standards/_index/sections/rules.idempotency.generated.json"
     },
     {
       "id": "rules.input-validation",
-      "title": "??????",
+      "title": "输入校验规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -779,12 +779,12 @@
         "security",
         "compliance"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定外部输入、请求参数和文件上传的校验边界。",
       "sections_index": "docs/standards/_index/sections/rules.input-validation.generated.json"
     },
     {
       "id": "rules.k8s-resource-naming",
-      "title": "Kubernetes ??????",
+      "title": "Kubernetes 资源命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -802,12 +802,12 @@
         "deployment",
         "operations"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定命名空间、工作负载、服务和配置资源命名。",
       "sections_index": "docs/standards/_index/sections/rules.k8s-resource-naming.generated.json"
     },
     {
       "id": "rules.logging",
-      "title": "????",
+      "title": "日志规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -827,12 +827,12 @@
         "observability",
         "operations"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定日志级别、字段、脱敏、采样和查询要求。",
       "sections_index": "docs/standards/_index/sections/rules.logging.generated.json"
     },
     {
       "id": "rules.messaging-patterns",
-      "title": "??????",
+      "title": "消息模式规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -856,12 +856,12 @@
         "reliability",
         "idempotency"
       ],
-      "summary": "??????????????????????????",
+      "summary": "规定消息可靠性、幂等消费和重试策略的设计和验证要求。",
       "sections_index": "docs/standards/_index/sections/rules.messaging-patterns.generated.json"
     },
     {
       "id": "rules.metrics",
-      "title": "????",
+      "title": "指标规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -881,12 +881,12 @@
         "observability",
         "operations"
       ],
-      "summary": "????????????????????",
+      "summary": "规定业务指标、技术指标、标签和聚合方式。",
       "sections_index": "docs/standards/_index/sections/rules.metrics.generated.json"
     },
     {
       "id": "rules.naming-common",
-      "title": "??????",
+      "title": "通用命名规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -903,12 +903,12 @@
         "naming",
         "code-style"
       ],
-      "summary": "???????????????????????",
+      "summary": "规定跨语言命名的可读性、一致性和领域表达原则。",
       "sections_index": "docs/standards/_index/sections/rules.naming-common.generated.json"
     },
     {
       "id": "rules.pii-handling",
-      "title": "????????",
+      "title": "个人信息处理规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -932,12 +932,12 @@
         "security",
         "compliance"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定个人信息识别、最小化、脱敏和访问控制。",
       "sections_index": "docs/standards/_index/sections/rules.pii-handling.generated.json"
     },
     {
       "id": "rules.repo-layout",
-      "title": "????????",
+      "title": "仓库目录布局规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -955,12 +955,12 @@
         "repo-layout",
         "governance"
       ],
-      "summary": "????????????????????????",
+      "summary": "规定源码、测试、文档、工具和生成产物的目录职责。",
       "sections_index": "docs/standards/_index/sections/rules.repo-layout.generated.json"
     },
     {
       "id": "rules.resilience",
-      "title": "??????",
+      "title": "韧性设计规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -981,12 +981,12 @@
         "backend",
         "framework"
       ],
-      "summary": "?????????????????",
+      "summary": "规定超时、重试、限流、熔断和降级。",
       "sections_index": "docs/standards/_index/sections/rules.resilience.generated.json"
     },
     {
       "id": "rules.secrets-management",
-      "title": "??????",
+      "title": "密钥管理规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -1010,12 +1010,12 @@
         "security",
         "compliance"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定密钥、令牌、证书和连接串的存储与轮换。",
       "sections_index": "docs/standards/_index/sections/rules.secrets-management.generated.json"
     },
     {
       "id": "rules.slo",
-      "title": "SLO ??",
+      "title": "SLO 规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -1036,12 +1036,12 @@
         "backend",
         "framework"
       ],
-      "summary": "?????????????????",
+      "summary": "规定服务目标、错误预算和告警口径。",
       "sections_index": "docs/standards/_index/sections/rules.slo.generated.json"
     },
     {
       "id": "rules.test-coverage",
-      "title": "??????",
+      "title": "测试覆盖规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -1063,12 +1063,12 @@
         "testing",
         "quality"
       ],
-      "summary": "?????????????????",
+      "summary": "规定覆盖目标、风险例外和质量门禁。",
       "sections_index": "docs/standards/_index/sections/rules.test-coverage.generated.json"
     },
     {
       "id": "rules.test-data-mock",
-      "title": "????? Mock ??",
+      "title": "测试数据与 Mock 规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -1090,12 +1090,12 @@
         "testing",
         "quality"
       ],
-      "summary": "?????????Mock ????????",
+      "summary": "规定测试数据构造、Mock 使用和隔离策略。",
       "sections_index": "docs/standards/_index/sections/rules.test-data-mock.generated.json"
     },
     {
       "id": "rules.test-strategy",
-      "title": "??????",
+      "title": "测试策略规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -1117,12 +1117,12 @@
         "testing",
         "quality"
       ],
-      "summary": "??????????????????????",
+      "summary": "规定单元、集成、契约、端到端和人工验证边界。",
       "sections_index": "docs/standards/_index/sections/rules.test-strategy.generated.json"
     },
     {
       "id": "rules.tracing",
-      "title": "??????",
+      "title": "链路追踪规范",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -1142,7 +1142,7 @@
         "observability",
         "operations"
       ],
-      "summary": "?? trace/span ??????????????",
+      "summary": "规定 trace/span 命名、上下文传播和采样策略。",
       "sections_index": "docs/standards/_index/sections/rules.tracing.generated.json"
     }
   ]

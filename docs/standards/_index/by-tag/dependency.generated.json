@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "processes.dependency-onboarding",
-      "title": "??????",
+      "title": "依赖引入流程",
       "doc_type": "process",
       "status": "active",
       "version": "1.0.0",
@@ -29,7 +29,7 @@
         "security",
         "process"
       ],
-      "summary": "?????????????????????",
+      "summary": "规定新增第三方依赖的评估、批准和维护流程。",
       "sections_index": "docs/standards/_index/sections/processes.dependency-onboarding.generated.json"
     }
   ]

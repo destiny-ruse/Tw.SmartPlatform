@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "decisions.0001-adopt-standards-blueprint",
-      "title": "????????",
+      "title": "采用工程规范蓝图",
       "doc_type": "decision",
       "status": "active",
       "version": "1.0.0",
@@ -25,12 +25,12 @@
         "standards",
         "governance"
       ],
-      "summary": "???? v2 ????????????????",
+      "summary": "决定采用 v2 工程规范蓝图作为标准体系的基础。",
       "sections_index": "docs/standards/_index/sections/decisions.0001-adopt-standards-blueprint.generated.json"
     },
     {
       "id": "decisions.0002-rest-response-shape-no-null",
-      "title": "REST ?????? null",
+      "title": "REST 响应字段禁止 null",
       "doc_type": "decision",
       "status": "active",
       "version": "1.0.0",
@@ -45,12 +45,12 @@
         "standards",
         "governance"
       ],
-      "summary": "API ???????????????? rules.api-response-shape#rules:no-null ?????",
+      "summary": "API 响应需要减少客户端空值分支，并与 rules.api-response-shape#rules:no-null 保持一致。",
       "sections_index": "docs/standards/_index/sections/decisions.0002-rest-response-shape-no-null.generated.json"
     },
     {
       "id": "decisions.0003-section-level-retrieval",
-      "title": "???????",
+      "title": "采用章节级检索",
       "doc_type": "decision",
       "status": "active",
       "version": "1.0.0",
@@ -65,7 +65,7 @@
         "standards",
         "governance"
       ],
-      "summary": "AI ?????????????? standards.authoring#retrieval ????????",
+      "summary": "AI 需要按需读取标准内容，并遵守 standards.authoring#retrieval 的最小读取原则。",
       "sections_index": "docs/standards/_index/sections/decisions.0003-section-level-retrieval.generated.json"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T05:45:20Z",
+  "generated_at": "2026-04-27T06:01:54Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -10,7 +10,7 @@
   "standards": [
     {
       "id": "rules.api-response-shape",
-      "title": "API ??????",
+      "title": "API 统一响应结构",
       "doc_type": "rule",
       "status": "active",
       "version": "1.0.0",
@@ -32,7 +32,7 @@
         "response",
         "contract"
       ],
-      "summary": "?? REST API ?????????????????",
+      "summary": "规定 REST API 响应结构、空值表达和错误响应关系。",
       "sections_index": "docs/standards/_index/sections/rules.api-response-shape.generated.json"
     }
   ]
