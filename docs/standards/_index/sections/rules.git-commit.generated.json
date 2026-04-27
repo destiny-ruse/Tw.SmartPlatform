@@ -1,7 +1,7 @@
 {
   "id": "rules.git-commit",
   "path": "docs/standards/rules/git-commit.md",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "sections": [
     {
       "anchor": "goal",
@@ -24,31 +24,39 @@
       "title": "规则",
       "level": 2,
       "start_line": 31,
-      "end_line": 40,
+      "end_line": 43,
       "regions": []
     },
     {
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 41,
-      "end_line": 47,
+      "start_line": 44,
+      "end_line": 60,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 48,
-      "end_line": 56,
+      "start_line": 61,
+      "end_line": 70,
+      "regions": []
+    },
+    {
+      "anchor": "relations",
+      "title": "相关规范",
+      "level": 2,
+      "start_line": 71,
+      "end_line": 77,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 57,
-      "end_line": 62,
+      "start_line": 78,
+      "end_line": 84,
       "regions": []
     }
   ]

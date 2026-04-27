@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T10:13:31Z",
+  "generated_at": "2026-04-27T10:23:56Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -13,7 +13,7 @@
       "title": "通用注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-common.md",
       "roles": [
         "architect",
@@ -36,7 +36,7 @@
       "title": ".NET 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-dotnet.md",
       "roles": [
         "backend",
@@ -58,7 +58,7 @@
       "title": "Java 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-java.md",
       "roles": [
         "backend",
@@ -80,7 +80,7 @@
       "title": "Python 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-python.md",
       "roles": [
         "backend",

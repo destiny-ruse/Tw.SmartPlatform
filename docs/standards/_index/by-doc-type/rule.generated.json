@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-04-27T10:13:31Z",
+  "generated_at": "2026-04-27T10:23:56Z",
   "generator": {
     "name": "tools/standards/standards.py",
     "version": "2.0.0"
@@ -178,7 +178,7 @@
       "title": "CI 流水线规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/ci-pipeline.md",
       "roles": [
         "backend",
@@ -225,7 +225,7 @@
       "title": "通用注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-common.md",
       "roles": [
         "architect",
@@ -248,7 +248,7 @@
       "title": ".NET 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-dotnet.md",
       "roles": [
         "backend",
@@ -270,7 +270,7 @@
       "title": "Java 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-java.md",
       "roles": [
         "backend",
@@ -292,7 +292,7 @@
       "title": "Python 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/comments-python.md",
       "roles": [
         "backend",
@@ -362,7 +362,7 @@
       "title": "容器镜像规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/container-image.md",
       "roles": [
         "backend",
@@ -544,7 +544,7 @@
       "title": "部署与回滚规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/deploy-rollback.md",
       "roles": [
         "backend",
@@ -567,7 +567,7 @@
       "title": "EditorConfig 规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/editorconfig.md",
       "roles": [
         "architect",
@@ -793,7 +793,7 @@
       "title": "分支与发布管理规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/git-branching.md",
       "roles": [
         "architect",
@@ -817,7 +817,7 @@
       "title": "Git 提交规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/git-commit.md",
       "roles": [
         "architect",
@@ -978,7 +978,7 @@
       "title": "Kubernetes 资源命名规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/k8s-resource-naming.md",
       "roles": [
         "backend",
@@ -1080,7 +1080,7 @@
       "title": "通用命名规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/naming-common.md",
       "roles": [
         "backend",
@@ -1102,7 +1102,7 @@
       "title": ".NET 命名规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/naming-dotnet.md",
       "roles": [
         "backend",
@@ -1124,7 +1124,7 @@
       "title": "Java 命名规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/naming-java.md",
       "roles": [
         "backend",
@@ -1146,7 +1146,7 @@
       "title": "Python 命名规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/naming-python.md",
       "roles": [
         "backend",
@@ -1241,7 +1241,7 @@
       "title": "仓库目录布局规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "docs/standards/rules/repo-layout.md",
       "roles": [
         "architect",

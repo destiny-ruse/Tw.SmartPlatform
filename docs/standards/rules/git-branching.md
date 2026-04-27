@@ -3,7 +3,7 @@ id: rules.git-branching
 title: 分支与发布管理规范
 doc_type: rule
 status: active
-version: 1.0.0
+version: 1.1.0
 owners: [architecture-team]
 roles: [architect, backend, frontend, qa, devops, ai]
 stacks: []
@@ -20,52 +20,66 @@ review_after: 2026-10-27
 <!-- anchor: goal -->
 ## 目标
 
-为团队提供统一的分支模型、命名约定、合并策略和发布流程，使主干始终可发布、变更可追溯、回滚可执行。
+分支与发布管理规范用于降低长期分支漂移、合并边界不清、发布来源不可追溯和回滚难以执行的风险。统一分支命名、合并策略和发布标记后，主干可以保持可发布状态，短期变更也能被审查、验证和清理。发布分支和 hotfix 分支必须服务于可追溯交付，而不是成为长期并行主干。
 
 <!-- anchor: scope -->
 ## 适用范围
 
-适用于所有进入仓库的功能、修复、文档、配置、CI 与发布相关变更，覆盖应用代码仓库、规范仓库与基础设施仓库。
+本规范适用于所有进入仓库历史的功能、修复、文档、配置、CI、规范和发布相关变更，覆盖应用代码仓库、规范仓库、工具脚本和基础设施仓库。它不适用于开发者本地未推送的临时试验分支、一次性 spike 记录或外部上游仓库的分支模型。
 
 <!-- anchor: rules -->
 ## 规则
 
-1. 长期分支只有 `master`（或 `main`），主干必须随时可发布、可回滚。
-2. 短期分支必须从最新 `master` 拉出，并使用 `<type>/<scope>-<short-desc>` 命名，例如 `feat/auth-oidc-login`、`fix/api-response-null`、`chore/standards-shard-index`。
-3. 短期分支生命周期不超过两周；超期必须 rebase 主干或拆分为更小变更。
-4. 合并到主干必须通过 PR，且 PR 必须满足 CI 通过、必要评审通过、规范引用合规。
-5. 默认使用 squash merge 进入主干，保持主干历史每次提交对应一个可回滚意图；rebase merge 仅用于线性历史项目并保留单一作者签名。
-6. 严禁直接向主干 push，严禁 `--force` 推送主干或受保护分支。
-7. 发布通过带 `v<MAJOR>.<MINOR>.<PATCH>` 的 tag 标记，tag 必须从主干提交创建，tag 一经发布不得移动。
-8. 紧急修复使用 `hotfix/<issue>-<short-desc>` 分支，从最近发布 tag 创建，修复完成后必须同时合并回主干。
-9. 任何废弃分支必须在合并或关闭后 7 天内删除，远端不得保留陈旧分支。
+1. 长期分支只能是仓库约定的主干分支，例如 `main` 或 `master`；不得维护长期漂移的 `dev`、`test`、`release-current` 作为并行主干。
+2. 短期分支必须从最新主干或明确发布基线拉出，并使用 `<type>/<scope>-<short-desc>` 命名，例如 `feat/auth-oidc-login`、`fix/api-response-null`、`docs/standards-rules-executable-content`。
+3. 分支类型必须与主要变更意图一致，可以使用 `feat`、`fix`、`docs`、`test`、`refactor`、`chore`、`hotfix`；不得用 `misc`、`temp`、`work` 表达正式变更。
+4. 单个分支应当承载一个可审查主题；不得把无关功能、格式化、工具升级和发布修复混入同一分支。
+5. 合并到主干前必须完成对应 CI 验证，并通过 PR 或等效评审记录说明变更意图、影响范围和回滚方式。
+6. 发布分支可以用于稳定发布候选、补充发布验证和生成发布标记，但不得接收与该发布无关的新功能。
+7. hotfix 分支必须从受影响发布 tag 或明确基线拉出，修复完成后应当把修复带回主干，避免下一次发布回归。
+8. 主干和发布 tag 不得被 force push 或移动；确需修正发布历史时必须创建新的提交或新的 tag。
+9. 已合并或放弃的短期远端分支应当清理，保留分支必须能从名称或 PR 说明判断当前用途。
 
 <!-- anchor: examples -->
 ## 示例
 
-正例：从最新主干拉出 `feat/cache-invalidation`，单一职责提交，PR 关联 issue 与受影响规范引用，CI 通过后 squash 合入主干，发布通过 tag `v1.4.0` 标记。
+正例：
 
-反例：长期分支 `dev` 与主干长期不同步，多人在同一分支强推 `--force`，发布无 tag 仅依赖时间戳，回滚需逐个 cherry-pick。
+```shell
+git switch main
+git pull --ff-only
+git switch -c docs/standards-rules-executable-content
+git commit -m "docs: expand general engineering standards rules"
+```
+
+反例：
+
+```shell
+git switch -c work
+git push --force origin main
+```
 
 <!-- anchor: checklist -->
 ## 检查清单
 
-- 分支名称是否符合 `<type>/<scope>-<short-desc>`。
-- 分支是否基于最新主干并已通过 CI。
-- PR 是否描述变更意图、影响范围和回滚方式。
-- 合并策略是否为 squash 或受控 rebase，未引入合并气泡。
-- 发布是否通过 tag 标记，tag 是否对应可重现构建。
+- 分支名称是否符合 `<type>/<scope>-<short-desc>`，并能表达主要变更意图。
+- 分支是否基于最新主干、发布基线或明确 hotfix 基线。
+- 分支内容是否保持一个可审查主题，未混入无关变更。
+- 合并前是否有 CI 结果和变更影响说明。
+- 发布分支是否只接收本次发布相关修复和验证。
+- hotfix 是否有回到主干的路径。
 
 <!-- anchor: relations -->
 ## 相关规范
 
-- `rules.git-commit`：提交粒度与提交信息格式。
-- `rules.code-review`：合并前评审要求。
-- `processes.change-governance`：变更治理与版本策略。
+- rules.git-commit
+- rules.deploy-rollback
+- processes.change-governance
 
 <!-- anchor: changelog -->
 ## 变更记录
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| 1.1.0 | 2026-04-27 | 补充执行级规则、示例、检查清单和相关规范。 |
 | 1.0.0 | 2026-04-27 | 建立初始规范。 |

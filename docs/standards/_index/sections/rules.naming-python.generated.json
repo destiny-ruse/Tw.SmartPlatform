@@ -1,7 +1,7 @@
 {
   "id": "rules.naming-python",
   "path": "docs/standards/rules/naming-python.md",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sections": [
     {
       "anchor": "goal",
@@ -24,31 +24,39 @@
       "title": "规则",
       "level": 2,
       "start_line": 31,
-      "end_line": 45,
+      "end_line": 50,
       "regions": []
     },
     {
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 46,
-      "end_line": 52,
+      "start_line": 51,
+      "end_line": 74,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 53,
-      "end_line": 59,
+      "start_line": 75,
+      "end_line": 84,
+      "regions": []
+    },
+    {
+      "anchor": "relations",
+      "title": "相关规范",
+      "level": 2,
+      "start_line": 85,
+      "end_line": 90,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 60,
-      "end_line": 64,
+      "start_line": 91,
+      "end_line": 96,
       "regions": []
     }
   ]

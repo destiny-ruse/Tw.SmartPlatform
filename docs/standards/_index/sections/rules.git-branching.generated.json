@@ -1,7 +1,7 @@
 {
   "id": "rules.git-branching",
   "path": "docs/standards/rules/git-branching.md",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sections": [
     {
       "anchor": "goal",
@@ -32,31 +32,31 @@
       "title": "示例",
       "level": 2,
       "start_line": 44,
-      "end_line": 50,
+      "end_line": 62,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 51,
-      "end_line": 59,
+      "start_line": 63,
+      "end_line": 72,
       "regions": []
     },
     {
       "anchor": "relations",
       "title": "相关规范",
       "level": 2,
-      "start_line": 60,
-      "end_line": 66,
+      "start_line": 73,
+      "end_line": 79,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 67,
-      "end_line": 71,
+      "start_line": 80,
+      "end_line": 85,
       "regions": []
     }
   ]
