@@ -11,6 +11,6 @@ public static class TestStreams
 
     public static MemoryStream FromBytes(byte[] bytes)
     {
-        return new MemoryStream(bytes);
+        return new MemoryStream(bytes.ToArray());
     }
 }
