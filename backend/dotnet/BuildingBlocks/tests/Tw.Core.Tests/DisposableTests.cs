@@ -83,6 +83,43 @@ public class DisposableTests
     }
 
     [Fact]
+    public async Task AsyncDisposeFunc_Propagates_Synchronous_Exception_From_Task_Function()
+    {
+        var expected = new InvalidOperationException("sync failure");
+        Func<Task> disposeAsync = () => throw expected;
+        var disposable = new AsyncDisposeFunc(disposeAsync);
+
+        var act = async () => await disposable.DisposeAsync();
+
+        await act.Should().ThrowAsync<InvalidOperationException>()
+            .WithMessage(expected.Message);
+    }
+
+    [Fact]
+    public async Task AsyncDisposeFunc_Propagates_Faulted_Task()
+    {
+        var expected = new InvalidOperationException("task failure");
+        var disposable = new AsyncDisposeFunc(() => Task.FromException(expected));
+
+        var act = async () => await disposable.DisposeAsync();
+
+        await act.Should().ThrowAsync<InvalidOperationException>()
+            .WithMessage(expected.Message);
+    }
+
+    [Fact]
+    public async Task AsyncDisposeFunc_Propagates_Faulted_ValueTask()
+    {
+        var expected = new InvalidOperationException("value task failure");
+        var disposable = new AsyncDisposeFunc(() => ValueTask.FromException(expected));
+
+        var act = async () => await disposable.DisposeAsync();
+
+        await act.Should().ThrowAsync<InvalidOperationException>()
+            .WithMessage(expected.Message);
+    }
+
+    [Fact]
     public async Task Null_Disposables_Are_Safe()
     {
         NullDisposable.Instance.Dispose();

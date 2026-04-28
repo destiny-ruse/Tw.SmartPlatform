@@ -237,7 +237,7 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a new string containing the source characters in random order.
+    /// Returns a new string containing the source characters in random order, or an empty string when the input is empty.
     /// </summary>
     /// <param name="value">The string to shuffle.</param>
     /// <returns>A shuffled copy of <paramref name="value"/>.</returns>
@@ -245,6 +245,10 @@ public static class SecureRandomGenerator
     public static string Shuffle(string value)
     {
         Check.NotNull(value);
+        if (value.Length == 0)
+        {
+            return string.Empty;
+        }
 
         return new string(Shuffle(value.ToCharArray()).ToArray());
     }
@@ -269,15 +273,15 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a unique random selection from a collection without modifying the input.
+    /// Returns a random selection of distinct values from a collection without modifying the input.
     /// </summary>
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="collection">The source collection.</param>
-    /// <param name="count">The number of elements to select.</param>
-    /// <returns>A new list containing the selected elements.</returns>
+    /// <param name="count">The number of distinct values to select.</param>
+    /// <returns>A new list containing the selected distinct values.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="collection"/> is <see langword="null"/>.</exception>
     /// <exception cref="ArgumentException">Thrown when <paramref name="collection"/> is empty.</exception>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative or greater than the source count.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative or greater than the distinct source value count.</exception>
     public static IList<T> GetRandomElements<T>(IList<T> collection, int count)
     {
         var source = Check.NotNull(collection);
@@ -288,12 +292,16 @@ public static class SecureRandomGenerator
 
         Check.NonNegative(count);
 
-        if (count > source.Count)
+        var distinctValues = source.Distinct(EqualityComparer<T>.Default).ToList();
+        if (count > distinctValues.Count)
         {
-            throw new ArgumentOutOfRangeException(nameof(count), count, "Count cannot exceed the collection count.");
+            throw new ArgumentOutOfRangeException(
+                nameof(count),
+                count,
+                "Count cannot exceed the distinct collection value count.");
         }
 
-        return Shuffle(source).Take(count).ToList();
+        return Shuffle(distinctValues).Take(count).ToList();
     }
 
     /// <summary>

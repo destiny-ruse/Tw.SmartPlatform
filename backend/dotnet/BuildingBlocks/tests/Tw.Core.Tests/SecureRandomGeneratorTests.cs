@@ -51,6 +51,24 @@ public class SecureRandomGeneratorTests
     }
 
     [Fact]
+    public void GetLong_Returns_Value_In_Full_Long_Range()
+    {
+        var result = SecureRandomGenerator.GetLong(long.MinValue, long.MaxValue);
+
+        result.Should().BeGreaterThanOrEqualTo(long.MinValue)
+            .And.BeLessThan(long.MaxValue);
+    }
+
+    [Fact]
+    public void GetLong_Returns_Value_In_Wide_Range()
+    {
+        var result = SecureRandomGenerator.GetLong(-9_000_000_000_000_000_000L, 9_000_000_000_000_000_000L);
+
+        result.Should().BeGreaterThanOrEqualTo(-9_000_000_000_000_000_000L)
+            .And.BeLessThan(9_000_000_000_000_000_000L);
+    }
+
+    [Fact]
     public void GetLong_Throws_When_Min_Is_Not_Less_Than_Max()
     {
         var act = () => SecureRandomGenerator.GetLong(8, 8);
@@ -262,6 +280,29 @@ public class SecureRandomGeneratorTests
     }
 
     [Fact]
+    public void GetRandomElements_Returns_Unique_Values_From_Duplicate_Source()
+    {
+        var source = new[] { 1, 1, 2, 2, 3, 3 };
+
+        var result = SecureRandomGenerator.GetRandomElements(source, 3);
+
+        result.Should().HaveCount(3)
+            .And.OnlyHaveUniqueItems()
+            .And.BeEquivalentTo([1, 2, 3]);
+    }
+
+    [Fact]
+    public void GetRandomElements_Throws_When_Count_Exceeds_Distinct_Source_Count()
+    {
+        var source = new[] { 1, 1, 2 };
+
+        var act = () => SecureRandomGenerator.GetRandomElements(source, 3);
+
+        act.Should().Throw<ArgumentOutOfRangeException>()
+            .WithParameterName("count");
+    }
+
+    [Fact]
     public void GetRandomElements_Validates_Arguments()
     {
         IList<int> nullList = null!;
@@ -334,6 +375,14 @@ public class SecureRandomGeneratorTests
 
         result.Should().HaveLength(value.Length);
         result.Order().Should().Equal(value.Order());
+    }
+
+    [Fact]
+    public void Shuffle_String_Returns_Empty_For_Empty_String()
+    {
+        var result = SecureRandomGenerator.Shuffle(string.Empty);
+
+        result.Should().BeEmpty();
     }
 
     [Fact]
