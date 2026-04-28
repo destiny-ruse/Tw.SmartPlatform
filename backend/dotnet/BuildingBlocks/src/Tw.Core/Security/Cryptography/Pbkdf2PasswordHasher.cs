@@ -129,8 +129,8 @@ public static class Pbkdf2PasswordHasher
     /// <summary>Verifies a password against a self-describing PBKDF2 password hash.</summary>
     /// <param name="password">The password to verify.</param>
     /// <param name="hashedPassword">The password hash produced by <see cref="HashPassword"/>.</param>
-    /// <param name="iterations">The fallback iteration count for hashes that omit metadata.</param>
-    /// <param name="hashAlgorithm">The fallback hash algorithm for hashes that omit metadata.</param>
+    /// <param name="iterations">Retained for signature compatibility; self-describing hashes use their stored iteration count.</param>
+    /// <param name="hashAlgorithm">Retained for signature compatibility; self-describing hashes use their stored hash algorithm.</param>
     /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
     /// <returns><see langword="true"/> when the password matches; otherwise, <see langword="false"/>.</returns>
     public static bool VerifyPassword(
@@ -142,20 +142,18 @@ public static class Pbkdf2PasswordHasher
     {
         Check.NotNull(password);
         Check.NotNullOrWhiteSpace(hashedPassword);
-        Check.Positive(iterations);
 
         if (!TryParseHash(hashedPassword, out var parsedHash))
         {
             return false;
         }
 
-        var algorithm = hashAlgorithm ?? parsedHash.HashAlgorithm;
         var key = DeriveKey(
             (encoding ?? DefaultEncoding).GetBytes(password),
             parsedHash.Salt,
             parsedHash.Iterations,
             parsedHash.Hash.Length,
-            algorithm);
+            parsedHash.HashAlgorithm);
 
         return key.Length == parsedHash.Hash.Length &&
             CryptographicOperations.FixedTimeEquals(key, parsedHash.Hash);
@@ -221,8 +219,22 @@ public static class Pbkdf2PasswordHasher
             return false;
         }
 
-        parsedHash = new ParsedPasswordHash(new HashAlgorithmName(parts[1]), iterations, salt, hash);
+        var hashAlgorithm = new HashAlgorithmName(parts[1]);
+        if (!IsSupportedHashAlgorithm(hashAlgorithm))
+        {
+            return false;
+        }
+
+        parsedHash = new ParsedPasswordHash(hashAlgorithm, iterations, salt, hash);
         return true;
+    }
+
+    private static bool IsSupportedHashAlgorithm(HashAlgorithmName hashAlgorithm)
+    {
+        return hashAlgorithm.Equals(HashAlgorithmName.SHA1) ||
+            hashAlgorithm.Equals(HashAlgorithmName.SHA256) ||
+            hashAlgorithm.Equals(HashAlgorithmName.SHA384) ||
+            hashAlgorithm.Equals(HashAlgorithmName.SHA512);
     }
 
     private readonly record struct ParsedPasswordHash(
