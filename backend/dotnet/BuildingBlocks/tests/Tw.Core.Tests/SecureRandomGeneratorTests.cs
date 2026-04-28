@@ -77,6 +77,15 @@ public class SecureRandomGeneratorTests
             .And.BeLessThan(2.5);
     }
 
+    [Fact]
+    public void GetDouble_Range_Stays_Half_Open_For_Tiny_Range()
+    {
+        var result = SecureRandomGenerator.GetDouble(0.0, double.Epsilon);
+
+        result.Should().BeGreaterThanOrEqualTo(0.0)
+            .And.BeLessThan(double.Epsilon);
+    }
+
     [Theory]
     [InlineData(double.NaN, 1.0, "minValue")]
     [InlineData(1.0, double.PositiveInfinity, "maxValue")]
@@ -303,6 +312,17 @@ public class SecureRandomGeneratorTests
         result.Should().NotBeSameAs(source)
             .And.BeEquivalentTo(source);
         source.Should().Equal(1, 2, 3, 4);
+    }
+
+    [Fact]
+    public void Shuffle_List_Rejects_Empty_Collection()
+    {
+        var source = Array.Empty<int>();
+
+        var act = () => SecureRandomGenerator.Shuffle(source);
+
+        act.Should().Throw<ArgumentException>()
+            .WithParameterName("collection");
     }
 
     [Fact]

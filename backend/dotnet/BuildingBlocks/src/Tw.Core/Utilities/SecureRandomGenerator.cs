@@ -100,7 +100,14 @@ public static class SecureRandomGenerator
         var range = maxValue - minValue;
         EnsureFinite(range, nameof(maxValue));
 
-        return minValue + (GetDouble() * range);
+        var result = minValue + (GetDouble() * range);
+        if (result < maxValue)
+        {
+            return result;
+        }
+
+        var clamped = Math.BitDecrement(maxValue);
+        return clamped < minValue ? minValue : clamped;
     }
 
     /// <summary>
@@ -296,9 +303,14 @@ public static class SecureRandomGenerator
     /// <param name="collection">The source collection.</param>
     /// <returns>A shuffled copy of <paramref name="collection"/>.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="collection"/> is <see langword="null"/>.</exception>
+    /// <exception cref="ArgumentException">Thrown when <paramref name="collection"/> is empty.</exception>
     public static IList<T> Shuffle<T>(IList<T> collection)
     {
         var result = Check.NotNull(collection).ToList();
+        if (result.Count == 0)
+        {
+            throw new ArgumentException("Collection cannot be empty.", nameof(collection));
+        }
 
         for (var i = result.Count - 1; i > 0; i--)
         {
