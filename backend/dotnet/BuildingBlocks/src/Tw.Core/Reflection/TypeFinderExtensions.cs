@@ -46,6 +46,6 @@ public static class TypeFinderExtensions
 
     private static bool IsConcrete(Type type)
     {
-        return !type.IsAbstract && !type.IsInterface;
+        return !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;
     }
 }

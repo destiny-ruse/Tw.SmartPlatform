@@ -8,6 +8,7 @@ namespace Tw.Core.Tests.Reflection;
 [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 internal sealed class ReflectionTestAttribute : Attribute
 {
+    public int Order { get; set; }
 }
 
 public class ReflectionCacheTests
@@ -65,6 +66,44 @@ public class ReflectionCacheTests
         method.GetAsyncResultType().Should().Be(typeof(string));
     }
 
+    [Fact]
+    public void GetAsyncResultType_Returns_ValueTask_Result_Type()
+    {
+        var method = GetMethod(nameof(ValueTaskMethod));
+
+        method.GetAsyncResultType().Should().Be(typeof(int));
+    }
+
+    [Fact]
+    public void GetAsyncResultType_Returns_Void_For_Non_Generic_ValueTask()
+    {
+        var method = GetMethod(nameof(NonGenericValueTaskMethod));
+
+        method.GetAsyncResultType().Should().Be(typeof(void));
+    }
+
+    [Fact]
+    public void GetAsyncResultType_Rejects_Null_Method()
+    {
+        MethodInfo method = null!;
+
+        var act = () => method.GetAsyncResultType();
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(method));
+    }
+
+    [Fact]
+    public void GetSingleAttribute_Returns_First_Attribute_In_Reflection_Order()
+    {
+        var method = GetMethod(nameof(MultipleAttributesMethod));
+        var attributes = method.GetAttributes<ReflectionTestAttribute>();
+
+        method.GetSingleAttributeOrNull<ReflectionTestAttribute>().Should().BeSameAs(attributes[0]);
+        method.GetSingleAttribute<ReflectionTestAttribute>().Should().BeSameAs(attributes[0]);
+        attributes.Select(attribute => attribute.Order).Should().Equal(1, 2);
+    }
+
     [ReflectionTest]
     private static Task<int> AsyncMethod()
     {
@@ -79,6 +118,22 @@ public class ReflectionCacheTests
     private static string PlainMethod()
     {
         return string.Empty;
+    }
+
+    private static ValueTask<int> ValueTaskMethod()
+    {
+        return ValueTask.FromResult(1);
+    }
+
+    private static ValueTask NonGenericValueTaskMethod()
+    {
+        return ValueTask.CompletedTask;
+    }
+
+    [ReflectionTest(Order = 1)]
+    [ReflectionTest(Order = 2)]
+    private static void MultipleAttributesMethod()
+    {
     }
 
     private static MethodInfo GetMethod(string name)

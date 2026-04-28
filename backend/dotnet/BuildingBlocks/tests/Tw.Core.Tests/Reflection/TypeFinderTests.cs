@@ -1,4 +1,6 @@
 using FluentAssertions;
+using System.Reflection;
+using System.Reflection.Emit;
 using Tw.Core.Reflection;
 using Xunit;
 
@@ -16,6 +18,10 @@ internal abstract class AbstractReflectionService : IReflectionService
 {
 }
 
+internal sealed class OpenGenericReflectionService<T> : IReflectionService
+{
+}
+
 public class TypeFinderTests
 {
     [Fact]
@@ -28,6 +34,36 @@ public class TypeFinderTests
         types.Should().Contain(typeof(ReflectionService));
         types.Should().NotContain(typeof(AbstractReflectionService));
         types.Should().NotContain(typeof(IReflectionService));
+    }
+
+    [Fact]
+    public void FindTypes_Excludes_Open_Generic_Type_Definitions()
+    {
+        var finder = new TypeFinder([typeof(ReflectionService).Assembly]);
+
+        var types = finder.FindTypes<IReflectionService>();
+
+        types.Should().NotContain(typeof(OpenGenericReflectionService<>));
+    }
+
+    [Theory]
+    [InlineData("System", true)]
+    [InlineData("System.Private.CoreLib", true)]
+    [InlineData("SystemUnderTest.Tests", false)]
+    [InlineData("Microsoft", true)]
+    [InlineData("Microsoft.Extensions.Configuration", true)]
+    [InlineData("MicrosoftPartner.App", false)]
+    [InlineData("Windows", true)]
+    [InlineData("Windows.Foundation", true)]
+    [InlineData("WindowsPartner.App", false)]
+    public void FindTypes_Skips_Only_Platform_Assembly_Names(string assemblyName, bool expected)
+    {
+        var assembly = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName(assemblyName), AssemblyBuilderAccess.Run);
+        var method = typeof(TypeFinder).GetMethod("ShouldSkipAssembly", BindingFlags.NonPublic | BindingFlags.Static)!;
+
+        var result = (bool)method.Invoke(null, [assembly])!;
+
+        result.Should().Be(expected);
     }
 
     [Fact]

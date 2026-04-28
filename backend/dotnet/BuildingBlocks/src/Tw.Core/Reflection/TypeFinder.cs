@@ -74,7 +74,9 @@ public sealed class TypeFinder : ITypeFinder
         var assemblyName = assembly.GetName().Name;
 
         return assemblyName is not null
-            && SkippedAssemblyNamePrefixes.Any(prefix => assemblyName.StartsWith(prefix, StringComparison.Ordinal));
+            && SkippedAssemblyNamePrefixes.Any(prefix =>
+                assemblyName.Equals(prefix, StringComparison.Ordinal)
+                || assemblyName.StartsWith(prefix + ".", StringComparison.Ordinal));
     }
 
     private static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
@@ -91,6 +93,6 @@ public sealed class TypeFinder : ITypeFinder
 
     private static bool IsConcrete(Type type)
     {
-        return !type.IsAbstract && !type.IsInterface;
+        return !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;
     }
 }
