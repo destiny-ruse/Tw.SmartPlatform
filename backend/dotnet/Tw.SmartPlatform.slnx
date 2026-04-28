@@ -21,7 +21,10 @@
     <Project Path="BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj" Id="78570cdc-239e-4f64-bdec-50060c3bc9f7" />
     <Project Path="BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj" Id="d449ed2f-7ccf-498b-a2ae-b79b5ce56c53" />
   </Folder>
-  <Folder Name="/BuildingBlocks/tests/" />
+  <Folder Name="/BuildingBlocks/tests/">
+    <Project Path="BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
+  </Folder>
   <Folder Name="/Services/" />
   <Folder Name="/Services/Authentication/" />
   <Folder Name="/Services/Authentication/src/" />

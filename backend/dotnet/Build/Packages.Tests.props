@@ -1,12 +1,15 @@
-<!-- 用途: 专门管理单元测试、集成测试相关的包 -->
+<!-- Purpose: central package versions for unit and integration test projects. -->
 <Project>
   <ItemGroup>
-    <!-- 测试框架 -->
+    <!-- Test framework -->
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
 
-    <!-- 断言库 -->
+    <!-- Assertions -->
+    <PackageVersion Include="FluentAssertions" Version="8.9.0" />
 
-    <!-- Mock 框架 -->
-
-    <!-- 测试数据生成 -->
+    <!-- Coverage -->
+    <PackageVersion Include="coverlet.collector" Version="10.0.0" />
   </ItemGroup>
 </Project>
