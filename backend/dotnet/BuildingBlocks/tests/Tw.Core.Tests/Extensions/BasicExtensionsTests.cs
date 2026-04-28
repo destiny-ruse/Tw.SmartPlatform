@@ -89,6 +89,9 @@ public class BasicExtensionsTests
             .Where(method => method.DeclaringType == typeof(StringExtensions))
             .ToArray();
 
+        AssertSignature(methods, nameof(StringExtensions.ToPascalCase), typeof(string), ["str"], [typeof(string)]);
+        AssertSignature(methods, nameof(StringExtensions.ToCamelCase), typeof(string), ["str"], [typeof(string)]);
+        AssertSignature(methods, nameof(StringExtensions.ToSnakeCase), typeof(string), ["str"], [typeof(string)]);
         AssertSignature(methods, nameof(StringExtensions.EnsureEndsWith), typeof(string), ["str", "c", "comparisonType"], [typeof(string), typeof(char), typeof(StringComparison)]);
         AssertSignature(methods, nameof(StringExtensions.EnsureStartsWith), typeof(string), ["str", "c", "comparisonType"], [typeof(string), typeof(char), typeof(StringComparison)]);
         AssertSignature(methods, nameof(StringExtensions.Left), typeof(string), ["str", "len"], [typeof(string), typeof(int)]);
@@ -118,6 +121,16 @@ public class BasicExtensionsTests
         methods.Where(method => method.Name == nameof(StringExtensions.TruncateWithPostfix)).Should().HaveCount(2);
         AssertSignature(methods, nameof(StringExtensions.TruncateWithPostfix), typeof(string), ["str", "maxLength"], [typeof(string), typeof(int)]);
         AssertSignature(methods, nameof(StringExtensions.TruncateWithPostfix), typeof(string), ["str", "maxLength", "postfix"], [typeof(string), typeof(int), typeof(string)]);
+
+        methods.Where(method => method.Name == nameof(StringExtensions.GetBytes)).Should().HaveCount(2);
+        AssertSignature(methods, nameof(StringExtensions.GetBytes), typeof(byte[]), ["str"], [typeof(string)]);
+        AssertSignature(methods, nameof(StringExtensions.GetBytes), typeof(byte[]), ["str", "encoding"], [typeof(string), typeof(Encoding)]);
+        AssertSignature(methods, nameof(StringExtensions.Truncate), typeof(string), ["str", "maxLength"], [typeof(string), typeof(int)]);
+        AssertSignature(methods, nameof(StringExtensions.TruncateFromBeginning), typeof(string), ["str", "maxLength"], [typeof(string), typeof(int)]);
+        AssertSignature(methods, nameof(StringExtensions.Chunk), typeof(IEnumerable<string>), ["value", "chunkSize"], [typeof(string), typeof(int)]);
+        AssertSignature(methods, nameof(StringExtensions.FormatWith), typeof(string), ["template", "args"], [typeof(string), typeof(object[])]);
+        AssertSignature(methods, nameof(StringExtensions.RemoveWhiteSpace), typeof(string), ["value"], [typeof(string)]);
+        AssertSignature(methods, nameof(StringExtensions.Reverse), typeof(string), ["value"], [typeof(string)]);
     }
 
     [Fact]
@@ -151,6 +164,17 @@ public class BasicExtensionsTests
         DateTime.UtcNow.AddDays(-1).IsPast().Should().BeTrue();
         DateTime.UtcNow.AddDays(1).IsFuture().Should().BeTrue();
         utc.ToFriendlyString().Should().NotBeNullOrWhiteSpace();
+    }
+
+    [Fact]
+    public void DateTime_Public_Api_Signatures_Match_Plan()
+    {
+        var methods = typeof(DateTimeExtensions)
+            .GetMethods(BindingFlags.Public | BindingFlags.Static)
+            .Where(method => method.DeclaringType == typeof(DateTimeExtensions))
+            .ToArray();
+
+        AssertSignature(methods, nameof(DateTimeExtensions.CalculateAge), typeof(int), ["birthDate"], [typeof(DateTime)]);
     }
 
     [Fact]

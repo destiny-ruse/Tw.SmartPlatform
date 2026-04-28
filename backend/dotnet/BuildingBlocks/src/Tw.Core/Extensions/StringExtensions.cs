@@ -13,31 +13,31 @@ public static class StringExtensions
     public static bool IsNullOrWhiteSpace(this string? str) => string.IsNullOrWhiteSpace(str);
 
     /// <summary>Converts the first character of a string to uppercase.</summary>
-    public static string? ToPascalCase(this string? source)
+    public static string? ToPascalCase(this string? str)
     {
-        return ChangeFirstCharacterCase(source, char.ToUpperInvariant);
+        return ChangeFirstCharacterCase(str, char.ToUpperInvariant);
     }
 
     /// <summary>Converts the first character of a string to lowercase.</summary>
-    public static string? ToCamelCase(this string? source)
+    public static string? ToCamelCase(this string? str)
     {
-        return ChangeFirstCharacterCase(source, char.ToLowerInvariant);
+        return ChangeFirstCharacterCase(str, char.ToLowerInvariant);
     }
 
     /// <summary>Converts a string to snake_case.</summary>
-    public static string? ToSnakeCase(this string? source)
+    public static string? ToSnakeCase(this string? str)
     {
-        if (string.IsNullOrEmpty(source))
+        if (string.IsNullOrEmpty(str))
         {
-            return source;
+            return str;
         }
 
-        var builder = new StringBuilder(source.Length + 8);
+        var builder = new StringBuilder(str.Length + 8);
         var previousWasSeparator = false;
 
-        for (var index = 0; index < source.Length; index++)
+        for (var index = 0; index < str.Length; index++)
         {
-            var current = source[index];
+            var current = str[index];
             if (char.IsWhiteSpace(current) || current is '-' or '_')
             {
                 AppendSeparator(builder, ref previousWasSeparator);
@@ -46,8 +46,8 @@ public static class StringExtensions
 
             if (char.IsUpper(current) && builder.Length > 0 && !previousWasSeparator)
             {
-                var previous = source[index - 1];
-                var nextIsLower = index + 1 < source.Length && char.IsLower(source[index + 1]);
+                var previous = str[index - 1];
+                var nextIsLower = index + 1 < str.Length && char.IsLower(str[index + 1]);
                 if (char.IsLower(previous) || char.IsDigit(previous) || nextIsLower)
                 {
                     AppendSeparator(builder, ref previousWasSeparator);
@@ -231,32 +231,32 @@ public static class StringExtensions
     }
 
     /// <summary>Encodes a string as UTF-8 bytes.</summary>
-    public static byte[] GetBytes(this string? source)
+    public static byte[] GetBytes(this string? str)
     {
-        return source.GetBytes(Encoding.UTF8);
+        return str.GetBytes(Encoding.UTF8);
     }
 
     /// <summary>Encodes a string using the supplied encoding.</summary>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="encoding"/> is <see langword="null"/>.</exception>
-    public static byte[] GetBytes(this string? source, Encoding encoding)
+    public static byte[] GetBytes(this string? str, Encoding encoding)
     {
-        return source is null ? [] : Check.NotNull(encoding).GetBytes(source);
+        return str is null ? [] : Check.NotNull(encoding).GetBytes(str);
     }
 
     /// <summary>Truncates a string from the end.</summary>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="maxLength"/> is negative.</exception>
-    public static string? Truncate(this string? source, int maxLength)
+    public static string? Truncate(this string? str, int maxLength)
     {
         Check.NonNegative(maxLength);
-        return source is null || source.Length <= maxLength ? source : source[..maxLength];
+        return str is null || str.Length <= maxLength ? str : str[..maxLength];
     }
 
     /// <summary>Truncates a string from the beginning.</summary>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="maxLength"/> is negative.</exception>
-    public static string? TruncateFromBeginning(this string? source, int maxLength)
+    public static string? TruncateFromBeginning(this string? str, int maxLength)
     {
         Check.NonNegative(maxLength);
-        return source is null || source.Length <= maxLength ? source : source[^maxLength..];
+        return str is null || str.Length <= maxLength ? str : str[^maxLength..];
     }
 
     /// <summary>Truncates a string and appends an ellipsis postfix.</summary>
@@ -288,42 +288,42 @@ public static class StringExtensions
 
     /// <summary>Splits a string into fixed-size chunks.</summary>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="chunkSize"/> is less than or equal to zero.</exception>
-    public static IEnumerable<string> Chunk(this string? source, int chunkSize)
+    public static IEnumerable<string> Chunk(this string? value, int chunkSize)
     {
         Check.Positive(chunkSize);
 
-        if (string.IsNullOrEmpty(source))
+        if (string.IsNullOrEmpty(value))
         {
             yield break;
         }
 
-        for (var index = 0; index < source.Length; index += chunkSize)
+        for (var index = 0; index < value.Length; index += chunkSize)
         {
-            yield return source.Substring(index, Math.Min(chunkSize, source.Length - index));
+            yield return value.Substring(index, Math.Min(chunkSize, value.Length - index));
         }
     }
 
     /// <summary>Formats a string using <see cref="string.Format(string, object?[])"/>.</summary>
-    public static string? FormatWith(this string? source, params object?[] args)
+    public static string? FormatWith(this string? template, params object?[] args)
     {
-        return source is null ? null : string.Format(source, args);
+        return template is null ? null : string.Format(template, args);
     }
 
     /// <summary>Removes all whitespace characters from a string.</summary>
-    public static string? RemoveWhiteSpace(this string? source)
+    public static string? RemoveWhiteSpace(this string? value)
     {
-        return source is null ? null : Regex.Replace(source, @"\s+", string.Empty);
+        return value is null ? null : Regex.Replace(value, @"\s+", string.Empty);
     }
 
     /// <summary>Reverses a string.</summary>
-    public static string? Reverse(this string? source)
+    public static string? Reverse(this string? value)
     {
-        if (source is null)
+        if (value is null)
         {
             return null;
         }
 
-        var characters = source.ToCharArray();
+        var characters = value.ToCharArray();
         Array.Reverse(characters);
         return new string(characters);
     }

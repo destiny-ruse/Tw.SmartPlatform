@@ -117,13 +117,13 @@ public static class DateTimeExtensions
     }
 
     /// <summary>Calculates age in whole years compared with today.</summary>
-    /// <param name="dateOfBirth">The birth date.</param>
+    /// <param name="birthDate">The birth date.</param>
     /// <returns>The age in whole years.</returns>
-    public static int CalculateAge(this DateTime dateOfBirth)
+    public static int CalculateAge(this DateTime birthDate)
     {
         var today = DateTime.Today;
-        var age = today.Year - dateOfBirth.Year;
-        if (dateOfBirth.Date > today.Date.AddYears(-age))
+        var age = today.Year - birthDate.Year;
+        if (birthDate.Date > today.Date.AddYears(-age))
         {
             age--;
         }
