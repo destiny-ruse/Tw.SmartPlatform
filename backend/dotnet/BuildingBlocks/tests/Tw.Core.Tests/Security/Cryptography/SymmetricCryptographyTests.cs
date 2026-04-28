@@ -19,6 +19,18 @@ public sealed class SymmetricCryptographyTests
         decrypted.Should().Be(TestBytes.LongText);
     }
 
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void AesCryptography_RoundTrips_Blank_String(string plaintext)
+    {
+        var encrypted = AesCryptography.Encrypt(plaintext, TestBytes.AesKey16);
+
+        var decrypted = AesCryptography.Decrypt(encrypted, TestBytes.AesKey16);
+
+        decrypted.Should().Be(plaintext);
+    }
+
     [Fact]
     public void AesCryptography_Rejects_Invalid_Key_Length()
     {

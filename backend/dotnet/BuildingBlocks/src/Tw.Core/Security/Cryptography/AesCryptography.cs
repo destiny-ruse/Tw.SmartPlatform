@@ -214,7 +214,7 @@ internal static class SymmetricCryptographyCore
         Encoding? encoding,
         SymmetricAlgorithmProfile profile)
     {
-        Check.NotNullOrWhiteSpace(input);
+        Check.NotNull(input);
         Check.NotNullOrWhiteSpace(key);
 
         var textEncoding = encoding ?? DefaultEncoding;
