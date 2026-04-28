@@ -1,0 +1,34 @@
+schema_version: 1.0.0
+id: backend.capability.sql-sugar
+kind: capability
+name: SqlSugar 数据访问能力
+status: active
+summary: 提供基于 SqlSugar 的数据访问封装和仓储支持，统一后端服务的数据库访问方式。
+owners:
+  - platform
+tags:
+  - backend
+  - sql-sugar
+  - platform
+domain: platform
+provided_by:
+  modules:
+    - backend.dotnet.building-blocks.sql-sugar
+reuse:
+  use_when:
+    - 需要访问关系型数据库或使用仓储模式时
+  do_not_reimplement:
+    - 不要在服务中直接配置 SqlSugar 客户端，应通过 Tw.SqlSugar 提供的仓储基类和扩展接口使用
+aliases:
+  - 数据访问
+  - ORM
+  - 仓储
+source:
+  declared_in: docs/knowledge/graph/capabilities/backend.capability.sql-sugar.yaml
+  evidence:
+    - backend/dotnet/BuildingBlocks/src/Tw.SqlSugar
+provenance:
+  created_by: human
+  created_at: 2026-04-28
+  updated_by: human
+  updated_at: 2026-04-28

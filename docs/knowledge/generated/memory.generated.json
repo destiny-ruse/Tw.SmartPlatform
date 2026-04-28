@@ -7,6 +7,52 @@
   "nodes": [
     {
       "aliases": [
+        "Web 宿主",
+        "中间件"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.asp-net-core",
+      "kind": "capability",
+      "name": "ASP.NET Core 集成能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.asp-net-core"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在各服务中重复配置 Web 层基础设施，应通过 Tw.AspNetCore 提供的扩展方法注册"
+        ],
+        "use_when": [
+          "需要注册中间件、配置 Web 主机或使用统一的服务启动约定时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.asp-net-core.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore"
+        ]
+      },
+      "status": "active",
+      "summary": "提供 Web 应用基础集成、中间件注册和通用启动配置支持，统一后端服务的 Web 层初始化方式。",
+      "tags": [
+        "backend",
+        "asp-net-core",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
         "登录",
         "token",
         "当前用户"
@@ -249,6 +295,52 @@
     },
     {
       "aliases": [
+        "租户",
+        "多租户"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.multi-tenancy",
+      "kind": "capability",
+      "name": "多租户能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.multi-tenancy"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中自行解析租户标识，应通过 Tw.MultiTenancy 提供的租户上下文接口获取"
+        ],
+        "use_when": [
+          "需要获取当前租户信息或按租户隔离数据时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.multi-tenancy.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy"
+        ]
+      },
+      "status": "active",
+      "summary": "提供租户识别、租户上下文传递和租户隔离能力，支持多租户 SaaS 架构。",
+      "tags": [
+        "backend",
+        "multi-tenancy",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
         "远程调用",
         "服务间调用",
         "客户端代理"
@@ -303,6 +395,53 @@
       ]
     },
     {
+      "aliases": [
+        "数据访问",
+        "ORM",
+        "仓储"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.sql-sugar",
+      "kind": "capability",
+      "name": "SqlSugar 数据访问能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.sql-sugar"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中直接配置 SqlSugar 客户端，应通过 Tw.SqlSugar 提供的仓储基类和扩展接口使用"
+        ],
+        "use_when": [
+          "需要访问关系型数据库或使用仓储模式时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.sql-sugar.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar"
+        ]
+      },
+      "status": "active",
+      "summary": "提供基于 SqlSugar 的数据访问封装和仓储支持，统一后端服务的数据库访问方式。",
+      "tags": [
+        "backend",
+        "sql-sugar",
+        "platform"
+      ]
+    },
+    {
       "applies_to": {
         "capabilities": [
           "backend.capability.authentication"
@@ -338,6 +477,42 @@
         "backend",
         "auth",
         "decision"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.asp-net-core",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "ASP.NET Core 集成构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.asp-net-core"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.asp-net-core.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载 ASP.NET Core Web 应用的基础集成、中间件、扩展和通用启动支持。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "asp-net-core"
       ]
     },
     {
@@ -449,6 +624,42 @@
       ]
     },
     {
+      "id": "backend.dotnet.building-blocks.multi-tenancy",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "多租户构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.multi-tenancy"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.multi-tenancy.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载多租户识别、租户上下文、租户隔离和租户配置相关的通用能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "multi-tenancy"
+      ]
+    },
+    {
       "id": "backend.dotnet.building-blocks.remote-service",
       "kind": "module",
       "module_type": "building-block",
@@ -483,6 +694,42 @@
         "dotnet",
         "service-integration",
         "remote-call"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.sql-sugar",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "SqlSugar 数据访问构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.sql-sugar"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.sql-sugar.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载基于 SqlSugar 的数据访问封装、仓储支持和数据库集成能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "sql-sugar"
       ]
     },
     {

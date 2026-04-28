@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.capability.multi-tenancy",
+      "kind": "capability",
+      "name": "多租户能力",
+      "path": "docs/knowledge/graph/capabilities/backend.capability.multi-tenancy.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.multi-tenancy.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-domain/platform.generated.json",
+        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/multi-tenancy.generated.json",
+        "docs/knowledge/generated/_index/by-tag/platform.generated.json"
+      ],
+      "summary": "提供租户识别、租户上下文传递和租户隔离能力，支持多租户 SaaS 架构。",
+      "tags": [
+        "backend",
+        "multi-tenancy",
+        "platform"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.multi-tenancy",
+      "kind": "module",
+      "name": "多租户构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.multi-tenancy.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.multi-tenancy.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/multi-tenancy.generated.json"
+      ],
+      "summary": "承载多租户识别、租户上下文、租户隔离和租户配置相关的通用能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "multi-tenancy"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

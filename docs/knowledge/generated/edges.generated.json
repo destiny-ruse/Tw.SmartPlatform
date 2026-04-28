@@ -31,6 +31,11 @@
       "type": "applies_to"
     },
     {
+      "from": "backend.dotnet.building-blocks.asp-net-core",
+      "to": "backend.capability.asp-net-core",
+      "type": "provides"
+    },
+    {
       "from": "backend.dotnet.building-blocks.caching",
       "to": "backend.capability.caching",
       "type": "provides"
@@ -46,8 +51,18 @@
       "type": "provides"
     },
     {
+      "from": "backend.dotnet.building-blocks.multi-tenancy",
+      "to": "backend.capability.multi-tenancy",
+      "type": "provides"
+    },
+    {
       "from": "backend.dotnet.building-blocks.remote-service",
       "to": "backend.capability.remote-service",
+      "type": "provides"
+    },
+    {
+      "from": "backend.dotnet.building-blocks.sql-sugar",
+      "to": "backend.capability.sql-sugar",
       "type": "provides"
     },
     {

@@ -1,0 +1,33 @@
+schema_version: 1.0.0
+id: backend.capability.asp-net-core
+kind: capability
+name: ASP.NET Core 集成能力
+status: active
+summary: 提供 Web 应用基础集成、中间件注册和通用启动配置支持，统一后端服务的 Web 层初始化方式。
+owners:
+  - platform
+tags:
+  - backend
+  - asp-net-core
+  - platform
+domain: platform
+provided_by:
+  modules:
+    - backend.dotnet.building-blocks.asp-net-core
+reuse:
+  use_when:
+    - 需要注册中间件、配置 Web 主机或使用统一的服务启动约定时
+  do_not_reimplement:
+    - 不要在各服务中重复配置 Web 层基础设施，应通过 Tw.AspNetCore 提供的扩展方法注册
+aliases:
+  - Web 宿主
+  - 中间件
+source:
+  declared_in: docs/knowledge/graph/capabilities/backend.capability.asp-net-core.yaml
+  evidence:
+    - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore
+provenance:
+  created_by: human
+  created_at: 2026-04-28
+  updated_by: human
+  updated_at: 2026-04-28

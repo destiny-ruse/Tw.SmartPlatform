@@ -6,6 +6,27 @@
   },
   "nodes": [
     {
+      "id": "backend.dotnet.building-blocks.asp-net-core",
+      "kind": "module",
+      "name": "ASP.NET Core 集成构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.asp-net-core.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.asp-net-core.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/asp-net-core.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json"
+      ],
+      "summary": "承载 ASP.NET Core Web 应用的基础集成、中间件、扩展和通用启动支持。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "asp-net-core"
+      ]
+    },
+    {
       "id": "backend.dotnet.building-blocks.caching",
       "kind": "module",
       "name": "缓存构件",
@@ -69,6 +90,27 @@
       ]
     },
     {
+      "id": "backend.dotnet.building-blocks.multi-tenancy",
+      "kind": "module",
+      "name": "多租户构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.multi-tenancy.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.multi-tenancy.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/multi-tenancy.generated.json"
+      ],
+      "summary": "承载多租户识别、租户上下文、租户隔离和租户配置相关的通用能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "multi-tenancy"
+      ]
+    },
+    {
       "id": "backend.dotnet.building-blocks.remote-service",
       "kind": "module",
       "name": "远程服务调用公共构件",
@@ -89,6 +131,27 @@
         "dotnet",
         "service-integration",
         "remote-call"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.sql-sugar",
+      "kind": "module",
+      "name": "SqlSugar 数据访问构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.sql-sugar.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.sql-sugar.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/sql-sugar.generated.json"
+      ],
+      "summary": "承载基于 SqlSugar 的数据访问封装、仓储支持和数据库集成能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "sql-sugar"
       ]
     },
     {

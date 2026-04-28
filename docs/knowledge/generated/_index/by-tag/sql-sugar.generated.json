@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.capability.sql-sugar",
+      "kind": "capability",
+      "name": "SqlSugar 数据访问能力",
+      "path": "docs/knowledge/graph/capabilities/backend.capability.sql-sugar.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.sql-sugar.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-domain/platform.generated.json",
+        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/sql-sugar.generated.json"
+      ],
+      "summary": "提供基于 SqlSugar 的数据访问封装和仓储支持，统一后端服务的数据库访问方式。",
+      "tags": [
+        "backend",
+        "sql-sugar",
+        "platform"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.sql-sugar",
+      "kind": "module",
+      "name": "SqlSugar 数据访问构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.sql-sugar.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.sql-sugar.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/sql-sugar.generated.json"
+      ],
+      "summary": "承载基于 SqlSugar 的数据访问封装、仓储支持和数据库集成能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "sql-sugar"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}
