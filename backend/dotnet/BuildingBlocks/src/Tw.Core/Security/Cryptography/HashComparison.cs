@@ -248,9 +248,39 @@ internal static class Sha3Hash
         int rateBytes,
         CancellationToken cancellationToken)
     {
-        using var memoryStream = new MemoryStream();
-        await stream.CopyToAsync(memoryStream, cancellationToken);
-        return ComputeSha3(memoryStream.ToArray(), hashLength, rateBytes);
+        Check.NotNull(stream);
+
+        var state = new ulong[25];
+        var pendingBlock = new byte[rateBytes];
+        var pendingCount = 0;
+        var buffer = new byte[81920];
+
+        while (true)
+        {
+            var bytesRead = await stream.ReadAsync(buffer, cancellationToken);
+            if (bytesRead == 0)
+            {
+                break;
+            }
+
+            var offset = 0;
+            while (offset < bytesRead)
+            {
+                var bytesToCopy = Math.Min(rateBytes - pendingCount, bytesRead - offset);
+                buffer.AsSpan(offset, bytesToCopy).CopyTo(pendingBlock.AsSpan(pendingCount));
+                pendingCount += bytesToCopy;
+                offset += bytesToCopy;
+
+                if (pendingCount == rateBytes)
+                {
+                    AbsorbBlock(state, pendingBlock);
+                    KeccakF1600(state);
+                    pendingCount = 0;
+                }
+            }
+        }
+
+        return FinalizeSha3(state, pendingBlock.AsSpan(0, pendingCount), hashLength, rateBytes);
     }
 
     private static byte[] ComputeSha3(byte[] bytes, int hashLength, int rateBytes)
@@ -267,9 +297,14 @@ internal static class Sha3Hash
             offset += rateBytes;
         }
 
+        return FinalizeSha3(state, bytes.AsSpan(offset), hashLength, rateBytes);
+    }
+
+    private static byte[] FinalizeSha3(ulong[] state, ReadOnlySpan<byte> tail, int hashLength, int rateBytes)
+    {
         var finalBlock = new byte[rateBytes];
-        bytes.AsSpan(offset).CopyTo(finalBlock);
-        finalBlock[bytes.Length - offset] = 0x06;
+        tail.CopyTo(finalBlock);
+        finalBlock[tail.Length] = 0x06;
         finalBlock[^1] |= 0x80;
         AbsorbBlock(state, finalBlock);
         KeccakF1600(state);
