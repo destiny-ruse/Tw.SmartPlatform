@@ -1,4 +1,5 @@
 using FluentAssertions;
+using System.Reflection;
 using Tw.Core.Collections;
 using Xunit;
 
@@ -6,6 +7,15 @@ namespace Tw.Core.Tests;
 
 public class TypeListTests
 {
+    [Fact]
+    public void ITypeList_Generic_Parameter_Is_Invariant()
+    {
+        var genericParameter = typeof(ITypeList<>).GetGenericArguments()[0];
+
+        genericParameter.GenericParameterAttributes.Should()
+            .NotHaveFlag(GenericParameterAttributes.Contravariant);
+    }
+
     [Fact]
     public void TypeList_Accepts_Assignable_Types()
     {
@@ -77,6 +87,18 @@ public class TypeListTests
     }
 
     [Fact]
+    public void Insert_Rejects_Null_Type()
+    {
+        var types = new TypeList<IDisposable>();
+        Type item = null!;
+
+        var act = () => types.Insert(0, item);
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(item));
+    }
+
+    [Fact]
     public void Index_Setter_Enforces_Assignability()
     {
         var types = new TypeList<IDisposable> { typeof(MemoryStream) };
@@ -85,6 +107,18 @@ public class TypeListTests
 
         act.Should().Throw<ArgumentException>()
             .WithParameterName("value");
+    }
+
+    [Fact]
+    public void Index_Setter_Rejects_Null_Type()
+    {
+        var types = new TypeList<IDisposable> { typeof(MemoryStream) };
+        Type value = null!;
+
+        var act = () => types[0] = value;
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName(nameof(value));
     }
 
     [Fact]

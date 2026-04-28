@@ -9,7 +9,7 @@ public interface ITypeList : ITypeList<object>;
 /// Represents a list of types constrained to a base type.
 /// </summary>
 /// <typeparam name="TBaseType">The required base type for every item.</typeparam>
-public interface ITypeList<in TBaseType> : IList<Type>
+public interface ITypeList<TBaseType> : IList<Type>
 {
     /// <summary>
     /// Adds the specified type argument to the list.
