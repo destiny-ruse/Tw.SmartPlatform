@@ -74,11 +74,13 @@ public class BasicExtensionsTests
         var right = () => "abc".Right(-1);
         var truncate = () => "abc".Truncate(-1);
         var chunk = () => "abc".Chunk(0).ToArray();
+        var nullNthIndex = () => ((string?)null).NthIndexOf('x', 0);
 
         left.Should().Throw<ArgumentOutOfRangeException>();
         right.Should().Throw<ArgumentOutOfRangeException>();
         truncate.Should().Throw<ArgumentOutOfRangeException>();
         chunk.Should().Throw<ArgumentOutOfRangeException>();
+        nullNthIndex.Should().Throw<ArgumentOutOfRangeException>().WithParameterName("n");
     }
 
     [Fact]
@@ -144,6 +146,16 @@ public class BasicExtensionsTests
         value.EndOfDay().Should().Be(new DateTime(2026, 4, 28).AddDays(1).AddTicks(-1));
         value.EndOfMonth().Should().Be(new DateTime(2026, 5, 1).AddTicks(-1));
         value.EndOfYear().Should().Be(new DateTime(2027, 1, 1).AddTicks(-1));
+    }
+
+    [Fact]
+    public void DateTime_Boundaries_Clamp_Extrema()
+    {
+        DateTime.MaxValue.EndOfDay().Should().Be(DateTime.MaxValue);
+        DateTime.MaxValue.EndOfWeek().Should().Be(DateTime.MaxValue);
+        DateTime.MaxValue.EndOfMonth().Should().Be(DateTime.MaxValue);
+        DateTime.MaxValue.EndOfYear().Should().Be(DateTime.MaxValue);
+        DateTime.MinValue.StartOfWeek().Should().Be(DateTime.MinValue);
     }
 
     [Fact]
@@ -233,6 +245,44 @@ public class BasicExtensionsTests
     }
 
     [Fact]
+    public void Object_As_Validates_Null_And_Failed_Cast()
+    {
+        object nullObject = null!;
+        object incompatible = 42;
+
+        var nullCast = () => ObjectExtensions.As<string>(nullObject);
+        var invalidCast = () => ObjectExtensions.As<string>(incompatible);
+
+        nullCast.Should().Throw<ArgumentNullException>().WithParameterName("obj");
+        invalidCast.Should().Throw<InvalidCastException>()
+            .WithMessage("*System.Int32*System.String*");
+    }
+
+    [Fact]
+    public void Object_To_Validates_Null()
+    {
+        object nullObject = null!;
+
+        var act = () => nullObject.To<int>();
+
+        act.Should().Throw<ArgumentNullException>().WithParameterName("obj");
+    }
+
+    [Fact]
+    public void Exception_ReThrow_Validates_Null_And_Preserves_Stack()
+    {
+        Exception exception = null!;
+        var nullRethrow = () => exception.ReThrow();
+        var captured = CaptureExceptionFromThrowingHelper();
+
+        var rethrow = () => captured.ReThrow();
+
+        nullRethrow.Should().Throw<ArgumentNullException>().WithParameterName(nameof(exception));
+        rethrow.Should().Throw<InvalidOperationException>()
+            .Which.StackTrace.Should().Contain(nameof(ThrowingHelper));
+    }
+
+    [Fact]
     public void Comparable_IsBetween_Works()
     {
         2.IsBetween(1, 3).Should().BeTrue();
@@ -281,5 +331,24 @@ public class BasicExtensionsTests
 
         match.Should().NotBeNull();
         match!.GetParameters().Select(parameter => parameter.Name).Should().Equal(parameterNames);
+    }
+
+    private static Exception CaptureExceptionFromThrowingHelper()
+    {
+        try
+        {
+            ThrowingHelper();
+        }
+        catch (Exception exception)
+        {
+            return exception;
+        }
+
+        throw new InvalidOperationException("The helper did not throw.");
+    }
+
+    private static void ThrowingHelper()
+    {
+        throw new InvalidOperationException("Original failure.");
     }
 }

@@ -3,19 +3,30 @@ namespace Tw.Core.Extensions;
 /// <summary>Provides extension methods for general object values.</summary>
 public static class ObjectExtensions
 {
-    /// <summary>Casts an object using the C# <c>as</c> operator.</summary>
+    /// <summary>Casts an object to a reference type.</summary>
+    /// <exception cref="ArgumentNullException">Thrown when <paramref name="obj"/> is <see langword="null"/>.</exception>
+    /// <exception cref="InvalidCastException">Thrown when <paramref name="obj"/> is not assignable to <typeparamref name="T"/>.</exception>
     public static T As<T>(this object obj)
         where T : class
     {
-        return (obj as T)!;
+        var value = Check.NotNull(obj);
+        if (value is T typedValue)
+        {
+            return typedValue;
+        }
+
+        throw new InvalidCastException(
+            $"Object of type {value.GetType().FullName} cannot be cast to {typeof(T).FullName}.");
     }
 
     /// <summary>Converts an object to a value type.</summary>
+    /// <exception cref="ArgumentNullException">Thrown when <paramref name="obj"/> is <see langword="null"/>.</exception>
     /// <exception cref="InvalidCastException">Thrown when conversion is not supported.</exception>
     /// <exception cref="FormatException">Thrown when conversion input is not in a valid format.</exception>
     public static T To<T>(this object obj)
         where T : struct
     {
+        Check.NotNull(obj);
         var targetType = Nullable.GetUnderlyingType(typeof(T)) ?? typeof(T);
         return (T)Convert.ChangeType(obj, targetType);
     }

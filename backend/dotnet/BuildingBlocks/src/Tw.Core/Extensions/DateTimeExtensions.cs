@@ -48,6 +48,11 @@ public static class DateTimeExtensions
     /// <returns>The end of the day.</returns>
     public static DateTime EndOfDay(this DateTime dateTime)
     {
+        if (dateTime.Date == DateTime.MaxValue.Date)
+        {
+            return DateTime.MaxValue;
+        }
+
         return dateTime.StartOfDay().AddDays(1).AddTicks(-1);
     }
 
@@ -57,6 +62,11 @@ public static class DateTimeExtensions
     public static DateTime StartOfWeek(this DateTime dateTime)
     {
         var difference = ((int)dateTime.DayOfWeek - (int)DayOfWeek.Monday + 7) % 7;
+        if (dateTime.StartOfDay().Ticks < TimeSpan.TicksPerDay * difference)
+        {
+            return DateTime.MinValue;
+        }
+
         return dateTime.StartOfDay().AddDays(-difference);
     }
 
@@ -65,7 +75,10 @@ public static class DateTimeExtensions
     /// <returns>The end of the week.</returns>
     public static DateTime EndOfWeek(this DateTime dateTime)
     {
-        return dateTime.StartOfWeek().AddDays(7).AddTicks(-1);
+        var startOfWeek = dateTime.StartOfWeek();
+        return DateTime.MaxValue.Ticks - startOfWeek.Ticks < TimeSpan.TicksPerDay * 7
+            ? DateTime.MaxValue
+            : startOfWeek.AddDays(7).AddTicks(-1);
     }
 
     /// <summary>Returns the first tick of the date's month.</summary>
@@ -81,6 +94,11 @@ public static class DateTimeExtensions
     /// <returns>The end of the month.</returns>
     public static DateTime EndOfMonth(this DateTime dateTime)
     {
+        if (dateTime.Year == DateTime.MaxValue.Year && dateTime.Month == DateTime.MaxValue.Month)
+        {
+            return DateTime.MaxValue;
+        }
+
         return dateTime.StartOfMonth().AddMonths(1).AddTicks(-1);
     }
 
@@ -97,6 +115,11 @@ public static class DateTimeExtensions
     /// <returns>The end of the year.</returns>
     public static DateTime EndOfYear(this DateTime dateTime)
     {
+        if (dateTime.Year == DateTime.MaxValue.Year)
+        {
+            return DateTime.MaxValue;
+        }
+
         return dateTime.StartOfYear().AddYears(1).AddTicks(-1);
     }
 

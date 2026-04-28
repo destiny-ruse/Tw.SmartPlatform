@@ -12,19 +12,19 @@ public static class StringExtensions
     /// <summary>Returns whether a string is <see langword="null"/>, empty, or whitespace.</summary>
     public static bool IsNullOrWhiteSpace(this string? str) => string.IsNullOrWhiteSpace(str);
 
-    /// <summary>Converts the first character of a string to uppercase.</summary>
+    /// <summary>Converts the first UTF-16 character of a string to uppercase using basic character casing.</summary>
     public static string? ToPascalCase(this string? str)
     {
         return ChangeFirstCharacterCase(str, char.ToUpperInvariant);
     }
 
-    /// <summary>Converts the first character of a string to lowercase.</summary>
+    /// <summary>Converts the first UTF-16 character of a string to lowercase using basic character casing.</summary>
     public static string? ToCamelCase(this string? str)
     {
         return ChangeFirstCharacterCase(str, char.ToLowerInvariant);
     }
 
-    /// <summary>Converts a string to snake_case.</summary>
+    /// <summary>Converts a string to snake_case using basic UTF-16 character casing.</summary>
     public static string? ToSnakeCase(this string? str)
     {
         if (string.IsNullOrEmpty(str))
@@ -121,12 +121,12 @@ public static class StringExtensions
     /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="n"/> is less than or equal to zero.</exception>
     public static int NthIndexOf(this string? str, char c, int n)
     {
+        Check.Positive(n);
+
         if (string.IsNullOrEmpty(str))
         {
             return -1;
         }
-
-        Check.Positive(n);
 
         var index = -1;
         for (var count = 0; count < n; count++)
