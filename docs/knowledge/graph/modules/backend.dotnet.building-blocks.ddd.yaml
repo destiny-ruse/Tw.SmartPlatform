@@ -1,0 +1,24 @@
+schema_version: 1.0.0
+id: backend.dotnet.building-blocks.ddd
+kind: module
+name: DDD 基础构件
+status: active
+summary: 承载领域驱动设计的基础抽象，包括实体、聚合根、值对象和领域事件基类，供各服务领域层继承使用。
+owners:
+  - platform
+tags:
+  - backend
+  - dotnet
+  - ddd
+module_type: building-block
+stack: dotnet
+path: backend/dotnet/BuildingBlocks/src/Ddd
+source:
+  declared_in: docs/knowledge/graph/modules/backend.dotnet.building-blocks.ddd.yaml
+  evidence:
+    - backend/dotnet/BuildingBlocks/src/Ddd
+provenance:
+  created_by: human
+  created_at: 2026-04-28
+  updated_by: human
+  updated_at: 2026-04-28

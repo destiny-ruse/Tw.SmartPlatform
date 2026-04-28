@@ -698,6 +698,68 @@
       ]
     },
     {
+      "id": "backend.dotnet.building-blocks.core",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "核心基础构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.core.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.Core"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载后端通用的核心类型、基础工具、扩展方法和跨模块共享能力，是所有服务的基础依赖。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "core"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.ddd",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "DDD 基础构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Ddd",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.ddd.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Ddd"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载领域驱动设计的基础抽象，包括实体、聚合根、值对象和领域事件基类，供各服务领域层继承使用。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "ddd"
+      ]
+    },
+    {
       "id": "backend.dotnet.building-blocks.distributed-locking",
       "kind": "module",
       "module_type": "building-block",
@@ -984,6 +1046,37 @@
         "backend",
         "dotnet",
         "text-templating"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.uow",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "工作单元构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Uow",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.uow.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.Uow"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载工作单元模式相关的事务协调、提交边界和基础抽象实现，供数据访问层使用。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "uow"
       ]
     },
     {

@@ -71,6 +71,48 @@
       ]
     },
     {
+      "id": "backend.dotnet.building-blocks.core",
+      "kind": "module",
+      "name": "核心基础构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.core.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.core.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/core.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json"
+      ],
+      "summary": "承载后端通用的核心类型、基础工具、扩展方法和跨模块共享能力，是所有服务的基础依赖。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "core"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.ddd",
+      "kind": "module",
+      "name": "DDD 基础构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.ddd.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.ddd.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/ddd.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json"
+      ],
+      "summary": "承载领域驱动设计的基础抽象，包括实体、聚合根、值对象和领域事件基类，供各服务领域层继承使用。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "ddd"
+      ]
+    },
+    {
       "id": "backend.dotnet.building-blocks.distributed-locking",
       "kind": "module",
       "name": "分布式锁构件",
@@ -238,6 +280,27 @@
         "backend",
         "dotnet",
         "text-templating"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.uow",
+      "kind": "module",
+      "name": "工作单元构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.uow.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.uow.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/uow.generated.json"
+      ],
+      "summary": "承载工作单元模式相关的事务协调、提交边界和基础抽象实现，供数据访问层使用。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "uow"
       ]
     },
     {

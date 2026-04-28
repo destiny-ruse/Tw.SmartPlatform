@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.dotnet.building-blocks.uow",
+      "kind": "module",
+      "name": "工作单元构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.uow.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.uow.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/uow.generated.json"
+      ],
+      "summary": "承载工作单元模式相关的事务协调、提交边界和基础抽象实现，供数据访问层使用。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "uow"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

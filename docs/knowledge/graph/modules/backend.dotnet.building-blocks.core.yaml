@@ -1,0 +1,24 @@
+schema_version: 1.0.0
+id: backend.dotnet.building-blocks.core
+kind: module
+name: 核心基础构件
+status: active
+summary: 承载后端通用的核心类型、基础工具、扩展方法和跨模块共享能力，是所有服务的基础依赖。
+owners:
+  - platform
+tags:
+  - backend
+  - dotnet
+  - core
+module_type: building-block
+stack: dotnet
+path: backend/dotnet/BuildingBlocks/src/Tw.Core
+source:
+  declared_in: docs/knowledge/graph/modules/backend.dotnet.building-blocks.core.yaml
+  evidence:
+    - backend/dotnet/BuildingBlocks/src/Tw.Core
+provenance:
+  created_by: human
+  created_at: 2026-04-28
+  updated_by: human
+  updated_at: 2026-04-28
