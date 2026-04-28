@@ -113,20 +113,33 @@ public static class DictionaryExtensions
     /// <summary>Converts a string/object dictionary to a dynamic object.</summary>
     /// <param name="dictionary">The dictionary to convert.</param>
     /// <returns>An <see cref="ExpandoObject"/> containing the dictionary values.</returns>
-    /// <remarks>Nested <see cref="Dictionary{TKey,TValue}"/> values with string keys and object values are converted recursively.</remarks>
+    /// <remarks>Nested dictionaries with string keys and object values are converted recursively; dictionaries with other key types are left unchanged.</remarks>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="dictionary"/> is <see langword="null"/>.</exception>
     public static dynamic ConvertToDynamicObject(this Dictionary<string, object> dictionary)
+    {
+        return ConvertStringObjectDictionary(Check.NotNull(dictionary));
+    }
+
+    private static ExpandoObject ConvertStringObjectDictionary(IEnumerable<KeyValuePair<string, object>> dictionary)
     {
         var expando = new ExpandoObject();
         var target = (IDictionary<string, object?>)expando;
 
-        foreach (var item in Check.NotNull(dictionary))
+        foreach (var item in dictionary)
         {
-            target[item.Key] = item.Value is Dictionary<string, object> nested
-                ? ConvertToDynamicObject(nested)
-                : item.Value;
+            target[item.Key] = ConvertDynamicValue(item.Value);
         }
 
         return expando;
+    }
+
+    private static object? ConvertDynamicValue(object? value)
+    {
+        return value switch
+        {
+            IDictionary<string, object> dictionary => ConvertStringObjectDictionary(dictionary),
+            IReadOnlyDictionary<string, object> dictionary => ConvertStringObjectDictionary(dictionary),
+            _ => value,
+        };
     }
 }

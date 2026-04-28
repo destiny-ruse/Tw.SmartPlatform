@@ -21,6 +21,23 @@ public class StreamExtensionsTests
     }
 
     [Fact]
+    public async Task WriteText_Defaults_To_Utf8_Without_Bom()
+    {
+        using var syncStream = new MemoryStream();
+        await using var asyncStream = new MemoryStream();
+
+        syncStream.WriteText("hello");
+        await asyncStream.WriteTextAsync("hello");
+        syncStream.Position = 0;
+        asyncStream.Position = 0;
+
+        syncStream.ToArray().Should().Equal((byte)'h', (byte)'e', (byte)'l', (byte)'l', (byte)'o');
+        asyncStream.ToArray().Should().Equal((byte)'h', (byte)'e', (byte)'l', (byte)'l', (byte)'o');
+        (await syncStream.ReadAllTextAsync()).Should().Be("hello");
+        (await asyncStream.ReadAllTextAsync()).Should().Be("hello");
+    }
+
+    [Fact]
     public async Task GetAllBytes_And_Async_Read_From_Current_Position()
     {
         await using var stream = new MemoryStream([1, 2, 3, 4]);

@@ -1,5 +1,6 @@
 using FluentAssertions;
 using System.Collections.Concurrent;
+using System.Collections.ObjectModel;
 using System.Dynamic;
 using System.Reflection;
 using Tw.Core.Extensions;
@@ -22,6 +23,29 @@ public class CollectionExtensionsTests
         addedDuplicate.Should().BeFalse();
         addedItems.Should().Equal(4, 5);
         values.Should().Equal(1, 2, 3, 4, 5);
+    }
+
+    [Fact]
+    public void AddIfNotContains_Items_Mutates_Immediately_And_Returns_Stable_Added_Items()
+    {
+        var values = new List<int> { 1, 2 };
+
+        var addedItems = values.AddIfNotContains(new[] { 2, 3, 4 });
+
+        values.Should().Equal(1, 2, 3, 4);
+        addedItems.Should().Equal(3, 4);
+        addedItems.Should().Equal(3, 4);
+        values.Should().Equal(1, 2, 3, 4);
+    }
+
+    [Fact]
+    public void AddIfNotContains_Items_Validates_Null_Items_At_Call_Time()
+    {
+        IEnumerable<int> items = null!;
+
+        var act = () => new List<int>().AddIfNotContains(items);
+
+        act.Should().Throw<ArgumentNullException>().WithParameterName(nameof(items));
     }
 
     [Fact]
@@ -128,10 +152,19 @@ public class CollectionExtensionsTests
     [Fact]
     public void Dictionary_GetOrDefault_And_Dynamic_Conversion_Work()
     {
+        IDictionary<string, object> dictionaryChild = new SortedList<string, object>
+        {
+            ["value"] = 42,
+        };
+        IReadOnlyDictionary<string, object> readOnlyChild = new ReadOnlyDictionary<string, object>(
+            new Dictionary<string, object> { ["name"] = "readonly" });
         var dictionary = new Dictionary<string, object>
         {
             ["name"] = "core",
             ["child"] = new Dictionary<string, object> { ["value"] = 42 },
+            ["dictionaryChild"] = dictionaryChild,
+            ["readOnlyChild"] = readOnlyChild,
+            ["nonStringKeys"] = new Dictionary<int, object> { [1] = "one" },
         };
         IReadOnlyDictionary<string, object> readOnly = dictionary;
         var concurrent = new ConcurrentDictionary<string, int>();
@@ -146,6 +179,9 @@ public class CollectionExtensionsTests
         ((object)dynamicObject).Should().BeAssignableTo<ExpandoObject>();
         ((string)dynamicObject.name).Should().Be("core");
         ((int)dynamicObject.child.value).Should().Be(42);
+        ((int)dynamicObject.dictionaryChild.value).Should().Be(42);
+        ((string)dynamicObject.readOnlyChild.name).Should().Be("readonly");
+        ((object)dynamicObject.nonStringKeys).Should().BeAssignableTo<Dictionary<int, object>>();
     }
 
     [Fact]
@@ -179,6 +215,34 @@ public class CollectionExtensionsTests
     }
 
     [Fact]
+    public async Task Enumerable_ForEachParallelAsync_Honors_Cancellation()
+    {
+        using var cts = new CancellationTokenSource();
+        await cts.CancelAsync();
+        var calls = 0;
+
+        Func<Task> act = () => Enumerable.Range(1, 3).ForEachParallelAsync(_ =>
+        {
+            calls++;
+            return Task.CompletedTask;
+        }, maxDegreeOfParallelism: 2, cts.Token);
+
+        await act.Should().ThrowAsync<OperationCanceledException>();
+        calls.Should().Be(0);
+    }
+
+    [Fact]
+    public async Task Enumerable_ForEachParallelAsync_Propagates_Action_Exception()
+    {
+        var failure = new InvalidOperationException("parallel failure");
+
+        Func<Task> act = () => new[] { 1 }.ForEachParallelAsync(_ => Task.FromException(failure), maxDegreeOfParallelism: 1);
+
+        await act.Should().ThrowAsync<InvalidOperationException>()
+            .WithMessage("parallel failure");
+    }
+
+    [Fact]
     public void Enumerable_Batch_WhereIf_PageBy_And_AsReadOnlyCollection_Work()
     {
         var values = Enumerable.Range(1, 7);
@@ -191,6 +255,33 @@ public class CollectionExtensionsTests
         values.PageBy(pageNumber: 2, pageSize: 3).Should().Equal(4, 5, 6);
         values.AsReadOnlyCollection().Should().Equal(1, 2, 3, 4, 5, 6, 7)
             .And.BeAssignableTo<IReadOnlyCollection<int>>();
+    }
+
+    [Fact]
+    public void Enumerable_Batch_Validates_At_Call_Time_And_Returns_Stable_Materialized_Batches()
+    {
+        IEnumerable<int> source = null!;
+        var values = new List<int> { 1, 2, 3 };
+
+        var nullSource = () => source.Batch(2);
+        var invalidBatchSize = () => values.Batch(0);
+        var batches = values.Batch(2).Select(batch => batch.ToArray()).ToArray();
+        values[0] = 99;
+
+        nullSource.Should().Throw<ArgumentNullException>().WithParameterName(nameof(source));
+        invalidBatchSize.Should().Throw<ArgumentOutOfRangeException>().WithParameterName("batchSize");
+        batches.Should().BeEquivalentTo(new[] { new[] { 1, 2 }, new[] { 3 } }, options => options.WithStrictOrdering());
+        batches[0].Should().Equal(1, 2);
+        batches[0].Should().Equal(1, 2);
+    }
+
+    [Fact]
+    public void Enumerable_PageBy_Throws_When_Calculated_Offset_Exceeds_Int_MaxValue()
+    {
+        var act = () => new[] { 1 }.PageBy(int.MaxValue, 2).ToArray();
+
+        act.Should().Throw<ArgumentOutOfRangeException>()
+            .Where(exception => new[] { "pageNumber", "pageSize" }.Contains(exception.ParamName));
     }
 
     [Fact]

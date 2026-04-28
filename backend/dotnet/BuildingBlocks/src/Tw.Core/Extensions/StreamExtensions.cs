@@ -5,6 +5,8 @@ namespace Tw.Core.Extensions;
 /// <summary>Provides extension methods for streams.</summary>
 public static class StreamExtensions
 {
+    private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
+
     /// <summary>Reads all bytes from the stream's current position without disposing the stream.</summary>
     /// <param name="stream">The stream to read.</param>
     /// <returns>The bytes read from the current position to the end.</returns>
@@ -58,42 +60,42 @@ public static class StreamExtensions
         return new MemoryStream(stream.GetAllBytes());
     }
 
-    /// <summary>Reads all text from the stream's current position using UTF-8 by default.</summary>
+    /// <summary>Reads all text from the stream's current position using UTF-8 without a byte order mark by default.</summary>
     /// <param name="stream">The stream to read.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 when omitted.</param>
+    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
     /// <param name="cancellationToken">The token that cancels the asynchronous read.</param>
     /// <returns>The text read from the stream.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="stream"/> is <see langword="null"/>.</exception>
     public static async Task<string> ReadAllTextAsync(this Stream stream, Encoding? encoding = null, CancellationToken cancellationToken = default)
     {
-        using var reader = new StreamReader(Check.NotNull(stream), encoding ?? Encoding.UTF8, detectEncodingFromByteOrderMarks: true, leaveOpen: true);
+        using var reader = new StreamReader(Check.NotNull(stream), encoding ?? DefaultEncoding, detectEncodingFromByteOrderMarks: true, leaveOpen: true);
         return await reader.ReadToEndAsync(cancellationToken);
     }
 
-    /// <summary>Writes text at the stream's current position using UTF-8 by default without resetting the position.</summary>
+    /// <summary>Writes text at the stream's current position using UTF-8 without a byte order mark by default, without resetting the position.</summary>
     /// <param name="stream">The stream to write.</param>
     /// <param name="text">The text to write.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 when omitted.</param>
+    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="stream"/> or <paramref name="text"/> is <see langword="null"/>.</exception>
     public static void WriteText(this Stream stream, string text, Encoding? encoding = null)
     {
-        var writer = new StreamWriter(Check.NotNull(stream), encoding ?? Encoding.UTF8, leaveOpen: true);
+        var writer = new StreamWriter(Check.NotNull(stream), encoding ?? DefaultEncoding, leaveOpen: true);
         using (writer)
         {
             writer.Write(Check.NotNull(text));
         }
     }
 
-    /// <summary>Writes text at the stream's current position using UTF-8 by default without resetting the position.</summary>
+    /// <summary>Writes text at the stream's current position using UTF-8 without a byte order mark by default, without resetting the position.</summary>
     /// <param name="stream">The stream to write.</param>
     /// <param name="text">The text to write.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 when omitted.</param>
+    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
     /// <param name="cancellationToken">The token that cancels the asynchronous write.</param>
     /// <returns>A task that completes when the text has been flushed to the stream.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="stream"/> or <paramref name="text"/> is <see langword="null"/>.</exception>
     public static async Task WriteTextAsync(this Stream stream, string text, Encoding? encoding = null, CancellationToken cancellationToken = default)
     {
-        var writer = new StreamWriter(Check.NotNull(stream), encoding ?? Encoding.UTF8, leaveOpen: true);
+        var writer = new StreamWriter(Check.NotNull(stream), encoding ?? DefaultEncoding, leaveOpen: true);
         await using (writer)
         {
             await writer.WriteAsync(Check.NotNull(text).AsMemory(), cancellationToken);

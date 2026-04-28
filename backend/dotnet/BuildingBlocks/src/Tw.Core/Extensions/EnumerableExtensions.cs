@@ -123,6 +123,11 @@ public static class EnumerableExtensions
         Check.NotNull(source);
         Check.Positive(batchSize);
 
+        return BatchIterator(source, batchSize);
+    }
+
+    private static IEnumerable<IEnumerable<T>> BatchIterator<T>(IEnumerable<T> source, int batchSize)
+    {
         var batch = new List<T>(batchSize);
         foreach (var item in source)
         {
@@ -181,7 +186,14 @@ public static class EnumerableExtensions
         Check.NotNull(source);
         Check.Positive(pageNumber);
         Check.Positive(pageSize);
-        return source.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+        var offset = (long)(pageNumber - 1) * pageSize;
+        if (offset > int.MaxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(pageNumber), pageNumber, "The calculated page offset exceeds the supported range.");
+        }
+
+        return source.Skip((int)offset).Take(pageSize);
     }
 
     /// <summary>Returns the sequence as a read-only collection.</summary>

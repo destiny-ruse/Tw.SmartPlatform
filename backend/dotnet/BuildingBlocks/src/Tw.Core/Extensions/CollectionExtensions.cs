@@ -24,22 +24,24 @@ public static class CollectionExtensions
 
     /// <summary>Adds each missing item and returns the items that were added.</summary>
     /// <param name="source">The collection to update.</param>
-    /// <param name="items">The candidate items to add. The sequence is enumerated once.</param>
+    /// <param name="items">The candidate items to add. The sequence is enumerated once at call time.</param>
     /// <typeparam name="T">The item type.</typeparam>
     /// <returns>The items that were added, in source enumeration order.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="items"/> is <see langword="null"/>.</exception>
     public static IEnumerable<T> AddIfNotContains<T>(this ICollection<T> source, IEnumerable<T> items)
     {
-        Check.NotNull(source);
-        Check.NotNull(items);
+        var collection = Check.NotNull(source);
+        var addedItems = new List<T>();
 
-        foreach (var item in items)
+        foreach (var item in Check.NotNull(items))
         {
-            if (source.AddIfNotContains(item))
+            if (collection.AddIfNotContains(item))
             {
-                yield return item;
+                addedItems.Add(item);
             }
         }
+
+        return addedItems;
     }
 
     /// <summary>Adds a factory-created item when no existing item matches the predicate.</summary>
