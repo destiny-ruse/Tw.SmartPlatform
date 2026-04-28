@@ -15,6 +15,23 @@ public class ConfigurationTests
     }
 
     [Fact]
+    public void ConfigurationSectionAttribute_Targets_Classes()
+    {
+        var usage = typeof(ConfigurationSectionAttribute)
+            .GetCustomAttributes(typeof(AttributeUsageAttribute), inherit: false)
+            .Should()
+            .ContainSingle()
+            .Subject
+            .Should()
+            .BeOfType<AttributeUsageAttribute>()
+            .Subject;
+
+        usage.ValidOn.Should().Be(AttributeTargets.Class);
+        usage.AllowMultiple.Should().BeFalse();
+        usage.Inherited.Should().BeTrue();
+    }
+
+    [Fact]
     public void ConfigurableOptions_Is_Marker_Interface()
     {
         typeof(IConfigurableOptions).GetMembers().Should().BeEmpty();
