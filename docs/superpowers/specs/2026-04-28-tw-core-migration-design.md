@@ -27,6 +27,7 @@ The source material is `D:\WorkSpaces\Nebulaxis_Old\src`. The migration target i
 4. Do not mark cryptography APIs as legacy or obsolete just because older algorithms may be used by future business requirements.
 5. Do not migrate application, domain, data, messaging, infrastructure, or web-layer code into `Tw.Core`.
 6. Do not migrate `ErrorDefinition`. Structured error definitions with log-level metadata belong in higher layers. Removing it also avoids introducing `Microsoft.Extensions.Logging.Abstractions` through a single low-value type.
+7. Do not treat `StringCryptographyExtensions` as old API compatibility. It is a new internal convenience API surface and is in scope for this migration.
 
 ## Standards
 
@@ -79,7 +80,7 @@ All cryptography capability should be migrated into `Tw.Core` under a clear secu
 8. SHA2 hashing: SHA256, SHA384, SHA512.
 9. SHA3 hashing: SHA3-256, SHA3-384, SHA3-512.
 10. HMAC hashing for MD5, SHA1, SHA2, and SHA3 variants.
-11. String-level cryptography extension methods (`StringCryptographyExtensions`): convenience wrappers that apply hasher and encryption APIs directly to `string` inputs.
+11. String-level cryptography extension methods (`StringCryptographyExtensions`): a new convenience API surface that applies hasher and encryption APIs directly to `string` inputs.
 
 ### Excluded
 
@@ -145,6 +146,8 @@ backend/dotnet/BuildingBlocks/tests/
 
 `Tw.TestBase` must be created before `Tw.Core.Tests`.
 
+All BuildingBlocks test projects must live under `backend/dotnet/BuildingBlocks/tests`. `Tw.TestBase` and `Tw.Core.Tests` must be added to `backend/dotnet/Tw.SmartPlatform.slnx` under the `/BuildingBlocks/tests/` solution folder.
+
 ## Naming Design
 
 Namespaces must use `Tw.Core.*` and align with folders.
@@ -176,20 +179,20 @@ Primary renames:
 | `SHA256Encryption` | `Sha256Hasher` |
 | `SHA384Encryption` | `Sha384Hasher` |
 | `SHA512Encryption` | `Sha512Hasher` |
-| `SHA3_256Encryption` | `Sha3_256Hasher` |
-| `SHA3_384Encryption` | `Sha3_384Hasher` |
-| `SHA3_512Encryption` | `Sha3_512Hasher` |
+| `SHA3_256Encryption` | `Sha3256Hasher` |
+| `SHA3_384Encryption` | `Sha3384Hasher` |
+| `SHA3_512Encryption` | `Sha3512Hasher` |
 | `HMACMD5Encryption` | `HmacMd5Hasher` |
 | `HMACSHA1Encryption` | `HmacSha1Hasher` |
 | `HMACSHA256Encryption` | `HmacSha256Hasher` |
 | `HMACSHA384Encryption` | `HmacSha384Hasher` |
 | `HMACSHA512Encryption` | `HmacSha512Hasher` |
-| `HMACSHA3_256Encryption` | `HmacSha3_256Hasher` |
-| `HMACSHA3_384Encryption` | `HmacSha3_384Hasher` |
-| `HMACSHA3_512Encryption` | `HmacSha3_512Hasher` |
+| `HMACSHA3_256Encryption` | `HmacSha3256Hasher` |
+| `HMACSHA3_384Encryption` | `HmacSha3384Hasher` |
+| `HMACSHA3_512Encryption` | `HmacSha3512Hasher` |
 | `StringEncryptionExtensions` | `StringCryptographyExtensions` |
 
-`TwException` is not abstract. It is the direct-throw base class for all custom exceptions in the system. All custom exceptions must inherit from it.
+`TwException` is not abstract. It is the direct-throw base class for all custom exceptions in the internal framework. All company framework custom exceptions should inherit from it. This intentional baseline is acceptable because Tw.SmartPlatform is an internal framework, not a market-facing product framework.
 
 Hashing methods must use hashing terminology:
 
@@ -201,6 +204,15 @@ Hashing methods must use hashing terminology:
 | Compare hash | `VerifyHash` |
 
 Encryption and decryption methods should keep `Encrypt`, `Decrypt`, `EncryptFileAsync`, and `DecryptFileAsync` where they actually perform reversible encryption.
+
+`StringCryptographyExtensions` should expose only behavior-backed convenience methods. It must not wrap an empty old type. Initial method families:
+
+1. Hashing: `ComputeMd5Hash`, `ComputeSha1Hash`, `ComputeSha256Hash`, `ComputeSha384Hash`, `ComputeSha512Hash`, `ComputeSha3256Hash`, `ComputeSha3384Hash`, `ComputeSha3512Hash`.
+2. Hash verification: `VerifyMd5Hash`, `VerifySha1Hash`, `VerifySha256Hash`, `VerifySha384Hash`, `VerifySha512Hash`, `VerifySha3256Hash`, `VerifySha3384Hash`, `VerifySha3512Hash`.
+3. HMAC hashing: `ComputeHmacMd5Hash`, `ComputeHmacSha1Hash`, `ComputeHmacSha256Hash`, `ComputeHmacSha384Hash`, `ComputeHmacSha512Hash`, `ComputeHmacSha3256Hash`, `ComputeHmacSha3384Hash`, `ComputeHmacSha3512Hash`.
+4. HMAC verification: `VerifyHmacMd5Hash`, `VerifyHmacSha1Hash`, `VerifyHmacSha256Hash`, `VerifyHmacSha384Hash`, `VerifyHmacSha512Hash`, `VerifyHmacSha3256Hash`, `VerifyHmacSha3384Hash`, `VerifyHmacSha3512Hash`.
+5. Reversible encryption: `EncryptWithAes`, `DecryptWithAes`, `EncryptWithDes`, `DecryptWithDes`, `EncryptWithTripleDes`, `DecryptWithTripleDes`, `EncryptWithRsa`, `DecryptWithRsa`.
+6. Signatures and passwords: `SignWithRsa`, `VerifyRsaSignature`, `HashPasswordWithPbkdf2`, `VerifyPbkdf2Password`.
 
 ## Implementation Rules
 
@@ -277,10 +289,12 @@ Initial test coverage should include:
 
 Implementation must run fresh verification before claiming completion:
 
-1. `dotnet restore Tw.SmartPlatform.slnx`
-2. `dotnet build Tw.SmartPlatform.slnx --no-restore`
-3. Targeted `dotnet test` for `Tw.Core.Tests`
-4. Full relevant backend `dotnet test` if additional test projects are added or solution wiring changes broadly
+Run from `backend/dotnet`:
+
+1. `dotnet restore .\Tw.SmartPlatform.slnx`
+2. `dotnet build .\Tw.SmartPlatform.slnx --no-restore`
+3. `dotnet test .\BuildingBlocks\tests\Tw.Core.Tests\Tw.Core.Tests.csproj --no-build`
+4. `dotnet test .\Tw.SmartPlatform.slnx --no-build` if additional test projects are added or solution wiring changes broadly
 
 Failures must be fixed or documented with exact remaining risk.
 
