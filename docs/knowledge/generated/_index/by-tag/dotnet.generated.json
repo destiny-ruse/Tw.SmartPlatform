@@ -29,6 +29,69 @@
       ]
     },
     {
+      "id": "backend.dotnet.building-blocks.caching",
+      "kind": "module",
+      "name": "缓存构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.caching.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.caching.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/caching.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json"
+      ],
+      "summary": "承载缓存抽象、缓存策略、缓存提供者集成和通用缓存访问能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "caching"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.distributed-locking",
+      "kind": "module",
+      "name": "分布式锁构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.distributed-locking.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.distributed-locking.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/distributed-locking.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json"
+      ],
+      "summary": "承载分布式锁抽象、并发控制和跨实例互斥执行相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "distributed-locking"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.event-bus",
+      "kind": "module",
+      "name": "事件总线构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.event-bus.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.event-bus.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/event-bus.generated.json"
+      ],
+      "summary": "承载事件发布订阅、集成事件、领域事件转发和异步解耦通信能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "event-bus"
+      ]
+    },
+    {
       "id": "backend.dotnet.building-blocks.remote-service",
       "kind": "module",
       "name": "远程服务调用公共构件",

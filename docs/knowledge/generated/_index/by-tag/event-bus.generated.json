@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.capability.event-bus",
+      "kind": "capability",
+      "name": "事件总线能力",
+      "path": "docs/knowledge/graph/capabilities/backend.capability.event-bus.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.event-bus.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-domain/platform.generated.json",
+        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/event-bus.generated.json",
+        "docs/knowledge/generated/_index/by-tag/platform.generated.json"
+      ],
+      "summary": "提供事件发布订阅、集成事件和领域事件转发能力，支持服务间异步解耦通信。",
+      "tags": [
+        "backend",
+        "event-bus",
+        "platform"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.event-bus",
+      "kind": "module",
+      "name": "事件总线构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.event-bus.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.event-bus.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/event-bus.generated.json"
+      ],
+      "summary": "承载事件发布订阅、集成事件、领域事件转发和异步解耦通信能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "event-bus"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

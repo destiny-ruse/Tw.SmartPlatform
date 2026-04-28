@@ -31,6 +31,21 @@
       "type": "applies_to"
     },
     {
+      "from": "backend.dotnet.building-blocks.caching",
+      "to": "backend.capability.caching",
+      "type": "provides"
+    },
+    {
+      "from": "backend.dotnet.building-blocks.distributed-locking",
+      "to": "backend.capability.distributed-locking",
+      "type": "provides"
+    },
+    {
+      "from": "backend.dotnet.building-blocks.event-bus",
+      "to": "backend.capability.event-bus",
+      "type": "provides"
+    },
+    {
       "from": "backend.dotnet.building-blocks.remote-service",
       "to": "backend.capability.remote-service",
       "type": "provides"

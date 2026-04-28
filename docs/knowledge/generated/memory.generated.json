@@ -110,6 +110,145 @@
     },
     {
       "aliases": [
+        "缓存",
+        "cache"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.caching",
+      "kind": "capability",
+      "name": "缓存能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.caching"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中直接引用特定缓存库，应通过 Tw.Caching 提供的抽象接口使用"
+        ],
+        "use_when": [
+          "需要缓存数据或减少重复计算时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.caching.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.Caching"
+        ]
+      },
+      "status": "active",
+      "summary": "提供缓存抽象、缓存策略和通用缓存访问接口，屏蔽底层缓存提供者差异。",
+      "tags": [
+        "backend",
+        "caching",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
+        "分布式锁",
+        "互斥锁"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.distributed-locking",
+      "kind": "capability",
+      "name": "分布式锁能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.distributed-locking"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中自行实现分布式锁逻辑，应通过 Tw.DistributedLocking 提供的接口获取锁"
+        ],
+        "use_when": [
+          "需要跨实例互斥执行某段逻辑时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.distributed-locking.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking"
+        ]
+      },
+      "status": "active",
+      "summary": "提供分布式锁抽象和跨实例互斥执行能力，用于并发控制场景。",
+      "tags": [
+        "backend",
+        "distributed-locking",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
+        "事件",
+        "event",
+        "消息队列"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.event-bus",
+      "kind": "capability",
+      "name": "事件总线能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.event-bus"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中直接依赖 MQ 客户端，应通过 Tw.EventBus 提供的接口发布和订阅事件"
+        ],
+        "use_when": [
+          "需要跨服务异步通信或领域事件转发时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.event-bus.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.EventBus"
+        ]
+      },
+      "status": "active",
+      "summary": "提供事件发布订阅、集成事件和领域事件转发能力，支持服务间异步解耦通信。",
+      "tags": [
+        "backend",
+        "event-bus",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
         "远程调用",
         "服务间调用",
         "客户端代理"
@@ -199,6 +338,114 @@
         "backend",
         "auth",
         "decision"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.caching",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "缓存构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Caching",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.caching"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.caching.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.Caching"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载缓存抽象、缓存策略、缓存提供者集成和通用缓存访问能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "caching"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.distributed-locking",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "分布式锁构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.distributed-locking"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.distributed-locking.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载分布式锁抽象、并发控制和跨实例互斥执行相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "distributed-locking"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.event-bus",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "事件总线构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.event-bus"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.event-bus.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.EventBus"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载事件发布订阅、集成事件、领域事件转发和异步解耦通信能力。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "event-bus"
       ]
     },
     {

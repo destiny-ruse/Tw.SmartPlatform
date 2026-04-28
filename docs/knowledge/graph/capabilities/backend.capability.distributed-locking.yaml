@@ -1,0 +1,33 @@
+schema_version: 1.0.0
+id: backend.capability.distributed-locking
+kind: capability
+name: 分布式锁能力
+status: active
+summary: 提供分布式锁抽象和跨实例互斥执行能力，用于并发控制场景。
+owners:
+  - platform
+tags:
+  - backend
+  - distributed-locking
+  - platform
+domain: platform
+provided_by:
+  modules:
+    - backend.dotnet.building-blocks.distributed-locking
+reuse:
+  use_when:
+    - 需要跨实例互斥执行某段逻辑时
+  do_not_reimplement:
+    - 不要在服务中自行实现分布式锁逻辑，应通过 Tw.DistributedLocking 提供的接口获取锁
+aliases:
+  - 分布式锁
+  - 互斥锁
+source:
+  declared_in: docs/knowledge/graph/capabilities/backend.capability.distributed-locking.yaml
+  evidence:
+    - backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking
+provenance:
+  created_by: human
+  created_at: 2026-04-28
+  updated_by: human
+  updated_at: 2026-04-28
