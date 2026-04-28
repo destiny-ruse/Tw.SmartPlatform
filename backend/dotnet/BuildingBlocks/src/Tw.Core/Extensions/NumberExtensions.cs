@@ -78,17 +78,25 @@ public static class NumberExtensions
     public static decimal Round(this decimal source, int decimals = 0) => Math.Round(source, decimals);
 
     /// <summary>Formats a double as a percentage string.</summary>
-    public static string ToPercentage(this double source, int decimalPlaces = 2)
+    /// <param name="source">The source value where 1.0 is 100 percent.</param>
+    /// <param name="decimals">The number of decimal places.</param>
+    /// <returns>The formatted percentage.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="decimals"/> is negative.</exception>
+    public static string ToPercentage(this double source, int decimals = 2)
     {
-        Check.NonNegative(decimalPlaces);
-        return (source * 100).ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture) + "%";
+        Check.NonNegative(decimals);
+        return (source * 100).ToString($"F{decimals}", CultureInfo.InvariantCulture) + "%";
     }
 
     /// <summary>Formats a decimal as a percentage string.</summary>
-    public static string ToPercentage(this decimal source, int decimalPlaces = 2)
+    /// <param name="source">The source value where 1.0 is 100 percent.</param>
+    /// <param name="decimals">The number of decimal places.</param>
+    /// <returns>The formatted percentage.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="decimals"/> is negative.</exception>
+    public static string ToPercentage(this decimal source, int decimals = 2)
     {
-        Check.NonNegative(decimalPlaces);
-        return (source * 100).ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture) + "%";
+        Check.NonNegative(decimals);
+        return (source * 100).ToString($"F{decimals}", CultureInfo.InvariantCulture) + "%";
     }
 
     private static void ValidateRange<T>(T min, T max)

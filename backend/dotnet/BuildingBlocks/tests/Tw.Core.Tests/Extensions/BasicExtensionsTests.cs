@@ -93,13 +93,13 @@ public class BasicExtensionsTests
         var timestamp = utc.ToUnixTimestamp();
         var timestampMilliseconds = utc.ToUnixTimestampMilliseconds();
 
-        DateTimeExtensions.FromUnixTimestamp(timestamp).Should().Be(utc);
-        DateTimeExtensions.FromUnixTimestampMilliseconds(timestampMilliseconds).Should().Be(utc);
+        timestamp.FromUnixTimestamp().Should().Be(utc);
+        timestampMilliseconds.FromUnixTimestampMilliseconds().Should().Be(utc);
         utc.StartOfWeek().DayOfWeek.Should().Be(DayOfWeek.Monday);
         utc.EndOfWeek().Should().Be(utc.StartOfWeek().AddDays(7).AddTicks(-1));
         new DateTime(2026, 5, 2).IsWeekend().Should().BeTrue();
         new DateTime(2026, 5, 4).IsWeekday().Should().BeTrue();
-        new DateTime(2000, 12, 31).CalculateAge(new DateTime(2026, 4, 28)).Should().Be(25);
+        DateTime.Today.AddYears(-25).AddDays(-1).CalculateAge().Should().Be(25);
         DateTime.Today.IsToday().Should().BeTrue();
         DateTime.UtcNow.AddDays(-1).IsPast().Should().BeTrue();
         DateTime.UtcNow.AddDays(1).IsFuture().Should().BeTrue();
@@ -141,8 +141,8 @@ public class BasicExtensionsTests
         1536L.ToFileSize().Should().Be("1.50 KB");
         1.234d.Round(2).Should().Be(1.23);
         1.235m.Round(2).Should().Be(1.24m);
-        0.1234d.ToPercentage(1).Should().Be("12.3%");
-        0.1234m.ToPercentage(1).Should().Be("12.3%");
+        0.1234d.ToPercentage(decimals: 1).Should().Be("12.3%");
+        0.1234m.ToPercentage(decimals: 1).Should().Be("12.3%");
     }
 
     [Fact]
@@ -172,7 +172,10 @@ public class BasicExtensionsTests
     public void Type_Extensions_Return_Assignability_And_Base_Classes()
     {
         typeof(MemoryStream).IsAssignableTo<Stream>().Should().BeTrue();
-        typeof(MemoryStream).GetBaseClasses().Should().Contain(typeof(Stream));
+
+        Type[] baseClasses = typeof(MemoryStream).GetBaseClasses();
+
+        baseClasses.Should().Contain(typeof(Stream));
     }
 
     [Fact]
@@ -188,6 +191,8 @@ public class BasicExtensionsTests
         assignable.Should().Throw<ArgumentNullException>().WithParameterName(nameof(type));
         assignableToType.Should().Throw<ArgumentNullException>().WithParameterName(nameof(targetType));
         baseClasses.Should().Throw<ArgumentNullException>().WithParameterName(nameof(type));
-        typeof(MemoryStream).GetBaseClasses(typeof(Stream)).Should().NotContain(typeof(Stream));
+        Type[] baseClassesBeforeStream = typeof(MemoryStream).GetBaseClasses(typeof(Stream));
+
+        baseClassesBeforeStream.Should().NotContain(typeof(Stream));
     }
 }

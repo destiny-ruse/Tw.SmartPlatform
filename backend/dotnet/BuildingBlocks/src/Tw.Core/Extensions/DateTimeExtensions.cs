@@ -22,7 +22,7 @@ public static class DateTimeExtensions
     /// <summary>Converts a Unix timestamp in seconds to a UTC date and time.</summary>
     /// <param name="timestamp">The Unix timestamp in seconds.</param>
     /// <returns>The UTC date and time.</returns>
-    public static DateTime FromUnixTimestamp(long timestamp)
+    public static DateTime FromUnixTimestamp(this long timestamp)
     {
         return DateTimeOffset.FromUnixTimeSeconds(timestamp).UtcDateTime;
     }
@@ -30,7 +30,7 @@ public static class DateTimeExtensions
     /// <summary>Converts a Unix timestamp in milliseconds to a UTC date and time.</summary>
     /// <param name="timestampMilliseconds">The Unix timestamp in milliseconds.</param>
     /// <returns>The UTC date and time.</returns>
-    public static DateTime FromUnixTimestampMilliseconds(long timestampMilliseconds)
+    public static DateTime FromUnixTimestampMilliseconds(this long timestampMilliseconds)
     {
         return DateTimeOffset.FromUnixTimeMilliseconds(timestampMilliseconds).UtcDateTime;
     }
@@ -121,15 +121,7 @@ public static class DateTimeExtensions
     /// <returns>The age in whole years.</returns>
     public static int CalculateAge(this DateTime dateOfBirth)
     {
-        return dateOfBirth.CalculateAge(DateTime.Today);
-    }
-
-    /// <summary>Calculates age in whole years compared with a reference date.</summary>
-    /// <param name="dateOfBirth">The birth date.</param>
-    /// <param name="today">The reference date.</param>
-    /// <returns>The age in whole years.</returns>
-    public static int CalculateAge(this DateTime dateOfBirth, DateTime today)
-    {
+        var today = DateTime.Today;
         var age = today.Year - dateOfBirth.Year;
         if (dateOfBirth.Date > today.Date.AddYears(-age))
         {

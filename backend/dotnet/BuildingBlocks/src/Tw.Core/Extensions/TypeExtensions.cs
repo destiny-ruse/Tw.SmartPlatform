@@ -31,7 +31,7 @@ public static class TypeExtensions
     /// <param name="includeObject">Whether to include <see cref="object"/>.</param>
     /// <returns>The base classes from nearest to farthest.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
-    public static IEnumerable<Type> GetBaseClasses(this Type type, bool includeObject = true)
+    public static Type[] GetBaseClasses(this Type type, bool includeObject = true)
     {
         return type.GetBaseClasses(stoppingType: null!, includeObject);
     }
@@ -42,20 +42,23 @@ public static class TypeExtensions
     /// <param name="includeObject">Whether to include <see cref="object"/>.</param>
     /// <returns>The base classes from nearest to farthest.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
-    public static IEnumerable<Type> GetBaseClasses(this Type type, Type stoppingType, bool includeObject = true)
+    public static Type[] GetBaseClasses(this Type type, Type stoppingType, bool includeObject = true)
     {
         Check.NotNull(type);
 
+        var baseClasses = new List<Type>();
         var current = type.BaseType;
         while (current is not null)
         {
             if (current == stoppingType || (!includeObject && current == typeof(object)))
             {
-                yield break;
+                break;
             }
 
-            yield return current;
+            baseClasses.Add(current);
             current = current.BaseType;
         }
+
+        return baseClasses.ToArray();
     }
 }
