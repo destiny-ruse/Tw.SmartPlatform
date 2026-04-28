@@ -343,6 +343,68 @@
       ]
     },
     {
+      "id": "backend.dotnet.services.oss",
+      "kind": "module",
+      "module_type": "microservice",
+      "name": "对象存储服务",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/Services/OSS",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.services.oss.yaml",
+        "evidence": [
+          "backend/dotnet/Services/OSS/README.md"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载对象存储、文件上传下载、资源访问和存储测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "oss"
+      ]
+    },
+    {
+      "id": "backend.dotnet.services.system",
+      "kind": "module",
+      "module_type": "microservice",
+      "name": "系统服务",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/Services/System",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.services.system.yaml",
+        "evidence": [
+          "backend/dotnet/Services/System/README.md"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载系统管理、基础配置、平台字典和系统测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "system"
+      ]
+    },
+    {
       "callee": "backend.dotnet.services.authentication",
       "caller": "backend.dotnet.services.notice",
       "domain": "integration",

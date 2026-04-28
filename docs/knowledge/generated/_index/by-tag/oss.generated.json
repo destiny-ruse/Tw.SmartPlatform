@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.dotnet.services.oss",
+      "kind": "module",
+      "name": "对象存储服务",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.services.oss.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.services.oss.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/oss.generated.json"
+      ],
+      "summary": "承载对象存储、文件上传下载、资源访问和存储测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "oss"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

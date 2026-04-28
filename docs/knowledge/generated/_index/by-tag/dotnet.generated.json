@@ -115,6 +115,48 @@
         "dotnet",
         "notice"
       ]
+    },
+    {
+      "id": "backend.dotnet.services.oss",
+      "kind": "module",
+      "name": "对象存储服务",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.services.oss.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.services.oss.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/oss.generated.json"
+      ],
+      "summary": "承载对象存储、文件上传下载、资源访问和存储测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "oss"
+      ]
+    },
+    {
+      "id": "backend.dotnet.services.system",
+      "kind": "module",
+      "name": "系统服务",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.services.system.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.services.system.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/system.generated.json"
+      ],
+      "summary": "承载系统管理、基础配置、平台字典和系统测试相关服务代码。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "system"
+      ]
     }
   ],
   "schema_version": "1.0.0"
