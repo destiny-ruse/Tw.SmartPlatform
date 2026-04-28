@@ -1,4 +1,6 @@
 using FluentAssertions;
+using System.Reflection;
+using System.Text;
 using Tw.Core.Extensions;
 using Xunit;
 
@@ -39,18 +41,24 @@ public class BasicExtensionsTests
     [Fact]
     public void String_Edge_Cases_Work()
     {
-        ((string?)null).Left(3).Should().BeNull();
-        ((string?)null).Right(3).Should().BeNull();
+        var nullLeft = () => ((string)null!).Left(3);
+        var nullRight = () => ((string)null!).Right(3);
+
+        nullLeft.Should().Throw<ArgumentNullException>().WithParameterName("str");
+        nullRight.Should().Throw<ArgumentNullException>().WithParameterName("str");
         ((string?)null).EnsureStartsWith('/').Should().Be("/");
         ((string?)null).EnsureEndsWith('/').Should().Be("/");
         "path".EnsureStartsWith('/').Should().Be("/path");
         "path".EnsureEndsWith('/').Should().Be("path/");
+        "path/".EnsureEndsWith('/', StringComparison.OrdinalIgnoreCase).Should().Be("path/");
+        "/path".EnsureStartsWith('/', StringComparison.OrdinalIgnoreCase).Should().Be("/path");
         "one,two,,three".Split(",", StringSplitOptions.RemoveEmptyEntries).Should().Equal("one", "two", "three");
         "a\r\nb\nc".SplitToLines().Should().Equal("a", "b", "c");
         "héllo".GetBytes().Should().Equal("héllo".ToBase64().FromBase64().GetBytes());
-        "abcabc".NthIndexOf("abc", 2).Should().Be(3);
+        "abcabc".NthIndexOf('a', 2).Should().Be(3);
         "HelloWorld".RemovePostFix("World").Should().Be("Hello");
         "HelloWorld".RemovePreFix("Hello").Should().Be("World");
+        "HelloWorld".ReplaceFirst("World", replace: "Core").Should().Be("HelloCore");
         "one two\tthree".RemoveWhiteSpace().Should().Be("onetwothree");
         "abc".Reverse().Should().Be("cba");
         "abcdef".TruncateFromBeginning(3).Should().Be("def");
@@ -71,6 +79,45 @@ public class BasicExtensionsTests
         right.Should().Throw<ArgumentOutOfRangeException>();
         truncate.Should().Throw<ArgumentOutOfRangeException>();
         chunk.Should().Throw<ArgumentOutOfRangeException>();
+    }
+
+    [Fact]
+    public void String_Public_Api_Signatures_Match_Plan()
+    {
+        var methods = typeof(StringExtensions)
+            .GetMethods(BindingFlags.Public | BindingFlags.Static)
+            .Where(method => method.DeclaringType == typeof(StringExtensions))
+            .ToArray();
+
+        AssertSignature(methods, nameof(StringExtensions.EnsureEndsWith), typeof(string), ["str", "c", "comparisonType"], [typeof(string), typeof(char), typeof(StringComparison)]);
+        AssertSignature(methods, nameof(StringExtensions.EnsureStartsWith), typeof(string), ["str", "c", "comparisonType"], [typeof(string), typeof(char), typeof(StringComparison)]);
+        AssertSignature(methods, nameof(StringExtensions.Left), typeof(string), ["str", "len"], [typeof(string), typeof(int)]);
+        AssertSignature(methods, nameof(StringExtensions.Right), typeof(string), ["str", "len"], [typeof(string), typeof(int)]);
+        AssertSignature(methods, nameof(StringExtensions.NormalizeLineEndings), typeof(string), ["str"], [typeof(string)]);
+        AssertSignature(methods, nameof(StringExtensions.NthIndexOf), typeof(int), ["str", "c", "n"], [typeof(string), typeof(char), typeof(int)]);
+        AssertSignature(methods, nameof(StringExtensions.ReplaceFirst), typeof(string), ["str", "search", "replace", "comparisonType"], [typeof(string), typeof(string), typeof(string), typeof(StringComparison)]);
+        AssertSignature(methods, nameof(StringExtensions.ToBase64), typeof(string), ["value", "encoding"], [typeof(string), typeof(Encoding)]);
+        AssertSignature(methods, nameof(StringExtensions.FromBase64), typeof(string), ["value", "encoding"], [typeof(string), typeof(Encoding)]);
+
+        methods.Where(method => method.Name == nameof(StringExtensions.RemovePostFix)).Should().HaveCount(2);
+        AssertSignature(methods, nameof(StringExtensions.RemovePostFix), typeof(string), ["str", "postFixes"], [typeof(string), typeof(string[])]);
+        AssertSignature(methods, nameof(StringExtensions.RemovePostFix), typeof(string), ["str", "comparisonType", "postFixes"], [typeof(string), typeof(StringComparison), typeof(string[])]);
+
+        methods.Where(method => method.Name == nameof(StringExtensions.RemovePreFix)).Should().HaveCount(2);
+        AssertSignature(methods, nameof(StringExtensions.RemovePreFix), typeof(string), ["str", "preFixes"], [typeof(string), typeof(string[])]);
+        AssertSignature(methods, nameof(StringExtensions.RemovePreFix), typeof(string), ["str", "comparisonType", "preFixes"], [typeof(string), typeof(StringComparison), typeof(string[])]);
+
+        methods.Where(method => method.Name == nameof(StringExtensions.Split)).Should().HaveCount(2);
+        AssertSignature(methods, nameof(StringExtensions.Split), typeof(string[]), ["str", "separator"], [typeof(string), typeof(string)]);
+        AssertSignature(methods, nameof(StringExtensions.Split), typeof(string[]), ["str", "separator", "options"], [typeof(string), typeof(string), typeof(StringSplitOptions)]);
+
+        methods.Where(method => method.Name == nameof(StringExtensions.SplitToLines)).Should().HaveCount(2);
+        AssertSignature(methods, nameof(StringExtensions.SplitToLines), typeof(string[]), ["str"], [typeof(string)]);
+        AssertSignature(methods, nameof(StringExtensions.SplitToLines), typeof(string[]), ["str", "options"], [typeof(string), typeof(StringSplitOptions)]);
+
+        methods.Where(method => method.Name == nameof(StringExtensions.TruncateWithPostfix)).Should().HaveCount(2);
+        AssertSignature(methods, nameof(StringExtensions.TruncateWithPostfix), typeof(string), ["str", "maxLength"], [typeof(string), typeof(int)]);
+        AssertSignature(methods, nameof(StringExtensions.TruncateWithPostfix), typeof(string), ["str", "maxLength", "postfix"], [typeof(string), typeof(int), typeof(string)]);
     }
 
     [Fact]
@@ -194,5 +241,21 @@ public class BasicExtensionsTests
         Type[] baseClassesBeforeStream = typeof(MemoryStream).GetBaseClasses(typeof(Stream));
 
         baseClassesBeforeStream.Should().NotContain(typeof(Stream));
+    }
+
+    private static void AssertSignature(
+        MethodInfo[] methods,
+        string name,
+        Type returnType,
+        string[] parameterNames,
+        Type[] parameterTypes)
+    {
+        var match = methods.SingleOrDefault(method =>
+            method.Name == name &&
+            method.ReturnType == returnType &&
+            method.GetParameters().Select(parameter => parameter.ParameterType).SequenceEqual(parameterTypes));
+
+        match.Should().NotBeNull();
+        match!.GetParameters().Select(parameter => parameter.Name).Should().Equal(parameterNames);
     }
 }
