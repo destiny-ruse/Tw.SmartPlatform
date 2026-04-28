@@ -2,6 +2,7 @@ import argparse
 import contextlib
 import io
 import json
+import os
 import re
 import tempfile
 import textwrap
@@ -40,6 +41,10 @@ def write_file(root: Path, relative_path: str, content: str) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(textwrap.dedent(content).lstrip(), encoding="utf-8", newline="\n")
     return path
+
+
+def claude_skill_target(skill: str) -> str:
+    return os.path.join("..", "..", ".agents", "skills", skill)
 
 
 def write_taxonomy(root: Path) -> None:
@@ -1133,11 +1138,11 @@ class KnowledgeToolTests(unittest.TestCase):
             expected = knowledge.claude_skill_link_plan(root)
 
             self.assertEqual(
-                "../../.agents/skills/tw-requirement-router",
+                claude_skill_target("tw-requirement-router"),
                 expected["tw-requirement-router"],
             )
             self.assertEqual(
-                "../../.agents/skills/tw-knowledge-maintenance",
+                claude_skill_target("tw-knowledge-maintenance"),
                 expected["tw-knowledge-maintenance"],
             )
 
@@ -1151,13 +1156,34 @@ class KnowledgeToolTests(unittest.TestCase):
             expected = knowledge.claude_skill_link_plan(root)
 
             self.assertEqual(
-                "../../.agents/skills/tw-requirement-router",
+                claude_skill_target("tw-requirement-router"),
                 expected["tw-requirement-router"],
             )
             self.assertEqual(
-                "../../.agents/skills/brainstorming",
+                claude_skill_target("brainstorming"),
                 expected["brainstorming"],
             )
+
+    def test_sync_claude_skills_recreates_inaccessible_symlink_target(self):
+        with isolated_repo() as root:
+            skill = "tw-requirement-router"
+            source = root / ".agents" / "skills" / skill
+            source.mkdir(parents=True)
+            (source / "SKILL.md").write_text("---\nname: test\n---\n", encoding="utf-8")
+            destination = root / ".claude" / "skills" / skill
+            destination.parent.mkdir(parents=True)
+            broken_target = (
+                "../../.agents/skills/tw-requirement-router"
+                if os.sep == "\\"
+                else r"..\..\.agents\skills\tw-requirement-router"
+            )
+            destination.symlink_to(broken_target, target_is_directory=True)
+
+            messages = knowledge.sync_claude_skills()
+
+            self.assertEqual([], messages, diagnostic_text(messages))
+            self.assertTrue((destination / "SKILL.md").is_file())
+            self.assertEqual(claude_skill_target(skill), os.readlink(destination))
 
     def test_sync_claude_skills_reports_missing_source_skill(self):
         original_claude_skill_link_plan = knowledge.claude_skill_link_plan

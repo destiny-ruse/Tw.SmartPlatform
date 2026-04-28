@@ -1089,15 +1089,31 @@ def repository_skill_names(root: Path = REPO_ROOT) -> list[str]:
 
 def claude_skill_link_plan(root: Path = REPO_ROOT) -> dict[str, str]:
     return {
-        skill: f"../../.agents/skills/{skill}"
+        skill: claude_skill_link_target(skill)
         for skill in repository_skill_names(root)
     }
+
+
+def claude_skill_link_target(skill: str) -> str:
+    return os.path.join("..", "..", ".agents", "skills", skill)
 
 
 def expected_claude_skill_link(destination: Path, target: str) -> bool:
     if not destination.is_symlink():
         return False
-    return destination.readlink().as_posix() == target
+    try:
+        actual_target = os.readlink(destination)
+    except OSError:
+        return False
+    return actual_target == target and (destination / "SKILL.md").is_file()
+
+
+def report_claude_skill_link_conflict(destination: Path) -> Diagnostic:
+    return error(
+        "knowledge.skill-link-conflict",
+        destination,
+        "Claude Skill 目标已存在且不是预期相对符号链接。",
+    )
 
 
 def sync_claude_skills() -> list[Diagnostic]:
@@ -1123,14 +1139,11 @@ def sync_claude_skills() -> list[Diagnostic]:
         if destination.exists() or destination.is_symlink():
             if expected_claude_skill_link(destination, target):
                 continue
-            messages.append(
-                error(
-                    "knowledge.skill-link-conflict",
-                    destination,
-                    "Claude Skill 目标已存在且不是预期相对符号链接。",
-                )
-            )
-            continue
+            if not destination.is_symlink():
+                messages.append(report_claude_skill_link_conflict(destination))
+                continue
+            # Windows 目录符号链接会保留原始分隔符，错误分隔符会导致链接存在但无法访问
+            destination.unlink()
 
         try:
             destination.symlink_to(target, target_is_directory=True)
