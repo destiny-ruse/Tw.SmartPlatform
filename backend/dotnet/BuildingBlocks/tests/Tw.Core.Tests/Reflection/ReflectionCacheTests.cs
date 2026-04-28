@@ -67,6 +67,23 @@ public class ReflectionCacheTests
     }
 
     [Fact]
+    public void IsAsyncReturnType_Detects_Task_And_ValueTask_Return_Types()
+    {
+        typeof(Task).IsAsyncReturnType().Should().BeTrue();
+        typeof(Task<int>).IsAsyncReturnType().Should().BeTrue();
+        typeof(ValueTask).IsAsyncReturnType().Should().BeTrue();
+        typeof(ValueTask<int>).IsAsyncReturnType().Should().BeTrue();
+        typeof(string).IsAsyncReturnType().Should().BeFalse();
+    }
+
+    [Fact]
+    public void IsAsyncMethod_Uses_Method_Return_Type()
+    {
+        GetMethod(nameof(AsyncMethod)).IsAsyncMethod().Should().BeTrue();
+        GetMethod(nameof(PlainMethod)).IsAsyncMethod().Should().BeFalse();
+    }
+
+    [Fact]
     public void GetAsyncResultType_Returns_ValueTask_Result_Type()
     {
         var method = GetMethod(nameof(ValueTaskMethod));
@@ -103,6 +120,66 @@ public class ReflectionCacheTests
         method.GetSingleAttribute<ReflectionTestAttribute>().Should().BeSameAs(attributes[0]);
         attributes.Select(attribute => attribute.Order).Should().Equal(1, 2);
     }
+
+    [Fact]
+    public void GetCachedInterfaces_Returns_Type_Interfaces()
+    {
+        typeof(ConstructibleReflectionSubject)
+            .GetCachedInterfaces()
+            .Should()
+            .Contain(typeof(IReflectionCacheSubject));
+    }
+
+    [Fact]
+    public void GetCachedInterfaces_Returns_Copy_Of_Cached_Metadata()
+    {
+        var interfaces = typeof(ConstructibleReflectionSubject).GetCachedInterfaces();
+        interfaces[0] = typeof(IDisposable);
+
+        typeof(ConstructibleReflectionSubject)
+            .GetCachedInterfaces()
+            .Should()
+            .Contain(typeof(IReflectionCacheSubject));
+    }
+
+    [Fact]
+    public void GetCachedParameterlessCtor_Returns_Public_Parameterless_Constructor()
+    {
+        var constructor = typeof(ConstructibleReflectionSubject).GetCachedParameterlessCtor();
+
+        constructor.Should().NotBeNull();
+        constructor!.GetParameters().Should().BeEmpty();
+    }
+
+    [Fact]
+    public void HasParameterlessCtor_Uses_Cached_Constructor_Metadata()
+    {
+        typeof(ConstructibleReflectionSubject).HasParameterlessCtor().Should().BeTrue();
+        typeof(SubjectWithoutParameterlessConstructor).HasParameterlessCtor().Should().BeFalse();
+    }
+
+#if DEBUG
+    [Fact]
+    public void GetStatistics_Returns_Debug_Cache_Counts()
+    {
+        var method = GetMethod(nameof(AsyncMethod));
+        method.GetAttributes<ReflectionTestAttribute>();
+        method.GetAsyncResultType();
+        typeof(Task<int>).IsAsyncReturnType();
+        typeof(ConstructibleReflectionSubject).GetCachedInterfaces();
+        typeof(ConstructibleReflectionSubject).GetCachedParameterlessCtor();
+        method.IsAsyncMethod();
+
+        var statistics = ReflectionCache.GetStatistics();
+
+        statistics.AttributeCacheCount.Should().BeGreaterThan(0);
+        statistics.AsyncResultTypeCacheCount.Should().BeGreaterThan(0);
+        statistics.AsyncReturnTypeCacheCount.Should().BeGreaterThan(0);
+        statistics.InterfacesCacheCount.Should().BeGreaterThan(0);
+        statistics.ParameterlessConstructorCacheCount.Should().BeGreaterThan(0);
+        statistics.MethodIsAsyncCacheCount.Should().BeGreaterThan(0);
+    }
+#endif
 
     [ReflectionTest]
     private static Task<int> AsyncMethod()
@@ -154,5 +231,26 @@ public class ReflectionCacheTests
         public override void InheritedMethod()
         {
         }
+    }
+
+    private interface IReflectionCacheSubject
+    {
+    }
+
+    private sealed class ConstructibleReflectionSubject : IReflectionCacheSubject
+    {
+        public ConstructibleReflectionSubject()
+        {
+        }
+    }
+
+    private sealed class SubjectWithoutParameterlessConstructor
+    {
+        public SubjectWithoutParameterlessConstructor(string value)
+        {
+            Value = value;
+        }
+
+        public string Value { get; }
     }
 }
