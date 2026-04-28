@@ -14,11 +14,14 @@ public sealed class TemporaryDirectory : IDisposable
 
     public string GetPath(string fileName)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(fileName);
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            throw new ArgumentException("文件名不能是空字符串或空白字符串。", nameof(fileName));
+        }
 
         if (System.IO.Path.IsPathRooted(fileName))
         {
-            throw new ArgumentException("Rooted paths are not allowed.", nameof(fileName));
+            throw new ArgumentException("不允许使用根路径。", nameof(fileName));
         }
 
         var rootPath = EnsureTrailingDirectorySeparator(System.IO.Path.GetFullPath(Path));
@@ -26,7 +29,7 @@ public sealed class TemporaryDirectory : IDisposable
 
         if (!fullPath.StartsWith(rootPath, PathComparison))
         {
-            throw new ArgumentException("Path must stay within the temporary directory.", nameof(fileName));
+            throw new ArgumentException("路径必须保持在临时目录内。", nameof(fileName));
         }
 
         return fullPath;

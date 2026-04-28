@@ -1,47 +1,47 @@
 namespace Tw.Core.Extensions;
 
-/// <summary>Provides extension methods for <see cref="Type"/> values.</summary>
+/// <summary>提供 <see cref="Type"/> 值扩展方法</summary>
 public static class TypeExtensions
 {
-    /// <summary>Returns the full type name followed by the assembly name.</summary>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <summary>返回完整类型名以及程序集名称</summary>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static string GetFullNameWithAssemblyName(this Type type)
     {
         var checkedType = Check.NotNull(type);
         return $"{checkedType.FullName}, {checkedType.Assembly.GetName().Name}";
     }
 
-    /// <summary>Returns whether a type is assignable to the target type.</summary>
-    /// <typeparam name="TTarget">The target type.</typeparam>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <summary>返回类型是否可赋值给目标类型</summary>
+    /// <typeparam name="TTarget">目标类型</typeparam>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static bool IsAssignableTo<TTarget>(this Type type)
     {
         return IsAssignableTo(type, typeof(TTarget));
     }
 
-    /// <summary>Returns whether a type is assignable to the target type.</summary>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> or <paramref name="targetType"/> is <see langword="null"/>.</exception>
+    /// <summary>返回类型是否可赋值给目标类型</summary>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 或 <paramref name="targetType"/> 为 <see langword="null"/> 时抛出</exception>
     public static bool IsAssignableTo(this Type type, Type targetType)
     {
         return Check.NotNull(targetType).IsAssignableFrom(Check.NotNull(type));
     }
 
-    /// <summary>Gets the base classes for a type.</summary>
-    /// <param name="type">The source type.</param>
-    /// <param name="includeObject">Whether to include <see cref="object"/>.</param>
-    /// <returns>The base classes from nearest to farthest.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <summary>获取类型的基类</summary>
+    /// <param name="type">源类型</param>
+    /// <param name="includeObject">是否包含 <see cref="object"/></param>
+    /// <returns>从最近到最远排列的基类</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static Type[] GetBaseClasses(this Type type, bool includeObject = true)
     {
         return type.GetBaseClasses(stoppingType: null!, includeObject);
     }
 
-    /// <summary>Gets the base classes for a type, stopping before a specified type.</summary>
-    /// <param name="type">The source type.</param>
-    /// <param name="stoppingType">The base type where traversal should stop before yielding it.</param>
-    /// <param name="includeObject">Whether to include <see cref="object"/>.</param>
-    /// <returns>The base classes from nearest to farthest.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <summary>获取类型的基类，并在指定类型之前停止</summary>
+    /// <param name="type">源类型</param>
+    /// <param name="stoppingType">遍历应在返回此基类型之前停止</param>
+    /// <param name="includeObject">是否包含 <see cref="object"/></param>
+    /// <returns>从最近到最远排列的基类</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static Type[] GetBaseClasses(this Type type, Type stoppingType, bool includeObject = true)
     {
         Check.NotNull(type);

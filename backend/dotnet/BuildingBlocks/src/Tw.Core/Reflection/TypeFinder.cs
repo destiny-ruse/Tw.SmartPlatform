@@ -3,17 +3,17 @@ using System.Reflection;
 namespace Tw.Core.Reflection;
 
 /// <summary>
-/// Finds runtime types from explicitly supplied assemblies.
+/// 从显式提供的程序集中查找运行时类型
 /// </summary>
 public sealed class TypeFinder : ITypeFinder
 {
     private static readonly string[] SkippedAssemblyNamePrefixes = ["System", "Microsoft", "Windows"];
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TypeFinder"/> class.
+    /// 初始化 <see cref="TypeFinder"/> 类的新实例
     /// </summary>
-    /// <param name="assemblies">The assemblies to search, preserving first occurrence order.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="assemblies"/> or one of its entries is <see langword="null"/>.</exception>
+    /// <param name="assemblies">要搜索的程序集，保留首次出现顺序</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="assemblies"/> 或其中任一项为 <see langword="null"/> 时抛出</exception>
     public TypeFinder(IEnumerable<Assembly> assemblies)
     {
         var checkedAssemblies = Check.NotNull(assemblies);

@@ -2,14 +2,14 @@ using System.Text;
 
 namespace Tw.Core.Extensions;
 
-/// <summary>Provides extension methods for byte arrays.</summary>
+/// <summary>提供字节数组扩展方法</summary>
 public static class ByteArrayExtensions
 {
-    /// <summary>Converts a byte array to a hexadecimal string.</summary>
-    /// <param name="bytes">The bytes to convert.</param>
-    /// <param name="useUpperCase">Whether to use uppercase hexadecimal characters.</param>
-    /// <returns>The hexadecimal representation of <paramref name="bytes"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="bytes"/> is <see langword="null"/>.</exception>
+    /// <summary>将字节数组转换为十六进制字符串</summary>
+    /// <param name="bytes">要转换的字节</param>
+    /// <param name="useUpperCase">是否使用大写十六进制字符</param>
+    /// <returns><paramref name="bytes"/> 的十六进制表示</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="bytes"/> 为 <see langword="null"/> 时抛出</exception>
     public static string ToHexString(this byte[] bytes, bool useUpperCase = false)
     {
         Check.NotNull(bytes);

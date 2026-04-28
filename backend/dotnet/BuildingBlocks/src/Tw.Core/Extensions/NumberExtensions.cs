@@ -2,58 +2,58 @@ using System.Globalization;
 
 namespace Tw.Core.Extensions;
 
-/// <summary>Provides extension methods for numeric values.</summary>
+/// <summary>提供数值扩展方法</summary>
 public static class NumberExtensions
 {
-    /// <summary>Returns whether an integer is even.</summary>
+    /// <summary>返回整数是否为偶数</summary>
     public static bool IsEven(this int source) => source % 2 == 0;
 
-    /// <summary>Returns whether an integer is odd.</summary>
+    /// <summary>返回整数是否为奇数</summary>
     public static bool IsOdd(this int source) => !source.IsEven();
 
-    /// <summary>Returns whether a long integer is even.</summary>
+    /// <summary>返回长整数是否为偶数</summary>
     public static bool IsEven(this long source) => source % 2 == 0;
 
-    /// <summary>Returns whether a long integer is odd.</summary>
+    /// <summary>返回长整数是否为奇数</summary>
     public static bool IsOdd(this long source) => !source.IsEven();
 
-    /// <summary>Restricts an integer to an inclusive range.</summary>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="max"/> is less than <paramref name="min"/>.</exception>
+    /// <summary>将整数限制在闭区间内</summary>
+    /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static int Clamp(this int source, int min, int max)
     {
         ValidateRange(min, max);
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>Restricts a long integer to an inclusive range.</summary>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="max"/> is less than <paramref name="min"/>.</exception>
+    /// <summary>将长整数限制在闭区间内</summary>
+    /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static long Clamp(this long source, long min, long max)
     {
         ValidateRange(min, max);
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>Restricts a double to an inclusive range.</summary>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="max"/> is less than <paramref name="min"/>.</exception>
+    /// <summary>将双精度浮点数限制在闭区间内</summary>
+    /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static double Clamp(this double source, double min, double max)
     {
         ValidateRange(min, max);
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>Restricts a decimal to an inclusive range.</summary>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="max"/> is less than <paramref name="min"/>.</exception>
+    /// <summary>将十进制数限制在闭区间内</summary>
+    /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static decimal Clamp(this decimal source, decimal min, decimal max)
     {
         ValidateRange(min, max);
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>Formats a byte count using binary file size units.</summary>
-    /// <param name="source">The byte count.</param>
-    /// <param name="decimalPlaces">The number of decimal places.</param>
-    /// <returns>The formatted file size.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="decimalPlaces"/> is negative.</exception>
+    /// <summary>使用二进制文件大小单位格式化字节数</summary>
+    /// <param name="source">字节数</param>
+    /// <param name="decimalPlaces">小数位数</param>
+    /// <returns>格式化后的文件大小</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="decimalPlaces"/> 为负数时抛出</exception>
     public static string ToFileSize(this long source, int decimalPlaces = 2)
     {
         Check.NonNegative(decimalPlaces);
@@ -71,28 +71,28 @@ public static class NumberExtensions
         return $"{size.ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture)} {units[unitIndex]}";
     }
 
-    /// <summary>Rounds a double to the specified number of decimal places.</summary>
+    /// <summary>将双精度浮点数舍入到指定小数位数</summary>
     public static double Round(this double source, int decimals = 0) => Math.Round(source, decimals);
 
-    /// <summary>Rounds a decimal to the specified number of decimal places.</summary>
+    /// <summary>将十进制数舍入到指定小数位数</summary>
     public static decimal Round(this decimal source, int decimals = 0) => Math.Round(source, decimals);
 
-    /// <summary>Formats a double as a percentage string.</summary>
-    /// <param name="source">The source value where 1.0 is 100 percent.</param>
-    /// <param name="decimals">The number of decimal places.</param>
-    /// <returns>The formatted percentage.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="decimals"/> is negative.</exception>
+    /// <summary>将双精度浮点数格式化为百分比字符串</summary>
+    /// <param name="source">源值，其中 1.0 表示 100%</param>
+    /// <param name="decimals">小数位数</param>
+    /// <returns>格式化后的百分比</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="decimals"/> 为负数时抛出</exception>
     public static string ToPercentage(this double source, int decimals = 2)
     {
         Check.NonNegative(decimals);
         return (source * 100).ToString($"F{decimals}", CultureInfo.InvariantCulture) + "%";
     }
 
-    /// <summary>Formats a decimal as a percentage string.</summary>
-    /// <param name="source">The source value where 1.0 is 100 percent.</param>
-    /// <param name="decimals">The number of decimal places.</param>
-    /// <returns>The formatted percentage.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="decimals"/> is negative.</exception>
+    /// <summary>将十进制数格式化为百分比字符串</summary>
+    /// <param name="source">源值，其中 1.0 表示 100%</param>
+    /// <param name="decimals">小数位数</param>
+    /// <returns>格式化后的百分比</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="decimals"/> 为负数时抛出</exception>
     public static string ToPercentage(this decimal source, int decimals = 2)
     {
         Check.NonNegative(decimals);
@@ -104,7 +104,7 @@ public static class NumberExtensions
     {
         if (max.CompareTo(min) < 0)
         {
-            throw new ArgumentException("Maximum value must be greater than or equal to minimum value.", "max");
+            throw new ArgumentException("最大值必须大于或等于最小值。", "max");
         }
     }
 }

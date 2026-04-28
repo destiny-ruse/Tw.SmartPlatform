@@ -344,11 +344,11 @@ public class BasicExtensionsTests
             return exception;
         }
 
-        throw new InvalidOperationException("The helper did not throw.");
+        throw new InvalidOperationException("辅助方法没有抛出异常。");
     }
 
     private static void ThrowingHelper()
     {
-        throw new InvalidOperationException("Original failure.");
+        throw new InvalidOperationException("原始失败。");
     }
 }

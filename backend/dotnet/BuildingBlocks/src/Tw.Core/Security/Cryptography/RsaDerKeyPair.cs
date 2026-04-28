@@ -1,8 +1,8 @@
 namespace Tw.Core.Security.Cryptography;
 
 /// <summary>
-/// Represents an RSA public/private key pair encoded as DER bytes.
+/// 表示编码为 DER 字节的 RSA 公私钥对
 /// </summary>
-/// <param name="PublicKeyDer">The public key in PKCS#1 DER format.</param>
-/// <param name="PrivateKeyDer">The private key in PKCS#1 DER format.</param>
+/// <param name="PublicKeyDer">PKCS#1 DER 格式的公钥</param>
+/// <param name="PrivateKeyDer">PKCS#1 DER 格式的私钥</param>
 public readonly record struct RsaDerKeyPair(byte[] PublicKeyDer, byte[] PrivateKeyDer);

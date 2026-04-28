@@ -1,24 +1,24 @@
 namespace Tw.Core.Exceptions;
 
 /// <summary>
-/// Represents a Tw.Core failure caused by invalid or missing configuration.
+/// 表示由无效或缺失配置导致的 Tw.Core 故障
 /// </summary>
 public class TwConfigurationException : TwException
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="TwConfigurationException"/> class with an error message.
+    /// 使用错误消息初始化 <see cref="TwConfigurationException"/> 类的新实例
     /// </summary>
-    /// <param name="message">The message that describes the configuration failure.</param>
+    /// <param name="message">描述配置故障的消息</param>
     public TwConfigurationException(string message)
         : base(message)
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TwConfigurationException"/> class with an error message and inner exception.
+    /// 使用错误消息和内部异常初始化 <see cref="TwConfigurationException"/> 类的新实例
     /// </summary>
-    /// <param name="message">The message that describes the configuration failure.</param>
-    /// <param name="innerException">The exception that caused the current exception.</param>
+    /// <param name="message">描述配置故障的消息</param>
+    /// <param name="innerException">导致当前异常的异常</param>
     public TwConfigurationException(string message, Exception innerException)
         : base(message, innerException)
     {

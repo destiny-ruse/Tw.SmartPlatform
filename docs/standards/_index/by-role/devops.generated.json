@@ -179,7 +179,7 @@
       "title": "通用注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/comments-common.md",
       "roles": [
         "architect",
@@ -194,7 +194,7 @@
         "comments",
         "governance"
       ],
-      "summary": "规定跨语言注释的意图、准确性和维护要求。",
+      "summary": "规定跨语言注释语言、意图、准确性和维护要求。",
       "sections_index": "docs/standards/_index/sections/rules.comments-common.generated.json"
     },
     {
@@ -349,7 +349,7 @@
       "title": "错误处理规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/error-handling.md",
       "roles": [
         "architect",
@@ -473,7 +473,7 @@
       "title": "输入校验规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/input-validation.md",
       "roles": [
         "architect",

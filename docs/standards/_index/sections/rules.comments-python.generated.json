@@ -1,7 +1,7 @@
 {
   "id": "rules.comments-python",
   "path": "docs/standards/rules/comments-python.md",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "sections": [
     {
       "anchor": "goal",
@@ -24,39 +24,39 @@
       "title": "规则",
       "level": 2,
       "start_line": 31,
-      "end_line": 42,
+      "end_line": 47,
       "regions": []
     },
     {
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 43,
-      "end_line": 65,
+      "start_line": 48,
+      "end_line": 73,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 66,
-      "end_line": 75,
+      "start_line": 74,
+      "end_line": 87,
       "regions": []
     },
     {
       "anchor": "relations",
       "title": "相关规范",
       "level": 2,
-      "start_line": 76,
-      "end_line": 81,
+      "start_line": 88,
+      "end_line": 93,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 82,
-      "end_line": 87,
+      "start_line": 94,
+      "end_line": 100,
       "regions": []
     }
   ]

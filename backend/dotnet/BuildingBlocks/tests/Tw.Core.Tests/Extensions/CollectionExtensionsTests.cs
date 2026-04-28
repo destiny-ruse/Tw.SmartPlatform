@@ -234,12 +234,12 @@ public class CollectionExtensionsTests
     [Fact]
     public async Task Enumerable_ForEachParallelAsync_Propagates_Action_Exception()
     {
-        var failure = new InvalidOperationException("parallel failure");
+        var failure = new InvalidOperationException("并行失败");
 
         Func<Task> act = () => new[] { 1 }.ForEachParallelAsync(_ => Task.FromException(failure), maxDegreeOfParallelism: 1);
 
         await act.Should().ThrowAsync<InvalidOperationException>()
-            .WithMessage("parallel failure");
+            .WithMessage("并行失败");
     }
 
     [Fact]

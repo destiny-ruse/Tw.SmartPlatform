@@ -1,31 +1,31 @@
 namespace Tw.Core.Exceptions;
 
 /// <summary>
-/// Serves as the base exception type for Tw.Core failures that callers may handle consistently.
+/// 作为调用方可统一处理的 Tw.Core 故障基异常类型
 /// </summary>
 public class TwException : Exception
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="TwException"/> class.
+    /// 初始化 <see cref="TwException"/> 类的新实例
     /// </summary>
     public TwException()
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TwException"/> class with an error message.
+    /// 使用错误消息初始化 <see cref="TwException"/> 类的新实例
     /// </summary>
-    /// <param name="message">The message that describes the failure.</param>
+    /// <param name="message">描述故障的消息</param>
     public TwException(string message)
         : base(message)
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TwException"/> class with an error message and inner exception.
+    /// 使用错误消息和内部异常初始化 <see cref="TwException"/> 类的新实例
     /// </summary>
-    /// <param name="message">The message that describes the failure.</param>
-    /// <param name="innerException">The exception that caused the current exception.</param>
+    /// <param name="message">描述故障的消息</param>
+    /// <param name="innerException">导致当前异常的异常</param>
     public TwException(string message, Exception innerException)
         : base(message, innerException)
     {

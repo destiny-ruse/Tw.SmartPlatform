@@ -3,24 +3,24 @@ using Tw.Core;
 namespace Tw.Core.Utilities;
 
 /// <summary>
-/// Invokes a supplied action when the instance is disposed.
+/// 在实例释放时调用给定操作
 /// </summary>
 public sealed class DisposeAction : IDisposable
 {
     private Action? action;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="DisposeAction"/> class.
+    /// 初始化 <see cref="DisposeAction"/> 类的新实例
     /// </summary>
-    /// <param name="action">The action to invoke during disposal.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="action"/> is <see langword="null"/>.</exception>
+    /// <param name="action">释放期间要调用的操作</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="action"/> 为 <see langword="null"/> 时抛出</exception>
     public DisposeAction(Action action)
     {
         this.action = Check.NotNull(action);
     }
 
     /// <summary>
-    /// Invokes the configured action at most once.
+    /// 最多调用一次已配置的操作
     /// </summary>
     public void Dispose()
     {

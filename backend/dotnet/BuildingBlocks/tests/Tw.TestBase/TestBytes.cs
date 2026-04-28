@@ -19,7 +19,10 @@ public static class TestBytes
 
     public static byte[] DeterministicBytes(int length)
     {
-        ArgumentOutOfRangeException.ThrowIfNegative(length);
+        if (length < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(length), length, "长度不能为负数。");
+        }
 
         var bytes = new byte[length];
 

@@ -4,48 +4,48 @@ using System.Text;
 namespace Tw.Core.Security.Cryptography;
 
 /// <summary>
-/// Provides MD5 hash computation and verification helpers.
+/// 提供 MD5 哈希计算与验证辅助方法
 /// </summary>
 public static class Md5Hasher
 {
     /// <summary>
-    /// Computes the MD5 hash for a string.
+    /// 计算字符串的 MD5 哈希
     /// </summary>
-    /// <param name="input">The string to hash.</param>
-    /// <param name="useUpperCase">Whether to return uppercase hexadecimal characters.</param>
-    /// <param name="useShortHash">Whether to return the legacy 16-character middle segment of the MD5 hash.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns>The MD5 hash as a hexadecimal string.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="input"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="input"/> is empty or whitespace.</exception>
+    /// <param name="input">要计算哈希的字符串</param>
+    /// <param name="useUpperCase">是否返回大写十六进制字符</param>
+    /// <param name="useShortHash">是否返回旧版 MD5 哈希的中间 16 个字符片段</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>十六进制字符串形式的 MD5 哈希</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="input"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="input"/> 为空字符串或空白字符串时抛出</exception>
     public static string ComputeHash(string input, bool useUpperCase = false, bool useShortHash = false, Encoding? encoding = null)
     {
         return HashComputation.ComputeMd5Hash(input, useUpperCase, useShortHash, encoding, MD5.HashData);
     }
 
     /// <summary>
-    /// Computes the MD5 hash for bytes.
+    /// 计算字节的 MD5 哈希
     /// </summary>
-    /// <param name="bytes">The bytes to hash.</param>
-    /// <param name="useUpperCase">Whether to return uppercase hexadecimal characters.</param>
-    /// <param name="useShortHash">Whether to return the legacy 16-character middle segment of the MD5 hash.</param>
-    /// <returns>The MD5 hash as a hexadecimal string.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="bytes"/> is <see langword="null"/>.</exception>
+    /// <param name="bytes">要计算哈希的字节</param>
+    /// <param name="useUpperCase">是否返回大写十六进制字符</param>
+    /// <param name="useShortHash">是否返回旧版 MD5 哈希的中间 16 个字符片段</param>
+    /// <returns>十六进制字符串形式的 MD5 哈希</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="bytes"/> 为 <see langword="null"/> 时抛出</exception>
     public static string ComputeHash(byte[] bytes, bool useUpperCase = false, bool useShortHash = false)
     {
         return HashComputation.ComputeMd5Hash(bytes, useUpperCase, useShortHash, MD5.HashData);
     }
 
     /// <summary>
-    /// Computes the MD5 hash for a file.
+    /// 计算文件的 MD5 哈希
     /// </summary>
-    /// <param name="filePath">The file path to read.</param>
-    /// <param name="useUpperCase">Whether to return uppercase hexadecimal characters.</param>
-    /// <param name="useShortHash">Whether to return the legacy 16-character middle segment of the MD5 hash.</param>
-    /// <param name="cancellationToken">The token that cancels the file read and hash operation.</param>
-    /// <returns>The MD5 hash as a hexadecimal string.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="filePath"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="filePath"/> is empty or whitespace.</exception>
+    /// <param name="filePath">要读取的文件路径</param>
+    /// <param name="useUpperCase">是否返回大写十六进制字符</param>
+    /// <param name="useShortHash">是否返回旧版 MD5 哈希的中间 16 个字符片段</param>
+    /// <param name="cancellationToken">取消文件读取和哈希操作的令牌</param>
+    /// <returns>十六进制字符串形式的 MD5 哈希</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="filePath"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="filePath"/> 为空字符串或空白字符串时抛出</exception>
     public static Task<string> ComputeFileHashAsync(
         string filePath,
         bool useUpperCase = false,
@@ -56,14 +56,14 @@ public static class Md5Hasher
     }
 
     /// <summary>
-    /// Computes the MD5 hash for a stream without disposing it.
+    /// 计算流的 MD5 哈希且不释放该流
     /// </summary>
-    /// <param name="stream">The stream to hash from its current position.</param>
-    /// <param name="useUpperCase">Whether to return uppercase hexadecimal characters.</param>
-    /// <param name="useShortHash">Whether to return the legacy 16-character middle segment of the MD5 hash.</param>
-    /// <param name="cancellationToken">The token that cancels the stream read and hash operation.</param>
-    /// <returns>The MD5 hash as a hexadecimal string.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="stream"/> is <see langword="null"/>.</exception>
+    /// <param name="stream">要从当前位置开始计算哈希的流</param>
+    /// <param name="useUpperCase">是否返回大写十六进制字符</param>
+    /// <param name="useShortHash">是否返回旧版 MD5 哈希的中间 16 个字符片段</param>
+    /// <param name="cancellationToken">取消流读取和哈希操作的令牌</param>
+    /// <returns>十六进制字符串形式的 MD5 哈希</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="stream"/> 为 <see langword="null"/> 时抛出</exception>
     public static Task<string> ComputeFileHashAsync(
         Stream stream,
         bool useUpperCase = false,
@@ -74,28 +74,28 @@ public static class Md5Hasher
     }
 
     /// <summary>
-    /// Verifies an MD5 hash for a string using fixed-time byte comparison.
+    /// 使用固定时间字节比较验证字符串的 MD5 哈希
     /// </summary>
-    /// <param name="input">The string to hash and verify.</param>
-    /// <param name="hash">The expected hexadecimal hash.</param>
-    /// <param name="useShortHash">Whether to verify against the legacy 16-character middle segment of the MD5 hash.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns><see langword="true"/> when the hash matches; otherwise, <see langword="false"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="input"/> or <paramref name="hash"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="input"/> is empty or whitespace.</exception>
+    /// <param name="input">要计算并验证哈希的字符串</param>
+    /// <param name="hash">预期的十六进制哈希</param>
+    /// <param name="useShortHash">是否按旧版 MD5 哈希的中间 16 个字符片段进行验证</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>哈希匹配时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="input"/> 或 <paramref name="hash"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="input"/> 为空字符串或空白字符串时抛出</exception>
     public static bool VerifyHash(string input, string hash, bool useShortHash = false, Encoding? encoding = null)
     {
         return HashComputation.VerifyMd5Hash(input, hash, useShortHash, encoding, MD5.HashData);
     }
 
     /// <summary>
-    /// Verifies an MD5 hash for bytes using fixed-time byte comparison.
+    /// 使用固定时间字节比较验证字节的 MD5 哈希
     /// </summary>
-    /// <param name="bytes">The bytes to hash and verify.</param>
-    /// <param name="hash">The expected hexadecimal hash.</param>
-    /// <param name="useShortHash">Whether to verify against the legacy 16-character middle segment of the MD5 hash.</param>
-    /// <returns><see langword="true"/> when the hash matches; otherwise, <see langword="false"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="bytes"/> or <paramref name="hash"/> is <see langword="null"/>.</exception>
+    /// <param name="bytes">要计算并验证哈希的字节</param>
+    /// <param name="hash">预期的十六进制哈希</param>
+    /// <param name="useShortHash">是否按旧版 MD5 哈希的中间 16 个字符片段进行验证</param>
+    /// <returns>哈希匹配时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="bytes"/> 或 <paramref name="hash"/> 为 <see langword="null"/> 时抛出</exception>
     public static bool VerifyHash(byte[] bytes, string hash, bool useShortHash = false)
     {
         return HashComputation.VerifyMd5Hash(bytes, hash, useShortHash, MD5.HashData);

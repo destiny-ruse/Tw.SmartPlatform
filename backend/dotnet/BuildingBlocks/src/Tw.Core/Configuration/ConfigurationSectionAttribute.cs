@@ -1,14 +1,14 @@
 namespace Tw.Core.Configuration;
 
 /// <summary>
-/// Identifies the configuration section that should bind to an options type.
+/// 标识应绑定到选项类型的配置节
 /// </summary>
-/// <param name="name">The non-empty configuration section name used by callers during options binding.</param>
+/// <param name="name">调用方在选项绑定期间使用的非空配置节名称</param>
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
 public sealed class ConfigurationSectionAttribute(string name) : Attribute
 {
     /// <summary>
-    /// Gets the configuration section name associated with the decorated options type.
+    /// 与被标注选项类型关联的配置节名称
     /// </summary>
     public string Name { get; } = Tw.Core.Check.NotNullOrWhiteSpace(name);
 }

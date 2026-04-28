@@ -1,15 +1,15 @@
 namespace Tw.Core.Primitives;
 
 /// <summary>
-/// Provides a named base object for primitive descriptors.
+/// 为基元描述符提供具名基对象
 /// </summary>
-/// <param name="name">The non-empty display or lookup name.</param>
-/// <exception cref="ArgumentNullException">Thrown when <paramref name="name"/> is <see langword="null"/>.</exception>
-/// <exception cref="ArgumentException">Thrown when <paramref name="name"/> is empty or whitespace.</exception>
+/// <param name="name">非空显示名或查找名</param>
+/// <exception cref="ArgumentNullException">当 <paramref name="name"/> 为 <see langword="null"/> 时抛出</exception>
+/// <exception cref="ArgumentException">当 <paramref name="name"/> 为空字符串或空白字符串时抛出</exception>
 public class NamedObject(string name)
 {
     /// <summary>
-    /// Gets the validated name.
+    /// 通过验证的名称
     /// </summary>
     public string Name { get; } = Check.NotNullOrWhiteSpace(name);
 }

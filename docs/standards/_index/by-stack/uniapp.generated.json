@@ -319,7 +319,7 @@
       "title": "输入校验规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/input-validation.md",
       "roles": [
         "architect",

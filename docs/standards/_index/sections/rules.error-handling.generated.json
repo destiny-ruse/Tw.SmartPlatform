@@ -1,7 +1,7 @@
 {
   "id": "rules.error-handling",
   "path": "docs/standards/rules/error-handling.md",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "sections": [
     {
       "anchor": "goal",
@@ -24,39 +24,39 @@
       "title": "规则",
       "level": 2,
       "start_line": 31,
-      "end_line": 41,
+      "end_line": 42,
       "regions": []
     },
     {
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 42,
-      "end_line": 66,
+      "start_line": 43,
+      "end_line": 67,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 67,
-      "end_line": 75,
+      "start_line": 68,
+      "end_line": 77,
       "regions": []
     },
     {
       "anchor": "relations",
       "title": "相关规范",
       "level": 2,
-      "start_line": 76,
-      "end_line": 83,
+      "start_line": 78,
+      "end_line": 85,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 84,
-      "end_line": 89,
+      "start_line": 86,
+      "end_line": 92,
       "regions": []
     }
   ]

@@ -3,33 +3,33 @@ using System.Reflection;
 namespace Tw.Core.Reflection;
 
 /// <summary>
-/// Finds runtime types from a configured set of assemblies.
+/// 从配置的程序集集合中查找运行时类型
 /// </summary>
 public interface ITypeFinder
 {
     /// <summary>
-    /// Gets the assemblies that are searched for types.
+    /// 用于搜索类型的程序集
     /// </summary>
     IReadOnlyList<Assembly> Assemblies { get; }
 
     /// <summary>
-    /// Finds loadable types from the configured assemblies.
+    /// 从已配置程序集中查找可加载类型
     /// </summary>
-    /// <returns>The discovered types in assembly traversal order.</returns>
+    /// <returns>按程序集遍历顺序发现的类型</returns>
     IReadOnlyList<Type> FindTypes();
 
     /// <summary>
-    /// Finds concrete types assignable to the supplied base type.
+    /// 查找可赋值给给定基类型的具体类型
     /// </summary>
-    /// <param name="baseType">The base type or interface that discovered types must implement.</param>
-    /// <returns>The matching concrete types in discovery order.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="baseType"/> is <see langword="null"/>.</exception>
+    /// <param name="baseType">发现的类型必须实现的基类型或接口</param>
+    /// <returns>按发现顺序排列的匹配具体类型</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="baseType"/> 为 <see langword="null"/> 时抛出</exception>
     IReadOnlyList<Type> FindTypes(Type baseType);
 
     /// <summary>
-    /// Finds concrete types assignable to the supplied base type parameter.
+    /// 查找可赋值给给定基类型参数的具体类型
     /// </summary>
-    /// <typeparam name="TBaseType">The base type or interface that discovered types must implement.</typeparam>
-    /// <returns>The matching concrete types in discovery order.</returns>
+    /// <typeparam name="TBaseType">发现的类型必须实现的基类型或接口</typeparam>
+    /// <returns>按发现顺序排列的匹配具体类型</returns>
     IReadOnlyList<Type> FindTypes<TBaseType>();
 }

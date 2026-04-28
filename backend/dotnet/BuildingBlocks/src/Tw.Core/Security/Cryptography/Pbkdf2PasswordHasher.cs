@@ -6,10 +6,10 @@ using Tw.Core;
 namespace Tw.Core.Security.Cryptography;
 
 /// <summary>
-/// Provides PBKDF2 password key derivation, hashing, and verification helpers.
+/// 提供 PBKDF2 密码密钥派生、哈希和验证辅助方法
 /// </summary>
 /// <remarks>
-/// Password hashes use <c>PBKDF2$HashAlgorithm$Iterations$KeyLength$SaltBase64$HashBase64</c>.
+/// 密码哈希使用 <c>PBKDF2$HashAlgorithm$Iterations$KeyLength$SaltBase64$HashBase64</c> 格式
 /// </remarks>
 public static class Pbkdf2PasswordHasher
 {
@@ -19,14 +19,14 @@ public static class Pbkdf2PasswordHasher
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
     private static readonly HashAlgorithmName DefaultHashAlgorithm = HashAlgorithmName.SHA256;
 
-    /// <summary>Derives a PBKDF2 key from a password string and returns it as Base64.</summary>
-    /// <param name="password">The password to derive from.</param>
-    /// <param name="salt">The salt bytes.</param>
-    /// <param name="iterations">The PBKDF2 iteration count.</param>
-    /// <param name="keyLength">The derived key length in bytes.</param>
-    /// <param name="hashAlgorithm">The PBKDF2 hash algorithm, or SHA-256 when omitted.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns>The derived key encoded as Base64.</returns>
+    /// <summary>从密码字符串派生 PBKDF2 密钥并以 Base64 返回</summary>
+    /// <param name="password">用于派生的密码</param>
+    /// <param name="salt">盐值字节</param>
+    /// <param name="iterations">PBKDF2 迭代次数</param>
+    /// <param name="keyLength">派生密钥长度，单位为字节</param>
+    /// <param name="hashAlgorithm">PBKDF2 哈希算法；省略时使用 SHA-256</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>Base64 编码的派生密钥</returns>
     public static string DeriveKey(
         string password,
         byte[] salt,
@@ -41,13 +41,13 @@ public static class Pbkdf2PasswordHasher
         return Convert.ToBase64String(key);
     }
 
-    /// <summary>Derives a PBKDF2 key from password bytes.</summary>
-    /// <param name="password">The password bytes to derive from.</param>
-    /// <param name="salt">The salt bytes.</param>
-    /// <param name="iterations">The PBKDF2 iteration count.</param>
-    /// <param name="keyLength">The derived key length in bytes.</param>
-    /// <param name="hashAlgorithm">The PBKDF2 hash algorithm, or SHA-256 when omitted.</param>
-    /// <returns>The derived key bytes.</returns>
+    /// <summary>从密码字节派生 PBKDF2 密钥</summary>
+    /// <param name="password">用于派生的密码字节</param>
+    /// <param name="salt">盐值字节</param>
+    /// <param name="iterations">PBKDF2 迭代次数</param>
+    /// <param name="keyLength">派生密钥长度，单位为字节</param>
+    /// <param name="hashAlgorithm">PBKDF2 哈希算法；省略时使用 SHA-256</param>
+    /// <returns>派生密钥字节</returns>
     public static byte[] DeriveKey(
         byte[] password,
         byte[] salt,
@@ -62,7 +62,7 @@ public static class Pbkdf2PasswordHasher
 
         if (salt.Length < MinimumSaltLength)
         {
-            throw new ArgumentException($"Salt must be at least {MinimumSaltLength} bytes.", nameof(salt));
+            throw new ArgumentException($"盐值必须至少为 {MinimumSaltLength} 字节。", nameof(salt));
         }
 
         return Rfc2898DeriveBytes.Pbkdf2(
@@ -73,35 +73,35 @@ public static class Pbkdf2PasswordHasher
             keyLength);
     }
 
-    /// <summary>Generates a cryptographically random salt and returns it as Base64.</summary>
-    /// <param name="length">The salt length in bytes.</param>
-    /// <returns>The salt encoded as Base64.</returns>
+    /// <summary>生成密码学随机盐值并以 Base64 返回</summary>
+    /// <param name="length">盐值长度，单位为字节</param>
+    /// <returns>Base64 编码的盐值</returns>
     public static string GenerateSalt(int length = 16)
     {
         return Convert.ToBase64String(GenerateSaltBytes(length));
     }
 
-    /// <summary>Generates cryptographically random salt bytes.</summary>
-    /// <param name="length">The salt length in bytes.</param>
-    /// <returns>The salt bytes.</returns>
+    /// <summary>生成密码学随机盐值字节</summary>
+    /// <param name="length">盐值长度，单位为字节</param>
+    /// <returns>盐值字节</returns>
     public static byte[] GenerateSaltBytes(int length = 16)
     {
         if (length < MinimumSaltLength)
         {
-            throw new ArgumentException($"Salt length must be at least {MinimumSaltLength} bytes.", nameof(length));
+            throw new ArgumentException($"盐值长度必须至少为 {MinimumSaltLength} 字节。", nameof(length));
         }
 
         return RandomNumberGenerator.GetBytes(length);
     }
 
-    /// <summary>Hashes a password using PBKDF2 and a generated salt.</summary>
-    /// <param name="password">The password to hash.</param>
-    /// <param name="iterations">The PBKDF2 iteration count.</param>
-    /// <param name="keyLength">The derived key length in bytes.</param>
-    /// <param name="saltLength">The generated salt length in bytes.</param>
-    /// <param name="hashAlgorithm">The PBKDF2 hash algorithm, or SHA-256 when omitted.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns>A self-describing PBKDF2 password hash.</returns>
+    /// <summary>使用 PBKDF2 和生成的盐值对密码进行哈希</summary>
+    /// <param name="password">要哈希的密码</param>
+    /// <param name="iterations">PBKDF2 迭代次数</param>
+    /// <param name="keyLength">派生密钥长度，单位为字节</param>
+    /// <param name="saltLength">生成的盐值长度，单位为字节</param>
+    /// <param name="hashAlgorithm">PBKDF2 哈希算法；省略时使用 SHA-256</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>自描述 PBKDF2 密码哈希</returns>
     public static string HashPassword(
         string password,
         int iterations = 100000,
@@ -126,13 +126,13 @@ public static class Pbkdf2PasswordHasher
             Convert.ToBase64String(key));
     }
 
-    /// <summary>Verifies a password against a self-describing PBKDF2 password hash.</summary>
-    /// <param name="password">The password to verify.</param>
-    /// <param name="hashedPassword">The password hash produced by <see cref="HashPassword"/>.</param>
-    /// <param name="iterations">Retained for signature compatibility; self-describing hashes use their stored iteration count.</param>
-    /// <param name="hashAlgorithm">Retained for signature compatibility; self-describing hashes use their stored hash algorithm.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns><see langword="true"/> when the password matches; otherwise, <see langword="false"/>.</returns>
+    /// <summary>根据自描述 PBKDF2 密码哈希验证密码</summary>
+    /// <param name="password">要验证的密码</param>
+    /// <param name="hashedPassword"><see cref="HashPassword"/> 生成的密码哈希</param>
+    /// <param name="iterations">为保持签名兼容而保留；自描述哈希使用其中存储的迭代次数</param>
+    /// <param name="hashAlgorithm">为保持签名兼容而保留；自描述哈希使用其中存储的哈希算法</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>密码匹配时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public static bool VerifyPassword(
         string password,
         string hashedPassword,
@@ -159,15 +159,15 @@ public static class Pbkdf2PasswordHasher
             CryptographicOperations.FixedTimeEquals(key, parsedHash.Hash);
     }
 
-    /// <summary>Derives a PBKDF2 key from a password string and returns it as hexadecimal.</summary>
-    /// <param name="password">The password to derive from.</param>
-    /// <param name="salt">The salt bytes.</param>
-    /// <param name="iterations">The PBKDF2 iteration count.</param>
-    /// <param name="keyLength">The derived key length in bytes.</param>
-    /// <param name="useUpperCase">Whether to return uppercase hexadecimal characters.</param>
-    /// <param name="hashAlgorithm">The PBKDF2 hash algorithm, or SHA-256 when omitted.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns>The derived key encoded as hexadecimal.</returns>
+    /// <summary>从密码字符串派生 PBKDF2 密钥并以十六进制返回</summary>
+    /// <param name="password">用于派生的密码</param>
+    /// <param name="salt">盐值字节</param>
+    /// <param name="iterations">PBKDF2 迭代次数</param>
+    /// <param name="keyLength">派生密钥长度，单位为字节</param>
+    /// <param name="useUpperCase">是否返回大写十六进制字符</param>
+    /// <param name="hashAlgorithm">PBKDF2 哈希算法；省略时使用 SHA-256</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>十六进制编码的派生密钥</returns>
     public static string DeriveKeyToHex(
         string password,
         byte[] salt,

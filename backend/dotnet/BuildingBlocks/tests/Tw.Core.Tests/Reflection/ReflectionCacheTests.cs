@@ -47,7 +47,7 @@ public class ReflectionCacheTests
         var act = () => method.GetSingleAttribute<ReflectionTestAttribute>();
 
         act.Should().Throw<InvalidOperationException>()
-            .WithMessage("*ReflectionTestAttribute*PlainMethod*");
+            .WithMessage("*未在成员*PlainMethod*找到特性*ReflectionTestAttribute*");
     }
 
     [Fact]

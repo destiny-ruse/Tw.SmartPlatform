@@ -5,10 +5,10 @@ using Tw.Core;
 namespace Tw.Core.Security.Cryptography;
 
 /// <summary>
-/// Provides RSA key generation, encryption, decryption, signing, and signature verification helpers.
+/// 提供 RSA 密钥生成、加密、解密、签名和签名验证辅助方法
 /// </summary>
 /// <remarks>
-/// Encryption defaults to OAEP with SHA-256. Signing defaults to SHA-256 with PKCS#1 signature padding.
+/// 加密默认使用带 SHA-256 的 OAEP。签名默认使用带 PKCS#1 签名填充的 SHA-256
 /// </remarks>
 public static class RsaCryptography
 {
@@ -17,9 +17,9 @@ public static class RsaCryptography
     private static readonly HashAlgorithmName DefaultSignatureHashAlgorithm = HashAlgorithmName.SHA256;
     private static readonly RSASignaturePadding DefaultSignaturePadding = RSASignaturePadding.Pkcs1;
 
-    /// <summary>Generates an RSA key pair encoded as PEM.</summary>
-    /// <param name="keySize">The RSA key size in bits.</param>
-    /// <returns>The generated RSA key pair.</returns>
+    /// <summary>生成编码为 PEM 的 RSA 密钥对</summary>
+    /// <param name="keySize">RSA 密钥位数</param>
+    /// <returns>生成的 RSA 密钥对</returns>
     public static RsaKeyPair GenerateKeyPair(int keySize = 2048)
     {
         Check.Positive(keySize);
@@ -28,9 +28,9 @@ public static class RsaCryptography
         return new RsaKeyPair(rsa.ExportRSAPublicKeyPem(), rsa.ExportRSAPrivateKeyPem());
     }
 
-    /// <summary>Generates an RSA key pair encoded as DER bytes.</summary>
-    /// <param name="keySize">The RSA key size in bits.</param>
-    /// <returns>The generated RSA key pair.</returns>
+    /// <summary>生成编码为 DER 字节的 RSA 密钥对</summary>
+    /// <param name="keySize">RSA 密钥位数</param>
+    /// <returns>生成的 RSA 密钥对</returns>
     public static RsaDerKeyPair GenerateDerKeyPair(int keySize = 2048)
     {
         Check.Positive(keySize);
@@ -39,12 +39,12 @@ public static class RsaCryptography
         return new RsaDerKeyPair(rsa.ExportRSAPublicKey(), rsa.ExportRSAPrivateKey());
     }
 
-    /// <summary>Encrypts a string with a PEM public key and returns Base64 ciphertext.</summary>
-    /// <param name="input">The text to encrypt.</param>
-    /// <param name="publicKeyPem">The public key in PEM format.</param>
-    /// <param name="padding">The RSA encryption padding, or OAEP SHA-256 when omitted.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns>The encrypted bytes encoded as Base64.</returns>
+    /// <summary>使用 PEM 公钥加密字符串并返回 Base64 密文</summary>
+    /// <param name="input">要加密的文本</param>
+    /// <param name="publicKeyPem">PEM 格式的公钥</param>
+    /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>Base64 编码的加密字节</returns>
     public static string Encrypt(
         string input,
         string publicKeyPem,
@@ -57,11 +57,11 @@ public static class RsaCryptography
         return Convert.ToBase64String(encrypted);
     }
 
-    /// <summary>Encrypts bytes with a PEM public key.</summary>
-    /// <param name="bytes">The bytes to encrypt.</param>
-    /// <param name="publicKeyPem">The public key in PEM format.</param>
-    /// <param name="padding">The RSA encryption padding, or OAEP SHA-256 when omitted.</param>
-    /// <returns>The encrypted bytes.</returns>
+    /// <summary>使用 PEM 公钥加密字节</summary>
+    /// <param name="bytes">要加密的字节</param>
+    /// <param name="publicKeyPem">PEM 格式的公钥</param>
+    /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
+    /// <returns>加密后的字节</returns>
     public static byte[] Encrypt(byte[] bytes, string publicKeyPem, RSAEncryptionPadding? padding = null)
     {
         Check.NotNull(bytes);
@@ -72,11 +72,11 @@ public static class RsaCryptography
         return rsa.Encrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>Encrypts bytes with a DER public key.</summary>
-    /// <param name="bytes">The bytes to encrypt.</param>
-    /// <param name="publicKeyDer">The public key in DER format.</param>
-    /// <param name="padding">The RSA encryption padding, or OAEP SHA-256 when omitted.</param>
-    /// <returns>The encrypted bytes.</returns>
+    /// <summary>使用 DER 公钥加密字节</summary>
+    /// <param name="bytes">要加密的字节</param>
+    /// <param name="publicKeyDer">DER 格式的公钥</param>
+    /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
+    /// <returns>加密后的字节</returns>
     public static byte[] Encrypt(byte[] bytes, byte[] publicKeyDer, RSAEncryptionPadding? padding = null)
     {
         Check.NotNull(bytes);
@@ -87,12 +87,12 @@ public static class RsaCryptography
         return rsa.Encrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>Decrypts Base64 ciphertext with a PEM private key.</summary>
-    /// <param name="input">The Base64 ciphertext to decrypt.</param>
-    /// <param name="privateKeyPem">The private key in PEM format.</param>
-    /// <param name="padding">The RSA encryption padding, or OAEP SHA-256 when omitted.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns>The decrypted text.</returns>
+    /// <summary>使用 PEM 私钥解密 Base64 密文</summary>
+    /// <param name="input">要解密的 Base64 密文</param>
+    /// <param name="privateKeyPem">PEM 格式的私钥</param>
+    /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>解密后的文本</returns>
     public static string Decrypt(
         string input,
         string privateKeyPem,
@@ -105,11 +105,11 @@ public static class RsaCryptography
         return (encoding ?? DefaultEncoding).GetString(decrypted);
     }
 
-    /// <summary>Decrypts bytes with a PEM private key.</summary>
-    /// <param name="bytes">The bytes to decrypt.</param>
-    /// <param name="privateKeyPem">The private key in PEM format.</param>
-    /// <param name="padding">The RSA encryption padding, or OAEP SHA-256 when omitted.</param>
-    /// <returns>The decrypted bytes.</returns>
+    /// <summary>使用 PEM 私钥解密字节</summary>
+    /// <param name="bytes">要解密的字节</param>
+    /// <param name="privateKeyPem">PEM 格式的私钥</param>
+    /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
+    /// <returns>解密后的字节</returns>
     public static byte[] Decrypt(byte[] bytes, string privateKeyPem, RSAEncryptionPadding? padding = null)
     {
         Check.NotNull(bytes);
@@ -120,11 +120,11 @@ public static class RsaCryptography
         return rsa.Decrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>Decrypts bytes with a DER private key.</summary>
-    /// <param name="bytes">The bytes to decrypt.</param>
-    /// <param name="privateKeyDer">The private key in DER format.</param>
-    /// <param name="padding">The RSA encryption padding, or OAEP SHA-256 when omitted.</param>
-    /// <returns>The decrypted bytes.</returns>
+    /// <summary>使用 DER 私钥解密字节</summary>
+    /// <param name="bytes">要解密的字节</param>
+    /// <param name="privateKeyDer">DER 格式的私钥</param>
+    /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
+    /// <returns>解密后的字节</returns>
     public static byte[] Decrypt(byte[] bytes, byte[] privateKeyDer, RSAEncryptionPadding? padding = null)
     {
         Check.NotNull(bytes);
@@ -135,13 +135,13 @@ public static class RsaCryptography
         return rsa.Decrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>Signs a string with a PEM private key and returns a Base64 signature.</summary>
-    /// <param name="input">The text to sign.</param>
-    /// <param name="privateKeyPem">The private key in PEM format.</param>
-    /// <param name="hashAlgorithm">The signature hash algorithm, or SHA-256 when omitted.</param>
-    /// <param name="padding">The RSA signature padding, or PKCS#1 when omitted.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns>The signature encoded as Base64.</returns>
+    /// <summary>使用 PEM 私钥为字符串签名并返回 Base64 签名</summary>
+    /// <param name="input">要签名的文本</param>
+    /// <param name="privateKeyPem">PEM 格式的私钥</param>
+    /// <param name="hashAlgorithm">签名哈希算法；省略时使用 SHA-256</param>
+    /// <param name="padding">RSA 签名填充；省略时使用 PKCS#1</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>Base64 编码的签名</returns>
     public static string Sign(
         string input,
         string privateKeyPem,
@@ -155,12 +155,12 @@ public static class RsaCryptography
         return Convert.ToBase64String(signature);
     }
 
-    /// <summary>Signs bytes with a PEM private key.</summary>
-    /// <param name="bytes">The bytes to sign.</param>
-    /// <param name="privateKeyPem">The private key in PEM format.</param>
-    /// <param name="hashAlgorithm">The signature hash algorithm, or SHA-256 when omitted.</param>
-    /// <param name="padding">The RSA signature padding, or PKCS#1 when omitted.</param>
-    /// <returns>The signature bytes.</returns>
+    /// <summary>使用 PEM 私钥为字节签名</summary>
+    /// <param name="bytes">要签名的字节</param>
+    /// <param name="privateKeyPem">PEM 格式的私钥</param>
+    /// <param name="hashAlgorithm">签名哈希算法；省略时使用 SHA-256</param>
+    /// <param name="padding">RSA 签名填充；省略时使用 PKCS#1</param>
+    /// <returns>签名字节</returns>
     public static byte[] Sign(
         byte[] bytes,
         string privateKeyPem,
@@ -175,14 +175,14 @@ public static class RsaCryptography
         return rsa.SignData(bytes, hashAlgorithm ?? DefaultSignatureHashAlgorithm, padding ?? DefaultSignaturePadding);
     }
 
-    /// <summary>Verifies a Base64 signature for a string with a PEM public key.</summary>
-    /// <param name="input">The text whose signature is verified.</param>
-    /// <param name="signature">The Base64 signature.</param>
-    /// <param name="publicKeyPem">The public key in PEM format.</param>
-    /// <param name="hashAlgorithm">The signature hash algorithm, or SHA-256 when omitted.</param>
-    /// <param name="padding">The RSA signature padding, or PKCS#1 when omitted.</param>
-    /// <param name="encoding">The text encoding, or UTF-8 without a byte order mark when omitted.</param>
-    /// <returns><see langword="true"/> when the signature is valid; otherwise, <see langword="false"/>.</returns>
+    /// <summary>使用 PEM 公钥验证字符串的 Base64 签名</summary>
+    /// <param name="input">要验证签名的文本</param>
+    /// <param name="signature">Base64 签名</param>
+    /// <param name="publicKeyPem">PEM 格式的公钥</param>
+    /// <param name="hashAlgorithm">签名哈希算法；省略时使用 SHA-256</param>
+    /// <param name="padding">RSA 签名填充；省略时使用 PKCS#1</param>
+    /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
+    /// <returns>签名有效时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public static bool VerifySignature(
         string input,
         string signature,
@@ -213,13 +213,13 @@ public static class RsaCryptography
             padding);
     }
 
-    /// <summary>Verifies a signature for bytes with a PEM public key.</summary>
-    /// <param name="bytes">The bytes whose signature is verified.</param>
-    /// <param name="signature">The signature bytes.</param>
-    /// <param name="publicKeyPem">The public key in PEM format.</param>
-    /// <param name="hashAlgorithm">The signature hash algorithm, or SHA-256 when omitted.</param>
-    /// <param name="padding">The RSA signature padding, or PKCS#1 when omitted.</param>
-    /// <returns><see langword="true"/> when the signature is valid; otherwise, <see langword="false"/>.</returns>
+    /// <summary>使用 PEM 公钥验证字节签名</summary>
+    /// <param name="bytes">要验证签名的字节</param>
+    /// <param name="signature">签名字节</param>
+    /// <param name="publicKeyPem">PEM 格式的公钥</param>
+    /// <param name="hashAlgorithm">签名哈希算法；省略时使用 SHA-256</param>
+    /// <param name="padding">RSA 签名填充；省略时使用 PKCS#1</param>
+    /// <returns>签名有效时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public static bool VerifySignature(
         byte[] bytes,
         byte[] signature,

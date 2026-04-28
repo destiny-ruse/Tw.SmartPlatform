@@ -29,7 +29,7 @@ public sealed class HasherTests
             nameof(Sha3256Hasher) => Sha3256Hasher.ComputeHash(TestBytes.Text),
             nameof(Sha3384Hasher) => Sha3384Hasher.ComputeHash(TestBytes.Text),
             nameof(Sha3512Hasher) => Sha3512Hasher.ComputeHash(TestBytes.Text),
-            _ => throw new InvalidOperationException(hasherName),
+            _ => throw new InvalidOperationException($"未知哈希器：{hasherName}"),
         };
 
         actual.Should().Be(expected);
@@ -138,7 +138,7 @@ public sealed class HasherTests
     {
         public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)
         {
-            throw new InvalidOperationException("Stream hashing must read incrementally instead of copying the whole stream.");
+            throw new InvalidOperationException("流哈希必须增量读取，而不是复制整个流。");
         }
     }
 }

@@ -1,18 +1,18 @@
 namespace Tw.Core.Primitives;
 
 /// <summary>
-/// Provides convenience methods for adding named type selectors.
+/// 提供添加具名类型选择器的便利方法
 /// </summary>
 public static class NamedTypeSelectorListExtensions
 {
     /// <summary>
-    /// Adds a selector that matches exactly the supplied type.
+    /// 添加一个精确匹配给定类型的选择器
     /// </summary>
-    /// <param name="selectors">The selector collection to update.</param>
-    /// <param name="name">The non-empty selector name.</param>
-    /// <param name="type">The type to match exactly.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="selectors"/>, <paramref name="name"/>, or <paramref name="type"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="name"/> is empty or whitespace.</exception>
+    /// <param name="selectors">要更新的选择器集合</param>
+    /// <param name="name">非空选择器名称</param>
+    /// <param name="type">要精确匹配的类型</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="selectors"/>、<paramref name="name"/> 或 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="name"/> 为空字符串或空白字符串时抛出</exception>
     public static void Add(this ICollection<NamedTypeSelector> selectors, string name, Type type)
     {
         var validatedType = Check.NotNull(type);
@@ -21,13 +21,13 @@ public static class NamedTypeSelectorListExtensions
     }
 
     /// <summary>
-    /// Adds a selector that uses the supplied predicate.
+    /// 添加一个使用给定谓词的选择器
     /// </summary>
-    /// <param name="selectors">The selector collection to update.</param>
-    /// <param name="name">The non-empty selector name.</param>
-    /// <param name="predicate">The predicate that evaluates candidate types.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="selectors"/>, <paramref name="name"/>, or <paramref name="predicate"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="name"/> is empty or whitespace.</exception>
+    /// <param name="selectors">要更新的选择器集合</param>
+    /// <param name="name">非空选择器名称</param>
+    /// <param name="predicate">用于评估候选类型的谓词</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="selectors"/>、<paramref name="name"/> 或 <paramref name="predicate"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="name"/> 为空字符串或空白字符串时抛出</exception>
     public static void Add(this ICollection<NamedTypeSelector> selectors, string name, Func<Type, bool> predicate)
     {
         Check.NotNull(selectors).Add(new NamedTypeSelector(name, predicate));

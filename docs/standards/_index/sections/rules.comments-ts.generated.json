@@ -1,7 +1,7 @@
 {
   "id": "rules.comments-ts",
   "path": "docs/standards/rules/comments-ts.md",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "sections": [
     {
       "anchor": "goal",
@@ -24,39 +24,39 @@
       "title": "规则",
       "level": 2,
       "start_line": 31,
-      "end_line": 42,
+      "end_line": 47,
       "regions": []
     },
     {
       "anchor": "examples",
       "title": "示例",
       "level": 2,
-      "start_line": 43,
-      "end_line": 71,
+      "start_line": 48,
+      "end_line": 76,
       "regions": []
     },
     {
       "anchor": "checklist",
       "title": "检查清单",
       "level": 2,
-      "start_line": 72,
-      "end_line": 81,
+      "start_line": 77,
+      "end_line": 90,
       "regions": []
     },
     {
       "anchor": "relations",
       "title": "相关规范",
       "level": 2,
-      "start_line": 82,
-      "end_line": 89,
+      "start_line": 91,
+      "end_line": 98,
       "regions": []
     },
     {
       "anchor": "changelog",
       "title": "变更记录",
       "level": 2,
-      "start_line": 90,
-      "end_line": 95,
+      "start_line": 99,
+      "end_line": 105,
       "regions": []
     }
   ]

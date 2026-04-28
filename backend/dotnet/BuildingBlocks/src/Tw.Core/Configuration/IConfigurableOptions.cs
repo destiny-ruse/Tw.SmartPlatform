@@ -1,6 +1,6 @@
 namespace Tw.Core.Configuration;
 
 /// <summary>
-/// Marks a type as an options object that can participate in configuration binding.
+/// 将类型标记为可参与配置绑定的选项对象
 /// </summary>
 public interface IConfigurableOptions;

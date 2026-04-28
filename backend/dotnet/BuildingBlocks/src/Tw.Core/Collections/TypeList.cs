@@ -3,26 +3,26 @@ using System.Collections;
 namespace Tw.Core.Collections;
 
 /// <summary>
-/// Provides a mutable list of types assignable to <see cref="object"/>.
+/// 提供可赋值给 <see cref="object"/> 的可变类型列表
 /// </summary>
 public class TypeList : TypeList<object>, ITypeList;
 
 /// <summary>
-/// Provides a mutable list of types constrained to a base type.
+/// 提供受基类型约束的可变类型列表
 /// </summary>
-/// <typeparam name="TBaseType">The required base type for every item.</typeparam>
+/// <typeparam name="TBaseType">每个元素要求的基类型</typeparam>
 public class TypeList<TBaseType> : ITypeList<TBaseType>
 {
     private readonly List<Type> items = [];
 
     /// <summary>
-    /// Gets or replaces the type at the specified index.
+    /// 获取或替换指定索引处的类型
     /// </summary>
-    /// <param name="index">The zero-based index of the type to get or replace.</param>
-    /// <returns>The type stored at the specified index.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when setting a <see langword="null"/> value.</exception>
-    /// <exception cref="ArgumentException">Thrown when the assigned type is not assignable to <typeparamref name="TBaseType"/>.</exception>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="index"/> is outside the list bounds.</exception>
+    /// <param name="index">要获取或替换的类型的从零开始索引</param>
+    /// <returns>存储在指定索引处的类型</returns>
+    /// <exception cref="ArgumentNullException">当设置 <see langword="null"/> 值时抛出</exception>
+    /// <exception cref="ArgumentException">当分配的类型不能赋值给 <typeparamref name="TBaseType"/> 时抛出</exception>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="index"/> 超出列表边界时抛出</exception>
     public Type this[int index]
     {
         get => items[index];
@@ -36,20 +36,20 @@ public class TypeList<TBaseType> : ITypeList<TBaseType>
     public bool IsReadOnly => false;
 
     /// <summary>
-    /// Adds a type assignable to <typeparamref name="TBaseType"/>.
+    /// 添加可赋值给 <typeparamref name="TBaseType"/> 的类型
     /// </summary>
-    /// <param name="type">The type to add.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="type"/> is not assignable to <typeparamref name="TBaseType"/>.</exception>
+    /// <param name="type">要添加的类型</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="type"/> 不能赋值给 <typeparamref name="TBaseType"/> 时抛出</exception>
     public void Add(Type type)
     {
         items.Add(Check.AssignableTo<TBaseType>(type));
     }
 
     /// <summary>
-    /// Adds the specified type argument to the list.
+    /// 将指定类型参数添加到列表
     /// </summary>
-    /// <typeparam name="T">The type to add; it must be assignable to <typeparamref name="TBaseType"/>.</typeparam>
+    /// <typeparam name="T">要添加的类型，且必须可赋值给 <typeparamref name="TBaseType"/></typeparam>
     public void Add<T>()
         where T : TBaseType
     {
@@ -57,10 +57,10 @@ public class TypeList<TBaseType> : ITypeList<TBaseType>
     }
 
     /// <summary>
-    /// Adds the specified type argument when it is not already present.
+    /// 当指定类型参数尚不存在时添加该类型
     /// </summary>
-    /// <typeparam name="T">The type to add; it must be assignable to <typeparamref name="TBaseType"/>.</typeparam>
-    /// <returns><see langword="true"/> when the type was added; otherwise, <see langword="false"/>.</returns>
+    /// <typeparam name="T">要添加的类型，且必须可赋值给 <typeparamref name="TBaseType"/></typeparam>
+    /// <returns>添加成功时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public bool TryAdd<T>()
         where T : TBaseType
     {
@@ -75,10 +75,10 @@ public class TypeList<TBaseType> : ITypeList<TBaseType>
     }
 
     /// <summary>
-    /// Returns whether the specified type argument is present by exact type match.
+    /// 按精确类型匹配返回指定类型参数是否存在
     /// </summary>
-    /// <typeparam name="T">The type to locate; it must be assignable to <typeparamref name="TBaseType"/>.</typeparam>
-    /// <returns><see langword="true"/> when the exact type is present; otherwise, <see langword="false"/>.</returns>
+    /// <typeparam name="T">要查找的类型，且必须可赋值给 <typeparamref name="TBaseType"/></typeparam>
+    /// <returns>精确类型存在时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public bool Contains<T>()
         where T : TBaseType
     {
@@ -86,10 +86,10 @@ public class TypeList<TBaseType> : ITypeList<TBaseType>
     }
 
     /// <summary>
-    /// Removes the specified type argument by exact type match.
+    /// 按精确类型匹配移除指定类型参数
     /// </summary>
-    /// <typeparam name="T">The type to remove; it must be assignable to <typeparamref name="TBaseType"/>.</typeparam>
-    /// <returns><see langword="true"/> when the exact type was removed; otherwise, <see langword="false"/>.</returns>
+    /// <typeparam name="T">要移除的类型，且必须可赋值给 <typeparamref name="TBaseType"/></typeparam>
+    /// <returns>精确类型移除成功时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public bool Remove<T>()
         where T : TBaseType
     {
@@ -103,10 +103,10 @@ public class TypeList<TBaseType> : ITypeList<TBaseType>
     }
 
     /// <summary>
-    /// Returns whether the supplied type is present by exact type match.
+    /// 按精确类型匹配返回给定类型是否存在
     /// </summary>
-    /// <param name="item">The type to locate.</param>
-    /// <returns><see langword="true"/> when the exact type is present; otherwise, <see langword="false"/>.</returns>
+    /// <param name="item">要查找的类型</param>
+    /// <returns>精确类型存在时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public bool Contains(Type item)
     {
         return items.Contains(item);
@@ -125,33 +125,33 @@ public class TypeList<TBaseType> : ITypeList<TBaseType>
     }
 
     /// <summary>
-    /// Returns the zero-based index of the supplied type using exact type matching.
+    /// 使用精确类型匹配返回给定类型的从零开始索引
     /// </summary>
-    /// <param name="item">The type to locate.</param>
-    /// <returns>The zero-based index of <paramref name="item"/>, or -1 when it is absent.</returns>
+    /// <param name="item">要查找的类型</param>
+    /// <returns><paramref name="item"/> 的从零开始索引；不存在时返回 -1</returns>
     public int IndexOf(Type item)
     {
         return items.IndexOf(item);
     }
 
     /// <summary>
-    /// Inserts a type assignable to <typeparamref name="TBaseType"/> at the specified index.
+    /// 在指定索引处插入可赋值给 <typeparamref name="TBaseType"/> 的类型
     /// </summary>
-    /// <param name="index">The zero-based index at which to insert the type.</param>
-    /// <param name="item">The type to insert.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="item"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="item"/> is not assignable to <typeparamref name="TBaseType"/>.</exception>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="index"/> is outside the valid insertion range.</exception>
+    /// <param name="index">插入类型的位置，从零开始</param>
+    /// <param name="item">要插入的类型</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="item"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="item"/> 不能赋值给 <typeparamref name="TBaseType"/> 时抛出</exception>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="index"/> 超出有效插入范围时抛出</exception>
     public void Insert(int index, Type item)
     {
         items.Insert(index, Check.AssignableTo<TBaseType>(item));
     }
 
     /// <summary>
-    /// Removes the first occurrence of the supplied type using exact type matching.
+    /// 使用精确类型匹配移除给定类型的第一个匹配项
     /// </summary>
-    /// <param name="item">The type to remove.</param>
-    /// <returns><see langword="true"/> when the exact type was removed; otherwise, <see langword="false"/>.</returns>
+    /// <param name="item">要移除的类型</param>
+    /// <returns>精确类型移除成功时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public bool Remove(Type item)
     {
         return items.Remove(item);

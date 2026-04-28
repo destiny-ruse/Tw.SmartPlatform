@@ -85,7 +85,7 @@ public class DisposableTests
     [Fact]
     public async Task AsyncDisposeFunc_Propagates_Synchronous_Exception_From_Task_Function()
     {
-        var expected = new InvalidOperationException("sync failure");
+        var expected = new InvalidOperationException("同步失败");
         Func<Task> disposeAsync = () => throw expected;
         var disposable = new AsyncDisposeFunc(disposeAsync);
 
@@ -98,7 +98,7 @@ public class DisposableTests
     [Fact]
     public async Task AsyncDisposeFunc_Propagates_Faulted_Task()
     {
-        var expected = new InvalidOperationException("task failure");
+        var expected = new InvalidOperationException("任务失败");
         var disposable = new AsyncDisposeFunc(() => Task.FromException(expected));
 
         var act = async () => await disposable.DisposeAsync();
@@ -110,7 +110,7 @@ public class DisposableTests
     [Fact]
     public async Task AsyncDisposeFunc_Propagates_Faulted_ValueTask()
     {
-        var expected = new InvalidOperationException("value task failure");
+        var expected = new InvalidOperationException("value 任务失败");
         var disposable = new AsyncDisposeFunc(() => ValueTask.FromException(expected));
 
         var act = async () => await disposable.DisposeAsync();

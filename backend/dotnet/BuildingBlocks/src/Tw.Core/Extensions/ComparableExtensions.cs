@@ -1,14 +1,14 @@
 namespace Tw.Core.Extensions;
 
-/// <summary>Provides extension methods for comparable values.</summary>
+/// <summary>提供可比较值的扩展方法</summary>
 public static class ComparableExtensions
 {
-    /// <summary>Returns whether a value is within an inclusive range.</summary>
-    /// <typeparam name="T">The comparable value type.</typeparam>
-    /// <param name="value">The value to compare.</param>
-    /// <param name="minInclusiveValue">The inclusive lower bound.</param>
-    /// <param name="maxInclusiveValue">The inclusive upper bound.</param>
-    /// <returns><see langword="true"/> when <paramref name="value"/> is between the bounds; otherwise, <see langword="false"/>.</returns>
+    /// <summary>返回值是否位于闭区间内</summary>
+    /// <typeparam name="T">可比较值类型</typeparam>
+    /// <param name="value">要比较的值</param>
+    /// <param name="minInclusiveValue">闭区间下界</param>
+    /// <param name="maxInclusiveValue">闭区间上界</param>
+    /// <returns><paramref name="value"/> 位于边界之间时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
     public static bool IsBetween<T>(this T value, T minInclusiveValue, T maxInclusiveValue)
         where T : IComparable<T>
     {

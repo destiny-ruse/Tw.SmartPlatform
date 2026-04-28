@@ -3,7 +3,7 @@ id: rules.comments-dotnet
 title: .NET 注释规范
 doc_type: rule
 status: active
-version: 1.1.0
+version: 1.3.0
 owners: [architecture-team]
 roles: [backend, ai]
 stacks: [dotnet]
@@ -32,12 +32,17 @@ review_after: 2026-10-27
 
 1. 公共类型、公共成员、接口方法和跨程序集可见 API 必须使用 XML 注释说明用途和关键契约；不得依赖实现细节作为唯一说明。
 2. XML 注释必须使用 `<summary>` 表达职责，必要时使用 `<param>`、`<returns>`、`<exception>`、`<remarks>` 补充输入、输出、异常和副作用。
-3. 异步方法注释应当说明取消、重试、幂等性或外部调用边界；不得只写“异步执行”。
-4. 抛出业务异常、验证异常或外部依赖异常的公共 API 必须说明调用方可预期的异常类型或错误语义。
-5. 行内注释必须解释兼容性、安全、性能或迁移取舍；不得注释普通 C# 语句的语法行为。
-6. `<inheritdoc />` 可以用于继承稳定接口契约，但实现改变副作用、异常或性能特征时必须补充说明。
-7. 测试代码注释应当说明特殊数据、时间控制或外部依赖替身的原因；不得逐行解释 Arrange、Act、Assert。
-8. 生成代码、迁移快照和设计器文件不得添加需要人工长期维护的注释；相关说明应当写在源模板或相邻文档中。
+3. XML 文档注释、单行注释和块注释中的自然语言必须使用简体中文；代码标识符、协议名、英文缩写、标准格式和外部契约字段可以保留原文。
+4. XML 注释、`<param>` 参数描述、`<returns>`、`<exception>`、`<remarks>` 和单行注释末尾不得使用中英文句号。
+5. 属性 XML 注释必须直接描述属性含义；不得包含“获取”“设置”“获取或设置”等模板化字样。
+6. 单行注释必须简洁说明意图，优先使用 `// ` 放在被说明代码上方并与代码对齐；注释与代码之间不留空行，注释上方保留空行，代码块第一行除外。
+7. 除公开成员 XML 注释外，方法内部的复杂算法、业务流程、规避已知缺陷的 Hack 和非显而易见分支必须添加注释，说明为什么这样处理。
+8. 异步方法注释应当说明取消、重试、幂等性或外部调用边界；不得只写“异步执行”。
+9. 抛出业务异常、验证异常或外部依赖异常的公共 API 必须说明调用方可预期的异常类型或错误语义。
+10. 行内注释必须解释兼容性、安全、性能或迁移取舍；不得注释普通 C# 语句的语法行为。
+11. `<inheritdoc />` 可以用于继承稳定接口契约，但实现改变副作用、异常或性能特征时必须补充说明。
+12. 测试代码注释应当说明特殊数据、时间控制或外部依赖替身的原因；不得逐行解释 Arrange、Act、Assert。
+13. 生成代码、迁移快照和设计器文件不得添加需要人工长期维护的注释；相关说明应当写在源模板或相邻文档中。
 
 <!-- anchor: examples -->
 ## 示例
@@ -45,10 +50,13 @@ review_after: 2026-10-27
 正例：
 
 ```csharp
-/// <summary>Schedules an order cancellation when the order is still reversible.</summary>
-/// <param name="orderId">Stable order identifier from the public API.</param>
-/// <exception cref="InvalidOperationException">Thrown when the order has already been settled.</exception>
+/// <summary>当订单仍可撤销时调度取消</summary>
+/// <param name="orderId">公共 API 中稳定的订单标识</param>
+/// <exception cref="InvalidOperationException">当订单已结算时抛出</exception>
 public Task CancelAsync(string orderId, CancellationToken cancellationToken);
+
+/// <summary>当前用户标识</summary>
+public Guid? UserId { get; init; }
 ```
 
 反例：
@@ -67,6 +75,10 @@ foreach (var order in orders)
 
 - 公共类型、接口和成员是否有必要 XML 注释。
 - XML 注释是否覆盖调用方需要知道的参数、返回、异常或副作用。
+- 注释中的自然语言是否使用简体中文，且仅保留必要的技术名词或外部契约原文。
+- XML 注释、参数描述和单行注释末尾是否避免中英文句号。
+- 属性 XML 注释是否直接描述属性含义，且未使用“获取”“设置”“获取或设置”。
+- 方法内部复杂逻辑、兼容分支或 Hack 是否说明原因。
 - 异步、取消、重试和外部调用边界是否说明清楚。
 - 行内注释是否解释意图或约束，而不是复述 C# 语法。
 - `<inheritdoc />` 是否只用于契约完全一致的实现。
@@ -83,5 +95,7 @@ foreach (var order in orders)
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| 1.3.0 | 2026-04-28 | 补充 .NET 注释语言、句号、属性注释和方法内部复杂逻辑注释格式要求。 |
+| 1.2.0 | 2026-04-28 | 要求 .NET 注释中的自然语言使用简体中文，并更新示例与检查清单。 |
 | 1.1.0 | 2026-04-27 | 补充执行级规则、示例、检查清单和相关规范。 |
 | 1.0.0 | 2026-04-27 | 建立初始规范。 |

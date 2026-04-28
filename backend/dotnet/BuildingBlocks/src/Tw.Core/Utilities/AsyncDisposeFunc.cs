@@ -3,17 +3,17 @@ using Tw.Core;
 namespace Tw.Core.Utilities;
 
 /// <summary>
-/// Invokes a supplied asynchronous delegate when the instance is disposed.
+/// 在实例释放时调用给定异步委托
 /// </summary>
 public sealed class AsyncDisposeFunc : IAsyncDisposable
 {
     private Func<ValueTask>? disposeAsync;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="AsyncDisposeFunc"/> class.
+    /// 初始化 <see cref="AsyncDisposeFunc"/> 类的新实例
     /// </summary>
-    /// <param name="disposeAsync">The asynchronous function to invoke during disposal.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="disposeAsync"/> is <see langword="null"/>.</exception>
+    /// <param name="disposeAsync">释放期间要调用的异步函数</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="disposeAsync"/> 为 <see langword="null"/> 时抛出</exception>
     public AsyncDisposeFunc(Func<Task> disposeAsync)
     {
         var validatedDisposeAsync = Check.NotNull(disposeAsync);
@@ -21,19 +21,19 @@ public sealed class AsyncDisposeFunc : IAsyncDisposable
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="AsyncDisposeFunc"/> class.
+    /// 初始化 <see cref="AsyncDisposeFunc"/> 类的新实例
     /// </summary>
-    /// <param name="disposeAsync">The asynchronous function to invoke during disposal.</param>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="disposeAsync"/> is <see langword="null"/>.</exception>
+    /// <param name="disposeAsync">释放期间要调用的异步函数</param>
+    /// <exception cref="ArgumentNullException">当 <paramref name="disposeAsync"/> 为 <see langword="null"/> 时抛出</exception>
     public AsyncDisposeFunc(Func<ValueTask> disposeAsync)
     {
         this.disposeAsync = Check.NotNull(disposeAsync);
     }
 
     /// <summary>
-    /// Invokes the configured asynchronous function at most once.
+    /// 最多调用一次已配置的异步函数
     /// </summary>
-    /// <returns>A value task that represents the disposal operation.</returns>
+    /// <returns>表示释放操作的值任务</returns>
     public ValueTask DisposeAsync()
     {
         var callback = Interlocked.Exchange(ref disposeAsync, null);

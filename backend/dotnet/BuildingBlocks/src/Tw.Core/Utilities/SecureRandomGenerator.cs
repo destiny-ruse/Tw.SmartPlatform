@@ -4,7 +4,7 @@ using Tw.Core;
 namespace Tw.Core.Utilities;
 
 /// <summary>
-/// Provides cryptographically secure random values and collection helpers.
+/// 提供密码学安全的随机值和集合辅助方法
 /// </summary>
 public static class SecureRandomGenerator
 {
@@ -16,12 +16,12 @@ public static class SecureRandomGenerator
     private const string SpecialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
     /// <summary>
-    /// Returns a random integer in the half-open range [<paramref name="minValue"/>, <paramref name="maxValue"/>).
+    /// 返回半开区间 [<paramref name="minValue"/>, <paramref name="maxValue"/>) 内的随机整数
     /// </summary>
-    /// <param name="minValue">The inclusive lower bound.</param>
-    /// <param name="maxValue">The exclusive upper bound.</param>
-    /// <returns>A random integer within the requested range.</returns>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="minValue"/> is greater than or equal to <paramref name="maxValue"/>.</exception>
+    /// <param name="minValue">闭区间下界</param>
+    /// <param name="maxValue">开区间上界</param>
+    /// <returns>请求范围内的随机整数</returns>
+    /// <exception cref="ArgumentException">当 <paramref name="minValue"/> 大于或等于 <paramref name="maxValue"/> 时抛出</exception>
     public static int GetInt(int minValue, int maxValue)
     {
         EnsureMinLessThanMax(minValue, maxValue, nameof(maxValue));
@@ -30,11 +30,11 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a random integer in the half-open range [0, <paramref name="maxValue"/>).
+    /// 返回半开区间 [0, <paramref name="maxValue"/>) 内的随机整数
     /// </summary>
-    /// <param name="maxValue">The exclusive upper bound.</param>
-    /// <returns>A random integer within the requested range.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="maxValue"/> is less than or equal to zero.</exception>
+    /// <param name="maxValue">开区间上界</param>
+    /// <returns>请求范围内的随机整数</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="maxValue"/> 小于或等于零时抛出</exception>
     public static int GetInt(int maxValue)
     {
         Check.Positive(maxValue);
@@ -43,13 +43,13 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a random long integer in the half-open range [<paramref name="minValue"/>, <paramref name="maxValue"/>).
+    /// 返回半开区间 [<paramref name="minValue"/>, <paramref name="maxValue"/>) 内的随机长整数
     /// </summary>
-    /// <param name="minValue">The inclusive lower bound.</param>
-    /// <param name="maxValue">The exclusive upper bound.</param>
-    /// <returns>A random long integer within the requested range.</returns>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="minValue"/> is greater than or equal to <paramref name="maxValue"/>.</exception>
-    /// <remarks>Uses rejection sampling to avoid modulo bias across the requested range.</remarks>
+    /// <param name="minValue">闭区间下界</param>
+    /// <param name="maxValue">开区间上界</param>
+    /// <returns>请求范围内的随机长整数</returns>
+    /// <exception cref="ArgumentException">当 <paramref name="minValue"/> 大于或等于 <paramref name="maxValue"/> 时抛出</exception>
+    /// <remarks>使用拒绝采样避免请求范围内的取模偏差</remarks>
     public static long GetLong(long minValue, long maxValue)
     {
         EnsureMinLessThanMax(minValue, maxValue, nameof(maxValue));
@@ -72,9 +72,9 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a random double in the half-open range [0.0, 1.0).
+    /// 返回半开区间 [0.0, 1.0) 内的随机双精度浮点数
     /// </summary>
-    /// <returns>A random double within the requested range.</returns>
+    /// <returns>请求范围内的随机双精度浮点数</returns>
     public static double GetDouble()
     {
         Span<byte> bytes = stackalloc byte[sizeof(ulong)];
@@ -85,12 +85,12 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a random double in the half-open range [<paramref name="minValue"/>, <paramref name="maxValue"/>).
+    /// 返回半开区间 [<paramref name="minValue"/>, <paramref name="maxValue"/>) 内的随机双精度浮点数
     /// </summary>
-    /// <param name="minValue">The inclusive lower bound.</param>
-    /// <param name="maxValue">The exclusive upper bound.</param>
-    /// <returns>A random double within the requested range.</returns>
-    /// <exception cref="ArgumentException">Thrown when a bound is not finite, the lower bound is greater than or equal to the upper bound, or the range span is not finite.</exception>
+    /// <param name="minValue">闭区间下界</param>
+    /// <param name="maxValue">开区间上界</param>
+    /// <returns>请求范围内的随机双精度浮点数</returns>
+    /// <exception cref="ArgumentException">当边界不是有限数、下界大于或等于上界，或范围跨度不是有限数时抛出</exception>
     public static double GetDouble(double minValue, double maxValue)
     {
         EnsureFinite(minValue, nameof(minValue));
@@ -111,20 +111,20 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a random Boolean value.
+    /// 返回随机布尔值
     /// </summary>
-    /// <returns>A random Boolean value.</returns>
+    /// <returns>随机布尔值</returns>
     public static bool GetBool()
     {
         return GetInt(2) == 0;
     }
 
     /// <summary>
-    /// Returns a byte array filled with cryptographically secure random bytes.
+    /// 返回填充了密码学安全随机字节的字节数组
     /// </summary>
-    /// <param name="length">The requested byte count.</param>
-    /// <returns>A new byte array with the requested length.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+    /// <param name="length">请求的字节数</param>
+    /// <returns>具有请求长度的新字节数组</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="length"/> 为负数时抛出</exception>
     public static byte[] GetBytes(int length)
     {
         Check.NonNegative(length);
@@ -140,13 +140,13 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a random string using the supplied character source or the default alphanumeric source.
+    /// 使用给定字符源或默认字母数字源返回随机字符串
     /// </summary>
-    /// <param name="length">The requested string length.</param>
-    /// <param name="chars">The optional character source. When omitted, alphanumeric characters are used.</param>
-    /// <returns>A random string with the requested length.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="chars"/> is empty.</exception>
+    /// <param name="length">请求的字符串长度</param>
+    /// <param name="chars">可选字符源。省略时使用字母数字字符</param>
+    /// <returns>具有请求长度的随机字符串</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="length"/> 为负数时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="chars"/> 为空字符串时抛出</exception>
     public static string GetString(int length, string? chars = null)
     {
         Check.NonNegative(length);
@@ -154,7 +154,7 @@ public static class SecureRandomGenerator
         var source = chars ?? AlphanumericChars;
         if (source.Length == 0)
         {
-            throw new ArgumentException("Character source cannot be empty.", nameof(chars));
+            throw new ArgumentException("字符源不能为空。", nameof(chars));
         }
 
         return new string(Enumerable.Range(0, length)
@@ -163,46 +163,46 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a random numeric string.
+    /// 返回随机数字字符串
     /// </summary>
-    /// <param name="length">The requested string length.</param>
-    /// <returns>A numeric string with the requested length.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+    /// <param name="length">请求的字符串长度</param>
+    /// <returns>具有请求长度的数字字符串</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="length"/> 为负数时抛出</exception>
     public static string GetNumericString(int length)
     {
         return GetString(length, NumericChars);
     }
 
     /// <summary>
-    /// Returns a random alphabetic string.
+    /// 返回随机字母字符串
     /// </summary>
-    /// <param name="length">The requested string length.</param>
-    /// <param name="upperCase">Whether to use uppercase letters; otherwise lowercase letters are used.</param>
-    /// <returns>An alphabetic string with the requested length.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+    /// <param name="length">请求的字符串长度</param>
+    /// <param name="upperCase">是否使用大写字母；否则使用小写字母</param>
+    /// <returns>具有请求长度的字母字符串</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="length"/> 为负数时抛出</exception>
     public static string GetAlphaString(int length, bool upperCase = true)
     {
         return GetString(length, upperCase ? UppercaseChars : LowercaseChars);
     }
 
     /// <summary>
-    /// Returns a random alphanumeric string.
+    /// 返回随机字母数字字符串
     /// </summary>
-    /// <param name="length">The requested string length.</param>
-    /// <returns>An alphanumeric string with the requested length.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+    /// <param name="length">请求的字符串长度</param>
+    /// <returns>具有请求长度的字母数字字符串</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="length"/> 为负数时抛出</exception>
     public static string GetAlphanumericString(int length)
     {
         return GetString(length, AlphanumericChars);
     }
 
     /// <summary>
-    /// Returns a random password that contains each required character category.
+    /// 返回包含每个必需字符类别的随机密码
     /// </summary>
-    /// <param name="length">The requested password length.</param>
-    /// <param name="includeSpecialChars">Whether to require and allow special characters.</param>
-    /// <returns>A password with the requested length and required character categories.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is too short for the required categories.</exception>
+    /// <param name="length">请求的密码长度</param>
+    /// <param name="includeSpecialChars">是否要求并允许特殊字符</param>
+    /// <returns>具有请求长度和必需字符类别的密码</returns>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="length"/> 短于必需类别数量时抛出</exception>
     public static string GetStrongPassword(int length = 16, bool includeSpecialChars = true)
     {
         var requiredLength = includeSpecialChars ? 4 : 3;
@@ -211,7 +211,7 @@ public static class SecureRandomGenerator
             throw new ArgumentOutOfRangeException(
                 nameof(length),
                 length,
-                $"Length must be at least {requiredLength}.");
+                $"长度必须至少为 {requiredLength}。");
         }
 
         var chars = new List<char>
@@ -237,11 +237,11 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns a new string containing the source characters in random order, or an empty string when the input is empty.
+    /// 返回包含源字符随机顺序的新字符串；输入为空时返回空字符串
     /// </summary>
-    /// <param name="value">The string to shuffle.</param>
-    /// <returns>A shuffled copy of <paramref name="value"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="value"/> is <see langword="null"/>.</exception>
+    /// <param name="value">要打乱的字符串</param>
+    /// <returns><paramref name="value"/> 的随机顺序副本</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="value"/> 为 <see langword="null"/> 时抛出</exception>
     public static string Shuffle(string value)
     {
         Check.NotNull(value);
@@ -254,40 +254,40 @@ public static class SecureRandomGenerator
     }
 
     /// <summary>
-    /// Returns one random element from a collection.
+    /// 从集合中返回一个随机元素
     /// </summary>
-    /// <typeparam name="T">The element type.</typeparam>
-    /// <param name="collection">The source collection.</param>
-    /// <returns>A random element from <paramref name="collection"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="collection"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="collection"/> is empty.</exception>
+    /// <typeparam name="T">元素类型</typeparam>
+    /// <param name="collection">源集合</param>
+    /// <returns>来自 <paramref name="collection"/> 的随机元素</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="collection"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="collection"/> 为空集合时抛出</exception>
     public static T GetRandomElement<T>(IList<T> collection)
     {
         var source = Check.NotNull(collection);
         if (source.Count == 0)
         {
-            throw new ArgumentException("Collection cannot be empty.", nameof(collection));
+            throw new ArgumentException("集合不能为空。", nameof(collection));
         }
 
         return source[GetInt(source.Count)];
     }
 
     /// <summary>
-    /// Returns a random selection of distinct values from a collection without modifying the input.
+    /// 从集合中随机选择不重复值，且不修改输入集合
     /// </summary>
-    /// <typeparam name="T">The element type.</typeparam>
-    /// <param name="collection">The source collection.</param>
-    /// <param name="count">The number of distinct values to select.</param>
-    /// <returns>A new list containing the selected distinct values.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="collection"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="collection"/> is empty.</exception>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative or greater than the distinct source value count.</exception>
+    /// <typeparam name="T">元素类型</typeparam>
+    /// <param name="collection">源集合</param>
+    /// <param name="count">要选择的不重复值数量</param>
+    /// <returns>包含已选择不重复值的新列表</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="collection"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="collection"/> 为空集合时抛出</exception>
+    /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="count"/> 为负数或大于源集合的不重复值数量时抛出</exception>
     public static IList<T> GetRandomElements<T>(IList<T> collection, int count)
     {
         var source = Check.NotNull(collection);
         if (source.Count == 0)
         {
-            throw new ArgumentException("Collection cannot be empty.", nameof(collection));
+            throw new ArgumentException("集合不能为空。", nameof(collection));
         }
 
         Check.NonNegative(count);
@@ -298,26 +298,26 @@ public static class SecureRandomGenerator
             throw new ArgumentOutOfRangeException(
                 nameof(count),
                 count,
-                "Count cannot exceed the distinct collection value count.");
+                "数量不能超过集合中的不重复值数量。");
         }
 
         return Shuffle(distinctValues).Take(count).ToList();
     }
 
     /// <summary>
-    /// Returns a new list containing the source elements in random order.
+    /// 返回包含源元素随机顺序的新列表
     /// </summary>
-    /// <typeparam name="T">The element type.</typeparam>
-    /// <param name="collection">The source collection.</param>
-    /// <returns>A shuffled copy of <paramref name="collection"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="collection"/> is <see langword="null"/>.</exception>
-    /// <exception cref="ArgumentException">Thrown when <paramref name="collection"/> is empty.</exception>
+    /// <typeparam name="T">元素类型</typeparam>
+    /// <param name="collection">源集合</param>
+    /// <returns><paramref name="collection"/> 的随机顺序副本</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="collection"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException">当 <paramref name="collection"/> 为空集合时抛出</exception>
     public static IList<T> Shuffle<T>(IList<T> collection)
     {
         var result = Check.NotNull(collection).ToList();
         if (result.Count == 0)
         {
-            throw new ArgumentException("Collection cannot be empty.", nameof(collection));
+            throw new ArgumentException("集合不能为空。", nameof(collection));
         }
 
         for (var i = result.Count - 1; i > 0; i--)
@@ -334,7 +334,7 @@ public static class SecureRandomGenerator
     {
         if (minValue.CompareTo(maxValue) >= 0)
         {
-            throw new ArgumentException("Minimum value must be less than maximum value.", parameterName);
+            throw new ArgumentException("最小值必须小于最大值。", parameterName);
         }
     }
 
@@ -342,7 +342,7 @@ public static class SecureRandomGenerator
     {
         if (!double.IsFinite(value))
         {
-            throw new ArgumentException("Value must be finite.", parameterName);
+            throw new ArgumentException("值必须是有限数。", parameterName);
         }
     }
 

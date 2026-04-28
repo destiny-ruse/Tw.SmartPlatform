@@ -1,12 +1,12 @@
 namespace Tw.Core.Utilities;
 
 /// <summary>
-/// Provides a reusable disposable instance whose disposal has no effect.
+/// 提供释放时无任何效果的可复用释放实例
 /// </summary>
 public sealed class NullDisposable : IDisposable
 {
     /// <summary>
-    /// Gets the shared no-op disposable instance.
+    /// 共享的空操作释放实例
     /// </summary>
     public static NullDisposable Instance { get; } = new();
 
@@ -15,7 +15,7 @@ public sealed class NullDisposable : IDisposable
     }
 
     /// <summary>
-    /// Performs no operation.
+    /// 不执行任何操作
     /// </summary>
     public void Dispose()
     {

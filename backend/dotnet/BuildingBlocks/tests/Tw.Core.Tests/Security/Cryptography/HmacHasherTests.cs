@@ -119,7 +119,7 @@ public sealed class HmacHasherTests
             nameof(HmacSha3256Hasher) => HmacSha3256Hasher.ComputeHash(TestBytes.HmacKey, TestBytes.LongText),
             nameof(HmacSha3384Hasher) => HmacSha3384Hasher.ComputeHash(TestBytes.HmacKey, TestBytes.LongText),
             nameof(HmacSha3512Hasher) => HmacSha3512Hasher.ComputeHash(TestBytes.HmacKey, TestBytes.LongText),
-            _ => throw new InvalidOperationException(hasherName),
+            _ => throw new InvalidOperationException($"未知 HMAC 哈希器：{hasherName}"),
         };
     }
 
@@ -135,7 +135,7 @@ public sealed class HmacHasherTests
             nameof(HmacSha3256Hasher) => HmacSha3256Hasher.VerifyHash(TestBytes.HmacKey, TestBytes.LongText, expected),
             nameof(HmacSha3384Hasher) => HmacSha3384Hasher.VerifyHash(TestBytes.HmacKey, TestBytes.LongText, expected),
             nameof(HmacSha3512Hasher) => HmacSha3512Hasher.VerifyHash(TestBytes.HmacKey, TestBytes.LongText, expected),
-            _ => throw new InvalidOperationException(hasherName),
+            _ => throw new InvalidOperationException($"未知 HMAC 哈希器：{hasherName}"),
         };
     }
 
@@ -143,7 +143,7 @@ public sealed class HmacHasherTests
     {
         public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)
         {
-            throw new InvalidOperationException("Stream hashing must read incrementally instead of copying the whole stream.");
+            throw new InvalidOperationException("流哈希必须增量读取，而不是复制整个流。");
         }
     }
 }

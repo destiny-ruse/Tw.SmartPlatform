@@ -13,7 +13,7 @@
       "title": ".NET 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.3.0",
       "path": "docs/standards/rules/comments-dotnet.md",
       "roles": [
         "backend",
@@ -35,7 +35,7 @@
       "title": "Java 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/comments-java.md",
       "roles": [
         "backend",
@@ -57,7 +57,7 @@
       "title": "Python 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/comments-python.md",
       "roles": [
         "backend",
@@ -79,7 +79,7 @@
       "title": "TypeScript 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/comments-ts.md",
       "roles": [
         "frontend",

@@ -4,7 +4,7 @@ using System.Reflection;
 namespace Tw.Core.Reflection;
 
 /// <summary>
-/// Provides cached reflection helpers for attributes and asynchronous method result types.
+/// 为特性和异步方法结果类型提供带缓存的反射辅助方法
 /// </summary>
 public static class ReflectionCache
 {
@@ -16,13 +16,13 @@ public static class ReflectionCache
     private static readonly ConcurrentDictionary<MethodInfo, Type> AsyncResultTypeCache = new();
 
     /// <summary>
-    /// Returns whether a member has the specified attribute.
+    /// 返回成员是否具有指定特性
     /// </summary>
-    /// <typeparam name="TAttribute">The attribute type to locate.</typeparam>
-    /// <param name="member">The member to inspect.</param>
-    /// <param name="inherit">Whether inherited attributes should be included.</param>
-    /// <returns><see langword="true"/> when the attribute is present; otherwise, <see langword="false"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="member"/> is <see langword="null"/>.</exception>
+    /// <typeparam name="TAttribute">要定位的特性类型</typeparam>
+    /// <param name="member">要检查的成员</param>
+    /// <param name="inherit">是否包含继承的特性</param>
+    /// <returns>特性存在时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="member"/> 为 <see langword="null"/> 时抛出</exception>
     public static bool HasAttribute<TAttribute>(this MemberInfo member, bool inherit = true)
         where TAttribute : Attribute
     {
@@ -30,13 +30,13 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Gets the single matching attribute from a member, or <see langword="null"/> when none exists.
+    /// 从成员获取单个匹配特性；不存在时返回 <see langword="null"/>
     /// </summary>
-    /// <typeparam name="TAttribute">The attribute type to locate.</typeparam>
-    /// <param name="member">The member to inspect.</param>
-    /// <param name="inherit">Whether inherited attributes should be included.</param>
-    /// <returns>The first matching attribute, or <see langword="null"/> when the member does not have one.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="member"/> is <see langword="null"/>.</exception>
+    /// <typeparam name="TAttribute">要定位的特性类型</typeparam>
+    /// <param name="member">要检查的成员</param>
+    /// <param name="inherit">是否包含继承的特性</param>
+    /// <returns>第一个匹配特性；成员没有该特性时返回 <see langword="null"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="member"/> 为 <see langword="null"/> 时抛出</exception>
     public static TAttribute? GetSingleAttributeOrNull<TAttribute>(this MemberInfo member, bool inherit = true)
         where TAttribute : Attribute
     {
@@ -44,30 +44,30 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Gets the single matching attribute from a member.
+    /// 从成员获取单个匹配特性
     /// </summary>
-    /// <typeparam name="TAttribute">The attribute type to locate.</typeparam>
-    /// <param name="member">The member to inspect.</param>
-    /// <param name="inherit">Whether inherited attributes should be included.</param>
-    /// <returns>The first matching attribute.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="member"/> is <see langword="null"/>.</exception>
-    /// <exception cref="InvalidOperationException">Thrown when the member does not have the requested attribute.</exception>
+    /// <typeparam name="TAttribute">要定位的特性类型</typeparam>
+    /// <param name="member">要检查的成员</param>
+    /// <param name="inherit">是否包含继承的特性</param>
+    /// <returns>第一个匹配特性</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="member"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="InvalidOperationException">当成员不具有请求的特性时抛出</exception>
     public static TAttribute GetSingleAttribute<TAttribute>(this MemberInfo member, bool inherit = true)
         where TAttribute : Attribute
     {
         return member.GetSingleAttributeOrNull<TAttribute>(inherit)
             ?? throw new InvalidOperationException(
-                $"Attribute {typeof(TAttribute).FullName} was not found on member {member.DeclaringType?.FullName}.{member.Name}.");
+                $"未在成员 {member.DeclaringType?.FullName}.{member.Name} 上找到特性 {typeof(TAttribute).FullName}。");
     }
 
     /// <summary>
-    /// Gets all matching attributes from a member.
+    /// 从成员获取所有匹配特性
     /// </summary>
-    /// <typeparam name="TAttribute">The attribute type to locate.</typeparam>
-    /// <param name="member">The member to inspect.</param>
-    /// <param name="inherit">Whether inherited attributes should be included.</param>
-    /// <returns>The matching attributes in reflection order.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="member"/> is <see langword="null"/>.</exception>
+    /// <typeparam name="TAttribute">要定位的特性类型</typeparam>
+    /// <param name="member">要检查的成员</param>
+    /// <param name="inherit">是否包含继承的特性</param>
+    /// <returns>按反射顺序排列的匹配特性</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="member"/> 为 <see langword="null"/> 时抛出</exception>
     public static IReadOnlyList<TAttribute> GetAttributes<TAttribute>(this MemberInfo member, bool inherit = true)
         where TAttribute : Attribute
     {
@@ -83,11 +83,11 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Returns whether a type is <see cref="Task"/>, <see cref="Task{TResult}"/>, <see cref="ValueTask"/>, or <see cref="ValueTask{TResult}"/>.
+    /// 返回类型是否为 <see cref="Task"/>、<see cref="Task{TResult}"/>、<see cref="ValueTask"/> 或 <see cref="ValueTask{TResult}"/>
     /// </summary>
-    /// <param name="type">The type to inspect.</param>
-    /// <returns><see langword="true"/> when the type is an asynchronous result type; otherwise, <see langword="false"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <param name="type">要检查的类型</param>
+    /// <returns>类型是异步结果类型时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static bool IsAsyncReturnType(this Type type)
     {
         var checkedType = Check.NotNull(type);
@@ -112,11 +112,11 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Gets the interfaces implemented by a type.
+    /// 获取类型实现的接口
     /// </summary>
-    /// <param name="type">The type to inspect.</param>
-    /// <returns>The implemented interfaces in reflection order.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <param name="type">要检查的类型</param>
+    /// <returns>按反射顺序排列的已实现接口</returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static Type[] GetCachedInterfaces(this Type type)
     {
         var checkedType = Check.NotNull(type);
@@ -125,11 +125,11 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Gets a public parameterless constructor from a type.
+    /// 从类型获取公共无参构造函数
     /// </summary>
-    /// <param name="type">The type to inspect.</param>
-    /// <returns>The public parameterless constructor, or <see langword="null"/> when none exists.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <param name="type">要检查的类型</param>
+    /// <returns>公共无参构造函数；不存在时返回 <see langword="null"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static ConstructorInfo? GetCachedParameterlessCtor(this Type type)
     {
         var checkedType = Check.NotNull(type);
@@ -138,22 +138,22 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Returns whether a type has a public parameterless constructor.
+    /// 返回类型是否具有公共无参构造函数
     /// </summary>
-    /// <param name="type">The type to inspect.</param>
-    /// <returns><see langword="true"/> when a public parameterless constructor exists; otherwise, <see langword="false"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <see langword="null"/>.</exception>
+    /// <param name="type">要检查的类型</param>
+    /// <returns>公共无参构造函数存在时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="type"/> 为 <see langword="null"/> 时抛出</exception>
     public static bool HasParameterlessCtor(this Type type)
     {
         return type.GetCachedParameterlessCtor() is not null;
     }
 
     /// <summary>
-    /// Returns whether a method returns a task or value task type.
+    /// 返回方法是否返回任务或值任务类型
     /// </summary>
-    /// <param name="method">The method to inspect.</param>
-    /// <returns><see langword="true"/> when the method return type is asynchronous; otherwise, <see langword="false"/>.</returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="method"/> is <see langword="null"/>.</exception>
+    /// <param name="method">要检查的方法</param>
+    /// <returns>方法返回类型为异步类型时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
+    /// <exception cref="ArgumentNullException">当 <paramref name="method"/> 为 <see langword="null"/> 时抛出</exception>
     public static bool IsAsyncMethod(this MethodInfo method)
     {
         var checkedMethod = Check.NotNull(method);
@@ -162,15 +162,15 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Gets the logical result type for a method, unwrapping <see cref="Task{TResult}"/> and <see cref="ValueTask{TResult}"/>.
+    /// 获取方法的逻辑结果类型，并展开 <see cref="Task{TResult}"/> 与 <see cref="ValueTask{TResult}"/>
     /// </summary>
-    /// <param name="method">The method to inspect.</param>
+    /// <param name="method">要检查的方法</param>
     /// <returns>
-    /// The generic result type for <see cref="Task{TResult}"/> and <see cref="ValueTask{TResult}"/>,
-    /// <see cref="void"/> for non-generic <see cref="Task"/> and <see cref="ValueTask"/>,
-    /// or the declared return type for non-task methods.
+    /// 对 <see cref="Task{TResult}"/> 与 <see cref="ValueTask{TResult}"/> 返回泛型结果类型；
+    /// 对非泛型 <see cref="Task"/> 与 <see cref="ValueTask"/> 返回 <see cref="void"/>；
+    /// 对非任务方法返回声明的返回类型
     /// </returns>
-    /// <exception cref="ArgumentNullException">Thrown when <paramref name="method"/> is <see langword="null"/>.</exception>
+    /// <exception cref="ArgumentNullException">当 <paramref name="method"/> 为 <see langword="null"/> 时抛出</exception>
     public static Type GetAsyncResultType(this MethodInfo method)
     {
         var checkedMethod = Check.NotNull(method);
@@ -198,9 +198,9 @@ public static class ReflectionCache
 
 #if DEBUG
     /// <summary>
-    /// Gets reflection cache entry counts for diagnostics in debug builds.
+    /// 获取调试构建中用于诊断的反射缓存条目数量
     /// </summary>
-    /// <returns>The current cache entry counts.</returns>
+    /// <returns>当前缓存条目数量</returns>
     public static CacheStatistics GetStatistics()
     {
         return new CacheStatistics(
@@ -213,14 +213,14 @@ public static class ReflectionCache
     }
 
     /// <summary>
-    /// Represents reflection cache entry counts for diagnostics in debug builds.
+    /// 表示调试构建中用于诊断的反射缓存条目数量
     /// </summary>
-    /// <param name="AttributeCacheCount">The attribute cache entry count.</param>
-    /// <param name="AsyncReturnTypeCacheCount">The asynchronous return type cache entry count.</param>
-    /// <param name="InterfacesCacheCount">The implemented interfaces cache entry count.</param>
-    /// <param name="ParameterlessConstructorCacheCount">The parameterless constructor cache entry count.</param>
-    /// <param name="MethodIsAsyncCacheCount">The asynchronous method cache entry count.</param>
-    /// <param name="AsyncResultTypeCacheCount">The asynchronous result type cache entry count.</param>
+    /// <param name="AttributeCacheCount">特性缓存条目数量</param>
+    /// <param name="AsyncReturnTypeCacheCount">异步返回类型缓存条目数量</param>
+    /// <param name="InterfacesCacheCount">已实现接口缓存条目数量</param>
+    /// <param name="ParameterlessConstructorCacheCount">无参构造函数缓存条目数量</param>
+    /// <param name="MethodIsAsyncCacheCount">异步方法缓存条目数量</param>
+    /// <param name="AsyncResultTypeCacheCount">异步结果类型缓存条目数量</param>
     public sealed record CacheStatistics(
         int AttributeCacheCount,
         int AsyncReturnTypeCacheCount,

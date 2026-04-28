@@ -178,7 +178,7 @@
       "title": "Java 注释规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/comments-java.md",
       "roles": [
         "backend",
@@ -385,7 +385,7 @@
       "title": "错误处理规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/error-handling.md",
       "roles": [
         "architect",
@@ -520,7 +520,7 @@
       "title": "输入校验规范",
       "doc_type": "rule",
       "status": "active",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "docs/standards/rules/input-validation.md",
       "roles": [
         "architect",

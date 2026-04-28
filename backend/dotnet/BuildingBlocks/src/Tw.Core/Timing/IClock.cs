@@ -1,54 +1,54 @@
 namespace Tw.Core.Timing;
 
 /// <summary>
-/// Provides the application clock contract for current time and time-zone normalization.
+/// 提供当前时间与时区规范化的应用时钟契约
 /// </summary>
 public interface IClock
 {
     /// <summary>
-    /// Gets the current date and time in the clock's configured kind.
+    /// 按时钟配置的时间种类表示的当前日期时间
     /// </summary>
     DateTime Now { get; }
 
     /// <summary>
-    /// Gets the <see cref="DateTimeKind"/> produced by this clock.
+    /// 此时钟生成的 <see cref="DateTimeKind"/>
     /// </summary>
     DateTimeKind Kind { get; }
 
     /// <summary>
-    /// Gets whether the clock can convert between UTC and user-local time zones.
+    /// 时钟是否可在 UTC 与用户本地时区之间转换
     /// </summary>
     /// <remarks>
-    /// When <see langword="false"/>, callers should treat user-time conversion as unavailable or equivalent
-    /// to the clock's configured time kind.
+    /// 当为 <see langword="false"/> 时，调用方应将用户时间转换视为不可用，
+    /// 或视为等同于时钟配置的时间种类
     /// </remarks>
     bool SupportsMultipleTimezone { get; }
 
     /// <summary>
-    /// Normalizes the supplied date and time to the clock's configured <see cref="Kind"/>.
+    /// 将给定日期时间规范化为时钟配置的 <see cref="Kind"/>
     /// </summary>
-    /// <param name="dateTime">The date and time value to normalize.</param>
-    /// <returns>The normalized date and time value.</returns>
+    /// <param name="dateTime">要规范化的日期时间值</param>
+    /// <returns>规范化后的日期时间值</returns>
     DateTime Normalize(DateTime dateTime);
 
     /// <summary>
-    /// Converts a UTC date and time to the current user's time zone when multiple time zones are supported.
+    /// 当支持多时区时，将 UTC 日期时间转换为当前用户时区
     /// </summary>
-    /// <param name="utcDateTime">The UTC date and time to convert.</param>
-    /// <returns>The converted user-local date and time, or the clock-specific equivalent when user time is unavailable.</returns>
+    /// <param name="utcDateTime">要转换的 UTC 日期时间</param>
+    /// <returns>转换后的用户本地日期时间；用户时间不可用时返回时钟特定的等价值</returns>
     DateTime ConvertToUserTime(DateTime utcDateTime);
 
     /// <summary>
-    /// Converts a date and time offset to the current user's time zone when multiple time zones are supported.
+    /// 当支持多时区时，将日期时间偏移转换为当前用户时区
     /// </summary>
-    /// <param name="dateTimeOffset">The date and time offset to convert.</param>
-    /// <returns>The converted user-local date and time offset, or the clock-specific equivalent when user time is unavailable.</returns>
+    /// <param name="dateTimeOffset">要转换的日期时间偏移</param>
+    /// <returns>转换后的用户本地日期时间偏移；用户时间不可用时返回时钟特定的等价值</returns>
     DateTimeOffset ConvertToUserTime(DateTimeOffset dateTimeOffset);
 
     /// <summary>
-    /// Converts the supplied date and time to UTC according to the clock's time-zone rules.
+    /// 按时钟的时区规则将给定日期时间转换为 UTC
     /// </summary>
-    /// <param name="dateTime">The date and time to convert to UTC.</param>
-    /// <returns>The UTC date and time value.</returns>
+    /// <param name="dateTime">要转换为 UTC 的日期时间</param>
+    /// <returns>UTC 日期时间值</returns>
     DateTime ConvertToUtc(DateTime dateTime);
 }
