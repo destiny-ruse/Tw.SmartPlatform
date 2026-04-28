@@ -1,2 +1,4 @@
-docs/superpowers/
 .worktrees/
+__pycache__/
+*.py[cod]
+.claude/settings.local.json
