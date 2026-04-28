@@ -1,0 +1,36 @@
+schema_version: 1.0.0
+id: backend.capability.document-processing
+kind: capability
+name: 文档处理能力
+status: active
+summary: 提供文档生成、解析、格式转换和处理流程能力，支持 PDF、Word 等常见文档格式操作。
+owners:
+  - platform
+tags:
+  - backend
+  - document-processing
+  - platform
+domain: platform
+provided_by:
+  modules:
+    - backend.dotnet.building-blocks.document-processing
+reuse:
+  use_when:
+    - 需要生成、解析或转换文档格式时
+  do_not_reimplement:
+    - 不要在服务中直接依赖文档库，应通过 Tw.DocumentProcessing 提供的处理接口操作文档
+aliases:
+  - 文档生成
+  - PDF
+  - 报表
+  - DocumentProcessing
+  - Tw.DocumentProcessing
+source:
+  declared_in: docs/knowledge/graph/capabilities/backend.capability.document-processing.yaml
+  evidence:
+    - backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing
+provenance:
+  created_by: human
+  created_at: 2026-04-28
+  updated_by: human
+  updated_at: 2026-04-28

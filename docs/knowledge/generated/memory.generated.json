@@ -248,6 +248,55 @@
     },
     {
       "aliases": [
+        "文档生成",
+        "PDF",
+        "报表",
+        "DocumentProcessing",
+        "Tw.DocumentProcessing"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.document-processing",
+      "kind": "capability",
+      "name": "文档处理能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.document-processing"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中直接依赖文档库，应通过 Tw.DocumentProcessing 提供的处理接口操作文档"
+        ],
+        "use_when": [
+          "需要生成、解析或转换文档格式时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.document-processing.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing"
+        ]
+      },
+      "status": "active",
+      "summary": "提供文档生成、解析、格式转换和处理流程能力，支持 PDF、Word 等常见文档格式操作。",
+      "tags": [
+        "backend",
+        "document-processing",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
         "事件",
         "event",
         "消息队列"
@@ -336,6 +385,54 @@
       "tags": [
         "backend",
         "multi-tenancy",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
+        "拼音",
+        "检索",
+        "PinYinConverter",
+        "Tw.PinYinConverter"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.pin-yin-converter",
+      "kind": "capability",
+      "name": "拼音转换能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.pin-yin-converter"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中引入独立的拼音库，应通过 Tw.PinYinConverter 提供的转换接口使用"
+        ],
+        "use_when": [
+          "需要将中文转换为拼音用于检索、排序或文本规范化时"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.pin-yin-converter.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter"
+        ]
+      },
+      "status": "active",
+      "summary": "提供中文拼音转换、检索辅助和文本规范化能力，支持拼音搜索和排序场景。",
+      "tags": [
+        "backend",
+        "pin-yin-converter",
         "platform"
       ]
     },
@@ -438,6 +535,55 @@
       "tags": [
         "backend",
         "sql-sugar",
+        "platform"
+      ]
+    },
+    {
+      "aliases": [
+        "模板",
+        "渲染",
+        "通知文本",
+        "TextTemplating",
+        "Tw.TextTemplating"
+      ],
+      "domain": "platform",
+      "id": "backend.capability.text-templating",
+      "kind": "capability",
+      "name": "文本模板能力",
+      "owners": [
+        "platform"
+      ],
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provided_by": {
+        "modules": [
+          "backend.dotnet.building-blocks.text-templating"
+        ]
+      },
+      "reuse": {
+        "do_not_reimplement": [
+          "不要在服务中自行拼接动态文本，应通过 Tw.TextTemplating 提供的模板渲染接口生成内容"
+        ],
+        "use_when": [
+          "需要基于模板动态生成文本内容时（如通知消息、邮件正文）"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/capabilities/backend.capability.text-templating.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating"
+        ]
+      },
+      "status": "active",
+      "summary": "提供文本模板渲染、变量替换和模板化内容生成能力，用于通知、邮件和动态文本场景。",
+      "tags": [
+        "backend",
+        "text-templating",
         "platform"
       ]
     },
@@ -588,6 +734,42 @@
       ]
     },
     {
+      "id": "backend.dotnet.building-blocks.document-processing",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "文档处理构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.document-processing"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.document-processing.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载文档生成、解析、转换和处理流程相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "document-processing"
+      ]
+    },
+    {
       "id": "backend.dotnet.building-blocks.event-bus",
       "kind": "module",
       "module_type": "building-block",
@@ -657,6 +839,42 @@
         "backend",
         "dotnet",
         "multi-tenancy"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.pin-yin-converter",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "拼音转换构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.pin-yin-converter"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.pin-yin-converter.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载中文拼音转换、检索辅助和文本规范化相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "pin-yin-converter"
       ]
     },
     {
@@ -730,6 +948,42 @@
         "backend",
         "dotnet",
         "sql-sugar"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.text-templating",
+      "kind": "module",
+      "module_type": "building-block",
+      "name": "文本模板构件",
+      "owners": [
+        "platform"
+      ],
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating",
+      "provenance": {
+        "created_at": "2026-04-28",
+        "created_by": "human",
+        "updated_at": "2026-04-28",
+        "updated_by": "human"
+      },
+      "provides": {
+        "capabilities": [
+          "backend.capability.text-templating"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source": {
+        "declared_in": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.text-templating.yaml",
+        "evidence": [
+          "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating"
+        ]
+      },
+      "stack": "dotnet",
+      "status": "active",
+      "summary": "承载文本模板渲染、变量替换和模板化内容生成相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "text-templating"
       ]
     },
     {

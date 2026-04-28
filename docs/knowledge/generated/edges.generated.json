@@ -46,6 +46,11 @@
       "type": "provides"
     },
     {
+      "from": "backend.dotnet.building-blocks.document-processing",
+      "to": "backend.capability.document-processing",
+      "type": "provides"
+    },
+    {
       "from": "backend.dotnet.building-blocks.event-bus",
       "to": "backend.capability.event-bus",
       "type": "provides"
@@ -56,6 +61,11 @@
       "type": "provides"
     },
     {
+      "from": "backend.dotnet.building-blocks.pin-yin-converter",
+      "to": "backend.capability.pin-yin-converter",
+      "type": "provides"
+    },
+    {
       "from": "backend.dotnet.building-blocks.remote-service",
       "to": "backend.capability.remote-service",
       "type": "provides"
@@ -63,6 +73,11 @@
     {
       "from": "backend.dotnet.building-blocks.sql-sugar",
       "to": "backend.capability.sql-sugar",
+      "type": "provides"
+    },
+    {
+      "from": "backend.dotnet.building-blocks.text-templating",
+      "to": "backend.capability.text-templating",
       "type": "provides"
     },
     {

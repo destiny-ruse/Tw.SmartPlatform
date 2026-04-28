@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.capability.document-processing",
+      "kind": "capability",
+      "name": "文档处理能力",
+      "path": "docs/knowledge/graph/capabilities/backend.capability.document-processing.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.document-processing.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-domain/platform.generated.json",
+        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/document-processing.generated.json",
+        "docs/knowledge/generated/_index/by-tag/platform.generated.json"
+      ],
+      "summary": "提供文档生成、解析、格式转换和处理流程能力，支持 PDF、Word 等常见文档格式操作。",
+      "tags": [
+        "backend",
+        "document-processing",
+        "platform"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.document-processing",
+      "kind": "module",
+      "name": "文档处理构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.document-processing.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.document-processing.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/document-processing.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json"
+      ],
+      "summary": "承载文档生成、解析、转换和处理流程相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "document-processing"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

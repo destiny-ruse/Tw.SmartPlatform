@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.capability.pin-yin-converter",
+      "kind": "capability",
+      "name": "拼音转换能力",
+      "path": "docs/knowledge/graph/capabilities/backend.capability.pin-yin-converter.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.pin-yin-converter.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-domain/platform.generated.json",
+        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/pin-yin-converter.generated.json",
+        "docs/knowledge/generated/_index/by-tag/platform.generated.json"
+      ],
+      "summary": "提供中文拼音转换、检索辅助和文本规范化能力，支持拼音搜索和排序场景。",
+      "tags": [
+        "backend",
+        "pin-yin-converter",
+        "platform"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.pin-yin-converter",
+      "kind": "module",
+      "name": "拼音转换构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.pin-yin-converter.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.pin-yin-converter.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/pin-yin-converter.generated.json"
+      ],
+      "summary": "承载中文拼音转换、检索辅助和文本规范化相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "pin-yin-converter"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}

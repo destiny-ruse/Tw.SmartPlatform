@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-27T16:28:27Z",
+  "generator": {
+    "name": "tools/knowledge/knowledge.py",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "backend.capability.text-templating",
+      "kind": "capability",
+      "name": "文本模板能力",
+      "path": "docs/knowledge/graph/capabilities/backend.capability.text-templating.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.capability.text-templating.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-domain/platform.generated.json",
+        "docs/knowledge/generated/_index/by-kind/capability.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/platform.generated.json",
+        "docs/knowledge/generated/_index/by-tag/text-templating.generated.json"
+      ],
+      "summary": "提供文本模板渲染、变量替换和模板化内容生成能力，用于通知、邮件和动态文本场景。",
+      "tags": [
+        "backend",
+        "text-templating",
+        "platform"
+      ]
+    },
+    {
+      "id": "backend.dotnet.building-blocks.text-templating",
+      "kind": "module",
+      "name": "文本模板构件",
+      "path": "docs/knowledge/graph/modules/backend.dotnet.building-blocks.text-templating.yaml",
+      "sections_index": "docs/knowledge/generated/_index/sections/backend.dotnet.building-blocks.text-templating.generated.json",
+      "shards": [
+        "docs/knowledge/generated/_index/by-kind/module.generated.json",
+        "docs/knowledge/generated/_index/by-owner/platform.generated.json",
+        "docs/knowledge/generated/_index/by-stack/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/backend.generated.json",
+        "docs/knowledge/generated/_index/by-tag/dotnet.generated.json",
+        "docs/knowledge/generated/_index/by-tag/text-templating.generated.json"
+      ],
+      "summary": "承载文本模板渲染、变量替换和模板化内容生成相关的通用能力实现。",
+      "tags": [
+        "backend",
+        "dotnet",
+        "text-templating"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}
