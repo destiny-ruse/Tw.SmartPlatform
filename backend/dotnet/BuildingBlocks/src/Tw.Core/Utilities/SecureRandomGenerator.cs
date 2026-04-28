@@ -90,14 +90,17 @@ public static class SecureRandomGenerator
     /// <param name="minValue">The inclusive lower bound.</param>
     /// <param name="maxValue">The exclusive upper bound.</param>
     /// <returns>A random double within the requested range.</returns>
-    /// <exception cref="ArgumentException">Thrown when a bound is not finite or the lower bound is greater than or equal to the upper bound.</exception>
+    /// <exception cref="ArgumentException">Thrown when a bound is not finite, the lower bound is greater than or equal to the upper bound, or the range span is not finite.</exception>
     public static double GetDouble(double minValue, double maxValue)
     {
         EnsureFinite(minValue, nameof(minValue));
         EnsureFinite(maxValue, nameof(maxValue));
         EnsureMinLessThanMax(minValue, maxValue, nameof(maxValue));
 
-        return minValue + (GetDouble() * (maxValue - minValue));
+        var range = maxValue - minValue;
+        EnsureFinite(range, nameof(maxValue));
+
+        return minValue + (GetDouble() * range);
     }
 
     /// <summary>
@@ -266,10 +269,16 @@ public static class SecureRandomGenerator
     /// <param name="count">The number of elements to select.</param>
     /// <returns>A new list containing the selected elements.</returns>
     /// <exception cref="ArgumentNullException">Thrown when <paramref name="collection"/> is <see langword="null"/>.</exception>
+    /// <exception cref="ArgumentException">Thrown when <paramref name="collection"/> is empty.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative or greater than the source count.</exception>
     public static IList<T> GetRandomElements<T>(IList<T> collection, int count)
     {
         var source = Check.NotNull(collection);
+        if (source.Count == 0)
+        {
+            throw new ArgumentException("Collection cannot be empty.", nameof(collection));
+        }
+
         Check.NonNegative(count);
 
         if (count > source.Count)

@@ -90,6 +90,15 @@ public class SecureRandomGeneratorTests
     }
 
     [Fact]
+    public void GetDouble_Range_Rejects_Overflowing_Difference()
+    {
+        var act = () => SecureRandomGenerator.GetDouble(double.MinValue, double.MaxValue);
+
+        act.Should().Throw<ArgumentException>()
+            .WithParameterName("maxValue");
+    }
+
+    [Fact]
     public void GetBool_Returns_Boolean()
     {
         var result = SecureRandomGenerator.GetBool();
@@ -259,6 +268,17 @@ public class SecureRandomGeneratorTests
             .WithParameterName("count");
         tooManyAct.Should().Throw<ArgumentOutOfRangeException>()
             .WithParameterName("count");
+    }
+
+    [Fact]
+    public void GetRandomElements_Rejects_Empty_Collection_When_Count_Is_Zero()
+    {
+        var source = Array.Empty<int>();
+
+        var act = () => SecureRandomGenerator.GetRandomElements(source, 0);
+
+        act.Should().Throw<ArgumentException>()
+            .WithParameterName("collection");
     }
 
     [Fact]
