@@ -13,7 +13,7 @@
     <Project Path="BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj" Id="00d55dcc-01eb-48b8-97f9-f4c6dc77a685" />
     <Project Path="BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj" Id="e0e0367f-47d2-4e79-854c-0bf93cd9b3e8" />
     <Project Path="BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj" />
-    <Project Path="Tw.AspNetCore/Tw.AspNetCore.csproj" Id="254c7393-f49f-4c61-b278-effcecda9a0f" />
+    <Project Path="BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj" Id="254c7393-f49f-4c61-b278-effcecda9a0f" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Ddd/">
     <Project Path="BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj" />
