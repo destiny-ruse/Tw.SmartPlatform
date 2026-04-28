@@ -26,6 +26,7 @@ The source material is `D:\WorkSpaces\Nebulaxis_Old\src`. The migration target i
 3. Do not preserve old `Nebulaxis` names or provide compatibility wrappers.
 4. Do not mark cryptography APIs as legacy or obsolete just because older algorithms may be used by future business requirements.
 5. Do not migrate application, domain, data, messaging, infrastructure, or web-layer code into `Tw.Core`.
+6. Do not migrate `ErrorDefinition`. Structured error definitions with log-level metadata belong in higher layers. Removing it also avoids introducing `Microsoft.Extensions.Logging.Abstractions` through a single low-value type.
 
 ## Standards
 
@@ -56,13 +57,13 @@ The following categories should be migrated into `Tw.Core` after renaming:
 2. Disposable action helpers and null disposable instances.
 3. Named object, named value, named action, and named type selector primitives.
 4. Type list collections.
-5. Extension methods for strings, collections, dictionaries, enumerable sequences, streams, dates, numbers, exceptions, GUIDs, objects, and types.
+5. Extension methods for strings, byte arrays, comparable types, collections, lists, dictionaries, enumerable sequences, streams, dates, numbers, exceptions, GUIDs, objects, and types.
 6. Reflection helpers and reflection cache.
 7. Configuration section marker attribute and configurable options marker.
-8. Current user abstraction.
+8. Current user abstraction (without `TenantId`; multi-tenancy is a separate building block).
 9. Clock abstraction.
-10. Core diagnostics and exception primitives.
-11. Secure random generation utilities.
+10. Exception primitives: `TwException` and `TwConfigurationException`.
+11. Secure random generation utilities including string generation, collection shuffle, element selection, and password generation.
 
 ### Included From Nebulaxis.Security
 
@@ -78,6 +79,7 @@ All cryptography capability should be migrated into `Tw.Core` under a clear secu
 8. SHA2 hashing: SHA256, SHA384, SHA512.
 9. SHA3 hashing: SHA3-256, SHA3-384, SHA3-512.
 10. HMAC hashing for MD5, SHA1, SHA2, and SHA3 variants.
+11. String-level cryptography extension methods (`StringCryptographyExtensions`): convenience wrappers that apply hasher and encryption APIs directly to `string` inputs.
 
 ### Excluded
 
@@ -92,7 +94,9 @@ The following code must not be migrated into `Tw.Core`:
 7. `Core/Nebulaxis.Core/Attributes/InterceptAttribute.cs`
 8. `Core/Nebulaxis.Core/Attributes/LogAttribute.cs`
 9. `Core/Nebulaxis.Core/Interceptors/LogInterceptor.cs`
-10. Application, Domain, Data, Messaging, Infrastructure, Web, and provider-specific projects.
+10. `Core/Nebulaxis.Core/Diagnostics/ErrorDefinition.cs` — carries `LogLevel` from `Microsoft.Extensions.Logging.Abstractions`; structured error definitions belong in higher layers.
+11. `Core/Nebulaxis.Security/Cryptography/ECCEncryption.cs` — empty stub, no behavior to migrate.
+12. Application, Domain, Data, Messaging, Infrastructure, Web, and provider-specific projects.
 
 If an included file depends on excluded DI or AOP types, remove or redesign that dependency instead of pulling the excluded capability into `Tw.Core`.
 
@@ -103,18 +107,33 @@ The target project should use this structure:
 ```text
 backend/dotnet/BuildingBlocks/src/Tw.Core/
   Check.cs
-  Context/
   Configuration/
   Collections/
-  Diagnostics/
+  Context/
   Exceptions/
   Extensions/
+  Primitives/
   Reflection/
   Security/
     Cryptography/
   Timing/
   Utilities/
 ```
+
+Folder responsibilities:
+
+| Folder | Contents |
+| --- | --- |
+| `Configuration/` | `ConfigurationSectionAttribute`, `IConfigurableOptions` |
+| `Collections/` | `ITypeList`, `TypeList` |
+| `Context/` | `ICurrentUser` |
+| `Exceptions/` | `TwException`, `TwConfigurationException` |
+| `Extensions/` | All `*Extensions.cs` files for BCL types |
+| `Primitives/` | `NamedAction`, `NamedActionList`, `NamedObject`, `NamedObjectList`, `NamedTypeSelector`, `NamedTypeSelectorListExtensions`, `NamedValue` |
+| `Reflection/` | `ITypeFinder`, `TypeFinder`, `TypeFinderExtensions`, `ReflectionCache` |
+| `Security/Cryptography/` | All hasher, encryptor, and `StringCryptographyExtensions` types |
+| `Timing/` | `IClock` |
+| `Utilities/` | `DisposeAction`, `AsyncDisposeFunc`, `NullDisposable`, `NullAsyncDisposable`, `SecureRandomGenerator` |
 
 Test projects should use:
 
@@ -139,14 +158,14 @@ Primary renames:
 | `Nebulaxis.Reflection` | `Tw.Core.Reflection` |
 | `Nebulaxis.Configuration` | `Tw.Core.Configuration` |
 | `Nebulaxis.Context` | `Tw.Core.Context` |
-| `Nebulaxis.Diagnostics` | `Tw.Core.Diagnostics` |
 | `Nebulaxis.Security.Cryptography` | `Tw.Core.Security.Cryptography` |
+| `Nebulaxis.Utilities` | `Tw.Core.Utilities` |
 | `RandomHelper` | `SecureRandomGenerator` |
 | `NameValue<T>` | `NamedValue<T>` |
 | `NameValue` | `NamedValue` |
 | `NebulaxisException` | `TwException` |
 | `ConfigurationException` | `TwConfigurationException` |
-| `CoreException` | `TwCoreException` |
+| `CoreException` | *(removed; `TwCoreException` would be identical to `TwException` once `ErrorDefinition` is excluded)* |
 | `AESEncryption` | `AesCryptography` |
 | `DESEncryption` | `DesCryptography` |
 | `TripleDESEncryption` | `TripleDesCryptography` |
@@ -160,7 +179,17 @@ Primary renames:
 | `SHA3_256Encryption` | `Sha3_256Hasher` |
 | `SHA3_384Encryption` | `Sha3_384Hasher` |
 | `SHA3_512Encryption` | `Sha3_512Hasher` |
+| `HMACMD5Encryption` | `HmacMd5Hasher` |
+| `HMACSHA1Encryption` | `HmacSha1Hasher` |
 | `HMACSHA256Encryption` | `HmacSha256Hasher` |
+| `HMACSHA384Encryption` | `HmacSha384Hasher` |
+| `HMACSHA512Encryption` | `HmacSha512Hasher` |
+| `HMACSHA3_256Encryption` | `HmacSha3_256Hasher` |
+| `HMACSHA3_384Encryption` | `HmacSha3_384Hasher` |
+| `HMACSHA3_512Encryption` | `HmacSha3_512Hasher` |
+| `StringEncryptionExtensions` | `StringCryptographyExtensions` |
+
+`TwException` is not abstract. It is the direct-throw base class for all custom exceptions in the system. All custom exceptions must inherit from it.
 
 Hashing methods must use hashing terminology:
 
@@ -200,6 +229,8 @@ Encryption and decryption methods should keep `Encrypt`, `Decrypt`, `EncryptFile
 
 `Tw.Core` should remain dependency-light. Runtime dependencies should only be added if the BCL cannot provide a required capability.
 
+`Microsoft.Extensions.Logging.Abstractions` is an approved exception to the BCL-first rule if a future capability in `Tw.Core` genuinely requires it. It must not be added for the current migration scope since `ErrorDefinition` is excluded.
+
 Test package versions should be added to `backend/dotnet/Build/Packages.Tests.props` through central package management. Candidate test dependencies:
 
 1. `xunit`
@@ -230,16 +261,17 @@ Initial responsibilities:
 Initial test coverage should include:
 
 1. Guard validation success and failure paths.
-2. Core string, collection, dictionary, stream, numeric, date, type, GUID, and object extension behavior.
+2. Core string, byte array, comparable, collection, list, dictionary, stream, numeric, date, type, GUID, and object extension behavior.
 3. Disposable helpers invoking actions exactly once where applicable.
-4. Reflection helpers for attributes, interfaces, constructors, async method detection, and type filtering.
+4. Reflection helpers for attributes, interfaces, constructors, async method detection, type filtering, and `TypeFinder` assembly scanning.
 5. Current user and clock abstractions where behavior exists.
-6. Secure random generator boundary validation.
+6. Secure random generator: integer, long, double, bool, byte array, string generation, numeric string, alpha string, alphanumeric string, strong password composition, shuffle (string and collection), element selection, and boundary validation.
 7. Hashers with deterministic known vectors.
 8. HMAC hashers with deterministic known vectors.
 9. AES, DES, TripleDES round-trip behavior, invalid key or IV boundaries, and file/stream flows.
 10. RSA key generation, round-trip encryption, signing, and verification.
 11. PBKDF2 derivation and password verification.
+12. `StringCryptographyExtensions` for hash and encryption convenience methods on string inputs.
 
 ## Verification Strategy
 
@@ -261,6 +293,7 @@ Failures must be fixed or documented with exact remaining risk.
 | DES or TripleDES APIs may trigger obsolete diagnostics | Use non-obsolete implementation paths or stop and report the blocker before suppressing warnings. |
 | Broad extension method migration may create ambiguous APIs | Keep method names clear, avoid duplicate overloads that do not add value, and validate with build and tests. |
 | Test packages may be missing from central package management | Add current stable versions only in `Build/Packages.Tests.props` and restore lock files. |
+| `ErrorDefinition` removal means there is no structured error-code carrier in `Tw.Core` | Accept as intentional. Consumers that need structured error codes should define their own in higher layers. |
 
 ## Acceptance Criteria
 
