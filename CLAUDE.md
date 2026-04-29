@@ -37,6 +37,9 @@
 11. **功能开发或行为修改，先运行 tw-requirement-router。**
     任何新功能开发或现有行为变更，必须先通过 `tw-requirement-router` 路由需求，再执行后续工作。
 
+12. **文档变更优先使用 documentation-writer 技能。**
+    修改 `documentation-writer` 技能支持的文件类型（设计文档、规范文档、说明文档等 Markdown 文件）时，优先通过该技能执行，不直接用 Edit 工具全文改写。
+
 # 默认输出
 
 1. **结论**
