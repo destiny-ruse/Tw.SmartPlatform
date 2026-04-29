@@ -1,0 +1,343 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-001",
+      "end_line": 13,
+      "heading": "Subagent-Driven Development",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 6,
+      "summary": "Subagent-Driven Development in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-002",
+      "end_line": 39,
+      "heading": "When to Use",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "subagent",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 14,
+      "summary": "When to Use in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-003",
+      "end_line": 86,
+      "heading": "The Process",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "process",
+        "skill",
+        "skills",
+        "subagent",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 40,
+      "summary": "The Process in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-004",
+      "end_line": 101,
+      "heading": "Model Selection",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "model",
+        "selection",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 87,
+      "summary": "Model Selection in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-005",
+      "end_line": 119,
+      "heading": "Handling Implementer Status",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "handling",
+        "implementer",
+        "md",
+        "skill",
+        "skills",
+        "status",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 102,
+      "summary": "Handling Implementer Status in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-006",
+      "end_line": 125,
+      "heading": "Prompt Templates",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "prompt",
+        "skill",
+        "skills",
+        "subagent",
+        "templates"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 120,
+      "summary": "Prompt Templates in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-007",
+      "end_line": 201,
+      "heading": "Example Workflow",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "example",
+        "md",
+        "skill",
+        "skills",
+        "subagent",
+        "workflow"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 126,
+      "summary": "Example Workflow in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-008",
+      "end_line": 233,
+      "heading": "Advantages",
+      "keywords": [
+        "advantages",
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 202,
+      "summary": "Advantages in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-009",
+      "end_line": 264,
+      "heading": "Red Flags",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "flags",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 234,
+      "summary": "Red Flags in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-010",
+      "end_line": 277,
+      "heading": "Integration",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "integration",
+        "md",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 265,
+      "summary": "Integration in .agents/skills/subagent-driven-development/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/subagent-driven-development/SKILL.md"
+}

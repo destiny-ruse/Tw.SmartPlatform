@@ -34,7 +34,7 @@ class PreflightRunner:
         index = SearchIndex(self.root)
         fts_available = index._can_use_fts()
         query = self._semantic_query(task, stack, path)
-        candidates = [result.to_json() for result in index.query(query, stack=None, kind=None, limit=5)]
+        candidates = [result.to_json() for result in index.query(query, stack=stack, kind=None, limit=5)]
         actions = [] if fts_available else ["build-search"]
 
         return {

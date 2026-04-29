@@ -1,0 +1,208 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.requesting-code-review.SKILL#chunk-001",
+      "end_line": 11,
+      "heading": "Requesting Code Review",
+      "keywords": [
+        "agents",
+        "code",
+        "md",
+        "requesting",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "requesting",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:fb1c965693e9b71799462b4bf445f65c82806c32aff1cd041acacb552a7da9ca",
+      "source_path": ".agents/skills/requesting-code-review/SKILL.md",
+      "start_line": 6,
+      "summary": "Requesting Code Review in .agents/skills/requesting-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.requesting-code-review.SKILL#chunk-002",
+      "end_line": 23,
+      "heading": "When to Request Review",
+      "keywords": [
+        "agents",
+        "code",
+        "md",
+        "request",
+        "requesting",
+        "review",
+        "skill",
+        "skills",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "requesting",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:fb1c965693e9b71799462b4bf445f65c82806c32aff1cd041acacb552a7da9ca",
+      "source_path": ".agents/skills/requesting-code-review/SKILL.md",
+      "start_line": 12,
+      "summary": "When to Request Review in .agents/skills/requesting-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.requesting-code-review.SKILL#chunk-003",
+      "end_line": 48,
+      "heading": "How to Request",
+      "keywords": [
+        "agents",
+        "code",
+        "how",
+        "md",
+        "request",
+        "requesting",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "requesting",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:fb1c965693e9b71799462b4bf445f65c82806c32aff1cd041acacb552a7da9ca",
+      "source_path": ".agents/skills/requesting-code-review/SKILL.md",
+      "start_line": 24,
+      "summary": "How to Request in .agents/skills/requesting-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.requesting-code-review.SKILL#chunk-004",
+      "end_line": 76,
+      "heading": "Example",
+      "keywords": [
+        "agents",
+        "code",
+        "example",
+        "md",
+        "requesting",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "requesting",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:fb1c965693e9b71799462b4bf445f65c82806c32aff1cd041acacb552a7da9ca",
+      "source_path": ".agents/skills/requesting-code-review/SKILL.md",
+      "start_line": 49,
+      "summary": "Example in .agents/skills/requesting-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.requesting-code-review.SKILL#chunk-005",
+      "end_line": 91,
+      "heading": "Integration with Workflows",
+      "keywords": [
+        "agents",
+        "code",
+        "integration",
+        "md",
+        "requesting",
+        "review",
+        "skill",
+        "skills",
+        "with",
+        "workflows"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "requesting",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:fb1c965693e9b71799462b4bf445f65c82806c32aff1cd041acacb552a7da9ca",
+      "source_path": ".agents/skills/requesting-code-review/SKILL.md",
+      "start_line": 77,
+      "summary": "Integration with Workflows in .agents/skills/requesting-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.requesting-code-review.SKILL#chunk-006",
+      "end_line": 105,
+      "heading": "Red Flags",
+      "keywords": [
+        "agents",
+        "code",
+        "flags",
+        "md",
+        "red",
+        "requesting",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "requesting",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:fb1c965693e9b71799462b4bf445f65c82806c32aff1cd041acacb552a7da9ca",
+      "source_path": ".agents/skills/requesting-code-review/SKILL.md",
+      "start_line": 92,
+      "summary": "Red Flags in .agents/skills/requesting-code-review/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/requesting-code-review/SKILL.md"
+}

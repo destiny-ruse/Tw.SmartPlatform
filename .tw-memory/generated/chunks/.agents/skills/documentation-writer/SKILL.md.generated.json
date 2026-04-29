@@ -1,0 +1,169 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.documentation-writer.SKILL#chunk-001",
+      "end_line": 10,
+      "heading": "Diátaxis Documentation Expert",
+      "keywords": [
+        "agents",
+        "diátaxis",
+        "documentation",
+        "expert",
+        "md",
+        "skill",
+        "skills",
+        "writer"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "documentation",
+          "skill",
+          "skills",
+          "writer"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:3ac35d319282601db73a9327a45f051373a9ced3b2d4387710ae3f4baee708e0",
+      "source_path": ".agents/skills/documentation-writer/SKILL.md",
+      "start_line": 6,
+      "summary": "Diátaxis Documentation Expert in .agents/skills/documentation-writer/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.documentation-writer.SKILL#chunk-002",
+      "end_line": 17,
+      "heading": "GUIDING PRINCIPLES",
+      "keywords": [
+        "agents",
+        "documentation",
+        "guiding",
+        "md",
+        "principles",
+        "skill",
+        "skills",
+        "writer"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "documentation",
+          "skill",
+          "skills",
+          "writer"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:3ac35d319282601db73a9327a45f051373a9ced3b2d4387710ae3f4baee708e0",
+      "source_path": ".agents/skills/documentation-writer/SKILL.md",
+      "start_line": 11,
+      "summary": "GUIDING PRINCIPLES in .agents/skills/documentation-writer/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.documentation-writer.SKILL#chunk-003",
+      "end_line": 26,
+      "heading": "YOUR TASK: The Four Document Types",
+      "keywords": [
+        "agents",
+        "document",
+        "documentation",
+        "four",
+        "md",
+        "skill",
+        "skills",
+        "task:",
+        "the",
+        "types",
+        "writer",
+        "your"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "documentation",
+          "skill",
+          "skills",
+          "writer"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:3ac35d319282601db73a9327a45f051373a9ced3b2d4387710ae3f4baee708e0",
+      "source_path": ".agents/skills/documentation-writer/SKILL.md",
+      "start_line": 18,
+      "summary": "YOUR TASK: The Four Document Types in .agents/skills/documentation-writer/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.documentation-writer.SKILL#chunk-004",
+      "end_line": 40,
+      "heading": "WORKFLOW",
+      "keywords": [
+        "agents",
+        "documentation",
+        "md",
+        "skill",
+        "skills",
+        "workflow",
+        "writer"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "documentation",
+          "skill",
+          "skills",
+          "writer"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:3ac35d319282601db73a9327a45f051373a9ced3b2d4387710ae3f4baee708e0",
+      "source_path": ".agents/skills/documentation-writer/SKILL.md",
+      "start_line": 27,
+      "summary": "WORKFLOW in .agents/skills/documentation-writer/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.documentation-writer.SKILL#chunk-005",
+      "end_line": 45,
+      "heading": "CONTEXTUAL AWARENESS",
+      "keywords": [
+        "agents",
+        "awareness",
+        "contextual",
+        "documentation",
+        "md",
+        "skill",
+        "skills",
+        "writer"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "documentation",
+          "skill",
+          "skills",
+          "writer"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:3ac35d319282601db73a9327a45f051373a9ced3b2d4387710ae3f4baee708e0",
+      "source_path": ".agents/skills/documentation-writer/SKILL.md",
+      "start_line": 41,
+      "summary": "CONTEXTUAL AWARENESS in .agents/skills/documentation-writer/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/documentation-writer/SKILL.md"
+}

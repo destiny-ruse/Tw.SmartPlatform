@@ -66,6 +66,18 @@ class ScannerTests(unittest.TestCase):
             self.assertEqual(record.source_type, "service-directory")
             self.assertEqual(record.service, "notice")
 
+    def test_scan_includes_agent_skill_files_as_skills(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            path = root / ".agents" / "skills" / "tw-dotnet" / "SKILL.md"
+            path.parent.mkdir(parents=True)
+            path.write_text("---\nname: tw-dotnet\n---\n# TW Dotnet\n", encoding="utf-8")
+
+            [record] = SourceScanner(root).scan()
+
+            self.assertEqual(record.source_path, ".agents/skills/tw-dotnet/SKILL.md")
+            self.assertEqual(record.source_type, "skill")
+
     def test_scan_prunes_without_path_rglob(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

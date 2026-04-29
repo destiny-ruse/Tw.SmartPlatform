@@ -1,0 +1,332 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Executing Plans",
+      "keywords": [
+        "agents",
+        "executing",
+        "md",
+        "plans",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 6,
+      "summary": "Executing Plans in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "executing",
+        "md",
+        "overview",
+        "plans",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-003",
+      "end_line": 17,
+      "heading": "The Process",
+      "keywords": [
+        "agents",
+        "executing",
+        "md",
+        "plans",
+        "process",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 16,
+      "summary": "The Process in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-004",
+      "end_line": 23,
+      "heading": "Step 1: Load and Review Plan",
+      "keywords": [
+        "agents",
+        "and",
+        "executing",
+        "load",
+        "md",
+        "plan",
+        "plans",
+        "review",
+        "skill",
+        "skills",
+        "step"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 18,
+      "summary": "Step 1: Load and Review Plan in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-005",
+      "end_line": 31,
+      "heading": "Step 2: Execute Tasks",
+      "keywords": [
+        "agents",
+        "execute",
+        "executing",
+        "md",
+        "plans",
+        "skill",
+        "skills",
+        "step",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 24,
+      "summary": "Step 2: Execute Tasks in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-006",
+      "end_line": 38,
+      "heading": "Step 3: Complete Development",
+      "keywords": [
+        "agents",
+        "complete",
+        "development",
+        "executing",
+        "md",
+        "plans",
+        "skill",
+        "skills",
+        "step"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 32,
+      "summary": "Step 3: Complete Development in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-007",
+      "end_line": 48,
+      "heading": "When to Stop and Ask for Help",
+      "keywords": [
+        "agents",
+        "and",
+        "ask",
+        "executing",
+        "for",
+        "help",
+        "md",
+        "plans",
+        "skill",
+        "skills",
+        "stop",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 39,
+      "summary": "When to Stop and Ask for Help in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-008",
+      "end_line": 56,
+      "heading": "When to Revisit Earlier Steps",
+      "keywords": [
+        "agents",
+        "earlier",
+        "executing",
+        "md",
+        "plans",
+        "revisit",
+        "skill",
+        "skills",
+        "steps",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 49,
+      "summary": "When to Revisit Earlier Steps in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-009",
+      "end_line": 64,
+      "heading": "Remember",
+      "keywords": [
+        "agents",
+        "executing",
+        "md",
+        "plans",
+        "remember",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 57,
+      "summary": "Remember in .agents/skills/executing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.executing-plans.SKILL#chunk-010",
+      "end_line": 70,
+      "heading": "Integration",
+      "keywords": [
+        "agents",
+        "executing",
+        "integration",
+        "md",
+        "plans",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "executing",
+          "plans",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "start_line": 65,
+      "summary": "Integration in .agents/skills/executing-plans/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/executing-plans/SKILL.md"
+}

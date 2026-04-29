@@ -1,0 +1,835 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Using Git Worktrees",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 6,
+      "summary": "Using Git Worktrees in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "overview",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-003",
+      "end_line": 19,
+      "heading": "Directory Selection Process",
+      "keywords": [
+        "agents",
+        "directory",
+        "git",
+        "md",
+        "process",
+        "selection",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 16,
+      "summary": "Directory Selection Process in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-004",
+      "end_line": 29,
+      "heading": "1. Check Existing Directories",
+      "keywords": [
+        "agents",
+        "check",
+        "directories",
+        "existing",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 20,
+      "summary": "1. Check Existing Directories in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-005",
+      "end_line": 37,
+      "heading": "2. Check CLAUDE.md",
+      "keywords": [
+        "agents",
+        "check",
+        "claude",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 30,
+      "summary": "2. Check CLAUDE.md in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-006",
+      "end_line": 50,
+      "heading": "3. Ask User",
+      "keywords": [
+        "agents",
+        "ask",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "user",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 38,
+      "summary": "3. Ask User in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-007",
+      "end_line": 52,
+      "heading": "Safety Verification",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "safety",
+        "skill",
+        "skills",
+        "using",
+        "verification",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 51,
+      "summary": "Safety Verification in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-008",
+      "end_line": 70,
+      "heading": "For Project-Local Directories (.worktrees or worktrees)",
+      "keywords": [
+        "agents",
+        "directories",
+        "for",
+        "git",
+        "local",
+        "md",
+        "project",
+        "skill",
+        "skills",
+        "using",
+        "worktrees",
+        "worktrees)"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 53,
+      "summary": "For Project-Local Directories (.worktrees or worktrees) in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-009",
+      "end_line": 74,
+      "heading": "For Global Directory (~/.config/superpowers/worktrees)",
+      "keywords": [
+        "agents",
+        "config",
+        "directory",
+        "for",
+        "git",
+        "global",
+        "md",
+        "skill",
+        "skills",
+        "superpowers",
+        "using",
+        "worktrees",
+        "worktrees)"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 71,
+      "summary": "For Global Directory (~/.config/superpowers/worktrees) in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-010",
+      "end_line": 76,
+      "heading": "Creation Steps",
+      "keywords": [
+        "agents",
+        "creation",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "steps",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 75,
+      "summary": "Creation Steps in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-011",
+      "end_line": 82,
+      "heading": "1. Detect Project Name",
+      "keywords": [
+        "agents",
+        "detect",
+        "git",
+        "md",
+        "name",
+        "project",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 77,
+      "summary": "1. Detect Project Name in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-012",
+      "end_line": 100,
+      "heading": "2. Create Worktree",
+      "keywords": [
+        "agents",
+        "create",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktree",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 83,
+      "summary": "2. Create Worktree in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-013",
+      "end_line": 119,
+      "heading": "3. Run Project Setup",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "project",
+        "run",
+        "setup",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 101,
+      "summary": "3. Run Project Setup in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-014",
+      "end_line": 135,
+      "heading": "4. Verify Clean Baseline",
+      "keywords": [
+        "agents",
+        "baseline",
+        "clean",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "verify",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 120,
+      "summary": "4. Verify Clean Baseline in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-015",
+      "end_line": 143,
+      "heading": "5. Report Location",
+      "keywords": [
+        "agents",
+        "git",
+        "location",
+        "md",
+        "report",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 136,
+      "summary": "5. Report Location in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-016",
+      "end_line": 155,
+      "heading": "Quick Reference",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "quick",
+        "reference",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 144,
+      "summary": "Quick Reference in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-017",
+      "end_line": 157,
+      "heading": "Common Mistakes",
+      "keywords": [
+        "agents",
+        "common",
+        "git",
+        "md",
+        "mistakes",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 156,
+      "summary": "Common Mistakes in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-018",
+      "end_line": 162,
+      "heading": "Skipping ignore verification",
+      "keywords": [
+        "agents",
+        "git",
+        "ignore",
+        "md",
+        "skill",
+        "skills",
+        "skipping",
+        "using",
+        "verification",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 158,
+      "summary": "Skipping ignore verification in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-019",
+      "end_line": 167,
+      "heading": "Assuming directory location",
+      "keywords": [
+        "agents",
+        "assuming",
+        "directory",
+        "git",
+        "location",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 163,
+      "summary": "Assuming directory location in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-020",
+      "end_line": 172,
+      "heading": "Proceeding with failing tests",
+      "keywords": [
+        "agents",
+        "failing",
+        "git",
+        "md",
+        "proceeding",
+        "skill",
+        "skills",
+        "tests",
+        "using",
+        "with",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 168,
+      "summary": "Proceeding with failing tests in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-021",
+      "end_line": 177,
+      "heading": "Hardcoding setup commands",
+      "keywords": [
+        "agents",
+        "commands",
+        "git",
+        "hardcoding",
+        "md",
+        "setup",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 173,
+      "summary": "Hardcoding setup commands in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-022",
+      "end_line": 193,
+      "heading": "Example Workflow",
+      "keywords": [
+        "agents",
+        "example",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "workflow",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 178,
+      "summary": "Example Workflow in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-023",
+      "end_line": 208,
+      "heading": "Red Flags",
+      "keywords": [
+        "agents",
+        "flags",
+        "git",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 194,
+      "summary": "Red Flags in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-024",
+      "end_line": 218,
+      "heading": "Integration",
+      "keywords": [
+        "agents",
+        "git",
+        "integration",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 209,
+      "summary": "Integration in .agents/skills/using-git-worktrees/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/using-git-worktrees/SKILL.md"
+}

@@ -1,0 +1,3218 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-011",
+      "end_line": 136,
+      "heading": "Writing Patterns",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "patterns",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 115,
+      "summary": "Writing Patterns in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-012",
+      "end_line": 140,
+      "heading": "Writing Style",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "skill",
+        "skills",
+        "style",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 137,
+      "summary": "Writing Style in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-013",
+      "end_line": 162,
+      "heading": "Test Cases",
+      "keywords": [
+        "agents",
+        "cases",
+        "creator",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 141,
+      "summary": "Test Cases in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-014",
+      "end_line": 168,
+      "heading": "Running and evaluating test cases",
+      "keywords": [
+        "agents",
+        "and",
+        "cases",
+        "creator",
+        "evaluating",
+        "md",
+        "running",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 163,
+      "summary": "Running and evaluating test cases in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-015",
+      "end_line": 198,
+      "heading": "Step 1: Spawn all runs (with-skill AND baseline) in the same turn",
+      "keywords": [
+        "(with",
+        "agents",
+        "all",
+        "and",
+        "baseline)",
+        "creator",
+        "md",
+        "runs",
+        "same",
+        "skill",
+        "skills",
+        "spawn",
+        "step",
+        "the",
+        "turn"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 169,
+      "summary": "Step 1: Spawn all runs (with-skill AND baseline) in the same turn in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-016",
+      "end_line": 206,
+      "heading": "Step 2: While runs are in progress, draft assertions",
+      "keywords": [
+        "agents",
+        "are",
+        "assertions",
+        "creator",
+        "draft",
+        "md",
+        "progress,",
+        "runs",
+        "skill",
+        "skills",
+        "step",
+        "while"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 199,
+      "summary": "Step 2: While runs are in progress, draft assertions in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-017",
+      "end_line": 220,
+      "heading": "Step 3: As runs complete, capture timing data",
+      "keywords": [
+        "agents",
+        "capture",
+        "complete,",
+        "creator",
+        "data",
+        "md",
+        "runs",
+        "skill",
+        "skills",
+        "step",
+        "timing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 207,
+      "summary": "Step 3: As runs complete, capture timing data in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-018",
+      "end_line": 252,
+      "heading": "Step 4: Grade, aggregate, and launch the viewer",
+      "keywords": [
+        "agents",
+        "aggregate,",
+        "and",
+        "creator",
+        "grade,",
+        "launch",
+        "md",
+        "skill",
+        "skills",
+        "step",
+        "the",
+        "viewer"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 221,
+      "summary": "Step 4: Grade, aggregate, and launch the viewer in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-019",
+      "end_line": 266,
+      "heading": "What the user sees in the viewer",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "sees",
+        "skill",
+        "skills",
+        "the",
+        "user",
+        "viewer",
+        "what"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 253,
+      "summary": "What the user sees in the viewer in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-020",
+      "end_line": 291,
+      "heading": "Step 5: Read the feedback",
+      "keywords": [
+        "agents",
+        "creator",
+        "feedback",
+        "md",
+        "read",
+        "skill",
+        "skills",
+        "step",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 267,
+      "summary": "Step 5: Read the feedback in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-021",
+      "end_line": 295,
+      "heading": "Improving the skill",
+      "keywords": [
+        "agents",
+        "creator",
+        "improving",
+        "md",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 292,
+      "summary": "Improving the skill in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-022",
+      "end_line": 307,
+      "heading": "How to think about improvements",
+      "keywords": [
+        "about",
+        "agents",
+        "creator",
+        "how",
+        "improvements",
+        "md",
+        "skill",
+        "skills",
+        "think"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 296,
+      "summary": "How to think about improvements in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-023",
+      "end_line": 324,
+      "heading": "The iteration loop",
+      "keywords": [
+        "agents",
+        "creator",
+        "iteration",
+        "loop",
+        "md",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 308,
+      "summary": "The iteration loop in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-024",
+      "end_line": 332,
+      "heading": "Advanced: Blind comparison",
+      "keywords": [
+        "advanced:",
+        "agents",
+        "blind",
+        "comparison",
+        "creator",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 325,
+      "summary": "Advanced: Blind comparison in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-025",
+      "end_line": 336,
+      "heading": "Description Optimization",
+      "keywords": [
+        "agents",
+        "creator",
+        "description",
+        "md",
+        "optimization",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 333,
+      "summary": "Description Optimization in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-026",
+      "end_line": 359,
+      "heading": "Step 1: Generate trigger eval queries",
+      "keywords": [
+        "agents",
+        "creator",
+        "eval",
+        "generate",
+        "md",
+        "queries",
+        "skill",
+        "skills",
+        "step",
+        "trigger"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 337,
+      "summary": "Step 1: Generate trigger eval queries in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-027",
+      "end_line": 374,
+      "heading": "Step 2: Review with user",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "review",
+        "skill",
+        "skills",
+        "step",
+        "user",
+        "with"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 360,
+      "summary": "Step 2: Review with user in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-028",
+      "end_line": 395,
+      "heading": "Step 3: Run the optimization loop",
+      "keywords": [
+        "agents",
+        "creator",
+        "loop",
+        "md",
+        "optimization",
+        "run",
+        "skill",
+        "skills",
+        "step",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 375,
+      "summary": "Step 3: Run the optimization loop in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-029",
+      "end_line": 401,
+      "heading": "How skill triggering works",
+      "keywords": [
+        "agents",
+        "creator",
+        "how",
+        "md",
+        "skill",
+        "skills",
+        "triggering",
+        "works"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 396,
+      "summary": "How skill triggering works in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-030",
+      "end_line": 407,
+      "heading": "Step 4: Apply the result",
+      "keywords": [
+        "agents",
+        "apply",
+        "creator",
+        "md",
+        "result",
+        "skill",
+        "skills",
+        "step",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 402,
+      "summary": "Step 4: Apply the result in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-031",
+      "end_line": 419,
+      "heading": "Package and Present (only if `present_files` tool is available)",
+      "keywords": [
+        "(only",
+        "`present",
+        "agents",
+        "and",
+        "available)",
+        "creator",
+        "files`",
+        "md",
+        "package",
+        "present",
+        "skill",
+        "skills",
+        "tool"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 408,
+      "summary": "Package and Present (only if `present_files` tool is available) in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-032",
+      "end_line": 444,
+      "heading": "Claude.ai-specific instructions",
+      "keywords": [
+        "agents",
+        "claude",
+        "creator",
+        "instructions",
+        "md",
+        "skill",
+        "skills",
+        "specific"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 420,
+      "summary": "Claude.ai-specific instructions in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-033",
+      "end_line": 458,
+      "heading": "Cowork-Specific Instructions",
+      "keywords": [
+        "agents",
+        "cowork",
+        "creator",
+        "instructions",
+        "md",
+        "skill",
+        "skills",
+        "specific"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 445,
+      "summary": "Cowork-Specific Instructions in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-034",
+      "end_line": 485,
+      "heading": "Reference files",
+      "keywords": [
+        "agents",
+        "creator",
+        "files",
+        "md",
+        "reference",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 459,
+      "summary": "Reference files in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-001",
+      "end_line": 13,
+      "heading": "Subagent-Driven Development",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 6,
+      "summary": "Subagent-Driven Development in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-002",
+      "end_line": 39,
+      "heading": "When to Use",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "subagent",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 14,
+      "summary": "When to Use in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-003",
+      "end_line": 86,
+      "heading": "The Process",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "process",
+        "skill",
+        "skills",
+        "subagent",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 40,
+      "summary": "The Process in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-004",
+      "end_line": 101,
+      "heading": "Model Selection",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "model",
+        "selection",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 87,
+      "summary": "Model Selection in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-005",
+      "end_line": 119,
+      "heading": "Handling Implementer Status",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "handling",
+        "implementer",
+        "md",
+        "skill",
+        "skills",
+        "status",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 102,
+      "summary": "Handling Implementer Status in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-006",
+      "end_line": 125,
+      "heading": "Prompt Templates",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "prompt",
+        "skill",
+        "skills",
+        "subagent",
+        "templates"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 120,
+      "summary": "Prompt Templates in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-007",
+      "end_line": 201,
+      "heading": "Example Workflow",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "example",
+        "md",
+        "skill",
+        "skills",
+        "subagent",
+        "workflow"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 126,
+      "summary": "Example Workflow in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-008",
+      "end_line": 233,
+      "heading": "Advantages",
+      "keywords": [
+        "advantages",
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 202,
+      "summary": "Advantages in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-009",
+      "end_line": 264,
+      "heading": "Red Flags",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "flags",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 234,
+      "summary": "Red Flags in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.subagent-driven-development.SKILL#chunk-010",
+      "end_line": 277,
+      "heading": "Integration",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "integration",
+        "md",
+        "skill",
+        "skills",
+        "subagent"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "subagent"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "start_line": 265,
+      "summary": "Integration in .agents/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Systematic Debugging",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 6,
+      "summary": "Systematic Debugging in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "overview",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-003",
+      "end_line": 23,
+      "heading": "The Iron Law",
+      "keywords": [
+        "agents",
+        "debugging",
+        "iron",
+        "law",
+        "md",
+        "skill",
+        "skills",
+        "systematic",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 16,
+      "summary": "The Iron Law in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-004",
+      "end_line": 45,
+      "heading": "When to Use",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "skill",
+        "skills",
+        "systematic",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 24,
+      "summary": "When to Use in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-005",
+      "end_line": 49,
+      "heading": "The Four Phases",
+      "keywords": [
+        "agents",
+        "debugging",
+        "four",
+        "md",
+        "phases",
+        "skill",
+        "skills",
+        "systematic",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 46,
+      "summary": "The Four Phases in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-006",
+      "end_line": 121,
+      "heading": "Phase 1: Root Cause Investigation",
+      "keywords": [
+        "agents",
+        "cause",
+        "debugging",
+        "investigation",
+        "md",
+        "phase",
+        "root",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 50,
+      "summary": "Phase 1: Root Cause Investigation in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-007",
+      "end_line": 144,
+      "heading": "Phase 2: Pattern Analysis",
+      "keywords": [
+        "agents",
+        "analysis",
+        "debugging",
+        "md",
+        "pattern",
+        "phase",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 122,
+      "summary": "Phase 2: Pattern Analysis in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-008",
+      "end_line": 169,
+      "heading": "Phase 3: Hypothesis and Testing",
+      "keywords": [
+        "agents",
+        "and",
+        "debugging",
+        "hypothesis",
+        "md",
+        "phase",
+        "skill",
+        "skills",
+        "systematic",
+        "testing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 145,
+      "summary": "Phase 3: Hypothesis and Testing in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-009",
+      "end_line": 214,
+      "heading": "Phase 4: Implementation",
+      "keywords": [
+        "agents",
+        "debugging",
+        "implementation",
+        "md",
+        "phase",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 170,
+      "summary": "Phase 4: Implementation in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-010",
+      "end_line": 233,
+      "heading": "Red Flags - STOP and Follow Process",
+      "keywords": [
+        "agents",
+        "and",
+        "debugging",
+        "flags",
+        "follow",
+        "md",
+        "process",
+        "red",
+        "skill",
+        "skills",
+        "stop",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 215,
+      "summary": "Red Flags - STOP and Follow Process in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-011",
+      "end_line": 244,
+      "heading": "your human partner's Signals You're Doing It Wrong",
+      "keywords": [
+        "agents",
+        "debugging",
+        "doing",
+        "human",
+        "md",
+        "partner's",
+        "signals",
+        "skill",
+        "skills",
+        "systematic",
+        "wrong",
+        "you're",
+        "your"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 234,
+      "summary": "your human partner's Signals You're Doing It Wrong in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-012",
+      "end_line": 257,
+      "heading": "Common Rationalizations",
+      "keywords": [
+        "agents",
+        "common",
+        "debugging",
+        "md",
+        "rationalizations",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 245,
+      "summary": "Common Rationalizations in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-013",
+      "end_line": 266,
+      "heading": "Quick Reference",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "quick",
+        "reference",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 258,
+      "summary": "Quick Reference in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-014",
+      "end_line": 277,
+      "heading": "When Process Reveals \"No Root Cause\"",
+      "keywords": [
+        "\"no",
+        "agents",
+        "cause\"",
+        "debugging",
+        "md",
+        "process",
+        "reveals",
+        "root",
+        "skill",
+        "skills",
+        "systematic",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 267,
+      "summary": "When Process Reveals \"No Root Cause\" in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-015",
+      "end_line": 289,
+      "heading": "Supporting Techniques",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "skill",
+        "skills",
+        "supporting",
+        "systematic",
+        "techniques"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 278,
+      "summary": "Supporting Techniques in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-016",
+      "end_line": 296,
+      "heading": "Real-World Impact",
+      "keywords": [
+        "agents",
+        "debugging",
+        "impact",
+        "md",
+        "real",
+        "skill",
+        "skills",
+        "systematic",
+        "world"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 290,
+      "summary": "Real-World Impact in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Test-Driven Development (TDD)",
+      "keywords": [
+        "(tdd)",
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 6,
+      "summary": "Test-Driven Development (TDD) in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "overview",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-003",
+      "end_line": 30,
+      "heading": "When to Use",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 16,
+      "summary": "When to Use in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-004",
+      "end_line": 46,
+      "heading": "The Iron Law",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "iron",
+        "law",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 31,
+      "summary": "The Iron Law in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-005",
+      "end_line": 70,
+      "heading": "Red-Green-Refactor",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "green",
+        "md",
+        "red",
+        "refactor",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 47,
+      "summary": "Red-Green-Refactor in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-006",
+      "end_line": 112,
+      "heading": "RED - Write Failing Test",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "failing",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "test",
+        "write"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 71,
+      "summary": "RED - Write Failing Test in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-007",
+      "end_line": 129,
+      "heading": "Verify RED - Watch It Fail",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "fail",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "test",
+        "verify",
+        "watch"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 113,
+      "summary": "Verify RED - Watch It Fail in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-008",
+      "end_line": 167,
+      "heading": "GREEN - Minimal Code",
+      "keywords": [
+        "agents",
+        "code",
+        "development",
+        "driven",
+        "green",
+        "md",
+        "minimal",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 130,
+      "summary": "GREEN - Minimal Code in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-009",
+      "end_line": 184,
+      "heading": "Verify GREEN - Watch It Pass",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "green",
+        "md",
+        "pass",
+        "skill",
+        "skills",
+        "test",
+        "verify",
+        "watch"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 168,
+      "summary": "Verify GREEN - Watch It Pass in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-010",
+      "end_line": 193,
+      "heading": "REFACTOR - Clean Up",
+      "keywords": [
+        "agents",
+        "clean",
+        "development",
+        "driven",
+        "md",
+        "refactor",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 185,
+      "summary": "REFACTOR - Clean Up in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-011",
+      "end_line": 197,
+      "heading": "Repeat",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "repeat",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 194,
+      "summary": "Repeat in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-012",
+      "end_line": 205,
+      "heading": "Good Tests",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "good",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "tests"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 198,
+      "summary": "Good Tests in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-013",
+      "end_line": 255,
+      "heading": "Why Order Matters",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "matters",
+        "md",
+        "order",
+        "skill",
+        "skills",
+        "test",
+        "why"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 206,
+      "summary": "Why Order Matters in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-014",
+      "end_line": 271,
+      "heading": "Common Rationalizations",
+      "keywords": [
+        "agents",
+        "common",
+        "development",
+        "driven",
+        "md",
+        "rationalizations",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 256,
+      "summary": "Common Rationalizations in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-015",
+      "end_line": 289,
+      "heading": "Red Flags - STOP and Start Over",
+      "keywords": [
+        "agents",
+        "and",
+        "development",
+        "driven",
+        "flags",
+        "md",
+        "over",
+        "red",
+        "skill",
+        "skills",
+        "start",
+        "stop",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 272,
+      "summary": "Red Flags - STOP and Start Over in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-016",
+      "end_line": 326,
+      "heading": "Example: Bug Fix",
+      "keywords": [
+        "agents",
+        "bug",
+        "development",
+        "driven",
+        "example:",
+        "fix",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 290,
+      "summary": "Example: Bug Fix in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-017",
+      "end_line": 341,
+      "heading": "Verification Checklist",
+      "keywords": [
+        "agents",
+        "checklist",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 327,
+      "summary": "Verification Checklist in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-018",
+      "end_line": 350,
+      "heading": "When Stuck",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "stuck",
+        "test",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 342,
+      "summary": "When Stuck in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-019",
+      "end_line": 356,
+      "heading": "Debugging Integration",
+      "keywords": [
+        "agents",
+        "debugging",
+        "development",
+        "driven",
+        "integration",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 351,
+      "summary": "Debugging Integration in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-020",
+      "end_line": 363,
+      "heading": "Testing Anti-Patterns",
+      "keywords": [
+        "agents",
+        "anti",
+        "development",
+        "driven",
+        "md",
+        "patterns",
+        "skill",
+        "skills",
+        "test",
+        "testing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 357,
+      "summary": "Testing Anti-Patterns in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-021",
+      "end_line": 371,
+      "heading": "Final Rule",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "final",
+        "md",
+        "rule",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 364,
+      "summary": "Final Rule in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW .NET Development",
+      "keywords": [
+        "agents",
+        "development",
+        "dotnet",
+        "md",
+        "net",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 6,
+      "summary": "TW .NET Development in .agents/skills/tw-dotnet/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "dotnet",
+        "md",
+        "preflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-dotnet/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "dotnet",
+        "md",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-dotnet/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "dotnet",
+        "md",
+        "postflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-dotnet/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Frontend Development",
+      "keywords": [
+        "agents",
+        "development",
+        "frontend",
+        "md",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Frontend Development in .agents/skills/tw-frontend/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "frontend",
+        "md",
+        "preflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-frontend/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "frontend",
+        "md",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-frontend/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "frontend",
+        "md",
+        "postflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-frontend/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Java Development",
+      "keywords": [
+        "agents",
+        "development",
+        "java",
+        "md",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Java Development in .agents/skills/tw-java/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "java",
+        "md",
+        "preflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-java/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "java",
+        "md",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-java/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "java",
+        "md",
+        "postflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-java/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-memory.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Memory System Maintenance",
+      "keywords": [
+        "agents",
+        "maintenance",
+        "md",
+        "memory",
+        "skill",
+        "skills",
+        "system",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "memory",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-memory/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Memory System Maintenance in .agents/skills/tw-memory/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-memory.SKILL#chunk-002",
+      "end_line": 21,
+      "heading": "Required Flow",
+      "keywords": [
+        "agents",
+        "flow",
+        "md",
+        "memory",
+        "required",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "memory",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-memory/SKILL.md",
+      "start_line": 10,
+      "summary": "Required Flow in .agents/skills/tw-memory/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-memory.SKILL#chunk-003",
+      "end_line": 24,
+      "heading": "Boundaries",
+      "keywords": [
+        "agents",
+        "boundaries",
+        "md",
+        "memory",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "memory",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-memory/SKILL.md",
+      "start_line": 22,
+      "summary": "Boundaries in .agents/skills/tw-memory/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Python Development",
+      "keywords": [
+        "agents",
+        "development",
+        "md",
+        "python",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Python Development in .agents/skills/tw-python/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "md",
+        "preflight",
+        "python",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-python/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "md",
+        "python",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-python/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "md",
+        "postflight",
+        "python",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-python/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Using Git Worktrees",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 6,
+      "summary": "Using Git Worktrees in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "overview",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-003",
+      "end_line": 19,
+      "heading": "Directory Selection Process",
+      "keywords": [
+        "agents",
+        "directory",
+        "git",
+        "md",
+        "process",
+        "selection",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 16,
+      "summary": "Directory Selection Process in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-004",
+      "end_line": 29,
+      "heading": "1. Check Existing Directories",
+      "keywords": [
+        "agents",
+        "check",
+        "directories",
+        "existing",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 20,
+      "summary": "1. Check Existing Directories in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-005",
+      "end_line": 37,
+      "heading": "2. Check CLAUDE.md",
+      "keywords": [
+        "agents",
+        "check",
+        "claude",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 30,
+      "summary": "2. Check CLAUDE.md in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-006",
+      "end_line": 50,
+      "heading": "3. Ask User",
+      "keywords": [
+        "agents",
+        "ask",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "user",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 38,
+      "summary": "3. Ask User in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-007",
+      "end_line": 52,
+      "heading": "Safety Verification",
+      "keywords": [
+        "agents",
+        "git",
+        "md",
+        "safety",
+        "skill",
+        "skills",
+        "using",
+        "verification",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 51,
+      "summary": "Safety Verification in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-008",
+      "end_line": 70,
+      "heading": "For Project-Local Directories (.worktrees or worktrees)",
+      "keywords": [
+        "agents",
+        "directories",
+        "for",
+        "git",
+        "local",
+        "md",
+        "project",
+        "skill",
+        "skills",
+        "using",
+        "worktrees",
+        "worktrees)"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 53,
+      "summary": "For Project-Local Directories (.worktrees or worktrees) in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-009",
+      "end_line": 74,
+      "heading": "For Global Directory (~/.config/superpowers/worktrees)",
+      "keywords": [
+        "agents",
+        "config",
+        "directory",
+        "for",
+        "git",
+        "global",
+        "md",
+        "skill",
+        "skills",
+        "superpowers",
+        "using",
+        "worktrees",
+        "worktrees)"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 71,
+      "summary": "For Global Directory (~/.config/superpowers/worktrees) in .agents/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-git-worktrees.SKILL#chunk-010",
+      "end_line": 76,
+      "heading": "Creation Steps",
+      "keywords": [
+        "agents",
+        "creation",
+        "git",
+        "md",
+        "skill",
+        "skills",
+        "steps",
+        "using",
+        "worktrees"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "git",
+          "skill",
+          "skills",
+          "using",
+          "worktrees"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "start_line": 75,
+      "summary": "Creation Steps in .agents/skills/using-git-worktrees/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

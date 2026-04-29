@@ -1,0 +1,127 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Java Development",
+      "keywords": [
+        "agents",
+        "development",
+        "java",
+        "md",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Java Development in .agents/skills/tw-java/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "java",
+        "md",
+        "preflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-java/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "java",
+        "md",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-java/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-java.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "java",
+        "md",
+        "postflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "java",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-java/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/tw-java/SKILL.md"
+}

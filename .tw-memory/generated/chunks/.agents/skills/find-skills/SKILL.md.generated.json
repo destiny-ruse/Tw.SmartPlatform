@@ -1,0 +1,427 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "Find Skills",
+      "keywords": [
+        "agents",
+        "find",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 6,
+      "summary": "Find Skills in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-002",
+      "end_line": 20,
+      "heading": "When to Use This Skill",
+      "keywords": [
+        "agents",
+        "find",
+        "md",
+        "skill",
+        "skills",
+        "this",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 10,
+      "summary": "When to Use This Skill in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-003",
+      "end_line": 33,
+      "heading": "What is the Skills CLI?",
+      "keywords": [
+        "agents",
+        "cli?",
+        "find",
+        "md",
+        "skill",
+        "skills",
+        "the",
+        "what"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 21,
+      "summary": "What is the Skills CLI? in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-004",
+      "end_line": 35,
+      "heading": "How to Help Users Find Skills",
+      "keywords": [
+        "agents",
+        "find",
+        "help",
+        "how",
+        "md",
+        "skill",
+        "skills",
+        "users"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 34,
+      "summary": "How to Help Users Find Skills in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-005",
+      "end_line": 43,
+      "heading": "Step 1: Understand What They Need",
+      "keywords": [
+        "agents",
+        "find",
+        "md",
+        "need",
+        "skill",
+        "skills",
+        "step",
+        "they",
+        "understand",
+        "what"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 36,
+      "summary": "Step 1: Understand What They Need in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-006",
+      "end_line": 51,
+      "heading": "Step 2: Check the Leaderboard First",
+      "keywords": [
+        "agents",
+        "check",
+        "find",
+        "first",
+        "leaderboard",
+        "md",
+        "skill",
+        "skills",
+        "step",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 44,
+      "summary": "Step 2: Check the Leaderboard First in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-007",
+      "end_line": 65,
+      "heading": "Step 3: Search for Skills",
+      "keywords": [
+        "agents",
+        "find",
+        "for",
+        "md",
+        "search",
+        "skill",
+        "skills",
+        "step"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 52,
+      "summary": "Step 3: Search for Skills in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-008",
+      "end_line": 73,
+      "heading": "Step 4: Verify Quality Before Recommending",
+      "keywords": [
+        "agents",
+        "before",
+        "find",
+        "md",
+        "quality",
+        "recommending",
+        "skill",
+        "skills",
+        "step",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 66,
+      "summary": "Step 4: Verify Quality Before Recommending in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-009",
+      "end_line": 95,
+      "heading": "Step 5: Present Options to the User",
+      "keywords": [
+        "agents",
+        "find",
+        "md",
+        "options",
+        "present",
+        "skill",
+        "skills",
+        "step",
+        "the",
+        "user"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 74,
+      "summary": "Step 5: Present Options to the User in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-010",
+      "end_line": 105,
+      "heading": "Step 6: Offer to Install",
+      "keywords": [
+        "agents",
+        "find",
+        "install",
+        "md",
+        "offer",
+        "skill",
+        "skills",
+        "step"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 96,
+      "summary": "Step 6: Offer to Install in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-011",
+      "end_line": 119,
+      "heading": "Common Skill Categories",
+      "keywords": [
+        "agents",
+        "categories",
+        "common",
+        "find",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 106,
+      "summary": "Common Skill Categories in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-012",
+      "end_line": 125,
+      "heading": "Tips for Effective Searches",
+      "keywords": [
+        "agents",
+        "effective",
+        "find",
+        "for",
+        "md",
+        "searches",
+        "skill",
+        "skills",
+        "tips"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 120,
+      "summary": "Tips for Effective Searches in .agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.find-skills.SKILL#chunk-013",
+      "end_line": 142,
+      "heading": "When No Skills Are Found",
+      "keywords": [
+        "agents",
+        "are",
+        "find",
+        "found",
+        "md",
+        "skill",
+        "skills",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "find",
+          "skill",
+          "skills",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "start_line": 126,
+      "summary": "When No Skills Are Found in .agents/skills/find-skills/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/find-skills/SKILL.md"
+}

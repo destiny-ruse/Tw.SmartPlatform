@@ -1,0 +1,1113 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-001",
+      "end_line": 31,
+      "heading": "Skill Creator",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 6,
+      "summary": "Skill Creator in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-002",
+      "end_line": 44,
+      "heading": "Communicating with the user",
+      "keywords": [
+        "agents",
+        "communicating",
+        "creator",
+        "md",
+        "skill",
+        "skills",
+        "the",
+        "user",
+        "with"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 32,
+      "summary": "Communicating with the user in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-003",
+      "end_line": 46,
+      "heading": "Creating a skill",
+      "keywords": [
+        "agents",
+        "creating",
+        "creator",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 45,
+      "summary": "Creating a skill in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-004",
+      "end_line": 55,
+      "heading": "Capture Intent",
+      "keywords": [
+        "agents",
+        "capture",
+        "creator",
+        "intent",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 47,
+      "summary": "Capture Intent in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-005",
+      "end_line": 61,
+      "heading": "Interview and Research",
+      "keywords": [
+        "agents",
+        "and",
+        "creator",
+        "interview",
+        "md",
+        "research",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 56,
+      "summary": "Interview and Research in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-006",
+      "end_line": 70,
+      "heading": "Write the SKILL.md",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "skill",
+        "skills",
+        "the",
+        "write"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 62,
+      "summary": "Write the SKILL.md in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-007",
+      "end_line": 72,
+      "heading": "Skill Writing Guide",
+      "keywords": [
+        "agents",
+        "creator",
+        "guide",
+        "md",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 71,
+      "summary": "Skill Writing Guide in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-008",
+      "end_line": 85,
+      "heading": "Anatomy of a Skill",
+      "keywords": [
+        "agents",
+        "anatomy",
+        "creator",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 73,
+      "summary": "Anatomy of a Skill in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-009",
+      "end_line": 110,
+      "heading": "Progressive Disclosure",
+      "keywords": [
+        "agents",
+        "creator",
+        "disclosure",
+        "md",
+        "progressive",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 86,
+      "summary": "Progressive Disclosure in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-010",
+      "end_line": 114,
+      "heading": "Principle of Lack of Surprise",
+      "keywords": [
+        "agents",
+        "creator",
+        "lack",
+        "md",
+        "principle",
+        "skill",
+        "skills",
+        "surprise"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 111,
+      "summary": "Principle of Lack of Surprise in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-011",
+      "end_line": 136,
+      "heading": "Writing Patterns",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "patterns",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 115,
+      "summary": "Writing Patterns in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-012",
+      "end_line": 140,
+      "heading": "Writing Style",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "skill",
+        "skills",
+        "style",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 137,
+      "summary": "Writing Style in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-013",
+      "end_line": 162,
+      "heading": "Test Cases",
+      "keywords": [
+        "agents",
+        "cases",
+        "creator",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 141,
+      "summary": "Test Cases in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-014",
+      "end_line": 168,
+      "heading": "Running and evaluating test cases",
+      "keywords": [
+        "agents",
+        "and",
+        "cases",
+        "creator",
+        "evaluating",
+        "md",
+        "running",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 163,
+      "summary": "Running and evaluating test cases in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-015",
+      "end_line": 198,
+      "heading": "Step 1: Spawn all runs (with-skill AND baseline) in the same turn",
+      "keywords": [
+        "(with",
+        "agents",
+        "all",
+        "and",
+        "baseline)",
+        "creator",
+        "md",
+        "runs",
+        "same",
+        "skill",
+        "skills",
+        "spawn",
+        "step",
+        "the",
+        "turn"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 169,
+      "summary": "Step 1: Spawn all runs (with-skill AND baseline) in the same turn in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-016",
+      "end_line": 206,
+      "heading": "Step 2: While runs are in progress, draft assertions",
+      "keywords": [
+        "agents",
+        "are",
+        "assertions",
+        "creator",
+        "draft",
+        "md",
+        "progress,",
+        "runs",
+        "skill",
+        "skills",
+        "step",
+        "while"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 199,
+      "summary": "Step 2: While runs are in progress, draft assertions in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-017",
+      "end_line": 220,
+      "heading": "Step 3: As runs complete, capture timing data",
+      "keywords": [
+        "agents",
+        "capture",
+        "complete,",
+        "creator",
+        "data",
+        "md",
+        "runs",
+        "skill",
+        "skills",
+        "step",
+        "timing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 207,
+      "summary": "Step 3: As runs complete, capture timing data in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-018",
+      "end_line": 252,
+      "heading": "Step 4: Grade, aggregate, and launch the viewer",
+      "keywords": [
+        "agents",
+        "aggregate,",
+        "and",
+        "creator",
+        "grade,",
+        "launch",
+        "md",
+        "skill",
+        "skills",
+        "step",
+        "the",
+        "viewer"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 221,
+      "summary": "Step 4: Grade, aggregate, and launch the viewer in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-019",
+      "end_line": 266,
+      "heading": "What the user sees in the viewer",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "sees",
+        "skill",
+        "skills",
+        "the",
+        "user",
+        "viewer",
+        "what"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 253,
+      "summary": "What the user sees in the viewer in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-020",
+      "end_line": 291,
+      "heading": "Step 5: Read the feedback",
+      "keywords": [
+        "agents",
+        "creator",
+        "feedback",
+        "md",
+        "read",
+        "skill",
+        "skills",
+        "step",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 267,
+      "summary": "Step 5: Read the feedback in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-021",
+      "end_line": 295,
+      "heading": "Improving the skill",
+      "keywords": [
+        "agents",
+        "creator",
+        "improving",
+        "md",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 292,
+      "summary": "Improving the skill in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-022",
+      "end_line": 307,
+      "heading": "How to think about improvements",
+      "keywords": [
+        "about",
+        "agents",
+        "creator",
+        "how",
+        "improvements",
+        "md",
+        "skill",
+        "skills",
+        "think"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 296,
+      "summary": "How to think about improvements in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-023",
+      "end_line": 324,
+      "heading": "The iteration loop",
+      "keywords": [
+        "agents",
+        "creator",
+        "iteration",
+        "loop",
+        "md",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 308,
+      "summary": "The iteration loop in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-024",
+      "end_line": 332,
+      "heading": "Advanced: Blind comparison",
+      "keywords": [
+        "advanced:",
+        "agents",
+        "blind",
+        "comparison",
+        "creator",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 325,
+      "summary": "Advanced: Blind comparison in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-025",
+      "end_line": 336,
+      "heading": "Description Optimization",
+      "keywords": [
+        "agents",
+        "creator",
+        "description",
+        "md",
+        "optimization",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 333,
+      "summary": "Description Optimization in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-026",
+      "end_line": 359,
+      "heading": "Step 1: Generate trigger eval queries",
+      "keywords": [
+        "agents",
+        "creator",
+        "eval",
+        "generate",
+        "md",
+        "queries",
+        "skill",
+        "skills",
+        "step",
+        "trigger"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 337,
+      "summary": "Step 1: Generate trigger eval queries in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-027",
+      "end_line": 374,
+      "heading": "Step 2: Review with user",
+      "keywords": [
+        "agents",
+        "creator",
+        "md",
+        "review",
+        "skill",
+        "skills",
+        "step",
+        "user",
+        "with"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 360,
+      "summary": "Step 2: Review with user in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-028",
+      "end_line": 395,
+      "heading": "Step 3: Run the optimization loop",
+      "keywords": [
+        "agents",
+        "creator",
+        "loop",
+        "md",
+        "optimization",
+        "run",
+        "skill",
+        "skills",
+        "step",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 375,
+      "summary": "Step 3: Run the optimization loop in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-029",
+      "end_line": 401,
+      "heading": "How skill triggering works",
+      "keywords": [
+        "agents",
+        "creator",
+        "how",
+        "md",
+        "skill",
+        "skills",
+        "triggering",
+        "works"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 396,
+      "summary": "How skill triggering works in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-030",
+      "end_line": 407,
+      "heading": "Step 4: Apply the result",
+      "keywords": [
+        "agents",
+        "apply",
+        "creator",
+        "md",
+        "result",
+        "skill",
+        "skills",
+        "step",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 402,
+      "summary": "Step 4: Apply the result in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-031",
+      "end_line": 419,
+      "heading": "Package and Present (only if `present_files` tool is available)",
+      "keywords": [
+        "(only",
+        "`present",
+        "agents",
+        "and",
+        "available)",
+        "creator",
+        "files`",
+        "md",
+        "package",
+        "present",
+        "skill",
+        "skills",
+        "tool"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 408,
+      "summary": "Package and Present (only if `present_files` tool is available) in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-032",
+      "end_line": 444,
+      "heading": "Claude.ai-specific instructions",
+      "keywords": [
+        "agents",
+        "claude",
+        "creator",
+        "instructions",
+        "md",
+        "skill",
+        "skills",
+        "specific"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 420,
+      "summary": "Claude.ai-specific instructions in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-033",
+      "end_line": 458,
+      "heading": "Cowork-Specific Instructions",
+      "keywords": [
+        "agents",
+        "cowork",
+        "creator",
+        "instructions",
+        "md",
+        "skill",
+        "skills",
+        "specific"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 445,
+      "summary": "Cowork-Specific Instructions in .agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.skill-creator.SKILL#chunk-034",
+      "end_line": 485,
+      "heading": "Reference files",
+      "keywords": [
+        "agents",
+        "creator",
+        "files",
+        "md",
+        "reference",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "creator",
+          "skill",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "start_line": 459,
+      "summary": "Reference files in .agents/skills/skill-creator/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/skill-creator/SKILL.md"
+}

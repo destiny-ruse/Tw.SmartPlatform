@@ -1,0 +1,570 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Finishing a Development Branch",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 6,
+      "summary": "Finishing a Development Branch in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "md",
+        "overview",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-003",
+      "end_line": 17,
+      "heading": "The Process",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "md",
+        "process",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 16,
+      "summary": "The Process in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-004",
+      "end_line": 39,
+      "heading": "Step 1: Verify Tests",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "md",
+        "skill",
+        "skills",
+        "step",
+        "tests",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 18,
+      "summary": "Step 1: Verify Tests in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-005",
+      "end_line": 48,
+      "heading": "Step 2: Determine Base Branch",
+      "keywords": [
+        "a",
+        "agents",
+        "base",
+        "branch",
+        "determine",
+        "development",
+        "finishing",
+        "md",
+        "skill",
+        "skills",
+        "step"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 40,
+      "summary": "Step 2: Determine Base Branch in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-006",
+      "end_line": 65,
+      "heading": "Step 3: Present Options",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "md",
+        "options",
+        "present",
+        "skill",
+        "skills",
+        "step"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 49,
+      "summary": "Step 3: Present Options in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-007",
+      "end_line": 67,
+      "heading": "Step 4: Execute Choice",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "choice",
+        "development",
+        "execute",
+        "finishing",
+        "md",
+        "skill",
+        "skills",
+        "step"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 66,
+      "summary": "Step 4: Execute Choice in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-008",
+      "end_line": 88,
+      "heading": "Option 1: Merge Locally",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "locally",
+        "md",
+        "merge",
+        "option",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 68,
+      "summary": "Option 1: Merge Locally in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-009",
+      "end_line": 107,
+      "heading": "Option 2: Push and Create PR",
+      "keywords": [
+        "a",
+        "agents",
+        "and",
+        "branch",
+        "create",
+        "development",
+        "finishing",
+        "md",
+        "option",
+        "push",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 89,
+      "summary": "Option 2: Push and Create PR in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-010",
+      "end_line": 113,
+      "heading": "Option 3: Keep As-Is",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "keep",
+        "md",
+        "option",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 108,
+      "summary": "Option 3: Keep As-Is in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-011",
+      "end_line": 135,
+      "heading": "Option 4: Discard",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "discard",
+        "finishing",
+        "md",
+        "option",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 114,
+      "summary": "Option 4: Discard in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-012",
+      "end_line": 151,
+      "heading": "Step 5: Cleanup Worktree",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "cleanup",
+        "development",
+        "finishing",
+        "md",
+        "skill",
+        "skills",
+        "step",
+        "worktree"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 136,
+      "summary": "Step 5: Cleanup Worktree in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-013",
+      "end_line": 160,
+      "heading": "Quick Reference",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "md",
+        "quick",
+        "reference",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 152,
+      "summary": "Quick Reference in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-014",
+      "end_line": 178,
+      "heading": "Common Mistakes",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "common",
+        "development",
+        "finishing",
+        "md",
+        "mistakes",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 161,
+      "summary": "Common Mistakes in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-015",
+      "end_line": 192,
+      "heading": "Red Flags",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "flags",
+        "md",
+        "red",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 179,
+      "summary": "Red Flags in .agents/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.finishing-a-development-branch.SKILL#chunk-016",
+      "end_line": 200,
+      "heading": "Integration",
+      "keywords": [
+        "a",
+        "agents",
+        "branch",
+        "development",
+        "finishing",
+        "integration",
+        "md",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "branch",
+          "development",
+          "finishing",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "start_line": 193,
+      "summary": "Integration in .agents/skills/finishing-a-development-branch/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md"
+}

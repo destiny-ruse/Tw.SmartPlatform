@@ -1,5 +1,5 @@
 {
-  "repo_hash": "sha256:765df0f795b5cd49639ff225fad84d7ea599c4108dfc35018a91114770e5300e",
+  "repo_hash": "sha256:247a667cfcb88fd43c3b8c70b44ee5229b120107a0d718d2590ead893c0bf070",
   "schema_version": "1.0.0",
   "shards": [
     {
@@ -93,7 +93,7 @@
       "path": "route-index/by-kind/manual-part-002.generated.json"
     },
     {
-      "chunk_count": 17,
+      "chunk_count": 58,
       "kind": "kind",
       "name": "manual",
       "path": "route-index/by-kind/manual-part-003.generated.json"
@@ -109,6 +109,24 @@
       "kind": "kind",
       "name": "readme",
       "path": "route-index/by-kind/readme.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "kind",
+      "name": "skill",
+      "path": "route-index/by-kind/skill-part-001.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "kind",
+      "name": "skill",
+      "path": "route-index/by-kind/skill-part-002.generated.json"
+    },
+    {
+      "chunk_count": 94,
+      "kind": "kind",
+      "name": "skill",
+      "path": "route-index/by-kind/skill-part-003.generated.json"
     },
     {
       "chunk_count": 3,
@@ -135,7 +153,7 @@
       "path": "route-index/by-language/docs-part-002.generated.json"
     },
     {
-      "chunk_count": 18,
+      "chunk_count": 59,
       "kind": "language",
       "name": "docs",
       "path": "route-index/by-language/docs-part-003.generated.json"

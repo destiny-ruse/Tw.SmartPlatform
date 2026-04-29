@@ -1,0 +1,382 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Verification Before Completion",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "md",
+        "skill",
+        "skills",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 6,
+      "summary": "Verification Before Completion in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "md",
+        "overview",
+        "skill",
+        "skills",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-003",
+      "end_line": 23,
+      "heading": "The Iron Law",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "iron",
+        "law",
+        "md",
+        "skill",
+        "skills",
+        "the",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 16,
+      "summary": "The Iron Law in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-004",
+      "end_line": 39,
+      "heading": "The Gate Function",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "function",
+        "gate",
+        "md",
+        "skill",
+        "skills",
+        "the",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 24,
+      "summary": "The Gate Function in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-005",
+      "end_line": 51,
+      "heading": "Common Failures",
+      "keywords": [
+        "agents",
+        "before",
+        "common",
+        "completion",
+        "failures",
+        "md",
+        "skill",
+        "skills",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 40,
+      "summary": "Common Failures in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-006",
+      "end_line": 62,
+      "heading": "Red Flags - STOP",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "flags",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "stop",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 52,
+      "summary": "Red Flags - STOP in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-007",
+      "end_line": 75,
+      "heading": "Rationalization Prevention",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "md",
+        "prevention",
+        "rationalization",
+        "skill",
+        "skills",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 63,
+      "summary": "Rationalization Prevention in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-008",
+      "end_line": 107,
+      "heading": "Key Patterns",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "key",
+        "md",
+        "patterns",
+        "skill",
+        "skills",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 76,
+      "summary": "Key Patterns in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-009",
+      "end_line": 116,
+      "heading": "Why This Matters",
+      "keywords": [
+        "agents",
+        "before",
+        "completion",
+        "matters",
+        "md",
+        "skill",
+        "skills",
+        "this",
+        "verification",
+        "why"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 108,
+      "summary": "Why This Matters in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-010",
+      "end_line": 132,
+      "heading": "When To Apply",
+      "keywords": [
+        "agents",
+        "apply",
+        "before",
+        "completion",
+        "md",
+        "skill",
+        "skills",
+        "verification",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 117,
+      "summary": "When To Apply in .agents/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.verification-before-completion.SKILL#chunk-011",
+      "end_line": 139,
+      "heading": "The Bottom Line",
+      "keywords": [
+        "agents",
+        "before",
+        "bottom",
+        "completion",
+        "line",
+        "md",
+        "skill",
+        "skills",
+        "the",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "before",
+          "completion",
+          "skill",
+          "skills",
+          "verification"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "start_line": 133,
+      "summary": "The Bottom Line in .agents/skills/verification-before-completion/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/verification-before-completion/SKILL.md"
+}

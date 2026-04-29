@@ -1,0 +1,536 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Systematic Debugging",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 6,
+      "summary": "Systematic Debugging in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "overview",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-003",
+      "end_line": 23,
+      "heading": "The Iron Law",
+      "keywords": [
+        "agents",
+        "debugging",
+        "iron",
+        "law",
+        "md",
+        "skill",
+        "skills",
+        "systematic",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 16,
+      "summary": "The Iron Law in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-004",
+      "end_line": 45,
+      "heading": "When to Use",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "skill",
+        "skills",
+        "systematic",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 24,
+      "summary": "When to Use in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-005",
+      "end_line": 49,
+      "heading": "The Four Phases",
+      "keywords": [
+        "agents",
+        "debugging",
+        "four",
+        "md",
+        "phases",
+        "skill",
+        "skills",
+        "systematic",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 46,
+      "summary": "The Four Phases in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-006",
+      "end_line": 121,
+      "heading": "Phase 1: Root Cause Investigation",
+      "keywords": [
+        "agents",
+        "cause",
+        "debugging",
+        "investigation",
+        "md",
+        "phase",
+        "root",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 50,
+      "summary": "Phase 1: Root Cause Investigation in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-007",
+      "end_line": 144,
+      "heading": "Phase 2: Pattern Analysis",
+      "keywords": [
+        "agents",
+        "analysis",
+        "debugging",
+        "md",
+        "pattern",
+        "phase",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 122,
+      "summary": "Phase 2: Pattern Analysis in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-008",
+      "end_line": 169,
+      "heading": "Phase 3: Hypothesis and Testing",
+      "keywords": [
+        "agents",
+        "and",
+        "debugging",
+        "hypothesis",
+        "md",
+        "phase",
+        "skill",
+        "skills",
+        "systematic",
+        "testing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 145,
+      "summary": "Phase 3: Hypothesis and Testing in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-009",
+      "end_line": 214,
+      "heading": "Phase 4: Implementation",
+      "keywords": [
+        "agents",
+        "debugging",
+        "implementation",
+        "md",
+        "phase",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 170,
+      "summary": "Phase 4: Implementation in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-010",
+      "end_line": 233,
+      "heading": "Red Flags - STOP and Follow Process",
+      "keywords": [
+        "agents",
+        "and",
+        "debugging",
+        "flags",
+        "follow",
+        "md",
+        "process",
+        "red",
+        "skill",
+        "skills",
+        "stop",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 215,
+      "summary": "Red Flags - STOP and Follow Process in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-011",
+      "end_line": 244,
+      "heading": "your human partner's Signals You're Doing It Wrong",
+      "keywords": [
+        "agents",
+        "debugging",
+        "doing",
+        "human",
+        "md",
+        "partner's",
+        "signals",
+        "skill",
+        "skills",
+        "systematic",
+        "wrong",
+        "you're",
+        "your"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 234,
+      "summary": "your human partner's Signals You're Doing It Wrong in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-012",
+      "end_line": 257,
+      "heading": "Common Rationalizations",
+      "keywords": [
+        "agents",
+        "common",
+        "debugging",
+        "md",
+        "rationalizations",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 245,
+      "summary": "Common Rationalizations in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-013",
+      "end_line": 266,
+      "heading": "Quick Reference",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "quick",
+        "reference",
+        "skill",
+        "skills",
+        "systematic"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 258,
+      "summary": "Quick Reference in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-014",
+      "end_line": 277,
+      "heading": "When Process Reveals \"No Root Cause\"",
+      "keywords": [
+        "\"no",
+        "agents",
+        "cause\"",
+        "debugging",
+        "md",
+        "process",
+        "reveals",
+        "root",
+        "skill",
+        "skills",
+        "systematic",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 267,
+      "summary": "When Process Reveals \"No Root Cause\" in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-015",
+      "end_line": 289,
+      "heading": "Supporting Techniques",
+      "keywords": [
+        "agents",
+        "debugging",
+        "md",
+        "skill",
+        "skills",
+        "supporting",
+        "systematic",
+        "techniques"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 278,
+      "summary": "Supporting Techniques in .agents/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.systematic-debugging.SKILL#chunk-016",
+      "end_line": 296,
+      "heading": "Real-World Impact",
+      "keywords": [
+        "agents",
+        "debugging",
+        "impact",
+        "md",
+        "real",
+        "skill",
+        "skills",
+        "systematic",
+        "world"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "debugging",
+          "skill",
+          "skills",
+          "systematic"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "start_line": 290,
+      "summary": "Real-World Impact in .agents/skills/systematic-debugging/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/systematic-debugging/SKILL.md"
+}

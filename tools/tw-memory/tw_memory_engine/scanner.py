@@ -94,6 +94,8 @@ class SourceScanner:
 
     def _is_included(self, path: Path, parts: tuple[str, ...]) -> bool:
         name = path.name
+        if self._is_skill_file(name, parts):
+            return True
         if len(parts) == 1 and name == "README.md":
             return True
         if name == "README.md" and parts[0] in MARKDOWN_ROOTS:
@@ -103,6 +105,9 @@ class SourceScanner:
         if self._is_package_file(name):
             return True
         return False
+
+    def _is_skill_file(self, name: str, parts: tuple[str, ...]) -> bool:
+        return len(parts) >= 4 and parts[0] == ".agents" and parts[1] == "skills" and name == "SKILL.md"
 
     def _is_package_file(self, name: str) -> bool:
         return (

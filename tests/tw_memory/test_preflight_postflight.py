@@ -50,6 +50,30 @@ class PreflightPostflightTests(unittest.TestCase):
             self.assertIn("build-search", result["actions"])
             self.assertGreaterEqual(len(result["candidates"]), 1)
 
+    def test_preflight_filters_candidates_by_requested_stack(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            dotnet = root / "backend" / "dotnet" / "BuildingBlocks" / "src" / "Tw.Caching"
+            java = root / "backend" / "java" / "orders"
+            dotnet.mkdir(parents=True)
+            java.mkdir(parents=True)
+            (dotnet / "README.md").write_text("# Dotnet Cache\n\nCaching building blocks.\n", encoding="utf-8")
+            (java / "README.md").write_text("# Java Orders\n\nJava order service.\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+
+            result = PreflightRunner(root).run(
+                task="dotnet caching building blocks",
+                stack="java",
+                path="backend/java",
+            )
+
+            candidate_paths = [candidate["source_path"] for candidate in result["candidates"]]
+            self.assertGreaterEqual(len(candidate_paths), 1)
+            self.assertFalse(
+                any(path.startswith("backend/dotnet/") for path in candidate_paths),
+                candidate_paths,
+            )
+
     def test_preflight_query_normalizes_cli_path_forms_for_language_and_service_terms(self):
         runner = PreflightRunner(Path("."))
 

@@ -1,0 +1,128 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW .NET Development",
+      "keywords": [
+        "agents",
+        "development",
+        "dotnet",
+        "md",
+        "net",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:f13b7b4377fe4c248e1dd805cb0a648922da2dc296eda84e0f120275a75c1571",
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 6,
+      "summary": "TW .NET Development in .agents/skills/tw-dotnet/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "dotnet",
+        "md",
+        "preflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:f13b7b4377fe4c248e1dd805cb0a648922da2dc296eda84e0f120275a75c1571",
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-dotnet/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "dotnet",
+        "md",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:f13b7b4377fe4c248e1dd805cb0a648922da2dc296eda84e0f120275a75c1571",
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-dotnet/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-dotnet.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "dotnet",
+        "md",
+        "postflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "dotnet",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:f13b7b4377fe4c248e1dd805cb0a648922da2dc296eda84e0f120275a75c1571",
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-dotnet/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/tw-dotnet/SKILL.md"
+}

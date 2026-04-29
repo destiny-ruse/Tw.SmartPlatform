@@ -1,4 +1,5 @@
 import json
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -13,6 +14,34 @@ SearchIndex = engine.search.SearchIndex
 
 
 class CheckerTests(unittest.TestCase):
+    def test_check_reports_missing_required_memory_artifacts(self):
+        cases = [
+            (".tw-memory", "memory-missing"),
+            (".tw-memory/source-index", "source-index-missing"),
+            (".tw-memory/generated/chunks", "chunks-missing"),
+            (".tw-memory/route-index/index.generated.json", "route-index-missing"),
+        ]
+
+        for missing_path, expected_code in cases:
+            with self.subTest(missing_path=missing_path), tempfile.TemporaryDirectory() as work:
+                root = Path(work)
+                (root / "docs").mkdir()
+                (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
+                MemoryGenerator(root).generate()
+
+                target = root / missing_path
+                if target.is_dir():
+                    shutil.rmtree(target)
+                else:
+                    target.unlink()
+
+                diagnostics = MemoryChecker(root).check()
+
+                self.assertTrue(
+                    any(item.code == expected_code and item.level == "error" for item in diagnostics),
+                    [item.to_json() for item in diagnostics],
+                )
+
     def test_check_reports_stale_source_hash(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
@@ -62,9 +91,11 @@ class CheckerTests(unittest.TestCase):
     def test_check_warns_when_route_index_is_too_large(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
-            index = root / ".tw-memory" / "route-index"
-            index.mkdir(parents=True)
-            (index / "index.generated.json").write_text("x" * 210_000, encoding="utf-8")
+            (root / "docs").mkdir()
+            (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+            index = root / ".tw-memory" / "route-index" / "index.generated.json"
+            index.write_text(json.dumps({"shards": [], "padding": "x" * 210_000}), encoding="utf-8")
 
             diagnostics = MemoryChecker(root).check()
 

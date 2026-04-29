@@ -33,9 +33,9 @@ class MarkdownChunker:
         chunks: list[ChunkRecord] = []
         for index, (start_line, heading) in enumerate(heading_starts):
             next_start = heading_starts[index + 1][0] if index + 1 < len(heading_starts) else len(lines) + 1
-            chunks.append(
-                self._record(
-                    number=index + 1,
+            chunks.extend(
+                self._windowed_records(
+                    number_offset=len(chunks),
                     source_hash=source_hash,
                     start_line=start_line,
                     end_line=next_start - 1,
@@ -72,22 +72,42 @@ class MarkdownChunker:
         return starts
 
     def _synthetic_chunks(self, lines: list[str], source_hash: str) -> list[ChunkRecord]:
+        return self._windowed_records(
+            number_offset=0,
+            source_hash=source_hash,
+            start_line=1,
+            end_line=len(lines),
+            heading=None,
+        )
+
+    def _windowed_records(
+        self,
+        *,
+        number_offset: int,
+        source_hash: str,
+        start_line: int,
+        end_line: int,
+        heading: str | None,
+    ) -> list[ChunkRecord]:
         chunks: list[ChunkRecord] = []
-        start_line = 1
-        while start_line <= len(lines):
-            end_line = min(start_line + WINDOW_LINES - 1, len(lines))
+        if end_line < start_line:
+            return chunks
+
+        current_start = start_line
+        while current_start <= end_line:
+            current_end = min(current_start + WINDOW_LINES - 1, end_line)
             chunks.append(
                 self._record(
-                    number=len(chunks) + 1,
+                    number=number_offset + len(chunks) + 1,
                     source_hash=source_hash,
-                    start_line=start_line,
-                    end_line=end_line,
-                    heading=None,
+                    start_line=current_start,
+                    end_line=current_end,
+                    heading=heading,
                 )
             )
-            if end_line == len(lines):
+            if current_end == end_line:
                 break
-            start_line = max(1, end_line - OVERLAP_LINES + 1)
+            current_start = max(start_line, current_end - OVERLAP_LINES + 1)
         return chunks
 
     def _record(

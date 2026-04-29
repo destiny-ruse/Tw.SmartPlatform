@@ -1,0 +1,127 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Python Development",
+      "keywords": [
+        "agents",
+        "development",
+        "md",
+        "python",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:916acdf9ac41a5e6b530caefb50207ac21ca9ebfb772bf42dae04826eaf17a9e",
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Python Development in .agents/skills/tw-python/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "md",
+        "preflight",
+        "python",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:916acdf9ac41a5e6b530caefb50207ac21ca9ebfb772bf42dae04826eaf17a9e",
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-python/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "md",
+        "python",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:916acdf9ac41a5e6b530caefb50207ac21ca9ebfb772bf42dae04826eaf17a9e",
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-python/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-python.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "md",
+        "postflight",
+        "python",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "python",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:916acdf9ac41a5e6b530caefb50207ac21ca9ebfb772bf42dae04826eaf17a9e",
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-python/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/tw-python/SKILL.md"
+}

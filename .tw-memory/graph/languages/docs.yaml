@@ -23,6 +23,12 @@ chunks:
   - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-010
   - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-011
   - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-012
+  - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-013
+  - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-014
+  - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-015
+  - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-016
+  - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-017
+  - docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-018
   - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-001
   - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-002
   - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-003
@@ -34,6 +40,10 @@ chunks:
   - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-009
   - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-010
   - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-011
+  - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-012
+  - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-013
+  - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-014
+  - docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-015
   - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-001
   - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-002
   - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-003
@@ -46,6 +56,12 @@ chunks:
   - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-010
   - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-011
   - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-012
+  - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-013
+  - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-014
+  - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-015
+  - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-016
+  - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-017
+  - docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-018
   - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-001
   - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-002
   - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-003
@@ -57,6 +73,8 @@ chunks:
   - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-009
   - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-010
   - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-011
+  - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-012
+  - docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-013
   - docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-001
   - docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-002
   - docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-003
@@ -68,6 +86,7 @@ chunks:
   - docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-009
   - docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-010
   - docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-011
+  - docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-012
   - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-001
   - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-002
   - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-003
@@ -78,6 +97,8 @@ chunks:
   - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-008
   - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-009
   - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-010
+  - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-011
+  - docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-012
   - docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-001
   - docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-002
   - docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-003
@@ -106,6 +127,25 @@ chunks:
   - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-015
   - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-016
   - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-017
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-018
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-019
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-020
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-021
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-022
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-023
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-024
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-025
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-026
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-027
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-028
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-029
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-030
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-031
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-032
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-033
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-034
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-035
+  - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-036
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-001
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-002
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-003
@@ -170,6 +210,7 @@ chunks:
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-062
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-063
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-064
+  - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-065
   - docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-001
   - docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-002
   - docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-003

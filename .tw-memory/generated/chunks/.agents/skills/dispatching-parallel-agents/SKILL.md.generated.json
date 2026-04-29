@@ -1,0 +1,505 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Dispatching Parallel Agents",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "md",
+        "parallel",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 6,
+      "summary": "Dispatching Parallel Agents in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "md",
+        "overview",
+        "parallel",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-003",
+      "end_line": 46,
+      "heading": "When to Use",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "md",
+        "parallel",
+        "skill",
+        "skills",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 16,
+      "summary": "When to Use in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-004",
+      "end_line": 48,
+      "heading": "The Pattern",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "md",
+        "parallel",
+        "pattern",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 47,
+      "summary": "The Pattern in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-005",
+      "end_line": 57,
+      "heading": "1. Identify Independent Domains",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "domains",
+        "identify",
+        "independent",
+        "md",
+        "parallel",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 49,
+      "summary": "1. Identify Independent Domains in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-006",
+      "end_line": 65,
+      "heading": "2. Create Focused Agent Tasks",
+      "keywords": [
+        "agent",
+        "agents",
+        "create",
+        "dispatching",
+        "focused",
+        "md",
+        "parallel",
+        "skill",
+        "skills",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 58,
+      "summary": "2. Create Focused Agent Tasks in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-007",
+      "end_line": 75,
+      "heading": "3. Dispatch in Parallel",
+      "keywords": [
+        "agents",
+        "dispatch",
+        "dispatching",
+        "md",
+        "parallel",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 66,
+      "summary": "3. Dispatch in Parallel in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-008",
+      "end_line": 83,
+      "heading": "4. Review and Integrate",
+      "keywords": [
+        "agents",
+        "and",
+        "dispatching",
+        "integrate",
+        "md",
+        "parallel",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 76,
+      "summary": "4. Review and Integrate in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-009",
+      "end_line": 111,
+      "heading": "Agent Prompt Structure",
+      "keywords": [
+        "agent",
+        "agents",
+        "dispatching",
+        "md",
+        "parallel",
+        "prompt",
+        "skill",
+        "skills",
+        "structure"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 84,
+      "summary": "Agent Prompt Structure in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-010",
+      "end_line": 125,
+      "heading": "Common Mistakes",
+      "keywords": [
+        "agents",
+        "common",
+        "dispatching",
+        "md",
+        "mistakes",
+        "parallel",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 112,
+      "summary": "Common Mistakes in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-011",
+      "end_line": 132,
+      "heading": "When NOT to Use",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "md",
+        "not",
+        "parallel",
+        "skill",
+        "skills",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 126,
+      "summary": "When NOT to Use in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-012",
+      "end_line": 159,
+      "heading": "Real Example from Session",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "example",
+        "from",
+        "md",
+        "parallel",
+        "real",
+        "session",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 133,
+      "summary": "Real Example from Session in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-013",
+      "end_line": 166,
+      "heading": "Key Benefits",
+      "keywords": [
+        "agents",
+        "benefits",
+        "dispatching",
+        "key",
+        "md",
+        "parallel",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 160,
+      "summary": "Key Benefits in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-014",
+      "end_line": 174,
+      "heading": "Verification",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "md",
+        "parallel",
+        "skill",
+        "skills",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 167,
+      "summary": "Verification in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.dispatching-parallel-agents.SKILL#chunk-015",
+      "end_line": 182,
+      "heading": "Real-World Impact",
+      "keywords": [
+        "agents",
+        "dispatching",
+        "impact",
+        "md",
+        "parallel",
+        "real",
+        "skill",
+        "skills",
+        "world"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "agents",
+          "dispatching",
+          "parallel",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "start_line": 175,
+      "summary": "Real-World Impact in .agents/skills/dispatching-parallel-agents/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md"
+}

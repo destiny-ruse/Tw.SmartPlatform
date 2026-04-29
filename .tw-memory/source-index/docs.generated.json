@@ -9,6 +9,270 @@
       },
       "language": null,
       "service": null,
+      "source_hash": "sha256:4625fbfaafb229d41364b77a3591f9559e0d9d73ab0ed3589bb8e3c63f0cb734",
+      "source_path": ".agents/skills/brainstorming/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:ee429867974830f3fa1dc2a3b0cf5c98c742a1c33ec0fb156ac3727a255d24b5",
+      "source_path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:3ac35d319282601db73a9327a45f051373a9ced3b2d4387710ae3f4baee708e0",
+      "source_path": ".agents/skills/documentation-writer/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:d97039071302785fe4f5191bf426782dc4409cfb2f08bf0f7a4b75815ad291e9",
+      "source_path": ".agents/skills/executing-plans/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_path": ".agents/skills/find-skills/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:7e9bf2c86310276c9151a3774ac0c03ed8b648feb72b9873aca6bce2f8992194",
+      "source_path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:fb1c965693e9b71799462b4bf445f65c82806c32aff1cd041acacb552a7da9ca",
+      "source_path": ".agents/skills/requesting-code-review/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "source_path": ".agents/skills/skill-creator/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:d8d67336dd741ab3354c68749c5937a4ed2207359c1ef0b0bbeed266296c30f6",
+      "source_path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_path": ".agents/skills/systematic-debugging/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:f13b7b4377fe4c248e1dd805cb0a648922da2dc296eda84e0f120275a75c1571",
+      "source_path": ".agents/skills/tw-dotnet/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:d1e99ffb257a97baf3b2cd7d123d82a0c27c3ba8429544132d318bd668259e30",
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_path": ".agents/skills/tw-java/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:6a43d9fd439237b3632321e1dfa8cb14ebc995ad286ca3791b7ec5468c450c53",
+      "source_path": ".agents/skills/tw-memory/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:916acdf9ac41a5e6b530caefb50207ac21ca9ebfb772bf42dae04826eaf17a9e",
+      "source_path": ".agents/skills/tw-python/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:c35ac975d145f74d9f3668c1b035a3754d3c0f4edb491cc80a6a0265cfdf7749",
+      "source_path": ".agents/skills/verification-before-completion/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_path": ".agents/skills/writing-skills/SKILL.md",
+      "source_type": "skill"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
       "source_hash": "sha256:dc70851cbaf1fa745444ef7d8aabccd1ed5cf9e0965ce5ebb20b3869d50f7b18",
       "source_path": "README.md",
       "source_type": "readme"

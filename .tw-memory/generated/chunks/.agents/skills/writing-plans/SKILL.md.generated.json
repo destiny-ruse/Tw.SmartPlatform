@@ -1,0 +1,356 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Writing Plans",
+      "keywords": [
+        "agents",
+        "md",
+        "plans",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 6,
+      "summary": "Writing Plans in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-002",
+      "end_line": 20,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "md",
+        "overview",
+        "plans",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-003",
+      "end_line": 24,
+      "heading": "Scope Check",
+      "keywords": [
+        "agents",
+        "check",
+        "md",
+        "plans",
+        "scope",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 21,
+      "summary": "Scope Check in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-004",
+      "end_line": 35,
+      "heading": "File Structure",
+      "keywords": [
+        "agents",
+        "file",
+        "md",
+        "plans",
+        "skill",
+        "skills",
+        "structure",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 25,
+      "summary": "File Structure in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-005",
+      "end_line": 44,
+      "heading": "Bite-Sized Task Granularity",
+      "keywords": [
+        "agents",
+        "bite",
+        "granularity",
+        "md",
+        "plans",
+        "sized",
+        "skill",
+        "skills",
+        "task",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 36,
+      "summary": "Bite-Sized Task Granularity in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-006",
+      "end_line": 62,
+      "heading": "Plan Document Header",
+      "keywords": [
+        "agents",
+        "document",
+        "header",
+        "md",
+        "plan",
+        "plans",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 45,
+      "summary": "Plan Document Header in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-007",
+      "end_line": 105,
+      "heading": "Task Structure",
+      "keywords": [
+        "agents",
+        "md",
+        "plans",
+        "skill",
+        "skills",
+        "structure",
+        "task",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 63,
+      "summary": "Task Structure in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-008",
+      "end_line": 115,
+      "heading": "No Placeholders",
+      "keywords": [
+        "agents",
+        "md",
+        "placeholders",
+        "plans",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 106,
+      "summary": "No Placeholders in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-009",
+      "end_line": 121,
+      "heading": "Remember",
+      "keywords": [
+        "agents",
+        "md",
+        "plans",
+        "remember",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 116,
+      "summary": "Remember in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-010",
+      "end_line": 133,
+      "heading": "Self-Review",
+      "keywords": [
+        "agents",
+        "md",
+        "plans",
+        "review",
+        "self",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 122,
+      "summary": "Self-Review in .agents/skills/writing-plans/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.writing-plans.SKILL#chunk-011",
+      "end_line": 152,
+      "heading": "Execution Handoff",
+      "keywords": [
+        "agents",
+        "execution",
+        "handoff",
+        "md",
+        "plans",
+        "skill",
+        "skills",
+        "writing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "plans",
+          "skill",
+          "skills",
+          "writing"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6f76fc9d4817a070c5deea6bfac91ff8dec32d0698d39cbc749d4ea37daa8658",
+      "source_path": ".agents/skills/writing-plans/SKILL.md",
+      "start_line": 134,
+      "summary": "Execution Handoff in .agents/skills/writing-plans/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/writing-plans/SKILL.md"
+}

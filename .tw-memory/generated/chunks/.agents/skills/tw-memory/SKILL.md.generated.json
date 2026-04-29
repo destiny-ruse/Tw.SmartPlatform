@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.tw-memory.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Memory System Maintenance",
+      "keywords": [
+        "agents",
+        "maintenance",
+        "md",
+        "memory",
+        "skill",
+        "skills",
+        "system",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "memory",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6a43d9fd439237b3632321e1dfa8cb14ebc995ad286ca3791b7ec5468c450c53",
+      "source_path": ".agents/skills/tw-memory/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Memory System Maintenance in .agents/skills/tw-memory/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-memory.SKILL#chunk-002",
+      "end_line": 21,
+      "heading": "Required Flow",
+      "keywords": [
+        "agents",
+        "flow",
+        "md",
+        "memory",
+        "required",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "memory",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6a43d9fd439237b3632321e1dfa8cb14ebc995ad286ca3791b7ec5468c450c53",
+      "source_path": ".agents/skills/tw-memory/SKILL.md",
+      "start_line": 10,
+      "summary": "Required Flow in .agents/skills/tw-memory/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-memory.SKILL#chunk-003",
+      "end_line": 24,
+      "heading": "Boundaries",
+      "keywords": [
+        "agents",
+        "boundaries",
+        "md",
+        "memory",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "memory",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:6a43d9fd439237b3632321e1dfa8cb14ebc995ad286ca3791b7ec5468c450c53",
+      "source_path": ".agents/skills/tw-memory/SKILL.md",
+      "start_line": 22,
+      "summary": "Boundaries in .agents/skills/tw-memory/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/tw-memory/SKILL.md"
+}

@@ -1,0 +1,127 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-001",
+      "end_line": 9,
+      "heading": "TW Frontend Development",
+      "keywords": [
+        "agents",
+        "development",
+        "frontend",
+        "md",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d1e99ffb257a97baf3b2cd7d123d82a0c27c3ba8429544132d318bd668259e30",
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 6,
+      "summary": "TW Frontend Development in .agents/skills/tw-frontend/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-002",
+      "end_line": 24,
+      "heading": "Preflight",
+      "keywords": [
+        "agents",
+        "frontend",
+        "md",
+        "preflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d1e99ffb257a97baf3b2cd7d123d82a0c27c3ba8429544132d318bd668259e30",
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 10,
+      "summary": "Preflight in .agents/skills/tw-frontend/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-003",
+      "end_line": 28,
+      "heading": "Development Rules",
+      "keywords": [
+        "agents",
+        "development",
+        "frontend",
+        "md",
+        "rules",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d1e99ffb257a97baf3b2cd7d123d82a0c27c3ba8429544132d318bd668259e30",
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 25,
+      "summary": "Development Rules in .agents/skills/tw-frontend/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.tw-frontend.SKILL#chunk-004",
+      "end_line": 42,
+      "heading": "Postflight",
+      "keywords": [
+        "agents",
+        "frontend",
+        "md",
+        "postflight",
+        "skill",
+        "skills",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "frontend",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:d1e99ffb257a97baf3b2cd7d123d82a0c27c3ba8429544132d318bd668259e30",
+      "source_path": ".agents/skills/tw-frontend/SKILL.md",
+      "start_line": 29,
+      "summary": "Postflight in .agents/skills/tw-frontend/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/tw-frontend/SKILL.md"
+}

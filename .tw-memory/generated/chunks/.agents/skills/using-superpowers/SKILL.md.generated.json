@@ -1,0 +1,290 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-001",
+      "end_line": 27,
+      "heading": "Instruction Priority",
+      "keywords": [
+        "agents",
+        "instruction",
+        "md",
+        "priority",
+        "skill",
+        "skills",
+        "superpowers",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 18,
+      "summary": "Instruction Priority in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-002",
+      "end_line": 37,
+      "heading": "How to Access Skills",
+      "keywords": [
+        "access",
+        "agents",
+        "how",
+        "md",
+        "skill",
+        "skills",
+        "superpowers",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 28,
+      "summary": "How to Access Skills in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-003",
+      "end_line": 41,
+      "heading": "Platform Adaptation",
+      "keywords": [
+        "adaptation",
+        "agents",
+        "md",
+        "platform",
+        "skill",
+        "skills",
+        "superpowers",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 38,
+      "summary": "Platform Adaptation in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-004",
+      "end_line": 43,
+      "heading": "Using Skills",
+      "keywords": [
+        "agents",
+        "md",
+        "skill",
+        "skills",
+        "superpowers",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 42,
+      "summary": "Using Skills in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-005",
+      "end_line": 77,
+      "heading": "The Rule",
+      "keywords": [
+        "agents",
+        "md",
+        "rule",
+        "skill",
+        "skills",
+        "superpowers",
+        "the",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 44,
+      "summary": "The Rule in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-006",
+      "end_line": 96,
+      "heading": "Red Flags",
+      "keywords": [
+        "agents",
+        "flags",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "superpowers",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 78,
+      "summary": "Red Flags in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-007",
+      "end_line": 106,
+      "heading": "Skill Priority",
+      "keywords": [
+        "agents",
+        "md",
+        "priority",
+        "skill",
+        "skills",
+        "superpowers",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 97,
+      "summary": "Skill Priority in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-008",
+      "end_line": 114,
+      "heading": "Skill Types",
+      "keywords": [
+        "agents",
+        "md",
+        "skill",
+        "skills",
+        "superpowers",
+        "types",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 107,
+      "summary": "Skill Types in .agents/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.using-superpowers.SKILL#chunk-009",
+      "end_line": 117,
+      "heading": "User Instructions",
+      "keywords": [
+        "agents",
+        "instructions",
+        "md",
+        "skill",
+        "skills",
+        "superpowers",
+        "user",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "skill",
+          "skills",
+          "superpowers",
+          "using"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:8052a1248970aee7ddd272bf27e9873aec08177d5065b75ba8c53d9b68d89d5f",
+      "source_path": ".agents/skills/using-superpowers/SKILL.md",
+      "start_line": 115,
+      "summary": "User Instructions in .agents/skills/using-superpowers/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/using-superpowers/SKILL.md"
+}

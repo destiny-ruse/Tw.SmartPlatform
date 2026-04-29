@@ -1,0 +1,597 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Code Review Reception",
+      "keywords": [
+        "agents",
+        "code",
+        "md",
+        "receiving",
+        "reception",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 6,
+      "summary": "Code Review Reception in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-002",
+      "end_line": 13,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "code",
+        "md",
+        "overview",
+        "receiving",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-003",
+      "end_line": 26,
+      "heading": "The Response Pattern",
+      "keywords": [
+        "agents",
+        "code",
+        "md",
+        "pattern",
+        "receiving",
+        "response",
+        "review",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 14,
+      "summary": "The Response Pattern in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-004",
+      "end_line": 39,
+      "heading": "Forbidden Responses",
+      "keywords": [
+        "agents",
+        "code",
+        "forbidden",
+        "md",
+        "receiving",
+        "responses",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 27,
+      "summary": "Forbidden Responses in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-005",
+      "end_line": 58,
+      "heading": "Handling Unclear Feedback",
+      "keywords": [
+        "agents",
+        "code",
+        "feedback",
+        "handling",
+        "md",
+        "receiving",
+        "review",
+        "skill",
+        "skills",
+        "unclear"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 40,
+      "summary": "Handling Unclear Feedback in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-006",
+      "end_line": 60,
+      "heading": "Source-Specific Handling",
+      "keywords": [
+        "agents",
+        "code",
+        "handling",
+        "md",
+        "receiving",
+        "review",
+        "skill",
+        "skills",
+        "source",
+        "specific"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 59,
+      "summary": "Source-Specific Handling in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-007",
+      "end_line": 66,
+      "heading": "From your human partner",
+      "keywords": [
+        "agents",
+        "code",
+        "from",
+        "human",
+        "md",
+        "partner",
+        "receiving",
+        "review",
+        "skill",
+        "skills",
+        "your"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 61,
+      "summary": "From your human partner in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-008",
+      "end_line": 87,
+      "heading": "From External Reviewers",
+      "keywords": [
+        "agents",
+        "code",
+        "external",
+        "from",
+        "md",
+        "receiving",
+        "review",
+        "reviewers",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 67,
+      "summary": "From External Reviewers in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-009",
+      "end_line": 99,
+      "heading": "YAGNI Check for \"Professional\" Features",
+      "keywords": [
+        "\"professional\"",
+        "agents",
+        "check",
+        "code",
+        "features",
+        "for",
+        "md",
+        "receiving",
+        "review",
+        "skill",
+        "skills",
+        "yagni"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 88,
+      "summary": "YAGNI Check for \"Professional\" Features in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-010",
+      "end_line": 112,
+      "heading": "Implementation Order",
+      "keywords": [
+        "agents",
+        "code",
+        "implementation",
+        "md",
+        "order",
+        "receiving",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 100,
+      "summary": "Implementation Order in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-011",
+      "end_line": 130,
+      "heading": "When To Push Back",
+      "keywords": [
+        "agents",
+        "back",
+        "code",
+        "md",
+        "push",
+        "receiving",
+        "review",
+        "skill",
+        "skills",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 113,
+      "summary": "When To Push Back in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-012",
+      "end_line": 149,
+      "heading": "Acknowledging Correct Feedback",
+      "keywords": [
+        "acknowledging",
+        "agents",
+        "code",
+        "correct",
+        "feedback",
+        "md",
+        "receiving",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 131,
+      "summary": "Acknowledging Correct Feedback in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-013",
+      "end_line": 163,
+      "heading": "Gracefully Correcting Your Pushback",
+      "keywords": [
+        "agents",
+        "code",
+        "correcting",
+        "gracefully",
+        "md",
+        "pushback",
+        "receiving",
+        "review",
+        "skill",
+        "skills",
+        "your"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 150,
+      "summary": "Gracefully Correcting Your Pushback in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-014",
+      "end_line": 175,
+      "heading": "Common Mistakes",
+      "keywords": [
+        "agents",
+        "code",
+        "common",
+        "md",
+        "mistakes",
+        "receiving",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 164,
+      "summary": "Common Mistakes in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-015",
+      "end_line": 202,
+      "heading": "Real Examples",
+      "keywords": [
+        "agents",
+        "code",
+        "examples",
+        "md",
+        "real",
+        "receiving",
+        "review",
+        "skill",
+        "skills"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 176,
+      "summary": "Real Examples in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-016",
+      "end_line": 206,
+      "heading": "GitHub Thread Replies",
+      "keywords": [
+        "agents",
+        "code",
+        "github",
+        "md",
+        "receiving",
+        "replies",
+        "review",
+        "skill",
+        "skills",
+        "thread"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 203,
+      "summary": "GitHub Thread Replies in .agents/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.receiving-code-review.SKILL#chunk-017",
+      "end_line": 213,
+      "heading": "The Bottom Line",
+      "keywords": [
+        "agents",
+        "bottom",
+        "code",
+        "line",
+        "md",
+        "receiving",
+        "review",
+        "skill",
+        "skills",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "code",
+          "receiving",
+          "review",
+          "skill",
+          "skills"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_path": ".agents/skills/receiving-code-review/SKILL.md",
+      "start_line": 207,
+      "summary": "The Bottom Line in .agents/skills/receiving-code-review/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/receiving-code-review/SKILL.md"
+}

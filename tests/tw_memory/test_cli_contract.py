@@ -7,9 +7,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from tools.tw_memory_test_support import import_engine
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CLI = REPO_ROOT / "tools" / "tw-memory" / "tw_memory.py"
+engine = import_engine()
+MemoryGenerator = engine.generator.MemoryGenerator
 
 
 class CliContractTests(unittest.TestCase):
@@ -141,8 +145,8 @@ class CliContractTests(unittest.TestCase):
     def test_check_warning_only_diagnostics_exit_zero(self):
         with tempfile.TemporaryDirectory() as work:
             root = self._temp_repo_root(work)
+            MemoryGenerator(root).generate()
             route_index = root / ".tw-memory" / "route-index" / "index.generated.json"
-            route_index.parent.mkdir(parents=True)
             route_index.write_text(json.dumps({"shards": [], "padding": "x" * 210_000}), encoding="utf-8")
 
             result = subprocess.run(

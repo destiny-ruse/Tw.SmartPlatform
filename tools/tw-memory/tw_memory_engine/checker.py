@@ -51,12 +51,58 @@ class MemoryChecker:
 
     def check(self) -> list[Diagnostic]:
         diagnostics: list[Diagnostic] = []
+        diagnostics.extend(self._check_required_artifacts())
         source_records = self._source_records(diagnostics)
         diagnostics.extend(self._check_source_freshness(source_records))
         diagnostics.extend(self._check_chunk_ranges())
         diagnostics.extend(self._check_manual_freshness(source_records))
         diagnostics.extend(self._check_route_index())
         diagnostics.extend(self._check_memory_safety())
+        return diagnostics
+
+    def _check_required_artifacts(self) -> list[Diagnostic]:
+        if not self.memory_root.exists():
+            return [
+                Diagnostic(
+                    level="error",
+                    code="memory-missing",
+                    path=".tw-memory",
+                    message="required .tw-memory directory is missing",
+                )
+            ]
+
+        required_paths = [
+            (
+                self.memory_root / "source-index",
+                "source-index-missing",
+                ".tw-memory/source-index",
+                "required source index directory is missing",
+            ),
+            (
+                self.memory_root / "generated" / "chunks",
+                "chunks-missing",
+                ".tw-memory/generated/chunks",
+                "required generated chunks directory is missing",
+            ),
+            (
+                self.memory_root / "route-index" / "index.generated.json",
+                "route-index-missing",
+                ".tw-memory/route-index/index.generated.json",
+                "required route index is missing",
+            ),
+        ]
+
+        diagnostics: list[Diagnostic] = []
+        for path, code, diagnostic_path, message in required_paths:
+            if not path.exists():
+                diagnostics.append(
+                    Diagnostic(
+                        level="error",
+                        code=code,
+                        path=diagnostic_path,
+                        message=message,
+                    )
+                )
         return diagnostics
 
     def _source_records(self, diagnostics: list[Diagnostic]) -> list[tuple[Path, dict[str, Any]]]:

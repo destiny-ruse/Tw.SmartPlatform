@@ -1,0 +1,732 @@
+{
+  "chunks": [
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-001",
+      "end_line": 7,
+      "heading": "Test-Driven Development (TDD)",
+      "keywords": [
+        "(tdd)",
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 6,
+      "summary": "Test-Driven Development (TDD) in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-002",
+      "end_line": 15,
+      "heading": "Overview",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "overview",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 8,
+      "summary": "Overview in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-003",
+      "end_line": 30,
+      "heading": "When to Use",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "use",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 16,
+      "summary": "When to Use in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-004",
+      "end_line": 46,
+      "heading": "The Iron Law",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "iron",
+        "law",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "the"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 31,
+      "summary": "The Iron Law in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-005",
+      "end_line": 70,
+      "heading": "Red-Green-Refactor",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "green",
+        "md",
+        "red",
+        "refactor",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 47,
+      "summary": "Red-Green-Refactor in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-006",
+      "end_line": 112,
+      "heading": "RED - Write Failing Test",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "failing",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "test",
+        "write"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 71,
+      "summary": "RED - Write Failing Test in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-007",
+      "end_line": 129,
+      "heading": "Verify RED - Watch It Fail",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "fail",
+        "md",
+        "red",
+        "skill",
+        "skills",
+        "test",
+        "verify",
+        "watch"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 113,
+      "summary": "Verify RED - Watch It Fail in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-008",
+      "end_line": 167,
+      "heading": "GREEN - Minimal Code",
+      "keywords": [
+        "agents",
+        "code",
+        "development",
+        "driven",
+        "green",
+        "md",
+        "minimal",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 130,
+      "summary": "GREEN - Minimal Code in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-009",
+      "end_line": 184,
+      "heading": "Verify GREEN - Watch It Pass",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "green",
+        "md",
+        "pass",
+        "skill",
+        "skills",
+        "test",
+        "verify",
+        "watch"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 168,
+      "summary": "Verify GREEN - Watch It Pass in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-010",
+      "end_line": 193,
+      "heading": "REFACTOR - Clean Up",
+      "keywords": [
+        "agents",
+        "clean",
+        "development",
+        "driven",
+        "md",
+        "refactor",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 185,
+      "summary": "REFACTOR - Clean Up in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-011",
+      "end_line": 197,
+      "heading": "Repeat",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "repeat",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 194,
+      "summary": "Repeat in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-012",
+      "end_line": 205,
+      "heading": "Good Tests",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "good",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "tests"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 198,
+      "summary": "Good Tests in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-013",
+      "end_line": 255,
+      "heading": "Why Order Matters",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "matters",
+        "md",
+        "order",
+        "skill",
+        "skills",
+        "test",
+        "why"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 206,
+      "summary": "Why Order Matters in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-014",
+      "end_line": 271,
+      "heading": "Common Rationalizations",
+      "keywords": [
+        "agents",
+        "common",
+        "development",
+        "driven",
+        "md",
+        "rationalizations",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 256,
+      "summary": "Common Rationalizations in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-015",
+      "end_line": 289,
+      "heading": "Red Flags - STOP and Start Over",
+      "keywords": [
+        "agents",
+        "and",
+        "development",
+        "driven",
+        "flags",
+        "md",
+        "over",
+        "red",
+        "skill",
+        "skills",
+        "start",
+        "stop",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 272,
+      "summary": "Red Flags - STOP and Start Over in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-016",
+      "end_line": 326,
+      "heading": "Example: Bug Fix",
+      "keywords": [
+        "agents",
+        "bug",
+        "development",
+        "driven",
+        "example:",
+        "fix",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 290,
+      "summary": "Example: Bug Fix in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-017",
+      "end_line": 341,
+      "heading": "Verification Checklist",
+      "keywords": [
+        "agents",
+        "checklist",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "test",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 327,
+      "summary": "Verification Checklist in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-018",
+      "end_line": 350,
+      "heading": "When Stuck",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "md",
+        "skill",
+        "skills",
+        "stuck",
+        "test",
+        "when"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 342,
+      "summary": "When Stuck in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-019",
+      "end_line": 356,
+      "heading": "Debugging Integration",
+      "keywords": [
+        "agents",
+        "debugging",
+        "development",
+        "driven",
+        "integration",
+        "md",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 351,
+      "summary": "Debugging Integration in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-020",
+      "end_line": 363,
+      "heading": "Testing Anti-Patterns",
+      "keywords": [
+        "agents",
+        "anti",
+        "development",
+        "driven",
+        "md",
+        "patterns",
+        "skill",
+        "skills",
+        "test",
+        "testing"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 357,
+      "summary": "Testing Anti-Patterns in .agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "chunk_id": ".agents.skills.test-driven-development.SKILL#chunk-021",
+      "end_line": 371,
+      "heading": "Final Rule",
+      "keywords": [
+        "agents",
+        "development",
+        "driven",
+        "final",
+        "md",
+        "rule",
+        "skill",
+        "skills",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "agents",
+          "development",
+          "driven",
+          "skill",
+          "skills",
+          "test"
+        ],
+        "framework": null,
+        "kind": "skill",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_path": ".agents/skills/test-driven-development/SKILL.md",
+      "start_line": 364,
+      "summary": "Final Rule in .agents/skills/test-driven-development/SKILL.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": ".agents/skills/test-driven-development/SKILL.md"
+}
