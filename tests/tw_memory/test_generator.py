@@ -116,3 +116,16 @@ class GeneratorTests(unittest.TestCase):
             self.assertEqual(len(result.errors), 1)
             self.assertEqual(result.errors[0].code, "source-decode-failed")
             self.assertEqual(result.errors[0].path, "docs/bad.md")
+
+    def test_generate_summarizes_synthetic_chunks_by_line_range(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            path = root / "docs" / "no-heading.md"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("first\nsecond\nthird\n", encoding="utf-8")
+
+            MemoryGenerator(root).generate()
+
+            chunk_file = root / ".tw-memory" / "generated" / "chunks" / "docs" / "no-heading.md.generated.json"
+            payload = json.loads(chunk_file.read_text(encoding="utf-8"))
+            self.assertEqual(payload["chunks"][0]["summary"], "Lines 1-3 in docs/no-heading.md")

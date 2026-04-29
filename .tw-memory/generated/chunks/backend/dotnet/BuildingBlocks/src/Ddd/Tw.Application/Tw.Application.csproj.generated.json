@@ -33,7 +33,7 @@
       "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
     }
   ],
   "schema_version": "1.0.0",

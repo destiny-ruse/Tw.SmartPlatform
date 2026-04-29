@@ -71,7 +71,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README#chunk-001",
@@ -139,7 +139,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README#chunk-001",
@@ -246,7 +246,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain#chunk-001",
@@ -280,7 +280,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
     }
   ],
   "schema_version": "1.0.0"

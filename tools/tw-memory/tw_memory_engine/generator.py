@@ -140,7 +140,13 @@ class MemoryGenerator:
                         replace(
                             chunk,
                             source_path=record.source_path,
-                            summary=summarize_chunk(record.source_path, chunk.heading, chunk_lines),
+                            summary=summarize_chunk(
+                                record.source_path,
+                                chunk.heading,
+                                chunk_lines,
+                                chunk.start_line,
+                                chunk.end_line,
+                            ),
                             keywords=extract_keywords(record.source_path, chunk.heading, chunk_lines),
                             relations=relations,
                         )

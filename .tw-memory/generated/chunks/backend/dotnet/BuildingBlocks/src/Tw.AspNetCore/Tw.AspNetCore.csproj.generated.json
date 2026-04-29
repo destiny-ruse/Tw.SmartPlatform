@@ -31,7 +31,7 @@
       "source_hash": "sha256:0936b78ab9d099d8bf39619537937139d95fee957ada931db92add5a59dabba3",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
       "start_line": 1,
-      "summary": "15 line chunk in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
     }
   ],
   "schema_version": "1.0.0",

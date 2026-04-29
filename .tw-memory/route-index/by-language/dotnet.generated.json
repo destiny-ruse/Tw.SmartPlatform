@@ -127,7 +127,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README#chunk-001",
@@ -195,7 +195,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README#chunk-001",
@@ -302,7 +302,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain#chunk-001",
@@ -336,7 +336,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-001",
@@ -403,7 +403,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
       "start_line": 1,
-      "summary": "15 line chunk in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.README#chunk-001",
@@ -467,7 +467,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.README#chunk-001",
@@ -531,7 +531,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.README#chunk-001",
@@ -595,7 +595,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.README#chunk-001",
@@ -659,7 +659,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.README#chunk-001",
@@ -723,7 +723,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README#chunk-001",
@@ -787,7 +787,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.README#chunk-001",
@@ -851,7 +851,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.README#chunk-001",
@@ -915,7 +915,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README#chunk-001",
@@ -979,7 +979,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.README#chunk-001",
@@ -1043,7 +1043,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.README#chunk-001",
@@ -1107,7 +1107,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj",
       "start_line": 1,
-      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj"
+      "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests#chunk-001",
@@ -1141,7 +1141,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj",
       "start_line": 1,
-      "summary": "25 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
+      "summary": "Lines 1-25 in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase#chunk-001",
@@ -1173,7 +1173,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj",
       "start_line": 1,
-      "summary": "11 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj"
+      "summary": "Lines 1-11 in backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj"
     },
     {
       "chunk_id": "backend.dotnet.README#chunk-001",

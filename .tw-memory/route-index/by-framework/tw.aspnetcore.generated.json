@@ -65,7 +65,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
       "start_line": 1,
-      "summary": "15 line chunk in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
     }
   ],
   "schema_version": "1.0.0"

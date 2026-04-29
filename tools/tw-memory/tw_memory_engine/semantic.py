@@ -10,10 +10,19 @@ LANGUAGE_TOKENS = {"frontend", "dotnet", "java", "python", "contracts", "deploy"
 TOKEN_RE = re.compile(r"[/_.\-\s]+")
 
 
-def summarize_chunk(path: str, heading: str | None, lines: Sequence[str]) -> str:
+def summarize_chunk(
+    path: str,
+    heading: str | None,
+    lines: Sequence[str],
+    start_line: int | None = None,
+    end_line: int | None = None,
+) -> str:
+    del lines
     if heading:
         return f"{heading} in {path}"
-    return f"{len(lines)} line chunk in {path}"
+    if start_line is None or end_line is None:
+        raise ValueError("start_line and end_line are required for synthetic chunk summaries")
+    return f"Lines {start_line}-{end_line} in {path}"
 
 
 def extract_keywords(path: str, heading: str | None, lines: Sequence[str]) -> list[str]:

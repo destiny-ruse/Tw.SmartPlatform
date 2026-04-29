@@ -33,7 +33,7 @@
       "source_hash": "sha256:975ac18ddf26f893bc0c55f76fe05666fbd011d53b5a5becb79c61be170664aa",
       "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj",
       "start_line": 1,
-      "summary": "25 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
+      "summary": "Lines 1-25 in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
     }
   ],
   "schema_version": "1.0.0",
