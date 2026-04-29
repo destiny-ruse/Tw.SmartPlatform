@@ -1,0 +1,69 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "远程服务构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "readme",
+        "remoteservice",
+        "src",
+        "tw",
+        "远程服务构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "remoteservice",
+          "src"
+        ],
+        "framework": "tw.remoteservice",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md",
+      "start_line": 1,
+      "summary": "远程服务构件目录 in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.Tw.RemoteService.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "remoteservice",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "remoteservice",
+          "remoteservice",
+          "src"
+        ],
+        "framework": "tw.remoteservice",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

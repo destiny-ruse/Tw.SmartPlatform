@@ -1,0 +1,34 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "deploy.docker-compose.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Docker Compose 部署目录",
+      "keywords": [
+        "compose",
+        "deploy",
+        "docker",
+        "md",
+        "readme",
+        "部署目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "compose",
+          "deploy",
+          "docker"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_hash": "sha256:ae6085e20ae1209700f036f2a435e9295b204a350c80102733bb2be547d70e04",
+      "source_path": "deploy/docker-compose/README.md",
+      "start_line": 1,
+      "summary": "Docker Compose 部署目录 in deploy/docker-compose/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "deploy/docker-compose/README.md"
+}

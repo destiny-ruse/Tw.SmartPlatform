@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "缓存构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "caching",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "缓存构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "caching",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.caching",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:4b35ab61f082218839f4e9db9df3f76278cad9c7c3244825c2df688fa5ab736f",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md",
+      "start_line": 1,
+      "summary": "缓存构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md"
+}

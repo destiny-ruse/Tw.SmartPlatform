@@ -1,0 +1,34 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.Services.System.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "系统服务目录",
+      "keywords": [
+        "backend",
+        "dotnet",
+        "md",
+        "readme",
+        "services",
+        "system",
+        "系统服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "dotnet",
+          "services",
+          "system"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "system"
+      },
+      "source_path": "backend/dotnet/Services/System/README.md",
+      "start_line": 1,
+      "summary": "系统服务目录 in backend/dotnet/Services/System/README.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

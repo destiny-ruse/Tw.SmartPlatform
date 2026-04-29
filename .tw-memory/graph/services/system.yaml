@@ -1,0 +1,6 @@
+chunks:
+  - backend.dotnet.Services.System.README.md#chunk-001
+schema_version: "1.0.0"
+service: "system"
+sources:
+  - backend/dotnet/Services/System/README.md

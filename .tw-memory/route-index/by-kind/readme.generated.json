@@ -1,0 +1,1304 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Tw.SmartPlatform",
+      "keywords": [
+        "md",
+        "readme",
+        "smartplatform"
+      ],
+      "relations": {
+        "capabilities": [],
+        "framework": null,
+        "kind": "readme",
+        "language": null,
+        "service": null
+      },
+      "source_path": "README.md",
+      "start_line": 1,
+      "summary": "Tw.SmartPlatform in README.md"
+    },
+    {
+      "chunk_id": "backend.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "后端目录",
+      "keywords": [
+        "backend",
+        "md",
+        "readme",
+        "后端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": null,
+        "service": null
+      },
+      "source_path": "backend/README.md",
+      "start_line": 1,
+      "summary": "后端目录 in backend/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.Aspire.README.md#chunk-001",
+      "end_line": 3,
+      "heading": ".NET Aspire 编排目录",
+      "keywords": [
+        "aspire",
+        "backend",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "编排目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspire",
+          "backend",
+          "dotnet"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/Aspire/README.md",
+      "start_line": 1,
+      "summary": ".NET Aspire 编排目录 in backend/dotnet/Aspire/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.README.md#chunk-001",
+      "end_line": 3,
+      "heading": ".NET 公共构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "公共构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/README.md",
+      "start_line": 1,
+      "summary": ".NET 公共构件目录 in backend/dotnet/BuildingBlocks/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "应用契约构件目录",
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "contracts",
+        "ddd",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "应用契约构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "backend",
+          "buildingblocks",
+          "contracts",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md",
+      "start_line": 1,
+      "summary": "应用契约构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "应用层构件目录",
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "应用层构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md",
+      "start_line": 1,
+      "summary": "应用层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "领域层构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "domain",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "领域层构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "domain",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md",
+      "start_line": 1,
+      "summary": "领域层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "共享领域构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "domain",
+        "dotnet",
+        "md",
+        "readme",
+        "shared",
+        "src",
+        "tw",
+        "共享领域构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "domain",
+          "dotnet",
+          "shared",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md",
+      "start_line": 1,
+      "summary": "共享领域构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "ASP.NET Core 集成构件目录",
+      "keywords": [
+        "asp",
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "core",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "src",
+        "tw",
+        "集成构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md",
+      "start_line": 1,
+      "summary": "ASP.NET Core 集成构件目录 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "缓存构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "caching",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "缓存构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "caching",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.caching",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md",
+      "start_line": 1,
+      "summary": "缓存构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "核心基础构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "核心基础构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/README.md",
+      "start_line": 1,
+      "summary": "核心基础构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Core/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "分布式锁构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "distributedlocking",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "分布式锁构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "distributedlocking",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.distributedlocking",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/README.md",
+      "start_line": 1,
+      "summary": "分布式锁构件目录 in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "文档处理构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "documentprocessing",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "文档处理构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "documentprocessing",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.documentprocessing",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md",
+      "start_line": 1,
+      "summary": "文档处理构件目录 in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "事件总线构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "eventbus",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "事件总线构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "eventbus",
+          "src"
+        ],
+        "framework": "tw.eventbus",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md",
+      "start_line": 1,
+      "summary": "事件总线构件目录 in backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "多租户构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "multitenancy",
+        "readme",
+        "src",
+        "tw",
+        "多租户构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "multitenancy",
+          "src"
+        ],
+        "framework": "tw.multitenancy",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md",
+      "start_line": 1,
+      "summary": "多租户构件目录 in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "拼音转换构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "pinyinconverter",
+        "readme",
+        "src",
+        "tw",
+        "拼音转换构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "pinyinconverter",
+          "src"
+        ],
+        "framework": "tw.pinyinconverter",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md",
+      "start_line": 1,
+      "summary": "拼音转换构件目录 in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "远程服务构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "readme",
+        "remoteservice",
+        "src",
+        "tw",
+        "远程服务构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "remoteservice",
+          "src"
+        ],
+        "framework": "tw.remoteservice",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md",
+      "start_line": 1,
+      "summary": "远程服务构件目录 in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "SqlSugar 数据访问构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "readme",
+        "sqlsugar",
+        "src",
+        "tw",
+        "数据访问构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "sqlsugar",
+          "src"
+        ],
+        "framework": "tw.sqlsugar",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/README.md",
+      "start_line": 1,
+      "summary": "SqlSugar 数据访问构件目录 in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "文本模板构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "texttemplating",
+        "tw",
+        "文本模板构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "src",
+          "texttemplating"
+        ],
+        "framework": "tw.texttemplating",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md",
+      "start_line": 1,
+      "summary": "文本模板构件目录 in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "工作单元构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "uow",
+        "工作单元构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "src",
+          "uow"
+        ],
+        "framework": "tw.uow",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md",
+      "start_line": 1,
+      "summary": "工作单元构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.README.md#chunk-001",
+      "end_line": 3,
+      "heading": ".NET 后端目录",
+      "keywords": [
+        "backend",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "后端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "dotnet"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/README.md",
+      "start_line": 1,
+      "summary": ".NET 后端目录 in backend/dotnet/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.Services.Authentication.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "认证服务目录",
+      "keywords": [
+        "authentication",
+        "backend",
+        "dotnet",
+        "md",
+        "readme",
+        "services",
+        "认证服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "authentication",
+          "backend",
+          "dotnet",
+          "services"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "authentication"
+      },
+      "source_path": "backend/dotnet/Services/Authentication/README.md",
+      "start_line": 1,
+      "summary": "认证服务目录 in backend/dotnet/Services/Authentication/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.Services.Authorization.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "授权服务目录",
+      "keywords": [
+        "authorization",
+        "backend",
+        "dotnet",
+        "md",
+        "readme",
+        "services",
+        "授权服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "authorization",
+          "backend",
+          "dotnet",
+          "services"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "authorization"
+      },
+      "source_path": "backend/dotnet/Services/Authorization/README.md",
+      "start_line": 1,
+      "summary": "授权服务目录 in backend/dotnet/Services/Authorization/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.Services.Notice.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "通知服务目录",
+      "keywords": [
+        "backend",
+        "dotnet",
+        "md",
+        "notice",
+        "readme",
+        "services",
+        "通知服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "dotnet",
+          "notice",
+          "services"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "notice"
+      },
+      "source_path": "backend/dotnet/Services/Notice/README.md",
+      "start_line": 1,
+      "summary": "通知服务目录 in backend/dotnet/Services/Notice/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.Services.OSS.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "对象存储服务目录",
+      "keywords": [
+        "backend",
+        "dotnet",
+        "md",
+        "oss",
+        "readme",
+        "services",
+        "对象存储服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "dotnet",
+          "oss",
+          "services"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "oss"
+      },
+      "source_path": "backend/dotnet/Services/OSS/README.md",
+      "start_line": 1,
+      "summary": "对象存储服务目录 in backend/dotnet/Services/OSS/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.Services.README.md#chunk-001",
+      "end_line": 3,
+      "heading": ".NET 服务目录",
+      "keywords": [
+        "backend",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "services",
+        "服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "dotnet",
+          "services"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/Services/README.md",
+      "start_line": 1,
+      "summary": ".NET 服务目录 in backend/dotnet/Services/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.Services.System.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "系统服务目录",
+      "keywords": [
+        "backend",
+        "dotnet",
+        "md",
+        "readme",
+        "services",
+        "system",
+        "系统服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "dotnet",
+          "services",
+          "system"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "system"
+      },
+      "source_path": "backend/dotnet/Services/System/README.md",
+      "start_line": 1,
+      "summary": "系统服务目录 in backend/dotnet/Services/System/README.md"
+    },
+    {
+      "chunk_id": "backend.java.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Java 后端目录",
+      "keywords": [
+        "backend",
+        "java",
+        "md",
+        "readme",
+        "后端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "java"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "java",
+        "service": null
+      },
+      "source_path": "backend/java/README.md",
+      "start_line": 1,
+      "summary": "Java 后端目录 in backend/java/README.md"
+    },
+    {
+      "chunk_id": "backend.python.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Python 后端目录",
+      "keywords": [
+        "backend",
+        "md",
+        "python",
+        "readme",
+        "后端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "python"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "python",
+        "service": null
+      },
+      "source_path": "backend/python/README.md",
+      "start_line": 1,
+      "summary": "Python 后端目录 in backend/python/README.md"
+    },
+    {
+      "chunk_id": "contracts.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_path": "contracts/README.md",
+      "start_line": 1,
+      "summary": "契约目录 in contracts/README.md"
+    },
+    {
+      "chunk_id": "contracts.openapi.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "OpenAPI 契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "openapi",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts",
+          "openapi"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_path": "contracts/openapi/README.md",
+      "start_line": 1,
+      "summary": "OpenAPI 契约目录 in contracts/openapi/README.md"
+    },
+    {
+      "chunk_id": "contracts.protos.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Protobuf 契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "protobuf",
+        "protos",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts",
+          "protos"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_path": "contracts/protos/README.md",
+      "start_line": 1,
+      "summary": "Protobuf 契约目录 in contracts/protos/README.md"
+    },
+    {
+      "chunk_id": "deploy.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "部署目录",
+      "keywords": [
+        "deploy",
+        "md",
+        "readme",
+        "部署目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_path": "deploy/README.md",
+      "start_line": 1,
+      "summary": "部署目录 in deploy/README.md"
+    },
+    {
+      "chunk_id": "deploy.ci-cd.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "持续交付目录",
+      "keywords": [
+        "cd",
+        "ci",
+        "deploy",
+        "md",
+        "readme",
+        "持续交付目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_path": "deploy/ci-cd/README.md",
+      "start_line": 1,
+      "summary": "持续交付目录 in deploy/ci-cd/README.md"
+    },
+    {
+      "chunk_id": "deploy.docker-compose.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Docker Compose 部署目录",
+      "keywords": [
+        "compose",
+        "deploy",
+        "docker",
+        "md",
+        "readme",
+        "部署目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "compose",
+          "deploy",
+          "docker"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_path": "deploy/docker-compose/README.md",
+      "start_line": 1,
+      "summary": "Docker Compose 部署目录 in deploy/docker-compose/README.md"
+    },
+    {
+      "chunk_id": "deploy.k8s-helm.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Kubernetes 与 Helm 部署目录",
+      "keywords": [
+        "deploy",
+        "helm",
+        "k8s",
+        "kubernetes",
+        "md",
+        "readme",
+        "部署目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "helm",
+          "k8s"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_path": "deploy/k8s-helm/README.md",
+      "start_line": 1,
+      "summary": "Kubernetes 与 Helm 部署目录 in deploy/k8s-helm/README.md"
+    },
+    {
+      "chunk_id": "docs.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "文档目录",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "文档目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/README.md",
+      "start_line": 1,
+      "summary": "文档目录 in docs/README.md"
+    },
+    {
+      "chunk_id": "frontend.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端目录",
+      "keywords": [
+        "frontend",
+        "md",
+        "readme",
+        "前端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "frontend"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_path": "frontend/README.md",
+      "start_line": 1,
+      "summary": "前端目录 in frontend/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "readme",
+        "前端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_path": "frontend/apps/README.md",
+      "start_line": 1,
+      "summary": "前端应用目录 in frontend/apps/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.app.owner.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "业主端应用目录",
+      "keywords": [
+        "app",
+        "apps",
+        "frontend",
+        "md",
+        "owner",
+        "readme",
+        "tw",
+        "业主端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "app",
+          "apps",
+          "frontend",
+          "owner"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.app.owner"
+      },
+      "source_path": "frontend/apps/tw.app.owner/README.md",
+      "start_line": 1,
+      "summary": "业主端应用目录 in frontend/apps/tw.app.owner/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.app.staff.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "员工端应用目录",
+      "keywords": [
+        "app",
+        "apps",
+        "frontend",
+        "md",
+        "readme",
+        "staff",
+        "tw",
+        "员工端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "app",
+          "apps",
+          "frontend",
+          "staff"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.app.staff"
+      },
+      "source_path": "frontend/apps/tw.app.staff/README.md",
+      "start_line": 1,
+      "summary": "员工端应用目录 in frontend/apps/tw.app.staff/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.web.client.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "客户端 Web 应用目录",
+      "keywords": [
+        "apps",
+        "client",
+        "frontend",
+        "md",
+        "readme",
+        "tw",
+        "web",
+        "客户端",
+        "应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "client",
+          "frontend",
+          "web"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.web.client"
+      },
+      "source_path": "frontend/apps/tw.web.client/README.md",
+      "start_line": 1,
+      "summary": "客户端 Web 应用目录 in frontend/apps/tw.web.client/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.web.ops.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "运营 Web 应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "ops",
+        "readme",
+        "tw",
+        "web",
+        "应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend",
+          "ops",
+          "web"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.web.ops"
+      },
+      "source_path": "frontend/apps/tw.web.ops/README.md",
+      "start_line": 1,
+      "summary": "运营 Web 应用目录 in frontend/apps/tw.web.ops/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.web.portal.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "门户 Web 应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "portal",
+        "readme",
+        "tw",
+        "web",
+        "应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend",
+          "portal",
+          "web"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.web.portal"
+      },
+      "source_path": "frontend/apps/tw.web.portal/README.md",
+      "start_line": 1,
+      "summary": "门户 Web 应用目录 in frontend/apps/tw.web.portal/README.md"
+    },
+    {
+      "chunk_id": "frontend.packages.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端共享包目录",
+      "keywords": [
+        "frontend",
+        "md",
+        "packages",
+        "readme",
+        "前端共享包目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "frontend",
+          "packages"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_path": "frontend/packages/README.md",
+      "start_line": 1,
+      "summary": "前端共享包目录 in frontend/packages/README.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

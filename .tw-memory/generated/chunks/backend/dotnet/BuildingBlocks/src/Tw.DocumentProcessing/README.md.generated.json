@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "文档处理构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "documentprocessing",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "文档处理构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "documentprocessing",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.documentprocessing",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:fa855a970d21e0e0bc8826120835072a10f3a1bc8a89e73d108234622946c5a0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md",
+      "start_line": 1,
+      "summary": "文档处理构件目录 in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md"
+}

@@ -1,0 +1,32 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "frontend.packages.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端共享包目录",
+      "keywords": [
+        "frontend",
+        "md",
+        "packages",
+        "readme",
+        "前端共享包目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "frontend",
+          "packages"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_hash": "sha256:e15de831206cfe0531830bd6be9488aeb60e9c06ad6212715415efa0eac72347",
+      "source_path": "frontend/packages/README.md",
+      "start_line": 1,
+      "summary": "前端共享包目录 in frontend/packages/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "frontend/packages/README.md"
+}

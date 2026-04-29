@@ -1,0 +1,204 @@
+{
+  "repo_hash": "sha256:af30374158a95136a2c3a3593c606533a6fab4ba38e85e3993c38121f3086446",
+  "schema_version": "1.0.0",
+  "shards": [
+    {
+      "chunk_count": 8,
+      "kind": "framework",
+      "name": "ddd",
+      "path": "route-index/by-framework/ddd.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.aspnetcore",
+      "path": "route-index/by-framework/tw.aspnetcore.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.caching",
+      "path": "route-index/by-framework/tw.caching.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.core",
+      "path": "route-index/by-framework/tw.core.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.distributedlocking",
+      "path": "route-index/by-framework/tw.distributedlocking.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.documentprocessing",
+      "path": "route-index/by-framework/tw.documentprocessing.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.eventbus",
+      "path": "route-index/by-framework/tw.eventbus.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.multitenancy",
+      "path": "route-index/by-framework/tw.multitenancy.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.pinyinconverter",
+      "path": "route-index/by-framework/tw.pinyinconverter.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.remoteservice",
+      "path": "route-index/by-framework/tw.remoteservice.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.sqlsugar",
+      "path": "route-index/by-framework/tw.sqlsugar.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.texttemplating",
+      "path": "route-index/by-framework/tw.texttemplating.generated.json"
+    },
+    {
+      "chunk_count": 2,
+      "kind": "framework",
+      "name": "tw.uow",
+      "path": "route-index/by-framework/tw.uow.generated.json"
+    },
+    {
+      "chunk_count": 217,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual.generated.json"
+    },
+    {
+      "chunk_count": 18,
+      "kind": "kind",
+      "name": "package",
+      "path": "route-index/by-kind/package.generated.json"
+    },
+    {
+      "chunk_count": 45,
+      "kind": "kind",
+      "name": "readme",
+      "path": "route-index/by-kind/readme.generated.json"
+    },
+    {
+      "chunk_count": 3,
+      "kind": "language",
+      "name": "contracts",
+      "path": "route-index/by-language/contracts.generated.json"
+    },
+    {
+      "chunk_count": 4,
+      "kind": "language",
+      "name": "deploy",
+      "path": "route-index/by-language/deploy.generated.json"
+    },
+    {
+      "chunk_count": 218,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs.generated.json"
+    },
+    {
+      "chunk_count": 43,
+      "kind": "language",
+      "name": "dotnet",
+      "path": "route-index/by-language/dotnet.generated.json"
+    },
+    {
+      "chunk_count": 8,
+      "kind": "language",
+      "name": "frontend",
+      "path": "route-index/by-language/frontend.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "language",
+      "name": "java",
+      "path": "route-index/by-language/java.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "language",
+      "name": "python",
+      "path": "route-index/by-language/python.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "authentication",
+      "path": "route-index/by-service/authentication.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "authorization",
+      "path": "route-index/by-service/authorization.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "notice",
+      "path": "route-index/by-service/notice.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "oss",
+      "path": "route-index/by-service/oss.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "system",
+      "path": "route-index/by-service/system.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "tw.app.owner",
+      "path": "route-index/by-service/tw.app.owner.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "tw.app.staff",
+      "path": "route-index/by-service/tw.app.staff.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "tw.web.client",
+      "path": "route-index/by-service/tw.web.client.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "tw.web.ops",
+      "path": "route-index/by-service/tw.web.ops.generated.json"
+    },
+    {
+      "chunk_count": 1,
+      "kind": "service",
+      "name": "tw.web.portal",
+      "path": "route-index/by-service/tw.web.portal.generated.json"
+    }
+  ]
+}

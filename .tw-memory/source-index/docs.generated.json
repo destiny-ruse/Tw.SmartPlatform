@@ -1,0 +1,677 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:dc70851cbaf1fa745444ef7d8aabccd1ed5cf9e0965ce5ebb20b3869d50f7b18",
+      "source_path": "README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": null,
+      "service": null,
+      "source_hash": "sha256:a96311819f65f22ccb4defc3d6ce9e1bc0c0b59584219d6983f4b891693ea4f1",
+      "source_path": "backend/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:50f0a23904fee8cfe7c1d246dd34d30be73c604f8daee9cf86c01371a99f704b",
+      "source_path": "backend/dotnet/Aspire/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:48940951134b3c98303bf9de607735542de1c430101337657f684a231db6e8b5",
+      "source_path": "backend/dotnet/BuildingBlocks/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:bf58a593419b79b68b20c35f6ad92116cbbf7bf2689bdb94cab6b9b1556b7296",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:f6215ff48279abb939ac51ecedcddb1d4cb4681b2874cdfd05ad2ad900274e9f",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8d20bbcf6bf0edecfa67256d21f884878d7c21610f30425833f8ac05df868548",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:77906ecbdac202c6658b26fc63c948ba81c532ca9094c39b9f97d4e8bb89e3e6",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:92d0e69fa0a1c5b9926ba3ea3c143e1dfa4ceb6a89704cd692180749600d11da",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.caching",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:4b35ab61f082218839f4e9db9df3f76278cad9c7c3244825c2df688fa5ab736f",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a3a7f6801ac49b571043f6685d145c575efc78a0dfc04251a6285dca5e28bf55",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.distributedlocking",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:b444b72597bee48dfa518f278793e9aed5aad03b733d059b262bc51cb8b97b7e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.documentprocessing",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:fa855a970d21e0e0bc8826120835072a10f3a1bc8a89e73d108234622946c5a0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.eventbus",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:6e3a2ccfb3b27bc2ddaa4cc4546cd361466db39330bc7bb6cc0c491ed761efcc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.multitenancy",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:b4c30fb7771dd1c779482416146aee0720461da128edbab004f3c42f7b7593f7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.pinyinconverter",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8207fb85d2bcf10c974fc9b459714be77ba046bf96037210fb096fa343030c1e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.remoteservice",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:e5be377be569025694667e13f045ac3f2bf063d38871d59b4a3acb28b7ef2c3b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.sqlsugar",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:1e6b26f65341bbe14ed8f9d345c40b0acd01b317cac298e0f56f5daef37604ac",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.texttemplating",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:3da13a4a0778727ea918e492f5316f7274c80a63ee05399b2689ccd638d4b82f",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.uow",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:cafde45691ff21fee5c5da9a4a0c3f2cb5b4b4a10e8b4dc3290af81b1a8a25ab",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:52a790fd8de729391f0e0499837d3d6438be43ea6af80ca6a986732bd11838a5",
+      "source_path": "backend/dotnet/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": "authentication",
+      "source_hash": "sha256:9ed2add69fd8eb4dd2a09fcf42d46eb63df18590ac05cad3ecdfea2a2eff85f2",
+      "source_path": "backend/dotnet/Services/Authentication/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": "authorization",
+      "source_hash": "sha256:8159da8c0446f984bf3e23910f850993979cc5f33c783f881df43176fafedba3",
+      "source_path": "backend/dotnet/Services/Authorization/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": "notice",
+      "source_hash": "sha256:864dc9d0bc376cf546dfb1249fa0ae003a649b041165b992e355b5ba46bcec6d",
+      "source_path": "backend/dotnet/Services/Notice/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": "oss",
+      "source_hash": "sha256:a6e79feecbedee2cb824ade27306595517a9d579ee325ed9c1171d77609bb172",
+      "source_path": "backend/dotnet/Services/OSS/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:9a639ed4cfb2e051a35be1aaa47dc492ffa0dbd641e2643ea8bdd34cea423cf3",
+      "source_path": "backend/dotnet/Services/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": "system",
+      "source_hash": "sha256:83486b60bd4f8d14b88947bddd3142ea9078cba4e56a2aaa42c40fc73836345d",
+      "source_path": "backend/dotnet/Services/System/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "java",
+      "service": null,
+      "source_hash": "sha256:f9bd94b12f3a4d177ea3cfd324757c64a1b200b6342df94e11ec96a54994cc4a",
+      "source_path": "backend/java/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "python",
+      "service": null,
+      "source_hash": "sha256:d9d365d9184d1f0eef0103684edc638007d999164bccfa001d8aab468ba8e7f9",
+      "source_path": "backend/python/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "contracts",
+      "service": null,
+      "source_hash": "sha256:ddafdc966009a762dc8c8f7a09714309c3ed062163ec1328fbc0139eea77fd05",
+      "source_path": "contracts/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "contracts",
+      "service": null,
+      "source_hash": "sha256:54cfae0833ff72370b3448e4015700238a38e67e4057e1d1a9bae1f12b587a3b",
+      "source_path": "contracts/openapi/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "contracts",
+      "service": null,
+      "source_hash": "sha256:beb0bf80c267df8a779a39798d5e642ea0b9007d6132d7a160cd77b981a77b69",
+      "source_path": "contracts/protos/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "deploy",
+      "service": null,
+      "source_hash": "sha256:d929f92611a0a20151afad55b20cd10654255e6b140445097ea4fd80d6cac15f",
+      "source_path": "deploy/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "deploy",
+      "service": null,
+      "source_hash": "sha256:33c23af3601e1c04c693d6205fc6456fab342492158f6d799e9a44fc2760406f",
+      "source_path": "deploy/ci-cd/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "deploy",
+      "service": null,
+      "source_hash": "sha256:ae6085e20ae1209700f036f2a435e9295b204a350c80102733bb2be547d70e04",
+      "source_path": "deploy/docker-compose/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "deploy",
+      "service": null,
+      "source_hash": "sha256:650488416603fcd1ca025f8c24d1c5dbadfb226c24d0ba64bfb7d44deb9a0038",
+      "source_path": "deploy/k8s-helm/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:f6b28edc09ddcdbeed306acb15cc7fca9428c2a8aca1b11bd04c4a9f5d302ac0",
+      "source_path": "docs/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:200f9411e7f0614c1e08820f7a045dc28caa1a1dff989697061d310830644cf8",
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:6ed65a0dd5a11bf7c88aa05b90930cf83d3d0f4cb1b67fd10526edcdc27c0f19",
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:875cedec67293c17905d9751858cbe0262a3905736e5493edb65abb4b908b039",
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:f4405d882d86603cb29a6e7f15909e089f82a97bd6b7bac22d3885a663f2277d",
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:d7b112ec1a553bf75d629dd01b8bbb3c9c1cf49238c18d8ebbe18065c18ffaf0",
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:8f01b2d6a40e90143e98377de6b98a3bbcc5f788d48c0373bdb3e8c750a8a2e1",
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": null,
+      "source_hash": "sha256:b52c2d5cf51806b0659af312650da3dc2977d5e40efa4d196d91df8d6a45a83b",
+      "source_path": "frontend/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": null,
+      "source_hash": "sha256:5fb004464bc57633651c64f9e054652b66ce1b90dec24f6dcbf7eaba89eb59fa",
+      "source_path": "frontend/apps/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": "tw.app.owner",
+      "source_hash": "sha256:a2233741d2ba9ccdeb5cd4ffc11bfe93a4cb8c5fd97d93beaf7996463abec5c5",
+      "source_path": "frontend/apps/tw.app.owner/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": "tw.app.staff",
+      "source_hash": "sha256:6183064ef58e7dc6e0da6714234b36e6870160a6c94749e8b3f134fb252a58a0",
+      "source_path": "frontend/apps/tw.app.staff/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": "tw.web.client",
+      "source_hash": "sha256:c6451abe9cec5eb63724ed4ee0c7a51d9690bcf621a63337ac8a271a802764cb",
+      "source_path": "frontend/apps/tw.web.client/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": "tw.web.ops",
+      "source_hash": "sha256:6c0024f719668d00dd787631625435ead497262047c7247f5f6388d8db35cf94",
+      "source_path": "frontend/apps/tw.web.ops/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": "tw.web.portal",
+      "source_hash": "sha256:21f9289bf0592658f879e2ec58198bf62d6f3a6b9ac37c5026b80fa99bfb6918",
+      "source_path": "frontend/apps/tw.web.portal/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "frontend",
+      "service": null,
+      "source_hash": "sha256:e15de831206cfe0531830bd6be9488aeb60e9c06ad6212715415efa0eac72347",
+      "source_path": "frontend/packages/README.md",
+      "source_type": "readme"
+    }
+  ]
+}

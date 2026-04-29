@@ -1,0 +1,30 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "文档目录",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "文档目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f6b28edc09ddcdbeed306acb15cc7fca9428c2a8aca1b11bd04c4a9f5d302ac0",
+      "source_path": "docs/README.md",
+      "start_line": 1,
+      "summary": "文档目录 in docs/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/README.md"
+}

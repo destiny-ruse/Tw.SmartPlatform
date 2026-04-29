@@ -1,0 +1,32 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.python.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Python 后端目录",
+      "keywords": [
+        "backend",
+        "md",
+        "python",
+        "readme",
+        "后端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "python"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "python",
+        "service": null
+      },
+      "source_hash": "sha256:d9d365d9184d1f0eef0103684edc638007d999164bccfa001d8aab468ba8e7f9",
+      "source_path": "backend/python/README.md",
+      "start_line": 1,
+      "summary": "Python 后端目录 in backend/python/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/python/README.md"
+}

@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+languages:
+  - frontend
+  - dotnet
+  - java
+  - python
+  - contracts
+  - deploy
+  - docs
+source_types:
+  - spec
+  - standard
+  - manual
+  - readme
+  - source
+  - package
+  - service-directory
+  - skill
+memory_layers:
+  - source-index
+  - graph
+  - route-index

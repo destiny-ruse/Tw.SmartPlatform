@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "拼音转换构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "pinyinconverter",
+        "readme",
+        "src",
+        "tw",
+        "拼音转换构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "pinyinconverter",
+          "src"
+        ],
+        "framework": "tw.pinyinconverter",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8207fb85d2bcf10c974fc9b459714be77ba046bf96037210fb096fa343030c1e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md",
+      "start_line": 1,
+      "summary": "拼音转换构件目录 in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md"
+}

@@ -1,0 +1,597 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "contracts",
+        "csproj",
+        "ddd",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "application",
+          "backend",
+          "buildingblocks",
+          "contracts",
+          "contracts",
+          "csproj",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "ddd",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "application",
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "ddd",
+        "domain",
+        "dotnet",
+        "shared",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "ddd",
+          "domain",
+          "domain",
+          "dotnet",
+          "shared",
+          "shared",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "ddd",
+        "domain",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "ddd",
+          "domain",
+          "domain",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore.csproj#chunk-001",
+      "end_line": 15,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
+      "start_line": 1,
+      "summary": "15 line chunk in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "caching",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "caching",
+          "caching",
+          "csproj",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.caching",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Tw.Core.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "core",
+          "csproj",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "distributedlocking",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "distributedlocking",
+          "distributedlocking",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.distributedlocking",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.Tw.DocumentProcessing.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "documentprocessing",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "documentprocessing",
+          "documentprocessing",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.documentprocessing",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.Tw.EventBus.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "eventbus",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "eventbus",
+          "eventbus",
+          "src"
+        ],
+        "framework": "tw.eventbus",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "multitenancy",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "multitenancy",
+          "multitenancy",
+          "src"
+        ],
+        "framework": "tw.multitenancy",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.Tw.PinYinConverter.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "pinyinconverter",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "pinyinconverter",
+          "pinyinconverter",
+          "src"
+        ],
+        "framework": "tw.pinyinconverter",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.Tw.RemoteService.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "remoteservice",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "remoteservice",
+          "remoteservice",
+          "src"
+        ],
+        "framework": "tw.remoteservice",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "sqlsugar",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "sqlsugar",
+          "sqlsugar",
+          "src"
+        ],
+        "framework": "tw.sqlsugar",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.Tw.TextTemplating.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "src",
+        "texttemplating",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "src",
+          "texttemplating",
+          "texttemplating"
+        ],
+        "framework": "tw.texttemplating",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.Tw.Uow.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw",
+        "uow"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "src",
+          "uow",
+          "uow"
+        ],
+        "framework": "tw.uow",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests.csproj#chunk-001",
+      "end_line": 25,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "csproj",
+        "dotnet",
+        "tests",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "core",
+          "csproj",
+          "dotnet",
+          "tests",
+          "tests",
+          "tests"
+        ],
+        "framework": null,
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj",
+      "start_line": 1,
+      "summary": "25 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase.csproj#chunk-001",
+      "end_line": 11,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "testbase",
+        "tests",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "testbase",
+          "testbase",
+          "tests"
+        ],
+        "framework": null,
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj",
+      "start_line": 1,
+      "summary": "11 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

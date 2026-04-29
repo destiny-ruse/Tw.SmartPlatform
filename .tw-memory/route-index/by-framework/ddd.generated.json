@@ -1,0 +1,287 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "应用契约构件目录",
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "contracts",
+        "ddd",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "应用契约构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "backend",
+          "buildingblocks",
+          "contracts",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md",
+      "start_line": 1,
+      "summary": "应用契约构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "contracts",
+        "csproj",
+        "ddd",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "application",
+          "backend",
+          "buildingblocks",
+          "contracts",
+          "contracts",
+          "csproj",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "应用层构件目录",
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "应用层构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md",
+      "start_line": 1,
+      "summary": "应用层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "ddd",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "application",
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "领域层构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "domain",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "领域层构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "domain",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md",
+      "start_line": 1,
+      "summary": "领域层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "共享领域构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "domain",
+        "dotnet",
+        "md",
+        "readme",
+        "shared",
+        "src",
+        "tw",
+        "共享领域构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "domain",
+          "dotnet",
+          "shared",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md",
+      "start_line": 1,
+      "summary": "共享领域构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "ddd",
+        "domain",
+        "dotnet",
+        "shared",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "ddd",
+          "domain",
+          "domain",
+          "dotnet",
+          "shared",
+          "shared",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "ddd",
+        "domain",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "ddd",
+          "domain",
+          "domain",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

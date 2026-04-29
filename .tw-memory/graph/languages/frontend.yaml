@@ -1,0 +1,20 @@
+chunks:
+  - frontend.README.md#chunk-001
+  - frontend.apps.README.md#chunk-001
+  - frontend.apps.tw.app.owner.README.md#chunk-001
+  - frontend.apps.tw.app.staff.README.md#chunk-001
+  - frontend.apps.tw.web.client.README.md#chunk-001
+  - frontend.apps.tw.web.ops.README.md#chunk-001
+  - frontend.apps.tw.web.portal.README.md#chunk-001
+  - frontend.packages.README.md#chunk-001
+language: "frontend"
+schema_version: "1.0.0"
+sources:
+  - frontend/README.md
+  - frontend/apps/README.md
+  - frontend/apps/tw.app.owner/README.md
+  - frontend/apps/tw.app.staff/README.md
+  - frontend/apps/tw.web.client/README.md
+  - frontend/apps/tw.web.ops/README.md
+  - frontend/apps/tw.web.portal/README.md
+  - frontend/packages/README.md

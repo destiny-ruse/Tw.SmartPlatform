@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "ddd",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:0936b78ab9d099d8bf39619537937139d95fee957ada931db92add5a59dabba3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.caching",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:6fd56b0ad80a63c1d0534e51e96d6a047e7b9a8a7a6d45118b32496c31f74ce0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.distributedlocking",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.documentprocessing",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.eventbus",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.multitenancy",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.pinyinconverter",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.remoteservice",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.sqlsugar",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.texttemplating",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.uow",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:975ac18ddf26f893bc0c55f76fe05666fbd011d53b5a5becb79c61be170664aa",
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:5b744c20c8d788f8de21ac1fe91c7d0e4ba3ef76c40c300addd24748896c38b1",
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj",
+      "source_type": "package"
+    }
+  ]
+}

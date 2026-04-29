@@ -1,0 +1,30 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "deploy.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "部署目录",
+      "keywords": [
+        "deploy",
+        "md",
+        "readme",
+        "部署目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_hash": "sha256:d929f92611a0a20151afad55b20cd10654255e6b140445097ea4fd80d6cac15f",
+      "source_path": "deploy/README.md",
+      "start_line": 1,
+      "summary": "部署目录 in deploy/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "deploy/README.md"
+}

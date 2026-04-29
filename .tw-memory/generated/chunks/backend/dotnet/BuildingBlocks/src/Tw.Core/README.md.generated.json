@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "核心基础构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "核心基础构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:a3a7f6801ac49b571043f6685d145c575efc78a0dfc04251a6285dca5e28bf55",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/README.md",
+      "start_line": 1,
+      "summary": "核心基础构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Core/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/README.md"
+}

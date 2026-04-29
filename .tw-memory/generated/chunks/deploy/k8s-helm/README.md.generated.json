@@ -1,0 +1,35 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "deploy.k8s-helm.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Kubernetes 与 Helm 部署目录",
+      "keywords": [
+        "deploy",
+        "helm",
+        "k8s",
+        "kubernetes",
+        "md",
+        "readme",
+        "部署目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "helm",
+          "k8s"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_hash": "sha256:650488416603fcd1ca025f8c24d1c5dbadfb226c24d0ba64bfb7d44deb9a0038",
+      "source_path": "deploy/k8s-helm/README.md",
+      "start_line": 1,
+      "summary": "Kubernetes 与 Helm 部署目录 in deploy/k8s-helm/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "deploy/k8s-helm/README.md"
+}

@@ -1,0 +1,42 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "ASP.NET Core 集成构件目录",
+      "keywords": [
+        "asp",
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "core",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "src",
+        "tw",
+        "集成构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:92d0e69fa0a1c5b9926ba3ea3c143e1dfa4ceb6a89704cd692180749600d11da",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md",
+      "start_line": 1,
+      "summary": "ASP.NET Core 集成构件目录 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md"
+}

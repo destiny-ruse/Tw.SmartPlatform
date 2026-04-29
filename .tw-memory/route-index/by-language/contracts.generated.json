@@ -1,0 +1,79 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "contracts.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_path": "contracts/README.md",
+      "start_line": 1,
+      "summary": "契约目录 in contracts/README.md"
+    },
+    {
+      "chunk_id": "contracts.openapi.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "OpenAPI 契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "openapi",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts",
+          "openapi"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_path": "contracts/openapi/README.md",
+      "start_line": 1,
+      "summary": "OpenAPI 契约目录 in contracts/openapi/README.md"
+    },
+    {
+      "chunk_id": "contracts.protos.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Protobuf 契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "protobuf",
+        "protos",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts",
+          "protos"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_path": "contracts/protos/README.md",
+      "start_line": 1,
+      "summary": "Protobuf 契约目录 in contracts/protos/README.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

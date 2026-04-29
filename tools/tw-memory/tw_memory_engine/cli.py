@@ -4,6 +4,7 @@ import argparse
 import json
 from typing import Sequence
 
+from .generator import MemoryGenerator
 from .paths import repo_root
 from .scanner import SourceScanner
 
@@ -79,6 +80,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         else:
             print(f"sources: {len(records)}")
         return 0
+
+    if args.command == "generate":
+        result = MemoryGenerator(repo_root()).generate()
+        if args.format == "json":
+            print(json.dumps(result.to_json(), ensure_ascii=False, indent=2))
+        else:
+            print(f"generated: {result.generated_count}")
+            print(f"diagnostics: {len(result.errors)}")
+        return 1 if result.errors else 0
 
     parser.error(f"{args.command} is wired but not implemented in this task")
     return 2

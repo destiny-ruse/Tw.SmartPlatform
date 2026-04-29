@@ -1,0 +1,27 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Tw.SmartPlatform",
+      "keywords": [
+        "md",
+        "readme",
+        "smartplatform"
+      ],
+      "relations": {
+        "capabilities": [],
+        "framework": null,
+        "kind": "readme",
+        "language": null,
+        "service": null
+      },
+      "source_hash": "sha256:dc70851cbaf1fa745444ef7d8aabccd1ed5cf9e0965ce5ebb20b3869d50f7b18",
+      "source_path": "README.md",
+      "start_line": 1,
+      "summary": "Tw.SmartPlatform in README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "README.md"
+}

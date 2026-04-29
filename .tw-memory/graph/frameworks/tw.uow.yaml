@@ -1,0 +1,8 @@
+chunks:
+  - backend.dotnet.BuildingBlocks.src.Tw.Uow.README.md#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.Uow.Tw.Uow.csproj#chunk-001
+framework: "tw.uow"
+schema_version: "1.0.0"
+sources:
+  - backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md
+  - backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj

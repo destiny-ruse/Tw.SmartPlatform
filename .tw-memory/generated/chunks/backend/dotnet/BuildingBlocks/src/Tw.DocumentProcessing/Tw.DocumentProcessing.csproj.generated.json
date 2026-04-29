@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.Tw.DocumentProcessing.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "documentprocessing",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "documentprocessing",
+          "documentprocessing",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.documentprocessing",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj"
+}

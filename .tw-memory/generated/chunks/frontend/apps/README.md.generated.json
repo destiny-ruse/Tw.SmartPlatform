@@ -1,0 +1,32 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "frontend.apps.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "readme",
+        "前端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_hash": "sha256:5fb004464bc57633651c64f9e054652b66ce1b90dec24f6dcbf7eaba89eb59fa",
+      "source_path": "frontend/apps/README.md",
+      "start_line": 1,
+      "summary": "前端应用目录 in frontend/apps/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "frontend/apps/README.md"
+}

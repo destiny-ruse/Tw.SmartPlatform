@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "多租户构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "multitenancy",
+        "readme",
+        "src",
+        "tw",
+        "多租户构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "multitenancy",
+          "src"
+        ],
+        "framework": "tw.multitenancy",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:b4c30fb7771dd1c779482416146aee0720461da128edbab004f3c42f7b7593f7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md",
+      "start_line": 1,
+      "summary": "多租户构件目录 in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md"
+}

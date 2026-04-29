@@ -1,0 +1,32 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.java.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Java 后端目录",
+      "keywords": [
+        "backend",
+        "java",
+        "md",
+        "readme",
+        "后端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "java"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "java",
+        "service": null
+      },
+      "source_hash": "sha256:f9bd94b12f3a4d177ea3cfd324757c64a1b200b6342df94e11ec96a54994cc4a",
+      "source_path": "backend/java/README.md",
+      "start_line": 1,
+      "summary": "Java 后端目录 in backend/java/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/java/README.md"
+}

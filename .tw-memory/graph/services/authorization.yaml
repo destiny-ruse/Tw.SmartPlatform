@@ -1,0 +1,6 @@
+chunks:
+  - backend.dotnet.Services.Authorization.README.md#chunk-001
+schema_version: "1.0.0"
+service: "authorization"
+sources:
+  - backend/dotnet/Services/Authorization/README.md

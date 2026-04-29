@@ -1,0 +1,6 @@
+chunks:
+  - frontend.apps.tw.web.portal.README.md#chunk-001
+schema_version: "1.0.0"
+service: "tw.web.portal"
+sources:
+  - frontend/apps/tw.web.portal/README.md

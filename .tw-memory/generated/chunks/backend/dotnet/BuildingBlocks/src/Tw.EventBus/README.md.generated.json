@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "事件总线构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "eventbus",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "事件总线构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "eventbus",
+          "src"
+        ],
+        "framework": "tw.eventbus",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6e3a2ccfb3b27bc2ddaa4cc4546cd361466db39330bc7bb6cc0c491ed761efcc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md",
+      "start_line": 1,
+      "summary": "事件总线构件目录 in backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md"
+}

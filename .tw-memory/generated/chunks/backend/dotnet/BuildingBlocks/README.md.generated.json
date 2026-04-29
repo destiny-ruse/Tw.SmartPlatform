@@ -1,0 +1,35 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.README.md#chunk-001",
+      "end_line": 3,
+      "heading": ".NET 公共构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "公共构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:48940951134b3c98303bf9de607735542de1c430101337657f684a231db6e8b5",
+      "source_path": "backend/dotnet/BuildingBlocks/README.md",
+      "start_line": 1,
+      "summary": ".NET 公共构件目录 in backend/dotnet/BuildingBlocks/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/README.md"
+}

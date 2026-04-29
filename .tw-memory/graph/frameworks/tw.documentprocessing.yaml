@@ -1,0 +1,8 @@
+chunks:
+  - backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.README.md#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.Tw.DocumentProcessing.csproj#chunk-001
+framework: "tw.documentprocessing"
+schema_version: "1.0.0"
+sources:
+  - backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md
+  - backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj

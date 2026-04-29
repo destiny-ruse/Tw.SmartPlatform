@@ -1,0 +1,43 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "共享领域构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "domain",
+        "dotnet",
+        "md",
+        "readme",
+        "shared",
+        "src",
+        "tw",
+        "共享领域构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "domain",
+          "dotnet",
+          "shared",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8d20bbcf6bf0edecfa67256d21f884878d7c21610f30425833f8ac05df868548",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md",
+      "start_line": 1,
+      "summary": "共享领域构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md"
+}

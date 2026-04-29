@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Tw.Core.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "core",
+          "csproj",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6fd56b0ad80a63c1d0534e51e96d6a047e7b9a8a7a6d45118b32496c31f74ce0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
+}

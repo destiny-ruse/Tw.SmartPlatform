@@ -1,0 +1,35 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "frontend.apps.tw.app.owner.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "业主端应用目录",
+      "keywords": [
+        "app",
+        "apps",
+        "frontend",
+        "md",
+        "owner",
+        "readme",
+        "tw",
+        "业主端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "app",
+          "apps",
+          "frontend",
+          "owner"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.app.owner"
+      },
+      "source_path": "frontend/apps/tw.app.owner/README.md",
+      "start_line": 1,
+      "summary": "业主端应用目录 in frontend/apps/tw.app.owner/README.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

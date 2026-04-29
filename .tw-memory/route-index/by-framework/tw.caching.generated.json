@@ -1,0 +1,69 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "缓存构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "caching",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "缓存构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "caching",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.caching",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md",
+      "start_line": 1,
+      "summary": "缓存构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "caching",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "caching",
+          "caching",
+          "csproj",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.caching",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

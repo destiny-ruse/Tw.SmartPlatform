@@ -1,0 +1,37 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "frontend.apps.tw.web.ops.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "运营 Web 应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "ops",
+        "readme",
+        "tw",
+        "web",
+        "应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend",
+          "ops",
+          "web"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.web.ops"
+      },
+      "source_hash": "sha256:6c0024f719668d00dd787631625435ead497262047c7247f5f6388d8db35cf94",
+      "source_path": "frontend/apps/tw.web.ops/README.md",
+      "start_line": 1,
+      "summary": "运营 Web 应用目录 in frontend/apps/tw.web.ops/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "frontend/apps/tw.web.ops/README.md"
+}

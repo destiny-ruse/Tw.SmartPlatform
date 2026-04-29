@@ -1,0 +1,445 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-001",
+      "end_line": 12,
+      "heading": "Options Auto Registration Implementation Plan",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "implementation",
+        "md",
+        "options",
+        "plan",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 1,
+      "summary": "Options Auto Registration Implementation Plan in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "execution",
+        "md",
+        "options",
+        "order",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-003",
+      "end_line": 22,
+      "heading": "Source Inputs",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "inputs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-004",
+      "end_line": 35,
+      "heading": "File Structure",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "file",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 23,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-005",
+      "end_line": 37,
+      "heading": "Tasks",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 36,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-006",
+      "end_line": 144,
+      "heading": "Task 1: Extend Configuration Metadata",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "configuration",
+        "docs",
+        "extend",
+        "md",
+        "metadata",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 38,
+      "summary": "Task 1: Extend Configuration Metadata in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-007",
+      "end_line": 286,
+      "heading": "Task 2: Discover Options Registration Descriptors",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "descriptors",
+        "discover",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 145,
+      "summary": "Task 2: Discover Options Registration Descriptors in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-008",
+      "end_line": 375,
+      "heading": "Task 3: Register Options Into IServiceCollection",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "into",
+        "iservicecollection",
+        "md",
+        "options",
+        "plans",
+        "register",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 287,
+      "summary": "Task 3: Register Options Into IServiceCollection in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-009",
+      "end_line": 470,
+      "heading": "Task 4: Cover Named Options and Validation Failures",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "and",
+        "auto",
+        "cover",
+        "docs",
+        "failures",
+        "md",
+        "named",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task",
+        "validation"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 376,
+      "summary": "Task 4: Cover Named Options and Validation Failures in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-010",
+      "end_line": 495,
+      "heading": "Task 5: Verify P0 Options Acceptance",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "acceptance",
+        "auto",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 471,
+      "summary": "Task 5: Verify P0 Options Acceptance in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration.md#chunk-011",
+      "end_line": 503,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "checklist",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "review",
+        "self",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:174f80d56f5015b9c8532a311e384d62b66aeb80fb3c1279501e12d25e1735ef",
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 496,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+}

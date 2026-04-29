@@ -1,0 +1,32 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "contracts.openapi.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "OpenAPI 契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "openapi",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts",
+          "openapi"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_hash": "sha256:54cfae0833ff72370b3448e4015700238a38e67e4057e1d1a9bae1f12b587a3b",
+      "source_path": "contracts/openapi/README.md",
+      "start_line": 1,
+      "summary": "OpenAPI 契约目录 in contracts/openapi/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "contracts/openapi/README.md"
+}

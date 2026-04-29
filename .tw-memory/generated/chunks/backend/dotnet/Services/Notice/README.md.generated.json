@@ -1,0 +1,36 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.Services.Notice.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "通知服务目录",
+      "keywords": [
+        "backend",
+        "dotnet",
+        "md",
+        "notice",
+        "readme",
+        "services",
+        "通知服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "dotnet",
+          "notice",
+          "services"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "notice"
+      },
+      "source_hash": "sha256:864dc9d0bc376cf546dfb1249fa0ae003a649b041165b992e355b5ba46bcec6d",
+      "source_path": "backend/dotnet/Services/Notice/README.md",
+      "start_line": 1,
+      "summary": "通知服务目录 in backend/dotnet/Services/Notice/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/Services/Notice/README.md"
+}

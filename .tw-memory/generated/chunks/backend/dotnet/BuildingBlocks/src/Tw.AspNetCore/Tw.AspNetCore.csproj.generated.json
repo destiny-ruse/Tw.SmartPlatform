@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore.csproj#chunk-001",
+      "end_line": 15,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:0936b78ab9d099d8bf39619537937139d95fee957ada931db92add5a59dabba3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
+      "start_line": 1,
+      "summary": "15 line chunk in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+}

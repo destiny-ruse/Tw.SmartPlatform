@@ -1,0 +1,41 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "领域层构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "ddd",
+        "domain",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "领域层构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "ddd",
+          "domain",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:77906ecbdac202c6658b26fc63c948ba81c532ca9094c39b9f97d4e8bb89e3e6",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md",
+      "start_line": 1,
+      "summary": "领域层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md"
+}

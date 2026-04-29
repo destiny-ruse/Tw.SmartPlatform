@@ -1,0 +1,11 @@
+schema_version: "1.0.0"
+default_backend: fts
+vector_backends:
+  aliyun:
+    enabled: false
+  tencent:
+    enabled: false
+  volcengine:
+    enabled: false
+  self-hosted:
+    enabled: false

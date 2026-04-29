@@ -1,0 +1,36 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.Services.Authentication.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "认证服务目录",
+      "keywords": [
+        "authentication",
+        "backend",
+        "dotnet",
+        "md",
+        "readme",
+        "services",
+        "认证服务目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "authentication",
+          "backend",
+          "dotnet",
+          "services"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": "authentication"
+      },
+      "source_hash": "sha256:9ed2add69fd8eb4dd2a09fcf42d46eb63df18590ac05cad3ecdfea2a2eff85f2",
+      "source_path": "backend/dotnet/Services/Authentication/README.md",
+      "start_line": 1,
+      "summary": "认证服务目录 in backend/dotnet/Services/Authentication/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/Services/Authentication/README.md"
+}

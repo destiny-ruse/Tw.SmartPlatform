@@ -1,0 +1,43 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "应用契约构件目录",
+      "keywords": [
+        "application",
+        "backend",
+        "buildingblocks",
+        "contracts",
+        "ddd",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "tw",
+        "应用契约构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "application",
+          "backend",
+          "buildingblocks",
+          "contracts",
+          "ddd",
+          "dotnet",
+          "src"
+        ],
+        "framework": "ddd",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:bf58a593419b79b68b20c35f6ad92116cbbf7bf2689bdb94cab6b9b1556b7296",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md",
+      "start_line": 1,
+      "summary": "应用契约构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md"
+}

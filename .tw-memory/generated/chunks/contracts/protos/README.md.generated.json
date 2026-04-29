@@ -1,0 +1,33 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "contracts.protos.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "Protobuf 契约目录",
+      "keywords": [
+        "contracts",
+        "md",
+        "protobuf",
+        "protos",
+        "readme",
+        "契约目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contracts",
+          "protos"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "contracts",
+        "service": null
+      },
+      "source_hash": "sha256:beb0bf80c267df8a779a39798d5e642ea0b9007d6132d7a160cd77b981a77b69",
+      "source_path": "contracts/protos/README.md",
+      "start_line": 1,
+      "summary": "Protobuf 契约目录 in contracts/protos/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "contracts/protos/README.md"
+}

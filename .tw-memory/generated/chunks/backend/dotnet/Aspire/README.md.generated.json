@@ -1,0 +1,35 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.Aspire.README.md#chunk-001",
+      "end_line": 3,
+      "heading": ".NET Aspire 编排目录",
+      "keywords": [
+        "aspire",
+        "backend",
+        "dotnet",
+        "md",
+        "net",
+        "readme",
+        "编排目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspire",
+          "backend",
+          "dotnet"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:50f0a23904fee8cfe7c1d246dd34d30be73c604f8daee9cf86c01371a99f704b",
+      "source_path": "backend/dotnet/Aspire/README.md",
+      "start_line": 1,
+      "summary": ".NET Aspire 编排目录 in backend/dotnet/Aspire/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/Aspire/README.md"
+}

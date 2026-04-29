@@ -1,0 +1,8 @@
+chunks:
+  - backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README.md#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy.csproj#chunk-001
+framework: "tw.multitenancy"
+schema_version: "1.0.0"
+sources:
+  - backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md
+  - backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj

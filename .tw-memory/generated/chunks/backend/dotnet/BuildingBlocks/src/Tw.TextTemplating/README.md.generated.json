@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "文本模板构件目录",
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "dotnet",
+        "md",
+        "readme",
+        "src",
+        "texttemplating",
+        "tw",
+        "文本模板构件目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "src",
+          "texttemplating"
+        ],
+        "framework": "tw.texttemplating",
+        "kind": "readme",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:3da13a4a0778727ea918e492f5316f7274c80a63ee05399b2689ccd638d4b82f",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md",
+      "start_line": 1,
+      "summary": "文本模板构件目录 in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md"
+}

@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "caching",
+        "csproj",
+        "dotnet",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "caching",
+          "caching",
+          "csproj",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.caching",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
+}

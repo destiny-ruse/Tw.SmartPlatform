@@ -1,0 +1,229 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "frontend.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端目录",
+      "keywords": [
+        "frontend",
+        "md",
+        "readme",
+        "前端目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "frontend"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_path": "frontend/README.md",
+      "start_line": 1,
+      "summary": "前端目录 in frontend/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "readme",
+        "前端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_path": "frontend/apps/README.md",
+      "start_line": 1,
+      "summary": "前端应用目录 in frontend/apps/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.app.owner.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "业主端应用目录",
+      "keywords": [
+        "app",
+        "apps",
+        "frontend",
+        "md",
+        "owner",
+        "readme",
+        "tw",
+        "业主端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "app",
+          "apps",
+          "frontend",
+          "owner"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.app.owner"
+      },
+      "source_path": "frontend/apps/tw.app.owner/README.md",
+      "start_line": 1,
+      "summary": "业主端应用目录 in frontend/apps/tw.app.owner/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.app.staff.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "员工端应用目录",
+      "keywords": [
+        "app",
+        "apps",
+        "frontend",
+        "md",
+        "readme",
+        "staff",
+        "tw",
+        "员工端应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "app",
+          "apps",
+          "frontend",
+          "staff"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.app.staff"
+      },
+      "source_path": "frontend/apps/tw.app.staff/README.md",
+      "start_line": 1,
+      "summary": "员工端应用目录 in frontend/apps/tw.app.staff/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.web.client.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "客户端 Web 应用目录",
+      "keywords": [
+        "apps",
+        "client",
+        "frontend",
+        "md",
+        "readme",
+        "tw",
+        "web",
+        "客户端",
+        "应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "client",
+          "frontend",
+          "web"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.web.client"
+      },
+      "source_path": "frontend/apps/tw.web.client/README.md",
+      "start_line": 1,
+      "summary": "客户端 Web 应用目录 in frontend/apps/tw.web.client/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.web.ops.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "运营 Web 应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "ops",
+        "readme",
+        "tw",
+        "web",
+        "应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend",
+          "ops",
+          "web"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.web.ops"
+      },
+      "source_path": "frontend/apps/tw.web.ops/README.md",
+      "start_line": 1,
+      "summary": "运营 Web 应用目录 in frontend/apps/tw.web.ops/README.md"
+    },
+    {
+      "chunk_id": "frontend.apps.tw.web.portal.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "门户 Web 应用目录",
+      "keywords": [
+        "apps",
+        "frontend",
+        "md",
+        "portal",
+        "readme",
+        "tw",
+        "web",
+        "应用目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "apps",
+          "frontend",
+          "portal",
+          "web"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": "tw.web.portal"
+      },
+      "source_path": "frontend/apps/tw.web.portal/README.md",
+      "start_line": 1,
+      "summary": "门户 Web 应用目录 in frontend/apps/tw.web.portal/README.md"
+    },
+    {
+      "chunk_id": "frontend.packages.README.md#chunk-001",
+      "end_line": 3,
+      "heading": "前端共享包目录",
+      "keywords": [
+        "frontend",
+        "md",
+        "packages",
+        "readme",
+        "前端共享包目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "frontend",
+          "packages"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "frontend",
+        "service": null
+      },
+      "source_path": "frontend/packages/README.md",
+      "start_line": 1,
+      "summary": "前端共享包目录 in frontend/packages/README.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar.csproj#chunk-001",
+      "end_line": 9,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "sqlsugar",
+        "src",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "sqlsugar",
+          "sqlsugar",
+          "src"
+        ],
+        "framework": "tw.sqlsugar",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:61e3f2d043e37f0db4be1d8083dd31bebbfbb8fde2cf027327db2556c16bc385",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj",
+      "start_line": 1,
+      "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj"
+}

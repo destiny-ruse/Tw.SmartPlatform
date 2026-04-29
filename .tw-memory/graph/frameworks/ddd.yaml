@@ -1,0 +1,20 @@
+chunks:
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README.md#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts.csproj#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README.md#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application.csproj#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README.md#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README.md#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared.csproj#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain.csproj#chunk-001
+framework: "ddd"
+schema_version: "1.0.0"
+sources:
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md
+  - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj
