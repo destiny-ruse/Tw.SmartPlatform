@@ -1,6 +1,7 @@
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from tools.tw_memory_test_support import import_engine
 
@@ -8,6 +9,7 @@ from tools.tw_memory_test_support import import_engine
 engine = import_engine()
 SourceScanner = engine.scanner.SourceScanner
 GeneratorInfo = engine.models.GeneratorInfo
+file_sha256 = engine.hashing.file_sha256
 
 
 class ScannerTests(unittest.TestCase):
@@ -63,6 +65,53 @@ class ScannerTests(unittest.TestCase):
             self.assertEqual(record.source_path, "backend/dotnet/Services/Notice/SERVICE.md")
             self.assertEqual(record.source_type, "service-directory")
             self.assertEqual(record.service, "notice")
+
+    def test_scan_prunes_without_path_rglob(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            (root / "docs").mkdir()
+            (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
+
+            with mock.patch.object(Path, "rglob", side_effect=AssertionError("rglob should not be used")):
+                records = SourceScanner(root).scan()
+
+            self.assertEqual([record.source_path for record in records], ["docs/README.md"])
+
+    def test_scan_excludes_ignored_directories_and_generated_prefixes(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            (root / "README.md").write_text("# Root\n", encoding="utf-8")
+
+            excluded_paths = [
+                ".git/README.md",
+                ".worktrees/README.md",
+                "frontend/node_modules/package.json",
+                "backend/dotnet/Services/Notice/bin/README.md",
+                "backend/dotnet/Services/Notice/obj/README.md",
+                "backend/python/Notice/__pycache__/README.md",
+                ".tw-memory/README.md",
+                ".tw-memory/generated/fts/README.md",
+                ".tw-memory/generated/vector/README.md",
+            ]
+            for source_path in excluded_paths:
+                path = root / source_path
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("# Excluded\n", encoding="utf-8")
+
+            records = SourceScanner(root).scan()
+            paths = {record.source_path for record in records}
+
+            self.assertEqual(paths, {"README.md"})
+
+    def test_file_sha256_hashes_raw_bytes(self):
+        with tempfile.TemporaryDirectory() as work:
+            path = Path(work) / "README.md"
+            path.write_bytes(b"# Docs\r\n")
+            crlf_hash = file_sha256(path)
+            path.write_bytes(b"# Docs\n")
+            lf_hash = file_sha256(path)
+
+            self.assertNotEqual(crlf_hash, lf_hash)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from . import GENERATOR_NAME, SCHEMA_VERSION
@@ -41,26 +42,45 @@ class SourceScanner:
 
     def scan(self) -> list[SourceRecord]:
         records: list[SourceRecord] = []
-        for path in self.root.rglob("*"):
-            if not path.is_file() or self._is_excluded(path):
-                continue
-            source_path = relative_posix(self.root, path)
-            parts = tuple(source_path.split("/"))
-            if not self._is_included(path, parts):
-                continue
-            records.append(
-                SourceRecord(
-                    source_path=source_path,
-                    source_hash=file_sha256(path),
-                    source_type=self._source_type(path, parts),
-                    language=self._language(parts),
-                    framework=self._framework(parts),
-                    service=self._service(parts),
-                    generator=self.generator,
-                )
+        for current_root, dirnames, filenames in os.walk(self.root):
+            current_path = Path(current_root)
+            dirnames[:] = sorted(
+                dirname for dirname in dirnames if not self._is_excluded_dir(current_path / dirname)
             )
+            for filename in sorted(filenames):
+                path = current_path / filename
+                if self._is_excluded(path):
+                    continue
+                record = self._record_for(path)
+                if record is not None:
+                    records.append(record)
 
         return sorted(records, key=lambda record: record.source_path)
+
+    def _record_for(self, path: Path) -> SourceRecord | None:
+        source_path = relative_posix(self.root, path)
+        parts = tuple(source_path.split("/"))
+        if not self._is_included(path, parts):
+            return None
+        return SourceRecord(
+            source_path=source_path,
+            source_hash=file_sha256(path),
+            source_type=self._source_type(path, parts),
+            language=self._language(parts),
+            framework=self._framework(parts),
+            service=self._service(parts),
+            generator=self.generator,
+        )
+
+    def _is_excluded_dir(self, path: Path) -> bool:
+        parts = path.resolve().relative_to(self.root).parts
+        if parts[-1] in EXCLUDED_DIRS:
+            return True
+        return any(
+            parts[index : index + len(prefix)] == prefix
+            for prefix in EXCLUDED_PREFIXES
+            for index in range(0, len(parts) - len(prefix) + 1)
+        )
 
     def _is_excluded(self, path: Path) -> bool:
         parts = path.resolve().relative_to(self.root).parts
