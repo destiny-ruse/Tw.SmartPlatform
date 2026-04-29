@@ -240,6 +240,8 @@ class MemoryChecker:
             relative_parts = path.relative_to(self.memory_root).parts
             relative_path = relative_posix(self.root, path)
             size = path.stat().st_size
+            if self._is_runtime_cache_file(relative_parts):
+                continue
 
             if self._is_forbidden_memory_file(path, relative_parts, size):
                 diagnostics.append(
@@ -281,10 +283,10 @@ class MemoryChecker:
             return True
         if size > ERROR_SIZE_BYTES:
             return True
-        return any(
-            relative_parts[: len(prefix)] == prefix
-            for prefix in RUNTIME_PREFIXES
-        )
+        return False
+
+    def _is_runtime_cache_file(self, relative_parts: tuple[str, ...]) -> bool:
+        return any(relative_parts[: len(prefix)] == prefix for prefix in RUNTIME_PREFIXES)
 
     def _newer_related_package_source(self, directory: Path, manual: Path, index_mtime: float) -> Path | None:
         if not directory.exists():

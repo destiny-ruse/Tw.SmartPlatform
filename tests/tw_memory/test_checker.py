@@ -9,6 +9,7 @@ from tools.tw_memory_test_support import import_engine
 engine = import_engine()
 MemoryGenerator = engine.generator.MemoryGenerator
 MemoryChecker = engine.checker.MemoryChecker
+SearchIndex = engine.search.SearchIndex
 
 
 class CheckerTests(unittest.TestCase):
@@ -38,26 +39,25 @@ class CheckerTests(unittest.TestCase):
 
             self.assertTrue(any(item.code == "forbidden-memory-file" for item in diagnostics))
 
-    def test_check_rejects_runtime_cache_directories_inside_committable_memory(self):
+    def test_check_allows_ignored_runtime_cache_directories(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
             (root / "docs").mkdir()
             (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
             MemoryGenerator(root).generate()
-            fts_cache = root / ".tw-memory" / "generated" / "fts" / "cache.json"
-            vector_cache = root / ".tw-memory" / "generated" / "vector" / "cache.json"
-            fts_cache.write_text("cache\n", encoding="utf-8")
-            vector_cache.write_text("cache\n", encoding="utf-8")
+            SearchIndex(root).build_fts()
+            vector_cache = root / ".tw-memory" / "generated" / "vector" / "cache.bin"
+            vector_cache.write_bytes(b"runtime cache")
 
             diagnostics = MemoryChecker(root).check()
-            forbidden_paths = {
+            runtime_paths = {
                 item.path
                 for item in diagnostics
-                if item.code == "forbidden-memory-file"
+                if item.path
+                and item.path.startswith((".tw-memory/generated/fts/", ".tw-memory/generated/vector/"))
             }
 
-            self.assertIn(".tw-memory/generated/fts/cache.json", forbidden_paths)
-            self.assertIn(".tw-memory/generated/vector/cache.json", forbidden_paths)
+            self.assertEqual(runtime_paths, set())
 
     def test_check_warns_when_route_index_is_too_large(self):
         with tempfile.TemporaryDirectory() as work:
