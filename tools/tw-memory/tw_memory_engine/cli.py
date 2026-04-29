@@ -7,6 +7,8 @@ from typing import Sequence
 from .checker import MemoryChecker
 from .generator import MemoryGenerator
 from .paths import repo_root
+from .postflight import PostflightRunner
+from .preflight import PreflightRunner
 from .reader import ChunkReader
 from .scanner import SourceScanner
 from .search import SearchIndex
@@ -124,6 +126,42 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(reader.format(evidence, args.format))
         return 2 if evidence.get("stale") is True else 0
 
+    if args.command == "preflight":
+        result = PreflightRunner(repo_root()).run(args.task, args.stack, args.path)
+        if args.format == "json":
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+        else:
+            print(f"status: {result['status']}")
+            actions = result.get("actions", [])
+            print(f"actions: {', '.join(actions) if actions else '-'}")
+            for candidate in result.get("candidates", []):
+                print(
+                    f"{candidate['chunk_id']} "
+                    f"{candidate['source_path']}:{candidate['start_line']}-{candidate['end_line']} "
+                    f"{candidate['summary']}"
+                )
+            for diagnostic in result.get("diagnostics", []):
+                print(
+                    f"{diagnostic['level']} {diagnostic['code']} "
+                    f"{diagnostic.get('path') or '-'} {diagnostic['message']}"
+                )
+        return 0 if result.get("status") == "ok" else 2
+
+    if args.command == "postflight":
+        changed_files = _split_changed_files(args.changed_files)
+        result = PostflightRunner(repo_root()).run(changed_files)
+        if args.format == "json":
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+        else:
+            actions = result.get("actions", [])
+            if actions:
+                for action in actions:
+                    print(f"action: {action}")
+            else:
+                print("action: none")
+            print(f"reason: {result['reason']}")
+        return 0
+
     if args.command == "build-search":
         count = SearchIndex(repo_root()).build_fts()
         if args.format == "json":
@@ -134,3 +172,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     parser.error(f"{args.command} is wired but not implemented in this task")
     return 2
+
+
+def _split_changed_files(value: str) -> list[str]:
+    return [part.strip() for group in value.split(";") for part in group.split(",") if part.strip()]

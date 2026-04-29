@@ -95,7 +95,7 @@ class CliContractTests(unittest.TestCase):
 
     def test_unimplemented_command_exits_nonzero(self):
         result = subprocess.run(
-            [sys.executable, str(CLI), "preflight", "--task", "x"],
+            [sys.executable, str(CLI), "sync-vector", "--backend", "test"],
             cwd=REPO_ROOT,
             text=True,
             stdout=subprocess.PIPE,
