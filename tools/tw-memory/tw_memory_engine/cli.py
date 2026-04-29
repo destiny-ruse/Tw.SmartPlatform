@@ -7,7 +7,9 @@ from typing import Sequence
 from .checker import MemoryChecker
 from .generator import MemoryGenerator
 from .paths import repo_root
+from .reader import ChunkReader
 from .scanner import SourceScanner
+from .search import SearchIndex
 
 
 COMMANDS = (
@@ -99,6 +101,36 @@ def main(argv: Sequence[str] | None = None) -> int:
             for item in diagnostics:
                 print(f"{item.level} {item.code} {item.path or '-'} {item.message}")
         return 1 if any(item.level == "error" for item in diagnostics) else 0
+
+    if args.command == "query":
+        results = SearchIndex(repo_root()).query(args.text, args.stack, args.kind, args.limit)
+        if args.format == "json":
+            print(json.dumps({"results": [result.to_json() for result in results]}, ensure_ascii=False, indent=2))
+        else:
+            for result in results:
+                print(
+                    f"{result.chunk_id} "
+                    f"{result.source_path}:{result.start_line}-{result.end_line} "
+                    f"{result.summary}"
+                )
+        return 0
+
+    if args.command == "read":
+        reader = ChunkReader(repo_root())
+        evidence = reader.read(args.chunk_id, args.with_neighbors)
+        if args.format == "json":
+            print(json.dumps(evidence, ensure_ascii=False, indent=2))
+        else:
+            print(reader.format(evidence, args.format))
+        return 2 if evidence.get("stale") is True else 0
+
+    if args.command == "build-search":
+        count = SearchIndex(repo_root()).build_fts()
+        if args.format == "json":
+            print(json.dumps({"backend": args.backend, "indexed_chunks": count}, ensure_ascii=False, indent=2))
+        else:
+            print(f"indexed chunks: {count}")
+        return 0
 
     parser.error(f"{args.command} is wired but not implemented in this task")
     return 2
