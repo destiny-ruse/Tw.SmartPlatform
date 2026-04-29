@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sqlite3
@@ -7,8 +8,14 @@ from contextlib import closing
 from pathlib import Path
 from typing import Any, Iterable
 
+from . import SCHEMA_VERSION
 from .models import QueryResult
 from .paths import memory_root
+
+
+SEARCH_TERM_RE = re.compile(r"[\w./:-]+", re.UNICODE)
+CONTROL_CHAR_RE = re.compile(r"[\x00-\x1f\x7f]")
+FTS_TABLES = {"chunks", "chunks_fts", "metadata"}
 
 
 class SearchIndex:
@@ -24,6 +31,15 @@ class SearchIndex:
         with closing(sqlite3.connect(self.database_path)) as connection:
             connection.execute("DROP TABLE IF EXISTS chunks_fts")
             connection.execute("DROP TABLE IF EXISTS chunks")
+            connection.execute("DROP TABLE IF EXISTS metadata")
+            connection.execute(
+                """
+                CREATE TABLE metadata(
+                    key TEXT PRIMARY KEY,
+                    value TEXT NOT NULL
+                )
+                """
+            )
             connection.execute(
                 """
                 CREATE TABLE chunks(
@@ -47,6 +63,10 @@ class SearchIndex:
                     content=''
                 )
                 """
+            )
+            connection.executemany(
+                "INSERT INTO metadata(key, value) VALUES (?, ?)",
+                sorted(self._current_metadata().items()),
             )
 
             for chunk in chunks:
@@ -95,9 +115,36 @@ class SearchIndex:
     def query(self, text: str, stack: str | None, kind: str | None, limit: int) -> list[QueryResult]:
         if limit <= 0:
             return []
-        if self.database_path.exists():
-            return self._query_fts(text, stack, kind, limit)
+        if self._can_use_fts():
+            try:
+                return self._query_fts(text, stack, kind, limit)
+            except sqlite3.Error:
+                pass
         return self._query_route_index(text, stack, kind, limit)
+
+    def _can_use_fts(self) -> bool:
+        if not self.database_path.exists():
+            return False
+
+        try:
+            with closing(sqlite3.connect(self.database_path)) as connection:
+                tables = {
+                    row[0]
+                    for row in connection.execute(
+                        "SELECT name FROM sqlite_master WHERE type IN ('table', 'virtual table')"
+                    )
+                }
+                if not FTS_TABLES.issubset(tables):
+                    return False
+                metadata = {
+                    key: value
+                    for key, value in connection.execute("SELECT key, value FROM metadata")
+                }
+        except (OSError, sqlite3.Error):
+            return False
+
+        expected = self._current_metadata()
+        return all(metadata.get(key) == value for key, value in expected.items())
 
     def _query_fts(self, text: str, stack: str | None, kind: str | None, limit: int) -> list[QueryResult]:
         expression = self._fts_expression(text)
@@ -237,6 +284,23 @@ class SearchIndex:
         except (OSError, UnicodeDecodeError, json.JSONDecodeError):
             return {}
 
+    def _current_metadata(self) -> dict[str, str]:
+        route_index = self.memory_root / "route-index" / "index.generated.json"
+        payload = self._load_json(route_index)
+        repo_hash = payload.get("repo_hash") if isinstance(payload, dict) else None
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "repo_hash": repo_hash if isinstance(repo_hash, str) else "",
+            "route_index_hash": self._file_hash(route_index),
+        }
+
+    def _file_hash(self, path: Path) -> str:
+        try:
+            contents = path.read_bytes()
+        except OSError:
+            return ""
+        return f"sha256:{hashlib.sha256(contents).hexdigest()}"
+
     def _fts_expression(self, text: str) -> str | None:
         terms = self._terms(text)
         if not terms:
@@ -248,7 +312,8 @@ class SearchIndex:
         return " OR ".join(quoted_terms)
 
     def _terms(self, text: str) -> list[str]:
-        return [term for term in re.split(r"\s+", text.strip()) if term]
+        sanitized = CONTROL_CHAR_RE.sub(" ", text)
+        return SEARCH_TERM_RE.findall(sanitized)
 
     def _matches_filters(self, relations: dict[str, Any], stack: str | None, kind: str | None) -> bool:
         if stack is not None and relations.get("language") != stack:

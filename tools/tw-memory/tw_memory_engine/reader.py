@@ -62,6 +62,14 @@ class ChunkReader:
                 "action": "run generate/check",
             }
 
+        if not self._valid_line_range(start_line, end_line, len(lines)):
+            return {
+                "chunk_id": chunk_id,
+                "stale": True,
+                "error": "invalid-chunk-range",
+                "action": "run generate/check",
+            }
+
         text = "\n".join(lines[start_line - 1 : end_line])
         return {
             "chunk_id": chunk_id,
@@ -139,6 +147,9 @@ class ChunkReader:
             and isinstance(chunk.get("start_line"), int)
             and isinstance(chunk.get("end_line"), int)
         )
+
+    def _valid_line_range(self, start_line: int, end_line: int, line_count: int) -> bool:
+        return 1 <= start_line <= end_line <= line_count
 
     def _resolve_source(self, source_path: str) -> Path | None:
         if self._is_unsafe_relative_path(source_path):
