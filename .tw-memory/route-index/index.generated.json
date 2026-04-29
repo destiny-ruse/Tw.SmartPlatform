@@ -1,5 +1,5 @@
 {
-  "repo_hash": "sha256:af30374158a95136a2c3a3593c606533a6fab4ba38e85e3993c38121f3086446",
+  "repo_hash": "sha256:765df0f795b5cd49639ff225fad84d7ea599c4108dfc35018a91114770e5300e",
   "schema_version": "1.0.0",
   "shards": [
     {
@@ -105,7 +105,7 @@
       "path": "route-index/by-kind/package.generated.json"
     },
     {
-      "chunk_count": 45,
+      "chunk_count": 46,
       "kind": "kind",
       "name": "readme",
       "path": "route-index/by-kind/readme.generated.json"
@@ -117,7 +117,7 @@
       "path": "route-index/by-language/contracts.generated.json"
     },
     {
-      "chunk_count": 4,
+      "chunk_count": 5,
       "kind": "language",
       "name": "deploy",
       "path": "route-index/by-language/deploy.generated.json"

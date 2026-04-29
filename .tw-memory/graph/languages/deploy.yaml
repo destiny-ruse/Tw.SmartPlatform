@@ -1,6 +1,7 @@
 chunks:
   - deploy.README#chunk-001
   - deploy.ci-cd.README#chunk-001
+  - deploy.ci-cd.README#chunk-002
   - deploy.docker-compose.README#chunk-001
   - deploy.k8s-helm.README#chunk-001
 language: "deploy"

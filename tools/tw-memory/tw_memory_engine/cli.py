@@ -12,6 +12,7 @@ from .preflight import PreflightRunner
 from .reader import ChunkReader
 from .scanner import SourceScanner
 from .search import SearchIndex
+from .vector import VectorSyncRunner
 
 
 COMMANDS = (
@@ -169,6 +170,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         else:
             print(f"indexed chunks: {count}")
         return 0
+
+    if args.command == "sync-vector":
+        result = VectorSyncRunner(repo_root()).run(args.backend)
+        if args.format == "json":
+            print(json.dumps(result.to_json(), ensure_ascii=False, indent=2))
+        else:
+            print(f"{result.backend}: {result.status}")
+        return result.exit_code
 
     parser.error(f"{args.command} is wired but not implemented in this task")
     return 2

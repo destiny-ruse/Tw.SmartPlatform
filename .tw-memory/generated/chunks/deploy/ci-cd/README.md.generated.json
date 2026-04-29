@@ -2,7 +2,7 @@
   "chunks": [
     {
       "chunk_id": "deploy.ci-cd.README#chunk-001",
-      "end_line": 3,
+      "end_line": 4,
       "heading": "持续交付目录",
       "keywords": [
         "cd",
@@ -21,10 +21,37 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:33c23af3601e1c04c693d6205fc6456fab342492158f6d799e9a44fc2760406f",
+      "source_hash": "sha256:3569586b7575923d5f15e88893a1ded9657954f67ef91f3240d2971d0c40b3db",
       "source_path": "deploy/ci-cd/README.md",
       "start_line": 1,
       "summary": "持续交付目录 in deploy/ci-cd/README.md"
+    },
+    {
+      "chunk_id": "deploy.ci-cd.README#chunk-002",
+      "end_line": 13,
+      "heading": "TW Memory Check",
+      "keywords": [
+        "cd",
+        "check",
+        "ci",
+        "deploy",
+        "md",
+        "memory",
+        "readme"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_hash": "sha256:3569586b7575923d5f15e88893a1ded9657954f67ef91f3240d2971d0c40b3db",
+      "source_path": "deploy/ci-cd/README.md",
+      "start_line": 5,
+      "summary": "TW Memory Check in deploy/ci-cd/README.md"
     }
   ],
   "schema_version": "1.0.0",

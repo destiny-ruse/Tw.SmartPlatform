@@ -25,7 +25,7 @@
     },
     {
       "chunk_id": "deploy.ci-cd.README#chunk-001",
-      "end_line": 3,
+      "end_line": 4,
       "heading": "持续交付目录",
       "keywords": [
         "cd",
@@ -47,6 +47,32 @@
       "source_path": "deploy/ci-cd/README.md",
       "start_line": 1,
       "summary": "持续交付目录 in deploy/ci-cd/README.md"
+    },
+    {
+      "chunk_id": "deploy.ci-cd.README#chunk-002",
+      "end_line": 13,
+      "heading": "TW Memory Check",
+      "keywords": [
+        "cd",
+        "check",
+        "ci",
+        "deploy",
+        "md",
+        "memory",
+        "readme"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "deploy",
+        "service": null
+      },
+      "source_path": "deploy/ci-cd/README.md",
+      "start_line": 5,
+      "summary": "TW Memory Check in deploy/ci-cd/README.md"
     },
     {
       "chunk_id": "deploy.docker-compose.README#chunk-001",

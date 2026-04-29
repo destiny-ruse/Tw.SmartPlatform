@@ -93,9 +93,9 @@ class CliContractTests(unittest.TestCase):
             if not before_exists and memory_root.exists():
                 shutil.rmtree(memory_root)
 
-    def test_unimplemented_command_exits_nonzero(self):
+    def test_sync_vector_rejects_unknown_backend(self):
         result = subprocess.run(
-            [sys.executable, str(CLI), "sync-vector", "--backend", "test"],
+            [sys.executable, str(CLI), "sync-vector", "--backend", "test", "--format", "json"],
             cwd=REPO_ROOT,
             text=True,
             stdout=subprocess.PIPE,
@@ -103,8 +103,20 @@ class CliContractTests(unittest.TestCase):
             timeout=10,
         )
 
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn("not implemented", result.stderr)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn('"status": "unknown-backend"', result.stdout)
+
+    def test_sync_vector_is_safe_when_backend_is_disabled(self):
+        result = subprocess.run(
+            [sys.executable, str(CLI), "sync-vector", "--backend", "aliyun", "--format", "json"],
+            cwd=REPO_ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+
+        self.assertEqual(result.returncode, 2)
+        self.assertIn('"status": "disabled"', result.stdout)
 
     def test_check_can_emit_json_diagnostics(self):
         result = subprocess.run(
