@@ -50,6 +50,21 @@ class PreflightPostflightTests(unittest.TestCase):
             self.assertIn("build-search", result["actions"])
             self.assertGreaterEqual(len(result["candidates"]), 1)
 
+    def test_preflight_query_normalizes_cli_path_forms_for_language_and_service_terms(self):
+        runner = PreflightRunner(Path("."))
+
+        for path in (
+            "./backend/dotnet/Services/Orders/Foo.cs",
+            r".\backend\dotnet\Services\Orders\Foo.cs",
+            "  backend//dotnet//Services//Orders//Foo.cs  ",
+        ):
+            with self.subTest(path=path):
+                query = runner._semantic_query(task="update command handler", stack=None, path=path)
+
+                self.assertIn("Foo.cs", query)
+                self.assertIn("dotnet", query)
+                self.assertIn("orders", query)
+
     def test_postflight_classifies_memory_impact(self):
         result = PostflightRunner(Path(".")).run(
             [

@@ -63,7 +63,8 @@ class PreflightRunner:
 
 
 def _normalize_path(path: str) -> str:
-    return path.replace("\\", "/").strip("/")
+    parts = [part for part in path.strip().replace("\\", "/").split("/") if part and part != "."]
+    return "/".join(parts)
 
 
 def _path_language(path: str) -> str | None:
