@@ -196,7 +196,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-006",
-      "end_line": 127,
+      "end_line": 142,
       "heading": "Task 1: Add Cancellation Token Infrastructure",
       "keywords": [
         "03",
@@ -275,7 +275,7 @@
       },
       "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
-      "start_line": 120,
+      "start_line": 135,
       "summary": "Task 1: Add Cancellation Token Infrastructure in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
     },
     {
@@ -321,7 +321,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-009",
-      "end_line": 312,
+      "end_line": 320,
       "heading": "Task 2: Add Public AOP Abstractions",
       "keywords": [
         "03",
@@ -398,7 +398,7 @@
       },
       "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
-      "start_line": 305,
+      "start_line": 313,
       "summary": "Task 2: Add Public AOP Abstractions in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
     },
     {

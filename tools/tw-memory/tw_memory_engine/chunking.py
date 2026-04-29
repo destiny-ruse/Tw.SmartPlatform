@@ -35,6 +35,7 @@ class MarkdownChunker:
             next_start = heading_starts[index + 1][0] if index + 1 < len(heading_starts) else len(lines) + 1
             chunks.extend(
                 self._windowed_records(
+                    lines=lines,
                     number_offset=len(chunks),
                     source_hash=source_hash,
                     start_line=start_line,
@@ -73,6 +74,7 @@ class MarkdownChunker:
 
     def _synthetic_chunks(self, lines: list[str], source_hash: str) -> list[ChunkRecord]:
         return self._windowed_records(
+            lines=lines,
             number_offset=0,
             source_hash=source_hash,
             start_line=1,
@@ -83,6 +85,7 @@ class MarkdownChunker:
     def _windowed_records(
         self,
         *,
+        lines: list[str],
         number_offset: int,
         source_hash: str,
         start_line: int,
@@ -95,7 +98,12 @@ class MarkdownChunker:
 
         current_start = start_line
         while current_start <= end_line:
-            current_end = min(current_start + WINDOW_LINES - 1, end_line)
+            current_end = self._window_end_preserving_fence(
+                lines=lines,
+                section_start=start_line,
+                nominal_end=min(current_start + WINDOW_LINES - 1, end_line),
+                end_line=end_line,
+            )
             chunks.append(
                 self._record(
                     number=number_offset + len(chunks) + 1,
@@ -109,6 +117,42 @@ class MarkdownChunker:
                 break
             current_start = max(start_line, current_end - OVERLAP_LINES + 1)
         return chunks
+
+    def _window_end_preserving_fence(
+        self,
+        *,
+        lines: list[str],
+        section_start: int,
+        nominal_end: int,
+        end_line: int,
+    ) -> int:
+        if nominal_end >= end_line:
+            return nominal_end
+
+        in_fence = False
+        fence_marker = ""
+        for line in lines[section_start - 1 : nominal_end]:
+            fence_match = FENCE_RE.match(line)
+            if not fence_match:
+                continue
+
+            marker_char = fence_match.group(1)[0]
+            if not in_fence:
+                in_fence = True
+                fence_marker = marker_char
+            elif marker_char == fence_marker:
+                in_fence = False
+                fence_marker = ""
+
+        if not in_fence:
+            return nominal_end
+
+        for line_number in range(nominal_end + 1, end_line + 1):
+            fence_match = FENCE_RE.match(lines[line_number - 1])
+            if fence_match and fence_match.group(1)[0] == fence_marker:
+                return line_number
+
+        return end_line
 
     def _record(
         self,

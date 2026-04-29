@@ -662,7 +662,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-006",
-      "end_line": 130,
+      "end_line": 157,
       "heading": "Task 1: Add Lifecycle Markers and Registration Attributes",
       "keywords": [
         "01",
@@ -741,12 +741,12 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 123,
+      "start_line": 150,
       "summary": "Task 1: Add Lifecycle Markers and Registration Attributes in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-008",
-      "end_line": 255,
+      "end_line": 285,
       "heading": "Task 2: Resolve Exposed Service Types",
       "keywords": [
         "01",
@@ -823,12 +823,12 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 248,
+      "start_line": 278,
       "summary": "Task 2: Resolve Exposed Service Types in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-010",
-      "end_line": 383,
+      "end_line": 420,
       "heading": "Task 3: Plan Final Registrations and Conflicts",
       "keywords": [
         "01",
@@ -870,48 +870,6 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-011",
-      "end_line": 455,
-      "heading": "Task 3: Plan Final Registrations and Conflicts",
-      "keywords": [
-        "01",
-        "04",
-        "2026",
-        "29",
-        "and",
-        "auto",
-        "conflicts",
-        "core",
-        "docs",
-        "final",
-        "md",
-        "plan",
-        "plans",
-        "registration",
-        "registrations",
-        "superpowers",
-        "task"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "auto",
-          "core",
-          "docs",
-          "plans",
-          "registration",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 376,
-      "summary": "Task 3: Plan Final Registrations and Conflicts in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-012",
       "end_line": 462,
       "heading": "Task 3: Plan Final Registrations and Conflicts",
       "keywords": [
@@ -949,11 +907,11 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 448,
+      "start_line": 413,
       "summary": "Task 3: Plan Final Registrations and Conflicts in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-013",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-012",
       "end_line": 542,
       "heading": "Task 4: Scan Assemblies Into Candidates",
       "keywords": [
@@ -994,7 +952,7 @@
       "summary": "Task 4: Scan Assemblies Into Candidates in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-014",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-013",
       "end_line": 572,
       "heading": "Task 4: Scan Assemblies Into Candidates",
       "keywords": [
@@ -1035,7 +993,7 @@
       "summary": "Task 4: Scan Assemblies Into Candidates in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-015",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-014",
       "end_line": 652,
       "heading": "Task 5: Register Final Entries With Autofac",
       "keywords": [
@@ -1077,7 +1035,7 @@
       "summary": "Task 5: Register Final Entries With Autofac in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-016",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-015",
       "end_line": 682,
       "heading": "Task 5: Register Final Entries With Autofac",
       "keywords": [
@@ -1119,7 +1077,7 @@
       "summary": "Task 5: Register Final Entries With Autofac in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-017",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-016",
       "end_line": 711,
       "heading": "Task 6: Verify P0 Core Acceptance",
       "keywords": [
@@ -1158,7 +1116,7 @@
       "summary": "Task 6: Verify P0 Core Acceptance in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-018",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-017",
       "end_line": 719,
       "heading": "Self-Review Checklist",
       "keywords": [
@@ -1467,7 +1425,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-008",
-      "end_line": 224,
+      "end_line": 251,
       "heading": "Task 2: Discover Options Registration Descriptors",
       "keywords": [
         "02",
@@ -1540,7 +1498,7 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
-      "start_line": 217,
+      "start_line": 244,
       "summary": "Task 2: Discover Options Registration Descriptors in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
     },
     {
@@ -1976,7 +1934,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-006",
-      "end_line": 127,
+      "end_line": 142,
       "heading": "Task 1: Add Cancellation Token Infrastructure",
       "keywords": [
         "03",
@@ -2053,7 +2011,7 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
-      "start_line": 120,
+      "start_line": 135,
       "summary": "Task 1: Add Cancellation Token Infrastructure in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
     },
     {
@@ -2098,7 +2056,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-009",
-      "end_line": 312,
+      "end_line": 320,
       "heading": "Task 2: Add Public AOP Abstractions",
       "keywords": [
         "03",
@@ -2173,7 +2131,7 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
-      "start_line": 305,
+      "start_line": 313,
       "summary": "Task 2: Add Public AOP Abstractions in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
     },
     {
@@ -2726,7 +2684,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-007",
-      "end_line": 171,
+      "end_line": 187,
       "heading": "Task 2: Add ASP.NET Core Infrastructure Entrypoint",
       "keywords": [
         "04",
@@ -2805,7 +2763,7 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
-      "start_line": 164,
+      "start_line": 180,
       "summary": "Task 2: Add ASP.NET Core Infrastructure Entrypoint in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
     },
     {
@@ -2850,7 +2808,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-010",
-      "end_line": 358,
+      "end_line": 360,
       "heading": "Task 4: Add MVC Action Filter Adapter",
       "keywords": [
         "04",
@@ -2923,7 +2881,7 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
-      "start_line": 351,
+      "start_line": 353,
       "summary": "Task 4: Add MVC Action Filter Adapter in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
     },
     {
@@ -3726,7 +3684,7 @@
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-007",
-      "end_line": 157,
+      "end_line": 159,
       "heading": "Task 2: Add gRPC Feature and Idempotent Registration",
       "keywords": [
         "04",
@@ -3803,7 +3761,7 @@
         "service": null
       },
       "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
-      "start_line": 150,
+      "start_line": 152,
       "summary": "Task 2: Add gRPC Feature and Idempotent Registration in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
@@ -3957,6 +3915,47 @@
       "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
       "start_line": 292,
       "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-001",
+      "end_line": 12,
+      "heading": "CAP Worker Adapter Boundary P3 Implementation Plan",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "implementation",
+        "md",
+        "p3",
+        "plan",
+        "plans",
+        "superpowers",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 1,
+      "summary": "CAP Worker Adapter Boundary P3 Implementation Plan in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
     }
   ],
   "schema_version": "1.0.0"
