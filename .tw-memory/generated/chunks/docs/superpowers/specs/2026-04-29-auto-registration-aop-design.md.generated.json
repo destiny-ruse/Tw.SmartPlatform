@@ -709,7 +709,7 @@
       },
       "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 395,
+      "start_line": 403,
       "summary": "3.6 AOP 相关接口与特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {

@@ -327,7 +327,7 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 212,
+      "start_line": 215,
       "summary": "Task 1: Create CLI Skeleton and Test Harness in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
@@ -372,7 +372,7 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 328,
+      "start_line": 336,
       "summary": "Task 1: Create CLI Skeleton and Test Harness in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
@@ -462,56 +462,11 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 445,
+      "start_line": 453,
       "summary": "Task 2: Discover Fact Sources Without Copying Bodies in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-012",
-      "end_line": 605,
-      "heading": "Task 2: Discover Fact Sources Without Copying Bodies",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "bodies",
-        "copying",
-        "design",
-        "development",
-        "discover",
-        "docs",
-        "fact",
-        "md",
-        "memory",
-        "plans",
-        "sources",
-        "superpowers",
-        "task",
-        "tw",
-        "without"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 526,
-      "summary": "Task 2: Discover Fact Sources Without Copying Bodies in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-013",
       "end_line": 610,
       "heading": "Task 2: Discover Fact Sources Without Copying Bodies",
       "keywords": [
@@ -552,11 +507,11 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 598,
+      "start_line": 534,
       "summary": "Task 2: Discover Fact Sources Without Copying Bodies in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-014",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-013",
       "end_line": 722,
       "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
       "keywords": [
@@ -600,8 +555,8 @@
       "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-015",
-      "end_line": 801,
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-014",
+      "end_line": 802,
       "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
       "keywords": [
         "04",
@@ -640,55 +595,55 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 715,
+      "start_line": 723,
+      "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-015",
+      "end_line": 883,
+      "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "and",
+        "chunk",
+        "design",
+        "development",
+        "docs",
+        "generate",
+        "markdown",
+        "md",
+        "memory",
+        "memory`",
+        "plans",
+        "superpowers",
+        "task",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 802,
       "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
       "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-016",
-      "end_line": 874,
-      "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "chunk",
-        "design",
-        "development",
-        "docs",
-        "generate",
-        "markdown",
-        "md",
-        "memory",
-        "memory`",
-        "plans",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 794,
-      "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-017",
       "end_line": 893,
       "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
       "keywords": [
@@ -728,11 +683,11 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 867,
+      "start_line": 876,
       "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-018",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-017",
       "end_line": 1006,
       "heading": "Task 4: Validate Freshness and Repository Safety",
       "keywords": [
@@ -776,7 +731,7 @@
       "summary": "Task 4: Validate Freshness and Repository Safety in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-019",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-018",
       "end_line": 1047,
       "heading": "Task 4: Validate Freshness and Repository Safety",
       "keywords": [
@@ -816,11 +771,11 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 999,
+      "start_line": 1007,
       "summary": "Task 4: Validate Freshness and Repository Safety in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-020",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-019",
       "end_line": 1143,
       "heading": "Task 5: Implement Query, Hash-Checked Read, and Local FTS",
       "keywords": [
@@ -866,7 +821,7 @@
       "summary": "Task 5: Implement Query, Hash-Checked Read, and Local FTS in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-021",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-020",
       "end_line": 1198,
       "heading": "Task 5: Implement Query, Hash-Checked Read, and Local FTS",
       "keywords": [
@@ -908,11 +863,11 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1136,
+      "start_line": 1144,
       "summary": "Task 5: Implement Query, Hash-Checked Read, and Local FTS in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-022",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-021",
       "end_line": 1278,
       "heading": "Task 6: Implement Preflight and Postflight",
       "keywords": [
@@ -955,50 +910,7 @@
       "summary": "Task 6: Implement Preflight and Postflight in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-023",
-      "end_line": 1350,
-      "heading": "Task 6: Implement Preflight and Postflight",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "design",
-        "development",
-        "docs",
-        "implement",
-        "md",
-        "memory",
-        "plans",
-        "postflight",
-        "preflight",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1271,
-      "summary": "Task 6: Implement Preflight and Postflight in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-024",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-022",
       "end_line": 1351,
       "heading": "Task 6: Implement Preflight and Postflight",
       "keywords": [
@@ -1037,11 +949,11 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1343,
+      "start_line": 1272,
       "summary": "Task 6: Implement Preflight and Postflight in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-025",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-023",
       "end_line": 1431,
       "heading": "Task 7: Add Vector Boundary and CI Check Entry",
       "keywords": [
@@ -1086,7 +998,7 @@
       "summary": "Task 7: Add Vector Boundary and CI Check Entry in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-026",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-024",
       "end_line": 1454,
       "heading": "Task 7: Add Vector Boundary and CI Check Entry",
       "keywords": [
@@ -1131,7 +1043,7 @@
       "summary": "Task 7: Add Vector Boundary and CI Check Entry in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-027",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-025",
       "end_line": 1537,
       "heading": "Task 8: Add Thin Skills",
       "keywords": [
@@ -1173,91 +1085,91 @@
       "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-026",
+      "end_line": 1625,
+      "heading": "Task 8: Add Thin Skills",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "add",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "plans",
+        "skills",
+        "superpowers",
+        "task",
+        "thin",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 1532,
+      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-027",
+      "end_line": 1705,
+      "heading": "Task 8: Add Thin Skills",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "add",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "plans",
+        "skills",
+        "superpowers",
+        "task",
+        "thin",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 1626,
+      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
       "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-028",
-      "end_line": 1609,
-      "heading": "Task 8: Add Thin Skills",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "skills",
-        "superpowers",
-        "task",
-        "thin",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1530,
-      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-029",
-      "end_line": 1691,
-      "heading": "Task 8: Add Thin Skills",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "skills",
-        "superpowers",
-        "task",
-        "thin",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1602,
-      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-030",
       "end_line": 1752,
       "heading": "Task 8: Add Thin Skills",
       "keywords": [
@@ -1295,11 +1207,11 @@
       },
       "source_hash": "sha256:e27f791bd32e8f006596c1557815392269524def1aff3a2fc0908f987820cb60",
       "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1684,
+      "start_line": 1698,
       "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-031",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-029",
       "end_line": 1828,
       "heading": "Task 9: Final First-Phase Verification",
       "keywords": [
@@ -1342,7 +1254,7 @@
       "summary": "Task 9: Final First-Phase Verification in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-032",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-030",
       "end_line": 1842,
       "heading": "Self-Review Checklist",
       "keywords": [
@@ -1383,7 +1295,7 @@
       "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-033",
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-031",
       "end_line": 1850,
       "heading": "Execution Handoff",
       "keywords": [

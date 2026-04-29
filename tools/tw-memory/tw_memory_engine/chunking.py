@@ -115,8 +115,49 @@ class MarkdownChunker:
             )
             if current_end == end_line:
                 break
-            current_start = max(start_line, current_end - OVERLAP_LINES + 1)
+            current_start = self._window_start_preserving_fence(
+                lines=lines,
+                section_start=start_line,
+                nominal_start=max(start_line, current_end - OVERLAP_LINES + 1),
+                current_end=current_end,
+                end_line=end_line,
+            )
         return chunks
+
+    def _window_start_preserving_fence(
+        self,
+        *,
+        lines: list[str],
+        section_start: int,
+        nominal_start: int,
+        current_end: int,
+        end_line: int,
+    ) -> int:
+        in_fence = False
+        fence_marker = ""
+        fence_start = 0
+
+        for line_number in range(section_start, end_line + 1):
+            fence_match = FENCE_RE.match(lines[line_number - 1])
+            if fence_match:
+                marker_char = fence_match.group(1)[0]
+                if not in_fence:
+                    in_fence = True
+                    fence_marker = marker_char
+                    fence_start = line_number
+                elif marker_char == fence_marker:
+                    if fence_start <= nominal_start <= line_number:
+                        return line_number + 1
+                    in_fence = False
+                    fence_marker = ""
+                    fence_start = 0
+
+            if line_number >= nominal_start and not in_fence:
+                return nominal_start
+
+        if in_fence and fence_start <= nominal_start:
+            return min(max(current_end + 1, nominal_start + 1), end_line + 1)
+        return nominal_start
 
     def _window_end_preserving_fence(
         self,

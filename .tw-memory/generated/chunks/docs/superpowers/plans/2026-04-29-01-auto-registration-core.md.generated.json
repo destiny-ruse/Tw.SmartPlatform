@@ -277,7 +277,7 @@
       },
       "source_hash": "sha256:200f9411e7f0614c1e08820f7a045dc28caa1a1dff989697061d310830644cf8",
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 150,
+      "start_line": 158,
       "summary": "Task 1: Add Lifecycle Markers and Registration Attributes in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
@@ -361,7 +361,7 @@
       },
       "source_hash": "sha256:200f9411e7f0614c1e08820f7a045dc28caa1a1dff989697061d310830644cf8",
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 278,
+      "start_line": 286,
       "summary": "Task 2: Resolve Exposed Service Types in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
@@ -447,7 +447,7 @@
       },
       "source_hash": "sha256:200f9411e7f0614c1e08820f7a045dc28caa1a1dff989697061d310830644cf8",
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 413,
+      "start_line": 421,
       "summary": "Task 3: Plan Final Registrations and Conflicts in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
@@ -531,7 +531,7 @@
       },
       "source_hash": "sha256:200f9411e7f0614c1e08820f7a045dc28caa1a1dff989697061d310830644cf8",
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 535,
+      "start_line": 542,
       "summary": "Task 4: Scan Assemblies Into Candidates in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {
@@ -617,7 +617,7 @@
       },
       "source_hash": "sha256:200f9411e7f0614c1e08820f7a045dc28caa1a1dff989697061d310830644cf8",
       "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
-      "start_line": 645,
+      "start_line": 651,
       "summary": "Task 5: Register Final Entries With Autofac in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
     },
     {

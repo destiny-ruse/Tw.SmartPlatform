@@ -73,3 +73,22 @@ class ChunkingTests(unittest.TestCase):
             self.assertEqual(chunks[0].start_line, 1)
             self.assertGreater(chunks[0].end_line - chunks[0].start_line + 1, WINDOW_LINES)
             self.assertEqual(lines[chunks[0].end_line - 1], "```")
+
+    def test_large_heading_section_next_window_does_not_start_inside_extended_fence(self):
+        lines = ["# Huge"]
+        lines.extend(f"before {index}" for index in range(1, WINDOW_LINES - 5))
+        lines.append("```python")
+        lines.extend(f"print({index})" for index in range(1, 12))
+        lines.append("```")
+        lines.extend(f"after {index}" for index in range(1, 12))
+        text = "\n".join(lines) + "\n"
+
+        with tempfile.TemporaryDirectory() as work:
+            path = Path(work) / "README.md"
+            path.write_text(text, encoding="utf-8")
+
+            chunks = MarkdownChunker(path, "docs.readme").chunk()
+
+            self.assertGreater(len(chunks), 1)
+            self.assertEqual(chunks[0].end_line, 88)
+            self.assertEqual(chunks[1].start_line, 89)
