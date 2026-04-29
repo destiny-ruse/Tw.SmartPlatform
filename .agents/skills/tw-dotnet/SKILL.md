@@ -1,6 +1,6 @@
 ---
 name: tw-dotnet
-description: Use for .NET development tasks in this repository before reading project memory or editing .NET services, BuildingBlocks, README files, or tests.
+description: Use for tasks that inspect or edit `backend/dotnet/**`.
 ---
 
 # TW .NET Development

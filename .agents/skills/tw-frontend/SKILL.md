@@ -1,6 +1,6 @@
 ---
 name: tw-frontend
-description: Use for frontend development tasks in this repository before reading project memory or editing frontend apps, packages, README files, or tests.
+description: Use for tasks that inspect or edit `frontend/**`.
 ---
 
 # TW Frontend Development

@@ -5,7 +5,7 @@ description: Use only when maintaining the TW memory system itself: `.tw-memory`
 
 # TW Memory System Maintenance
 
-Use only when maintaining the TW memory system itself. Do not use this skill for ordinary product code.
+Use only when maintaining the TW memory system itself; not for ordinary product code.
 
 ## Required Flow
 

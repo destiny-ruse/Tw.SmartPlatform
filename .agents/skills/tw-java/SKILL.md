@@ -1,6 +1,6 @@
 ---
 name: tw-java
-description: Use for Java development tasks in this repository before reading project memory or editing Java services, packages, README files, or tests.
+description: Use for tasks that inspect or edit `backend/java/**`.
 ---
 
 # TW Java Development

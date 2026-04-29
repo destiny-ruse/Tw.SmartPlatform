@@ -1,6 +1,6 @@
 ---
 name: tw-python
-description: Use for Python development tasks in this repository before reading project memory or editing Python services, scripts, README files, or tests.
+description: Use for tasks that inspect or edit `backend/python/**`.
 ---
 
 # TW Python Development
