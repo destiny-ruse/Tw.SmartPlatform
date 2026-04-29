@@ -81,10 +81,22 @@
       "path": "route-index/by-framework/tw.uow.generated.json"
     },
     {
-      "chunk_count": 217,
+      "chunk_count": 100,
       "kind": "kind",
       "name": "manual",
-      "path": "route-index/by-kind/manual.generated.json"
+      "path": "route-index/by-kind/manual-part-001.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual-part-002.generated.json"
+    },
+    {
+      "chunk_count": 17,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual-part-003.generated.json"
     },
     {
       "chunk_count": 18,
@@ -111,10 +123,22 @@
       "path": "route-index/by-language/deploy.generated.json"
     },
     {
-      "chunk_count": 218,
+      "chunk_count": 100,
       "kind": "language",
       "name": "docs",
-      "path": "route-index/by-language/docs.generated.json"
+      "path": "route-index/by-language/docs-part-001.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs-part-002.generated.json"
+    },
+    {
+      "chunk_count": 18,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs-part-003.generated.json"
     },
     {
       "chunk_count": 43,

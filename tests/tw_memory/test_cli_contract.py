@@ -2,6 +2,7 @@ import json
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -11,6 +12,12 @@ CLI = REPO_ROOT / "tools" / "tw-memory" / "tw_memory.py"
 
 
 class CliContractTests(unittest.TestCase):
+    def _temp_repo_root(self, work: str) -> Path:
+        root = Path(work)
+        (root / "README.md").write_text("# Temp\n", encoding="utf-8")
+        (root / "tools").mkdir()
+        return root
+
     def test_help_lists_all_public_commands(self):
         result = subprocess.run(
             [sys.executable, str(CLI), "--help"],
@@ -117,6 +124,46 @@ class CliContractTests(unittest.TestCase):
             self.assertIn("level", diagnostic)
             self.assertIn("code", diagnostic)
             self.assertIn("message", diagnostic)
+
+    def test_check_warning_only_diagnostics_exit_zero(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = self._temp_repo_root(work)
+            route_index = root / ".tw-memory" / "route-index" / "index.generated.json"
+            route_index.parent.mkdir(parents=True)
+            route_index.write_text(json.dumps({"shards": [], "padding": "x" * 210_000}), encoding="utf-8")
+
+            result = subprocess.run(
+                [sys.executable, str(CLI), "check", "--format", "json"],
+                cwd=root,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=10,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            payload = json.loads(result.stdout)
+            self.assertTrue(any(item["level"] == "warning" for item in payload["diagnostics"]))
+
+    def test_check_error_diagnostics_exit_nonzero(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = self._temp_repo_root(work)
+            source_index = root / ".tw-memory" / "source-index" / "docs.generated.json"
+            source_index.parent.mkdir(parents=True)
+            source_index.write_text("{not-json", encoding="utf-8")
+
+            result = subprocess.run(
+                [sys.executable, str(CLI), "check", "--format", "json"],
+                cwd=root,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=10,
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            payload = json.loads(result.stdout)
+            self.assertTrue(any(item["level"] == "error" for item in payload["diagnostics"]))
 
     def test_generate_can_emit_json_with_paths_and_diagnostics(self):
         result = subprocess.run(

@@ -6,3 +6,8 @@ __pycache__/
 .tw-memory/generated/vector/
 .tw-memory/**/*.sqlite
 .tw-memory/**/*.db
+.tw-memory/**/*.parquet
+.tw-memory/**/*.bin
+.tw-memory/**/*.npy
+.tw-memory/**/third-party-docs/
+.tw-memory/**/third-party-source/

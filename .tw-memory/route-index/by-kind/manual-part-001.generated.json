@@ -1,0 +1,3999 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-001",
+      "end_line": 12,
+      "heading": "Auto Registration Dependency Admission Implementation Plan",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "implementation",
+        "md",
+        "plan",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 1,
+      "summary": "Auto Registration Dependency Admission Implementation Plan in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-002",
+      "end_line": 24,
+      "heading": "Execution Order",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "execution",
+        "md",
+        "order",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-003",
+      "end_line": 31,
+      "heading": "Source Inputs",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "inputs",
+        "md",
+        "plans",
+        "registration",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 25,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-004",
+      "end_line": 40,
+      "heading": "File Structure",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "file",
+        "md",
+        "plans",
+        "registration",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 32,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-005",
+      "end_line": 59,
+      "heading": "Package Versions",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "md",
+        "package",
+        "plans",
+        "registration",
+        "superpowers",
+        "versions"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 41,
+      "summary": "Package Versions in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-006",
+      "end_line": 61,
+      "heading": "Tasks",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "md",
+        "plans",
+        "registration",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 60,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-007",
+      "end_line": 110,
+      "heading": "Task 1: Write Dependency Admission Record",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "md",
+        "plans",
+        "record",
+        "registration",
+        "superpowers",
+        "task",
+        "write"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 62,
+      "summary": "Task 1: Write Dependency Admission Record in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-008",
+      "end_line": 159,
+      "heading": "Task 2: Pin Central Package Versions",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "central",
+        "dependency",
+        "docs",
+        "md",
+        "package",
+        "pin",
+        "plans",
+        "registration",
+        "superpowers",
+        "task",
+        "versions"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 111,
+      "summary": "Task 2: Pin Central Package Versions in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-009",
+      "end_line": 225,
+      "heading": "Task 3: Add Project Package References",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "add",
+        "admission",
+        "auto",
+        "dependency",
+        "docs",
+        "md",
+        "package",
+        "plans",
+        "project",
+        "references",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 160,
+      "summary": "Task 3: Add Project Package References in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-010",
+      "end_line": 263,
+      "heading": "Task 4: Baseline Verification",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "baseline",
+        "dependency",
+        "docs",
+        "md",
+        "plans",
+        "registration",
+        "superpowers",
+        "task",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 226,
+      "summary": "Task 4: Baseline Verification in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-011",
+      "end_line": 270,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "00",
+        "04",
+        "2026",
+        "29",
+        "admission",
+        "auto",
+        "checklist",
+        "dependency",
+        "docs",
+        "md",
+        "plans",
+        "registration",
+        "review",
+        "self",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "admission",
+          "auto",
+          "dependency",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
+      "start_line": 264,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-001",
+      "end_line": 12,
+      "heading": "Auto Registration Core Implementation Plan",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "core",
+        "docs",
+        "implementation",
+        "md",
+        "plan",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 1,
+      "summary": "Auto Registration Core Implementation Plan in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "core",
+        "docs",
+        "execution",
+        "md",
+        "order",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-003",
+      "end_line": 22,
+      "heading": "Source Inputs",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "core",
+        "docs",
+        "inputs",
+        "md",
+        "plans",
+        "registration",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-004",
+      "end_line": 48,
+      "heading": "File Structure",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "core",
+        "docs",
+        "file",
+        "md",
+        "plans",
+        "registration",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 23,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-005",
+      "end_line": 50,
+      "heading": "Tasks",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "core",
+        "docs",
+        "md",
+        "plans",
+        "registration",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 49,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-006",
+      "end_line": 175,
+      "heading": "Task 1: Add Lifecycle Markers and Registration Attributes",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "add",
+        "and",
+        "attributes",
+        "auto",
+        "core",
+        "docs",
+        "lifecycle",
+        "markers",
+        "md",
+        "plans",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 51,
+      "summary": "Task 1: Add Lifecycle Markers and Registration Attributes in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-007",
+      "end_line": 303,
+      "heading": "Task 2: Resolve Exposed Service Types",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "core",
+        "docs",
+        "exposed",
+        "md",
+        "plans",
+        "registration",
+        "resolve",
+        "service",
+        "superpowers",
+        "task",
+        "types"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 176,
+      "summary": "Task 2: Resolve Exposed Service Types in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-008",
+      "end_line": 462,
+      "heading": "Task 3: Plan Final Registrations and Conflicts",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "and",
+        "auto",
+        "conflicts",
+        "core",
+        "docs",
+        "final",
+        "md",
+        "plan",
+        "plans",
+        "registration",
+        "registrations",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 304,
+      "summary": "Task 3: Plan Final Registrations and Conflicts in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-009",
+      "end_line": 572,
+      "heading": "Task 4: Scan Assemblies Into Candidates",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "assemblies",
+        "auto",
+        "candidates",
+        "core",
+        "docs",
+        "into",
+        "md",
+        "plans",
+        "registration",
+        "scan",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 463,
+      "summary": "Task 4: Scan Assemblies Into Candidates in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-010",
+      "end_line": 682,
+      "heading": "Task 5: Register Final Entries With Autofac",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "autofac",
+        "core",
+        "docs",
+        "entries",
+        "final",
+        "md",
+        "plans",
+        "register",
+        "registration",
+        "superpowers",
+        "task",
+        "with"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 573,
+      "summary": "Task 5: Register Final Entries With Autofac in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-011",
+      "end_line": 711,
+      "heading": "Task 6: Verify P0 Core Acceptance",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "acceptance",
+        "auto",
+        "core",
+        "docs",
+        "md",
+        "plans",
+        "registration",
+        "superpowers",
+        "task",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 683,
+      "summary": "Task 6: Verify P0 Core Acceptance in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-01-auto-registration-core#chunk-012",
+      "end_line": 719,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "01",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "checklist",
+        "core",
+        "docs",
+        "md",
+        "plans",
+        "registration",
+        "review",
+        "self",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "core",
+          "docs",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-01-auto-registration-core.md",
+      "start_line": 712,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-01-auto-registration-core.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-001",
+      "end_line": 12,
+      "heading": "Options Auto Registration Implementation Plan",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "implementation",
+        "md",
+        "options",
+        "plan",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 1,
+      "summary": "Options Auto Registration Implementation Plan in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "execution",
+        "md",
+        "options",
+        "order",
+        "plans",
+        "registration",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-003",
+      "end_line": 22,
+      "heading": "Source Inputs",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "inputs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-004",
+      "end_line": 35,
+      "heading": "File Structure",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "file",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 23,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-005",
+      "end_line": 37,
+      "heading": "Tasks",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 36,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-006",
+      "end_line": 144,
+      "heading": "Task 1: Extend Configuration Metadata",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "configuration",
+        "docs",
+        "extend",
+        "md",
+        "metadata",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 38,
+      "summary": "Task 1: Extend Configuration Metadata in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-007",
+      "end_line": 286,
+      "heading": "Task 2: Discover Options Registration Descriptors",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "descriptors",
+        "discover",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 145,
+      "summary": "Task 2: Discover Options Registration Descriptors in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-008",
+      "end_line": 375,
+      "heading": "Task 3: Register Options Into IServiceCollection",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "docs",
+        "into",
+        "iservicecollection",
+        "md",
+        "options",
+        "plans",
+        "register",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 287,
+      "summary": "Task 3: Register Options Into IServiceCollection in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-009",
+      "end_line": 470,
+      "heading": "Task 4: Cover Named Options and Validation Failures",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "and",
+        "auto",
+        "cover",
+        "docs",
+        "failures",
+        "md",
+        "named",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task",
+        "validation"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 376,
+      "summary": "Task 4: Cover Named Options and Validation Failures in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-010",
+      "end_line": 495,
+      "heading": "Task 5: Verify P0 Options Acceptance",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "acceptance",
+        "auto",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "superpowers",
+        "task",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 471,
+      "summary": "Task 5: Verify P0 Options Acceptance in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-02-options-auto-registration#chunk-011",
+      "end_line": 503,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "02",
+        "04",
+        "2026",
+        "29",
+        "auto",
+        "checklist",
+        "docs",
+        "md",
+        "options",
+        "plans",
+        "registration",
+        "review",
+        "self",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "auto",
+          "docs",
+          "options",
+          "plans",
+          "registration",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-02-options-auto-registration.md",
+      "start_line": 496,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-02-options-auto-registration.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-001",
+      "end_line": 12,
+      "heading": "Service AOP Castle Implementation Plan",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "castle",
+        "docs",
+        "implementation",
+        "md",
+        "plan",
+        "plans",
+        "service",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 1,
+      "summary": "Service AOP Castle Implementation Plan in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "castle",
+        "docs",
+        "execution",
+        "md",
+        "order",
+        "plans",
+        "service",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-003",
+      "end_line": 21,
+      "heading": "Source Inputs",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "castle",
+        "docs",
+        "inputs",
+        "md",
+        "plans",
+        "service",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-004",
+      "end_line": 45,
+      "heading": "File Structure",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "castle",
+        "docs",
+        "file",
+        "md",
+        "plans",
+        "service",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 22,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-005",
+      "end_line": 47,
+      "heading": "Tasks",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "castle",
+        "docs",
+        "md",
+        "plans",
+        "service",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 46,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-006",
+      "end_line": 160,
+      "heading": "Task 1: Add Cancellation Token Infrastructure",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "add",
+        "aop",
+        "cancellation",
+        "castle",
+        "docs",
+        "infrastructure",
+        "md",
+        "plans",
+        "service",
+        "superpowers",
+        "task",
+        "token"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 48,
+      "summary": "Task 1: Add Cancellation Token Infrastructure in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-007",
+      "end_line": 338,
+      "heading": "Task 2: Add Public AOP Abstractions",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "abstractions",
+        "add",
+        "aop",
+        "castle",
+        "docs",
+        "md",
+        "plans",
+        "public",
+        "service",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 161,
+      "summary": "Task 2: Add Public AOP Abstractions in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-008",
+      "end_line": 444,
+      "heading": "Task 3: Build Service Chain Cache",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "build",
+        "cache",
+        "castle",
+        "chain",
+        "docs",
+        "md",
+        "plans",
+        "service",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 339,
+      "summary": "Task 3: Build Service Chain Cache in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-009",
+      "end_line": 538,
+      "heading": "Task 4: Adapt Castle Async Interception",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "adapt",
+        "aop",
+        "async",
+        "castle",
+        "docs",
+        "interception",
+        "md",
+        "plans",
+        "service",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 445,
+      "summary": "Task 4: Adapt Castle Async Interception in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-010",
+      "end_line": 627,
+      "heading": "Task 5: Enable Proxies During Autofac Registration",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "autofac",
+        "castle",
+        "docs",
+        "during",
+        "enable",
+        "md",
+        "plans",
+        "proxies",
+        "registration",
+        "service",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 539,
+      "summary": "Task 5: Enable Proxies During Autofac Registration in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-011",
+      "end_line": 652,
+      "heading": "Task 6: Verify P1 Service AOP Acceptance",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "acceptance",
+        "aop",
+        "castle",
+        "docs",
+        "md",
+        "plans",
+        "service",
+        "superpowers",
+        "task",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 628,
+      "summary": "Task 6: Verify P1 Service AOP Acceptance in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-03-service-aop-castle#chunk-012",
+      "end_line": 661,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "03",
+        "04",
+        "2026",
+        "29",
+        "aop",
+        "castle",
+        "checklist",
+        "docs",
+        "md",
+        "plans",
+        "review",
+        "self",
+        "service",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "aop",
+          "castle",
+          "docs",
+          "plans",
+          "service",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
+      "start_line": 653,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-001",
+      "end_line": 12,
+      "heading": "ASP.NET Core MVC Adapter Implementation Plan",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "asp",
+        "aspnetcore",
+        "core",
+        "docs",
+        "implementation",
+        "md",
+        "mvc",
+        "net",
+        "plan",
+        "plans",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 1,
+      "summary": "ASP.NET Core MVC Adapter Implementation Plan in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "aspnetcore",
+        "docs",
+        "execution",
+        "md",
+        "mvc",
+        "order",
+        "plans",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-003",
+      "end_line": 22,
+      "heading": "Source Inputs",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "aspnetcore",
+        "docs",
+        "inputs",
+        "md",
+        "mvc",
+        "plans",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-004",
+      "end_line": 37,
+      "heading": "File Structure",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "aspnetcore",
+        "docs",
+        "file",
+        "md",
+        "mvc",
+        "plans",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 23,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-005",
+      "end_line": 39,
+      "heading": "Tasks",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "aspnetcore",
+        "docs",
+        "md",
+        "mvc",
+        "plans",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 38,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-006",
+      "end_line": 91,
+      "heading": "Task 1: Add Tw.AspNetCore Test Project",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "add",
+        "aspnetcore",
+        "docs",
+        "md",
+        "mvc",
+        "plans",
+        "project",
+        "superpowers",
+        "task",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 40,
+      "summary": "Task 1: Add Tw.AspNetCore Test Project in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-007",
+      "end_line": 205,
+      "heading": "Task 2: Add ASP.NET Core Infrastructure Entrypoint",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "add",
+        "asp",
+        "aspnetcore",
+        "core",
+        "docs",
+        "entrypoint",
+        "infrastructure",
+        "md",
+        "mvc",
+        "net",
+        "plans",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 92,
+      "summary": "Task 2: Add ASP.NET Core Infrastructure Entrypoint in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-008",
+      "end_line": 278,
+      "heading": "Task 3: Build Entry Chain Cache",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "aspnetcore",
+        "build",
+        "cache",
+        "chain",
+        "docs",
+        "entry",
+        "md",
+        "mvc",
+        "plans",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 206,
+      "summary": "Task 3: Build Entry Chain Cache in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-009",
+      "end_line": 388,
+      "heading": "Task 4: Add MVC Action Filter Adapter",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "action",
+        "adapter",
+        "add",
+        "aspnetcore",
+        "docs",
+        "filter",
+        "md",
+        "mvc",
+        "plans",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 279,
+      "summary": "Task 4: Add MVC Action Filter Adapter in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-010",
+      "end_line": 414,
+      "heading": "Task 5: Verify P1 MVC Adapter Acceptance",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "acceptance",
+        "adapter",
+        "aspnetcore",
+        "docs",
+        "md",
+        "mvc",
+        "plans",
+        "superpowers",
+        "task",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 389,
+      "summary": "Task 5: Verify P1 MVC Adapter Acceptance in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-04-aspnetcore-mvc-adapter#chunk-011",
+      "end_line": 423,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "04",
+        "2026",
+        "29",
+        "adapter",
+        "aspnetcore",
+        "checklist",
+        "docs",
+        "md",
+        "mvc",
+        "plans",
+        "review",
+        "self",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "aspnetcore",
+          "docs",
+          "mvc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md",
+      "start_line": 415,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-04-aspnetcore-mvc-adapter.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-001",
+      "end_line": 12,
+      "heading": "Cross-Cutting Quality Gates Implementation Plan",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "cross",
+        "cutting",
+        "docs",
+        "gates",
+        "implementation",
+        "md",
+        "plan",
+        "plans",
+        "quality",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 1,
+      "summary": "Cross-Cutting Quality Gates Implementation Plan in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "cross",
+        "cutting",
+        "docs",
+        "execution",
+        "gates",
+        "md",
+        "order",
+        "plans",
+        "quality",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-003",
+      "end_line": 21,
+      "heading": "Source Inputs",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "cross",
+        "cutting",
+        "docs",
+        "gates",
+        "inputs",
+        "md",
+        "plans",
+        "quality",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-004",
+      "end_line": 37,
+      "heading": "File Structure",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "cross",
+        "cutting",
+        "docs",
+        "file",
+        "gates",
+        "md",
+        "plans",
+        "quality",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 22,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-005",
+      "end_line": 39,
+      "heading": "Tasks",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "cross",
+        "cutting",
+        "docs",
+        "gates",
+        "md",
+        "plans",
+        "quality",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 38,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-006",
+      "end_line": 133,
+      "heading": "Task 1: Add Diagnostic Report API",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "add",
+        "api",
+        "cross",
+        "cutting",
+        "diagnostic",
+        "docs",
+        "gates",
+        "md",
+        "plans",
+        "quality",
+        "report",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 40,
+      "summary": "Task 1: Add Diagnostic Report API in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-007",
+      "end_line": 211,
+      "heading": "Task 2: Emit Scan, Sort, Register, and AOP Diagnostics",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "and",
+        "aop",
+        "cross",
+        "cutting",
+        "diagnostics",
+        "docs",
+        "emit",
+        "gates",
+        "md",
+        "plans",
+        "quality",
+        "register,",
+        "scan,",
+        "sort,",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 134,
+      "summary": "Task 2: Emit Scan, Sort, Register, and AOP Diagnostics in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-008",
+      "end_line": 263,
+      "heading": "Task 3: Extend Localization and Comment Gates",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "and",
+        "comment",
+        "cross",
+        "cutting",
+        "docs",
+        "extend",
+        "gates",
+        "localization",
+        "md",
+        "plans",
+        "quality",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 212,
+      "summary": "Task 3: Extend Localization and Comment Gates in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-009",
+      "end_line": 324,
+      "heading": "Task 4: Update Building Block Documentation",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "block",
+        "building",
+        "cross",
+        "cutting",
+        "docs",
+        "documentation",
+        "gates",
+        "md",
+        "plans",
+        "quality",
+        "superpowers",
+        "task",
+        "update"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 264,
+      "summary": "Task 4: Update Building Block Documentation in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-010",
+      "end_line": 352,
+      "heading": "Task 5: Final P0/P1 Verification",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "cross",
+        "cutting",
+        "docs",
+        "final",
+        "gates",
+        "md",
+        "plans",
+        "quality",
+        "superpowers",
+        "task",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 325,
+      "summary": "Task 5: Final P0/P1 Verification in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-011",
+      "end_line": 360,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "04",
+        "05",
+        "2026",
+        "29",
+        "checklist",
+        "cross",
+        "cutting",
+        "docs",
+        "gates",
+        "md",
+        "plans",
+        "quality",
+        "review",
+        "self",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "cross",
+          "cutting",
+          "docs",
+          "gates",
+          "plans",
+          "quality",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md",
+      "start_line": 353,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-001",
+      "end_line": 12,
+      "heading": "gRPC Adapter P2 Implementation Plan",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "docs",
+        "grpc",
+        "implementation",
+        "md",
+        "p2",
+        "plan",
+        "plans",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 1,
+      "summary": "gRPC Adapter P2 Implementation Plan in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "docs",
+        "execution",
+        "grpc",
+        "md",
+        "order",
+        "p2",
+        "plans",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-003",
+      "end_line": 21,
+      "heading": "Source Inputs",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "docs",
+        "grpc",
+        "inputs",
+        "md",
+        "p2",
+        "plans",
+        "source",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-004",
+      "end_line": 33,
+      "heading": "File Structure",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "docs",
+        "file",
+        "grpc",
+        "md",
+        "p2",
+        "plans",
+        "structure",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 22,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-005",
+      "end_line": 35,
+      "heading": "Tasks",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "docs",
+        "grpc",
+        "md",
+        "p2",
+        "plans",
+        "superpowers",
+        "tasks"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 34,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-006",
+      "end_line": 77,
+      "heading": "Task 1: Verify gRPC Dependency Gate",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "dependency",
+        "docs",
+        "gate",
+        "grpc",
+        "md",
+        "p2",
+        "plans",
+        "superpowers",
+        "task",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 36,
+      "summary": "Task 1: Verify gRPC Dependency Gate in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-007",
+      "end_line": 177,
+      "heading": "Task 2: Add gRPC Feature and Idempotent Registration",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "add",
+        "and",
+        "docs",
+        "feature",
+        "grpc",
+        "idempotent",
+        "md",
+        "p2",
+        "plans",
+        "registration",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 78,
+      "summary": "Task 2: Add gRPC Feature and Idempotent Registration in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-008",
+      "end_line": 264,
+      "heading": "Task 3: Add gRPC Interceptor Adapter",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "add",
+        "docs",
+        "grpc",
+        "interceptor",
+        "md",
+        "p2",
+        "plans",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 178,
+      "summary": "Task 3: Add gRPC Interceptor Adapter in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-009",
+      "end_line": 291,
+      "heading": "Task 4: Verify P2 gRPC Acceptance",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "acceptance",
+        "adapter",
+        "docs",
+        "grpc",
+        "md",
+        "p2",
+        "plans",
+        "superpowers",
+        "task",
+        "verify"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 265,
+      "summary": "Task 4: Verify P2 gRPC Acceptance in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-010",
+      "end_line": 299,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "04",
+        "06",
+        "2026",
+        "29",
+        "adapter",
+        "checklist",
+        "docs",
+        "grpc",
+        "md",
+        "p2",
+        "plans",
+        "review",
+        "self",
+        "superpowers"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "docs",
+          "grpc",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md",
+      "start_line": 292,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-001",
+      "end_line": 12,
+      "heading": "CAP Worker Adapter Boundary P3 Implementation Plan",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "implementation",
+        "md",
+        "p3",
+        "plan",
+        "plans",
+        "superpowers",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 1,
+      "summary": "CAP Worker Adapter Boundary P3 Implementation Plan in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-002",
+      "end_line": 16,
+      "heading": "Execution Order",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "execution",
+        "md",
+        "order",
+        "p3",
+        "plans",
+        "superpowers",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 13,
+      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-003",
+      "end_line": 21,
+      "heading": "Source Inputs",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "inputs",
+        "md",
+        "p3",
+        "plans",
+        "source",
+        "superpowers",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 17,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-004",
+      "end_line": 29,
+      "heading": "File Structure",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "file",
+        "md",
+        "p3",
+        "plans",
+        "structure",
+        "superpowers",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 22,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-005",
+      "end_line": 31,
+      "heading": "Tasks",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "md",
+        "p3",
+        "plans",
+        "superpowers",
+        "tasks",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 30,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-006",
+      "end_line": 100,
+      "heading": "Task 1: Write CAP Entry Boundary Spec",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "entry",
+        "md",
+        "p3",
+        "plans",
+        "spec",
+        "superpowers",
+        "task",
+        "worker",
+        "write"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 32,
+      "summary": "Task 1: Write CAP Entry Boundary Spec in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-007",
+      "end_line": 168,
+      "heading": "Task 2: Write Worker Entry Boundary Spec",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "docs",
+        "entry",
+        "md",
+        "p3",
+        "plans",
+        "spec",
+        "superpowers",
+        "task",
+        "worker",
+        "write"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 101,
+      "summary": "Task 2: Write Worker Entry Boundary Spec in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-008",
+      "end_line": 235,
+      "heading": "Task 3: Create CAP Adapter Successor Plan",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "create",
+        "docs",
+        "md",
+        "p3",
+        "plan",
+        "plans",
+        "successor",
+        "superpowers",
+        "task",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 169,
+      "summary": "Task 3: Create CAP Adapter Successor Plan in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-009",
+      "end_line": 291,
+      "heading": "Task 4: Create Worker Adapter Successor Plan",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "create",
+        "docs",
+        "md",
+        "p3",
+        "plan",
+        "plans",
+        "successor",
+        "superpowers",
+        "task",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 236,
+      "summary": "Task 4: Create Worker Adapter Successor Plan in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-010",
+      "end_line": 327,
+      "heading": "Task 5: Link P3 Boundary Documents From Parent Design",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "design",
+        "docs",
+        "documents",
+        "from",
+        "link",
+        "md",
+        "p3",
+        "parent",
+        "plans",
+        "superpowers",
+        "task",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 292,
+      "summary": "Task 5: Link P3 Boundary Documents From Parent Design in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-011",
+      "end_line": 334,
+      "heading": "Self-Review Checklist",
+      "keywords": [
+        "04",
+        "07",
+        "2026",
+        "29",
+        "adapter",
+        "boundary",
+        "cap",
+        "checklist",
+        "docs",
+        "md",
+        "p3",
+        "plans",
+        "review",
+        "self",
+        "superpowers",
+        "worker"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "adapter",
+          "boundary",
+          "cap",
+          "docs",
+          "plans",
+          "superpowers",
+          "worker"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
+      "start_line": 328,
+      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-001",
+      "end_line": 12,
+      "heading": "TW Memory AI Development Layer Implementation Plan",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "implementation",
+        "layer",
+        "md",
+        "memory",
+        "plan",
+        "plans",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 1,
+      "summary": "TW Memory AI Development Layer Implementation Plan in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-002",
+      "end_line": 22,
+      "heading": "Source Inputs",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "inputs",
+        "md",
+        "memory",
+        "plans",
+        "source",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 13,
+      "summary": "Source Inputs in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-003",
+      "end_line": 35,
+      "heading": "Scope Boundary",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "boundary",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "plans",
+        "scope",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 23,
+      "summary": "Scope Boundary in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-004",
+      "end_line": 76,
+      "heading": "File Structure",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "file",
+        "md",
+        "memory",
+        "plans",
+        "structure",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 36,
+      "summary": "File Structure in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-005",
+      "end_line": 137,
+      "heading": "Data Contracts",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "contracts",
+        "data",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "plans",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 77,
+      "summary": "Data Contracts in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-006",
+      "end_line": 139,
+      "heading": "Tasks",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "plans",
+        "superpowers",
+        "tasks",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 138,
+      "summary": "Tasks in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-007",
+      "end_line": 369,
+      "heading": "Task 1: Create CLI Skeleton and Test Harness",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "and",
+        "cli",
+        "create",
+        "design",
+        "development",
+        "docs",
+        "harness",
+        "md",
+        "memory",
+        "plans",
+        "skeleton",
+        "superpowers",
+        "task",
+        "test",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 140,
+      "summary": "Task 1: Create CLI Skeleton and Test Harness in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-008",
+      "end_line": 610,
+      "heading": "Task 2: Discover Fact Sources Without Copying Bodies",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "bodies",
+        "copying",
+        "design",
+        "development",
+        "discover",
+        "docs",
+        "fact",
+        "md",
+        "memory",
+        "plans",
+        "sources",
+        "superpowers",
+        "task",
+        "tw",
+        "without"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 370,
+      "summary": "Task 2: Discover Fact Sources Without Copying Bodies in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-009",
+      "end_line": 893,
+      "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "and",
+        "chunk",
+        "design",
+        "development",
+        "docs",
+        "generate",
+        "markdown",
+        "md",
+        "memory",
+        "memory`",
+        "plans",
+        "superpowers",
+        "task",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 611,
+      "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-010",
+      "end_line": 1047,
+      "heading": "Task 4: Validate Freshness and Repository Safety",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "and",
+        "design",
+        "development",
+        "docs",
+        "freshness",
+        "md",
+        "memory",
+        "plans",
+        "repository",
+        "safety",
+        "superpowers",
+        "task",
+        "tw",
+        "validate"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 894,
+      "summary": "Task 4: Validate Freshness and Repository Safety in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-011",
+      "end_line": 1198,
+      "heading": "Task 5: Implement Query, Hash-Checked Read, and Local FTS",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "and",
+        "checked",
+        "design",
+        "development",
+        "docs",
+        "fts",
+        "hash",
+        "implement",
+        "local",
+        "md",
+        "memory",
+        "plans",
+        "query,",
+        "read,",
+        "superpowers",
+        "task"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "plans",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 1048,
+      "summary": "Task 5: Implement Query, Hash-Checked Read, and Local FTS in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from .hashing import file_sha256
@@ -51,7 +51,7 @@ class MemoryChecker:
 
     def check(self) -> list[Diagnostic]:
         diagnostics: list[Diagnostic] = []
-        source_records = self._source_records()
+        source_records = self._source_records(diagnostics)
         diagnostics.extend(self._check_source_freshness(source_records))
         diagnostics.extend(self._check_chunk_ranges())
         diagnostics.extend(self._check_manual_freshness(source_records))
@@ -59,14 +59,14 @@ class MemoryChecker:
         diagnostics.extend(self._check_memory_safety())
         return diagnostics
 
-    def _source_records(self) -> list[tuple[Path, dict[str, Any]]]:
+    def _source_records(self, diagnostics: list[Diagnostic]) -> list[tuple[Path, dict[str, Any]]]:
         source_index = self.memory_root / "source-index"
         if not source_index.exists():
             return []
 
         records: list[tuple[Path, dict[str, Any]]] = []
         for path in sorted(source_index.glob("*.generated.json")):
-            payload = self._load_json(path)
+            payload = self._load_json(path, diagnostics)
             for record in payload.get("sources", []) if isinstance(payload, dict) else []:
                 if isinstance(record, dict):
                     records.append((path, record))
@@ -80,7 +80,15 @@ class MemoryChecker:
             if not isinstance(source_path, str):
                 continue
 
-            path = self.root / source_path
+            path = self._resolve_repo_path(
+                source_path,
+                code="invalid-source-path",
+                diagnostics=diagnostics,
+                message="source-index path must stay inside the repository",
+            )
+            if path is None:
+                continue
+
             if not path.is_file():
                 diagnostics.append(
                     Diagnostic(
@@ -111,7 +119,7 @@ class MemoryChecker:
         diagnostics: list[Diagnostic] = []
         line_counts: dict[str, int] = {}
         for chunk_file in sorted(chunks_root.rglob("*.generated.json")):
-            payload = self._load_json(chunk_file)
+            payload = self._load_json(chunk_file, diagnostics)
             if not isinstance(payload, dict):
                 continue
 
@@ -126,7 +134,14 @@ class MemoryChecker:
                 source_path = chunk.get("source_path", payload_source_path)
                 if not isinstance(source_path, str):
                     continue
-                source = self.root / source_path
+                source = self._resolve_repo_path(
+                    source_path,
+                    code="invalid-chunk-path",
+                    diagnostics=diagnostics,
+                    message="chunk source path must stay inside the repository",
+                )
+                if source is None:
+                    continue
                 if not source.is_file():
                     continue
                 if source_path not in line_counts:
@@ -157,7 +172,9 @@ class MemoryChecker:
             if not isinstance(source_path, str):
                 continue
 
-            manual = self.root / source_path
+            manual = self._resolve_repo_path(source_path)
+            if manual is None:
+                continue
             if not manual.is_file():
                 continue
             index_mtime = index_path.stat().st_mtime
@@ -178,11 +195,11 @@ class MemoryChecker:
         if not index_path.exists():
             return []
 
-        payload = self._load_json(index_path)
-        if not isinstance(payload, dict):
-            return []
-
         diagnostics: list[Diagnostic] = []
+        payload = self._load_json(index_path, diagnostics)
+        if not isinstance(payload, dict):
+            return diagnostics
+
         shards = payload.get("shards", [])
         if not isinstance(shards, list):
             return diagnostics
@@ -193,7 +210,14 @@ class MemoryChecker:
             shard_path = shard.get("path")
             if not isinstance(shard_path, str):
                 continue
-            path = (self.memory_root / shard_path).resolve()
+            path = self._resolve_memory_path(
+                shard_path,
+                code="broken-route-path",
+                diagnostics=diagnostics,
+                message="route-index shard path points outside .tw-memory",
+            )
+            if path is None:
+                continue
             if not self._is_under(path, self.memory_root) or not path.is_file():
                 diagnostics.append(
                     Diagnostic(
@@ -282,11 +306,92 @@ class MemoryChecker:
             return False
         return 1 <= start_line <= end_line <= line_count
 
-    def _load_json(self, path: Path) -> Any:
+    def _load_json(self, path: Path, diagnostics: list[Diagnostic]) -> Any:
         try:
             return json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+            diagnostics.append(
+                Diagnostic(
+                    level="error",
+                    code="invalid-json",
+                    path=relative_posix(self.root, path),
+                    message=f"generated JSON could not be read: {exc}",
+                )
+            )
             return {}
+
+    def _resolve_repo_path(
+        self,
+        source_path: str,
+        *,
+        code: str | None = None,
+        diagnostics: list[Diagnostic] | None = None,
+        message: str = "path must stay inside the repository",
+    ) -> Path | None:
+        return self._resolve_safe_path(source_path, self.root, code=code, diagnostics=diagnostics, message=message)
+
+    def _resolve_memory_path(
+        self,
+        source_path: str,
+        *,
+        code: str | None = None,
+        diagnostics: list[Diagnostic] | None = None,
+        message: str = "path must stay inside .tw-memory",
+    ) -> Path | None:
+        return self._resolve_safe_path(
+            source_path,
+            self.memory_root,
+            code=code,
+            diagnostics=diagnostics,
+            message=message,
+            display_prefix=".tw-memory/",
+        )
+
+    def _resolve_safe_path(
+        self,
+        source_path: str,
+        base: Path,
+        *,
+        code: str | None,
+        diagnostics: list[Diagnostic] | None,
+        message: str,
+        display_prefix: str = "",
+    ) -> Path | None:
+        if self._is_unsafe_relative_path(source_path):
+            if diagnostics is not None and code is not None:
+                diagnostics.append(
+                    Diagnostic(
+                        level="error",
+                        code=code,
+                        path=f"{display_prefix}{source_path}",
+                        message=message,
+                    )
+                )
+            return None
+
+        resolved = (base / source_path).resolve()
+        if not self._is_under(resolved, base):
+            if diagnostics is not None and code is not None:
+                diagnostics.append(
+                    Diagnostic(
+                        level="error",
+                        code=code,
+                        path=f"{display_prefix}{source_path}",
+                        message=message,
+                    )
+                )
+            return None
+        return resolved
+
+    def _is_unsafe_relative_path(self, source_path: str) -> bool:
+        if not source_path:
+            return True
+
+        posix = PurePosixPath(source_path)
+        windows = PureWindowsPath(source_path)
+        if posix.is_absolute() or windows.is_absolute() or windows.drive:
+            return True
+        return ".." in posix.parts or ".." in windows.parts
 
     def _is_under(self, path: Path, parent: Path) -> bool:
         try:

@@ -129,3 +129,24 @@ class GeneratorTests(unittest.TestCase):
             chunk_file = root / ".tw-memory" / "generated" / "chunks" / "docs" / "no-heading.md.generated.json"
             payload = json.loads(chunk_file.read_text(encoding="utf-8"))
             self.assertEqual(payload["chunks"][0]["summary"], "Lines 1-3 in docs/no-heading.md")
+
+    def test_generate_splits_large_route_shards_before_checker_warning_size(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs" / "superpowers" / "specs"
+            docs.mkdir(parents=True)
+            for index in range(500):
+                (docs / f"very-long-memory-route-shard-file-name-{index:03d}.md").write_text(
+                    f"# Route shard warning fixture {index}\n",
+                    encoding="utf-8",
+                )
+
+            MemoryGenerator(root).generate()
+
+            route_files = [
+                path
+                for path in (root / ".tw-memory" / "route-index").rglob("*.generated.json")
+                if path.name != "index.generated.json"
+            ]
+            self.assertTrue(route_files)
+            self.assertTrue(all(path.stat().st_size <= 200 * 1024 for path in route_files))

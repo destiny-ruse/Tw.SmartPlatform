@@ -1,0 +1,690 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-030",
+      "end_line": 499,
+      "heading": "11. 第三方框架范围收缩",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "第三方框架范围收缩"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 480,
+      "summary": "11. 第三方框架范围收缩 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-031",
+      "end_line": 523,
+      "heading": "12. 可插拔检索后端",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "可插拔检索后端"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 500,
+      "summary": "12. 可插拔检索后端 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-032",
+      "end_line": 558,
+      "heading": "13. Skill 触发规则",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "skill",
+        "specs",
+        "superpowers",
+        "tw",
+        "触发规则"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 524,
+      "summary": "13. Skill 触发规则 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-033",
+      "end_line": 576,
+      "heading": "14. 工程规范记忆",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "工程规范记忆"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 559,
+      "summary": "14. 工程规范记忆 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-034",
+      "end_line": 580,
+      "heading": "15. 目录总览",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "目录总览"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 577,
+      "summary": "15. 目录总览 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-035",
+      "end_line": 590,
+      "heading": "15.1 公司正式目录说明",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "公司正式目录说明"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 581,
+      "summary": "15.1 公司正式目录说明 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-036",
+      "end_line": 629,
+      "heading": "15.2 AI 目录能力总览",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "目录能力总览"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 591,
+      "summary": "15.2 AI 目录能力总览 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-037",
+      "end_line": 631,
+      "heading": "16. 变更触发策略",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "变更触发策略"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 630,
+      "summary": "16. 变更触发策略 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-038",
+      "end_line": 637,
+      "heading": "16.1 拉取代码后",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "拉取代码后"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 632,
+      "summary": "16.1 拉取代码后 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-039",
+      "end_line": 643,
+      "heading": "16.2 变更前",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "变更前"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 638,
+      "summary": "16.2 变更前 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-040",
+      "end_line": 655,
+      "heading": "16.3 变更中",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "变更中"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 644,
+      "summary": "16.3 变更中 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-041",
+      "end_line": 666,
+      "heading": "16.4 变更后",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "变更后"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 656,
+      "summary": "16.4 变更后 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-042",
+      "end_line": 678,
+      "heading": "16.5 CI",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 667,
+      "summary": "16.5 CI in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-043",
+      "end_line": 714,
+      "heading": "17. Git 存储策略",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "git",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "存储策略"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 679,
+      "summary": "17. Git 存储策略 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-044",
+      "end_line": 729,
+      "heading": "18. 成功标准",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "成功标准"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 715,
+      "summary": "18. 成功标准 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-045",
+      "end_line": 745,
+      "heading": "19. 风险约束",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "风险约束"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 730,
+      "summary": "19. 风险约束 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-046",
+      "end_line": 769,
+      "heading": "20. 第一阶段范围",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "第一阶段范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 746,
+      "summary": "20. 第一阶段范围 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-047",
+      "end_line": 781,
+      "heading": "21. 已收敛的关键问题",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "ai",
+        "design",
+        "development",
+        "docs",
+        "md",
+        "memory",
+        "specs",
+        "superpowers",
+        "tw",
+        "已收敛的关键问题"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "development",
+          "docs",
+          "memory",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md",
+      "start_line": 770,
+      "summary": "21. 已收敛的关键问题 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

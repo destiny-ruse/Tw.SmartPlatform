@@ -66,6 +66,7 @@ vector_backends:
   self-hosted:
     enabled: false
 """
+MAX_ROUTE_SHARD_CHUNKS = 100
 
 
 @dataclass(frozen=True)
@@ -236,16 +237,19 @@ class MemoryGenerator:
                 lambda chunk, key=relation_key: str(chunk.relations[key]),
             )
             for value, shard_chunks in grouped.items():
-                path = f"route-index/{directory}/{value}.generated.json"
-                generated_paths.append(self._write_json(path, self._route_payload(shard_chunks)))
-                shards.append(
-                    {
-                        "kind": relation_key,
-                        "name": value,
-                        "path": path,
-                        "chunk_count": len(shard_chunks),
-                    }
-                )
+                split_chunks = self._split_route_chunks(shard_chunks)
+                for index, route_chunks in enumerate(split_chunks, start=1):
+                    suffix = "" if len(split_chunks) == 1 else f"-part-{index:03d}"
+                    path = f"route-index/{directory}/{value}{suffix}.generated.json"
+                    generated_paths.append(self._write_json(path, self._route_payload(route_chunks)))
+                    shards.append(
+                        {
+                            "kind": relation_key,
+                            "name": value,
+                            "path": path,
+                            "chunk_count": len(route_chunks),
+                        }
+                    )
 
         root_payload = {
             "schema_version": SCHEMA_VERSION,
@@ -272,6 +276,13 @@ class MemoryGenerator:
                 for chunk in sorted(chunks, key=lambda item: item.chunk_id)
             ],
         }
+
+    def _split_route_chunks(self, chunks: list[ChunkRecord]) -> list[list[ChunkRecord]]:
+        sorted_chunks = sorted(chunks, key=lambda item: item.chunk_id)
+        return [
+            sorted_chunks[index : index + MAX_ROUTE_SHARD_CHUNKS]
+            for index in range(0, len(sorted_chunks), MAX_ROUTE_SHARD_CHUNKS)
+        ]
 
     def _write_json(self, relative_path: str, payload: dict[str, object]) -> str:
         path = self.memory_root / relative_path
