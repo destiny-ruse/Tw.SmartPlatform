@@ -88,7 +88,7 @@ class CliContractTests(unittest.TestCase):
 
     def test_unimplemented_command_exits_nonzero(self):
         result = subprocess.run(
-            [sys.executable, str(CLI), "check"],
+            [sys.executable, str(CLI), "query", "--text", "x"],
             cwd=REPO_ROOT,
             text=True,
             stdout=subprocess.PIPE,
@@ -98,6 +98,25 @@ class CliContractTests(unittest.TestCase):
 
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("not implemented", result.stderr)
+
+    def test_check_can_emit_json_diagnostics(self):
+        result = subprocess.run(
+            [sys.executable, str(CLI), "check", "--format", "json"],
+            cwd=REPO_ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=10,
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertIn("diagnostics", payload)
+        self.assertIsInstance(payload["diagnostics"], list)
+        for diagnostic in payload["diagnostics"]:
+            self.assertIn("level", diagnostic)
+            self.assertIn("code", diagnostic)
+            self.assertIn("message", diagnostic)
 
     def test_generate_can_emit_json_with_paths_and_diagnostics(self):
         result = subprocess.run(
