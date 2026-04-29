@@ -88,7 +88,7 @@ class CliContractTests(unittest.TestCase):
 
     def test_unimplemented_command_exits_nonzero(self):
         result = subprocess.run(
-            [sys.executable, str(CLI), "generate"],
+            [sys.executable, str(CLI), "check"],
             cwd=REPO_ROOT,
             text=True,
             stdout=subprocess.PIPE,
@@ -98,6 +98,23 @@ class CliContractTests(unittest.TestCase):
 
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("not implemented", result.stderr)
+
+    def test_generate_can_emit_json_with_paths_and_diagnostics(self):
+        result = subprocess.run(
+            [sys.executable, str(CLI), "generate", "--format", "json"],
+            cwd=REPO_ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=10,
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertGreater(payload["generated_count"], 0)
+        self.assertGreater(len(payload["generated_paths"]), 0)
+        self.assertEqual(payload["diagnostics"], [])
+        self.assertIn(".tw-memory/route-index/index.generated.json", payload["generated_paths"])
 
 
 if __name__ == "__main__":
