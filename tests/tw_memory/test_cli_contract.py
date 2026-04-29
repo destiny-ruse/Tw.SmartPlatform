@@ -62,7 +62,11 @@ class CliContractTests(unittest.TestCase):
             )
 
             self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertEqual(json.loads(result.stdout), {"sources": [], "writes": []})
+            payload = json.loads(result.stdout)
+            self.assertEqual(payload["writes"], [])
+            self.assertTrue(payload["sources"])
+            self.assertIn("source_path", payload["sources"][0])
+            self.assertIn("source_hash", payload["sources"][0])
             self.assertTrue(sentinel.exists())
             self.assertEqual(before_contents, sentinel.read_text(encoding="utf-8"))
             self.assertEqual(

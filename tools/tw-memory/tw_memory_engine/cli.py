@@ -4,6 +4,9 @@ import argparse
 import json
 from typing import Sequence
 
+from .paths import repo_root
+from .scanner import SourceScanner
+
 
 COMMANDS = (
     "scan",
@@ -69,11 +72,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.command == "scan":
-        payload = {"sources": [], "writes": []}
+        records = SourceScanner(repo_root()).scan()
+        payload = {"sources": [record.to_json() for record in records], "writes": []}
         if args.format == "json":
             print(json.dumps(payload, ensure_ascii=False, indent=2))
         else:
-            print("sources: 0")
+            print(f"sources: {len(records)}")
         return 0
 
     parser.error(f"{args.command} is wired but not implemented in this task")
