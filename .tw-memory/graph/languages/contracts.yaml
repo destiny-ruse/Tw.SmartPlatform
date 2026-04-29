@@ -1,7 +1,7 @@
 chunks:
-  - contracts.README.md#chunk-001
-  - contracts.openapi.README.md#chunk-001
-  - contracts.protos.README.md#chunk-001
+  - contracts.README#chunk-001
+  - contracts.openapi.README#chunk-001
+  - contracts.protos.README#chunk-001
 language: "contracts"
 schema_version: "1.0.0"
 sources:

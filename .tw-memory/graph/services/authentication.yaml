@@ -1,5 +1,5 @@
 chunks:
-  - backend.dotnet.Services.Authentication.README.md#chunk-001
+  - backend.dotnet.Services.Authentication.README#chunk-001
 schema_version: "1.0.0"
 service: "authentication"
 sources:

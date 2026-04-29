@@ -1,6 +1,6 @@
 chunks:
-  - backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.README.md#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking.csproj#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking#chunk-001
 framework: "tw.distributedlocking"
 schema_version: "1.0.0"
 sources:

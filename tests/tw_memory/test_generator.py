@@ -29,6 +29,11 @@ class GeneratorTests(unittest.TestCase):
             self.assertGreaterEqual(len(chunk_files), 1)
             self.assertNotIn("Human readable body.", json.dumps(source_index, ensure_ascii=False))
             self.assertNotIn("Human readable body.", json.dumps(route_index, ensure_ascii=False))
+            for chunk_file in chunk_files:
+                self.assertNotIn("Human readable body.", chunk_file.read_text(encoding="utf-8"))
+            for route_file in (root / ".tw-memory" / "route-index").rglob("*.generated.json"):
+                if route_file.name != "index.generated.json":
+                    self.assertNotIn("Human readable body.", route_file.read_text(encoding="utf-8"))
 
     def test_generate_creates_language_graph_for_dotnet_frontend_java_python(self):
         with tempfile.TemporaryDirectory() as work:
@@ -48,3 +53,66 @@ class GeneratorTests(unittest.TestCase):
             for language in ["dotnet", "java", "python", "frontend"]:
                 graph = root / ".tw-memory" / "graph" / "languages" / f"{language}.yaml"
                 self.assertTrue(graph.exists(), language)
+
+    def test_generate_prunes_stale_generated_artifacts(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            (root / "docs").mkdir()
+            (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
+            stale_files = [
+                root / ".tw-memory" / "source-index" / "stale.generated.json",
+                root / ".tw-memory" / "graph" / "languages" / "stale.yaml",
+                root / ".tw-memory" / "route-index" / "by-language" / "stale.generated.json",
+                root / ".tw-memory" / "generated" / "chunks" / "stale.generated.json",
+            ]
+            preserved_files = [
+                root / ".tw-memory" / "generated" / "fts" / "cache.db",
+                root / ".tw-memory" / "generated" / "vector" / "cache.bin",
+            ]
+            for path in stale_files + preserved_files:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("stale\n", encoding="utf-8")
+
+            MemoryGenerator(root).generate()
+
+            for path in stale_files:
+                self.assertFalse(path.exists(), path)
+            for path in preserved_files:
+                self.assertTrue(path.exists(), path)
+
+    def test_generate_uses_collision_safe_chunk_ids(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            source_paths = [
+                "docs/cache.md",
+                "frontend/apps/tw.web.client/README.md",
+                "frontend/apps/tw/web/client/README.md",
+            ]
+            for source_path in source_paths:
+                target = root / source_path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(f"# {source_path}\n", encoding="utf-8")
+
+            MemoryGenerator(root).generate()
+
+            chunk_files = (root / ".tw-memory" / "generated" / "chunks").rglob("*.generated.json")
+            chunk_ids = [
+                chunk["chunk_id"]
+                for chunk_file in chunk_files
+                for chunk in json.loads(chunk_file.read_text(encoding="utf-8"))["chunks"]
+            ]
+            self.assertIn("docs.cache#chunk-001", chunk_ids)
+            self.assertEqual(len(chunk_ids), len(set(chunk_ids)))
+
+    def test_generate_reports_utf8_decode_errors(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            path = root / "docs" / "bad.md"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(b"# bad\n\xff\xfe\n")
+
+            result = MemoryGenerator(root).generate()
+
+            self.assertEqual(len(result.errors), 1)
+            self.assertEqual(result.errors[0].code, "source-decode-failed")
+            self.assertEqual(result.errors[0].path, "docs/bad.md")

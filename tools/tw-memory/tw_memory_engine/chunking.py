@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Sequence
 from pathlib import Path
 
 from .hashing import file_sha256
@@ -14,12 +15,13 @@ OVERLAP_LINES = 8
 
 
 class MarkdownChunker:
-    def __init__(self, path: Path, base_id: str):
+    def __init__(self, path: Path, base_id: str, lines: Sequence[str] | None = None):
         self.path = path
         self.base_id = base_id
+        self.lines = list(lines) if lines is not None else None
 
     def chunk(self) -> list[ChunkRecord]:
-        lines = self.path.read_text(encoding="utf-8").splitlines()
+        lines = self.lines if self.lines is not None else self.path.read_text(encoding="utf-8").splitlines()
         if not lines:
             return []
 

@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README#chunk-001",
       "end_line": 3,
       "heading": "应用契约构件目录",
       "keywords": [
@@ -37,7 +37,7 @@
       "summary": "应用契约构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -74,7 +74,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README#chunk-001",
       "end_line": 3,
       "heading": "应用层构件目录",
       "keywords": [
@@ -108,7 +108,7 @@
       "summary": "应用层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -142,7 +142,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README#chunk-001",
       "end_line": 3,
       "heading": "领域层构件目录",
       "keywords": [
@@ -176,7 +176,7 @@
       "summary": "领域层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README#chunk-001",
       "end_line": 3,
       "heading": "共享领域构件目录",
       "keywords": [
@@ -212,7 +212,7 @@
       "summary": "共享领域构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -249,7 +249,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [

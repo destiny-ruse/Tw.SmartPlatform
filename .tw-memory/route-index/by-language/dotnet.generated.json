@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "backend.dotnet.Aspire.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.Aspire.README#chunk-001",
       "end_line": 3,
       "heading": ".NET Aspire 编排目录",
       "keywords": [
@@ -29,7 +29,7 @@
       "summary": ".NET Aspire 编排目录 in backend/dotnet/Aspire/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.README#chunk-001",
       "end_line": 3,
       "heading": ".NET 公共构件目录",
       "keywords": [
@@ -57,7 +57,7 @@
       "summary": ".NET 公共构件目录 in backend/dotnet/BuildingBlocks/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README#chunk-001",
       "end_line": 3,
       "heading": "应用契约构件目录",
       "keywords": [
@@ -93,7 +93,7 @@
       "summary": "应用契约构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -130,7 +130,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README#chunk-001",
       "end_line": 3,
       "heading": "应用层构件目录",
       "keywords": [
@@ -164,7 +164,7 @@
       "summary": "应用层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -198,7 +198,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README#chunk-001",
       "end_line": 3,
       "heading": "领域层构件目录",
       "keywords": [
@@ -232,7 +232,7 @@
       "summary": "领域层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README#chunk-001",
       "end_line": 3,
       "heading": "共享领域构件目录",
       "keywords": [
@@ -268,7 +268,7 @@
       "summary": "共享领域构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -305,7 +305,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -339,7 +339,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-001",
       "end_line": 3,
       "heading": "ASP.NET Core 集成构件目录",
       "keywords": [
@@ -374,7 +374,7 @@
       "summary": "ASP.NET Core 集成构件目录 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore#chunk-001",
       "end_line": 15,
       "heading": null,
       "keywords": [
@@ -406,7 +406,7 @@
       "summary": "15 line chunk in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.README#chunk-001",
       "end_line": 3,
       "heading": "缓存构件目录",
       "keywords": [
@@ -438,7 +438,7 @@
       "summary": "缓存构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -470,7 +470,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.README#chunk-001",
       "end_line": 3,
       "heading": "核心基础构件目录",
       "keywords": [
@@ -502,7 +502,7 @@
       "summary": "核心基础构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Core/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Tw.Core.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Tw.Core#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -534,7 +534,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.README#chunk-001",
       "end_line": 3,
       "heading": "分布式锁构件目录",
       "keywords": [
@@ -566,7 +566,7 @@
       "summary": "分布式锁构件目录 in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -598,7 +598,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.README#chunk-001",
       "end_line": 3,
       "heading": "文档处理构件目录",
       "keywords": [
@@ -630,7 +630,7 @@
       "summary": "文档处理构件目录 in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.Tw.DocumentProcessing.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.Tw.DocumentProcessing#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -662,7 +662,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.README#chunk-001",
       "end_line": 3,
       "heading": "事件总线构件目录",
       "keywords": [
@@ -694,7 +694,7 @@
       "summary": "事件总线构件目录 in backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.Tw.EventBus.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.Tw.EventBus#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -726,7 +726,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README#chunk-001",
       "end_line": 3,
       "heading": "多租户构件目录",
       "keywords": [
@@ -758,7 +758,7 @@
       "summary": "多租户构件目录 in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -790,7 +790,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.README#chunk-001",
       "end_line": 3,
       "heading": "拼音转换构件目录",
       "keywords": [
@@ -822,7 +822,7 @@
       "summary": "拼音转换构件目录 in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.Tw.PinYinConverter.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.Tw.PinYinConverter#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -854,7 +854,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.README#chunk-001",
       "end_line": 3,
       "heading": "远程服务构件目录",
       "keywords": [
@@ -886,7 +886,7 @@
       "summary": "远程服务构件目录 in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.Tw.RemoteService.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.Tw.RemoteService#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -918,7 +918,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README#chunk-001",
       "end_line": 3,
       "heading": "SqlSugar 数据访问构件目录",
       "keywords": [
@@ -950,7 +950,7 @@
       "summary": "SqlSugar 数据访问构件目录 in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -982,7 +982,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.README#chunk-001",
       "end_line": 3,
       "heading": "文本模板构件目录",
       "keywords": [
@@ -1014,7 +1014,7 @@
       "summary": "文本模板构件目录 in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.Tw.TextTemplating.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.Tw.TextTemplating#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -1046,7 +1046,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.README#chunk-001",
       "end_line": 3,
       "heading": "工作单元构件目录",
       "keywords": [
@@ -1078,7 +1078,7 @@
       "summary": "工作单元构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.Tw.Uow.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.Tw.Uow#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -1110,7 +1110,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests#chunk-001",
       "end_line": 25,
       "heading": null,
       "keywords": [
@@ -1144,7 +1144,7 @@
       "summary": "25 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase#chunk-001",
       "end_line": 11,
       "heading": null,
       "keywords": [
@@ -1176,7 +1176,7 @@
       "summary": "11 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.README#chunk-001",
       "end_line": 3,
       "heading": ".NET 后端目录",
       "keywords": [
@@ -1202,7 +1202,7 @@
       "summary": ".NET 后端目录 in backend/dotnet/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.Services.Authentication.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.Services.Authentication.README#chunk-001",
       "end_line": 3,
       "heading": "认证服务目录",
       "keywords": [
@@ -1231,7 +1231,7 @@
       "summary": "认证服务目录 in backend/dotnet/Services/Authentication/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.Services.Authorization.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.Services.Authorization.README#chunk-001",
       "end_line": 3,
       "heading": "授权服务目录",
       "keywords": [
@@ -1260,7 +1260,7 @@
       "summary": "授权服务目录 in backend/dotnet/Services/Authorization/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.Services.Notice.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.Services.Notice.README#chunk-001",
       "end_line": 3,
       "heading": "通知服务目录",
       "keywords": [
@@ -1289,7 +1289,7 @@
       "summary": "通知服务目录 in backend/dotnet/Services/Notice/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.Services.OSS.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.Services.OSS.README#chunk-001",
       "end_line": 3,
       "heading": "对象存储服务目录",
       "keywords": [
@@ -1318,7 +1318,7 @@
       "summary": "对象存储服务目录 in backend/dotnet/Services/OSS/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.Services.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.Services.README#chunk-001",
       "end_line": 3,
       "heading": ".NET 服务目录",
       "keywords": [
@@ -1346,7 +1346,7 @@
       "summary": ".NET 服务目录 in backend/dotnet/Services/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.Services.System.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.Services.System.README#chunk-001",
       "end_line": 3,
       "heading": "系统服务目录",
       "keywords": [

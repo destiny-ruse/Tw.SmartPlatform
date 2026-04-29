@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-001",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-001",
       "end_line": 9,
       "heading": "Tw AI 工具开发记忆层设计",
       "keywords": [
@@ -40,7 +40,7 @@
       "summary": "Tw AI 工具开发记忆层设计 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-002",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-002",
       "end_line": 25,
       "heading": "1. 背景",
       "keywords": [
@@ -78,7 +78,7 @@
       "summary": "1. 背景 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-003",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-003",
       "end_line": 38,
       "heading": "2. 目标",
       "keywords": [
@@ -116,7 +116,7 @@
       "summary": "2. 目标 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-004",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-004",
       "end_line": 52,
       "heading": "3. 非目标",
       "keywords": [
@@ -155,7 +155,7 @@
       "summary": "3. 非目标 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-005",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-005",
       "end_line": 54,
       "heading": "4. 总体边界",
       "keywords": [
@@ -194,7 +194,7 @@
       "summary": "4. 总体边界 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-006",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-006",
       "end_line": 69,
       "heading": "4.1 公司正式资产",
       "keywords": [
@@ -233,7 +233,7 @@
       "summary": "4.1 公司正式资产 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-007",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-007",
       "end_line": 82,
       "heading": "4.2 AI 记忆层",
       "keywords": [
@@ -272,7 +272,7 @@
       "summary": "4.2 AI 记忆层 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-008",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-008",
       "end_line": 96,
       "heading": "4.3 记忆引擎",
       "keywords": [
@@ -311,7 +311,7 @@
       "summary": "4.3 记忆引擎 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-009",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-009",
       "end_line": 110,
       "heading": "4.4 Thin Skills",
       "keywords": [
@@ -351,7 +351,7 @@
       "summary": "4.4 Thin Skills in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-010",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-010",
       "end_line": 118,
       "heading": "4.5 检索后端",
       "keywords": [
@@ -390,7 +390,7 @@
       "summary": "4.5 检索后端 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-011",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-011",
       "end_line": 154,
       "heading": "5. `.tw-memory` 三层结构",
       "keywords": [
@@ -430,7 +430,7 @@
       "summary": "5. `.tw-memory` 三层结构 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-012",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-012",
       "end_line": 167,
       "heading": "5.1 第一层：来源索引",
       "keywords": [
@@ -469,7 +469,7 @@
       "summary": "5.1 第一层：来源索引 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-013",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-013",
       "end_line": 183,
       "heading": "5.2 第二层：结构记忆",
       "keywords": [
@@ -508,7 +508,7 @@
       "summary": "5.2 第二层：结构记忆 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-014",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-014",
       "end_line": 209,
       "heading": "5.3 第三层：路由索引",
       "keywords": [
@@ -547,7 +547,7 @@
       "summary": "5.3 第三层：路由索引 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-015",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-015",
       "end_line": 217,
       "heading": "5.4 支撑目录",
       "keywords": [
@@ -586,7 +586,7 @@
       "summary": "5.4 支撑目录 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-016",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-016",
       "end_line": 234,
       "heading": "6. 使用手册处理",
       "keywords": [
@@ -625,7 +625,7 @@
       "summary": "6. 使用手册处理 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-017",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-017",
       "end_line": 242,
       "heading": "7. `tools/tw-memory` 命令",
       "keywords": [
@@ -665,7 +665,7 @@
       "summary": "7. `tools/tw-memory` 命令 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-018",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-018",
       "end_line": 266,
       "heading": "7.1 preflight",
       "keywords": [
@@ -704,7 +704,7 @@
       "summary": "7.1 preflight in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-019",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-019",
       "end_line": 274,
       "heading": "7.2 scan",
       "keywords": [
@@ -743,7 +743,7 @@
       "summary": "7.2 scan in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-020",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-020",
       "end_line": 282,
       "heading": "7.3 generate",
       "keywords": [
@@ -782,7 +782,7 @@
       "summary": "7.3 generate in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-021",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-021",
       "end_line": 298,
       "heading": "7.4 check",
       "keywords": [
@@ -821,7 +821,7 @@
       "summary": "7.4 check in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-022",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-022",
       "end_line": 311,
       "heading": "7.5 query",
       "keywords": [
@@ -860,7 +860,7 @@
       "summary": "7.5 query in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-023",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-023",
       "end_line": 329,
       "heading": "7.6 read",
       "keywords": [
@@ -899,7 +899,7 @@
       "summary": "7.6 read in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-024",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-024",
       "end_line": 350,
       "heading": "7.7 postflight",
       "keywords": [
@@ -938,7 +938,7 @@
       "summary": "7.7 postflight in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-025",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-025",
       "end_line": 358,
       "heading": "7.8 build-search",
       "keywords": [
@@ -978,7 +978,7 @@
       "summary": "7.8 build-search in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-026",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-026",
       "end_line": 371,
       "heading": "7.9 sync-vector",
       "keywords": [
@@ -1018,7 +1018,7 @@
       "summary": "7.9 sync-vector in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-027",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-027",
       "end_line": 420,
       "heading": "8. AI 语义分析与检索流程",
       "keywords": [
@@ -1057,7 +1057,7 @@
       "summary": "8. AI 语义分析与检索流程 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-028",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-028",
       "end_line": 460,
       "heading": "9. 语义增强分级",
       "keywords": [
@@ -1096,7 +1096,7 @@
       "summary": "9. 语义增强分级 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-029",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-029",
       "end_line": 479,
       "heading": "10. 人工文档与自动 chunk",
       "keywords": [
@@ -1136,7 +1136,7 @@
       "summary": "10. 人工文档与自动 chunk in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-030",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-030",
       "end_line": 499,
       "heading": "11. 第三方框架范围收缩",
       "keywords": [
@@ -1175,7 +1175,7 @@
       "summary": "11. 第三方框架范围收缩 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-031",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-031",
       "end_line": 523,
       "heading": "12. 可插拔检索后端",
       "keywords": [
@@ -1214,7 +1214,7 @@
       "summary": "12. 可插拔检索后端 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-032",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-032",
       "end_line": 558,
       "heading": "13. Skill 触发规则",
       "keywords": [
@@ -1254,7 +1254,7 @@
       "summary": "13. Skill 触发规则 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-033",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-033",
       "end_line": 576,
       "heading": "14. 工程规范记忆",
       "keywords": [
@@ -1293,7 +1293,7 @@
       "summary": "14. 工程规范记忆 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-034",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-034",
       "end_line": 580,
       "heading": "15. 目录总览",
       "keywords": [
@@ -1332,7 +1332,7 @@
       "summary": "15. 目录总览 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-035",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-035",
       "end_line": 590,
       "heading": "15.1 公司正式目录说明",
       "keywords": [
@@ -1371,7 +1371,7 @@
       "summary": "15.1 公司正式目录说明 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-036",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-036",
       "end_line": 629,
       "heading": "15.2 AI 目录能力总览",
       "keywords": [
@@ -1410,7 +1410,7 @@
       "summary": "15.2 AI 目录能力总览 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-037",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-037",
       "end_line": 631,
       "heading": "16. 变更触发策略",
       "keywords": [
@@ -1449,7 +1449,7 @@
       "summary": "16. 变更触发策略 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-038",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-038",
       "end_line": 637,
       "heading": "16.1 拉取代码后",
       "keywords": [
@@ -1488,7 +1488,7 @@
       "summary": "16.1 拉取代码后 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-039",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-039",
       "end_line": 643,
       "heading": "16.2 变更前",
       "keywords": [
@@ -1527,7 +1527,7 @@
       "summary": "16.2 变更前 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-040",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-040",
       "end_line": 655,
       "heading": "16.3 变更中",
       "keywords": [
@@ -1566,7 +1566,7 @@
       "summary": "16.3 变更中 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-041",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-041",
       "end_line": 666,
       "heading": "16.4 变更后",
       "keywords": [
@@ -1605,7 +1605,7 @@
       "summary": "16.4 变更后 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-042",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-042",
       "end_line": 678,
       "heading": "16.5 CI",
       "keywords": [
@@ -1643,7 +1643,7 @@
       "summary": "16.5 CI in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-043",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-043",
       "end_line": 714,
       "heading": "17. Git 存储策略",
       "keywords": [
@@ -1683,7 +1683,7 @@
       "summary": "17. Git 存储策略 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-044",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-044",
       "end_line": 729,
       "heading": "18. 成功标准",
       "keywords": [
@@ -1722,7 +1722,7 @@
       "summary": "18. 成功标准 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-045",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-045",
       "end_line": 745,
       "heading": "19. 风险约束",
       "keywords": [
@@ -1761,7 +1761,7 @@
       "summary": "19. 风险约束 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-046",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-046",
       "end_line": 769,
       "heading": "20. 第一阶段范围",
       "keywords": [
@@ -1800,7 +1800,7 @@
       "summary": "20. 第一阶段范围 in docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design.md#chunk-047",
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-047",
       "end_line": 781,
       "heading": "21. 已收敛的关键问题",
       "keywords": [

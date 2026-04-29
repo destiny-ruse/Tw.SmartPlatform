@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import hashlib
 import json
+import shutil
 from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any
@@ -95,6 +97,7 @@ class MemoryGenerator:
         sources = SourceScanner(self.root).scan()
         repo_hash = tree_hash(self.root, [record.source_path for record in sources])
 
+        self._prune_generated_artifacts()
         generated_paths.extend(self._write_static_files())
         self._ensure_runtime_dirs()
         chunks = self._chunks_for_sources(sources, errors)
@@ -117,15 +120,21 @@ class MemoryGenerator:
         for source_path in ("generated/fts", "generated/vector"):
             (self.memory_root / source_path).mkdir(parents=True, exist_ok=True)
 
+    def _prune_generated_artifacts(self) -> None:
+        for source_path in ("source-index", "graph", "route-index", "generated/chunks"):
+            path = self.memory_root / source_path
+            if path.exists():
+                shutil.rmtree(path)
+
     def _chunks_for_sources(self, sources: list[SourceRecord], errors: list[Diagnostic]) -> list[ChunkRecord]:
         chunks: list[ChunkRecord] = []
+        base_ids = self._base_ids_for_sources(sources)
         for record in sources:
             path = self.root / record.source_path
             try:
                 source_lines = path.read_text(encoding="utf-8").splitlines()
-                base_id = self._base_id(record.source_path)
                 relations = relations_for_source(record)
-                for chunk in MarkdownChunker(path, base_id).chunk():
+                for chunk in MarkdownChunker(path, base_ids[record.source_path], source_lines).chunk():
                     chunk_lines = source_lines[chunk.start_line - 1 : chunk.end_line]
                     chunks.append(
                         replace(
@@ -136,6 +145,15 @@ class MemoryGenerator:
                             relations=relations,
                         )
                     )
+            except UnicodeDecodeError as exc:
+                errors.append(
+                    Diagnostic(
+                        level="error",
+                        code="source-decode-failed",
+                        message=str(exc),
+                        path=record.source_path,
+                    )
+                )
             except OSError as exc:
                 errors.append(
                     Diagnostic(
@@ -274,7 +292,24 @@ class MemoryGenerator:
         return "\n".join(lines) + "\n"
 
     def _base_id(self, source_path: str) -> str:
-        return source_path.replace("/", ".").replace("\\", ".")
+        path = Path(source_path)
+        without_suffix = (path.parent / path.stem).as_posix() if path.parent.as_posix() != "." else path.stem
+        return without_suffix.replace("/", ".").replace("\\", ".")
+
+    def _base_ids_for_sources(self, sources: list[SourceRecord]) -> dict[str, str]:
+        base_counts: dict[str, int] = {}
+        for record in sources:
+            base_id = self._base_id(record.source_path)
+            base_counts[base_id] = base_counts.get(base_id, 0) + 1
+
+        base_ids: dict[str, str] = {}
+        for record in sources:
+            base_id = self._base_id(record.source_path)
+            if base_counts[base_id] > 1:
+                suffix = hashlib.sha256(record.source_path.encode("utf-8")).hexdigest()[:8]
+                base_id = f"{base_id}-{suffix}"
+            base_ids[record.source_path] = base_id
+        return base_ids
 
     def _group_chunks(
         self,

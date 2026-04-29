@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "frontend.README.md#chunk-001",
+      "chunk_id": "frontend.README#chunk-001",
       "end_line": 3,
       "heading": "前端目录",
       "keywords": [
@@ -24,7 +24,7 @@
       "summary": "前端目录 in frontend/README.md"
     },
     {
-      "chunk_id": "frontend.apps.README.md#chunk-001",
+      "chunk_id": "frontend.apps.README#chunk-001",
       "end_line": 3,
       "heading": "前端应用目录",
       "keywords": [
@@ -49,7 +49,7 @@
       "summary": "前端应用目录 in frontend/apps/README.md"
     },
     {
-      "chunk_id": "frontend.apps.tw.app.owner.README.md#chunk-001",
+      "chunk_id": "frontend.apps.tw.app.owner.README#chunk-001",
       "end_line": 3,
       "heading": "业主端应用目录",
       "keywords": [
@@ -79,7 +79,7 @@
       "summary": "业主端应用目录 in frontend/apps/tw.app.owner/README.md"
     },
     {
-      "chunk_id": "frontend.apps.tw.app.staff.README.md#chunk-001",
+      "chunk_id": "frontend.apps.tw.app.staff.README#chunk-001",
       "end_line": 3,
       "heading": "员工端应用目录",
       "keywords": [
@@ -109,7 +109,7 @@
       "summary": "员工端应用目录 in frontend/apps/tw.app.staff/README.md"
     },
     {
-      "chunk_id": "frontend.apps.tw.web.client.README.md#chunk-001",
+      "chunk_id": "frontend.apps.tw.web.client.README#chunk-001",
       "end_line": 3,
       "heading": "客户端 Web 应用目录",
       "keywords": [
@@ -140,7 +140,7 @@
       "summary": "客户端 Web 应用目录 in frontend/apps/tw.web.client/README.md"
     },
     {
-      "chunk_id": "frontend.apps.tw.web.ops.README.md#chunk-001",
+      "chunk_id": "frontend.apps.tw.web.ops.README#chunk-001",
       "end_line": 3,
       "heading": "运营 Web 应用目录",
       "keywords": [
@@ -170,7 +170,7 @@
       "summary": "运营 Web 应用目录 in frontend/apps/tw.web.ops/README.md"
     },
     {
-      "chunk_id": "frontend.apps.tw.web.portal.README.md#chunk-001",
+      "chunk_id": "frontend.apps.tw.web.portal.README#chunk-001",
       "end_line": 3,
       "heading": "门户 Web 应用目录",
       "keywords": [
@@ -200,7 +200,7 @@
       "summary": "门户 Web 应用目录 in frontend/apps/tw.web.portal/README.md"
     },
     {
-      "chunk_id": "frontend.packages.README.md#chunk-001",
+      "chunk_id": "frontend.packages.README#chunk-001",
       "end_line": 3,
       "heading": "前端共享包目录",
       "keywords": [

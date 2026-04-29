@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "deploy.k8s-helm.README.md#chunk-001",
+      "chunk_id": "deploy.k8s-helm.README#chunk-001",
       "end_line": 3,
       "heading": "Kubernetes 与 Helm 部署目录",
       "keywords": [

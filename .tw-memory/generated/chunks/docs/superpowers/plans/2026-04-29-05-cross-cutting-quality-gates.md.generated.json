@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-001",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-001",
       "end_line": 12,
       "heading": "Cross-Cutting Quality Gates Implementation Plan",
       "keywords": [
@@ -42,7 +42,7 @@
       "summary": "Cross-Cutting Quality Gates Implementation Plan in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-002",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-002",
       "end_line": 16,
       "heading": "Execution Order",
       "keywords": [
@@ -83,7 +83,7 @@
       "summary": "Execution Order in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-003",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-003",
       "end_line": 21,
       "heading": "Source Inputs",
       "keywords": [
@@ -124,7 +124,7 @@
       "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-004",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-004",
       "end_line": 37,
       "heading": "File Structure",
       "keywords": [
@@ -165,7 +165,7 @@
       "summary": "File Structure in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-005",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-005",
       "end_line": 39,
       "heading": "Tasks",
       "keywords": [
@@ -205,7 +205,7 @@
       "summary": "Tasks in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-006",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-006",
       "end_line": 133,
       "heading": "Task 1: Add Diagnostic Report API",
       "keywords": [
@@ -249,7 +249,7 @@
       "summary": "Task 1: Add Diagnostic Report API in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-007",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-007",
       "end_line": 211,
       "heading": "Task 2: Emit Scan, Sort, Register, and AOP Diagnostics",
       "keywords": [
@@ -296,7 +296,7 @@
       "summary": "Task 2: Emit Scan, Sort, Register, and AOP Diagnostics in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-008",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-008",
       "end_line": 263,
       "heading": "Task 3: Extend Localization and Comment Gates",
       "keywords": [
@@ -340,7 +340,7 @@
       "summary": "Task 3: Extend Localization and Comment Gates in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-009",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-009",
       "end_line": 324,
       "heading": "Task 4: Update Building Block Documentation",
       "keywords": [
@@ -384,7 +384,7 @@
       "summary": "Task 4: Update Building Block Documentation in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-010",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-010",
       "end_line": 352,
       "heading": "Task 5: Final P0/P1 Verification",
       "keywords": [
@@ -426,7 +426,7 @@
       "summary": "Task 5: Final P0/P1 Verification in docs/superpowers/plans/2026-04-29-05-cross-cutting-quality-gates.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates.md#chunk-011",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-05-cross-cutting-quality-gates#chunk-011",
       "end_line": 360,
       "heading": "Self-Review Checklist",
       "keywords": [

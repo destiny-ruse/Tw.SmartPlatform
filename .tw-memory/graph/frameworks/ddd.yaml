@@ -1,12 +1,12 @@
 chunks:
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README.md#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts.csproj#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README.md#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application.csproj#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README.md#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README.md#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared.csproj#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain.csproj#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain#chunk-001
 framework: "ddd"
 schema_version: "1.0.0"
 sources:

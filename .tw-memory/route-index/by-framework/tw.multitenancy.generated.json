@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.README#chunk-001",
       "end_line": 3,
       "heading": "多租户构件目录",
       "keywords": [
@@ -33,7 +33,7 @@
       "summary": "多租户构件目录 in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [

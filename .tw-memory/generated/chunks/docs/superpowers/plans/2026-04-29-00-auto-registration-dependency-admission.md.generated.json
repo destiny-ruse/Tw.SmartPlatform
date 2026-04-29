@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-001",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-001",
       "end_line": 12,
       "heading": "Auto Registration Dependency Admission Implementation Plan",
       "keywords": [
@@ -42,7 +42,7 @@
       "summary": "Auto Registration Dependency Admission Implementation Plan in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-002",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-002",
       "end_line": 24,
       "heading": "Execution Order",
       "keywords": [
@@ -83,7 +83,7 @@
       "summary": "Execution Order in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-003",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-003",
       "end_line": 31,
       "heading": "Source Inputs",
       "keywords": [
@@ -124,7 +124,7 @@
       "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-004",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-004",
       "end_line": 40,
       "heading": "File Structure",
       "keywords": [
@@ -165,7 +165,7 @@
       "summary": "File Structure in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-005",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-005",
       "end_line": 59,
       "heading": "Package Versions",
       "keywords": [
@@ -206,7 +206,7 @@
       "summary": "Package Versions in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-006",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-006",
       "end_line": 61,
       "heading": "Tasks",
       "keywords": [
@@ -246,7 +246,7 @@
       "summary": "Tasks in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-007",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-007",
       "end_line": 110,
       "heading": "Task 1: Write Dependency Admission Record",
       "keywords": [
@@ -288,7 +288,7 @@
       "summary": "Task 1: Write Dependency Admission Record in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-008",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-008",
       "end_line": 159,
       "heading": "Task 2: Pin Central Package Versions",
       "keywords": [
@@ -332,7 +332,7 @@
       "summary": "Task 2: Pin Central Package Versions in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-009",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-009",
       "end_line": 225,
       "heading": "Task 3: Add Project Package References",
       "keywords": [
@@ -376,7 +376,7 @@
       "summary": "Task 3: Add Project Package References in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-010",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-010",
       "end_line": 263,
       "heading": "Task 4: Baseline Verification",
       "keywords": [
@@ -418,7 +418,7 @@
       "summary": "Task 4: Baseline Verification in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission.md#chunk-011",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-00-auto-registration-dependency-admission#chunk-011",
       "end_line": 270,
       "heading": "Self-Review Checklist",
       "keywords": [

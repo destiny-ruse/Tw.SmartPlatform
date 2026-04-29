@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Contracts.Tw.Application.Contracts#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -38,7 +38,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Application.Tw.Application#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -72,7 +72,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application/Tw.Application.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -109,7 +109,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -143,7 +143,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore#chunk-001",
       "end_line": 15,
       "heading": null,
       "keywords": [
@@ -175,7 +175,7 @@
       "summary": "15 line chunk in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -207,7 +207,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Caching/Tw.Caching.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Tw.Core.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Tw.Core#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -239,7 +239,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -271,7 +271,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.Tw.DocumentProcessing.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.Tw.DocumentProcessing#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -303,7 +303,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/Tw.DocumentProcessing.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.Tw.EventBus.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.Tw.EventBus#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -335,7 +335,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.EventBus/Tw.EventBus.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.MultiTenancy.Tw.MultiTenancy#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -367,7 +367,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/Tw.MultiTenancy.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.Tw.PinYinConverter.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.PinYinConverter.Tw.PinYinConverter#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -399,7 +399,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/Tw.PinYinConverter.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.Tw.RemoteService.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.RemoteService.Tw.RemoteService#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -431,7 +431,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/Tw.RemoteService.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -463,7 +463,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/Tw.SqlSugar.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.Tw.TextTemplating.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.Tw.TextTemplating#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -495,7 +495,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.Tw.Uow.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Uow.Tw.Uow#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [
@@ -527,7 +527,7 @@
       "summary": "9 line chunk in backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests#chunk-001",
       "end_line": 25,
       "heading": null,
       "keywords": [
@@ -561,7 +561,7 @@
       "summary": "25 line chunk in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase#chunk-001",
       "end_line": 11,
       "heading": null,
       "keywords": [

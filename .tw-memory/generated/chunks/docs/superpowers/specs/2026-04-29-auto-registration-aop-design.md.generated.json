@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-001",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-001",
       "end_line": 8,
       "heading": "DI 自动注册与 AOP 框架设计文档",
       "keywords": [
@@ -41,7 +41,7 @@
       "summary": "DI 自动注册与 AOP 框架设计文档 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-002",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-002",
       "end_line": 14,
       "heading": "Status",
       "keywords": [
@@ -80,7 +80,7 @@
       "summary": "Status in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-003",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-003",
       "end_line": 30,
       "heading": "Standards",
       "keywords": [
@@ -119,7 +119,7 @@
       "summary": "Standards in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-004",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-004",
       "end_line": 47,
       "heading": "Dependency Admission",
       "keywords": [
@@ -159,7 +159,7 @@
       "summary": "Dependency Admission in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-005",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-005",
       "end_line": 56,
       "heading": "Knowledge Alignment",
       "keywords": [
@@ -199,7 +199,7 @@
       "summary": "Knowledge Alignment in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-006",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-006",
       "end_line": 83,
       "heading": "一、设计决策概览",
       "keywords": [
@@ -238,7 +238,7 @@
       "summary": "一、设计决策概览 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-007",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-007",
       "end_line": 85,
       "heading": "二、公共入口 API",
       "keywords": [
@@ -278,7 +278,7 @@
       "summary": "二、公共入口 API in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-008",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-008",
       "end_line": 109,
       "heading": "2.1 Tw.AspNetCore 基础设施入口（推荐）",
       "keywords": [
@@ -318,7 +318,7 @@
       "summary": "2.1 Tw.AspNetCore 基础设施入口（推荐） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-009",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-009",
       "end_line": 126,
       "heading": "2.2 P2 gRPC 入口",
       "keywords": [
@@ -357,7 +357,7 @@
       "summary": "2.2 P2 gRPC 入口 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-010",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-010",
       "end_line": 156,
       "heading": "2.3 手动组合（非 ASP.NET Core 场景）",
       "keywords": [
@@ -400,7 +400,7 @@
       "summary": "2.3 手动组合（非 ASP.NET Core 场景） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-011",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-011",
       "end_line": 160,
       "heading": "三、核心抽象层",
       "keywords": [
@@ -439,7 +439,7 @@
       "summary": "三、核心抽象层 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-012",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-012",
       "end_line": 202,
       "heading": "3.1 CancellationToken 基础设施",
       "keywords": [
@@ -479,7 +479,7 @@
       "summary": "3.1 CancellationToken 基础设施 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-013",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-013",
       "end_line": 210,
       "heading": "3.2 生命周期接口",
       "keywords": [
@@ -518,7 +518,7 @@
       "summary": "3.2 生命周期接口 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-014",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-014",
       "end_line": 238,
       "heading": "3.3 注册控制特性",
       "keywords": [
@@ -557,7 +557,7 @@
       "summary": "3.3 注册控制特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-015",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-015",
       "end_line": 281,
       "heading": "3.4 配置与选项控制特性",
       "keywords": [
@@ -596,7 +596,7 @@
       "summary": "3.4 配置与选项控制特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-016",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-016",
       "end_line": 294,
       "heading": "3.5 暴露服务默认规则",
       "keywords": [
@@ -635,7 +635,7 @@
       "summary": "3.5 暴露服务默认规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-017",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-017",
       "end_line": 405,
       "heading": "3.6 AOP 相关接口与特性",
       "keywords": [
@@ -674,7 +674,7 @@
       "summary": "3.6 AOP 相关接口与特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-018",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-018",
       "end_line": 407,
       "heading": "四、程序集扫描与拓扑排序",
       "keywords": [
@@ -713,7 +713,7 @@
       "summary": "四、程序集扫描与拓扑排序 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-019",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-019",
       "end_line": 418,
       "heading": "4.1 程序集发现规则",
       "keywords": [
@@ -752,7 +752,7 @@
       "summary": "4.1 程序集发现规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-020",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-020",
       "end_line": 434,
       "heading": "4.2 拓扑排序（Kahn 算法）",
       "keywords": [
@@ -792,7 +792,7 @@
       "summary": "4.2 拓扑排序（Kahn 算法） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-021",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-021",
       "end_line": 448,
       "heading": "4.3 并发扫描策略",
       "keywords": [
@@ -831,7 +831,7 @@
       "summary": "4.3 并发扫描策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-022",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-022",
       "end_line": 467,
       "heading": "4.4 服务注册元数据结构",
       "keywords": [
@@ -870,7 +870,7 @@
       "summary": "4.4 服务注册元数据结构 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-023",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-023",
       "end_line": 469,
       "heading": "五、Autofac 注册执行",
       "keywords": [
@@ -910,7 +910,7 @@
       "summary": "五、Autofac 注册执行 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-024",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-024",
       "end_line": 477,
       "heading": "5.1 生命周期映射",
       "keywords": [
@@ -949,7 +949,7 @@
       "summary": "5.1 生命周期映射 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-025",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-025",
       "end_line": 490,
       "heading": "5.2 冲突裁决规则",
       "keywords": [
@@ -988,7 +988,7 @@
       "summary": "5.2 冲突裁决规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-026",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-026",
       "end_line": 504,
       "heading": "5.3 无显式替换标记的多实现处理",
       "keywords": [
@@ -1027,7 +1027,7 @@
       "summary": "5.3 无显式替换标记的多实现处理 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-027",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-027",
       "end_line": 521,
       "heading": "5.4 部分替换规则",
       "keywords": [
@@ -1066,7 +1066,7 @@
       "summary": "5.4 部分替换规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-028",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-028",
       "end_line": 533,
       "heading": "5.5 Keyed Service 替换规则",
       "keywords": [
@@ -1107,7 +1107,7 @@
       "summary": "5.5 Keyed Service 替换规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-029",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-029",
       "end_line": 565,
       "heading": "5.6 注册流水线（按拓扑顺序逐条执行）",
       "keywords": [
@@ -1146,7 +1146,7 @@
       "summary": "5.6 注册流水线（按拓扑顺序逐条执行） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-030",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-030",
       "end_line": 579,
       "heading": "5.7 内部模块封装",
       "keywords": [
@@ -1185,7 +1185,7 @@
       "summary": "5.7 内部模块封装 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-031",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-031",
       "end_line": 581,
       "heading": "六、AOP 架构",
       "keywords": [
@@ -1224,7 +1224,7 @@
       "summary": "六、AOP 架构 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-032",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-032",
       "end_line": 600,
       "heading": "6.1 拦截器三层叠加顺序",
       "keywords": [
@@ -1263,7 +1263,7 @@
       "summary": "6.1 拦截器三层叠加顺序 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-033",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-033",
       "end_line": 634,
       "heading": "6.2 拦截器链计算流程",
       "keywords": [
@@ -1302,7 +1302,7 @@
       "summary": "6.2 拦截器链计算流程 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-034",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-034",
       "end_line": 658,
       "heading": "6.3 IgnoreInterceptors 作用域",
       "keywords": [
@@ -1342,7 +1342,7 @@
       "summary": "6.3 IgnoreInterceptors 作用域 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-035",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-035",
       "end_line": 671,
       "heading": "6.4 入口 Adapter vs Castle.Core 模式",
       "keywords": [
@@ -1383,7 +1383,7 @@
       "summary": "6.4 入口 Adapter vs Castle.Core 模式 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-036",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-036",
       "end_line": 727,
       "heading": "6.5 入口 Adapter 设计",
       "keywords": [
@@ -1422,7 +1422,7 @@
       "summary": "6.5 入口 Adapter 设计 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-037",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-037",
       "end_line": 752,
       "heading": "6.6 调用形态分派",
       "keywords": [
@@ -1461,7 +1461,7 @@
       "summary": "6.6 调用形态分派 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-038",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-038",
       "end_line": 764,
       "heading": "6.7 拦截调用契约",
       "keywords": [
@@ -1500,7 +1500,7 @@
       "summary": "6.7 拦截调用契约 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-039",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-039",
       "end_line": 775,
       "heading": "6.8 Castle 代理覆盖与启动诊断",
       "keywords": [
@@ -1540,7 +1540,7 @@
       "summary": "6.8 Castle 代理覆盖与启动诊断 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-040",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-040",
       "end_line": 777,
       "heading": "七、配置与选项自动注册",
       "keywords": [
@@ -1579,7 +1579,7 @@
       "summary": "七、配置与选项自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-041",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-041",
       "end_line": 800,
       "heading": "7.1 自动发现规则",
       "keywords": [
@@ -1618,7 +1618,7 @@
       "summary": "7.1 自动发现规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-042",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-042",
       "end_line": 821,
       "heading": "7.2 注册行为",
       "keywords": [
@@ -1657,7 +1657,7 @@
       "summary": "7.2 注册行为 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-043",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-043",
       "end_line": 833,
       "heading": "7.3 验证策略",
       "keywords": [
@@ -1696,7 +1696,7 @@
       "summary": "7.3 验证策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-044",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-044",
       "end_line": 844,
       "heading": "7.4 命名选项",
       "keywords": [
@@ -1735,7 +1735,7 @@
       "summary": "7.4 命名选项 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-045",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-045",
       "end_line": 856,
       "heading": "7.5 性能与运行时影响",
       "keywords": [
@@ -1774,7 +1774,7 @@
       "summary": "7.5 性能与运行时影响 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-046",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-046",
       "end_line": 877,
       "heading": "八、性能优化策略",
       "keywords": [
@@ -1813,7 +1813,7 @@
       "summary": "八、性能优化策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-047",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-047",
       "end_line": 879,
       "heading": "九、典型使用示例",
       "keywords": [
@@ -1852,7 +1852,7 @@
       "summary": "九、典型使用示例 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-048",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-048",
       "end_line": 889,
       "heading": "9.1 基础自动注册",
       "keywords": [
@@ -1891,7 +1891,7 @@
       "summary": "9.1 基础自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-049",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-049",
       "end_line": 896,
       "heading": "9.2 Keyed Service",
       "keywords": [
@@ -1931,7 +1931,7 @@
       "summary": "9.2 Keyed Service in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-050",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-050",
       "end_line": 907,
       "heading": "9.3 集合服务",
       "keywords": [
@@ -1970,7 +1970,7 @@
       "summary": "9.3 集合服务 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-051",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-051",
       "end_line": 915,
       "heading": "9.4 开放泛型",
       "keywords": [
@@ -2009,7 +2009,7 @@
       "summary": "9.4 开放泛型 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-052",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-052",
       "end_line": 924,
       "heading": "9.5 服务替换",
       "keywords": [
@@ -2048,7 +2048,7 @@
       "summary": "9.5 服务替换 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-053",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-053",
       "end_line": 940,
       "heading": "9.6 ICancellationTokenProvider 使用",
       "keywords": [
@@ -2087,7 +2087,7 @@
       "summary": "9.6 ICancellationTokenProvider 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-054",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-054",
       "end_line": 995,
       "heading": "9.7 AOP 使用",
       "keywords": [
@@ -2125,7 +2125,7 @@
       "summary": "9.7 AOP 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-055",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-055",
       "end_line": 1013,
       "heading": "9.8 Feature Collection 使用",
       "keywords": [
@@ -2165,7 +2165,7 @@
       "summary": "9.8 Feature Collection 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-056",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-056",
       "end_line": 1049,
       "heading": "9.9 配置与选项自动注册",
       "keywords": [
@@ -2204,7 +2204,7 @@
       "summary": "9.9 配置与选项自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-057",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-057",
       "end_line": 1053,
       "heading": "十、验收标准",
       "keywords": [
@@ -2243,7 +2243,7 @@
       "summary": "十、验收标准 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-058",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-058",
       "end_line": 1069,
       "heading": "10.1 P0：自动注册、配置和容器基础",
       "keywords": [
@@ -2282,7 +2282,7 @@
       "summary": "10.1 P0：自动注册、配置和容器基础 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-059",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-059",
       "end_line": 1084,
       "heading": "10.2 P1：Service AOP 与 MVC/Web API Adapter",
       "keywords": [
@@ -2325,7 +2325,7 @@
       "summary": "10.2 P1：Service AOP 与 MVC/Web API Adapter in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-060",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-060",
       "end_line": 1092,
       "heading": "10.3 P2：gRPC Adapter",
       "keywords": [
@@ -2365,7 +2365,7 @@
       "summary": "10.3 P2：gRPC Adapter in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-061",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-061",
       "end_line": 1102,
       "heading": "10.4 横切质量门禁：诊断、依赖和测试",
       "keywords": [
@@ -2404,7 +2404,7 @@
       "summary": "10.4 横切质量门禁：诊断、依赖和测试 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-062",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-062",
       "end_line": 1109,
       "heading": "10.5 P3：后续 Adapter 验收边界",
       "keywords": [
@@ -2445,7 +2445,7 @@
       "summary": "10.5 P3：后续 Adapter 验收边界 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-063",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-063",
       "end_line": 1123,
       "heading": "十一、风险与处理",
       "keywords": [
@@ -2484,7 +2484,7 @@
       "summary": "十一、风险与处理 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design.md#chunk-064",
+      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-064",
       "end_line": 1132,
       "heading": "十二、不在范围内",
       "keywords": [

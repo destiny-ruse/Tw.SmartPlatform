@@ -1,5 +1,5 @@
 chunks:
-  - backend.java.README.md#chunk-001
+  - backend.java.README#chunk-001
 language: "java"
 schema_version: "1.0.0"
 sources:

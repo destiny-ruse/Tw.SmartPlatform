@@ -1,6 +1,6 @@
 chunks:
-  - backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README.md#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar.csproj#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.Tw.SqlSugar#chunk-001
 framework: "tw.sqlsugar"
 schema_version: "1.0.0"
 sources:

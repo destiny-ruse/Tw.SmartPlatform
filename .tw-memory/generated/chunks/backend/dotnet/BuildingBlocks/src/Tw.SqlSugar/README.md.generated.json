@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.SqlSugar.README#chunk-001",
       "end_line": 3,
       "heading": "SqlSugar 数据访问构件目录",
       "keywords": [

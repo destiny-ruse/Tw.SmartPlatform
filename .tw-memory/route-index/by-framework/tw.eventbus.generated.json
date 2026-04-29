@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.README.md#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.README#chunk-001",
       "end_line": 3,
       "heading": "事件总线构件目录",
       "keywords": [
@@ -33,7 +33,7 @@
       "summary": "事件总线构件目录 in backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md"
     },
     {
-      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.Tw.EventBus.csproj#chunk-001",
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.EventBus.Tw.EventBus#chunk-001",
       "end_line": 9,
       "heading": null,
       "keywords": [

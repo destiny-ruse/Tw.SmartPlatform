@@ -1,8 +1,8 @@
 chunks:
-  - deploy.README.md#chunk-001
-  - deploy.ci-cd.README.md#chunk-001
-  - deploy.docker-compose.README.md#chunk-001
-  - deploy.k8s-helm.README.md#chunk-001
+  - deploy.README#chunk-001
+  - deploy.ci-cd.README#chunk-001
+  - deploy.docker-compose.README#chunk-001
+  - deploy.k8s-helm.README#chunk-001
 language: "deploy"
 schema_version: "1.0.0"
 sources:

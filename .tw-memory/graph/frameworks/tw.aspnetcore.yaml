@@ -1,6 +1,6 @@
 chunks:
-  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README.md#chunk-001
-  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore.csproj#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore#chunk-001
 framework: "tw.aspnetcore"
 schema_version: "1.0.0"
 sources:

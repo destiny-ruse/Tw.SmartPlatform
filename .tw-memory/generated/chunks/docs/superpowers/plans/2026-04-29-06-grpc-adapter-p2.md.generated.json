@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-001",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-001",
       "end_line": 12,
       "heading": "gRPC Adapter P2 Implementation Plan",
       "keywords": [
@@ -39,7 +39,7 @@
       "summary": "gRPC Adapter P2 Implementation Plan in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-002",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-002",
       "end_line": 16,
       "heading": "Execution Order",
       "keywords": [
@@ -77,7 +77,7 @@
       "summary": "Execution Order in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-003",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-003",
       "end_line": 21,
       "heading": "Source Inputs",
       "keywords": [
@@ -115,7 +115,7 @@
       "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-004",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-004",
       "end_line": 33,
       "heading": "File Structure",
       "keywords": [
@@ -153,7 +153,7 @@
       "summary": "File Structure in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-005",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-005",
       "end_line": 35,
       "heading": "Tasks",
       "keywords": [
@@ -190,7 +190,7 @@
       "summary": "Tasks in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-006",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-006",
       "end_line": 77,
       "heading": "Task 1: Verify gRPC Dependency Gate",
       "keywords": [
@@ -230,7 +230,7 @@
       "summary": "Task 1: Verify gRPC Dependency Gate in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-007",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-007",
       "end_line": 177,
       "heading": "Task 2: Add gRPC Feature and Idempotent Registration",
       "keywords": [
@@ -272,7 +272,7 @@
       "summary": "Task 2: Add gRPC Feature and Idempotent Registration in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-008",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-008",
       "end_line": 264,
       "heading": "Task 3: Add gRPC Interceptor Adapter",
       "keywords": [
@@ -311,7 +311,7 @@
       "summary": "Task 3: Add gRPC Interceptor Adapter in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-009",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-009",
       "end_line": 291,
       "heading": "Task 4: Verify P2 gRPC Acceptance",
       "keywords": [
@@ -350,7 +350,7 @@
       "summary": "Task 4: Verify P2 gRPC Acceptance in docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md"
     },
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2.md#chunk-010",
+      "chunk_id": "docs.superpowers.plans.2026-04-29-06-grpc-adapter-p2#chunk-010",
       "end_line": 299,
       "heading": "Self-Review Checklist",
       "keywords": [

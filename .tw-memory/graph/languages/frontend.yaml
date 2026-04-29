@@ -1,12 +1,12 @@
 chunks:
-  - frontend.README.md#chunk-001
-  - frontend.apps.README.md#chunk-001
-  - frontend.apps.tw.app.owner.README.md#chunk-001
-  - frontend.apps.tw.app.staff.README.md#chunk-001
-  - frontend.apps.tw.web.client.README.md#chunk-001
-  - frontend.apps.tw.web.ops.README.md#chunk-001
-  - frontend.apps.tw.web.portal.README.md#chunk-001
-  - frontend.packages.README.md#chunk-001
+  - frontend.README#chunk-001
+  - frontend.apps.README#chunk-001
+  - frontend.apps.tw.app.owner.README#chunk-001
+  - frontend.apps.tw.app.staff.README#chunk-001
+  - frontend.apps.tw.web.client.README#chunk-001
+  - frontend.apps.tw.web.ops.README#chunk-001
+  - frontend.apps.tw.web.portal.README#chunk-001
+  - frontend.packages.README#chunk-001
 language: "frontend"
 schema_version: "1.0.0"
 sources:

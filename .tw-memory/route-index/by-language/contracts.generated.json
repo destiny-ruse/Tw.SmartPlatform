@@ -1,7 +1,7 @@
 {
   "chunks": [
     {
-      "chunk_id": "contracts.README.md#chunk-001",
+      "chunk_id": "contracts.README#chunk-001",
       "end_line": 3,
       "heading": "契约目录",
       "keywords": [
@@ -24,7 +24,7 @@
       "summary": "契约目录 in contracts/README.md"
     },
     {
-      "chunk_id": "contracts.openapi.README.md#chunk-001",
+      "chunk_id": "contracts.openapi.README#chunk-001",
       "end_line": 3,
       "heading": "OpenAPI 契约目录",
       "keywords": [
@@ -49,7 +49,7 @@
       "summary": "OpenAPI 契约目录 in contracts/openapi/README.md"
     },
     {
-      "chunk_id": "contracts.protos.README.md#chunk-001",
+      "chunk_id": "contracts.protos.README#chunk-001",
       "end_line": 3,
       "heading": "Protobuf 契约目录",
       "keywords": [
