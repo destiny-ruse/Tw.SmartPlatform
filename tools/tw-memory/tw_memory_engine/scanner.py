@@ -96,6 +96,8 @@ class SourceScanner:
         name = path.name
         if name == "README.md":
             return "readme"
+        if name == "SERVICE.md" and self._service(parts) is not None:
+            return "service-directory"
         if name == "SKILL.md":
             return "skill"
         if self._is_package_file(name):

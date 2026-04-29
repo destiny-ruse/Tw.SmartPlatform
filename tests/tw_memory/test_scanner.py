@@ -7,9 +7,16 @@ from tools.tw_memory_test_support import import_engine
 
 engine = import_engine()
 SourceScanner = engine.scanner.SourceScanner
+GeneratorInfo = engine.models.GeneratorInfo
 
 
 class ScannerTests(unittest.TestCase):
+    def test_generator_info_serializes_to_json(self):
+        self.assertEqual(
+            GeneratorInfo("tw-memory", "1.0.0").to_json(),
+            {"name": "tw-memory", "version": "1.0.0"},
+        )
+
     def test_scan_finds_docs_readmes_package_files_and_language_roots(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
@@ -43,6 +50,19 @@ class ScannerTests(unittest.TestCase):
             self.assertEqual(record.language, "dotnet")
             self.assertEqual(record.service, "notice")
             self.assertTrue(record.source_hash.startswith("sha256:"))
+
+    def test_scan_classifies_service_marker_as_service_directory(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            (root / "backend" / "dotnet" / "Services" / "Notice").mkdir(parents=True)
+            path = root / "backend" / "dotnet" / "Services" / "Notice" / "SERVICE.md"
+            path.write_text("# Notice Service Marker\n", encoding="utf-8")
+
+            [record] = SourceScanner(root).scan()
+
+            self.assertEqual(record.source_path, "backend/dotnet/Services/Notice/SERVICE.md")
+            self.assertEqual(record.source_type, "service-directory")
+            self.assertEqual(record.service, "notice")
 
 
 if __name__ == "__main__":

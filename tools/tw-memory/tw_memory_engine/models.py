@@ -9,6 +9,9 @@ class GeneratorInfo:
     name: str
     version: str
 
+    def to_json(self) -> dict[str, Any]:
+        return asdict(self)
+
 
 @dataclass(frozen=True)
 class SourceRecord:
