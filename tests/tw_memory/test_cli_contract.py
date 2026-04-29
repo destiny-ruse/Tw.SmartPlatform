@@ -1,4 +1,5 @@
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -193,6 +194,37 @@ class CliContractTests(unittest.TestCase):
         self.assertGreater(len(payload["generated_paths"]), 0)
         self.assertEqual(payload["diagnostics"], [])
         self.assertIn(".tw-memory/route-index/index.generated.json", payload["generated_paths"])
+
+    def test_read_emits_utf8_when_console_encoding_is_narrow(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = self._temp_repo_root(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "cache.md").write_text("\ufeff# 缓存\n\nRedis 缓存包装。\n", encoding="utf-8")
+
+            generate = subprocess.run(
+                [sys.executable, str(CLI), "generate", "--format", "brief"],
+                cwd=root,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=10,
+            )
+            self.assertEqual(generate.returncode, 0, generate.stderr.decode("utf-8", errors="replace"))
+
+            env = os.environ.copy()
+            env["PYTHONIOENCODING"] = "cp1252:strict"
+            result = subprocess.run(
+                [sys.executable, str(CLI), "read", "--chunk-id", "docs.cache#chunk-001"],
+                cwd=root,
+                env=env,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=10,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr.decode("utf-8", errors="replace"))
+            self.assertIn(b"docs/cache.md", result.stdout)
+            self.assertIn("Redis 缓存包装。".encode("utf-8"), result.stdout)
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from typing import Sequence
 
 from .checker import MemoryChecker
@@ -75,6 +76,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    _configure_stdout()
     parser = build_parser()
     args = parser.parse_args(argv)
 
@@ -185,3 +187,8 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 def _split_changed_files(value: str) -> list[str]:
     return [part.strip() for group in value.split(";") for part in group.split(",") if part.strip()]
+
+
+def _configure_stdout() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
