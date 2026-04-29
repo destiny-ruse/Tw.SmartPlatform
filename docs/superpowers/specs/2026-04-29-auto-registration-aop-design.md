@@ -358,6 +358,8 @@ public interface IAutoMatchInterceptor
     InterceptorScope Scope => InterceptorScope.Service;
 
     // Service scope：serviceType 为解析接口，implementationType 为实现类（两者通常不同）
+    // 若实现类暴露多个服务接口，框架对每个 (serviceType, impl) 对调用一次 Match()；
+    // 任一调用返回 true（OR 语义），该拦截器即进入此实现类型的 Service 链
     bool Match(Type serviceType, Type implementationType);
 
     // Entry scope：controllerType 为 Controller 具体类型
@@ -373,12 +375,12 @@ public interface IGrpcCallFeature     { ServerCallContext ServerCallContext { ge
 
 // 显式标记拦截器的特性声明
 // 仅对 Service scope（Castle.Core 代理）有效；标注在 Controller 类上时启动期输出警告并忽略
+// Entry 链只能通过全局注册或 IAutoMatchInterceptor.MatchEntry() 参与，不支持显式 [Intercept] 指定
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface,
     AllowMultiple = true, Inherited = true)]
 public sealed class InterceptAttribute(Type interceptorType) : Attribute
 {
-    public Type            InterceptorType { get; } = interceptorType;
-    public InterceptorScope Scope          { get; init; } = InterceptorScope.Service;
+    public Type InterceptorType { get; } = interceptorType;
 }
 
 // 忽略拦截器的特性声明
@@ -540,7 +542,7 @@ record ServiceRegistrationEntry(
     ↓
 唯一服务仅写入胜出项；集合服务写入全部集合项
 
-对每个 ServiceRegistrationEntry，独立执行以下两步（互不干扰）：
+对每个 ServiceRegistrationEntry，执行步骤 1（Controller 类型显式排除，不生成 Castle 代理）：
 
 步骤 1 — Service 链注册（Castle.Core 代理，Scope = Service）
   Service 链不为空？
@@ -549,13 +551,15 @@ record ServiceRegistrationEntry(
   │         └── No  → .As(serviceType).EnableInterfaceInterceptors().InterceptedBy(...)
   └── No  → 跳过代理，直接注册原始实现
 
-步骤 2 — Entry 元数据记录（Scope = Entry，供 Adapter 使用）
-  Entry 链不为空？
-  ├── Yes → 写入 EntryInterceptorRegistry（启动期全量构建，与 Castle 代理完全独立）
-  └── No  → 跳过
+完成所有 ServiceRegistrationEntry 注册后，执行步骤 2（全局，与各服务注册无关）：
+
+步骤 2 — Entry 基线构建（全局，Scope = Entry，供 Adapter 使用）
+  1. 汇总所有全局 Entry 拦截器
+  2. 汇总所有 IAutoMatchInterceptor（Scope = Entry）
+  3. 写入 EntryInterceptorRegistry，作为 EntryChainCache 的基线数据源
 ```
 
-Controller 类型显式排除在步骤 1 扫描之外，不生成 Castle 代理。Controller 的 Entry 链通过 `EntryChainCache` 在首次 Action 调用时按需填充（见 § 6.2）。
+Controller 的 Entry 链通过 `EntryChainCache` 在首次 Action 调用时从 EntryInterceptorRegistry 基线懒填充（见 § 6.2）。
 
 > Autofac 仍由框架接管最终容器，但替换语义不再依赖"最后注册者生效"；最后注册者只作为 Autofac 底层特性，不作为业务规则来源。
 
@@ -635,6 +639,8 @@ internal sealed class AutoRegistrationModule : Module
 | DI 服务实现类上 | 仅当前实现类的 Service 链（ServiceChainCache） |
 | Controller 类上 | EntryChainCache 中该 Controller 的 Entry 链 |
 | 接口上 | 所有实现该接口的类均继承此规则，**包括接口继承链的传递性**（如 `ISpecificRepo : IReadOnlyRepo`，`[IgnoreInterceptors]` 在 `IReadOnlyRepo` 上，则实现 `ISpecificRepo` 的类同样受约束） |
+
+> `[IgnoreInterceptors]` 只抑制**全局与自动匹配**拦截器；显式 `[Intercept]` 标注的拦截器不受抑制，设计上视为服务类型的强制约定。
 
 ```csharp
 // 示例：查询接口不参与工作单元拦截（传递到所有子接口的实现类）
