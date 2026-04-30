@@ -110,7 +110,10 @@ class ScannerTests(unittest.TestCase):
             root = Path(work)
             files = {
                 "docs/build/README.md": "readme",
+                "docs/generated/fts/README.md": "readme",
+                "docs/generated/vector/README.md": "readme",
                 "docs/standards/references/build/README.md": "reference",
+                "docs/standards/references/generated/fts/README.md": "reference",
             }
             for source_path in files:
                 path = root / source_path

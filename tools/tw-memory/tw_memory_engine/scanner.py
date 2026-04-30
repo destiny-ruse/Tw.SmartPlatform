@@ -28,10 +28,6 @@ GENERATED_OUTPUT_DIRS = {
     ".venv",
     "venv",
 }
-EXCLUDED_PREFIXES = {
-    ("generated", "fts"),
-    ("generated", "vector"),
-}
 MARKDOWN_ROOTS = {"docs", "backend", "frontend", "contracts", "deploy"}
 PACKAGE_FILENAMES = {
     "package.json",
@@ -100,11 +96,7 @@ class SourceScanner:
             return True
         if self._is_generated_output_path(parts):
             return True
-        return any(
-            parts[index : index + len(prefix)] == prefix
-            for prefix in EXCLUDED_PREFIXES
-            for index in range(0, len(parts) - len(prefix) + 1)
-        )
+        return False
 
     def _is_excluded(self, path: Path) -> bool:
         parts = path.resolve().relative_to(self.root).parts
@@ -112,11 +104,7 @@ class SourceScanner:
             return True
         if self._is_generated_output_path(parts[:-1]):
             return True
-        return any(
-            parts[index : index + len(prefix)] == prefix
-            for prefix in EXCLUDED_PREFIXES
-            for index in range(0, len(parts) - len(prefix) + 1)
-        )
+        return False
 
     def _is_included(self, path: Path, parts: tuple[str, ...]) -> bool:
         name = path.name
