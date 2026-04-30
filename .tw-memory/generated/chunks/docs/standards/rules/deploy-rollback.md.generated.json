@@ -1,0 +1,251 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-001",
+      "end_line": 2,
+      "heading": "部署与回滚规范",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards",
+        "部署与回滚规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 1,
+      "summary": "部署与回滚规范 in docs/standards/rules/deploy-rollback.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/deploy-rollback.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/deploy-rollback.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/deploy-rollback.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-005",
+      "end_line": 42,
+      "heading": "示例",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/deploy-rollback.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-006",
+      "end_line": 51,
+      "heading": "检查清单",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 43,
+      "summary": "检查清单 in docs/standards/rules/deploy-rollback.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-007",
+      "end_line": 58,
+      "heading": "相关规范",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 52,
+      "summary": "相关规范 in docs/standards/rules/deploy-rollback.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.deploy-rollback#chunk-008",
+      "end_line": 64,
+      "heading": "变更记录",
+      "keywords": [
+        "deploy",
+        "docs",
+        "md",
+        "rollback",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "deploy",
+          "docs",
+          "rollback",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
+      "source_path": "docs/standards/rules/deploy-rollback.md",
+      "start_line": 59,
+      "summary": "变更记录 in docs/standards/rules/deploy-rollback.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/deploy-rollback.md"
+}

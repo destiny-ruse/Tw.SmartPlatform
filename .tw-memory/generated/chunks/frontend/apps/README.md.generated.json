@@ -21,7 +21,7 @@
         "language": "frontend",
         "service": null
       },
-      "source_hash": "sha256:5fb004464bc57633651c64f9e054652b66ce1b90dec24f6dcbf7eaba89eb59fa",
+      "source_hash": "sha256:384348b2f557603895fbb006b50fca9955e95c0e4aef3b928f4dc33cee58c57d",
       "source_path": "frontend/apps/README.md",
       "start_line": 1,
       "summary": "前端应用目录 in frontend/apps/README.md"

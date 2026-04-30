@@ -24,7 +24,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:48940951134b3c98303bf9de607735542de1c430101337657f684a231db6e8b5",
+      "source_hash": "sha256:3e0ecf6f2db263768be0705532c87573f5bfdd76770e7978ab544643800b5f05",
       "source_path": "backend/dotnet/BuildingBlocks/README.md",
       "start_line": 1,
       "summary": ".NET 公共构件目录 in backend/dotnet/BuildingBlocks/README.md"

@@ -22,7 +22,7 @@
         "language": "contracts",
         "service": null
       },
-      "source_hash": "sha256:beb0bf80c267df8a779a39798d5e642ea0b9007d6132d7a160cd77b981a77b69",
+      "source_hash": "sha256:02b4d02acec8d1dbb030ae3cf294654b6b031f1f961cd99e1ab77900f9f63fca",
       "source_path": "contracts/protos/README.md",
       "start_line": 1,
       "summary": "Protobuf 契约目录 in contracts/protos/README.md"

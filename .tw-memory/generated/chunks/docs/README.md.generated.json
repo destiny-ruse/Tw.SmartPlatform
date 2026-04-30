@@ -2,7 +2,7 @@
   "chunks": [
     {
       "chunk_id": "docs.README#chunk-001",
-      "end_line": 3,
+      "end_line": 4,
       "heading": "文档目录",
       "keywords": [
         "docs",
@@ -19,10 +19,57 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:f6b28edc09ddcdbeed306acb15cc7fca9428c2a8aca1b11bd04c4a9f5d302ac0",
+      "source_hash": "sha256:6b655095a6ae5ff3345568770fc56a6481355c56784b1975b2ef38470b6138d5",
       "source_path": "docs/README.md",
       "start_line": 1,
       "summary": "文档目录 in docs/README.md"
+    },
+    {
+      "chunk_id": "docs.README#chunk-002",
+      "end_line": 9,
+      "heading": "索引",
+      "keywords": [
+        "docs",
+        "md",
+        "readme"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:6b655095a6ae5ff3345568770fc56a6481355c56784b1975b2ef38470b6138d5",
+      "source_path": "docs/README.md",
+      "start_line": 5,
+      "summary": "索引 in docs/README.md"
+    },
+    {
+      "chunk_id": "docs.README#chunk-003",
+      "end_line": 12,
+      "heading": "维护约定",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "维护约定"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:6b655095a6ae5ff3345568770fc56a6481355c56784b1975b2ef38470b6138d5",
+      "source_path": "docs/README.md",
+      "start_line": 10,
+      "summary": "维护约定 in docs/README.md"
     }
   ],
   "schema_version": "1.0.0",

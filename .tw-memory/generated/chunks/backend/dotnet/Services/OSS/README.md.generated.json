@@ -25,7 +25,7 @@
         "language": "dotnet",
         "service": "oss"
       },
-      "source_hash": "sha256:a6e79feecbedee2cb824ade27306595517a9d579ee325ed9c1171d77609bb172",
+      "source_hash": "sha256:8f3d5c3bd85a7954bb0fb121b04e5d5877dfd9a8711a5d699999800c96d679ab",
       "source_path": "backend/dotnet/Services/OSS/README.md",
       "start_line": 1,
       "summary": "对象存储服务目录 in backend/dotnet/Services/OSS/README.md"

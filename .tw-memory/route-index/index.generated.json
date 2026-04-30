@@ -1,5 +1,5 @@
 {
-  "repo_hash": "sha256:247a667cfcb88fd43c3b8c70b44ee5229b120107a0d718d2590ead893c0bf070",
+  "repo_hash": "sha256:87dffff30343463f00a2078adc3bfc1698d8ce77d42868d03e95573c535080fc",
   "schema_version": "1.0.0",
   "shards": [
     {
@@ -93,10 +93,40 @@
       "path": "route-index/by-kind/manual-part-002.generated.json"
     },
     {
-      "chunk_count": 52,
+      "chunk_count": 100,
       "kind": "kind",
       "name": "manual",
       "path": "route-index/by-kind/manual-part-003.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual-part-004.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual-part-005.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual-part-006.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual-part-007.generated.json"
+    },
+    {
+      "chunk_count": 85,
+      "kind": "kind",
+      "name": "manual",
+      "path": "route-index/by-kind/manual-part-008.generated.json"
     },
     {
       "chunk_count": 18,
@@ -105,7 +135,7 @@
       "path": "route-index/by-kind/package.generated.json"
     },
     {
-      "chunk_count": 46,
+      "chunk_count": 53,
       "kind": "kind",
       "name": "readme",
       "path": "route-index/by-kind/readme.generated.json"
@@ -153,10 +183,40 @@
       "path": "route-index/by-language/docs-part-002.generated.json"
     },
     {
-      "chunk_count": 53,
+      "chunk_count": 100,
       "kind": "language",
       "name": "docs",
       "path": "route-index/by-language/docs-part-003.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs-part-004.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs-part-005.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs-part-006.generated.json"
+    },
+    {
+      "chunk_count": 100,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs-part-007.generated.json"
+    },
+    {
+      "chunk_count": 93,
+      "kind": "language",
+      "name": "docs",
+      "path": "route-index/by-language/docs-part-008.generated.json"
     },
     {
       "chunk_count": 43,

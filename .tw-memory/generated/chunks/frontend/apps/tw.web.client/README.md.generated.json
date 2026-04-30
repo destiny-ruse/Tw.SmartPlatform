@@ -27,7 +27,7 @@
         "language": "frontend",
         "service": "tw.web.client"
       },
-      "source_hash": "sha256:c6451abe9cec5eb63724ed4ee0c7a51d9690bcf621a63337ac8a271a802764cb",
+      "source_hash": "sha256:58f727596c0cef9d6adb43e2828b6ba247db03be030cd6695e8d1f4a82f16c9b",
       "source_path": "frontend/apps/tw.web.client/README.md",
       "start_line": 1,
       "summary": "客户端 Web 应用目录 in frontend/apps/tw.web.client/README.md"

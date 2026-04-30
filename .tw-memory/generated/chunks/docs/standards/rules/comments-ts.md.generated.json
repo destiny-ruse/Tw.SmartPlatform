@@ -1,0 +1,244 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-001",
+      "end_line": 2,
+      "heading": "TypeScript 注释规范",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts",
+        "typescript",
+        "注释规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 1,
+      "summary": "TypeScript 注释规范 in docs/standards/rules/comments-ts.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/comments-ts.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/comments-ts.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-004",
+      "end_line": 26,
+      "heading": "规则",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/comments-ts.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-005",
+      "end_line": 54,
+      "heading": "示例",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 27,
+      "summary": "示例 in docs/standards/rules/comments-ts.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-006",
+      "end_line": 67,
+      "heading": "检查清单",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 55,
+      "summary": "检查清单 in docs/standards/rules/comments-ts.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-007",
+      "end_line": 74,
+      "heading": "相关规范",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 68,
+      "summary": "相关规范 in docs/standards/rules/comments-ts.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-008",
+      "end_line": 81,
+      "heading": "变更记录",
+      "keywords": [
+        "comments",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "ts",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 75,
+      "summary": "变更记录 in docs/standards/rules/comments-ts.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/comments-ts.md"
+}

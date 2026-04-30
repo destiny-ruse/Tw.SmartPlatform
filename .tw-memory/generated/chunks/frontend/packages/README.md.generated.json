@@ -21,7 +21,7 @@
         "language": "frontend",
         "service": null
       },
-      "source_hash": "sha256:e15de831206cfe0531830bd6be9488aeb60e9c06ad6212715415efa0eac72347",
+      "source_hash": "sha256:4485d485aa17cd33046e209014ffc1af0def1a2ebcd6857d1564c77e0266b7eb",
       "source_path": "frontend/packages/README.md",
       "start_line": 1,
       "summary": "前端共享包目录 in frontend/packages/README.md"

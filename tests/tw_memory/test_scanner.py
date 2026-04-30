@@ -24,6 +24,8 @@ class ScannerTests(unittest.TestCase):
             root = Path(work)
             (root / "docs").mkdir()
             (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
+            (root / "docs-old").mkdir()
+            (root / "docs-old" / "README.md").write_text("# Legacy Docs\n", encoding="utf-8")
             (root / "backend" / "dotnet" / "ServiceA").mkdir(parents=True)
             (root / "backend" / "dotnet" / "ServiceA" / "README.md").write_text("# Service A\n", encoding="utf-8")
             (root / "frontend").mkdir()
@@ -35,6 +37,7 @@ class ScannerTests(unittest.TestCase):
             paths = {record.source_path for record in records}
 
             self.assertIn("docs/README.md", paths)
+            self.assertNotIn("docs-old/README.md", paths)
             self.assertIn("backend/dotnet/ServiceA/README.md", paths)
             self.assertIn("frontend/package.json", paths)
             self.assertNotIn(".tw-memory/old.generated.json", paths)

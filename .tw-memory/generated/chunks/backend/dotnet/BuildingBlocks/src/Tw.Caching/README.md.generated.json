@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:4b35ab61f082218839f4e9db9df3f76278cad9c7c3244825c2df688fa5ab736f",
+      "source_hash": "sha256:110da6743411ac97d5549dcf3e78c4810a7b881655a4771cbdf488f35a11dc9a",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md",
       "start_line": 1,
       "summary": "缓存构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md"

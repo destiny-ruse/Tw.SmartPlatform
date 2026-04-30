@@ -21,7 +21,7 @@
         "language": "java",
         "service": null
       },
-      "source_hash": "sha256:f9bd94b12f3a4d177ea3cfd324757c64a1b200b6342df94e11ec96a54994cc4a",
+      "source_hash": "sha256:0852caaaadcae6495107e7c689b5caf500ceedc7cf65277ee5234c509b39e781",
       "source_path": "backend/java/README.md",
       "start_line": 1,
       "summary": "Java 后端目录 in backend/java/README.md"

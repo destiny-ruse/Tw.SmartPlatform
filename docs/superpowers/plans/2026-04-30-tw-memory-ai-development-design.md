@@ -17,7 +17,7 @@
 - Existing tools convention: `tools/README.md`
 - Existing documentation convention: `docs/README.md`
 - Existing skills convention: `.agents/skills/*/SKILL.md`
-- Existing standards source to index: `docs-old/standards/**`
+- Existing standards source assets: `docs/standards/**/*.md`; standards are human-readable Markdown without front matter metadata or hidden anchor comments.
 - Existing language/service roots: `frontend/`, `backend/dotnet/`, `backend/java/`, `backend/python/`, `contracts/`, `deploy/`
 
 ## Scope Boundary
@@ -553,7 +553,7 @@ hashing.py:
 Implement `SourceScanner(root: Path).scan()` with these exact rules:
 
 ```text
-1. Include Markdown files under docs/, docs-old/, backend/, frontend/, contracts/, deploy/, and root README.md.
+1. Include Markdown files under docs/, backend/, frontend/, contracts/, deploy/, and root README.md.
 2. Include README.md files under source roots.
 3. Include package files: package.json, pnpm-lock.yaml, yarn.lock, package-lock.json, *.csproj, *.sln, pom.xml, build.gradle, requirements*.txt, pyproject.toml.
 4. Exclude .git/, .tw-memory/, .worktrees/, node_modules/, bin/, obj/, __pycache__/, generated/fts/, generated/vector/.
@@ -1294,7 +1294,6 @@ Implement `PostflightRunner(root).run(changed_files: list[str])`:
 ```text
 memory_affecting_files:
   - docs/**
-  - docs-old/**
   - **/README.md
   - package files
   - .tw-memory/taxonomy.yaml

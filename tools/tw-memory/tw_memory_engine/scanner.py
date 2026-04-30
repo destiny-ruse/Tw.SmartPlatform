@@ -22,7 +22,7 @@ EXCLUDED_PREFIXES = {
     ("generated", "fts"),
     ("generated", "vector"),
 }
-MARKDOWN_ROOTS = {"docs", "docs-old", "backend", "frontend", "contracts", "deploy"}
+MARKDOWN_ROOTS = {"docs", "backend", "frontend", "contracts", "deploy"}
 PACKAGE_FILENAMES = {
     "package.json",
     "pnpm-lock.yaml",
@@ -131,12 +131,12 @@ class SourceScanner:
             return "spec"
         if parts[0] == "deploy":
             return "standard"
-        if parts[0] in {"docs", "docs-old"}:
+        if parts[0] == "docs":
             return "manual"
         return "source"
 
     def _language(self, parts: tuple[str, ...]) -> str | None:
-        if parts[0] in {"docs", "docs-old"}:
+        if parts[0] == "docs":
             return "docs"
         if parts[0] in LANGUAGE_ROOTS:
             return parts[0]

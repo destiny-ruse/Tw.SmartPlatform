@@ -26,7 +26,7 @@
         "language": "frontend",
         "service": "tw.web.ops"
       },
-      "source_hash": "sha256:6c0024f719668d00dd787631625435ead497262047c7247f5f6388d8db35cf94",
+      "source_hash": "sha256:403bcdee35a2cfaffa5f2822e6c2db79727f9bc65a73b1d869d882d2b0f09cf7",
       "source_path": "frontend/apps/tw.web.ops/README.md",
       "start_line": 1,
       "summary": "运营 Web 应用目录 in frontend/apps/tw.web.ops/README.md"

@@ -30,7 +30,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:77906ecbdac202c6658b26fc63c948ba81c532ca9094c39b9f97d4e8bb89e3e6",
+      "source_hash": "sha256:3d345462782905c529d7a58d3a95900ddea43c86989797ae8702eadd58540db2",
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md",
       "start_line": 1,
       "summary": "领域层构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md"

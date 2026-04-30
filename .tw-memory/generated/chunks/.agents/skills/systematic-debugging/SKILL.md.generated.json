@@ -25,7 +25,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 6,
       "summary": "Systematic Debugging in .agents/skills/systematic-debugging/SKILL.md"
@@ -56,7 +56,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 8,
       "summary": "Overview in .agents/skills/systematic-debugging/SKILL.md"
@@ -89,7 +89,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 16,
       "summary": "The Iron Law in .agents/skills/systematic-debugging/SKILL.md"
@@ -121,7 +121,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 24,
       "summary": "When to Use in .agents/skills/systematic-debugging/SKILL.md"
@@ -154,7 +154,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 46,
       "summary": "The Four Phases in .agents/skills/systematic-debugging/SKILL.md"
@@ -188,7 +188,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 50,
       "summary": "Phase 1: Root Cause Investigation in .agents/skills/systematic-debugging/SKILL.md"
@@ -221,7 +221,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 122,
       "summary": "Phase 2: Pattern Analysis in .agents/skills/systematic-debugging/SKILL.md"
@@ -255,7 +255,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 145,
       "summary": "Phase 3: Hypothesis and Testing in .agents/skills/systematic-debugging/SKILL.md"
@@ -287,7 +287,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 170,
       "summary": "Phase 4: Implementation in .agents/skills/systematic-debugging/SKILL.md"
@@ -323,7 +323,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 215,
       "summary": "Red Flags - STOP and Follow Process in .agents/skills/systematic-debugging/SKILL.md"
@@ -360,7 +360,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 234,
       "summary": "your human partner's Signals You're Doing It Wrong in .agents/skills/systematic-debugging/SKILL.md"
@@ -392,7 +392,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 245,
       "summary": "Common Rationalizations in .agents/skills/systematic-debugging/SKILL.md"
@@ -424,7 +424,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 258,
       "summary": "Quick Reference in .agents/skills/systematic-debugging/SKILL.md"
@@ -460,7 +460,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 267,
       "summary": "When Process Reveals \"No Root Cause\" in .agents/skills/systematic-debugging/SKILL.md"
@@ -492,7 +492,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 278,
       "summary": "Supporting Techniques in .agents/skills/systematic-debugging/SKILL.md"
@@ -525,7 +525,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:530855dfa2b10d5b9f92ac170fe41c5f8fbc4918957a564855b50a896ca625a2",
+      "source_hash": "sha256:4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
       "source_path": ".agents/skills/systematic-debugging/SKILL.md",
       "start_line": 290,
       "summary": "Real-World Impact in .agents/skills/systematic-debugging/SKILL.md"

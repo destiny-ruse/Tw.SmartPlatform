@@ -26,7 +26,7 @@
         "language": "frontend",
         "service": "tw.web.portal"
       },
-      "source_hash": "sha256:21f9289bf0592658f879e2ec58198bf62d6f3a6b9ac37c5026b80fa99bfb6918",
+      "source_hash": "sha256:e97619de19a856e24810790b28eaf979c7e4a502184897361e4911e59424a760",
       "source_path": "frontend/apps/tw.web.portal/README.md",
       "start_line": 1,
       "summary": "门户 Web 应用目录 in frontend/apps/tw.web.portal/README.md"

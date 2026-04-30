@@ -1,0 +1,189 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.references.http-status#chunk-001",
+      "end_line": 2,
+      "heading": "HTTP 状态码参考",
+      "keywords": [
+        "docs",
+        "http",
+        "md",
+        "references",
+        "standards",
+        "status",
+        "状态码参考"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "http",
+          "references",
+          "standards",
+          "status"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e9fb0ad979ce8d27f9971cd30865cf7307930b59140ccb55235dac920ae37f6a",
+      "source_path": "docs/standards/references/http-status.md",
+      "start_line": 1,
+      "summary": "HTTP 状态码参考 in docs/standards/references/http-status.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.http-status#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "docs",
+        "http",
+        "md",
+        "references",
+        "standards",
+        "status"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "http",
+          "references",
+          "standards",
+          "status"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e9fb0ad979ce8d27f9971cd30865cf7307930b59140ccb55235dac920ae37f6a",
+      "source_path": "docs/standards/references/http-status.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/references/http-status.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.http-status#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "docs",
+        "http",
+        "md",
+        "references",
+        "standards",
+        "status",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "http",
+          "references",
+          "standards",
+          "status"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e9fb0ad979ce8d27f9971cd30865cf7307930b59140ccb55235dac920ae37f6a",
+      "source_path": "docs/standards/references/http-status.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/references/http-status.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.http-status#chunk-004",
+      "end_line": 23,
+      "heading": "目录",
+      "keywords": [
+        "docs",
+        "http",
+        "md",
+        "references",
+        "standards",
+        "status"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "http",
+          "references",
+          "standards",
+          "status"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e9fb0ad979ce8d27f9971cd30865cf7307930b59140ccb55235dac920ae37f6a",
+      "source_path": "docs/standards/references/http-status.md",
+      "start_line": 11,
+      "summary": "目录 in docs/standards/references/http-status.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.http-status#chunk-005",
+      "end_line": 29,
+      "heading": "示例",
+      "keywords": [
+        "docs",
+        "http",
+        "md",
+        "references",
+        "standards",
+        "status"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "http",
+          "references",
+          "standards",
+          "status"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e9fb0ad979ce8d27f9971cd30865cf7307930b59140ccb55235dac920ae37f6a",
+      "source_path": "docs/standards/references/http-status.md",
+      "start_line": 24,
+      "summary": "示例 in docs/standards/references/http-status.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.http-status#chunk-006",
+      "end_line": 34,
+      "heading": "变更记录",
+      "keywords": [
+        "docs",
+        "http",
+        "md",
+        "references",
+        "standards",
+        "status",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "http",
+          "references",
+          "standards",
+          "status"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e9fb0ad979ce8d27f9971cd30865cf7307930b59140ccb55235dac920ae37f6a",
+      "source_path": "docs/standards/references/http-status.md",
+      "start_line": 30,
+      "summary": "变更记录 in docs/standards/references/http-status.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/references/http-status.md"
+}

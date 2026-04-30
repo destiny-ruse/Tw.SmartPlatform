@@ -1,0 +1,177 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.references.glossary#chunk-001",
+      "end_line": 2,
+      "heading": "工程术语表",
+      "keywords": [
+        "docs",
+        "glossary",
+        "md",
+        "references",
+        "standards",
+        "工程术语表"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "glossary",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:1f2975bd9a619f2ee4380722e8a53ef4401e3f84fe7b1e45d696267a9bc56f80",
+      "source_path": "docs/standards/references/glossary.md",
+      "start_line": 1,
+      "summary": "工程术语表 in docs/standards/references/glossary.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.glossary#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "docs",
+        "glossary",
+        "md",
+        "references",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "glossary",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:1f2975bd9a619f2ee4380722e8a53ef4401e3f84fe7b1e45d696267a9bc56f80",
+      "source_path": "docs/standards/references/glossary.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/references/glossary.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.glossary#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "docs",
+        "glossary",
+        "md",
+        "references",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "glossary",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:1f2975bd9a619f2ee4380722e8a53ef4401e3f84fe7b1e45d696267a9bc56f80",
+      "source_path": "docs/standards/references/glossary.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/references/glossary.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.glossary#chunk-004",
+      "end_line": 18,
+      "heading": "目录",
+      "keywords": [
+        "docs",
+        "glossary",
+        "md",
+        "references",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "glossary",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:1f2975bd9a619f2ee4380722e8a53ef4401e3f84fe7b1e45d696267a9bc56f80",
+      "source_path": "docs/standards/references/glossary.md",
+      "start_line": 11,
+      "summary": "目录 in docs/standards/references/glossary.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.glossary#chunk-005",
+      "end_line": 24,
+      "heading": "示例",
+      "keywords": [
+        "docs",
+        "glossary",
+        "md",
+        "references",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "glossary",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:1f2975bd9a619f2ee4380722e8a53ef4401e3f84fe7b1e45d696267a9bc56f80",
+      "source_path": "docs/standards/references/glossary.md",
+      "start_line": 19,
+      "summary": "示例 in docs/standards/references/glossary.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.glossary#chunk-006",
+      "end_line": 29,
+      "heading": "变更记录",
+      "keywords": [
+        "docs",
+        "glossary",
+        "md",
+        "references",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "glossary",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:1f2975bd9a619f2ee4380722e8a53ef4401e3f84fe7b1e45d696267a9bc56f80",
+      "source_path": "docs/standards/references/glossary.md",
+      "start_line": 25,
+      "summary": "变更记录 in docs/standards/references/glossary.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/references/glossary.md"
+}

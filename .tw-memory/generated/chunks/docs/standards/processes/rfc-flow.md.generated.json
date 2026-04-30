@@ -1,0 +1,220 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-001",
+      "end_line": 2,
+      "heading": "RFC 流程规范",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "流程规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 1,
+      "summary": "RFC 流程规范 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-004",
+      "end_line": 17,
+      "heading": "流程",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 11,
+      "summary": "流程 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-005",
+      "end_line": 21,
+      "heading": "模板",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 18,
+      "summary": "模板 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-006",
+      "end_line": 27,
+      "heading": "检查清单",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 22,
+      "summary": "检查清单 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-007",
+      "end_line": 32,
+      "heading": "变更记录",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 28,
+      "summary": "变更记录 in docs/standards/processes/rfc-flow.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/processes/rfc-flow.md"
+}

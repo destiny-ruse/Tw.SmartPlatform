@@ -1,0 +1,220 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-001",
+      "end_line": 2,
+      "heading": "变更治理规范",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "变更治理规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 1,
+      "summary": "变更治理规范 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-004",
+      "end_line": 18,
+      "heading": "流程",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 11,
+      "summary": "流程 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-005",
+      "end_line": 22,
+      "heading": "规则",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 19,
+      "summary": "规则 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-006",
+      "end_line": 28,
+      "heading": "检查清单",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 23,
+      "summary": "检查清单 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-007",
+      "end_line": 33,
+      "heading": "变更记录",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 29,
+      "summary": "变更记录 in docs/standards/processes/change-governance.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/processes/change-governance.md"
+}

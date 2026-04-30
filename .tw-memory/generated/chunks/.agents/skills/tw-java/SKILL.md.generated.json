@@ -25,7 +25,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_hash": "sha256:b98e46d9914d3fa5ee369a4c00a7c765574e980439a2b3ce0872b20054e8749b",
       "source_path": ".agents/skills/tw-java/SKILL.md",
       "start_line": 6,
       "summary": "TW Java Development in .agents/skills/tw-java/SKILL.md"
@@ -55,7 +55,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_hash": "sha256:b98e46d9914d3fa5ee369a4c00a7c765574e980439a2b3ce0872b20054e8749b",
       "source_path": ".agents/skills/tw-java/SKILL.md",
       "start_line": 10,
       "summary": "Preflight in .agents/skills/tw-java/SKILL.md"
@@ -86,7 +86,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_hash": "sha256:b98e46d9914d3fa5ee369a4c00a7c765574e980439a2b3ce0872b20054e8749b",
       "source_path": ".agents/skills/tw-java/SKILL.md",
       "start_line": 25,
       "summary": "Development Rules in .agents/skills/tw-java/SKILL.md"
@@ -116,7 +116,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4ef6f2b758ea57f35e1b4dee720911804b07e166351d4dca901e34fd07e0ea2e",
+      "source_hash": "sha256:b98e46d9914d3fa5ee369a4c00a7c765574e980439a2b3ce0872b20054e8749b",
       "source_path": ".agents/skills/tw-java/SKILL.md",
       "start_line": 29,
       "summary": "Postflight in .agents/skills/tw-java/SKILL.md"

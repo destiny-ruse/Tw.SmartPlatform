@@ -60,7 +60,7 @@ def _is_memory_affecting(path: str) -> bool:
     parts = tuple(part for part in path.split("/") if part)
     if not parts:
         return False
-    if parts[0] in {"docs", "docs-old"}:
+    if parts[0] == "docs":
         return True
     if parts[-1] == "README.md":
         return True

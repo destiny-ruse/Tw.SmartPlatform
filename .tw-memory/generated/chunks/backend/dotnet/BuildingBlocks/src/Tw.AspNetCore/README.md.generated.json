@@ -31,7 +31,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:92d0e69fa0a1c5b9926ba3ea3c143e1dfa4ceb6a89704cd692180749600d11da",
+      "source_hash": "sha256:fdb84e35216be4c94e216fb4ce54b4ee63d519e5a3294d2f030cf45bcca2e875",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md",
       "start_line": 1,
       "summary": "ASP.NET Core 集成构件目录 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md"

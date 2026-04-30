@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:cafde45691ff21fee5c5da9a4a0c3f2cb5b4b4a10e8b4dc3290af81b1a8a25ab",
+      "source_hash": "sha256:8fdbf91860eeebfe836b9094787edff5eaf626935d876e6470cafa4fe4eeb19b",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md",
       "start_line": 1,
       "summary": "工作单元构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md"

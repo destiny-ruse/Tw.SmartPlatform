@@ -1,0 +1,189 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.references.error-codes#chunk-001",
+      "end_line": 2,
+      "heading": "错误码目录",
+      "keywords": [
+        "codes",
+        "docs",
+        "error",
+        "md",
+        "references",
+        "standards",
+        "错误码目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "codes",
+          "docs",
+          "error",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:00f0177d1a64eb44ae589b113bf805ac8067250fe25efd29ad060c782b3d467a",
+      "source_path": "docs/standards/references/error-codes.md",
+      "start_line": 1,
+      "summary": "错误码目录 in docs/standards/references/error-codes.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.error-codes#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "codes",
+        "docs",
+        "error",
+        "md",
+        "references",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "codes",
+          "docs",
+          "error",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:00f0177d1a64eb44ae589b113bf805ac8067250fe25efd29ad060c782b3d467a",
+      "source_path": "docs/standards/references/error-codes.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/references/error-codes.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.error-codes#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "codes",
+        "docs",
+        "error",
+        "md",
+        "references",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "codes",
+          "docs",
+          "error",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:00f0177d1a64eb44ae589b113bf805ac8067250fe25efd29ad060c782b3d467a",
+      "source_path": "docs/standards/references/error-codes.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/references/error-codes.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.error-codes#chunk-004",
+      "end_line": 19,
+      "heading": "目录",
+      "keywords": [
+        "codes",
+        "docs",
+        "error",
+        "md",
+        "references",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "codes",
+          "docs",
+          "error",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:00f0177d1a64eb44ae589b113bf805ac8067250fe25efd29ad060c782b3d467a",
+      "source_path": "docs/standards/references/error-codes.md",
+      "start_line": 11,
+      "summary": "目录 in docs/standards/references/error-codes.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.error-codes#chunk-005",
+      "end_line": 25,
+      "heading": "示例",
+      "keywords": [
+        "codes",
+        "docs",
+        "error",
+        "md",
+        "references",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "codes",
+          "docs",
+          "error",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:00f0177d1a64eb44ae589b113bf805ac8067250fe25efd29ad060c782b3d467a",
+      "source_path": "docs/standards/references/error-codes.md",
+      "start_line": 20,
+      "summary": "示例 in docs/standards/references/error-codes.md"
+    },
+    {
+      "chunk_id": "docs.standards.references.error-codes#chunk-006",
+      "end_line": 30,
+      "heading": "变更记录",
+      "keywords": [
+        "codes",
+        "docs",
+        "error",
+        "md",
+        "references",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "codes",
+          "docs",
+          "error",
+          "references",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:00f0177d1a64eb44ae589b113bf805ac8067250fe25efd29ad060c782b3d467a",
+      "source_path": "docs/standards/references/error-codes.md",
+      "start_line": 26,
+      "summary": "变更记录 in docs/standards/references/error-codes.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/references/error-codes.md"
+}

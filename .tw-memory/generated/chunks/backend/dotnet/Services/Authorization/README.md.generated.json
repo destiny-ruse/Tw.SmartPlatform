@@ -25,7 +25,7 @@
         "language": "dotnet",
         "service": "authorization"
       },
-      "source_hash": "sha256:8159da8c0446f984bf3e23910f850993979cc5f33c783f881df43176fafedba3",
+      "source_hash": "sha256:91f7219bd37d492e0792704e45943bacdb270518ecef309fccaa378133805b5b",
       "source_path": "backend/dotnet/Services/Authorization/README.md",
       "start_line": 1,
       "summary": "授权服务目录 in backend/dotnet/Services/Authorization/README.md"

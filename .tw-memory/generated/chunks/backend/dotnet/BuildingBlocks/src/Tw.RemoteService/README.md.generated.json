@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:e5be377be569025694667e13f045ac3f2bf063d38871d59b4a3acb28b7ef2c3b",
+      "source_hash": "sha256:2fce75c88bc2f2286180643022900cb1e1e4ee9e1434567e8f25d62c5ab2dd01",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md",
       "start_line": 1,
       "summary": "远程服务构件目录 in backend/dotnet/BuildingBlocks/src/Tw.RemoteService/README.md"

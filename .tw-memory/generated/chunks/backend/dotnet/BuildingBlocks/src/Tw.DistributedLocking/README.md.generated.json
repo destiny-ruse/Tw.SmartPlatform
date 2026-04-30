@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:b444b72597bee48dfa518f278793e9aed5aad03b733d059b262bc51cb8b97b7e",
+      "source_hash": "sha256:63c54238a3970bbd31605e85c89b137a62a3fa9480f81d230b83d80526bebd88",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/README.md",
       "start_line": 1,
       "summary": "分布式锁构件目录 in backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/README.md"

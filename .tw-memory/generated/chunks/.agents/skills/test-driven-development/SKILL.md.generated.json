@@ -28,7 +28,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 6,
       "summary": "Test-Driven Development (TDD) in .agents/skills/test-driven-development/SKILL.md"
@@ -61,7 +61,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 8,
       "summary": "Overview in .agents/skills/test-driven-development/SKILL.md"
@@ -95,7 +95,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 16,
       "summary": "When to Use in .agents/skills/test-driven-development/SKILL.md"
@@ -130,7 +130,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 31,
       "summary": "The Iron Law in .agents/skills/test-driven-development/SKILL.md"
@@ -165,7 +165,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 47,
       "summary": "Red-Green-Refactor in .agents/skills/test-driven-development/SKILL.md"
@@ -200,7 +200,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 71,
       "summary": "RED - Write Failing Test in .agents/skills/test-driven-development/SKILL.md"
@@ -236,7 +236,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 113,
       "summary": "Verify RED - Watch It Fail in .agents/skills/test-driven-development/SKILL.md"
@@ -271,7 +271,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 130,
       "summary": "GREEN - Minimal Code in .agents/skills/test-driven-development/SKILL.md"
@@ -307,7 +307,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 168,
       "summary": "Verify GREEN - Watch It Pass in .agents/skills/test-driven-development/SKILL.md"
@@ -341,7 +341,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 185,
       "summary": "REFACTOR - Clean Up in .agents/skills/test-driven-development/SKILL.md"
@@ -374,7 +374,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 194,
       "summary": "Repeat in .agents/skills/test-driven-development/SKILL.md"
@@ -408,7 +408,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 198,
       "summary": "Good Tests in .agents/skills/test-driven-development/SKILL.md"
@@ -443,7 +443,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 206,
       "summary": "Why Order Matters in .agents/skills/test-driven-development/SKILL.md"
@@ -477,7 +477,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 256,
       "summary": "Common Rationalizations in .agents/skills/test-driven-development/SKILL.md"
@@ -515,7 +515,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 272,
       "summary": "Red Flags - STOP and Start Over in .agents/skills/test-driven-development/SKILL.md"
@@ -550,7 +550,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 290,
       "summary": "Example: Bug Fix in .agents/skills/test-driven-development/SKILL.md"
@@ -584,7 +584,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 327,
       "summary": "Verification Checklist in .agents/skills/test-driven-development/SKILL.md"
@@ -618,7 +618,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 342,
       "summary": "When Stuck in .agents/skills/test-driven-development/SKILL.md"
@@ -652,7 +652,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 351,
       "summary": "Debugging Integration in .agents/skills/test-driven-development/SKILL.md"
@@ -687,7 +687,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 357,
       "summary": "Testing Anti-Patterns in .agents/skills/test-driven-development/SKILL.md"
@@ -721,7 +721,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4f090e919b7310192864f1d046910c53fa7ca353f5cc2b8d07717c7a897f0183",
+      "source_hash": "sha256:7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_path": ".agents/skills/test-driven-development/SKILL.md",
       "start_line": 364,
       "summary": "Final Rule in .agents/skills/test-driven-development/SKILL.md"

@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:6e3a2ccfb3b27bc2ddaa4cc4546cd361466db39330bc7bb6cc0c491ed761efcc",
+      "source_hash": "sha256:fc50aff2470f3aedc056f1d5a0040e1b27ce0b34bce3678be15c1676ea90ea33",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md",
       "start_line": 1,
       "summary": "事件总线构件目录 in backend/dotnet/BuildingBlocks/src/Tw.EventBus/README.md"

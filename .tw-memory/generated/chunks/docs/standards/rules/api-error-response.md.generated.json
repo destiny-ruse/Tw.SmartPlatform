@@ -1,0 +1,267 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-001",
+      "end_line": 2,
+      "heading": "API 错误响应规范",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards",
+        "错误响应规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 1,
+      "summary": "API 错误响应规范 in docs/standards/rules/api-error-response.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/api-error-response.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/api-error-response.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-004",
+      "end_line": 20,
+      "heading": "规则",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/api-error-response.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-005",
+      "end_line": 49,
+      "heading": "示例",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 21,
+      "summary": "示例 in docs/standards/rules/api-error-response.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-006",
+      "end_line": 57,
+      "heading": "检查清单",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 50,
+      "summary": "检查清单 in docs/standards/rules/api-error-response.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-007",
+      "end_line": 65,
+      "heading": "相关规范",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 58,
+      "summary": "相关规范 in docs/standards/rules/api-error-response.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.api-error-response#chunk-008",
+      "end_line": 71,
+      "heading": "变更记录",
+      "keywords": [
+        "api",
+        "docs",
+        "error",
+        "md",
+        "response",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "api",
+          "docs",
+          "error",
+          "response",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
+      "source_path": "docs/standards/rules/api-error-response.md",
+      "start_line": 66,
+      "summary": "变更记录 in docs/standards/rules/api-error-response.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/api-error-response.md"
+}

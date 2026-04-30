@@ -35,7 +35,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1,
       "summary": "DI 自动注册与 AOP 框架设计文档 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -74,7 +74,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 9,
       "summary": "Status in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -113,7 +113,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 15,
       "summary": "Standards in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -153,7 +153,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 31,
       "summary": "Dependency Admission in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -193,7 +193,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 48,
       "summary": "Knowledge Alignment in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -232,7 +232,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 57,
       "summary": "一、设计决策概览 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -272,7 +272,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 84,
       "summary": "二、公共入口 API in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -312,7 +312,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 86,
       "summary": "2.1 Tw.AspNetCore 基础设施入口（推荐） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -351,7 +351,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 110,
       "summary": "2.2 P2 gRPC 入口 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -394,7 +394,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 127,
       "summary": "2.3 手动组合（非 ASP.NET Core 场景） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -433,7 +433,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 157,
       "summary": "三、核心抽象层 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -473,7 +473,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 161,
       "summary": "3.1 CancellationToken 基础设施 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -512,7 +512,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 203,
       "summary": "3.2 生命周期接口 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -551,7 +551,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 211,
       "summary": "3.3 注册控制特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -590,7 +590,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 239,
       "summary": "3.4 配置与选项控制特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -629,7 +629,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 282,
       "summary": "3.5 暴露服务默认规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -668,7 +668,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 295,
       "summary": "3.6 AOP 相关接口与特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -707,7 +707,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 403,
       "summary": "3.6 AOP 相关接口与特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -746,7 +746,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 406,
       "summary": "四、程序集扫描与拓扑排序 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -785,7 +785,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 408,
       "summary": "4.1 程序集发现规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -825,7 +825,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 419,
       "summary": "4.2 拓扑排序（Kahn 算法） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -864,7 +864,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 435,
       "summary": "4.3 并发扫描策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -903,7 +903,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 449,
       "summary": "4.4 服务注册元数据结构 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -943,7 +943,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 468,
       "summary": "五、Autofac 注册执行 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -982,7 +982,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 470,
       "summary": "5.1 生命周期映射 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1021,7 +1021,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 478,
       "summary": "5.2 冲突裁决规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1060,7 +1060,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 491,
       "summary": "5.3 无显式替换标记的多实现处理 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1099,7 +1099,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 505,
       "summary": "5.4 部分替换规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1140,7 +1140,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 522,
       "summary": "5.5 Keyed Service 替换规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1179,7 +1179,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 534,
       "summary": "5.6 注册流水线（按拓扑顺序逐条执行） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1218,7 +1218,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 566,
       "summary": "5.7 内部模块封装 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1257,7 +1257,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 580,
       "summary": "六、AOP 架构 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1296,7 +1296,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 582,
       "summary": "6.1 拦截器三层叠加顺序 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1335,7 +1335,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 601,
       "summary": "6.2 拦截器链计算流程 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1375,7 +1375,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 635,
       "summary": "6.3 IgnoreInterceptors 作用域 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1416,7 +1416,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 659,
       "summary": "6.4 入口 Adapter vs Castle.Core 模式 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1455,7 +1455,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 672,
       "summary": "6.5 入口 Adapter 设计 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1494,7 +1494,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 728,
       "summary": "6.6 调用形态分派 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1533,7 +1533,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 753,
       "summary": "6.7 拦截调用契约 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1573,7 +1573,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 765,
       "summary": "6.8 Castle 代理覆盖与启动诊断 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1612,7 +1612,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 776,
       "summary": "七、配置与选项自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1651,7 +1651,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 778,
       "summary": "7.1 自动发现规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1690,7 +1690,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 801,
       "summary": "7.2 注册行为 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1729,7 +1729,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 822,
       "summary": "7.3 验证策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1768,7 +1768,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 834,
       "summary": "7.4 命名选项 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1807,7 +1807,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 845,
       "summary": "7.5 性能与运行时影响 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1846,7 +1846,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 857,
       "summary": "八、性能优化策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1885,7 +1885,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 878,
       "summary": "九、典型使用示例 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1924,7 +1924,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 880,
       "summary": "9.1 基础自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -1964,7 +1964,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 890,
       "summary": "9.2 Keyed Service in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2003,7 +2003,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 897,
       "summary": "9.3 集合服务 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2042,7 +2042,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 908,
       "summary": "9.4 开放泛型 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2081,7 +2081,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 916,
       "summary": "9.5 服务替换 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2120,7 +2120,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 925,
       "summary": "9.6 ICancellationTokenProvider 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2158,7 +2158,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 941,
       "summary": "9.7 AOP 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2198,7 +2198,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 996,
       "summary": "9.8 Feature Collection 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2237,7 +2237,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1014,
       "summary": "9.9 配置与选项自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2276,7 +2276,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1050,
       "summary": "十、验收标准 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2315,7 +2315,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1054,
       "summary": "10.1 P0：自动注册、配置和容器基础 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2358,7 +2358,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1070,
       "summary": "10.2 P1：Service AOP 与 MVC/Web API Adapter in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2398,7 +2398,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1085,
       "summary": "10.3 P2：gRPC Adapter in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2437,7 +2437,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1093,
       "summary": "10.4 横切质量门禁：诊断、依赖和测试 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2478,7 +2478,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1103,
       "summary": "10.5 P3：后续 Adapter 验收边界 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2517,7 +2517,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1110,
       "summary": "十一、风险与处理 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
@@ -2556,7 +2556,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:047b74a18731e6978499d90fb286b4c0800d65d3d1a4fb3b9f748f22d12f0540",
+      "source_hash": "sha256:2b8e81892440131705bdd5ee86951286c5bf7be5d9da7ba6af878bf5b4da474f",
       "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
       "start_line": 1124,
       "summary": "十二、不在范围内 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"

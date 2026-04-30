@@ -1,3990 +1,2955 @@
 {
   "chunks": [
     {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-002",
-      "end_line": 16,
-      "heading": "Execution Order",
+      "chunk_id": "docs.standards.rules.api-rest-design#chunk-011",
+      "end_line": 69,
+      "heading": "变更记录",
       "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "docs",
-        "execution",
-        "md",
-        "order",
-        "p3",
-        "plans",
-        "superpowers",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 13,
-      "summary": "Execution Order in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-003",
-      "end_line": 21,
-      "heading": "Source Inputs",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "docs",
-        "inputs",
-        "md",
-        "p3",
-        "plans",
-        "source",
-        "superpowers",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 17,
-      "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-004",
-      "end_line": 29,
-      "heading": "File Structure",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "docs",
-        "file",
-        "md",
-        "p3",
-        "plans",
-        "structure",
-        "superpowers",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 22,
-      "summary": "File Structure in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-005",
-      "end_line": 31,
-      "heading": "Tasks",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "docs",
-        "md",
-        "p3",
-        "plans",
-        "superpowers",
-        "tasks",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 30,
-      "summary": "Tasks in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-006",
-      "end_line": 100,
-      "heading": "Task 1: Write CAP Entry Boundary Spec",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "docs",
-        "entry",
-        "md",
-        "p3",
-        "plans",
-        "spec",
-        "superpowers",
-        "task",
-        "worker",
-        "write"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 32,
-      "summary": "Task 1: Write CAP Entry Boundary Spec in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-007",
-      "end_line": 168,
-      "heading": "Task 2: Write Worker Entry Boundary Spec",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "docs",
-        "entry",
-        "md",
-        "p3",
-        "plans",
-        "spec",
-        "superpowers",
-        "task",
-        "worker",
-        "write"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 101,
-      "summary": "Task 2: Write Worker Entry Boundary Spec in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-008",
-      "end_line": 235,
-      "heading": "Task 3: Create CAP Adapter Successor Plan",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "create",
-        "docs",
-        "md",
-        "p3",
-        "plan",
-        "plans",
-        "successor",
-        "superpowers",
-        "task",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 169,
-      "summary": "Task 3: Create CAP Adapter Successor Plan in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-009",
-      "end_line": 291,
-      "heading": "Task 4: Create Worker Adapter Successor Plan",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "create",
-        "docs",
-        "md",
-        "p3",
-        "plan",
-        "plans",
-        "successor",
-        "superpowers",
-        "task",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 236,
-      "summary": "Task 4: Create Worker Adapter Successor Plan in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-010",
-      "end_line": 327,
-      "heading": "Task 5: Link P3 Boundary Documents From Parent Design",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "design",
-        "docs",
-        "documents",
-        "from",
-        "link",
-        "md",
-        "p3",
-        "parent",
-        "plans",
-        "superpowers",
-        "task",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 292,
-      "summary": "Task 5: Link P3 Boundary Documents From Parent Design in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-29-07-cap-worker-adapter-boundary-p3#chunk-011",
-      "end_line": 334,
-      "heading": "Self-Review Checklist",
-      "keywords": [
-        "04",
-        "07",
-        "2026",
-        "29",
-        "adapter",
-        "boundary",
-        "cap",
-        "checklist",
-        "docs",
-        "md",
-        "p3",
-        "plans",
-        "review",
-        "self",
-        "superpowers",
-        "worker"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "adapter",
-          "boundary",
-          "cap",
-          "docs",
-          "plans",
-          "superpowers",
-          "worker"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md",
-      "start_line": 328,
-      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-001",
-      "end_line": 12,
-      "heading": "TW Memory AI Development Layer Implementation Plan",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "implementation",
-        "layer",
-        "md",
-        "memory",
-        "plan",
-        "plans",
-        "superpowers",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1,
-      "summary": "TW Memory AI Development Layer Implementation Plan in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-002",
-      "end_line": 22,
-      "heading": "Source Inputs",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "inputs",
-        "md",
-        "memory",
-        "plans",
-        "source",
-        "superpowers",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 13,
-      "summary": "Source Inputs in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-003",
-      "end_line": 35,
-      "heading": "Scope Boundary",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "boundary",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "scope",
-        "superpowers",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 23,
-      "summary": "Scope Boundary in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-004",
-      "end_line": 76,
-      "heading": "File Structure",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "file",
-        "md",
-        "memory",
-        "plans",
-        "structure",
-        "superpowers",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 36,
-      "summary": "File Structure in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-005",
-      "end_line": 137,
-      "heading": "Data Contracts",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "contracts",
-        "data",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "superpowers",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 77,
-      "summary": "Data Contracts in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-006",
-      "end_line": 139,
-      "heading": "Tasks",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "superpowers",
-        "tasks",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 138,
-      "summary": "Tasks in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-007",
-      "end_line": 219,
-      "heading": "Task 1: Create CLI Skeleton and Test Harness",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "cli",
-        "create",
-        "design",
-        "development",
-        "docs",
-        "harness",
-        "md",
-        "memory",
-        "plans",
-        "skeleton",
-        "superpowers",
-        "task",
-        "test",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 140,
-      "summary": "Task 1: Create CLI Skeleton and Test Harness in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-008",
-      "end_line": 335,
-      "heading": "Task 1: Create CLI Skeleton and Test Harness",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "cli",
-        "create",
-        "design",
-        "development",
-        "docs",
-        "harness",
-        "md",
-        "memory",
-        "plans",
-        "skeleton",
-        "superpowers",
-        "task",
-        "test",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 215,
-      "summary": "Task 1: Create CLI Skeleton and Test Harness in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-009",
-      "end_line": 369,
-      "heading": "Task 1: Create CLI Skeleton and Test Harness",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "cli",
-        "create",
-        "design",
-        "development",
-        "docs",
-        "harness",
-        "md",
-        "memory",
-        "plans",
-        "skeleton",
-        "superpowers",
-        "task",
-        "test",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 336,
-      "summary": "Task 1: Create CLI Skeleton and Test Harness in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-010",
-      "end_line": 452,
-      "heading": "Task 2: Discover Fact Sources Without Copying Bodies",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "bodies",
-        "copying",
-        "design",
-        "development",
-        "discover",
-        "docs",
-        "fact",
-        "md",
-        "memory",
-        "plans",
-        "sources",
-        "superpowers",
-        "task",
-        "tw",
-        "without"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 370,
-      "summary": "Task 2: Discover Fact Sources Without Copying Bodies in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-011",
-      "end_line": 533,
-      "heading": "Task 2: Discover Fact Sources Without Copying Bodies",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "bodies",
-        "copying",
-        "design",
-        "development",
-        "discover",
-        "docs",
-        "fact",
-        "md",
-        "memory",
-        "plans",
-        "sources",
-        "superpowers",
-        "task",
-        "tw",
-        "without"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 453,
-      "summary": "Task 2: Discover Fact Sources Without Copying Bodies in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-012",
-      "end_line": 610,
-      "heading": "Task 2: Discover Fact Sources Without Copying Bodies",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "bodies",
-        "copying",
-        "design",
-        "development",
-        "discover",
-        "docs",
-        "fact",
-        "md",
-        "memory",
-        "plans",
-        "sources",
-        "superpowers",
-        "task",
-        "tw",
-        "without"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 534,
-      "summary": "Task 2: Discover Fact Sources Without Copying Bodies in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-013",
-      "end_line": 722,
-      "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "chunk",
-        "design",
-        "development",
-        "docs",
-        "generate",
-        "markdown",
-        "md",
-        "memory",
-        "memory`",
-        "plans",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 611,
-      "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-014",
-      "end_line": 802,
-      "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "chunk",
-        "design",
-        "development",
-        "docs",
-        "generate",
-        "markdown",
-        "md",
-        "memory",
-        "memory`",
-        "plans",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 723,
-      "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-015",
-      "end_line": 883,
-      "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "chunk",
-        "design",
-        "development",
-        "docs",
-        "generate",
-        "markdown",
-        "md",
-        "memory",
-        "memory`",
-        "plans",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 802,
-      "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-016",
-      "end_line": 893,
-      "heading": "Task 3: Chunk Markdown and Generate `.tw-memory`",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "chunk",
-        "design",
-        "development",
-        "docs",
-        "generate",
-        "markdown",
-        "md",
-        "memory",
-        "memory`",
-        "plans",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 876,
-      "summary": "Task 3: Chunk Markdown and Generate `.tw-memory` in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-017",
-      "end_line": 1006,
-      "heading": "Task 4: Validate Freshness and Repository Safety",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "design",
-        "development",
-        "docs",
-        "freshness",
-        "md",
-        "memory",
-        "plans",
-        "repository",
-        "safety",
-        "superpowers",
-        "task",
-        "tw",
-        "validate"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 894,
-      "summary": "Task 4: Validate Freshness and Repository Safety in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-018",
-      "end_line": 1047,
-      "heading": "Task 4: Validate Freshness and Repository Safety",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "design",
-        "development",
-        "docs",
-        "freshness",
-        "md",
-        "memory",
-        "plans",
-        "repository",
-        "safety",
-        "superpowers",
-        "task",
-        "tw",
-        "validate"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1007,
-      "summary": "Task 4: Validate Freshness and Repository Safety in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-019",
-      "end_line": 1143,
-      "heading": "Task 5: Implement Query, Hash-Checked Read, and Local FTS",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "checked",
-        "design",
-        "development",
-        "docs",
-        "fts",
-        "hash",
-        "implement",
-        "local",
-        "md",
-        "memory",
-        "plans",
-        "query,",
-        "read,",
-        "superpowers",
-        "task"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1048,
-      "summary": "Task 5: Implement Query, Hash-Checked Read, and Local FTS in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-020",
-      "end_line": 1198,
-      "heading": "Task 5: Implement Query, Hash-Checked Read, and Local FTS",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "checked",
-        "design",
-        "development",
-        "docs",
-        "fts",
-        "hash",
-        "implement",
-        "local",
-        "md",
-        "memory",
-        "plans",
-        "query,",
-        "read,",
-        "superpowers",
-        "task"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1144,
-      "summary": "Task 5: Implement Query, Hash-Checked Read, and Local FTS in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-021",
-      "end_line": 1278,
-      "heading": "Task 6: Implement Preflight and Postflight",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "design",
-        "development",
-        "docs",
-        "implement",
-        "md",
-        "memory",
-        "plans",
-        "postflight",
-        "preflight",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1199,
-      "summary": "Task 6: Implement Preflight and Postflight in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-022",
-      "end_line": 1351,
-      "heading": "Task 6: Implement Preflight and Postflight",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "and",
-        "design",
-        "development",
-        "docs",
-        "implement",
-        "md",
-        "memory",
-        "plans",
-        "postflight",
-        "preflight",
-        "superpowers",
-        "task",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1272,
-      "summary": "Task 6: Implement Preflight and Postflight in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-023",
-      "end_line": 1431,
-      "heading": "Task 7: Add Vector Boundary and CI Check Entry",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "and",
-        "boundary",
-        "check",
-        "design",
-        "development",
-        "docs",
-        "entry",
-        "md",
-        "memory",
-        "plans",
-        "superpowers",
-        "task",
-        "tw",
-        "vector"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1352,
-      "summary": "Task 7: Add Vector Boundary and CI Check Entry in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-024",
-      "end_line": 1454,
-      "heading": "Task 7: Add Vector Boundary and CI Check Entry",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "and",
-        "boundary",
-        "check",
-        "design",
-        "development",
-        "docs",
-        "entry",
-        "md",
-        "memory",
-        "plans",
-        "superpowers",
-        "task",
-        "tw",
-        "vector"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1424,
-      "summary": "Task 7: Add Vector Boundary and CI Check Entry in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-025",
-      "end_line": 1537,
-      "heading": "Task 8: Add Thin Skills",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "skills",
-        "superpowers",
-        "task",
-        "thin",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1455,
-      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-026",
-      "end_line": 1625,
-      "heading": "Task 8: Add Thin Skills",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "skills",
-        "superpowers",
-        "task",
-        "thin",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1532,
-      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-027",
-      "end_line": 1705,
-      "heading": "Task 8: Add Thin Skills",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "skills",
-        "superpowers",
-        "task",
-        "thin",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1626,
-      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-028",
-      "end_line": 1752,
-      "heading": "Task 8: Add Thin Skills",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "add",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "skills",
-        "superpowers",
-        "task",
-        "thin",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1698,
-      "summary": "Task 8: Add Thin Skills in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-029",
-      "end_line": 1828,
-      "heading": "Task 9: Final First-Phase Verification",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "final",
-        "first",
-        "md",
-        "memory",
-        "phase",
-        "plans",
-        "superpowers",
-        "task",
-        "tw",
-        "verification"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1753,
-      "summary": "Task 9: Final First-Phase Verification in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-030",
-      "end_line": 1842,
-      "heading": "Self-Review Checklist",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "checklist",
-        "design",
-        "development",
-        "docs",
-        "md",
-        "memory",
-        "plans",
-        "review",
-        "self",
-        "superpowers",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1829,
-      "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-031",
-      "end_line": 1850,
-      "heading": "Execution Handoff",
-      "keywords": [
-        "04",
-        "2026",
-        "30",
-        "ai",
-        "design",
-        "development",
-        "docs",
-        "execution",
-        "handoff",
-        "md",
-        "memory",
-        "plans",
-        "superpowers",
-        "tw"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "design",
-          "development",
-          "docs",
-          "memory",
-          "plans",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md",
-      "start_line": 1843,
-      "summary": "Execution Handoff in docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-001",
-      "end_line": 8,
-      "heading": "DI 自动注册与 AOP 框架设计文档",
-      "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
-        "docs",
-        "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "框架设计文档",
-        "自动注册与"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
-          "docs",
-          "registration",
-          "specs",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 1,
-      "summary": "DI 自动注册与 AOP 框架设计文档 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-002",
-      "end_line": 14,
-      "heading": "Status",
-      "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
-        "docs",
-        "md",
-        "registration",
-        "specs",
-        "status",
-        "superpowers"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
-          "docs",
-          "registration",
-          "specs",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 9,
-      "summary": "Status in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-003",
-      "end_line": 30,
-      "heading": "Standards",
-      "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
-        "docs",
-        "md",
-        "registration",
-        "specs",
-        "standards",
-        "superpowers"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
-          "docs",
-          "registration",
-          "specs",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 15,
-      "summary": "Standards in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-004",
-      "end_line": 47,
-      "heading": "Dependency Admission",
-      "keywords": [
-        "04",
-        "2026",
-        "29",
-        "admission",
-        "aop",
-        "auto",
-        "dependency",
-        "design",
-        "docs",
-        "md",
-        "registration",
-        "specs",
-        "superpowers"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
-          "docs",
-          "registration",
-          "specs",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 31,
-      "summary": "Dependency Admission in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-005",
-      "end_line": 56,
-      "heading": "Knowledge Alignment",
-      "keywords": [
-        "04",
-        "2026",
-        "29",
-        "alignment",
-        "aop",
-        "auto",
-        "design",
-        "docs",
-        "knowledge",
-        "md",
-        "registration",
-        "specs",
-        "superpowers"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
-          "docs",
-          "registration",
-          "specs",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 48,
-      "summary": "Knowledge Alignment in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-006",
-      "end_line": 83,
-      "heading": "一、设计决策概览",
-      "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
-        "docs",
-        "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "一、设计决策概览"
-      ],
-      "relations": {
-        "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
-          "docs",
-          "registration",
-          "specs",
-          "superpowers"
-        ],
-        "framework": null,
-        "kind": "manual",
-        "language": "docs",
-        "service": null
-      },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 57,
-      "summary": "一、设计决策概览 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
-    },
-    {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-007",
-      "end_line": 85,
-      "heading": "二、公共入口 API",
-      "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
         "api",
-        "auto",
         "design",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "二、公共入口"
+        "rest",
+        "rules",
+        "standards",
+        "变更记录"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
+          "api",
           "design",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rest",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 84,
-      "summary": "二、公共入口 API in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/api-rest-design.md",
+      "start_line": 64,
+      "summary": "变更记录 in docs/standards/rules/api-rest-design.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-008",
-      "end_line": 109,
-      "heading": "2.1 Tw.AspNetCore 基础设施入口（推荐）",
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-001",
+      "end_line": 2,
+      "heading": "AsyncAPI 约定规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "aspnetcore",
-        "auto",
-        "design",
+        "asyncapi",
+        "conventions",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "基础设施入口（推荐）"
+        "rules",
+        "standards",
+        "约定规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "asyncapi",
+          "conventions",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 86,
-      "summary": "2.1 Tw.AspNetCore 基础设施入口（推荐） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 1,
+      "summary": "AsyncAPI 约定规范 in docs/standards/rules/asyncapi-conventions.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-009",
-      "end_line": 126,
-      "heading": "2.2 P2 gRPC 入口",
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "asyncapi",
+        "conventions",
         "docs",
-        "grpc",
         "md",
-        "registration",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "asyncapi",
+          "conventions",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 110,
-      "summary": "2.2 P2 gRPC 入口 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/asyncapi-conventions.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-010",
-      "end_line": 156,
-      "heading": "2.3 手动组合（非 ASP.NET Core 场景）",
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "asp",
-        "auto",
-        "core",
-        "design",
+        "asyncapi",
+        "conventions",
         "docs",
+        "md",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "asyncapi",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/asyncapi-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "asyncapi",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "asyncapi",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/asyncapi-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-005",
+      "end_line": 53,
+      "heading": "示例",
+      "keywords": [
+        "asyncapi",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "asyncapi",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/asyncapi-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-006",
+      "end_line": 61,
+      "heading": "检查清单",
+      "keywords": [
+        "asyncapi",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "asyncapi",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 54,
+      "summary": "检查清单 in docs/standards/rules/asyncapi-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-007",
+      "end_line": 68,
+      "heading": "相关规范",
+      "keywords": [
+        "asyncapi",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "asyncapi",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 62,
+      "summary": "相关规范 in docs/standards/rules/asyncapi-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.asyncapi-conventions#chunk-008",
+      "end_line": 74,
+      "heading": "变更记录",
+      "keywords": [
+        "asyncapi",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "asyncapi",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/asyncapi-conventions.md",
+      "start_line": 69,
+      "summary": "变更记录 in docs/standards/rules/asyncapi-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-001",
+      "end_line": 2,
+      "heading": "OAuth 与 OIDC 认证规范",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards",
+        "认证规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 1,
+      "summary": "OAuth 与 OIDC 认证规范 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-005",
+      "end_line": 51,
+      "heading": "示例",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-006",
+      "end_line": 60,
+      "heading": "检查清单",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 52,
+      "summary": "检查清单 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-007",
+      "end_line": 66,
+      "heading": "相关规范",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 61,
+      "summary": "相关规范 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.auth-oauth-oidc#chunk-008",
+      "end_line": 72,
+      "heading": "变更记录",
+      "keywords": [
+        "auth",
+        "docs",
+        "md",
+        "oauth",
+        "oidc",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "auth",
+          "docs",
+          "oauth",
+          "oidc",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/auth-oauth-oidc.md",
+      "start_line": 67,
+      "summary": "变更记录 in docs/standards/rules/auth-oauth-oidc.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-001",
+      "end_line": 2,
+      "heading": "缓存约定规范",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "缓存约定规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 1,
+      "summary": "缓存约定规范 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-005",
+      "end_line": 40,
+      "heading": "示例",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-006",
+      "end_line": 49,
+      "heading": "检查清单",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 41,
+      "summary": "检查清单 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-007",
+      "end_line": 55,
+      "heading": "相关规范",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 50,
+      "summary": "相关规范 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.cache-conventions#chunk-008",
+      "end_line": 61,
+      "heading": "变更记录",
+      "keywords": [
+        "cache",
+        "conventions",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "cache",
+          "conventions",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/cache-conventions.md",
+      "start_line": 56,
+      "summary": "变更记录 in docs/standards/rules/cache-conventions.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-001",
+      "end_line": 2,
+      "heading": "CI 流水线规范",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards",
+        "流水线规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 1,
+      "summary": "CI 流水线规范 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-005",
+      "end_line": 45,
+      "heading": "示例",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-006",
+      "end_line": 54,
+      "heading": "检查清单",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 46,
+      "summary": "检查清单 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-007",
+      "end_line": 61,
+      "heading": "相关规范",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 55,
+      "summary": "相关规范 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.ci-pipeline#chunk-008",
+      "end_line": 67,
+      "heading": "变更记录",
+      "keywords": [
+        "ci",
+        "docs",
+        "md",
+        "pipeline",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "pipeline",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/ci-pipeline.md",
+      "start_line": 62,
+      "summary": "变更记录 in docs/standards/rules/ci-pipeline.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-001",
+      "end_line": 2,
+      "heading": "代码评审规范",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "代码评审规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 1,
+      "summary": "代码评审规范 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-002",
+      "end_line": 8,
+      "heading": "目标",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-003",
+      "end_line": 14,
+      "heading": "适用范围",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 9,
+      "summary": "适用范围 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-004",
+      "end_line": 25,
+      "heading": "规则",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 15,
+      "summary": "规则 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-005",
+      "end_line": 41,
+      "heading": "示例",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 26,
+      "summary": "示例 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-006",
+      "end_line": 50,
+      "heading": "检查清单",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 42,
+      "summary": "检查清单 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-007",
+      "end_line": 57,
+      "heading": "相关规范",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 51,
+      "summary": "相关规范 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-008",
+      "end_line": 63,
+      "heading": "变更记录",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 58,
+      "summary": "变更记录 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-001",
+      "end_line": 2,
+      "heading": "通用注释规范",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "通用注释规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 1,
+      "summary": "通用注释规范 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-004",
+      "end_line": 27,
+      "heading": "规则",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-005",
+      "end_line": 43,
+      "heading": "示例",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 28,
+      "summary": "示例 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-006",
+      "end_line": 56,
+      "heading": "检查清单",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 44,
+      "summary": "检查清单 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-007",
+      "end_line": 61,
+      "heading": "相关规范",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 57,
+      "summary": "相关规范 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-common#chunk-008",
+      "end_line": 68,
+      "heading": "变更记录",
+      "keywords": [
+        "comments",
+        "common",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "comments",
+          "common",
+          "docs",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/comments-common.md",
+      "start_line": 62,
+      "summary": "变更记录 in docs/standards/rules/comments-common.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-001",
+      "end_line": 2,
+      "heading": ".NET 注释规范",
+      "keywords": [
+        "comments",
+        "docs",
+        "dotnet",
         "md",
         "net",
-        "registration",
-        "specs",
-        "superpowers",
-        "场景）",
-        "手动组合（非"
+        "rules",
+        "standards",
+        "注释规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 127,
-      "summary": "2.3 手动组合（非 ASP.NET Core 场景） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 1,
+      "summary": ".NET 注释规范 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-011",
-      "end_line": 160,
-      "heading": "三、核心抽象层",
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "dotnet",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "三、核心抽象层"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 157,
-      "summary": "三、核心抽象层 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-012",
-      "end_line": 202,
-      "heading": "3.1 CancellationToken 基础设施",
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "cancellationtoken",
-        "design",
+        "comments",
         "docs",
+        "dotnet",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "基础设施"
+        "rules",
+        "standards",
+        "适用范围"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 161,
-      "summary": "3.1 CancellationToken 基础设施 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-013",
-      "end_line": 210,
-      "heading": "3.2 生命周期接口",
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-004",
+      "end_line": 26,
+      "heading": "规则",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "dotnet",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "生命周期接口"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 203,
-      "summary": "3.2 生命周期接口 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-014",
-      "end_line": 238,
-      "heading": "3.3 注册控制特性",
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-005",
+      "end_line": 51,
+      "heading": "示例",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "dotnet",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "注册控制特性"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 211,
-      "summary": "3.3 注册控制特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 27,
+      "summary": "示例 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-015",
-      "end_line": 281,
-      "heading": "3.4 配置与选项控制特性",
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-006",
+      "end_line": 64,
+      "heading": "检查清单",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "dotnet",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "配置与选项控制特性"
+        "rules",
+        "standards",
+        "检查清单"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 239,
-      "summary": "3.4 配置与选项控制特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 52,
+      "summary": "检查清单 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-016",
-      "end_line": 294,
-      "heading": "3.5 暴露服务默认规则",
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-007",
+      "end_line": 69,
+      "heading": "相关规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "dotnet",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "暴露服务默认规则"
+        "rules",
+        "standards",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 282,
-      "summary": "3.5 暴露服务默认规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 65,
+      "summary": "相关规范 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-017",
-      "end_line": 402,
-      "heading": "3.6 AOP 相关接口与特性",
+      "chunk_id": "docs.standards.rules.comments-dotnet#chunk-008",
+      "end_line": 77,
+      "heading": "变更记录",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "dotnet",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "相关接口与特性"
+        "rules",
+        "standards",
+        "变更记录"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "dotnet",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 295,
-      "summary": "3.6 AOP 相关接口与特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-dotnet.md",
+      "start_line": 70,
+      "summary": "变更记录 in docs/standards/rules/comments-dotnet.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-018",
-      "end_line": 405,
-      "heading": "3.6 AOP 相关接口与特性",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-001",
+      "end_line": 2,
+      "heading": "Java 注释规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "相关接口与特性"
+        "rules",
+        "standards",
+        "注释规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 403,
-      "summary": "3.6 AOP 相关接口与特性 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 1,
+      "summary": "Java 注释规范 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-019",
-      "end_line": 407,
-      "heading": "四、程序集扫描与拓扑排序",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "四、程序集扫描与拓扑排序"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 406,
-      "summary": "四、程序集扫描与拓扑排序 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-020",
-      "end_line": 418,
-      "heading": "4.1 程序集发现规则",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "程序集发现规则"
+        "rules",
+        "standards",
+        "适用范围"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 408,
-      "summary": "4.1 程序集发现规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-021",
-      "end_line": 434,
-      "heading": "4.2 拓扑排序（Kahn 算法）",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-004",
+      "end_line": 26,
+      "heading": "规则",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "拓扑排序（kahn",
-        "算法）"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 419,
-      "summary": "4.2 拓扑排序（Kahn 算法） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-022",
-      "end_line": 448,
-      "heading": "4.3 并发扫描策略",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-005",
+      "end_line": 50,
+      "heading": "示例",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "并发扫描策略"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 435,
-      "summary": "4.3 并发扫描策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 27,
+      "summary": "示例 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-023",
-      "end_line": 467,
-      "heading": "4.4 服务注册元数据结构",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-006",
+      "end_line": 63,
+      "heading": "检查清单",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "服务注册元数据结构"
+        "rules",
+        "standards",
+        "检查清单"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 449,
-      "summary": "4.4 服务注册元数据结构 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 51,
+      "summary": "检查清单 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-024",
-      "end_line": 469,
-      "heading": "五、Autofac 注册执行",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-007",
+      "end_line": 68,
+      "heading": "相关规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "五、autofac",
-        "注册执行"
+        "rules",
+        "standards",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 468,
-      "summary": "五、Autofac 注册执行 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 64,
+      "summary": "相关规范 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-025",
-      "end_line": 477,
-      "heading": "5.1 生命周期映射",
+      "chunk_id": "docs.standards.rules.comments-java#chunk-008",
+      "end_line": 75,
+      "heading": "变更记录",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
+        "java",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "生命周期映射"
+        "rules",
+        "standards",
+        "变更记录"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "java",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 470,
-      "summary": "5.1 生命周期映射 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-java.md",
+      "start_line": 69,
+      "summary": "变更记录 in docs/standards/rules/comments-java.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-026",
-      "end_line": 490,
-      "heading": "5.2 冲突裁决规则",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-001",
+      "end_line": 2,
+      "heading": "Python 注释规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "冲突裁决规则"
+        "python",
+        "rules",
+        "standards",
+        "注释规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 478,
-      "summary": "5.2 冲突裁决规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 1,
+      "summary": "Python 注释规范 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-027",
-      "end_line": 504,
-      "heading": "5.3 无显式替换标记的多实现处理",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "无显式替换标记的多实现处理"
+        "python",
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 491,
-      "summary": "5.3 无显式替换标记的多实现处理 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-028",
-      "end_line": 521,
-      "heading": "5.4 部分替换规则",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "部分替换规则"
+        "python",
+        "rules",
+        "standards",
+        "适用范围"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 505,
-      "summary": "5.4 部分替换规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-029",
-      "end_line": 533,
-      "heading": "5.5 Keyed Service 替换规则",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-004",
+      "end_line": 26,
+      "heading": "规则",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
-        "keyed",
         "md",
-        "registration",
-        "service",
-        "specs",
-        "superpowers",
-        "替换规则"
+        "python",
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 522,
-      "summary": "5.5 Keyed Service 替换规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-030",
-      "end_line": 565,
-      "heading": "5.6 注册流水线（按拓扑顺序逐条执行）",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-005",
+      "end_line": 54,
+      "heading": "示例",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "注册流水线（按拓扑顺序逐条执行）"
+        "python",
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 534,
-      "summary": "5.6 注册流水线（按拓扑顺序逐条执行） in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 27,
+      "summary": "示例 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-031",
-      "end_line": 579,
-      "heading": "5.7 内部模块封装",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-006",
+      "end_line": 67,
+      "heading": "检查清单",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "内部模块封装"
+        "python",
+        "rules",
+        "standards",
+        "检查清单"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 566,
-      "summary": "5.7 内部模块封装 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 55,
+      "summary": "检查清单 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-032",
-      "end_line": 581,
-      "heading": "六、AOP 架构",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-007",
+      "end_line": 72,
+      "heading": "相关规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "六、aop"
+        "python",
+        "rules",
+        "standards",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 580,
-      "summary": "六、AOP 架构 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 68,
+      "summary": "相关规范 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-033",
-      "end_line": 600,
-      "heading": "6.1 拦截器三层叠加顺序",
+      "chunk_id": "docs.standards.rules.comments-python#chunk-008",
+      "end_line": 79,
+      "heading": "变更记录",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "拦截器三层叠加顺序"
+        "python",
+        "rules",
+        "standards",
+        "变更记录"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "python",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 582,
-      "summary": "6.1 拦截器三层叠加顺序 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-python.md",
+      "start_line": 73,
+      "summary": "变更记录 in docs/standards/rules/comments-python.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-034",
-      "end_line": 634,
-      "heading": "6.2 拦截器链计算流程",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-001",
+      "end_line": 2,
+      "heading": "TypeScript 注释规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "拦截器链计算流程"
+        "rules",
+        "standards",
+        "ts",
+        "typescript",
+        "注释规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 601,
-      "summary": "6.2 拦截器链计算流程 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 1,
+      "summary": "TypeScript 注释规范 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-035",
-      "end_line": 658,
-      "heading": "6.3 IgnoreInterceptors 作用域",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
-        "ignoreinterceptors",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "作用域"
+        "rules",
+        "standards",
+        "ts"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 635,
-      "summary": "6.3 IgnoreInterceptors 作用域 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-036",
-      "end_line": 671,
-      "heading": "6.4 入口 Adapter vs Castle.Core 模式",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "adapter",
-        "aop",
-        "auto",
-        "castle",
-        "core",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards",
+        "ts",
+        "适用范围"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 659,
-      "summary": "6.4 入口 Adapter vs Castle.Core 模式 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-037",
-      "end_line": 727,
-      "heading": "6.5 入口 Adapter 设计",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-004",
+      "end_line": 26,
+      "heading": "规则",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "adapter",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards",
+        "ts"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 672,
-      "summary": "6.5 入口 Adapter 设计 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-038",
-      "end_line": 752,
-      "heading": "6.6 调用形态分派",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-005",
+      "end_line": 54,
+      "heading": "示例",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "调用形态分派"
+        "rules",
+        "standards",
+        "ts"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 728,
-      "summary": "6.6 调用形态分派 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 27,
+      "summary": "示例 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-039",
-      "end_line": 764,
-      "heading": "6.7 拦截调用契约",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-006",
+      "end_line": 67,
+      "heading": "检查清单",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "拦截调用契约"
+        "rules",
+        "standards",
+        "ts",
+        "检查清单"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 753,
-      "summary": "6.7 拦截调用契约 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 55,
+      "summary": "检查清单 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-040",
-      "end_line": 775,
-      "heading": "6.8 Castle 代理覆盖与启动诊断",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-007",
+      "end_line": 74,
+      "heading": "相关规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "castle",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "代理覆盖与启动诊断"
+        "rules",
+        "standards",
+        "ts",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 765,
-      "summary": "6.8 Castle 代理覆盖与启动诊断 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 68,
+      "summary": "相关规范 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-041",
-      "end_line": 777,
-      "heading": "七、配置与选项自动注册",
+      "chunk_id": "docs.standards.rules.comments-ts#chunk-008",
+      "end_line": 81,
+      "heading": "变更记录",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "comments",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "七、配置与选项自动注册"
+        "rules",
+        "standards",
+        "ts",
+        "变更记录"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "comments",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 776,
-      "summary": "七、配置与选项自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/comments-ts.md",
+      "start_line": 75,
+      "summary": "变更记录 in docs/standards/rules/comments-ts.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-042",
-      "end_line": 800,
-      "heading": "7.1 自动发现规则",
+      "chunk_id": "docs.standards.rules.configuration#chunk-001",
+      "end_line": 2,
+      "heading": "配置管理规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "自动发现规则"
+        "rules",
+        "standards",
+        "配置管理规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 778,
-      "summary": "7.1 自动发现规则 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 1,
+      "summary": "配置管理规范 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-043",
-      "end_line": 821,
-      "heading": "7.2 注册行为",
+      "chunk_id": "docs.standards.rules.configuration#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "注册行为"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 801,
-      "summary": "7.2 注册行为 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-044",
-      "end_line": 833,
-      "heading": "7.3 验证策略",
+      "chunk_id": "docs.standards.rules.configuration#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "验证策略"
+        "rules",
+        "standards",
+        "适用范围"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 822,
-      "summary": "7.3 验证策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-045",
-      "end_line": 844,
-      "heading": "7.4 命名选项",
+      "chunk_id": "docs.standards.rules.configuration#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "命名选项"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 834,
-      "summary": "7.4 命名选项 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-046",
-      "end_line": 856,
-      "heading": "7.5 性能与运行时影响",
+      "chunk_id": "docs.standards.rules.configuration#chunk-005",
+      "end_line": 49,
+      "heading": "示例",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "性能与运行时影响"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 845,
-      "summary": "7.5 性能与运行时影响 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-047",
-      "end_line": 877,
-      "heading": "八、性能优化策略",
+      "chunk_id": "docs.standards.rules.configuration#chunk-006",
+      "end_line": 58,
+      "heading": "检查清单",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "八、性能优化策略"
+        "rules",
+        "standards",
+        "检查清单"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 857,
-      "summary": "八、性能优化策略 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 50,
+      "summary": "检查清单 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-048",
-      "end_line": 879,
-      "heading": "九、典型使用示例",
+      "chunk_id": "docs.standards.rules.configuration#chunk-007",
+      "end_line": 64,
+      "heading": "相关规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "九、典型使用示例"
+        "rules",
+        "standards",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 878,
-      "summary": "九、典型使用示例 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 59,
+      "summary": "相关规范 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-049",
-      "end_line": 889,
-      "heading": "9.1 基础自动注册",
+      "chunk_id": "docs.standards.rules.configuration#chunk-008",
+      "end_line": 70,
+      "heading": "变更记录",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "configuration",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "基础自动注册"
+        "rules",
+        "standards",
+        "变更记录"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "configuration",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 880,
-      "summary": "9.1 基础自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/configuration.md",
+      "start_line": 65,
+      "summary": "变更记录 in docs/standards/rules/configuration.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-050",
-      "end_line": 896,
-      "heading": "9.2 Keyed Service",
+      "chunk_id": "docs.standards.rules.container-image#chunk-001",
+      "end_line": 2,
+      "heading": "容器镜像规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "container",
         "docs",
-        "keyed",
+        "image",
         "md",
-        "registration",
-        "service",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards",
+        "容器镜像规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 890,
-      "summary": "9.2 Keyed Service in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 1,
+      "summary": "容器镜像规范 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-051",
-      "end_line": 907,
-      "heading": "9.3 集合服务",
+      "chunk_id": "docs.standards.rules.container-image#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "container",
         "docs",
+        "image",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "集合服务"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 897,
-      "summary": "9.3 集合服务 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-052",
-      "end_line": 915,
-      "heading": "9.4 开放泛型",
+      "chunk_id": "docs.standards.rules.container-image#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "container",
         "docs",
+        "image",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "开放泛型"
+        "rules",
+        "standards",
+        "适用范围"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 908,
-      "summary": "9.4 开放泛型 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-053",
-      "end_line": 924,
-      "heading": "9.5 服务替换",
+      "chunk_id": "docs.standards.rules.container-image#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "container",
         "docs",
+        "image",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "服务替换"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 916,
-      "summary": "9.5 服务替换 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-054",
-      "end_line": 940,
-      "heading": "9.6 ICancellationTokenProvider 使用",
+      "chunk_id": "docs.standards.rules.container-image#chunk-005",
+      "end_line": 43,
+      "heading": "示例",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "container",
         "docs",
-        "icancellationtokenprovider",
+        "image",
         "md",
-        "registration",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 925,
-      "summary": "9.6 ICancellationTokenProvider 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-055",
-      "end_line": 995,
-      "heading": "9.7 AOP 使用",
+      "chunk_id": "docs.standards.rules.container-image#chunk-006",
+      "end_line": 52,
+      "heading": "检查清单",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "container",
         "docs",
+        "image",
         "md",
-        "registration",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards",
+        "检查清单"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 941,
-      "summary": "9.7 AOP 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 44,
+      "summary": "检查清单 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-056",
-      "end_line": 1013,
-      "heading": "9.8 Feature Collection 使用",
+      "chunk_id": "docs.standards.rules.container-image#chunk-007",
+      "end_line": 58,
+      "heading": "相关规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "collection",
-        "design",
+        "container",
         "docs",
-        "feature",
+        "image",
         "md",
-        "registration",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 996,
-      "summary": "9.8 Feature Collection 使用 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 53,
+      "summary": "相关规范 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-057",
-      "end_line": 1049,
-      "heading": "9.9 配置与选项自动注册",
+      "chunk_id": "docs.standards.rules.container-image#chunk-008",
+      "end_line": 64,
+      "heading": "变更记录",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "container",
         "docs",
+        "image",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "配置与选项自动注册"
+        "rules",
+        "standards",
+        "变更记录"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "container",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "image",
+          "rules",
+          "standards"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 1014,
-      "summary": "9.9 配置与选项自动注册 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/container-image.md",
+      "start_line": 59,
+      "summary": "变更记录 in docs/standards/rules/container-image.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-058",
-      "end_line": 1053,
-      "heading": "十、验收标准",
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-001",
+      "end_line": 2,
+      "heading": "契约测试规范",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "contract",
         "docs",
         "md",
-        "registration",
-        "specs",
-        "superpowers",
-        "十、验收标准"
+        "rules",
+        "standards",
+        "testing",
+        "契约测试规范"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "contract",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards",
+          "testing"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 1050,
-      "summary": "十、验收标准 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 1,
+      "summary": "契约测试规范 in docs/standards/rules/contract-testing.md"
     },
     {
-      "chunk_id": "docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-059",
-      "end_line": 1069,
-      "heading": "10.1 P0：自动注册、配置和容器基础",
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-002",
+      "end_line": 8,
+      "heading": "目标",
       "keywords": [
-        "04",
-        "2026",
-        "29",
-        "aop",
-        "auto",
-        "design",
+        "contract",
         "docs",
         "md",
-        "p0：自动注册、配置和容器基础",
-        "registration",
-        "specs",
-        "superpowers"
+        "rules",
+        "standards",
+        "testing"
       ],
       "relations": {
         "capabilities": [
-          "2026",
-          "aop",
-          "auto",
-          "design",
+          "contract",
           "docs",
-          "registration",
-          "specs",
-          "superpowers"
+          "rules",
+          "standards",
+          "testing"
         ],
         "framework": null,
         "kind": "manual",
         "language": "docs",
         "service": null
       },
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "start_line": 1054,
-      "summary": "10.1 P0：自动注册、配置和容器基础 in docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md"
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-003",
+      "end_line": 14,
+      "heading": "适用范围",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 9,
+      "summary": "适用范围 in docs/standards/rules/contract-testing.md"
     }
   ],
   "schema_version": "1.0.0"

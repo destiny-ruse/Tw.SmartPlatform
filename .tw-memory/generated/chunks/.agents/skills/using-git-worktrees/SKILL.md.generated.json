@@ -27,7 +27,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 6,
       "summary": "Using Git Worktrees in .agents/skills/using-git-worktrees/SKILL.md"
@@ -60,7 +60,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 8,
       "summary": "Overview in .agents/skills/using-git-worktrees/SKILL.md"
@@ -95,7 +95,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 16,
       "summary": "Directory Selection Process in .agents/skills/using-git-worktrees/SKILL.md"
@@ -130,7 +130,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 20,
       "summary": "1. Check Existing Directories in .agents/skills/using-git-worktrees/SKILL.md"
@@ -164,7 +164,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 30,
       "summary": "2. Check CLAUDE.md in .agents/skills/using-git-worktrees/SKILL.md"
@@ -198,7 +198,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 38,
       "summary": "3. Ask User in .agents/skills/using-git-worktrees/SKILL.md"
@@ -232,7 +232,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 51,
       "summary": "Safety Verification in .agents/skills/using-git-worktrees/SKILL.md"
@@ -269,7 +269,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 53,
       "summary": "For Project-Local Directories (.worktrees or worktrees) in .agents/skills/using-git-worktrees/SKILL.md"
@@ -307,7 +307,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 71,
       "summary": "For Global Directory (~/.config/superpowers/worktrees) in .agents/skills/using-git-worktrees/SKILL.md"
@@ -341,7 +341,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 75,
       "summary": "Creation Steps in .agents/skills/using-git-worktrees/SKILL.md"
@@ -376,7 +376,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 77,
       "summary": "1. Detect Project Name in .agents/skills/using-git-worktrees/SKILL.md"
@@ -410,7 +410,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 83,
       "summary": "2. Create Worktree in .agents/skills/using-git-worktrees/SKILL.md"
@@ -445,7 +445,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 101,
       "summary": "3. Run Project Setup in .agents/skills/using-git-worktrees/SKILL.md"
@@ -480,7 +480,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 120,
       "summary": "4. Verify Clean Baseline in .agents/skills/using-git-worktrees/SKILL.md"
@@ -514,7 +514,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 136,
       "summary": "5. Report Location in .agents/skills/using-git-worktrees/SKILL.md"
@@ -548,7 +548,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 144,
       "summary": "Quick Reference in .agents/skills/using-git-worktrees/SKILL.md"
@@ -582,7 +582,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 156,
       "summary": "Common Mistakes in .agents/skills/using-git-worktrees/SKILL.md"
@@ -617,7 +617,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 158,
       "summary": "Skipping ignore verification in .agents/skills/using-git-worktrees/SKILL.md"
@@ -652,7 +652,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 163,
       "summary": "Assuming directory location in .agents/skills/using-git-worktrees/SKILL.md"
@@ -688,7 +688,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 168,
       "summary": "Proceeding with failing tests in .agents/skills/using-git-worktrees/SKILL.md"
@@ -723,7 +723,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 173,
       "summary": "Hardcoding setup commands in .agents/skills/using-git-worktrees/SKILL.md"
@@ -757,7 +757,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 178,
       "summary": "Example Workflow in .agents/skills/using-git-worktrees/SKILL.md"
@@ -791,7 +791,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 194,
       "summary": "Red Flags in .agents/skills/using-git-worktrees/SKILL.md"
@@ -824,7 +824,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5f1fde9a84c0828282bcc59feb31c5814a501f9efdb039f909d7dd2755d341ce",
+      "source_hash": "sha256:de9dcde34840eee074047ec327d4ea6ca4954c5a73a6d874dc48f25fe46c9e7c",
       "source_path": ".agents/skills/using-git-worktrees/SKILL.md",
       "start_line": 209,
       "summary": "Integration in .agents/skills/using-git-worktrees/SKILL.md"

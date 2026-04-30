@@ -24,7 +24,7 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:650488416603fcd1ca025f8c24d1c5dbadfb226c24d0ba64bfb7d44deb9a0038",
+      "source_hash": "sha256:eb28c8b31d73753bcf1d2dda5f6f0e07146b46139cbcbab28a9df15039dc245c",
       "source_path": "deploy/k8s-helm/README.md",
       "start_line": 1,
       "summary": "Kubernetes 与 Helm 部署目录 in deploy/k8s-helm/README.md"

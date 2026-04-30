@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:3da13a4a0778727ea918e492f5316f7274c80a63ee05399b2689ccd638d4b82f",
+      "source_hash": "sha256:4a5993214f80c5033f3fc62164252714a0dd9d4ce8c321a94cb174ba3889d726",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md",
       "start_line": 1,
       "summary": "文本模板构件目录 in backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/README.md"

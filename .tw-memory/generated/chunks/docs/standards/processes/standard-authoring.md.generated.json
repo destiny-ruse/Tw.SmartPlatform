@@ -1,0 +1,253 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-001",
+      "end_line": 2,
+      "heading": "规范撰写规范",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "规范撰写规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 1,
+      "summary": "规范撰写规范 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-003",
+      "end_line": 17,
+      "heading": "适用范围",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-004",
+      "end_line": 29,
+      "heading": "文档结构",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "文档结构"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 18,
+      "summary": "文档结构 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-005",
+      "end_line": 37,
+      "heading": "状态管理",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "状态管理"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 30,
+      "summary": "状态管理 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-006",
+      "end_line": 46,
+      "heading": "引用要求",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "引用要求"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 38,
+      "summary": "引用要求 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-007",
+      "end_line": 59,
+      "heading": "变更流程",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "变更流程"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 47,
+      "summary": "变更流程 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-008",
+      "end_line": 67,
+      "heading": "变更记录",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 60,
+      "summary": "变更记录 in docs/standards/processes/standard-authoring.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/processes/standard-authoring.md"
+}

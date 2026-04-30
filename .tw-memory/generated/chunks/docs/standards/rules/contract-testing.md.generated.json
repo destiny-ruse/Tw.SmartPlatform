@@ -1,0 +1,251 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-001",
+      "end_line": 2,
+      "heading": "契约测试规范",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing",
+        "契约测试规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 1,
+      "summary": "契约测试规范 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-002",
+      "end_line": 8,
+      "heading": "目标",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-003",
+      "end_line": 14,
+      "heading": "适用范围",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 9,
+      "summary": "适用范围 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-004",
+      "end_line": 25,
+      "heading": "规则",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 15,
+      "summary": "规则 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-005",
+      "end_line": 51,
+      "heading": "示例",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 26,
+      "summary": "示例 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-006",
+      "end_line": 60,
+      "heading": "检查清单",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 52,
+      "summary": "检查清单 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-007",
+      "end_line": 67,
+      "heading": "相关规范",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 61,
+      "summary": "相关规范 in docs/standards/rules/contract-testing.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.contract-testing#chunk-008",
+      "end_line": 73,
+      "heading": "变更记录",
+      "keywords": [
+        "contract",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "testing",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "contract",
+          "docs",
+          "rules",
+          "standards",
+          "testing"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
+      "source_path": "docs/standards/rules/contract-testing.md",
+      "start_line": 68,
+      "summary": "变更记录 in docs/standards/rules/contract-testing.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/contract-testing.md"
+}

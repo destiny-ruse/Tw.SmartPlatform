@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:8207fb85d2bcf10c974fc9b459714be77ba046bf96037210fb096fa343030c1e",
+      "source_hash": "sha256:92d42641894b474919d845dcfcc1ce9075d3e77fbe5a517422e044160148dec7",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md",
       "start_line": 1,
       "summary": "拼音转换构件目录 in backend/dotnet/BuildingBlocks/src/Tw.PinYinConverter/README.md"

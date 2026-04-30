@@ -36,7 +36,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 1,
       "summary": "Auto Registration Dependency Admission Implementation Plan in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -77,7 +77,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 13,
       "summary": "Execution Order in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -118,7 +118,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 25,
       "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -159,7 +159,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 32,
       "summary": "File Structure in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -200,7 +200,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 41,
       "summary": "Package Versions in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -240,7 +240,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 60,
       "summary": "Tasks in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -282,7 +282,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 62,
       "summary": "Task 1: Write Dependency Admission Record in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -326,7 +326,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 111,
       "summary": "Task 2: Pin Central Package Versions in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -370,7 +370,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 160,
       "summary": "Task 3: Add Project Package References in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -412,7 +412,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 226,
       "summary": "Task 4: Baseline Verification in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"
@@ -454,7 +454,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:8863b8cdd8a4a2ed7e28115830e314b4007a0a8ef3cf9557327612496ec00752",
+      "source_hash": "sha256:0dba71e1d35781249c68fbb57b31ea72e2b659e8418645a2282abb742cccb433",
       "source_path": "docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md",
       "start_line": 264,
       "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-00-auto-registration-dependency-admission.md"

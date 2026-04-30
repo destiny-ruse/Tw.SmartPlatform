@@ -71,7 +71,7 @@ def _path_language(path: str) -> str | None:
     parts = tuple(part for part in path.split("/") if part)
     if not parts:
         return None
-    if parts[0] in {"docs", "docs-old"}:
+    if parts[0] == "docs":
         return "docs"
     if parts[0] in {"frontend", "contracts", "deploy"}:
         return parts[0]

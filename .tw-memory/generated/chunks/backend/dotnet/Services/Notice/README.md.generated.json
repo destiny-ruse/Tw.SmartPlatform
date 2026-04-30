@@ -25,7 +25,7 @@
         "language": "dotnet",
         "service": "notice"
       },
-      "source_hash": "sha256:864dc9d0bc376cf546dfb1249fa0ae003a649b041165b992e355b5ba46bcec6d",
+      "source_hash": "sha256:89855d4ebcf614e7d863bde249b1637d702c10c05de2b1d3754099a08346c4a3",
       "source_path": "backend/dotnet/Services/Notice/README.md",
       "start_line": 1,
       "summary": "通知服务目录 in backend/dotnet/Services/Notice/README.md"

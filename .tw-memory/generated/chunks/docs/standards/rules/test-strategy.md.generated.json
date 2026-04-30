@@ -1,0 +1,251 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-001",
+      "end_line": 2,
+      "heading": "测试策略规范",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test",
+        "测试策略规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 1,
+      "summary": "测试策略规范 in docs/standards/rules/test-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-002",
+      "end_line": 8,
+      "heading": "目标",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/test-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-003",
+      "end_line": 14,
+      "heading": "适用范围",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 9,
+      "summary": "适用范围 in docs/standards/rules/test-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-004",
+      "end_line": 25,
+      "heading": "规则",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 15,
+      "summary": "规则 in docs/standards/rules/test-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-005",
+      "end_line": 47,
+      "heading": "示例",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 26,
+      "summary": "示例 in docs/standards/rules/test-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-006",
+      "end_line": 56,
+      "heading": "检查清单",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 48,
+      "summary": "检查清单 in docs/standards/rules/test-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-007",
+      "end_line": 63,
+      "heading": "相关规范",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 57,
+      "summary": "相关规范 in docs/standards/rules/test-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-strategy#chunk-008",
+      "end_line": 69,
+      "heading": "变更记录",
+      "keywords": [
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "test",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "rules",
+          "standards",
+          "strategy",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
+      "source_path": "docs/standards/rules/test-strategy.md",
+      "start_line": 64,
+      "summary": "变更记录 in docs/standards/rules/test-strategy.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/test-strategy.md"
+}

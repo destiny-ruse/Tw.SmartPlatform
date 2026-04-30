@@ -24,7 +24,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:50f0a23904fee8cfe7c1d246dd34d30be73c604f8daee9cf86c01371a99f704b",
+      "source_hash": "sha256:922fc231dae66e9284b8d395b46f701ca12ae79b493fc79f516698f04bce1d4f",
       "source_path": "backend/dotnet/Aspire/README.md",
       "start_line": 1,
       "summary": ".NET Aspire 编排目录 in backend/dotnet/Aspire/README.md"

@@ -25,7 +25,7 @@
         "language": "dotnet",
         "service": "authentication"
       },
-      "source_hash": "sha256:9ed2add69fd8eb4dd2a09fcf42d46eb63df18590ac05cad3ecdfea2a2eff85f2",
+      "source_hash": "sha256:1b2f871fea61719e2e3727a36c1e0257776f342c58a82f7909be91cd9c732f4d",
       "source_path": "backend/dotnet/Services/Authentication/README.md",
       "start_line": 1,
       "summary": "认证服务目录 in backend/dotnet/Services/Authentication/README.md"

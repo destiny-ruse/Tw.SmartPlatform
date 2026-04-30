@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:b4c30fb7771dd1c779482416146aee0720461da128edbab004f3c42f7b7593f7",
+      "source_hash": "sha256:b8b31932c0400f5fb62581991c6d6c6c892c925ca3f50123bd2f688605b5720a",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md",
       "start_line": 1,
       "summary": "多租户构件目录 in backend/dotnet/BuildingBlocks/src/Tw.MultiTenancy/README.md"

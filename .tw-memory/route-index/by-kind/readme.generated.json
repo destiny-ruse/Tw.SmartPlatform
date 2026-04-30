@@ -1080,7 +1080,7 @@
     },
     {
       "chunk_id": "docs.README#chunk-001",
-      "end_line": 3,
+      "end_line": 4,
       "heading": "文档目录",
       "keywords": [
         "docs",
@@ -1100,6 +1100,176 @@
       "source_path": "docs/README.md",
       "start_line": 1,
       "summary": "文档目录 in docs/README.md"
+    },
+    {
+      "chunk_id": "docs.README#chunk-002",
+      "end_line": 9,
+      "heading": "索引",
+      "keywords": [
+        "docs",
+        "md",
+        "readme"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/README.md",
+      "start_line": 5,
+      "summary": "索引 in docs/README.md"
+    },
+    {
+      "chunk_id": "docs.README#chunk-003",
+      "end_line": 12,
+      "heading": "维护约定",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "维护约定"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/README.md",
+      "start_line": 10,
+      "summary": "维护约定 in docs/README.md"
+    },
+    {
+      "chunk_id": "docs.standards.README#chunk-001",
+      "end_line": 4,
+      "heading": "工程规范目录",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "standards",
+        "工程规范目录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/README.md",
+      "start_line": 1,
+      "summary": "工程规范目录 in docs/standards/README.md"
+    },
+    {
+      "chunk_id": "docs.standards.README#chunk-002",
+      "end_line": 8,
+      "heading": "使用方式",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "standards",
+        "使用方式"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/README.md",
+      "start_line": 5,
+      "summary": "使用方式 in docs/standards/README.md"
+    },
+    {
+      "chunk_id": "docs.standards.README#chunk-003",
+      "end_line": 15,
+      "heading": "当前规范",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "standards",
+        "当前规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/README.md",
+      "start_line": 9,
+      "summary": "当前规范 in docs/standards/README.md"
+    },
+    {
+      "chunk_id": "docs.standards.README#chunk-004",
+      "end_line": 26,
+      "heading": "同步检查",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "standards",
+        "同步检查"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/README.md",
+      "start_line": 16,
+      "summary": "同步检查 in docs/standards/README.md"
+    },
+    {
+      "chunk_id": "docs.standards.README#chunk-005",
+      "end_line": 30,
+      "heading": "治理入口",
+      "keywords": [
+        "docs",
+        "md",
+        "readme",
+        "standards",
+        "治理入口"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "readme",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/README.md",
+      "start_line": 27,
+      "summary": "治理入口 in docs/standards/README.md"
     },
     {
       "chunk_id": "frontend.README#chunk-001",

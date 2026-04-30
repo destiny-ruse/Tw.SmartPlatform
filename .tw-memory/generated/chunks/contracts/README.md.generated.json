@@ -19,7 +19,7 @@
         "language": "contracts",
         "service": null
       },
-      "source_hash": "sha256:ddafdc966009a762dc8c8f7a09714309c3ed062163ec1328fbc0139eea77fd05",
+      "source_hash": "sha256:4d255dc7477de587e646fe46133b6a7ba847c5583c51ae313d8a334bb2c41538",
       "source_path": "contracts/README.md",
       "start_line": 1,
       "summary": "契约目录 in contracts/README.md"

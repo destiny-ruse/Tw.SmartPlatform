@@ -1,0 +1,251 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-001",
+      "end_line": 2,
+      "heading": "环境策略规范",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "环境策略规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 1,
+      "summary": "环境策略规范 in docs/standards/rules/env-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/env-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/env-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/env-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-005",
+      "end_line": 47,
+      "heading": "示例",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/env-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-006",
+      "end_line": 56,
+      "heading": "检查清单",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 48,
+      "summary": "检查清单 in docs/standards/rules/env-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-007",
+      "end_line": 63,
+      "heading": "相关规范",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 57,
+      "summary": "相关规范 in docs/standards/rules/env-strategy.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.env-strategy#chunk-008",
+      "end_line": 69,
+      "heading": "变更记录",
+      "keywords": [
+        "docs",
+        "env",
+        "md",
+        "rules",
+        "standards",
+        "strategy",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "env",
+          "rules",
+          "standards",
+          "strategy"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
+      "source_path": "docs/standards/rules/env-strategy.md",
+      "start_line": 64,
+      "summary": "变更记录 in docs/standards/rules/env-strategy.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/env-strategy.md"
+}

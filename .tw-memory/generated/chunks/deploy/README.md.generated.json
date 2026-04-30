@@ -19,7 +19,7 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:d929f92611a0a20151afad55b20cd10654255e6b140445097ea4fd80d6cac15f",
+      "source_hash": "sha256:e2f9cfab8a5a8f2ce76d15e17df9d5fb7e4ccbb4238b3101a43f4cdaaebe2700",
       "source_path": "deploy/README.md",
       "start_line": 1,
       "summary": "部署目录 in deploy/README.md"

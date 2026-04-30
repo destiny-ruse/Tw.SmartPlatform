@@ -1,0 +1,251 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-001",
+      "end_line": 2,
+      "heading": "测试覆盖规范",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test",
+        "测试覆盖规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 1,
+      "summary": "测试覆盖规范 in docs/standards/rules/test-coverage.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-002",
+      "end_line": 8,
+      "heading": "目标",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/test-coverage.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-003",
+      "end_line": 14,
+      "heading": "适用范围",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 9,
+      "summary": "适用范围 in docs/standards/rules/test-coverage.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-004",
+      "end_line": 25,
+      "heading": "规则",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 15,
+      "summary": "规则 in docs/standards/rules/test-coverage.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-005",
+      "end_line": 49,
+      "heading": "示例",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 26,
+      "summary": "示例 in docs/standards/rules/test-coverage.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-006",
+      "end_line": 58,
+      "heading": "检查清单",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 50,
+      "summary": "检查清单 in docs/standards/rules/test-coverage.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-007",
+      "end_line": 64,
+      "heading": "相关规范",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 59,
+      "summary": "相关规范 in docs/standards/rules/test-coverage.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.test-coverage#chunk-008",
+      "end_line": 70,
+      "heading": "变更记录",
+      "keywords": [
+        "coverage",
+        "docs",
+        "md",
+        "rules",
+        "standards",
+        "test",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "coverage",
+          "docs",
+          "rules",
+          "standards",
+          "test"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
+      "source_path": "docs/standards/rules/test-coverage.md",
+      "start_line": 65,
+      "summary": "变更记录 in docs/standards/rules/test-coverage.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/test-coverage.md"
+}

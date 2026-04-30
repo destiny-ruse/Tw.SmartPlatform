@@ -1,0 +1,235 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-001",
+      "end_line": 2,
+      "heading": "日志规范",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards",
+        "日志规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 1,
+      "summary": "日志规范 in docs/standards/rules/logging.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/logging.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/rules/logging.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-004",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 11,
+      "summary": "规则 in docs/standards/rules/logging.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-005",
+      "end_line": 45,
+      "heading": "示例",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 22,
+      "summary": "示例 in docs/standards/rules/logging.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-006",
+      "end_line": 54,
+      "heading": "检查清单",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 46,
+      "summary": "检查清单 in docs/standards/rules/logging.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-007",
+      "end_line": 61,
+      "heading": "相关规范",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 55,
+      "summary": "相关规范 in docs/standards/rules/logging.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.logging#chunk-008",
+      "end_line": 67,
+      "heading": "变更记录",
+      "keywords": [
+        "docs",
+        "logging",
+        "md",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "logging",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
+      "source_path": "docs/standards/rules/logging.md",
+      "start_line": 62,
+      "summary": "变更记录 in docs/standards/rules/logging.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/logging.md"
+}

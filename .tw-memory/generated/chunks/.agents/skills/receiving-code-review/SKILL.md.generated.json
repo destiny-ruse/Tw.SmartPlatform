@@ -28,7 +28,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 6,
       "summary": "Code Review Reception in .agents/skills/receiving-code-review/SKILL.md"
@@ -61,7 +61,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 8,
       "summary": "Overview in .agents/skills/receiving-code-review/SKILL.md"
@@ -96,7 +96,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 14,
       "summary": "The Response Pattern in .agents/skills/receiving-code-review/SKILL.md"
@@ -130,7 +130,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 27,
       "summary": "Forbidden Responses in .agents/skills/receiving-code-review/SKILL.md"
@@ -165,7 +165,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 40,
       "summary": "Handling Unclear Feedback in .agents/skills/receiving-code-review/SKILL.md"
@@ -200,7 +200,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 59,
       "summary": "Source-Specific Handling in .agents/skills/receiving-code-review/SKILL.md"
@@ -236,7 +236,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 61,
       "summary": "From your human partner in .agents/skills/receiving-code-review/SKILL.md"
@@ -271,7 +271,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 67,
       "summary": "From External Reviewers in .agents/skills/receiving-code-review/SKILL.md"
@@ -308,7 +308,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 88,
       "summary": "YAGNI Check for \"Professional\" Features in .agents/skills/receiving-code-review/SKILL.md"
@@ -342,7 +342,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 100,
       "summary": "Implementation Order in .agents/skills/receiving-code-review/SKILL.md"
@@ -377,7 +377,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 113,
       "summary": "When To Push Back in .agents/skills/receiving-code-review/SKILL.md"
@@ -412,7 +412,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 131,
       "summary": "Acknowledging Correct Feedback in .agents/skills/receiving-code-review/SKILL.md"
@@ -448,7 +448,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 150,
       "summary": "Gracefully Correcting Your Pushback in .agents/skills/receiving-code-review/SKILL.md"
@@ -482,7 +482,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 164,
       "summary": "Common Mistakes in .agents/skills/receiving-code-review/SKILL.md"
@@ -516,7 +516,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 176,
       "summary": "Real Examples in .agents/skills/receiving-code-review/SKILL.md"
@@ -551,7 +551,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 203,
       "summary": "GitHub Thread Replies in .agents/skills/receiving-code-review/SKILL.md"
@@ -586,7 +586,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:bda6f19ebd6d4ec043e448c8d233de8308f76b72230de2297b306bc49b8a6e93",
+      "source_hash": "sha256:c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
       "source_path": ".agents/skills/receiving-code-review/SKILL.md",
       "start_line": 207,
       "summary": "The Bottom Line in .agents/skills/receiving-code-review/SKILL.md"

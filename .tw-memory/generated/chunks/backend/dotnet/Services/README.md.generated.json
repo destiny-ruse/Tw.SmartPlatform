@@ -24,7 +24,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:9a639ed4cfb2e051a35be1aaa47dc492ffa0dbd641e2643ea8bdd34cea423cf3",
+      "source_hash": "sha256:82edd69d9ac04e5b7e56f9c7f2cbc81333d09340a034da8637ee9700d052d7c2",
       "source_path": "backend/dotnet/Services/README.md",
       "start_line": 1,
       "summary": ".NET 服务目录 in backend/dotnet/Services/README.md"

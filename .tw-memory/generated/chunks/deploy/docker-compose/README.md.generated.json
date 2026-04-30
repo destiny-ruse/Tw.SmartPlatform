@@ -23,7 +23,7 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:ae6085e20ae1209700f036f2a435e9295b204a350c80102733bb2be547d70e04",
+      "source_hash": "sha256:4eeeeae823a3ee94db4a6b4a748123e4f45113508466e5efff0a627711b00ada",
       "source_path": "deploy/docker-compose/README.md",
       "start_line": 1,
       "summary": "Docker Compose 部署目录 in deploy/docker-compose/README.md"

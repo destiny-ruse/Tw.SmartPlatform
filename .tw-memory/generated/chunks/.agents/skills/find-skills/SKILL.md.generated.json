@@ -24,7 +24,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 6,
       "summary": "Find Skills in .agents/skills/find-skills/SKILL.md"
@@ -56,7 +56,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 10,
       "summary": "When to Use This Skill in .agents/skills/find-skills/SKILL.md"
@@ -88,7 +88,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 21,
       "summary": "What is the Skills CLI? in .agents/skills/find-skills/SKILL.md"
@@ -120,7 +120,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 34,
       "summary": "How to Help Users Find Skills in .agents/skills/find-skills/SKILL.md"
@@ -154,7 +154,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 36,
       "summary": "Step 1: Understand What They Need in .agents/skills/find-skills/SKILL.md"
@@ -188,7 +188,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 44,
       "summary": "Step 2: Check the Leaderboard First in .agents/skills/find-skills/SKILL.md"
@@ -220,7 +220,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 52,
       "summary": "Step 3: Search for Skills in .agents/skills/find-skills/SKILL.md"
@@ -254,7 +254,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 66,
       "summary": "Step 4: Verify Quality Before Recommending in .agents/skills/find-skills/SKILL.md"
@@ -288,7 +288,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 74,
       "summary": "Step 5: Present Options to the User in .agents/skills/find-skills/SKILL.md"
@@ -320,7 +320,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 96,
       "summary": "Step 6: Offer to Install in .agents/skills/find-skills/SKILL.md"
@@ -351,7 +351,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 106,
       "summary": "Common Skill Categories in .agents/skills/find-skills/SKILL.md"
@@ -384,7 +384,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 120,
       "summary": "Tips for Effective Searches in .agents/skills/find-skills/SKILL.md"
@@ -416,7 +416,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+      "source_hash": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
       "source_path": ".agents/skills/find-skills/SKILL.md",
       "start_line": 126,
       "summary": "When No Skills Are Found in .agents/skills/find-skills/SKILL.md"

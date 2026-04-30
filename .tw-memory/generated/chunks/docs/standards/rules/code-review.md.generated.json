@@ -1,0 +1,251 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-001",
+      "end_line": 2,
+      "heading": "代码评审规范",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "代码评审规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 1,
+      "summary": "代码评审规范 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-002",
+      "end_line": 8,
+      "heading": "目标",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-003",
+      "end_line": 14,
+      "heading": "适用范围",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 9,
+      "summary": "适用范围 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-004",
+      "end_line": 25,
+      "heading": "规则",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 15,
+      "summary": "规则 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-005",
+      "end_line": 41,
+      "heading": "示例",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 26,
+      "summary": "示例 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-006",
+      "end_line": 50,
+      "heading": "检查清单",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 42,
+      "summary": "检查清单 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-007",
+      "end_line": 57,
+      "heading": "相关规范",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "相关规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 51,
+      "summary": "相关规范 in docs/standards/rules/code-review.md"
+    },
+    {
+      "chunk_id": "docs.standards.rules.code-review#chunk-008",
+      "end_line": 63,
+      "heading": "变更记录",
+      "keywords": [
+        "code",
+        "docs",
+        "md",
+        "review",
+        "rules",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "code",
+          "docs",
+          "review",
+          "rules",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
+      "source_path": "docs/standards/rules/code-review.md",
+      "start_line": 58,
+      "summary": "变更记录 in docs/standards/rules/code-review.md"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "docs/standards/rules/code-review.md"
+}

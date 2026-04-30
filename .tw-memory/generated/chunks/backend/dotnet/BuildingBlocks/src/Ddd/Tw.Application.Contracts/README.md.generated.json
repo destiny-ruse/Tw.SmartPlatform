@@ -32,7 +32,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:bf58a593419b79b68b20c35f6ad92116cbbf7bf2689bdb94cab6b9b1556b7296",
+      "source_hash": "sha256:bc8679ab2c14526479fb85918dfddc6b3b6676fa8ab4afd6870031b0bc5dd367",
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md",
       "start_line": 1,
       "summary": "应用契约构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Application.Contracts/README.md"

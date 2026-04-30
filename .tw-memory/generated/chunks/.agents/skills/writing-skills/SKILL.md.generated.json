@@ -24,7 +24,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 6,
       "summary": "Writing Skills in .agents/skills/writing-skills/SKILL.md"
@@ -54,7 +54,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 8,
       "summary": "Overview in .agents/skills/writing-skills/SKILL.md"
@@ -85,7 +85,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 22,
       "summary": "What is a Skill? in .agents/skills/writing-skills/SKILL.md"
@@ -117,7 +117,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 30,
       "summary": "TDD Mapping for Skills in .agents/skills/writing-skills/SKILL.md"
@@ -148,7 +148,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 47,
       "summary": "When to Create a Skill in .agents/skills/writing-skills/SKILL.md"
@@ -178,7 +178,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 61,
       "summary": "Skill Types in .agents/skills/writing-skills/SKILL.md"
@@ -208,7 +208,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 63,
       "summary": "Technique in .agents/skills/writing-skills/SKILL.md"
@@ -238,7 +238,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 66,
       "summary": "Pattern in .agents/skills/writing-skills/SKILL.md"
@@ -268,7 +268,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 69,
       "summary": "Reference in .agents/skills/writing-skills/SKILL.md"
@@ -299,7 +299,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 72,
       "summary": "Directory Structure in .agents/skills/writing-skills/SKILL.md"
@@ -329,7 +329,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 93,
       "summary": "SKILL.md Structure in .agents/skills/writing-skills/SKILL.md"
@@ -362,7 +362,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 140,
       "summary": "Claude Search Optimization (CSO) in .agents/skills/writing-skills/SKILL.md"
@@ -394,7 +394,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 144,
       "summary": "1. Rich Description Field in .agents/skills/writing-skills/SKILL.md"
@@ -425,7 +425,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 199,
       "summary": "2. Keyword Coverage in .agents/skills/writing-skills/SKILL.md"
@@ -456,7 +456,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 207,
       "summary": "3. Descriptive Naming in .agents/skills/writing-skills/SKILL.md"
@@ -488,7 +488,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 213,
       "summary": "4. Token Efficiency (Critical) in .agents/skills/writing-skills/SKILL.md"
@@ -520,7 +520,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 278,
       "summary": "4. Cross-Referencing Other Skills in .agents/skills/writing-skills/SKILL.md"
@@ -551,7 +551,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 290,
       "summary": "Flowchart Usage in .agents/skills/writing-skills/SKILL.md"
@@ -582,7 +582,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 324,
       "summary": "Code Examples in .agents/skills/writing-skills/SKILL.md"
@@ -613,7 +613,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 347,
       "summary": "File Organization in .agents/skills/writing-skills/SKILL.md"
@@ -644,7 +644,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 349,
       "summary": "Self-Contained Skill in .agents/skills/writing-skills/SKILL.md"
@@ -676,7 +676,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 356,
       "summary": "Skill with Reusable Tool in .agents/skills/writing-skills/SKILL.md"
@@ -708,7 +708,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 364,
       "summary": "Skill with Heavy Reference in .agents/skills/writing-skills/SKILL.md"
@@ -742,7 +742,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 374,
       "summary": "The Iron Law (Same as TDD) in .agents/skills/writing-skills/SKILL.md"
@@ -774,7 +774,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 395,
       "summary": "Testing All Skill Types in .agents/skills/writing-skills/SKILL.md"
@@ -807,7 +807,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 399,
       "summary": "Discipline-Enforcing Skills (rules/requirements) in .agents/skills/writing-skills/SKILL.md"
@@ -839,7 +839,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 411,
       "summary": "Technique Skills (how-to guides) in .agents/skills/writing-skills/SKILL.md"
@@ -871,7 +871,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 422,
       "summary": "Pattern Skills (mental models) in .agents/skills/writing-skills/SKILL.md"
@@ -903,7 +903,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 433,
       "summary": "Reference Skills (documentation/APIs) in .agents/skills/writing-skills/SKILL.md"
@@ -937,7 +937,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 444,
       "summary": "Common Rationalizations for Skipping Testing in .agents/skills/writing-skills/SKILL.md"
@@ -969,7 +969,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 459,
       "summary": "Bulletproofing Skills Against Rationalization in .agents/skills/writing-skills/SKILL.md"
@@ -1002,7 +1002,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 465,
       "summary": "Close Every Loophole Explicitly in .agents/skills/writing-skills/SKILL.md"
@@ -1035,7 +1035,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 487,
       "summary": "Address \"Spirit vs Letter\" Arguments in .agents/skills/writing-skills/SKILL.md"
@@ -1067,7 +1067,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 497,
       "summary": "Build Rationalization Table in .agents/skills/writing-skills/SKILL.md"
@@ -1100,7 +1100,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 509,
       "summary": "Create Red Flags List in .agents/skills/writing-skills/SKILL.md"
@@ -1134,7 +1134,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 525,
       "summary": "Update CSO for Violation Symptoms in .agents/skills/writing-skills/SKILL.md"
@@ -1167,7 +1167,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 533,
       "summary": "RED-GREEN-REFACTOR for Skills in .agents/skills/writing-skills/SKILL.md"
@@ -1201,7 +1201,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 537,
       "summary": "RED: Write Failing Test (Baseline) in .agents/skills/writing-skills/SKILL.md"
@@ -1233,7 +1233,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 546,
       "summary": "GREEN: Write Minimal Skill in .agents/skills/writing-skills/SKILL.md"
@@ -1265,7 +1265,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 552,
       "summary": "REFACTOR: Close Loopholes in .agents/skills/writing-skills/SKILL.md"
@@ -1296,7 +1296,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 562,
       "summary": "Anti-Patterns in .agents/skills/writing-skills/SKILL.md"
@@ -1327,7 +1327,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 564,
       "summary": "❌ Narrative Example in .agents/skills/writing-skills/SKILL.md"
@@ -1359,7 +1359,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 568,
       "summary": "❌ Multi-Language Dilution in .agents/skills/writing-skills/SKILL.md"
@@ -1390,7 +1390,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 572,
       "summary": "❌ Code in Flowcharts in .agents/skills/writing-skills/SKILL.md"
@@ -1421,7 +1421,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 579,
       "summary": "❌ Generic Labels in .agents/skills/writing-skills/SKILL.md"
@@ -1454,7 +1454,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 583,
       "summary": "STOP: Before Moving to Next Skill in .agents/skills/writing-skills/SKILL.md"
@@ -1487,7 +1487,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 596,
       "summary": "Skill Creation Checklist (TDD Adapted) in .agents/skills/writing-skills/SKILL.md"
@@ -1518,7 +1518,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 635,
       "summary": "Discovery Workflow in .agents/skills/writing-skills/SKILL.md"
@@ -1550,7 +1550,7 @@
         "language": null,
         "service": null
       },
-      "source_hash": "sha256:4d99cd4e235947d27d58241335dfd5ca89b4e873af5051b19ae32a3ac92851ea",
+      "source_hash": "sha256:38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
       "source_path": ".agents/skills/writing-skills/SKILL.md",
       "start_line": 647,
       "summary": "The Bottom Line in .agents/skills/writing-skills/SKILL.md"

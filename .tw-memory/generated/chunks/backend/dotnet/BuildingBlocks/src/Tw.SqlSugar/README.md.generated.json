@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:1e6b26f65341bbe14ed8f9d345c40b0acd01b317cac298e0f56f5daef37604ac",
+      "source_hash": "sha256:17f5ec5a8e4d247216b779c50af2c220be25dd2b16b3d04e0be5ca9d196417e9",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/README.md",
       "start_line": 1,
       "summary": "SqlSugar 数据访问构件目录 in backend/dotnet/BuildingBlocks/src/Tw.SqlSugar/README.md"

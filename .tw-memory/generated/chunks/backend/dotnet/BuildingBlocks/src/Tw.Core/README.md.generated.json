@@ -28,7 +28,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:a3a7f6801ac49b571043f6685d145c575efc78a0dfc04251a6285dca5e28bf55",
+      "source_hash": "sha256:1bcebf5d853055de1f8923dd7b67d35edf5f377947bbcb459aab7929960d943c",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/README.md",
       "start_line": 1,
       "summary": "核心基础构件目录 in backend/dotnet/BuildingBlocks/src/Tw.Core/README.md"

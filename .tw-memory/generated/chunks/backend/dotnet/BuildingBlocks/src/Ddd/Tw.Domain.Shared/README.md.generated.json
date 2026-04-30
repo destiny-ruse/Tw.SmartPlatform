@@ -32,7 +32,7 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:8d20bbcf6bf0edecfa67256d21f884878d7c21610f30425833f8ac05df868548",
+      "source_hash": "sha256:2b7293a6db9974b61ed3708673d05de757b49695dbe4a1f9a218026eb3161636",
       "source_path": "backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md",
       "start_line": 1,
       "summary": "共享领域构件目录 in backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/README.md"

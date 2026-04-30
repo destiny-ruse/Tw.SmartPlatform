@@ -34,7 +34,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 1,
       "summary": "Service AOP Castle Implementation Plan in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -73,7 +73,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 13,
       "summary": "Execution Order in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -112,7 +112,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 17,
       "summary": "Source Inputs in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -151,7 +151,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 22,
       "summary": "File Structure in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -189,7 +189,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 46,
       "summary": "Tasks in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -231,7 +231,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 48,
       "summary": "Task 1: Add Cancellation Token Infrastructure in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -273,7 +273,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 143,
       "summary": "Task 1: Add Cancellation Token Infrastructure in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -314,7 +314,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 161,
       "summary": "Task 2: Add Public AOP Abstractions in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -355,7 +355,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 240,
       "summary": "Task 2: Add Public AOP Abstractions in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -396,7 +396,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 321,
       "summary": "Task 2: Add Public AOP Abstractions in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -437,7 +437,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 339,
       "summary": "Task 3: Build Service Chain Cache in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -478,7 +478,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 414,
       "summary": "Task 3: Build Service Chain Cache in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -519,7 +519,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 445,
       "summary": "Task 4: Adapt Castle Async Interception in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -560,7 +560,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 521,
       "summary": "Task 4: Adapt Castle Async Interception in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -603,7 +603,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 539,
       "summary": "Task 5: Enable Proxies During Autofac Registration in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -646,7 +646,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 611,
       "summary": "Task 5: Enable Proxies During Autofac Registration in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -686,7 +686,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 628,
       "summary": "Task 6: Verify P1 Service AOP Acceptance in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
@@ -726,7 +726,7 @@
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:84fb21ad2b366cff854a68eda138c7f9660698580fae3df66a2e1f2c3d4b1242",
+      "source_hash": "sha256:5eebee561349d6eafcf0cda144623122796ea41defc2590a397a657892d31698",
       "source_path": "docs/superpowers/plans/2026-04-29-03-service-aop-castle.md",
       "start_line": 653,
       "summary": "Self-Review Checklist in docs/superpowers/plans/2026-04-29-03-service-aop-castle.md"
