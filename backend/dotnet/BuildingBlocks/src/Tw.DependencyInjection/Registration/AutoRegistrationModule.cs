@@ -117,7 +117,7 @@ public sealed class AutoRegistrationModule : Autofac.Module
         }
         else
         {
-        registration.Keyed(descriptor.Key, descriptor.ServiceType);
+            registration.Keyed(descriptor.Key, descriptor.ServiceType);
         }
     }
 
