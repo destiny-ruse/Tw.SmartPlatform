@@ -166,9 +166,12 @@ class MemoryChecker:
             return False
 
         return not any(
-            item.code == "invalid-json"
-            and isinstance(item.path, str)
-            and item.path.startswith(".tw-memory/source-index/")
+            item.code == "invalid-source-path"
+            or (
+                item.code == "invalid-json"
+                and isinstance(item.path, str)
+                and item.path.startswith(".tw-memory/source-index/")
+            )
             for item in diagnostics
         )
 

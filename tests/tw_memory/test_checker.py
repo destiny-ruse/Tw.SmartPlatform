@@ -227,6 +227,8 @@ class CheckerTests(unittest.TestCase):
     def test_check_rejects_source_index_paths_that_escape_repo(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
+            (root / "docs").mkdir()
+            (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
             index = root / ".tw-memory" / "source-index"
             index.mkdir(parents=True)
             payload = {
@@ -245,6 +247,10 @@ class CheckerTests(unittest.TestCase):
             ]
 
             self.assertEqual(len(invalid_paths), 2)
+            self.assertFalse(
+                any(item.code == "source-index-stale" for item in diagnostics),
+                [item.to_json() for item in diagnostics],
+            )
 
     def test_check_rejects_chunk_paths_that_escape_repo(self):
         with tempfile.TemporaryDirectory() as work:
