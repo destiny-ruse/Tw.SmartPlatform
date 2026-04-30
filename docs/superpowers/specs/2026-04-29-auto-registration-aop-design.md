@@ -276,7 +276,9 @@ public sealed class ConfigurationSectionAttribute(string name) : Attribute
 {
     public string Name { get; } = Tw.Core.Check.NotNullOrWhiteSpace(name);
     public string? OptionsName { get; init; }
-    public bool? ValidateOnStart { get; init; }
+    // ValidateOnStart 是 bool（不是 bool?）：Roslyn 不允许 bool? 作为 attribute 命名参数（CS0655）。
+    // 默认 true 遵循 fail-fast；显式 false 跳过启动验证；未来 H1 可在 AutoRegistrationOptions 暴露全局开关。
+    public bool ValidateOnStart { get; init; } = true;
     public bool DirectInject { get; init; }
 }
 
@@ -317,14 +319,10 @@ public sealed class RedisOptions : IConfigurableOptions { }
 ### 3.6 AOP 相关接口与特性
 
 ```csharp
-// 统一调用上下文，屏蔽 Castle.Core 与各入口 Adapter 的底层差异
+// 统一调用上下文基础形状（精简版，已与执行计划对齐）
+// 仅保留所有入口与拦截层共享的最小集合；方法元数据下沉到 IUnaryInvocationContext。
 public interface IInvocationContext
 {
-    Type       ServiceType        { get; }
-    Type       ImplementationType { get; }
-    MethodInfo Method             { get; }
-    object?[]  Arguments          { get; }
-
     // 委托给 ICancellationTokenProvider.Token；框架在执行拦截链前设置 ambient token
     CancellationToken CancellationToken { get; }
 
@@ -334,15 +332,18 @@ public interface IInvocationContext
     // 获取场景特定数据，由各 Adapter 在执行拦截链前注入
     // MVC → IHttpRequestFeature；gRPC → IGrpcCallFeature；Worker → IWorkerItemFeature（后续）
     // 非对应场景返回 null，拦截器应做 null check
-    T? GetFeature<T>() where T : class;
+    TFeature? GetFeature<TFeature>() where TFeature : class;
 }
 
 // 单次请求/方法调用：覆盖 sync、Task、Task<T>、ValueTask、ValueTask<T>
+// 方法元数据（Method/Arguments）以及返回类型在此层暴露，与 Castle/MVC Adapter 对齐。
 public interface IUnaryInvocationContext : IInvocationContext
 {
-    Type?   ResultType  { get; }
-    object? ReturnValue { get; set; }
-    ValueTask<object?> ProceedAsync();
+    MethodInfo Method      { get; }
+    object?[]  Arguments   { get; }
+    Type       ReturnType  { get; }       // 非空；命名与 .NET 反射 MethodInfo.ReturnType 一致（旧版本曾命名为 ResultType?）
+    object?    ReturnValue { get; set; }
+    ValueTask  ProceedAsync();
 }
 
 // 异步流：覆盖 IAsyncEnumerable<T> 与可映射为流式结果的入口
@@ -794,7 +795,7 @@ internal sealed class CompositeGrpcInterceptor : Grpc.Core.Interceptors.Intercep
 `ProceedAsync()` 与 `ProceedAsyncEnumerable()` 是拦截器链推进的唯一入口，框架必须保证以下契约：
 
 - `ProceedAsync()` 只能调用一次。重复调用代表拦截器逻辑错误，框架抛出继承 `TwException` 的框架异常，异常消息使用简体中文并包含拦截器类型与目标方法名称。
-- 拦截器可以选择不调用 `ProceedAsync()` 以实现短路。短路时若目标方法存在返回值，必须设置 `ReturnValue`；框架在离开拦截链时验证 `ReturnValue` 可赋值给 `ResultType`，不匹配则抛出框架异常。
+- 拦截器可以选择不调用 `ProceedAsync()` 以实现短路。短路时若目标方法存在返回值，必须设置 `ReturnValue`；框架在离开拦截链时验证 `ReturnValue` 可赋值给 `ReturnType`，不匹配则抛出框架异常。
 - 目标方法或下游拦截器抛出的异常默认原样向上传播。框架不默认包装业务异常，避免改变调用方可观察语义；只有框架契约被破坏时才抛出框架异常。
 - `Items` 字典生命周期限定在单次调用上下文内。框架不写入业务键，内置键如需引入必须使用 `Tw.` 前缀，避免与业务拦截器冲突。
 - `ValueTask` / `ValueTask<T>` 由框架内部单次消费，不向拦截器暴露原始实例，避免重复 await。
@@ -865,8 +866,8 @@ services.AddOptions<TOptions>()
 - 默认启用 `ValidateDataAnnotations()`
 - 若类型实现 `IValidatableObject`，随 DataAnnotations 一起执行类级验证
 - 自动扫描并注册实现了 `IValidateOptions<TOptions>` 的验证器；验证器必须满足 singleton 兼容性，不能依赖 scoped 服务
-- `ValidateOnStart` 默认在测试与生产环境开启，开发环境可通过全局选项关闭；环境判断由 `AddTwAspNetCoreInfrastructure()` 在注册阶段读取 `IHostEnvironment` 完成，确保时序正确
-- `[ConfigurationSection(..., ValidateOnStart = true/false)]` 可覆盖全局策略
+- `ValidateOnStart` 在 attribute 上默认为 `true`（fail-fast）；显式 `[ConfigurationSection(..., ValidateOnStart = false)]` 关闭单个选项类型的启动验证
+- 初版（首批交付）不暴露环境感知的全局开关；后续 H1 wave 可在 `AutoRegistrationOptions` 增补 `EnableValidateOnStart(bool)` 等全局接口，并由 `AddTwAspNetCoreInfrastructure()` 在注册阶段读取 `IHostEnvironment` 选择默认值，attribute 显式值始终覆盖全局默认
 
 验证失败视为启动失败，异常信息包含 options 类型、section 名、失败字段或验证器名称。
 

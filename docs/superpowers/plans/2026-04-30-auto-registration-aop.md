@@ -54,10 +54,11 @@
 - `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs`
 - `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs`
 - `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs`
-- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs`
-- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlanner.cs`
-- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDescriptor.cs`
-- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDiagnostics.cs`
+- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs` (R1: scan-stage producer)
+- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceScanDescriptor.cs` (R1: scan-stage record, plural `ServiceTypes` per implementation)
+- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlanner.cs` (R2: plan-stage producer)
+- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDescriptor.cs` (R2: plan-stage record, singular `ServiceType` per registration)
+- `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDiagnostics.cs` (R2: warnings and topology diagnostics)
 - `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ExposeServicesAttribute.cs`
 - `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/KeyedServiceAttribute.cs`
 - `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ReplaceServiceAttribute.cs`
@@ -158,14 +159,16 @@ Patch `backend/dotnet/Build/Packages.ThirdParty.props` with the approved version
 </Project>
 ```
 
-- [ ] **Step 4: Add Microsoft package versions only if needed by compile**
+- [ ] **Step 4: Add Microsoft package versions needed by `Tw.DependencyInjection` and tests**
 
-If `Tw.DependencyInjection` cannot compile without explicit package references, patch `backend/dotnet/Build/Packages.Microsoft.props` with exact versions aligned to the .NET 10 SDK:
+Patch `backend/dotnet/Build/Packages.Microsoft.props` with exact versions aligned to the .NET 10 SDK. The `DependencyInjection.Abstractions` patch (10.0.4) is the floor required by `Autofac.Extensions.DependencyInjection 11.0.0`. The `Configuration` and `DependencyInjection` implementation entries are needed by the test project (which constructs `ConfigurationBuilder` and `ServiceCollection` directly):
 
 ```xml
+<PackageVersion Include="Microsoft.Extensions.Configuration" Version="10.0.0" />
 <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0" />
 <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.0" />
-<PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+<PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
+<PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.4" />
 <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.0" />
 <PackageVersion Include="Microsoft.Extensions.Options" Version="10.0.0" />
 <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.0" />
@@ -224,11 +227,12 @@ public void ConfigurationSectionAttribute_Targets_Classes_And_Allows_Multiple_De
 [Fact]
 public void ConfigurationSectionAttribute_Stores_Options_Metadata()
 {
-    var attribute = new ConfigurationSectionAttribute(
-        "Auth",
+    var attribute = new ConfigurationSectionAttribute("Auth")
+    {
         OptionsName = "Primary",
         ValidateOnStart = true,
-        DirectInject = true);
+        DirectInject = true,
+    };
 
     attribute.Name.Should().Be("Auth");
     attribute.OptionsName.Should().Be("Primary");
@@ -236,6 +240,8 @@ public void ConfigurationSectionAttribute_Stores_Options_Metadata()
     attribute.DirectInject.Should().BeTrue();
 }
 ```
+
+Also assert that `ValidateOnStart` defaults to `true` (fail-fast) and that the attribute literal `[ConfigurationSection("X", ValidateOnStart = false)]` compiles — the latter is a regression guard against using `bool?` (which is not allowed as a C# attribute argument, CS0655).
 
 - [ ] **Step 2: Run tests and confirm failure**
 
@@ -255,33 +261,36 @@ Patch `ConfigurationSectionAttribute.cs` to this public shape:
 namespace Tw.Core.Configuration;
 
 /// <summary>
-/// 标识应绑定到选项类型的配置节。
+/// 标识应绑定到选项类型的配置节
 /// </summary>
-/// <param name="name">调用方在选项绑定期间使用的非空配置节名称。</param>
+/// <param name="name">调用方在选项绑定期间使用的非空配置节名称</param>
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
 public sealed class ConfigurationSectionAttribute(string name) : Attribute
 {
     /// <summary>
-    /// 与被标注选项类型关联的配置节名称。
+    /// 与被标注选项类型关联的配置节名称
     /// </summary>
-    public string Name { get; } = Check.NotNullOrWhiteSpace(name);
+    public string Name { get; } = Tw.Core.Check.NotNullOrWhiteSpace(name);
 
     /// <summary>
-    /// Microsoft Options 命名实例名称；为 <see langword="null"/> 时表示默认实例。
+    /// Microsoft Options 命名实例名称；为 <see langword="null"/> 时表示默认实例
     /// </summary>
     public string? OptionsName { get; init; }
 
     /// <summary>
-    /// 是否在主机构建完成后立即验证该配置实例。
+    /// 是否在主机构建完成后立即验证该配置实例；默认 <see langword="true"/> 遵循 fail-fast 原则，
+    /// 显式设为 <see langword="false"/> 时跳过启动验证
     /// </summary>
-    public bool? ValidateOnStart { get; init; }
+    public bool ValidateOnStart { get; init; } = true;
 
     /// <summary>
-    /// 是否允许直接解析选项类型本体，值来自 <c>IOptionsMonitor&lt;TOptions&gt;.CurrentValue</c>。
+    /// 是否允许直接解析选项类型本体，值来自 <c>IOptionsMonitor&lt;TOptions&gt;.CurrentValue</c>
     /// </summary>
     public bool DirectInject { get; init; }
 }
 ```
+
+> **Note (C# attribute argument constraint):** `ValidateOnStart` is `bool` (not `bool?`) because Roslyn rejects `bool?` as a named attribute argument with CS0655. The semantics "未声明则跟随全局策略" was sacrificed in favor of attribute syntax compatibility; the H1 wave can later expose a global override if needed. Trailing periods on Chinese XML doc summaries are also dropped to satisfy `Tw.Core.Tests.SourceLocalizationRulesTests.Source_Comments_Do_Not_End_With_Period`.
 
 - [ ] **Step 4: Preserve the no-DI dependency constraint**
 
