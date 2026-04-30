@@ -1,14 +1,14 @@
 # DI 自动注册与 AOP 框架设计文档
 
 **日期**：2026-04-29  
-**技术栈**：.NET 10+、Autofac、Autofac.Extensions.DependencyInjection、Autofac.Extras.DynamicProxy、Castle.Core、Castle.Core.AsyncInterceptor、Microsoft.Extensions.Options、gRPC for .NET（P2）  
+**技术栈**：.NET 10+、Microsoft.Extensions.DependencyInjection/Options/Configuration、Autofac、Autofac.Extensions.DependencyInjection、Autofac.Extras.DynamicProxy、Castle.Core、Castle.Core.AsyncInterceptor、ASP.NET Core MVC、gRPC for .NET（P2）
 **目标**：封装公司内部通用的 DI 自动注册与 AOP 拦截能力，支持 Web API、gRPC、CAP 消息队列消费、后台服务等多种程序入口；首批执行计划以 DI 自动注册、Options 自动注册、Castle Service AOP 与 MVC/Web API Adapter 为交付边界，gRPC Adapter 作为 P2 阶段，CAP/Worker Adapter 保留在同一总体设计内分期落地。
 
 ---
 
 ## Status
 
-待审批。设计稿已完成第二轮审查（基于 ABP vNext 对比分析与架构评审），本轮修订内容包括：Entry/Service 双链并行架构澄清（§ 5.6）、删除 `InterceptorScope.All`、`IAutoMatchInterceptor` 新增 `MatchEntry` 方法（§ 3.6）、`[Intercept]` 与 Controller 边界说明（§ 6.5）、`ConfigurationSectionAttribute.AllowMultiple` 变更影响评估（§ 3.4）、低拓扑替换与高拓扑普通实现的交叉边界规则（§ 5.3）、`TypeFinder`/`ReflectionCache` 复用策略（§ 4.1）；等待最终审批后进入实现计划阶段。
+待审批。设计稿已完成第三轮审查（基于当前仓库、`tw-memory` 生成索引和 .NET 测试结果的对齐审查）。本轮修订内容包括：`Tw.Core` 纯核心边界与新增 `Tw.DependencyInjection` 构件归属（§ Knowledge Alignment、§ 1）、依赖准入候选版本与包源映射风险（§ Dependency Admission）、自动匹配拦截器与运行时拦截器实例的生命周期拆分（§ 3.6、§ 6.2）、开放泛型扫描与现有 `TypeFinder` 行为的兼容边界（§ 4.1）、`ConfigurationSectionAttribute` 迁移影响和测试更新要求（§ 3.4、§ 10.1）、`[Intercept]` 示例与 Service-only 语义一致性修正（§ 3.6）。
 
 ---
 
@@ -30,7 +30,9 @@
 
 ## Dependency Admission
 
-本设计会为 BuildingBlocks 首次引入 Autofac/Castle 相关运行时依赖。实现计划必须在修改 `Directory.Packages.props` 前完成依赖准入记录，并把结论写入实现计划或 PR 描述。所有新增包版本必须通过中央包管理固定，并通过 `packages.lock.json` 参与可复现构建；不得使用无上界浮动版本作为生产依赖。
+本设计会为 BuildingBlocks 首次引入 Autofac/Castle 相关运行时依赖。当前 `backend/dotnet/Build/Packages.ThirdParty.props` 尚无生产第三方包版本声明，`Directory.Packages.props` 虽开启中央包管理和浮动版本能力，但本功能新增的生产依赖必须使用精确 `PackageVersion`，不得使用通配符、预发布漂移或无上界浮动版本。
+
+实现计划必须在修改 `Directory.Packages.props` 或 `Build/Packages.*.props` 前完成依赖准入记录，并把结论写入实现计划或 PR 描述。所有新增包版本必须通过中央包管理固定，并通过各项目 `packages.lock.json` 参与可复现构建；不得删除锁文件。当前 `dotnet test backend/dotnet/Tw.SmartPlatform.slnx` 会输出 NU1507 包源映射警告（Huawei + nuget.org）；依赖准入必须同时决定是补充 package source mapping，还是在 PR 中记录该既有警告的处理计划。
 
 | 依赖 | 用途 | 替代方案与取舍 | 准入要求 |
 |---|---|---|---|
@@ -41,7 +43,19 @@
 | `Castle.Core.AsyncInterceptor` | 提供 Castle DynamicProxy 的异步方法拦截分派，覆盖 sync、`Task`、`Task<T>` 等常见形态 | 自研异步分派胶水代码可减少一个依赖，但容易误处理异常传播、返回值、重复 await 和兼容性细节；优先使用稳定开源包 | 固定版本；确认 Apache-2.0 许可证、维护状态、下载量、下游依赖和漏洞扫描结果；若准入失败才回退内部适配层 |
 | `Grpc.AspNetCore` / `Grpc.Core.Api`（P2） | gRPC server interceptor、`GrpcServiceOptions`、`ServerCallContext` 与 streaming RPC 入口适配 | 仅用 ASP.NET Core middleware 可减少依赖面，但无法直接操作 gRPC 层的反序列化消息、返回值和 `ServerCallContext` | P2 阶段准入；固定版本；确认与 .NET 10、ASP.NET Core Host 和许可证策略兼容 |
 
-Microsoft 官方配置能力（`Microsoft.Extensions.Options`、`ConfigurationBinder`、DataAnnotations 验证）沿用 .NET 标准生态，版本随目标框架与中央包管理策略统一控制。所有依赖准入结论必须说明用途、影响范围、替代方案、验证命令和后续维护责任。
+首批准入候选版本（截至 2026-04-30，以 NuGet Gallery 当前稳定版本为基线）：
+
+| 依赖 | 候选版本 | 备注 |
+|---|---:|---|
+| `Autofac` | `9.1.0` | MIT license；`Autofac.Extensions.DependencyInjection` 和 `Autofac.Extras.DynamicProxy` 的上游依赖 |
+| `Autofac.Extensions.DependencyInjection` | `11.0.0` | .NET 8+ / .NET Standard 2.0 兼容；用于 Host 集成 |
+| `Autofac.Extras.DynamicProxy` | `7.1.0` | .NET 6+ / .NET Standard 2.0 兼容；用于 Autofac 与 Castle DynamicProxy 集成 |
+| `Castle.Core` | `5.2.1` | .NET 6+ / .NET Standard 2.0 兼容；DynamicProxy 基础 |
+| `Castle.Core.AsyncInterceptor` | `2.1.0` | .NET 5+ / .NET Standard 2.0 兼容；需重点验证维护状态、许可证和漏洞扫描 |
+
+候选版本不是最终批准结果。实现计划必须运行并记录 `dotnet restore --locked-mode`、`dotnet list package --include-transitive`、漏洞扫描/许可证检查命令，以及首批集成测试结果。
+
+Microsoft 官方配置与 DI 抽象能力（如 `Microsoft.Extensions.DependencyInjection.Abstractions`、`Microsoft.Extensions.Options`、`Microsoft.Extensions.Options.ConfigurationExtensions`、`Microsoft.Extensions.Configuration.Binder`、DataAnnotations 验证）沿用 .NET 标准生态。若目标项目不能通过共享框架直接引用这些 API，必须在 `Build/Packages.Microsoft.props` 中固定精确版本；若由 Web SDK / shared framework 提供，则实现计划需明确不新增 PackageReference 的理由。所有依赖准入结论必须说明用途、影响范围、替代方案、验证命令和后续维护责任。
 
 ---
 
@@ -49,8 +63,10 @@ Microsoft 官方配置能力（`Microsoft.Extensions.Options`、`ConfigurationBi
 
 核心能力归属：
 
-- `backend.dotnet.building-blocks.core`（`Tw.Core`）：生命周期接口、注册控制特性、`ICancellationTokenProvider`、`ICurrentCancellationTokenAccessor`、`IInvocationContext` 体系、`InterceptorBase`、自动注册引擎、Castle 代理集成。
-- `backend.dotnet.building-blocks.asp-net-core`（`Tw.AspNetCore`）：MVC 入口 Adapter、`HttpContextCancellationTokenProvider`、`AddTwAspNetCoreInfrastructure()` 统一初始化入口，以及 P2 阶段的 gRPC 入口 Adapter 与 `AddGrpcInterceptors()` 扩展。
+- `backend.dotnet.building-blocks.core`（`Tw.Core`）：继续保持纯核心库定位，承载 `Check`、异常、基础上下文、`IConfigurableOptions`、`ConfigurationSectionAttribute`、`TypeFinder`、`ReflectionCache` 等不依赖 DI 容器、ASP.NET Core、Autofac、Castle 或 gRPC 的基础能力。`Tw.Core` 不引入 `Microsoft.Extensions.DependencyInjection.Abstractions`，保留当前测试约束。
+- `backend.dotnet.building-blocks.dependency-injection`（新增 `Tw.DependencyInjection`）：承载生命周期接口、注册控制特性、自动注册引擎、Options 自动注册、`ICancellationTokenProvider`、`ICurrentCancellationTokenAccessor`、`IInvocationContext` 体系、`InterceptorBase`、拦截器链计算、Autofac/Castle 集成和 `AddAutoRegistration()` / `UseAutoRegistration()`。
+- `backend.dotnet.building-blocks.asp-net-core`（`Tw.AspNetCore`）：承载 MVC/Web API 入口 Adapter、`HttpContextCancellationTokenProvider`、`AddTwAspNetCoreInfrastructure()` 统一初始化入口，以及 P2 阶段的 gRPC 入口 Adapter 与 `AddGrpcInterceptors()` 扩展。该项目引用 `Tw.DependencyInjection`，但不把 Autofac Module 暴露给业务侧。
+- 当前仓库尚无业务服务源码引用这些能力。首批实现需要把新增 `Tw.DependencyInjection` 项目加入 `Tw.SmartPlatform.slnx`，并为其建立对应测试项目或扩展现有 BuildingBlocks 测试布局。
 
 ---
 
@@ -58,7 +74,7 @@ Microsoft 官方配置能力（`Microsoft.Extensions.Options`、`ConfigurationBi
 
 | 决策点 | 结论 |
 |---|---|
-| 程序集归属 | 核心能力在 `Tw.Core`；首批 MVC Adapter、P2 gRPC Adapter 与初始化入口在 `Tw.AspNetCore` |
+| 程序集归属 | `Tw.Core` 保持纯核心基础能力；新增 `Tw.DependencyInjection` 承载 DI/Options/AOP 引擎与 Autofac/Castle 集成；首批 MVC Adapter、P2 gRPC Adapter 与 ASP.NET Core 初始化入口在 `Tw.AspNetCore` |
 | Autofac 接入方式 | 使用 `AutofacServiceProviderFactory` 接管最终容器；`IServiceCollection` 阶段只保存配置与注册框架辅助服务，Autofac 注册在 `ContainerBuilder` 阶段执行 |
 | 模块化方式 | 禁止业务侧显式声明 Autofac Module，仅框架内部使用 |
 | 自动注册触发 | 实现生命周期接口（Transient / Scoped / Singleton） |
@@ -69,8 +85,8 @@ Microsoft 官方配置能力（`Microsoft.Extensions.Options`、`ConfigurationBi
 | Keyed Service Key 类型 | `object`（string / enum / Type 均可） |
 | 服务替换优先级 | 拓扑顺序高的程序集胜出；同程序集用 Order 数字；仍冲突则报错 |
 | 无显式替换标记的多实现 | 跨程序集：拓扑胜出 + 启动警告；同程序集或不同程序集同层：启动报错 |
-| AOP 自动启用 | 全局拦截器 + 拦截器自声明匹配规则（两者并存） |
-| 拦截器适用范围 | 拦截器声明 `Entry` 或 `Service` 作用域；两条链严格隔离，同一拦截器只能作用于其中一层 |
+| AOP 自动启用 | 全局拦截器 + 独立 matcher 自声明匹配规则（两者并存）；matcher 是启动期 singleton 规则对象，运行时拦截器实例按 DI 生命周期解析 |
+| 拦截器适用范围 | matcher 声明 `Entry` 或 `Service` 作用域；两条链严格隔离，同一 matcher 只能作用于其中一层 |
 | 入口适配方式 | 首批提供 MVC/Web API 入口 Adapter；gRPC Adapter 作为 P2；CAP/Worker Adapter 保留在同一设计稿内，但放入后续执行计划 |
 | Castle 代理覆盖 | 默认仅保证接口代理；无业务接口或仅暴露具体类时启动警告，类代理需显式开启且方法必须为 `virtual` |
 | 异步拦截 | 按 sync / Task / Task<T> / ValueTask / ValueTask<T> / stream 分派 |
@@ -85,7 +101,7 @@ Microsoft 官方配置能力（`Microsoft.Extensions.Options`、`ConfigurationBi
 
 ### 2.1 Tw.AspNetCore 基础设施入口（推荐）
 
-`AddTwAspNetCoreInfrastructure()` 是 `Tw.AspNetCore` 提供的统一初始化方法。该名称明确表达它初始化 Tw 平台在 ASP.NET Core 中需要的基础设施，而不是代替所有 ASP.NET Core 能力。方法内部依次完成：接管 Autofac 容器、注册 `HttpContextCancellationTokenProvider`、读取 `IHostEnvironment` 配置 `ValidateOnStart` 默认策略、挂载 `AutoRegistrationModule`，并通过 `IConfigureOptions<MvcOptions>` 注册 MVC/Web API 全局入口 Adapter。
+`AddTwAspNetCoreInfrastructure()` 是 `Tw.AspNetCore` 提供的统一初始化方法。该名称明确表达它初始化 Tw 平台在 ASP.NET Core 中需要的基础设施，而不是代替所有 ASP.NET Core 能力。方法内部组合 `Tw.DependencyInjection` 的 `AddAutoRegistration()` / `UseAutoRegistration()`，接管 Autofac 容器、注册 `HttpContextCancellationTokenProvider`、读取 `IHostEnvironment` 配置 `ValidateOnStart` 默认策略、挂载框架内部 `AutoRegistrationModule`，并通过 `IConfigureOptions<MvcOptions>` 注册 MVC/Web API 全局入口 Adapter。
 
 ```csharp
 // 推荐：使用 Tw.AspNetCore 基础设施入口
@@ -152,11 +168,13 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 
 > 若项目未使用 `AutofacServiceProviderFactory`，`AddAutoRegistration` 在启动期抛出明确异常，避免悄悄退化为原生 DI 行为。
 
+`AddAutoRegistration()` 与 `UseAutoRegistration()` 由 `Tw.DependencyInjection` 提供；`AddTwAspNetCoreInfrastructure()` 只是 ASP.NET Core 组合入口，不复制注册引擎逻辑。
+
 ---
 
 ## 三、核心抽象层
 
-> **命名约定**：以下所有类名、接口名、特性名均为最终命名，`AddTwAspNetCoreInfrastructure`、`AddAutoRegistration`、`UseAutoRegistration`、`AddGrpcInterceptors` 方法名固定。
+> **命名约定**：以下所有类名、接口名、特性名均为最终命名，`AddTwAspNetCoreInfrastructure`、`AddAutoRegistration`、`UseAutoRegistration`、`AddGrpcInterceptors` 方法名固定。除 `ConfigurationSectionAttribute` 与 `IConfigurableOptions` 继续位于 `Tw.Core.Configuration` 外，本节 DI/AOP 相关类型默认位于 `Tw.DependencyInjection`。
 
 ### 3.1 CancellationToken 基础设施
 
@@ -180,7 +198,7 @@ public interface ICurrentCancellationTokenAccessor
 
 | 实现类 | 位置 | 说明 |
 |---|---|---|
-| `NullCancellationTokenProvider` | `Tw.Core` | 默认注册，返回 `CancellationToken.None` |
+| `NullCancellationTokenProvider` | `Tw.DependencyInjection` | 默认注册，返回 `CancellationToken.None` |
 | `HttpContextCancellationTokenProvider` | `Tw.AspNetCore` | 覆盖注册，读取 `HttpContext.RequestAborted` |
 
 内部使用 `AsyncLocal<CancellationToken?>` 维护 ambient token。`Use()` 替换当前值并在 `Dispose` 时恢复，天然支持异步调用链跨 `await` 传播。
@@ -201,6 +219,8 @@ public interface ICurrentCancellationTokenAccessor
 > **不要直接注入 `CancellationToken` 到构造函数**：`CancellationToken` 是值类型，注入到 Singleton 时在构造时捕获并永久固化，Scoped 服务也只在 scope 创建时固化，均无法感知调用链变化。
 
 ### 3.2 生命周期接口
+
+生命周期接口位于 `Tw.DependencyInjection`，避免把 DI 容器语义扩散到 `Tw.Core`。业务类型需要参与自动注册时显式引用该构件。
 
 ```csharp
 public interface ITransientDependency { }
@@ -246,6 +266,8 @@ public interface ISingletonDependency { }
 - `DirectInject`、`ValidateOnStart` 和 `OptionsName` 均挂在 `ConfigurationSectionAttribute` 上，不再新增独立的 `OptionsAttribute`，避免形成第二套配置标记体系。
 
 > **变更影响评估**：`AllowMultiple` 由 `false` 改为 `true` 属于向后兼容变更，原有单 attribute 声明仍合法。实现前须检索全库 `ConfigurationSectionAttribute` 的所有反射调用点，确认无代码隐式假设"同类型只有一个实例"。
+>
+> **当前仓库影响**：现有 `ConfigurationSectionAttribute` 只有 `Name` 且 `AllowMultiple = false`，现有 `ConfigurationTests.ConfigurationSectionAttribute_Targets_Classes` 也断言 `AllowMultiple` 为 `false`。实现计划必须同步更新该测试，并新增 `OptionsName`、`ValidateOnStart`、`DirectInject`、重复默认实例和重复命名实例的测试。Options 自动注册扫描不得使用 `GetSingleAttributeOrNull<ConfigurationSectionAttribute>()` 获取配置节；必须使用 `GetAttributes<ConfigurationSectionAttribute>()` 读取全部声明。
 
 ```csharp
 // 调整现有特性：AllowMultiple 从 false 改为 true，支持命名选项
@@ -350,32 +372,43 @@ public enum InterceptorScope
     Entry,     // MVC Action / gRPC RPC 入口边界调用（由 Adapter 全局 Filter 执行）
 }
 
-// 拦截器自声明自动匹配规则（无需业务类打特性）
+// 拦截器自动匹配规则（无需业务类打特性）
+// matcher 是启动期 singleton 规则对象，不是运行时拦截器实例；
+// 因此不得依赖 scoped 服务，也不得保存请求状态。
 // Order 决定同层内执行顺序：数字越小越靠外层（先执行）；默认 0
-public interface IAutoMatchInterceptor
+public interface IInterceptorMatcher
 {
     int              Order => 0;
     InterceptorScope Scope => InterceptorScope.Service;
+    Type             InterceptorType { get; }
 
     // Service scope：serviceType 为解析接口，implementationType 为实现类（两者通常不同）
-    // 若实现类暴露多个服务接口，框架对每个 (serviceType, impl) 对调用一次 Match()；
-    // 任一调用返回 true（OR 语义），该拦截器即进入此实现类型的 Service 链
-    bool Match(Type serviceType, Type implementationType);
+    // 若实现类暴露多个服务接口，框架对每个 (serviceType, impl) 对调用一次 MatchService()；
+    // 任一调用返回 true（OR 语义），该 matcher 的 InterceptorType 即进入此实现类型的 Service 链
+    bool MatchService(Type serviceType, Type implementationType) => false;
 
     // Entry scope：controllerType 为 Controller 具体类型
-    // 默认 false；拦截器若需参与 Entry 链必须显式重写此方法，
+    // 默认 false；matcher 若需参与 Entry 链必须显式重写此方法，
     // 避免 Service scope 的匹配逻辑意外影响 Entry 链
     bool MatchEntry(Type controllerType) => false;
 }
 
 // 场景特定 Feature 接口（由对应 Adapter 实现并注入 IInvocationContext）
+// IHttpRequestFeature 位于 Tw.AspNetCore；IGrpcCallFeature 位于 P2 gRPC Adapter 所属程序集。
 public interface IHttpRequestFeature  { HttpContext HttpContext { get; } }
 public interface IGrpcCallFeature     { ServerCallContext ServerCallContext { get; } }
 // IWorkerItemFeature —— 后续执行计划
 
+// IInterceptorMatcher 实现类由扫描器从已扫描程序集中自动发现，
+// 独立于生命周期标记接口，并按 singleton 规则注册。
+// matcher 可以引用配置或无状态服务，但不得依赖 scoped 服务；
+// 若容器检测到 singleton matcher 依赖 scoped 服务，启动失败。
+// 运行时真正执行的拦截器实例不使用 matcher 实例，
+// 而是按 InterceptorType 从 DI 容器解析。
+
 // 显式标记拦截器的特性声明
 // 仅对 Service scope（Castle.Core 代理）有效；标注在 Controller 类上时启动期输出警告并忽略
-// Entry 链只能通过全局注册或 IAutoMatchInterceptor.MatchEntry() 参与，不支持显式 [Intercept] 指定
+// Entry 链只能通过全局注册或 IInterceptorMatcher.MatchEntry() 参与，不支持显式 [Intercept] 指定
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface,
     AllowMultiple = true, Inherited = true)]
 public sealed class InterceptAttribute(Type interceptorType) : Attribute
@@ -395,7 +428,6 @@ public sealed class IgnoreInterceptorsAttribute(params Type[] interceptorTypes) 
 
 // 使用示例
 [Intercept(typeof(CacheInterceptor))]
-[Intercept(typeof(CacheInterceptor), Scope = InterceptorScope.Service)]
 
 [IgnoreInterceptors]                                        // 忽略所有全局/自动匹配拦截器
 [IgnoreInterceptors(typeof(UnitOfWorkInterceptor))]         // 忽略指定拦截器
@@ -414,7 +446,9 @@ public sealed class IgnoreInterceptorsAttribute(params Type[] interceptorTypes) 
 - 排除名称含 `.Tests` / `.Test` / `.Specs` / `.Spec` 的测试程序集
 - **不主动从磁盘加载**未加载的程序集
 
-扫描引擎优先复用 `Tw.Core.Reflection.TypeFinder` 与 `ReflectionCache`；若现有能力不满足需求（如程序集级并发批量收集），在同一命名空间内扩展，不另建独立引擎。
+扫描引擎优先复用 `Tw.Core.Reflection.TypeFinder` 与 `ReflectionCache`，但必须保留当前 `TypeFinder.FindTypes(Type)` / `TypeFinderExtensions.FindConcreteTypes*()` 排除开放泛型定义的既有行为。自动注册引擎如需支持开放泛型，不调用 concrete 查询 API，而是基于 `ITypeFinder.FindTypes()` 的完整可加载类型结果自行识别 `type.IsGenericTypeDefinition`，再进入开放泛型注册分支。
+
+若现有能力不满足程序集级并发批量收集需求，在 `Tw.DependencyInjection` 内新增扫描协调器；只在确实通用且不引入 DI 依赖时，才向 `Tw.Core.Reflection` 增补纯反射辅助方法。不得为了自动注册引擎让 `Tw.Core` 引用 `Microsoft.Extensions.DependencyInjection.Abstractions`、Autofac 或 Castle。
 
 ### 4.2 拓扑排序（Kahn 算法）
 
@@ -459,6 +493,7 @@ record ServiceRegistrationEntry(
     int                               CollectionOrder,       // 默认 0
     int                               ReplacementOrder,      // 默认 0
     int                               AssemblyTopologicalIndex,
+    bool                              IsOpenGenericDefinition,
     IReadOnlyList<Type>               InterceptorTypes
 );
 ```
@@ -541,6 +576,8 @@ record ServiceRegistrationEntry(
 生成最终 ServiceRegistrationEntry 集合
     ↓
 唯一服务仅写入胜出项；集合服务写入全部集合项
+    ↓
+收集并注册 IInterceptorMatcher singleton 规则对象
 
 对每个 ServiceRegistrationEntry，执行步骤 1（Controller 类型显式排除，不生成 Castle 代理）：
 
@@ -555,11 +592,13 @@ record ServiceRegistrationEntry(
 
 步骤 2 — Entry 基线构建（全局，Scope = Entry，供 Adapter 使用）
   1. 汇总所有全局 Entry 拦截器
-  2. 汇总所有 IAutoMatchInterceptor（Scope = Entry）
+  2. 汇总所有 IInterceptorMatcher（Scope = Entry）
   3. 写入 EntryInterceptorRegistry，作为 EntryChainCache 的基线数据源
 ```
 
 Controller 的 Entry 链通过 `EntryChainCache` 在首次 Action 调用时从 EntryInterceptorRegistry 基线懒填充（见 § 6.2）。
+
+开放泛型注册只在 `IsOpenGenericDefinition = true` 且所有暴露服务也是开放泛型定义时执行 `RegisterGeneric`。开放泛型实现不得注册为 keyed service（见 § 12），不得与封闭泛型实现互相替换；若扫描到 `[KeyedService]` 与开放泛型组合，启动失败并提示该场景不在首批范围内。
 
 > Autofac 仍由框架接管最终容器，但替换语义不再依赖"最后注册者生效"；最后注册者只作为 Autofac 底层特性，不作为业务规则来源。
 
@@ -585,7 +624,7 @@ internal sealed class AutoRegistrationModule : Module
 
 ```
 ① 全局拦截器      通过 options.AddGlobalInterceptor<T>() 注册，对指定 Scope 内的调用生效
-② 自动匹配拦截器  实现 IAutoMatchInterceptor，Match() 返回 true 时生效
+② 自动匹配规则      实现 IInterceptorMatcher，MatchService() / MatchEntry() 返回 true 时生效
 ③ 显式标记拦截器  通过 [Intercept(typeof(T))] 标注在类或接口上
 ```
 
@@ -596,7 +635,7 @@ internal sealed class AutoRegistrationModule : Module
 | `Service` | Castle.Core 代理的 DI 服务方法调用 | `ServiceChainCache`，按 `implementationType` 索引，启动期全量预填充 |
 | `Entry` | MVC Action / gRPC RPC 入口边界调用 | `EntryChainCache`，按 `controllerType` / `serviceType` 索引，首次调用时懒填充 |
 
-默认 `Scope = Service`。例如工作单元、缓存只用于服务层（Service）；请求日志、Trace 声明为 Entry。同一拦截器仅在其声明的 Scope 下生效，不存在同时作用于两层的模式。
+默认 `Scope = Service`。例如工作单元、缓存只用于服务层（Service）；请求日志、Trace 声明为 Entry。同一 matcher 仅在其声明的 Scope 下生效，不存在同时作用于两层的模式。同一个拦截器类型如确实需要同时用于 Entry 和 Service，必须通过两个不同 matcher 或一个全局注册加一个 matcher 显式表达，避免隐式双链污染。
 
 ### 6.2 拦截器链计算流程
 
@@ -608,7 +647,7 @@ internal sealed class AutoRegistrationModule : Module
 对每个被扫描的 DI 服务实现类型：
 1. 收集该类型上所有 [IgnoreInterceptors] 规则（类 + 其实现的接口；接口继承链传递）
 2. 从全局 Service 拦截器列表中移除被忽略的条目
-3. 执行 Match(serviceType, implementationType)，过滤 Scope = Service 的自动匹配拦截器，
+3. 执行 MatchService(serviceType, implementationType)，过滤 Scope = Service 的自动匹配规则，
    移除被忽略的条目
 4. 追加显式 [Intercept] 标记的拦截器（不受 [IgnoreInterceptors] 影响）
 5. 若链为空，跳过 Castle 代理注册
@@ -620,17 +659,17 @@ internal sealed class AutoRegistrationModule : Module
 ```
 启动期预构建 Entry 基线链：
   - 所有全局 Entry 拦截器
-  - 所有 IAutoMatchInterceptor（Scope = Entry）
+  - 所有 IInterceptorMatcher（Scope = Entry）
 
 首次调用 controllerType 时：
 1. 从基线链出发
 2. 收集 controllerType 上的 [IgnoreInterceptors] 规则
 3. 从基线链中移除被忽略的条目
-4. 执行 MatchEntry(controllerType)，移除返回 false 的自动匹配拦截器
+4. 执行 MatchEntry(controllerType)，移除返回 false 的自动匹配规则
 5. 写入 EntryChainCache[controllerType]
 ```
 
-自动匹配由独立的 singleton 规则对象完成；实际拦截器实例在运行时按 DI 生命周期解析，避免启动期构造依赖 scoped 服务的拦截器。
+自动匹配由独立的 singleton matcher 对象完成；matcher 只返回拦截器类型和匹配结论。实际拦截器实例在运行时按 DI 生命周期解析，避免启动期构造依赖 scoped 服务的拦截器。
 
 ### 6.3 IgnoreInterceptors 作用域
 
@@ -667,7 +706,7 @@ public class HealthController : ControllerBase { }
 
 **入口 Adapter 重要限制**：Service 层之间的直接调用链不会被入口 Adapter 拦截。如需 Service 层拦截，使用 Castle.Core 模式。
 
-两种模式拦截的是不同调用栈帧：Adapter 拦截入口边界，Castle.Core 拦截 DI 服务方法。`InterceptorScope` 严格隔离两条链，同一拦截器只能声明一个 Scope，不会同时出现在两条链中。
+两种模式拦截的是不同调用栈帧：Adapter 拦截入口边界，Castle.Core 拦截 DI 服务方法。`InterceptorScope` 严格隔离两条链，同一 matcher 只能声明一个 Scope，不会同时出现在两条链中。
 
 ### 6.5 入口 Adapter 设计
 
@@ -685,7 +724,7 @@ MVC/Web API Adapter 在 `AddTwAspNetCoreInfrastructure()` 中通过 `IConfigureO
 Entry 链组成（由 `CompositeActionFilter` 在启动期预构建基线、首次调用时按 Controller 类型懒填充）：
 
 - **全局 Entry 拦截器**：通过 `options.AddGlobalInterceptor<T>(scope: InterceptorScope.Entry)` 注册
-- **自动匹配 Entry 拦截器**：`IAutoMatchInterceptor`（`Scope = Entry`）中 `MatchEntry(controllerType)` 返回 `true` 的条目
+- **自动匹配 Entry 规则**：`IInterceptorMatcher`（`Scope = Entry`）中 `MatchEntry(controllerType)` 返回 `true` 的条目
 - **`[Intercept]` 在 Controller 上不适用**：Castle.Core 代理不能作用于 Controller（参见 ABP vNext #3409），打此特性时启动期输出警告并忽略
 
 ```csharp
@@ -948,15 +987,19 @@ options.AddGlobalInterceptor<LoggingInterceptor>(scope: InterceptorScope.Service
 options.AddGlobalInterceptor<TraceInterceptor>(scope: InterceptorScope.Entry);
 
 // 自动匹配 Service scope（无需业务类打特性）
-public class AuditInterceptor : InterceptorBase, IAutoMatchInterceptor
+public sealed class AuditInterceptorMatcher : IInterceptorMatcher
 {
+    public Type InterceptorType => typeof(AuditInterceptor);
     public InterceptorScope Scope => InterceptorScope.Service;
 
-    public bool Match(Type serviceType, Type implementationType)
+    public bool MatchService(Type serviceType, Type implementationType)
         => implementationType.Namespace?.StartsWith("Tw.Application") == true;
 
     // MatchEntry 默认 false，不参与 Entry 链（无需重写）
+}
 
+public class AuditInterceptor : InterceptorBase
+{
     public override async ValueTask InterceptAsync(IUnaryInvocationContext context)
     {
         await context.ProceedAsync();
@@ -964,16 +1007,20 @@ public class AuditInterceptor : InterceptorBase, IAutoMatchInterceptor
 }
 
 // 自动匹配 Entry scope（仅参与 Controller 入口链）
-public class RequestLoggingInterceptor : InterceptorBase, IAutoMatchInterceptor
+public sealed class RequestLoggingInterceptorMatcher : IInterceptorMatcher
 {
+    public Type InterceptorType => typeof(RequestLoggingInterceptor);
     public InterceptorScope Scope => InterceptorScope.Entry;
 
-    public bool Match(Type serviceType, Type implementationType)
+    public bool MatchService(Type serviceType, Type implementationType)
         => false; // 不参与 Service 链
 
     public bool MatchEntry(Type controllerType)
         => !controllerType.Namespace?.StartsWith("Tw.Internal") == true; // 排除内部 Controller
+}
 
+public class RequestLoggingInterceptor : InterceptorBase
+{
     public override async ValueTask InterceptAsync(IUnaryInvocationContext context)
     {
         await context.ProceedAsync();
@@ -1053,34 +1100,37 @@ public class PaymentClient : IScopedDependency
 
 ### 10.1 P0：自动注册、配置和容器基础
 
-1. `ITransientDependency` / `IScopedDependency` / `ISingletonDependency` 实现类在启动时自动完成注册，无需手动 `builder.Services.AddXxx()`；生命周期分别映射到 `InstancePerDependency()`、`InstancePerLifetimeScope()`、`SingleInstance()`。
-2. 默认暴露规则正确：实现业务接口时暴露接口；仅实现生命周期接口时暴露具体类型；`System.*`、`Microsoft.*` 与生命周期标记接口不会作为业务服务暴露。
-3. `[ExposeServices]`、`IncludeSelf`、`[DisableAutoRegistration]`、开放泛型注册对最终注册表的影响符合设计稿描述。
-4. `[KeyedService]` 使用 `(ServiceType, Key)` 维度注册；Key 不匹配的替换不会影响原注册，并输出可诊断的启动警告。
-5. `[ReplaceService]` 仅替换暴露服务交集；替换链中间层在非被替换服务上的注册保持可解析。
-6. `[CollectionService]` 分组保留所有集合实现并稳定排序；集合实现与非集合实现混用时启动失败。
-7. 多实现冲突裁决符合设计稿描述：跨拓扑层级按高层胜出并警告；同程序集或同拓扑层不同程序集冲突时启动失败；异常消息包含全部冲突类型名称。
-8. 拓扑排序正确：叶子程序集注册覆盖底层程序集同类注册；循环引用在启动时抛出含完整循环路径的异常。
-9. 程序集并发扫描结果与单线程扫描结果一致；重复启动测试不出现注册顺序抖动。
-10. Options 自动注册优先复用现有 `IConfigurableOptions` 与调整后的 `ConfigurationSectionAttribute`；命名选项、验证覆盖和直接注入均通过 `ConfigurationSectionAttribute` 表达。
-11. 同一类型声明多个 `ConfigurationSectionAttribute` 时，默认命名实例只能有一个；多个 `OptionsName = null` 或重复 `OptionsName` 均启动失败。
-12. `[ConfigurationSection(..., ValidateOnStart = true)]` 标注的配置类在启动阶段验证失败时终止启动，异常信息包含 options 类型、section 名和失败字段，且不输出敏感值。
-13. `[ConfigurationSection(..., DirectInject = true)]` 支持构造函数直接注入 `TOptions`，注入值来自 `IOptionsMonitor<TOptions>.CurrentValue`；命名选项默认不注册 `TOptions` 本体直接注入。
+1. 新增 `Tw.DependencyInjection` 构件并加入 `Tw.SmartPlatform.slnx`；`Tw.Core` 不新增 DI、Autofac、Castle、ASP.NET Core 或 gRPC 依赖，现有 `TypeFinderExtensions_Do_Not_Require_DependencyInjection` 约束继续成立。
+2. `ITransientDependency` / `IScopedDependency` / `ISingletonDependency` 实现类在启动时自动完成注册，无需手动 `builder.Services.AddXxx()`；生命周期分别映射到 `InstancePerDependency()`、`InstancePerLifetimeScope()`、`SingleInstance()`。
+3. 默认暴露规则正确：实现业务接口时暴露接口；仅实现生命周期接口时暴露具体类型；`System.*`、`Microsoft.*` 与生命周期标记接口不会作为业务服务暴露。
+4. `[ExposeServices]`、`IncludeSelf`、`[DisableAutoRegistration]`、开放泛型注册对最终注册表的影响符合设计稿描述；开放泛型支持通过 `ITypeFinder.FindTypes()` 自行识别，不改变现有 concrete 查询 API 行为。
+5. `[KeyedService]` 使用 `(ServiceType, Key)` 维度注册；Key 不匹配的替换不会影响原注册，并输出可诊断的启动警告；开放泛型 + keyed service 明确启动失败。
+6. `[ReplaceService]` 仅替换暴露服务交集；替换链中间层在非被替换服务上的注册保持可解析。
+7. `[CollectionService]` 分组保留所有集合实现并稳定排序；集合实现与非集合实现混用时启动失败。
+8. 多实现冲突裁决符合设计稿描述：跨拓扑层级按高层胜出并警告；同程序集或同拓扑层不同程序集冲突时启动失败；异常消息包含全部冲突类型名称。
+9. 拓扑排序正确：叶子程序集注册覆盖底层程序集同类注册；循环引用在启动时抛出含完整循环路径的异常。
+10. 程序集并发扫描结果与单线程扫描结果一致；重复启动测试不出现注册顺序抖动。
+11. Options 自动注册优先复用现有 `IConfigurableOptions` 与调整后的 `ConfigurationSectionAttribute`；命名选项、验证覆盖和直接注入均通过 `ConfigurationSectionAttribute` 表达。
+12. `ConfigurationSectionAttribute` 迁移测试必须覆盖 `AllowMultiple = true`、`OptionsName`、`ValidateOnStart`、`DirectInject` 和重复声明失败；旧的 `AllowMultiple = false` 测试同步更新。
+13. 同一类型声明多个 `ConfigurationSectionAttribute` 时，默认命名实例只能有一个；多个 `OptionsName = null` 或重复 `OptionsName` 均启动失败。
+14. `[ConfigurationSection(..., ValidateOnStart = true)]` 标注的配置类在启动阶段验证失败时终止启动，异常信息包含 options 类型、section 名和失败字段，且不输出敏感值。
+15. `[ConfigurationSection(..., DirectInject = true)]` 支持构造函数直接注入 `TOptions`，注入值来自 `IOptionsMonitor<TOptions>.CurrentValue`；命名选项默认不注册 `TOptions` 本体直接注入。
 
 ### 10.2 P1：Service AOP 与 MVC/Web API Adapter
 
 1. `InterceptorBase.InterceptAsync()` 能拦截 sync、`Task`、`Task<T>`、`ValueTask`、`ValueTask<T>` 返回形态，`ProceedAsync()` 正确传递返回值和异常。
 2. `ProceedAsync()` 单次调用语义明确：重复调用应抛出框架异常；未调用时允许短路返回，且 `ReturnValue` 必须按目标返回类型校验。
 3. `IAsyncEnumerable<T>` 不被提前枚举；`InterceptAsyncEnumerable<T>()` 返回的流在枚举期间保持拦截器包装和取消令牌传播。
-4. `ServiceChainCache` 在启动期按 `implementationType` 全量预填充；`EntryChainCache` 在首次 Action 调用时按 `controllerType` 懒填充；两个缓存互相独立。Service 链顺序：全局 Service 拦截器 → `Match()` 自动匹配 → 显式 `[Intercept]`；Entry 链顺序：全局 Entry 拦截器 → `MatchEntry()` 自动匹配；同层内按 `Order` 稳定排序。
-5. `InterceptorScope.Service` 和 `Entry` 严格隔离：Service scope 拦截器不出现在 Entry 链中，Entry scope 拦截器不出现在 Castle Service 代理链中。
-6. `[IgnoreInterceptors]` 在 DI 服务类/接口上作用于 ServiceChainCache，在 Controller 类上作用于 EntryChainCache；接口继承链的 `[IgnoreInterceptors]` 向下传递到所有实现类；`[IgnoreInterceptors]` 只抑制全局与自动匹配拦截器，不抑制显式 `[Intercept]`。
-7. Castle.Core 模式默认使用接口代理；仅暴露具体类型时默认不生成代理并输出启动警告；显式开启类代理时非 `virtual` 成员输出启动警告。
-8. 拦截器链为空的类型不注册代理；首次 Resolve 时生成代理不改变服务生命周期。
-9. `IInvocationContext.CancellationToken` 优先使用方法参数中的 `CancellationToken`；没有方法参数时使用入口 Adapter 设置的 ambient token；仍不存在时返回 `CancellationToken.None`。
-10. `ICancellationTokenProvider.Token` 注入任意生命周期服务后均能正确返回当前调用链 token，包括 Singleton 服务。
-11. `AddTwAspNetCoreInfrastructure()` 通过 `IConfigureOptions<MvcOptions>` 注册 MVC/Web API Adapter；`IInvocationContext.GetFeature<IHttpRequestFeature>()` 在 MVC Adapter 执行链中返回非 null，在非 HTTP 场景返回 null。
-12. MVC Adapter 覆盖 Controller Action 调用边界，不宣称覆盖 Result 序列化之后的行为。
+4. `IInterceptorMatcher` 作为 singleton 规则对象在启动期解析和执行，不构造运行时拦截器实例；运行时拦截器按 `InterceptorType` 从 DI 容器解析，允许拦截器自身使用 scoped 依赖。
+5. `ServiceChainCache` 在启动期按 `implementationType` 全量预填充；`EntryChainCache` 在首次 Action 调用时按 `controllerType` 懒填充；两个缓存互相独立。Service 链顺序：全局 Service 拦截器 → `MatchService()` 自动匹配 → 显式 `[Intercept]`；Entry 链顺序：全局 Entry 拦截器 → `MatchEntry()` 自动匹配；同层内按 `Order` 稳定排序。
+6. `InterceptorScope.Service` 和 `Entry` 严格隔离：Service scope matcher 不出现在 Entry 链中，Entry scope matcher 不出现在 Castle Service 代理链中。
+7. `[IgnoreInterceptors]` 在 DI 服务类/接口上作用于 ServiceChainCache，在 Controller 类上作用于 EntryChainCache；接口继承链的 `[IgnoreInterceptors]` 向下传递到所有实现类；`[IgnoreInterceptors]` 只抑制全局与自动匹配拦截器，不抑制显式 `[Intercept]`。
+8. Castle.Core 模式默认使用接口代理；仅暴露具体类型时默认不生成代理并输出启动警告；显式开启类代理时非 `virtual` 成员输出启动警告。
+9. 拦截器链为空的类型不注册代理；首次 Resolve 时生成代理不改变服务生命周期。
+10. `IInvocationContext.CancellationToken` 优先使用方法参数中的 `CancellationToken`；没有方法参数时使用入口 Adapter 设置的 ambient token；仍不存在时返回 `CancellationToken.None`。
+11. `ICancellationTokenProvider.Token` 注入任意生命周期服务后均能正确返回当前调用链 token，包括 Singleton 服务。
+12. `AddTwAspNetCoreInfrastructure()` 通过 `IConfigureOptions<MvcOptions>` 注册 MVC/Web API Adapter；`IInvocationContext.GetFeature<IHttpRequestFeature>()` 在 MVC Adapter 执行链中返回非 null，在非 HTTP 场景返回 null。
+13. MVC Adapter 覆盖 Controller Action 调用边界，不宣称覆盖 Result 序列化之后的行为。
 
 ### 10.3 P2：gRPC Adapter
 
@@ -1094,11 +1144,12 @@ public class PaymentClient : IScopedDependency
 
 1. 开发环境启动时输出扫描、排序、注册、AOP 预计算耗时与警告；生产环境可关闭诊断输出。
 2. 框架显式抛出的异常使用稳定异常类型和简体中文消息；消息不泄露密钥、连接串、堆栈或第三方原始错误。
-3. 新增依赖必须在中央包管理中固定版本，并提交锁文件变更；PR 中记录用途、替代方案、许可证、漏洞扫描、维护责任和验证命令。
-4. `Castle.Core.AsyncInterceptor` 准入记录必须确认当前版本、许可证、维护状态、下载量或下游依赖、漏洞扫描结果，并用集成测试覆盖 sync、`Task`、`Task<T>` 分派。
-5. 所有新增 public API 必须提供 XML 注释，说明用途、调用时序、副作用、异常语义和关键契约。
-6. 单元测试覆盖元数据扫描、裁决、链计算、Options 规则和异常分支；集成测试覆盖 Autofac Host 启动、Castle 代理、MVC Adapter 与配置验证；P2 阶段补充 gRPC Adapter 集成测试。
-7. 未自动化覆盖的风险必须在实现计划或 PR 中记录原因、影响范围、替代验证和后续跟踪项。
+3. 新增依赖必须在中央包管理中固定精确版本，并提交锁文件变更；PR 中记录用途、替代方案、许可证、漏洞扫描、维护责任和验证命令。
+4. 包源映射风险必须被处理或显式记录：若继续保留 Huawei + nuget.org 双源，需补充 package source mapping；若暂不处理 NU1507，PR 中必须说明这是既有警告、影响范围和后续跟踪项。
+5. `Castle.Core.AsyncInterceptor` 准入记录必须确认当前版本、许可证、维护状态、下载量或下游依赖、漏洞扫描结果，并用集成测试覆盖 sync、`Task`、`Task<T>` 分派。
+6. 所有新增 public API 必须提供 XML 注释，说明用途、调用时序、副作用、异常语义和关键契约。
+7. 单元测试覆盖元数据扫描、裁决、链计算、Options 规则和异常分支；集成测试覆盖 Autofac Host 启动、Castle 代理、MVC Adapter 与配置验证；P2 阶段补充 gRPC Adapter 集成测试。
+8. 未自动化覆盖的风险必须在实现计划或 PR 中记录原因、影响范围、替代验证和后续跟踪项。
 
 ### 10.5 P3：后续 Adapter 验收边界
 
@@ -1113,7 +1164,7 @@ public class PaymentClient : IScopedDependency
 |---|---|
 | Castle 代理与 Autofac 集成版本兼容性 | 锁定 `Castle.Core`、`Autofac.Extras.DynamicProxy` 版本；集成测试覆盖代理注册与拦截调用 |
 | `ValueTask` 单次消费语义被误用 | 框架内部不暴露原始 `ValueTask`，统一通过 `IUnaryInvocationContext.ProceedAsync()` 消费 |
-| 拦截器依赖 Scoped 服务但被注册为 Singleton | 拦截器实例延迟至运行时按生命周期解析；若 Singleton 拦截器注入 Scoped 服务，由 DI 容器在运行时暴露错误 |
+| matcher 与拦截器生命周期混淆 | `IInterceptorMatcher` 是启动期 singleton 规则对象，不保存请求状态；拦截器实例延迟至运行时按生命周期解析。若 singleton matcher 注入 scoped 服务，由 DI 容器在启动或解析阶段暴露错误 |
 | 程序集循环引用导致拓扑排序死循环 | Kahn 算法天然检测循环：处理完毕后仍有剩余节点即为循环，启动时抛异常含完整循环路径 |
 | `ICancellationTokenProvider` 在非 ASP.NET Core 场景未正确初始化 | 默认注册 `NullCancellationTokenProvider`（返回 `None`）确保兜底；各入口 Adapter 负责覆盖 ambient token |
 | 方法参数含多个 `CancellationToken` | 框架取第一个 `CancellationToken` 类型参数；启动时对含多个 CT 参数的方法记录警告 |
