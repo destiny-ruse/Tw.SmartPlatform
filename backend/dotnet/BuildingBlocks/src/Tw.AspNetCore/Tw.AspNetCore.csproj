@@ -12,4 +12,8 @@
 		<NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
+	</ItemGroup>
+
 </Project>

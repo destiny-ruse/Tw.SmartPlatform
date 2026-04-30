@@ -34,6 +34,7 @@ public static class AutoRegistrationServiceCollectionExtensions
         RegisterCancellationDefaults(services);
         RegisterGlobalInterceptors(services, options);
         RegisterMatcherTypes(services, options);
+        RegisterEntryChainCache(services);
 
         if (options.OptionsAutoRegistrationEnabled && options.Assemblies.Count > 0)
         {
@@ -41,6 +42,8 @@ public static class AutoRegistrationServiceCollectionExtensions
         }
 
         services.RemoveAll<AutoRegistrationState>();
+        services.RemoveAll<AutoRegistrationOptions>();
+        services.AddSingleton(options);
         services.AddSingleton(new AutoRegistrationState(configuration, options));
         return services;
     }
@@ -73,6 +76,17 @@ public static class AutoRegistrationServiceCollectionExtensions
             options.AddMatcherType(matcherType);
             services.TryAddEnumerable(ServiceDescriptor.Singleton(typeof(IInterceptorMatcher), matcherType));
         }
+    }
+
+    private static void RegisterEntryChainCache(IServiceCollection services)
+    {
+        services.TryAddSingleton(provider =>
+        {
+            var options = provider.GetRequiredService<AutoRegistrationOptions>();
+            return new EntryChainCache(
+                options.GlobalInterceptors,
+                provider.GetServices<IInterceptorMatcher>());
+        });
     }
 
     private static bool IsPublicConcreteMatcher(Type type)

@@ -26,6 +26,7 @@
     <Project Path="BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj" />
   </Folder>
   <Folder Name="/Services/" />
   <Folder Name="/Services/Authentication/" />
