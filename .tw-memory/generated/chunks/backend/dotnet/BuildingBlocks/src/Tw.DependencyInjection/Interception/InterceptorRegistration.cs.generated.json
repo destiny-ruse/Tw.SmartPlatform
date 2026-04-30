@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorRegistration#chunk-001",
+      "end_line": 37,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "interception",
+        "interceptorregistration",
+        "src",
+        "tw",
+        "core",
+        "dependency",
+        "injection",
+        "namespace",
+        "public",
+        "summary",
+        "using",
+        "中的单条",
+        "单条拦截",
+        "器注册记",
+        "器链中的"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "interception",
+          "interceptorregistration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:970dd996e2e9b7b6d0b203efcf64438e2c7a6447113c5f49debd71df96d4e236",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorRegistration.cs",
+      "start_line": 1,
+      "summary": "Lines 1-37 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorRegistration.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorRegistration.cs"
+}

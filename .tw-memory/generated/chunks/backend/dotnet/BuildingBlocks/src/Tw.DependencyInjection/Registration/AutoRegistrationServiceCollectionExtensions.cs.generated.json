@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationServiceCollectionExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "autoregistrationservicecollectionextensions",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "cancellation",
+        "collection",
+        "configuration",
+        "core",
+        "dependency",
+        "extensions",
+        "injection",
+        "interception",
+        "iservice",
+        "microsoft",
+        "namespace"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationservicecollectionextensions",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:544ed487fa0b6e87672abbf9713f744f2efa3aaef5ac3410b770829c647790e0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationServiceCollectionExtensions#chunk-002",
+      "end_line": 110,
+      "heading": null,
+      "keywords": [
+        "autoregistrationservicecollectionextensions",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "add",
+        "assemblies",
+        "concrete",
+        "descriptor",
+        "enumerable",
+        "foreach",
+        "get",
+        "loadable",
+        "many",
+        "matcher",
+        "options"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationservicecollectionextensions",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:544ed487fa0b6e87672abbf9713f744f2efa3aaef5ac3410b770829c647790e0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-110 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs"
+}

@@ -358,7 +358,7 @@
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Configuration.ConfigurationSectionAttribute#chunk-001",
-      "end_line": 14,
+      "end_line": 30,
       "heading": null,
       "keywords": [
         "backend",
@@ -399,7 +399,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs",
       "start_line": 1,
-      "summary": "Lines 1-14 in backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs"
+      "summary": "Lines 1-30 in backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Configuration.IConfigurableOptions#chunk-001",

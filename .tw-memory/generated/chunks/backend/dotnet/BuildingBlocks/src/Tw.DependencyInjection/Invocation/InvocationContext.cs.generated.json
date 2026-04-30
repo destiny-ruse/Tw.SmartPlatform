@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Invocation.InvocationContext#chunk-001",
+      "end_line": 35,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "invocation",
+        "invocationcontext",
+        "src",
+        "tw",
+        "ambient",
+        "dependency",
+        "injection",
+        "items",
+        "namespace",
+        "summary",
+        "上下文实",
+        "下文实现",
+        "典和类型",
+        "包含",
+        "取消令牌"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "invocation",
+          "invocationcontext",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:ecb880ab514da650d4593496f67739c99eca83918cc787524f2e6a6598a53b79",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationContext.cs",
+      "start_line": 1,
+      "summary": "Lines 1-35 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationContext.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationContext.cs"
+}

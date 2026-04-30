@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Dependency.ISingletonDependency#chunk-001",
+      "end_line": 6,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependency",
+        "dependencyinjection",
+        "dotnet",
+        "isingletondependency",
+        "src",
+        "tw",
+        "injection",
+        "namespace",
+        "summary",
+        "与自动注",
+        "以单例生",
+        "例生命周",
+        "单例生命",
+        "参与自动",
+        "周期参与",
+        "命周期参",
+        "型应以单"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependency",
+          "dependencyinjection",
+          "dotnet",
+          "isingletondependency",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:55793c8bc12c4a713dd25f7bb0395413b95f805dfeaf66914815011b50e8c65a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ISingletonDependency.cs",
+      "start_line": 1,
+      "summary": "Lines 1-6 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ISingletonDependency.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ISingletonDependency.cs"
+}

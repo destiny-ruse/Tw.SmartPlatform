@@ -1,0 +1,54 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.DependencyInjection.Tests.Tw.DependencyInjection.Tests#chunk-001",
+      "end_line": 26,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dependencyinjection",
+        "dotnet",
+        "tests",
+        "tw",
+        "enable",
+        "false",
+        "framework",
+        "group",
+        "implicit",
+        "include",
+        "item",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "packable",
+        "package"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dependencyinjection",
+          "dependencyinjection",
+          "dotnet",
+          "tests",
+          "tests",
+          "tests"
+        ],
+        "framework": null,
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:d35a40d40cafc0552adbc6226e994342ecb931cc92b44ef0d1b5c52bb4b13ecb",
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj",
+      "start_line": 1,
+      "summary": "Lines 1-26 in backend/dotnet/BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj"
+}

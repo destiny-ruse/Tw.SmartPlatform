@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleProxyRegistrationExtensions#chunk-001",
+      "end_line": 49,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "castle",
+        "castleproxyregistrationextensions",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "interception",
+        "src",
+        "tw",
+        "autofac",
+        "builder",
+        "class",
+        "dependency",
+        "dynamic",
+        "extensions",
+        "extras",
+        "injection",
+        "internal",
+        "iregistration"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "castle",
+          "castleproxyregistrationextensions",
+          "dependencyinjection",
+          "dotnet",
+          "interception",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:f7b9637ada9e48dc6b87b9b9ed81144563ecb33cd5a307b0e67d2cb9d1abda25",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleProxyRegistrationExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-49 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleProxyRegistrationExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleProxyRegistrationExtensions.cs"
+}

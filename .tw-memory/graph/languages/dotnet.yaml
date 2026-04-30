@@ -9,7 +9,20 @@ chunks:
   - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.README#chunk-001
   - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Shared.Tw.Domain.Shared#chunk-001
   - backend.dotnet.BuildingBlocks.src.Ddd.Tw.Domain.Tw.Domain#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.AddTwAspNetCoreInfrastructureExtensions#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Cancellation.HttpContextCancellationTokenProvider#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Features.HttpRequestFeature#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Features.IHttpRequestFeature#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.MvcUnaryInvocationContext#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwEntryInterceptorFilter#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwEntryInterceptorFilter#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwMvcOptionsSetup#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-004
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-005
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-006
   - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.Caching.README#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching#chunk-001
@@ -149,6 +162,80 @@ chunks:
   - backend.dotnet.BuildingBlocks.src.Tw.Core.Utilities.SecureRandomGenerator#chunk-003
   - backend.dotnet.BuildingBlocks.src.Tw.Core.Utilities.SecureRandomGenerator#chunk-004
   - backend.dotnet.BuildingBlocks.src.Tw.Core.Utilities.SecureRandomGenerator#chunk-005
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Cancellation.CurrentCancellationTokenAccessor#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Cancellation.ICancellationTokenProvider#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Cancellation.ICurrentCancellationTokenAccessor#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Cancellation.NullCancellationTokenProvider#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Dependency.IScopedDependency#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Dependency.ISingletonDependency#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Dependency.ITransientDependency#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleAsyncInterceptorAdapter#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleAsyncInterceptorAdapter#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleAsyncInterceptorAdapter#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleAsyncInterceptorAdapter#chunk-004
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleProxyRegistrationExtensions#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleUnaryInvocationContext#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.EntryChainCache#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.IInterceptorMatcher#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.IgnoreInterceptorsAttribute#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptAttribute#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorBase#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorMetadata#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorMetadata#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorRegistration#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorScope#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.ServiceChainCache#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Invocation.IInvocationContext#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Invocation.IUnaryInvocationContext#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Invocation.InvocationContext#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Invocation.InvocationFeatureCollection#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsAutoRegistrationExtensions#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsAutoRegistrationExtensions#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationDescriptor#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-004
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-004
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-005
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-006
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-007
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.README#chunk-008
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.CollectionServiceAttribute#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.DisableAutoRegistrationAttribute#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.ExposeServicesAttribute#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.KeyedServiceAttribute#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.ReplaceServiceAttribute#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationContainerBuilderExtensions#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationContainerBuilderExtensions#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationDiagnostics#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationModule#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationModule#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationModule#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationOptions#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationOptions#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationServiceCollectionExtensions#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationServiceCollectionExtensions#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationState#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationDescriptor#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationDiagnostics#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlan#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlanner#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlanner#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlanner#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlanner#chunk-004
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlanner#chunk-005
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlanner#chunk-006
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlanner#chunk-007
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-004
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceScanDescriptor#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Tw.DependencyInjection#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.README#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.DocumentProcessing.README#chunk-001
@@ -167,7 +254,9 @@ chunks:
   - backend.dotnet.BuildingBlocks.src.Tw.TextTemplating.Tw.TextTemplating#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.Uow.README#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.Uow.Tw.Uow#chunk-001
+  - backend.dotnet.BuildingBlocks.tests.Tw.AspNetCore.Tests.Tw.AspNetCore.Tests#chunk-001
   - backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests#chunk-001
+  - backend.dotnet.BuildingBlocks.tests.Tw.DependencyInjection.Tests.Tw.DependencyInjection.Tests#chunk-001
   - backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase#chunk-001
   - backend.dotnet.README#chunk-001
   - backend.dotnet.Services.Authentication.README#chunk-001
@@ -189,6 +278,13 @@ sources:
   - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain.Shared/Tw.Domain.Shared.csproj
   - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/README.md
   - backend/dotnet/BuildingBlocks/src/Ddd/Tw.Domain/Tw.Domain.csproj
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/AddTwAspNetCoreInfrastructureExtensions.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Cancellation/HttpContextCancellationTokenProvider.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/HttpRequestFeature.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/IHttpRequestFeature.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/MvcUnaryInvocationContext.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwMvcOptionsSetup.cs
   - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md
   - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj
   - backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md
@@ -260,6 +356,51 @@ sources:
   - backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs
   - backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs
   - backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/SecureRandomGenerator.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/CurrentCancellationTokenAccessor.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/ICancellationTokenProvider.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/ICurrentCancellationTokenAccessor.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/NullCancellationTokenProvider.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/IScopedDependency.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ISingletonDependency.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ITransientDependency.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleAsyncInterceptorAdapter.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleProxyRegistrationExtensions.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleUnaryInvocationContext.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/EntryChainCache.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IInterceptorMatcher.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IgnoreInterceptorsAttribute.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptAttribute.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorBase.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorMetadata.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorRegistration.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorScope.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/ServiceChainCache.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/IInvocationContext.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/IUnaryInvocationContext.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationContext.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationFeatureCollection.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsAutoRegistrationExtensions.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationDescriptor.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/README.md
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/CollectionServiceAttribute.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/DisableAutoRegistrationAttribute.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ExposeServicesAttribute.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/KeyedServiceAttribute.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ReplaceServiceAttribute.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationDiagnostics.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationOptions.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationState.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDescriptor.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDiagnostics.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlan.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlanner.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceScanDescriptor.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Tw.DependencyInjection.csproj
   - backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/README.md
   - backend/dotnet/BuildingBlocks/src/Tw.DistributedLocking/Tw.DistributedLocking.csproj
   - backend/dotnet/BuildingBlocks/src/Tw.DocumentProcessing/README.md
@@ -278,7 +419,9 @@ sources:
   - backend/dotnet/BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj
   - backend/dotnet/BuildingBlocks/src/Tw.Uow/README.md
   - backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj
+  - backend/dotnet/BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj
   - backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj
+  - backend/dotnet/BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj
   - backend/dotnet/BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj
   - backend/dotnet/README.md
   - backend/dotnet/Services/Authentication/README.md

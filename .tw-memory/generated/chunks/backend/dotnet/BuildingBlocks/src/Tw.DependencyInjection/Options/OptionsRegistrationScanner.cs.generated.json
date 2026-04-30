@@ -1,0 +1,190 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "options",
+        "optionsregistrationscanner",
+        "src",
+        "tw",
+        "configuration",
+        "core",
+        "cref",
+        "dependency",
+        "descriptor",
+        "exceptions",
+        "injection",
+        "namespace",
+        "reflection",
+        "registration",
+        "see"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "options",
+          "optionsregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8854738adc9cc57c21ec217848e20813bf098309732e09841253ddfa7f9166a5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "options",
+        "optionsregistrationscanner",
+        "src",
+        "tw",
+        "add",
+        "compute",
+        "default",
+        "descriptor",
+        "direct",
+        "else",
+        "false",
+        "inject",
+        "name",
+        "new",
+        "null"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "options",
+          "optionsregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8854738adc9cc57c21ec217848e20813bf098309732e09841253ddfa7f9166a5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-003",
+      "end_line": 224,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "options",
+        "optionsregistrationscanner",
+        "src",
+        "tw",
+        "abstract",
+        "binder",
+        "class",
+        "configuration",
+        "constructor",
+        "false",
+        "get",
+        "return",
+        "type",
+        "参构造函",
+        "定的前提"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "options",
+          "optionsregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8854738adc9cc57c21ec217848e20813bf098309732e09841253ddfa7f9166a5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs",
+      "start_line": 145,
+      "summary": "Lines 145-224 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsRegistrationScanner#chunk-004",
+      "end_line": 238,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "options",
+        "optionsregistrationscanner",
+        "src",
+        "tw",
+        "descriptor",
+        "descriptors",
+        "duplicates",
+        "iread",
+        "list",
+        "name",
+        "only",
+        "private",
+        "registration",
+        "static",
+        "summary"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "options",
+          "optionsregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8854738adc9cc57c21ec217848e20813bf098309732e09841253ddfa7f9166a5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs",
+      "start_line": 217,
+      "summary": "Lines 217-238 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs"
+}

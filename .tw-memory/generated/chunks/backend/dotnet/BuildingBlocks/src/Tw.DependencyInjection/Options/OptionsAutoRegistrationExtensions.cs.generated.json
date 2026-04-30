@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsAutoRegistrationExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "options",
+        "optionsautoregistrationextensions",
+        "src",
+        "tw",
+        "configuration",
+        "dependency",
+        "extensions",
+        "injection",
+        "microsoft",
+        "namespace",
+        "reflection",
+        "summary",
+        "system",
+        "using",
+        "从程序集"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "options",
+          "optionsautoregistrationextensions",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:c547eb81d787d728faf7c246ba1600d28b7ac51ad86636cf45029fc7a1000c61",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsAutoRegistrationExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsAutoRegistrationExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Options.OptionsAutoRegistrationExtensions#chunk-002",
+      "end_line": 121,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "options",
+        "optionsautoregistrationextensions",
+        "src",
+        "tw",
+        "add",
+        "builder",
+        "collection",
+        "extensions",
+        "generic",
+        "get",
+        "length",
+        "make",
+        "method",
+        "name",
+        "nameof"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "options",
+          "optionsautoregistrationextensions",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:c547eb81d787d728faf7c246ba1600d28b7ac51ad86636cf45029fc7a1000c61",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsAutoRegistrationExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-121 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsAutoRegistrationExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsAutoRegistrationExtensions.cs"
+}

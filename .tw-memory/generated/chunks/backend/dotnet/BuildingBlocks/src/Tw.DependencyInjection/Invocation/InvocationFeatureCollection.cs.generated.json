@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Invocation.InvocationFeatureCollection#chunk-001",
+      "end_line": 27,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "invocation",
+        "invocationfeaturecollection",
+        "src",
+        "tw",
+        "core",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "using",
+        "化特性集",
+        "取场景特",
+        "场景特定",
+        "型化特性",
+        "型存取场"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "invocation",
+          "invocationfeaturecollection",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:48cd7c646c60270af302f56ea29694ccb2b8eba6264b4ad66aacdf0ff63a188d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationFeatureCollection.cs",
+      "start_line": 1,
+      "summary": "Lines 1-27 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationFeatureCollection.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationFeatureCollection.cs"
+}

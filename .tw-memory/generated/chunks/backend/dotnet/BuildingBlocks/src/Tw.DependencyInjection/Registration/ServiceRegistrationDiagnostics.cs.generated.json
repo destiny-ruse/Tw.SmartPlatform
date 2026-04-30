@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationDiagnostics#chunk-001",
+      "end_line": 19,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "serviceregistrationdiagnostics",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "产出的诊",
+        "信息集合",
+        "出的诊断",
+        "划阶段产",
+        "包含拓扑",
+        "含拓扑覆",
+        "拓扑覆盖"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "serviceregistrationdiagnostics",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8ebe1bf061002a60fd03f9af96fefafcecd1608ffc0350af1c302535a49efb3e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDiagnostics.cs",
+      "start_line": 1,
+      "summary": "Lines 1-19 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDiagnostics.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDiagnostics.cs"
+}

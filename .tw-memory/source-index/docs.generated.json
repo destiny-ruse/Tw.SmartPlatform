@@ -369,7 +369,7 @@
       },
       "language": "dotnet",
       "service": null,
-      "source_hash": "sha256:fdb84e35216be4c94e216fb4ce54b4ee63d519e5a3294d2f030cf45bcca2e875",
+      "source_hash": "sha256:8c997e35e4692abdaece8ac313f191927877284a59a8294b101ffe4093c5c1d1",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md",
       "source_type": "readme"
     },
@@ -395,6 +395,18 @@
       "service": null,
       "source_hash": "sha256:1bcebf5d853055de1f8923dd7b67d35edf5f377947bbcb459aab7929960d943c",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/README.md",
+      "source_type": "readme"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:e4ea6daa3133daf6bd3f798f7032bdcd09318fdb6d57613726f7271890e96355",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/README.md",
       "source_type": "readme"
     },
     {

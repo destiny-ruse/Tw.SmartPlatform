@@ -2,7 +2,7 @@
   "chunks": [
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Configuration.ConfigurationSectionAttribute#chunk-001",
-      "end_line": 14,
+      "end_line": 30,
       "heading": null,
       "keywords": [
         "backend",
@@ -41,10 +41,10 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:5b0491af22c72f93e1e1529a43bfc2ce6a403ededda8fd83fe54ab5499f1458e",
+      "source_hash": "sha256:1cc09f87ea87608fe73d2e88b75c6d0d3d1a5eb2840b7a57d0b703b6e704a5c9",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs",
       "start_line": 1,
-      "summary": "Lines 1-14 in backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs"
+      "summary": "Lines 1-30 in backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs"
     }
   ],
   "schema_version": "1.0.0",

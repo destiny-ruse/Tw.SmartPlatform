@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwMvcOptionsSetup#chunk-001",
+      "end_line": 22,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dotnet",
+        "mvc",
+        "src",
+        "tw",
+        "twmvcoptionssetup",
+        "asp",
+        "class",
+        "core",
+        "entry",
+        "extensions",
+        "filter",
+        "iconfigure",
+        "microsoft",
+        "namespace",
+        "net",
+        "options"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "mvc",
+          "src",
+          "twmvcoptionssetup"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:53e0ebe9a83841531553b00b725ba9f6562d42a5093d5a74ed0a6ece3484473a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwMvcOptionsSetup.cs",
+      "start_line": 1,
+      "summary": "Lines 1-22 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwMvcOptionsSetup.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwMvcOptionsSetup.cs"
+}

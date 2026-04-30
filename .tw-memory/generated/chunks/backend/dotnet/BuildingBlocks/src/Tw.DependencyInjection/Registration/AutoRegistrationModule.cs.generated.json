@@ -1,0 +1,144 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationModule#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "autoregistrationmodule",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "autofac",
+        "builder",
+        "castle",
+        "core",
+        "dependency",
+        "diagnostics",
+        "injection",
+        "interception",
+        "namespace",
+        "reflection",
+        "summary"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationmodule",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5f98babc599eee25c1b91a377fbbf27e61ab049db112755b327dbd975f35985a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationModule#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "autoregistrationmodule",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "builder",
+        "cache",
+        "can",
+        "chain",
+        "class",
+        "container",
+        "count",
+        "descriptor",
+        "get",
+        "implementation",
+        "interceptors"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationmodule",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5f98babc599eee25c1b91a377fbbf27e61ab049db112755b327dbd975f35985a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationModule#chunk-003",
+      "end_line": 157,
+      "heading": null,
+      "keywords": [
+        "autoregistrationmodule",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "binding",
+        "comparer",
+        "declaring",
+        "final",
+        "flags",
+        "foreach",
+        "get",
+        "instance",
+        "methods",
+        "name",
+        "object"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationmodule",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5f98babc599eee25c1b91a377fbbf27e61ab049db112755b327dbd975f35985a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs",
+      "start_line": 145,
+      "summary": "Lines 145-157 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs"
+}

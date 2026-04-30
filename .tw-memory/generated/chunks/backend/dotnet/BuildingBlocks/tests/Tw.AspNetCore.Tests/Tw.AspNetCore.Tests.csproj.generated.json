@@ -1,0 +1,54 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.AspNetCore.Tests.Tw.AspNetCore.Tests#chunk-001",
+      "end_line": 28,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "tests",
+        "tw",
+        "asp",
+        "core",
+        "enable",
+        "false",
+        "framework",
+        "group",
+        "implicit",
+        "include",
+        "item",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "tests",
+          "tests",
+          "tests"
+        ],
+        "framework": null,
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:320025fc63c38100d6edff5885b5287198baa8c9f3a871bd6c1399661d9755ed",
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj",
+      "start_line": 1,
+      "summary": "Lines 1-28 in backend/dotnet/BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj"
+}

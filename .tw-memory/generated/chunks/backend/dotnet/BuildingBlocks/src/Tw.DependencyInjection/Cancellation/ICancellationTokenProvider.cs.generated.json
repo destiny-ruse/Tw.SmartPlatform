@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Cancellation.ICancellationTokenProvider#chunk-001",
+      "end_line": 12,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cancellation",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "icancellationtokenprovider",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "public",
+        "summary",
+        "任意服务",
+        "供当前调",
+        "前调用链",
+        "取消令牌",
+        "可被任意",
+        "当前调用"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "cancellation",
+          "dependencyinjection",
+          "dotnet",
+          "icancellationtokenprovider",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:58bd4754fd83bf5278c563cbe2d480c2eec769d9d3c7a0d52538203a18e7f9cd",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/ICancellationTokenProvider.cs",
+      "start_line": 1,
+      "summary": "Lines 1-12 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/ICancellationTokenProvider.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/ICancellationTokenProvider.cs"
+}

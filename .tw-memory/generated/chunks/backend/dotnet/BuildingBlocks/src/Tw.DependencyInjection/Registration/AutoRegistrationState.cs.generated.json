@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationState#chunk-001",
+      "end_line": 7,
+      "heading": null,
+      "keywords": [
+        "autoregistrationstate",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "auto",
+        "configuration",
+        "dependency",
+        "extensions",
+        "iconfiguration",
+        "injection",
+        "internal",
+        "microsoft",
+        "namespace",
+        "options",
+        "record"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationstate",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:08dca22fc1abbeec01201707ebc9eaf2ee263034619ac558466489fd3b5f618a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationState.cs",
+      "start_line": 1,
+      "summary": "Lines 1-7 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationState.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationState.cs"
+}

@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationDiagnostics#chunk-001",
+      "end_line": 57,
+      "heading": null,
+      "keywords": [
+        "autoregistrationdiagnostics",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "auto",
+        "class",
+        "configuration",
+        "dependency",
+        "diagnostics",
+        "disabled",
+        "extensions",
+        "false",
+        "injection",
+        "internal",
+        "microsoft"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationdiagnostics",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:a44a99d0501705e4519b7a548a9e65a282d39d6b498bc972e127dceaed909d6e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationDiagnostics.cs",
+      "start_line": 1,
+      "summary": "Lines 1-57 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationDiagnostics.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationDiagnostics.cs"
+}

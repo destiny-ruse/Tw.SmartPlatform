@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptAttribute#chunk-001",
+      "end_line": 16,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "interceptattribute",
+        "interception",
+        "src",
+        "tw",
+        "core",
+        "dependency",
+        "injection",
+        "namespace",
+        "param",
+        "summary",
+        "using",
+        "务层必须",
+        "声明服务",
+        "层必须应",
+        "应用的拦"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "interceptattribute",
+          "interception",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:32b1e6f2ad9abe57176250aed94cdd65a997e523c7f2ed5ac542a6b727f5c2e5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-16 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptAttribute.cs"
+}

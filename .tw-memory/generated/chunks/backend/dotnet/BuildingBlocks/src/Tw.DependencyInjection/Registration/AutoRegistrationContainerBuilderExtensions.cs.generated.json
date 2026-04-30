@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationContainerBuilderExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "autoregistrationcontainerbuilderextensions",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "autofac",
+        "builder",
+        "container",
+        "core",
+        "dependency",
+        "diagnostics",
+        "exceptions",
+        "extensions",
+        "injection",
+        "interception",
+        "microsoft"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationcontainerbuilderextensions",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:e0ea8976fa1af1eba1b8f59781ddc0764d331706d4bd5f6751ca0badc63ca0f3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.AutoRegistrationContainerBuilderExtensions#chunk-002",
+      "end_line": 101,
+      "heading": null,
+      "keywords": [
+        "autoregistrationcontainerbuilderextensions",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "builder",
+        "count",
+        "diagnostics",
+        "elapsed",
+        "global",
+        "intercepted",
+        "interceptors",
+        "matchers",
+        "module",
+        "options",
+        "plan"
+      ],
+      "relations": {
+        "capabilities": [
+          "autoregistrationcontainerbuilderextensions",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:e0ea8976fa1af1eba1b8f59781ddc0764d331706d4bd5f6751ca0badc63ca0f3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-101 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs"
+}

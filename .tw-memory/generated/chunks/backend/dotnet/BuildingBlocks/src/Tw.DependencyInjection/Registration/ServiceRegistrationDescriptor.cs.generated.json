@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationDescriptor#chunk-001",
+      "end_line": 32,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "serviceregistrationdescriptor",
+        "src",
+        "tw",
+        "dependency",
+        "extensions",
+        "injection",
+        "microsoft",
+        "namespace",
+        "summary",
+        "using",
+        "产出的单",
+        "出的单条",
+        "划阶段产",
+        "务注册记"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "serviceregistrationdescriptor",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:83681fb986f2e12cba75d33b21761cf5fa9223f25d4ae036ab63aeeaf79257ee",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDescriptor.cs",
+      "start_line": 1,
+      "summary": "Lines 1-32 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDescriptor.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDescriptor.cs"
+}

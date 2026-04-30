@@ -1,0 +1,190 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "serviceregistrationscanner",
+        "src",
+        "tw",
+        "attributes",
+        "core",
+        "cref",
+        "dependency",
+        "exceptions",
+        "extensions",
+        "finder",
+        "injection",
+        "itype",
+        "microsoft",
+        "namespace"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "serviceregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:08701b8c38864fce07c01e704ab41782e8057d5087f1c51ac9612b47ccf0c394",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "serviceregistrationscanner",
+        "src",
+        "tw",
+        "configuration",
+        "cref",
+        "descriptor",
+        "exception",
+        "implementation",
+        "name",
+        "param",
+        "returns",
+        "scan",
+        "see",
+        "service"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "serviceregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:08701b8c38864fce07c01e704ab41782e8057d5087f1c51ac9612b47ccf0c394",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-003",
+      "end_line": 224,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "serviceregistrationscanner",
+        "src",
+        "tw",
+        "assembly",
+        "attr",
+        "collection",
+        "definition",
+        "descriptor",
+        "generic",
+        "helpers",
+        "key",
+        "keyed",
+        "lifetime",
+        "name"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "serviceregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:08701b8c38864fce07c01e704ab41782e8057d5087f1c51ac9612b47ccf0c394",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs",
+      "start_line": 145,
+      "summary": "Lines 145-224 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationScanner#chunk-004",
+      "end_line": 249,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "serviceregistrationscanner",
+        "src",
+        "tw",
+        "add",
+        "bool",
+        "comparison",
+        "equals",
+        "false",
+        "implementation",
+        "microsoft",
+        "namespace",
+        "null",
+        "ordinal",
+        "private"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "serviceregistrationscanner",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:08701b8c38864fce07c01e704ab41782e8057d5087f1c51ac9612b47ccf0c394",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs",
+      "start_line": 217,
+      "summary": "Lines 217-249 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs"
+}

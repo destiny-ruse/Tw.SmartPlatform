@@ -2,7 +2,7 @@
   "chunks": [
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore#chunk-001",
-      "end_line": 15,
+      "end_line": 19,
       "heading": null,
       "keywords": [
         "aspnetcore",
@@ -41,10 +41,10 @@
         "language": "dotnet",
         "service": null
       },
-      "source_hash": "sha256:0936b78ab9d099d8bf39619537937139d95fee957ada931db92add5a59dabba3",
+      "source_hash": "sha256:9202aadb271f02f5b91b69e641865f073da739be3f69b40fee74607c71756163",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
       "start_line": 1,
-      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+      "summary": "Lines 1-19 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
     }
   ],
   "schema_version": "1.0.0",

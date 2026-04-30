@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwEntryInterceptorFilter#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dotnet",
+        "mvc",
+        "src",
+        "tw",
+        "twentryinterceptorfilter",
+        "action",
+        "asp",
+        "cancellation",
+        "controllers",
+        "core",
+        "dependency",
+        "entry",
+        "exceptions",
+        "features",
+        "filters",
+        "injection"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "mvc",
+          "src",
+          "twentryinterceptorfilter"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:d386bbccd6f2f512e9947f2fe3a5e888427db72db0cea6c2406e83d93b02fbbe",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwEntryInterceptorFilter#chunk-002",
+      "end_line": 130,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dotnet",
+        "mvc",
+        "src",
+        "tw",
+        "twentryinterceptorfilter",
+        "async",
+        "await",
+        "base",
+        "chain",
+        "context",
+        "get",
+        "http",
+        "index",
+        "intercept",
+        "interceptor",
+        "invocation"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "mvc",
+          "src",
+          "twentryinterceptorfilter"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:d386bbccd6f2f512e9947f2fe3a5e888427db72db0cea6c2406e83d93b02fbbe",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs",
+      "start_line": 73,
+      "summary": "Lines 73-130 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs"
+}

@@ -57,7 +57,7 @@
       },
       "language": "dotnet",
       "service": null,
-      "source_hash": "sha256:0936b78ab9d099d8bf39619537937139d95fee957ada931db92add5a59dabba3",
+      "source_hash": "sha256:9202aadb271f02f5b91b69e641865f073da739be3f69b40fee74607c71756163",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
       "source_type": "package"
     },
@@ -83,6 +83,18 @@
       "service": null,
       "source_hash": "sha256:6fd56b0ad80a63c1d0534e51e96d6a047e7b9a8a7a6d45118b32496c31f74ce0",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:54e1a4ca2c99ea69e2fb411d9054a817909cc2a08f9fdb7bbd36d782134c3ce2",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Tw.DependencyInjection.csproj",
       "source_type": "package"
     },
     {
@@ -201,8 +213,32 @@
       },
       "language": "dotnet",
       "service": null,
+      "source_hash": "sha256:320025fc63c38100d6edff5885b5287198baa8c9f3a871bd6c1399661d9755ed",
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
       "source_hash": "sha256:975ac18ddf26f893bc0c55f76fe05666fbd011d53b5a5becb79c61be170664aa",
       "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj",
+      "source_type": "package"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:d35a40d40cafc0552adbc6226e994342ecb931cc92b44ef0d1b5c52bb4b13ecb",
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj",
       "source_type": "package"
     },
     {

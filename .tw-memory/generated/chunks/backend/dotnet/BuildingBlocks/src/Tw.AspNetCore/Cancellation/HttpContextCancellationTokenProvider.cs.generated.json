@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Cancellation.HttpContextCancellationTokenProvider#chunk-001",
+      "end_line": 16,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "cancellation",
+        "cs",
+        "dotnet",
+        "httpcontextcancellationtokenprovider",
+        "src",
+        "tw",
+        "asp",
+        "core",
+        "dependency",
+        "http",
+        "injection",
+        "microsoft",
+        "namespace",
+        "net",
+        "summary",
+        "using",
+        "从当前"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "cancellation",
+          "dotnet",
+          "httpcontextcancellationtokenprovider",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:2f81a65a6935ce8e0a1628264b9de610dff2c7b5909942a6424efba5067736f1",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Cancellation/HttpContextCancellationTokenProvider.cs",
+      "start_line": 1,
+      "summary": "Lines 1-16 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Cancellation/HttpContextCancellationTokenProvider.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Cancellation/HttpContextCancellationTokenProvider.cs"
+}

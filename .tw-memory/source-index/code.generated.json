@@ -2,6 +2,90 @@
   "schema_version": "1.0.0",
   "sources": [
     {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a97724ad4574ae759d698369fa9431439379842a7f9498356d91c04986c79e3b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/AddTwAspNetCoreInfrastructureExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:2f81a65a6935ce8e0a1628264b9de610dff2c7b5909942a6424efba5067736f1",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Cancellation/HttpContextCancellationTokenProvider.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:47e49be7f20c71d01d7e67a230763c7175a3d5612de70885cae24c366b6827f4",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/HttpRequestFeature.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:398b3c3532e2ced5de445f480e0e32619211a286a65dc786c3dad2324b204438",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/IHttpRequestFeature.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:996de7759ca0136d12c32f7d4d49f5ea345341fc5a98f986bf169fbfb0c95173",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/MvcUnaryInvocationContext.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:d386bbccd6f2f512e9947f2fe3a5e888427db72db0cea6c2406e83d93b02fbbe",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.aspnetcore",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:53e0ebe9a83841531553b00b725ba9f6562d42a5093d5a74ed0a6ece3484473a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwMvcOptionsSetup.cs",
+      "source_type": "source"
+    },
+    {
       "framework": "tw.core",
       "generator": {
         "name": "tw-memory",
@@ -45,7 +129,7 @@
       },
       "language": "dotnet",
       "service": null,
-      "source_hash": "sha256:5b0491af22c72f93e1e1529a43bfc2ce6a403ededda8fd83fe54ab5499f1458e",
+      "source_hash": "sha256:1cc09f87ea87608fe73d2e88b75c6d0d3d1a5eb2840b7a57d0b703b6e704a5c9",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs",
       "source_type": "source"
     },
@@ -779,6 +863,522 @@
       "service": null,
       "source_hash": "sha256:1ad06d31c13b2a18a439e6cb95745e06b19c78246f8dc4b0aa5179d28e5e421b",
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/SecureRandomGenerator.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:1afab475770783f5523dd54a9cab107bfca703dace0e9f7543c2319996a9333c",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/CurrentCancellationTokenAccessor.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:58bd4754fd83bf5278c563cbe2d480c2eec769d9d3c7a0d52538203a18e7f9cd",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/ICancellationTokenProvider.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:cbfe7f9aa6d0efbf5b8865abe997be12efa6f1cfefa280e5950a02bfcd65ea0c",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/ICurrentCancellationTokenAccessor.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:f733a25bd97d64efba687bbeb32dac912ccfe8edcef1579b44e6c0f39160fdb0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/NullCancellationTokenProvider.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:59e35e9a1d089463690d54e624c2681b3179976d53c1fff25e07e05c5f619946",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/IScopedDependency.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:55793c8bc12c4a713dd25f7bb0395413b95f805dfeaf66914815011b50e8c65a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ISingletonDependency.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:d942e9261d0be68457806b19b5db91fe9c7d6a457b3a88b4ecd636d1391164ee",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ITransientDependency.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a21ac98a5b0649aef7c49c0b6f27a7f8131599a3d16b60a4f83b3d1af187bed9",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleAsyncInterceptorAdapter.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:f7b9637ada9e48dc6b87b9b9ed81144563ecb33cd5a307b0e67d2cb9d1abda25",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleProxyRegistrationExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:788110b3a889fc3103e017e762bfe79e9aa4ae9ed31f0482d666e2865af9cd58",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleUnaryInvocationContext.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:ac59fece560bef6d14021e0230955575ea765dac337cc8a92a241bb751ea8b4d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/EntryChainCache.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:43439ad69257aff81e83b384b38114a4c2cc0a81efbfbbcf3f258a5c01a8f120",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IInterceptorMatcher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:94b240eee2c87918c310660845054a33c4eabb9e4b6426d049dc0d384f611518",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IgnoreInterceptorsAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:32b1e6f2ad9abe57176250aed94cdd65a997e523c7f2ed5ac542a6b727f5c2e5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:812b3534ede745986fecc96ef38e6a5c53007df3197c9e3be3dbbfcad2e3717d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorBase.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:703188c96180dd6f224ef3a048a54c9652ab59f1dfac32c8b6a6f2b16986c6bb",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorMetadata.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:970dd996e2e9b7b6d0b203efcf64438e2c7a6447113c5f49debd71df96d4e236",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorRegistration.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:7c04e0c6cd157dc914220b91dbf3d6bc1f734ae835ba41287b6fe3696839cb49",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorScope.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:93eed13872243ffffc1cd412155d6ed9c9ff5481bcbc534e1ddb4fb363adfd99",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/ServiceChainCache.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:eeace95808478855f601a52f1fcf228ac6e88439e5c9c05547cf63f7fbb5b7d1",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/IInvocationContext.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:7a0c138a111b8b6e4cf0299780449fbbd58f291af0a021a0a218f963caaa8ccf",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/IUnaryInvocationContext.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:ecb880ab514da650d4593496f67739c99eca83918cc787524f2e6a6598a53b79",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationContext.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:48cd7c646c60270af302f56ea29694ccb2b8eba6264b4ad66aacdf0ff63a188d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Invocation/InvocationFeatureCollection.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:c547eb81d787d728faf7c246ba1600d28b7ac51ad86636cf45029fc7a1000c61",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsAutoRegistrationExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:d5a97863b2944a52306cfda79b8a9e47227fb0e4582b08214a6b7a0aa70f24a1",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationDescriptor.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8854738adc9cc57c21ec217848e20813bf098309732e09841253ddfa7f9166a5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Options/OptionsRegistrationScanner.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a2472d68b915db9bb9d26add0542ecb6d4d28e9fab2159b76b25983c525c58e3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/CollectionServiceAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:d0d611422de83881639f013eb97f1a555ff21505995884be86eb4df92b0679a1",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/DisableAutoRegistrationAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:5f0d1d275b5747070ef8af5940c1012fe416910466b950dccf832a62d17e0530",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ExposeServicesAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:acdbf7207e1adf158391cbd2b5a2bfacf0444e18f870a2c5aed704e75c12456c",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/KeyedServiceAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:ffb2405453d59c12970b05f35b925e0cfb4d58050898bbf678197f21f76010ee",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ReplaceServiceAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:e0ea8976fa1af1eba1b8f59781ddc0764d331706d4bd5f6751ca0badc63ca0f3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationContainerBuilderExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a44a99d0501705e4519b7a548a9e65a282d39d6b498bc972e127dceaed909d6e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationDiagnostics.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:5f98babc599eee25c1b91a377fbbf27e61ab049db112755b327dbd975f35985a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationModule.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:937567e714d2fe3618952137fd3d0351967a9bfe5fae7f225ee1b146357d8027",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationOptions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:544ed487fa0b6e87672abbf9713f744f2efa3aaef5ac3410b770829c647790e0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationServiceCollectionExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:08dca22fc1abbeec01201707ebc9eaf2ee263034619ac558466489fd3b5f618a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/AutoRegistrationState.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:83681fb986f2e12cba75d33b21761cf5fa9223f25d4ae036ab63aeeaf79257ee",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDescriptor.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8ebe1bf061002a60fd03f9af96fefafcecd1608ffc0350af1c302535a49efb3e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationDiagnostics.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:b723a257dc2b5b64ef121d96b6dbd8d6f0379afd7e39c3b31fa11f26598d82aa",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlan.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:e7bee9a1b8f4155d424be0f434e59198d90bac1a13e6ef918e13eb30993fc138",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlanner.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:08701b8c38864fce07c01e704ab41782e8057d5087f1c51ac9612b47ccf0c394",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationScanner.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.dependencyinjection",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:274bee9faf17f42ae60e50f486a0d8eb1458091f71eda3a09fd116c156c179e9",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceScanDescriptor.cs",
       "source_type": "source"
     }
   ]

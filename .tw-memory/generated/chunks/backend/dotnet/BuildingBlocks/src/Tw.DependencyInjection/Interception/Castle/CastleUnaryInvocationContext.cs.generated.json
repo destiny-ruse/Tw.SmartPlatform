@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.Castle.CastleUnaryInvocationContext#chunk-001",
+      "end_line": 46,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "castle",
+        "castleunaryinvocationcontext",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "interception",
+        "src",
+        "tw",
+        "class",
+        "context",
+        "dependency",
+        "func",
+        "injection",
+        "internal",
+        "invocation",
+        "iunary",
+        "namespace",
+        "private"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "castle",
+          "castleunaryinvocationcontext",
+          "dependencyinjection",
+          "dotnet",
+          "interception",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:788110b3a889fc3103e017e762bfe79e9aa4ae9ed31f0482d666e2865af9cd58",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleUnaryInvocationContext.cs",
+      "start_line": 1,
+      "summary": "Lines 1-46 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleUnaryInvocationContext.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/Castle/CastleUnaryInvocationContext.cs"
+}

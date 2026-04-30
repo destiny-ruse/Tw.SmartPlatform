@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.DisableAutoRegistrationAttribute#chunk-001",
+      "end_line": 8,
+      "heading": null,
+      "keywords": [
+        "attributes",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "disableautoregistrationattribute",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "出自动注",
+        "动注册扫",
+        "型退出自",
+        "实现类型",
+        "标注的类",
+        "标记实现"
+      ],
+      "relations": {
+        "capabilities": [
+          "attributes",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "disableautoregistrationattribute",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:d0d611422de83881639f013eb97f1a555ff21505995884be86eb4df92b0679a1",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/DisableAutoRegistrationAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-8 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/DisableAutoRegistrationAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/DisableAutoRegistrationAttribute.cs"
+}

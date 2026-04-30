@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Dependency.IScopedDependency#chunk-001",
+      "end_line": 6,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependency",
+        "dependencyinjection",
+        "dotnet",
+        "iscopeddependency",
+        "src",
+        "tw",
+        "injection",
+        "namespace",
+        "summary",
+        "以作用域",
+        "作用域生",
+        "参与自动",
+        "周期参与",
+        "命周期参",
+        "型应以作",
+        "域生命周",
+        "实现类型"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependency",
+          "dependencyinjection",
+          "dotnet",
+          "iscopeddependency",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:59e35e9a1d089463690d54e624c2681b3179976d53c1fff25e07e05c5f619946",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/IScopedDependency.cs",
+      "start_line": 1,
+      "summary": "Lines 1-6 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/IScopedDependency.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/IScopedDependency.cs"
+}

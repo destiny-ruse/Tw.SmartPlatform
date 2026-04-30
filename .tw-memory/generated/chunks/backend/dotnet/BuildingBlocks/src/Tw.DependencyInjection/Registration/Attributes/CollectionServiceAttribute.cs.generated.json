@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.CollectionServiceAttribute#chunk-001",
+      "end_line": 14,
+      "heading": null,
+      "keywords": [
+        "attributes",
+        "backend",
+        "buildingblocks",
+        "collectionserviceattribute",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "以集合追",
+        "允许同一",
+        "加模式注",
+        "合追加模",
+        "型以集合",
+        "实现类型"
+      ],
+      "relations": {
+        "capabilities": [
+          "attributes",
+          "backend",
+          "buildingblocks",
+          "collectionserviceattribute",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:a2472d68b915db9bb9d26add0542ecb6d4d28e9fab2159b76b25983c525c58e3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/CollectionServiceAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-14 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/CollectionServiceAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/CollectionServiceAttribute.cs"
+}

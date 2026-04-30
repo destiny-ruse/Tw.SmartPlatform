@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.ServiceRegistrationPlan#chunk-001",
+      "end_line": 25,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "serviceregistrationplan",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "决策的服",
+        "划阶段的",
+        "务注册列",
+        "包含已决",
+        "含已决策",
+        "已决策的",
+        "最终产出"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "serviceregistrationplan",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:b723a257dc2b5b64ef121d96b6dbd8d6f0379afd7e39c3b31fa11f26598d82aa",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlan.cs",
+      "start_line": 1,
+      "summary": "Lines 1-25 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlan.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/ServiceRegistrationPlan.cs"
+}

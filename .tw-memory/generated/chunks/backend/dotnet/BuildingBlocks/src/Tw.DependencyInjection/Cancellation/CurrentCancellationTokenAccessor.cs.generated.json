@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Cancellation.CurrentCancellationTokenAccessor#chunk-001",
+      "end_line": 42,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cancellation",
+        "cs",
+        "currentcancellationtokenaccessor",
+        "dependencyinjection",
+        "dotnet",
+        "src",
+        "tw",
+        "accessor",
+        "ambient",
+        "async",
+        "cref",
+        "dependency",
+        "icancellation",
+        "icurrent",
+        "injection",
+        "local",
+        "namespace",
+        "provider"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "cancellation",
+          "currentcancellationtokenaccessor",
+          "dependencyinjection",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:1afab475770783f5523dd54a9cab107bfca703dace0e9f7543c2319996a9333c",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/CurrentCancellationTokenAccessor.cs",
+      "start_line": 1,
+      "summary": "Lines 1-42 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/CurrentCancellationTokenAccessor.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Cancellation/CurrentCancellationTokenAccessor.cs"
+}

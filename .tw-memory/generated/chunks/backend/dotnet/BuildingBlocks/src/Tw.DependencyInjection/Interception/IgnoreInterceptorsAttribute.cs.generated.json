@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.IgnoreInterceptorsAttribute#chunk-001",
+      "end_line": 18,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "ignoreinterceptorsattribute",
+        "interception",
+        "src",
+        "tw",
+        "core",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "using",
+        "全部自动",
+        "分或全部",
+        "前类型忽",
+        "型忽略部",
+        "声明当前"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "ignoreinterceptorsattribute",
+          "interception",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:94b240eee2c87918c310660845054a33c4eabb9e4b6426d049dc0d384f611518",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IgnoreInterceptorsAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-18 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IgnoreInterceptorsAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IgnoreInterceptorsAttribute.cs"
+}

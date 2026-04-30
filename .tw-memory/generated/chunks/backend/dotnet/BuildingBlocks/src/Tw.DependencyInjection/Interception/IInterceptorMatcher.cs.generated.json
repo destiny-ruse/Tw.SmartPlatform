@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.IInterceptorMatcher#chunk-001",
+      "end_line": 35,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "iinterceptormatcher",
+        "interception",
+        "src",
+        "tw",
+        "dependency",
+        "iinterceptor",
+        "injection",
+        "interface",
+        "namespace",
+        "public",
+        "summary",
+        "动匹配规",
+        "动期执行",
+        "匹配规则",
+        "启动期执"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "iinterceptormatcher",
+          "interception",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:43439ad69257aff81e83b384b38114a4c2cc0a81efbfbbcf3f258a5c01a8f120",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IInterceptorMatcher.cs",
+      "start_line": 1,
+      "summary": "Lines 1-35 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IInterceptorMatcher.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/IInterceptorMatcher.cs"
+}

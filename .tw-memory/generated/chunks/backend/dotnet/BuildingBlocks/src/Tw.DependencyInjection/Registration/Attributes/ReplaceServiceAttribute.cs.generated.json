@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.ReplaceServiceAttribute#chunk-001",
+      "end_line": 14,
+      "heading": null,
+      "keywords": [
+        "attributes",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "registration",
+        "replaceserviceattribute",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "以替换模",
+        "型以替换",
+        "实现类型",
+        "将覆盖已",
+        "已注册的",
+        "换模式注"
+      ],
+      "relations": {
+        "capabilities": [
+          "attributes",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "registration",
+          "replaceserviceattribute",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:ffb2405453d59c12970b05f35b925e0cfb4d58050898bbf678197f21f76010ee",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ReplaceServiceAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-14 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ReplaceServiceAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ReplaceServiceAttribute.cs"
+}

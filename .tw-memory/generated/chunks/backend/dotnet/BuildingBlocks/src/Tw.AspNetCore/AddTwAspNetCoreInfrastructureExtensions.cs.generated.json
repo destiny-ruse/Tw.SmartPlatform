@@ -1,0 +1,51 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.AddTwAspNetCoreInfrastructureExtensions#chunk-001",
+      "end_line": 42,
+      "heading": null,
+      "keywords": [
+        "addtwaspnetcoreinfrastructureextensions",
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "asp",
+        "autofac",
+        "builder",
+        "cancellation",
+        "core",
+        "dependency",
+        "extensions",
+        "injection",
+        "microsoft",
+        "mvc",
+        "namespace",
+        "net"
+      ],
+      "relations": {
+        "capabilities": [
+          "addtwaspnetcoreinfrastructureextensions",
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:a97724ad4574ae759d698369fa9431439379842a7f9498356d91c04986c79e3b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/AddTwAspNetCoreInfrastructureExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-42 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/AddTwAspNetCoreInfrastructureExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/AddTwAspNetCoreInfrastructureExtensions.cs"
+}

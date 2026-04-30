@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.MvcUnaryInvocationContext#chunk-001",
+      "end_line": 46,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dotnet",
+        "mvc",
+        "mvcunaryinvocationcontext",
+        "src",
+        "tw",
+        "asp",
+        "class",
+        "context",
+        "core",
+        "dependency",
+        "func",
+        "injection",
+        "internal",
+        "invocation",
+        "iunary",
+        "namespace"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "mvc",
+          "mvcunaryinvocationcontext",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:996de7759ca0136d12c32f7d4d49f5ea345341fc5a98f986bf169fbfb0c95173",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/MvcUnaryInvocationContext.cs",
+      "start_line": 1,
+      "summary": "Lines 1-46 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/MvcUnaryInvocationContext.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/MvcUnaryInvocationContext.cs"
+}

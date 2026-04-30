@@ -190,7 +190,7 @@
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore#chunk-001",
-      "end_line": 15,
+      "end_line": 19,
       "heading": null,
       "keywords": [
         "aspnetcore",
@@ -231,7 +231,7 @@
       },
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj",
       "start_line": 1,
-      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
+      "summary": "Lines 1-19 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Caching.Tw.Caching#chunk-001",
@@ -322,6 +322,51 @@
       "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj",
       "start_line": 1,
       "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.Core/Tw.Core.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Tw.DependencyInjection#chunk-001",
+      "end_line": 27,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dependencyinjection",
+        "dotnet",
+        "src",
+        "tw",
+        "core",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "include",
+        "item",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "packable",
+        "project"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dependencyinjection",
+          "dependencyinjection",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Tw.DependencyInjection.csproj",
+      "start_line": 1,
+      "summary": "Lines 1-27 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Tw.DependencyInjection.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DistributedLocking.Tw.DistributedLocking#chunk-001",
@@ -729,6 +774,53 @@
       "summary": "Lines 1-9 in backend/dotnet/BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj"
     },
     {
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.AspNetCore.Tests.Tw.AspNetCore.Tests#chunk-001",
+      "end_line": 28,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dotnet",
+        "tests",
+        "tw",
+        "asp",
+        "core",
+        "enable",
+        "false",
+        "framework",
+        "group",
+        "implicit",
+        "include",
+        "item",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dotnet",
+          "tests",
+          "tests",
+          "tests"
+        ],
+        "framework": null,
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj",
+      "start_line": 1,
+      "summary": "Lines 1-28 in backend/dotnet/BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj"
+    },
+    {
       "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.Core.Tests.Tw.Core.Tests#chunk-001",
       "end_line": 25,
       "heading": null,
@@ -774,6 +866,53 @@
       "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj",
       "start_line": 1,
       "summary": "Lines 1-25 in backend/dotnet/BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.DependencyInjection.Tests.Tw.DependencyInjection.Tests#chunk-001",
+      "end_line": 26,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "csproj",
+        "dependencyinjection",
+        "dotnet",
+        "tests",
+        "tw",
+        "enable",
+        "false",
+        "framework",
+        "group",
+        "implicit",
+        "include",
+        "item",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "packable",
+        "package"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "csproj",
+          "dependencyinjection",
+          "dependencyinjection",
+          "dotnet",
+          "tests",
+          "tests",
+          "tests"
+        ],
+        "framework": null,
+        "kind": "package",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_path": "backend/dotnet/BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj",
+      "start_line": 1,
+      "summary": "Lines 1-26 in backend/dotnet/BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj"
     },
     {
       "chunk_id": "backend.dotnet.BuildingBlocks.tests.Tw.TestBase.Tw.TestBase#chunk-001",

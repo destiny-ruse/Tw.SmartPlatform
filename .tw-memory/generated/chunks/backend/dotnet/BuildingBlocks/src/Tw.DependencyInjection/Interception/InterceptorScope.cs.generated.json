@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorScope#chunk-001",
+      "end_line": 17,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "interception",
+        "interceptorscope",
+        "src",
+        "tw",
+        "dependency",
+        "enum",
+        "injection",
+        "interceptor",
+        "namespace",
+        "public",
+        "scope",
+        "summary",
+        "器解析的",
+        "器适用的",
+        "容器解析"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "interception",
+          "interceptorscope",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:7c04e0c6cd157dc914220b91dbf3d6bc1f734ae835ba41287b6fe3696839cb49",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorScope.cs",
+      "start_line": 1,
+      "summary": "Lines 1-17 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorScope.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorScope.cs"
+}

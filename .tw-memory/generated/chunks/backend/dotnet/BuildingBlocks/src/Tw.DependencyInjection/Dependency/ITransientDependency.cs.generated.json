@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Dependency.ITransientDependency#chunk-001",
+      "end_line": 6,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependency",
+        "dependencyinjection",
+        "dotnet",
+        "itransientdependency",
+        "src",
+        "tw",
+        "injection",
+        "namespace",
+        "summary",
+        "与自动注",
+        "以瞬时生",
+        "参与自动",
+        "周期参与",
+        "命周期参",
+        "型应以瞬",
+        "实现类型",
+        "应以瞬时"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependency",
+          "dependencyinjection",
+          "dotnet",
+          "itransientdependency",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:d942e9261d0be68457806b19b5db91fe9c7d6a457b3a88b4ecd636d1391164ee",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ITransientDependency.cs",
+      "start_line": 1,
+      "summary": "Lines 1-6 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ITransientDependency.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Dependency/ITransientDependency.cs"
+}

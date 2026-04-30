@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.KeyedServiceAttribute#chunk-001",
+      "end_line": 15,
+      "heading": null,
+      "keywords": [
+        "attributes",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "keyedserviceattribute",
+        "registration",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "与基于键",
+        "为实现类",
+        "于键的服",
+        "以参与基",
+        "参与基于",
+        "型指定命"
+      ],
+      "relations": {
+        "capabilities": [
+          "attributes",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "keyedserviceattribute",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:acdbf7207e1adf158391cbd2b5a2bfacf0444e18f870a2c5aed704e75c12456c",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/KeyedServiceAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/KeyedServiceAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/KeyedServiceAttribute.cs"
+}

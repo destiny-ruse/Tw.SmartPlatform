@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorMetadata#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "interception",
+        "interceptormetadata",
+        "src",
+        "tw",
+        "class",
+        "core",
+        "dependency",
+        "empty",
+        "injection",
+        "interceptor",
+        "internal",
+        "iread",
+        "list",
+        "metadata",
+        "namespace"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "interception",
+          "interceptormetadata",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:703188c96180dd6f224ef3a048a54c9652ab59f1dfac32c8b6a6f2b16986c6bb",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorMetadata.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorMetadata.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Interception.InterceptorMetadata#chunk-002",
+      "end_line": 114,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "interception",
+        "interceptormetadata",
+        "src",
+        "tw",
+        "attributes",
+        "enumerate",
+        "ienumerable",
+        "intercept",
+        "interceptor",
+        "layer",
+        "many",
+        "new",
+        "private",
+        "read",
+        "registration"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "interception",
+          "interceptormetadata",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:703188c96180dd6f224ef3a048a54c9652ab59f1dfac32c8b6a6f2b16986c6bb",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorMetadata.cs",
+      "start_line": 73,
+      "summary": "Lines 73-114 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorMetadata.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Interception/InterceptorMetadata.cs"
+}

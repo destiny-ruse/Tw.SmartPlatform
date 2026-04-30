@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.DependencyInjection.Registration.Attributes.ExposeServicesAttribute#chunk-001",
+      "end_line": 20,
+      "heading": null,
+      "keywords": [
+        "attributes",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dependencyinjection",
+        "dotnet",
+        "exposeservicesattribute",
+        "registration",
+        "src",
+        "tw",
+        "dependency",
+        "injection",
+        "namespace",
+        "summary",
+        "型对外暴",
+        "声明实现",
+        "外暴露的",
+        "实现类型",
+        "对外暴露",
+        "式声明实"
+      ],
+      "relations": {
+        "capabilities": [
+          "attributes",
+          "backend",
+          "buildingblocks",
+          "dependencyinjection",
+          "dotnet",
+          "exposeservicesattribute",
+          "registration",
+          "src"
+        ],
+        "framework": "tw.dependencyinjection",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5f0d1d275b5747070ef8af5940c1012fe416910466b950dccf832a62d17e0530",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ExposeServicesAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-20 in backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ExposeServicesAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/Registration/Attributes/ExposeServicesAttribute.cs"
+}

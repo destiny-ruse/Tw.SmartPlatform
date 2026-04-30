@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Features.HttpRequestFeature#chunk-001",
+      "end_line": 13,
+      "heading": null,
+      "keywords": [
+        "aspnetcore",
+        "backend",
+        "buildingblocks",
+        "cs",
+        "dotnet",
+        "features",
+        "httprequestfeature",
+        "src",
+        "tw",
+        "action",
+        "asp",
+        "class",
+        "context",
+        "core",
+        "feature",
+        "get",
+        "http",
+        "ihttp",
+        "internal",
+        "microsoft"
+      ],
+      "relations": {
+        "capabilities": [
+          "aspnetcore",
+          "backend",
+          "buildingblocks",
+          "dotnet",
+          "features",
+          "httprequestfeature",
+          "src"
+        ],
+        "framework": "tw.aspnetcore",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:47e49be7f20c71d01d7e67a230763c7175a3d5612de70885cae24c366b6827f4",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/HttpRequestFeature.cs",
+      "start_line": 1,
+      "summary": "Lines 1-13 in backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/HttpRequestFeature.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/HttpRequestFeature.cs"
+}

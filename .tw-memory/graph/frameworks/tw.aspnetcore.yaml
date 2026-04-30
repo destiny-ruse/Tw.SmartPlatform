@@ -1,8 +1,28 @@
 chunks:
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.AddTwAspNetCoreInfrastructureExtensions#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Cancellation.HttpContextCancellationTokenProvider#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Features.HttpRequestFeature#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Features.IHttpRequestFeature#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.MvcUnaryInvocationContext#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwEntryInterceptorFilter#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwEntryInterceptorFilter#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Mvc.TwMvcOptionsSetup#chunk-001
   - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-001
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-002
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-003
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-004
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-005
+  - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.README#chunk-006
   - backend.dotnet.BuildingBlocks.src.Tw.AspNetCore.Tw.AspNetCore#chunk-001
 framework: "tw.aspnetcore"
 schema_version: "1.0.0"
 sources:
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/AddTwAspNetCoreInfrastructureExtensions.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Cancellation/HttpContextCancellationTokenProvider.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/HttpRequestFeature.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Features/IHttpRequestFeature.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/MvcUnaryInvocationContext.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwEntryInterceptorFilter.cs
+  - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Mvc/TwMvcOptionsSetup.cs
   - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/README.md
   - backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj
