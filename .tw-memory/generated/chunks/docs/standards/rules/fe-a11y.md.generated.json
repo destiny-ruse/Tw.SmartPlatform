@@ -21,7 +21,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -50,7 +50,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +70,9 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "vue",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +82,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +101,16 @@
         "fe",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "aria",
+        "button",
+        "div",
+        "escape",
+        "form",
+        "label",
+        "main",
+        "nav",
+        "tab"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +120,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +139,21 @@
         "fe",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "alert",
+        "aria",
+        "button",
+        "click",
+        "close",
+        "describedby",
+        "dialog",
+        "div",
+        "error",
+        "hidden",
+        "icon",
+        "input",
+        "label",
+        "mobile"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +163,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +183,8 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "aria"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +194,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +214,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "i18n",
+        "project",
+        "styles",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +228,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -228,7 +258,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

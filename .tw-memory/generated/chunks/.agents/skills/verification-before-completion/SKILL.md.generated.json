@@ -44,7 +44,19 @@
         "overview",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "always",
+        "claiming",
+        "claims",
+        "complete",
+        "core",
+        "dishonesty",
+        "efficiency",
+        "evidence",
+        "letter",
+        "principle",
+        "rule",
+        "spirit"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +91,17 @@
         "skill",
         "skills",
         "the",
-        "verification"
+        "verification",
+        "cannot",
+        "claim",
+        "claims",
+        "command",
+        "evidence",
+        "fresh",
+        "haven",
+        "message",
+        "passes",
+        "run"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +136,17 @@
         "skill",
         "skills",
         "the",
-        "verification"
+        "verification",
+        "any",
+        "claim",
+        "claiming",
+        "command",
+        "complete",
+        "execute",
+        "expressing",
+        "fresh",
+        "full",
+        "identify"
       ],
       "relations": {
         "capabilities": [
@@ -148,7 +180,18 @@
         "md",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "build",
+        "check",
+        "claim",
+        "clean",
+        "command",
+        "errors",
+        "extrapolation",
+        "linter",
+        "output",
+        "partial",
+        "pass"
       ],
       "relations": {
         "capabilities": [
@@ -183,7 +226,17 @@
         "skill",
         "skills",
         "stop",
-        "verification"
+        "verification",
+        "about",
+        "agent",
+        "commit",
+        "done",
+        "etc",
+        "expressing",
+        "great",
+        "perfect",
+        "probably",
+        "push"
       ],
       "relations": {
         "capabilities": [
@@ -217,7 +270,18 @@
         "rationalization",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "agent",
+        "compiler",
+        "confidence",
+        "confident",
+        "evidence",
+        "exceptions",
+        "excuse",
+        "just",
+        "linter",
+        "now",
+        "once"
       ],
       "relations": {
         "capabilities": [
@@ -251,7 +315,18 @@
         "patterns",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "all",
+        "command",
+        "correct",
+        "fix",
+        "green",
+        "looks",
+        "now",
+        "pass",
+        "red",
+        "regression",
+        "revert"
       ],
       "relations": {
         "capabilities": [
@@ -286,7 +361,17 @@
         "skills",
         "this",
         "verification",
-        "why"
+        "why",
+        "believe",
+        "broken",
+        "crash",
+        "don",
+        "failure",
+        "functions",
+        "human",
+        "memories",
+        "missing",
+        "partner"
       ],
       "relations": {
         "capabilities": [
@@ -320,7 +405,18 @@
         "skill",
         "skills",
         "verification",
-        "when"
+        "when",
+        "about",
+        "always",
+        "any",
+        "claims",
+        "committing",
+        "creation",
+        "expression",
+        "moving",
+        "positive",
+        "satisfaction",
+        "state"
       ],
       "relations": {
         "capabilities": [
@@ -355,7 +451,17 @@
         "skill",
         "skills",
         "the",
-        "verification"
+        "verification",
+        "claim",
+        "command",
+        "negotiable",
+        "non",
+        "output",
+        "read",
+        "result",
+        "run",
+        "shortcuts",
+        "then"
       ],
       "relations": {
         "capabilities": [

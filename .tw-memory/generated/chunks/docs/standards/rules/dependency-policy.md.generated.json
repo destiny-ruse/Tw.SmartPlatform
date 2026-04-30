@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,8 @@
         "policy",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "sdk"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +84,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +103,8 @@
         "md",
         "policy",
         "rules",
-        "standards"
+        "standards",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +115,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +134,21 @@
         "md",
         "policy",
         "rules",
-        "standards"
+        "standards",
+        "apache",
+        "dependencies",
+        "example",
+        "json",
+        "latest",
+        "left",
+        "license",
+        "org",
+        "pad",
+        "parser",
+        "passed",
+        "reason",
+        "review",
+        "scan"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +159,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +179,8 @@
         "policy",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +191,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +211,12 @@
         "policy",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "management",
+        "onboarding",
+        "pipeline",
+        "processes",
+        "secrets"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +227,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +258,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

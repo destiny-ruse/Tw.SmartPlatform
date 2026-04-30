@@ -11,7 +11,9 @@
         "md",
         "rules",
         "standards",
-        "约定规范"
+        "约定规范",
+        "api",
+        "async"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +24,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +43,9 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "async"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +56,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +76,15 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apps",
+        "async",
+        "backend",
+        "mock",
+        "schema",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +95,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +114,14 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "async",
+        "broker",
+        "dto",
+        "pii",
+        "schema",
+        "traceparent"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +132,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +151,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "channels",
+        "data",
+        "event",
+        "events",
+        "headers",
+        "message",
+        "name",
+        "object",
+        "occurred",
+        "order",
+        "orders",
+        "paid",
+        "payload",
+        "properties"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +176,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +196,10 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "api",
+        "async",
+        "schema"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +210,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +230,14 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "contract",
+        "data",
+        "formats",
+        "messaging",
+        "patterns",
+        "testing",
+        "tracing"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +248,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +279,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

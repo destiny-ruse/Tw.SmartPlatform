@@ -24,7 +24,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -56,7 +56,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -77,7 +77,18 @@
         "response",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "json",
+        "mobile",
+        "mock",
+        "open",
+        "rest",
+        "rpc",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -89,7 +100,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -109,7 +120,16 @@
         "md",
         "response",
         "rules",
-        "standards"
+        "standards",
+        "code",
+        "details",
+        "field",
+        "http",
+        "json",
+        "message",
+        "pii",
+        "sql",
+        "trace"
       ],
       "relations": {
         "capabilities": [
@@ -121,7 +141,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -141,7 +161,20 @@
         "md",
         "response",
         "rules",
-        "standards"
+        "standards",
+        "af7651916cd43dd8448eb211c80319c",
+        "code",
+        "details",
+        "exception",
+        "failed",
+        "field",
+        "items",
+        "json",
+        "message",
+        "min",
+        "null",
+        "order",
+        "quantity"
       ],
       "relations": {
         "capabilities": [
@@ -153,7 +186,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +207,13 @@
         "response",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "code",
+        "http",
+        "message",
+        "pii",
+        "sql",
+        "trace"
       ],
       "relations": {
         "capabilities": [
@@ -186,7 +225,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -207,7 +246,14 @@
         "response",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "codes",
+        "handling",
+        "http",
+        "references",
+        "shape",
+        "status",
+        "tracing"
       ],
       "relations": {
         "capabilities": [
@@ -219,7 +265,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -252,7 +298,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

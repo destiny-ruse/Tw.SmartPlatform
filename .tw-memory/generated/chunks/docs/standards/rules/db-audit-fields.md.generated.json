@@ -23,7 +23,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -54,7 +54,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -75,7 +75,8 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "orm"
       ],
       "relations": {
         "capabilities": [
@@ -86,7 +87,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -106,7 +107,13 @@
         "fields",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "created",
+        "delete",
+        "deleted",
+        "flag",
+        "tenant",
+        "updated"
       ],
       "relations": {
         "capabilities": [
@@ -117,7 +124,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -137,7 +144,20 @@
         "fields",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "bigint",
+        "create",
+        "created",
+        "deleted",
+        "item",
+        "key",
+        "null",
+        "order",
+        "primary",
+        "select",
+        "sku",
+        "sql",
+        "table"
       ],
       "relations": {
         "capabilities": [
@@ -148,7 +168,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -180,7 +200,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -201,7 +221,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "handling",
+        "naming",
+        "pii",
+        "tracing"
       ],
       "relations": {
         "capabilities": [
@@ -212,7 +236,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -244,7 +268,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

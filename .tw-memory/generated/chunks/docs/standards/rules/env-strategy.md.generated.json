@@ -22,7 +22,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -83,7 +83,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -113,7 +113,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +132,21 @@
         "md",
         "rules",
         "standards",
-        "strategy"
+        "strategy",
+        "artifact",
+        "catalog",
+        "com",
+        "config",
+        "database",
+        "example",
+        "f2a91c",
+        "image",
+        "prod",
+        "production",
+        "promotion",
+        "ref",
+        "registry",
+        "secret"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +157,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +188,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +208,13 @@
         "rules",
         "standards",
         "strategy",
-        "相关规范"
+        "相关规范",
+        "configuration",
+        "deploy",
+        "management",
+        "pipeline",
+        "rollback",
+        "secrets"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +225,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +256,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

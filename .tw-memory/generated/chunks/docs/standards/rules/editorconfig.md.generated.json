@@ -9,7 +9,9 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "config",
+        "editor"
       ],
       "relations": {
         "capabilities": [
@@ -19,7 +21,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -37,7 +39,10 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "config",
+        "diff",
+        "editor"
       ],
       "relations": {
         "capabilities": [
@@ -47,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -66,7 +71,12 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "json",
+        "markdown",
+        "sql",
+        "vendored",
+        "yaml"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +86,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -94,7 +104,22 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "charset",
+        "config",
+        "crlf",
+        "editor",
+        "end",
+        "ide",
+        "java",
+        "json",
+        "line",
+        "lint",
+        "python",
+        "root",
+        "script",
+        "space",
+        "tab"
       ],
       "relations": {
         "capabilities": [
@@ -104,7 +129,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -122,7 +147,22 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "charset",
+        "end",
+        "final",
+        "ide",
+        "indent",
+        "ini",
+        "insert",
+        "json",
+        "line",
+        "newline",
+        "readme",
+        "root",
+        "size",
+        "space",
+        "style"
       ],
       "relations": {
         "capabilities": [
@@ -132,7 +172,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -151,7 +191,12 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "config",
+        "editor",
+        "lint",
+        "root",
+        "true"
       ],
       "relations": {
         "capabilities": [
@@ -161,7 +206,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -180,7 +225,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "layout",
+        "naming",
+        "repo"
       ],
       "relations": {
         "capabilities": [
@@ -190,7 +239,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -219,7 +268,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

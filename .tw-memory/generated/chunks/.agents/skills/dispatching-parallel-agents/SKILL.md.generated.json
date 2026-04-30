@@ -42,7 +42,20 @@
         "overview",
         "parallel",
         "skill",
-        "skills"
+        "skills",
+        "context",
+        "crafting",
+        "delegate",
+        "ensure",
+        "focused",
+        "instructions",
+        "isolated",
+        "never",
+        "precisely",
+        "should",
+        "specialized",
+        "stay",
+        "succeed"
       ],
       "relations": {
         "capabilities": [
@@ -75,7 +88,19 @@
         "skill",
         "skills",
         "use",
-        "when"
+        "when",
+        "agent",
+        "all",
+        "box",
+        "can",
+        "diamond",
+        "digraph",
+        "domain",
+        "dot",
+        "failures",
+        "independent",
+        "investigates",
+        "multiple"
       ],
       "relations": {
         "capabilities": [
@@ -142,7 +167,18 @@
         "md",
         "parallel",
         "skill",
-        "skills"
+        "skills",
+        "abort",
+        "approval",
+        "batch",
+        "behavior",
+        "broken",
+        "completion",
+        "domain",
+        "each",
+        "failures",
+        "file",
+        "fixing"
       ],
       "relations": {
         "capabilities": [
@@ -177,7 +213,17 @@
         "parallel",
         "skill",
         "skills",
-        "tasks"
+        "tasks",
+        "clear",
+        "constraints",
+        "don",
+        "each",
+        "file",
+        "gets",
+        "goal",
+        "make",
+        "one",
+        "pass"
       ],
       "relations": {
         "capabilities": [
@@ -209,7 +255,20 @@
         "md",
         "parallel",
         "skill",
-        "skills"
+        "skills",
+        "abort",
+        "agent",
+        "all",
+        "approval",
+        "batch",
+        "behavior",
+        "claude",
+        "code",
+        "completion",
+        "conditions",
+        "environment",
+        "failures",
+        "fix"
       ],
       "relations": {
         "capabilities": [
@@ -243,7 +302,18 @@
         "parallel",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "all",
+        "changes",
+        "conflict",
+        "don",
+        "each",
+        "fixes",
+        "full",
+        "read",
+        "return",
+        "run",
+        "suite"
       ],
       "relations": {
         "capabilities": [
@@ -277,7 +347,18 @@
         "prompt",
         "skill",
         "skills",
-        "structure"
+        "structure",
+        "about",
+        "all",
+        "clear",
+        "contained",
+        "context",
+        "domain",
+        "focused",
+        "good",
+        "needed",
+        "one",
+        "output"
       ],
       "relations": {
         "capabilities": [
@@ -310,7 +391,19 @@
         "mistakes",
         "parallel",
         "skill",
-        "skills"
+        "skills",
+        "abort",
+        "agent",
+        "all",
+        "broad",
+        "condition",
+        "context",
+        "doesn",
+        "fix",
+        "focused",
+        "gets",
+        "lost",
+        "race"
       ],
       "relations": {
         "capabilities": [
@@ -344,7 +437,18 @@
         "skill",
         "skills",
         "use",
-        "when"
+        "when",
+        "context",
+        "entire",
+        "failures",
+        "first",
+        "fix",
+        "fixing",
+        "full",
+        "investigate",
+        "might",
+        "need",
+        "one"
       ],
       "relations": {
         "capabilities": [
@@ -379,7 +483,17 @@
         "real",
         "session",
         "skill",
-        "skills"
+        "skills",
+        "abort",
+        "across",
+        "after",
+        "agent",
+        "batch",
+        "behavior",
+        "completion",
+        "failures",
+        "files",
+        "issues"
       ],
       "relations": {
         "capabilities": [
@@ -412,7 +526,19 @@
         "md",
         "parallel",
         "skill",
-        "skills"
+        "skills",
+        "agent",
+        "context",
+        "don",
+        "each",
+        "focus",
+        "happen",
+        "independence",
+        "interfere",
+        "investigations",
+        "less",
+        "multiple",
+        "narrow"
       ],
       "relations": {
         "capabilities": [
@@ -444,7 +570,20 @@
         "parallel",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "after",
+        "changed",
+        "check",
+        "code",
+        "conflicts",
+        "did",
+        "each",
+        "edit",
+        "full",
+        "return",
+        "review",
+        "run",
+        "same"
       ],
       "relations": {
         "capabilities": [
@@ -478,7 +617,18 @@
         "real",
         "skill",
         "skills",
-        "world"
+        "world",
+        "across",
+        "all",
+        "completed",
+        "concurrently",
+        "conflicts",
+        "debugging",
+        "dispatched",
+        "failures",
+        "files",
+        "fixes",
+        "integrated"
       ],
       "relations": {
         "capabilities": [

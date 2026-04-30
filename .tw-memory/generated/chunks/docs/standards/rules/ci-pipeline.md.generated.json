@@ -21,7 +21,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -50,7 +50,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +70,8 @@
         "pipeline",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "kubernetes"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +81,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +100,10 @@
         "md",
         "pipeline",
         "rules",
-        "standards"
+        "standards",
+        "lint",
+        "sha",
+        "tag"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +113,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +132,21 @@
         "md",
         "pipeline",
         "rules",
-        "standards"
+        "standards",
+        "app",
+        "build",
+        "docker",
+        "git",
+        "image",
+        "label",
+        "name",
+        "opencontainers",
+        "org",
+        "pytest",
+        "python",
+        "revision",
+        "run",
+        "sha"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +156,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +176,9 @@
         "pipeline",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "sha",
+        "tag"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +188,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +208,15 @@
         "pipeline",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "commit",
+        "container",
+        "deploy",
+        "git",
+        "image",
+        "rollback",
+        "strategy",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +226,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -228,7 +256,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

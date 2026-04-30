@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Collections.ITypeList#chunk-001",
+      "end_line": 44,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "collections",
+        "core",
+        "cs",
+        "dotnet",
+        "itypelist",
+        "src",
+        "tw",
+        "add",
+        "cref",
+        "ilist",
+        "interface",
+        "itype",
+        "list",
+        "name",
+        "namespace",
+        "object",
+        "public",
+        "returns"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "collections",
+          "core",
+          "dotnet",
+          "itypelist",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:52f220c3e509e398ddf1901b4fcaf437730dc3131917fb0ebd25c3afc3368801",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/ITypeList.cs",
+      "start_line": 1,
+      "summary": "Lines 1-44 in backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/ITypeList.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/ITypeList.cs"
+}

@@ -16,7 +16,8 @@
         "readme",
         "src",
         "tw",
-        "集成构件目录"
+        "集成构件目录",
+        "web"
       ],
       "relations": {
         "capabilities": [

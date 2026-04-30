@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,8 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "javadoc"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +53,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +73,8 @@
         "naming",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "vendored"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +85,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +104,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "camel",
+        "can",
+        "case",
+        "common",
+        "data",
+        "helper",
+        "jdbc",
+        "manager2",
+        "misc",
+        "obj",
+        "order",
+        "pascal",
+        "repository",
+        "should"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +129,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +148,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "application",
+        "boolean",
+        "can",
+        "cancel",
+        "cancellation",
+        "class",
+        "com",
+        "common",
+        "flag",
+        "helper2",
+        "misc",
+        "order",
+        "ordering",
+        "package"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +173,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +193,10 @@
         "naming",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "generated",
+        "helper",
+        "manager"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +207,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +227,9 @@
         "naming",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "comments",
+        "common"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +240,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +271,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

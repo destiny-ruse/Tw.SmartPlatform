@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,10 @@
         "java",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "ide",
+        "javadoc"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +55,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +75,9 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "javadoc",
+        "vendored"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +88,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +107,16 @@
         "java",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "deprecated",
+        "hack",
+        "javadoc",
+        "param",
+        "record",
+        "return",
+        "see",
+        "throws"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +127,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +146,19 @@
         "java",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "cancel",
+        "exception",
+        "handle",
+        "illegal",
+        "order",
+        "orders",
+        "param",
+        "state",
+        "string",
+        "throws",
+        "void"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +169,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +189,12 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "api",
+        "generated",
+        "hack",
+        "javadoc",
+        "record"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +205,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +225,9 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "naming"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +238,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +269,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

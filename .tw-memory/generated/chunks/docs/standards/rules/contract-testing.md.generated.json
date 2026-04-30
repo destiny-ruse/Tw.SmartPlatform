@@ -22,7 +22,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,11 @@
         "md",
         "rules",
         "standards",
-        "testing"
+        "testing",
+        "api",
+        "async",
+        "rest",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +56,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +76,16 @@
         "rules",
         "standards",
         "testing",
-        "适用范围"
+        "适用范围",
+        "api",
+        "async",
+        "fixture",
+        "open",
+        "proto",
+        "rest",
+        "rpc",
+        "schema",
+        "sdk"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +96,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +115,21 @@
         "md",
         "rules",
         "standards",
-        "testing"
+        "testing",
+        "api",
+        "async",
+        "channel",
+        "header",
+        "http",
+        "message",
+        "payload",
+        "pii",
+        "proto",
+        "rest",
+        "rpc",
+        "safe",
+        "schema",
+        "status"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +140,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +159,21 @@
         "md",
         "rules",
         "standards",
-        "testing"
+        "testing",
+        "1001",
+        "api",
+        "body",
+        "change",
+        "consumer",
+        "get",
+        "items",
+        "method",
+        "ord",
+        "order",
+        "orders",
+        "paid",
+        "path",
+        "provider"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +184,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +204,11 @@
         "rules",
         "standards",
         "testing",
-        "检查清单"
+        "检查清单",
+        "api",
+        "pii",
+        "proto",
+        "schema"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +219,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +239,17 @@
         "rules",
         "standards",
         "testing",
-        "相关规范"
+        "相关规范",
+        "api",
+        "asyncapi",
+        "conventions",
+        "design",
+        "grpc",
+        "proto",
+        "rest",
+        "strategy",
+        "style",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +260,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +291,7 @@
           "testing"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

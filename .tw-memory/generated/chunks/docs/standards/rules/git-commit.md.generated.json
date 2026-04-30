@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,8 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "gitignore"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +53,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +73,8 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "stash"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +85,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +104,21 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "add",
+        "bug",
+        "build",
+        "changes",
+        "chore",
+        "feat",
+        "fix",
+        "gitignore",
+        "ide",
+        "index",
+        "refactor",
+        "review",
+        "squash",
+        "summary"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +129,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +148,17 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "add",
+        "engineering",
+        "env",
+        "expand",
+        "general",
+        "generation",
+        "index",
+        "shell",
+        "update",
+        "verify"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +169,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +189,10 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "gitignore",
+        "summary",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +203,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +223,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "branching",
+        "code",
+        "editorconfig",
+        "review"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +238,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +258,8 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "gitignore"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +270,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

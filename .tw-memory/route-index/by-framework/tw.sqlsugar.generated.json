@@ -13,7 +13,9 @@
         "sqlsugar",
         "src",
         "tw",
-        "数据访问构件目录"
+        "数据访问构件目录",
+        "sql",
+        "sugar"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +45,20 @@
         "dotnet",
         "sqlsugar",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target",
+        "usings"
       ],
       "relations": {
         "capabilities": [

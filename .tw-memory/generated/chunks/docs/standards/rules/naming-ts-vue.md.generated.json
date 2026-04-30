@@ -13,7 +13,9 @@
         "ts",
         "typescript",
         "vue",
-        "命名规范"
+        "命名规范",
+        "script",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -24,7 +26,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -44,7 +46,10 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "import",
+        "script",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -55,7 +60,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -76,7 +81,10 @@
         "standards",
         "ts",
         "vue",
-        "适用范围"
+        "适用范围",
+        "script",
+        "store",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -87,7 +95,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -107,7 +115,20 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "bill",
+        "camel",
+        "can",
+        "case",
+        "common",
+        "data1",
+        "detail",
+        "emits",
+        "helper",
+        "obj",
+        "order",
+        "panel",
+        "pascal"
       ],
       "relations": {
         "capabilities": [
@@ -118,7 +139,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -138,7 +159,20 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "boolean",
+        "can",
+        "const",
+        "detail",
+        "manager2",
+        "name",
+        "null",
+        "obj",
+        "order",
+        "orders",
+        "query",
+        "ref",
+        "refresh"
       ],
       "relations": {
         "capabilities": [
@@ -149,7 +183,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -181,7 +215,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -202,7 +236,10 @@
         "standards",
         "ts",
         "vue",
-        "相关规范"
+        "相关规范",
+        "common",
+        "project",
+        "typescript"
       ],
       "relations": {
         "capabilities": [
@@ -213,7 +250,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -245,7 +282,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

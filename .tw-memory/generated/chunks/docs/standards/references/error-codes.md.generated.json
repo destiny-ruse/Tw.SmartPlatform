@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,8 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +53,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -72,7 +73,9 @@
         "md",
         "references",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "rest"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +86,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -102,7 +105,16 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "auth",
+        "field",
+        "found",
+        "required",
+        "resource",
+        "system",
+        "unauthorized",
+        "unavailable",
+        "validation"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +125,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -132,7 +144,10 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "field",
+        "required",
+        "validation"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +158,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -174,7 +189,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },

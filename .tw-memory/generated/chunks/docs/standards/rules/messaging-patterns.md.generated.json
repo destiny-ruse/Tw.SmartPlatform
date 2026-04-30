@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,9 @@
         "messaging",
         "patterns",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "async"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +54,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +74,11 @@
         "patterns",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +89,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +108,9 @@
         "messaging",
         "patterns",
         "rules",
-        "standards"
+        "standards",
+        "broker",
+        "message"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +121,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +140,21 @@
         "messaging",
         "patterns",
         "rules",
-        "standards"
+        "standards",
+        "absent",
+        "consume",
+        "data",
+        "def",
+        "handle",
+        "insert",
+        "invoice",
+        "key",
+        "mark",
+        "message",
+        "messages",
+        "order",
+        "paid",
+        "processed"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +165,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +196,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +216,12 @@
         "patterns",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "asyncapi",
+        "conventions",
+        "idempotency",
+        "resilience",
+        "tracing"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +232,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +263,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

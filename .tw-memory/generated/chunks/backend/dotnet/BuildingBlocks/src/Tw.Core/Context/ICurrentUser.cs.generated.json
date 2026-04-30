@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Context.ICurrentUser#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "context",
+        "core",
+        "cs",
+        "dotnet",
+        "icurrentuser",
+        "src",
+        "tw",
+        "authenticated",
+        "bool",
+        "claims",
+        "email",
+        "get",
+        "guid",
+        "icurrent",
+        "interface",
+        "name",
+        "namespace",
+        "public"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "context",
+          "core",
+          "dotnet",
+          "icurrentuser",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:990bb33065b2008a25fd5875cc5168bed0f8bb2855976a6b8123865eda47f8ce",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICurrentUser.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICurrentUser.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Context.ICurrentUser#chunk-002",
+      "end_line": 87,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "context",
+        "core",
+        "cs",
+        "dotnet",
+        "icurrentuser",
+        "src",
+        "tw",
+        "all",
+        "bool",
+        "claim",
+        "claims",
+        "false",
+        "get",
+        "langword",
+        "name",
+        "param",
+        "remarks",
+        "returns"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "context",
+          "core",
+          "dotnet",
+          "icurrentuser",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:990bb33065b2008a25fd5875cc5168bed0f8bb2855976a6b8123865eda47f8ce",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICurrentUser.cs",
+      "start_line": 73,
+      "summary": "Lines 73-87 in backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICurrentUser.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICurrentUser.cs"
+}

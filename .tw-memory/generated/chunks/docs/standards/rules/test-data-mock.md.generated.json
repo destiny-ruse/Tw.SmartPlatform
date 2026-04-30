@@ -24,7 +24,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -56,7 +56,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -77,7 +77,16 @@
         "rules",
         "standards",
         "test",
-        "适用范围"
+        "适用范围",
+        "factory",
+        "fake",
+        "fixture",
+        "pii",
+        "seed",
+        "server",
+        "snapshot",
+        "spy",
+        "stub"
       ],
       "relations": {
         "capabilities": [
@@ -89,7 +98,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -109,7 +118,14 @@
         "mock",
         "rules",
         "standards",
-        "test"
+        "test",
+        "factory",
+        "fixture",
+        "locale",
+        "payload",
+        "pii",
+        "schema",
+        "server"
       ],
       "relations": {
         "capabilities": [
@@ -121,7 +137,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -141,7 +157,20 @@
         "mock",
         "rules",
         "standards",
-        "test"
+        "test",
+        "001",
+        "copied",
+        "created",
+        "email",
+        "example",
+        "json",
+        "name",
+        "now",
+        "phone",
+        "production",
+        "role",
+        "t00",
+        "token"
       ],
       "relations": {
         "capabilities": [
@@ -153,7 +182,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +203,10 @@
         "rules",
         "standards",
         "test",
-        "检查清单"
+        "检查清单",
+        "fixture",
+        "pii",
+        "schema"
       ],
       "relations": {
         "capabilities": [
@@ -186,7 +218,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -207,7 +239,11 @@
         "rules",
         "standards",
         "test",
-        "相关规范"
+        "相关规范",
+        "handling",
+        "migration",
+        "pii",
+        "strategy"
       ],
       "relations": {
         "capabilities": [
@@ -219,7 +255,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -252,7 +288,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

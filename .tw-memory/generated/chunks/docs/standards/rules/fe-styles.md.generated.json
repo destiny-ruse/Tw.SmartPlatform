@@ -21,7 +21,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -50,7 +50,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +70,8 @@
         "rules",
         "standards",
         "styles",
-        "适用范围"
+        "适用范围",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +81,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +100,9 @@
         "md",
         "rules",
         "standards",
-        "styles"
+        "styles",
+        "dom",
+        "token"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +112,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +131,21 @@
         "md",
         "rules",
         "standards",
-        "styles"
+        "styles",
+        "ant",
+        "background",
+        "body",
+        "card",
+        "color",
+        "display",
+        "gap",
+        "grid",
+        "max",
+        "media",
+        "order",
+        "padding",
+        "page",
+        "primary"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +155,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +175,9 @@
         "rules",
         "standards",
         "styles",
-        "检查清单"
+        "检查清单",
+        "important",
+        "token"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +187,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +207,11 @@
         "rules",
         "standards",
         "styles",
-        "相关规范"
+        "相关规范",
+        "a11y",
+        "naming",
+        "project",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +221,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -228,7 +251,7 @@
           "styles"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

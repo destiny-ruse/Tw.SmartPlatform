@@ -49,7 +49,18 @@
         "ddd",
         "dotnet",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk"
       ],
       "relations": {
         "capabilities": [
@@ -119,7 +130,19 @@
         "ddd",
         "dotnet",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target"
       ],
       "relations": {
         "capabilities": [
@@ -224,7 +247,18 @@
         "dotnet",
         "shared",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk"
       ],
       "relations": {
         "capabilities": [
@@ -260,7 +294,19 @@
         "domain",
         "dotnet",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target"
       ],
       "relations": {
         "capabilities": [

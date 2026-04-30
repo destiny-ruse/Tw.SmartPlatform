@@ -11,7 +11,11 @@
         "python",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "backend",
+        "tasks",
+        "under",
+        "use"
       ],
       "relations": {
         "capabilities": [
@@ -41,7 +45,20 @@
         "python",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "before",
+        "brief",
+        "editing",
+        "format",
+        "memory",
+        "path",
+        "powershell",
+        "query",
+        "read",
+        "run",
+        "semantic",
+        "short",
+        "stack"
       ],
       "relations": {
         "capabilities": [
@@ -72,7 +89,19 @@
         "rules",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "before",
+        "company",
+        "direct",
+        "documented",
+        "files",
+        "generated",
+        "internal",
+        "open",
+        "party",
+        "prefer",
+        "readme",
+        "repository"
       ],
       "relations": {
         "capabilities": [
@@ -102,7 +131,20 @@
         "python",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "after",
+        "brief",
+        "changed",
+        "check",
+        "classify",
+        "edits",
+        "files",
+        "format",
+        "generate",
+        "impact",
+        "memory",
+        "powershell",
+        "regeneration"
       ],
       "relations": {
         "capabilities": [

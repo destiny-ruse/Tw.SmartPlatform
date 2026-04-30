@@ -12,7 +12,8 @@
         "rules",
         "standards",
         "style",
-        "风格规范"
+        "风格规范",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -24,7 +25,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -44,7 +45,8 @@
         "proto",
         "rules",
         "standards",
-        "style"
+        "style",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +58,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -77,7 +79,17 @@
         "rules",
         "standards",
         "style",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apis",
+        "async",
+        "dto",
+        "json",
+        "rest",
+        "rpc",
+        "sdk",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -89,7 +101,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -109,7 +121,19 @@
         "proto",
         "rules",
         "standards",
-        "style"
+        "style",
+        "case",
+        "get",
+        "order",
+        "orders",
+        "package",
+        "pascal",
+        "proto3",
+        "request",
+        "reserved",
+        "response",
+        "rpc",
+        "snake"
       ],
       "relations": {
         "capabilities": [
@@ -121,7 +145,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -141,7 +165,20 @@
         "proto",
         "rules",
         "standards",
-        "style"
+        "style",
+        "debug",
+        "get",
+        "int64",
+        "message",
+        "order",
+        "orders",
+        "package",
+        "proto3",
+        "request",
+        "response",
+        "returns",
+        "rpc",
+        "service"
       ],
       "relations": {
         "capabilities": [
@@ -153,7 +190,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +211,9 @@
         "rules",
         "standards",
         "style",
-        "检查清单"
+        "检查清单",
+        "proto3",
+        "reserved"
       ],
       "relations": {
         "capabilities": [
@@ -186,7 +225,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -207,7 +246,12 @@
         "rules",
         "standards",
         "style",
-        "相关规范"
+        "相关规范",
+        "contract",
+        "data",
+        "formats",
+        "testing",
+        "versioning"
       ],
       "relations": {
         "capabilities": [
@@ -219,7 +263,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -252,7 +296,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

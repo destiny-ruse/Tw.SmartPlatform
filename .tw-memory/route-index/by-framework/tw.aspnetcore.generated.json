@@ -16,7 +16,8 @@
         "readme",
         "src",
         "tw",
-        "集成构件目录"
+        "集成构件目录",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -46,7 +47,20 @@
         "csproj",
         "dotnet",
         "src",
-        "tw"
+        "tw",
+        "assembly",
+        "configuration",
+        "enable",
+        "framework",
+        "generate",
+        "group",
+        "implicit",
+        "library",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "output"
       ],
       "relations": {
         "capabilities": [

@@ -8,7 +8,10 @@
         "backend",
         "md",
         "readme",
-        "后端目录"
+        "后端目录",
+        "java",
+        "net",
+        "python"
       ],
       "relations": {
         "capabilities": [

@@ -16,7 +16,15 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "agents",
+        "approved",
+        "audience",
+        "boundary",
+        "date",
+        "document",
+        "explanation",
+        "implementation"
       ],
       "relations": {
         "capabilities": [
@@ -57,7 +65,13 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "asset",
+        "assets",
+        "authorship",
+        "building",
+        "documents",
+        "index"
       ],
       "relations": {
         "capabilities": [
@@ -98,7 +112,13 @@
         "specs",
         "summary",
         "superpowers",
-        "tw"
+        "tw",
+        "added",
+        "can",
+        "check",
+        "engine",
+        "first",
+        "layer"
       ],
       "relations": {
         "capabilities": [
@@ -180,7 +200,13 @@
         "source",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "already",
+        "asset",
+        "carry",
+        "fact",
+        "files",
+        "human"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +246,14 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "chunk",
+        "contain",
+        "evidence",
+        "graph",
+        "hashes",
+        "indexes",
+        "keywords"
       ],
       "relations": {
         "capabilities": [
@@ -261,7 +294,13 @@
         "runtime",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "artifacts",
+        "committed",
+        "content",
+        "databases",
+        "embeddings",
+        "fts"
       ],
       "relations": {
         "capabilities": [
@@ -341,7 +380,13 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "check",
+        "checker",
+        "committed",
+        "compare",
+        "current",
+        "during"
       ],
       "relations": {
         "capabilities": [
@@ -383,7 +428,12 @@
         "source",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "affect",
+        "code",
+        "decisions",
+        "development",
+        "facts"
       ],
       "relations": {
         "capabilities": [
@@ -425,7 +475,12 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "bounded",
+        "chunk",
+        "derive",
+        "full",
+        "generating"
       ],
       "relations": {
         "capabilities": [
@@ -467,7 +522,12 @@
         "specs",
         "standards",
         "superpowers",
-        "tw"
+        "tw",
+        "candidates",
+        "combine",
+        "company",
+        "decisions",
+        "framework"
       ],
       "relations": {
         "capabilities": [
@@ -508,7 +568,13 @@
         "specs",
         "standards",
         "superpowers",
-        "tw"
+        "tw",
+        "classify",
+        "decision",
+        "decisions",
+        "first",
+        "keeps",
+        "path"
       ],
       "relations": {
         "capabilities": [
@@ -549,7 +615,13 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "adapters",
+        "already",
+        "backends",
+        "check",
+        "create",
+        "exists"
       ],
       "relations": {
         "capabilities": [
@@ -591,7 +663,12 @@
         "route",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "documented",
+        "generated",
+        "hash",
+        "include",
+        "index"
       ],
       "relations": {
         "capabilities": [
@@ -633,7 +710,12 @@
         "specs",
         "superpowers",
         "tw",
-        "verification"
+        "verification",
+        "check",
+        "diff",
+        "discover",
+        "existing",
+        "fixed"
       ],
       "relations": {
         "capabilities": [
@@ -674,7 +756,13 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "adding",
+        "after",
+        "check",
+        "complete",
+        "fail",
+        "generate"
       ],
       "relations": {
         "capabilities": [
@@ -715,7 +803,13 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "add",
+        "authors",
+        "bodies",
+        "copy",
+        "documentation",
+        "does"
       ],
       "relations": {
         "capabilities": [
@@ -756,7 +850,13 @@
         "risk",
         "specs",
         "superpowers",
-        "tw"
+        "tw",
+        "add",
+        "checker",
+        "comparison",
+        "controlled",
+        "current",
+        "duplicate"
       ],
       "relations": {
         "capabilities": [

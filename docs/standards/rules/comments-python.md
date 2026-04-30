@@ -44,7 +44,7 @@ def cancel_order(order_id: str) -> None:
 
 ```python
 
-# 遍历订单
+# 遍历订单
 
 for order in orders:
     # 添加订单

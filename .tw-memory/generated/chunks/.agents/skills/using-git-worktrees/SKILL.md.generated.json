@@ -44,7 +44,19 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "allowing",
+        "branches",
+        "core",
+        "create",
+        "directory",
+        "isolated",
+        "multiple",
+        "principle",
+        "repository",
+        "same",
+        "selection",
+        "sharing"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +91,10 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "follow",
+        "order",
+        "priority"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +129,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "alternative",
+        "bash",
+        "both",
+        "dev",
+        "directory",
+        "exist",
+        "found",
+        "hidden",
+        "null",
+        "order"
       ],
       "relations": {
         "capabilities": [
@@ -148,7 +173,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "asking",
+        "bash",
+        "dev",
+        "director",
+        "grep",
+        "null",
+        "preference",
+        "specified",
+        "use",
+        "worktree"
       ],
       "relations": {
         "capabilities": [
@@ -182,7 +217,18 @@
         "skills",
         "user",
         "using",
-        "worktrees"
+        "worktrees",
+        "claude",
+        "config",
+        "create",
+        "directory",
+        "exists",
+        "found",
+        "global",
+        "hidden",
+        "local",
+        "location",
+        "name"
       ],
       "relations": {
         "capabilities": [
@@ -253,7 +299,15 @@
         "skills",
         "using",
         "worktrees",
-        "worktrees)"
+        "worktrees)",
+        "bash",
+        "before",
+        "check",
+        "creating",
+        "dev",
+        "directory",
+        "gitignore",
+        "global"
       ],
       "relations": {
         "capabilities": [
@@ -291,7 +345,13 @@
         "superpowers",
         "using",
         "worktrees",
-        "worktrees)"
+        "worktrees)",
+        "entirely",
+        "gitignore",
+        "needed",
+        "outside",
+        "project",
+        "verification"
       ],
       "relations": {
         "capabilities": [
@@ -360,7 +420,13 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "basename",
+        "bash",
+        "parse",
+        "rev",
+        "show",
+        "toplevel"
       ],
       "relations": {
         "capabilities": [
@@ -394,7 +460,18 @@
         "skills",
         "using",
         "worktree",
-        "worktrees"
+        "worktrees",
+        "add",
+        "bash",
+        "branch",
+        "case",
+        "config",
+        "determine",
+        "esac",
+        "full",
+        "location",
+        "name",
+        "new"
       ],
       "relations": {
         "capabilities": [
@@ -429,7 +506,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "appropriate",
+        "auto",
+        "bash",
+        "build",
+        "cargo",
+        "detect",
+        "install",
+        "json",
+        "node",
+        "npm"
       ],
       "relations": {
         "capabilities": [
@@ -464,7 +551,17 @@
         "skills",
         "using",
         "verify",
-        "worktrees"
+        "worktrees",
+        "appropriate",
+        "bash",
+        "cargo",
+        "command",
+        "ensure",
+        "examples",
+        "fail",
+        "npm",
+        "project",
+        "pytest"
       ],
       "relations": {
         "capabilities": [
@@ -498,7 +595,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "failures",
+        "feature",
+        "full",
+        "implement",
+        "name",
+        "passing",
+        "path",
+        "ready",
+        "tests",
+        "worktree"
       ],
       "relations": {
         "capabilities": [
@@ -532,7 +639,18 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "action",
+        "add",
+        "ask",
+        "both",
+        "check",
+        "claude",
+        "commit",
+        "directory",
+        "exist",
+        "exists",
+        "gitignore"
       ],
       "relations": {
         "capabilities": [
@@ -601,7 +719,17 @@
         "skipping",
         "using",
         "verification",
-        "worktrees"
+        "worktrees",
+        "always",
+        "before",
+        "check",
+        "contents",
+        "creating",
+        "fix",
+        "get",
+        "local",
+        "pollute",
+        "problem"
       ],
       "relations": {
         "capabilities": [
@@ -636,7 +764,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "ask",
+        "claude",
+        "conventions",
+        "creates",
+        "existing",
+        "fix",
+        "follow",
+        "inconsistency",
+        "priority",
+        "problem"
       ],
       "relations": {
         "capabilities": [
@@ -672,7 +810,16 @@
         "tests",
         "using",
         "with",
-        "worktrees"
+        "worktrees",
+        "bugs",
+        "can",
+        "distinguish",
+        "existing",
+        "explicit",
+        "failures",
+        "fix",
+        "get",
+        "issues"
       ],
       "relations": {
         "capabilities": [
@@ -707,7 +854,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "auto",
+        "breaks",
+        "detect",
+        "different",
+        "etc",
+        "files",
+        "fix",
+        "json",
+        "package",
+        "problem"
       ],
       "relations": {
         "capabilities": [
@@ -741,7 +898,18 @@
         "skills",
         "using",
         "workflow",
-        "worktrees"
+        "worktrees",
+        "add",
+        "auth",
+        "check",
+        "confirms",
+        "create",
+        "exists",
+        "ignore",
+        "ignored",
+        "isolated",
+        "set",
+        "verify"
       ],
       "relations": {
         "capabilities": [
@@ -775,7 +943,18 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "asking",
+        "assume",
+        "baseline",
+        "create",
+        "directory",
+        "failing",
+        "ignored",
+        "local",
+        "location",
+        "never",
+        "proceed"
       ],
       "relations": {
         "capabilities": [
@@ -808,7 +987,19 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "any",
+        "approved",
+        "before",
+        "brainstorming",
+        "called",
+        "design",
+        "development",
+        "driven",
+        "executing",
+        "follows",
+        "implementation",
+        "needing"
       ],
       "relations": {
         "capabilities": [

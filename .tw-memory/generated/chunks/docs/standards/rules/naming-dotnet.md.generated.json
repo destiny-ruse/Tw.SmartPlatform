@@ -23,7 +23,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -42,7 +42,10 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "ide",
+        "net"
       ],
       "relations": {
         "capabilities": [
@@ -53,7 +56,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -73,7 +76,8 @@
         "naming",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "net"
       ],
       "relations": {
         "capabilities": [
@@ -84,7 +88,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -103,7 +107,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "async",
+        "bool",
+        "camel",
+        "can",
+        "case",
+        "common",
+        "flag",
+        "ihelper",
+        "imanager",
+        "iorder",
+        "net",
+        "pascal",
+        "repository",
+        "should"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +132,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -133,7 +151,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "async",
+        "bool",
+        "cancellation",
+        "class",
+        "common",
+        "csharp",
+        "find",
+        "flag",
+        "get",
+        "helper2",
+        "interface",
+        "iorder",
+        "new",
+        "order"
       ],
       "relations": {
         "capabilities": [
@@ -144,7 +176,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -164,7 +196,14 @@
         "naming",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "api",
+        "async",
+        "common",
+        "generated",
+        "helper",
+        "manager",
+        "net"
       ],
       "relations": {
         "capabilities": [
@@ -175,7 +214,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -195,7 +234,9 @@
         "naming",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "comments",
+        "common"
       ],
       "relations": {
         "capabilities": [
@@ -206,7 +247,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -237,7 +278,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

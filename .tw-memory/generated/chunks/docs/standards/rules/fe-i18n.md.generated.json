@@ -21,7 +21,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -50,7 +50,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +70,12 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "fixture",
+        "json",
+        "script",
+        "type",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +85,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +104,11 @@
         "i18n",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "aria",
+        "key",
+        "label",
+        "placeholder"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +118,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +137,16 @@
         "i18n",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "button",
+        "count",
+        "input",
+        "json",
+        "label",
+        "order",
+        "placeholder",
+        "receiver",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +156,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +176,10 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "aria",
+        "label",
+        "placeholder"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +189,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +209,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "a11y",
+        "project",
+        "typescript",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +223,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -228,7 +253,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

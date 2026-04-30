@@ -1,4 +1,785 @@
 {
   "schema_version": "1.0.0",
-  "sources": []
+  "sources": [
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:5d7df26bd1b45c3290b062b030a1130e0a43f81a950ee867514a992b11900203",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:52f220c3e509e398ddf1901b4fcaf437730dc3131917fb0ebd25c3afc3368801",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/ITypeList.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:6c2122cd9393bcdf87b07f903e8347813bba4459399d56aedbb65d2455409166",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:5b0491af22c72f93e1e1529a43bfc2ce6a403ededda8fd83fe54ab5499f1458e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:dc46e36b97663ec0ceadd0ed7cef187b513413b65aaad456ac80eba6c1b426ab",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/IConfigurableOptions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:990bb33065b2008a25fd5875cc5168bed0f8bb2855976a6b8123865eda47f8ce",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICurrentUser.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:53b9b410b6e99a44891a018bc8cee6be20fdda61668a69f59b163c52d119db41",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwConfigurationException.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:080ddb5fbf28cdce782c68d4c58564054525599e8571ab7be1dc6f1364bb054d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwException.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:948ca44feb08ccc85dc988df9db0398415f69e7847156a0e691b9e876bb73ffc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ByteArrayExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:26e0efc72503d2bc4b8ceb9914d580d1b625d40b49c78c9c33dfbd654ba60228",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:4ef0a94e526b9950e611eda1bbf702607bc5c68c9801ff6d4a155f4d23df1254",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ComparableExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:fdd60f3f08874f792567c4c9e80c65b413662aedef5d8cd1bb35d46dbc52d716",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:6ce010f2e7074440332e224ac02c33c9c9a3ec3e05af4d727cd3656cf2dd0074",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:6dc9d9b21bef5aab9ed97f992ec43c17b8170c7d90703a53c2e7fae95e554586",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:f5b29c1e6f26f2f5bcc7cbbc92a895f6581e54f322df9ca1a326bae784d57826",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ExceptionExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:844ae12728a198eaed1d2daa545ecf7597f98620de43edd7371db4eb4e92c969",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/GuidExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:7ed19d0795d99dad26029f82da80de2056a17f979a33638379bf5b3615233293",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:fae8cabbc7c55333142c6595af7765aeff5483d06924d03d28b51cacf437c15b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ObjectExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:2223bda4e53f25413cc2eb3c420b6d8329007f6c565e53cffafe07590cc51498",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:405ae48743cccb51c2ebdd64387e1ca4453224c2926f1cf40039057c49af65af",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StringExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:84f8430d3f822e472c5e0cc3e1b501e522676a94a0cee5a8bf1dcae5dd344cfd",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/TypeExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a00305cb574cdc81fd73195ffbb129709198f3d88430b862af8d5f574b98ea24",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedAction.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:bb037dc1a89ae4bc011850ada356a63ad401766318a9eeb9b17282708f5b1da3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedActionList.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:eba4efaaccf714815b066c79ca9f22029845caecb60bc8d37093456187cac23a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObject.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8a21df2728afe336603958b65f69ae077d24cec9766c4dca820d42555608ac93",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObjectList.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:73022b8ee54735bc7777038614968c0ccbcdd127f713fd29633f9af4186ef3da",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelector.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:5f22a9d184008e5b922ad77c12997576a688d4856b5d62f2d88499a1af53fcc0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelectorListExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:5d440e62672cf6fe38338428d693a5226018194f5550e66b453c6688b13a5bd9",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedValue.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:1562eb71e24914156f5a92861129ddb566484b770c80cd557901bbb827290643",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ITypeFinder.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:b4b8670684cf00b6311e77f073ab2d1e03d7cac8b74e60bf96630814379d5825",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:d9da786ddfccc8719d0394d83df28a32b763cd177d0e17262af1a1422ce5f145",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:1803cb2a321259a1e3b05f5e17d6d5870f33d11832bb43d122110e928c96c590",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinderExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:fca853e93f9ab3b67d3f320d2270098da852f276b9e78bef673b047a9d10f189",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/AesCryptography.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:22e8cf31d6c0efe1b3b1b1127a331f0eea93dbacbe4755600e8ed86384f2cc63",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:11e4373594aac1a0335425510bf739d0f98aaaeff7391fd0b7b33c76a3f40ccc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HashComparison.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:27bd22d3a1723a397706362251d2f9f63044d9d023f8dd2918000f455fe1a7af",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HexEncoding.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8f0f51c184467fced769b71c5fcb92b7ba78bba957fc7be8d1f17e65cda5b333",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacMd5Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:308640e43ad499fb34351d515f62e708165759159855e8c0a9e6de4269a251b6",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha1Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:052214c6ae89452b22d2b0bdf7ec2a44510b54ca37dc8f1f7abe9633bac9dae5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:aa22302cb722b640900d72f137afb25b2a636d97d60890d63a47da48bd165a9d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3256Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:737ff02c6a95dcfc6895cf578fbc5a45de924de0f8b617666d25f745a2af9a56",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3384Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:82cc8d16b21f95a843389ef8103fa36af947df5e1aed544929127788ed5ca03f",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3512Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:b4d80e1f87a6b25068b838f37f7636d61222026b91a54acc4088fd92f3605cae",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha384Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:89c8658830ea4fd45059fc5ca05a54d767ce5c1af5b2bab6928ddc7653659694",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha512Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:bb9d8cf148e0708f0987de4ece5f47666460c99e195af38d0f3a39e8f799dd7a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Md5Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:0156d594444f042e7fab8e3d0e92cde1f7a32b3adfcc6828929899c984316bf9",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Pbkdf2PasswordHasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:0e768e43ab58c883a936bcc71ece21ede6e3d07bcba440304af153e391064b42",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaCryptography.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8721effcffae951157c4233ad8dd0f67c629c0b670884669dcdf910e59c7736c",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaDerKeyPair.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:fa5d177dc70908b88ba36074132c423e090d7d8d8003ac3f052570df7326c3dc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaKeyPair.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:22f494212a706a1c530619293efaa81d5b758cc2fbdecc8e4b4de64a95c378a4",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha1Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:472bea3a3eed61848b4566fa7fb40b9f81fbe256a838ce56a09592b33e4778da",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha256Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:94b1503c9a10c73a7f9af4a65ff8ca770db12a56f14419b41eedca57e3ad807d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3256Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:8585b05d777d6d17b1072839172009c5f5c01e0de88a9af236e862437054c68e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3384Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:ad58c9dd3199e0a3263e4d33f4ed95e534b990498528f5ce5e1f89ecbcc33fcc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3512Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:661d034d68dcd314ae639888b4803c0692391e687facc83f261290542ec247f3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha384Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:edf2260a25e6a7eb53189a0fd64de883be0750343c6615174c50c8b9763cccbc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha512Hasher.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:7b99e994311ee5760286d4da647ebda6bc4faf56eb3b36a27645e42db144b816",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/StringCryptographyExtensions.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:f61208e68c94575ced99b2bc5d2e17122c6fa02eb661e672746f7855f8bccac5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:f8aad544b041708f8a5cc9b802402f2c7130ec35144987f978a206ab0c932096",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Timing/IClock.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a1a6461c37760fd28446bb8ce6a7a354cacd4bd2c89b45f329401145c0a42017",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/AsyncDisposeFunc.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:1514ad989b5eb607cbc2b9295fcb00e8191a798f0139e5f2858d33a25f3c2438",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/DisposeAction.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:a5ecc167199d379300f179276268113fe1432b5f96abf70283de51cb2dd4106b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:e7af70c86827ac7784f7bcd7f74141c5f755a3513c75d275dee4cc95a975b4a3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs",
+      "source_type": "source"
+    },
+    {
+      "framework": "tw.core",
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
+      "language": "dotnet",
+      "service": null,
+      "source_hash": "sha256:1ad06d31c13b2a18a439e6cb95745e06b19c78246f8dc4b0aa5179d28e5e421b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/SecureRandomGenerator.cs",
+      "source_type": "source"
+    }
+  ]
 }

@@ -41,7 +41,20 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "assuming",
+        "codebase",
+        "comprehensive",
+        "context",
+        "document",
+        "engineer",
+        "everything",
+        "files",
+        "implementation",
+        "know",
+        "need",
+        "our",
+        "questionable"
       ],
       "relations": {
         "capabilities": [
@@ -73,7 +86,19 @@
         "scope",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "been",
+        "brainstorming",
+        "breaking",
+        "broken",
+        "covers",
+        "during",
+        "independent",
+        "multiple",
+        "project",
+        "separate",
+        "should",
+        "spec"
       ],
       "relations": {
         "capabilities": [
@@ -105,7 +130,19 @@
         "skill",
         "skills",
         "structure",
-        "writing"
+        "writing",
+        "before",
+        "created",
+        "decisions",
+        "decomposition",
+        "defining",
+        "each",
+        "files",
+        "get",
+        "map",
+        "modified",
+        "one",
+        "out"
       ],
       "relations": {
         "capabilities": [
@@ -139,7 +176,17 @@
         "skill",
         "skills",
         "task",
-        "writing"
+        "writing",
+        "action",
+        "code",
+        "each",
+        "failing",
+        "fails",
+        "implement",
+        "make",
+        "minimal",
+        "minutes",
+        "one"
       ],
       "relations": {
         "capabilities": [
@@ -172,7 +219,18 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "agentic",
+        "development",
+        "driven",
+        "every",
+        "feature",
+        "implementation",
+        "markdown",
+        "must",
+        "name",
+        "required",
+        "start"
       ],
       "relations": {
         "capabilities": [
@@ -204,7 +262,19 @@
         "skills",
         "structure",
         "task",
-        "writing"
+        "writing",
+        "component",
+        "create",
+        "def",
+        "exact",
+        "existing",
+        "failing",
+        "file",
+        "files",
+        "markdown",
+        "modify",
+        "name",
+        "path"
       ],
       "relations": {
         "capabilities": [
@@ -235,7 +305,20 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "actual",
+        "contain",
+        "content",
+        "engineer",
+        "every",
+        "failures",
+        "fill",
+        "implement",
+        "later",
+        "must",
+        "needs",
+        "never",
+        "plan"
       ],
       "relations": {
         "capabilities": [
@@ -266,7 +349,20 @@
         "remember",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "always",
+        "changes",
+        "code",
+        "commands",
+        "commits",
+        "complete",
+        "dry",
+        "every",
+        "exact",
+        "expected",
+        "file",
+        "frequent",
+        "output"
       ],
       "relations": {
         "capabilities": [
@@ -298,7 +394,19 @@
         "self",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "after",
+        "against",
+        "check",
+        "checklist",
+        "complete",
+        "coverage",
+        "dispatch",
+        "eyes",
+        "fresh",
+        "look",
+        "plan",
+        "run"
       ],
       "relations": {
         "capabilities": [
@@ -330,7 +438,19 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "after",
+        "choice",
+        "complete",
+        "dispatch",
+        "docs",
+        "driven",
+        "filename",
+        "fresh",
+        "offer",
+        "options",
+        "plan",
+        "recommended"
       ],
       "relations": {
         "capabilities": [

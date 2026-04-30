@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ExceptionExtensions#chunk-001",
+      "end_line": 15,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "exceptionextensions",
+        "extensions",
+        "src",
+        "tw",
+        "argument",
+        "class",
+        "cref",
+        "exception",
+        "langword",
+        "name",
+        "namespace",
+        "null",
+        "param",
+        "paramref",
+        "public"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "exceptionextensions",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:f5b29c1e6f26f2f5bcc7cbbc92a895f6581e54f322df9ca1a326bae784d57826",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ExceptionExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ExceptionExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ExceptionExtensions.cs"
+}

@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.GuidExtensions#chunk-001",
+      "end_line": 21,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "guidextensions",
+        "src",
+        "tw",
+        "bool",
+        "class",
+        "cref",
+        "empty",
+        "guid",
+        "langword",
+        "name",
+        "namespace",
+        "null",
+        "param",
+        "paramref"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "guidextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:844ae12728a198eaed1d2daa545ecf7597f98620de43edd7371db4eb4e92c969",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/GuidExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-21 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/GuidExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/GuidExtensions.cs"
+}

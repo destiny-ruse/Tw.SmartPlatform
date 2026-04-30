@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Exceptions.TwException#chunk-001",
+      "end_line": 33,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "exceptions",
+        "src",
+        "tw",
+        "twexception",
+        "base",
+        "class",
+        "cref",
+        "exception",
+        "inner",
+        "message",
+        "name",
+        "namespace",
+        "param",
+        "public",
+        "see"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "exceptions",
+          "src",
+          "twexception"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:080ddb5fbf28cdce782c68d4c58564054525599e8571ab7be1dc6f1364bb054d",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwException.cs",
+      "start_line": 1,
+      "summary": "Lines 1-33 in backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwException.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwException.cs"
+}

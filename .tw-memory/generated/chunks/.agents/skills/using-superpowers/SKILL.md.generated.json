@@ -12,7 +12,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "always",
+        "behavior",
+        "claude",
+        "default",
+        "direct",
+        "explicit",
+        "gemini",
+        "instructions",
+        "override",
+        "precedence",
+        "prompt",
+        "requests"
       ],
       "relations": {
         "capabilities": [
@@ -44,7 +56,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "claude",
+        "code",
+        "content",
+        "directly",
+        "files",
+        "follow",
+        "invoke",
+        "its",
+        "loaded",
+        "never",
+        "presented",
+        "read"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +100,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "claude",
+        "cli",
+        "code",
+        "codex",
+        "copilot",
+        "equivalents",
+        "gemini",
+        "get",
+        "names",
+        "non",
+        "platforms",
+        "references"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +174,19 @@
         "skills",
         "superpowers",
         "the",
-        "using"
+        "using",
+        "action",
+        "any",
+        "apply",
+        "before",
+        "chance",
+        "check",
+        "even",
+        "invoke",
+        "invoked",
+        "means",
+        "might",
+        "relevant"
       ],
       "relations": {
         "capabilities": [
@@ -170,7 +218,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "check",
+        "context",
+        "just",
+        "mean",
+        "more",
+        "need",
+        "question",
+        "questions",
+        "rationalizing",
+        "reality",
+        "simple",
+        "stop"
       ],
       "relations": {
         "capabilities": [
@@ -201,7 +261,20 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "apply",
+        "approach",
+        "brainstorming",
+        "could",
+        "debugging",
+        "determine",
+        "first",
+        "how",
+        "implementation",
+        "multiple",
+        "order",
+        "process",
+        "second"
       ],
       "relations": {
         "capabilities": [
@@ -232,7 +305,20 @@
         "skills",
         "superpowers",
         "types",
-        "using"
+        "using",
+        "adapt",
+        "away",
+        "context",
+        "debugging",
+        "discipline",
+        "don",
+        "exactly",
+        "flexible",
+        "follow",
+        "itself",
+        "patterns",
+        "principles",
+        "rigid"
       ],
       "relations": {
         "capabilities": [
@@ -264,7 +350,16 @@
         "skills",
         "superpowers",
         "user",
-        "using"
+        "using",
+        "add",
+        "doesn",
+        "fix",
+        "how",
+        "mean",
+        "say",
+        "skip",
+        "what",
+        "workflows"
       ],
       "relations": {
         "capabilities": [

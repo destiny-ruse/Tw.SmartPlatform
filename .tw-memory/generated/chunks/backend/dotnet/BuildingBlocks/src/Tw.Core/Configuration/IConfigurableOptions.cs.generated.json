@@ -1,0 +1,47 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Configuration.IConfigurableOptions#chunk-001",
+      "end_line": 6,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "configuration",
+        "core",
+        "cs",
+        "dotnet",
+        "iconfigurableoptions",
+        "src",
+        "tw",
+        "iconfigurable",
+        "interface",
+        "namespace",
+        "options",
+        "public",
+        "summary"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "configuration",
+          "core",
+          "dotnet",
+          "iconfigurableoptions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:dc46e36b97663ec0ceadd0ed7cef187b513413b65aaad456ac80eba6c1b426ab",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/IConfigurableOptions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-6 in backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/IConfigurableOptions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/IConfigurableOptions.cs"
+}

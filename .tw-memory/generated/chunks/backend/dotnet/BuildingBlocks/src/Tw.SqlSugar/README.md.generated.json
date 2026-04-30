@@ -13,7 +13,9 @@
         "sqlsugar",
         "src",
         "tw",
-        "数据访问构件目录"
+        "数据访问构件目录",
+        "sql",
+        "sugar"
       ],
       "relations": {
         "capabilities": [

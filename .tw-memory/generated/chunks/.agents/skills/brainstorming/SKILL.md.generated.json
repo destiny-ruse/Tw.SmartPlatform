@@ -12,7 +12,19 @@
         "into",
         "md",
         "skill",
-        "skills"
+        "skills",
+        "ask",
+        "collaborative",
+        "context",
+        "current",
+        "dialogue",
+        "formed",
+        "fully",
+        "help",
+        "natural",
+        "project",
+        "questions",
+        "specs"
       ],
       "relations": {
         "capabilities": [
@@ -47,7 +59,15 @@
         "simple",
         "skill",
         "skills",
-        "too"
+        "too",
+        "all",
+        "change",
+        "config",
+        "design",
+        "every",
+        "function",
+        "goes",
+        "list"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +96,21 @@
         "checklist",
         "md",
         "skill",
-        "skills"
+        "skills",
+        "check",
+        "commits",
+        "complete",
+        "context",
+        "create",
+        "docs",
+        "each",
+        "explore",
+        "files",
+        "items",
+        "must",
+        "offer",
+        "order",
+        "project"
       ],
       "relations": {
         "capabilities": [
@@ -106,7 +140,20 @@
         "md",
         "process",
         "skill",
-        "skills"
+        "skills",
+        "ahead",
+        "box",
+        "companion",
+        "content",
+        "context",
+        "diamond",
+        "digraph",
+        "dot",
+        "explore",
+        "message",
+        "offer",
+        "other",
+        "own"
       ],
       "relations": {
         "capabilities": [
@@ -136,7 +183,20 @@
         "process",
         "skill",
         "skills",
-        "the"
+        "the",
+        "asking",
+        "assess",
+        "before",
+        "check",
+        "commits",
+        "current",
+        "detailed",
+        "docs",
+        "files",
+        "first",
+        "idea",
+        "out",
+        "project"
       ],
       "relations": {
         "capabilities": [
@@ -167,7 +227,19 @@
         "md",
         "skill",
         "skills",
-        "the"
+        "the",
+        "default",
+        "docs",
+        "documentation",
+        "elements",
+        "location",
+        "override",
+        "preferences",
+        "spec",
+        "specs",
+        "style",
+        "superpowers",
+        "topic"
       ],
       "relations": {
         "capabilities": [
@@ -197,7 +269,20 @@
         "md",
         "principles",
         "skill",
-        "skills"
+        "skills",
+        "answer",
+        "choice",
+        "don",
+        "easier",
+        "ended",
+        "multiple",
+        "one",
+        "open",
+        "overwhelm",
+        "possible",
+        "preferred",
+        "question",
+        "questions"
       ],
       "relations": {
         "capabilities": [
@@ -227,7 +312,20 @@
         "md",
         "skill",
         "skills",
-        "visual"
+        "visual",
+        "accepting",
+        "available",
+        "based",
+        "benefit",
+        "browser",
+        "diagrams",
+        "does",
+        "during",
+        "mean",
+        "means",
+        "mockups",
+        "mode",
+        "options"
       ],
       "relations": {
         "capabilities": [

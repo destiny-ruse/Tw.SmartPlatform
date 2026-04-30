@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.StreamExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "src",
+        "streamextensions",
+        "tw",
+        "class",
+        "default",
+        "emit",
+        "encoder",
+        "encoding",
+        "namespace",
+        "new",
+        "private",
+        "public",
+        "readonly",
+        "should"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "src",
+          "streamextensions"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:2223bda4e53f25413cc2eb3c420b6d8329007f6c565e53cffafe07590cc51498",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.StreamExtensions#chunk-002",
+      "end_line": 121,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "src",
+        "streamextensions",
+        "tw",
+        "argument",
+        "cref",
+        "encoding",
+        "exception",
+        "langword",
+        "name",
+        "null",
+        "param",
+        "paramref",
+        "public",
+        "see"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "src",
+          "streamextensions"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:2223bda4e53f25413cc2eb3c420b6d8329007f6c565e53cffafe07590cc51498",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-121 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs"
+}

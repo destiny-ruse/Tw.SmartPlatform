@@ -1,0 +1,100 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.HmacSha256Hasher#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "dotnet",
+        "hmacsha256hasher",
+        "security",
+        "src",
+        "tw",
+        "class",
+        "hasher",
+        "hmac",
+        "input",
+        "key",
+        "name",
+        "namespace",
+        "param",
+        "public",
+        "sha256"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "dotnet",
+          "hmacsha256hasher",
+          "security",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:052214c6ae89452b22d2b0bdf7ec2a44510b54ca37dc8f1f7abe9633bac9dae5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.HmacSha256Hasher#chunk-002",
+      "end_line": 116,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "dotnet",
+        "hmacsha256hasher",
+        "security",
+        "src",
+        "tw",
+        "async",
+        "bool",
+        "cancellation",
+        "case",
+        "computation",
+        "compute",
+        "default",
+        "encoding",
+        "false",
+        "file"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "dotnet",
+          "hmacsha256hasher",
+          "security",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:052214c6ae89452b22d2b0bdf7ec2a44510b54ca37dc8f1f7abe9633bac9dae5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs",
+      "start_line": 73,
+      "summary": "Lines 73-116 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs"
+}

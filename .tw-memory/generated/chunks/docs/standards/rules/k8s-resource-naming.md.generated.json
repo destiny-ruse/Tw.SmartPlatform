@@ -25,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -45,7 +45,8 @@
         "naming",
         "resource",
         "rules",
-        "standards"
+        "standards",
+        "kubernetes"
       ],
       "relations": {
         "capabilities": [
@@ -57,7 +58,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -78,7 +79,19 @@
         "resource",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "account",
+        "chart",
+        "config",
+        "cron",
+        "deployment",
+        "helm",
+        "hpa",
+        "ingress",
+        "job",
+        "kubernetes",
+        "kustomize",
+        "map"
       ],
       "relations": {
         "capabilities": [
@@ -90,7 +103,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -110,7 +123,20 @@
         "naming",
         "resource",
         "rules",
-        "standards"
+        "standards",
+        "component",
+        "config",
+        "deployment",
+        "dev",
+        "helm",
+        "job",
+        "kustomize",
+        "label",
+        "map",
+        "namespace",
+        "ordering",
+        "platform",
+        "prod"
       ],
       "relations": {
         "capabilities": [
@@ -122,7 +148,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -142,7 +168,20 @@
         "naming",
         "resource",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "app",
+        "apps",
+        "component",
+        "deployment",
+        "kind",
+        "kubernetes",
+        "labels",
+        "metadata",
+        "name",
+        "namespace",
+        "ordering",
+        "part"
       ],
       "relations": {
         "capabilities": [
@@ -154,7 +193,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -175,7 +214,13 @@
         "resource",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "config",
+        "label",
+        "map",
+        "namespace",
+        "secret",
+        "service"
       ],
       "relations": {
         "capabilities": [
@@ -187,7 +232,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -208,7 +253,12 @@
         "resource",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "container",
+        "deploy",
+        "image",
+        "rollback"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +270,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -253,7 +303,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

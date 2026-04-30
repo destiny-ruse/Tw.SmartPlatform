@@ -32,7 +32,10 @@
         "md",
         "openapi",
         "readme",
-        "契约目录"
+        "契约目录",
+        "api",
+        "http",
+        "open"
       ],
       "relations": {
         "capabilities": [

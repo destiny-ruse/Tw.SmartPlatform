@@ -19,7 +19,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -37,7 +37,8 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "sli"
       ],
       "relations": {
         "capabilities": [
@@ -47,7 +48,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -66,7 +67,15 @@
         "rules",
         "slo",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apps",
+        "backend",
+        "http",
+        "rpc",
+        "services",
+        "sli",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +85,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -94,7 +103,9 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "cpu",
+        "sli"
       ],
       "relations": {
         "capabilities": [
@@ -104,7 +115,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -122,7 +133,22 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "api",
+        "business",
+        "condition",
+        "conflict",
+        "create",
+        "defined",
+        "documented",
+        "excludes",
+        "http",
+        "order",
+        "requests",
+        "response",
+        "rolling",
+        "service",
+        "sli"
       ],
       "relations": {
         "capabilities": [
@@ -132,7 +158,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -151,7 +177,8 @@
         "rules",
         "slo",
         "standards",
-        "检查清单"
+        "检查清单",
+        "sli"
       ],
       "relations": {
         "capabilities": [
@@ -161,7 +188,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -180,7 +207,13 @@
         "rules",
         "slo",
         "standards",
-        "相关规范"
+        "相关规范",
+        "checks",
+        "deploy",
+        "health",
+        "metrics",
+        "resilience",
+        "rollback"
       ],
       "relations": {
         "capabilities": [
@@ -190,7 +223,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -219,7 +252,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

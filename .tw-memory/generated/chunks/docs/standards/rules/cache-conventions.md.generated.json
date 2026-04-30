@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,8 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "ttl"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +53,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +73,8 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "http"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +85,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +104,9 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "key",
+        "ttl"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +117,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +136,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "await",
+        "catalog",
+        "const",
+        "jitter",
+        "key",
+        "platform",
+        "product",
+        "seconds",
+        "set",
+        "smart",
+        "tenant",
+        "ttl",
+        "typescript",
+        "view"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +161,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +181,9 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "key",
+        "ttl"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +194,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +214,10 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "configuration",
+        "metrics",
+        "resilience"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +228,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +259,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

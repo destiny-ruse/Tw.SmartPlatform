@@ -19,7 +19,12 @@
         "plan",
         "plans",
         "superpowers",
-        "tw"
+        "tw",
+        "agentic",
+        "driven",
+        "executing",
+        "implement",
+        "recommended"
       ],
       "relations": {
         "capabilities": [
@@ -59,7 +64,13 @@
         "plans",
         "source",
         "superpowers",
-        "tw"
+        "tw",
+        "agents",
+        "claude",
+        "convention",
+        "documentation",
+        "existing",
+        "instruction"
       ],
       "relations": {
         "capabilities": [
@@ -99,7 +110,13 @@
         "plans",
         "scope",
         "superpowers",
-        "tw"
+        "tw",
+        "artifacts",
+        "check",
+        "cli",
+        "commands",
+        "first",
+        "generate"
       ],
       "relations": {
         "capabilities": [
@@ -139,7 +156,13 @@
         "plans",
         "structure",
         "superpowers",
-        "tw"
+        "tw",
+        "chunks",
+        "command",
+        "create",
+        "dataclasses",
+        "engine",
+        "entry"
       ],
       "relations": {
         "capabilities": [
@@ -179,7 +202,13 @@
         "memory",
         "plans",
         "superpowers",
-        "tw"
+        "tw",
+        "artifacts",
+        "entries",
+        "first",
+        "generated",
+        "hash",
+        "include"
       ],
       "relations": {
         "capabilities": [
@@ -263,7 +292,8 @@
         "superpowers",
         "task",
         "test",
-        "tw"
+        "tw",
+        "contract"
       ],
       "relations": {
         "capabilities": [
@@ -308,7 +338,8 @@
         "superpowers",
         "task",
         "test",
-        "tw"
+        "tw",
+        "because"
       ],
       "relations": {
         "capabilities": [
@@ -353,7 +384,8 @@
         "superpowers",
         "task",
         "test",
-        "tw"
+        "tw",
+        "append"
       ],
       "relations": {
         "capabilities": [
@@ -398,7 +430,8 @@
         "superpowers",
         "task",
         "tw",
-        "without"
+        "without",
+        "cli"
       ],
       "relations": {
         "capabilities": [
@@ -443,7 +476,8 @@
         "superpowers",
         "task",
         "tw",
-        "without"
+        "without",
+        "because"
       ],
       "relations": {
         "capabilities": [
@@ -488,7 +522,8 @@
         "superpowers",
         "task",
         "tw",
-        "without"
+        "without",
+        "containing"
       ],
       "relations": {
         "capabilities": [
@@ -532,7 +567,9 @@
         "plans",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "adapters",
+        "chunking"
       ],
       "relations": {
         "capabilities": [
@@ -576,7 +613,9 @@
         "plans",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "because",
+        "chunking"
       ],
       "relations": {
         "capabilities": [
@@ -620,7 +659,9 @@
         "plans",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "create",
+        "files"
       ],
       "relations": {
         "capabilities": [
@@ -664,7 +705,9 @@
         "plans",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "artifacts",
+        "brief"
       ],
       "relations": {
         "capabilities": [
@@ -708,7 +751,9 @@
         "superpowers",
         "task",
         "tw",
-        "validate"
+        "validate",
+        "checker",
+        "cli"
       ],
       "relations": {
         "capabilities": [
@@ -752,7 +797,9 @@
         "superpowers",
         "task",
         "tw",
-        "validate"
+        "validate",
+        "brief",
+        "check"
       ],
       "relations": {
         "capabilities": [
@@ -887,7 +934,10 @@
         "preflight",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "cli",
+        "create",
+        "engine"
       ],
       "relations": {
         "capabilities": [
@@ -930,7 +980,10 @@
         "preflight",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "because",
+        "exist",
+        "expected"
       ],
       "relations": {
         "capabilities": [
@@ -975,7 +1028,8 @@
         "superpowers",
         "task",
         "tw",
-        "vector"
+        "vector",
+        "adapters"
       ],
       "relations": {
         "capabilities": [
@@ -1020,7 +1074,8 @@
         "superpowers",
         "task",
         "tw",
-        "vector"
+        "vector",
+        "chunk"
       ],
       "relations": {
         "capabilities": [
@@ -1062,7 +1117,11 @@
         "superpowers",
         "task",
         "thin",
-        "tw"
+        "tw",
+        "agents",
+        "create",
+        "dotnet",
+        "failing"
       ],
       "relations": {
         "capabilities": [
@@ -1104,7 +1163,11 @@
         "superpowers",
         "task",
         "thin",
-        "tw"
+        "tw",
+        "brief",
+        "call",
+        "candidates",
+        "dotnet"
       ],
       "relations": {
         "capabilities": [
@@ -1146,7 +1209,11 @@
         "superpowers",
         "task",
         "thin",
-        "tw"
+        "tw",
+        "brief",
+        "call",
+        "candidates",
+        "format"
       ],
       "relations": {
         "capabilities": [
@@ -1188,7 +1255,11 @@
         "superpowers",
         "task",
         "thin",
-        "tw"
+        "tw",
+        "check",
+        "create",
+        "directly",
+        "each"
       ],
       "relations": {
         "capabilities": [
@@ -1231,7 +1302,10 @@
         "superpowers",
         "task",
         "tw",
-        "verification"
+        "verification",
+        "agents",
+        "files",
+        "format"
       ],
       "relations": {
         "capabilities": [
@@ -1272,7 +1346,12 @@
         "review",
         "self",
         "superpowers",
-        "tw"
+        "tw",
+        "bodies",
+        "chat",
+        "company",
+        "contain",
+        "copies"
       ],
       "relations": {
         "capabilities": [
@@ -1312,7 +1391,13 @@
         "memory",
         "plans",
         "superpowers",
-        "tw"
+        "tw",
+        "above",
+        "all",
+        "checked",
+        "commit",
+        "complete",
+        "dispatch"
       ],
       "relations": {
         "capabilities": [

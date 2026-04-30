@@ -23,7 +23,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -42,7 +42,10 @@
         "dotnet",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "ide",
+        "net",
+        "xml"
       ],
       "relations": {
         "capabilities": [
@@ -53,7 +56,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -73,7 +76,11 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "net",
+        "open",
+        "xml"
       ],
       "relations": {
         "capabilities": [
@@ -84,7 +91,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -103,7 +110,19 @@
         "dotnet",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "act",
+        "api",
+        "arrange",
+        "assert",
+        "exception",
+        "hack",
+        "inheritdoc",
+        "param",
+        "remarks",
+        "returns",
+        "summary",
+        "xml"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +133,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -133,7 +152,21 @@
         "dotnet",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "async",
+        "cancel",
+        "cancellation",
+        "cref",
+        "csharp",
+        "exception",
+        "get",
+        "guid",
+        "invalid",
+        "name",
+        "operation",
+        "order",
+        "param"
       ],
       "relations": {
         "capabilities": [
@@ -144,7 +177,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -164,7 +197,11 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "generated",
+        "hack",
+        "inheritdoc",
+        "xml"
       ],
       "relations": {
         "capabilities": [
@@ -175,7 +212,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -195,7 +232,9 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "naming"
       ],
       "relations": {
         "capabilities": [
@@ -206,7 +245,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -226,7 +265,8 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "net"
       ],
       "relations": {
         "capabilities": [
@@ -237,7 +277,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

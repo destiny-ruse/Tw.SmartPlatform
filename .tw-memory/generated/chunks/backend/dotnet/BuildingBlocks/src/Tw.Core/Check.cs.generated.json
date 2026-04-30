@@ -1,0 +1,186 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Check#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "check",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "class",
+        "compiler",
+        "langword",
+        "name",
+        "namespace",
+        "null",
+        "param",
+        "parameter",
+        "public",
+        "runtime",
+        "see",
+        "services"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "check",
+          "core",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5d7df26bd1b45c3290b062b030a1130e0a43f81a950ee867514a992b11900203",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Check#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "check",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "argument",
+        "caller",
+        "cref",
+        "empty",
+        "exception",
+        "expression",
+        "ienumerable",
+        "langword",
+        "name",
+        "nameof",
+        "null",
+        "param"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "check",
+          "core",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5d7df26bd1b45c3290b062b030a1130e0a43f81a950ee867514a992b11900203",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Check#chunk-003",
+      "end_line": 224,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "check",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "argument",
+        "cref",
+        "exception",
+        "int",
+        "name",
+        "negative",
+        "new",
+        "non",
+        "out",
+        "param",
+        "parameter",
+        "paramref"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "check",
+          "core",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5d7df26bd1b45c3290b062b030a1130e0a43f81a950ee867514a992b11900203",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs",
+      "start_line": 145,
+      "summary": "Lines 145-224 in backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Check#chunk-004",
+      "end_line": 237,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "check",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "argument",
+        "assignable",
+        "base",
+        "caller",
+        "cref",
+        "exception",
+        "expression",
+        "langword",
+        "name",
+        "nameof",
+        "null",
+        "parameter"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "check",
+          "core",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5d7df26bd1b45c3290b062b030a1130e0a43f81a950ee867514a992b11900203",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs",
+      "start_line": 217,
+      "summary": "Lines 217-237 in backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs"
+}

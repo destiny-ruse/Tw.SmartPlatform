@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,12 @@
         "processes",
         "standard",
         "standards",
-        "适用范围"
+        "适用范围",
+        "decisions",
+        "front",
+        "matter",
+        "references",
+        "rules"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +88,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -103,7 +108,16 @@
         "processes",
         "standard",
         "standards",
-        "文档结构"
+        "文档结构",
+        "after",
+        "front",
+        "machine",
+        "markdown",
+        "matter",
+        "review",
+        "roles",
+        "rules",
+        "yaml"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +128,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -134,7 +148,8 @@
         "processes",
         "standard",
         "standards",
-        "状态管理"
+        "状态管理",
+        "rfc"
       ],
       "relations": {
         "capabilities": [
@@ -145,7 +160,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -165,7 +180,8 @@
         "processes",
         "standard",
         "standards",
-        "引用要求"
+        "引用要求",
+        "markdown"
       ],
       "relations": {
         "capabilities": [
@@ -176,7 +192,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -196,7 +212,16 @@
         "processes",
         "standard",
         "standards",
-        "变更流程"
+        "变更流程",
+        "brief",
+        "check",
+        "format",
+        "generate",
+        "memory",
+        "powershell",
+        "python",
+        "rfc",
+        "tools"
       ],
       "relations": {
         "capabilities": [
@@ -207,7 +232,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -227,7 +252,10 @@
         "processes",
         "standard",
         "standards",
-        "变更记录"
+        "变更记录",
+        "anchor",
+        "front",
+        "matter"
       ],
       "relations": {
         "capabilities": [
@@ -238,7 +266,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },

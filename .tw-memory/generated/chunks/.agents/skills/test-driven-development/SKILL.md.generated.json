@@ -12,7 +12,8 @@
         "md",
         "skill",
         "skills",
-        "test"
+        "test",
+        "tdd"
       ],
       "relations": {
         "capabilities": [
@@ -45,7 +46,19 @@
         "overview",
         "skill",
         "skills",
-        "test"
+        "test",
+        "code",
+        "core",
+        "didn",
+        "don",
+        "fail",
+        "first",
+        "know",
+        "letter",
+        "minimal",
+        "pass",
+        "principle",
+        "right"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +92,18 @@
         "skills",
         "test",
         "use",
-        "when"
+        "when",
+        "always",
+        "ask",
+        "behavior",
+        "bug",
+        "changes",
+        "code",
+        "configuration",
+        "exceptions",
+        "features",
+        "fixes",
+        "generated"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +138,17 @@
         "skill",
         "skills",
         "test",
-        "the"
+        "the",
+        "adapt",
+        "before",
+        "code",
+        "delete",
+        "don",
+        "exceptions",
+        "failing",
+        "first",
+        "keep",
+        "over"
       ],
       "relations": {
         "capabilities": [
@@ -149,7 +183,17 @@
         "refactor",
         "skill",
         "skills",
-        "test"
+        "test",
+        "box",
+        "cycle",
+        "digraph",
+        "dot",
+        "failing",
+        "fails",
+        "ffcccc",
+        "fillcolor",
+        "filled",
+        "label"
       ],
       "relations": {
         "capabilities": [
@@ -184,7 +228,17 @@
         "skill",
         "skills",
         "test",
-        "write"
+        "write",
+        "async",
+        "attempts",
+        "const",
+        "failed",
+        "good",
+        "happen",
+        "let",
+        "minimal",
+        "one",
+        "operations"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +274,16 @@
         "skills",
         "test",
         "verify",
-        "watch"
+        "watch",
+        "bash",
+        "because",
+        "confirm",
+        "errors",
+        "expected",
+        "fails",
+        "failure",
+        "feature",
+        "mandatory"
       ],
       "relations": {
         "capabilities": [
@@ -255,7 +318,17 @@
         "minimal",
         "skill",
         "skills",
-        "test"
+        "test",
+        "async",
+        "await",
+        "catch",
+        "function",
+        "good",
+        "let",
+        "operation",
+        "pass",
+        "promise",
+        "retry"
       ],
       "relations": {
         "capabilities": [
@@ -291,7 +364,16 @@
         "skills",
         "test",
         "verify",
-        "watch"
+        "watch",
+        "bash",
+        "confirm",
+        "errors",
+        "fails",
+        "fix",
+        "mandatory",
+        "npm",
+        "other",
+        "output"
       ],
       "relations": {
         "capabilities": [
@@ -325,7 +407,18 @@
         "refactor",
         "skill",
         "skills",
-        "test"
+        "test",
+        "add",
+        "after",
+        "behavior",
+        "don",
+        "duplication",
+        "extract",
+        "green",
+        "helpers",
+        "improve",
+        "keep",
+        "names"
       ],
       "relations": {
         "capabilities": [
@@ -358,7 +451,10 @@
         "repeat",
         "skill",
         "skills",
-        "test"
+        "test",
+        "failing",
+        "feature",
+        "next"
       ],
       "relations": {
         "capabilities": [
@@ -392,7 +488,18 @@
         "skill",
         "skills",
         "test",
-        "tests"
+        "tests",
+        "bad",
+        "behavior",
+        "clear",
+        "describes",
+        "domain",
+        "email",
+        "intent",
+        "minimal",
+        "name",
+        "one",
+        "quality"
       ],
       "relations": {
         "capabilities": [
@@ -427,7 +534,17 @@
         "skill",
         "skills",
         "test",
-        "why"
+        "why",
+        "after",
+        "code",
+        "immediately",
+        "implementation",
+        "might",
+        "nothing",
+        "pass",
+        "passing",
+        "proves",
+        "tests"
       ],
       "relations": {
         "capabilities": [
@@ -461,7 +578,18 @@
         "rationalizations",
         "skill",
         "skills",
-        "test"
+        "test",
+        "achieve",
+        "after",
+        "breaks",
+        "code",
+        "excuse",
+        "goals",
+        "immediately",
+        "nothing",
+        "passing",
+        "prove",
+        "reality"
       ],
       "relations": {
         "capabilities": [
@@ -499,7 +627,14 @@
         "skills",
         "start",
         "stop",
-        "test"
+        "test",
+        "added",
+        "after",
+        "before",
+        "can",
+        "code",
+        "explain",
+        "failed"
       ],
       "relations": {
         "capabilities": [
@@ -534,7 +669,17 @@
         "md",
         "skill",
         "skills",
-        "test"
+        "test",
+        "accepted",
+        "async",
+        "await",
+        "const",
+        "email",
+        "empty",
+        "error",
+        "example",
+        "expect",
+        "form"
       ],
       "relations": {
         "capabilities": [
@@ -568,7 +713,18 @@
         "skill",
         "skills",
         "test",
-        "verification"
+        "verification",
+        "before",
+        "complete",
+        "each",
+        "every",
+        "expected",
+        "fail",
+        "failed",
+        "feature",
+        "function",
+        "implementing",
+        "marking"
       ],
       "relations": {
         "capabilities": [
@@ -602,7 +758,18 @@
         "skills",
         "stuck",
         "test",
-        "when"
+        "when",
+        "api",
+        "ask",
+        "assertion",
+        "complicated",
+        "design",
+        "don",
+        "first",
+        "how",
+        "human",
+        "know",
+        "partner"
       ],
       "relations": {
         "capabilities": [
@@ -636,7 +803,18 @@
         "md",
         "skill",
         "skills",
-        "test"
+        "test",
+        "bug",
+        "bugs",
+        "cycle",
+        "failing",
+        "fix",
+        "follow",
+        "found",
+        "never",
+        "prevents",
+        "proves",
+        "regression"
       ],
       "relations": {
         "capabilities": [
@@ -671,7 +849,17 @@
         "skill",
         "skills",
         "test",
-        "testing"
+        "testing",
+        "adding",
+        "avoid",
+        "behavior",
+        "classes",
+        "common",
+        "instead",
+        "methods",
+        "mock",
+        "mocks",
+        "only"
       ],
       "relations": {
         "capabilities": [
@@ -705,7 +893,18 @@
         "rule",
         "skill",
         "skills",
-        "test"
+        "test",
+        "code",
+        "exceptions",
+        "exists",
+        "failed",
+        "first",
+        "human",
+        "otherwise",
+        "partner",
+        "permission",
+        "production",
+        "tdd"
       ],
       "relations": {
         "capabilities": [

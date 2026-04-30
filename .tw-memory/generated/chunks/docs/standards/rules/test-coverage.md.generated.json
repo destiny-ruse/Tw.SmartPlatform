@@ -22,7 +22,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,10 @@
         "rules",
         "standards",
         "test",
-        "适用范围"
+        "适用范围",
+        "api",
+        "src",
+        "tests"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +86,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +105,12 @@
         "md",
         "rules",
         "standards",
-        "test"
+        "test",
+        "api",
+        "happy",
+        "helper",
+        "mock",
+        "path"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +121,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +140,21 @@
         "md",
         "rules",
         "standards",
-        "test"
+        "test",
+        "async",
+        "await",
+        "cart",
+        "checkout",
+        "error",
+        "expect",
+        "fails",
+        "inventory",
+        "mock",
+        "new",
+        "out",
+        "rejected",
+        "rejects",
+        "reservation"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +165,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +185,8 @@
         "rules",
         "standards",
         "test",
-        "检查清单"
+        "检查清单",
+        "mock"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +197,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +217,12 @@
         "rules",
         "standards",
         "test",
-        "相关规范"
+        "相关规范",
+        "code",
+        "contract",
+        "review",
+        "strategy",
+        "testing"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +233,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +264,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

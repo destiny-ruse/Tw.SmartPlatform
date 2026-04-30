@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.NumberExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "numberextensions",
+        "src",
+        "tw",
+        "argument",
+        "bool",
+        "class",
+        "cref",
+        "even",
+        "exception",
+        "globalization",
+        "int",
+        "long",
+        "namespace",
+        "number"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "numberextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:7ed19d0795d99dad26029f82da80de2056a17f979a33638379bf5b3615233293",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.NumberExtensions#chunk-002",
+      "end_line": 110,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "numberextensions",
+        "src",
+        "tw",
+        "argument",
+        "cref",
+        "decimal",
+        "decimals",
+        "double",
+        "exception",
+        "int",
+        "math",
+        "name",
+        "out",
+        "param"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "numberextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:7ed19d0795d99dad26029f82da80de2056a17f979a33638379bf5b3615233293",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-110 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs"
+}

@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Utilities.DisposeAction#chunk-001",
+      "end_line": 29,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "disposeaction",
+        "dotnet",
+        "src",
+        "tw",
+        "utilities",
+        "action",
+        "argument",
+        "class",
+        "cref",
+        "dispose",
+        "exception",
+        "idisposable",
+        "name",
+        "namespace",
+        "null",
+        "param"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "disposeaction",
+          "dotnet",
+          "src",
+          "utilities"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:1514ad989b5eb607cbc2b9295fcb00e8191a798f0139e5f2858d33a25f3c2438",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/DisposeAction.cs",
+      "start_line": 1,
+      "summary": "Lines 1-29 in backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/DisposeAction.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/DisposeAction.cs"
+}

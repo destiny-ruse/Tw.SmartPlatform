@@ -22,7 +22,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,16 @@
         "rules",
         "standards",
         "validation",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "http",
+        "mobile",
+        "pii",
+        "rpc",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +92,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +111,16 @@
         "md",
         "rules",
         "standards",
-        "validation"
+        "validation",
+        "api",
+        "async",
+        "mime",
+        "open",
+        "pii",
+        "proto",
+        "schema",
+        "sql",
+        "url"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +131,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +150,21 @@
         "md",
         "rules",
         "standards",
-        "validation"
+        "validation",
+        "allowed",
+        "bytes",
+        "check",
+        "content",
+        "file",
+        "image",
+        "jpeg",
+        "max",
+        "mime",
+        "name",
+        "png",
+        "python",
+        "require",
+        "sanitize"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +175,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +195,8 @@
         "rules",
         "standards",
         "validation",
-        "检查清单"
+        "检查清单",
+        "pii"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +207,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +227,16 @@
         "rules",
         "standards",
         "validation",
-        "相关规范"
+        "相关规范",
+        "api",
+        "design",
+        "error",
+        "handling",
+        "management",
+        "pii",
+        "response",
+        "rest",
+        "secrets"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +247,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +278,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

@@ -11,7 +11,20 @@
         "md",
         "skill",
         "skills",
-        "subagent"
+        "subagent",
+        "after",
+        "code",
+        "compliance",
+        "dispatching",
+        "each",
+        "execute",
+        "first",
+        "fresh",
+        "per",
+        "plan",
+        "quality",
+        "review",
+        "spec"
       ],
       "relations": {
         "capabilities": [
@@ -45,7 +58,18 @@
         "skills",
         "subagent",
         "use",
-        "when"
+        "when",
+        "box",
+        "diamond",
+        "digraph",
+        "dot",
+        "executing",
+        "implementation",
+        "independent",
+        "manual",
+        "mostly",
+        "plan",
+        "plans"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +103,18 @@
         "skill",
         "skills",
         "subagent",
-        "the"
+        "the",
+        "answer",
+        "asks",
+        "box",
+        "cluster",
+        "diamond",
+        "digraph",
+        "dispatch",
+        "dot",
+        "implementer",
+        "label",
+        "per"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +148,18 @@
         "selection",
         "skill",
         "skills",
-        "subagent"
+        "subagent",
+        "can",
+        "clear",
+        "conserve",
+        "cost",
+        "each",
+        "functions",
+        "handle",
+        "implementation",
+        "increase",
+        "isolated",
+        "least"
       ],
       "relations": {
         "capabilities": [
@@ -148,7 +194,17 @@
         "skill",
         "skills",
         "status",
-        "subagent"
+        "subagent",
+        "appropriately",
+        "completed",
+        "compliance",
+        "concerns",
+        "done",
+        "each",
+        "flagged",
+        "four",
+        "handle",
+        "one"
       ],
       "relations": {
         "capabilities": [
@@ -182,7 +238,14 @@
         "skill",
         "skills",
         "subagent",
-        "templates"
+        "templates",
+        "code",
+        "compliance",
+        "dispatch",
+        "implementer",
+        "quality",
+        "reviewer",
+        "spec"
       ],
       "relations": {
         "capabilities": [
@@ -216,7 +279,18 @@
         "skill",
         "skills",
         "subagent",
-        "workflow"
+        "workflow",
+        "all",
+        "docs",
+        "execute",
+        "extract",
+        "feature",
+        "file",
+        "full",
+        "once",
+        "plan",
+        "plans",
+        "read"
       ],
       "relations": {
         "capabilities": [
@@ -249,7 +323,19 @@
         "md",
         "skill",
         "skills",
-        "subagent"
+        "subagent",
+        "ask",
+        "can",
+        "confusion",
+        "context",
+        "don",
+        "execution",
+        "follow",
+        "fresh",
+        "interfere",
+        "manual",
+        "naturally",
+        "parallel"
       ],
       "relations": {
         "capabilities": [
@@ -283,7 +369,18 @@
         "red",
         "skill",
         "skills",
-        "subagent"
+        "subagent",
+        "branch",
+        "code",
+        "compliance",
+        "consent",
+        "explicit",
+        "implementation",
+        "issues",
+        "main",
+        "master",
+        "never",
+        "proceed"
       ],
       "relations": {
         "capabilities": [
@@ -316,7 +413,19 @@
         "md",
         "skill",
         "skills",
-        "subagent"
+        "subagent",
+        "before",
+        "creates",
+        "executes",
+        "git",
+        "isolated",
+        "plan",
+        "plans",
+        "requesting",
+        "required",
+        "set",
+        "starting",
+        "superpowers"
       ],
       "relations": {
         "capabilities": [

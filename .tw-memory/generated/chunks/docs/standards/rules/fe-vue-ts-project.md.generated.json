@@ -14,7 +14,9 @@
         "ts",
         "typescript",
         "vue",
-        "项目规范"
+        "项目规范",
+        "script",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -25,7 +27,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -46,7 +48,9 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "script",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -57,7 +61,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -79,7 +83,18 @@
         "standards",
         "ts",
         "vue",
-        "适用范围"
+        "适用范围",
+        "api",
+        "app",
+        "components",
+        "composables",
+        "eslint",
+        "features",
+        "pages",
+        "router",
+        "script",
+        "src",
+        "stores"
       ],
       "relations": {
         "capabilities": [
@@ -90,7 +105,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -111,7 +126,18 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "composable",
+        "emits",
+        "feature",
+        "import",
+        "internal",
+        "meta",
+        "props",
+        "script",
+        "service",
+        "store",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -122,7 +148,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -143,7 +169,19 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "const",
+        "create",
+        "define",
+        "draft",
+        "editor",
+        "emit",
+        "emits",
+        "import",
+        "lang",
+        "order",
+        "props",
+        "save"
       ],
       "relations": {
         "capabilities": [
@@ -154,7 +192,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -176,7 +214,13 @@
         "standards",
         "ts",
         "vue",
-        "检查清单"
+        "检查清单",
+        "api",
+        "composable",
+        "emits",
+        "meta",
+        "props",
+        "store"
       ],
       "relations": {
         "capabilities": [
@@ -187,7 +231,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -209,7 +253,11 @@
         "standards",
         "ts",
         "vue",
-        "相关规范"
+        "相关规范",
+        "comments",
+        "naming",
+        "styles",
+        "typescript"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +268,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -253,7 +301,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

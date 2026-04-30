@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.Sha512Hasher#chunk-001",
+      "end_line": 68,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "dotnet",
+        "security",
+        "sha512hasher",
+        "src",
+        "tw",
+        "case",
+        "class",
+        "hasher",
+        "input",
+        "name",
+        "namespace",
+        "param",
+        "public",
+        "sha",
+        "sha512"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "dotnet",
+          "security",
+          "sha512hasher",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:edf2260a25e6a7eb53189a0fd64de883be0750343c6615174c50c8b9763cccbc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha512Hasher.cs",
+      "start_line": 1,
+      "summary": "Lines 1-68 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha512Hasher.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha512Hasher.cs"
+}

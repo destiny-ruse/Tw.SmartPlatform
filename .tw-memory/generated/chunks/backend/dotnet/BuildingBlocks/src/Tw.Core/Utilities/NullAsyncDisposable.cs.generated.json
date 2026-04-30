@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Utilities.NullAsyncDisposable#chunk-001",
+      "end_line": 25,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "nullasyncdisposable",
+        "src",
+        "tw",
+        "utilities",
+        "async",
+        "class",
+        "disposable",
+        "dispose",
+        "get",
+        "iasync",
+        "instance",
+        "namespace",
+        "new",
+        "null",
+        "private"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "nullasyncdisposable",
+          "src",
+          "utilities"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:a5ecc167199d379300f179276268113fe1432b5f96abf70283de51cb2dd4106b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs",
+      "start_line": 1,
+      "summary": "Lines 1-25 in backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs"
+}

@@ -11,7 +11,8 @@
         "kubernetes",
         "md",
         "readme",
-        "部署目录"
+        "部署目录",
+        "chart"
       ],
       "relations": {
         "capabilities": [

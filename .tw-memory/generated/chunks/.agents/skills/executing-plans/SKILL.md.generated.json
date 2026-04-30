@@ -41,7 +41,20 @@
         "overview",
         "plans",
         "skill",
-        "skills"
+        "skills",
+        "all",
+        "announce",
+        "complete",
+        "critically",
+        "execute",
+        "implement",
+        "load",
+        "note",
+        "plan",
+        "report",
+        "review",
+        "start",
+        "tasks"
       ],
       "relations": {
         "capabilities": [
@@ -108,7 +121,16 @@
         "review",
         "skill",
         "skills",
-        "step"
+        "step",
+        "about",
+        "any",
+        "before",
+        "concerns",
+        "create",
+        "critically",
+        "file",
+        "human",
+        "identify"
       ],
       "relations": {
         "capabilities": [
@@ -141,7 +163,18 @@
         "skill",
         "skills",
         "step",
-        "tasks"
+        "tasks",
+        "bite",
+        "completed",
+        "each",
+        "exactly",
+        "follow",
+        "mark",
+        "plan",
+        "progress",
+        "run",
+        "sized",
+        "specified"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +207,18 @@
         "plans",
         "skill",
         "skills",
-        "step"
+        "step",
+        "after",
+        "all",
+        "announce",
+        "branch",
+        "finishing",
+        "follow",
+        "required",
+        "sub",
+        "superpowers",
+        "tasks",
+        "tests"
       ],
       "relations": {
         "capabilities": [
@@ -210,7 +254,15 @@
         "skill",
         "skills",
         "stop",
-        "when"
+        "when",
+        "blocker",
+        "critical",
+        "dependency",
+        "fails",
+        "gaps",
+        "hit",
+        "immediately",
+        "instruction"
       ],
       "relations": {
         "capabilities": [
@@ -244,7 +296,17 @@
         "skill",
         "skills",
         "steps",
-        "when"
+        "when",
+        "approach",
+        "based",
+        "don",
+        "feedback",
+        "force",
+        "fundamental",
+        "needs",
+        "partner",
+        "plan",
+        "rethinking"
       ],
       "relations": {
         "capabilities": [
@@ -275,7 +337,20 @@
         "plans",
         "remember",
         "skill",
-        "skills"
+        "skills",
+        "blocked",
+        "critically",
+        "don",
+        "exactly",
+        "first",
+        "follow",
+        "guess",
+        "never",
+        "plan",
+        "reference",
+        "review",
+        "says",
+        "skip"
       ],
       "relations": {
         "capabilities": [
@@ -306,7 +381,20 @@
         "md",
         "plans",
         "skill",
-        "skills"
+        "skills",
+        "before",
+        "creates",
+        "executes",
+        "finishing",
+        "git",
+        "isolated",
+        "plan",
+        "required",
+        "set",
+        "starting",
+        "superpowers",
+        "using",
+        "workflow"
       ],
       "relations": {
         "capabilities": [

@@ -22,7 +22,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,8 @@
         "md",
         "references",
         "standards",
-        "status"
+        "status",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +53,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -72,7 +73,8 @@
         "references",
         "standards",
         "status",
-        "适用范围"
+        "适用范围",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +85,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -113,7 +115,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -143,7 +145,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -174,7 +176,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },

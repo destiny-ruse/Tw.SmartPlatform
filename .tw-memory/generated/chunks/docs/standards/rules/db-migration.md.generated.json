@@ -21,7 +21,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -40,7 +40,8 @@
         "md",
         "migration",
         "rules",
-        "standards"
+        "standards",
+        "schema"
       ],
       "relations": {
         "capabilities": [
@@ -50,7 +51,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +71,8 @@
         "migration",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "schema"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +82,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +101,8 @@
         "md",
         "migration",
         "rules",
-        "standards"
+        "standards",
+        "schema"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +112,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +131,21 @@
         "md",
         "migration",
         "rules",
-        "standards"
+        "standards",
+        "add",
+        "alter",
+        "between",
+        "column",
+        "created",
+        "drop",
+        "end",
+        "legacy",
+        "null",
+        "order",
+        "sales",
+        "set",
+        "sql",
+        "start"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +155,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +175,8 @@
         "migration",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "schema"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +186,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +206,13 @@
         "migration",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "data",
+        "deploy",
+        "mock",
+        "naming",
+        "rollback",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +222,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -228,7 +252,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

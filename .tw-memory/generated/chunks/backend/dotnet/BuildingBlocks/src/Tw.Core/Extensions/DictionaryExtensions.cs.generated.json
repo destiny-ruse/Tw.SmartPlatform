@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.DictionaryExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dictionaryextensions",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "class",
+        "collections",
+        "concurrent",
+        "dictionary",
+        "dynamic",
+        "key",
+        "name",
+        "namespace",
+        "param",
+        "public",
+        "returns"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dictionaryextensions",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6ce010f2e7074440332e224ac02c33c9c9a3ec3e05af4d727cd3656cf2dd0074",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.DictionaryExtensions#chunk-002",
+      "end_line": 145,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dictionaryextensions",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "argument",
+        "cref",
+        "default",
+        "dictionary",
+        "exception",
+        "get",
+        "iread",
+        "key",
+        "langword",
+        "name",
+        "null"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dictionaryextensions",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6ce010f2e7074440332e224ac02c33c9c9a3ec3e05af4d727cd3656cf2dd0074",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-145 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs"
+}

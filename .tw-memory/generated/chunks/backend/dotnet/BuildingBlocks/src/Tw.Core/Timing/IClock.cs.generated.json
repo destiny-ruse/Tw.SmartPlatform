@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Timing.IClock#chunk-001",
+      "end_line": 54,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "iclock",
+        "src",
+        "timing",
+        "tw",
+        "bool",
+        "cref",
+        "date",
+        "false",
+        "get",
+        "interface",
+        "kind",
+        "langword",
+        "namespace",
+        "now",
+        "public"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "iclock",
+          "src",
+          "timing"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:f8aad544b041708f8a5cc9b802402f2c7130ec35144987f978a206ab0c932096",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Timing/IClock.cs",
+      "start_line": 1,
+      "summary": "Lines 1-54 in backend/dotnet/BuildingBlocks/src/Tw.Core/Timing/IClock.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Timing/IClock.cs"
+}

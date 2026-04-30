@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,14 @@
         "review",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "merge",
+        "pull",
+        "request",
+        "src",
+        "tests",
+        "tools"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +90,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -113,7 +120,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +139,12 @@
         "md",
         "review",
         "rules",
-        "standards"
+        "standards",
+        "create",
+        "order",
+        "orders",
+        "src",
+        "text"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +155,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +186,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +206,16 @@
         "review",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "authoring",
+        "change",
+        "commit",
+        "doc",
+        "git",
+        "governance",
+        "processes",
+        "strategy",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +226,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +257,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

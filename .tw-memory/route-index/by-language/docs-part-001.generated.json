@@ -30,7 +30,9 @@
       "keywords": [
         "docs",
         "md",
-        "readme"
+        "readme",
+        "standards",
+        "superpowers"
       ],
       "relations": {
         "capabilities": [
@@ -53,7 +55,16 @@
         "docs",
         "md",
         "readme",
-        "维护约定"
+        "维护约定",
+        "brief",
+        "check",
+        "format",
+        "generate",
+        "markdown",
+        "memory",
+        "python",
+        "standards",
+        "tools"
       ],
       "relations": {
         "capabilities": [
@@ -102,7 +113,11 @@
         "md",
         "readme",
         "standards",
-        "使用方式"
+        "使用方式",
+        "authoring",
+        "markdown",
+        "processes",
+        "standard"
       ],
       "relations": {
         "capabilities": [
@@ -127,7 +142,11 @@
         "md",
         "readme",
         "standards",
-        "当前规范"
+        "当前规范",
+        "decisions",
+        "processes",
+        "references",
+        "rules"
       ],
       "relations": {
         "capabilities": [
@@ -152,7 +171,15 @@
         "md",
         "readme",
         "standards",
-        "同步检查"
+        "同步检查",
+        "brief",
+        "check",
+        "format",
+        "generate",
+        "memory",
+        "powershell",
+        "python",
+        "tools"
       ],
       "relations": {
         "capabilities": [
@@ -177,7 +204,11 @@
         "md",
         "readme",
         "standards",
-        "治理入口"
+        "治理入口",
+        "decisions",
+        "flow",
+        "processes",
+        "rfc"
       ],
       "relations": {
         "capabilities": [
@@ -222,7 +253,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -244,7 +275,9 @@
         "response",
         "rest",
         "shape",
-        "standards"
+        "standards",
+        "api",
+        "rules"
       ],
       "relations": {
         "capabilities": [
@@ -258,7 +291,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -280,7 +313,8 @@
         "response",
         "rest",
         "shape",
-        "standards"
+        "standards",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -294,7 +328,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -330,7 +364,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -367,7 +401,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -404,7 +438,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -434,7 +468,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -463,7 +497,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -482,7 +516,8 @@
         "md",
         "processes",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -493,7 +528,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -522,7 +557,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -551,7 +586,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -581,7 +616,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -611,7 +646,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -641,7 +676,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -670,7 +705,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -700,7 +735,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -729,7 +764,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -758,7 +793,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -788,7 +823,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -818,7 +853,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -848,7 +883,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -877,7 +912,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -907,7 +942,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -936,7 +971,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -965,7 +1000,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -995,7 +1030,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1025,7 +1060,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1055,7 +1090,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1084,7 +1119,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1114,7 +1149,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1143,7 +1178,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1172,7 +1207,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1202,7 +1237,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1232,7 +1267,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1262,7 +1297,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1291,7 +1326,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1310,7 +1345,12 @@
         "processes",
         "standard",
         "standards",
-        "适用范围"
+        "适用范围",
+        "decisions",
+        "front",
+        "matter",
+        "references",
+        "rules"
       ],
       "relations": {
         "capabilities": [
@@ -1321,7 +1361,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1340,7 +1380,16 @@
         "processes",
         "standard",
         "standards",
-        "文档结构"
+        "文档结构",
+        "after",
+        "front",
+        "machine",
+        "markdown",
+        "matter",
+        "review",
+        "roles",
+        "rules",
+        "yaml"
       ],
       "relations": {
         "capabilities": [
@@ -1351,7 +1400,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1370,7 +1419,8 @@
         "processes",
         "standard",
         "standards",
-        "状态管理"
+        "状态管理",
+        "rfc"
       ],
       "relations": {
         "capabilities": [
@@ -1381,7 +1431,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1400,7 +1450,8 @@
         "processes",
         "standard",
         "standards",
-        "引用要求"
+        "引用要求",
+        "markdown"
       ],
       "relations": {
         "capabilities": [
@@ -1411,7 +1462,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1430,7 +1481,16 @@
         "processes",
         "standard",
         "standards",
-        "变更流程"
+        "变更流程",
+        "brief",
+        "check",
+        "format",
+        "generate",
+        "memory",
+        "powershell",
+        "python",
+        "rfc",
+        "tools"
       ],
       "relations": {
         "capabilities": [
@@ -1441,7 +1501,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1460,7 +1520,10 @@
         "processes",
         "standard",
         "standards",
-        "变更记录"
+        "变更记录",
+        "anchor",
+        "front",
+        "matter"
       ],
       "relations": {
         "capabilities": [
@@ -1471,7 +1534,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -1499,7 +1562,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1526,7 +1589,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1544,7 +1607,8 @@
         "md",
         "references",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -1554,7 +1618,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1571,7 +1635,10 @@
         "docs",
         "md",
         "references",
-        "standards"
+        "standards",
+        "iso",
+        "utc",
+        "yyyy"
       ],
       "relations": {
         "capabilities": [
@@ -1581,7 +1648,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1608,7 +1675,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1636,7 +1703,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1666,7 +1733,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1684,7 +1751,8 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -1695,7 +1763,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1714,7 +1782,9 @@
         "md",
         "references",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "rest"
       ],
       "relations": {
         "capabilities": [
@@ -1725,7 +1795,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1743,7 +1813,16 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "auth",
+        "field",
+        "found",
+        "required",
+        "resource",
+        "system",
+        "unauthorized",
+        "unavailable",
+        "validation"
       ],
       "relations": {
         "capabilities": [
@@ -1754,7 +1833,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1772,7 +1851,10 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "field",
+        "required",
+        "validation"
       ],
       "relations": {
         "capabilities": [
@@ -1783,7 +1865,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1813,7 +1895,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1841,7 +1923,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1868,7 +1950,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1886,7 +1968,8 @@
         "md",
         "references",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -1896,7 +1979,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1923,7 +2006,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1950,7 +2033,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -1978,7 +2061,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -2008,7 +2091,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -2026,7 +2109,8 @@
         "md",
         "references",
         "standards",
-        "status"
+        "status",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -2037,7 +2121,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -2056,7 +2140,8 @@
         "references",
         "standards",
         "status",
-        "适用范围"
+        "适用范围",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -2067,7 +2152,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -2096,7 +2181,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -2125,7 +2210,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -2155,7 +2240,7 @@
           "status"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -2187,7 +2272,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2218,7 +2303,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2238,7 +2323,18 @@
         "response",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "json",
+        "mobile",
+        "mock",
+        "open",
+        "rest",
+        "rpc",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -2250,7 +2346,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2269,7 +2365,16 @@
         "md",
         "response",
         "rules",
-        "standards"
+        "standards",
+        "code",
+        "details",
+        "field",
+        "http",
+        "json",
+        "message",
+        "pii",
+        "sql",
+        "trace"
       ],
       "relations": {
         "capabilities": [
@@ -2281,7 +2386,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2300,7 +2405,20 @@
         "md",
         "response",
         "rules",
-        "standards"
+        "standards",
+        "af7651916cd43dd8448eb211c80319c",
+        "code",
+        "details",
+        "exception",
+        "failed",
+        "field",
+        "items",
+        "json",
+        "message",
+        "min",
+        "null",
+        "order",
+        "quantity"
       ],
       "relations": {
         "capabilities": [
@@ -2312,7 +2430,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2332,7 +2450,13 @@
         "response",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "code",
+        "http",
+        "message",
+        "pii",
+        "sql",
+        "trace"
       ],
       "relations": {
         "capabilities": [
@@ -2344,7 +2468,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2364,7 +2488,14 @@
         "response",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "codes",
+        "handling",
+        "http",
+        "references",
+        "shape",
+        "status",
+        "tracing"
       ],
       "relations": {
         "capabilities": [
@@ -2376,7 +2507,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2408,7 +2539,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2440,7 +2571,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2459,7 +2590,10 @@
         "response",
         "rules",
         "shape",
-        "standards"
+        "standards",
+        "null",
+        "rest",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -2471,7 +2605,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2491,7 +2625,19 @@
         "rules",
         "shape",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "json",
+        "mobile",
+        "open",
+        "rest",
+        "rpc",
+        "services",
+        "socket",
+        "src",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -2503,7 +2649,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2522,7 +2668,15 @@
         "response",
         "rules",
         "shape",
-        "standards"
+        "standards",
+        "data",
+        "error",
+        "items",
+        "json",
+        "null",
+        "pagination",
+        "rest",
+        "true"
       ],
       "relations": {
         "capabilities": [
@@ -2534,7 +2688,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2553,7 +2707,18 @@
         "response",
         "rules",
         "shape",
-        "standards"
+        "standards",
+        "amount",
+        "created",
+        "false",
+        "items",
+        "json",
+        "next",
+        "null",
+        "page",
+        "pagination",
+        "size",
+        "total"
       ],
       "relations": {
         "capabilities": [
@@ -2565,7 +2730,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2585,7 +2750,10 @@
         "rules",
         "shape",
         "standards",
-        "检查清单"
+        "检查清单",
+        "items",
+        "null",
+        "pagination"
       ],
       "relations": {
         "capabilities": [
@@ -2597,7 +2765,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2617,7 +2785,14 @@
         "rules",
         "shape",
         "standards",
-        "相关规范"
+        "相关规范",
+        "data",
+        "decisions",
+        "design",
+        "error",
+        "formats",
+        "null",
+        "rest"
       ],
       "relations": {
         "capabilities": [
@@ -2629,7 +2804,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2649,7 +2824,8 @@
         "rules",
         "shape",
         "standards",
-        "变更记录"
+        "变更记录",
+        "null"
       ],
       "relations": {
         "capabilities": [
@@ -2661,7 +2837,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2693,7 +2869,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2712,7 +2888,8 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "http"
       ],
       "relations": {
         "capabilities": [
@@ -2724,7 +2901,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2744,7 +2921,19 @@
         "rest",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "http",
+        "json",
+        "mobile",
+        "mock",
+        "open",
+        "rpc",
+        "sdk",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -2756,7 +2945,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2775,7 +2964,19 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "accepted",
+        "create",
+        "delete",
+        "get",
+        "http",
+        "idempotency",
+        "key",
+        "order",
+        "patch",
+        "post",
+        "put",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -2787,7 +2988,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2818,7 +3019,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2837,7 +3038,12 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "delete",
+        "get",
+        "patch",
+        "post",
+        "put"
       ],
       "relations": {
         "capabilities": [
@@ -2849,7 +3055,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2880,7 +3086,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2899,7 +3105,14 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "get",
+        "http",
+        "hzy8",
+        "ord",
+        "order",
+        "orders",
+        "post"
       ],
       "relations": {
         "capabilities": [
@@ -2911,7 +3124,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2931,7 +3144,9 @@
         "rest",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "http",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -2943,7 +3158,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -2963,7 +3178,17 @@
         "rest",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "data",
+        "formats",
+        "http",
+        "idempotency",
+        "input",
+        "references",
+        "response",
+        "shape",
+        "status",
+        "validation"
       ],
       "relations": {
         "capabilities": [
@@ -2975,7 +3200,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

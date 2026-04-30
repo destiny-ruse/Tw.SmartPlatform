@@ -35,7 +35,11 @@
         "md",
         "readme",
         "standards",
-        "使用方式"
+        "使用方式",
+        "authoring",
+        "markdown",
+        "processes",
+        "standard"
       ],
       "relations": {
         "capabilities": [
@@ -61,7 +65,11 @@
         "md",
         "readme",
         "standards",
-        "当前规范"
+        "当前规范",
+        "decisions",
+        "processes",
+        "references",
+        "rules"
       ],
       "relations": {
         "capabilities": [
@@ -87,7 +95,15 @@
         "md",
         "readme",
         "standards",
-        "同步检查"
+        "同步检查",
+        "brief",
+        "check",
+        "format",
+        "generate",
+        "memory",
+        "powershell",
+        "python",
+        "tools"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +129,11 @@
         "md",
         "readme",
         "standards",
-        "治理入口"
+        "治理入口",
+        "decisions",
+        "flow",
+        "processes",
+        "rfc"
       ],
       "relations": {
         "capabilities": [

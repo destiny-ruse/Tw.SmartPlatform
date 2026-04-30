@@ -17,7 +17,14 @@
         "plan",
         "plans",
         "registration",
-        "superpowers"
+        "superpowers",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "implement",
+        "recommended",
+        "required"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +63,14 @@
         "order",
         "plans",
         "registration",
-        "superpowers"
+        "superpowers",
+        "admission",
+        "after",
+        "before",
+        "dependency",
+        "must",
+        "options",
+        "pass"
       ],
       "relations": {
         "capabilities": [
@@ -95,7 +109,14 @@
         "plans",
         "registration",
         "source",
-        "superpowers"
+        "superpowers",
+        "backend",
+        "blocks",
+        "building",
+        "design",
+        "discovery",
+        "dotnet",
+        "evidence"
       ],
       "relations": {
         "capabilities": [
@@ -134,7 +155,14 @@
         "plans",
         "registration",
         "structure",
-        "superpowers"
+        "superpowers",
+        "attribute",
+        "backend",
+        "blocks",
+        "building",
+        "create",
+        "dependency",
+        "dotnet"
       ],
       "relations": {
         "capabilities": [
@@ -215,7 +243,10 @@
         "plans",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -258,7 +289,10 @@
         "plans",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -300,7 +334,11 @@
         "service",
         "superpowers",
         "task",
-        "types"
+        "types",
+        "backend",
+        "blocks",
+        "building",
+        "create"
       ],
       "relations": {
         "capabilities": [
@@ -342,7 +380,11 @@
         "service",
         "superpowers",
         "task",
-        "types"
+        "types",
+        "backend",
+        "blocks",
+        "building",
+        "csproj"
       ],
       "relations": {
         "capabilities": [
@@ -385,7 +427,10 @@
         "registration",
         "registrations",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -428,7 +473,10 @@
         "registration",
         "registrations",
         "superpowers",
-        "task"
+        "task",
+        "class",
+        "create",
+        "csharp"
       ],
       "relations": {
         "capabilities": [
@@ -470,7 +518,11 @@
         "registration",
         "scan",
         "superpowers",
-        "task"
+        "task",
+        "assembly",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -512,7 +564,11 @@
         "registration",
         "scan",
         "superpowers",
-        "task"
+        "task",
+        "assembly",
+        "create",
+        "finder",
+        "implement"
       ],
       "relations": {
         "capabilities": [
@@ -555,7 +611,10 @@
         "registration",
         "superpowers",
         "task",
-        "with"
+        "with",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -598,7 +657,10 @@
         "registration",
         "superpowers",
         "task",
-        "with"
+        "with",
+        "assembly",
+        "builder",
+        "calls"
       ],
       "relations": {
         "capabilities": [
@@ -638,7 +700,13 @@
         "registration",
         "superpowers",
         "task",
-        "verify"
+        "verify",
+        "backend",
+        "blocks",
+        "building",
+        "csproj",
+        "dotnet",
+        "files"
       ],
       "relations": {
         "capabilities": [
@@ -678,7 +746,13 @@
         "registration",
         "review",
         "self",
-        "superpowers"
+        "superpowers",
+        "all",
+        "default",
+        "dependency",
+        "excludes",
+        "exist",
+        "expose"
       ],
       "relations": {
         "capabilities": [

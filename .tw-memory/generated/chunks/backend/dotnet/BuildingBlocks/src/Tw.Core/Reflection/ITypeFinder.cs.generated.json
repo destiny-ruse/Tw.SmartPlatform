@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.ITypeFinder#chunk-001",
+      "end_line": 35,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "itypefinder",
+        "reflection",
+        "src",
+        "tw",
+        "assemblies",
+        "assembly",
+        "find",
+        "finder",
+        "get",
+        "interface",
+        "iread",
+        "itype",
+        "list",
+        "namespace",
+        "only"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "itypefinder",
+          "reflection",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:1562eb71e24914156f5a92861129ddb566484b770c80cd557901bbb827290643",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ITypeFinder.cs",
+      "start_line": 1,
+      "summary": "Lines 1-35 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ITypeFinder.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ITypeFinder.cs"
+}

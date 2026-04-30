@@ -24,7 +24,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -43,7 +43,9 @@
         "naming",
         "rules",
         "standards",
-        "uniapp"
+        "uniapp",
+        "app",
+        "uni"
       ],
       "relations": {
         "capabilities": [
@@ -54,7 +56,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -74,7 +76,13 @@
         "rules",
         "standards",
         "uniapp",
-        "适用范围"
+        "适用范围",
+        "adapter",
+        "api",
+        "app",
+        "json",
+        "pages",
+        "uni"
       ],
       "relations": {
         "capabilities": [
@@ -85,7 +93,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -104,7 +112,21 @@
         "naming",
         "rules",
         "standards",
-        "uniapp"
+        "uniapp",
+        "adapter",
+        "camel",
+        "card",
+        "case",
+        "detail",
+        "device",
+        "info",
+        "json",
+        "kebab",
+        "login",
+        "new",
+        "order",
+        "page",
+        "page1"
       ],
       "relations": {
         "capabilities": [
@@ -115,7 +137,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -134,7 +156,21 @@
         "naming",
         "rules",
         "standards",
-        "uniapp"
+        "uniapp",
+        "adapter",
+        "bar",
+        "composables",
+        "detail",
+        "device",
+        "import",
+        "index",
+        "info",
+        "json",
+        "navigation",
+        "order",
+        "pages",
+        "path",
+        "platform"
       ],
       "relations": {
         "capabilities": [
@@ -145,7 +181,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -165,7 +201,13 @@
         "rules",
         "standards",
         "uniapp",
-        "检查清单"
+        "检查清单",
+        "adapter",
+        "case",
+        "json",
+        "kebab",
+        "pages",
+        "utils"
       ],
       "relations": {
         "capabilities": [
@@ -176,7 +218,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -196,7 +238,10 @@
         "rules",
         "standards",
         "uniapp",
-        "相关规范"
+        "相关规范",
+        "common",
+        "compat",
+        "cross"
       ],
       "relations": {
         "capabilities": [
@@ -207,7 +252,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -238,7 +283,7 @@
           "uniapp"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

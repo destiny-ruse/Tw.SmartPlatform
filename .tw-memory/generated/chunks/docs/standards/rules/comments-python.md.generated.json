@@ -22,11 +22,11 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 1,
       "summary": "Python 注释规范 in docs/standards/rules/comments-python.md"
@@ -41,7 +41,8 @@
         "md",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "docstring"
       ],
       "relations": {
         "capabilities": [
@@ -52,11 +53,11 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 3,
       "summary": "目标 in docs/standards/rules/comments-python.md"
@@ -72,7 +73,11 @@
         "python",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "cli",
+        "docstring",
+        "notebook",
+        "vendored"
       ],
       "relations": {
         "capabilities": [
@@ -83,11 +88,11 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 7,
       "summary": "适用范围 in docs/standards/rules/comments-python.md"
@@ -102,7 +107,16 @@
         "md",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "cli",
+        "docstring",
+        "fixme",
+        "fixture",
+        "hack",
+        "mock",
+        "property",
+        "pydantic",
+        "todo"
       ],
       "relations": {
         "capabilities": [
@@ -113,18 +127,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 11,
       "summary": "规则 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-005",
-      "end_line": 54,
+      "end_line": 53,
       "heading": "示例",
       "keywords": [
         "comments",
@@ -132,7 +146,20 @@
         "md",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "append",
+        "args",
+        "cancel",
+        "def",
+        "error",
+        "none",
+        "order",
+        "orders",
+        "raises",
+        "result",
+        "str",
+        "value"
       ],
       "relations": {
         "capabilities": [
@@ -143,18 +170,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 27,
       "summary": "示例 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-006",
-      "end_line": 67,
+      "end_line": 66,
       "heading": "检查清单",
       "keywords": [
         "comments",
@@ -163,7 +190,14 @@
         "python",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "cli",
+        "docstring",
+        "fixme",
+        "generated",
+        "hack",
+        "property",
+        "todo"
       ],
       "relations": {
         "capabilities": [
@@ -174,18 +208,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
-      "start_line": 55,
+      "start_line": 54,
       "summary": "检查清单 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-007",
-      "end_line": 72,
+      "end_line": 71,
       "heading": "相关规范",
       "keywords": [
         "comments",
@@ -194,7 +228,9 @@
         "python",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "naming"
       ],
       "relations": {
         "capabilities": [
@@ -205,18 +241,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
-      "start_line": 68,
+      "start_line": 67,
       "summary": "相关规范 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-008",
-      "end_line": 79,
+      "end_line": 78,
       "heading": "变更记录",
       "keywords": [
         "comments",
@@ -236,13 +272,13 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:108842e1dcafc359dcff7a8f639589b1a3529f979b059e5aa48005744f3137ae",
       "source_path": "docs/standards/rules/comments-python.md",
-      "start_line": 73,
+      "start_line": 72,
       "summary": "变更记录 in docs/standards/rules/comments-python.md"
     }
   ],

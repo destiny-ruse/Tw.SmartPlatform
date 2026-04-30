@@ -1,0 +1,227 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.decisions.0002-rest-response-shape-no-null#chunk-001",
+      "end_line": 2,
+      "heading": "REST 响应字段禁止 null",
+      "keywords": [
+        "0002",
+        "decisions",
+        "docs",
+        "md",
+        "no",
+        "null",
+        "response",
+        "rest",
+        "shape",
+        "standards",
+        "响应字段禁止"
+      ],
+      "relations": {
+        "capabilities": [
+          "0002",
+          "decisions",
+          "docs",
+          "null",
+          "response",
+          "rest",
+          "shape",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "decision",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "start_line": 1,
+      "summary": "REST 响应字段禁止 null in docs/standards/decisions/0002-rest-response-shape-no-null.md"
+    },
+    {
+      "chunk_id": "docs.standards.decisions.0002-rest-response-shape-no-null#chunk-002",
+      "end_line": 6,
+      "heading": "背景",
+      "keywords": [
+        "0002",
+        "decisions",
+        "docs",
+        "md",
+        "no",
+        "null",
+        "response",
+        "rest",
+        "shape",
+        "standards",
+        "api",
+        "rules"
+      ],
+      "relations": {
+        "capabilities": [
+          "0002",
+          "decisions",
+          "docs",
+          "null",
+          "response",
+          "rest",
+          "shape",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "decision",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "start_line": 3,
+      "summary": "背景 in docs/standards/decisions/0002-rest-response-shape-no-null.md"
+    },
+    {
+      "chunk_id": "docs.standards.decisions.0002-rest-response-shape-no-null#chunk-003",
+      "end_line": 10,
+      "heading": "决策",
+      "keywords": [
+        "0002",
+        "decisions",
+        "docs",
+        "md",
+        "no",
+        "null",
+        "response",
+        "rest",
+        "shape",
+        "standards",
+        "api"
+      ],
+      "relations": {
+        "capabilities": [
+          "0002",
+          "decisions",
+          "docs",
+          "null",
+          "response",
+          "rest",
+          "shape",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "decision",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "start_line": 7,
+      "summary": "决策 in docs/standards/decisions/0002-rest-response-shape-no-null.md"
+    },
+    {
+      "chunk_id": "docs.standards.decisions.0002-rest-response-shape-no-null#chunk-004",
+      "end_line": 14,
+      "heading": "影响",
+      "keywords": [
+        "0002",
+        "decisions",
+        "docs",
+        "md",
+        "no",
+        "null",
+        "response",
+        "rest",
+        "shape",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "0002",
+          "decisions",
+          "docs",
+          "null",
+          "response",
+          "rest",
+          "shape",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "decision",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "start_line": 11,
+      "summary": "影响 in docs/standards/decisions/0002-rest-response-shape-no-null.md"
+    },
+    {
+      "chunk_id": "docs.standards.decisions.0002-rest-response-shape-no-null#chunk-005",
+      "end_line": 18,
+      "heading": "备选方案",
+      "keywords": [
+        "0002",
+        "decisions",
+        "docs",
+        "md",
+        "no",
+        "null",
+        "response",
+        "rest",
+        "shape",
+        "standards",
+        "备选方案"
+      ],
+      "relations": {
+        "capabilities": [
+          "0002",
+          "decisions",
+          "docs",
+          "null",
+          "response",
+          "rest",
+          "shape",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "decision",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "start_line": 15,
+      "summary": "备选方案 in docs/standards/decisions/0002-rest-response-shape-no-null.md"
+    },
+    {
+      "chunk_id": "docs.standards.decisions.0002-rest-response-shape-no-null#chunk-006",
+      "end_line": 23,
+      "heading": "变更记录",
+      "keywords": [
+        "0002",
+        "decisions",
+        "docs",
+        "md",
+        "no",
+        "null",
+        "response",
+        "rest",
+        "shape",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "0002",
+          "decisions",
+          "docs",
+          "null",
+          "response",
+          "rest",
+          "shape",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "decision",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
+      "start_line": 19,
+      "summary": "变更记录 in docs/standards/decisions/0002-rest-response-shape-no-null.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

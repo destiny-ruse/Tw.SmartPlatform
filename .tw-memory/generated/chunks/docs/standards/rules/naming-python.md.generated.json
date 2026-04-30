@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,11 @@
         "python",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "cli",
+        "json",
+        "notebook",
+        "vendored"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +87,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +106,21 @@
         "naming",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "async",
+        "base",
+        "camel",
+        "can",
+        "case",
+        "common",
+        "data",
+        "def",
+        "error",
+        "expected",
+        "flag",
+        "obj",
+        "pascal",
+        "scenario"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +131,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +150,21 @@
         "naming",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "async",
+        "bool",
+        "can",
+        "cancel",
+        "count",
+        "data",
+        "def",
+        "fetch",
+        "flag",
+        "get",
+        "max",
+        "order",
+        "pending",
+        "retry"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +175,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +195,11 @@
         "python",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "case",
+        "docstring",
+        "generated",
+        "snake"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +210,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +230,9 @@
         "python",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "comments",
+        "common"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +243,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +274,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,8 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "hotfix"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +53,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +73,8 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "spike"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +85,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +104,21 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "auth",
+        "current",
+        "desc",
+        "dev",
+        "feat",
+        "fix",
+        "login",
+        "main",
+        "master",
+        "null",
+        "oidc",
+        "release",
+        "response"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +129,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +148,21 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "commit",
+        "content",
+        "engineering",
+        "executable",
+        "expand",
+        "force",
+        "general",
+        "main",
+        "only",
+        "origin",
+        "pull",
+        "push",
+        "shell",
+        "switch"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +173,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +193,12 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "desc",
+        "hotfix",
+        "scope",
+        "short",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +209,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +229,13 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "change",
+        "commit",
+        "deploy",
+        "governance",
+        "processes",
+        "rollback"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +246,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +277,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

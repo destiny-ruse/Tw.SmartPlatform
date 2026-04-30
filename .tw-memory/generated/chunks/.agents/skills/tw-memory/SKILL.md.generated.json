@@ -12,7 +12,15 @@
         "skill",
         "skills",
         "system",
-        "tw"
+        "tw",
+        "code",
+        "itself",
+        "maintaining",
+        "only",
+        "ordinary",
+        "product",
+        "use",
+        "when"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +51,19 @@
         "required",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "after",
+        "before",
+        "behavior",
+        "change",
+        "changes",
+        "changing",
+        "checks",
+        "cli",
+        "contract",
+        "contracts",
+        "engine",
+        "focused"
       ],
       "relations": {
         "capabilities": [
@@ -73,7 +93,20 @@
         "memory",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "bodies",
+        "chunk",
+        "evidence",
+        "graph",
+        "hashes",
+        "indexes",
+        "keywords",
+        "manual",
+        "metadata",
+        "must",
+        "pointers",
+        "relations",
+        "route"
       ],
       "relations": {
         "capabilities": [

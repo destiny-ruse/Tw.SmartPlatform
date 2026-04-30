@@ -11,7 +11,8 @@
         "rules",
         "standards",
         "versioning",
-        "版本演进规范"
+        "版本演进规范",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +23,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +42,8 @@
         "md",
         "rules",
         "standards",
-        "versioning"
+        "versioning",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +54,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +74,15 @@
         "rules",
         "standards",
         "versioning",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apis",
+        "async",
+        "proto",
+        "rest",
+        "rpc",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +93,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +112,13 @@
         "md",
         "rules",
         "standards",
-        "versioning"
+        "versioning",
+        "deprecated",
+        "orders",
+        "proto",
+        "reserved",
+        "rpc",
+        "true"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +129,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +148,16 @@
         "md",
         "rules",
         "standards",
-        "versioning"
+        "versioning",
+        "int64",
+        "legacy",
+        "message",
+        "order",
+        "paid",
+        "proto",
+        "reserved",
+        "status",
+        "string"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +168,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +188,8 @@
         "rules",
         "standards",
         "versioning",
-        "检查清单"
+        "检查清单",
+        "reserved"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +200,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +220,14 @@
         "rules",
         "standards",
         "versioning",
-        "相关规范"
+        "相关规范",
+        "change",
+        "contract",
+        "governance",
+        "processes",
+        "proto",
+        "style",
+        "testing"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +238,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +269,7 @@
           "versioning"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

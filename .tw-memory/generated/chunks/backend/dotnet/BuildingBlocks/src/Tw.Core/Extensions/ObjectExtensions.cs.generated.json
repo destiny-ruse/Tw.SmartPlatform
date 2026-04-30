@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ObjectExtensions#chunk-001",
+      "end_line": 67,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "objectextensions",
+        "src",
+        "tw",
+        "argument",
+        "cast",
+        "class",
+        "cref",
+        "exception",
+        "invalid",
+        "langword",
+        "name",
+        "namespace",
+        "null",
+        "obj"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "objectextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:fae8cabbc7c55333142c6595af7765aeff5483d06924d03d28b51cacf437c15b",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ObjectExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-67 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ObjectExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ObjectExtensions.cs"
+}

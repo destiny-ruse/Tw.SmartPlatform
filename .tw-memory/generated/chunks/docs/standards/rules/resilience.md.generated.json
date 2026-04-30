@@ -20,7 +20,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -48,7 +48,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -67,7 +67,14 @@
         "resilience",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apps",
+        "backend",
+        "http",
+        "rpc",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -77,7 +84,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -105,7 +112,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -123,7 +130,22 @@
         "md",
         "resilience",
         "rules",
-        "standards"
+        "standards",
+        "breaker",
+        "circuit",
+        "configured",
+        "dependencies",
+        "enabled",
+        "errors",
+        "fallback",
+        "idempotency",
+        "mark",
+        "order",
+        "payment",
+        "requires",
+        "retry",
+        "retryable",
+        "service"
       ],
       "relations": {
         "capabilities": [
@@ -133,7 +155,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -162,7 +184,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -181,7 +203,12 @@
         "resilience",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "checks",
+        "health",
+        "idempotency",
+        "metrics",
+        "slo"
       ],
       "relations": {
         "capabilities": [
@@ -191,7 +218,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -220,7 +247,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Utilities.AsyncDisposeFunc#chunk-001",
+      "end_line": 43,
+      "heading": null,
+      "keywords": [
+        "asyncdisposefunc",
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "utilities",
+        "async",
+        "class",
+        "cref",
+        "disposable",
+        "dispose",
+        "func",
+        "iasync",
+        "name",
+        "namespace",
+        "param",
+        "private"
+      ],
+      "relations": {
+        "capabilities": [
+          "asyncdisposefunc",
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "src",
+          "utilities"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:a1a6461c37760fd28446bb8ce6a7a354cacd4bd2c89b45f329401145c0a42017",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/AsyncDisposeFunc.cs",
+      "start_line": 1,
+      "summary": "Lines 1-43 in backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/AsyncDisposeFunc.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/AsyncDisposeFunc.cs"
+}

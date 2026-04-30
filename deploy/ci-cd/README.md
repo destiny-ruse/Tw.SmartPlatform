@@ -10,4 +10,4 @@ CI should run this command from the repository root:
 .\deploy\ci-cd\tw-memory-check.ps1
 ```
 
-The script validates `.tw-memory` freshness, source hashes, route paths, chunk line ranges, and forbidden runtime cache files. It does not generate files in CI.
+The script validates `.tw-memory` freshness, source hashes, route paths, chunk line ranges, forbidden runtime cache files, and repository whitespace issues. It does not generate files in CI.

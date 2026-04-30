@@ -31,7 +31,9 @@
       "keywords": [
         "docs",
         "md",
-        "readme"
+        "readme",
+        "standards",
+        "superpowers"
       ],
       "relations": {
         "capabilities": [
@@ -55,7 +57,16 @@
         "docs",
         "md",
         "readme",
-        "维护约定"
+        "维护约定",
+        "brief",
+        "check",
+        "format",
+        "generate",
+        "markdown",
+        "memory",
+        "python",
+        "standards",
+        "tools"
       ],
       "relations": {
         "capabilities": [

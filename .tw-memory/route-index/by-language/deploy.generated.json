@@ -59,7 +59,20 @@
         "deploy",
         "md",
         "memory",
-        "readme"
+        "readme",
+        "chunk",
+        "command",
+        "freshness",
+        "hashes",
+        "line",
+        "paths",
+        "powershell",
+        "ps1",
+        "ranges",
+        "repository",
+        "root",
+        "route",
+        "run"
       ],
       "relations": {
         "capabilities": [
@@ -112,7 +125,8 @@
         "kubernetes",
         "md",
         "readme",
-        "部署目录"
+        "部署目录",
+        "chart"
       ],
       "relations": {
         "capabilities": [

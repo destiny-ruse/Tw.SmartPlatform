@@ -11,7 +11,20 @@
         "requesting",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "before",
+        "cascade",
+        "catch",
+        "context",
+        "crafted",
+        "dispatch",
+        "evaluation",
+        "gets",
+        "issues",
+        "never",
+        "precisely",
+        "reviewer",
+        "session"
       ],
       "relations": {
         "capabilities": [
@@ -45,7 +58,18 @@
         "review",
         "skill",
         "skills",
-        "when"
+        "when",
+        "after",
+        "before",
+        "completing",
+        "development",
+        "driven",
+        "each",
+        "feature",
+        "fresh",
+        "main",
+        "major",
+        "mandatory"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +103,18 @@
         "requesting",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "base",
+        "bash",
+        "dispatch",
+        "get",
+        "git",
+        "head",
+        "main",
+        "origin",
+        "parse",
+        "rev",
+        "reviewer"
       ],
       "relations": {
         "capabilities": [
@@ -112,7 +147,19 @@
         "requesting",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "add",
+        "base",
+        "before",
+        "completed",
+        "function",
+        "git",
+        "grep",
+        "just",
+        "let",
+        "log",
+        "oneline",
+        "proceeding"
       ],
       "relations": {
         "capabilities": [
@@ -147,7 +194,17 @@
         "skill",
         "skills",
         "with",
-        "workflows"
+        "workflows",
+        "after",
+        "batch",
+        "before",
+        "catch",
+        "compound",
+        "development",
+        "driven",
+        "each",
+        "executing",
+        "fix"
       ],
       "relations": {
         "capabilities": [
@@ -181,7 +238,18 @@
         "requesting",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "argue",
+        "because",
+        "critical",
+        "feedback",
+        "ignore",
+        "important",
+        "issues",
+        "never",
+        "proceed",
+        "push",
+        "reviewer"
       ],
       "relations": {
         "capabilities": [

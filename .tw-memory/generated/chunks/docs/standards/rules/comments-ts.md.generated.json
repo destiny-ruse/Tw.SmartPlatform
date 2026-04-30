@@ -12,7 +12,9 @@
         "standards",
         "ts",
         "typescript",
-        "注释规范"
+        "注释规范",
+        "script",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +24,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +43,10 @@
         "md",
         "rules",
         "standards",
-        "ts"
+        "ts",
+        "api",
+        "script",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -51,7 +56,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -71,7 +76,11 @@
         "rules",
         "standards",
         "ts",
-        "适用范围"
+        "适用范围",
+        "api",
+        "src",
+        "tsx",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -81,7 +90,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -100,7 +109,20 @@
         "md",
         "rules",
         "standards",
-        "ts"
+        "ts",
+        "api",
+        "count",
+        "emits",
+        "fixme",
+        "hack",
+        "null",
+        "param",
+        "props",
+        "ref",
+        "returns",
+        "todo",
+        "tsdoc",
+        "undefined"
       ],
       "relations": {
         "capabilities": [
@@ -110,7 +132,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -129,7 +151,21 @@
         "md",
         "rules",
         "standards",
-        "ts"
+        "ts",
+        "await",
+        "const",
+        "current",
+        "detail",
+        "export",
+        "interface",
+        "legacy",
+        "null",
+        "order",
+        "orders",
+        "payload",
+        "query",
+        "ref",
+        "result"
       ],
       "relations": {
         "capabilities": [
@@ -139,7 +175,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -159,7 +195,15 @@
         "rules",
         "standards",
         "ts",
-        "检查清单"
+        "检查清单",
+        "api",
+        "emits",
+        "fixme",
+        "hack",
+        "props",
+        "ref",
+        "todo",
+        "tsdoc"
       ],
       "relations": {
         "capabilities": [
@@ -169,7 +213,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -189,7 +233,12 @@
         "rules",
         "standards",
         "ts",
-        "相关规范"
+        "相关规范",
+        "common",
+        "naming",
+        "project",
+        "typescript",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -199,7 +248,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -219,7 +268,10 @@
         "rules",
         "standards",
         "ts",
-        "变更记录"
+        "变更记录",
+        "script",
+        "type",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -229,7 +281,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

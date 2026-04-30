@@ -21,7 +21,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -40,7 +40,9 @@
         "fe",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "view",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -50,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +72,14 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "app",
+        "css",
+        "uni",
+        "view",
+        "vue",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +89,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +108,20 @@
         "fe",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "adapter",
+        "agent",
+        "api",
+        "css",
+        "detection",
+        "feature",
+        "loading",
+        "polyfill",
+        "service",
+        "transpile",
+        "user",
+        "view",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +131,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +150,21 @@
         "fe",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "await",
+        "boolean",
+        "can",
+        "common",
+        "copied",
+        "copy",
+        "else",
+        "export",
+        "function",
+        "link",
+        "navigator",
+        "return",
+        "share",
+        "show"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +174,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +194,10 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "api",
+        "css",
+        "loading"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +207,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +227,12 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "cross",
+        "strategy",
+        "test",
+        "typescript",
+        "uniapp"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +242,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -228,7 +272,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

@@ -1,0 +1,190 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "argument",
+        "class",
+        "cref",
+        "exception",
+        "langword",
+        "list",
+        "name",
+        "namespace",
+        "null",
+        "param",
+        "paramref"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "add",
+        "argument",
+        "check",
+        "cref",
+        "exception",
+        "ilist",
+        "item",
+        "langword",
+        "last",
+        "name",
+        "null"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-003",
+      "end_line": 224,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "argument",
+        "cref",
+        "exception",
+        "factory",
+        "ilist",
+        "item",
+        "langword",
+        "name",
+        "null",
+        "param",
+        "paramref"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 145,
+      "summary": "Lines 145-224 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-004",
+      "end_line": 261,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "add",
+        "argument",
+        "cref",
+        "exception",
+        "factory",
+        "index",
+        "item",
+        "list",
+        "name",
+        "new",
+        "null"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 217,
+      "summary": "Lines 217-261 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+}

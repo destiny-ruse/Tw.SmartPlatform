@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,8 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "dockerfile"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +84,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +103,15 @@
         "image",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "dockerfile",
+        "dockerignore",
+        "git",
+        "label",
+        "latest",
+        "root",
+        "sbom",
+        "sha"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +122,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +141,21 @@
         "image",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "abc1234",
+        "app",
+        "aspnet",
+        "build",
+        "com",
+        "copy",
+        "dockerfile",
+        "dotnet",
+        "entrypoint",
+        "label",
+        "mcr",
+        "microsoft",
+        "opencontainers",
+        "org"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +166,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +186,9 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "git",
+        "label"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +199,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +219,13 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "k8s",
+        "management",
+        "naming",
+        "pipeline",
+        "resource",
+        "secrets"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +236,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +267,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

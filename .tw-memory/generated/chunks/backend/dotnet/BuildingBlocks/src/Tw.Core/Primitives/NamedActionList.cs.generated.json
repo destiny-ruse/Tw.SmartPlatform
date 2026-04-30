@@ -1,0 +1,51 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Primitives.NamedActionList#chunk-001",
+      "end_line": 7,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "namedactionlist",
+        "primitives",
+        "src",
+        "tw",
+        "action",
+        "class",
+        "list",
+        "name",
+        "named",
+        "namespace",
+        "object",
+        "public",
+        "summary",
+        "typeparam"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "namedactionlist",
+          "primitives",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:bb037dc1a89ae4bc011850ada356a63ad401766318a9eeb9b17282708f5b1da3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedActionList.cs",
+      "start_line": 1,
+      "summary": "Lines 1-7 in backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedActionList.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedActionList.cs"
+}

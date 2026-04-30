@@ -17,7 +17,14 @@
         "plan",
         "plans",
         "service",
-        "superpowers"
+        "superpowers",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "implement",
+        "recommended",
+        "required"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +63,14 @@
         "order",
         "plans",
         "service",
-        "superpowers"
+        "superpowers",
+        "adapter",
+        "after",
+        "aspnetcore",
+        "auto",
+        "before",
+        "must",
+        "mvc"
       ],
       "relations": {
         "capabilities": [
@@ -95,7 +109,14 @@
         "plans",
         "service",
         "source",
-        "superpowers"
+        "superpowers",
+        "comments",
+        "design",
+        "dotnet",
+        "error",
+        "handling",
+        "items",
+        "naming"
       ],
       "relations": {
         "capabilities": [
@@ -134,7 +155,14 @@
         "plans",
         "service",
         "structure",
-        "superpowers"
+        "superpowers",
+        "accessor",
+        "ambient",
+        "backend",
+        "blocks",
+        "building",
+        "cancellation",
+        "context"
       ],
       "relations": {
         "capabilities": [
@@ -214,7 +242,11 @@
         "service",
         "superpowers",
         "task",
-        "token"
+        "token",
+        "accessor",
+        "ambient",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -256,7 +288,11 @@
         "service",
         "superpowers",
         "task",
-        "token"
+        "token",
+        "backend",
+        "blocks",
+        "building",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -297,7 +333,12 @@
         "public",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building",
+        "context",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -338,7 +379,12 @@
         "public",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "abstract",
+        "adapter",
+        "api",
+        "base",
+        "class"
       ],
       "relations": {
         "capabilities": [
@@ -379,7 +425,12 @@
         "public",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "abstraction",
+        "backend",
+        "blocks",
+        "building",
+        "cache"
       ],
       "relations": {
         "capabilities": [
@@ -420,7 +471,12 @@
         "plans",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "auto",
+        "backend",
+        "blocks",
+        "building",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -461,7 +517,12 @@
         "plans",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "adds",
+        "create",
+        "global",
+        "implement",
+        "implementation"
       ],
       "relations": {
         "capabilities": [
@@ -502,7 +563,12 @@
         "plans",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "adapter",
+        "backend",
+        "blocks",
+        "building",
+        "context"
       ],
       "relations": {
         "capabilities": [
@@ -543,7 +609,12 @@
         "plans",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building",
+        "core",
+        "csproj"
       ],
       "relations": {
         "capabilities": [
@@ -586,7 +657,10 @@
         "registration",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "auto",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -629,7 +703,10 @@
         "registration",
         "service",
         "superpowers",
-        "task"
+        "task",
+        "async",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -669,7 +746,13 @@
         "service",
         "superpowers",
         "task",
-        "verify"
+        "verify",
+        "backend",
+        "blocks",
+        "building",
+        "core",
+        "csproj",
+        "dotnet"
       ],
       "relations": {
         "capabilities": [
@@ -709,7 +792,13 @@
         "review",
         "self",
         "service",
-        "superpowers"
+        "superpowers",
+        "all",
+        "appear",
+        "chains",
+        "contain",
+        "entry",
+        "exist"
       ],
       "relations": {
         "capabilities": [

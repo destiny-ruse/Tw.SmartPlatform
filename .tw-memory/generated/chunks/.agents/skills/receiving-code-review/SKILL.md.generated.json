@@ -45,7 +45,19 @@
         "receiving",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "ask",
+        "assuming",
+        "before",
+        "comfort",
+        "core",
+        "correctness",
+        "emotional",
+        "evaluation",
+        "implementing",
+        "over",
+        "performance",
+        "principle"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +92,17 @@
         "review",
         "skill",
         "skills",
-        "the"
+        "the",
+        "against",
+        "ask",
+        "check",
+        "codebase",
+        "complete",
+        "feedback",
+        "own",
+        "reacting",
+        "read",
+        "requirement"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +136,18 @@
         "responses",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "absolutely",
+        "before",
+        "claude",
+        "excellent",
+        "explicit",
+        "feedback",
+        "great",
+        "implement",
+        "instead",
+        "let",
+        "never"
       ],
       "relations": {
         "capabilities": [
@@ -149,7 +182,17 @@
         "review",
         "skill",
         "skills",
-        "unclear"
+        "unclear",
+        "any",
+        "anything",
+        "ask",
+        "clarification",
+        "example",
+        "implement",
+        "implementation",
+        "item",
+        "items",
+        "may"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +263,16 @@
         "review",
         "skill",
         "skills",
-        "your"
+        "your",
+        "acknowledgment",
+        "action",
+        "after",
+        "agreement",
+        "ask",
+        "implement",
+        "performative",
+        "scope",
+        "skip"
       ],
       "relations": {
         "capabilities": [
@@ -255,7 +307,17 @@
         "review",
         "reviewers",
         "skill",
-        "skills"
+        "skills",
+        "all",
+        "before",
+        "breaks",
+        "check",
+        "codebase",
+        "correct",
+        "current",
+        "does",
+        "existing",
+        "functionality"
       ],
       "relations": {
         "capabilities": [
@@ -292,7 +354,15 @@
         "review",
         "skill",
         "skills",
-        "yagni"
+        "yagni",
+        "actual",
+        "called",
+        "codebase",
+        "endpoint",
+        "grep",
+        "implement",
+        "implementing",
+        "isn"
       ],
       "relations": {
         "capabilities": [
@@ -326,7 +396,18 @@
         "receiving",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "anything",
+        "blocking",
+        "breaks",
+        "clarify",
+        "complex",
+        "feedback",
+        "first",
+        "fixes",
+        "implement",
+        "imports",
+        "issues"
       ],
       "relations": {
         "capabilities": [
@@ -361,7 +442,17 @@
         "review",
         "skill",
         "skills",
-        "when"
+        "when",
+        "breaks",
+        "compatibility",
+        "context",
+        "existing",
+        "feature",
+        "full",
+        "functionality",
+        "incorrect",
+        "lacks",
+        "legacy"
       ],
       "relations": {
         "capabilities": [
@@ -396,7 +487,17 @@
         "receiving",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "absolutely",
+        "brief",
+        "catch",
+        "changed",
+        "description",
+        "fix",
+        "fixed",
+        "good",
+        "issue",
+        "just"
       ],
       "relations": {
         "capabilities": [
@@ -432,7 +533,16 @@
         "review",
         "skill",
         "skills",
-        "your"
+        "your",
+        "back",
+        "because",
+        "checked",
+        "correct",
+        "does",
+        "implementing",
+        "initial",
+        "now",
+        "pushed"
       ],
       "relations": {
         "capabilities": [
@@ -466,7 +576,18 @@
         "receiving",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "act",
+        "against",
+        "agreement",
+        "batch",
+        "blind",
+        "codebase",
+        "first",
+        "fix",
+        "implementation",
+        "just",
+        "mistake"
       ],
       "relations": {
         "capabilities": [
@@ -500,7 +621,18 @@
         "receiving",
         "review",
         "skill",
-        "skills"
+        "skills",
+        "absolutely",
+        "agreement",
+        "api",
+        "bad",
+        "build",
+        "checking",
+        "good",
+        "legacy",
+        "let",
+        "performative",
+        "remove"
       ],
       "relations": {
         "capabilities": [
@@ -535,7 +667,17 @@
         "review",
         "skill",
         "skills",
-        "thread"
+        "thread",
+        "api",
+        "comment",
+        "comments",
+        "git",
+        "hub",
+        "inline",
+        "level",
+        "owner",
+        "pulls",
+        "reply"
       ],
       "relations": {
         "capabilities": [
@@ -570,7 +712,17 @@
         "review",
         "skill",
         "skills",
-        "the"
+        "the",
+        "agreement",
+        "always",
+        "evaluate",
+        "external",
+        "feedback",
+        "follow",
+        "implement",
+        "orders",
+        "performative",
+        "question"
       ],
       "relations": {
         "capabilities": [

@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +72,14 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apps",
+        "backend",
+        "http",
+        "rpc",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +90,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +109,9 @@
         "handling",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "sql",
+        "trace"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +122,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +141,21 @@
         "handling",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "catch",
+        "code",
+        "dependency",
+        "errors",
+        "exception",
+        "failed",
+        "false",
+        "http",
+        "java",
+        "map",
+        "response",
+        "retryable",
+        "return",
+        "status"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +166,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +186,8 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "trace"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +198,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +218,13 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "api",
+        "codes",
+        "logging",
+        "references",
+        "resilience",
+        "response"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +235,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -236,7 +266,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

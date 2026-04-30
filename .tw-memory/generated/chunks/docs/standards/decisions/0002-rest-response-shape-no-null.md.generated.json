@@ -29,7 +29,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -52,7 +52,9 @@
         "response",
         "rest",
         "shape",
-        "standards"
+        "standards",
+        "api",
+        "rules"
       ],
       "relations": {
         "capabilities": [
@@ -66,7 +68,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -89,7 +91,8 @@
         "response",
         "rest",
         "shape",
-        "standards"
+        "standards",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -103,7 +106,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -140,7 +143,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -178,7 +181,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },
@@ -216,7 +219,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "decision",
         "language": "docs",
         "service": null
       },

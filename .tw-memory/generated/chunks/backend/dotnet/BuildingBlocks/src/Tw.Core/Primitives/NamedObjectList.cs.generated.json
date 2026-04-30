@@ -1,0 +1,51 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Primitives.NamedObjectList#chunk-001",
+      "end_line": 8,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "namedobjectlist",
+        "primitives",
+        "src",
+        "tw",
+        "class",
+        "list",
+        "name",
+        "named",
+        "namespace",
+        "object",
+        "public",
+        "summary",
+        "typeparam",
+        "where"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "namedobjectlist",
+          "primitives",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:8a21df2728afe336603958b65f69ae077d24cec9766c4dca820d42555608ac93",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObjectList.cs",
+      "start_line": 1,
+      "summary": "Lines 1-8 in backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObjectList.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObjectList.cs"
+}

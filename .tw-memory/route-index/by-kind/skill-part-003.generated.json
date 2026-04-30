@@ -14,7 +14,13 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "basename",
+        "bash",
+        "parse",
+        "rev",
+        "show",
+        "toplevel"
       ],
       "relations": {
         "capabilities": [
@@ -47,7 +53,18 @@
         "skills",
         "using",
         "worktree",
-        "worktrees"
+        "worktrees",
+        "add",
+        "bash",
+        "branch",
+        "case",
+        "config",
+        "determine",
+        "esac",
+        "full",
+        "location",
+        "name",
+        "new"
       ],
       "relations": {
         "capabilities": [
@@ -81,7 +98,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "appropriate",
+        "auto",
+        "bash",
+        "build",
+        "cargo",
+        "detect",
+        "install",
+        "json",
+        "node",
+        "npm"
       ],
       "relations": {
         "capabilities": [
@@ -115,7 +142,17 @@
         "skills",
         "using",
         "verify",
-        "worktrees"
+        "worktrees",
+        "appropriate",
+        "bash",
+        "cargo",
+        "command",
+        "ensure",
+        "examples",
+        "fail",
+        "npm",
+        "project",
+        "pytest"
       ],
       "relations": {
         "capabilities": [
@@ -148,7 +185,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "failures",
+        "feature",
+        "full",
+        "implement",
+        "name",
+        "passing",
+        "path",
+        "ready",
+        "tests",
+        "worktree"
       ],
       "relations": {
         "capabilities": [
@@ -181,7 +228,18 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "action",
+        "add",
+        "ask",
+        "both",
+        "check",
+        "claude",
+        "commit",
+        "directory",
+        "exist",
+        "exists",
+        "gitignore"
       ],
       "relations": {
         "capabilities": [
@@ -248,7 +306,17 @@
         "skipping",
         "using",
         "verification",
-        "worktrees"
+        "worktrees",
+        "always",
+        "before",
+        "check",
+        "contents",
+        "creating",
+        "fix",
+        "get",
+        "local",
+        "pollute",
+        "problem"
       ],
       "relations": {
         "capabilities": [
@@ -282,7 +350,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "ask",
+        "claude",
+        "conventions",
+        "creates",
+        "existing",
+        "fix",
+        "follow",
+        "inconsistency",
+        "priority",
+        "problem"
       ],
       "relations": {
         "capabilities": [
@@ -317,7 +395,16 @@
         "tests",
         "using",
         "with",
-        "worktrees"
+        "worktrees",
+        "bugs",
+        "can",
+        "distinguish",
+        "existing",
+        "explicit",
+        "failures",
+        "fix",
+        "get",
+        "issues"
       ],
       "relations": {
         "capabilities": [
@@ -351,7 +438,17 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "auto",
+        "breaks",
+        "detect",
+        "different",
+        "etc",
+        "files",
+        "fix",
+        "json",
+        "package",
+        "problem"
       ],
       "relations": {
         "capabilities": [
@@ -384,7 +481,18 @@
         "skills",
         "using",
         "workflow",
-        "worktrees"
+        "worktrees",
+        "add",
+        "auth",
+        "check",
+        "confirms",
+        "create",
+        "exists",
+        "ignore",
+        "ignored",
+        "isolated",
+        "set",
+        "verify"
       ],
       "relations": {
         "capabilities": [
@@ -417,7 +525,18 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "asking",
+        "assume",
+        "baseline",
+        "create",
+        "directory",
+        "failing",
+        "ignored",
+        "local",
+        "location",
+        "never",
+        "proceed"
       ],
       "relations": {
         "capabilities": [
@@ -449,7 +568,19 @@
         "skill",
         "skills",
         "using",
-        "worktrees"
+        "worktrees",
+        "any",
+        "approved",
+        "before",
+        "brainstorming",
+        "called",
+        "design",
+        "development",
+        "driven",
+        "executing",
+        "follows",
+        "implementation",
+        "needing"
       ],
       "relations": {
         "capabilities": [
@@ -481,7 +612,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "always",
+        "behavior",
+        "claude",
+        "default",
+        "direct",
+        "explicit",
+        "gemini",
+        "instructions",
+        "override",
+        "precedence",
+        "prompt",
+        "requests"
       ],
       "relations": {
         "capabilities": [
@@ -512,7 +655,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "claude",
+        "code",
+        "content",
+        "directly",
+        "files",
+        "follow",
+        "invoke",
+        "its",
+        "loaded",
+        "never",
+        "presented",
+        "read"
       ],
       "relations": {
         "capabilities": [
@@ -543,7 +698,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "claude",
+        "cli",
+        "code",
+        "codex",
+        "copilot",
+        "equivalents",
+        "gemini",
+        "get",
+        "names",
+        "non",
+        "platforms",
+        "references"
       ],
       "relations": {
         "capabilities": [
@@ -603,7 +770,19 @@
         "skills",
         "superpowers",
         "the",
-        "using"
+        "using",
+        "action",
+        "any",
+        "apply",
+        "before",
+        "chance",
+        "check",
+        "even",
+        "invoke",
+        "invoked",
+        "means",
+        "might",
+        "relevant"
       ],
       "relations": {
         "capabilities": [
@@ -634,7 +813,19 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "check",
+        "context",
+        "just",
+        "mean",
+        "more",
+        "need",
+        "question",
+        "questions",
+        "rationalizing",
+        "reality",
+        "simple",
+        "stop"
       ],
       "relations": {
         "capabilities": [
@@ -664,7 +855,20 @@
         "skill",
         "skills",
         "superpowers",
-        "using"
+        "using",
+        "apply",
+        "approach",
+        "brainstorming",
+        "could",
+        "debugging",
+        "determine",
+        "first",
+        "how",
+        "implementation",
+        "multiple",
+        "order",
+        "process",
+        "second"
       ],
       "relations": {
         "capabilities": [
@@ -694,7 +898,20 @@
         "skills",
         "superpowers",
         "types",
-        "using"
+        "using",
+        "adapt",
+        "away",
+        "context",
+        "debugging",
+        "discipline",
+        "don",
+        "exactly",
+        "flexible",
+        "follow",
+        "itself",
+        "patterns",
+        "principles",
+        "rigid"
       ],
       "relations": {
         "capabilities": [
@@ -725,7 +942,16 @@
         "skills",
         "superpowers",
         "user",
-        "using"
+        "using",
+        "add",
+        "doesn",
+        "fix",
+        "how",
+        "mean",
+        "say",
+        "skip",
+        "what",
+        "workflows"
       ],
       "relations": {
         "capabilities": [
@@ -787,7 +1013,19 @@
         "overview",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "always",
+        "claiming",
+        "claims",
+        "complete",
+        "core",
+        "dishonesty",
+        "efficiency",
+        "evidence",
+        "letter",
+        "principle",
+        "rule",
+        "spirit"
       ],
       "relations": {
         "capabilities": [
@@ -821,7 +1059,17 @@
         "skill",
         "skills",
         "the",
-        "verification"
+        "verification",
+        "cannot",
+        "claim",
+        "claims",
+        "command",
+        "evidence",
+        "fresh",
+        "haven",
+        "message",
+        "passes",
+        "run"
       ],
       "relations": {
         "capabilities": [
@@ -855,7 +1103,17 @@
         "skill",
         "skills",
         "the",
-        "verification"
+        "verification",
+        "any",
+        "claim",
+        "claiming",
+        "command",
+        "complete",
+        "execute",
+        "expressing",
+        "fresh",
+        "full",
+        "identify"
       ],
       "relations": {
         "capabilities": [
@@ -888,7 +1146,18 @@
         "md",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "build",
+        "check",
+        "claim",
+        "clean",
+        "command",
+        "errors",
+        "extrapolation",
+        "linter",
+        "output",
+        "partial",
+        "pass"
       ],
       "relations": {
         "capabilities": [
@@ -922,7 +1191,17 @@
         "skill",
         "skills",
         "stop",
-        "verification"
+        "verification",
+        "about",
+        "agent",
+        "commit",
+        "done",
+        "etc",
+        "expressing",
+        "great",
+        "perfect",
+        "probably",
+        "push"
       ],
       "relations": {
         "capabilities": [
@@ -955,7 +1234,18 @@
         "rationalization",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "agent",
+        "compiler",
+        "confidence",
+        "confident",
+        "evidence",
+        "exceptions",
+        "excuse",
+        "just",
+        "linter",
+        "now",
+        "once"
       ],
       "relations": {
         "capabilities": [
@@ -988,7 +1278,18 @@
         "patterns",
         "skill",
         "skills",
-        "verification"
+        "verification",
+        "all",
+        "command",
+        "correct",
+        "fix",
+        "green",
+        "looks",
+        "now",
+        "pass",
+        "red",
+        "regression",
+        "revert"
       ],
       "relations": {
         "capabilities": [
@@ -1022,7 +1323,17 @@
         "skills",
         "this",
         "verification",
-        "why"
+        "why",
+        "believe",
+        "broken",
+        "crash",
+        "don",
+        "failure",
+        "functions",
+        "human",
+        "memories",
+        "missing",
+        "partner"
       ],
       "relations": {
         "capabilities": [
@@ -1055,7 +1366,18 @@
         "skill",
         "skills",
         "verification",
-        "when"
+        "when",
+        "about",
+        "always",
+        "any",
+        "claims",
+        "committing",
+        "creation",
+        "expression",
+        "moving",
+        "positive",
+        "satisfaction",
+        "state"
       ],
       "relations": {
         "capabilities": [
@@ -1089,7 +1411,17 @@
         "skill",
         "skills",
         "the",
-        "verification"
+        "verification",
+        "claim",
+        "command",
+        "negotiable",
+        "non",
+        "output",
+        "read",
+        "result",
+        "run",
+        "shortcuts",
+        "then"
       ],
       "relations": {
         "capabilities": [
@@ -1149,7 +1481,20 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "assuming",
+        "codebase",
+        "comprehensive",
+        "context",
+        "document",
+        "engineer",
+        "everything",
+        "files",
+        "implementation",
+        "know",
+        "need",
+        "our",
+        "questionable"
       ],
       "relations": {
         "capabilities": [
@@ -1180,7 +1525,19 @@
         "scope",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "been",
+        "brainstorming",
+        "breaking",
+        "broken",
+        "covers",
+        "during",
+        "independent",
+        "multiple",
+        "project",
+        "separate",
+        "should",
+        "spec"
       ],
       "relations": {
         "capabilities": [
@@ -1211,7 +1568,19 @@
         "skill",
         "skills",
         "structure",
-        "writing"
+        "writing",
+        "before",
+        "created",
+        "decisions",
+        "decomposition",
+        "defining",
+        "each",
+        "files",
+        "get",
+        "map",
+        "modified",
+        "one",
+        "out"
       ],
       "relations": {
         "capabilities": [
@@ -1244,7 +1613,17 @@
         "skill",
         "skills",
         "task",
-        "writing"
+        "writing",
+        "action",
+        "code",
+        "each",
+        "failing",
+        "fails",
+        "implement",
+        "make",
+        "minimal",
+        "minutes",
+        "one"
       ],
       "relations": {
         "capabilities": [
@@ -1276,7 +1655,18 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "agentic",
+        "development",
+        "driven",
+        "every",
+        "feature",
+        "implementation",
+        "markdown",
+        "must",
+        "name",
+        "required",
+        "start"
       ],
       "relations": {
         "capabilities": [
@@ -1307,7 +1697,19 @@
         "skills",
         "structure",
         "task",
-        "writing"
+        "writing",
+        "component",
+        "create",
+        "def",
+        "exact",
+        "existing",
+        "failing",
+        "file",
+        "files",
+        "markdown",
+        "modify",
+        "name",
+        "path"
       ],
       "relations": {
         "capabilities": [
@@ -1337,7 +1739,20 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "actual",
+        "contain",
+        "content",
+        "engineer",
+        "every",
+        "failures",
+        "fill",
+        "implement",
+        "later",
+        "must",
+        "needs",
+        "never",
+        "plan"
       ],
       "relations": {
         "capabilities": [
@@ -1367,7 +1782,20 @@
         "remember",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "always",
+        "changes",
+        "code",
+        "commands",
+        "commits",
+        "complete",
+        "dry",
+        "every",
+        "exact",
+        "expected",
+        "file",
+        "frequent",
+        "output"
       ],
       "relations": {
         "capabilities": [
@@ -1398,7 +1826,19 @@
         "self",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "after",
+        "against",
+        "check",
+        "checklist",
+        "complete",
+        "coverage",
+        "dispatch",
+        "eyes",
+        "fresh",
+        "look",
+        "plan",
+        "run"
       ],
       "relations": {
         "capabilities": [
@@ -1429,7 +1869,19 @@
         "plans",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "after",
+        "choice",
+        "complete",
+        "dispatch",
+        "docs",
+        "driven",
+        "filename",
+        "fresh",
+        "offer",
+        "options",
+        "plan",
+        "recommended"
       ],
       "relations": {
         "capabilities": [
@@ -1486,7 +1938,21 @@
         "overview",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "agent",
+        "applied",
+        "claude",
+        "code",
+        "codex",
+        "development",
+        "directories",
+        "documentation",
+        "driven",
+        "live",
+        "personal",
+        "process",
+        "specific",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -1516,7 +1982,20 @@
         "skill?",
         "skills",
         "what",
-        "writing"
+        "writing",
+        "apply",
+        "approaches",
+        "claude",
+        "effective",
+        "find",
+        "future",
+        "guide",
+        "guides",
+        "help",
+        "instances",
+        "narratives",
+        "patterns",
+        "proven"
       ],
       "relations": {
         "capabilities": [
@@ -1547,7 +2026,19 @@
         "skill",
         "skills",
         "tdd",
-        "writing"
+        "writing",
+        "agent",
+        "baseline",
+        "case",
+        "code",
+        "concept",
+        "creation",
+        "document",
+        "fails",
+        "pressure",
+        "production",
+        "red",
+        "rule"
       ],
       "relations": {
         "capabilities": [
@@ -1577,7 +2068,20 @@
         "skill",
         "skills",
         "when",
-        "writing"
+        "writing",
+        "across",
+        "again",
+        "applies",
+        "benefit",
+        "broadly",
+        "intuitively",
+        "obvious",
+        "others",
+        "pattern",
+        "project",
+        "projects",
+        "reference",
+        "specific"
       ],
       "relations": {
         "capabilities": [
@@ -1635,7 +2139,17 @@
         "skill",
         "skills",
         "technique",
-        "writing"
+        "writing",
+        "based",
+        "cause",
+        "concrete",
+        "condition",
+        "follow",
+        "method",
+        "root",
+        "steps",
+        "tracing",
+        "waiting"
       ],
       "relations": {
         "capabilities": [
@@ -1664,7 +2178,15 @@
         "pattern",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "about",
+        "flags",
+        "flatten",
+        "invariants",
+        "problems",
+        "test",
+        "thinking",
+        "way"
       ],
       "relations": {
         "capabilities": [
@@ -1693,7 +2215,14 @@
         "reference",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "api",
+        "docs",
+        "documentation",
+        "guides",
+        "office",
+        "syntax",
+        "tool"
       ],
       "relations": {
         "capabilities": [
@@ -1723,7 +2252,20 @@
         "skill",
         "skills",
         "structure",
-        "writing"
+        "writing",
+        "all",
+        "file",
+        "files",
+        "flat",
+        "heavy",
+        "main",
+        "name",
+        "namespace",
+        "needed",
+        "one",
+        "only",
+        "reference",
+        "required"
       ],
       "relations": {
         "capabilities": [
@@ -1752,7 +2294,21 @@
         "skill",
         "skills",
         "structure",
-        "writing"
+        "writing",
+        "agentskills",
+        "all",
+        "characters",
+        "description",
+        "fields",
+        "frontmatter",
+        "https",
+        "letters",
+        "max",
+        "name",
+        "required",
+        "see",
+        "specification",
+        "supported"
       ],
       "relations": {
         "capabilities": [
@@ -1784,7 +2340,14 @@
         "search",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "critical",
+        "cso",
+        "discovery",
+        "find",
+        "future",
+        "needs",
+        "your"
       ],
       "relations": {
         "capabilities": [
@@ -1815,7 +2378,19 @@
         "rich",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "answer",
+        "claude",
+        "decide",
+        "format",
+        "given",
+        "load",
+        "make",
+        "now",
+        "purpose",
+        "read",
+        "reads",
+        "right"
       ],
       "relations": {
         "capabilities": [
@@ -1845,7 +2420,20 @@
         "md",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "claude",
+        "condition",
+        "enotempty",
+        "error",
+        "flaky",
+        "hanging",
+        "hook",
+        "messages",
+        "out",
+        "pollution",
+        "race",
+        "search",
+        "symptoms"
       ],
       "relations": {
         "capabilities": [
@@ -1875,7 +2463,20 @@
         "naming",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "active",
+        "async",
+        "based",
+        "condition",
+        "creating",
+        "creation",
+        "first",
+        "helpers",
+        "test",
+        "use",
+        "verb",
+        "voice",
+        "waiting"
       ],
       "relations": {
         "capabilities": [
@@ -1906,7 +2507,19 @@
         "skill",
         "skills",
         "token",
-        "writing"
+        "writing",
+        "conversation",
+        "counts",
+        "critical",
+        "each",
+        "every",
+        "frequently",
+        "getting",
+        "load",
+        "loaded",
+        "problem",
+        "referenced",
+        "started"
       ],
       "relations": {
         "capabilities": [
@@ -1937,7 +2550,19 @@
         "referencing",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "documentation",
+        "explicit",
+        "good",
+        "markers",
+        "name",
+        "only",
+        "references",
+        "required",
+        "requirement",
+        "sub",
+        "superpowers",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -1967,7 +2592,20 @@
         "skill",
         "skills",
         "usage",
-        "writing"
+        "writing",
+        "box",
+        "decision",
+        "diamond",
+        "digraph",
+        "dot",
+        "information",
+        "inline",
+        "label",
+        "markdown",
+        "might",
+        "need",
+        "shape",
+        "show"
       ],
       "relations": {
         "capabilities": [
@@ -1997,7 +2635,20 @@
         "md",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "beats",
+        "choose",
+        "debugging",
+        "example",
+        "excellent",
+        "java",
+        "language",
+        "many",
+        "mediocre",
+        "most",
+        "one",
+        "ones",
+        "relevant"
       ],
       "relations": {
         "capabilities": [
@@ -2057,7 +2708,18 @@
         "self",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "all",
+        "content",
+        "defense",
+        "depth",
+        "everything",
+        "fits",
+        "heavy",
+        "inline",
+        "needed",
+        "reference",
+        "when"
       ],
       "relations": {
         "capabilities": [
@@ -2088,7 +2750,19 @@
         "skills",
         "tool",
         "with",
-        "writing"
+        "writing",
+        "adapt",
+        "based",
+        "code",
+        "condition",
+        "example",
+        "helpers",
+        "just",
+        "narrative",
+        "overview",
+        "patterns",
+        "waiting",
+        "when"
       ],
       "relations": {
         "capabilities": [
@@ -2119,7 +2793,19 @@
         "skill",
         "skills",
         "with",
-        "writing"
+        "writing",
+        "api",
+        "executable",
+        "inline",
+        "large",
+        "lines",
+        "material",
+        "ooxml",
+        "overview",
+        "pptx",
+        "pptxgenjs",
+        "scripts",
+        "structure"
       ],
       "relations": {
         "capabilities": [
@@ -2152,7 +2838,17 @@
         "skills",
         "tdd)",
         "the",
-        "writing"
+        "writing",
+        "applies",
+        "before",
+        "delete",
+        "edit",
+        "edits",
+        "existing",
+        "failing",
+        "first",
+        "new",
+        "over"
       ],
       "relations": {
         "capabilities": [
@@ -2183,7 +2879,11 @@
         "skills",
         "testing",
         "types",
-        "writing"
+        "writing",
+        "approaches",
+        "different",
+        "need",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -2215,7 +2915,18 @@
         "requirements)",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "academic",
+        "before",
+        "coding",
+        "completion",
+        "comply",
+        "designing",
+        "examples",
+        "pressure",
+        "questions",
+        "requirements",
+        "rules"
       ],
       "relations": {
         "capabilities": [
@@ -2246,7 +2957,19 @@
         "skill",
         "skills",
         "technique",
-        "writing"
+        "writing",
+        "application",
+        "apply",
+        "based",
+        "can",
+        "cause",
+        "condition",
+        "correctly",
+        "defensive",
+        "examples",
+        "guides",
+        "how",
+        "programming"
       ],
       "relations": {
         "capabilities": [
@@ -2277,7 +3000,19 @@
         "pattern",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "application",
+        "applies",
+        "can",
+        "complexity",
+        "concepts",
+        "examples",
+        "hiding",
+        "information",
+        "mental",
+        "models",
+        "recognition",
+        "recognize"
       ],
       "relations": {
         "capabilities": [
@@ -2308,7 +3043,19 @@
         "reference",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "api",
+        "apis",
+        "application",
+        "can",
+        "command",
+        "documentation",
+        "examples",
+        "find",
+        "guides",
+        "information",
+        "library",
+        "references"
       ],
       "relations": {
         "capabilities": [
@@ -2341,7 +3088,17 @@
         "skills",
         "skipping",
         "testing",
-        "writing"
+        "writing",
+        "can",
+        "clear",
+        "excuse",
+        "gaps",
+        "just",
+        "obviously",
+        "other",
+        "reality",
+        "reference",
+        "references"
       ],
       "relations": {
         "capabilities": [
@@ -2372,7 +3129,19 @@
         "rationalization",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "discipline",
+        "enforce",
+        "find",
+        "like",
+        "loopholes",
+        "need",
+        "note",
+        "pressure",
+        "psychology",
+        "resist",
+        "smart",
+        "tdd"
       ],
       "relations": {
         "capabilities": [
@@ -2404,7 +3173,18 @@
         "md",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "bad",
+        "before",
+        "code",
+        "delete",
+        "don",
+        "forbid",
+        "good",
+        "just",
+        "markdown",
+        "rule",
+        "specific"
       ],
       "relations": {
         "capabilities": [
@@ -2436,7 +3216,18 @@
         "md",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "add",
+        "class",
+        "cuts",
+        "early",
+        "entire",
+        "following",
+        "foundational",
+        "letter",
+        "markdown",
+        "off",
+        "principle"
       ],
       "relations": {
         "capabilities": [
@@ -2467,7 +3258,19 @@
         "skill",
         "skills",
         "table",
-        "writing"
+        "writing",
+        "baseline",
+        "below",
+        "capture",
+        "every",
+        "excuse",
+        "goes",
+        "make",
+        "markdown",
+        "rationalizations",
+        "reality",
+        "section",
+        "see"
       ],
       "relations": {
         "capabilities": [
@@ -2499,7 +3302,18 @@
         "red",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "already",
+        "before",
+        "check",
+        "code",
+        "easy",
+        "make",
+        "manually",
+        "markdown",
+        "over",
+        "rationalizing",
+        "self"
       ],
       "relations": {
         "capabilities": [
@@ -2532,7 +3346,17 @@
         "symptoms",
         "update",
         "violation",
-        "writing"
+        "writing",
+        "about",
+        "add",
+        "any",
+        "before",
+        "bugfix",
+        "description",
+        "feature",
+        "implementation",
+        "implementing",
+        "rule"
       ],
       "relations": {
         "capabilities": [
@@ -2564,7 +3388,10 @@
         "refactor",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "cycle",
+        "follow",
+        "tdd"
       ],
       "relations": {
         "capabilities": [
@@ -2597,7 +3424,17 @@
         "skills",
         "test",
         "write",
-        "writing"
+        "writing",
+        "baseline",
+        "behavior",
+        "choices",
+        "did",
+        "document",
+        "exact",
+        "make",
+        "pressure",
+        "rationalizations",
+        "red"
       ],
       "relations": {
         "capabilities": [
@@ -2628,7 +3465,19 @@
         "skill",
         "skills",
         "write",
-        "writing"
+        "writing",
+        "add",
+        "addresses",
+        "agent",
+        "cases",
+        "content",
+        "don",
+        "extra",
+        "green",
+        "hypothetical",
+        "now",
+        "rationalizations",
+        "run"
       ],
       "relations": {
         "capabilities": [
@@ -2659,7 +3508,19 @@
         "refactor:",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "add",
+        "agent",
+        "bulletproof",
+        "complete",
+        "counter",
+        "explicit",
+        "found",
+        "how",
+        "methodology",
+        "new",
+        "rationalization",
+        "refactor"
       ],
       "relations": {
         "capabilities": [
@@ -2719,7 +3580,18 @@
         "narrative",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "bad",
+        "caused",
+        "dir",
+        "empty",
+        "found",
+        "project",
+        "reusable",
+        "session",
+        "specific",
+        "too",
+        "why"
       ],
       "relations": {
         "capabilities": [
@@ -2750,7 +3622,14 @@
         "multi",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "bad",
+        "burden",
+        "example",
+        "maintenance",
+        "mediocre",
+        "quality",
+        "why"
       ],
       "relations": {
         "capabilities": [
@@ -2780,7 +3659,20 @@
         "md",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "bad",
+        "can",
+        "copy",
+        "dot",
+        "file",
+        "hard",
+        "import",
+        "label",
+        "paste",
+        "read",
+        "step1",
+        "step2",
+        "why"
       ],
       "relations": {
         "capabilities": [
@@ -2810,7 +3702,16 @@
         "md",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "bad",
+        "helper1",
+        "helper2",
+        "meaning",
+        "pattern4",
+        "semantic",
+        "should",
+        "step3",
+        "why"
       ],
       "relations": {
         "capabilities": [
@@ -2842,7 +3743,18 @@
         "skill",
         "skills",
         "stop:",
-        "writing"
+        "writing",
+        "after",
+        "any",
+        "batch",
+        "complete",
+        "create",
+        "deployment",
+        "each",
+        "move",
+        "multiple",
+        "must",
+        "process"
       ],
       "relations": {
         "capabilities": [
@@ -2874,7 +3786,18 @@
         "md",
         "skill",
         "skills",
-        "writing"
+        "writing",
+        "adapted",
+        "below",
+        "create",
+        "each",
+        "failing",
+        "important",
+        "item",
+        "phase",
+        "pressure",
+        "red",
+        "scenarios"
       ],
       "relations": {
         "capabilities": [
@@ -2904,7 +3827,20 @@
         "skill",
         "skills",
         "workflow",
-        "writing"
+        "writing",
+        "claude",
+        "description",
+        "encounters",
+        "finds",
+        "flaky",
+        "future",
+        "how",
+        "matches",
+        "overview",
+        "patterns",
+        "problem",
+        "quick",
+        "reads"
       ],
       "relations": {
         "capabilities": [
@@ -2935,7 +3871,19 @@
         "skill",
         "skills",
         "the",
-        "writing"
+        "writing",
+        "baseline",
+        "creating",
+        "cycle",
+        "documentation",
+        "failing",
+        "first",
+        "green",
+        "iron",
+        "law",
+        "process",
+        "red",
+        "refactor"
       ],
       "relations": {
         "capabilities": [

@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ComparableExtensions#chunk-001",
+      "end_line": 17,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "comparableextensions",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "class",
+        "comparable",
+        "inclusive",
+        "langword",
+        "max",
+        "min",
+        "name",
+        "namespace",
+        "param",
+        "paramref",
+        "public"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "comparableextensions",
+          "core",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:4ef0a94e526b9950e611eda1bbf702607bc5c68c9801ff6d4a155f4d23df1254",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ComparableExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-17 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ComparableExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ComparableExtensions.cs"
+}

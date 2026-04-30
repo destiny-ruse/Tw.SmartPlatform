@@ -11,7 +11,20 @@
         "csproj",
         "dotnet",
         "src",
-        "tw"
+        "tw",
+        "assembly",
+        "configuration",
+        "enable",
+        "framework",
+        "generate",
+        "group",
+        "implicit",
+        "library",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "output"
       ],
       "relations": {
         "capabilities": [

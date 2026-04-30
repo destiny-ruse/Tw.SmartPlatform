@@ -1,0 +1,1101 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-001",
+      "end_line": 2,
+      "heading": "变更治理规范",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "变更治理规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 1,
+      "summary": "变更治理规范 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "适用范围",
+        "api"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-004",
+      "end_line": 18,
+      "heading": "流程",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 11,
+      "summary": "流程 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-005",
+      "end_line": 22,
+      "heading": "规则",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 19,
+      "summary": "规则 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-006",
+      "end_line": 28,
+      "heading": "检查清单",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 23,
+      "summary": "检查清单 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.change-governance#chunk-007",
+      "end_line": 33,
+      "heading": "变更记录",
+      "keywords": [
+        "change",
+        "docs",
+        "governance",
+        "md",
+        "processes",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "change",
+          "docs",
+          "governance",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/change-governance.md",
+      "start_line": 29,
+      "summary": "变更记录 in docs/standards/processes/change-governance.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.dependency-onboarding#chunk-001",
+      "end_line": 2,
+      "heading": "依赖引入流程",
+      "keywords": [
+        "dependency",
+        "docs",
+        "md",
+        "onboarding",
+        "processes",
+        "standards",
+        "依赖引入流程"
+      ],
+      "relations": {
+        "capabilities": [
+          "dependency",
+          "docs",
+          "onboarding",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/dependency-onboarding.md",
+      "start_line": 1,
+      "summary": "依赖引入流程 in docs/standards/processes/dependency-onboarding.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.dependency-onboarding#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "dependency",
+        "docs",
+        "md",
+        "onboarding",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "dependency",
+          "docs",
+          "onboarding",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/dependency-onboarding.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/dependency-onboarding.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.dependency-onboarding#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "dependency",
+        "docs",
+        "md",
+        "onboarding",
+        "processes",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "dependency",
+          "docs",
+          "onboarding",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/dependency-onboarding.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/dependency-onboarding.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.dependency-onboarding#chunk-004",
+      "end_line": 17,
+      "heading": "流程",
+      "keywords": [
+        "dependency",
+        "docs",
+        "md",
+        "onboarding",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "dependency",
+          "docs",
+          "onboarding",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/dependency-onboarding.md",
+      "start_line": 11,
+      "summary": "流程 in docs/standards/processes/dependency-onboarding.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.dependency-onboarding#chunk-005",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "dependency",
+        "docs",
+        "md",
+        "onboarding",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "dependency",
+          "docs",
+          "onboarding",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/dependency-onboarding.md",
+      "start_line": 18,
+      "summary": "规则 in docs/standards/processes/dependency-onboarding.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.dependency-onboarding#chunk-006",
+      "end_line": 27,
+      "heading": "检查清单",
+      "keywords": [
+        "dependency",
+        "docs",
+        "md",
+        "onboarding",
+        "processes",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "dependency",
+          "docs",
+          "onboarding",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/dependency-onboarding.md",
+      "start_line": 22,
+      "summary": "检查清单 in docs/standards/processes/dependency-onboarding.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.dependency-onboarding#chunk-007",
+      "end_line": 32,
+      "heading": "变更记录",
+      "keywords": [
+        "dependency",
+        "docs",
+        "md",
+        "onboarding",
+        "processes",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "dependency",
+          "docs",
+          "onboarding",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/dependency-onboarding.md",
+      "start_line": 28,
+      "summary": "变更记录 in docs/standards/processes/dependency-onboarding.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.doc-authoring#chunk-001",
+      "end_line": 2,
+      "heading": "文档撰写流程",
+      "keywords": [
+        "authoring",
+        "doc",
+        "docs",
+        "md",
+        "processes",
+        "standards",
+        "文档撰写流程"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "doc",
+          "docs",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/doc-authoring.md",
+      "start_line": 1,
+      "summary": "文档撰写流程 in docs/standards/processes/doc-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.doc-authoring#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "authoring",
+        "doc",
+        "docs",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "doc",
+          "docs",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/doc-authoring.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/doc-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.doc-authoring#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "authoring",
+        "doc",
+        "docs",
+        "md",
+        "processes",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "doc",
+          "docs",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/doc-authoring.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/doc-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.doc-authoring#chunk-004",
+      "end_line": 17,
+      "heading": "流程",
+      "keywords": [
+        "authoring",
+        "doc",
+        "docs",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "doc",
+          "docs",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/doc-authoring.md",
+      "start_line": 11,
+      "summary": "流程 in docs/standards/processes/doc-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.doc-authoring#chunk-005",
+      "end_line": 21,
+      "heading": "规则",
+      "keywords": [
+        "authoring",
+        "doc",
+        "docs",
+        "md",
+        "processes",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "doc",
+          "docs",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/doc-authoring.md",
+      "start_line": 18,
+      "summary": "规则 in docs/standards/processes/doc-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.doc-authoring#chunk-006",
+      "end_line": 27,
+      "heading": "检查清单",
+      "keywords": [
+        "authoring",
+        "doc",
+        "docs",
+        "md",
+        "processes",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "doc",
+          "docs",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/doc-authoring.md",
+      "start_line": 22,
+      "summary": "检查清单 in docs/standards/processes/doc-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.doc-authoring#chunk-007",
+      "end_line": 32,
+      "heading": "变更记录",
+      "keywords": [
+        "authoring",
+        "doc",
+        "docs",
+        "md",
+        "processes",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "doc",
+          "docs",
+          "processes",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/doc-authoring.md",
+      "start_line": 28,
+      "summary": "变更记录 in docs/standards/processes/doc-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-001",
+      "end_line": 2,
+      "heading": "RFC 流程规范",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "流程规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 1,
+      "summary": "RFC 流程规范 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-003",
+      "end_line": 10,
+      "heading": "适用范围",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "适用范围"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-004",
+      "end_line": 17,
+      "heading": "流程",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 11,
+      "summary": "流程 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-005",
+      "end_line": 21,
+      "heading": "模板",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 18,
+      "summary": "模板 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-006",
+      "end_line": 27,
+      "heading": "检查清单",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "检查清单"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 22,
+      "summary": "检查清单 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.rfc-flow#chunk-007",
+      "end_line": 32,
+      "heading": "变更记录",
+      "keywords": [
+        "docs",
+        "flow",
+        "md",
+        "processes",
+        "rfc",
+        "standards",
+        "变更记录"
+      ],
+      "relations": {
+        "capabilities": [
+          "docs",
+          "flow",
+          "processes",
+          "rfc",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/rfc-flow.md",
+      "start_line": 28,
+      "summary": "变更记录 in docs/standards/processes/rfc-flow.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-001",
+      "end_line": 2,
+      "heading": "规范撰写规范",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "规范撰写规范"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 1,
+      "summary": "规范撰写规范 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-002",
+      "end_line": 6,
+      "heading": "目标",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 3,
+      "summary": "目标 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-003",
+      "end_line": 17,
+      "heading": "适用范围",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "适用范围",
+        "decisions",
+        "front",
+        "matter",
+        "references",
+        "rules"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 7,
+      "summary": "适用范围 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-004",
+      "end_line": 29,
+      "heading": "文档结构",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "文档结构",
+        "after",
+        "front",
+        "machine",
+        "markdown",
+        "matter",
+        "review",
+        "roles",
+        "rules",
+        "yaml"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 18,
+      "summary": "文档结构 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-005",
+      "end_line": 37,
+      "heading": "状态管理",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "状态管理",
+        "rfc"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 30,
+      "summary": "状态管理 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-006",
+      "end_line": 46,
+      "heading": "引用要求",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "引用要求",
+        "markdown"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 38,
+      "summary": "引用要求 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-007",
+      "end_line": 59,
+      "heading": "变更流程",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "变更流程",
+        "brief",
+        "check",
+        "format",
+        "generate",
+        "memory",
+        "powershell",
+        "python",
+        "rfc",
+        "tools"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 47,
+      "summary": "变更流程 in docs/standards/processes/standard-authoring.md"
+    },
+    {
+      "chunk_id": "docs.standards.processes.standard-authoring#chunk-008",
+      "end_line": 67,
+      "heading": "变更记录",
+      "keywords": [
+        "authoring",
+        "docs",
+        "md",
+        "processes",
+        "standard",
+        "standards",
+        "变更记录",
+        "anchor",
+        "front",
+        "matter"
+      ],
+      "relations": {
+        "capabilities": [
+          "authoring",
+          "docs",
+          "processes",
+          "standard",
+          "standards"
+        ],
+        "framework": null,
+        "kind": "process",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/standards/processes/standard-authoring.md",
+      "start_line": 60,
+      "summary": "变更记录 in docs/standards/processes/standard-authoring.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}
