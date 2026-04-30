@@ -35,6 +35,24 @@ class GeneratorTests(unittest.TestCase):
                 if route_file.name != "index.generated.json":
                     self.assertNotIn("Human readable body.", route_file.read_text(encoding="utf-8"))
 
+    def test_route_index_root_contains_generated_at(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "README.md").write_text("# Docs\n", encoding="utf-8")
+
+            MemoryGenerator(root).generate()
+
+            route_index = json.loads(
+                (root / ".tw-memory" / "route-index" / "index.generated.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(route_index["schema_version"], "1.0.0")
+            self.assertIn("generated_at", route_index)
+            self.assertRegex(route_index["generated_at"], r"^\d{4}-\d{2}-\d{2}T")
+            self.assertIn("repo_hash", route_index)
+            self.assertIsInstance(route_index["shards"], list)
+
     def test_generate_extracts_bounded_keywords_from_body_without_storing_body(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

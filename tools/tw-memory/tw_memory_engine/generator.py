@@ -4,6 +4,7 @@ import hashlib
 import json
 import shutil
 from dataclasses import dataclass, replace
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -256,6 +257,7 @@ class MemoryGenerator:
 
         root_payload = {
             "schema_version": SCHEMA_VERSION,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
             "repo_hash": repo_hash,
             "shards": sorted(shards, key=lambda shard: (str(shard["kind"]), str(shard["name"]))),
         }

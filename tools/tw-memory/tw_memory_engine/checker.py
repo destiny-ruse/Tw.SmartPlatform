@@ -308,6 +308,8 @@ class MemoryChecker:
         if not isinstance(payload, dict):
             return diagnostics
 
+        diagnostics.extend(self._check_route_root_schema(payload, index_path))
+
         shards = payload.get("shards", [])
         if not isinstance(shards, list):
             return diagnostics
@@ -333,6 +335,26 @@ class MemoryChecker:
                         code="broken-route-path",
                         path=f".tw-memory/{shard_path}",
                         message="route-index shard path points to a missing generated file",
+                    )
+                )
+        return diagnostics
+
+    def _check_route_root_schema(self, payload: dict[str, Any], index_path: Path) -> list[Diagnostic]:
+        diagnostics: list[Diagnostic] = []
+        required = {
+            "schema_version": str,
+            "generated_at": str,
+            "repo_hash": str,
+            "shards": list,
+        }
+        for field, expected_type in required.items():
+            if not isinstance(payload.get(field), expected_type):
+                diagnostics.append(
+                    Diagnostic(
+                        level="error",
+                        code="route-index-schema-invalid",
+                        path=relative_posix(self.root, index_path),
+                        message=f"route-index root field {field} is missing or invalid",
                     )
                 )
         return diagnostics
