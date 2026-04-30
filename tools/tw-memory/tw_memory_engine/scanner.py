@@ -28,6 +28,10 @@ GENERATED_OUTPUT_DIRS = {
     ".venv",
     "venv",
 }
+GENERATED_OUTPUT_PREFIXES = {
+    ("generated", "fts"),
+    ("generated", "vector"),
+}
 MARKDOWN_ROOTS = {"docs", "backend", "frontend", "contracts", "deploy"}
 PACKAGE_FILENAMES = {
     "package.json",
@@ -134,7 +138,13 @@ class SourceScanner:
         )
 
     def _is_generated_output_path(self, parts: tuple[str, ...]) -> bool:
-        if not any(part in GENERATED_OUTPUT_DIRS for part in parts):
+        has_generated_output_dir = any(part in GENERATED_OUTPUT_DIRS for part in parts)
+        has_generated_output_prefix = any(
+            parts[index : index + len(prefix)] == prefix
+            for prefix in GENERATED_OUTPUT_PREFIXES
+            for index in range(0, len(parts) - len(prefix) + 1)
+        )
+        if not has_generated_output_dir and not has_generated_output_prefix:
             return False
         if parts[0] == "docs":
             return False

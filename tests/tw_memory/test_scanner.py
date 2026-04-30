@@ -161,6 +161,8 @@ class ScannerTests(unittest.TestCase):
                 "backend/java/orders/target/Generated.java",
                 "backend/python/orders/.venv/app.py",
                 "backend/dotnet/BuildingBlocks/src/Tw.Caching/build/Generated.cs",
+                "backend/python/orders/generated/fts/Generated.py",
+                "frontend/apps/tw.web.ops/generated/vector/App.ts",
             ]
             for source_path in excluded:
                 path = root / source_path
