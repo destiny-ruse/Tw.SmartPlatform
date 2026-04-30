@@ -105,6 +105,22 @@ class ScannerTests(unittest.TestCase):
 
             self.assertEqual(records, files)
 
+    def test_scan_preserves_docs_under_generated_output_named_directories(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            files = {
+                "docs/build/README.md": "readme",
+                "docs/standards/references/build/README.md": "reference",
+            }
+            for source_path in files:
+                path = root / source_path
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("# Title\n", encoding="utf-8")
+
+            records = {record.source_path: record.source_type for record in SourceScanner(root).scan()}
+
+            self.assertEqual(records, files)
+
     def test_scan_includes_controlled_source_files(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

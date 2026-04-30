@@ -17,6 +17,8 @@ EXCLUDED_DIRS = {
     "bin",
     "obj",
     "__pycache__",
+}
+GENERATED_OUTPUT_DIRS = {
     "dist",
     "build",
     "coverage",
@@ -96,6 +98,8 @@ class SourceScanner:
         parts = path.resolve().relative_to(self.root).parts
         if parts[-1] in EXCLUDED_DIRS:
             return True
+        if self._is_generated_output_path(parts):
+            return True
         return any(
             parts[index : index + len(prefix)] == prefix
             for prefix in EXCLUDED_PREFIXES
@@ -105,6 +109,8 @@ class SourceScanner:
     def _is_excluded(self, path: Path) -> bool:
         parts = path.resolve().relative_to(self.root).parts
         if any(part in EXCLUDED_DIRS for part in parts[:-1]):
+            return True
+        if self._is_generated_output_path(parts[:-1]):
             return True
         return any(
             parts[index : index + len(prefix)] == prefix
@@ -138,6 +144,21 @@ class SourceScanner:
             or name.endswith(".sln")
             or (name.startswith("requirements") and name.endswith(".txt"))
         )
+
+    def _is_generated_output_path(self, parts: tuple[str, ...]) -> bool:
+        if not any(part in GENERATED_OUTPUT_DIRS for part in parts):
+            return False
+        if parts[0] == "docs":
+            return False
+        if len(parts) >= 5 and parts[:4] == ("backend", "dotnet", "BuildingBlocks", "src"):
+            return True
+        if len(parts) >= 5 and parts[:3] == ("backend", "dotnet", "Services"):
+            return True
+        if len(parts) >= 3 and parts[:2] in {("backend", "java"), ("backend", "python")}:
+            return True
+        if len(parts) >= 4 and parts[:2] in {("frontend", "packages"), ("frontend", "apps")}:
+            return True
+        return False
 
     def _is_controlled_source_file(self, path: Path, parts: tuple[str, ...]) -> bool:
         if path.suffix.lower() not in SOURCE_SUFFIXES:
