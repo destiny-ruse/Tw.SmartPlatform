@@ -1,5 +1,5 @@
 {
-  "repo_hash": "sha256:eff2e9e74a248267effd1ce24e24e08e36980afe20125ea44c86db91823f1fee",
+  "repo_hash": "sha256:de368b340d6d26960e84bb8e79266b385268bdbb64aacde7c4a1b40f715b5e0a",
   "schema_version": "1.0.0",
   "shards": [
     {
@@ -129,7 +129,7 @@
       "path": "route-index/by-kind/manual-part-008.generated.json"
     },
     {
-      "chunk_count": 4,
+      "chunk_count": 26,
       "kind": "kind",
       "name": "manual",
       "path": "route-index/by-kind/manual-part-009.generated.json"
@@ -225,7 +225,7 @@
       "path": "route-index/by-language/docs-part-008.generated.json"
     },
     {
-      "chunk_count": 12,
+      "chunk_count": 34,
       "kind": "language",
       "name": "docs",
       "path": "route-index/by-language/docs-part-009.generated.json"

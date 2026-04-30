@@ -680,6 +680,28 @@ chunks:
   - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-029
   - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-030
   - docs.superpowers.plans.2026-04-30-tw-memory-ai-development-design#chunk-031
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-001
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-002
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-003
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-004
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-005
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-006
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-007
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-008
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-009
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-010
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-011
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-012
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-013
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-014
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-015
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-016
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-017
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-018
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-019
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-020
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-021
+  - docs.superpowers.plans.2026-04-30-tw-memory-risk-remediation#chunk-022
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-001
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-002
   - docs.superpowers.specs.2026-04-29-auto-registration-aop-design#chunk-003
@@ -893,6 +915,7 @@ sources:
   - docs/superpowers/plans/2026-04-29-06-grpc-adapter-p2.md
   - docs/superpowers/plans/2026-04-29-07-cap-worker-adapter-boundary-p3.md
   - docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md
+  - docs/superpowers/plans/2026-04-30-tw-memory-risk-remediation.md
   - docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md
   - docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md
   - docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md
