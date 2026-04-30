@@ -117,7 +117,7 @@ class MemoryGenerator:
         return [
             self._write_text("README.md", README_TEXT),
             self._write_text("taxonomy.yaml", TAXONOMY_TEXT),
-            self._write_text("adapters/vector-backends.yaml", VECTOR_BACKENDS_TEXT),
+            self._write_text_if_missing("adapters/vector-backends.yaml", VECTOR_BACKENDS_TEXT),
         ]
 
     def _ensure_runtime_dirs(self) -> None:
@@ -295,6 +295,14 @@ class MemoryGenerator:
 
     def _write_text(self, relative_path: str, text: str) -> str:
         path = self.memory_root / relative_path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        return path.relative_to(self.root).as_posix()
+
+    def _write_text_if_missing(self, relative_path: str, text: str) -> str:
+        path = self.memory_root / relative_path
+        if path.exists():
+            return path.relative_to(self.root).as_posix()
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
         return path.relative_to(self.root).as_posix()

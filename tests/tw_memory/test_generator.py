@@ -57,6 +57,27 @@ class GeneratorTests(unittest.TestCase):
             self.assertLessEqual(len(chunk["keywords"]), 20)
             self.assertNotIn("Redis distributed cache wrapper handles cache invalidation.", serialized)
 
+    def test_generate_preserves_existing_vector_backend_config(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "README.md").write_text("# Docs\n", encoding="utf-8")
+            config = root / ".tw-memory" / "adapters" / "vector-backends.yaml"
+            config.parent.mkdir(parents=True)
+            config.write_text(
+                'schema_version: "1.0.0"\n'
+                "default_backend: fts\n"
+                "vector_backends:\n"
+                "  aliyun:\n"
+                "    enabled: true\n",
+                encoding="utf-8",
+            )
+
+            MemoryGenerator(root).generate()
+
+            self.assertIn("enabled: true", config.read_text(encoding="utf-8"))
+
     def test_generate_preserves_base_keywords_when_body_keyword_cap_is_reached(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
