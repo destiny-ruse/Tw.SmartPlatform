@@ -15,7 +15,7 @@ public class ConfigurationTests
     }
 
     [Fact]
-    public void ConfigurationSectionAttribute_Targets_Classes()
+    public void ConfigurationSectionAttribute_Targets_Classes_And_Allows_Multiple_Declarations()
     {
         var usage = typeof(ConfigurationSectionAttribute)
             .GetCustomAttributes(typeof(AttributeUsageAttribute), inherit: false)
@@ -27,8 +27,24 @@ public class ConfigurationTests
             .Subject;
 
         usage.ValidOn.Should().Be(AttributeTargets.Class);
-        usage.AllowMultiple.Should().BeFalse();
+        usage.AllowMultiple.Should().BeTrue();
         usage.Inherited.Should().BeTrue();
+    }
+
+    [Fact]
+    public void ConfigurationSectionAttribute_Stores_Options_Metadata()
+    {
+        var attribute = new ConfigurationSectionAttribute("Auth")
+        {
+            OptionsName = "Primary",
+            ValidateOnStart = true,
+            DirectInject = true
+        };
+
+        attribute.Name.Should().Be("Auth");
+        attribute.OptionsName.Should().Be("Primary");
+        attribute.ValidateOnStart.Should().BeTrue();
+        attribute.DirectInject.Should().BeTrue();
     }
 
     [Fact]
