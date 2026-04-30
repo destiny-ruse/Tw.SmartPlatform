@@ -55,7 +55,8 @@ class MemoryChecker:
         diagnostics.extend(self._check_required_artifacts())
         source_records = self._source_records(diagnostics)
         diagnostics.extend(self._check_source_freshness(source_records))
-        diagnostics.extend(self._check_source_index_matches_scan(source_records))
+        if self._source_index_can_be_compared(diagnostics):
+            diagnostics.extend(self._check_source_index_matches_scan(source_records))
         diagnostics.extend(self._check_chunk_ranges())
         diagnostics.extend(self._check_manual_freshness(source_records))
         diagnostics.extend(self._check_route_index())
@@ -158,6 +159,18 @@ class MemoryChecker:
                     )
                 )
         return diagnostics
+
+    def _source_index_can_be_compared(self, diagnostics: list[Diagnostic]) -> bool:
+        source_index = self.memory_root / "source-index"
+        if not source_index.exists():
+            return False
+
+        return not any(
+            item.code == "invalid-json"
+            and isinstance(item.path, str)
+            and item.path.startswith(".tw-memory/source-index/")
+            for item in diagnostics
+        )
 
     def _check_source_index_matches_scan(self, source_records: list[tuple[Path, dict[str, Any]]]) -> list[Diagnostic]:
         diagnostics: list[Diagnostic] = []

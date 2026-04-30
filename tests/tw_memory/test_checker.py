@@ -42,6 +42,25 @@ class CheckerTests(unittest.TestCase):
                     [item.to_json() for item in diagnostics],
                 )
 
+    def test_check_does_not_report_source_index_stale_when_source_index_missing(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            (root / "docs").mkdir()
+            (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+            shutil.rmtree(root / ".tw-memory" / "source-index")
+
+            diagnostics = MemoryChecker(root).check()
+
+            self.assertTrue(
+                any(item.code == "source-index-missing" and item.level == "error" for item in diagnostics),
+                [item.to_json() for item in diagnostics],
+            )
+            self.assertFalse(
+                any(item.code == "source-index-stale" for item in diagnostics),
+                [item.to_json() for item in diagnostics],
+            )
+
     def test_check_reports_stale_source_hash(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
@@ -92,6 +111,14 @@ class CheckerTests(unittest.TestCase):
                 any(
                     item.level == "error"
                     and item.code == "source-missing"
+                    and item.path == "docs/README.md"
+                    for item in diagnostics
+                ),
+                [item.to_json() for item in diagnostics],
+            )
+            self.assertFalse(
+                any(
+                    item.code == "source-index-stale"
                     and item.path == "docs/README.md"
                     for item in diagnostics
                 ),
@@ -172,6 +199,8 @@ class CheckerTests(unittest.TestCase):
     def test_check_reports_invalid_generated_json(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
+            (root / "docs").mkdir()
+            (root / "docs" / "README.md").write_text("# Docs\n", encoding="utf-8")
             for path in [
                 root / ".tw-memory" / "source-index" / "docs.generated.json",
                 root / ".tw-memory" / "generated" / "chunks" / "docs" / "README.md.generated.json",
@@ -190,6 +219,10 @@ class CheckerTests(unittest.TestCase):
             self.assertIn(".tw-memory/source-index/docs.generated.json", invalid_paths)
             self.assertIn(".tw-memory/generated/chunks/docs/README.md.generated.json", invalid_paths)
             self.assertIn(".tw-memory/route-index/index.generated.json", invalid_paths)
+            self.assertFalse(
+                any(item.code == "source-index-stale" for item in diagnostics),
+                [item.to_json() for item in diagnostics],
+            )
 
     def test_check_rejects_source_index_paths_that_escape_repo(self):
         with tempfile.TemporaryDirectory() as work:
