@@ -14,6 +14,7 @@
     <Project Path="BuildingBlocks/src/Tw.TextTemplating/Tw.TextTemplating.csproj" Id="e0e0367f-47d2-4e79-854c-0bf93cd9b3e8" />
     <Project Path="BuildingBlocks/src/Tw.Uow/Tw.Uow.csproj" />
     <Project Path="BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj" Id="254c7393-f49f-4c61-b278-effcecda9a0f" />
+    <Project Path="BuildingBlocks/src/Tw.DependencyInjection/Tw.DependencyInjection.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Ddd/">
     <Project Path="BuildingBlocks/src/Ddd/Tw.Application.Contracts/Tw.Application.Contracts.csproj" />
@@ -24,6 +25,7 @@
   <Folder Name="/BuildingBlocks/tests/">
     <Project Path="BuildingBlocks/tests/Tw.TestBase/Tw.TestBase.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
   </Folder>
   <Folder Name="/Services/" />
   <Folder Name="/Services/Authentication/" />
