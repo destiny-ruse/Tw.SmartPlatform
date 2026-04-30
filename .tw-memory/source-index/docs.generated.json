@@ -1675,6 +1675,18 @@
         "name": "tw-memory",
         "version": "1.0.0"
       },
+      "language": "docs",
+      "service": null,
+      "source_hash": "sha256:a3469641b7abe9597cbde74196437abd1ac1dc04ea782c0f339f1e6aceed72b4",
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "source_type": "manual"
+    },
+    {
+      "framework": null,
+      "generator": {
+        "name": "tw-memory",
+        "version": "1.0.0"
+      },
       "language": "frontend",
       "service": null,
       "source_hash": "sha256:572b520e7bdbd8a5d00c5ba99f40d3ea0e36405a0bac81cc421500cce19fa7c0",

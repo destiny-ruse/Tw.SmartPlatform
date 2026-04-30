@@ -1,0 +1,488 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-008",
+      "end_line": 86,
+      "heading": "4. Remediation Design",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "design",
+        "docs",
+        "md",
+        "memory",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 85,
+      "summary": "4. Remediation Design in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-009",
+      "end_line": 99,
+      "heading": "4.1 Freshness Detection",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "design",
+        "detection",
+        "docs",
+        "freshness",
+        "md",
+        "memory",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 87,
+      "summary": "4.1 Freshness Detection in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-010",
+      "end_line": 116,
+      "heading": "4.2 Controlled Source Coverage",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "controlled",
+        "coverage",
+        "design",
+        "docs",
+        "md",
+        "memory",
+        "remediation",
+        "risk",
+        "source",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 100,
+      "summary": "4.2 Controlled Source Coverage in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-011",
+      "end_line": 130,
+      "heading": "4.3 Body-Derived Keywords",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "body",
+        "derived",
+        "design",
+        "docs",
+        "keywords",
+        "md",
+        "memory",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 117,
+      "summary": "4.3 Body-Derived Keywords in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-012",
+      "end_line": 141,
+      "heading": "4.4 Global Standards Recall",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "design",
+        "docs",
+        "global",
+        "md",
+        "memory",
+        "recall",
+        "remediation",
+        "risk",
+        "specs",
+        "standards",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 131,
+      "summary": "4.4 Global Standards Recall in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-013",
+      "end_line": 154,
+      "heading": "4.5 Standards Classification",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "classification",
+        "design",
+        "docs",
+        "md",
+        "memory",
+        "remediation",
+        "risk",
+        "specs",
+        "standards",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 142,
+      "summary": "4.5 Standards Classification in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-014",
+      "end_line": 162,
+      "heading": "4.6 Config Preservation",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "config",
+        "design",
+        "docs",
+        "md",
+        "memory",
+        "preservation",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 155,
+      "summary": "4.6 Config Preservation in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-015",
+      "end_line": 175,
+      "heading": "4.7 Route Contract Alignment",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "alignment",
+        "contract",
+        "design",
+        "docs",
+        "md",
+        "memory",
+        "remediation",
+        "risk",
+        "route",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 163,
+      "summary": "4.7 Route Contract Alignment in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-016",
+      "end_line": 188,
+      "heading": "4.8 Verification Quality Gate",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "design",
+        "docs",
+        "gate",
+        "md",
+        "memory",
+        "quality",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw",
+        "verification"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 176,
+      "summary": "4.8 Verification Quality Gate in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-017",
+      "end_line": 207,
+      "heading": "5. Acceptance Criteria",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "acceptance",
+        "criteria",
+        "design",
+        "docs",
+        "md",
+        "memory",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 189,
+      "summary": "5. Acceptance Criteria in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-018",
+      "end_line": 221,
+      "heading": "6. Non-Goals",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "design",
+        "docs",
+        "goals",
+        "md",
+        "memory",
+        "non",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 208,
+      "summary": "6. Non-Goals in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    },
+    {
+      "chunk_id": "docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-019",
+      "end_line": 240,
+      "heading": "7. Implementation Order",
+      "keywords": [
+        "04",
+        "2026",
+        "30",
+        "design",
+        "docs",
+        "implementation",
+        "md",
+        "memory",
+        "order",
+        "remediation",
+        "risk",
+        "specs",
+        "superpowers",
+        "tw"
+      ],
+      "relations": {
+        "capabilities": [
+          "2026",
+          "design",
+          "docs",
+          "memory",
+          "remediation",
+          "risk",
+          "specs",
+          "superpowers"
+        ],
+        "framework": null,
+        "kind": "manual",
+        "language": "docs",
+        "service": null
+      },
+      "source_path": "docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md",
+      "start_line": 222,
+      "summary": "7. Implementation Order in docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

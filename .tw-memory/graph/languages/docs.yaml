@@ -792,6 +792,25 @@ chunks:
   - docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-045
   - docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-046
   - docs.superpowers.specs.2026-04-30-tw-memory-ai-development-design#chunk-047
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-001
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-002
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-003
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-004
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-005
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-006
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-007
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-008
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-009
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-010
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-011
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-012
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-013
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-014
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-015
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-016
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-017
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-018
+  - docs.superpowers.specs.2026-04-30-tw-memory-risk-remediation-design#chunk-019
 language: "docs"
 schema_version: "1.0.0"
 sources:
@@ -876,3 +895,4 @@ sources:
   - docs/superpowers/plans/2026-04-30-tw-memory-ai-development-design.md
   - docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md
   - docs/superpowers/specs/2026-04-30-tw-memory-ai-development-design.md
+  - docs/superpowers/specs/2026-04-30-tw-memory-risk-remediation-design.md
