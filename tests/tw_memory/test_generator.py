@@ -57,6 +57,25 @@ class GeneratorTests(unittest.TestCase):
             self.assertLessEqual(len(chunk["keywords"]), 20)
             self.assertNotIn("Redis distributed cache wrapper handles cache invalidation.", serialized)
 
+    def test_generate_preserves_base_keywords_when_body_keyword_cap_is_reached(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            frontend = root / "frontend"
+            frontend.mkdir()
+            source = frontend / "zuluartifact.md"
+            body = " ".join(f"alpha{index:03d}" for index in range(1, 40))
+            source.write_text(f"# ZuluHeading\n\n{body}\n", encoding="utf-8")
+
+            MemoryGenerator(root).generate()
+
+            chunk_file = root / ".tw-memory" / "generated" / "chunks" / "frontend" / "zuluartifact.md.generated.json"
+            payload = json.loads(chunk_file.read_text(encoding="utf-8"))
+            keywords = payload["chunks"][0]["keywords"]
+            self.assertLessEqual(len(keywords), 20)
+            self.assertIn("frontend", keywords)
+            self.assertIn("zuluartifact", keywords)
+            self.assertIn("zuluheading", keywords)
+
     def test_generate_creates_language_graph_for_dotnet_frontend_java_python(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

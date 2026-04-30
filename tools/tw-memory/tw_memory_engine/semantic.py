@@ -49,8 +49,9 @@ def extract_keywords(path: str, heading: str | None, lines: Sequence[str]) -> li
     if heading:
         keywords.update(token for token in _tokens(heading) if len(token) > 2)
     keywords.update(token for token in LANGUAGE_TOKENS if token in path.lower().split("/"))
-    keywords.update(_body_tokens(lines))
-    return sorted(keywords)[:MAX_KEYWORDS]
+    base_keywords = sorted(keywords)
+    body_keywords = [token for token in sorted(_body_tokens(lines)) if token not in keywords]
+    return (base_keywords + body_keywords)[:MAX_KEYWORDS]
 
 
 def relations_for_source(record: SourceRecord) -> dict[str, object]:
