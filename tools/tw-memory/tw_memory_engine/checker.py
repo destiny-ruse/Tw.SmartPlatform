@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+from datetime import datetime
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
@@ -304,7 +305,10 @@ class MemoryChecker:
             return []
 
         diagnostics: list[Diagnostic] = []
+        index_relative_path = relative_posix(self.root, index_path)
         payload = self._load_json(index_path, diagnostics)
+        if any(item.code == "invalid-json" and item.path == index_relative_path for item in diagnostics):
+            return diagnostics
         if not isinstance(payload, dict):
             return diagnostics
 
@@ -357,7 +361,24 @@ class MemoryChecker:
                         message=f"route-index root field {field} is missing or invalid",
                     )
                 )
+        generated_at = payload.get("generated_at")
+        if isinstance(generated_at, str) and not self._is_timezone_aware_iso_datetime(generated_at):
+            diagnostics.append(
+                Diagnostic(
+                    level="error",
+                    code="route-index-schema-invalid",
+                    path=relative_posix(self.root, index_path),
+                    message="route-index root field generated_at is missing or invalid",
+                )
+            )
         return diagnostics
+
+    def _is_timezone_aware_iso_datetime(self, value: str) -> bool:
+        try:
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError:
+            return False
+        return parsed.tzinfo is not None and parsed.utcoffset() is not None
 
     def _check_memory_safety(self) -> list[Diagnostic]:
         if not self.memory_root.exists():

@@ -215,6 +215,25 @@ class CheckerTests(unittest.TestCase):
                 [item.to_json() for item in diagnostics],
             )
 
+    def test_check_reports_route_index_invalid_generated_at(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "README.md").write_text("# Docs\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+            route_index = root / ".tw-memory" / "route-index" / "index.generated.json"
+            payload = json.loads(route_index.read_text(encoding="utf-8"))
+            payload["generated_at"] = "not-a-timestamp"
+            route_index.write_text(json.dumps(payload), encoding="utf-8")
+
+            diagnostics = MemoryChecker(root).check()
+
+            self.assertTrue(
+                any(item.level == "error" and item.code == "route-index-schema-invalid" for item in diagnostics),
+                [item.to_json() for item in diagnostics],
+            )
+
     def test_check_reports_invalid_generated_json(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
@@ -240,6 +259,10 @@ class CheckerTests(unittest.TestCase):
             self.assertIn(".tw-memory/route-index/index.generated.json", invalid_paths)
             self.assertFalse(
                 any(item.code == "source-index-stale" for item in diagnostics),
+                [item.to_json() for item in diagnostics],
+            )
+            self.assertFalse(
+                any(item.code == "route-index-schema-invalid" for item in diagnostics),
                 [item.to_json() for item in diagnostics],
             )
 

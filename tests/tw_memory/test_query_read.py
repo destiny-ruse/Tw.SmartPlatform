@@ -114,6 +114,20 @@ class QueryReadTests(unittest.TestCase):
             self.assertEqual(results[0].chunk_id, "docs.cache#chunk-001")
             self.assertIn("Postgres", results[0].summary)
 
+    def test_fts_remains_fresh_after_regenerate_without_source_changes(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "cache.md").write_text("# Redis\n\nDistributed cache wrapper.\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+            index = SearchIndex(root)
+            index.build_fts()
+
+            MemoryGenerator(root).generate()
+
+            self.assertTrue(index._can_use_fts())
+
     def test_query_handles_odd_fts_input_without_traceback(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

@@ -147,7 +147,18 @@ class CliContractTests(unittest.TestCase):
             root = self._temp_repo_root(work)
             MemoryGenerator(root).generate()
             route_index = root / ".tw-memory" / "route-index" / "index.generated.json"
-            route_index.write_text(json.dumps({"shards": [], "padding": "x" * 210_000}), encoding="utf-8")
+            route_index.write_text(
+                json.dumps(
+                    {
+                        "schema_version": "1.0.0",
+                        "generated_at": "2026-04-30T00:00:00+00:00",
+                        "repo_hash": "sha256:test",
+                        "shards": [],
+                        "padding": "x" * 210_000,
+                    }
+                ),
+                encoding="utf-8",
+            )
 
             result = subprocess.run(
                 [sys.executable, str(CLI), "check", "--format", "json"],
