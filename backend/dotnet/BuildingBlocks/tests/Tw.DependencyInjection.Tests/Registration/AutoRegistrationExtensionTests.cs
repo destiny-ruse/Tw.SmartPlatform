@@ -96,6 +96,65 @@ public sealed class AutoRegistrationExtensionTests
         secondScope.ServiceProvider.GetRequiredService(dynamicService.ServiceType).Should().NotBeSameAs(first);
     }
 
+    [Fact]
+    public void UseAutoRegistration_Emits_Development_Diagnostics()
+    {
+        var diagnosticAssembly = DiagnosticServiceAssembly.Create();
+        var diagnostics = new List<string>();
+        var services = new ServiceCollection();
+        var configuration = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                ["DOTNET_ENVIRONMENT"] = "Development",
+            })
+            .Build();
+
+        services.AddAutoRegistration(
+            configuration,
+            options => options
+                .AddAssembly(diagnosticAssembly.Assembly)
+                .AddGlobalInterceptor<AssemblyInterceptor>(InterceptorScope.Service)
+                .WriteDiagnosticsTo(diagnostics.Add));
+
+        var containerBuilder = new ContainerBuilder();
+        containerBuilder.UseAutoRegistration(services);
+        using var container = containerBuilder.Build();
+
+        diagnostics.Should().Contain(message => Contains(message, "scan") && Contains(message, "elapsed"));
+        diagnostics.Should().Contain(message => Contains(message, "sort") && Contains(message, "serviceCount=1"));
+        diagnostics.Should().Contain(message => Contains(message, "AOP") && Contains(message, "interceptedCount=1"));
+        diagnostics.Should().Contain(message => Contains(message, "register") && Contains(message, "serviceCount=1"));
+        diagnostics.Should().Contain(message => Contains(message, "total") && Contains(message, "elapsed"));
+        diagnostics.Should().Contain(message => Contains(message, "warning") && Contains(message, diagnosticAssembly.ServiceType.Name));
+    }
+
+    [Fact]
+    public void UseAutoRegistration_Suppresses_Diagnostics_In_Production()
+    {
+        var diagnosticAssembly = DiagnosticServiceAssembly.Create();
+        var diagnostics = new List<string>();
+        var services = new ServiceCollection();
+        var configuration = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                ["DOTNET_ENVIRONMENT"] = "Production",
+            })
+            .Build();
+
+        services.AddAutoRegistration(
+            configuration,
+            options => options
+                .AddAssembly(diagnosticAssembly.Assembly)
+                .AddGlobalInterceptor<AssemblyInterceptor>(InterceptorScope.Service)
+                .WriteDiagnosticsTo(diagnostics.Add));
+
+        var containerBuilder = new ContainerBuilder();
+        containerBuilder.UseAutoRegistration(services);
+        using var container = containerBuilder.Build();
+
+        diagnostics.Should().BeEmpty();
+    }
+
     public sealed class AssemblyMatcher : IInterceptorMatcher
     {
         public Type InterceptorType => typeof(AssemblyInterceptor);
@@ -131,4 +190,26 @@ public sealed class AutoRegistrationExtensionTests
             return new DynamicServiceAssembly(assemblyBuilder, serviceInterface);
         }
     }
+
+    private sealed record DiagnosticServiceAssembly(Assembly Assembly, Type ServiceType)
+    {
+        public static DiagnosticServiceAssembly Create()
+        {
+            var assemblyName = new AssemblyName($"Tw.DynamicAutoRegistrationDiagnostics.{Guid.NewGuid():N}");
+            var assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
+            var moduleBuilder = assemblyBuilder.DefineDynamicModule(assemblyName.Name!);
+
+            var implementation = moduleBuilder.DefineType(
+                "ConcreteDiagnosticService",
+                TypeAttributes.Public | TypeAttributes.Class);
+            implementation.AddInterfaceImplementation(typeof(IScopedDependency));
+            implementation.DefineDefaultConstructor(MethodAttributes.Public);
+            var implementationType = implementation.CreateTypeInfo()!.AsType();
+
+            return new DiagnosticServiceAssembly(assemblyBuilder, implementationType);
+        }
+    }
+
+    private static bool Contains(string message, string value)
+        => message.Contains(value, StringComparison.OrdinalIgnoreCase);
 }

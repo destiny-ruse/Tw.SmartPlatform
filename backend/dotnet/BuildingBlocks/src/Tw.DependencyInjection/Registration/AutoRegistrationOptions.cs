@@ -12,6 +12,7 @@ public sealed class AutoRegistrationOptions
     private readonly List<Assembly> _assemblies = [];
     private readonly List<InterceptorRegistration> _globalInterceptors = [];
     private readonly List<Type> _matcherTypes = [];
+    private bool? _diagnosticsEnabled;
 
     /// <summary>
     /// 参与服务、选项和匹配器扫描的程序集列表
@@ -27,6 +28,10 @@ public sealed class AutoRegistrationOptions
     /// 是否启用 Options 自动注册
     /// </summary>
     public bool OptionsAutoRegistrationEnabled { get; private set; }
+
+    internal bool? DiagnosticsEnabled => _diagnosticsEnabled;
+
+    internal Action<string>? DiagnosticsWriter { get; private set; }
 
     internal IReadOnlyList<Type> MatcherTypes => _matcherTypes;
 
@@ -59,6 +64,26 @@ public sealed class AutoRegistrationOptions
     public AutoRegistrationOptions EnableOptionsAutoRegistration(bool enabled = true)
     {
         OptionsAutoRegistrationEnabled = enabled;
+        return this;
+    }
+
+    /// <summary>
+    /// Enables or disables auto-registration diagnostics explicitly.
+    /// </summary>
+    /// <param name="enabled">Whether diagnostics should be emitted.</param>
+    public AutoRegistrationOptions EnableDiagnostics(bool enabled = true)
+    {
+        _diagnosticsEnabled = enabled;
+        return this;
+    }
+
+    /// <summary>
+    /// Uses the provided callback as the diagnostics output sink.
+    /// </summary>
+    /// <param name="writer">Callback invoked once for each diagnostics message.</param>
+    public AutoRegistrationOptions WriteDiagnosticsTo(Action<string> writer)
+    {
+        DiagnosticsWriter = Check.NotNull(writer);
         return this;
     }
 

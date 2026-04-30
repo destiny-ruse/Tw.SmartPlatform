@@ -1,5 +1,6 @@
 using Autofac;
 using Autofac.Builder;
+using System.Diagnostics;
 using System.Reflection;
 using Tw.Core;
 using Tw.DependencyInjection.Interception;
@@ -18,6 +19,7 @@ public sealed class AutoRegistrationModule : Autofac.Module
     private readonly ServiceRegistrationPlan _plan;
     private readonly List<string> _warnings = [];
     private ServiceChainCache? _serviceChainCache;
+    private AutoRegistrationDiagnostics _diagnostics = AutoRegistrationDiagnostics.Disabled;
 
     /// <summary>
     /// 初始化自动注册 Autofac 模块
@@ -42,9 +44,15 @@ public sealed class AutoRegistrationModule : Autofac.Module
     /// </summary>
     public IReadOnlyList<string> Warnings => _warnings;
 
+    internal void UseDiagnostics(AutoRegistrationDiagnostics diagnostics)
+    {
+        _diagnostics = Check.NotNull(diagnostics);
+    }
+
     /// <inheritdoc />
     protected override void Load(ContainerBuilder builder)
     {
+        var stopwatch = Stopwatch.StartNew();
         _serviceChainCache = new ServiceChainCache(_plan.Registrations, _globalInterceptors, _matchers);
         builder.RegisterInstance(_serviceChainCache).SingleInstance();
         builder.RegisterType<CastleAsyncInterceptorAdapter>().AsSelf().InstancePerDependency();
@@ -52,6 +60,16 @@ public sealed class AutoRegistrationModule : Autofac.Module
         foreach (var registration in _plan.Registrations)
         {
             RegisterService(builder, registration);
+        }
+
+        stopwatch.Stop();
+        _diagnostics.Stage(
+            "register",
+            stopwatch.Elapsed,
+            $"serviceCount={_plan.Registrations.Count}; warningCount={_warnings.Count}");
+        foreach (var warning in _warnings)
+        {
+            _diagnostics.Warning(warning);
         }
     }
 

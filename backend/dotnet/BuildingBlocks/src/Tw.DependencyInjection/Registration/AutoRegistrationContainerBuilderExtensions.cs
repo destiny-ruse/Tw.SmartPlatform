@@ -1,5 +1,6 @@
 using Autofac;
 using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics;
 using Tw.Core;
 using Tw.Core.Exceptions;
 using Tw.Core.Reflection;
@@ -34,14 +35,52 @@ public static class AutoRegistrationContainerBuilderExtensions
                 "调用 UseAutoRegistration 前必须先调用 AddAutoRegistration。");
         }
 
-        var scans = new ServiceRegistrationScanner(new TypeFinder(state.Options.Assemblies)).Scan();
-        var plan = ServiceRegistrationPlanner.Plan(scans, state.Options.Assemblies);
-        var matchers = state.Options.MatcherTypes.Select(CreateMatcher).ToArray();
+        var total = Stopwatch.StartNew();
+        var diagnostics = AutoRegistrationDiagnostics.Create(state.Configuration, state.Options);
 
-        builder.RegisterModule(new AutoRegistrationModule(
+        var scanStopwatch = Stopwatch.StartNew();
+        var scans = new ServiceRegistrationScanner(new TypeFinder(state.Options.Assemblies)).Scan();
+        scanStopwatch.Stop();
+        diagnostics.Stage(
+            "scan",
+            scanStopwatch.Elapsed,
+            $"assemblyCount={state.Options.Assemblies.Count}; descriptorCount={scans.Count}");
+
+        var sortStopwatch = Stopwatch.StartNew();
+        var plan = ServiceRegistrationPlanner.Plan(scans, state.Options.Assemblies);
+        sortStopwatch.Stop();
+        diagnostics.Stage(
+            "sort",
+            sortStopwatch.Elapsed,
+            $"serviceCount={plan.Registrations.Count}; warningCount={plan.Diagnostics.Warnings.Count}");
+        foreach (var warning in plan.Diagnostics.Warnings)
+        {
+            diagnostics.Warning(warning);
+        }
+
+        var aopStopwatch = Stopwatch.StartNew();
+        var matchers = state.Options.MatcherTypes.Select(CreateMatcher).ToArray();
+        var chainCache = new ServiceChainCache(plan.Registrations, state.Options.GlobalInterceptors, matchers);
+        var interceptedCount = plan.Registrations.Count(
+            registration => chainCache.GetInterceptors(registration.ImplementationType).Count > 0);
+        aopStopwatch.Stop();
+        diagnostics.Stage(
+            "AOP",
+            aopStopwatch.Elapsed,
+            $"globalInterceptorCount={state.Options.GlobalInterceptors.Count}; matcherCount={matchers.Length}; interceptedCount={interceptedCount}");
+
+        var module = new AutoRegistrationModule(
             plan,
             state.Options.GlobalInterceptors,
-            matchers));
+            matchers);
+        module.UseDiagnostics(diagnostics);
+        builder.RegisterModule(module);
+
+        total.Stop();
+        diagnostics.Stage(
+            "total",
+            total.Elapsed,
+            $"serviceCount={plan.Registrations.Count}; interceptedCount={interceptedCount}; warningCount={plan.Diagnostics.Warnings.Count}");
 
         return builder;
     }
