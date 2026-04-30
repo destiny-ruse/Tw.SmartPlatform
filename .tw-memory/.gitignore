@@ -1,0 +1,19 @@
+# Local memory runtime caches
+generated/fts/
+generated/vector/
+
+# Local databases and index sidecars
+**/*.sqlite
+**/*.sqlite-*
+**/*.db
+**/*.db-*
+
+# Vector and embedding artifacts
+**/*.parquet
+**/*.bin
+**/*.npy
+**/*.npz
+
+# Imported external material that must stay out of committed memory
+**/third-party-docs/
+**/third-party-source/
