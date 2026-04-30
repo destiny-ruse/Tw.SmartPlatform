@@ -74,6 +74,30 @@ class PreflightPostflightTests(unittest.TestCase):
                 candidate_paths,
             )
 
+    def test_preflight_includes_global_standards_with_stack_filter(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            dotnet = root / "backend" / "dotnet" / "BuildingBlocks" / "src" / "Tw.Caching"
+            standard = root / "docs" / "standards" / "rules"
+            dotnet.mkdir(parents=True)
+            standard.mkdir(parents=True)
+            (dotnet / "README.md").write_text("# Dotnet Cache\n\nCaching building blocks.\n", encoding="utf-8")
+            (standard / "api-response-shape.md").write_text(
+                "# API Response Shape\n\nResponse envelope standard.\n",
+                encoding="utf-8",
+            )
+            MemoryGenerator(root).generate()
+
+            result = PreflightRunner(root).run(
+                task="api response shape for dotnet cache",
+                stack="dotnet",
+                path="backend/dotnet/BuildingBlocks/src/Tw.Caching",
+            )
+
+            candidate_paths = [candidate["source_path"] for candidate in result["candidates"]]
+            self.assertIn("backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md", candidate_paths)
+            self.assertIn("docs/standards/rules/api-response-shape.md", candidate_paths)
+
     def test_preflight_query_normalizes_cli_path_forms_for_language_and_service_terms(self):
         runner = PreflightRunner(Path("."))
 

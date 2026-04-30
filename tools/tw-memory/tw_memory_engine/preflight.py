@@ -34,7 +34,7 @@ class PreflightRunner:
         index = SearchIndex(self.root)
         fts_available = index._can_use_fts()
         query = self._semantic_query(task, stack, path)
-        candidates = [result.to_json() for result in index.query(query, stack=stack, kind=None, limit=5)]
+        candidates = self._candidate_payloads(index, query, stack)
         actions = [] if fts_available else ["build-search"]
 
         return {
@@ -43,6 +43,17 @@ class PreflightRunner:
             "diagnostics": diagnostic_payload,
             "actions": actions,
         }
+
+    def _candidate_payloads(self, index: SearchIndex, query: str, stack: str | None) -> list[dict[str, object]]:
+        by_chunk_id: dict[str, dict[str, object]] = {}
+        for result in index.query(query, stack=stack, kind=None, limit=5):
+            by_chunk_id[result.chunk_id] = result.to_json()
+
+        for kind in ("standard", "process", "decision", "reference", "skill"):
+            for result in index.query(query, stack=None, kind=kind, limit=3):
+                by_chunk_id.setdefault(result.chunk_id, result.to_json())
+
+        return list(by_chunk_id.values())[:8]
 
     def _semantic_query(self, task: str, stack: str | None, path: str | None) -> str:
         terms = [task]
