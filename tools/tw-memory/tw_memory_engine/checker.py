@@ -8,6 +8,7 @@ from typing import Any
 from .hashing import file_sha256
 from .models import Diagnostic
 from .paths import memory_root, relative_posix
+from .scanner import SourceScanner
 
 
 WARNING_SIZE_BYTES = 200 * 1024
@@ -54,6 +55,7 @@ class MemoryChecker:
         diagnostics.extend(self._check_required_artifacts())
         source_records = self._source_records(diagnostics)
         diagnostics.extend(self._check_source_freshness(source_records))
+        diagnostics.extend(self._check_source_index_matches_scan(source_records))
         diagnostics.extend(self._check_chunk_ranges())
         diagnostics.extend(self._check_manual_freshness(source_records))
         diagnostics.extend(self._check_route_index())
@@ -155,6 +157,50 @@ class MemoryChecker:
                         message="source-index hash differs from the current source file",
                     )
                 )
+        return diagnostics
+
+    def _check_source_index_matches_scan(self, source_records: list[tuple[Path, dict[str, Any]]]) -> list[Diagnostic]:
+        diagnostics: list[Diagnostic] = []
+        indexed_paths: dict[str, int] = {}
+        for _index_path, record in source_records:
+            source_path = record.get("source_path")
+            if isinstance(source_path, str):
+                indexed_paths[source_path] = indexed_paths.get(source_path, 0) + 1
+
+        for source_path, count in sorted(indexed_paths.items()):
+            if count > 1:
+                diagnostics.append(
+                    Diagnostic(
+                        level="error",
+                        code="source-index-duplicate",
+                        path=source_path,
+                        message="source-index contains duplicate entries for the same source file",
+                    )
+                )
+
+        try:
+            scanned_paths = {record.source_path for record in SourceScanner(self.root).scan()}
+        except OSError as exc:
+            diagnostics.append(
+                Diagnostic(
+                    level="error",
+                    code="source-scan-failed",
+                    path=None,
+                    message=f"current source scan failed: {exc}",
+                )
+            )
+            return diagnostics
+
+        for source_path in sorted(scanned_paths - set(indexed_paths)):
+            diagnostics.append(
+                Diagnostic(
+                    level="error",
+                    code="source-index-stale",
+                    path=source_path,
+                    message="source file is not present in generated source-index",
+                )
+            )
+
         return diagnostics
 
     def _check_chunk_ranges(self) -> list[Diagnostic]:

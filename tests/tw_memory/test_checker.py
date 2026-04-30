@@ -55,6 +55,74 @@ class CheckerTests(unittest.TestCase):
 
             self.assertTrue(any(item.code == "source-stale" for item in diagnostics))
 
+    def test_check_reports_new_unindexed_source(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "README.md").write_text("# Docs\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+
+            (docs / "new-standard.md").write_text("# New Standard\n", encoding="utf-8")
+            diagnostics = MemoryChecker(root).check()
+
+            self.assertTrue(
+                any(
+                    item.level == "error"
+                    and item.code == "source-index-stale"
+                    and item.path == "docs/new-standard.md"
+                    for item in diagnostics
+                ),
+                [item.to_json() for item in diagnostics],
+            )
+
+    def test_check_reports_removed_indexed_source(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            source = docs / "README.md"
+            source.write_text("# Docs\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+
+            source.unlink()
+            diagnostics = MemoryChecker(root).check()
+
+            self.assertTrue(
+                any(
+                    item.level == "error"
+                    and item.code == "source-missing"
+                    and item.path == "docs/README.md"
+                    for item in diagnostics
+                ),
+                [item.to_json() for item in diagnostics],
+            )
+
+    def test_check_reports_duplicate_source_index_entries(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "README.md").write_text("# Docs\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+
+            index = root / ".tw-memory" / "source-index" / "docs.generated.json"
+            payload = json.loads(index.read_text(encoding="utf-8"))
+            payload["sources"].append(dict(payload["sources"][0]))
+            index.write_text(json.dumps(payload), encoding="utf-8")
+
+            diagnostics = MemoryChecker(root).check()
+
+            self.assertTrue(
+                any(
+                    item.level == "error"
+                    and item.code == "source-index-duplicate"
+                    and item.path == "docs/README.md"
+                    for item in diagnostics
+                ),
+                [item.to_json() for item in diagnostics],
+            )
+
     def test_check_rejects_sqlite_files_inside_committable_memory(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
