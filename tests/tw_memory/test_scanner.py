@@ -87,6 +87,24 @@ class ScannerTests(unittest.TestCase):
 
             self.assertEqual(records, files)
 
+    def test_scan_classifies_docs_standards_readmes_by_path(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            files = {
+                "docs/standards/rules/README.md": "standard",
+                "docs/standards/processes/README.md": "process",
+                "docs/standards/decisions/README.md": "decision",
+                "docs/standards/references/README.md": "reference",
+            }
+            for source_path in files:
+                path = root / source_path
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("# Title\n", encoding="utf-8")
+
+            records = {record.source_path: record.source_type for record in SourceScanner(root).scan()}
+
+            self.assertEqual(records, files)
+
     def test_scan_includes_controlled_source_files(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
@@ -114,6 +132,25 @@ class ScannerTests(unittest.TestCase):
                 self.assertEqual(records[source_path].source_type, "source")
             for source_path in excluded:
                 self.assertNotIn(source_path, records)
+
+    def test_scan_excludes_controlled_source_files_under_generated_output_dirs(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            excluded = [
+                "frontend/apps/tw.web.ops/dist/App.js",
+                "frontend/packages/ui/.next/Button.tsx",
+                "backend/java/orders/target/Generated.java",
+                "backend/python/orders/.venv/app.py",
+                "backend/dotnet/BuildingBlocks/src/Tw.Caching/build/Generated.cs",
+            ]
+            for source_path in excluded:
+                path = root / source_path
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("public token\n", encoding="utf-8")
+
+            records = {record.source_path for record in SourceScanner(root).scan()}
+
+            self.assertEqual(records, set())
 
     def test_scan_includes_agent_skill_files_as_skills(self):
         with tempfile.TemporaryDirectory() as work:

@@ -17,6 +17,14 @@ EXCLUDED_DIRS = {
     "bin",
     "obj",
     "__pycache__",
+    "dist",
+    "build",
+    "coverage",
+    ".next",
+    ".nuxt",
+    "target",
+    ".venv",
+    "venv",
 }
 EXCLUDED_PREFIXES = {
     ("generated", "fts"),
@@ -146,14 +154,6 @@ class SourceScanner:
 
     def _source_type(self, path: Path, parts: tuple[str, ...]) -> str:
         name = path.name
-        if name == "README.md":
-            return "readme"
-        if name == "SERVICE.md" and self._service(parts) is not None:
-            return "service-directory"
-        if name == "SKILL.md":
-            return "skill"
-        if self._is_package_file(name):
-            return "package"
         if len(parts) >= 3 and parts[:2] == ("docs", "standards"):
             if parts[2] == "rules":
                 return "standard"
@@ -163,6 +163,14 @@ class SourceScanner:
                 return "decision"
             if parts[2] == "references":
                 return "reference"
+        if name == "README.md":
+            return "readme"
+        if name == "SERVICE.md" and self._service(parts) is not None:
+            return "service-directory"
+        if name == "SKILL.md":
+            return "skill"
+        if self._is_package_file(name):
+            return "package"
         if parts[0] == "contracts":
             return "spec"
         if parts[0] == "deploy":
