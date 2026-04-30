@@ -26,7 +26,9 @@ STOP_WORDS = {
 MAX_KEYWORDS = 20
 TOKEN_RE = re.compile(r"[/_.\-\s]+")
 BODY_KEYWORD_RE = re.compile(r"[A-Za-z][A-Za-z0-9_]{2,}")
+CJK_KEYWORD_RE = re.compile(r"[\u3400-\u9fff]{2,}")
 CAMEL_RE = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
+CJK_KEYWORD_WIDTH = 4
 
 
 def summarize_chunk(
@@ -84,4 +86,21 @@ def _body_tokens(lines: Sequence[str]) -> set[str]:
                 tokens.add(normalized)
                 if len(tokens) >= MAX_KEYWORDS:
                     return tokens
+        for token in _cjk_tokens(line):
+            tokens.add(token)
+            if len(tokens) >= MAX_KEYWORDS:
+                return tokens
+    return tokens
+
+
+def _cjk_tokens(value: str) -> list[str]:
+    tokens: list[str] = []
+    for phrase in CJK_KEYWORD_RE.findall(value):
+        if len(phrase) <= CJK_KEYWORD_WIDTH:
+            tokens.append(phrase)
+            continue
+        tokens.extend(
+            phrase[index : index + CJK_KEYWORD_WIDTH]
+            for index in range(0, len(phrase) - CJK_KEYWORD_WIDTH + 1)
+        )
     return tokens

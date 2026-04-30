@@ -14,17 +14,17 @@
         "src",
         "tw",
         "typefinderextensions",
-        "argument",
-        "class",
         "cref",
-        "exception",
-        "extensions",
         "finder",
         "itype",
-        "name",
         "namespace",
-        "null",
-        "param"
+        "public",
+        "see",
+        "summary",
+        "不依赖额",
+        "件的便利",
+        "供不依赖",
+        "依赖额外"
       ],
       "relations": {
         "capabilities": [

@@ -45,7 +45,19 @@
         "standards",
         "uniapp",
         "app",
-        "uni"
+        "uni",
+        "中可搜索",
+        "力在多端",
+        "台能力在",
+        "命名方式",
+        "和平台能",
+        "在多端构",
+        "多端构建",
+        "平台能力",
+        "建中可搜",
+        "构建中可",
+        "源和平台",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -82,7 +94,14 @@
         "app",
         "json",
         "pages",
-        "uni"
+        "uni",
+        "合式函数",
+        "封装",
+        "平台",
+        "样式文件",
+        "的页面目",
+        "目的页面",
+        "组件"
       ],
       "relations": {
         "capabilities": [
@@ -113,20 +132,20 @@
         "rules",
         "standards",
         "uniapp",
-        "adapter",
-        "camel",
-        "card",
         "case",
         "detail",
-        "device",
-        "info",
-        "json",
         "kebab",
-        "login",
-        "new",
         "order",
-        "page",
-        "page1"
+        "使用稳定",
+        "和路由路",
+        "并表达业",
+        "录和路由",
+        "径必须使",
+        "必须使用",
+        "用稳定的",
+        "由路径必",
+        "目录和路",
+        "表达业务"
       ],
       "relations": {
         "capabilities": [
@@ -157,7 +176,6 @@
         "rules",
         "standards",
         "uniapp",
-        "adapter",
         "bar",
         "composables",
         "detail",
@@ -170,7 +188,8 @@
         "order",
         "pages",
         "path",
-        "platform"
+        "share",
+        "style"
       ],
       "relations": {
         "capabilities": [
@@ -203,11 +222,18 @@
         "uniapp",
         "检查清单",
         "adapter",
-        "case",
         "json",
-        "kebab",
         "pages",
-        "utils"
+        "业务命名",
+        "使用稳定",
+        "函数和平",
+        "合式函数",
+        "否使用稳",
+        "定业务命",
+        "式函数和",
+        "数和平台",
+        "是否使用",
+        "用稳定业"
       ],
       "relations": {
         "capabilities": [
@@ -272,7 +298,20 @@
         "rules",
         "standards",
         "uniapp",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

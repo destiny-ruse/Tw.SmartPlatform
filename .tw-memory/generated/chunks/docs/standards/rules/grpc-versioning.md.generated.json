@@ -12,7 +12,10 @@
         "standards",
         "versioning",
         "版本演进规范",
-        "rpc"
+        "rpc",
+        "本演进规",
+        "演进规范",
+        "版本演进"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +46,20 @@
         "rules",
         "standards",
         "versioning",
-        "rpc"
+        "rpc",
+        "乱和服务",
+        "于降低字",
+        "低字段号",
+        "包版本混",
+        "和服务升",
+        "字段号复",
+        "本混乱和",
+        "本演进规",
+        "段号复用",
+        "混乱和服",
+        "演进规范",
+        "版本混乱",
+        "版本演进"
       ],
       "relations": {
         "capabilities": [
@@ -82,7 +98,12 @@
         "rest",
         "rpc",
         "services",
-        "src"
+        "src",
+        "包版本",
+        "增和删除",
+        "字段新增",
+        "废弃标记",
+        "新增和删"
       ],
       "relations": {
         "capabilities": [
@@ -113,12 +134,20 @@
         "rules",
         "standards",
         "versioning",
-        "deprecated",
         "orders",
-        "proto",
-        "reserved",
         "rpc",
-        "true"
+        "一破坏性",
+        "不得改变",
+        "例如",
+        "内不得改",
+        "包名必须",
+        "包含版本",
+        "同一破坏",
+        "名必须包",
+        "含版本段",
+        "坏性版本",
+        "对外",
+        "必须包含"
       ],
       "relations": {
         "capabilities": [
@@ -157,7 +186,12 @@
         "proto",
         "reserved",
         "status",
-        "string"
+        "string",
+        "原字段",
+        "反例",
+        "曾经是",
+        "正例",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -189,7 +223,19 @@
         "standards",
         "versioning",
         "检查清单",
-        "reserved"
+        "一致版本",
+        "使用一致",
+        "务和生成",
+        "包名",
+        "包含并使",
+        "否包含并",
+        "含并使用",
+        "和生成配",
+        "字段新增",
+        "并使用一",
+        "成配置是",
+        "新增是否",
+        "是否包含"
       ],
       "relations": {
         "capabilities": [
@@ -258,7 +304,20 @@
         "rules",
         "standards",
         "versioning",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

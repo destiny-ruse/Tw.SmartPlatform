@@ -49,7 +49,17 @@
         "vue",
         "import",
         "script",
-        "type"
+        "type",
+        "中保持可",
+        "代码在搜",
+        "作中保持",
+        "保持可读",
+        "协作中保",
+        "命名方式",
+        "和跨团队",
+        "团队协作",
+        "审和跨团",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -84,7 +94,16 @@
         "适用范围",
         "script",
         "store",
-        "type"
+        "type",
+        "函数",
+        "变量",
+        "合式函数",
+        "和配置命",
+        "接口",
+        "文件",
+        "枚举",
+        "测试和配",
+        "目的类型"
       ],
       "relations": {
         "capabilities": [
@@ -116,19 +135,19 @@
         "standards",
         "ts",
         "vue",
-        "bill",
-        "camel",
-        "can",
-        "case",
         "common",
         "data1",
-        "detail",
-        "emits",
         "helper",
         "obj",
-        "order",
-        "panel",
-        "pascal"
+        "tmp",
+        "value",
+        "不得使用",
+        "义和职责",
+        "名必须表",
+        "含义和职",
+        "命名必须",
+        "和职责边",
+        "域含义和"
       ],
       "relations": {
         "capabilities": [
@@ -164,15 +183,15 @@
         "can",
         "const",
         "detail",
-        "manager2",
         "name",
         "null",
-        "obj",
         "order",
         "orders",
         "query",
         "ref",
-        "refresh"
+        "refresh",
+        "refund",
+        "route"
       ],
       "relations": {
         "capabilities": [
@@ -204,7 +223,19 @@
         "standards",
         "ts",
         "vue",
-        "检查清单"
+        "检查清单",
+        "一概念是",
+        "从名称判",
+        "使用场景",
+        "判断领域",
+        "同一概念",
+        "名称判断",
+        "否在类型",
+        "否能从名",
+        "和使用场",
+        "念是否在",
+        "断领域对",
+        "是否在类"
       ],
       "relations": {
         "capabilities": [
@@ -271,7 +302,19 @@
         "standards",
         "ts",
         "vue",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [

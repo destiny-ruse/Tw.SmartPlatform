@@ -14,17 +14,17 @@
         "src",
         "stringextensions",
         "tw",
-        "bool",
         "class",
-        "empty",
         "expressions",
-        "langword",
         "namespace",
-        "null",
         "public",
         "regular",
         "see",
-        "static"
+        "static",
+        "string",
+        "summary",
+        "system",
+        "text"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "src",
         "stringextensions",
         "tw",
-        "char",
         "comparison",
-        "empty",
         "ends",
-        "ensure",
-        "len",
         "name",
-        "null",
-        "ordinal",
         "param",
-        "paramref"
+        "str",
+        "string",
+        "summary",
+        "type",
+        "串以指定",
+        "以指定字",
+        "保字符串"
       ],
       "relations": {
         "capabilities": [
@@ -107,16 +107,16 @@
         "stringextensions",
         "tw",
         "comparison",
-        "empty",
         "fix",
         "fixes",
-        "foreach",
-        "length",
-        "null",
         "ordinal",
         "params",
         "post",
-        "postfix"
+        "public",
+        "remove",
+        "return",
+        "static",
+        "str"
       ],
       "relations": {
         "capabilities": [
@@ -152,17 +152,17 @@
         "src",
         "stringextensions",
         "tw",
-        "byte",
-        "bytes",
         "empty",
-        "endings",
-        "get",
-        "line",
         "lines",
         "none",
         "normalize",
         "null",
-        "options"
+        "options",
+        "public",
+        "return",
+        "separator",
+        "split",
+        "static"
       ],
       "relations": {
         "capabilities": [
@@ -199,16 +199,16 @@
         "stringextensions",
         "tw",
         "argument",
-        "check",
         "chunk",
         "cref",
-        "empty",
         "exception",
-        "ienumerable",
-        "int",
         "name",
-        "null",
-        "out"
+        "out",
+        "paramref",
+        "range",
+        "summary",
+        "串拆分为",
+        "为固定大"
       ],
       "relations": {
         "capabilities": [

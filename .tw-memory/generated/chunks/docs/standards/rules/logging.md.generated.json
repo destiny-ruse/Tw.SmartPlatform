@@ -38,7 +38,22 @@
         "logging",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "于降低故",
+        "低故障排",
+        "依赖自由",
+        "志级别滥",
+        "志规范用",
+        "排查依赖",
+        "故障排查",
+        "敏感数据",
+        "日志级别",
+        "日志规范",
+        "查依赖自",
+        "用于降低",
+        "目标",
+        "级别滥用",
+        "自由文本"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +91,12 @@
         "rpc",
         "services",
         "src",
-        "trace"
+        "trace",
+        "后台作业",
+        "处理任务",
+        "息消费者",
+        "批处理任",
+        "服务"
       ],
       "relations": {
         "capabilities": [
@@ -105,17 +125,21 @@
         "md",
         "rules",
         "standards",
-        "debug",
         "environment",
-        "error",
-        "info",
-        "message",
         "service",
-        "span",
-        "sql",
         "trace",
         "version",
-        "warn"
+        "产日志必",
+        "价关联字",
+        "使用结构",
+        "关联字段",
+        "并包含",
+        "必须使用",
+        "志必须使",
+        "或等价关",
+        "日志必须",
+        "构化格式",
+        "生产日志"
       ],
       "relations": {
         "capabilities": [
@@ -144,7 +168,6 @@
         "md",
         "rules",
         "standards",
-        "9f2a1c",
         "api",
         "code",
         "create",
@@ -154,11 +177,12 @@
         "f9c2d8e7a6b4c10",
         "json",
         "level",
-        "message",
         "operation",
         "order",
         "payment",
-        "prod"
+        "prod",
+        "service",
+        "timeout"
       ],
       "relations": {
         "capabilities": [
@@ -188,9 +212,20 @@
         "rules",
         "standards",
         "检查清单",
-        "pii",
-        "sql",
-        "trace"
+        "trace",
+        "为结构化",
+        "关联信息",
+        "包含服务",
+        "包含稳定",
+        "否为结构",
+        "否包含稳",
+        "并包含服",
+        "志是否为",
+        "志是否包",
+        "日志是否",
+        "是否为结",
+        "是否包含",
+        "构化字段"
       ],
       "relations": {
         "capabilities": [
@@ -253,7 +288,21 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [

@@ -15,16 +15,16 @@
         "security",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
         "md5",
-        "name",
         "namespace",
-        "param",
         "public",
-        "short"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -68,10 +68,10 @@
         "computation",
         "compute",
         "data",
-        "encoding",
         "file",
         "hash",
-        "input"
+        "md5",
+        "return"
       ],
       "relations": {
         "capabilities": [

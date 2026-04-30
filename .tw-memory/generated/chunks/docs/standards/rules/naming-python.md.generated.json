@@ -41,7 +41,21 @@
         "naming",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "于降低模",
+        "低模块职",
+        "动态对象",
+        "名规范用",
+        "命名规范",
+        "块职责不",
+        "对象难以",
+        "常量与配",
+        "态对象难",
+        "模块职责",
+        "用于降低",
+        "目标",
+        "职责不清",
+        "范用于降"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +90,16 @@
         "cli",
         "json",
         "notebook",
-        "vendored"
+        "vendored",
+        "入口和配",
+        "函数",
+        "参数",
+        "变量",
+        "口和配置",
+        "和配置对",
+        "常量",
+        "异常",
+        "方法"
       ],
       "relations": {
         "capabilities": [
@@ -107,20 +130,20 @@
         "python",
         "rules",
         "standards",
-        "async",
-        "base",
         "camel",
-        "can",
         "case",
-        "common",
         "data",
-        "def",
-        "error",
-        "expected",
-        "flag",
         "obj",
-        "pascal",
-        "scenario"
+        "snake",
+        "tmp",
+        "不得使用",
+        "义不明的",
+        "函数",
+        "参数必须",
+        "变量和参",
+        "含义不明",
+        "和参数必",
+        "必须使用"
       ],
       "relations": {
         "capabilities": [
@@ -160,11 +183,11 @@
         "def",
         "fetch",
         "flag",
-        "get",
         "max",
         "order",
         "pending",
-        "retry"
+        "retry",
+        "return"
       ],
       "relations": {
         "capabilities": [
@@ -197,9 +220,18 @@
         "standards",
         "检查清单",
         "case",
-        "docstring",
-        "generated",
-        "snake"
+        "snake",
+        "函数",
+        "参数是否",
+        "变量和参",
+        "命名形态",
+        "和参数是",
+        "和常量是",
+        "布尔值",
+        "常和常量",
+        "常量是否",
+        "异常和常",
+        "数是否使"
       ],
       "relations": {
         "capabilities": [
@@ -263,7 +295,20 @@
         "python",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

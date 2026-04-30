@@ -2804,13 +2804,13 @@
         "superpowers",
         "框架设计文档",
         "自动注册与",
-        "api",
         "async",
         "autofac",
-        "cap",
         "castle",
         "core",
-        "dependency"
+        "dependency",
+        "dynamic",
+        "extensions"
       ],
       "relations": {
         "capabilities": [
@@ -2895,14 +2895,14 @@
         "specs",
         "standards",
         "superpowers",
-        "api",
-        "async",
-        "base",
-        "comments",
         "dotnet",
-        "enumerable",
-        "iasync",
-        "intercept"
+        "naming",
+        "net",
+        "rules",
+        "下工程规",
+        "以下工程",
+        "工程规范",
+        "异步方法"
       ],
       "relations": {
         "capabilities": [
@@ -2947,8 +2947,8 @@
         "building",
         "castle",
         "directory",
-        "extensions",
-        "factory"
+        "json",
+        "lock"
       ],
       "relations": {
         "capabilities": [
@@ -2989,12 +2989,12 @@
         "specs",
         "superpowers",
         "accessor",
-        "asp",
         "backend",
         "base",
         "blocks",
         "building",
-        "cancellation"
+        "cancellation",
+        "context"
       ],
       "relations": {
         "capabilities": [
@@ -3035,12 +3035,12 @@
         "一、设计决策概览",
         "adapter",
         "asp",
-        "autofac",
-        "builder",
-        "collection",
-        "container",
         "core",
-        "factory"
+        "mvc",
+        "net",
+        "rpc",
+        "与初始化",
+        "决策概览"
       ],
       "relations": {
         "capabilities": [
@@ -3079,7 +3079,8 @@
         "registration",
         "specs",
         "superpowers",
-        "二、公共入口"
+        "二、公共入口",
+        "公共入口"
       ],
       "relations": {
         "capabilities": [
@@ -3168,10 +3169,10 @@
         "add",
         "builder",
         "csharp",
-        "interceptors",
         "options",
-        "public",
-        "rpc"
+        "rpc",
+        "services",
+        "供独立扩"
       ],
       "relations": {
         "capabilities": [
@@ -3215,9 +3216,9 @@
         "场景）",
         "手动组合（非",
         "add",
-        "autofac",
-        "builder",
-        "configure"
+        "use",
+        "web",
+        "供非"
       ],
       "relations": {
         "capabilities": [
@@ -3303,13 +3304,13 @@
         "specs",
         "superpowers",
         "基础设施",
-        "accessor",
-        "asp",
         "cancellation",
-        "context",
-        "core",
-        "csharp",
-        "dispose"
+        "icancellation",
+        "provider",
+        "token",
+        "业务服务",
+        "全局基础",
+        "务和框架"
       ],
       "relations": {
         "capabilities": [
@@ -3354,7 +3355,8 @@
         "iscoped",
         "isingleton",
         "itransient",
-        "public"
+        "public",
+        "周期接口"
       ],
       "relations": {
         "capabilities": [
@@ -3394,13 +3396,13 @@
         "superpowers",
         "注册控制特性",
         "csharp",
-        "disable",
-        "enum",
-        "expose",
-        "ibar",
-        "ifoo",
         "include",
-        "key"
+        "self",
+        "true",
+        "册控制特",
+        "哪些服务",
+        "定暴露哪",
+        "式指定暴"
       ],
       "relations": {
         "capabilities": [
@@ -3439,14 +3441,14 @@
         "specs",
         "superpowers",
         "配置与选项控制特性",
-        "allow",
-        "attribute",
-        "class",
-        "configuration",
-        "csharp",
-        "direct",
-        "false",
-        "iconfigurable"
+        "iconfigurable",
+        "与选项控",
+        "仓库已有",
+        "优先复用",
+        "先复用仓",
+        "册优先复",
+        "动注册优",
+        "复用仓库"
       ],
       "relations": {
         "capabilities": [
@@ -3485,14 +3487,14 @@
         "specs",
         "superpowers",
         "暴露服务默认规则",
-        "autofac",
-        "collection",
-        "expose",
-        "generic",
-        "idisposable",
-        "include",
-        "irepository",
-        "microsoft"
+        "下顺序计",
+        "个实现了",
+        "了生命周",
+        "以下顺序",
+        "务默认规",
+        "周期接口",
+        "命周期接",
+        "实现了生"
       ],
       "relations": {
         "capabilities": [
@@ -3532,13 +3534,13 @@
         "superpowers",
         "相关接口与特性",
         "adapter",
-        "arguments",
         "castle",
-        "context",
         "core",
         "csharp",
-        "get",
-        "icancellation"
+        "iinvocation",
+        "interface",
+        "public",
+        "一调用上"
       ],
       "relations": {
         "capabilities": [
@@ -3614,7 +3616,14 @@
         "registration",
         "specs",
         "superpowers",
-        "四、程序集扫描与拓扑排序"
+        "四、程序集扫描与拓扑排序",
+        "与拓扑排",
+        "序集扫描",
+        "扫描与拓",
+        "拓扑排序",
+        "描与拓扑",
+        "程序集扫",
+        "集扫描与"
       ],
       "relations": {
         "capabilities": [
@@ -3653,14 +3662,14 @@
         "specs",
         "superpowers",
         "程序集发现规则",
-        "add",
         "app",
         "assembly",
-        "cache",
-        "core",
         "domain",
         "entry",
-        "finder"
+        "get",
+        "从当前",
+        "加载程序",
+        "发现规则"
       ],
       "relations": {
         "capabilities": [
@@ -3700,13 +3709,13 @@
         "superpowers",
         "拓扑排序（kahn",
         "算法）",
-        "api",
-        "application",
         "dag",
         "domain",
         "kahn",
-        "key",
-        "service"
+        "以程序集",
+        "关系建立",
+        "向无环图",
+        "序集引用"
       ],
       "relations": {
         "capabilities": [
@@ -3749,7 +3758,10 @@
         "each",
         "entry",
         "parallel",
-        "service"
+        "service",
+        "串行执行",
+        "串行拓扑",
+        "反射各程"
       ],
       "relations": {
         "capabilities": [
@@ -3788,14 +3800,14 @@
         "specs",
         "superpowers",
         "服务注册元数据结构",
-        "bool",
-        "collection",
         "csharp",
-        "entry",
-        "exposed",
-        "implementation",
-        "int",
-        "iread"
+        "record",
+        "service",
+        "一条元数",
+        "个类型产",
+        "产生一条",
+        "元数据结",
+        "元数据记"
       ],
       "relations": {
         "capabilities": [
@@ -3920,14 +3932,14 @@
         "specs",
         "superpowers",
         "冲突裁决规则",
-        "assembly",
         "autofac",
         "ienumerable",
-        "index",
-        "key",
-        "order",
-        "replacement",
-        "service"
+        "元数据阶",
+        "先在元数",
+        "冲突裁决",
+        "决最终注",
+        "后先在元",
+        "在元数据"
       ],
       "relations": {
         "capabilities": [
@@ -3967,13 +3979,13 @@
         "superpowers",
         "无显式替换标记的多实现处理",
         "collection",
-        "handler",
         "key",
         "order",
-        "replace",
         "service",
         "type",
-        "validator"
+        "一分组全",
+        "分组全部",
+        "同一分组"
       ],
       "relations": {
         "capabilities": [
@@ -4013,10 +4025,13 @@
         "superpowers",
         "部分替换规则",
         "iorder",
-        "iquery",
-        "key",
         "service",
-        "type"
+        "与原始实",
+        "于替换者",
+        "仅作用于",
+        "作用于替",
+        "分替换规",
+        "务的交集"
       ],
       "relations": {
         "capabilities": [
@@ -4057,12 +4072,12 @@
         "specs",
         "superpowers",
         "替换规则",
-        "iorder",
         "key",
         "null",
-        "premium",
-        "standard",
-        "type"
+        "type",
+        "不产生替",
+        "不匹配则",
+        "二元组"
       ],
       "relations": {
         "capabilities": [
@@ -4101,14 +4116,14 @@
         "specs",
         "superpowers",
         "注册流水线（按拓扑顺序逐条执行）",
-        "adapter",
-        "castle",
-        "controller",
-        "core",
-        "enable",
         "entry",
-        "iauto",
-        "intercepted"
+        "key",
+        "service",
+        "type",
+        "一服务仅",
+        "册流水线",
+        "分组裁决",
+        "唯一服务"
       ],
       "relations": {
         "capabilities": [
@@ -4149,12 +4164,12 @@
         "内部模块封装",
         "autofac",
         "builder",
-        "class",
         "container",
-        "csharp",
-        "internal",
-        "load",
-        "module"
+        "module",
+        "内部使用",
+        "内部模块",
+        "封装注册",
+        "展方法挂"
       ],
       "relations": {
         "capabilities": [
@@ -4192,7 +4207,8 @@
         "registration",
         "specs",
         "superpowers",
-        "六、aop"
+        "六、aop",
+        "架构"
       ],
       "relations": {
         "capabilities": [
@@ -4231,14 +4247,14 @@
         "specs",
         "superpowers",
         "拦截器三层叠加顺序",
-        "action",
-        "add",
-        "cache",
-        "castle",
-        "chain",
-        "core",
-        "entry",
-        "global"
+        "三层叠加",
+        "个服务类",
+        "务类型预",
+        "动阶段对",
+        "叠加顺序",
+        "启动阶段",
+        "器三层叠",
+        "型预计算"
       ],
       "relations": {
         "capabilities": [
@@ -4277,14 +4293,14 @@
         "specs",
         "superpowers",
         "拦截器链计算流程",
-        "action",
         "cache",
-        "castle",
         "chain",
-        "controller",
-        "entry",
-        "false",
-        "iauto"
+        "implementation",
+        "service",
+        "type",
+        "两条链独",
+        "互不依赖",
+        "全量预填"
       ],
       "relations": {
         "capabilities": [
@@ -4327,10 +4343,10 @@
         "cache",
         "chain",
         "controller",
-        "csharp",
         "entry",
         "ignore",
-        "intercept"
+        "interceptors",
+        "ispecific"
       ],
       "relations": {
         "capabilities": [
@@ -4373,10 +4389,10 @@
         "superpowers",
         "api",
         "cap",
-        "handler",
-        "interceptor",
         "mvc",
-        "resolve"
+        "resolve",
+        "rpc",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -4416,13 +4432,13 @@
         "specs",
         "superpowers",
         "accessor",
-        "action",
         "ambient",
-        "api",
-        "asp",
         "cancellation",
         "context",
-        "core"
+        "feature",
+        "icurrent",
+        "iinvocation",
+        "token"
       ],
       "relations": {
         "capabilities": [
@@ -4461,14 +4477,14 @@
         "specs",
         "superpowers",
         "调用形态分派",
-        "async",
         "autofac",
-        "await",
         "castle",
-        "class",
-        "context",
-        "core",
-        "dynamic"
+        "dynamic",
+        "extras",
+        "proxy",
+        "virtual",
+        "代理只能",
+        "代理接口"
       ],
       "relations": {
         "capabilities": [

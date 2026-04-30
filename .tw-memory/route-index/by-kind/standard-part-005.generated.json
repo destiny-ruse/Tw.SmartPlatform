@@ -12,7 +12,19 @@
         "rules",
         "standards",
         "检查清单",
-        "api"
+        "api",
+        "事件",
+        "件是否已",
+        "出文件是",
+        "变更的数",
+        "否已识别",
+        "和导出文",
+        "增或变更",
+        "导出文件",
+        "或变更的",
+        "报表和导",
+        "数据字段",
+        "文件是否"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +91,20 @@
         "pii",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +134,12 @@
         "repo",
         "rules",
         "standards",
-        "仓库目录布局规范"
+        "仓库目录布局规范",
+        "仓库目录",
+        "布局规范",
+        "库目录布",
+        "录布局规",
+        "目录布局"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +168,21 @@
         "md",
         "repo",
         "rules",
-        "standards"
+        "standards",
+        "于降低目",
+        "仓库目录",
+        "低目录职",
+        "入口分散",
+        "具入口分",
+        "局规范用",
+        "工具入口",
+        "布局规范",
+        "库目录布",
+        "录布局规",
+        "录职责不",
+        "测试与源",
+        "用于降低",
+        "目录布局"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +212,20 @@
         "repo",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "于仓库根",
+        "仓库根目",
+        "和生成目",
+        "工具目录",
+        "库根目录",
+        "录和生成",
+        "文档目录",
+        "本规范适",
+        "测试目录",
+        "源码目录",
+        "生成目录",
+        "用于仓库",
+        "目录和生"
       ],
       "relations": {
         "capabilities": [
@@ -198,20 +255,20 @@
         "repo",
         "rules",
         "standards",
-        "apps",
-        "backend",
-        "decisions",
-        "deploy",
-        "frontend",
-        "generated",
-        "helm",
-        "infra",
-        "k8s",
-        "misc",
-        "processes",
-        "readme",
-        "references",
-        "services"
+        "不得把一",
+        "产物必须",
+        "和生成产",
+        "工具",
+        "必须有清",
+        "成产物必",
+        "文档",
+        "晰目录边",
+        "有清晰目",
+        "测试",
+        "清晰目录",
+        "源码",
+        "物必须有",
+        "生成产物"
       ],
       "relations": {
         "capabilities": [
@@ -242,10 +299,7 @@
         "rules",
         "standards",
         "check",
-        "job",
         "memory",
-        "misc",
-        "new2",
         "production",
         "ps1",
         "run",
@@ -254,7 +308,10 @@
         "test",
         "tests",
         "text",
-        "tmp"
+        "tmp",
+        "tools",
+        "反例",
+        "正例"
       ],
       "relations": {
         "capabilities": [
@@ -284,7 +341,20 @@
         "repo",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "动目录是",
+        "发现入口",
+        "可发现入",
+        "否有明确",
+        "和可发现",
+        "增或移动",
+        "录是否有",
+        "或移动目",
+        "新增或移",
+        "明确职责",
+        "是否有明",
+        "有明确职",
+        "测试"
       ],
       "relations": {
         "capabilities": [
@@ -349,7 +419,20 @@
         "repo",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -378,7 +461,10 @@
         "resilience",
         "rules",
         "standards",
-        "韧性设计规范"
+        "韧性设计规范",
+        "性设计规",
+        "设计规范",
+        "韧性设计"
       ],
       "relations": {
         "capabilities": [
@@ -405,7 +491,22 @@
         "md",
         "resilience",
         "rules",
-        "standards"
+        "standards",
+        "下游故障",
+        "于降低下",
+        "低下游故",
+        "复副作用",
+        "性设计规",
+        "故障放大",
+        "无限等待",
+        "游故障放",
+        "用于降低",
+        "目标",
+        "范用于降",
+        "规范用于",
+        "计规范用",
+        "设计规范",
+        "载雪崩和"
       ],
       "relations": {
         "capabilities": [
@@ -440,7 +541,14 @@
         "http",
         "rpc",
         "services",
-        "src"
+        "src",
+        "依赖客户",
+        "处理任务",
+        "外部依赖",
+        "息消费者",
+        "批处理任",
+        "服务",
+        "本规范适"
       ],
       "relations": {
         "capabilities": [
@@ -467,7 +575,22 @@
         "md",
         "resilience",
         "rules",
-        "standards"
+        "standards",
+        "件存储调",
+        "储调用必",
+        "和文件存",
+        "声明超时",
+        "存储调用",
+        "必须声明",
+        "息和文件",
+        "或截止时",
+        "所有网络",
+        "数据库",
+        "文件存储",
+        "时或截止",
+        "明超时或",
+        "消息和文",
+        "用必须声"
       ],
       "relations": {
         "capabilities": [
@@ -503,13 +626,13 @@
         "errors",
         "fallback",
         "idempotency",
-        "mark",
-        "order",
         "payment",
         "requires",
         "retry",
         "retryable",
-        "service"
+        "service",
+        "timeout",
+        "transient"
       ],
       "relations": {
         "capabilities": [
@@ -537,7 +660,21 @@
         "resilience",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "个外部调",
+        "件存储操",
+        "作和文件",
+        "作是否有",
+        "储操作是",
+        "列操作和",
+        "否有明确",
+        "和文件存",
+        "外部调用",
+        "存储操作",
+        "据库调用",
+        "操作和文",
+        "操作是否",
+        "数据库调"
       ],
       "relations": {
         "capabilities": [
@@ -598,7 +735,21 @@
         "resilience",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [
@@ -627,7 +778,10 @@
         "rules",
         "secrets",
         "standards",
-        "密钥管理规范"
+        "密钥管理规范",
+        "密钥管理",
+        "管理规范",
+        "钥管理规"
       ],
       "relations": {
         "capabilities": [
@@ -656,7 +810,21 @@
         "md",
         "rules",
         "secrets",
-        "standards"
+        "standards",
+        "串被硬编",
+        "书和连接",
+        "于降低密",
+        "令牌",
+        "和连接串",
+        "密钥管理",
+        "接串被硬",
+        "理规范用",
+        "用于降低",
+        "目标",
+        "管理规范",
+        "范用于降",
+        "被硬编码",
+        "规范用于"
       ],
       "relations": {
         "capabilities": [
@@ -697,7 +865,9 @@
         "services",
         "src",
         "token",
-        "webhook"
+        "webhook",
+        "容器镜像",
+        "本规范适"
       ],
       "relations": {
         "capabilities": [
@@ -727,11 +897,20 @@
         "rules",
         "secrets",
         "standards",
-        "authorization",
-        "dummy",
-        "secret",
-        "test",
-        "token"
+        "串必须存",
+        "书口令和",
+        "令和连接",
+        "令牌",
+        "储在受控",
+        "受控密钥",
+        "口令和连",
+        "和连接串",
+        "在受控密",
+        "存储在受",
+        "密钥",
+        "密钥存储",
+        "必须存储",
+        "接串必须"
       ],
       "relations": {
         "capabilities": [
@@ -763,18 +942,18 @@
         "standards",
         "client",
         "database",
-        "echo",
-        "export",
         "oauth",
         "orders",
-        "password",
-        "password123",
-        "plain",
-        "prod",
         "ref",
         "secret",
-        "server",
-        "shell"
+        "url",
+        "yaml",
+        "保存秘密",
+        "只保存秘",
+        "存秘密值",
+        "实值由受",
+        "密值引用",
+        "正例"
       ],
       "relations": {
         "capabilities": [
@@ -805,8 +984,19 @@
         "secrets",
         "standards",
         "检查清单",
-        "authorization",
-        "token"
+        "中是否没",
+        "代码",
+        "令牌",
+        "出中是否",
+        "否没有明",
+        "密值是否",
+        "或连接串",
+        "文档",
+        "明文密钥",
+        "是否没有",
+        "有明文密",
+        "没有明文",
+        "测试快照"
       ],
       "relations": {
         "capabilities": [
@@ -873,7 +1063,20 @@
         "rules",
         "secrets",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -901,7 +1104,8 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "规范"
       ],
       "relations": {
         "capabilities": [
@@ -929,7 +1133,21 @@
         "rules",
         "slo",
         "standards",
-        "sli"
+        "sli",
+        "于降低服",
+        "低服务可",
+        "务可靠性",
+        "口径不一",
+        "可靠性目",
+        "告警只反",
+        "径不一致",
+        "性目标口",
+        "服务可靠",
+        "标口径不",
+        "用于降低",
+        "目标",
+        "目标口径",
+        "范用于降"
       ],
       "relations": {
         "capabilities": [
@@ -965,7 +1183,13 @@
         "rpc",
         "services",
         "sli",
-        "src"
+        "src",
+        "上下游系",
+        "中面向用",
+        "向用户或",
+        "或上下游",
+        "户或上下",
+        "本规范适"
       ],
       "relations": {
         "capabilities": [
@@ -994,7 +1218,20 @@
         "slo",
         "standards",
         "cpu",
-        "sli"
+        "sli",
+        "一个面向",
+        "个生产服",
+        "个面向用",
+        "产服务必",
+        "务必须声",
+        "向用户或",
+        "声明至少",
+        "少一个面",
+        "必须声明",
+        "明至少一",
+        "服务必须",
+        "每个生产",
+        "生产服务"
       ],
       "relations": {
         "capabilities": [
@@ -1029,14 +1266,14 @@
         "create",
         "defined",
         "documented",
-        "excludes",
         "http",
         "order",
         "requests",
         "response",
-        "rolling",
         "service",
-        "sli"
+        "sli",
+        "success",
+        "successful"
       ],
       "relations": {
         "capabilities": [
@@ -1065,7 +1302,20 @@
         "slo",
         "standards",
         "检查清单",
-        "sli"
+        "sli",
+        "不是只表",
+        "只表达资",
+        "可感知结",
+        "否表达用",
+        "感知结果",
+        "或调用方",
+        "户或调用",
+        "方可感知",
+        "是只表达",
+        "是否表达",
+        "用户或调",
+        "用方可感",
+        "而不是只"
       ],
       "relations": {
         "capabilities": [
@@ -1127,7 +1377,21 @@
         "rules",
         "slo",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [
@@ -1156,7 +1420,10 @@
         "rules",
         "standards",
         "test",
-        "测试覆盖规范"
+        "测试覆盖规范",
+        "测试覆盖",
+        "覆盖规范",
+        "试覆盖规"
       ],
       "relations": {
         "capabilities": [
@@ -1185,7 +1452,21 @@
         "md",
         "rules",
         "standards",
-        "test"
+        "test",
+        "于降低关",
+        "件和回归",
+        "低关键路",
+        "关键路径",
+        "和回归场",
+        "回归场景",
+        "场景在变",
+        "归场景在",
+        "条件和回",
+        "测试覆盖",
+        "用于降低",
+        "界条件和",
+        "盖规范用",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -1216,9 +1497,19 @@
         "standards",
         "test",
         "适用范围",
-        "api",
         "src",
-        "tests"
+        "tests",
+        "到端测试",
+        "前端组件",
+        "后端测试",
+        "和与缺陷",
+        "契约测试",
+        "测试项目",
+        "盖率报告",
+        "盖门禁和",
+        "禁和与缺",
+        "端到端测",
+        "端测试项"
       ],
       "relations": {
         "capabilities": [
@@ -1248,11 +1539,20 @@
         "rules",
         "standards",
         "test",
-        "api",
         "happy",
-        "helper",
-        "mock",
-        "path"
+        "path",
+        "业务行为",
+        "为必须覆",
+        "修改业务",
+        "务行为必",
+        "增或修改",
+        "失败路径",
+        "必须覆盖",
+        "或修改业",
+        "改业务行",
+        "新增或修",
+        "正常路径",
+        "界条件和"
       ],
       "relations": {
         "capabilities": [
@@ -1284,7 +1584,6 @@
         "test",
         "async",
         "await",
-        "cart",
         "checkout",
         "error",
         "expect",
@@ -1295,7 +1594,8 @@
         "out",
         "rejected",
         "rejects",
-        "reservation"
+        "reservation",
+        "reserve"
       ],
       "relations": {
         "capabilities": [
@@ -1326,7 +1626,19 @@
         "standards",
         "test",
         "检查清单",
-        "mock"
+        "件和权限",
+        "别并覆盖",
+        "否覆盖正",
+        "否识别并",
+        "和权限或",
+        "失败路径",
+        "或状态转",
+        "是否覆盖",
+        "是否识别",
+        "权限或状",
+        "条件和权",
+        "正常路径",
+        "状态转换"
       ],
       "relations": {
         "capabilities": [
@@ -1391,7 +1703,20 @@
         "rules",
         "standards",
         "test",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -1422,7 +1747,10 @@
         "rules",
         "standards",
         "test",
-        "测试数据与"
+        "测试数据与",
+        "测试数据",
+        "规范",
+        "试数据与"
       ],
       "relations": {
         "capabilities": [
@@ -1453,7 +1781,20 @@
         "mock",
         "rules",
         "standards",
-        "test"
+        "test",
+        "个人信息",
+        "于降低测",
+        "人信息泄",
+        "低测试不",
+        "信息泄露",
+        "实个人信",
+        "息泄露和",
+        "泄露和过",
+        "测试不稳",
+        "测试数据",
+        "环境耦合",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -1489,12 +1830,15 @@
         "factory",
         "fake",
         "fixture",
-        "pii",
         "seed",
         "server",
         "snapshot",
         "spy",
-        "stub"
+        "stub",
+        "于单元测",
+        "到端测试",
+        "单元测试",
+        "契约测试"
       ],
       "relations": {
         "capabilities": [
@@ -1526,13 +1870,19 @@
         "rules",
         "standards",
         "test",
-        "factory",
-        "fixture",
         "locale",
-        "payload",
-        "pii",
-        "schema",
-        "server"
+        "不得依赖",
+        "依赖当前",
+        "固定时间",
+        "定性生成",
+        "当前日期",
+        "得依赖当",
+        "必须确定",
+        "据必须确",
+        "排序",
+        "数据必须",
+        "测试数据",
+        "相关输入"
       ],
       "relations": {
         "capabilities": [
@@ -1571,12 +1921,12 @@
         "example",
         "json",
         "name",
-        "now",
         "phone",
         "production",
         "role",
         "t00",
-        "token"
+        "token",
+        "user"
       ],
       "relations": {
         "capabilities": [
@@ -1611,7 +1961,16 @@
         "检查清单",
         "fixture",
         "pii",
-        "schema"
+        "不含真实",
+        "产导出数",
+        "令牌或生",
+        "否固定时",
+        "和外部响",
+        "固定时间",
+        "外部响应",
+        "密钥",
+        "导出数据",
+        "序和外部"
       ],
       "relations": {
         "capabilities": [
@@ -1679,7 +2038,19 @@
         "rules",
         "standards",
         "test",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
@@ -1710,7 +2081,10 @@
         "standards",
         "strategy",
         "test",
-        "测试策略规范"
+        "测试策略规范",
+        "测试策略",
+        "策略规范",
+        "试策略规"
       ],
       "relations": {
         "capabilities": [
@@ -1739,7 +2113,21 @@
         "rules",
         "standards",
         "strategy",
-        "test"
+        "test",
+        "于降低团",
+        "低团队把",
+        "压到单一",
+        "团队把所",
+        "所有风险",
+        "把所有风",
+        "有风险都",
+        "测试策略",
+        "用于降低",
+        "略规范用",
+        "目标",
+        "策略规范",
+        "范用于降",
+        "规范用于"
       ],
       "relations": {
         "capabilities": [
@@ -1772,7 +2160,17 @@
         "适用范围",
         "api",
         "app",
-        "uni"
+        "uni",
+        "于后端服",
+        "前端应用",
+        "前验证和",
+        "发布前验",
+        "后端服务",
+        "契约",
+        "布前验证",
+        "据库迁移",
+        "数据库迁",
+        "消息契约"
       ],
       "relations": {
         "capabilities": [
@@ -1802,11 +2200,20 @@
         "standards",
         "strategy",
         "test",
-        "api",
-        "async",
-        "rest",
-        "rpc",
-        "sdk"
+        "使用的测",
+        "变更必须",
+        "声明验证",
+        "必须声明",
+        "或配置变",
+        "明使用的",
+        "明验证策",
+        "更必须声",
+        "构或配置",
+        "每个功能",
+        "用的测试",
+        "的测试层",
+        "缺陷修复",
+        "置变更必"
       ],
       "relations": {
         "capabilities": [
@@ -1842,14 +2249,14 @@
         "integration",
         "inventory",
         "message",
-        "one",
         "order",
         "permission",
         "publish",
         "reservation",
         "row",
         "status",
-        "transaction"
+        "transitions",
+        "unit"
       ],
       "relations": {
         "capabilities": [
@@ -1879,7 +2286,20 @@
         "standards",
         "strategy",
         "test",
-        "检查清单"
+        "检查清单",
+        "为变更声",
+        "人工验证",
+        "到端和人",
+        "变更声明",
+        "否为变更",
+        "否把关键",
+        "和人工验",
+        "声明单元",
+        "契约",
+        "工验证的",
+        "把关键路",
+        "是否为变",
+        "是否把关"
       ],
       "relations": {
         "capabilities": [
@@ -1946,7 +2366,20 @@
         "standards",
         "strategy",
         "test",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -1975,7 +2408,10 @@
         "rules",
         "standards",
         "tracing",
-        "链路追踪规范"
+        "链路追踪规范",
+        "路追踪规",
+        "追踪规范",
+        "链路追踪"
       ],
       "relations": {
         "capabilities": [
@@ -2004,7 +2440,20 @@
         "standards",
         "tracing",
         "span",
-        "trace"
+        "trace",
+        "于降低跨",
+        "低跨服务",
+        "务调用无",
+        "异步任务",
+        "无法串联",
+        "服务调用",
+        "用于降低",
+        "用无法串",
+        "目标",
+        "范用于降",
+        "规范用于",
+        "调用无法",
+        "跨服务调"
       ],
       "relations": {
         "capabilities": [
@@ -2041,7 +2490,12 @@
         "services",
         "span",
         "src",
-        "trace"
+        "trace",
+        "后台任务",
+        "息消费者",
+        "息生产者",
+        "批处理作",
+        "服务"
       ],
       "relations": {
         "capabilities": [
@@ -2069,21 +2523,21 @@
         "rules",
         "standards",
         "tracing",
-        "call",
-        "created",
-        "dependency",
-        "environment",
-        "get",
-        "http",
-        "message",
-        "operation",
-        "order",
-        "orders",
-        "payment",
-        "pii",
-        "process",
-        "service",
-        "span"
+        "trace",
+        "任务必须",
+        "依赖调用",
+        "创建或延",
+        "务必须创",
+        "台任务必",
+        "后台任务",
+        "和后台任",
+        "外部依赖",
+        "建或延续",
+        "必须创建",
+        "息消费和",
+        "消息发布",
+        "消息消费",
+        "消费和后"
       ],
       "relations": {
         "capabilities": [
@@ -2156,7 +2610,18 @@
         "检查清单",
         "span",
         "trace",
-        "url"
+        "url",
+        "上下文",
+        "任务是否",
+        "依赖调用",
+        "创建或延",
+        "务是否创",
+        "台任务是",
+        "名称是否",
+        "后台任务",
+        "否创建或",
+        "和后台任",
+        "建或延续"
       ],
       "relations": {
         "capabilities": [
@@ -2219,7 +2684,21 @@
         "rules",
         "standards",
         "tracing",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [

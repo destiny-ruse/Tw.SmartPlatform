@@ -14,17 +14,17 @@
         "primitives",
         "src",
         "tw",
-        "argument",
         "class",
-        "cref",
-        "exception",
-        "extensions",
-        "list",
-        "name",
-        "named",
         "namespace",
-        "null",
-        "param"
+        "public",
+        "static",
+        "summary",
+        "供添加具",
+        "便利方法",
+        "具名类型",
+        "加具名类",
+        "名类型选",
+        "器的便利"
       ],
       "relations": {
         "capabilities": [

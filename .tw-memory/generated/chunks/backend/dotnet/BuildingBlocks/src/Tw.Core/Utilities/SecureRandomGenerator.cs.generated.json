@@ -14,17 +14,17 @@
         "src",
         "tw",
         "utilities",
-        "abcdefghijklmnopqrstuvwxyz",
-        "chars",
-        "class",
-        "const",
         "cryptography",
-        "generator",
-        "lowercase",
         "namespace",
-        "private",
-        "public",
-        "random"
+        "security",
+        "summary",
+        "system",
+        "using",
+        "供密码学",
+        "值和集合",
+        "全的随机",
+        "和集合辅",
+        "学安全的"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "src",
         "tw",
         "utilities",
-        "bit",
-        "bits",
-        "byte",
-        "bytes",
-        "converter",
         "double",
-        "fill",
-        "generator",
         "get",
-        "number",
-        "public"
+        "public",
+        "returns",
+        "static",
+        "summary",
+        "内的随机",
+        "半开区间",
+        "双精度浮",
+        "回半开区",
+        "围内的随"
       ],
       "relations": {
         "capabilities": [
@@ -106,17 +106,17 @@
         "src",
         "tw",
         "utilities",
-        "argument",
         "chars",
-        "check",
-        "cref",
-        "exception",
-        "get",
-        "int",
         "length",
         "name",
-        "negative",
-        "non"
+        "param",
+        "returns",
+        "使用字母",
+        "可选字符",
+        "字母数字",
+        "字符串长",
+        "数字字符",
+        "时使用字"
       ],
       "relations": {
         "capabilities": [
@@ -207,8 +207,8 @@
         "distinct",
         "equality",
         "exception",
-        "list",
-        "nameof"
+        "nameof",
+        "negative"
       ],
       "relations": {
         "capabilities": [

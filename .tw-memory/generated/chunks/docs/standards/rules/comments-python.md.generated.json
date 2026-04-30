@@ -42,7 +42,20 @@
         "python",
         "rules",
         "standards",
-        "docstring"
+        "docstring",
+        "中调用契",
+        "于降低动",
+        "低动态语",
+        "动态语言",
+        "契约不清",
+        "态语言中",
+        "注释规范",
+        "用于降低",
+        "用契约不",
+        "目标",
+        "类型意图",
+        "范用于降",
+        "规范用于"
       ],
       "relations": {
         "capabilities": [
@@ -77,7 +90,16 @@
         "cli",
         "docstring",
         "notebook",
-        "vendored"
+        "vendored",
+        "任务脚本",
+        "入口",
+        "公共函数",
+        "具和示例",
+        "和示例代",
+        "夹具和示",
+        "方法",
+        "本规范适",
+        "模块"
       ],
       "relations": {
         "capabilities": [
@@ -110,13 +132,18 @@
         "standards",
         "cli",
         "docstring",
-        "fixme",
-        "fixture",
-        "hack",
-        "mock",
-        "property",
-        "pydantic",
-        "todo"
+        "不得让调",
+        "入口必须",
+        "公共模块",
+        "函数和",
+        "参数含义",
+        "口必须使",
+        "常或副作",
+        "异常或副",
+        "得让调用",
+        "必须使用",
+        "或副作用",
+        "方阅读实"
       ],
       "relations": {
         "capabilities": [
@@ -148,18 +175,19 @@
         "rules",
         "standards",
         "api",
-        "append",
         "args",
         "cancel",
         "def",
-        "error",
         "none",
         "order",
-        "orders",
-        "raises",
-        "result",
         "str",
-        "value"
+        "中稳定的",
+        "公共",
+        "取消尚未",
+        "定的订单",
+        "尚未结算",
+        "未结算的",
+        "正例"
       ],
       "relations": {
         "capabilities": [
@@ -193,11 +221,17 @@
         "检查清单",
         "cli",
         "docstring",
-        "fixme",
-        "generated",
-        "hack",
-        "property",
-        "todo"
+        "业务约束",
+        "作用或外",
+        "充业务约",
+        "入口是否",
+        "公共模块",
+        "函数和",
+        "副作用或",
+        "口是否有",
+        "否有必要",
+        "否补充业",
+        "外部依赖"
       ],
       "relations": {
         "capabilities": [
@@ -261,7 +295,20 @@
         "python",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "内部复杂",
+        "函数内部",
+        "句号",
+        "员注释和",
+        "和函数内",
+        "复杂逻辑",
+        "成员注释",
+        "数内部复",
+        "日期",
+        "杂逻辑注",
+        "注释和函",
+        "注释语言",
+        "版本"
       ],
       "relations": {
         "capabilities": [

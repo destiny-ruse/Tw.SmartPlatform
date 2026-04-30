@@ -10,7 +10,10 @@
         "resilience",
         "rules",
         "standards",
-        "韧性设计规范"
+        "韧性设计规范",
+        "性设计规",
+        "设计规范",
+        "韧性设计"
       ],
       "relations": {
         "capabilities": [
@@ -38,7 +41,22 @@
         "md",
         "resilience",
         "rules",
-        "standards"
+        "standards",
+        "下游故障",
+        "于降低下",
+        "低下游故",
+        "复副作用",
+        "性设计规",
+        "故障放大",
+        "无限等待",
+        "游故障放",
+        "用于降低",
+        "目标",
+        "范用于降",
+        "规范用于",
+        "计规范用",
+        "设计规范",
+        "载雪崩和"
       ],
       "relations": {
         "capabilities": [
@@ -74,7 +92,14 @@
         "http",
         "rpc",
         "services",
-        "src"
+        "src",
+        "依赖客户",
+        "处理任务",
+        "外部依赖",
+        "息消费者",
+        "批处理任",
+        "服务",
+        "本规范适"
       ],
       "relations": {
         "capabilities": [
@@ -102,7 +127,22 @@
         "md",
         "resilience",
         "rules",
-        "standards"
+        "standards",
+        "件存储调",
+        "储调用必",
+        "和文件存",
+        "声明超时",
+        "存储调用",
+        "必须声明",
+        "息和文件",
+        "或截止时",
+        "所有网络",
+        "数据库",
+        "文件存储",
+        "时或截止",
+        "明超时或",
+        "消息和文",
+        "用必须声"
       ],
       "relations": {
         "capabilities": [
@@ -139,13 +179,13 @@
         "errors",
         "fallback",
         "idempotency",
-        "mark",
-        "order",
         "payment",
         "requires",
         "retry",
         "retryable",
-        "service"
+        "service",
+        "timeout",
+        "transient"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +214,21 @@
         "resilience",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "个外部调",
+        "件存储操",
+        "作和文件",
+        "作是否有",
+        "储操作是",
+        "列操作和",
+        "否有明确",
+        "和文件存",
+        "外部调用",
+        "存储操作",
+        "据库调用",
+        "操作和文",
+        "操作是否",
+        "数据库调"
       ],
       "relations": {
         "capabilities": [
@@ -237,7 +291,21 @@
         "resilience",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [

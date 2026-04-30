@@ -10,7 +10,21 @@
         "deploy",
         "md",
         "readme",
-        "持续交付目录"
+        "持续交付目录",
+        "于存放持",
+        "交付目录",
+        "动化发布",
+        "化发布相",
+        "和自动化",
+        "存放持续",
+        "录用于存",
+        "持续交付",
+        "持续集成",
+        "放持续集",
+        "本目录用",
+        "水线配置",
+        "流水线配",
+        "用于存放"
       ],
       "relations": {
         "capabilities": [
@@ -21,14 +35,14 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:586a72dde2bd11a9827b9375a7c314a92015b1c32806b221a0a21b144e5eebaa",
+      "source_hash": "sha256:b401d0c429f35f9ee1a69559f0132d98c188e1484a4bab0f4a85d022de0e2d6a",
       "source_path": "deploy/ci-cd/README.md",
       "start_line": 1,
       "summary": "持续交付目录 in deploy/ci-cd/README.md"
     },
     {
       "chunk_id": "deploy.ci-cd.README#chunk-002",
-      "end_line": 13,
+      "end_line": 14,
       "heading": "TW Memory Check",
       "keywords": [
         "cd",
@@ -61,7 +75,7 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:586a72dde2bd11a9827b9375a7c314a92015b1c32806b221a0a21b144e5eebaa",
+      "source_hash": "sha256:b401d0c429f35f9ee1a69559f0132d98c188e1484a4bab0f4a85d022de0e2d6a",
       "source_path": "deploy/ci-cd/README.md",
       "start_line": 5,
       "summary": "TW Memory Check in deploy/ci-cd/README.md"

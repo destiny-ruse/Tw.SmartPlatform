@@ -45,7 +45,18 @@
         "standards",
         "api",
         "ide",
-        "net"
+        "net",
+        "于降低命",
+        "低命名空",
+        "名空间漂",
+        "名规范用",
+        "命名空间",
+        "命名规范",
+        "型职责不",
+        "异步方法",
+        "步方法误",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -77,7 +88,19 @@
         "rules",
         "standards",
         "适用范围",
-        "net"
+        "net",
+        "参数",
+        "命名空间",
+        "字段",
+        "局部变量",
+        "属性",
+        "异步方法",
+        "接口",
+        "方法",
+        "本规范适",
+        "枚举",
+        "测试类型",
+        "的命名空"
       ],
       "relations": {
         "capabilities": [
@@ -108,20 +131,20 @@
         "naming",
         "rules",
         "standards",
-        "async",
-        "bool",
-        "camel",
-        "can",
         "case",
         "common",
-        "flag",
-        "ihelper",
-        "imanager",
-        "iorder",
-        "net",
         "pascal",
-        "repository",
-        "should"
+        "utils",
+        "分段",
+        "名空间和",
+        "命名空间",
+        "和程序集",
+        "和领域边",
+        "块和领域",
+        "并与目录",
+        "序集必须",
+        "必须使用",
+        "模块和领"
       ],
       "relations": {
         "capabilities": [
@@ -160,12 +183,12 @@
         "csharp",
         "find",
         "flag",
-        "get",
         "helper2",
         "interface",
         "iorder",
-        "new",
-        "order"
+        "order",
+        "public",
+        "repository"
       ],
       "relations": {
         "capabilities": [
@@ -197,13 +220,19 @@
         "rules",
         "standards",
         "检查清单",
-        "api",
-        "async",
-        "common",
-        "generated",
-        "helper",
-        "manager",
-        "net"
+        "net",
+        "参数和局",
+        "命名空间",
+        "和局部变",
+        "和领域边",
+        "域边界是",
+        "字段",
+        "序集和领",
+        "成员",
+        "接口",
+        "数和局部",
+        "是否一致",
+        "界是否一"
       ],
       "relations": {
         "capabilities": [
@@ -267,7 +296,20 @@
         "naming",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

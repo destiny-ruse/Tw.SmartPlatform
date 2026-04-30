@@ -11,7 +11,10 @@
         "naming",
         "rules",
         "standards",
-        "通用命名规范"
+        "通用命名规范",
+        "命名规范",
+        "用命名规",
+        "通用命名"
       ],
       "relations": {
         "capabilities": [
@@ -41,7 +44,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "一概念多",
+        "不可理解",
+        "于降低同",
+        "低同一概",
+        "写不可理",
+        "同一概念",
+        "名规范用",
+        "命名规范",
+        "域语言漂",
+        "概念多名",
+        "用于降低",
+        "用命名规",
+        "目标",
+        "缩写不可"
       ],
       "relations": {
         "capabilities": [
@@ -73,7 +90,19 @@
         "rules",
         "standards",
         "适用范围",
-        "api"
+        "api",
+        "事件名称",
+        "库相邻模",
+        "据库相邻",
+        "接口字段",
+        "数据库相",
+        "文件",
+        "文档示例",
+        "本规范适",
+        "档示例和",
+        "测试",
+        "用于代码",
+        "目录"
       ],
       "relations": {
         "capabilities": [
@@ -104,20 +133,20 @@
         "naming",
         "rules",
         "standards",
-        "bill",
-        "can",
-        "count",
         "data",
-        "enabled",
-        "flag",
         "info",
-        "list1",
         "manager",
-        "map",
         "obj",
-        "order",
-        "orders",
-        "retry"
+        "tmp",
+        "不得使用",
+        "名必须表",
+        "命名必须",
+        "工程用途",
+        "必须表达",
+        "或工程用",
+        "等无法独",
+        "职责或工",
+        "表达领域"
       ],
       "relations": {
         "capabilities": [
@@ -150,18 +179,18 @@
         "standards",
         "can",
         "const",
-        "create",
         "customer",
         "data",
         "failure",
         "flag",
         "map",
-        "mgr2",
         "new",
         "order",
         "orders",
         "payment",
-        "reason"
+        "reason",
+        "retry",
+        "string"
       ],
       "relations": {
         "capabilities": [
@@ -193,7 +222,19 @@
         "rules",
         "standards",
         "检查清单",
-        "generated"
+        "一概念是",
+        "同一概念",
+        "名称是否",
+        "否能表达",
+        "周期或工",
+        "命周期或",
+        "工程用途",
+        "念是否在",
+        "或工程用",
+        "是否能表",
+        "期或工程",
+        "概念是否",
+        "生命周期"
       ],
       "relations": {
         "capabilities": [
@@ -260,7 +301,20 @@
         "naming",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

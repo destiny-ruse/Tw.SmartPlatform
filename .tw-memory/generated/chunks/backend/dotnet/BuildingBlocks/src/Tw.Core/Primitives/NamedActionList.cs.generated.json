@@ -14,16 +14,17 @@
         "primitives",
         "src",
         "tw",
-        "action",
         "class",
-        "list",
         "name",
         "named",
         "namespace",
-        "object",
         "public",
         "summary",
-        "typeparam"
+        "typeparam",
+        "为具名操",
+        "作参数类",
+        "作提供可",
+        "供可变列"
       ],
       "relations": {
         "capabilities": [

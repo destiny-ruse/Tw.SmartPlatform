@@ -11,7 +11,10 @@
         "rules",
         "standards",
         "styles",
-        "前端样式规范"
+        "前端样式规范",
+        "前端样式",
+        "样式规范",
+        "端样式规"
       ],
       "relations": {
         "capabilities": [
@@ -40,7 +43,21 @@
         "md",
         "rules",
         "standards",
-        "styles"
+        "styles",
+        "主题扩展",
+        "前端样式",
+        "和主题扩",
+        "响应式布",
+        "在视觉一",
+        "局和主题",
+        "展之间保",
+        "布局和主",
+        "应式布局",
+        "式布局和",
+        "式必须在",
+        "必须在视",
+        "扩展之间",
+        "样式必须"
       ],
       "relations": {
         "capabilities": [
@@ -71,7 +88,19 @@
         "standards",
         "styles",
         "适用范围",
-        "vue"
+        "vue",
+        "主题变量",
+        "全局样式",
+        "和静态资",
+        "响应式断",
+        "图标和静",
+        "应式断点",
+        "建配置以",
+        "式构建配",
+        "态资源引",
+        "构建配置",
+        "标和静态",
+        "样式构建"
       ],
       "relations": {
         "capabilities": [
@@ -101,8 +130,20 @@
         "rules",
         "standards",
         "styles",
-        "dom",
-        "token"
+        "token",
+        "值必须来",
+        "可复用值",
+        "和阴影等",
+        "圆角和阴",
+        "复用值必",
+        "字号",
+        "层级",
+        "影等可复",
+        "必须来自",
+        "来自设计",
+        "用值必须",
+        "等可复用",
+        "自设计变"
       ],
       "relations": {
         "capabilities": [
@@ -132,9 +173,7 @@
         "rules",
         "standards",
         "styles",
-        "ant",
         "background",
-        "body",
         "card",
         "color",
         "display",
@@ -144,8 +183,10 @@
         "media",
         "order",
         "padding",
-        "page",
-        "primary"
+        "primary",
+        "scss",
+        "spacing",
+        "surface"
       ],
       "relations": {
         "capabilities": [
@@ -176,8 +217,19 @@
         "standards",
         "styles",
         "检查清单",
-        "important",
-        "token"
+        "token",
+        "件私有样",
+        "值是否来",
+        "公共样式",
+        "可复用视",
+        "否来自变",
+        "和公共样",
+        "复用视觉",
+        "式和公共",
+        "是否来自",
+        "有样式和",
+        "来自变量",
+        "样式和公"
       ],
       "relations": {
         "capabilities": [
@@ -241,7 +293,20 @@
         "rules",
         "standards",
         "styles",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

@@ -14,17 +14,17 @@
         "extensions",
         "src",
         "tw",
-        "bool",
         "class",
-        "empty",
         "enumerable",
-        "ienumerable",
         "langword",
-        "name",
         "namespace",
         "null",
-        "param",
-        "public"
+        "public",
+        "see",
+        "static",
+        "summary",
+        "举序列的",
+        "供可枚举"
       ],
       "relations": {
         "capabilities": [
@@ -62,15 +62,15 @@
         "tw",
         "action",
         "argument",
-        "async",
-        "check",
         "cref",
-        "each",
         "exception",
-        "foreach",
-        "func",
-        "ienumerable",
-        "langword"
+        "langword",
+        "name",
+        "null",
+        "paramref",
+        "returns",
+        "see",
+        "source"
       ],
       "relations": {
         "capabilities": [
@@ -106,17 +106,17 @@
         "extensions",
         "src",
         "tw",
-        "argument",
-        "bool",
         "condition",
-        "cref",
-        "exception",
-        "ienumerable",
-        "langword",
         "name",
-        "null",
         "param",
-        "paramref"
+        "predicate",
+        "source",
+        "summary",
+        "为真时筛",
+        "仅在条件",
+        "件为真时",
+        "否应用谓",
+        "在条件为"
       ],
       "relations": {
         "capabilities": [

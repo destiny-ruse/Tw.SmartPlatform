@@ -16,15 +16,15 @@
         "src",
         "tw",
         "aes",
-        "base64",
-        "class",
-        "input",
-        "key",
-        "langword",
-        "name",
         "namespace",
-        "param",
-        "paramref"
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的",
+        "供用于字"
       ],
       "relations": {
         "capabilities": [
@@ -113,12 +113,12 @@
         "algorithm",
         "async",
         "cancellation",
-        "ecb",
         "encrypt",
-        "file",
         "key",
         "mode",
-        "name"
+        "padding",
+        "return",
+        "stream"
       ],
       "relations": {
         "capabilities": [

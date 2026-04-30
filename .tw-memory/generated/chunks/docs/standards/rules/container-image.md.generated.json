@@ -11,7 +11,10 @@
         "md",
         "rules",
         "standards",
-        "容器镜像规范"
+        "容器镜像规范",
+        "器镜像规",
+        "容器镜像",
+        "镜像规范"
       ],
       "relations": {
         "capabilities": [
@@ -41,7 +44,21 @@
         "image",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "不可追溯",
+        "于降低运",
+        "低运行环",
+        "像不可追",
+        "像规范用",
+        "器镜像规",
+        "容器镜像",
+        "密钥泄漏",
+        "泄漏和漏",
+        "环境漂移",
+        "用于降低",
+        "目标",
+        "范用于降",
+        "行环境漂"
       ],
       "relations": {
         "capabilities": [
@@ -73,7 +90,19 @@
         "rules",
         "standards",
         "适用范围",
-        "dockerfile"
+        "dockerfile",
+        "像元数据",
+        "元数据和",
+        "器构建脚",
+        "基础镜像",
+        "容器构建",
+        "建上下文",
+        "据和推送",
+        "数据和推",
+        "本规范适",
+        "构建上下",
+        "构建脚本",
+        "础镜像选"
       ],
       "relations": {
         "capabilities": [
@@ -104,14 +133,20 @@
         "md",
         "rules",
         "standards",
-        "dockerfile",
-        "dockerignore",
-        "git",
-        "label",
         "latest",
-        "root",
-        "sbom",
-        "sha"
+        "使用明确",
+        "像必须使",
+        "像或内部",
+        "内部受控",
+        "基础镜像",
+        "必须使用",
+        "或内部受",
+        "明确版本",
+        "本的基础",
+        "版本的基",
+        "用明确版",
+        "的基础镜",
+        "础镜像或"
       ],
       "relations": {
         "capabilities": [
@@ -150,12 +185,12 @@
         "copy",
         "dockerfile",
         "dotnet",
-        "entrypoint",
         "label",
         "mcr",
         "microsoft",
         "opencontainers",
-        "org"
+        "org",
+        "revision"
       ],
       "relations": {
         "capabilities": [
@@ -187,8 +222,19 @@
         "rules",
         "standards",
         "检查清单",
-        "git",
-        "label"
+        "label",
+        "像是否固",
+        "像标签和",
+        "受控来源",
+        "否固定版",
+        "否能追溯",
+        "固定版本",
+        "基础镜像",
+        "定版本或",
+        "或来自受",
+        "是否固定",
+        "是否能追",
+        "本或来自"
       ],
       "relations": {
         "capabilities": [
@@ -256,7 +302,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

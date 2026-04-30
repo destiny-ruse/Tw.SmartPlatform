@@ -14,17 +14,17 @@
         "primitives",
         "src",
         "tw",
-        "action",
-        "argument",
-        "class",
-        "cref",
-        "exception",
-        "langword",
         "name",
-        "named",
         "namespace",
-        "null",
-        "object"
+        "summary",
+        "typeparam",
+        "与操作委",
+        "作参数类",
+        "作委托关",
+        "名称与操",
+        "委托关联",
+        "将通过验",
+        "操作参数"
       ],
       "relations": {
         "capabilities": [

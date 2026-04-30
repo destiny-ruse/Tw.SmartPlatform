@@ -14,17 +14,17 @@
         "src",
         "timing",
         "tw",
-        "bool",
-        "cref",
-        "date",
-        "false",
-        "get",
-        "interface",
-        "kind",
-        "langword",
         "namespace",
-        "now",
-        "public"
+        "summary",
+        "与时区规",
+        "供当前时",
+        "前时间与",
+        "化的应用",
+        "区规范化",
+        "应用时钟",
+        "当前时间",
+        "提供当前",
+        "时区规范"
       ],
       "relations": {
         "capabilities": [

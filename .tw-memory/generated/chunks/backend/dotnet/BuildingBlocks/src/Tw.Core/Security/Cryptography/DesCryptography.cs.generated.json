@@ -15,16 +15,16 @@
         "security",
         "src",
         "tw",
-        "base64",
-        "class",
         "des",
-        "input",
-        "key",
-        "langword",
-        "name",
         "namespace",
-        "param",
-        "paramref"
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的",
+        "供用于字"
       ],
       "relations": {
         "capabilities": [
@@ -62,16 +62,16 @@
         "security",
         "src",
         "tw",
-        "argument",
-        "byte",
         "bytes",
-        "cipher",
-        "cref",
-        "decrypt",
         "ecb",
-        "exception",
         "key",
-        "langword"
+        "langword",
+        "name",
+        "null",
+        "param",
+        "see",
+        "summary",
+        "加密密钥"
       ],
       "relations": {
         "capabilities": [
@@ -118,7 +118,7 @@
         "file",
         "key",
         "mode",
-        "name"
+        "padding"
       ],
       "relations": {
         "capabilities": [

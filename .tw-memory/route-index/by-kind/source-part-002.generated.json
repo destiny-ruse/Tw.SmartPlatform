@@ -15,16 +15,16 @@
         "security",
         "src",
         "tw",
-        "algorithm",
-        "base64",
         "globalization",
-        "hash",
-        "iterations",
-        "key",
-        "length",
         "namespace",
         "pbkdf2",
-        "public"
+        "summary",
+        "system",
+        "text",
+        "using",
+        "和验证辅",
+        "哈希和验",
+        "密码密钥"
       ],
       "relations": {
         "capabilities": [
@@ -62,15 +62,15 @@
         "src",
         "tw",
         "base64",
-        "byte",
-        "bytes",
-        "convert",
-        "generate",
-        "int",
         "key",
         "length",
-        "minimum",
-        "name"
+        "name",
+        "param",
+        "returns",
+        "summary",
+        "位为字节",
+        "单位为字",
+        "学随机盐"
       ],
       "relations": {
         "capabilities": [
@@ -199,16 +199,16 @@
         "security",
         "src",
         "tw",
-        "class",
-        "default",
-        "encoding",
         "namespace",
-        "oaep",
-        "pkcs",
-        "private",
-        "public",
-        "readonly",
-        "remarks"
+        "rsa",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "加密",
+        "名和签名",
+        "名验证辅",
+        "和签名验"
       ],
       "relations": {
         "capabilities": [
@@ -245,16 +245,16 @@
         "security",
         "src",
         "tw",
-        "byte",
         "bytes",
-        "check",
         "der",
-        "encrypt",
         "key",
         "name",
-        "null",
         "oaep",
-        "padding"
+        "padding",
+        "param",
+        "public",
+        "rsa",
+        "sha"
       ],
       "relations": {
         "capabilities": [
@@ -338,15 +338,15 @@
         "src",
         "tw",
         "algorithm",
-        "bool",
         "bytes",
-        "false",
         "hash",
         "key",
-        "langword",
         "name",
-        "padding",
-        "param"
+        "param",
+        "pem",
+        "public",
+        "sha",
+        "signature"
       ],
       "relations": {
         "capabilities": [
@@ -383,16 +383,16 @@
         "security",
         "src",
         "tw",
-        "byte",
         "der",
         "key",
         "name",
         "namespace",
-        "pair",
         "param",
         "pkcs",
         "private",
-        "public"
+        "public",
+        "rsa",
+        "summary"
       ],
       "relations": {
         "capabilities": [
@@ -432,13 +432,13 @@
         "key",
         "name",
         "namespace",
-        "pair",
         "param",
         "pem",
         "pkcs",
         "private",
         "public",
-        "readonly"
+        "rsa",
+        "summary"
       ],
       "relations": {
         "capabilities": [
@@ -475,16 +475,16 @@
         "sha1hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha",
-        "sha1"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -521,16 +521,16 @@
         "sha256hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha",
-        "sha256"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -567,16 +567,16 @@
         "sha3256hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha3",
-        "sha3256"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -613,16 +613,16 @@
         "sha3384hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha3",
-        "sha3384"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -659,16 +659,16 @@
         "sha3512hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha3",
-        "sha3512"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -705,16 +705,16 @@
         "sha384hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha",
-        "sha384"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -751,16 +751,16 @@
         "sha512hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha",
-        "sha512"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -797,16 +797,16 @@
         "src",
         "stringcryptographyextensions",
         "tw",
-        "bool",
-        "class",
-        "compute",
-        "extensions",
-        "hash",
-        "input",
-        "md5",
         "namespace",
-        "public",
-        "static"
+        "summary",
+        "system",
+        "text",
+        "using",
+        "串使用密",
+        "使用密码",
+        "供字符串",
+        "助方法的",
+        "字符串使"
       ],
       "relations": {
         "capabilities": [
@@ -844,15 +844,15 @@
         "stringcryptographyextensions",
         "tw",
         "bool",
-        "case",
         "compute",
         "encoding",
-        "false",
         "hash",
         "hasher",
         "hmac",
         "input",
-        "key"
+        "key",
+        "md5",
+        "public"
       ],
       "relations": {
         "capabilities": [
@@ -890,15 +890,15 @@
         "stringcryptographyextensions",
         "tw",
         "aes",
-        "base64",
         "bool",
-        "byte",
-        "cipher",
         "encoding",
-        "encrypt",
         "hash",
         "hasher",
-        "hmac"
+        "hmac",
+        "input",
+        "key",
+        "null",
+        "public"
       ],
       "relations": {
         "capabilities": [
@@ -935,16 +935,16 @@
         "src",
         "stringcryptographyextensions",
         "tw",
-        "algorithm",
         "base64",
         "decrypt",
         "encoding",
         "encrypt",
-        "hash",
         "input",
         "key",
         "null",
-        "padding"
+        "padding",
+        "pem",
+        "public"
       ],
       "relations": {
         "capabilities": [
@@ -981,16 +981,16 @@
         "src",
         "tripledescryptography",
         "tw",
-        "base64",
-        "class",
         "des",
-        "input",
-        "key",
-        "name",
         "namespace",
-        "param",
-        "paramref",
-        "public"
+        "summary",
+        "system",
+        "text",
+        "triple",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的"
       ],
       "relations": {
         "capabilities": [
@@ -1027,16 +1027,16 @@
         "src",
         "tripledescryptography",
         "tw",
-        "argument",
-        "byte",
         "bytes",
-        "cipher",
-        "cref",
-        "decrypt",
         "ecb",
-        "exception",
         "key",
-        "langword"
+        "langword",
+        "name",
+        "null",
+        "param",
+        "see",
+        "summary",
+        "加密密钥"
       ],
       "relations": {
         "capabilities": [
@@ -1118,17 +1118,17 @@
         "src",
         "timing",
         "tw",
-        "bool",
-        "cref",
-        "date",
-        "false",
-        "get",
-        "interface",
-        "kind",
-        "langword",
         "namespace",
-        "now",
-        "public"
+        "summary",
+        "与时区规",
+        "供当前时",
+        "前时间与",
+        "化的应用",
+        "区规范化",
+        "应用时钟",
+        "当前时间",
+        "提供当前",
+        "时区规范"
       ],
       "relations": {
         "capabilities": [
@@ -1165,15 +1165,15 @@
         "utilities",
         "async",
         "class",
-        "cref",
-        "disposable",
-        "dispose",
-        "func",
-        "iasync",
-        "name",
         "namespace",
-        "param",
-        "private"
+        "public",
+        "sealed",
+        "summary",
+        "using",
+        "例释放时",
+        "在实例释",
+        "定异步委",
+        "实例释放"
       ],
       "relations": {
         "capabilities": [
@@ -1209,16 +1209,16 @@
         "tw",
         "utilities",
         "action",
-        "argument",
         "class",
-        "cref",
         "dispose",
-        "exception",
         "idisposable",
-        "name",
         "namespace",
-        "null",
-        "param"
+        "public",
+        "sealed",
+        "summary",
+        "using",
+        "例释放时",
+        "在实例释"
       ],
       "relations": {
         "capabilities": [
@@ -1253,17 +1253,17 @@
         "src",
         "tw",
         "utilities",
-        "async",
-        "class",
-        "disposable",
-        "dispose",
-        "get",
-        "iasync",
-        "instance",
         "namespace",
-        "new",
-        "null",
-        "private"
+        "summary",
+        "任何效果",
+        "何效果的",
+        "供释放时",
+        "可复用异",
+        "复用异步",
+        "异步释放",
+        "提供释放",
+        "放时无任",
+        "效果的可"
       ],
       "relations": {
         "capabilities": [
@@ -1298,17 +1298,17 @@
         "src",
         "tw",
         "utilities",
-        "class",
-        "disposable",
-        "dispose",
-        "get",
-        "idisposable",
-        "instance",
         "namespace",
-        "new",
-        "null",
-        "private",
-        "public"
+        "public",
+        "summary",
+        "任何效果",
+        "何效果的",
+        "供释放时",
+        "可复用释",
+        "复用释放",
+        "提供释放",
+        "放时无任",
+        "效果的可"
       ],
       "relations": {
         "capabilities": [
@@ -1343,17 +1343,17 @@
         "src",
         "tw",
         "utilities",
-        "abcdefghijklmnopqrstuvwxyz",
-        "chars",
-        "class",
-        "const",
         "cryptography",
-        "generator",
-        "lowercase",
         "namespace",
-        "private",
-        "public",
-        "random"
+        "security",
+        "summary",
+        "system",
+        "using",
+        "供密码学",
+        "值和集合",
+        "全的随机",
+        "和集合辅",
+        "学安全的"
       ],
       "relations": {
         "capabilities": [
@@ -1388,17 +1388,17 @@
         "src",
         "tw",
         "utilities",
-        "bit",
-        "bits",
-        "byte",
-        "bytes",
-        "converter",
         "double",
-        "fill",
-        "generator",
         "get",
-        "number",
-        "public"
+        "public",
+        "returns",
+        "static",
+        "summary",
+        "内的随机",
+        "半开区间",
+        "双精度浮",
+        "回半开区",
+        "围内的随"
       ],
       "relations": {
         "capabilities": [
@@ -1433,17 +1433,17 @@
         "src",
         "tw",
         "utilities",
-        "argument",
         "chars",
-        "check",
-        "cref",
-        "exception",
-        "get",
-        "int",
         "length",
         "name",
-        "negative",
-        "non"
+        "param",
+        "returns",
+        "使用字母",
+        "可选字符",
+        "字母数字",
+        "字符串长",
+        "数字字符",
+        "时使用字"
       ],
       "relations": {
         "capabilities": [
@@ -1532,8 +1532,8 @@
         "distinct",
         "equality",
         "exception",
-        "list",
-        "nameof"
+        "nameof",
+        "negative"
       ],
       "relations": {
         "capabilities": [

@@ -11,7 +11,20 @@
         "md",
         "net",
         "readme",
-        "编排目录"
+        "编排目录",
+        "关的本地",
+        "务启动和",
+        "动和运行",
+        "启动和运",
+        "和运行时",
+        "地开发编",
+        "开发编排",
+        "录用于存",
+        "服务启动",
+        "本地开发",
+        "本目录用",
+        "用于存放",
+        "的本地开"
       ],
       "relations": {
         "capabilities": [
@@ -39,7 +52,20 @@
         "md",
         "net",
         "readme",
-        "公共构件目录"
+        "公共构件目录",
+        "公共构件",
+        "共构件目",
+        "分层组件",
+        "动分层组",
+        "可复用的",
+        "后端可复",
+        "域驱动分",
+        "复用的基",
+        "层组件和",
+        "录用于存",
+        "本目录用",
+        "构件目录",
+        "用于存放"
       ],
       "relations": {
         "capabilities": [
@@ -71,7 +97,16 @@
         "readme",
         "src",
         "tw",
-        "应用契约构件目录"
+        "应用契约构件目录",
+        "于承载应",
+        "务对外暴",
+        "外暴露的",
+        "契约构件",
+        "对外暴露",
+        "应用契约",
+        "应用服务",
+        "录用于承",
+        "承载应用"
       ],
       "relations": {
         "capabilities": [
@@ -154,7 +189,17 @@
         "readme",
         "src",
         "tw",
-        "应用层构件目录"
+        "应用层构件目录",
+        "事务边界",
+        "于承载应",
+        "务边界和",
+        "和应用层",
+        "层构件目",
+        "应用层构",
+        "应用服务",
+        "录用于承",
+        "承载应用",
+        "服务实现"
       ],
       "relations": {
         "capabilities": [
@@ -234,7 +279,17 @@
         "readme",
         "src",
         "tw",
-        "领域层构件目录"
+        "领域层构件目录",
+        "中的实体",
+        "于承载领",
+        "动设计中",
+        "域层构件",
+        "域驱动设",
+        "层构件目",
+        "录用于承",
+        "承载领域",
+        "本目录用",
+        "构件目录"
       ],
       "relations": {
         "capabilities": [
@@ -269,7 +324,16 @@
         "shared",
         "src",
         "tw",
-        "共享领域构件目录"
+        "共享领域构件目录",
+        "与应用层",
+        "于承载领",
+        "享领域构",
+        "共享领域",
+        "共同使用",
+        "域层与应",
+        "域构件目",
+        "层与应用",
+        "层共同使"
       ],
       "relations": {
         "capabilities": [
@@ -401,7 +465,14 @@
         "src",
         "tw",
         "集成构件目录",
-        "web"
+        "web",
+        "中间件",
+        "和通用启",
+        "基础集成",
+        "展和通用",
+        "应用的基",
+        "录用于承",
+        "成构件目"
       ],
       "relations": {
         "capabilities": [
@@ -478,7 +549,18 @@
         "readme",
         "src",
         "tw",
-        "缓存构件目录"
+        "缓存构件目录",
+        "于承载缓",
+        "供者集成",
+        "和通用缓",
+        "存提供者",
+        "存构件目",
+        "录用于承",
+        "成和通用",
+        "承载缓存",
+        "提供者集",
+        "本目录用",
+        "构件目录"
       ],
       "relations": {
         "capabilities": [
@@ -555,18 +637,18 @@
         "dotnet",
         "src",
         "tw",
-        "class",
         "compiler",
-        "langword",
-        "name",
         "namespace",
-        "null",
-        "param",
-        "parameter",
-        "public",
         "runtime",
-        "see",
-        "services"
+        "services",
+        "summary",
+        "system",
+        "using",
+        "于验证方",
+        "供用于验",
+        "参数的守",
+        "守卫辅助",
+        "提供用于"
       ],
       "relations": {
         "capabilities": [
@@ -600,17 +682,17 @@
         "src",
         "tw",
         "argument",
-        "caller",
         "cref",
-        "empty",
         "exception",
-        "expression",
-        "ienumerable",
         "langword",
         "name",
-        "nameof",
         "null",
-        "param"
+        "param",
+        "parameter",
+        "paramref",
+        "returns",
+        "see",
+        "value"
       ],
       "relations": {
         "capabilities": [
@@ -644,17 +726,17 @@
         "src",
         "tw",
         "argument",
-        "cref",
         "exception",
-        "int",
         "name",
-        "negative",
         "new",
-        "non",
         "out",
-        "param",
         "parameter",
-        "paramref"
+        "range",
+        "return",
+        "summary",
+        "throw",
+        "value",
+        "值必须大"
       ],
       "relations": {
         "capabilities": [
@@ -688,17 +770,17 @@
         "src",
         "tw",
         "argument",
-        "assignable",
         "base",
-        "caller",
         "cref",
         "exception",
-        "expression",
         "langword",
         "name",
-        "nameof",
         "null",
-        "parameter"
+        "paramref",
+        "public",
+        "returns",
+        "see",
+        "static"
       ],
       "relations": {
         "capabilities": [
@@ -732,17 +814,17 @@
         "itypelist",
         "src",
         "tw",
-        "add",
         "cref",
-        "ilist",
         "interface",
         "itype",
         "list",
-        "name",
         "namespace",
         "object",
         "public",
-        "returns"
+        "see",
+        "summary",
+        "受基类型",
+        "可赋值给"
       ],
       "relations": {
         "capabilities": [
@@ -779,15 +861,15 @@
         "typelist",
         "class",
         "cref",
-        "items",
-        "itype",
         "list",
-        "name",
         "namespace",
         "object",
-        "private",
         "public",
-        "readonly"
+        "see",
+        "summary",
+        "system",
+        "type",
+        "using"
       ],
       "relations": {
         "capabilities": [
@@ -822,17 +904,17 @@
         "src",
         "tw",
         "typelist",
-        "bool",
-        "contains",
-        "false",
-        "inheritdoc",
-        "langword",
-        "name",
-        "public",
-        "remove",
         "return",
-        "returns",
-        "see"
+        "summary",
+        "true",
+        "typeparam",
+        "匹配返回",
+        "参数是否",
+        "回指定类",
+        "型匹配返",
+        "型参数是",
+        "定类型参",
+        "指定类型"
       ],
       "relations": {
         "capabilities": [
@@ -868,16 +950,16 @@
         "tw",
         "typelist",
         "assignable",
-        "bool",
         "check",
-        "false",
         "index",
         "insert",
         "int",
         "item",
         "items",
-        "langword",
-        "name"
+        "public",
+        "summary",
+        "tbase",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -912,17 +994,17 @@
         "dotnet",
         "src",
         "tw",
-        "allow",
-        "attribute",
-        "class",
-        "false",
-        "get",
-        "inherited",
-        "multiple",
         "name",
         "namespace",
         "param",
-        "public"
+        "summary",
+        "到选项类",
+        "型的配置",
+        "定到选项",
+        "应绑定到",
+        "方在选项",
+        "标识应绑",
+        "用方在选"
       ],
       "relations": {
         "capabilities": [
@@ -957,12 +1039,17 @@
         "iconfigurableoptions",
         "src",
         "tw",
-        "iconfigurable",
-        "interface",
         "namespace",
-        "options",
         "public",
-        "summary"
+        "summary",
+        "与配置绑",
+        "为可参与",
+        "参与配置",
+        "可参与配",
+        "型标记为",
+        "定的选项",
+        "将类型标",
+        "标记为可"
       ],
       "relations": {
         "capabilities": [
@@ -997,17 +1084,17 @@
         "icurrentuser",
         "src",
         "tw",
-        "authenticated",
-        "bool",
         "claims",
-        "email",
-        "get",
-        "guid",
-        "icurrent",
-        "interface",
-        "name",
         "namespace",
-        "public"
+        "security",
+        "summary",
+        "system",
+        "using",
+        "上下文中",
+        "下文中基",
+        "中基于声",
+        "于声明的",
+        "前执行上"
       ],
       "relations": {
         "capabilities": [
@@ -1042,17 +1129,17 @@
         "icurrentuser",
         "src",
         "tw",
-        "all",
-        "bool",
         "claim",
-        "claims",
-        "false",
-        "get",
-        "langword",
-        "name",
-        "param",
-        "remarks",
-        "returns"
+        "returns",
+        "summary",
+        "上下文中",
+        "上下文可",
+        "下文中可",
+        "下文可见",
+        "中可用的",
+        "份上下文",
+        "前身份上",
+        "可用的所"
       ],
       "relations": {
         "capabilities": [
@@ -1087,17 +1174,17 @@
         "src",
         "tw",
         "twconfigurationexception",
-        "base",
         "class",
         "configuration",
-        "cref",
         "exception",
-        "inner",
-        "message",
-        "name",
         "namespace",
-        "param",
-        "public"
+        "public",
+        "see",
+        "summary",
+        "失配置导",
+        "或缺失配",
+        "故障",
+        "效或缺失"
       ],
       "relations": {
         "capabilities": [
@@ -1132,17 +1219,17 @@
         "src",
         "tw",
         "twexception",
-        "base",
         "class",
-        "cref",
         "exception",
-        "inner",
-        "message",
-        "name",
         "namespace",
-        "param",
         "public",
-        "see"
+        "see",
+        "summary",
+        "一处理的",
+        "为调用方",
+        "作为调用",
+        "可统一处",
+        "基异常类"
       ],
       "relations": {
         "capabilities": [
@@ -1179,15 +1266,15 @@
         "tw",
         "array",
         "byte",
-        "bytes",
-        "case",
         "class",
-        "name",
         "namespace",
-        "param",
-        "paramref",
         "public",
-        "returns"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "供字节数"
       ],
       "relations": {
         "capabilities": [
@@ -1224,15 +1311,15 @@
         "tw",
         "class",
         "collection",
-        "cref",
-        "exception",
-        "false",
-        "item",
-        "langword",
-        "name",
         "namespace",
-        "param",
-        "public"
+        "public",
+        "static",
+        "summary",
+        "供可变集",
+        "变集合的",
+        "可变集合",
+        "合尚未包",
+        "合的扩展"
       ],
       "relations": {
         "capabilities": [
@@ -1269,15 +1356,15 @@
         "tw",
         "all",
         "argument",
-        "bool",
         "cref",
         "exception",
-        "func",
-        "icollection",
         "ilist",
         "langword",
         "name",
-        "null"
+        "null",
+        "paramref",
+        "predicate",
+        "public"
       ],
       "relations": {
         "capabilities": [
@@ -1314,15 +1401,15 @@
         "tw",
         "class",
         "comparable",
-        "inclusive",
-        "langword",
-        "max",
-        "min",
-        "name",
         "namespace",
-        "param",
-        "paramref",
-        "public"
+        "public",
+        "static",
+        "summary",
+        "供可比较",
+        "值是否位",
+        "值的扩展",
+        "可比较值",
+        "回值是否"
       ],
       "relations": {
         "capabilities": [
@@ -1359,15 +1446,15 @@
         "tw",
         "class",
         "date",
-        "long",
-        "name",
         "namespace",
-        "new",
-        "offset",
-        "param",
         "public",
-        "return",
-        "returns"
+        "static",
+        "summary",
+        "time",
+        "unix",
+        "供日期时",
+        "值的扩展",
+        "将日期时"
       ],
       "relations": {
         "capabilities": [
@@ -1402,17 +1489,17 @@
         "extensions",
         "src",
         "tw",
-        "add",
-        "date",
-        "day",
-        "end",
-        "max",
-        "name",
         "param",
-        "per",
-        "public",
-        "return",
-        "returns"
+        "summary",
+        "一个计时",
+        "一为每周",
+        "一天返回",
+        "个计时周",
+        "为每周第",
+        "以星期一",
+        "后一个计",
+        "周最后一",
+        "周第一天"
       ],
       "relations": {
         "capabilities": [
@@ -1453,11 +1540,11 @@
         "calculate",
         "date",
         "int",
-        "langword",
-        "name",
-        "param",
         "public",
-        "return"
+        "return",
+        "static",
+        "summary",
+        "time"
       ],
       "relations": {
         "capabilities": [
@@ -1497,12 +1584,12 @@
         "concurrent",
         "dictionary",
         "dynamic",
-        "key",
-        "name",
         "namespace",
-        "param",
         "public",
-        "returns"
+        "static",
+        "summary",
+        "system",
+        "using"
       ],
       "relations": {
         "capabilities": [
@@ -1537,17 +1624,17 @@
         "extensions",
         "src",
         "tw",
-        "argument",
-        "cref",
         "default",
-        "dictionary",
-        "exception",
-        "get",
-        "iread",
         "key",
         "langword",
         "name",
-        "null"
+        "param",
+        "returns",
+        "see",
+        "tkey",
+        "tvalue",
+        "typeparam",
+        "不存在时"
       ],
       "relations": {
         "capabilities": [
@@ -1582,17 +1669,17 @@
         "extensions",
         "src",
         "tw",
-        "bool",
         "class",
-        "empty",
         "enumerable",
-        "ienumerable",
         "langword",
-        "name",
         "namespace",
         "null",
-        "param",
-        "public"
+        "public",
+        "see",
+        "static",
+        "summary",
+        "举序列的",
+        "供可枚举"
       ],
       "relations": {
         "capabilities": [
@@ -1629,15 +1716,15 @@
         "tw",
         "action",
         "argument",
-        "async",
-        "check",
         "cref",
-        "each",
         "exception",
-        "foreach",
-        "func",
-        "ienumerable",
-        "langword"
+        "langword",
+        "name",
+        "null",
+        "paramref",
+        "returns",
+        "see",
+        "source"
       ],
       "relations": {
         "capabilities": [
@@ -1672,17 +1759,17 @@
         "extensions",
         "src",
         "tw",
-        "argument",
-        "bool",
         "condition",
-        "cref",
-        "exception",
-        "ienumerable",
-        "langword",
         "name",
-        "null",
         "param",
-        "paramref"
+        "predicate",
+        "source",
+        "summary",
+        "为真时筛",
+        "仅在条件",
+        "件为真时",
+        "否应用谓",
+        "在条件为"
       ],
       "relations": {
         "capabilities": [
@@ -1717,17 +1804,17 @@
         "extensions",
         "src",
         "tw",
-        "argument",
         "class",
-        "cref",
         "exception",
-        "langword",
-        "name",
         "namespace",
-        "null",
-        "param",
-        "paramref",
-        "public"
+        "public",
+        "runtime",
+        "services",
+        "static",
+        "summary",
+        "system",
+        "using",
+        "供异常扩"
       ],
       "relations": {
         "capabilities": [
@@ -1762,17 +1849,17 @@
         "guidextensions",
         "src",
         "tw",
-        "bool",
         "class",
-        "cref",
-        "empty",
         "guid",
         "langword",
         "name",
         "namespace",
         "null",
         "param",
-        "paramref"
+        "public",
+        "see",
+        "static",
+        "summary"
       ],
       "relations": {
         "capabilities": [
@@ -1807,17 +1894,17 @@
         "listextensions",
         "src",
         "tw",
-        "argument",
         "class",
-        "cref",
-        "exception",
-        "langword",
         "list",
-        "name",
         "namespace",
-        "null",
-        "param",
-        "paramref"
+        "public",
+        "static",
+        "summary",
+        "供可变列",
+        "列表扩展",
+        "列表的只",
+        "变列表扩",
+        "可变列表"
       ],
       "relations": {
         "capabilities": [
@@ -1852,17 +1939,17 @@
         "listextensions",
         "src",
         "tw",
-        "add",
         "argument",
-        "check",
         "cref",
         "exception",
-        "ilist",
         "item",
         "langword",
-        "last",
         "name",
-        "null"
+        "null",
+        "param",
+        "paramref",
+        "see",
+        "source"
       ],
       "relations": {
         "capabilities": [
@@ -1897,17 +1984,17 @@
         "listextensions",
         "src",
         "tw",
-        "argument",
-        "cref",
-        "exception",
         "factory",
-        "ilist",
         "item",
-        "langword",
         "name",
-        "null",
         "param",
-        "paramref"
+        "selector",
+        "于选择待",
+        "元素的工",
+        "元素的谓",
+        "前元素的",
+        "当前元素",
+        "待替换元"
       ],
       "relations": {
         "capabilities": [
@@ -1943,16 +2030,16 @@
         "src",
         "tw",
         "add",
-        "argument",
-        "cref",
-        "exception",
         "factory",
-        "index",
         "item",
         "list",
-        "name",
         "new",
-        "null"
+        "return",
+        "summary",
+        "var",
+        "一个匹配",
+        "个匹配元",
+        "元素移动"
       ],
       "relations": {
         "capabilities": [
@@ -1987,17 +2074,17 @@
         "numberextensions",
         "src",
         "tw",
-        "argument",
-        "bool",
         "class",
-        "cref",
-        "even",
-        "exception",
         "globalization",
-        "int",
-        "long",
         "namespace",
-        "number"
+        "number",
+        "public",
+        "static",
+        "summary",
+        "system",
+        "using",
+        "供数值扩",
+        "值扩展方"
       ],
       "relations": {
         "capabilities": [
@@ -2032,17 +2119,17 @@
         "numberextensions",
         "src",
         "tw",
-        "argument",
-        "cref",
-        "decimal",
-        "decimals",
         "double",
-        "exception",
         "int",
-        "math",
-        "name",
-        "out",
-        "param"
+        "public",
+        "round",
+        "source",
+        "static",
+        "summary",
+        "入到指定",
+        "到指定小",
+        "双精度浮",
+        "定小数位"
       ],
       "relations": {
         "capabilities": [
@@ -2077,17 +2164,17 @@
         "objectextensions",
         "src",
         "tw",
-        "argument",
-        "cast",
         "class",
-        "cref",
-        "exception",
-        "invalid",
-        "langword",
-        "name",
         "namespace",
-        "null",
-        "obj"
+        "object",
+        "public",
+        "static",
+        "summary",
+        "供通用对",
+        "值扩展方",
+        "对象值扩",
+        "对象转换",
+        "将对象转"
       ],
       "relations": {
         "capabilities": [
@@ -2124,15 +2211,15 @@
         "tw",
         "class",
         "default",
-        "emit",
-        "encoder",
         "encoding",
         "namespace",
         "new",
         "private",
         "public",
         "readonly",
-        "should"
+        "static",
+        "stream",
+        "summary"
       ],
       "relations": {
         "capabilities": [
@@ -2167,17 +2254,17 @@
         "src",
         "streamextensions",
         "tw",
-        "argument",
-        "cref",
-        "encoding",
-        "exception",
-        "langword",
-        "name",
-        "null",
-        "param",
-        "paramref",
-        "public",
-        "see"
+        "summary",
+        "utf",
+        "不重置位",
+        "且不重置",
+        "位置写入",
+        "使用无字",
+        "写入文本",
+        "前位置写",
+        "在流当前",
+        "字节顺序",
+        "序标记的"
       ],
       "relations": {
         "capabilities": [
@@ -2212,17 +2299,17 @@
         "src",
         "stringextensions",
         "tw",
-        "bool",
         "class",
-        "empty",
         "expressions",
-        "langword",
         "namespace",
-        "null",
         "public",
         "regular",
         "see",
-        "static"
+        "static",
+        "string",
+        "summary",
+        "system",
+        "text"
       ],
       "relations": {
         "capabilities": [
@@ -2257,17 +2344,17 @@
         "src",
         "stringextensions",
         "tw",
-        "char",
         "comparison",
-        "empty",
         "ends",
-        "ensure",
-        "len",
         "name",
-        "null",
-        "ordinal",
         "param",
-        "paramref"
+        "str",
+        "string",
+        "summary",
+        "type",
+        "串以指定",
+        "以指定字",
+        "保字符串"
       ],
       "relations": {
         "capabilities": [
@@ -2303,16 +2390,16 @@
         "stringextensions",
         "tw",
         "comparison",
-        "empty",
         "fix",
         "fixes",
-        "foreach",
-        "length",
-        "null",
         "ordinal",
         "params",
         "post",
-        "postfix"
+        "public",
+        "remove",
+        "return",
+        "static",
+        "str"
       ],
       "relations": {
         "capabilities": [
@@ -2347,17 +2434,17 @@
         "src",
         "stringextensions",
         "tw",
-        "byte",
-        "bytes",
         "empty",
-        "endings",
-        "get",
-        "line",
         "lines",
         "none",
         "normalize",
         "null",
-        "options"
+        "options",
+        "public",
+        "return",
+        "separator",
+        "split",
+        "static"
       ],
       "relations": {
         "capabilities": [
@@ -2393,16 +2480,16 @@
         "stringextensions",
         "tw",
         "argument",
-        "check",
         "chunk",
         "cref",
-        "empty",
         "exception",
-        "ienumerable",
-        "int",
         "name",
-        "null",
-        "out"
+        "out",
+        "paramref",
+        "range",
+        "summary",
+        "串拆分为",
+        "为固定大"
       ],
       "relations": {
         "capabilities": [
@@ -2437,17 +2524,17 @@
         "src",
         "tw",
         "typeextensions",
-        "argument",
-        "assembly",
         "class",
         "cref",
-        "exception",
-        "full",
-        "get",
-        "langword",
-        "name",
         "namespace",
-        "null"
+        "public",
+        "see",
+        "static",
+        "summary",
+        "type",
+        "值扩展方",
+        "名以及程",
+        "回完整类"
       ],
       "relations": {
         "capabilities": [
@@ -2482,17 +2569,17 @@
         "primitives",
         "src",
         "tw",
-        "action",
-        "argument",
-        "class",
-        "cref",
-        "exception",
-        "langword",
         "name",
-        "named",
         "namespace",
-        "null",
-        "object"
+        "summary",
+        "typeparam",
+        "与操作委",
+        "作参数类",
+        "作委托关",
+        "名称与操",
+        "委托关联",
+        "将通过验",
+        "操作参数"
       ],
       "relations": {
         "capabilities": [
@@ -2527,16 +2614,17 @@
         "primitives",
         "src",
         "tw",
-        "action",
         "class",
-        "list",
         "name",
         "named",
         "namespace",
-        "object",
         "public",
         "summary",
-        "typeparam"
+        "typeparam",
+        "为具名操",
+        "作参数类",
+        "作提供可",
+        "供可变列"
       ],
       "relations": {
         "capabilities": [
@@ -2571,17 +2659,17 @@
         "primitives",
         "src",
         "tw",
-        "argument",
-        "check",
-        "class",
-        "cref",
-        "exception",
-        "get",
-        "langword",
         "name",
-        "named",
         "namespace",
-        "null"
+        "param",
+        "summary",
+        "为基元描",
+        "供具名基",
+        "元描述符",
+        "具名基对",
+        "名基对象",
+        "基元描述",
+        "描述符提"
       ],
       "relations": {
         "capabilities": [
@@ -2616,16 +2704,17 @@
         "primitives",
         "src",
         "tw",
-        "class",
-        "list",
         "name",
-        "named",
         "namespace",
-        "object",
-        "public",
         "summary",
         "typeparam",
-        "where"
+        "中存储的",
+        "为具名基",
+        "供可变列",
+        "元描述符",
+        "具名基元",
+        "列表中存",
+        "可变列表"
       ],
       "relations": {
         "capabilities": [
@@ -2660,17 +2749,17 @@
         "primitives",
         "src",
         "tw",
-        "argument",
-        "class",
-        "cref",
-        "exception",
-        "langword",
         "name",
-        "named",
         "namespace",
-        "null",
         "param",
-        "paramref"
+        "summary",
+        "与类型匹",
+        "匹配谓词",
+        "名称与类",
+        "型匹配谓",
+        "将通过验",
+        "的名称与",
+        "称与类型"
       ],
       "relations": {
         "capabilities": [
@@ -2705,17 +2794,17 @@
         "primitives",
         "src",
         "tw",
-        "argument",
         "class",
-        "cref",
-        "exception",
-        "extensions",
-        "list",
-        "name",
-        "named",
         "namespace",
-        "null",
-        "param"
+        "public",
+        "static",
+        "summary",
+        "供添加具",
+        "便利方法",
+        "具名类型",
+        "加具名类",
+        "名类型选",
+        "器的便利"
       ],
       "relations": {
         "capabilities": [
@@ -2751,16 +2840,16 @@
         "src",
         "tw",
         "argument",
-        "class",
         "cref",
         "exception",
-        "langword",
         "name",
-        "named",
         "namespace",
         "null",
         "param",
-        "paramref"
+        "paramref",
+        "see",
+        "summary",
+        "value"
       ],
       "relations": {
         "capabilities": [
@@ -2794,7 +2883,18 @@
         "readme",
         "src",
         "tw",
-        "核心基础构件目录"
+        "核心基础构件目录",
+        "于承载后",
+        "后端通用",
+        "基础工具",
+        "基础构件",
+        "录用于承",
+        "心基础构",
+        "扩展方法",
+        "承载后端",
+        "本目录用",
+        "构件目录",
+        "核心基础"
       ],
       "relations": {
         "capabilities": [
@@ -2827,17 +2927,17 @@
         "reflection",
         "src",
         "tw",
-        "assemblies",
-        "assembly",
-        "find",
-        "finder",
-        "get",
-        "interface",
-        "iread",
-        "itype",
-        "list",
         "namespace",
-        "only"
+        "summary",
+        "system",
+        "using",
+        "中查找运",
+        "从配置的",
+        "合中查找",
+        "序集集合",
+        "找运行时",
+        "查找运行",
+        "的程序集"
       ],
       "relations": {
         "capabilities": [
@@ -2872,17 +2972,17 @@
         "reflectioncache",
         "src",
         "tw",
-        "attribute",
-        "cache",
-        "class",
         "collections",
         "concurrent",
-        "dictionary",
-        "iread",
-        "key",
-        "list",
         "namespace",
-        "only"
+        "summary",
+        "system",
+        "using",
+        "为特性和",
+        "和异步方",
+        "型提供带",
+        "异步方法",
+        "性和异步"
       ],
       "relations": {
         "capabilities": [
@@ -2970,9 +3070,9 @@
         "exception",
         "get",
         "langword",
-        "method",
         "name",
-        "null"
+        "null",
+        "parameterless"
       ],
       "relations": {
         "capabilities": [
@@ -3010,14 +3110,14 @@
         "async",
         "attribute",
         "cache",
-        "constructor",
         "count",
-        "endif",
-        "int",
-        "interfaces",
-        "method",
         "name",
-        "param"
+        "param",
+        "return",
+        "summary",
+        "type",
+        "回类型缓",
+        "型缓存条"
       ],
       "relations": {
         "capabilities": [
@@ -3052,17 +3152,17 @@
         "src",
         "tw",
         "typefinder",
-        "assembly",
-        "class",
-        "finder",
-        "itype",
-        "name",
         "namespace",
-        "prefixes",
-        "private",
-        "public",
-        "readonly",
-        "sealed"
+        "summary",
+        "system",
+        "using",
+        "中查找运",
+        "从显式提",
+        "供的程序",
+        "序集中查",
+        "式提供的",
+        "找运行时",
+        "提供的程"
       ],
       "relations": {
         "capabilities": [
@@ -3142,17 +3242,17 @@
         "src",
         "tw",
         "typefinderextensions",
-        "argument",
-        "class",
         "cref",
-        "exception",
-        "extensions",
         "finder",
         "itype",
-        "name",
         "namespace",
-        "null",
-        "param"
+        "public",
+        "see",
+        "summary",
+        "不依赖额",
+        "件的便利",
+        "供不依赖",
+        "依赖额外"
       ],
       "relations": {
         "capabilities": [
@@ -3189,15 +3289,15 @@
         "src",
         "tw",
         "aes",
-        "base64",
-        "class",
-        "input",
-        "key",
-        "langword",
-        "name",
         "namespace",
-        "param",
-        "paramref"
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的",
+        "供用于字"
       ],
       "relations": {
         "capabilities": [
@@ -3284,12 +3384,12 @@
         "algorithm",
         "async",
         "cancellation",
-        "ecb",
         "encrypt",
-        "file",
         "key",
         "mode",
-        "name"
+        "padding",
+        "return",
+        "stream"
       ],
       "relations": {
         "capabilities": [
@@ -3510,16 +3610,16 @@
         "security",
         "src",
         "tw",
-        "base64",
-        "class",
         "des",
-        "input",
-        "key",
-        "langword",
-        "name",
         "namespace",
-        "param",
-        "paramref"
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的",
+        "供用于字"
       ],
       "relations": {
         "capabilities": [
@@ -3556,16 +3656,16 @@
         "security",
         "src",
         "tw",
-        "argument",
-        "byte",
         "bytes",
-        "cipher",
-        "cref",
-        "decrypt",
         "ecb",
-        "exception",
         "key",
-        "langword"
+        "langword",
+        "name",
+        "null",
+        "param",
+        "see",
+        "summary",
+        "加密密钥"
       ],
       "relations": {
         "capabilities": [
@@ -3611,7 +3711,7 @@
         "file",
         "key",
         "mode",
-        "name"
+        "padding"
       ],
       "relations": {
         "capabilities": [
@@ -3970,16 +4070,16 @@
         "security",
         "src",
         "tw",
-        "class",
-        "hasher",
         "hmac",
-        "input",
-        "key",
         "md5",
-        "name",
         "namespace",
-        "param",
-        "public"
+        "public",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -4016,16 +4116,16 @@
         "security",
         "src",
         "tw",
-        "cancellation",
         "case",
         "file",
-        "hash",
         "hmac",
         "key",
         "md5",
         "name",
         "param",
-        "path"
+        "path",
+        "summary",
+        "upper"
       ],
       "relations": {
         "capabilities": [
@@ -4065,13 +4165,13 @@
         "async",
         "cancellation",
         "data",
-        "encoding",
         "hash",
         "hmac",
         "hmacmd5",
-        "input",
-        "key",
-        "langword"
+        "md5",
+        "short",
+        "summary",
+        "token"
       ],
       "relations": {
         "capabilities": [
@@ -4384,16 +4484,16 @@
         "security",
         "src",
         "tw",
-        "class",
-        "hasher",
         "hmac",
-        "input",
-        "key",
-        "name",
         "namespace",
-        "param",
         "public",
-        "sha1"
+        "sha1",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [

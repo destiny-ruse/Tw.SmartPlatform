@@ -14,17 +14,17 @@
         "primitives",
         "src",
         "tw",
-        "argument",
-        "check",
-        "class",
-        "cref",
-        "exception",
-        "get",
-        "langword",
         "name",
-        "named",
         "namespace",
-        "null"
+        "param",
+        "summary",
+        "为基元描",
+        "供具名基",
+        "元描述符",
+        "具名基对",
+        "名基对象",
+        "基元描述",
+        "描述符提"
       ],
       "relations": {
         "capabilities": [

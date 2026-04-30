@@ -14,17 +14,17 @@
         "dotnet",
         "src",
         "tw",
-        "allow",
-        "attribute",
-        "class",
-        "false",
-        "get",
-        "inherited",
-        "multiple",
         "name",
         "namespace",
         "param",
-        "public"
+        "summary",
+        "到选项类",
+        "型的配置",
+        "定到选项",
+        "应绑定到",
+        "方在选项",
+        "标识应绑",
+        "用方在选"
       ],
       "relations": {
         "capabilities": [

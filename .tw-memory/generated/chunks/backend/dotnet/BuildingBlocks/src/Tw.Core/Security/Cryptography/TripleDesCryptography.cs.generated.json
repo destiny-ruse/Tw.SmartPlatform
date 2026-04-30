@@ -15,16 +15,16 @@
         "src",
         "tripledescryptography",
         "tw",
-        "base64",
-        "class",
         "des",
-        "input",
-        "key",
-        "name",
         "namespace",
-        "param",
-        "paramref",
-        "public"
+        "summary",
+        "system",
+        "text",
+        "triple",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的"
       ],
       "relations": {
         "capabilities": [
@@ -62,16 +62,16 @@
         "src",
         "tripledescryptography",
         "tw",
-        "argument",
-        "byte",
         "bytes",
-        "cipher",
-        "cref",
-        "decrypt",
         "ecb",
-        "exception",
         "key",
-        "langword"
+        "langword",
+        "name",
+        "null",
+        "param",
+        "see",
+        "summary",
+        "加密密钥"
       ],
       "relations": {
         "capabilities": [

@@ -16,15 +16,15 @@
         "tw",
         "class",
         "date",
-        "long",
-        "name",
         "namespace",
-        "new",
-        "offset",
-        "param",
         "public",
-        "return",
-        "returns"
+        "static",
+        "summary",
+        "time",
+        "unix",
+        "供日期时",
+        "值的扩展",
+        "将日期时"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "extensions",
         "src",
         "tw",
-        "add",
-        "date",
-        "day",
-        "end",
-        "max",
-        "name",
         "param",
-        "per",
-        "public",
-        "return",
-        "returns"
+        "summary",
+        "一个计时",
+        "一为每周",
+        "一天返回",
+        "个计时周",
+        "为每周第",
+        "以星期一",
+        "后一个计",
+        "周最后一",
+        "周第一天"
       ],
       "relations": {
         "capabilities": [
@@ -112,11 +112,11 @@
         "calculate",
         "date",
         "int",
-        "langword",
-        "name",
-        "param",
         "public",
-        "return"
+        "return",
+        "static",
+        "summary",
+        "time"
       ],
       "relations": {
         "capabilities": [

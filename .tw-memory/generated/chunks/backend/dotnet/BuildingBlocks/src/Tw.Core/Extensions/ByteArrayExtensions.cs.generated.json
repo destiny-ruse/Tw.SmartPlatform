@@ -16,15 +16,15 @@
         "tw",
         "array",
         "byte",
-        "bytes",
-        "case",
         "class",
-        "name",
         "namespace",
-        "param",
-        "paramref",
         "public",
-        "returns"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "供字节数"
       ],
       "relations": {
         "capabilities": [

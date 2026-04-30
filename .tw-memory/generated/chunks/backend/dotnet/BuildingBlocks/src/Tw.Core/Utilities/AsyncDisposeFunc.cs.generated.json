@@ -16,15 +16,15 @@
         "utilities",
         "async",
         "class",
-        "cref",
-        "disposable",
-        "dispose",
-        "func",
-        "iasync",
-        "name",
         "namespace",
-        "param",
-        "private"
+        "public",
+        "sealed",
+        "summary",
+        "using",
+        "例释放时",
+        "在实例释",
+        "定异步委",
+        "实例释放"
       ],
       "relations": {
         "capabilities": [

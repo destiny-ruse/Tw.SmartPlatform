@@ -11,7 +11,10 @@
         "rules",
         "standards",
         "testing",
-        "契约测试规范"
+        "契约测试规范",
+        "契约测试",
+        "测试规范",
+        "约测试规"
       ],
       "relations": {
         "capabilities": [
@@ -45,7 +48,17 @@
         "api",
         "async",
         "rest",
-        "rpc"
+        "rpc",
+        "和客户端",
+        "在独立演",
+        "契约测试",
+        "客户端集",
+        "成在独立",
+        "户端集成",
+        "测试规范",
+        "独立演进",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -85,7 +98,11 @@
         "rest",
         "rpc",
         "schema",
-        "sdk"
+        "sdk",
+        "契约",
+        "契约测试",
+        "客户端",
+        "方适配层"
       ],
       "relations": {
         "capabilities": [
@@ -117,19 +134,19 @@
         "standards",
         "testing",
         "api",
-        "async",
-        "channel",
-        "header",
-        "http",
-        "message",
-        "payload",
-        "pii",
-        "proto",
-        "rest",
-        "rpc",
-        "safe",
-        "schema",
-        "status"
+        "公共",
+        "务消息和",
+        "可执行契",
+        "和生成客",
+        "客户端必",
+        "必须有可",
+        "息和生成",
+        "成客户端",
+        "户端必须",
+        "执行契约",
+        "有可执行",
+        "服务消息",
+        "消息和生"
       ],
       "relations": {
         "capabilities": [
@@ -163,7 +180,6 @@
         "1001",
         "api",
         "body",
-        "change",
         "consumer",
         "get",
         "items",
@@ -173,7 +189,8 @@
         "orders",
         "paid",
         "path",
-        "provider"
+        "provider",
+        "request"
       ],
       "relations": {
         "capabilities": [
@@ -205,10 +222,19 @@
         "standards",
         "testing",
         "检查清单",
-        "api",
-        "pii",
-        "proto",
-        "schema"
+        "schema",
+        "供方和消",
+        "各自负责",
+        "否覆盖提",
+        "和消费方",
+        "提供方和",
+        "方各自负",
+        "方和消费",
+        "是否检查",
+        "是否覆盖",
+        "消费方各",
+        "盖提供方",
+        "自负责验"
       ],
       "relations": {
         "capabilities": [
@@ -280,7 +306,20 @@
         "rules",
         "standards",
         "testing",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

@@ -14,17 +14,17 @@
         "primitives",
         "src",
         "tw",
-        "argument",
-        "class",
-        "cref",
-        "exception",
-        "langword",
         "name",
-        "named",
         "namespace",
-        "null",
         "param",
-        "paramref"
+        "summary",
+        "与类型匹",
+        "匹配谓词",
+        "名称与类",
+        "型匹配谓",
+        "将通过验",
+        "的名称与",
+        "称与类型"
       ],
       "relations": {
         "capabilities": [

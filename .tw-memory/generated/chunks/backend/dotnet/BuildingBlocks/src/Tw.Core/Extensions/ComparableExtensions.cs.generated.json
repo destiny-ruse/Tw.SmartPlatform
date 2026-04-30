@@ -16,15 +16,15 @@
         "tw",
         "class",
         "comparable",
-        "inclusive",
-        "langword",
-        "max",
-        "min",
-        "name",
         "namespace",
-        "param",
-        "paramref",
-        "public"
+        "public",
+        "static",
+        "summary",
+        "供可比较",
+        "值是否位",
+        "值的扩展",
+        "可比较值",
+        "回值是否"
       ],
       "relations": {
         "capabilities": [

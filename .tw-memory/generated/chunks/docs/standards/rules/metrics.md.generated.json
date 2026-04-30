@@ -39,7 +39,21 @@
         "metrics",
         "rules",
         "standards",
-        "slo"
+        "slo",
+        "于降低服",
+        "低服务健",
+        "健康只能",
+        "务健康只",
+        "只能靠日",
+        "告警口径",
+        "康只能靠",
+        "指标规范",
+        "日志推断",
+        "服务健康",
+        "标规范用",
+        "用于降低",
+        "目标",
+        "能靠日志"
       ],
       "relations": {
         "capabilities": [
@@ -75,7 +89,14 @@
         "http",
         "rpc",
         "services",
-        "src"
+        "src",
+        "关适配器",
+        "后台作业",
+        "基础设施",
+        "处理任务",
+        "息消费者",
+        "批处理任",
+        "服务"
       ],
       "relations": {
         "capabilities": [
@@ -104,15 +125,21 @@
         "metrics",
         "rules",
         "standards",
-        "dependency",
-        "environment",
-        "operation",
-        "service",
-        "slo",
-        "status",
-        "trace",
-        "url",
-        "version"
+        "任务处理",
+        "依赖调用",
+        "列或任务",
+        "务处理结",
+        "务必须暴",
+        "处理结果",
+        "延迟",
+        "必须暴露",
+        "或任务处",
+        "暴露请求",
+        "服务必须",
+        "果等核心",
+        "理结果等",
+        "等核心指",
+        "结果等核"
       ],
       "relations": {
         "capabilities": [
@@ -145,17 +172,17 @@
         "dependency",
         "duration",
         "environment",
-        "histogram",
         "http",
         "labels",
         "name",
         "operation",
-        "outcome",
         "request",
         "requests",
         "seconds",
         "server",
-        "service"
+        "service",
+        "status",
+        "total"
       ],
       "relations": {
         "capabilities": [
@@ -185,8 +212,20 @@
         "rules",
         "standards",
         "检查清单",
-        "trace",
-        "url"
+        "任务结果",
+        "依赖",
+        "列和任务",
+        "务结果是",
+        "可查询指",
+        "否有可查",
+        "和任务结",
+        "型和单位",
+        "延迟",
+        "指标名称",
+        "是否有可",
+        "有可查询",
+        "果是否有",
+        "查询指标"
       ],
       "relations": {
         "capabilities": [
@@ -249,7 +288,21 @@
         "metrics",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [

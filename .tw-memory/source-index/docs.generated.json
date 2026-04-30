@@ -669,7 +669,7 @@
       },
       "language": "deploy",
       "service": null,
-      "source_hash": "sha256:586a72dde2bd11a9827b9375a7c314a92015b1c32806b221a0a21b144e5eebaa",
+      "source_hash": "sha256:b401d0c429f35f9ee1a69559f0132d98c188e1484a4bab0f4a85d022de0e2d6a",
       "source_path": "deploy/ci-cd/README.md",
       "source_type": "readme"
     },

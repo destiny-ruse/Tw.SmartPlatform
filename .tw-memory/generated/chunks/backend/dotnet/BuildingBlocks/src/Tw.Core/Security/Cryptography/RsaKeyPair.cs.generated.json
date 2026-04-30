@@ -18,13 +18,13 @@
         "key",
         "name",
         "namespace",
-        "pair",
         "param",
         "pem",
         "pkcs",
         "private",
         "public",
-        "readonly"
+        "rsa",
+        "summary"
       ],
       "relations": {
         "capabilities": [

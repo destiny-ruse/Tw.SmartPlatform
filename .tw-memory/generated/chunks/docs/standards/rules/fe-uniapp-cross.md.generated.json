@@ -47,7 +47,18 @@
         "standards",
         "uniapp",
         "app",
-        "uni"
+        "uni",
+        "代码必须",
+        "件编译和",
+        "和运行差",
+        "平台能力",
+        "式管理平",
+        "必须显式",
+        "显式管理",
+        "条件编译",
+        "理平台能",
+        "目标",
+        "码必须显"
       ],
       "relations": {
         "capabilities": [
@@ -88,7 +99,10 @@
         "type",
         "uni",
         "vue",
-        "web"
+        "web",
+        "台条件编",
+        "合式函数",
+        "平台条件"
       ],
       "relations": {
         "capabilities": [
@@ -121,14 +135,18 @@
         "standards",
         "uniapp",
         "adapter",
-        "app",
         "composable",
-        "css",
         "ifdef",
-        "json",
-        "pages",
         "service",
-        "uni"
+        "不得在多",
+        "个页面复",
+        "优先封装",
+        "先封装在",
+        "台差异必",
+        "和平台字",
+        "在多个页",
+        "多个页面",
+        "差异必须"
       ],
       "relations": {
         "capabilities": [
@@ -166,13 +184,13 @@
         "await",
         "choose",
         "const",
-        "count",
         "export",
         "function",
         "ifdef",
         "image",
         "null",
-        "plus"
+        "plus",
+        "promise"
       ],
       "relations": {
         "capabilities": [
@@ -206,11 +224,17 @@
         "uniapp",
         "检查清单",
         "adapter",
-        "app",
         "composable",
-        "json",
-        "pages",
-        "service"
+        "service",
+        "件编译范",
+        "台差异是",
+        "否封装在",
+        "否最小且",
+        "围是否最",
+        "小且只覆",
+        "差异是否",
+        "平台差异",
+        "异是否封"
       ],
       "relations": {
         "capabilities": [
@@ -277,7 +301,19 @@
         "rules",
         "standards",
         "uniapp",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [

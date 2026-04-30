@@ -45,7 +45,19 @@
         "oidc",
         "rules",
         "standards",
-        "oauth2"
+        "oauth2",
+        "于降低登",
+        "令牌误用",
+        "低登录流",
+        "录流程选",
+        "权限边界",
+        "流程选型",
+        "用于降低",
+        "登录流程",
+        "目标",
+        "程选型错",
+        "范用于降",
+        "规范用于"
       ],
       "relations": {
         "capabilities": [
@@ -123,12 +135,19 @@
         "oidc",
         "rules",
         "standards",
-        "api",
-        "audience",
         "pkce",
-        "scope",
-        "uri",
-        "url"
+        "互式登录",
+        "交互式登",
+        "使用授权",
+        "式并启用",
+        "式登录必",
+        "录必须使",
+        "必须使用",
+        "户交互式",
+        "授权码模",
+        "权码模式",
+        "模式并启",
+        "浏览器"
       ],
       "relations": {
         "capabilities": [
@@ -162,7 +181,6 @@
         "rules",
         "standards",
         "app",
-        "audience",
         "authorization",
         "callback",
         "code",
@@ -170,10 +188,11 @@
         "example",
         "flow",
         "https",
-        "idp",
         "issuer",
         "pkce",
-        "redirect"
+        "redirect",
+        "required",
+        "token"
       ],
       "relations": {
         "capabilities": [
@@ -207,11 +226,18 @@
         "rules",
         "standards",
         "检查清单",
-        "audience",
         "pkce",
-        "scope",
-        "uri",
-        "url"
+        "否按客户",
+        "型选择授",
+        "客户端凭",
+        "客户端类",
+        "录流程是",
+        "户端凭据",
+        "户端类型",
+        "择授权码",
+        "按客户端",
+        "授权码加",
+        "是否按客"
       ],
       "relations": {
         "capabilities": [
@@ -284,7 +310,19 @@
         "oidc",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [

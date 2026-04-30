@@ -16,15 +16,15 @@
         "tw",
         "class",
         "collection",
-        "cref",
-        "exception",
-        "false",
-        "item",
-        "langword",
-        "name",
         "namespace",
-        "param",
-        "public"
+        "public",
+        "static",
+        "summary",
+        "供可变集",
+        "变集合的",
+        "可变集合",
+        "合尚未包",
+        "合的扩展"
       ],
       "relations": {
         "capabilities": [
@@ -62,15 +62,15 @@
         "tw",
         "all",
         "argument",
-        "bool",
         "cref",
         "exception",
-        "func",
-        "icollection",
         "ilist",
         "langword",
         "name",
-        "null"
+        "null",
+        "paramref",
+        "predicate",
+        "public"
       ],
       "relations": {
         "capabilities": [

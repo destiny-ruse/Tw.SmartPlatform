@@ -15,16 +15,16 @@
         "security",
         "src",
         "tw",
-        "class",
-        "hasher",
         "hmac",
-        "input",
-        "key",
         "md5",
-        "name",
         "namespace",
-        "param",
-        "public"
+        "public",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [
@@ -62,16 +62,16 @@
         "security",
         "src",
         "tw",
-        "cancellation",
         "case",
         "file",
-        "hash",
         "hmac",
         "key",
         "md5",
         "name",
         "param",
-        "path"
+        "path",
+        "summary",
+        "upper"
       ],
       "relations": {
         "capabilities": [
@@ -112,13 +112,13 @@
         "async",
         "cancellation",
         "data",
-        "encoding",
         "hash",
         "hmac",
         "hmacmd5",
-        "input",
-        "key",
-        "langword"
+        "md5",
+        "short",
+        "summary",
+        "token"
       ],
       "relations": {
         "capabilities": [

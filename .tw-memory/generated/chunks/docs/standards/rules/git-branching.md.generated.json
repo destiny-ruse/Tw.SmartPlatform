@@ -11,7 +11,13 @@
         "md",
         "rules",
         "standards",
-        "分支与发布管理规范"
+        "分支与发布管理规范",
+        "与发布管",
+        "分支与发",
+        "发布管理",
+        "布管理规",
+        "支与发布",
+        "管理规范"
       ],
       "relations": {
         "capabilities": [
@@ -42,7 +48,20 @@
         "md",
         "rules",
         "standards",
-        "hotfix"
+        "hotfix",
+        "与发布管",
+        "于降低长",
+        "低长期分",
+        "分支与发",
+        "分支漂移",
+        "发布管理",
+        "合并边界",
+        "布管理规",
+        "并边界不",
+        "支与发布",
+        "期分支漂",
+        "理规范用",
+        "用于降低"
       ],
       "relations": {
         "capabilities": [
@@ -74,7 +93,19 @@
         "rules",
         "standards",
         "适用范围",
-        "spike"
+        "spike",
+        "于所有进",
+        "仓库历史",
+        "修复",
+        "入仓库历",
+        "历史的功",
+        "史的功能",
+        "库历史的",
+        "所有进入",
+        "文档",
+        "有进入仓",
+        "本规范适",
+        "用于所有"
       ],
       "relations": {
         "capabilities": [
@@ -105,20 +136,20 @@
         "md",
         "rules",
         "standards",
-        "api",
-        "auth",
         "current",
-        "desc",
         "dev",
-        "feat",
-        "fix",
-        "login",
         "main",
         "master",
-        "null",
-        "oidc",
         "release",
-        "response"
+        "test",
+        "主干分支",
+        "仓库约定",
+        "分支只能",
+        "只能是仓",
+        "定的主干",
+        "库约定的",
+        "支只能是",
+        "是仓库约"
       ],
       "relations": {
         "capabilities": [
@@ -154,15 +185,15 @@
         "engineering",
         "executable",
         "expand",
-        "force",
         "general",
         "main",
         "only",
-        "origin",
         "pull",
         "push",
         "shell",
-        "switch"
+        "switch",
+        "work",
+        "反例"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +229,15 @@
         "hotfix",
         "scope",
         "short",
-        "type"
+        "type",
+        "主要变更",
+        "分支名称",
+        "分支是否",
+        "变更意图",
+        "名称是否",
+        "并能表达",
+        "支名称是",
+        "支是否基"
       ],
       "relations": {
         "capabilities": [
@@ -266,7 +305,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

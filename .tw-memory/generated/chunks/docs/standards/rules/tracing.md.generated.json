@@ -10,7 +10,10 @@
         "rules",
         "standards",
         "tracing",
-        "链路追踪规范"
+        "链路追踪规范",
+        "路追踪规",
+        "追踪规范",
+        "链路追踪"
       ],
       "relations": {
         "capabilities": [
@@ -40,7 +43,20 @@
         "standards",
         "tracing",
         "span",
-        "trace"
+        "trace",
+        "于降低跨",
+        "低跨服务",
+        "务调用无",
+        "异步任务",
+        "无法串联",
+        "服务调用",
+        "用于降低",
+        "用无法串",
+        "目标",
+        "范用于降",
+        "规范用于",
+        "调用无法",
+        "跨服务调"
       ],
       "relations": {
         "capabilities": [
@@ -78,7 +94,12 @@
         "services",
         "span",
         "src",
-        "trace"
+        "trace",
+        "后台任务",
+        "息消费者",
+        "息生产者",
+        "批处理作",
+        "服务"
       ],
       "relations": {
         "capabilities": [
@@ -107,21 +128,21 @@
         "rules",
         "standards",
         "tracing",
-        "call",
-        "created",
-        "dependency",
-        "environment",
-        "get",
-        "http",
-        "message",
-        "operation",
-        "order",
-        "orders",
-        "payment",
-        "pii",
-        "process",
-        "service",
-        "span"
+        "trace",
+        "任务必须",
+        "依赖调用",
+        "创建或延",
+        "务必须创",
+        "台任务必",
+        "后台任务",
+        "和后台任",
+        "外部依赖",
+        "建或延续",
+        "必须创建",
+        "息消费和",
+        "消息发布",
+        "消息消费",
+        "消费和后"
       ],
       "relations": {
         "capabilities": [
@@ -196,7 +217,18 @@
         "检查清单",
         "span",
         "trace",
-        "url"
+        "url",
+        "上下文",
+        "任务是否",
+        "依赖调用",
+        "创建或延",
+        "务是否创",
+        "台任务是",
+        "名称是否",
+        "后台任务",
+        "否创建或",
+        "和后台任",
+        "建或延续"
       ],
       "relations": {
         "capabilities": [
@@ -261,7 +293,21 @@
         "rules",
         "standards",
         "tracing",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [

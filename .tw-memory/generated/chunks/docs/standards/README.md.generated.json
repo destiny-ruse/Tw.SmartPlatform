@@ -9,7 +9,22 @@
         "md",
         "readme",
         "standards",
-        "工程规范目录"
+        "工程规范目录",
+        "业务无关",
+        "于存放业",
+        "务无关的",
+        "存放业务",
+        "工程规范",
+        "录是项目",
+        "放业务无",
+        "是项目工",
+        "本目录是",
+        "用于存放",
+        "的统一入",
+        "目工程规",
+        "目录是项",
+        "程规范的",
+        "程规范目"
       ],
       "relations": {
         "capabilities": [
@@ -39,7 +54,18 @@
         "authoring",
         "markdown",
         "processes",
-        "standard"
+        "standard",
+        "修改规范",
+        "可直接阅",
+        "增或修改",
+        "应是可直",
+        "或修改规",
+        "接阅读的",
+        "改规范时",
+        "新增或修",
+        "是可直接",
+        "正文",
+        "每篇规范"
       ],
       "relations": {
         "capabilities": [
@@ -69,7 +95,11 @@
         "decisions",
         "processes",
         "references",
-        "rules"
+        "rules",
+        "决策记录",
+        "参考资料",
+        "流程",
+        "规则正文"
       ],
       "relations": {
         "capabilities": [
@@ -103,7 +133,14 @@
         "memory",
         "powershell",
         "python",
-        "tools"
+        "tools",
+        "从仓库根",
+        "仓库根目",
+        "修改本目",
+        "前仓库没",
+        "库根目录",
+        "应从仓库",
+        "当前仓库"
       ],
       "relations": {
         "capabilities": [
@@ -133,7 +170,9 @@
         "decisions",
         "flow",
         "processes",
-        "rfc"
+        "rfc",
+        "决策记录",
+        "流程"
       ],
       "relations": {
         "capabilities": [

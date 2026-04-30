@@ -12,7 +12,10 @@
         "rules",
         "standards",
         "test",
-        "测试数据与"
+        "测试数据与",
+        "测试数据",
+        "规范",
+        "试数据与"
       ],
       "relations": {
         "capabilities": [
@@ -44,7 +47,20 @@
         "mock",
         "rules",
         "standards",
-        "test"
+        "test",
+        "个人信息",
+        "于降低测",
+        "人信息泄",
+        "低测试不",
+        "信息泄露",
+        "实个人信",
+        "息泄露和",
+        "泄露和过",
+        "测试不稳",
+        "测试数据",
+        "环境耦合",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -81,12 +97,15 @@
         "factory",
         "fake",
         "fixture",
-        "pii",
         "seed",
         "server",
         "snapshot",
         "spy",
-        "stub"
+        "stub",
+        "于单元测",
+        "到端测试",
+        "单元测试",
+        "契约测试"
       ],
       "relations": {
         "capabilities": [
@@ -119,13 +138,19 @@
         "rules",
         "standards",
         "test",
-        "factory",
-        "fixture",
         "locale",
-        "payload",
-        "pii",
-        "schema",
-        "server"
+        "不得依赖",
+        "依赖当前",
+        "固定时间",
+        "定性生成",
+        "当前日期",
+        "得依赖当",
+        "必须确定",
+        "据必须确",
+        "排序",
+        "数据必须",
+        "测试数据",
+        "相关输入"
       ],
       "relations": {
         "capabilities": [
@@ -165,12 +190,12 @@
         "example",
         "json",
         "name",
-        "now",
         "phone",
         "production",
         "role",
         "t00",
-        "token"
+        "token",
+        "user"
       ],
       "relations": {
         "capabilities": [
@@ -206,7 +231,16 @@
         "检查清单",
         "fixture",
         "pii",
-        "schema"
+        "不含真实",
+        "产导出数",
+        "令牌或生",
+        "否固定时",
+        "和外部响",
+        "固定时间",
+        "外部响应",
+        "密钥",
+        "导出数据",
+        "序和外部"
       ],
       "relations": {
         "capabilities": [
@@ -276,7 +310,19 @@
         "rules",
         "standards",
         "test",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [

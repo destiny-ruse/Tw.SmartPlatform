@@ -12,7 +12,10 @@
         "response",
         "rules",
         "standards",
-        "错误响应规范"
+        "错误响应规范",
+        "响应规范",
+        "误响应规",
+        "错误响应"
       ],
       "relations": {
         "capabilities": [
@@ -44,7 +47,20 @@
         "md",
         "response",
         "rules",
-        "standards"
+        "standards",
+        "于降低客",
+        "低客户端",
+        "依赖异常",
+        "务端泄露",
+        "响应规范",
+        "客户端依",
+        "应规范用",
+        "异常文本",
+        "户端依赖",
+        "服务端泄",
+        "用于降低",
+        "目标",
+        "端依赖异"
       ],
       "relations": {
         "capabilities": [
@@ -88,7 +104,8 @@
         "rest",
         "rpc",
         "services",
-        "src"
+        "src",
+        "单校验失"
       ],
       "relations": {
         "capabilities": [
@@ -122,14 +139,18 @@
         "rules",
         "standards",
         "code",
-        "details",
-        "field",
-        "http",
         "json",
         "message",
-        "pii",
-        "sql",
-        "trace"
+        "trace",
+        "使用稳定",
+        "名和类型",
+        "和类型不",
+        "响应必须",
+        "型不得随",
+        "字段名和",
+        "对象",
+        "应必须使",
+        "必须使用"
       ],
       "relations": {
         "capabilities": [
@@ -165,16 +186,16 @@
         "af7651916cd43dd8448eb211c80319c",
         "code",
         "details",
-        "exception",
         "failed",
         "field",
         "items",
         "json",
         "message",
         "min",
-        "null",
-        "order",
-        "quantity"
+        "quantity",
+        "trace",
+        "validation",
+        "value"
       ],
       "relations": {
         "capabilities": [
@@ -211,9 +232,15 @@
         "code",
         "http",
         "message",
-        "pii",
-        "sql",
-        "trace"
+        "trace",
+        "且字段类",
+        "包含稳定",
+        "否包含稳",
+        "含稳定的",
+        "响应是否",
+        "字段类型",
+        "应是否包",
+        "是否包含"
       ],
       "relations": {
         "capabilities": [
@@ -286,7 +313,19 @@
         "response",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [

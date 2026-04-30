@@ -46,7 +46,18 @@
         "ts",
         "api",
         "script",
-        "type"
+        "type",
+        "不是重复",
+        "代码表面",
+        "复代码表",
+        "必须降低",
+        "是重复代",
+        "束和取舍",
+        "注释必须",
+        "注释解释",
+        "目标",
+        "码表面行",
+        "约束和取"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +91,16 @@
         "api",
         "src",
         "tsx",
-        "vue"
+        "vue",
+        "例和公共",
+        "公共组件",
+        "兼容性分",
+        "出的类型",
+        "合式函数",
+        "导出的类",
+        "文档注释",
+        "测试代码",
+        "示例和公"
       ],
       "relations": {
         "capabilities": [
@@ -110,19 +130,20 @@
         "rules",
         "standards",
         "ts",
-        "api",
-        "count",
-        "emits",
-        "fixme",
-        "hack",
-        "null",
-        "param",
-        "props",
-        "ref",
-        "returns",
-        "todo",
-        "tsdoc",
-        "undefined"
+        "业务约束",
+        "代码无法",
+        "全注意事",
+        "兼容原因",
+        "安全注意",
+        "必须解释",
+        "接表达的",
+        "无法直接",
+        "法直接表",
+        "注意事项",
+        "注释必须",
+        "直接表达",
+        "码无法直",
+        "表达的意"
       ],
       "relations": {
         "capabilities": [
@@ -152,20 +173,20 @@
         "rules",
         "standards",
         "ts",
-        "await",
-        "const",
-        "current",
-        "detail",
-        "export",
-        "interface",
         "legacy",
-        "null",
-        "order",
-        "orders",
-        "payload",
-        "query",
-        "ref",
-        "result"
+        "status",
+        "typescript",
+        "view",
+        "web",
+        "为了兼容",
+        "了兼容仍",
+        "仍返回旧",
+        "保留",
+        "兼容仍返",
+        "回旧字段",
+        "字段的移",
+        "容仍返回",
+        "旧字段的"
       ],
       "relations": {
         "capabilities": [
@@ -198,12 +219,17 @@
         "检查清单",
         "api",
         "emits",
-        "fixme",
-        "hack",
         "props",
-        "ref",
-        "todo",
-        "tsdoc"
+        "不出的意",
+        "了代码看",
+        "代码看不",
+        "公共",
+        "出的意图",
+        "否解释了",
+        "导出类型",
+        "是否解释",
+        "束或取舍",
+        "注释是否"
       ],
       "relations": {
         "capabilities": [
@@ -271,7 +297,17 @@
         "变更记录",
         "script",
         "type",
-        "vue"
+        "vue",
+        "内部复杂",
+        "函数内部",
+        "句号",
+        "员注释和",
+        "和函数内",
+        "复杂逻辑",
+        "成员注释",
+        "数内部复",
+        "日期",
+        "注释和函"
       ],
       "relations": {
         "capabilities": [

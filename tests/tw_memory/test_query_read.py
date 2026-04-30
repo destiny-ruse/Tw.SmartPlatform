@@ -44,6 +44,24 @@ class QueryReadTests(unittest.TestCase):
 
             self.assertEqual([result.chunk_id for result in results], ["docs.general#chunk-001"])
 
+    def test_query_matches_chinese_body_derived_keywords_without_fts(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            rules = root / "docs" / "standards" / "rules"
+            rules.mkdir(parents=True)
+            (rules / "comments-python.md").write_text(
+                "# Python 注释规范\n\nPython 注释规范用于降低动态语言中调用契约不清的风险。\n",
+                encoding="utf-8",
+            )
+            MemoryGenerator(root).generate()
+
+            results = SearchIndex(root).query("动态语言", stack=None, kind="standard", limit=5)
+
+            self.assertEqual(
+                [result.source_path for result in results],
+                ["docs/standards/rules/comments-python.md"],
+            )
+
     def test_query_filters_by_stack_and_kind(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

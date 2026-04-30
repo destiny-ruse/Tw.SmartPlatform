@@ -14,17 +14,17 @@
         "objectextensions",
         "src",
         "tw",
-        "argument",
-        "cast",
         "class",
-        "cref",
-        "exception",
-        "invalid",
-        "langword",
-        "name",
         "namespace",
-        "null",
-        "obj"
+        "object",
+        "public",
+        "static",
+        "summary",
+        "供通用对",
+        "值扩展方",
+        "对象值扩",
+        "对象转换",
+        "将对象转"
       ],
       "relations": {
         "capabilities": [

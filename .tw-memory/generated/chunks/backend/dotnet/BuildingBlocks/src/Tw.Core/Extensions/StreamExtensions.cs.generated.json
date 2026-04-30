@@ -16,15 +16,15 @@
         "tw",
         "class",
         "default",
-        "emit",
-        "encoder",
         "encoding",
         "namespace",
         "new",
         "private",
         "public",
         "readonly",
-        "should"
+        "static",
+        "stream",
+        "summary"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "src",
         "streamextensions",
         "tw",
-        "argument",
-        "cref",
-        "encoding",
-        "exception",
-        "langword",
-        "name",
-        "null",
-        "param",
-        "paramref",
-        "public",
-        "see"
+        "summary",
+        "utf",
+        "不重置位",
+        "且不重置",
+        "位置写入",
+        "使用无字",
+        "写入文本",
+        "前位置写",
+        "在流当前",
+        "字节顺序",
+        "序标记的"
       ],
       "relations": {
         "capabilities": [

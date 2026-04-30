@@ -963,9 +963,9 @@
         "registrations",
         "superpowers",
         "task",
-        "class",
         "create",
-        "csharp"
+        "csharp",
+        "dependency"
       ],
       "relations": {
         "capabilities": [
@@ -1539,10 +1539,10 @@
         "superpowers",
         "task",
         "add",
-        "allow",
         "attribute",
-        "class",
-        "core"
+        "core",
+        "csharp",
+        "disable"
       ],
       "relations": {
         "capabilities": [
@@ -2295,11 +2295,11 @@
         "service",
         "superpowers",
         "task",
-        "abstract",
         "adapter",
         "api",
-        "base",
-        "class"
+        "core",
+        "create",
+        "csharp"
       ],
       "relations": {
         "capabilities": [

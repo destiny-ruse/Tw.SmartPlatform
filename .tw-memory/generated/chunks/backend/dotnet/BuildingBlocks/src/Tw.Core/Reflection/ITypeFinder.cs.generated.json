@@ -14,17 +14,17 @@
         "reflection",
         "src",
         "tw",
-        "assemblies",
-        "assembly",
-        "find",
-        "finder",
-        "get",
-        "interface",
-        "iread",
-        "itype",
-        "list",
         "namespace",
-        "only"
+        "summary",
+        "system",
+        "using",
+        "中查找运",
+        "从配置的",
+        "合中查找",
+        "序集集合",
+        "找运行时",
+        "查找运行",
+        "的程序集"
       ],
       "relations": {
         "capabilities": [

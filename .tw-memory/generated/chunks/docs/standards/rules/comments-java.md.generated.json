@@ -44,7 +44,18 @@
         "standards",
         "api",
         "ide",
-        "javadoc"
+        "javadoc",
+        "于降低公",
+        "低公共类",
+        "公共类缺",
+        "共类缺少",
+        "和线程语",
+        "常和线程",
+        "异常和线",
+        "注释规范",
+        "用于降低",
+        "目标",
+        "程语义不"
       ],
       "relations": {
         "capabilities": [
@@ -77,7 +88,18 @@
         "standards",
         "适用范围",
         "javadoc",
-        "vendored"
+        "vendored",
+        "公共类",
+        "具和示例",
+        "和示例代",
+        "夹具和示",
+        "接口",
+        "控制器",
+        "服务",
+        "本规范适",
+        "枚举",
+        "测试夹具",
+        "源码"
       ],
       "relations": {
         "capabilities": [
@@ -108,15 +130,20 @@
         "md",
         "rules",
         "standards",
-        "api",
-        "deprecated",
-        "hack",
         "javadoc",
-        "param",
-        "record",
-        "return",
-        "see",
-        "throws"
+        "举和跨模",
+        "公共方法",
+        "公共类",
+        "共方法必",
+        "和调用契",
+        "和跨模块",
+        "块公共方",
+        "必须提供",
+        "接口",
+        "方法必须",
+        "明职责和",
+        "枚举和跨",
+        "模块公共"
       ],
       "relations": {
         "capabilities": [
@@ -148,17 +175,19 @@
         "rules",
         "standards",
         "api",
-        "cancel",
-        "exception",
-        "handle",
         "illegal",
         "order",
-        "orders",
         "param",
-        "state",
-        "string",
         "throws",
-        "void"
+        "中稳定的",
+        "公共",
+        "取消尚未",
+        "定的订单",
+        "尚未结算",
+        "未结算的",
+        "正例",
+        "消尚未结",
+        "的订单标"
       ],
       "relations": {
         "capabilities": [
@@ -190,11 +219,19 @@
         "rules",
         "standards",
         "检查清单",
-        "api",
-        "generated",
-        "hack",
         "javadoc",
-        "record"
+        "举和跨模",
+        "公共类",
+        "否有必要",
+        "否覆盖调",
+        "和跨模块",
+        "块方法是",
+        "接口",
+        "方法是否",
+        "是否有必",
+        "是否覆盖",
+        "枚举和跨",
+        "模块方法"
       ],
       "relations": {
         "capabilities": [
@@ -258,7 +295,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "内部复杂",
+        "句号",
+        "员注释和",
+        "和方法内",
+        "复杂逻辑",
+        "成员注释",
+        "方法内部",
+        "日期",
+        "杂逻辑注",
+        "法内部复",
+        "注释和方",
+        "注释语言",
+        "版本"
       ],
       "relations": {
         "capabilities": [

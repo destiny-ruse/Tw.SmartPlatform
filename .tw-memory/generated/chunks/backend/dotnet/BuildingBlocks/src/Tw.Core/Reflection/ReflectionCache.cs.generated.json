@@ -14,17 +14,17 @@
         "reflectioncache",
         "src",
         "tw",
-        "attribute",
-        "cache",
-        "class",
         "collections",
         "concurrent",
-        "dictionary",
-        "iread",
-        "key",
-        "list",
         "namespace",
-        "only"
+        "summary",
+        "system",
+        "using",
+        "为特性和",
+        "和异步方",
+        "型提供带",
+        "异步方法",
+        "性和异步"
       ],
       "relations": {
         "capabilities": [
@@ -114,9 +114,9 @@
         "exception",
         "get",
         "langword",
-        "method",
         "name",
-        "null"
+        "null",
+        "parameterless"
       ],
       "relations": {
         "capabilities": [
@@ -155,14 +155,14 @@
         "async",
         "attribute",
         "cache",
-        "constructor",
         "count",
-        "endif",
-        "int",
-        "interfaces",
-        "method",
         "name",
-        "param"
+        "param",
+        "return",
+        "summary",
+        "type",
+        "回类型缓",
+        "型缓存条"
       ],
       "relations": {
         "capabilities": [

@@ -13,18 +13,18 @@
         "dotnet",
         "src",
         "tw",
-        "class",
         "compiler",
-        "langword",
-        "name",
         "namespace",
-        "null",
-        "param",
-        "parameter",
-        "public",
         "runtime",
-        "see",
-        "services"
+        "services",
+        "summary",
+        "system",
+        "using",
+        "于验证方",
+        "供用于验",
+        "参数的守",
+        "守卫辅助",
+        "提供用于"
       ],
       "relations": {
         "capabilities": [
@@ -59,17 +59,17 @@
         "src",
         "tw",
         "argument",
-        "caller",
         "cref",
-        "empty",
         "exception",
-        "expression",
-        "ienumerable",
         "langword",
         "name",
-        "nameof",
         "null",
-        "param"
+        "param",
+        "parameter",
+        "paramref",
+        "returns",
+        "see",
+        "value"
       ],
       "relations": {
         "capabilities": [
@@ -104,17 +104,17 @@
         "src",
         "tw",
         "argument",
-        "cref",
         "exception",
-        "int",
         "name",
-        "negative",
         "new",
-        "non",
         "out",
-        "param",
         "parameter",
-        "paramref"
+        "range",
+        "return",
+        "summary",
+        "throw",
+        "value",
+        "值必须大"
       ],
       "relations": {
         "capabilities": [
@@ -149,17 +149,17 @@
         "src",
         "tw",
         "argument",
-        "assignable",
         "base",
-        "caller",
         "cref",
         "exception",
-        "expression",
         "langword",
         "name",
-        "nameof",
         "null",
-        "parameter"
+        "paramref",
+        "public",
+        "returns",
+        "see",
+        "static"
       ],
       "relations": {
         "capabilities": [

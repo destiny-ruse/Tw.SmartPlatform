@@ -16,15 +16,15 @@
         "typelist",
         "class",
         "cref",
-        "items",
-        "itype",
         "list",
-        "name",
         "namespace",
         "object",
-        "private",
         "public",
-        "readonly"
+        "see",
+        "summary",
+        "system",
+        "type",
+        "using"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "src",
         "tw",
         "typelist",
-        "bool",
-        "contains",
-        "false",
-        "inheritdoc",
-        "langword",
-        "name",
-        "public",
-        "remove",
         "return",
-        "returns",
-        "see"
+        "summary",
+        "true",
+        "typeparam",
+        "匹配返回",
+        "参数是否",
+        "回指定类",
+        "型匹配返",
+        "型参数是",
+        "定类型参",
+        "指定类型"
       ],
       "relations": {
         "capabilities": [
@@ -107,16 +107,16 @@
         "tw",
         "typelist",
         "assignable",
-        "bool",
         "check",
-        "false",
         "index",
         "insert",
         "int",
         "item",
         "items",
-        "langword",
-        "name"
+        "public",
+        "summary",
+        "tbase",
+        "type"
       ],
       "relations": {
         "capabilities": [

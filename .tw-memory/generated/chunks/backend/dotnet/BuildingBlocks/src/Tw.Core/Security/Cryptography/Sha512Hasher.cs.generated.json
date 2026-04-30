@@ -15,16 +15,16 @@
         "sha512hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha",
-        "sha512"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [

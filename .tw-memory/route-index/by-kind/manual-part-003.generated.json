@@ -17,14 +17,14 @@
         "specs",
         "superpowers",
         "拦截调用契约",
-        "accessor",
         "async",
-        "await",
-        "cancellation",
         "enumerable",
-        "exception",
-        "iasync",
-        "icurrent"
+        "proceed",
+        "保证以下",
+        "唯一入口",
+        "器链推进",
+        "必须保证",
+        "截器链推"
       ],
       "relations": {
         "capabilities": [
@@ -64,13 +64,13 @@
         "specs",
         "superpowers",
         "代理覆盖与启动诊断",
-        "class",
         "core",
         "enable",
         "interceptors",
         "interface",
         "public",
-        "virtual"
+        "与启动诊",
+        "代理覆盖"
       ],
       "relations": {
         "capabilities": [
@@ -108,7 +108,13 @@
         "registration",
         "specs",
         "superpowers",
-        "七、配置与选项自动注册"
+        "七、配置与选项自动注册",
+        "与选项自",
+        "置与选项",
+        "自动注册",
+        "选项自动",
+        "配置与选",
+        "项自动注"
       ],
       "relations": {
         "capabilities": [
@@ -147,14 +153,14 @@
         "specs",
         "superpowers",
         "自动发现规则",
-        "attribute",
-        "binder",
-        "class",
-        "configuration",
-        "disable",
-        "dto",
-        "iconfigurable",
-        "init"
+        "options",
+        "不额外从",
+        "从磁盘加",
+        "动发现规",
+        "发现结果",
+        "发现规则",
+        "复用程序",
+        "外从磁盘"
       ],
       "relations": {
         "capabilities": [
@@ -198,9 +204,9 @@
         "bind",
         "configuration",
         "csharp",
-        "current",
         "data",
-        "get"
+        "get",
+        "name"
       ],
       "relations": {
         "capabilities": [
@@ -239,14 +245,14 @@
         "specs",
         "superpowers",
         "验证策略",
-        "add",
         "annotations",
-        "asp",
-        "configuration",
-        "core",
         "data",
-        "environment",
-        "ihost"
+        "ivalidatable",
+        "ivalidate",
+        "object",
+        "validate",
+        "一起执行",
+        "可配置放"
       ],
       "relations": {
         "capabilities": [
@@ -285,14 +291,14 @@
         "specs",
         "superpowers",
         "命名选项",
-        "configuration",
-        "csharp",
         "default",
-        "get",
-        "ioptions",
-        "monitor",
         "name",
-        "options"
+        "options",
+        "个同类型",
+        "册默认命",
+        "初版只自",
+        "动注册默",
+        "只自动注"
       ],
       "relations": {
         "capabilities": [
@@ -331,14 +337,14 @@
         "specs",
         "superpowers",
         "性能与运行时影响",
-        "current",
-        "ioptions",
         "microsoft",
-        "monitor",
         "options",
-        "reload",
-        "scope",
-        "scoped"
+        "section",
+        "与运行时",
+        "册都发生",
+        "发生在启",
+        "启动阶段",
+        "器注册都"
       ],
       "relations": {
         "capabilities": [
@@ -377,14 +383,14 @@
         "specs",
         "superpowers",
         "八、性能优化策略",
-        "assemblies",
-        "castle",
-        "core",
-        "intercepted",
-        "register",
-        "resolve",
-        "scan",
-        "services"
+        "串行排序",
+        "优化策略",
+        "各程序集",
+        "后串行排",
+        "并发反射",
+        "并发扫描",
+        "序与注册",
+        "序集独立"
       ],
       "relations": {
         "capabilities": [
@@ -422,7 +428,10 @@
         "registration",
         "specs",
         "superpowers",
-        "九、典型使用示例"
+        "九、典型使用示例",
+        "使用示例",
+        "典型使用",
+        "型使用示"
       ],
       "relations": {
         "capabilities": [
@@ -466,9 +475,9 @@
         "dependency",
         "iorder",
         "iscoped",
-        "itransient",
         "order",
-        "public"
+        "public",
+        "scoped"
       ],
       "relations": {
         "capabilities": [
@@ -557,10 +566,10 @@
         "collection",
         "credit",
         "csharp",
-        "dependency",
         "ienumerable",
-        "inventory",
-        "iorder"
+        "iorder",
+        "iscoped",
+        "limit"
       ],
       "relations": {
         "capabilities": [
@@ -645,14 +654,14 @@
         "specs",
         "superpowers",
         "服务替换",
-        "class",
         "csharp",
-        "dependency",
-        "enhanced",
         "expose",
         "iorder",
         "iquery",
-        "iscoped"
+        "public",
+        "replace",
+        "service",
+        "services"
       ],
       "relations": {
         "capabilities": [
@@ -691,14 +700,14 @@
         "registration",
         "specs",
         "superpowers",
-        "async",
-        "await",
-        "class",
         "csharp",
-        "dependency",
         "icancellation",
-        "iorder",
-        "iscoped"
+        "provider",
+        "public",
+        "token",
+        "业务服务",
+        "使用",
+        "关心调用"
       ],
       "relations": {
         "capabilities": [
@@ -738,13 +747,13 @@
         "superpowers",
         "action",
         "add",
-        "audit",
-        "base",
         "castle",
-        "class",
         "core",
         "csharp",
-        "entry"
+        "entry",
+        "global",
+        "interceptor",
+        "logging"
       ],
       "relations": {
         "capabilities": [
@@ -784,13 +793,13 @@
         "registration",
         "specs",
         "superpowers",
-        "async",
         "base",
         "class",
-        "context",
         "csharp",
         "get",
-        "http"
+        "http",
+        "interceptor",
+        "logging"
       ],
       "relations": {
         "capabilities": [
@@ -829,14 +838,14 @@
         "specs",
         "superpowers",
         "配置与选项自动注册",
-        "class",
-        "configuration",
-        "connection",
         "csharp",
-        "direct",
-        "get",
-        "iconfigurable",
-        "init"
+        "options",
+        "与选项自",
+        "声明配置",
+        "复用现有",
+        "并实现标",
+        "式声明配",
+        "明配置节"
       ],
       "relations": {
         "capabilities": [
@@ -878,7 +887,11 @@
         "adapter",
         "cap",
         "rpc",
-        "worker"
+        "worker",
+        "与横切质",
+        "切质量门",
+        "划必须覆",
+        "层级推进"
       ],
       "relations": {
         "capabilities": [
@@ -920,11 +933,11 @@
         "add",
         "builder",
         "dependency",
-        "disable",
-        "expose",
-        "include",
         "instance",
-        "iscoped"
+        "iscoped",
+        "isingleton",
+        "itransient",
+        "lifetime"
       ],
       "relations": {
         "capabilities": [
@@ -969,8 +982,8 @@
         "web",
         "async",
         "base",
-        "cache",
-        "chain"
+        "intercept",
+        "interceptor"
       ],
       "relations": {
         "capabilities": [
@@ -1012,11 +1025,11 @@
         "superpowers",
         "add",
         "builder",
-        "call",
         "client",
-        "context",
-        "duplex",
-        "feature"
+        "grpc",
+        "interceptors",
+        "options",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -1055,14 +1068,14 @@
         "specs",
         "superpowers",
         "横切质量门禁：诊断、依赖和测试",
-        "adapter",
-        "api",
-        "async",
-        "autofac",
-        "castle",
-        "core",
-        "host",
-        "interceptor"
+        "依赖和测",
+        "切质量门",
+        "动时输出",
+        "发环境启",
+        "启动时输",
+        "境启动时",
+        "开发环境",
+        "排序"
       ],
       "relations": {
         "capabilities": [
@@ -1104,11 +1117,11 @@
         "superpowers",
         "验收边界",
         "ack",
-        "async",
         "cap",
-        "execute",
         "feature",
-        "hosted"
+        "入执行计",
+        "单独定义",
+        "后续"
       ],
       "relations": {
         "capabilities": [
@@ -1147,14 +1160,14 @@
         "specs",
         "superpowers",
         "十一、风险与处理",
-        "asp",
-        "async",
         "autofac",
         "castle",
-        "context",
         "core",
         "dynamic",
-        "extras"
+        "extras",
+        "proxy",
+        "代理与",
+        "十一"
       ],
       "relations": {
         "capabilities": [
@@ -1193,14 +1206,14 @@
         "specs",
         "superpowers",
         "十二、不在范围内",
-        "adapter",
-        "cache",
-        "cap",
-        "expose",
-        "hosted",
-        "ignore",
-        "interceptors",
-        "irepository"
+        "section",
+        "不在范围",
+        "中心管理",
+        "分布式配",
+        "动态新增",
+        "十二",
+        "在范围内",
+        "布式配置"
       ],
       "relations": {
         "capabilities": [
@@ -1240,9 +1253,13 @@
         "superpowers",
         "tw",
         "工具开发记忆层设计",
-        "skills",
-        "thin",
-        "tools"
+        "具开发记",
+        "发记忆层",
+        "后进入实",
+        "审阅落盘",
+        "工具开发",
+        "开发记忆",
+        "待用户审"
       ],
       "relations": {
         "capabilities": [
@@ -1280,7 +1297,14 @@
         "specs",
         "superpowers",
         "tw",
-        "token"
+        "仓库是多",
+        "会持续演",
+        "公司内部",
+        "内部框架",
+        "前仓库是",
+        "司内部框",
+        "多服务",
+        "多框架的"
       ],
       "relations": {
         "capabilities": [
@@ -1319,12 +1343,13 @@
         "superpowers",
         "tw",
         "core",
-        "fts",
-        "java",
         "net",
-        "python",
-        "skill",
-        "skills"
+        "skills",
+        "公司正式",
+        "具开发的",
+        "发的本地",
+        "司正式资",
+        "地记忆层"
       ],
       "relations": {
         "capabilities": [
@@ -1363,13 +1388,13 @@
         "superpowers",
         "tw",
         "非目标",
-        "adr",
-        "chunk",
-        "embedding",
-        "fts",
-        "mcp",
-        "sqlite",
-        "vectors"
+        "不把",
+        "不把使用",
+        "为公司正",
+        "作为公司",
+        "使用手册",
+        "公司正式",
+        "司正式文"
       ],
       "relations": {
         "capabilities": [
@@ -1446,7 +1471,13 @@
         "superpowers",
         "tw",
         "公司正式资产",
-        "readme"
+        "readme",
+        "事实来源",
+        "于公司正",
+        "产或代码",
+        "代码事实",
+        "公司正式",
+        "司正式资"
       ],
       "relations": {
         "capabilities": [
@@ -1486,7 +1517,12 @@
         "tw",
         "记忆层",
         "chunk",
-        "hash"
+        "hash",
+        "元数据",
+        "关系",
+        "关键词",
+        "具记忆层",
+        "后端同步"
       ],
       "relations": {
         "capabilities": [
@@ -1525,10 +1561,13 @@
         "superpowers",
         "tw",
         "记忆引擎",
-        "chunk",
-        "fts",
-        "skill",
-        "tools"
+        "tools",
+        "事实来源",
+        "和污染风",
+        "它负责",
+        "度和污染",
+        "引新鲜度",
+        "扫描事实"
       ],
       "relations": {
         "capabilities": [
@@ -1569,9 +1608,11 @@
         "thin",
         "tw",
         "agents",
-        "postflight",
         "skill",
-        "tools"
+        "tools",
+        "义分析要",
+        "使用英文",
+        "分析要求"
       ],
       "relations": {
         "capabilities": [
@@ -1613,7 +1654,10 @@
         "fts5",
         "mcp",
         "readme",
-        "sqlite"
+        "sqlite",
+        "不能成为",
+        "为事实来",
+        "事实来源"
       ],
       "relations": {
         "capabilities": [
@@ -1701,7 +1745,9 @@
         "index",
         "path",
         "readme",
-        "source"
+        "source",
+        "不复制正",
+        "事实来源"
       ],
       "relations": {
         "capabilities": [
@@ -1741,7 +1787,12 @@
         "tw",
         "第二层：结构记忆",
         "graph",
-        "yaml"
+        "yaml",
+        "二次封装",
+        "使用",
+        "使用手册",
+        "依赖事实",
+        "内部二次"
       ],
       "relations": {
         "capabilities": [
@@ -1781,12 +1832,12 @@
         "tw",
         "第三层：路由索引",
         "chunk",
-        "dotnet",
         "generated",
-        "git",
-        "hash",
         "index",
-        "json"
+        "json",
+        "route",
+        "token",
+        "不保存全"
       ],
       "relations": {
         "capabilities": [
@@ -1826,7 +1877,12 @@
         "tw",
         "支撑目录",
         "adapters",
-        "generated"
+        "generated",
+        "不保存事",
+        "不是权威",
+        "保存事实",
+        "保存检索",
+        "可重建生"
       ],
       "relations": {
         "capabilities": [
@@ -1865,13 +1921,13 @@
         "superpowers",
         "tw",
         "使用手册处理",
-        "api",
-        "check",
-        "chunk",
-        "generate",
-        "hash",
         "manuals",
-        "public"
+        "不属于",
+        "于公司内",
+        "使用手册",
+        "公司内部",
+        "内部资产",
+        "册属于公"
       ],
       "relations": {
         "capabilities": [
@@ -1914,7 +1970,9 @@
         "command",
         "powershell",
         "python",
-        "tools"
+        "tools",
+        "主入口",
+        "命令"
       ],
       "relations": {
         "capabilities": [
@@ -1954,12 +2012,12 @@
         "superpowers",
         "tw",
         "brief",
-        "build",
-        "check",
         "dotnet",
         "format",
-        "fts",
-        "generate"
+        "path",
+        "powershell",
+        "python",
+        "query"
       ],
       "relations": {
         "capabilities": [
@@ -2001,7 +2059,10 @@
         "powershell",
         "python",
         "readme",
-        "tools"
+        "tools",
+        "内部框架",
+        "务目录和",
+        "包管理文"
       ],
       "relations": {
         "capabilities": [
@@ -2043,7 +2104,10 @@
         "chunk",
         "powershell",
         "python",
-        "tools"
+        "tools",
+        "元数据",
+        "成或更新",
+        "来源索引"
       ],
       "relations": {
         "capabilities": [
@@ -2087,7 +2151,8 @@
         "powershell",
         "python",
         "source",
-        "tools"
+        "tools",
+        "册是否可"
       ],
       "relations": {
         "capabilities": [
@@ -2177,7 +2242,7 @@
         "evidence",
         "format",
         "framework",
-        "full"
+        "neighbors"
       ],
       "relations": {
         "capabilities": [
@@ -2216,13 +2281,13 @@
         "specs",
         "superpowers",
         "tw",
-        "api",
         "brief",
         "changed",
-        "check",
         "file",
         "files",
-        "format"
+        "format",
+        "list",
+        "powershell"
       ],
       "relations": {
         "capabilities": [
@@ -2351,13 +2416,13 @@
         "superpowers",
         "tw",
         "语义分析与检索流程",
-        "fts",
-        "graph",
-        "hash",
-        "index",
-        "preflight",
-        "query",
-        "read"
+        "skill",
+        "text",
+        "与检索流",
+        "义分析与",
+        "做语义分",
+        "分析与检",
+        "前必须先"
       ],
       "relations": {
         "capabilities": [
@@ -2397,12 +2462,12 @@
         "tw",
         "语义增强分级",
         "chunk",
-        "fts",
         "generate",
-        "hash",
         "readme",
         "scan",
-        "summary"
+        "text",
+        "不是写入",
+        "临时完成"
       ],
       "relations": {
         "capabilities": [
@@ -2442,12 +2507,12 @@
         "superpowers",
         "tw",
         "人工文档与自动",
-        "end",
-        "hash",
-        "keywords",
-        "line",
-        "markdown",
-        "overlap"
+        "readme",
+        "不为",
+        "产保持人",
+        "人工文档",
+        "人类可读",
+        "保持人类"
       ],
       "relations": {
         "capabilities": [
@@ -2486,13 +2551,13 @@
         "superpowers",
         "tw",
         "第三方框架范围收缩",
-        "adr",
-        "hash",
-        "intake",
-        "level",
-        "lockfile",
-        "party",
-        "third"
+        "三方框架",
+        "不建设以",
+        "不进入长",
+        "入长期记",
+        "原始知识",
+        "始知识不",
+        "建设以下"
       ],
       "relations": {
         "capabilities": [
@@ -2531,13 +2596,13 @@
         "superpowers",
         "tw",
         "可插拔检索后端",
-        "chunk",
-        "embedding",
         "fts5",
-        "mcp",
-        "metadata",
-        "read",
-        "sqlite"
+        "sqlite",
+        "一阶段默",
+        "云知识库",
+        "可插拔检",
+        "后期可选",
+        "库或向量"
       ],
       "relations": {
         "capabilities": [
@@ -2578,11 +2643,11 @@
         "tw",
         "触发规则",
         "agents",
-        "backend",
-        "contracts",
         "dotnet",
         "frontend",
-        "java"
+        "java",
+        "python",
+        "skills"
       ],
       "relations": {
         "capabilities": [
@@ -2621,13 +2686,13 @@
         "superpowers",
         "tw",
         "工程规范记忆",
-        "anchor",
-        "brief",
-        "check",
-        "chunk",
-        "format",
-        "front",
-        "generate"
+        "old",
+        "standards",
+        "不属于",
+        "中的公司",
+        "公司正式",
+        "公司规范",
+        "司正式规"
       ],
       "relations": {
         "capabilities": [
@@ -2665,7 +2730,10 @@
         "specs",
         "superpowers",
         "tw",
-        "目录总览"
+        "目录总览",
+        "录总览分",
+        "总览分两",
+        "览分两类"
       ],
       "relations": {
         "capabilities": [
@@ -2704,10 +2772,13 @@
         "superpowers",
         "tw",
         "公司正式目录说明",
-        "architecture",
-        "manuals",
-        "readme",
-        "text"
+        "text",
+        "公司正式",
+        "公司资产",
+        "司正式目",
+        "司资产区",
+        "向团队阅",
+        "团队阅读"
       ],
       "relations": {
         "capabilities": [
@@ -2746,13 +2817,13 @@
         "superpowers",
         "tw",
         "目录能力总览",
-        "auth",
-        "caching",
-        "core",
         "dotnet",
         "frameworks",
         "frontend",
-        "generated"
+        "generated",
+        "graph",
+        "index",
+        "json"
       ],
       "relations": {
         "capabilities": [
@@ -2790,7 +2861,10 @@
         "specs",
         "superpowers",
         "tw",
-        "变更触发策略"
+        "变更触发策略",
+        "变更触发",
+        "更触发策",
+        "触发策略"
       ],
       "relations": {
         "capabilities": [
@@ -2832,7 +2906,10 @@
         "git",
         "preflight",
         "pull",
-        "skill"
+        "skill",
+        "不后台自",
+        "任务开始",
+        "修改文件"
       ],
       "relations": {
         "capabilities": [
@@ -2871,7 +2948,13 @@
         "superpowers",
         "tw",
         "变更前",
-        "preflight"
+        "preflight",
+        "不写文件",
+        "任务开始",
+        "前运行一",
+        "务开始前",
+        "发任务开",
+        "只读检查"
       ],
       "relations": {
         "capabilities": [
@@ -2911,7 +2994,12 @@
         "tw",
         "变更中",
         "preflight",
-        "read"
+        "不会每次",
+        "仅在任务",
+        "件前触发",
+        "任务范围",
+        "会每次写",
+        "例如"
       ],
       "relations": {
         "capabilities": [
@@ -2955,7 +3043,8 @@
         "postflight",
         "powershell",
         "python",
-        "tools"
+        "tools",
+        "任务结束"
       ],
       "relations": {
         "capabilities": [
@@ -2997,7 +3086,10 @@
         "generate",
         "powershell",
         "python",
-        "tools"
+        "tools",
+        "不自动写",
+        "则失败并",
+        "动写文件"
       ],
       "relations": {
         "capabilities": [
@@ -3037,12 +3129,12 @@
         "superpowers",
         "tw",
         "存储策略",
-        "check",
         "chunks",
         "embedding",
         "fts",
-        "fts5",
-        "generated"
+        "generated",
+        "graph",
+        "index"
       ],
       "relations": {
         "capabilities": [
@@ -3081,13 +3173,13 @@
         "superpowers",
         "tw",
         "成功标准",
-        "api",
-        "check",
-        "chunk",
-        "fts",
-        "generate",
-        "hash",
-        "mcp"
+        "preflight",
+        "任务开始",
+        "关的规范",
+        "内部框架",
+        "前能运行",
+        "务开始前",
+        "发任务开"
       ],
       "relations": {
         "capabilities": [
@@ -3126,12 +3218,13 @@
         "superpowers",
         "tw",
         "风险约束",
-        "embedding",
-        "fts",
-        "git",
-        "mcp",
         "token",
-        "tools"
+        "三方官方",
+        "不保存密",
+        "不保存未",
+        "不保存第",
+        "不保存聊",
+        "保存密钥"
       ],
       "relations": {
         "capabilities": [
@@ -3173,10 +3266,10 @@
         "chunk",
         "cli",
         "fts5",
-        "mcp",
         "postflight",
         "preflight",
-        "query"
+        "query",
+        "read"
       ],
       "relations": {
         "capabilities": [
@@ -3215,13 +3308,13 @@
         "superpowers",
         "tw",
         "已收敛的关键问题",
-        "check",
-        "generate",
         "knowledge",
-        "postflight",
-        "preflight",
-        "skill",
-        "tools"
+        "于公司内",
+        "作为",
+        "使用手册",
+        "公司内部",
+        "关键问题",
+        "册属于公"
       ],
       "relations": {
         "capabilities": [

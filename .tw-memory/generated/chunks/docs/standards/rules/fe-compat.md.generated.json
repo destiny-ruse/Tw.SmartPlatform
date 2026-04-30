@@ -11,7 +11,11 @@
         "md",
         "rules",
         "standards",
-        "前端兼容性规范"
+        "前端兼容性规范",
+        "兼容性规",
+        "前端兼容",
+        "容性规范",
+        "端兼容性"
       ],
       "relations": {
         "capabilities": [
@@ -42,7 +46,19 @@
         "rules",
         "standards",
         "view",
-        "web"
+        "web",
+        "于降低浏",
+        "低浏览器",
+        "兼容性规",
+        "则用于降",
+        "前端兼容",
+        "力和网络",
+        "和网络环",
+        "备能力和",
+        "容性规则",
+        "性规则用",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +95,13 @@
         "uni",
         "view",
         "vue",
-        "web"
+        "web",
+        "备能力调",
+        "态资源加",
+        "构建产物",
+        "浏览器",
+        "特性",
+        "移动"
       ],
       "relations": {
         "capabilities": [
@@ -109,19 +131,20 @@
         "md",
         "rules",
         "standards",
-        "adapter",
-        "agent",
         "api",
         "css",
-        "detection",
-        "feature",
-        "loading",
-        "polyfill",
-        "service",
-        "transpile",
-        "user",
         "view",
-        "web"
+        "web",
+        "使用新的",
+        "前必须确",
+        "力前必须",
+        "备能力前",
+        "必须确认",
+        "性或设备",
+        "或设备能",
+        "新的浏览",
+        "特性或设",
+        "用新的浏"
       ],
       "relations": {
         "capabilities": [
@@ -154,8 +177,6 @@
         "await",
         "boolean",
         "can",
-        "common",
-        "copied",
         "copy",
         "else",
         "export",
@@ -164,7 +185,9 @@
         "navigator",
         "return",
         "share",
-        "show"
+        "show",
+        "title",
+        "toast"
       ],
       "relations": {
         "capabilities": [
@@ -197,7 +220,17 @@
         "检查清单",
         "api",
         "css",
-        "loading"
+        "力是否确",
+        "力缺失时",
+        "否确认支",
+        "备能力是",
+        "式或设备",
+        "或设备能",
+        "支持范围",
+        "是否确认",
+        "格式或设",
+        "源格式或",
+        "特性"
       ],
       "relations": {
         "capabilities": [
@@ -262,7 +295,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

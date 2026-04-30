@@ -15,16 +15,16 @@
         "security",
         "src",
         "tw",
-        "class",
-        "hasher",
         "hmac",
-        "input",
-        "key",
-        "name",
         "namespace",
-        "param",
         "public",
-        "sha512"
+        "sha512",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [

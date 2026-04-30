@@ -15,16 +15,16 @@
         "security",
         "src",
         "tw",
-        "byte",
         "der",
         "key",
         "name",
         "namespace",
-        "pair",
         "param",
         "pkcs",
         "private",
-        "public"
+        "public",
+        "rsa",
+        "summary"
       ],
       "relations": {
         "capabilities": [

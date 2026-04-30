@@ -14,17 +14,17 @@
         "src",
         "tw",
         "utilities",
-        "class",
-        "disposable",
-        "dispose",
-        "get",
-        "idisposable",
-        "instance",
         "namespace",
-        "new",
-        "null",
-        "private",
-        "public"
+        "public",
+        "summary",
+        "任何效果",
+        "何效果的",
+        "供释放时",
+        "可复用释",
+        "复用释放",
+        "提供释放",
+        "放时无任",
+        "效果的可"
       ],
       "relations": {
         "capabilities": [

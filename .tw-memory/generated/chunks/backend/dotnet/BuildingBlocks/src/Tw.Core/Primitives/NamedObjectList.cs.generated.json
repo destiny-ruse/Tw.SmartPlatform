@@ -14,16 +14,17 @@
         "primitives",
         "src",
         "tw",
-        "class",
-        "list",
         "name",
-        "named",
         "namespace",
-        "object",
-        "public",
         "summary",
         "typeparam",
-        "where"
+        "中存储的",
+        "为具名基",
+        "供可变列",
+        "元描述符",
+        "具名基元",
+        "列表中存",
+        "可变列表"
       ],
       "relations": {
         "capabilities": [

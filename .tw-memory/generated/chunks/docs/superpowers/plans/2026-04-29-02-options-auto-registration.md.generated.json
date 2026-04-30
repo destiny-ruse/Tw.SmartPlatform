@@ -289,10 +289,10 @@
         "superpowers",
         "task",
         "add",
-        "allow",
         "attribute",
-        "class",
-        "core"
+        "core",
+        "csharp",
+        "disable"
       ],
       "relations": {
         "capabilities": [

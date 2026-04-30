@@ -15,16 +15,16 @@
         "security",
         "src",
         "tw",
-        "class",
-        "default",
-        "encoding",
         "namespace",
-        "oaep",
-        "pkcs",
-        "private",
-        "public",
-        "readonly",
-        "remarks"
+        "rsa",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "加密",
+        "名和签名",
+        "名验证辅",
+        "和签名验"
       ],
       "relations": {
         "capabilities": [
@@ -62,16 +62,16 @@
         "security",
         "src",
         "tw",
-        "byte",
         "bytes",
-        "check",
         "der",
-        "encrypt",
         "key",
         "name",
-        "null",
         "oaep",
-        "padding"
+        "padding",
+        "param",
+        "public",
+        "rsa",
+        "sha"
       ],
       "relations": {
         "capabilities": [
@@ -157,15 +157,15 @@
         "src",
         "tw",
         "algorithm",
-        "bool",
         "bytes",
-        "false",
         "hash",
         "key",
-        "langword",
         "name",
-        "padding",
-        "param"
+        "param",
+        "pem",
+        "public",
+        "sha",
+        "signature"
       ],
       "relations": {
         "capabilities": [

@@ -14,17 +14,17 @@
         "numberextensions",
         "src",
         "tw",
-        "argument",
-        "bool",
         "class",
-        "cref",
-        "even",
-        "exception",
         "globalization",
-        "int",
-        "long",
         "namespace",
-        "number"
+        "number",
+        "public",
+        "static",
+        "summary",
+        "system",
+        "using",
+        "供数值扩",
+        "值扩展方"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "numberextensions",
         "src",
         "tw",
-        "argument",
-        "cref",
-        "decimal",
-        "decimals",
         "double",
-        "exception",
         "int",
-        "math",
-        "name",
-        "out",
-        "param"
+        "public",
+        "round",
+        "source",
+        "static",
+        "summary",
+        "入到指定",
+        "到指定小",
+        "双精度浮",
+        "定小数位"
       ],
       "relations": {
         "capabilities": [

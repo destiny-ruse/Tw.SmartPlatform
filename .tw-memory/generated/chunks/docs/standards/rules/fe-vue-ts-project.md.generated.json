@@ -50,7 +50,17 @@
         "ts",
         "vue",
         "script",
-        "type"
+        "type",
+        "合式函数",
+        "和构建配",
+        "层和构建",
+        "建配置形",
+        "形成清晰",
+        "必须让页",
+        "构建配置",
+        "求层和构",
+        "目必须让",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -128,16 +138,17 @@
         "ts",
         "vue",
         "composable",
-        "emits",
         "feature",
-        "import",
-        "internal",
-        "meta",
-        "props",
-        "script",
         "service",
-        "store",
-        "type"
+        "件必须负",
+        "和复用交",
+        "必须负责",
+        "换和复用",
+        "求转换和",
+        "由级编排",
+        "组件必须",
+        "规则",
+        "请求转换"
       ],
       "relations": {
         "capabilities": [
@@ -171,17 +182,17 @@
         "ts",
         "vue",
         "const",
-        "create",
         "define",
-        "draft",
         "editor",
         "emit",
         "emits",
-        "import",
         "lang",
         "order",
         "props",
-        "save"
+        "save",
+        "saved",
+        "script",
+        "setup"
       ],
       "relations": {
         "capabilities": [
@@ -218,9 +229,14 @@
         "api",
         "composable",
         "emits",
-        "meta",
         "props",
-        "store"
+        "store",
+        "公开导出",
+        "参数和公",
+        "和公开导",
+        "导出是否",
+        "层职责是",
+        "开导出是"
       ],
       "relations": {
         "capabilities": [
@@ -290,7 +306,18 @@
         "standards",
         "ts",
         "vue",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本"
       ],
       "relations": {
         "capabilities": [

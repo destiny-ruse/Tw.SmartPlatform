@@ -14,17 +14,17 @@
         "guidextensions",
         "src",
         "tw",
-        "bool",
         "class",
-        "cref",
-        "empty",
         "guid",
         "langword",
         "name",
         "namespace",
         "null",
         "param",
-        "paramref"
+        "public",
+        "see",
+        "static",
+        "summary"
       ],
       "relations": {
         "capabilities": [

@@ -14,12 +14,17 @@
         "iconfigurableoptions",
         "src",
         "tw",
-        "iconfigurable",
-        "interface",
         "namespace",
-        "options",
         "public",
-        "summary"
+        "summary",
+        "与配置绑",
+        "为可参与",
+        "参与配置",
+        "可参与配",
+        "型标记为",
+        "定的选项",
+        "将类型标",
+        "标记为可"
       ],
       "relations": {
         "capabilities": [

@@ -11,7 +11,10 @@
         "patterns",
         "rules",
         "standards",
-        "消息模式规范"
+        "消息模式规范",
+        "息模式规",
+        "模式规范",
+        "消息模式"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +46,19 @@
         "rules",
         "standards",
         "api",
-        "async"
+        "async",
+        "不可追踪",
+        "乱序消费",
+        "于降低重",
+        "低重复投",
+        "信不可追",
+        "可追踪和",
+        "式规范用",
+        "息模式规",
+        "无限重试",
+        "模式规范",
+        "死信不可",
+        "消息模式"
       ],
       "relations": {
         "capabilities": [
@@ -78,7 +93,16 @@
         "apps",
         "backend",
         "services",
-        "src"
+        "src",
+        "中消息生",
+        "主题",
+        "处理消费",
+        "息生产者",
+        "批处理消",
+        "本规范适",
+        "死信处理",
+        "消息生产",
+        "消费者"
       ],
       "relations": {
         "capabilities": [
@@ -110,7 +134,19 @@
         "rules",
         "standards",
         "broker",
-        "message"
+        "一次投递",
+        "够识别并",
+        "少一次投",
+        "必须按至",
+        "息消费者",
+        "投递模型",
+        "按至少一",
+        "模型设计",
+        "次投递模",
+        "消息消费",
+        "消费者必",
+        "者必须按",
+        "能够识别"
       ],
       "relations": {
         "capabilities": [
@@ -142,7 +178,6 @@
         "rules",
         "standards",
         "absent",
-        "consume",
         "data",
         "def",
         "handle",
@@ -154,7 +189,8 @@
         "messages",
         "order",
         "paid",
-        "processed"
+        "processed",
+        "python"
       ],
       "relations": {
         "capabilities": [
@@ -185,7 +221,20 @@
         "patterns",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "使用唯一",
+        "全处理重",
+        "否能安全",
+        "处理重复",
+        "安全处理",
+        "幂等键或",
+        "并记录幂",
+        "录幂等键",
+        "或使用唯",
+        "是否能安",
+        "消费者是",
+        "理重复消",
+        "等键或使"
       ],
       "relations": {
         "capabilities": [
@@ -252,7 +301,20 @@
         "patterns",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

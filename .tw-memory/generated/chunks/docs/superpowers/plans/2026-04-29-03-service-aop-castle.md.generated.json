@@ -380,11 +380,11 @@
         "service",
         "superpowers",
         "task",
-        "abstract",
         "adapter",
         "api",
-        "base",
-        "class"
+        "core",
+        "create",
+        "csharp"
       ],
       "relations": {
         "capabilities": [

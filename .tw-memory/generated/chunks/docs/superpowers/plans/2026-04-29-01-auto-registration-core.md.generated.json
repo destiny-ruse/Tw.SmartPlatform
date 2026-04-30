@@ -474,9 +474,9 @@
         "registrations",
         "superpowers",
         "task",
-        "class",
         "create",
-        "csharp"
+        "csharp",
+        "dependency"
       ],
       "relations": {
         "capabilities": [

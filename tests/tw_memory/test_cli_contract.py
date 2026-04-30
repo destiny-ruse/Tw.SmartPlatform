@@ -173,6 +173,13 @@ class CliContractTests(unittest.TestCase):
             payload = json.loads(result.stdout)
             self.assertTrue(any(item["level"] == "warning" for item in payload["diagnostics"]))
 
+    def test_ci_check_script_supports_committed_diff_whitespace_gate(self):
+        script = (REPO_ROOT / "deploy" / "ci-cd" / "tw-memory-check.ps1").read_text(encoding="utf-8")
+
+        self.assertIn("TW_MEMORY_DIFF_BASE", script)
+        self.assertIn("...HEAD", script)
+        self.assertIn("git diff --check", script)
+
     def test_check_error_diagnostics_exit_nonzero(self):
         with tempfile.TemporaryDirectory() as work:
             root = self._temp_repo_root(work)

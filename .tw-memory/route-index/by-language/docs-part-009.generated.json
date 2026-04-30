@@ -18,13 +18,13 @@
         "superpowers",
         "tw",
         "工程规范记忆",
-        "anchor",
-        "brief",
-        "check",
-        "chunk",
-        "format",
-        "front",
-        "generate"
+        "old",
+        "standards",
+        "不属于",
+        "中的公司",
+        "公司正式",
+        "公司规范",
+        "司正式规"
       ],
       "relations": {
         "capabilities": [
@@ -62,7 +62,10 @@
         "specs",
         "superpowers",
         "tw",
-        "目录总览"
+        "目录总览",
+        "录总览分",
+        "总览分两",
+        "览分两类"
       ],
       "relations": {
         "capabilities": [
@@ -101,10 +104,13 @@
         "superpowers",
         "tw",
         "公司正式目录说明",
-        "architecture",
-        "manuals",
-        "readme",
-        "text"
+        "text",
+        "公司正式",
+        "公司资产",
+        "司正式目",
+        "司资产区",
+        "向团队阅",
+        "团队阅读"
       ],
       "relations": {
         "capabilities": [
@@ -143,13 +149,13 @@
         "superpowers",
         "tw",
         "目录能力总览",
-        "auth",
-        "caching",
-        "core",
         "dotnet",
         "frameworks",
         "frontend",
-        "generated"
+        "generated",
+        "graph",
+        "index",
+        "json"
       ],
       "relations": {
         "capabilities": [
@@ -187,7 +193,10 @@
         "specs",
         "superpowers",
         "tw",
-        "变更触发策略"
+        "变更触发策略",
+        "变更触发",
+        "更触发策",
+        "触发策略"
       ],
       "relations": {
         "capabilities": [
@@ -229,7 +238,10 @@
         "git",
         "preflight",
         "pull",
-        "skill"
+        "skill",
+        "不后台自",
+        "任务开始",
+        "修改文件"
       ],
       "relations": {
         "capabilities": [
@@ -268,7 +280,13 @@
         "superpowers",
         "tw",
         "变更前",
-        "preflight"
+        "preflight",
+        "不写文件",
+        "任务开始",
+        "前运行一",
+        "务开始前",
+        "发任务开",
+        "只读检查"
       ],
       "relations": {
         "capabilities": [
@@ -308,7 +326,12 @@
         "tw",
         "变更中",
         "preflight",
-        "read"
+        "不会每次",
+        "仅在任务",
+        "件前触发",
+        "任务范围",
+        "会每次写",
+        "例如"
       ],
       "relations": {
         "capabilities": [
@@ -352,7 +375,8 @@
         "postflight",
         "powershell",
         "python",
-        "tools"
+        "tools",
+        "任务结束"
       ],
       "relations": {
         "capabilities": [
@@ -394,7 +418,10 @@
         "generate",
         "powershell",
         "python",
-        "tools"
+        "tools",
+        "不自动写",
+        "则失败并",
+        "动写文件"
       ],
       "relations": {
         "capabilities": [
@@ -434,12 +461,12 @@
         "superpowers",
         "tw",
         "存储策略",
-        "check",
         "chunks",
         "embedding",
         "fts",
-        "fts5",
-        "generated"
+        "generated",
+        "graph",
+        "index"
       ],
       "relations": {
         "capabilities": [
@@ -478,13 +505,13 @@
         "superpowers",
         "tw",
         "成功标准",
-        "api",
-        "check",
-        "chunk",
-        "fts",
-        "generate",
-        "hash",
-        "mcp"
+        "preflight",
+        "任务开始",
+        "关的规范",
+        "内部框架",
+        "前能运行",
+        "务开始前",
+        "发任务开"
       ],
       "relations": {
         "capabilities": [
@@ -523,12 +550,13 @@
         "superpowers",
         "tw",
         "风险约束",
-        "embedding",
-        "fts",
-        "git",
-        "mcp",
         "token",
-        "tools"
+        "三方官方",
+        "不保存密",
+        "不保存未",
+        "不保存第",
+        "不保存聊",
+        "保存密钥"
       ],
       "relations": {
         "capabilities": [
@@ -570,10 +598,10 @@
         "chunk",
         "cli",
         "fts5",
-        "mcp",
         "postflight",
         "preflight",
-        "query"
+        "query",
+        "read"
       ],
       "relations": {
         "capabilities": [
@@ -612,13 +640,13 @@
         "superpowers",
         "tw",
         "已收敛的关键问题",
-        "check",
-        "generate",
         "knowledge",
-        "postflight",
-        "preflight",
-        "skill",
-        "tools"
+        "于公司内",
+        "作为",
+        "使用手册",
+        "公司内部",
+        "关键问题",
+        "册属于公"
       ],
       "relations": {
         "capabilities": [

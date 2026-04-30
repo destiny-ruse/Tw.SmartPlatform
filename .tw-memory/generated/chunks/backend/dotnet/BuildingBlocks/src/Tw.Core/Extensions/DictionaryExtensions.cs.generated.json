@@ -19,12 +19,12 @@
         "concurrent",
         "dictionary",
         "dynamic",
-        "key",
-        "name",
         "namespace",
-        "param",
         "public",
-        "returns"
+        "static",
+        "summary",
+        "system",
+        "using"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "extensions",
         "src",
         "tw",
-        "argument",
-        "cref",
         "default",
-        "dictionary",
-        "exception",
-        "get",
-        "iread",
         "key",
         "langword",
         "name",
-        "null"
+        "param",
+        "returns",
+        "see",
+        "tkey",
+        "tvalue",
+        "typeparam",
+        "不存在时"
       ],
       "relations": {
         "capabilities": [

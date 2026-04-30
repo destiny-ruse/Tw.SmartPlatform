@@ -45,7 +45,18 @@
         "standards",
         "ide",
         "net",
-        "xml"
+        "xml",
+        "于降低公",
+        "低公共类",
+        "公共类型",
+        "共类型缺",
+        "和异常语",
+        "契约",
+        "异常语义",
+        "异步和异",
+        "步和异常",
+        "注释规范",
+        "用于降低"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +91,16 @@
         "api",
         "net",
         "open",
-        "xml"
+        "xml",
+        "公共类型",
+        "夹具和示",
+        "扩展方法",
+        "接口",
+        "控制器",
+        "本规范适",
+        "测试夹具",
+        "源码",
+        "绑定类型"
       ],
       "relations": {
         "capabilities": [
@@ -111,18 +131,20 @@
         "md",
         "rules",
         "standards",
-        "act",
         "api",
-        "arrange",
-        "assert",
-        "exception",
-        "hack",
-        "inheritdoc",
-        "param",
-        "remarks",
-        "returns",
-        "summary",
-        "xml"
+        "xml",
+        "公共成员",
+        "公共类型",
+        "口方法和",
+        "和跨程序",
+        "序集可见",
+        "必须使用",
+        "接口方法",
+        "方法和跨",
+        "明用途和",
+        "法和跨程",
+        "注释说明",
+        "用途和关"
       ],
       "relations": {
         "capabilities": [
@@ -154,19 +176,19 @@
         "rules",
         "standards",
         "api",
-        "async",
-        "cancel",
-        "cancellation",
-        "cref",
         "csharp",
-        "exception",
-        "get",
-        "guid",
-        "invalid",
         "name",
-        "operation",
         "order",
-        "param"
+        "param",
+        "summary",
+        "中稳定的",
+        "仍可撤销",
+        "公共",
+        "单仍可撤",
+        "可撤销时",
+        "当订单仍",
+        "撤销时调",
+        "时调度取"
       ],
       "relations": {
         "capabilities": [
@@ -198,10 +220,19 @@
         "rules",
         "standards",
         "检查清单",
-        "generated",
-        "hack",
-        "inheritdoc",
-        "xml"
+        "xml",
+        "公共类型",
+        "口和成员",
+        "否有必要",
+        "否覆盖调",
+        "员是否有",
+        "和成员是",
+        "成员是否",
+        "接口和成",
+        "方需要知",
+        "是否有必",
+        "是否覆盖",
+        "注释"
       ],
       "relations": {
         "capabilities": [
@@ -266,7 +297,19 @@
         "rules",
         "standards",
         "变更记录",
-        "net"
+        "net",
+        "内部复杂",
+        "句号",
+        "和方法内",
+        "复杂逻辑",
+        "属性注释",
+        "性注释和",
+        "方法内部",
+        "日期",
+        "杂逻辑注",
+        "法内部复",
+        "注释和方",
+        "注释语言"
       ],
       "relations": {
         "capabilities": [

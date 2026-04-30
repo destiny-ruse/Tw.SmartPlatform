@@ -11,7 +11,10 @@
         "md",
         "rules",
         "standards",
-        "健康检查规范"
+        "健康检查规范",
+        "健康检查",
+        "康检查规",
+        "检查规范"
       ],
       "relations": {
         "capabilities": [
@@ -45,7 +48,17 @@
         "liveness",
         "readiness",
         "slo",
-        "startup"
+        "startup",
+        "于降低编",
+        "低编排平",
+        "健康检查",
+        "台误杀进",
+        "平台误杀",
+        "康检查规",
+        "排平台误",
+        "查规范用",
+        "检查规范",
+        "用于降低"
       ],
       "relations": {
         "capabilities": [
@@ -86,7 +99,10 @@
         "rpc",
         "services",
         "src",
-        "startup"
+        "startup",
+        "后台作业",
+        "处理任务",
+        "息消费者"
       ],
       "relations": {
         "capabilities": [
@@ -117,11 +133,20 @@
         "md",
         "rules",
         "standards",
-        "api",
         "liveness",
-        "pii",
         "readiness",
-        "startup"
+        "startup",
+        "一个端点",
+        "不得用同",
+        "个端点同",
+        "务必须区",
+        "同一个端",
+        "同时表达",
+        "得用同一",
+        "必须区分",
+        "时表达进",
+        "服务必须",
+        "检查"
       ],
       "relations": {
         "capabilities": [
@@ -152,20 +177,20 @@
         "md",
         "rules",
         "standards",
-        "app",
         "broker",
         "csharp",
         "database",
         "degraded",
         "dependencies",
-        "get",
         "index",
         "live",
         "liveness",
-        "map",
         "message",
         "probes",
-        "readiness"
+        "readiness",
+        "ready",
+        "required",
+        "search"
       ],
       "relations": {
         "capabilities": [
@@ -199,7 +224,17 @@
         "检查清单",
         "liveness",
         "readiness",
-        "startup"
+        "startup",
+        "免检查外",
+        "分别定义",
+        "各自语义",
+        "否分别定",
+        "否避免检",
+        "外部依赖",
+        "并说明各",
+        "明各自语",
+        "是否分别",
+        "是否避免"
       ],
       "relations": {
         "capabilities": [
@@ -266,7 +301,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [

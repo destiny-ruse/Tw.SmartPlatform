@@ -14,17 +14,17 @@
         "src",
         "tw",
         "utilities",
-        "async",
-        "class",
-        "disposable",
-        "dispose",
-        "get",
-        "iasync",
-        "instance",
         "namespace",
-        "new",
-        "null",
-        "private"
+        "summary",
+        "任何效果",
+        "何效果的",
+        "供释放时",
+        "可复用异",
+        "复用异步",
+        "异步释放",
+        "提供释放",
+        "放时无任",
+        "效果的可"
       ],
       "relations": {
         "capabilities": [

@@ -13,7 +13,10 @@
         "resource",
         "rules",
         "standards",
-        "资源命名规范"
+        "资源命名规范",
+        "命名规范",
+        "源命名规",
+        "资源命名"
       ],
       "relations": {
         "capabilities": [
@@ -46,7 +49,19 @@
         "resource",
         "rules",
         "standards",
-        "kubernetes"
+        "kubernetes",
+        "于降低环",
+        "低环境混",
+        "务发现错",
+        "发现错误",
+        "名规范用",
+        "命名规范",
+        "归属不明",
+        "服务发现",
+        "源命名规",
+        "源归属不",
+        "环境混淆",
+        "现错误和"
       ],
       "relations": {
         "capabilities": [
@@ -81,7 +96,6 @@
         "standards",
         "适用范围",
         "account",
-        "chart",
         "config",
         "cron",
         "deployment",
@@ -91,7 +105,8 @@
         "job",
         "kubernetes",
         "kustomize",
-        "map"
+        "map",
+        "namespace"
       ],
       "relations": {
         "capabilities": [
@@ -125,18 +140,18 @@
         "rules",
         "standards",
         "component",
-        "config",
-        "deployment",
-        "dev",
-        "helm",
-        "job",
-        "kustomize",
-        "label",
-        "map",
-        "namespace",
-        "ordering",
-        "platform",
-        "prod"
+        "purpose",
+        "system",
+        "使用小写",
+        "名称必须",
+        "和连字符",
+        "字和连字",
+        "小写字母",
+        "并表达",
+        "必须使用",
+        "或项目内",
+        "数字和连",
+        "源名称必"
       ],
       "relations": {
         "capabilities": [
@@ -215,12 +230,18 @@
         "rules",
         "standards",
         "检查清单",
-        "config",
-        "label",
-        "map",
         "namespace",
-        "secret",
-        "service"
+        "service",
+        "件和用途",
+        "使用小写",
+        "只使用小",
+        "名称是否",
+        "否只使用",
+        "和连字符",
+        "字和连字",
+        "小写字母",
+        "并表达系",
+        "数字和连"
       ],
       "relations": {
         "capabilities": [
@@ -291,7 +312,19 @@
         "resource",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [

@@ -15,16 +15,16 @@
         "sha384hasher",
         "src",
         "tw",
-        "case",
-        "class",
-        "hasher",
-        "input",
-        "name",
         "namespace",
-        "param",
         "public",
         "sha",
-        "sha384"
+        "static",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与验证辅",
+        "哈希计算"
       ],
       "relations": {
         "capabilities": [

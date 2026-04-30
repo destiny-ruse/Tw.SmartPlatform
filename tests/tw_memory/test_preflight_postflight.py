@@ -119,6 +119,7 @@ class PreflightPostflightTests(unittest.TestCase):
                 "docs/standards/rules/cache.md",
                 "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md",
                 "backend/dotnet/BuildingBlocks/src/Tw.Caching/CacheClient.cs",
+                "backend/dotnet/Services/Notice/Foo.cs",
                 "frontend/apps/tw.web.ops/src/view.vue",
             ]
         )
@@ -130,7 +131,15 @@ class PreflightPostflightTests(unittest.TestCase):
         )
         self.assertIn(
             "backend/dotnet/BuildingBlocks/src/Tw.Caching/CacheClient.cs",
-            result["review_required_files"],
+            result["memory_affecting_files"],
+        )
+        self.assertIn(
+            "backend/dotnet/Services/Notice/Foo.cs",
+            result["memory_affecting_files"],
+        )
+        self.assertIn(
+            "frontend/apps/tw.web.ops/src/view.vue",
+            result["memory_affecting_files"],
         )
         self.assertIn("generate", result["actions"])
         self.assertIn("check", result["actions"])
@@ -141,7 +150,7 @@ class PreflightPostflightTests(unittest.TestCase):
         self.assertEqual(metadata_result["memory_affecting_files"], [".tw-memory/taxonomy.yaml"])
         self.assertEqual(metadata_result["actions"], ["generate", "check"])
 
-        review_result = PostflightRunner(Path(".")).run(
+        source_result = PostflightRunner(Path(".")).run(
             [
                 "backend/dotnet/BuildingBlocks/src/CacheClient.cs",
                 "backend/java/src/Main.java",
@@ -151,7 +160,7 @@ class PreflightPostflightTests(unittest.TestCase):
         )
 
         self.assertEqual(
-            review_result["review_required_files"],
+            source_result["memory_affecting_files"],
             [
                 "backend/dotnet/BuildingBlocks/src/CacheClient.cs",
                 "backend/java/src/Main.java",
@@ -159,7 +168,27 @@ class PreflightPostflightTests(unittest.TestCase):
                 "frontend/packages/ui/src/Button.tsx",
             ],
         )
+        self.assertEqual(source_result["actions"], ["generate", "check"])
+
+        review_result = PostflightRunner(Path(".")).run(["frontend/packages/ui/src/theme.css"])
+
+        self.assertEqual(review_result["review_required_files"], ["frontend/packages/ui/src/theme.css"])
         self.assertEqual(review_result["actions"], ["review-manual-sync", "postflight-again"])
+
+    def test_postflight_ignores_scanner_excluded_source_directories(self):
+        changed_files = [
+            "backend/dotnet/Services/Notice/bin/Foo.cs",
+            "backend/dotnet/Services/Notice/obj/Foo.cs",
+            "frontend/apps/tw.web.ops/node_modules/pkg/index.js",
+            "backend/python/orders/__pycache__/app.py",
+        ]
+
+        result = PostflightRunner(Path(".")).run(changed_files)
+
+        self.assertEqual(result["memory_affecting_files"], [])
+        self.assertEqual(result["review_required_files"], [])
+        self.assertEqual(result["ordinary_files"], changed_files)
+        self.assertEqual(result["actions"], [])
 
 
 if __name__ == "__main__":

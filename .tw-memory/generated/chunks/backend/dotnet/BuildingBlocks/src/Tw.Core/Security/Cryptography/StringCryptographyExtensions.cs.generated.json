@@ -15,16 +15,16 @@
         "src",
         "stringcryptographyextensions",
         "tw",
-        "bool",
-        "class",
-        "compute",
-        "extensions",
-        "hash",
-        "input",
-        "md5",
         "namespace",
-        "public",
-        "static"
+        "summary",
+        "system",
+        "text",
+        "using",
+        "串使用密",
+        "使用密码",
+        "供字符串",
+        "助方法的",
+        "字符串使"
       ],
       "relations": {
         "capabilities": [
@@ -63,15 +63,15 @@
         "stringcryptographyextensions",
         "tw",
         "bool",
-        "case",
         "compute",
         "encoding",
-        "false",
         "hash",
         "hasher",
         "hmac",
         "input",
-        "key"
+        "key",
+        "md5",
+        "public"
       ],
       "relations": {
         "capabilities": [
@@ -110,15 +110,15 @@
         "stringcryptographyextensions",
         "tw",
         "aes",
-        "base64",
         "bool",
-        "byte",
-        "cipher",
         "encoding",
-        "encrypt",
         "hash",
         "hasher",
-        "hmac"
+        "hmac",
+        "input",
+        "key",
+        "null",
+        "public"
       ],
       "relations": {
         "capabilities": [
@@ -156,16 +156,16 @@
         "src",
         "stringcryptographyextensions",
         "tw",
-        "algorithm",
         "base64",
         "decrypt",
         "encoding",
         "encrypt",
-        "hash",
         "input",
         "key",
         "null",
-        "padding"
+        "padding",
+        "pem",
+        "public"
       ],
       "relations": {
         "capabilities": [

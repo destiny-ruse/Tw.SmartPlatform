@@ -11,3 +11,4 @@ CI should run this command from the repository root:
 ```
 
 The script validates `.tw-memory` freshness, source hashes, route paths, chunk line ranges, forbidden runtime cache files, and repository whitespace issues. It does not generate files in CI.
+Set `TW_MEMORY_DIFF_BASE` (for example, `origin/master`) in CI to check committed branch whitespace with `git diff --check <base>...HEAD`; without it, the script checks the working tree diff.

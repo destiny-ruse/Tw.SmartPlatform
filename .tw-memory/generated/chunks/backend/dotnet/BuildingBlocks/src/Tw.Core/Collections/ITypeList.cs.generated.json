@@ -14,17 +14,17 @@
         "itypelist",
         "src",
         "tw",
-        "add",
         "cref",
-        "ilist",
         "interface",
         "itype",
         "list",
-        "name",
         "namespace",
         "object",
         "public",
-        "returns"
+        "see",
+        "summary",
+        "受基类型",
+        "可赋值给"
       ],
       "relations": {
         "capabilities": [

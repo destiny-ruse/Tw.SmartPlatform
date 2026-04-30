@@ -14,17 +14,17 @@
         "listextensions",
         "src",
         "tw",
-        "argument",
         "class",
-        "cref",
-        "exception",
-        "langword",
         "list",
-        "name",
         "namespace",
-        "null",
-        "param",
-        "paramref"
+        "public",
+        "static",
+        "summary",
+        "供可变列",
+        "列表扩展",
+        "列表的只",
+        "变列表扩",
+        "可变列表"
       ],
       "relations": {
         "capabilities": [
@@ -60,17 +60,17 @@
         "listextensions",
         "src",
         "tw",
-        "add",
         "argument",
-        "check",
         "cref",
         "exception",
-        "ilist",
         "item",
         "langword",
-        "last",
         "name",
-        "null"
+        "null",
+        "param",
+        "paramref",
+        "see",
+        "source"
       ],
       "relations": {
         "capabilities": [
@@ -106,17 +106,17 @@
         "listextensions",
         "src",
         "tw",
-        "argument",
-        "cref",
-        "exception",
         "factory",
-        "ilist",
         "item",
-        "langword",
         "name",
-        "null",
         "param",
-        "paramref"
+        "selector",
+        "于选择待",
+        "元素的工",
+        "元素的谓",
+        "前元素的",
+        "当前元素",
+        "待替换元"
       ],
       "relations": {
         "capabilities": [
@@ -153,16 +153,16 @@
         "src",
         "tw",
         "add",
-        "argument",
-        "cref",
-        "exception",
         "factory",
-        "index",
         "item",
         "list",
-        "name",
         "new",
-        "null"
+        "return",
+        "summary",
+        "var",
+        "一个匹配",
+        "个匹配元",
+        "元素移动"
       ],
       "relations": {
         "capabilities": [

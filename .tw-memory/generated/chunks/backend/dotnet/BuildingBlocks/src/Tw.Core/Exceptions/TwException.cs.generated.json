@@ -14,17 +14,17 @@
         "src",
         "tw",
         "twexception",
-        "base",
         "class",
-        "cref",
         "exception",
-        "inner",
-        "message",
-        "name",
         "namespace",
-        "param",
         "public",
-        "see"
+        "see",
+        "summary",
+        "一处理的",
+        "为调用方",
+        "作为调用",
+        "可统一处",
+        "基异常类"
       ],
       "relations": {
         "capabilities": [

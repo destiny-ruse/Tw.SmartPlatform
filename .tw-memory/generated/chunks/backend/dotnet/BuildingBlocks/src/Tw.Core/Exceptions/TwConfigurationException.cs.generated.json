@@ -14,17 +14,17 @@
         "src",
         "tw",
         "twconfigurationexception",
-        "base",
         "class",
         "configuration",
-        "cref",
         "exception",
-        "inner",
-        "message",
-        "name",
         "namespace",
-        "param",
-        "public"
+        "public",
+        "see",
+        "summary",
+        "失配置导",
+        "或缺失配",
+        "故障",
+        "效或缺失"
       ],
       "relations": {
         "capabilities": [

@@ -14,17 +14,17 @@
         "src",
         "tw",
         "typeextensions",
-        "argument",
-        "assembly",
         "class",
         "cref",
-        "exception",
-        "full",
-        "get",
-        "langword",
-        "name",
         "namespace",
-        "null"
+        "public",
+        "see",
+        "static",
+        "summary",
+        "type",
+        "值扩展方",
+        "名以及程",
+        "回完整类"
       ],
       "relations": {
         "capabilities": [
