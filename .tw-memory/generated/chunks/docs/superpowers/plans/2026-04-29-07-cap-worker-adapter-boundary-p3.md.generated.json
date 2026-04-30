@@ -19,7 +19,12 @@
         "plan",
         "plans",
         "superpowers",
-        "worker"
+        "worker",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "implement"
       ],
       "relations": {
         "capabilities": [
@@ -61,7 +66,12 @@
         "p3",
         "plans",
         "superpowers",
-        "worker"
+        "worker",
+        "after",
+        "definition",
+        "delivery",
+        "file",
+        "first"
       ],
       "relations": {
         "capabilities": [
@@ -103,7 +113,12 @@
         "plans",
         "source",
         "superpowers",
-        "worker"
+        "worker",
+        "asyncapi",
+        "authoring",
+        "conventions",
+        "design",
+        "doc"
       ],
       "relations": {
         "capabilities": [
@@ -145,7 +160,12 @@
         "plans",
         "structure",
         "superpowers",
-        "worker"
+        "worker",
+        "add",
+        "aop",
+        "auto",
+        "create",
+        "design"
       ],
       "relations": {
         "capabilities": [
@@ -230,7 +250,10 @@
         "superpowers",
         "task",
         "worker",
-        "write"
+        "write",
+        "aop",
+        "auto",
+        "create"
       ],
       "relations": {
         "capabilities": [
@@ -274,7 +297,10 @@
         "superpowers",
         "task",
         "worker",
-        "write"
+        "write",
+        "aop",
+        "auto",
+        "create"
       ],
       "relations": {
         "capabilities": [
@@ -318,7 +344,10 @@
         "successor",
         "superpowers",
         "task",
-        "worker"
+        "worker",
+        "agentic",
+        "concrete",
+        "entry"
       ],
       "relations": {
         "capabilities": [
@@ -362,7 +391,10 @@
         "successor",
         "superpowers",
         "task",
-        "worker"
+        "worker",
+        "agentic",
+        "concrete",
+        "entry"
       ],
       "relations": {
         "capabilities": [
@@ -408,7 +440,8 @@
         "plans",
         "superpowers",
         "task",
-        "worker"
+        "worker",
+        "add"
       ],
       "relations": {
         "capabilities": [
@@ -451,7 +484,11 @@
         "review",
         "self",
         "superpowers",
-        "worker"
+        "worker",
+        "ack",
+        "avoids",
+        "dead",
+        "execute"
       ],
       "relations": {
         "capabilities": [

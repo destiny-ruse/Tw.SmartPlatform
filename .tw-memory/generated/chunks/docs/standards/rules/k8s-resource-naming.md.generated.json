@@ -13,7 +13,10 @@
         "resource",
         "rules",
         "standards",
-        "资源命名规范"
+        "资源命名规范",
+        "命名规范",
+        "源命名规",
+        "资源命名"
       ],
       "relations": {
         "capabilities": [
@@ -25,7 +28,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -45,7 +48,20 @@
         "naming",
         "resource",
         "rules",
-        "standards"
+        "standards",
+        "kubernetes",
+        "于降低环",
+        "低环境混",
+        "务发现错",
+        "发现错误",
+        "名规范用",
+        "命名规范",
+        "归属不明",
+        "服务发现",
+        "源命名规",
+        "源归属不",
+        "环境混淆",
+        "现错误和"
       ],
       "relations": {
         "capabilities": [
@@ -57,7 +73,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -78,7 +94,19 @@
         "resource",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "account",
+        "config",
+        "cron",
+        "deployment",
+        "helm",
+        "hpa",
+        "ingress",
+        "job",
+        "kubernetes",
+        "kustomize",
+        "map",
+        "namespace"
       ],
       "relations": {
         "capabilities": [
@@ -90,7 +118,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -110,7 +138,20 @@
         "naming",
         "resource",
         "rules",
-        "standards"
+        "standards",
+        "component",
+        "purpose",
+        "system",
+        "使用小写",
+        "名称必须",
+        "和连字符",
+        "字和连字",
+        "小写字母",
+        "并表达",
+        "必须使用",
+        "或项目内",
+        "数字和连",
+        "源名称必"
       ],
       "relations": {
         "capabilities": [
@@ -122,7 +163,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -142,7 +183,20 @@
         "naming",
         "resource",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "app",
+        "apps",
+        "component",
+        "deployment",
+        "kind",
+        "kubernetes",
+        "labels",
+        "metadata",
+        "name",
+        "namespace",
+        "ordering",
+        "part"
       ],
       "relations": {
         "capabilities": [
@@ -154,7 +208,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -175,7 +229,19 @@
         "resource",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "namespace",
+        "service",
+        "件和用途",
+        "使用小写",
+        "只使用小",
+        "名称是否",
+        "否只使用",
+        "和连字符",
+        "字和连字",
+        "小写字母",
+        "并表达系",
+        "数字和连"
       ],
       "relations": {
         "capabilities": [
@@ -187,7 +253,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -208,7 +274,12 @@
         "resource",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "container",
+        "deploy",
+        "image",
+        "rollback"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +291,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -241,7 +312,19 @@
         "resource",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
@@ -253,7 +336,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

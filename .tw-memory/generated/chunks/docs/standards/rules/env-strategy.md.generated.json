@@ -11,7 +11,10 @@
         "rules",
         "standards",
         "strategy",
-        "环境策略规范"
+        "环境策略规范",
+        "境策略规",
+        "环境策略",
+        "策略规范"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "md",
         "rules",
         "standards",
-        "strategy"
+        "strategy",
+        "于降低环",
+        "低环境混",
+        "制品晋级",
+        "品晋级和",
+        "境策略规",
+        "晋级和生",
+        "未验证制",
+        "环境混用",
+        "环境策略",
+        "用于降低",
+        "略规范用",
+        "目标",
+        "策略规范",
+        "级和生产"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "rules",
         "standards",
         "strategy",
-        "适用范围"
+        "适用范围",
+        "业和运行",
+        "于源码构",
+        "作业和运",
+        "依赖端点",
+        "制品晋级",
+        "和缓存实",
+        "外部依赖",
+        "密钥引用",
+        "库和缓存",
+        "据库和缓",
+        "数据库和",
+        "消息主题",
+        "源码构建"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +132,21 @@
         "md",
         "rules",
         "standards",
-        "strategy"
+        "strategy",
+        "不得共享",
+        "产不得共",
+        "享可写数",
+        "共享可写",
+        "写数据库",
+        "发和生产",
+        "可写数据",
+        "和生产不",
+        "境必须按",
+        "开发",
+        "得共享可",
+        "必须按职",
+        "按职责隔",
+        "测试"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +157,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +176,21 @@
         "md",
         "rules",
         "standards",
-        "strategy"
+        "strategy",
+        "artifact",
+        "catalog",
+        "com",
+        "config",
+        "database",
+        "example",
+        "f2a91c",
+        "image",
+        "prod",
+        "production",
+        "promotion",
+        "ref",
+        "registry",
+        "secret"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +201,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +221,20 @@
         "rules",
         "standards",
         "strategy",
-        "检查清单"
+        "检查清单",
+        "从同一提",
+        "制品是否",
+        "各环境是",
+        "同一提交",
+        "否从同一",
+        "否隔离数",
+        "和外部端",
+        "品是否从",
+        "境是否隔",
+        "外部端点",
+        "密钥和外",
+        "是否从同",
+        "是否隔离"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +245,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +265,13 @@
         "rules",
         "standards",
         "strategy",
-        "相关规范"
+        "相关规范",
+        "configuration",
+        "deploy",
+        "management",
+        "pipeline",
+        "rollback",
+        "secrets"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +282,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +302,20 @@
         "rules",
         "standards",
         "strategy",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +326,7 @@
           "strategy"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

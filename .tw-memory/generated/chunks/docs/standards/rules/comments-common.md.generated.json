@@ -11,7 +11,10 @@
         "md",
         "rules",
         "standards",
-        "通用注释规范"
+        "通用注释规范",
+        "注释规范",
+        "用注释规",
+        "通用注释"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "与代码不",
+        "于降低注",
+        "代码不一",
+        "低注释与",
+        "复杂逻辑",
+        "杂逻辑缺",
+        "注释与代",
+        "注释规范",
+        "用于降低",
+        "用注释规",
+        "目标",
+        "码不一致",
+        "范用于降"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "vendored",
+        "中的行内",
+        "公共",
+        "文档注释",
+        "明中的行",
+        "本规范适",
+        "测试",
+        "用于源码",
+        "的行内注",
+        "署说明中",
+        "范适用于",
+        "行内注释"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +132,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "中的自然",
+        "人工维护",
+        "使用简体",
+        "工维护注",
+        "必须使用",
+        "所有人工",
+        "护注释中",
+        "有人工维",
+        "注释中的",
+        "然语言必",
+        "用简体中",
+        "的自然语",
+        "简体中文",
+        "维护注释"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +157,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +176,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "code",
+        "const",
+        "legacy",
+        "response",
+        "typescript",
+        "以兼容仍",
+        "保留",
+        "兼容仍使",
+        "动端客户",
+        "协议的移",
+        "字段以兼",
+        "容仍使用",
+        "正例",
+        "段以兼容"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +201,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +221,20 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "不是复述",
+        "否解释原",
+        "复述代码",
+        "是否使用",
+        "是否解释",
+        "是复述代",
+        "注释是否",
+        "注释自然",
+        "然语言是",
+        "约束",
+        "而不是复",
+        "自然语言",
+        "解释原因"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +245,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +265,10 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "code",
+        "naming",
+        "review"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +279,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +299,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充注释语",
+        "内部复杂",
+        "和内部复",
+        "复杂逻辑",
+        "属性注释",
+        "性注释和",
+        "日期",
+        "末尾句号",
+        "杂逻辑注",
+        "注释和内",
+        "注释要求",
+        "注释语言",
+        "版本"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +323,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

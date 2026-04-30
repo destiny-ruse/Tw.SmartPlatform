@@ -10,7 +10,11 @@
         "md",
         "rules",
         "standards",
-        "typescript"
+        "typescript",
+        "script",
+        "type",
+        "前端",
+        "规范"
       ],
       "relations": {
         "capabilities": [
@@ -20,7 +24,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -39,7 +43,21 @@
         "md",
         "rules",
         "standards",
-        "typescript"
+        "typescript",
+        "script",
+        "type",
+        "为可检查",
+        "件边界表",
+        "前端",
+        "和组件边",
+        "必须把接",
+        "态边界和",
+        "把接口边",
+        "接口边界",
+        "状态边界",
+        "界和组件",
+        "界表达为",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -49,7 +67,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -69,7 +87,20 @@
         "rules",
         "standards",
         "typescript",
-        "适用范围"
+        "适用范围",
+        "api",
+        "dto",
+        "script",
+        "src",
+        "tsx",
+        "type",
+        "vue",
+        "代码和构",
+        "和构建配",
+        "构建配置",
+        "测试代码",
+        "状态管理",
+        "码和构建"
       ],
       "relations": {
         "capabilities": [
@@ -79,7 +110,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -98,7 +129,21 @@
         "md",
         "rules",
         "standards",
-        "typescript"
+        "typescript",
+        "any",
+        "api",
+        "emits",
+        "props",
+        "值必须声",
+        "出值必须",
+        "和跨模块",
+        "响应",
+        "块导出值",
+        "对象和跨",
+        "导出值必",
+        "必须声明",
+        "态对象和",
+        "模块导出"
       ],
       "relations": {
         "capabilities": [
@@ -108,7 +153,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -127,7 +172,21 @@
         "md",
         "rules",
         "standards",
-        "typescript"
+        "typescript",
+        "const",
+        "date",
+        "dto",
+        "emit",
+        "format",
+        "function",
+        "key",
+        "null",
+        "order",
+        "paid",
+        "return",
+        "status",
+        "string",
+        "text"
       ],
       "relations": {
         "capabilities": [
@@ -137,7 +196,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -157,7 +216,20 @@
         "rules",
         "standards",
         "typescript",
-        "检查清单"
+        "检查清单",
+        "api",
+        "emits",
+        "props",
+        "传输层类",
+        "参数和状",
+        "否都有明",
+        "和状态是",
+        "层类型是",
+        "态是否都",
+        "数和状态",
+        "明确类型",
+        "是否都有",
+        "有明确类"
       ],
       "relations": {
         "capabilities": [
@@ -167,7 +239,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -187,7 +259,15 @@
         "rules",
         "standards",
         "typescript",
-        "相关规范"
+        "相关规范",
+        "api",
+        "input",
+        "naming",
+        "project",
+        "response",
+        "shape",
+        "validation",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -197,7 +277,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -217,7 +297,20 @@
         "rules",
         "standards",
         "typescript",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -227,7 +320,7 @@
           "typescript"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

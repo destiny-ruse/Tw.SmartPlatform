@@ -10,7 +10,9 @@
         "md",
         "references",
         "standards",
-        "工程术语表"
+        "工程术语表",
+        "工程术语",
+        "程术语表"
       ],
       "relations": {
         "capabilities": [
@@ -20,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -38,7 +40,18 @@
         "glossary",
         "md",
         "references",
-        "standards"
+        "standards",
+        "中的术语",
+        "减少跨团",
+        "团队沟通",
+        "少跨团队",
+        "术语歧义",
+        "沟通中的",
+        "的术语歧",
+        "目标",
+        "跨团队沟",
+        "通中的术",
+        "队沟通中"
       ],
       "relations": {
         "capabilities": [
@@ -48,7 +61,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -67,7 +80,21 @@
         "md",
         "references",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "中的统一",
+        "和跨团队",
+        "团队沟通",
+        "控和跨团",
+        "文档",
+        "沟通中的",
+        "测试",
+        "的统一引",
+        "监控和跨",
+        "统一引用",
+        "跨团队沟",
+        "适用于",
+        "通中的统"
       ],
       "relations": {
         "capabilities": [
@@ -77,7 +104,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -95,7 +122,22 @@
         "glossary",
         "md",
         "references",
-        "standards"
+        "standards",
+        "不要求既",
+        "供方共同",
+        "共同遵守",
+        "兼容变更",
+        "同遵守的",
+        "含义",
+        "和提供方",
+        "契约",
+        "守的接口",
+        "接口承诺",
+        "提供方共",
+        "方共同遵",
+        "方和提供",
+        "术语",
+        "用方和提"
       ],
       "relations": {
         "capabilities": [
@@ -105,7 +147,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -123,7 +165,22 @@
         "glossary",
         "md",
         "references",
-        "standards"
+        "standards",
+        "一术语或",
+        "不同团队",
+        "中引用统",
+        "反例",
+        "同团队为",
+        "在设计文",
+        "引用统一",
+        "态码含义",
+        "或状态码",
+        "文档中引",
+        "术语或状",
+        "档中引用",
+        "正例",
+        "状态码含",
+        "用统一术"
       ],
       "relations": {
         "capabilities": [
@@ -133,7 +190,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -152,7 +209,13 @@
         "md",
         "references",
         "standards",
-        "变更记录"
+        "变更记录",
+        "参考目录",
+        "建立参考",
+        "日期",
+        "版本",
+        "立参考目",
+        "说明"
       ],
       "relations": {
         "capabilities": [
@@ -162,7 +225,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },

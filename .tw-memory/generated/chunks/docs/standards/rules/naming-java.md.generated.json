@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "javadoc",
+        "不清和常",
+        "义不清和",
+        "于降低包",
+        "低包结构",
+        "包结构混",
+        "名规范用",
+        "命名规范",
+        "方法语义",
+        "法语义不",
+        "用于降低",
+        "目标",
+        "类职责模",
+        "结构混乱"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +66,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +86,20 @@
         "naming",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "vendored",
+        "参数",
+        "和文件命",
+        "字段",
+        "局部变量",
+        "常量",
+        "接口",
+        "方法",
+        "本规范适",
+        "枚举",
+        "模块",
+        "测试类",
+        "类和文件"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +110,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +129,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "misc",
+        "使用全小",
+        "全小写反",
+        "写反向域",
+        "包名必须",
+        "反向域名",
+        "名必须使",
+        "名或项目",
+        "向域名或",
+        "域名或项",
+        "小写反向",
+        "并按领域",
+        "必须使用",
+        "或项目约"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +154,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +173,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "application",
+        "boolean",
+        "can",
+        "cancel",
+        "cancellation",
+        "class",
+        "com",
+        "common",
+        "misc",
+        "order",
+        "ordering",
+        "package",
+        "pending",
+        "return"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +198,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +218,20 @@
         "naming",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "包名是否",
+        "变量是否",
+        "名是否小",
+        "和变量是",
+        "块或领域",
+        "字段和变",
+        "并表达模",
+        "或领域边",
+        "接口",
+        "方法",
+        "是否小写",
+        "枚举",
+        "模块或领"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +242,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +262,9 @@
         "naming",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "comments",
+        "common"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +275,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +295,20 @@
         "naming",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +319,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

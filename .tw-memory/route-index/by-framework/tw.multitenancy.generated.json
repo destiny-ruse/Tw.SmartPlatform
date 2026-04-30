@@ -13,7 +13,18 @@
         "readme",
         "src",
         "tw",
-        "多租户构件目录"
+        "多租户构件目录",
+        "于承载多",
+        "和租户配",
+        "多租户构",
+        "多租户识",
+        "录用于承",
+        "户上下文",
+        "户构件目",
+        "户隔离和",
+        "承载多租",
+        "本目录用",
+        "构件目录"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +54,20 @@
         "dotnet",
         "multitenancy",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target",
+        "usings"
       ],
       "relations": {
         "capabilities": [

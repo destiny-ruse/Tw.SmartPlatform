@@ -11,7 +11,12 @@
         "repo",
         "rules",
         "standards",
-        "仓库目录布局规范"
+        "仓库目录布局规范",
+        "仓库目录",
+        "布局规范",
+        "库目录布",
+        "录布局规",
+        "目录布局"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +27,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +46,21 @@
         "md",
         "repo",
         "rules",
-        "standards"
+        "standards",
+        "于降低目",
+        "仓库目录",
+        "低目录职",
+        "入口分散",
+        "具入口分",
+        "局规范用",
+        "工具入口",
+        "布局规范",
+        "库目录布",
+        "录布局规",
+        "录职责不",
+        "测试与源",
+        "用于降低",
+        "目录布局"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +71,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +91,20 @@
         "repo",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "于仓库根",
+        "仓库根目",
+        "和生成目",
+        "工具目录",
+        "库根目录",
+        "录和生成",
+        "文档目录",
+        "本规范适",
+        "测试目录",
+        "源码目录",
+        "生成目录",
+        "用于仓库",
+        "目录和生"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +115,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +134,21 @@
         "md",
         "repo",
         "rules",
-        "standards"
+        "standards",
+        "不得把一",
+        "产物必须",
+        "和生成产",
+        "工具",
+        "必须有清",
+        "成产物必",
+        "文档",
+        "晰目录边",
+        "有清晰目",
+        "测试",
+        "清晰目录",
+        "源码",
+        "物必须有",
+        "生成产物"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +159,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +178,21 @@
         "md",
         "repo",
         "rules",
-        "standards"
+        "standards",
+        "check",
+        "memory",
+        "production",
+        "ps1",
+        "run",
+        "scanner",
+        "src",
+        "test",
+        "tests",
+        "text",
+        "tmp",
+        "tools",
+        "反例",
+        "正例"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +203,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +223,20 @@
         "repo",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "动目录是",
+        "发现入口",
+        "可发现入",
+        "否有明确",
+        "和可发现",
+        "增或移动",
+        "录是否有",
+        "或移动目",
+        "新增或移",
+        "明确职责",
+        "是否有明",
+        "有明确职",
+        "测试"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +247,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +267,12 @@
         "repo",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "authoring",
+        "editorconfig",
+        "pipeline",
+        "strategy",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +283,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +303,20 @@
         "repo",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +327,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

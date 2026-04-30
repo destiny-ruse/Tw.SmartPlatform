@@ -11,7 +11,11 @@
         "naming",
         "rules",
         "standards",
-        "数据库命名规范"
+        "数据库命名规范",
+        "命名规范",
+        "库命名规",
+        "据库命名",
+        "数据库命"
       ],
       "relations": {
         "capabilities": [
@@ -21,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -40,7 +44,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "schema",
+        "于降低表",
+        "低表意不",
+        "冲突和迁",
+        "名冲突和",
+        "名规范用",
+        "命名冲突",
+        "命名规范",
+        "团队命名",
+        "库命名规",
+        "据库命名",
+        "数据库命",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -50,7 +68,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +88,20 @@
         "naming",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "orm",
+        "schema",
+        "中的数据",
+        "主键",
+        "于数据库",
+        "唯一约束",
+        "外键",
+        "射中的数",
+        "据库对象",
+        "数据库对",
+        "映射中的",
+        "检查约束",
+        "用于数据"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +111,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +130,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "case",
+        "snake",
+        "不得混用",
+        "使用小写",
+        "名称必须",
+        "对象名称",
+        "库对象名",
+        "得混用大",
+        "必须使用",
+        "拼音缩写",
+        "据库对象",
+        "数据库对",
+        "混用大小",
+        "用大小写"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +154,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +173,21 @@
         "md",
         "naming",
         "rules",
-        "standards"
+        "standards",
+        "amount",
+        "bigint",
+        "cents",
+        "constraint",
+        "create",
+        "created",
+        "customer",
+        "foreign",
+        "key",
+        "null",
+        "order",
+        "primary",
+        "sales",
+        "sql"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +197,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +217,20 @@
         "naming",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "case",
+        "schema",
+        "snake",
+        "一使用小",
+        "使用小写",
+        "名是否表",
+        "否统一使",
+        "否表达业",
+        "和表名是",
+        "对象是否",
+        "库对象是",
+        "据库对象",
+        "数据库对"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +240,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +260,11 @@
         "naming",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "audit",
+        "common",
+        "fields",
+        "migration"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +274,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -218,7 +294,20 @@
         "naming",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -228,7 +317,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

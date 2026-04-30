@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.TypeExtensions#chunk-001",
+      "end_line": 64,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "typeextensions",
+        "class",
+        "cref",
+        "namespace",
+        "public",
+        "see",
+        "static",
+        "summary",
+        "type",
+        "值扩展方",
+        "名以及程",
+        "回完整类"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "src",
+          "typeextensions"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:84f8430d3f822e472c5e0cc3e1b501e522676a94a0cee5a8bf1dcae5dd344cfd",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/TypeExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-64 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/TypeExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/TypeExtensions.cs"
+}

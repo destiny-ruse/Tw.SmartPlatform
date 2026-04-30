@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Primitives.NamedValue#chunk-001",
+      "end_line": 33,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "namedvalue",
+        "primitives",
+        "src",
+        "tw",
+        "argument",
+        "cref",
+        "exception",
+        "name",
+        "namespace",
+        "null",
+        "param",
+        "paramref",
+        "see",
+        "summary",
+        "value"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "namedvalue",
+          "primitives",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5d440e62672cf6fe38338428d693a5226018194f5550e66b453c6688b13a5bd9",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedValue.cs",
+      "start_line": 1,
+      "summary": "Lines 1-33 in backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedValue.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedValue.cs"
+}

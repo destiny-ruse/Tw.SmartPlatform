@@ -13,7 +13,18 @@
         "src",
         "tw",
         "uow",
-        "工作单元构件目录"
+        "工作单元构件目录",
+        "于承载工",
+        "作单元构",
+        "作单元模",
+        "元构件目",
+        "元模式相",
+        "关的事务",
+        "单元构件",
+        "单元模式",
+        "工作单元",
+        "式相关的",
+        "录用于承"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +54,20 @@
         "dotnet",
         "src",
         "tw",
-        "uow"
+        "uow",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target",
+        "usings"
       ],
       "relations": {
         "capabilities": [

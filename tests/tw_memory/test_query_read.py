@@ -29,6 +29,39 @@ class QueryReadTests(unittest.TestCase):
             self.assertEqual(len(results), 1)
             self.assertIn("cache", results[0].summary.lower())
 
+    def test_query_matches_body_derived_keywords_without_fts(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "general.md").write_text(
+                "# General\n\nRedis distributed cache wrapper.\n",
+                encoding="utf-8",
+            )
+            MemoryGenerator(root).generate()
+
+            results = SearchIndex(root).query("redis", stack=None, kind=None, limit=5)
+
+            self.assertEqual([result.chunk_id for result in results], ["docs.general#chunk-001"])
+
+    def test_query_matches_chinese_body_derived_keywords_without_fts(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            rules = root / "docs" / "standards" / "rules"
+            rules.mkdir(parents=True)
+            (rules / "comments-python.md").write_text(
+                "# Python 注释规范\n\nPython 注释规范用于降低动态语言中调用契约不清的风险。\n",
+                encoding="utf-8",
+            )
+            MemoryGenerator(root).generate()
+
+            results = SearchIndex(root).query("动态语言", stack=None, kind="standard", limit=5)
+
+            self.assertEqual(
+                [result.source_path for result in results],
+                ["docs/standards/rules/comments-python.md"],
+            )
+
     def test_query_filters_by_stack_and_kind(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
@@ -98,6 +131,20 @@ class QueryReadTests(unittest.TestCase):
             self.assertEqual(len(results), 1)
             self.assertEqual(results[0].chunk_id, "docs.cache#chunk-001")
             self.assertIn("Postgres", results[0].summary)
+
+    def test_fts_remains_fresh_after_regenerate_without_source_changes(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "cache.md").write_text("# Redis\n\nDistributed cache wrapper.\n", encoding="utf-8")
+            MemoryGenerator(root).generate()
+            index = SearchIndex(root)
+            index.build_fts()
+
+            MemoryGenerator(root).generate()
+
+            self.assertTrue(index._can_use_fts())
 
     def test_query_handles_odd_fts_input_without_traceback(self):
         with tempfile.TemporaryDirectory() as work:

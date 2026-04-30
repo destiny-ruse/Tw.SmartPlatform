@@ -13,7 +13,18 @@
         "dotnet",
         "shared",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk"
       ],
       "relations": {
         "capabilities": [

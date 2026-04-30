@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Primitives.NamedAction#chunk-001",
+      "end_line": 17,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "namedaction",
+        "primitives",
+        "src",
+        "tw",
+        "name",
+        "namespace",
+        "summary",
+        "typeparam",
+        "与操作委",
+        "作参数类",
+        "作委托关",
+        "名称与操",
+        "委托关联",
+        "将通过验",
+        "操作参数"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "namedaction",
+          "primitives",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:a00305cb574cdc81fd73195ffbb129709198f3d88430b862af8d5f574b98ea24",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedAction.cs",
+      "start_line": 1,
+      "summary": "Lines 1-17 in backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedAction.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedAction.cs"
+}

@@ -11,7 +11,11 @@
         "md",
         "rules",
         "standards",
-        "前端国际化规范"
+        "前端国际化规范",
+        "前端国际",
+        "国际化规",
+        "端国际化",
+        "际化规范"
       ],
       "relations": {
         "capabilities": [
@@ -21,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -40,7 +44,21 @@
         "i18n",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "于避免硬",
+        "位符错配",
+        "免硬编码",
+        "则用于避",
+        "前端国际",
+        "化规则用",
+        "占位符错",
+        "和多语言",
+        "国际化规",
+        "用于避免",
+        "目标",
+        "硬编码文",
+        "端国际化",
+        "符错配和"
       ],
       "relations": {
         "capabilities": [
@@ -50,7 +68,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +88,20 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "fixture",
+        "json",
+        "script",
+        "type",
+        "vue",
+        "协议字段",
+        "和文案评",
+        "文案评审",
+        "测试",
+        "空状态",
+        "组件",
+        "表单",
+        "语言包"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +111,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +130,21 @@
         "i18n",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "不得在模",
+        "则或通知",
+        "可见文案",
+        "得在模板",
+        "必须通过",
+        "户可见文",
+        "文案必须",
+        "校验规则",
+        "案必须通",
+        "用户可见",
+        "组件逻辑",
+        "见文案必",
+        "规则",
+        "规则或通"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +154,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +173,21 @@
         "i18n",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "button",
+        "count",
+        "input",
+        "json",
+        "label",
+        "order",
+        "placeholder",
+        "receiver",
+        "vue",
+        "件商品",
+        "入收货人",
+        "反例",
+        "提交订单",
+        "收货人"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +197,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +217,20 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "全部通过",
+        "可见文案",
+        "否全部通",
+        "否按领域",
+        "户可见文",
+        "文案是否",
+        "是否全部",
+        "是否按领",
+        "案是否全",
+        "用户可见",
+        "见文案是",
+        "言键引用",
+        "言键是否"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +240,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +260,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "a11y",
+        "project",
+        "typescript",
+        "vue"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +274,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -218,7 +294,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -228,7 +317,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

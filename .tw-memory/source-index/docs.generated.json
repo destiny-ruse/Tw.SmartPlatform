@@ -669,7 +669,7 @@
       },
       "language": "deploy",
       "service": null,
-      "source_hash": "sha256:70f589d140602be22ed8c21f7d13f4a2647ac21dd3f5b9ed83460f2a30797fff",
+      "source_hash": "sha256:ffdc8c1e5cefdb885949726a16316c9453b013f8aac524e8f8b429c580d4fce3",
       "source_path": "deploy/ci-cd/README.md",
       "source_type": "readme"
     },
@@ -731,7 +731,7 @@
       "service": null,
       "source_hash": "sha256:6dae8c62a8ac43fdbfed718a30a23ccd47da22b84f7857e0a6c7695e4dbcb25a",
       "source_path": "docs/standards/decisions/0002-rest-response-shape-no-null.md",
-      "source_type": "manual"
+      "source_type": "decision"
     },
     {
       "framework": null,
@@ -743,7 +743,7 @@
       "service": null,
       "source_hash": "sha256:efd7326a3c6dfa62caca94800f28cc88767623aabdb6c151316875928b8810cd",
       "source_path": "docs/standards/processes/change-governance.md",
-      "source_type": "manual"
+      "source_type": "process"
     },
     {
       "framework": null,
@@ -755,7 +755,7 @@
       "service": null,
       "source_hash": "sha256:18680623cf4950266b7ead7332fda9974c6af7082e1e2bc83c2e75bdb91b4856",
       "source_path": "docs/standards/processes/dependency-onboarding.md",
-      "source_type": "manual"
+      "source_type": "process"
     },
     {
       "framework": null,
@@ -767,7 +767,7 @@
       "service": null,
       "source_hash": "sha256:06c37712ad38b0ca5b0b174d95aa7995d9960da5fcde88f3e3b1460469699c72",
       "source_path": "docs/standards/processes/doc-authoring.md",
-      "source_type": "manual"
+      "source_type": "process"
     },
     {
       "framework": null,
@@ -779,7 +779,7 @@
       "service": null,
       "source_hash": "sha256:e64896f2f735dea88f2448b4f78beb5d48eb85c9e560b84ac68f602f4346e503",
       "source_path": "docs/standards/processes/rfc-flow.md",
-      "source_type": "manual"
+      "source_type": "process"
     },
     {
       "framework": null,
@@ -791,7 +791,7 @@
       "service": null,
       "source_hash": "sha256:a99d0a3ccc7765e02dc2531697a255186072d42538d1b9003548f6d9fc00a449",
       "source_path": "docs/standards/processes/standard-authoring.md",
-      "source_type": "manual"
+      "source_type": "process"
     },
     {
       "framework": null,
@@ -803,7 +803,7 @@
       "service": null,
       "source_hash": "sha256:b8870de6c8971362042f15d7cc2e41584c20bd777d0763f5ed2272448c3e053e",
       "source_path": "docs/standards/references/datetime.md",
-      "source_type": "manual"
+      "source_type": "reference"
     },
     {
       "framework": null,
@@ -815,7 +815,7 @@
       "service": null,
       "source_hash": "sha256:00f0177d1a64eb44ae589b113bf805ac8067250fe25efd29ad060c782b3d467a",
       "source_path": "docs/standards/references/error-codes.md",
-      "source_type": "manual"
+      "source_type": "reference"
     },
     {
       "framework": null,
@@ -827,7 +827,7 @@
       "service": null,
       "source_hash": "sha256:1f2975bd9a619f2ee4380722e8a53ef4401e3f84fe7b1e45d696267a9bc56f80",
       "source_path": "docs/standards/references/glossary.md",
-      "source_type": "manual"
+      "source_type": "reference"
     },
     {
       "framework": null,
@@ -839,7 +839,7 @@
       "service": null,
       "source_hash": "sha256:e9fb0ad979ce8d27f9971cd30865cf7307930b59140ccb55235dac920ae37f6a",
       "source_path": "docs/standards/references/http-status.md",
-      "source_type": "manual"
+      "source_type": "reference"
     },
     {
       "framework": null,
@@ -851,7 +851,7 @@
       "service": null,
       "source_hash": "sha256:d82ad82f6474a2f9366ab06969b85fa133145f32dc55f33a7da5073fb42d2a73",
       "source_path": "docs/standards/rules/api-error-response.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -863,7 +863,7 @@
       "service": null,
       "source_hash": "sha256:939418415ea947ae98f5463611211962eb666a70d862bf7c889b54f3de8224e7",
       "source_path": "docs/standards/rules/api-response-shape.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -875,7 +875,7 @@
       "service": null,
       "source_hash": "sha256:35e5dc75ae009504bdcc2a44784b5afd61a0f50d0309446738e71f6044a15f41",
       "source_path": "docs/standards/rules/api-rest-design.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -887,7 +887,7 @@
       "service": null,
       "source_hash": "sha256:90396e7eaf01e41cc65fbdcbd1f159c8f525777e28c65c36a1d5a1c82b34aa07",
       "source_path": "docs/standards/rules/asyncapi-conventions.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -899,7 +899,7 @@
       "service": null,
       "source_hash": "sha256:ca6d6ea25b2e468c82a25232ac45df0ecadfed52bfade1a010cf6d12b11b4285",
       "source_path": "docs/standards/rules/auth-oauth-oidc.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -911,7 +911,7 @@
       "service": null,
       "source_hash": "sha256:1c009900ba23f638296efdf36da4e71ea4c748522e10b4ad01579eb37ef3f72f",
       "source_path": "docs/standards/rules/cache-conventions.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -923,7 +923,7 @@
       "service": null,
       "source_hash": "sha256:74668bdf6bc94e3548bfea73b99d25fda990f23e583e22d85a4d5125bae24d37",
       "source_path": "docs/standards/rules/ci-pipeline.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -935,7 +935,7 @@
       "service": null,
       "source_hash": "sha256:ffc3e2930d159c3d559b5eb4345d86f46558dc2b90f6b5bb69b362797d0fddf2",
       "source_path": "docs/standards/rules/code-review.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -947,7 +947,7 @@
       "service": null,
       "source_hash": "sha256:e5bdec0fd18b57feab968709240e0081ea20b8ed64b72f3e70353f6761ecf9c3",
       "source_path": "docs/standards/rules/comments-common.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -959,7 +959,7 @@
       "service": null,
       "source_hash": "sha256:298f3cee9aca657d9596bc8aeee635ed7ef4472b21e74675afa1433c91b52ed4",
       "source_path": "docs/standards/rules/comments-dotnet.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -971,7 +971,7 @@
       "service": null,
       "source_hash": "sha256:5d15cae9636f1f736903cf3b8e47f493c4b8506e0a0f658389d27b939df45b95",
       "source_path": "docs/standards/rules/comments-java.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -981,9 +981,9 @@
       },
       "language": "docs",
       "service": null,
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -995,7 +995,7 @@
       "service": null,
       "source_hash": "sha256:7ed5d6bbcc966c4d7f7c0107e6152b88716a008ad16c46bc93d802e40ef0827f",
       "source_path": "docs/standards/rules/comments-ts.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1007,7 +1007,7 @@
       "service": null,
       "source_hash": "sha256:121dcfa3107d2a45a3c5f5e9d6a6aaaeb17d5e454749de6aeaaa00964580e221",
       "source_path": "docs/standards/rules/configuration.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1019,7 +1019,7 @@
       "service": null,
       "source_hash": "sha256:6a583d538e1a27b4422b5485357328e6858013962032a23eed6cacdeca6856cd",
       "source_path": "docs/standards/rules/container-image.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1031,7 +1031,7 @@
       "service": null,
       "source_hash": "sha256:c7e3f6b4145a5b2cd002bdfebd52c4db940c2443c338db76fc5cb3dbc0112365",
       "source_path": "docs/standards/rules/contract-testing.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1043,7 +1043,7 @@
       "service": null,
       "source_hash": "sha256:859bbdb99777533d625d0c5667dffb9d699b1e31b7f8daaf28a66724b2e72670",
       "source_path": "docs/standards/rules/data-formats.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1055,7 +1055,7 @@
       "service": null,
       "source_hash": "sha256:12299804d836ee94d2ebefc8a875f2d81a89971cfed124360d4a7c4763dd315d",
       "source_path": "docs/standards/rules/db-audit-fields.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1067,7 +1067,7 @@
       "service": null,
       "source_hash": "sha256:7b0d6c9b9dfb4654841d93ffe884178842212893118e653bd0a6fc4089085e21",
       "source_path": "docs/standards/rules/db-migration.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1079,7 +1079,7 @@
       "service": null,
       "source_hash": "sha256:712eee0dfb2c31ae3af74c9ca60265b3e856eeaa5d96d481be431e8692c19c9a",
       "source_path": "docs/standards/rules/db-naming.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1091,7 +1091,7 @@
       "service": null,
       "source_hash": "sha256:5ce2a6ffd3bf6bb1dcfa2aed5a0ee54be5a99b5c8ce350358ab567a5579fbcff",
       "source_path": "docs/standards/rules/dependency-policy.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1103,7 +1103,7 @@
       "service": null,
       "source_hash": "sha256:f274fe3b50cf0fe07248cd070e023979cc9c148faabed933a1ebd1255f9a4b2a",
       "source_path": "docs/standards/rules/deploy-rollback.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1115,7 +1115,7 @@
       "service": null,
       "source_hash": "sha256:7c064e76d1041ddd171bf2892a3c389e6b9db61dac69c93c71ca013acb954343",
       "source_path": "docs/standards/rules/editorconfig.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1127,7 +1127,7 @@
       "service": null,
       "source_hash": "sha256:4d4ddaca2186bfb1840113ac63074319f2d86150fb1fe1bba1c85d86a5c83c4f",
       "source_path": "docs/standards/rules/env-strategy.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1139,7 +1139,7 @@
       "service": null,
       "source_hash": "sha256:5ec5a3469b13e69e34cfade3caddf4e7dc583b2bf0d1fd9ef10d3010dba44c52",
       "source_path": "docs/standards/rules/error-handling.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1151,7 +1151,7 @@
       "service": null,
       "source_hash": "sha256:db6398b86044c43becbd6776226bc9d03c2db860dbe446bf4f5d23499282318d",
       "source_path": "docs/standards/rules/fe-a11y.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1163,7 +1163,7 @@
       "service": null,
       "source_hash": "sha256:fe316ce449aa5fa2c99ad9f462126d82cadd6161856e2e4e7a38b2689225c726",
       "source_path": "docs/standards/rules/fe-compat.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1175,7 +1175,7 @@
       "service": null,
       "source_hash": "sha256:e9bd9e4218c39be72d1fb9f42c1cae4154c72314c18a00b6f580f61039765f99",
       "source_path": "docs/standards/rules/fe-i18n.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1187,7 +1187,7 @@
       "service": null,
       "source_hash": "sha256:34a17b560f00a0989409ab1e69f4460cf8db04f0cc904f93b843a6ec47c784cd",
       "source_path": "docs/standards/rules/fe-styles.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1199,7 +1199,7 @@
       "service": null,
       "source_hash": "sha256:903048ee632baf2415017d301f3d1f656a77104ab77bc05a23a4b84f5dec70a1",
       "source_path": "docs/standards/rules/fe-typescript.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1211,7 +1211,7 @@
       "service": null,
       "source_hash": "sha256:a92e10a8d11911e6fa8efa36b42ccf44d6355bdedc015c5a0b8c59d4c9c49743",
       "source_path": "docs/standards/rules/fe-uniapp-cross.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1223,7 +1223,7 @@
       "service": null,
       "source_hash": "sha256:34bbd0067818c4e12ddab8e09f37e925ea0e5a73534b8c42714a113b175e3420",
       "source_path": "docs/standards/rules/fe-vue-ts-project.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1235,7 +1235,7 @@
       "service": null,
       "source_hash": "sha256:f27dddc72c6c9b24460f84f4f4230b357fe0224863ea2c70ad4a19b9c68791d3",
       "source_path": "docs/standards/rules/git-branching.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1247,7 +1247,7 @@
       "service": null,
       "source_hash": "sha256:b7f3412c2c365d851d8c4fba80d91986e840db887ce926bd5d80d4c1fdc9d337",
       "source_path": "docs/standards/rules/git-commit.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1259,7 +1259,7 @@
       "service": null,
       "source_hash": "sha256:cf8c83c5caeefe03bbf5872d687d9d7935d76975d55b2880e6d610ac4288f6c6",
       "source_path": "docs/standards/rules/grpc-proto-style.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1271,7 +1271,7 @@
       "service": null,
       "source_hash": "sha256:de70624aa44f81cc9f33f6987a6f3beedfb05d4e2ada0c90b273df45131d5fbd",
       "source_path": "docs/standards/rules/grpc-versioning.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1283,7 +1283,7 @@
       "service": null,
       "source_hash": "sha256:4f7b9328d71d2f64fabdb4097f3e81ae683c1e40c61faff4245991b5439c407d",
       "source_path": "docs/standards/rules/health-checks.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1295,7 +1295,7 @@
       "service": null,
       "source_hash": "sha256:4ae55f926f1cda4acc68f61946279ff5fff52de31af7e3bfae0b6c2d4ec4d301",
       "source_path": "docs/standards/rules/idempotency.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1307,7 +1307,7 @@
       "service": null,
       "source_hash": "sha256:5dc908d26c76401003813ce6c7d3deef93336f5b6d030a392fadcfa548e5c0c0",
       "source_path": "docs/standards/rules/input-validation.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1319,7 +1319,7 @@
       "service": null,
       "source_hash": "sha256:60a7f9c515760f3a43bdd8f440aa9438bc1b257b3cfc8ef892698986d1799aad",
       "source_path": "docs/standards/rules/k8s-resource-naming.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1331,7 +1331,7 @@
       "service": null,
       "source_hash": "sha256:df33617b6ef63f74835f7fc9a7fd43eeea54cbc4539aa45ccb731217d119a943",
       "source_path": "docs/standards/rules/logging.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1343,7 +1343,7 @@
       "service": null,
       "source_hash": "sha256:f59fdb701f2da743069e75780e0466efd67a0d773bf19868ef3d2e5a2852af85",
       "source_path": "docs/standards/rules/messaging-patterns.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1355,7 +1355,7 @@
       "service": null,
       "source_hash": "sha256:723dd5063229537c86cc5b9f9859a427dc78cdbbe1e94908c43077fa0ea0aadf",
       "source_path": "docs/standards/rules/metrics.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1367,7 +1367,7 @@
       "service": null,
       "source_hash": "sha256:2893c9bf84651e7ef4fdc29531f1fbed08c7b8344356d2843bd0c69509620c12",
       "source_path": "docs/standards/rules/naming-common.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1379,7 +1379,7 @@
       "service": null,
       "source_hash": "sha256:b27b369e3ef71be6ec0c3b529105a8932b364cb4430165b29b86cac61128c1c4",
       "source_path": "docs/standards/rules/naming-dotnet.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1391,7 +1391,7 @@
       "service": null,
       "source_hash": "sha256:fc90816783df118214ac37ccbb7843181b10b42bdd8cd98138fd9fefc09c6c6a",
       "source_path": "docs/standards/rules/naming-java.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1403,7 +1403,7 @@
       "service": null,
       "source_hash": "sha256:2f41364faf6f5cf28b1d85e4e8cd636081268205a9108459cee480152263e77e",
       "source_path": "docs/standards/rules/naming-python.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1415,7 +1415,7 @@
       "service": null,
       "source_hash": "sha256:1d84b2717e3bda46ee6aaa7af0c603fd34b05b712ac884f97e22d091d256c4f4",
       "source_path": "docs/standards/rules/naming-ts-vue.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1427,7 +1427,7 @@
       "service": null,
       "source_hash": "sha256:6ed90d97ba887e1aa47ff8ef40afd7a1d1425a3f23a5655188f67cdd26b9ba39",
       "source_path": "docs/standards/rules/naming-uniapp.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1439,7 +1439,7 @@
       "service": null,
       "source_hash": "sha256:41594afb9e6407d8b35b4d871952c95793abcc13cff5e676320d18fe3493ac51",
       "source_path": "docs/standards/rules/pii-handling.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1451,7 +1451,7 @@
       "service": null,
       "source_hash": "sha256:ab0cdd36c1e4aa3778c49e0a289638ba8b4c73d2160e56f22035ecd9757b95e4",
       "source_path": "docs/standards/rules/repo-layout.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1463,7 +1463,7 @@
       "service": null,
       "source_hash": "sha256:7e518ad2c104c38cd81b58e536a602796302b97197cd5245639ed822a5e9eba1",
       "source_path": "docs/standards/rules/resilience.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1475,7 +1475,7 @@
       "service": null,
       "source_hash": "sha256:83421a37540322e43dc8a45f1f59e7131cd00c006abc6a0a88d34c0a9d8f40e0",
       "source_path": "docs/standards/rules/secrets-management.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1487,7 +1487,7 @@
       "service": null,
       "source_hash": "sha256:73206386e11bf5583f7d691c7bdeaf15c6949019ee98de8c004f7a89b3f7cba4",
       "source_path": "docs/standards/rules/slo.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1499,7 +1499,7 @@
       "service": null,
       "source_hash": "sha256:ec217baa6414aa47ae54e5506e08f8cfad5b3dca2ac659c182da5b1a432f50d6",
       "source_path": "docs/standards/rules/test-coverage.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1511,7 +1511,7 @@
       "service": null,
       "source_hash": "sha256:85bb03fbdbb27337f4a04d9ac559beb720ee75710ce04648c1a630bd930a0efc",
       "source_path": "docs/standards/rules/test-data-mock.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1523,7 +1523,7 @@
       "service": null,
       "source_hash": "sha256:0d601251f52f44ccdfd673bda8f8fbeea241cea84c7f62ce35c91d606eeabbb0",
       "source_path": "docs/standards/rules/test-strategy.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,
@@ -1535,7 +1535,7 @@
       "service": null,
       "source_hash": "sha256:83a55892a3d4e5910ccaab7391f5fc82c5ec01d93cceb86ab0f3547474593fa8",
       "source_path": "docs/standards/rules/tracing.md",
-      "source_type": "manual"
+      "source_type": "standard"
     },
     {
       "framework": null,

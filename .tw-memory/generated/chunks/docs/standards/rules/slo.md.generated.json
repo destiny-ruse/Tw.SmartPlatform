@@ -9,7 +9,8 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "规范"
       ],
       "relations": {
         "capabilities": [
@@ -19,7 +20,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -37,7 +38,22 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "sli",
+        "于降低服",
+        "低服务可",
+        "务可靠性",
+        "口径不一",
+        "可靠性目",
+        "告警只反",
+        "径不一致",
+        "性目标口",
+        "服务可靠",
+        "标口径不",
+        "用于降低",
+        "目标",
+        "目标口径",
+        "范用于降"
       ],
       "relations": {
         "capabilities": [
@@ -47,7 +63,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -66,7 +82,21 @@
         "rules",
         "slo",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apps",
+        "backend",
+        "http",
+        "rpc",
+        "services",
+        "sli",
+        "src",
+        "上下游系",
+        "中面向用",
+        "向用户或",
+        "或上下游",
+        "户或上下",
+        "本规范适"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +106,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -94,7 +124,22 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "cpu",
+        "sli",
+        "一个面向",
+        "个生产服",
+        "个面向用",
+        "产服务必",
+        "务必须声",
+        "向用户或",
+        "声明至少",
+        "少一个面",
+        "必须声明",
+        "明至少一",
+        "服务必须",
+        "每个生产",
+        "生产服务"
       ],
       "relations": {
         "capabilities": [
@@ -104,7 +149,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -122,7 +167,22 @@
         "md",
         "rules",
         "slo",
-        "standards"
+        "standards",
+        "api",
+        "business",
+        "condition",
+        "conflict",
+        "create",
+        "defined",
+        "documented",
+        "http",
+        "order",
+        "requests",
+        "response",
+        "service",
+        "sli",
+        "success",
+        "successful"
       ],
       "relations": {
         "capabilities": [
@@ -132,7 +192,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -151,7 +211,21 @@
         "rules",
         "slo",
         "standards",
-        "检查清单"
+        "检查清单",
+        "sli",
+        "不是只表",
+        "只表达资",
+        "可感知结",
+        "否表达用",
+        "感知结果",
+        "或调用方",
+        "户或调用",
+        "方可感知",
+        "是只表达",
+        "是否表达",
+        "用户或调",
+        "用方可感",
+        "而不是只"
       ],
       "relations": {
         "capabilities": [
@@ -161,7 +235,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -180,7 +254,13 @@
         "rules",
         "slo",
         "standards",
-        "相关规范"
+        "相关规范",
+        "checks",
+        "deploy",
+        "health",
+        "metrics",
+        "resilience",
+        "rollback"
       ],
       "relations": {
         "capabilities": [
@@ -190,7 +270,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -209,7 +289,21 @@
         "rules",
         "slo",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [
@@ -219,7 +313,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

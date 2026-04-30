@@ -11,7 +11,9 @@
         "md",
         "references",
         "standards",
-        "错误码目录"
+        "错误码目录",
+        "误码目录",
+        "错误码目"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +24,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -41,7 +43,21 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "api",
+        "供稳定的",
+        "和用户提",
+        "定的错误",
+        "引用目录",
+        "户提示提",
+        "提供稳定",
+        "提示提供",
+        "测试和用",
+        "用户提示",
+        "的错误码",
+        "目标",
+        "码引用目",
+        "示提供稳"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +68,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -72,7 +88,20 @@
         "md",
         "references",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "rest",
+        "前端错误",
+        "动化测试",
+        "化测试断",
+        "和运维排",
+        "断言和运",
+        "测试断言",
+        "端错误处",
+        "自动化测",
+        "言和运维",
+        "试断言和",
+        "运维排障"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +112,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -102,7 +131,21 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "auth",
+        "field",
+        "found",
+        "required",
+        "resource",
+        "system",
+        "unauthorized",
+        "unavailable",
+        "validation",
+        "前缀",
+        "场景",
+        "目录",
+        "示例",
+        "系统错误"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +156,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -132,7 +175,21 @@
         "error",
         "md",
         "references",
-        "standards"
+        "standards",
+        "field",
+        "required",
+        "validation",
+        "位表单项",
+        "反例",
+        "定位表单",
+        "客户端根",
+        "客户端解",
+        "户端根据",
+        "户端解析",
+        "析自然语",
+        "正例",
+        "然语言错",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +200,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },
@@ -163,7 +220,14 @@
         "md",
         "references",
         "standards",
-        "变更记录"
+        "变更记录",
+        "建立错误",
+        "日期",
+        "版本",
+        "立错误码",
+        "误码目录",
+        "说明",
+        "错误码目"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +238,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "reference",
         "language": "docs",
         "service": null
       },

@@ -1,0 +1,147 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.DesCryptography#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "descryptography",
+        "dotnet",
+        "security",
+        "src",
+        "tw",
+        "des",
+        "namespace",
+        "summary",
+        "system",
+        "text",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的",
+        "供用于字"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "descryptography",
+          "dotnet",
+          "security",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:22e8cf31d6c0efe1b3b1b1127a331f0eea93dbacbe4755600e8ed86384f2cc63",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.DesCryptography#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "descryptography",
+        "dotnet",
+        "security",
+        "src",
+        "tw",
+        "bytes",
+        "ecb",
+        "key",
+        "langword",
+        "name",
+        "null",
+        "param",
+        "see",
+        "summary",
+        "加密密钥"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "descryptography",
+          "dotnet",
+          "security",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:22e8cf31d6c0efe1b3b1b1127a331f0eea93dbacbe4755600e8ed86384f2cc63",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.DesCryptography#chunk-003",
+      "end_line": 177,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "descryptography",
+        "dotnet",
+        "security",
+        "src",
+        "tw",
+        "algorithm",
+        "async",
+        "cancellation",
+        "decrypt",
+        "default",
+        "des",
+        "file",
+        "key",
+        "mode",
+        "padding"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "descryptography",
+          "dotnet",
+          "security",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:22e8cf31d6c0efe1b3b1b1127a331f0eea93dbacbe4755600e8ed86384f2cc63",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs",
+      "start_line": 145,
+      "summary": "Lines 145-177 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs"
+}

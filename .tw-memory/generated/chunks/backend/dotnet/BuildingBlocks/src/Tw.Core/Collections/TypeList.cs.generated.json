@@ -1,0 +1,144 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Collections.TypeList#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "collections",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "typelist",
+        "class",
+        "cref",
+        "list",
+        "namespace",
+        "object",
+        "public",
+        "see",
+        "summary",
+        "system",
+        "type",
+        "using"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "collections",
+          "core",
+          "dotnet",
+          "src",
+          "typelist"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6c2122cd9393bcdf87b07f903e8347813bba4459399d56aedbb65d2455409166",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Collections.TypeList#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "collections",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "typelist",
+        "return",
+        "summary",
+        "true",
+        "typeparam",
+        "匹配返回",
+        "参数是否",
+        "回指定类",
+        "型匹配返",
+        "型参数是",
+        "定类型参",
+        "指定类型"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "collections",
+          "core",
+          "dotnet",
+          "src",
+          "typelist"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6c2122cd9393bcdf87b07f903e8347813bba4459399d56aedbb65d2455409166",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Collections.TypeList#chunk-003",
+      "end_line": 171,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "collections",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "typelist",
+        "assignable",
+        "check",
+        "index",
+        "insert",
+        "int",
+        "item",
+        "items",
+        "public",
+        "summary",
+        "tbase",
+        "type"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "collections",
+          "core",
+          "dotnet",
+          "src",
+          "typelist"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6c2122cd9393bcdf87b07f903e8347813bba4459399d56aedbb65d2455409166",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs",
+      "start_line": 145,
+      "summary": "Lines 145-171 in backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs"
+}

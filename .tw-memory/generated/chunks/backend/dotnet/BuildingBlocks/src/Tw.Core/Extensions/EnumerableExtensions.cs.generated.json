@@ -1,0 +1,144 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.EnumerableExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "enumerableextensions",
+        "extensions",
+        "src",
+        "tw",
+        "class",
+        "enumerable",
+        "langword",
+        "namespace",
+        "null",
+        "public",
+        "see",
+        "static",
+        "summary",
+        "举序列的",
+        "供可枚举"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "enumerableextensions",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6dc9d9b21bef5aab9ed97f992ec43c17b8170c7d90703a53c2e7fae95e554586",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.EnumerableExtensions#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "enumerableextensions",
+        "extensions",
+        "src",
+        "tw",
+        "action",
+        "argument",
+        "cref",
+        "exception",
+        "langword",
+        "name",
+        "null",
+        "paramref",
+        "returns",
+        "see",
+        "source"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "enumerableextensions",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6dc9d9b21bef5aab9ed97f992ec43c17b8170c7d90703a53c2e7fae95e554586",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.EnumerableExtensions#chunk-003",
+      "end_line": 209,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "enumerableextensions",
+        "extensions",
+        "src",
+        "tw",
+        "condition",
+        "name",
+        "param",
+        "predicate",
+        "source",
+        "summary",
+        "为真时筛",
+        "仅在条件",
+        "件为真时",
+        "否应用谓",
+        "在条件为"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "enumerableextensions",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:6dc9d9b21bef5aab9ed97f992ec43c17b8170c7d90703a53c2e7fae95e554586",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs",
+      "start_line": 145,
+      "summary": "Lines 145-209 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs"
+}

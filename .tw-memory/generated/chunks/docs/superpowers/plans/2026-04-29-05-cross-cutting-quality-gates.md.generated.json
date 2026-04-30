@@ -18,7 +18,13 @@
         "plan",
         "plans",
         "quality",
-        "superpowers"
+        "superpowers",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "implement",
+        "recommended"
       ],
       "relations": {
         "capabilities": [
@@ -59,7 +65,13 @@
         "order",
         "plans",
         "quality",
-        "superpowers"
+        "superpowers",
+        "adapter",
+        "after",
+        "aspnetcore",
+        "before",
+        "grpc",
+        "must"
       ],
       "relations": {
         "capabilities": [
@@ -100,7 +112,13 @@
         "plans",
         "quality",
         "source",
-        "superpowers"
+        "superpowers",
+        "comments",
+        "dependency",
+        "design",
+        "dotnet",
+        "error",
+        "handling"
       ],
       "relations": {
         "capabilities": [
@@ -141,7 +159,13 @@
         "plans",
         "quality",
         "structure",
-        "superpowers"
+        "superpowers",
+        "assembly",
+        "auto",
+        "backend",
+        "blocks",
+        "building",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -225,7 +249,10 @@
         "quality",
         "report",
         "superpowers",
-        "task"
+        "task",
+        "auto",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -269,7 +296,10 @@
         "quality",
         "report",
         "superpowers",
-        "task"
+        "task",
+        "auto",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -360,7 +390,10 @@
         "plans",
         "quality",
         "superpowers",
-        "task"
+        "task",
+        "asp",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -404,7 +437,10 @@
         "quality",
         "superpowers",
         "task",
-        "update"
+        "update",
+        "asp",
+        "autofac",
+        "backend"
       ],
       "relations": {
         "capabilities": [
@@ -446,7 +482,12 @@
         "quality",
         "superpowers",
         "task",
-        "verification"
+        "verification",
+        "all",
+        "asp",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -488,7 +529,12 @@
         "quality",
         "review",
         "self",
-        "superpowers"
+        "superpowers",
+        "aop",
+        "concrete",
+        "controller",
+        "diagnostics",
+        "include"
       ],
       "relations": {
         "capabilities": [

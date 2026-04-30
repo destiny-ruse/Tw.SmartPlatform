@@ -11,7 +11,20 @@
         "dotnet",
         "pinyinconverter",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target",
+        "usings"
       ],
       "relations": {
         "capabilities": [

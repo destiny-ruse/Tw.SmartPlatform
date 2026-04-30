@@ -11,7 +11,10 @@
         "rules",
         "standards",
         "test",
-        "测试覆盖规范"
+        "测试覆盖规范",
+        "测试覆盖",
+        "覆盖规范",
+        "试覆盖规"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "md",
         "rules",
         "standards",
-        "test"
+        "test",
+        "于降低关",
+        "件和回归",
+        "低关键路",
+        "关键路径",
+        "和回归场",
+        "回归场景",
+        "场景在变",
+        "归场景在",
+        "条件和回",
+        "测试覆盖",
+        "用于降低",
+        "界条件和",
+        "盖规范用",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "rules",
         "standards",
         "test",
-        "适用范围"
+        "适用范围",
+        "src",
+        "tests",
+        "到端测试",
+        "前端组件",
+        "后端测试",
+        "和与缺陷",
+        "契约测试",
+        "测试项目",
+        "盖率报告",
+        "盖门禁和",
+        "禁和与缺",
+        "端到端测",
+        "端测试项"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +132,21 @@
         "md",
         "rules",
         "standards",
-        "test"
+        "test",
+        "happy",
+        "path",
+        "业务行为",
+        "为必须覆",
+        "修改业务",
+        "务行为必",
+        "增或修改",
+        "失败路径",
+        "必须覆盖",
+        "或修改业",
+        "改业务行",
+        "新增或修",
+        "正常路径",
+        "界条件和"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +157,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +176,21 @@
         "md",
         "rules",
         "standards",
-        "test"
+        "test",
+        "async",
+        "await",
+        "checkout",
+        "error",
+        "expect",
+        "fails",
+        "inventory",
+        "mock",
+        "new",
+        "out",
+        "rejected",
+        "rejects",
+        "reservation",
+        "reserve"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +201,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +221,20 @@
         "rules",
         "standards",
         "test",
-        "检查清单"
+        "检查清单",
+        "件和权限",
+        "别并覆盖",
+        "否覆盖正",
+        "否识别并",
+        "和权限或",
+        "失败路径",
+        "或状态转",
+        "是否覆盖",
+        "是否识别",
+        "权限或状",
+        "条件和权",
+        "正常路径",
+        "状态转换"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +245,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +265,12 @@
         "rules",
         "standards",
         "test",
-        "相关规范"
+        "相关规范",
+        "code",
+        "contract",
+        "review",
+        "strategy",
+        "testing"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +281,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +301,20 @@
         "rules",
         "standards",
         "test",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +325,7 @@
           "test"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

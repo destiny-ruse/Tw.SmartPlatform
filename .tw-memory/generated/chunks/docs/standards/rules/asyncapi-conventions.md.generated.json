@@ -11,7 +11,9 @@
         "md",
         "rules",
         "standards",
-        "约定规范"
+        "约定规范",
+        "api",
+        "async"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +24,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +43,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "async",
+        "主题命名",
+        "于降低异",
+        "低异步接",
+        "口缺少契",
+        "名不一致",
+        "命名不一",
+        "定规范用",
+        "异步接口",
+        "接口缺少",
+        "步接口缺",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +68,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +88,20 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apps",
+        "async",
+        "backend",
+        "mock",
+        "schema",
+        "services",
+        "src",
+        "中事件发",
+        "事件发布",
+        "命令消息",
+        "契约测试",
+        "文档"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +112,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +131,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "async",
+        "schema",
+        "个跨服务",
+        "务消息通",
+        "声明通道",
+        "契约",
+        "息通道必",
+        "明通道名",
+        "服务消息",
+        "每个跨服",
+        "消息方向",
+        "消息通道",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +156,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +175,21 @@
         "docs",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "channels",
+        "event",
+        "events",
+        "headers",
+        "message",
+        "name",
+        "object",
+        "order",
+        "orders",
+        "paid",
+        "payload",
+        "properties",
+        "publish",
+        "required"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +200,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +220,20 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "api",
+        "async",
+        "schema",
+        "个跨服务",
+        "主题命名",
+        "主题是否",
+        "例和版本",
+        "务主题是",
+        "名是否稳",
+        "命名是否",
+        "和版本信",
+        "契约",
+        "服务主题"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +244,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +264,14 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "contract",
+        "data",
+        "formats",
+        "messaging",
+        "patterns",
+        "testing",
+        "tracing"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +282,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +302,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +326,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

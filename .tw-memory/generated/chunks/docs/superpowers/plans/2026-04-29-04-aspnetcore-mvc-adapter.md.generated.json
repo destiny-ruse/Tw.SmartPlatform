@@ -19,7 +19,12 @@
         "net",
         "plan",
         "plans",
-        "superpowers"
+        "superpowers",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "recommended"
       ],
       "relations": {
         "capabilities": [
@@ -57,7 +62,15 @@
         "mvc",
         "order",
         "plans",
-        "superpowers"
+        "superpowers",
+        "after",
+        "aop",
+        "before",
+        "castle",
+        "cross",
+        "cutting",
+        "gates",
+        "must"
       ],
       "relations": {
         "capabilities": [
@@ -95,7 +108,15 @@
         "mvc",
         "plans",
         "source",
-        "superpowers"
+        "superpowers",
+        "asp",
+        "backend",
+        "blocks",
+        "building",
+        "capability",
+        "core",
+        "design",
+        "discovery"
       ],
       "relations": {
         "capabilities": [
@@ -133,7 +154,15 @@
         "mvc",
         "plans",
         "structure",
-        "superpowers"
+        "superpowers",
+        "asp",
+        "backend",
+        "blocks",
+        "building",
+        "cancellation",
+        "context",
+        "core",
+        "create"
       ],
       "relations": {
         "capabilities": [
@@ -210,7 +239,13 @@
         "project",
         "superpowers",
         "task",
-        "test"
+        "test",
+        "asp",
+        "backend",
+        "blocks",
+        "building",
+        "core",
+        "create"
       ],
       "relations": {
         "capabilities": [
@@ -253,7 +288,10 @@
         "net",
         "plans",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -296,7 +334,10 @@
         "net",
         "plans",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -337,7 +378,12 @@
         "mvc",
         "plans",
         "superpowers",
-        "task"
+        "task",
+        "aop",
+        "asp",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -377,7 +423,13 @@
         "mvc",
         "plans",
         "superpowers",
-        "task"
+        "task",
+        "aop",
+        "asp",
+        "backend",
+        "blocks",
+        "building",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -417,7 +469,13 @@
         "mvc",
         "plans",
         "superpowers",
-        "task"
+        "task",
+        "adds",
+        "aop",
+        "api",
+        "create",
+        "does",
+        "expose"
       ],
       "relations": {
         "capabilities": [
@@ -456,7 +514,14 @@
         "plans",
         "superpowers",
         "task",
-        "verify"
+        "verify",
+        "asp",
+        "backend",
+        "blocks",
+        "building",
+        "core",
+        "csproj",
+        "dotnet"
       ],
       "relations": {
         "capabilities": [
@@ -495,7 +560,14 @@
         "plans",
         "review",
         "self",
-        "superpowers"
+        "superpowers",
+        "add",
+        "asp",
+        "autofac",
+        "before",
+        "configured",
+        "container",
+        "core"
       ],
       "relations": {
         "capabilities": [

@@ -14,7 +14,9 @@
         "ts",
         "typescript",
         "vue",
-        "项目规范"
+        "项目规范",
+        "script",
+        "type"
       ],
       "relations": {
         "capabilities": [
@@ -25,7 +27,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -46,7 +48,19 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "script",
+        "type",
+        "合式函数",
+        "和构建配",
+        "层和构建",
+        "建配置形",
+        "形成清晰",
+        "必须让页",
+        "构建配置",
+        "求层和构",
+        "目必须让",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -57,7 +71,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -79,7 +93,18 @@
         "standards",
         "ts",
         "vue",
-        "适用范围"
+        "适用范围",
+        "api",
+        "app",
+        "components",
+        "composables",
+        "eslint",
+        "features",
+        "pages",
+        "router",
+        "script",
+        "src",
+        "stores"
       ],
       "relations": {
         "capabilities": [
@@ -90,7 +115,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -111,7 +136,19 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "composable",
+        "feature",
+        "service",
+        "件必须负",
+        "和复用交",
+        "必须负责",
+        "换和复用",
+        "求转换和",
+        "由级编排",
+        "组件必须",
+        "规则",
+        "请求转换"
       ],
       "relations": {
         "capabilities": [
@@ -122,7 +159,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -143,7 +180,19 @@
         "rules",
         "standards",
         "ts",
-        "vue"
+        "vue",
+        "const",
+        "define",
+        "editor",
+        "emit",
+        "emits",
+        "lang",
+        "order",
+        "props",
+        "save",
+        "saved",
+        "script",
+        "setup"
       ],
       "relations": {
         "capabilities": [
@@ -154,7 +203,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -176,7 +225,18 @@
         "standards",
         "ts",
         "vue",
-        "检查清单"
+        "检查清单",
+        "api",
+        "composable",
+        "emits",
+        "props",
+        "store",
+        "公开导出",
+        "参数和公",
+        "和公开导",
+        "导出是否",
+        "层职责是",
+        "开导出是"
       ],
       "relations": {
         "capabilities": [
@@ -187,7 +247,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -209,7 +269,11 @@
         "standards",
         "ts",
         "vue",
-        "相关规范"
+        "相关规范",
+        "comments",
+        "naming",
+        "styles",
+        "typescript"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +284,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -242,7 +306,18 @@
         "standards",
         "ts",
         "vue",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本"
       ],
       "relations": {
         "capabilities": [
@@ -253,7 +328,7 @@
           "vue"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

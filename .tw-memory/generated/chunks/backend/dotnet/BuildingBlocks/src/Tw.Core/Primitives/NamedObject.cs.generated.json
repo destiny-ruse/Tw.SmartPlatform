@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Primitives.NamedObject#chunk-001",
+      "end_line": 15,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "namedobject",
+        "primitives",
+        "src",
+        "tw",
+        "name",
+        "namespace",
+        "param",
+        "summary",
+        "为基元描",
+        "供具名基",
+        "元描述符",
+        "具名基对",
+        "名基对象",
+        "基元描述",
+        "描述符提"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "namedobject",
+          "primitives",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:eba4efaaccf714815b066c79ca9f22029845caecb60bc8d37093456187cac23a",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObject.cs",
+      "start_line": 1,
+      "summary": "Lines 1-15 in backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObject.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObject.cs"
+}

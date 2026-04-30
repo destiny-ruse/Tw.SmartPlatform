@@ -13,7 +13,18 @@
         "readme",
         "src",
         "tw",
-        "分布式锁构件目录"
+        "分布式锁构件目录",
+        "于承载分",
+        "分布式锁",
+        "制和跨实",
+        "发控制和",
+        "和跨实例",
+        "布式锁抽",
+        "布式锁构",
+        "并发控制",
+        "式锁抽象",
+        "式锁构件",
+        "录用于承"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +54,20 @@
         "distributedlocking",
         "dotnet",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target",
+        "usings"
       ],
       "relations": {
         "capabilities": [

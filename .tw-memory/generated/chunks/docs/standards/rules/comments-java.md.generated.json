@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,21 @@
         "java",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "ide",
+        "javadoc",
+        "于降低公",
+        "低公共类",
+        "公共类缺",
+        "共类缺少",
+        "和线程语",
+        "常和线程",
+        "异常和线",
+        "注释规范",
+        "用于降低",
+        "目标",
+        "程语义不"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +66,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +86,20 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "javadoc",
+        "vendored",
+        "公共类",
+        "具和示例",
+        "和示例代",
+        "夹具和示",
+        "接口",
+        "控制器",
+        "服务",
+        "本规范适",
+        "枚举",
+        "测试夹具",
+        "源码"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +110,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +129,21 @@
         "java",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "javadoc",
+        "举和跨模",
+        "公共方法",
+        "公共类",
+        "共方法必",
+        "和调用契",
+        "和跨模块",
+        "块公共方",
+        "必须提供",
+        "接口",
+        "方法必须",
+        "明职责和",
+        "枚举和跨",
+        "模块公共"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +154,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +173,21 @@
         "java",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "illegal",
+        "order",
+        "param",
+        "throws",
+        "中稳定的",
+        "公共",
+        "取消尚未",
+        "定的订单",
+        "尚未结算",
+        "未结算的",
+        "正例",
+        "消尚未结",
+        "的订单标"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +198,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +218,20 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "javadoc",
+        "举和跨模",
+        "公共类",
+        "否有必要",
+        "否覆盖调",
+        "和跨模块",
+        "块方法是",
+        "接口",
+        "方法是否",
+        "是否有必",
+        "是否覆盖",
+        "枚举和跨",
+        "模块方法"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +242,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +262,9 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "naming"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +275,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +295,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "内部复杂",
+        "句号",
+        "员注释和",
+        "和方法内",
+        "复杂逻辑",
+        "成员注释",
+        "方法内部",
+        "日期",
+        "杂逻辑注",
+        "法内部复",
+        "注释和方",
+        "注释语言",
+        "版本"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +319,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

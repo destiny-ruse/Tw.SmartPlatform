@@ -291,8 +291,21 @@ class SearchIndex:
         return {
             "schema_version": SCHEMA_VERSION,
             "repo_hash": repo_hash if isinstance(repo_hash, str) else "",
-            "route_index_hash": self._file_hash(route_index),
+            "route_index_hash": self._stable_route_index_hash(route_index),
         }
+
+    def _stable_route_index_hash(self, path: Path) -> str:
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            return self._file_hash(path)
+        if not isinstance(payload, dict):
+            return self._file_hash(path)
+
+        stable_payload = dict(payload)
+        stable_payload.pop("generated_at", None)
+        canonical = json.dumps(stable_payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        return f"sha256:{hashlib.sha256(canonical.encode('utf-8')).hexdigest()}"
 
     def _file_hash(self, path: Path) -> str:
         try:

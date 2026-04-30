@@ -1,0 +1,147 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.TripleDesCryptography#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "dotnet",
+        "security",
+        "src",
+        "tripledescryptography",
+        "tw",
+        "des",
+        "namespace",
+        "summary",
+        "system",
+        "text",
+        "triple",
+        "using",
+        "与解密辅",
+        "于字符串",
+        "件和流的"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "dotnet",
+          "security",
+          "src",
+          "tripledescryptography"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:f61208e68c94575ced99b2bc5d2e17122c6fa02eb661e672746f7855f8bccac5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.TripleDesCryptography#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "dotnet",
+        "security",
+        "src",
+        "tripledescryptography",
+        "tw",
+        "bytes",
+        "ecb",
+        "key",
+        "langword",
+        "name",
+        "null",
+        "param",
+        "see",
+        "summary",
+        "加密密钥"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "dotnet",
+          "security",
+          "src",
+          "tripledescryptography"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:f61208e68c94575ced99b2bc5d2e17122c6fa02eb661e672746f7855f8bccac5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.TripleDesCryptography#chunk-003",
+      "end_line": 177,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "dotnet",
+        "security",
+        "src",
+        "tripledescryptography",
+        "tw",
+        "algorithm",
+        "async",
+        "cancellation",
+        "decrypt",
+        "default",
+        "des",
+        "file",
+        "key",
+        "mode",
+        "padding"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "dotnet",
+          "security",
+          "src",
+          "tripledescryptography"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:f61208e68c94575ced99b2bc5d2e17122c6fa02eb661e672746f7855f8bccac5",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs",
+      "start_line": 145,
+      "summary": "Lines 145-177 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs"
+}

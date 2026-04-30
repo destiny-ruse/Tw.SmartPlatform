@@ -9,7 +9,14 @@
         "find",
         "md",
         "skill",
-        "skills"
+        "skills",
+        "agent",
+        "discover",
+        "ecosystem",
+        "helps",
+        "install",
+        "open",
+        "you"
       ],
       "relations": {
         "capabilities": [
@@ -41,7 +48,19 @@
         "skills",
         "this",
         "use",
-        "when"
+        "when",
+        "asks",
+        "can",
+        "capability",
+        "common",
+        "existing",
+        "expresses",
+        "how",
+        "interest",
+        "might",
+        "says",
+        "specialized",
+        "task"
       ],
       "relations": {
         "capabilities": [
@@ -73,7 +92,19 @@
         "skill",
         "skills",
         "the",
-        "what"
+        "what",
+        "agent",
+        "capabilities",
+        "cli",
+        "commands",
+        "ecosystem",
+        "extend",
+        "key",
+        "knowledge",
+        "manager",
+        "modular",
+        "npx",
+        "open"
       ],
       "relations": {
         "capabilities": [
@@ -139,7 +170,17 @@
         "step",
         "they",
         "understand",
-        "what"
+        "what",
+        "asks",
+        "deployment",
+        "design",
+        "domain",
+        "help",
+        "identify",
+        "react",
+        "something",
+        "specific",
+        "task"
       ],
       "relations": {
         "capabilities": [
@@ -173,7 +214,17 @@
         "skill",
         "skills",
         "step",
-        "the"
+        "the",
+        "already",
+        "before",
+        "cli",
+        "domain",
+        "exists",
+        "https",
+        "installs",
+        "known",
+        "ranks",
+        "running"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +256,19 @@
         "search",
         "skill",
         "skills",
-        "step"
+        "step",
+        "app",
+        "asks",
+        "bash",
+        "command",
+        "cover",
+        "doesn",
+        "example",
+        "how",
+        "leaderboard",
+        "make",
+        "need",
+        "npx"
       ],
       "relations": {
         "capabilities": [
@@ -239,7 +302,17 @@
         "skill",
         "skills",
         "step",
-        "verify"
+        "verify",
+        "always",
+        "anything",
+        "based",
+        "cautious",
+        "count",
+        "install",
+        "installs",
+        "prefer",
+        "recommend",
+        "results"
       ],
       "relations": {
         "capabilities": [
@@ -273,7 +346,17 @@
         "skills",
         "step",
         "the",
-        "user"
+        "user",
+        "can",
+        "command",
+        "count",
+        "does",
+        "install",
+        "name",
+        "relevant",
+        "source",
+        "them",
+        "they"
       ],
       "relations": {
         "capabilities": [
@@ -305,7 +388,19 @@
         "offer",
         "skill",
         "skills",
-        "step"
+        "step",
+        "add",
+        "bash",
+        "can",
+        "flag",
+        "globally",
+        "installs",
+        "level",
+        "npx",
+        "owner",
+        "proceed",
+        "repo",
+        "them"
       ],
       "relations": {
         "capabilities": [
@@ -336,7 +431,20 @@
         "find",
         "md",
         "skill",
-        "skills"
+        "skills",
+        "category",
+        "consider",
+        "css",
+        "development",
+        "example",
+        "jest",
+        "nextjs",
+        "playwright",
+        "queries",
+        "react",
+        "searching",
+        "tailwind",
+        "testing"
       ],
       "relations": {
         "capabilities": [
@@ -369,7 +477,18 @@
         "searches",
         "skill",
         "skills",
-        "tips"
+        "tips",
+        "alternative",
+        "better",
+        "check",
+        "deploy",
+        "deployment",
+        "doesn",
+        "just",
+        "keywords",
+        "popular",
+        "react",
+        "specific"
       ],
       "relations": {
         "capabilities": [
@@ -401,7 +520,19 @@
         "md",
         "skill",
         "skills",
-        "when"
+        "when",
+        "acknowledge",
+        "capabilities",
+        "could",
+        "directly",
+        "exist",
+        "existing",
+        "general",
+        "help",
+        "offer",
+        "relevant",
+        "suggest",
+        "task"
       ],
       "relations": {
         "capabilities": [

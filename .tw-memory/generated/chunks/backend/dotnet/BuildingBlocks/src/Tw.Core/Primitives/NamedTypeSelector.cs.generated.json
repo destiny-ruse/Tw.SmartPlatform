@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Primitives.NamedTypeSelector#chunk-001",
+      "end_line": 16,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "namedtypeselector",
+        "primitives",
+        "src",
+        "tw",
+        "name",
+        "namespace",
+        "param",
+        "summary",
+        "与类型匹",
+        "匹配谓词",
+        "名称与类",
+        "型匹配谓",
+        "将通过验",
+        "的名称与",
+        "称与类型"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "namedtypeselector",
+          "primitives",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:73022b8ee54735bc7777038614968c0ccbcdd127f713fd29633f9af4186ef3da",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelector.cs",
+      "start_line": 1,
+      "summary": "Lines 1-16 in backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelector.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelector.cs"
+}

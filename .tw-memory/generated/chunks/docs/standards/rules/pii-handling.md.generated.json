@@ -11,7 +11,12 @@
         "pii",
         "rules",
         "standards",
-        "个人信息处理规范"
+        "个人信息处理规范",
+        "个人信息",
+        "人信息处",
+        "信息处理",
+        "处理规范",
+        "息处理规"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +27,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +46,21 @@
         "md",
         "pii",
         "rules",
-        "standards"
+        "standards",
+        "个人信息",
+        "于降低个",
+        "人信息处",
+        "人信息被",
+        "低个人信",
+        "信息处理",
+        "信息被过",
+        "处理规范",
+        "息处理规",
+        "息被过度",
+        "未授权访",
+        "理规范用",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +71,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +91,20 @@
         "pii",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apps",
+        "backend",
+        "frontend",
+        "mobile",
+        "services",
+        "src",
+        "修复脚本",
+        "入导出文",
+        "契约",
+        "导入导出",
+        "导出文件",
+        "据修复脚"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +115,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +134,21 @@
         "md",
         "pii",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "事件",
+        "入导出能",
+        "出能力时",
+        "别是否包",
+        "力时必须",
+        "导入导出",
+        "导出能力",
+        "必须识别",
+        "或导入导",
+        "报表或导",
+        "新增字段",
+        "时必须识",
+        "是否包含"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +159,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +178,21 @@
         "md",
         "pii",
         "rules",
-        "standards"
+        "standards",
+        "9f2a1c",
+        "com",
+        "customer",
+        "email",
+        "example",
+        "json",
+        "masked",
+        "phone",
+        "usr",
+        "口返回稳",
+        "和脱敏展",
+        "回稳定主",
+        "接口返回",
+        "敏展示字"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +203,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +223,20 @@
         "pii",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "api",
+        "事件",
+        "件是否已",
+        "出文件是",
+        "变更的数",
+        "否已识别",
+        "和导出文",
+        "增或变更",
+        "导出文件",
+        "或变更的",
+        "报表和导",
+        "数据字段",
+        "文件是否"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +247,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +267,14 @@
         "pii",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "audit",
+        "fields",
+        "input",
+        "logging",
+        "management",
+        "secrets",
+        "validation"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +285,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +305,20 @@
         "pii",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +329,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

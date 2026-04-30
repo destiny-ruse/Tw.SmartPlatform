@@ -11,7 +11,20 @@
         "dotnet",
         "testbase",
         "tests",
-        "tw"
+        "tw",
+        "enable",
+        "false",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "packable",
+        "project",
+        "property",
+        "sdk"
       ],
       "relations": {
         "capabilities": [

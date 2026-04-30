@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Utilities.NullDisposable#chunk-001",
+      "end_line": 23,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "nulldisposable",
+        "src",
+        "tw",
+        "utilities",
+        "namespace",
+        "public",
+        "summary",
+        "任何效果",
+        "何效果的",
+        "供释放时",
+        "可复用释",
+        "复用释放",
+        "提供释放",
+        "放时无任",
+        "效果的可"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "nulldisposable",
+          "src",
+          "utilities"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:e7af70c86827ac7784f7bcd7f74141c5f755a3513c75d275dee4cc95a975b4a3",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs",
+      "start_line": 1,
+      "summary": "Lines 1-23 in backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs"
+}

@@ -46,7 +46,18 @@
         "md",
         "overview",
         "skill",
-        "skills"
+        "skills",
+        "announce",
+        "choice",
+        "chosen",
+        "clean",
+        "clear",
+        "completion",
+        "core",
+        "execute",
+        "guide",
+        "handling",
+        "options"
       ],
       "relations": {
         "capabilities": [
@@ -117,7 +128,16 @@
         "skills",
         "step",
         "tests",
-        "verify"
+        "verify",
+        "bash",
+        "before",
+        "cargo",
+        "fail",
+        "failing",
+        "failures",
+        "fix",
+        "must",
+        "npm"
       ],
       "relations": {
         "capabilities": [
@@ -153,7 +173,16 @@
         "md",
         "skill",
         "skills",
-        "step"
+        "step",
+        "ask",
+        "bash",
+        "branches",
+        "common",
+        "correct",
+        "dev",
+        "git",
+        "head",
+        "main"
       ],
       "relations": {
         "capabilities": [
@@ -189,7 +218,16 @@
         "present",
         "skill",
         "skills",
-        "step"
+        "step",
+        "back",
+        "base",
+        "complete",
+        "create",
+        "exactly",
+        "implementation",
+        "like",
+        "locally",
+        "merge"
       ],
       "relations": {
         "capabilities": [
@@ -261,7 +299,16 @@
         "merge",
         "option",
         "skill",
-        "skills"
+        "skills",
+        "base",
+        "bash",
+        "checkout",
+        "command",
+        "feature",
+        "git",
+        "latest",
+        "merged",
+        "pass"
       ],
       "relations": {
         "capabilities": [
@@ -298,7 +345,15 @@
         "option",
         "push",
         "skill",
-        "skills"
+        "skills",
+        "bash",
+        "body",
+        "bullets",
+        "cat",
+        "changed",
+        "eof",
+        "feature",
+        "git"
       ],
       "relations": {
         "capabilities": [
@@ -333,7 +388,15 @@
         "md",
         "option",
         "skill",
-        "skills"
+        "skills",
+        "cleanup",
+        "don",
+        "keeping",
+        "name",
+        "path",
+        "preserved",
+        "report",
+        "worktree"
       ],
       "relations": {
         "capabilities": [
@@ -368,7 +431,17 @@
         "md",
         "option",
         "skill",
-        "skills"
+        "skills",
+        "all",
+        "commit",
+        "commits",
+        "confirm",
+        "confirmation",
+        "confirmed",
+        "delete",
+        "exact",
+        "first",
+        "list"
       ],
       "relations": {
         "capabilities": [
@@ -404,7 +477,16 @@
         "skill",
         "skills",
         "step",
-        "worktree"
+        "worktree",
+        "bash",
+        "check",
+        "current",
+        "git",
+        "grep",
+        "keep",
+        "list",
+        "option",
+        "options"
       ],
       "relations": {
         "capabilities": [
@@ -439,7 +521,17 @@
         "quick",
         "reference",
         "skill",
-        "skills"
+        "skills",
+        "cleanup",
+        "create",
+        "discard",
+        "force",
+        "keep",
+        "locally",
+        "merge",
+        "option",
+        "push",
+        "worktree"
       ],
       "relations": {
         "capabilities": [
@@ -474,7 +566,17 @@
         "md",
         "mistakes",
         "skill",
-        "skills"
+        "skills",
+        "always",
+        "before",
+        "broken",
+        "code",
+        "create",
+        "ended",
+        "failing",
+        "fix",
+        "merge",
+        "offering"
       ],
       "relations": {
         "capabilities": [
@@ -509,7 +611,17 @@
         "md",
         "red",
         "skill",
-        "skills"
+        "skills",
+        "always",
+        "before",
+        "confirmation",
+        "delete",
+        "explicit",
+        "failing",
+        "force",
+        "merge",
+        "never",
+        "offering"
       ],
       "relations": {
         "capabilities": [
@@ -543,7 +655,18 @@
         "integration",
         "md",
         "skill",
-        "skills"
+        "skills",
+        "after",
+        "all",
+        "batches",
+        "called",
+        "cleans",
+        "complete",
+        "created",
+        "driven",
+        "executing",
+        "git",
+        "pairs"
       ],
       "relations": {
         "capabilities": [

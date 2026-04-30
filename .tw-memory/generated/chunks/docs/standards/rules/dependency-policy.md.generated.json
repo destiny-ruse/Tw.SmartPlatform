@@ -11,7 +11,10 @@
         "policy",
         "rules",
         "standards",
-        "依赖安全策略"
+        "依赖安全策略",
+        "依赖安全",
+        "安全策略",
+        "赖安全策"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "md",
         "policy",
         "rules",
-        "standards"
+        "standards",
+        "三方组件",
+        "于降低第",
+        "件带来的",
+        "低第三方",
+        "依赖安全",
+        "全策略用",
+        "安全策略",
+        "带来的供",
+        "方组件带",
+        "来的供应",
+        "漏洞",
+        "用于降低",
+        "略用于降",
+        "的供应链"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "policy",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "sdk",
+        "像和运行",
+        "入的第三",
+        "前端",
+        "和运行时",
+        "器镜像和",
+        "容器镜像",
+        "引入的第",
+        "时引入的",
+        "构建脚本",
+        "测试工具",
+        "用于后端",
+        "的第三方"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +132,21 @@
         "md",
         "policy",
         "rules",
-        "standards"
+        "standards",
+        "不得为少",
+        "依赖必须",
+        "可证和安",
+        "和安全影",
+        "增运行时",
+        "安全影响",
+        "得为少量",
+        "必须说明",
+        "新增运行",
+        "时依赖必",
+        "替代方案",
+        "维护状态",
+        "行时依赖",
+        "规则"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +157,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +176,21 @@
         "md",
         "policy",
         "rules",
-        "standards"
+        "standards",
+        "apache",
+        "example",
+        "json",
+        "license",
+        "org",
+        "parser",
+        "reason",
+        "review",
+        "security",
+        "version",
+        "人维护的",
+        "护的解析",
+        "换无人维",
+        "无人维护"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +201,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +221,20 @@
         "policy",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "依赖是否",
+        "可证和所",
+        "否被锁定",
+        "否说明用",
+        "和所有者",
+        "增依赖是",
+        "建是否可",
+        "新增依赖",
+        "是否被锁",
+        "是否说明",
+        "替代方案",
+        "本是否被",
+        "构建是否"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +245,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +265,12 @@
         "policy",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "management",
+        "onboarding",
+        "pipeline",
+        "processes",
+        "secrets"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +281,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +301,20 @@
         "policy",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +325,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

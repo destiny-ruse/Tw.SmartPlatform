@@ -1,0 +1,190 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.ReflectionCache#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "reflection",
+        "reflectioncache",
+        "src",
+        "tw",
+        "collections",
+        "concurrent",
+        "namespace",
+        "summary",
+        "system",
+        "using",
+        "为特性和",
+        "和异步方",
+        "型提供带",
+        "异步方法",
+        "性和异步"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "reflection",
+          "reflectioncache",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:b4b8670684cf00b6311e77f073ab2d1e03d7cac8b74e60bf96630814379d5825",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.ReflectionCache#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "reflection",
+        "reflectioncache",
+        "src",
+        "tw",
+        "add",
+        "array",
+        "attribute",
+        "attributes",
+        "cache",
+        "check",
+        "checked",
+        "custom",
+        "get",
+        "inherit",
+        "key"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "reflection",
+          "reflectioncache",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:b4b8670684cf00b6311e77f073ab2d1e03d7cac8b74e60bf96630814379d5825",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.ReflectionCache#chunk-003",
+      "end_line": 224,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "reflection",
+        "reflectioncache",
+        "src",
+        "tw",
+        "argument",
+        "bool",
+        "cached",
+        "cref",
+        "ctor",
+        "exception",
+        "get",
+        "langword",
+        "name",
+        "null",
+        "parameterless"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "reflection",
+          "reflectioncache",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:b4b8670684cf00b6311e77f073ab2d1e03d7cac8b74e60bf96630814379d5825",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs",
+      "start_line": 145,
+      "summary": "Lines 145-224 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.ReflectionCache#chunk-004",
+      "end_line": 234,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "reflection",
+        "reflectioncache",
+        "src",
+        "tw",
+        "async",
+        "attribute",
+        "cache",
+        "count",
+        "name",
+        "param",
+        "return",
+        "summary",
+        "type",
+        "回类型缓",
+        "型缓存条"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "reflection",
+          "reflectioncache",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:b4b8670684cf00b6311e77f073ab2d1e03d7cac8b74e60bf96630814379d5825",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs",
+      "start_line": 217,
+      "summary": "Lines 217-234 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs"
+}

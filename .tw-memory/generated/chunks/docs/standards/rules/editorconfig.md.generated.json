@@ -9,7 +9,10 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "config",
+        "editor",
+        "规范"
       ],
       "relations": {
         "capabilities": [
@@ -19,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -37,7 +40,22 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "config",
+        "diff",
+        "editor",
+        "一致和换",
+        "不一致和",
+        "于降低跨",
+        "低跨编辑",
+        "器格式漂",
+        "无意义",
+        "格式漂移",
+        "用于降低",
+        "目标",
+        "码不一致",
+        "编码不一",
+        "编辑器格"
       ],
       "relations": {
         "capabilities": [
@@ -47,7 +65,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -66,7 +84,21 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "json",
+        "markdown",
+        "sql",
+        "vendored",
+        "yaml",
+        "于仓库内",
+        "仓库内源",
+        "库内源码",
+        "成源文件",
+        "本规范适",
+        "测试",
+        "源文件和",
+        "生成源文",
+        "用于仓库"
       ],
       "relations": {
         "capabilities": [
@@ -76,7 +108,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -94,7 +126,22 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "ide",
+        "root",
+        "true",
+        "不得只依",
+        "仓库根目",
+        "依赖个人",
+        "口头约定",
+        "只依赖个",
+        "团队口头",
+        "并设置",
+        "库根目录",
+        "录必须提",
+        "得只依赖",
+        "必须提供",
+        "或团队口"
       ],
       "relations": {
         "capabilities": [
@@ -104,7 +151,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -122,7 +169,22 @@
         "editorconfig",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "charset",
+        "end",
+        "final",
+        "indent",
+        "ini",
+        "insert",
+        "json",
+        "line",
+        "newline",
+        "root",
+        "size",
+        "space",
+        "style",
+        "true",
+        "utf"
       ],
       "relations": {
         "capabilities": [
@@ -132,7 +194,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -151,7 +213,21 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "root",
+        "true",
+        "且声明",
+        "仓库根目",
+        "件类型是",
+        "否有编码",
+        "型是否有",
+        "增文件类",
+        "库根目录",
+        "录是否有",
+        "文件类型",
+        "新增文件",
+        "是否有编",
+        "根目录是"
       ],
       "relations": {
         "capabilities": [
@@ -161,7 +237,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -180,7 +256,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "layout",
+        "naming",
+        "repo"
       ],
       "relations": {
         "capabilities": [
@@ -190,7 +270,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -209,7 +289,21 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [
@@ -219,7 +313,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

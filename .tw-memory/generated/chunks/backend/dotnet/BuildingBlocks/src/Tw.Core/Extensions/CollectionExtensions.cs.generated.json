@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.CollectionExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "collectionextensions",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "class",
+        "collection",
+        "namespace",
+        "public",
+        "static",
+        "summary",
+        "供可变集",
+        "变集合的",
+        "可变集合",
+        "合尚未包",
+        "合的扩展"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "collectionextensions",
+          "core",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:26e0efc72503d2bc4b8ceb9914d580d1b625d40b49c78c9c33dfbd654ba60228",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.CollectionExtensions#chunk-002",
+      "end_line": 104,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "collectionextensions",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "all",
+        "argument",
+        "cref",
+        "exception",
+        "ilist",
+        "langword",
+        "name",
+        "null",
+        "paramref",
+        "predicate",
+        "public"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "collectionextensions",
+          "core",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:26e0efc72503d2bc4b8ceb9914d580d1b625d40b49c78c9c33dfbd654ba60228",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-104 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs"
+}

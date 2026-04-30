@@ -17,7 +17,14 @@
         "remediation",
         "risk",
         "superpowers",
-        "tw"
+        "tw",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "implement",
+        "recommended",
+        "required"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +63,14 @@
         "risk",
         "source",
         "superpowers",
-        "tw"
+        "tw",
+        "agents",
+        "artifacts",
+        "contract",
+        "current",
+        "design",
+        "engine",
+        "existing"
       ],
       "relations": {
         "capabilities": [
@@ -95,7 +109,14 @@
         "risk",
         "scope",
         "superpowers",
-        "tw"
+        "tw",
+        "add",
+        "after",
+        "all",
+        "authors",
+        "b812c62dcc3afc0de1453feb49f42a9668200da",
+        "commit",
+        "files"
       ],
       "relations": {
         "capabilities": [
@@ -134,7 +155,14 @@
         "risk",
         "structure",
         "superpowers",
-        "tw"
+        "tw",
+        "checker",
+        "classification",
+        "controlled",
+        "detection",
+        "discovery",
+        "engine",
+        "framework"
       ],
       "relations": {
         "capabilities": [
@@ -178,7 +206,9 @@
         "source",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "add",
+        "added"
       ],
       "relations": {
         "capabilities": [
@@ -222,7 +252,9 @@
         "source",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "checker",
+        "fail"
       ],
       "relations": {
         "capabilities": [
@@ -266,7 +298,9 @@
         "source",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "add",
+        "already"
       ],
       "relations": {
         "capabilities": [
@@ -311,7 +345,8 @@
         "standards",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "add"
       ],
       "relations": {
         "capabilities": [
@@ -356,7 +391,8 @@
         "standards",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "bool"
       ],
       "relations": {
         "capabilities": [
@@ -401,7 +437,8 @@
         "standards",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "add"
       ],
       "relations": {
         "capabilities": [
@@ -445,7 +482,9 @@
         "risk",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "add",
+        "engine"
       ],
       "relations": {
         "capabilities": [
@@ -489,7 +528,9 @@
         "risk",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "body",
+        "def"
       ],
       "relations": {
         "capabilities": [
@@ -532,7 +573,10 @@
         "standards",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "def",
+        "engine",
+        "failing"
       ],
       "relations": {
         "capabilities": [
@@ -575,7 +619,10 @@
         "standards",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "appends",
+        "filtered",
+        "first"
       ],
       "relations": {
         "capabilities": [
@@ -619,7 +666,9 @@
         "superpowers",
         "task",
         "tw",
-        "vector"
+        "vector",
+        "add",
+        "config"
       ],
       "relations": {
         "capabilities": [
@@ -663,7 +712,9 @@
         "superpowers",
         "task",
         "tw",
-        "vector"
+        "vector",
+        "add",
+        "all"
       ],
       "relations": {
         "capabilities": [
@@ -708,7 +759,8 @@
         "schema",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "add"
       ],
       "relations": {
         "capabilities": [
@@ -753,7 +805,8 @@
         "schema",
         "superpowers",
         "task",
-        "tw"
+        "tw",
+        "add"
       ],
       "relations": {
         "capabilities": [
@@ -797,7 +850,9 @@
         "superpowers",
         "task",
         "tw",
-        "verification"
+        "verification",
+        "check",
+        "comments"
       ],
       "relations": {
         "capabilities": [
@@ -841,7 +896,9 @@
         "superpowers",
         "task",
         "tw",
-        "verification"
+        "verification",
+        "acceptance",
+        "api"
       ],
       "relations": {
         "capabilities": [
@@ -880,7 +937,14 @@
         "risk",
         "superpowers",
         "tw",
-        "verification"
+        "verification",
+        "after",
+        "all",
+        "check",
+        "complete",
+        "diff",
+        "discover",
+        "exits"
       ],
       "relations": {
         "capabilities": [
@@ -920,7 +984,13 @@
         "risk",
         "self",
         "superpowers",
-        "tw"
+        "tw",
+        "acceptance",
+        "adding",
+        "covered",
+        "criterion",
+        "design",
+        "every"
       ],
       "relations": {
         "capabilities": [

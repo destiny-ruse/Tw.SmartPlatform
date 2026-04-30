@@ -12,7 +12,13 @@
         "md",
         "rules",
         "standards",
-        "数据库审计字段规范"
+        "数据库审计字段规范",
+        "字段规范",
+        "审计字段",
+        "库审计字",
+        "据库审计",
+        "数据库审",
+        "计字段规"
       ],
       "relations": {
         "capabilities": [
@@ -23,7 +29,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -43,7 +49,20 @@
         "fields",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "不可追踪",
+        "于降低数",
+        "低数据来",
+        "字段规范",
+        "审计字段",
+        "库审计字",
+        "据库审计",
+        "据来源不",
+        "数据库审",
+        "数据来源",
+        "来源不可",
+        "段规范用",
+        "源不可追"
       ],
       "relations": {
         "capabilities": [
@@ -54,7 +73,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -75,7 +94,19 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "orm",
+        "业务数据",
+        "于业务数",
+        "修复脚本",
+        "务数据库",
+        "复脚本和",
+        "据修复脚",
+        "据访问层",
+        "数据修复",
+        "数据库表",
+        "数据访问",
+        "映射"
       ],
       "relations": {
         "capabilities": [
@@ -86,7 +117,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -106,7 +137,20 @@
         "fields",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "created",
+        "updated",
+        "业务表必",
+        "为记录创",
+        "义分别为",
+        "分别为记",
+        "创建时间",
+        "别为记录",
+        "务表必须",
+        "和最后业",
+        "建时间和",
+        "录创建时",
+        "必须包含"
       ],
       "relations": {
         "capabilities": [
@@ -117,7 +161,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -137,7 +181,20 @@
         "fields",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "bigint",
+        "create",
+        "created",
+        "deleted",
+        "item",
+        "key",
+        "null",
+        "order",
+        "primary",
+        "sku",
+        "sql",
+        "table",
+        "tenant"
       ],
       "relations": {
         "capabilities": [
@@ -148,7 +205,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -169,7 +226,19 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "删除和租",
+        "否按数据",
+        "周期声明",
+        "命周期声",
+        "和租户字",
+        "声明创建",
+        "字段名称",
+        "审计字段",
+        "按数据生",
+        "据生命周",
+        "数据生命",
+        "是否按数"
       ],
       "relations": {
         "capabilities": [
@@ -180,7 +249,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -201,7 +270,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "handling",
+        "naming",
+        "pii",
+        "tracing"
       ],
       "relations": {
         "capabilities": [
@@ -212,7 +285,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -233,7 +306,19 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
@@ -244,7 +329,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

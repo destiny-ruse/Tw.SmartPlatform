@@ -22,11 +22,11 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 1,
       "summary": "Python 注释规范 in docs/standards/rules/comments-python.md"
@@ -41,7 +41,21 @@
         "md",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "docstring",
+        "中调用契",
+        "于降低动",
+        "低动态语",
+        "动态语言",
+        "契约不清",
+        "态语言中",
+        "注释规范",
+        "用于降低",
+        "用契约不",
+        "目标",
+        "类型意图",
+        "范用于降",
+        "规范用于"
       ],
       "relations": {
         "capabilities": [
@@ -52,11 +66,11 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 3,
       "summary": "目标 in docs/standards/rules/comments-python.md"
@@ -72,7 +86,20 @@
         "python",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "cli",
+        "docstring",
+        "notebook",
+        "vendored",
+        "任务脚本",
+        "入口",
+        "公共函数",
+        "具和示例",
+        "和示例代",
+        "夹具和示",
+        "方法",
+        "本规范适",
+        "模块"
       ],
       "relations": {
         "capabilities": [
@@ -83,11 +110,11 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 7,
       "summary": "适用范围 in docs/standards/rules/comments-python.md"
@@ -102,7 +129,21 @@
         "md",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "cli",
+        "docstring",
+        "不得让调",
+        "入口必须",
+        "公共模块",
+        "函数和",
+        "参数含义",
+        "口必须使",
+        "常或副作",
+        "异常或副",
+        "得让调用",
+        "必须使用",
+        "或副作用",
+        "方阅读实"
       ],
       "relations": {
         "capabilities": [
@@ -113,18 +154,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 11,
       "summary": "规则 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-005",
-      "end_line": 54,
+      "end_line": 53,
       "heading": "示例",
       "keywords": [
         "comments",
@@ -132,7 +173,21 @@
         "md",
         "python",
         "rules",
-        "standards"
+        "standards",
+        "api",
+        "args",
+        "cancel",
+        "def",
+        "none",
+        "order",
+        "str",
+        "中稳定的",
+        "公共",
+        "取消尚未",
+        "定的订单",
+        "尚未结算",
+        "未结算的",
+        "正例"
       ],
       "relations": {
         "capabilities": [
@@ -143,18 +198,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
       "start_line": 27,
       "summary": "示例 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-006",
-      "end_line": 67,
+      "end_line": 66,
       "heading": "检查清单",
       "keywords": [
         "comments",
@@ -163,7 +218,20 @@
         "python",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "cli",
+        "docstring",
+        "业务约束",
+        "作用或外",
+        "充业务约",
+        "入口是否",
+        "公共模块",
+        "函数和",
+        "副作用或",
+        "口是否有",
+        "否有必要",
+        "否补充业",
+        "外部依赖"
       ],
       "relations": {
         "capabilities": [
@@ -174,18 +242,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
-      "start_line": 55,
+      "start_line": 54,
       "summary": "检查清单 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-007",
-      "end_line": 72,
+      "end_line": 71,
       "heading": "相关规范",
       "keywords": [
         "comments",
@@ -194,7 +262,9 @@
         "python",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "common",
+        "naming"
       ],
       "relations": {
         "capabilities": [
@@ -205,18 +275,18 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
-      "start_line": 68,
+      "start_line": 67,
       "summary": "相关规范 in docs/standards/rules/comments-python.md"
     },
     {
       "chunk_id": "docs.standards.rules.comments-python#chunk-008",
-      "end_line": 79,
+      "end_line": 78,
       "heading": "变更记录",
       "keywords": [
         "comments",
@@ -225,7 +295,20 @@
         "python",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "内部复杂",
+        "函数内部",
+        "句号",
+        "员注释和",
+        "和函数内",
+        "复杂逻辑",
+        "成员注释",
+        "数内部复",
+        "日期",
+        "杂逻辑注",
+        "注释和函",
+        "注释语言",
+        "版本"
       ],
       "relations": {
         "capabilities": [
@@ -236,13 +319,13 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
-      "source_hash": "sha256:234b2fe0f5bce30404218790fba8f6d00e6fe6f5cd6c425231687d891cffbfa5",
+      "source_hash": "sha256:1d65504b7159a55d25e3eed6a240dfd6289f8cd91f7f3363c10f3705b6af8a7c",
       "source_path": "docs/standards/rules/comments-python.md",
-      "start_line": 73,
+      "start_line": 72,
       "summary": "变更记录 in docs/standards/rules/comments-python.md"
     }
   ],

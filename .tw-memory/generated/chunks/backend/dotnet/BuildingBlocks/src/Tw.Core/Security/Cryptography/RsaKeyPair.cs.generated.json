@@ -1,0 +1,53 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Security.Cryptography.RsaKeyPair#chunk-001",
+      "end_line": 8,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cryptography",
+        "cs",
+        "dotnet",
+        "rsakeypair",
+        "security",
+        "src",
+        "tw",
+        "key",
+        "name",
+        "namespace",
+        "param",
+        "pem",
+        "pkcs",
+        "private",
+        "public",
+        "rsa",
+        "summary"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "cryptography",
+          "dotnet",
+          "rsakeypair",
+          "security",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:fa5d177dc70908b88ba36074132c423e090d7d8d8003ac3f052570df7326c3dc",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaKeyPair.cs",
+      "start_line": 1,
+      "summary": "Lines 1-8 in backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaKeyPair.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaKeyPair.cs"
+}

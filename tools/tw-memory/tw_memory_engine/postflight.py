@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .scanner import EXCLUDED_DIRS, GENERATED_OUTPUT_DIRS, GENERATED_OUTPUT_PREFIXES, SOURCE_SUFFIXES
+
 
 PACKAGE_FILENAMES = {
     "package.json",
@@ -23,7 +25,10 @@ class PostflightRunner:
         files = [path for path in files if path]
 
         memory_affecting = [path for path in files if _is_memory_affecting(path)]
-        review_required = [path for path in files if _is_review_required(path)]
+        memory_affecting_set = set(memory_affecting)
+        review_required = [
+            path for path in files if path not in memory_affecting_set and _is_review_required(path)
+        ]
         ordinary = [
             path
             for path in files
@@ -66,6 +71,8 @@ def _is_memory_affecting(path: str) -> bool:
         return True
     if _is_package_file(parts[-1]):
         return True
+    if _is_controlled_source_file(parts):
+        return True
     if path == ".tw-memory/taxonomy.yaml":
         return True
     if path.startswith(".tw-memory/graph/"):
@@ -84,12 +91,62 @@ def _is_package_file(name: str) -> bool:
 
 def _is_review_required(path: str) -> bool:
     parts = tuple(part for part in path.split("/") if part)
+    if _is_excluded_source_path(parts):
+        return False
     if len(parts) >= 5 and parts[:4] == ("backend", "dotnet", "BuildingBlocks", "src"):
         return parts[-1].endswith(".cs")
+    if len(parts) >= 5 and parts[:3] == ("backend", "dotnet", "Services"):
+        return parts[-1].endswith(".cs")
     if len(parts) >= 3 and parts[:2] == ("frontend", "packages"):
+        return True
+    if len(parts) >= 4 and parts[:2] == ("frontend", "apps"):
         return True
     if len(parts) >= 4 and parts[:2] == ("backend", "java") and "src" in parts[2:-1]:
         return True
     if len(parts) >= 3 and parts[:2] == ("backend", "python"):
+        return True
+    return False
+
+
+def _is_controlled_source_file(parts: tuple[str, ...]) -> bool:
+    if not parts or Path(parts[-1]).suffix.lower() not in SOURCE_SUFFIXES:
+        return False
+    if _is_excluded_source_path(parts):
+        return False
+    if len(parts) >= 5 and parts[:4] == ("backend", "dotnet", "BuildingBlocks", "src"):
+        return True
+    if len(parts) >= 5 and parts[:3] == ("backend", "dotnet", "Services"):
+        return True
+    if len(parts) >= 3 and parts[:2] in {("backend", "java"), ("backend", "python")}:
+        return True
+    if len(parts) >= 4 and parts[:2] in {("frontend", "packages"), ("frontend", "apps")}:
+        return True
+    return False
+
+
+def _is_excluded_source_path(parts: tuple[str, ...]) -> bool:
+    if any(part in EXCLUDED_DIRS for part in parts[:-1]):
+        return True
+    return _is_generated_output_path(parts[:-1])
+
+
+def _is_generated_output_path(parts: tuple[str, ...]) -> bool:
+    has_generated_output_dir = any(part in GENERATED_OUTPUT_DIRS for part in parts)
+    has_generated_output_prefix = any(
+        parts[index : index + len(prefix)] == prefix
+        for prefix in GENERATED_OUTPUT_PREFIXES
+        for index in range(0, len(parts) - len(prefix) + 1)
+    )
+    if not has_generated_output_dir and not has_generated_output_prefix:
+        return False
+    if not parts or parts[0] == "docs":
+        return False
+    if len(parts) >= 5 and parts[:4] == ("backend", "dotnet", "BuildingBlocks", "src"):
+        return True
+    if len(parts) >= 5 and parts[:3] == ("backend", "dotnet", "Services"):
+        return True
+    if len(parts) >= 3 and parts[:2] in {("backend", "java"), ("backend", "python")}:
+        return True
+    if len(parts) >= 4 and parts[:2] in {("frontend", "packages"), ("frontend", "apps")}:
         return True
     return False

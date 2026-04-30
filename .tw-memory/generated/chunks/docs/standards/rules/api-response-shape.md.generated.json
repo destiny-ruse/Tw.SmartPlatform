@@ -12,7 +12,10 @@
         "rules",
         "shape",
         "standards",
-        "统一响应结构"
+        "统一响应结构",
+        "一响应结",
+        "响应结构",
+        "统一响应"
       ],
       "relations": {
         "capabilities": [
@@ -24,7 +27,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -44,7 +47,20 @@
         "response",
         "rules",
         "shape",
-        "standards"
+        "standards",
+        "null",
+        "rest",
+        "web",
+        "一响应结",
+        "于降低客",
+        "低客户端",
+        "响应结构",
+        "客户端针",
+        "应结构用",
+        "户端针对",
+        "构用于降",
+        "用于降低",
+        "目标"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +72,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -77,7 +93,19 @@
         "rules",
         "shape",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "json",
+        "mobile",
+        "open",
+        "rest",
+        "rpc",
+        "services",
+        "socket",
+        "src",
+        "web"
       ],
       "relations": {
         "capabilities": [
@@ -89,7 +117,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -109,7 +137,20 @@
         "response",
         "rules",
         "shape",
-        "standards"
+        "standards",
+        "json",
+        "一端点的",
+        "不得在对",
+        "功响应必",
+        "同一端点",
+        "响应必须",
+        "对象",
+        "层结构不",
+        "应必须返",
+        "必须返回",
+        "成功响应",
+        "构不得在",
+        "点的顶层"
       ],
       "relations": {
         "capabilities": [
@@ -121,7 +162,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -141,7 +182,20 @@
         "response",
         "rules",
         "shape",
-        "standards"
+        "standards",
+        "amount",
+        "created",
+        "false",
+        "items",
+        "json",
+        "next",
+        "null",
+        "page",
+        "pagination",
+        "size",
+        "total",
+        "反例",
+        "正例"
       ],
       "relations": {
         "capabilities": [
@@ -153,7 +207,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +228,19 @@
         "rules",
         "shape",
         "standards",
-        "检查清单"
+        "检查清单",
+        "一端点的",
+        "且没有对",
+        "功响应顶",
+        "同一端点",
+        "响应顶层",
+        "对象和数",
+        "层结构是",
+        "应顶层结",
+        "成功响应",
+        "是否稳定",
+        "有对象和",
+        "构是否稳"
       ],
       "relations": {
         "capabilities": [
@@ -186,7 +252,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -207,7 +273,14 @@
         "rules",
         "shape",
         "standards",
-        "相关规范"
+        "相关规范",
+        "data",
+        "decisions",
+        "design",
+        "error",
+        "formats",
+        "null",
+        "rest"
       ],
       "relations": {
         "capabilities": [
@@ -219,7 +292,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -240,7 +313,19 @@
         "rules",
         "shape",
         "standards",
-        "变更记录"
+        "变更记录",
+        "null",
+        "一响应结",
+        "充执行级",
+        "单和相关",
+        "和相关规",
+        "建立统一",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本"
       ],
       "relations": {
         "capabilities": [
@@ -252,7 +337,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

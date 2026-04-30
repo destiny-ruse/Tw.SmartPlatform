@@ -11,7 +11,10 @@
         "processes",
         "standard",
         "standards",
-        "规范撰写规范"
+        "规范撰写规范",
+        "撰写规范",
+        "范撰写规",
+        "规范撰写"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "md",
         "processes",
         "standard",
-        "standards"
+        "standards",
+        "义工程规",
+        "定义工程",
+        "工程规范",
+        "引用方式",
+        "文档的最",
+        "方式和变",
+        "最小结构",
+        "本规范定",
+        "档的最小",
+        "用方式和",
+        "的最小结",
+        "目标",
+        "程规范文",
+        "章节组织"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "processes",
         "standard",
         "standards",
-        "适用范围"
+        "适用范围",
+        "decisions",
+        "rules",
+        "下正式资",
+        "下的标准",
+        "下的流程",
+        "下的长期",
+        "于以下正",
+        "以下正式",
+        "本规范适",
+        "标准正文",
+        "正式资料",
+        "流程规范",
+        "用于以下"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -103,7 +133,20 @@
         "processes",
         "standard",
         "standards",
-        "文档结构"
+        "文档结构",
+        "markdown",
+        "一个一级",
+        "一级标题",
+        "个一级标",
+        "义清晰的",
+        "二级标题",
+        "以下结构",
+        "包含以下",
+        "含以下结",
+        "并包含以",
+        "必须使用",
+        "文档必须",
+        "晰的二级"
       ],
       "relations": {
         "capabilities": [
@@ -114,7 +157,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -134,7 +177,20 @@
         "processes",
         "standard",
         "standards",
-        "状态管理"
+        "状态管理",
+        "rfc",
+        "变更记录",
+        "和变更记",
+        "审结论和",
+        "态通过目",
+        "更记录管",
+        "状态通过",
+        "目录位置",
+        "稿资料应",
+        "结论和变",
+        "范状态通",
+        "草稿资料",
+        "规范状态"
       ],
       "relations": {
         "capabilities": [
@@ -145,7 +201,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -165,7 +221,20 @@
         "processes",
         "standard",
         "standards",
-        "引用要求"
+        "引用要求",
+        "markdown",
+        "中的日期",
+        "变更记录",
+        "引用规范",
+        "录中的日",
+        "或变更记",
+        "文件路径",
+        "文档标题",
+        "更记录中",
+        "本或变更",
+        "版本或变",
+        "用版本或",
+        "用规范结"
       ],
       "relations": {
         "capabilities": [
@@ -176,7 +245,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -196,7 +265,20 @@
         "processes",
         "standard",
         "standards",
-        "变更流程"
+        "变更流程",
+        "rfc",
+        "修改规范",
+        "决策应补",
+        "增或重大",
+        "大修改规",
+        "工程决策",
+        "应先创建",
+        "应补充决",
+        "或重大修",
+        "改规范时",
+        "效的工程",
+        "新增或重",
+        "有效的工"
       ],
       "relations": {
         "capabilities": [
@@ -207,7 +289,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -227,7 +309,20 @@
         "processes",
         "standard",
         "standards",
-        "变更记录"
+        "变更记录",
+        "front",
+        "matter",
+        "为纯人员",
+        "人员阅读",
+        "员阅读正",
+        "和隐藏锚",
+        "器字段和",
+        "字段和隐",
+        "改为纯人",
+        "日期",
+        "机器字段",
+        "段和隐藏",
+        "版本"
       ],
       "relations": {
         "capabilities": [
@@ -238,7 +333,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },

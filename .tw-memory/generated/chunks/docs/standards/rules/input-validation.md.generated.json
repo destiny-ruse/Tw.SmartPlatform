@@ -11,7 +11,10 @@
         "rules",
         "standards",
         "validation",
-        "输入校验规范"
+        "输入校验规范",
+        "入校验规",
+        "校验规范",
+        "输入校验"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "md",
         "rules",
         "standards",
-        "validation"
+        "validation",
+        "于降低未",
+        "低未可信",
+        "信输入直",
+        "入校验规",
+        "入直接进",
+        "可信输入",
+        "存储或外",
+        "接进入业",
+        "未可信输",
+        "校验规范",
+        "用于降低",
+        "目标",
+        "直接进入",
+        "范用于降"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "rules",
         "standards",
         "validation",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "http",
+        "mobile",
+        "pii",
+        "rpc",
+        "services",
+        "src",
+        "外部回调",
+        "异步消息",
+        "批量导入",
+        "文件上传"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +132,21 @@
         "md",
         "rules",
         "standards",
-        "validation"
+        "validation",
+        "任边界入",
+        "信任边界",
+        "入口校验",
+        "入必须在",
+        "口校验类",
+        "在信任边",
+        "外部输入",
+        "必须在信",
+        "所有外部",
+        "有外部输",
+        "校验类型",
+        "格式",
+        "界入口校",
+        "范围"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +157,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +176,21 @@
         "md",
         "rules",
         "standards",
-        "validation"
+        "validation",
+        "allowed",
+        "bytes",
+        "check",
+        "content",
+        "file",
+        "image",
+        "jpeg",
+        "max",
+        "mime",
+        "name",
+        "png",
+        "require",
+        "sanitize",
+        "signature"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +201,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +221,20 @@
         "rules",
         "standards",
         "validation",
-        "检查清单"
+        "检查清单",
+        "件和配置",
+        "信任边界",
+        "入和信任",
+        "别所有外",
+        "包括消息",
+        "否识别所",
+        "和信任边",
+        "回调",
+        "外部输入",
+        "所有外部",
+        "文件和配",
+        "是否识别",
+        "有外部输"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +245,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +265,16 @@
         "rules",
         "standards",
         "validation",
-        "相关规范"
+        "相关规范",
+        "api",
+        "design",
+        "error",
+        "handling",
+        "management",
+        "pii",
+        "response",
+        "rest",
+        "secrets"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +285,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +305,20 @@
         "rules",
         "standards",
         "validation",
-        "变更记录"
+        "变更记录",
+        "使用简体",
+        "入校验异",
+        "卫和输入",
+        "参数守卫",
+        "和输入校",
+        "守卫和输",
+        "常消息使",
+        "异常消息",
+        "息使用简",
+        "数守卫和",
+        "日期",
+        "校验异常",
+        "求参数守"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +329,7 @@
           "validation"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

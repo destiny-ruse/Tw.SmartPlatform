@@ -18,7 +18,13 @@
         "plan",
         "plans",
         "registration",
-        "superpowers"
+        "superpowers",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "implement",
+        "recommended"
       ],
       "relations": {
         "capabilities": [
@@ -59,7 +65,13 @@
         "order",
         "plans",
         "registration",
-        "superpowers"
+        "superpowers",
+        "adapter",
+        "aop",
+        "aspnetcore",
+        "castle",
+        "continue",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -100,7 +112,13 @@
         "plans",
         "registration",
         "source",
-        "superpowers"
+        "superpowers",
+        "aop",
+        "design",
+        "flow",
+        "layout",
+        "onboarding",
+        "policy"
       ],
       "relations": {
         "capabilities": [
@@ -141,7 +159,13 @@
         "plans",
         "registration",
         "structure",
-        "superpowers"
+        "superpowers",
+        "alternatives",
+        "autofac",
+        "castle",
+        "commands",
+        "create",
+        "decision"
       ],
       "relations": {
         "capabilities": [
@@ -182,7 +206,13 @@
         "plans",
         "registration",
         "superpowers",
-        "versions"
+        "versions",
+        "autofac",
+        "container",
+        "extensions",
+        "factory",
+        "final",
+        "injection"
       ],
       "relations": {
         "capabilities": [
@@ -264,7 +294,12 @@
         "registration",
         "superpowers",
         "task",
-        "write"
+        "write",
+        "autofac",
+        "castle",
+        "create",
+        "date",
+        "dependencies"
       ],
       "relations": {
         "capabilities": [
@@ -308,7 +343,10 @@
         "registration",
         "superpowers",
         "task",
-        "versions"
+        "versions",
+        "add",
+        "backend",
+        "build"
       ],
       "relations": {
         "capabilities": [
@@ -352,7 +390,10 @@
         "references",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "asp",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -394,7 +435,12 @@
         "registration",
         "superpowers",
         "task",
-        "verification"
+        "verification",
+        "backend",
+        "blocks",
+        "building",
+        "core",
+        "csproj"
       ],
       "relations": {
         "capabilities": [
@@ -436,7 +482,12 @@
         "registration",
         "review",
         "self",
-        "superpowers"
+        "superpowers",
+        "before",
+        "central",
+        "change",
+        "exists",
+        "files"
       ],
       "relations": {
         "capabilities": [

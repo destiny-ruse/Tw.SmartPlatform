@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Configuration.ConfigurationSectionAttribute#chunk-001",
+      "end_line": 14,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "configuration",
+        "configurationsectionattribute",
+        "core",
+        "cs",
+        "dotnet",
+        "src",
+        "tw",
+        "name",
+        "namespace",
+        "param",
+        "summary",
+        "到选项类",
+        "型的配置",
+        "定到选项",
+        "应绑定到",
+        "方在选项",
+        "标识应绑",
+        "用方在选"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "configuration",
+          "configurationsectionattribute",
+          "core",
+          "dotnet",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5b0491af22c72f93e1e1529a43bfc2ce6a403ededda8fd83fe54ab5499f1458e",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs",
+      "start_line": 1,
+      "summary": "Lines 1-14 in backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/ConfigurationSectionAttribute.cs"
+}

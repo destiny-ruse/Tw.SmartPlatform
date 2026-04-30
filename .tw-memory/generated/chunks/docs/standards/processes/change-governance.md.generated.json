@@ -11,7 +11,10 @@
         "md",
         "processes",
         "standards",
-        "变更治理规范"
+        "变更治理规范",
+        "变更治理",
+        "更治理规",
+        "治理规范"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "governance",
         "md",
         "processes",
-        "standards"
+        "standards",
+        "保工程变",
+        "变更有明",
+        "和回退方",
+        "回退方案",
+        "工程变更",
+        "影响评估",
+        "径和回退",
+        "明确影响",
+        "更有明确",
+        "有明确影",
+        "沟通路径",
+        "版本策略",
+        "目标",
+        "确保工程"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "md",
         "processes",
         "standards",
-        "适用范围"
+        "适用范围",
+        "api",
+        "于标准文",
+        "公共",
+        "则和跨团",
+        "和跨团队",
+        "团队依赖",
+        "基础设施",
+        "标准文档",
+        "用于标准",
+        "础设施模",
+        "规则和跨",
+        "设施模板",
+        "跨团队依"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -102,7 +132,21 @@
         "governance",
         "md",
         "processes",
-        "standards"
+        "standards",
+        "估兼容性",
+        "兼容性和",
+        "分类变更",
+        "受影响团",
+        "变更级别",
+        "和迁移成",
+        "容性和迁",
+        "影响团队",
+        "性和迁移",
+        "新版本和",
+        "更新版本",
+        "本和索引",
+        "流程",
+        "版本和索"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +157,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -132,7 +176,21 @@
         "governance",
         "md",
         "processes",
-        "standards"
+        "standards",
+        "也必须更",
+        "兼容性变",
+        "出迁移窗",
+        "变更也必",
+        "变更必须",
+        "坏性变更",
+        "容性变更",
+        "必须更新",
+        "必须给出",
+        "性变更也",
+        "性变更必",
+        "更也必须",
+        "更必须给",
+        "更新变更"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +201,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -163,7 +221,20 @@
         "md",
         "processes",
         "standards",
-        "检查清单"
+        "检查清单",
+        "否更新版",
+        "否说明影",
+        "否运行标",
+        "影响范围",
+        "新版本号",
+        "明影响范",
+        "是否更新",
+        "是否说明",
+        "是否运行",
+        "更新版本",
+        "标准检查",
+        "行标准检",
+        "说明影响"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +245,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -194,7 +265,15 @@
         "md",
         "processes",
         "standards",
-        "变更记录"
+        "变更记录",
+        "变更治理",
+        "建立变更",
+        "日期",
+        "更治理流",
+        "治理流程",
+        "版本",
+        "立变更治",
+        "说明"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +284,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },

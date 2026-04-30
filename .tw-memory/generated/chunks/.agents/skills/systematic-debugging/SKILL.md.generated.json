@@ -41,7 +41,20 @@
         "overview",
         "skill",
         "skills",
-        "systematic"
+        "systematic",
+        "always",
+        "before",
+        "bugs",
+        "cause",
+        "core",
+        "create",
+        "find",
+        "fixes",
+        "issues",
+        "mask",
+        "new",
+        "patches",
+        "principle"
       ],
       "relations": {
         "capabilities": [
@@ -74,7 +87,18 @@
         "skill",
         "skills",
         "systematic",
-        "the"
+        "the",
+        "cannot",
+        "cause",
+        "completed",
+        "first",
+        "fixes",
+        "haven",
+        "investigation",
+        "phase",
+        "propose",
+        "root",
+        "you"
       ],
       "relations": {
         "capabilities": [
@@ -106,7 +130,19 @@
         "skills",
         "systematic",
         "use",
-        "when"
+        "when",
+        "any",
+        "behavior",
+        "bugs",
+        "build",
+        "especially",
+        "failures",
+        "integration",
+        "issue",
+        "issues",
+        "performance",
+        "pressure",
+        "problems"
       ],
       "relations": {
         "capabilities": [
@@ -139,7 +175,15 @@
         "skill",
         "skills",
         "systematic",
-        "the"
+        "the",
+        "before",
+        "complete",
+        "each",
+        "must",
+        "next",
+        "phase",
+        "proceeding",
+        "you"
       ],
       "relations": {
         "capabilities": [
@@ -173,7 +217,17 @@
         "root",
         "skill",
         "skills",
-        "systematic"
+        "systematic",
+        "any",
+        "attempting",
+        "before",
+        "carefully",
+        "contain",
+        "don",
+        "error",
+        "errors",
+        "fix",
+        "messages"
       ],
       "relations": {
         "capabilities": [
@@ -206,7 +260,18 @@
         "phase",
         "skill",
         "skills",
-        "systematic"
+        "systematic",
+        "against",
+        "before",
+        "broken",
+        "code",
+        "codebase",
+        "compare",
+        "examples",
+        "find",
+        "fixing",
+        "implementing",
+        "locate"
       ],
       "relations": {
         "capabilities": [
@@ -240,7 +305,17 @@
         "skill",
         "skills",
         "systematic",
-        "testing"
+        "testing",
+        "because",
+        "cause",
+        "clearly",
+        "down",
+        "form",
+        "make",
+        "method",
+        "minimally",
+        "root",
+        "scientific"
       ],
       "relations": {
         "capabilities": [
@@ -272,7 +347,19 @@
         "phase",
         "skill",
         "skills",
-        "systematic"
+        "systematic",
+        "automated",
+        "before",
+        "case",
+        "cause",
+        "create",
+        "failing",
+        "fix",
+        "framework",
+        "must",
+        "off",
+        "one",
+        "possible"
       ],
       "relations": {
         "capabilities": [
@@ -308,7 +395,15 @@
         "skill",
         "skills",
         "stop",
-        "systematic"
+        "systematic",
+        "add",
+        "catch",
+        "changing",
+        "fix",
+        "investigate",
+        "just",
+        "later",
+        "now"
       ],
       "relations": {
         "capabilities": [
@@ -345,7 +440,14 @@
         "systematic",
         "wrong",
         "you're",
-        "your"
+        "your",
+        "added",
+        "assumed",
+        "evidence",
+        "gathering",
+        "happening",
+        "partner",
+        "redirections"
       ],
       "relations": {
         "capabilities": [
@@ -377,7 +479,19 @@
         "rationalizations",
         "skill",
         "skills",
-        "systematic"
+        "systematic",
+        "bugs",
+        "causes",
+        "don",
+        "emergency",
+        "excuse",
+        "fast",
+        "faster",
+        "issue",
+        "issues",
+        "need",
+        "process",
+        "reality"
       ],
       "relations": {
         "capabilities": [
@@ -409,7 +523,19 @@
         "reference",
         "skill",
         "skills",
-        "systematic"
+        "systematic",
+        "activities",
+        "cause",
+        "changes",
+        "check",
+        "criteria",
+        "errors",
+        "evidence",
+        "gather",
+        "key",
+        "pattern",
+        "phase",
+        "read"
       ],
       "relations": {
         "capabilities": [
@@ -445,7 +571,15 @@
         "skill",
         "skills",
         "systematic",
-        "when"
+        "when",
+        "appropriate",
+        "cause",
+        "completed",
+        "dependent",
+        "document",
+        "environmental",
+        "external",
+        "implement"
       ],
       "relations": {
         "capabilities": [
@@ -477,7 +611,19 @@
         "skills",
         "supporting",
         "systematic",
-        "techniques"
+        "techniques",
+        "available",
+        "backward",
+        "bugs",
+        "call",
+        "cause",
+        "directory",
+        "find",
+        "original",
+        "part",
+        "root",
+        "stack",
+        "these"
       ],
       "relations": {
         "capabilities": [
@@ -510,7 +656,18 @@
         "skill",
         "skills",
         "systematic",
-        "world"
+        "world",
+        "approach",
+        "bugs",
+        "first",
+        "fix",
+        "fixes",
+        "hours",
+        "introduced",
+        "minutes",
+        "near",
+        "new",
+        "random"
       ],
       "relations": {
         "capabilities": [

@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Primitives.NamedTypeSelectorListExtensions#chunk-001",
+      "end_line": 35,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "namedtypeselectorlistextensions",
+        "primitives",
+        "src",
+        "tw",
+        "class",
+        "namespace",
+        "public",
+        "static",
+        "summary",
+        "供添加具",
+        "便利方法",
+        "具名类型",
+        "加具名类",
+        "名类型选",
+        "器的便利"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "namedtypeselectorlistextensions",
+          "primitives",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:5f22a9d184008e5b922ad77c12997576a688d4856b5d62f2d88499a1af53fcc0",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelectorListExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-35 in backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelectorListExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelectorListExtensions.cs"
+}

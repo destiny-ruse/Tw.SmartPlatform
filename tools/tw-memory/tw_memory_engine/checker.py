@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import json
 import os
+from datetime import datetime
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from .hashing import file_sha256
 from .models import Diagnostic
 from .paths import memory_root, relative_posix
+from .scanner import SourceScanner
 
 
 WARNING_SIZE_BYTES = 200 * 1024
@@ -54,6 +56,8 @@ class MemoryChecker:
         diagnostics.extend(self._check_required_artifacts())
         source_records = self._source_records(diagnostics)
         diagnostics.extend(self._check_source_freshness(source_records))
+        if self._source_index_can_be_compared(diagnostics):
+            diagnostics.extend(self._check_source_index_matches_scan(source_records))
         diagnostics.extend(self._check_chunk_ranges())
         diagnostics.extend(self._check_manual_freshness(source_records))
         diagnostics.extend(self._check_route_index())
@@ -157,6 +161,65 @@ class MemoryChecker:
                 )
         return diagnostics
 
+    def _source_index_can_be_compared(self, diagnostics: list[Diagnostic]) -> bool:
+        source_index = self.memory_root / "source-index"
+        if not source_index.exists():
+            return False
+
+        return not any(
+            item.code == "invalid-source-path"
+            or (
+                item.code == "invalid-json"
+                and isinstance(item.path, str)
+                and item.path.startswith(".tw-memory/source-index/")
+            )
+            for item in diagnostics
+        )
+
+    def _check_source_index_matches_scan(self, source_records: list[tuple[Path, dict[str, Any]]]) -> list[Diagnostic]:
+        diagnostics: list[Diagnostic] = []
+        indexed_paths: dict[str, int] = {}
+        for _index_path, record in source_records:
+            source_path = record.get("source_path")
+            if isinstance(source_path, str):
+                indexed_paths[source_path] = indexed_paths.get(source_path, 0) + 1
+
+        for source_path, count in sorted(indexed_paths.items()):
+            if count > 1:
+                diagnostics.append(
+                    Diagnostic(
+                        level="error",
+                        code="source-index-duplicate",
+                        path=source_path,
+                        message="source-index contains duplicate entries for the same source file",
+                    )
+                )
+
+        try:
+            scanned_paths = {record.source_path for record in SourceScanner(self.root).scan()}
+        except OSError as exc:
+            diagnostics.append(
+                Diagnostic(
+                    level="error",
+                    code="source-scan-failed",
+                    path=None,
+                    message=f"current source scan failed: {exc}",
+                )
+            )
+            return diagnostics
+
+        for source_path in sorted(scanned_paths - set(indexed_paths)):
+            diagnostics.append(
+                Diagnostic(
+                    level="error",
+                    code="source-index-stale",
+                    path=source_path,
+                    message="source file is not present in generated source-index",
+                )
+            )
+
+        return diagnostics
+
     def _check_chunk_ranges(self) -> list[Diagnostic]:
         chunks_root = self.memory_root / "generated" / "chunks"
         if not chunks_root.exists():
@@ -242,9 +305,14 @@ class MemoryChecker:
             return []
 
         diagnostics: list[Diagnostic] = []
+        index_relative_path = relative_posix(self.root, index_path)
         payload = self._load_json(index_path, diagnostics)
+        if any(item.code == "invalid-json" and item.path == index_relative_path for item in diagnostics):
+            return diagnostics
         if not isinstance(payload, dict):
             return diagnostics
+
+        diagnostics.extend(self._check_route_root_schema(payload, index_path))
 
         shards = payload.get("shards", [])
         if not isinstance(shards, list):
@@ -274,6 +342,43 @@ class MemoryChecker:
                     )
                 )
         return diagnostics
+
+    def _check_route_root_schema(self, payload: dict[str, Any], index_path: Path) -> list[Diagnostic]:
+        diagnostics: list[Diagnostic] = []
+        required = {
+            "schema_version": str,
+            "generated_at": str,
+            "repo_hash": str,
+            "shards": list,
+        }
+        for field, expected_type in required.items():
+            if not isinstance(payload.get(field), expected_type):
+                diagnostics.append(
+                    Diagnostic(
+                        level="error",
+                        code="route-index-schema-invalid",
+                        path=relative_posix(self.root, index_path),
+                        message=f"route-index root field {field} is missing or invalid",
+                    )
+                )
+        generated_at = payload.get("generated_at")
+        if isinstance(generated_at, str) and not self._is_timezone_aware_iso_datetime(generated_at):
+            diagnostics.append(
+                Diagnostic(
+                    level="error",
+                    code="route-index-schema-invalid",
+                    path=relative_posix(self.root, index_path),
+                    message="route-index root field generated_at is missing or invalid",
+                )
+            )
+        return diagnostics
+
+    def _is_timezone_aware_iso_datetime(self, value: str) -> bool:
+        try:
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError:
+            return False
+        return parsed.tzinfo is not None and parsed.utcoffset() is not None
 
     def _check_memory_safety(self) -> list[Diagnostic]:
         if not self.memory_root.exists():

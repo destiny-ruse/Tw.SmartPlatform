@@ -11,7 +11,20 @@
         "csproj",
         "dotnet",
         "tests",
-        "tw"
+        "tw",
+        "enable",
+        "false",
+        "framework",
+        "group",
+        "implicit",
+        "include",
+        "item",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "packable",
+        "package"
       ],
       "relations": {
         "capabilities": [

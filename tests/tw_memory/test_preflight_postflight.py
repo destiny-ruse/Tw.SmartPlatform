@@ -74,6 +74,30 @@ class PreflightPostflightTests(unittest.TestCase):
                 candidate_paths,
             )
 
+    def test_preflight_includes_global_standards_with_stack_filter(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            dotnet = root / "backend" / "dotnet" / "BuildingBlocks" / "src" / "Tw.Caching"
+            standard = root / "docs" / "standards" / "rules"
+            dotnet.mkdir(parents=True)
+            standard.mkdir(parents=True)
+            (dotnet / "README.md").write_text("# Dotnet Cache\n\nCaching building blocks.\n", encoding="utf-8")
+            (standard / "api-response-shape.md").write_text(
+                "# API Response Shape\n\nResponse envelope standard.\n",
+                encoding="utf-8",
+            )
+            MemoryGenerator(root).generate()
+
+            result = PreflightRunner(root).run(
+                task="api response shape for dotnet cache",
+                stack="dotnet",
+                path="backend/dotnet/BuildingBlocks/src/Tw.Caching",
+            )
+
+            candidate_paths = [candidate["source_path"] for candidate in result["candidates"]]
+            self.assertIn("backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md", candidate_paths)
+            self.assertIn("docs/standards/rules/api-response-shape.md", candidate_paths)
+
     def test_preflight_query_normalizes_cli_path_forms_for_language_and_service_terms(self):
         runner = PreflightRunner(Path("."))
 
@@ -95,6 +119,7 @@ class PreflightPostflightTests(unittest.TestCase):
                 "docs/standards/rules/cache.md",
                 "backend/dotnet/BuildingBlocks/src/Tw.Caching/README.md",
                 "backend/dotnet/BuildingBlocks/src/Tw.Caching/CacheClient.cs",
+                "backend/dotnet/Services/Notice/Foo.cs",
                 "frontend/apps/tw.web.ops/src/view.vue",
             ]
         )
@@ -106,7 +131,15 @@ class PreflightPostflightTests(unittest.TestCase):
         )
         self.assertIn(
             "backend/dotnet/BuildingBlocks/src/Tw.Caching/CacheClient.cs",
-            result["review_required_files"],
+            result["memory_affecting_files"],
+        )
+        self.assertIn(
+            "backend/dotnet/Services/Notice/Foo.cs",
+            result["memory_affecting_files"],
+        )
+        self.assertIn(
+            "frontend/apps/tw.web.ops/src/view.vue",
+            result["memory_affecting_files"],
         )
         self.assertIn("generate", result["actions"])
         self.assertIn("check", result["actions"])
@@ -117,7 +150,7 @@ class PreflightPostflightTests(unittest.TestCase):
         self.assertEqual(metadata_result["memory_affecting_files"], [".tw-memory/taxonomy.yaml"])
         self.assertEqual(metadata_result["actions"], ["generate", "check"])
 
-        review_result = PostflightRunner(Path(".")).run(
+        source_result = PostflightRunner(Path(".")).run(
             [
                 "backend/dotnet/BuildingBlocks/src/CacheClient.cs",
                 "backend/java/src/Main.java",
@@ -127,7 +160,7 @@ class PreflightPostflightTests(unittest.TestCase):
         )
 
         self.assertEqual(
-            review_result["review_required_files"],
+            source_result["memory_affecting_files"],
             [
                 "backend/dotnet/BuildingBlocks/src/CacheClient.cs",
                 "backend/java/src/Main.java",
@@ -135,7 +168,27 @@ class PreflightPostflightTests(unittest.TestCase):
                 "frontend/packages/ui/src/Button.tsx",
             ],
         )
+        self.assertEqual(source_result["actions"], ["generate", "check"])
+
+        review_result = PostflightRunner(Path(".")).run(["frontend/packages/ui/src/theme.css"])
+
+        self.assertEqual(review_result["review_required_files"], ["frontend/packages/ui/src/theme.css"])
         self.assertEqual(review_result["actions"], ["review-manual-sync", "postflight-again"])
+
+    def test_postflight_ignores_scanner_excluded_source_directories(self):
+        changed_files = [
+            "backend/dotnet/Services/Notice/bin/Foo.cs",
+            "backend/dotnet/Services/Notice/obj/Foo.cs",
+            "frontend/apps/tw.web.ops/node_modules/pkg/index.js",
+            "backend/python/orders/__pycache__/app.py",
+        ]
+
+        result = PostflightRunner(Path(".")).run(changed_files)
+
+        self.assertEqual(result["memory_affecting_files"], [])
+        self.assertEqual(result["review_required_files"], [])
+        self.assertEqual(result["ordinary_files"], changed_files)
+        self.assertEqual(result["actions"], [])
 
 
 if __name__ == "__main__":

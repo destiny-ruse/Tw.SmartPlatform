@@ -11,7 +11,9 @@
         "pipeline",
         "rules",
         "standards",
-        "流水线规范"
+        "流水线规范",
+        "水线规范",
+        "流水线规"
       ],
       "relations": {
         "capabilities": [
@@ -21,7 +23,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -40,7 +42,21 @@
         "md",
         "pipeline",
         "rules",
-        "standards"
+        "standards",
+        "不可重复",
+        "于降低构",
+        "低构建不",
+        "制品来源",
+        "品来源不",
+        "建不可重",
+        "来源不清",
+        "构建不可",
+        "水线规范",
+        "流水线规",
+        "用于降低",
+        "目标",
+        "禁被绕过",
+        "线规范用"
       ],
       "relations": {
         "capabilities": [
@@ -50,7 +66,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +86,20 @@
         "pipeline",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "kubernetes",
+        "于仓库内",
+        "像构建触",
+        "制品发布",
+        "发和部署",
+        "建触发和",
+        "本规范适",
+        "构建脚本",
+        "构建触发",
+        "测试命令",
+        "用于仓库",
+        "缓存配置",
+        "范适用于"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +109,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +128,21 @@
         "md",
         "pipeline",
         "rules",
-        "standards"
+        "standards",
+        "依赖安装",
+        "分依赖安",
+        "制品生成",
+        "区分依赖",
+        "发布前验",
+        "和发布前",
+        "品生成和",
+        "少区分依",
+        "必须至少",
+        "成和发布",
+        "构建",
+        "水线必须",
+        "流水线必",
+        "测试"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +152,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +171,21 @@
         "md",
         "pipeline",
         "rules",
-        "standards"
+        "standards",
+        "app",
+        "build",
+        "docker",
+        "git",
+        "image",
+        "label",
+        "name",
+        "opencontainers",
+        "org",
+        "pytest",
+        "revision",
+        "run",
+        "sha",
+        "short"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +195,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +215,20 @@
         "pipeline",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "从流水线",
+        "位失败发",
+        "制品还是",
+        "发生在安",
+        "否能从流",
+        "失败发生",
+        "定位失败",
+        "是否能从",
+        "构建",
+        "检查",
+        "段定位失",
+        "水线阶段",
+        "流水线阶"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +238,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +258,15 @@
         "pipeline",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "commit",
+        "container",
+        "deploy",
+        "git",
+        "image",
+        "rollback",
+        "strategy",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +276,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -218,7 +296,20 @@
         "pipeline",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -228,7 +319,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

@@ -17,7 +17,14 @@
         "plan",
         "plans",
         "registration",
-        "superpowers"
+        "superpowers",
+        "agentic",
+        "development",
+        "driven",
+        "executing",
+        "implement",
+        "recommended",
+        "required"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +63,14 @@
         "order",
         "plans",
         "registration",
-        "superpowers"
+        "superpowers",
+        "after",
+        "aop",
+        "before",
+        "castle",
+        "core",
+        "must",
+        "pass"
       ],
       "relations": {
         "capabilities": [
@@ -95,7 +109,14 @@
         "plans",
         "registration",
         "source",
-        "superpowers"
+        "superpowers",
+        "attribute",
+        "backend",
+        "blocks",
+        "building",
+        "configuration",
+        "core",
+        "design"
       ],
       "relations": {
         "capabilities": [
@@ -134,7 +155,14 @@
         "plans",
         "registration",
         "structure",
-        "superpowers"
+        "superpowers",
+        "attribute",
+        "backend",
+        "blocks",
+        "building",
+        "configuration",
+        "core",
+        "create"
       ],
       "relations": {
         "capabilities": [
@@ -213,7 +241,12 @@
         "plans",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "attribute",
+        "backend",
+        "blocks",
+        "building",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -254,7 +287,12 @@
         "plans",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "add",
+        "attribute",
+        "core",
+        "csharp",
+        "disable"
       ],
       "relations": {
         "capabilities": [
@@ -294,7 +332,13 @@
         "plans",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building",
+        "core",
+        "create",
+        "dependency"
       ],
       "relations": {
         "capabilities": [
@@ -334,7 +378,13 @@
         "plans",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "create",
+        "empty",
+        "enabled",
+        "false",
+        "finder",
+        "implement"
       ],
       "relations": {
         "capabilities": [
@@ -375,7 +425,12 @@
         "register",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "autofac",
+        "backend",
+        "blocks",
+        "building",
+        "collection"
       ],
       "relations": {
         "capabilities": [
@@ -416,7 +471,12 @@
         "register",
         "registration",
         "superpowers",
-        "task"
+        "task",
+        "backend",
+        "blocks",
+        "building",
+        "collection",
+        "core"
       ],
       "relations": {
         "capabilities": [
@@ -459,7 +519,10 @@
         "registration",
         "superpowers",
         "task",
-        "validation"
+        "validation",
+        "add",
+        "backend",
+        "blocks"
       ],
       "relations": {
         "capabilities": [
@@ -502,7 +565,10 @@
         "registration",
         "superpowers",
         "task",
-        "validation"
+        "validation",
+        "backend",
+        "blocks",
+        "building"
       ],
       "relations": {
         "capabilities": [
@@ -542,7 +608,13 @@
         "registration",
         "superpowers",
         "task",
-        "verify"
+        "verify",
+        "backend",
+        "blocks",
+        "building",
+        "core",
+        "csproj",
+        "dotnet"
       ],
       "relations": {
         "capabilities": [
@@ -582,7 +654,13 @@
         "registration",
         "review",
         "self",
-        "superpowers"
+        "superpowers",
+        "attribute",
+        "configuration",
+        "declarations",
+        "direct",
+        "existing",
+        "inject"
       ],
       "relations": {
         "capabilities": [

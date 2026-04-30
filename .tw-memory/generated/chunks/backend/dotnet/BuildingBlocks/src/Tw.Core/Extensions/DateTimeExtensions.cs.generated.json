@@ -1,0 +1,144 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.DateTimeExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "datetimeextensions",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "class",
+        "date",
+        "namespace",
+        "public",
+        "static",
+        "summary",
+        "time",
+        "unix",
+        "供日期时",
+        "值的扩展",
+        "将日期时"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "datetimeextensions",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:fdd60f3f08874f792567c4c9e80c65b413662aedef5d8cd1bb35d46dbc52d716",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.DateTimeExtensions#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "datetimeextensions",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "param",
+        "summary",
+        "一个计时",
+        "一为每周",
+        "一天返回",
+        "个计时周",
+        "为每周第",
+        "以星期一",
+        "后一个计",
+        "周最后一",
+        "周第一天"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "datetimeextensions",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:fdd60f3f08874f792567c4c9e80c65b413662aedef5d8cd1bb35d46dbc52d716",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.DateTimeExtensions#chunk-003",
+      "end_line": 188,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "datetimeextensions",
+        "dotnet",
+        "extensions",
+        "src",
+        "tw",
+        "add",
+        "age",
+        "birth",
+        "calculate",
+        "date",
+        "int",
+        "public",
+        "return",
+        "static",
+        "summary",
+        "time"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "datetimeextensions",
+          "dotnet",
+          "extensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:fdd60f3f08874f792567c4c9e80c65b413662aedef5d8cd1bb35d46dbc52d716",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs",
+      "start_line": 145,
+      "summary": "Lines 145-188 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs"
+}

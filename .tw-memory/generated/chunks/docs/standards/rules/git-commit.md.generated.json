@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,21 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "gitignore",
+        "不可审查",
+        "于降低历",
+        "交规范用",
+        "产物来源",
+        "低历史不",
+        "历史不可",
+        "史不可审",
+        "回滚粒度",
+        "成产物来",
+        "提交规范",
+        "滚粒度过",
+        "生成产物",
+        "用于降低"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +66,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -72,7 +86,20 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "stash",
+        "于所有进",
+        "仓库历史",
+        "入仓库历",
+        "历史的代",
+        "史的代码",
+        "库历史的",
+        "所有进入",
+        "文档",
+        "有进入仓",
+        "本规范适",
+        "测试",
+        "用于所有"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +110,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -102,7 +129,21 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "bug",
+        "build",
+        "changes",
+        "chore",
+        "feat",
+        "fix",
+        "refactor",
+        "summary",
+        "test",
+        "type",
+        "update",
+        "交信息必",
+        "信息必须",
+        "必须使用"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +154,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -132,7 +173,20 @@
         "git",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "add",
+        "engineering",
+        "env",
+        "expand",
+        "general",
+        "generation",
+        "index",
+        "shell",
+        "update",
+        "verify",
+        "反例",
+        "正例",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +197,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -163,7 +217,20 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "summary",
+        "type",
+        "且摘要说",
+        "个提交是",
+        "交信息是",
+        "交是否保",
+        "信息是否",
+        "单个提交",
+        "否保持可",
+        "息是否符",
+        "提交信息",
+        "提交是否",
+        "摘要说明"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +241,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -194,7 +261,11 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "branching",
+        "code",
+        "editorconfig",
+        "review"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +276,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -225,7 +296,20 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "gitignore",
+        "交边界的",
+        "充执行级",
+        "单和相关",
+        "和相关规",
+        "执行级规",
+        "提交边界",
+        "日期",
+        "明确",
+        "是提交边",
+        "查清单和",
+        "检查清单",
+        "清单和相"
       ],
       "relations": {
         "capabilities": [
@@ -236,7 +320,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

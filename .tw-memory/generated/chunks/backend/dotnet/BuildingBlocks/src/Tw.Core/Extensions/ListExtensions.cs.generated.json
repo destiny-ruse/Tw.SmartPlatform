@@ -1,0 +1,190 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "class",
+        "list",
+        "namespace",
+        "public",
+        "static",
+        "summary",
+        "供可变列",
+        "列表扩展",
+        "列表的只",
+        "变列表扩",
+        "可变列表"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-002",
+      "end_line": 152,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "argument",
+        "cref",
+        "exception",
+        "item",
+        "langword",
+        "name",
+        "null",
+        "param",
+        "paramref",
+        "see",
+        "source"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 73,
+      "summary": "Lines 73-152 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-003",
+      "end_line": 224,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "factory",
+        "item",
+        "name",
+        "param",
+        "selector",
+        "于选择待",
+        "元素的工",
+        "元素的谓",
+        "前元素的",
+        "当前元素",
+        "待替换元"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 145,
+      "summary": "Lines 145-224 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Extensions.ListExtensions#chunk-004",
+      "end_line": 261,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "extensions",
+        "listextensions",
+        "src",
+        "tw",
+        "add",
+        "factory",
+        "item",
+        "list",
+        "new",
+        "return",
+        "summary",
+        "var",
+        "一个匹配",
+        "个匹配元",
+        "元素移动"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "extensions",
+          "listextensions",
+          "src"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:39c0518636ca38467f6ea9fa6a11da649db64cbb6eb6520c473ffa3decd39ba7",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "start_line": 217,
+      "summary": "Lines 217-261 in backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs"
+}

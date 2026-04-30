@@ -12,7 +12,8 @@
         "rules",
         "standards",
         "style",
-        "风格规范"
+        "风格规范",
+        "rpc"
       ],
       "relations": {
         "capabilities": [
@@ -24,7 +25,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -44,7 +45,20 @@
         "proto",
         "rules",
         "standards",
-        "style"
+        "style",
+        "rpc",
+        "一致导致",
+        "不一致导",
+        "包名",
+        "和字段风",
+        "字段风格",
+        "息和字段",
+        "服务",
+        "格不一致",
+        "格规范用",
+        "段风格不",
+        "消息和字",
+        "用于降低"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +70,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -77,7 +91,19 @@
         "rules",
         "standards",
         "style",
-        "适用范围"
+        "适用范围",
+        "api",
+        "apis",
+        "async",
+        "dto",
+        "json",
+        "rest",
+        "rpc",
+        "sdk",
+        "services",
+        "src",
+        "字段",
+        "文件"
       ],
       "relations": {
         "capabilities": [
@@ -89,7 +115,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -109,7 +135,20 @@
         "proto",
         "rules",
         "standards",
-        "style"
+        "style",
+        "orders",
+        "package",
+        "proto3",
+        "件必须使",
+        "包名必须",
+        "包含领域",
+        "名必须包",
+        "含领域和",
+        "和目标语",
+        "声明稳定",
+        "必须使用",
+        "必须包含",
+        "文件必须"
       ],
       "relations": {
         "capabilities": [
@@ -121,7 +160,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -141,7 +180,20 @@
         "proto",
         "rules",
         "standards",
-        "style"
+        "style",
+        "get",
+        "int64",
+        "message",
+        "order",
+        "orders",
+        "package",
+        "proto3",
+        "request",
+        "response",
+        "returns",
+        "rpc",
+        "service",
+        "status"
       ],
       "relations": {
         "capabilities": [
@@ -153,7 +205,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -174,7 +226,19 @@
         "rules",
         "standards",
         "style",
-        "检查清单"
+        "检查清单",
+        "proto3",
+        "举命名是",
+        "命名是否",
+        "和枚举命",
+        "和目标语",
+        "字段和枚",
+        "方法",
+        "是否声明",
+        "服务",
+        "本和目标",
+        "枚举命名",
+        "标语言选"
       ],
       "relations": {
         "capabilities": [
@@ -186,7 +250,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -207,7 +271,12 @@
         "rules",
         "standards",
         "style",
-        "相关规范"
+        "相关规范",
+        "contract",
+        "data",
+        "formats",
+        "testing",
+        "versioning"
       ],
       "relations": {
         "capabilities": [
@@ -219,7 +288,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -240,7 +309,19 @@
         "rules",
         "standards",
         "style",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范"
       ],
       "relations": {
         "capabilities": [
@@ -252,7 +333,7 @@
           "style"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

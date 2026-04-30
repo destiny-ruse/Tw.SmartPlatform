@@ -11,7 +11,11 @@
         "migration",
         "rules",
         "standards",
-        "数据库迁移规范"
+        "数据库迁移规范",
+        "库迁移规",
+        "据库迁移",
+        "数据库迁",
+        "迁移规范"
       ],
       "relations": {
         "capabilities": [
@@ -21,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -40,7 +44,21 @@
         "md",
         "migration",
         "rules",
-        "standards"
+        "standards",
+        "schema",
+        "不可回滚",
+        "丢失和线",
+        "变更导致",
+        "可回滚发",
+        "回滚发布",
+        "导致不可",
+        "库迁移规",
+        "据丢失和",
+        "据库迁移",
+        "数据丢失",
+        "数据库迁",
+        "更导致不",
+        "用于降低"
       ],
       "relations": {
         "capabilities": [
@@ -50,7 +68,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -70,7 +88,20 @@
         "migration",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "schema",
+        "于关系型",
+        "关系型数",
+        "具管理的",
+        "变更",
+        "和由迁移",
+        "型数据库",
+        "工具管理",
+        "库和由迁",
+        "据库和由",
+        "数据库和",
+        "用于关系",
+        "由迁移工"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +111,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -99,7 +130,21 @@
         "md",
         "migration",
         "rules",
-        "standards"
+        "standards",
+        "不得修改",
+        "业务意图",
+        "个迁移必",
+        "修改已经",
+        "可排序",
+        "可追溯的",
+        "已经进入",
+        "并说明业",
+        "得修改已",
+        "必须有唯",
+        "改已经进",
+        "明业务意",
+        "每个迁移",
+        "溯的名称"
       ],
       "relations": {
         "capabilities": [
@@ -109,7 +154,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -128,7 +173,21 @@
         "md",
         "migration",
         "rules",
-        "standards"
+        "standards",
+        "add",
+        "alter",
+        "between",
+        "column",
+        "created",
+        "end",
+        "null",
+        "order",
+        "sales",
+        "set",
+        "sql",
+        "start",
+        "status",
+        "table"
       ],
       "relations": {
         "capabilities": [
@@ -138,7 +197,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -158,7 +217,20 @@
         "migration",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "业务意图",
+        "兼容发布",
+        "前兼容发",
+        "可排序并",
+        "名称是否",
+        "向前兼容",
+        "否存在向",
+        "在向前兼",
+        "存在向前",
+        "并说明业",
+        "序并说明",
+        "排序并说",
+        "明业务意"
       ],
       "relations": {
         "capabilities": [
@@ -168,7 +240,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -188,7 +260,13 @@
         "migration",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "data",
+        "deploy",
+        "mock",
+        "naming",
+        "rollback",
+        "test"
       ],
       "relations": {
         "capabilities": [
@@ -198,7 +276,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -218,7 +296,20 @@
         "migration",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -228,7 +319,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

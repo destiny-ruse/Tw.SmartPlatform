@@ -12,7 +12,19 @@
         "md",
         "skill",
         "skills",
-        "writer"
+        "writer",
+        "creating",
+        "diataxis",
+        "framework",
+        "guided",
+        "high",
+        "https",
+        "principles",
+        "quality",
+        "software",
+        "specializing",
+        "strictly",
+        "structure"
       ],
       "relations": {
         "capabilities": [
@@ -44,7 +56,19 @@
         "principles",
         "skill",
         "skills",
-        "writer"
+        "writer",
+        "accuracy",
+        "all",
+        "clarity",
+        "clear",
+        "code",
+        "correct",
+        "date",
+        "details",
+        "ensure",
+        "especially",
+        "information",
+        "language"
       ],
       "relations": {
         "capabilities": [
@@ -80,7 +104,15 @@
         "the",
         "types",
         "writer",
-        "your"
+        "your",
+        "across",
+        "create",
+        "distinct",
+        "each",
+        "learning",
+        "must",
+        "oriented",
+        "purpose"
       ],
       "relations": {
         "capabilities": [
@@ -111,7 +143,20 @@
         "skill",
         "skills",
         "workflow",
-        "writer"
+        "writer",
+        "acknowledge",
+        "any",
+        "ask",
+        "clarify",
+        "clarifying",
+        "determine",
+        "every",
+        "fill",
+        "follow",
+        "gaps",
+        "information",
+        "must",
+        "process"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +188,19 @@
         "md",
         "skill",
         "skills",
-        "writer"
+        "writer",
+        "content",
+        "context",
+        "copy",
+        "existing",
+        "explicitly",
+        "files",
+        "markdown",
+        "other",
+        "project",
+        "provide",
+        "style",
+        "terminology"
       ],
       "relations": {
         "capabilities": [

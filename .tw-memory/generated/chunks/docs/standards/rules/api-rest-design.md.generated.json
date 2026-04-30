@@ -24,7 +24,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -44,7 +44,20 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "http",
+        "义不一致",
+        "于降低资",
+        "低资源命",
+        "命名混乱",
+        "方法语义",
+        "法语义不",
+        "源命名混",
+        "版本演进",
+        "用于降低",
+        "目标",
+        "范用于降",
+        "规范用于"
       ],
       "relations": {
         "capabilities": [
@@ -56,7 +69,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -77,7 +90,19 @@
         "rest",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "frontend",
+        "http",
+        "json",
+        "mobile",
+        "mock",
+        "open",
+        "rpc",
+        "sdk",
+        "services",
+        "src"
       ],
       "relations": {
         "capabilities": [
@@ -89,7 +114,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -109,7 +134,20 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "create",
+        "get",
+        "order",
+        "rpc",
+        "业务资源",
+        "使用名词",
+        "名词复数",
+        "和稳定标",
+        "复数和稳",
+        "径必须表",
+        "必须表达",
+        "数和稳定",
+        "用名词复"
       ],
       "relations": {
         "capabilities": [
@@ -121,7 +159,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -141,7 +179,20 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "不是内部",
+        "业务资源",
+        "使用名词",
+        "内部表名",
+        "务资源而",
+        "名或方法",
+        "名词复数",
+        "径使用名",
+        "是内部表",
+        "源而不是",
+        "源路径使",
+        "用名词复",
+        "类名或方"
       ],
       "relations": {
         "capabilities": [
@@ -153,7 +204,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -173,7 +224,20 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "delete",
+        "get",
+        "patch",
+        "post",
+        "put",
+        "不得产生",
+        "业务副作",
+        "于创建资",
+        "产生业务",
+        "创建资源",
+        "务副作用",
+        "只能读取",
+        "建资源或"
       ],
       "relations": {
         "capabilities": [
@@ -185,7 +249,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -205,7 +269,20 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "入新版本",
+        "兼容新增",
+        "协商机制",
+        "变更必须",
+        "坏性变更",
+        "容新增字",
+        "引入新版",
+        "径或协商",
+        "必须引入",
+        "性变更必",
+        "或协商机",
+        "新增字段",
+        "新版本路"
       ],
       "relations": {
         "capabilities": [
@@ -217,7 +294,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -237,7 +314,17 @@
         "md",
         "rest",
         "rules",
-        "standards"
+        "standards",
+        "get",
+        "http",
+        "hzy8",
+        "ord",
+        "order",
+        "orders",
+        "post",
+        "反例",
+        "正例",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -249,7 +336,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -270,7 +357,19 @@
         "rest",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "http",
+        "rpc",
+        "且没有动",
+        "业务资源",
+        "否表达稳",
+        "命名",
+        "定业务资",
+        "幂等性",
+        "径是否表",
+        "态码和重",
+        "方法",
+        "是否表达"
       ],
       "relations": {
         "capabilities": [
@@ -282,7 +381,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -303,7 +402,17 @@
         "rest",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "data",
+        "formats",
+        "http",
+        "idempotency",
+        "input",
+        "references",
+        "response",
+        "shape",
+        "status",
+        "validation"
       ],
       "relations": {
         "capabilities": [
@@ -315,7 +424,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -336,7 +445,19 @@
         "rest",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "单和相关",
+        "和相关规",
+        "建立",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例"
       ],
       "relations": {
         "capabilities": [
@@ -348,7 +469,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

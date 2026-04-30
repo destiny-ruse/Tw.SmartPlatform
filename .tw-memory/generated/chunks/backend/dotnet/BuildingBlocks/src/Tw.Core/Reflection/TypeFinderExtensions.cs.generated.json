@@ -1,0 +1,52 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.TypeFinderExtensions#chunk-001",
+      "end_line": 51,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "reflection",
+        "src",
+        "tw",
+        "typefinderextensions",
+        "cref",
+        "finder",
+        "itype",
+        "namespace",
+        "public",
+        "see",
+        "summary",
+        "不依赖额",
+        "件的便利",
+        "供不依赖",
+        "依赖额外"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "reflection",
+          "src",
+          "typefinderextensions"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:1803cb2a321259a1e3b05f5e17d6d5870f33d11832bb43d122110e928c96c590",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinderExtensions.cs",
+      "start_line": 1,
+      "summary": "Lines 1-51 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinderExtensions.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinderExtensions.cs"
+}

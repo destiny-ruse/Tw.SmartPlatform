@@ -13,7 +13,18 @@
         "readme",
         "src",
         "tw",
-        "缓存构件目录"
+        "缓存构件目录",
+        "于承载缓",
+        "供者集成",
+        "和通用缓",
+        "存提供者",
+        "存构件目",
+        "录用于承",
+        "成和通用",
+        "承载缓存",
+        "提供者集",
+        "本目录用",
+        "构件目录"
       ],
       "relations": {
         "capabilities": [
@@ -43,7 +54,20 @@
         "csproj",
         "dotnet",
         "src",
-        "tw"
+        "tw",
+        "enable",
+        "framework",
+        "group",
+        "implicit",
+        "microsoft",
+        "net",
+        "net10",
+        "nullable",
+        "project",
+        "property",
+        "sdk",
+        "target",
+        "usings"
       ],
       "relations": {
         "capabilities": [

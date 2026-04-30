@@ -22,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -41,7 +41,21 @@
         "md",
         "processes",
         "rfc",
-        "standards"
+        "standards",
+        "前形成可",
+        "变更在实",
+        "可追踪的",
+        "团队或高",
+        "在实施前",
+        "实施前形",
+        "工程变更",
+        "形成可讨",
+        "成可讨论",
+        "或高风险",
+        "施前形成",
+        "更在实施",
+        "目标",
+        "程变更在"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +66,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -72,7 +86,20 @@
         "processes",
         "rfc",
         "standards",
-        "适用范围"
+        "适用范围",
+        "于架构调",
+        "体系演进",
+        "公共契约",
+        "共契约变",
+        "变更和规",
+        "和规范体",
+        "基础设施",
+        "契约变化",
+        "施变更和",
+        "更和规范",
+        "架构调整",
+        "用于架构",
+        "础设施变"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +110,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -102,7 +129,21 @@
         "md",
         "processes",
         "rfc",
-        "standards"
+        "standards",
+        "出备选方",
+        "出背景和",
+        "列出备选",
+        "受影响角",
+        "响角色评",
+        "备选方案",
+        "录结论并",
+        "影响角色",
+        "提出背景",
+        "方案和取",
+        "景和目标",
+        "案和取舍",
+        "流程",
+        "结论并跟"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +154,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -132,7 +173,21 @@
         "md",
         "processes",
         "rfc",
-        "standards"
+        "standards",
+        "包含背景",
+        "和验收标",
+        "少包含背",
+        "式和验收",
+        "影响范围",
+        "方式和验",
+        "方案",
+        "模板",
+        "目标",
+        "移方式和",
+        "至少包含",
+        "迁移方式",
+        "非目标",
+        "验收标准"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +198,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -163,7 +218,20 @@
         "processes",
         "rfc",
         "standards",
-        "检查清单"
+        "检查清单",
+        "出受影响",
+        "列出受影",
+        "受影响系",
+        "否列出受",
+        "否明确非",
+        "否说明回",
+        "回滚或迁",
+        "影响系统",
+        "或迁移方",
+        "明回滚或",
+        "明确非目",
+        "是否列出",
+        "是否明确"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +242,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -194,7 +262,12 @@
         "processes",
         "rfc",
         "standards",
-        "变更记录"
+        "变更记录",
+        "建立",
+        "日期",
+        "流程",
+        "版本",
+        "说明"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +278,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },

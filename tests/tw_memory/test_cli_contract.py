@@ -147,7 +147,18 @@ class CliContractTests(unittest.TestCase):
             root = self._temp_repo_root(work)
             MemoryGenerator(root).generate()
             route_index = root / ".tw-memory" / "route-index" / "index.generated.json"
-            route_index.write_text(json.dumps({"shards": [], "padding": "x" * 210_000}), encoding="utf-8")
+            route_index.write_text(
+                json.dumps(
+                    {
+                        "schema_version": "1.0.0",
+                        "generated_at": "2026-04-30T00:00:00+00:00",
+                        "repo_hash": "sha256:test",
+                        "shards": [],
+                        "padding": "x" * 210_000,
+                    }
+                ),
+                encoding="utf-8",
+            )
 
             result = subprocess.run(
                 [sys.executable, str(CLI), "check", "--format", "json"],
@@ -161,6 +172,13 @@ class CliContractTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             payload = json.loads(result.stdout)
             self.assertTrue(any(item["level"] == "warning" for item in payload["diagnostics"]))
+
+    def test_ci_check_script_supports_committed_diff_whitespace_gate(self):
+        script = (REPO_ROOT / "deploy" / "ci-cd" / "tw-memory-check.ps1").read_text(encoding="utf-8")
+
+        self.assertIn("TW_MEMORY_DIFF_BASE", script)
+        self.assertIn("...HEAD", script)
+        self.assertIn("git diff --check", script)
 
     def test_check_error_diagnostics_exit_nonzero(self):
         with tempfile.TemporaryDirectory() as work:

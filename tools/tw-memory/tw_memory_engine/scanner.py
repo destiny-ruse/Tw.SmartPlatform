@@ -18,7 +18,17 @@ EXCLUDED_DIRS = {
     "obj",
     "__pycache__",
 }
-EXCLUDED_PREFIXES = {
+GENERATED_OUTPUT_DIRS = {
+    "dist",
+    "build",
+    "coverage",
+    ".next",
+    ".nuxt",
+    "target",
+    ".venv",
+    "venv",
+}
+GENERATED_OUTPUT_PREFIXES = {
     ("generated", "fts"),
     ("generated", "vector"),
 }
@@ -31,6 +41,18 @@ PACKAGE_FILENAMES = {
     "pom.xml",
     "build.gradle",
     "pyproject.toml",
+}
+SOURCE_SUFFIXES = {
+    ".cs",
+    ".fs",
+    ".vb",
+    ".java",
+    ".py",
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx",
+    ".vue",
 }
 LANGUAGE_ROOTS = {"frontend", "contracts", "deploy", "docs"}
 
@@ -76,21 +98,17 @@ class SourceScanner:
         parts = path.resolve().relative_to(self.root).parts
         if parts[-1] in EXCLUDED_DIRS:
             return True
-        return any(
-            parts[index : index + len(prefix)] == prefix
-            for prefix in EXCLUDED_PREFIXES
-            for index in range(0, len(parts) - len(prefix) + 1)
-        )
+        if self._is_generated_output_path(parts):
+            return True
+        return False
 
     def _is_excluded(self, path: Path) -> bool:
         parts = path.resolve().relative_to(self.root).parts
         if any(part in EXCLUDED_DIRS for part in parts[:-1]):
             return True
-        return any(
-            parts[index : index + len(prefix)] == prefix
-            for prefix in EXCLUDED_PREFIXES
-            for index in range(0, len(parts) - len(prefix) + 1)
-        )
+        if self._is_generated_output_path(parts[:-1]):
+            return True
+        return False
 
     def _is_included(self, path: Path, parts: tuple[str, ...]) -> bool:
         name = path.name
@@ -103,6 +121,8 @@ class SourceScanner:
         if path.suffix.lower() == ".md" and parts[0] in MARKDOWN_ROOTS:
             return True
         if self._is_package_file(name):
+            return True
+        if self._is_controlled_source_file(path, parts):
             return True
         return False
 
@@ -117,8 +137,51 @@ class SourceScanner:
             or (name.startswith("requirements") and name.endswith(".txt"))
         )
 
+    def _is_generated_output_path(self, parts: tuple[str, ...]) -> bool:
+        has_generated_output_dir = any(part in GENERATED_OUTPUT_DIRS for part in parts)
+        has_generated_output_prefix = any(
+            parts[index : index + len(prefix)] == prefix
+            for prefix in GENERATED_OUTPUT_PREFIXES
+            for index in range(0, len(parts) - len(prefix) + 1)
+        )
+        if not has_generated_output_dir and not has_generated_output_prefix:
+            return False
+        if parts[0] == "docs":
+            return False
+        if len(parts) >= 5 and parts[:4] == ("backend", "dotnet", "BuildingBlocks", "src"):
+            return True
+        if len(parts) >= 5 and parts[:3] == ("backend", "dotnet", "Services"):
+            return True
+        if len(parts) >= 3 and parts[:2] in {("backend", "java"), ("backend", "python")}:
+            return True
+        if len(parts) >= 4 and parts[:2] in {("frontend", "packages"), ("frontend", "apps")}:
+            return True
+        return False
+
+    def _is_controlled_source_file(self, path: Path, parts: tuple[str, ...]) -> bool:
+        if path.suffix.lower() not in SOURCE_SUFFIXES:
+            return False
+        if len(parts) >= 5 and parts[:4] == ("backend", "dotnet", "BuildingBlocks", "src"):
+            return True
+        if len(parts) >= 5 and parts[:3] == ("backend", "dotnet", "Services"):
+            return True
+        if len(parts) >= 3 and parts[:2] in {("backend", "java"), ("backend", "python")}:
+            return True
+        if len(parts) >= 4 and parts[:2] in {("frontend", "packages"), ("frontend", "apps")}:
+            return True
+        return False
+
     def _source_type(self, path: Path, parts: tuple[str, ...]) -> str:
         name = path.name
+        if len(parts) >= 3 and parts[:2] == ("docs", "standards"):
+            if parts[2] == "rules":
+                return "standard"
+            if parts[2] == "processes":
+                return "process"
+            if parts[2] == "decisions":
+                return "decision"
+            if parts[2] == "references":
+                return "reference"
         if name == "README.md":
             return "readme"
         if name == "SERVICE.md" and self._service(parts) is not None:

@@ -10,7 +10,9 @@
         "md",
         "rules",
         "standards",
-        "幂等性规范"
+        "幂等性规范",
+        "幂等性规",
+        "等性规范"
       ],
       "relations": {
         "capabilities": [
@@ -20,7 +22,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -38,7 +40,22 @@
         "idempotency",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "于降低客",
+        "交和消息",
+        "低客户端",
+        "和消息重",
+        "复提交和",
+        "客户端重",
+        "幂等性规",
+        "性规范用",
+        "息重复投",
+        "户端重试",
+        "提交和消",
+        "消息重复",
+        "用于降低",
+        "目标",
+        "等性规范"
       ],
       "relations": {
         "capabilities": [
@@ -48,7 +65,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -67,7 +84,21 @@
         "md",
         "rules",
         "standards",
-        "适用范围"
+        "适用范围",
+        "apps",
+        "backend",
+        "key",
+        "rest",
+        "services",
+        "src",
+        "付或订单",
+        "写接口",
+        "单类业务",
+        "后台作业",
+        "息消费者",
+        "或订单类",
+        "支付或订",
+        "本规范适"
       ],
       "relations": {
         "capabilities": [
@@ -77,7 +108,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -95,7 +126,22 @@
         "idempotency",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "key",
+        "写操作必",
+        "可能被客",
+        "器重试的",
+        "客户端或",
+        "度器重试",
+        "或调度器",
+        "户端或调",
+        "所有可能",
+        "操作必须",
+        "有可能被",
+        "的写操作",
+        "端或调度",
+        "能被客户",
+        "被客户端"
       ],
       "relations": {
         "capabilities": [
@@ -105,7 +151,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -123,7 +169,22 @@
         "idempotency",
         "md",
         "rules",
-        "standards"
+        "standards",
+        "a69e",
+        "api",
+        "application",
+        "b4f3ad0",
+        "b9f",
+        "bfc4fbf7b21",
+        "c2c",
+        "content",
+        "def",
+        "http",
+        "json",
+        "key",
+        "orders",
+        "post",
+        "python"
       ],
       "relations": {
         "capabilities": [
@@ -133,7 +194,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -152,7 +213,21 @@
         "md",
         "rules",
         "standards",
-        "检查清单"
+        "检查清单",
+        "一键来源",
+        "作和消息",
+        "写操作和",
+        "否声明幂",
+        "和唯一键",
+        "和消息消",
+        "唯一键来",
+        "声明幂等",
+        "幂等策略",
+        "息消费是",
+        "操作和消",
+        "明幂等策",
+        "是否声明",
+        "消息消费"
       ],
       "relations": {
         "capabilities": [
@@ -162,7 +237,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -181,7 +256,13 @@
         "md",
         "rules",
         "standards",
-        "相关规范"
+        "相关规范",
+        "api",
+        "design",
+        "messaging",
+        "patterns",
+        "resilience",
+        "rest"
       ],
       "relations": {
         "capabilities": [
@@ -191,7 +272,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },
@@ -210,7 +291,21 @@
         "md",
         "rules",
         "standards",
-        "变更记录"
+        "变更记录",
+        "充执行级",
+        "初始规范",
+        "单和相关",
+        "和相关规",
+        "建立初始",
+        "执行级规",
+        "日期",
+        "查清单和",
+        "检查清单",
+        "清单和相",
+        "版本",
+        "相关规范",
+        "示例",
+        "立初始规"
       ],
       "relations": {
         "capabilities": [
@@ -220,7 +315,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "standard",
         "language": "docs",
         "service": null
       },

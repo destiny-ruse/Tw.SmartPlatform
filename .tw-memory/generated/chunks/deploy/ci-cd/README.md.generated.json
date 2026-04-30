@@ -10,7 +10,21 @@
         "deploy",
         "md",
         "readme",
-        "持续交付目录"
+        "持续交付目录",
+        "于存放持",
+        "交付目录",
+        "动化发布",
+        "化发布相",
+        "和自动化",
+        "存放持续",
+        "录用于存",
+        "持续交付",
+        "持续集成",
+        "放持续集",
+        "本目录用",
+        "水线配置",
+        "流水线配",
+        "用于存放"
       ],
       "relations": {
         "capabilities": [
@@ -21,14 +35,14 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:70f589d140602be22ed8c21f7d13f4a2647ac21dd3f5b9ed83460f2a30797fff",
+      "source_hash": "sha256:ffdc8c1e5cefdb885949726a16316c9453b013f8aac524e8f8b429c580d4fce3",
       "source_path": "deploy/ci-cd/README.md",
       "start_line": 1,
       "summary": "持续交付目录 in deploy/ci-cd/README.md"
     },
     {
       "chunk_id": "deploy.ci-cd.README#chunk-002",
-      "end_line": 13,
+      "end_line": 14,
       "heading": "TW Memory Check",
       "keywords": [
         "cd",
@@ -37,7 +51,20 @@
         "deploy",
         "md",
         "memory",
-        "readme"
+        "readme",
+        "chunk",
+        "command",
+        "freshness",
+        "hashes",
+        "line",
+        "paths",
+        "powershell",
+        "ps1",
+        "ranges",
+        "repository",
+        "root",
+        "route",
+        "run"
       ],
       "relations": {
         "capabilities": [
@@ -48,7 +75,7 @@
         "language": "deploy",
         "service": null
       },
-      "source_hash": "sha256:70f589d140602be22ed8c21f7d13f4a2647ac21dd3f5b9ed83460f2a30797fff",
+      "source_hash": "sha256:ffdc8c1e5cefdb885949726a16316c9453b013f8aac524e8f8b429c580d4fce3",
       "source_path": "deploy/ci-cd/README.md",
       "start_line": 5,
       "summary": "TW Memory Check in deploy/ci-cd/README.md"

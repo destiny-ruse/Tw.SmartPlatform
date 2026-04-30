@@ -11,7 +11,10 @@
         "md",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "tasks",
+        "under",
+        "use"
       ],
       "relations": {
         "capabilities": [
@@ -41,7 +44,20 @@
         "preflight",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "before",
+        "brief",
+        "editing",
+        "format",
+        "memory",
+        "path",
+        "powershell",
+        "python",
+        "query",
+        "run",
+        "semantic",
+        "short",
+        "stack"
       ],
       "relations": {
         "capabilities": [
@@ -72,7 +88,19 @@
         "rules",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "app",
+        "before",
+        "company",
+        "direct",
+        "files",
+        "generated",
+        "internal",
+        "open",
+        "packages",
+        "party",
+        "prefer",
+        "readme"
       ],
       "relations": {
         "capabilities": [
@@ -102,7 +130,20 @@
         "postflight",
         "skill",
         "skills",
-        "tw"
+        "tw",
+        "after",
+        "brief",
+        "changed",
+        "check",
+        "classify",
+        "edits",
+        "files",
+        "format",
+        "generate",
+        "impact",
+        "memory",
+        "powershell",
+        "python"
       ],
       "relations": {
         "capabilities": [

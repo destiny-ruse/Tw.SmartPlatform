@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.TypeFinder#chunk-001",
+      "end_line": 80,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "reflection",
+        "src",
+        "tw",
+        "typefinder",
+        "namespace",
+        "summary",
+        "system",
+        "using",
+        "中查找运",
+        "从显式提",
+        "供的程序",
+        "序集中查",
+        "式提供的",
+        "找运行时",
+        "提供的程"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "reflection",
+          "src",
+          "typefinder"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:d9da786ddfccc8719d0394d83df28a32b763cd177d0e17262af1a1422ce5f145",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs",
+      "start_line": 1,
+      "summary": "Lines 1-80 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs"
+    },
+    {
+      "chunk_id": "backend.dotnet.BuildingBlocks.src.Tw.Core.Reflection.TypeFinder#chunk-002",
+      "end_line": 98,
+      "heading": null,
+      "keywords": [
+        "backend",
+        "buildingblocks",
+        "core",
+        "cs",
+        "dotnet",
+        "reflection",
+        "src",
+        "tw",
+        "typefinder",
+        "any",
+        "assembly",
+        "comparison",
+        "equals",
+        "get",
+        "ienumerable",
+        "loadable",
+        "name",
+        "null",
+        "ordinal",
+        "prefix"
+      ],
+      "relations": {
+        "capabilities": [
+          "backend",
+          "buildingblocks",
+          "core",
+          "dotnet",
+          "reflection",
+          "src",
+          "typefinder"
+        ],
+        "framework": "tw.core",
+        "kind": "source",
+        "language": "dotnet",
+        "service": null
+      },
+      "source_hash": "sha256:d9da786ddfccc8719d0394d83df28a32b763cd177d0e17262af1a1422ce5f145",
+      "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs",
+      "start_line": 73,
+      "summary": "Lines 73-98 in backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs"
+}

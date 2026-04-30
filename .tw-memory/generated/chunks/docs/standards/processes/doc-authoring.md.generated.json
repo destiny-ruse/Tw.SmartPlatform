@@ -11,7 +11,10 @@
         "md",
         "processes",
         "standards",
-        "文档撰写流程"
+        "文档撰写流程",
+        "撰写流程",
+        "文档撰写",
+        "档撰写流"
       ],
       "relations": {
         "capabilities": [
@@ -22,7 +25,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -41,7 +44,21 @@
         "docs",
         "md",
         "processes",
-        "standards"
+        "standards",
+        "于让跨团",
+        "具备明确",
+        "写流程用",
+        "动具备明",
+        "团队工程",
+        "备明确入",
+        "工程活动",
+        "撰写流程",
+        "文档撰写",
+        "明确入口",
+        "档撰写流",
+        "活动具备",
+        "流程用于",
+        "用于让跨"
       ],
       "relations": {
         "capabilities": [
@@ -52,7 +69,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -72,7 +89,20 @@
         "md",
         "processes",
         "standards",
-        "适用范围"
+        "适用范围",
+        "于标准文",
+        "依赖引入",
+        "具配置和",
+        "和工程流",
+        "工具配置",
+        "工程流程",
+        "标准文档",
+        "流程变更",
+        "用于标准",
+        "程流程变",
+        "置和工程",
+        "适用于标",
+        "配置和工"
       ],
       "relations": {
         "capabilities": [
@@ -83,7 +113,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -102,7 +132,21 @@
         "docs",
         "md",
         "processes",
-        "standards"
+        "standards",
+        "别受影响",
+        "受影响系",
+        "和后续责",
+        "响系统和",
+        "完成评审",
+        "审和验证",
+        "影响系统",
+        "成评审和",
+        "明背景和",
+        "景和目标",
+        "本和后续",
+        "流程",
+        "版本和后",
+        "系统和角"
       ],
       "relations": {
         "capabilities": [
@@ -113,7 +157,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -132,7 +176,21 @@
         "docs",
         "md",
         "processes",
-        "standards"
+        "standards",
+        "中的关键",
+        "例外必须",
+        "关键结论",
+        "原因和到",
+        "和到期时",
+        "因和到期",
+        "外必须说",
+        "必须可追",
+        "必须说明",
+        "明原因和",
+        "流程中的",
+        "的关键结",
+        "程中的关",
+        "结论必须"
       ],
       "relations": {
         "capabilities": [
@@ -143,7 +201,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -163,7 +221,20 @@
         "md",
         "processes",
         "standards",
-        "检查清单"
+        "检查清单",
+        "令或验收",
+        "入和输出",
+        "否完成必",
+        "否明确输",
+        "否记录验",
+        "命令或验",
+        "完成必要",
+        "录验证命",
+        "必要评审",
+        "成必要评",
+        "明确输入",
+        "是否完成",
+        "是否明确"
       ],
       "relations": {
         "capabilities": [
@@ -174,7 +245,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
@@ -194,7 +265,13 @@
         "md",
         "processes",
         "standards",
-        "变更记录"
+        "变更记录",
+        "建立流程",
+        "日期",
+        "流程规范",
+        "版本",
+        "立流程规",
+        "说明"
       ],
       "relations": {
         "capabilities": [
@@ -205,7 +282,7 @@
           "standards"
         ],
         "framework": null,
-        "kind": "manual",
+        "kind": "process",
         "language": "docs",
         "service": null
       },
