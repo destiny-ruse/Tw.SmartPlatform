@@ -29,6 +29,21 @@ class QueryReadTests(unittest.TestCase):
             self.assertEqual(len(results), 1)
             self.assertIn("cache", results[0].summary.lower())
 
+    def test_query_matches_body_derived_keywords_without_fts(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            (docs / "general.md").write_text(
+                "# General\n\nRedis distributed cache wrapper.\n",
+                encoding="utf-8",
+            )
+            MemoryGenerator(root).generate()
+
+            results = SearchIndex(root).query("redis", stack=None, kind=None, limit=5)
+
+            self.assertEqual([result.chunk_id for result in results], ["docs.general#chunk-001"])
+
     def test_query_filters_by_stack_and_kind(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

@@ -35,6 +35,28 @@ class GeneratorTests(unittest.TestCase):
                 if route_file.name != "index.generated.json":
                     self.assertNotIn("Human readable body.", route_file.read_text(encoding="utf-8"))
 
+    def test_generate_extracts_bounded_keywords_from_body_without_storing_body(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            docs = root / "docs"
+            docs.mkdir()
+            source = docs / "general.md"
+            source.write_text(
+                "# General\n\nRedis distributed cache wrapper handles cache invalidation.\n",
+                encoding="utf-8",
+            )
+
+            MemoryGenerator(root).generate()
+
+            chunk_file = root / ".tw-memory" / "generated" / "chunks" / "docs" / "general.md.generated.json"
+            payload = json.loads(chunk_file.read_text(encoding="utf-8"))
+            chunk = payload["chunks"][0]
+            serialized = json.dumps(payload, ensure_ascii=False)
+            self.assertIn("redis", chunk["keywords"])
+            self.assertIn("cache", chunk["keywords"])
+            self.assertLessEqual(len(chunk["keywords"]), 20)
+            self.assertNotIn("Redis distributed cache wrapper handles cache invalidation.", serialized)
+
     def test_generate_creates_language_graph_for_dotnet_frontend_java_python(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
