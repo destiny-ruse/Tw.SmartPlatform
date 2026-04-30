@@ -69,6 +69,52 @@ class ScannerTests(unittest.TestCase):
             self.assertEqual(record.source_type, "service-directory")
             self.assertEqual(record.service, "notice")
 
+    def test_scan_classifies_docs_standards_by_path(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            files = {
+                "docs/standards/rules/api-response-shape.md": "standard",
+                "docs/standards/processes/rfc-flow.md": "process",
+                "docs/standards/decisions/0001-example.md": "decision",
+                "docs/standards/references/http-status.md": "reference",
+            }
+            for source_path in files:
+                path = root / source_path
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("# Title\n", encoding="utf-8")
+
+            records = {record.source_path: record.source_type for record in SourceScanner(root).scan()}
+
+            self.assertEqual(records, files)
+
+    def test_scan_includes_controlled_source_files(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            included = [
+                "backend/dotnet/BuildingBlocks/src/Tw.Caching/CacheClient.cs",
+                "backend/dotnet/Services/Notice/NoticeService.cs",
+                "backend/java/orders/src/main/java/Orders.java",
+                "backend/python/orders/app.py",
+                "frontend/packages/ui/src/Button.tsx",
+                "frontend/apps/tw.web.ops/src/App.vue",
+            ]
+            excluded = [
+                "scripts/local.py",
+                "tools/tw-memory/tw_memory.py",
+            ]
+            for source_path in included + excluded:
+                path = root / source_path
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("public token\n", encoding="utf-8")
+
+            records = {record.source_path: record for record in SourceScanner(root).scan()}
+
+            for source_path in included:
+                self.assertIn(source_path, records)
+                self.assertEqual(records[source_path].source_type, "source")
+            for source_path in excluded:
+                self.assertNotIn(source_path, records)
+
     def test_scan_includes_agent_skill_files_as_skills(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

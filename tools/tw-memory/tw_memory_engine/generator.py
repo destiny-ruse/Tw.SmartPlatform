@@ -42,6 +42,9 @@ languages:
 source_types:
   - spec
   - standard
+  - process
+  - decision
+  - reference
   - manual
   - readme
   - source

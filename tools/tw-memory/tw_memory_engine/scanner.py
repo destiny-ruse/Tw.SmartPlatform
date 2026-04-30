@@ -32,6 +32,18 @@ PACKAGE_FILENAMES = {
     "build.gradle",
     "pyproject.toml",
 }
+SOURCE_SUFFIXES = {
+    ".cs",
+    ".fs",
+    ".vb",
+    ".java",
+    ".py",
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx",
+    ".vue",
+}
 LANGUAGE_ROOTS = {"frontend", "contracts", "deploy", "docs"}
 
 
@@ -104,6 +116,8 @@ class SourceScanner:
             return True
         if self._is_package_file(name):
             return True
+        if self._is_controlled_source_file(path, parts):
+            return True
         return False
 
     def _is_skill_file(self, name: str, parts: tuple[str, ...]) -> bool:
@@ -117,6 +131,19 @@ class SourceScanner:
             or (name.startswith("requirements") and name.endswith(".txt"))
         )
 
+    def _is_controlled_source_file(self, path: Path, parts: tuple[str, ...]) -> bool:
+        if path.suffix.lower() not in SOURCE_SUFFIXES:
+            return False
+        if len(parts) >= 5 and parts[:4] == ("backend", "dotnet", "BuildingBlocks", "src"):
+            return True
+        if len(parts) >= 5 and parts[:3] == ("backend", "dotnet", "Services"):
+            return True
+        if len(parts) >= 3 and parts[:2] in {("backend", "java"), ("backend", "python")}:
+            return True
+        if len(parts) >= 4 and parts[:2] in {("frontend", "packages"), ("frontend", "apps")}:
+            return True
+        return False
+
     def _source_type(self, path: Path, parts: tuple[str, ...]) -> str:
         name = path.name
         if name == "README.md":
@@ -127,6 +154,15 @@ class SourceScanner:
             return "skill"
         if self._is_package_file(name):
             return "package"
+        if len(parts) >= 3 and parts[:2] == ("docs", "standards"):
+            if parts[2] == "rules":
+                return "standard"
+            if parts[2] == "processes":
+                return "process"
+            if parts[2] == "decisions":
+                return "decision"
+            if parts[2] == "references":
+                return "reference"
         if parts[0] == "contracts":
             return "spec"
         if parts[0] == "deploy":
