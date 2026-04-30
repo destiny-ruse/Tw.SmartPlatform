@@ -52,4 +52,34 @@ public class ConfigurationTests
     {
         typeof(IConfigurableOptions).GetMembers().Should().BeEmpty();
     }
+
+    [Fact]
+    public void ConfigurationSectionAttribute_ValidateOnStart_Defaults_To_True()
+    {
+        var attribute = new ConfigurationSectionAttribute("Auth");
+
+        attribute.ValidateOnStart.Should().BeTrue();
+    }
+
+    [ConfigurationSection("ProbeFalse", ValidateOnStart = false)]
+    private sealed class ProbeFalseFixture { }
+
+    [ConfigurationSection("ProbeDefault")]
+    private sealed class ProbeDefaultFixture { }
+
+    [Fact]
+    public void ConfigurationSectionAttribute_Accepts_Bool_Literal_In_Attribute_Syntax()
+    {
+        var explicitFalse = typeof(ProbeFalseFixture)
+            .GetCustomAttributes(typeof(ConfigurationSectionAttribute), inherit: false)
+            .Cast<ConfigurationSectionAttribute>()
+            .Single();
+        var defaulted = typeof(ProbeDefaultFixture)
+            .GetCustomAttributes(typeof(ConfigurationSectionAttribute), inherit: false)
+            .Cast<ConfigurationSectionAttribute>()
+            .Single();
+
+        explicitFalse.ValidateOnStart.Should().BeFalse();
+        defaulted.ValidateOnStart.Should().BeTrue();
+    }
 }

@@ -27,16 +27,20 @@ public sealed class CacheOptions : IConfigurableOptions
     public int? Ttl { get; init; }
 }
 
-/// <summary>
-/// 同时有 IConfigurableOptions，但不显式标注 ValidateOnStart（即 null，由全局策略决定）。
-/// 用于测试 ValidateOnStart 默认值（null → true）的行为。
-/// 注意：C# 属性参数不支持 bool?，ValidateOnStart = false 只能通过 OptionsRegistrationDescriptor 直接构造测试。
-/// </summary>
+/// <summary>未显式标注 ValidateOnStart 的选项类型；默认 true（fail-fast）。</summary>
 [ConfigurationSection("Auth")]
 public sealed class AuthOptions : IConfigurableOptions
 {
     [Required]
     public string? Issuer { get; init; }
+}
+
+/// <summary>显式 ValidateOnStart = false，覆盖默认 fail-fast 行为。</summary>
+[ConfigurationSection("Optout", ValidateOnStart = false)]
+public sealed class ValidateOptOutOptions : IConfigurableOptions
+{
+    [Required]
+    public string? RequiredField { get; init; }
 }
 
 /// <summary>多属性命名选项：同一类型对应多个配置节。</summary>

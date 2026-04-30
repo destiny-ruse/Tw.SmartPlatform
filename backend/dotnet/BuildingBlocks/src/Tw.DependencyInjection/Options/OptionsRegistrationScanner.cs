@@ -78,7 +78,7 @@ public static class OptionsRegistrationScanner
                 OptionsType: type,
                 SectionName: defaultSection,
                 OptionsName: null,
-                ValidateOnStart: null,
+                ValidateOnStart: true,
                 DirectInject: false,
                 AssemblyName: assemblyName));
         }
@@ -131,7 +131,7 @@ public static class OptionsRegistrationScanner
                     OptionsType: type,
                     SectionName: defaultSection,
                     OptionsName: null,
-                    ValidateOnStart: null,
+                    ValidateOnStart: true,
                     DirectInject: false,
                     AssemblyName: assembly.GetName().Name ?? string.Empty));
             }

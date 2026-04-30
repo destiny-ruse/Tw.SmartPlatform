@@ -227,22 +227,28 @@ public sealed class OptionsAutoRegistrationTests
     // ====================================================================
 
     [Fact]
-    public void Scanner_Captures_ValidateOnStart_Null_When_Not_Set_On_Attribute()
+    public void Scanner_Captures_ValidateOnStart_True_When_Not_Set_On_Attribute()
     {
-        // AuthOptions: [ConfigurationSection("Auth")]，无 ValidateOnStart 设置 → null
-        // 注意：C# 属性参数语法不支持 bool?，所以无法在属性上设置 ValidateOnStart = false。
-        // ValidateOnStart 为 null 时，全局策略默认为 true（fail-fast）。
+        // AuthOptions: [ConfigurationSection("Auth")]，未显式设置 ValidateOnStart → 默认 true（fail-fast）
         var descriptors = ScanTypeLibrary(typeof(AuthOptions));
 
         descriptors.Should().ContainSingle()
-            .Which.ValidateOnStart.Should().BeNull();
+            .Which.ValidateOnStart.Should().BeTrue();
+    }
+
+    [Fact]
+    public void Scanner_Captures_ValidateOnStart_False_From_Attribute()
+    {
+        // ValidateOptOutOptions: [ConfigurationSection("Optout", ValidateOnStart = false)]
+        var descriptors = ScanTypeLibrary(typeof(ValidateOptOutOptions));
+
+        descriptors.Should().ContainSingle()
+            .Which.ValidateOnStart.Should().BeFalse();
     }
 
     [Fact]
     public void Descriptor_With_ValidateOnStart_False_Does_Not_Trigger_ValidateOnStart()
     {
-        // 通过直接构造描述符来测试 ValidateOnStart = false 的注册行为
-        // （因 C# 属性参数语法限制无法在 [ConfigurationSection] 上设置 bool? = false）
         var services = new ServiceCollection();
         var configuration = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>()) // Issuer 未提供
@@ -252,7 +258,7 @@ public sealed class OptionsAutoRegistrationTests
             OptionsType: typeof(AuthOptions),
             SectionName: "Auth",
             OptionsName: null,
-            ValidateOnStart: false, // 通过描述符直接设置
+            ValidateOnStart: false,
             DirectInject: false,
             AssemblyName: "Test");
 
@@ -296,7 +302,7 @@ public sealed class OptionsAutoRegistrationTests
             OptionsType: typeof(PaymentOptions),
             SectionName: "Payment",
             OptionsName: null,
-            ValidateOnStart: null,
+            ValidateOnStart: true,
             DirectInject: true,
             AssemblyName: "Test");
 
@@ -322,7 +328,7 @@ public sealed class OptionsAutoRegistrationTests
             OptionsType: typeof(RedisInstanceOptions),
             SectionName: "Redis:Primary",
             OptionsName: "Primary",
-            ValidateOnStart: null,
+            ValidateOnStart: true,
             DirectInject: false,
             AssemblyName: "Test"));
 
@@ -330,7 +336,7 @@ public sealed class OptionsAutoRegistrationTests
             OptionsType: typeof(RedisInstanceOptions),
             SectionName: "Redis:Replica",
             OptionsName: "Replica",
-            ValidateOnStart: null,
+            ValidateOnStart: true,
             DirectInject: false,
             AssemblyName: "Test"));
 
@@ -355,7 +361,7 @@ public sealed class OptionsAutoRegistrationTests
             OptionsType: typeof(RedisInstanceOptions),
             SectionName: "Redis:Primary",
             OptionsName: "Primary",
-            ValidateOnStart: null,
+            ValidateOnStart: true,
             DirectInject: true, // 即便设置了 DirectInject，命名选项也不应直接注册
             AssemblyName: "Test"));
 
@@ -380,7 +386,7 @@ public sealed class OptionsAutoRegistrationTests
             OptionsType: typeof(RedisOptions),
             SectionName: "Redis",
             OptionsName: null,
-            ValidateOnStart: null,
+            ValidateOnStart: true,
             DirectInject: false,
             AssemblyName: "Test"));
 
@@ -409,7 +415,7 @@ public sealed class OptionsAutoRegistrationTests
             OptionsType: typeof(PaymentOptions),
             SectionName: "Payment",
             OptionsName: null,
-            ValidateOnStart: null,
+            ValidateOnStart: true,
             DirectInject: true,
             AssemblyName: "Test");
 
@@ -463,8 +469,7 @@ public sealed class OptionsAutoRegistrationTests
         validateDAMethod.Invoke(null, [builder]);
 
         // .ValidateOnStart() — default true; skip only when explicitly false
-        var shouldValidateOnStart = d.ValidateOnStart ?? true;
-        if (shouldValidateOnStart)
+        if (d.ValidateOnStart)
         {
             var validateOnStartMethod = typeof(OptionsBuilderExtensions)
                 .GetMethod("ValidateOnStart")!

@@ -99,8 +99,7 @@ public static class OptionsAutoRegistrationExtensions
         validateDAMethod.Invoke(null, [builder]);
 
         // .ValidateOnStart() — default true (fail-fast); skip only when explicitly set to false
-        var shouldValidateOnStart = d.ValidateOnStart ?? true;
-        if (shouldValidateOnStart)
+        if (d.ValidateOnStart)
         {
             var validateOnStartMethod = typeof(OptionsBuilderExtensions)
                 .GetMethod("ValidateOnStart")!
