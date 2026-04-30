@@ -1,5 +1,10 @@
 <!-- 用途: 管理社区第三方包 (Nuget.org 上的开源库) -->
 <Project>
   <ItemGroup>
+    <PackageVersion Include="Autofac" Version="9.1.0" />
+    <PackageVersion Include="Autofac.Extensions.DependencyInjection" Version="11.0.0" />
+    <PackageVersion Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
+    <PackageVersion Include="Castle.Core" Version="5.2.1" />
+    <PackageVersion Include="Castle.Core.AsyncInterceptor" Version="2.1.0" />
   </ItemGroup>
 </Project>
