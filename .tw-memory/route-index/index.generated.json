@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-30T06:48:00.654444+00:00",
-  "repo_hash": "sha256:20cbd44042678e4ed85d0a6d7514044663dfce9170a26ca75f244a213eaf19e8",
+  "generated_at": "2026-04-30T07:15:04.169189+00:00",
+  "repo_hash": "sha256:df10cce42ec1b35707c4908586da863d62b2bc37985be376cffb8f363d45f687",
   "schema_version": "1.0.0",
   "shards": [
     {
@@ -92,12 +92,6 @@
       "kind": "kind",
       "name": "decision",
       "path": "route-index/by-kind/decision.generated.json"
-    },
-    {
-      "chunk_count": 65,
-      "kind": "kind",
-      "name": "manual",
-      "path": "route-index/by-kind/manual.generated.json"
     },
     {
       "chunk_count": 18,
@@ -226,16 +220,10 @@
       "path": "route-index/by-language/docs-part-005.generated.json"
     },
     {
-      "chunk_count": 100,
+      "chunk_count": 41,
       "kind": "language",
       "name": "docs",
       "path": "route-index/by-language/docs-part-006.generated.json"
-    },
-    {
-      "chunk_count": 6,
-      "kind": "language",
-      "name": "docs",
-      "path": "route-index/by-language/docs-part-007.generated.json"
     },
     {
       "chunk_count": 100,

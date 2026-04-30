@@ -32,6 +32,9 @@ GENERATED_OUTPUT_PREFIXES = {
     ("generated", "fts"),
     ("generated", "vector"),
 }
+EXCLUDED_SOURCE_PREFIXES = {
+    ("docs", "superpowers"),
+}
 MARKDOWN_ROOTS = {"docs", "backend", "frontend", "contracts", "deploy"}
 PACKAGE_FILENAMES = {
     "package.json",
@@ -98,6 +101,8 @@ class SourceScanner:
         parts = path.resolve().relative_to(self.root).parts
         if parts[-1] in EXCLUDED_DIRS:
             return True
+        if self._has_excluded_source_prefix(parts):
+            return True
         if self._is_generated_output_path(parts):
             return True
         return False
@@ -106,9 +111,17 @@ class SourceScanner:
         parts = path.resolve().relative_to(self.root).parts
         if any(part in EXCLUDED_DIRS for part in parts[:-1]):
             return True
+        if self._has_excluded_source_prefix(parts):
+            return True
         if self._is_generated_output_path(parts[:-1]):
             return True
         return False
+
+    def _has_excluded_source_prefix(self, parts: tuple[str, ...]) -> bool:
+        return any(
+            parts[: len(prefix)] == prefix
+            for prefix in EXCLUDED_SOURCE_PREFIXES
+        )
 
     def _is_included(self, path: Path, parts: tuple[str, ...]) -> bool:
         name = path.name

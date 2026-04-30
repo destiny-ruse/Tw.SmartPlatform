@@ -1543,18 +1543,6 @@
         "name": "tw-memory",
         "version": "1.0.0"
       },
-      "language": "docs",
-      "service": null,
-      "source_hash": "sha256:e8bf418afd97027a8506f64e799f76e39403ecdfbd40ced3d552bb509af9902c",
-      "source_path": "docs/superpowers/specs/2026-04-29-auto-registration-aop-design.md",
-      "source_type": "manual"
-    },
-    {
-      "framework": null,
-      "generator": {
-        "name": "tw-memory",
-        "version": "1.0.0"
-      },
       "language": "frontend",
       "service": null,
       "source_hash": "sha256:572b520e7bdbd8a5d00c5ba99f40d3ea0e36405a0bac81cc421500cce19fa7c0",

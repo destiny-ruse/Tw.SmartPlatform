@@ -124,6 +124,21 @@ class ScannerTests(unittest.TestCase):
 
             self.assertEqual(records, files)
 
+    def test_scan_excludes_superpowers_design_docs(self):
+        with tempfile.TemporaryDirectory() as work:
+            root = Path(work)
+            included = root / "docs" / "standards" / "rules" / "official.md"
+            excluded = root / "docs" / "superpowers" / "specs" / "temporary-design.md"
+            included.parent.mkdir(parents=True)
+            excluded.parent.mkdir(parents=True)
+            included.write_text("# Official Asset\n", encoding="utf-8")
+            excluded.write_text("# Temporary Design\n", encoding="utf-8")
+
+            records = {record.source_path for record in SourceScanner(root).scan()}
+
+            self.assertIn("docs/standards/rules/official.md", records)
+            self.assertNotIn("docs/superpowers/specs/temporary-design.md", records)
+
     def test_scan_includes_controlled_source_files(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)

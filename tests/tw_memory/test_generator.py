@@ -213,7 +213,7 @@ class GeneratorTests(unittest.TestCase):
     def test_generate_splits_large_route_shards_before_checker_warning_size(self):
         with tempfile.TemporaryDirectory() as work:
             root = Path(work)
-            docs = root / "docs" / "superpowers" / "specs"
+            docs = root / "docs" / "standards" / "references" / "route-shards"
             docs.mkdir(parents=True)
             for index in range(500):
                 (docs / f"very-long-memory-route-shard-file-name-{index:03d}.md").write_text(
