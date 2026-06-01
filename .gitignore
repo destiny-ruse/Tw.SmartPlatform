@@ -1,0 +1,32 @@
+# Local agent and index state
+.superpowers/
+.codegraph/
+.tw-memory/runtime/
+
+# Local IDE state
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Build outputs
+bin/
+obj/
+dist/
+build/
+coverage/
+
+# Package and language caches
+node_modules/
+__pycache__/
+.pytest_cache/
+
+# Local databases and generated search/vector caches
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.parquet
+*.bin
+*.npy
+*.npz

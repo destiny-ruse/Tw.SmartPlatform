@@ -1,0 +1,32 @@
+# Build output
+target/
+build/
+out/
+bin/
+
+# Dependency and wrapper caches
+.gradle/
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+.vscode/
+.settings/
+.classpath
+.project
+*.iml
+
+# Logs and runtime files
+*.log
+logs/
+hs_err_pid*
+replay_pid*
+
+# Packaged artifacts
+*.jar
+*.war
+*.ear
+
+# OS files
+.DS_Store
+Thumbs.db

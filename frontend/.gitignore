@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.yarn/
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
+
+# Build output
+dist/
+dist-ssr/
+build/
+coverage/
+
+# Vite and Vue
+*.local
+.vite/
+.vitepress/cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# uni-app output
+unpackage/
+.hbuilderx/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
