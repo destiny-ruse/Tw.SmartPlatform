@@ -102,6 +102,18 @@ def test_find_rules_boundary_violations_allows_task_index_loading_flow(repo: Pat
     assert find_rules_boundary_violations(repo, [rule_file]) == []
 
 
+def test_find_rules_boundary_violations_allows_language_task_router_flow(repo: Path) -> None:
+    rule_file = write_text(
+        repo / ".rules/ai-coding-rules/languages/typescript.md",
+        "# TypeScript\n\n## Execution Requirements\n"
+        "- Load `00-always-load.md` together with this language index.\n"
+        "- Read the formal language standard before changing source in this technology.\n"
+        "- For API, testing, security, dependency, CI/CD, runtime, or observability changes, also load the matching task index.\n",
+    )
+
+    assert find_rules_boundary_violations(repo, [rule_file]) == []
+
+
 def test_find_rules_boundary_violations_allows_memory_boundary_instructions(repo: Path) -> None:
     rule_file = write_text(
         repo / ".rules/ai-coding-rules/00-always-load.md",

@@ -12,7 +12,6 @@ Load this index when a task touches code review, architecture review, quality me
 
 ## Execution Requirements
 
-- Read the formal review and governance standard before reviewing or proposing high-risk changes.
-- Identify correctness, security, compatibility, observability, testing, rollback, and operational impact.
-- Record exceptions with rule, reason, risk, owner, mitigation, reviewer, and review date.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

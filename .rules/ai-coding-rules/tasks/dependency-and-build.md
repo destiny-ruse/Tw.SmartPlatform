@@ -10,7 +10,6 @@ Load this index when a task touches package manager files, dependency versions, 
 
 ## Execution Requirements
 
-- Read the formal dependency and build standard before adding dependencies, changing lock files, changing build scripts, or changing artifact generation.
-- Check dependency purpose, maintenance, security history, license, transitive dependency impact, and rollback path.
-- For container runtime or Kubernetes deployment changes, also load `tasks/runtime-and-infrastructure.md`.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

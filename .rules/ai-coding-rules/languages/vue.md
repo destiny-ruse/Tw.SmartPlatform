@@ -11,6 +11,5 @@ Load this index when a task touches Vue applications, management consoles, compo
 ## Execution Requirements
 
 - Load `00-always-load.md` together with this language index.
-- Apply the formal Vue standard for component boundaries, props, emits, slots, service modules, state flow, routing, code splitting, i18n, accessibility, styles, and compatibility.
-- For API, TypeScript, testing, security, dependency, or observability changes, also load the matching task index.
-
+- Read the formal language standard before changing source in this technology.
+- For API, testing, security, dependency, CI/CD, runtime, or observability changes, also load the matching task index.

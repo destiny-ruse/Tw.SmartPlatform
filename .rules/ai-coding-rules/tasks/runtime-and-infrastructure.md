@@ -12,7 +12,6 @@ Load this index when a task touches runtime environment, environment variables, 
 
 ## Execution Requirements
 
-- Read the formal runtime and infrastructure standard before changing environment, configuration, container, or Kubernetes resources.
-- Keep configuration and secrets separated, preserve artifact traceability, and avoid source changes for environment switching.
-- For deployment or rollback behavior, also load `tasks/ci-cd-and-release.md`.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

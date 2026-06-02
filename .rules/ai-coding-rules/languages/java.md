@@ -11,6 +11,5 @@ Load this index when a task touches Java services, batch jobs, public components
 ## Execution Requirements
 
 - Load `00-always-load.md` together with this language index.
-- Apply the formal Java standard for build tools, package structure, naming, JavaDoc, layering, exception semantics, transactions, dependencies, and quality checks.
-- For API, database, dependency, CI/CD, runtime, or observability changes, also load the matching task index.
-
+- Read the formal language standard before changing source in this technology.
+- For API, testing, security, dependency, CI/CD, runtime, or observability changes, also load the matching task index.

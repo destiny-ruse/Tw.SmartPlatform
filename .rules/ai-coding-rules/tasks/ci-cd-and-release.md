@@ -11,7 +11,6 @@ Load this index when a task touches CI/CD pipeline, workflow, build job, quality
 
 ## Execution Requirements
 
-- Read the formal CI/CD and release standard before changing pipeline or release behavior.
-- Preserve source, build, test, artifact, deployment, and rollback traceability.
-- For runtime configuration or Kubernetes changes, also load `tasks/runtime-and-infrastructure.md`.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

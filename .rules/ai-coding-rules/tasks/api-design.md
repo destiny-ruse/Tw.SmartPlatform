@@ -12,7 +12,6 @@ Load this index when a task touches REST, HTTP JSON API, gRPC, AsyncAPI, OpenAPI
 
 ## Execution Requirements
 
-- Read the formal API standard before changing API routes, request models, response models, error codes, status codes, message contracts, or generated clients.
-- When API behavior changes, check contract tests, Mock data, SDK impact, compatibility, and migration requirements.
-- For authentication, authorization, sensitive data, or input boundary changes, also load `tasks/security.md`.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

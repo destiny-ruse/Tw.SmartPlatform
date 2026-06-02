@@ -12,6 +12,7 @@ _BULLET = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+(.*)$")
 _EXACT_FOR_ALSO_LOAD_INSTRUCTIONS = (
     "For API changes, also load `tasks/api-design.md`.",
     "For authentication, authorization, sensitive data, or input boundary changes, also load `tasks/security.md`.",
+    "For API, testing, security, dependency, CI/CD, runtime, or observability changes, also load the matching task index.",
     "For container runtime or Kubernetes deployment changes, also load `tasks/runtime-and-infrastructure.md`.",
     "For data, dependency, security, resilience, CI/CD, runtime, or observability changes, also load the matching task index.",
     "For deployment or rollback behavior, also load `tasks/ci-cd-and-release.md`.",

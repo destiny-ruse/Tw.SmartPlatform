@@ -11,6 +11,5 @@ Load this index when a task touches TypeScript front-end code, Node.js TypeScrip
 ## Execution Requirements
 
 - Load `00-always-load.md` together with this language index.
-- Apply the formal TypeScript standard for strict type checking, domain types, runtime validation, `any` boundaries, `as` boundaries, non-null assertion use, module boundaries, and TSDoc/JSDoc.
-- For API, Vue, testing, security, dependency, or observability changes, also load the matching task index.
-
+- Read the formal language standard before changing source in this technology.
+- For API, testing, security, dependency, CI/CD, runtime, or observability changes, also load the matching task index.

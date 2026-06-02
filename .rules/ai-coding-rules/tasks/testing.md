@@ -10,7 +10,6 @@ Load this index when a task creates, changes, reviews, or fixes unit tests, inte
 
 ## Execution Requirements
 
-- Read the formal testing standard before adding or changing tests.
-- Match test level to risk: unit for isolated behavior, integration for framework or external dependency boundaries, end-to-end for key journeys, contract tests for API and message compatibility.
-- Test data must be deterministic, repeatable, isolated, and free of unmasked production data.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

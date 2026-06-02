@@ -11,6 +11,5 @@ Load this index when a task touches C#, ASP.NET Core, .NET background jobs, clas
 ## Execution Requirements
 
 - Load `00-always-load.md` together with this language index.
-- Apply the formal .NET Core standard for solution structure, naming, DocFX XML documentation, dependency injection, configuration, layering, async programming, and analyzers.
-- For API, database, dependency, CI/CD, runtime, or observability changes, also load the matching task index.
-
+- Read the formal language standard before changing source in this technology.
+- For API, testing, security, dependency, CI/CD, runtime, or observability changes, also load the matching task index.

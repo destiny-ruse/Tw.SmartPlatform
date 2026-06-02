@@ -11,6 +11,5 @@ Load this index when a task touches Python services, scripts, automation tasks, 
 ## Execution Requirements
 
 - Load `00-always-load.md` together with this language index.
-- Apply the formal Python standard for environment isolation, dependency locking, naming, docstring, type hints, import behavior, task entry points, and structured logging.
-- For data, dependency, security, resilience, CI/CD, runtime, or observability changes, also load the matching task index.
-
+- Read the formal language standard before changing source in this technology.
+- For API, testing, security, dependency, CI/CD, runtime, or observability changes, also load the matching task index.

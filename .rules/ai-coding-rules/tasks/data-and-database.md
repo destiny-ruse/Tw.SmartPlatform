@@ -12,7 +12,6 @@ Load this index when a task touches database schema, table naming, field naming,
 
 ## Execution Requirements
 
-- Read the formal data and database standard before changing schema, migration files, data access models, data repair scripts, or data formats.
-- Identify forward compatibility, rollback strategy, data preservation, tenant isolation, audit fields, and production verification.
-- For release sequencing or rollback tasks, also load `tasks/ci-cd-and-release.md`.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

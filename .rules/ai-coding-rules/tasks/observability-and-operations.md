@@ -11,7 +11,6 @@ Load this index when a task touches structured logs, metrics, tracing, request c
 
 ## Execution Requirements
 
-- Read the formal observability and operations standard before changing logs, metrics, tracing, alerts, or runbooks.
-- Preserve correlation identifiers, stable metric labels, actionable alerts, and sensitive data masking.
-- For SLO or health check changes, also load `tasks/resilience-and-reliability.md`.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.

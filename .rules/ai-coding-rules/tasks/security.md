@@ -11,7 +11,6 @@ Load this index when a task touches authentication, authorization, OAuth, OIDC, 
 
 ## Execution Requirements
 
-- Read the formal security standard before changing security boundaries or handling sensitive data.
-- Never rely on front-end checks as the only authorization or validation control.
-- Check logs, errors, test data, examples, and configuration for secrets or personal information exposure.
-
+- Read the referenced formal standard files before changing this task area.
+- If this task overlaps another task category, load the matching task index from `01-task-router.md`.
+- Use `.tw-memory/routes/standards.generated.yaml` only to locate formal-standard sections when the generated memory index is current.
