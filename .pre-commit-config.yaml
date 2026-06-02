@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: tw-memory-check
+        name: tw-memory check
+        entry: python -m tw_memory check --staged
+        language: system
+        pass_filenames: false
+        always_run: true
