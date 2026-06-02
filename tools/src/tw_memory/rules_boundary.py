@@ -22,6 +22,7 @@ _EXACT_FOR_ALSO_LOAD_INSTRUCTIONS = (
 )
 _EXACT_READ_FORMAL_INSTRUCTIONS = (
     "Read the formal language standard before changing source in this technology.",
+    "Read the formal coding standard before changing source.",
     "Read the formal API standard before changing API routes, request models, response models, error codes, status codes, message contracts, or generated clients.",
     "Read the formal CI/CD and release standard before changing pipeline or release behavior.",
     "Read the formal data and database standard before changing schema, migration files, data access models, data repair scripts, or data formats.",
