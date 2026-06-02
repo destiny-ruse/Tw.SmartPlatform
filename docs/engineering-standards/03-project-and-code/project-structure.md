@@ -57,6 +57,7 @@ project-root/
 | .NET Aspire 编排项目 | `backend/dotnet/Aspire` |
 | .NET 构建辅助项目 | `backend/dotnet/Build` |
 | .NET 后端公共构建块源码 | `backend/dotnet/BuildingBlocks/src` |
+| 共享包职责与边界声明 | `<package-root>/package-charter.yaml` |
 | .NET 后端公共构建块测试 | `backend/dotnet/BuildingBlocks/tests` |
 | Java 后端相关文件 | `backend/java` |
 | Python 后端相关文件 | `backend/python` |
@@ -109,7 +110,7 @@ project-root/
 - 发布、回滚、运行检查和排障入口。
 - 公共组件的使用边界、兼容性策略和示例。
 
-公共组件、SDK、框架库和跨团队工具必须额外说明适用范围、不适用范围、兼容性承诺、升级方式和迁移注意事项。
+公共组件、SDK、框架库和跨团队工具的适用范围、不适用范围、依赖边界、兼容性承诺和迁移指针，必须在该包根目录的 `package-charter.yaml` 中声明。
 
 ## 生成产物与脚本
 

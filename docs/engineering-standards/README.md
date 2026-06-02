@@ -57,6 +57,7 @@
 ### 项目与编码规范
 
 - [项目结构规范](03-project-and-code/project-structure.md)
+- [共享包 charter 规范](03-project-and-code/shared-package-charter.md)
 - [通用编码规范](03-project-and-code/coding-standards.md)
 - [API 设计规范](03-project-and-code/api-design.md)
 - [数据与数据库规范](03-project-and-code/data-and-database.md)
