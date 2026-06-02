@@ -1,0 +1,22 @@
+queries:
+  callees:
+    requires:
+    - symbol
+    verify_with_source: true
+  callers:
+    requires:
+    - symbol
+    verify_with_source: true
+  find_symbol:
+    requires:
+    - symbol
+    verify_with_source: true
+  impact:
+    requires:
+    - path
+    verify_with_source: true
+  route_handlers:
+    requires:
+    - api
+    verify_with_source: true
+schema_version: 1.0.0

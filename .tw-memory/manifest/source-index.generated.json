@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.0.0",
+  "sources": {
+    "charter:package-charter:Tw.AspNetCore": {
+      "extractor": "package-charter:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/package-charter.yaml",
+      "sha256": "5de7ace77b9b109b13f207d031047e6389d804135dacd16eebfcc712d971f9ad",
+      "source_id": "charter:package-charter:Tw.AspNetCore",
+      "source_type": "charter"
+    },
+    "charter:package-charter:Tw.Core": {
+      "extractor": "package-charter:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/package-charter.yaml",
+      "sha256": "84bf3b85bb0aa934b7efd54247cd8ae98a34f760785ac8b6bf25803ae488153d",
+      "source_id": "charter:package-charter:Tw.Core",
+      "source_type": "charter"
+    },
+    "skill:.agents/skills/brainstorming/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/brainstorming/SKILL.md",
+      "sha256": "bba47904a7f6bbee3bf8a107ebbe84e65d392be683bbb898ded736b29e415f90",
+      "source_id": "skill:.agents/skills/brainstorming/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/dispatching-parallel-agents/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/dispatching-parallel-agents/SKILL.md",
+      "sha256": "76806091c7f923ba2596546b19cccd98a08e57a68745df77c3a7b998fe838e2b",
+      "source_id": "skill:.agents/skills/dispatching-parallel-agents/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/documentation-writer/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/documentation-writer/SKILL.md",
+      "sha256": "7e8244988c9f4eb63bf8c0edf160578544621eb96e5e51e2d848f1401c5de8f1",
+      "source_id": "skill:.agents/skills/documentation-writer/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/executing-plans/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/executing-plans/SKILL.md",
+      "sha256": "e2102f11631433939f162d383d769f8257d859d6639e0e14969cda3ef0a95eca",
+      "source_id": "skill:.agents/skills/executing-plans/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/find-skills/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/find-skills/SKILL.md",
+      "sha256": "1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
+      "source_id": "skill:.agents/skills/find-skills/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/finishing-a-development-branch/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/finishing-a-development-branch/SKILL.md",
+      "sha256": "5c8d4b59aedb14c94e2f5d787a3265e858e8f53d4ceffe7ff1c15878a52b0e91",
+      "source_id": "skill:.agents/skills/finishing-a-development-branch/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/receiving-code-review/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/receiving-code-review/SKILL.md",
+      "sha256": "c9382e92b8f32363566068ecfed19d3b2651eaf40d3942b24840f839dedfc406",
+      "source_id": "skill:.agents/skills/receiving-code-review/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/requesting-code-review/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/requesting-code-review/SKILL.md",
+      "sha256": "5a3a44a3667800e2dc836829c6b92fada51e6dc58ac144ec05fe59f47d6bcd84",
+      "source_id": "skill:.agents/skills/requesting-code-review/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/subagent-driven-development/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/subagent-driven-development/SKILL.md",
+      "sha256": "905a2b9be59b734dbe166525ad31dcaaf712a75926135adee1f554557aba5744",
+      "source_id": "skill:.agents/skills/subagent-driven-development/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/systematic-debugging/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/systematic-debugging/SKILL.md",
+      "sha256": "4999cb851360485eca5074e727bbdd62ef20549c5d5b01216fcbf5831badb473",
+      "source_id": "skill:.agents/skills/systematic-debugging/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/test-driven-development/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/test-driven-development/SKILL.md",
+      "sha256": "7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
+      "source_id": "skill:.agents/skills/test-driven-development/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/using-git-worktrees/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "sha256": "085a45ee3de432bdb2768011591d9a882cb6c759e2317f379226451c5618fe8e",
+      "source_id": "skill:.agents/skills/using-git-worktrees/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/using-superpowers/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/using-superpowers/SKILL.md",
+      "sha256": "316e29381219adf0cac62190c67aeabf427d6e6e5f2735541d502b3d339be7aa",
+      "source_id": "skill:.agents/skills/using-superpowers/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/verification-before-completion/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/verification-before-completion/SKILL.md",
+      "sha256": "ea52d15aabaf72bc6b558efe2c126f161b53961090ddcd712000273bfe8c7b6c",
+      "source_id": "skill:.agents/skills/verification-before-completion/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/writing-plans/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/writing-plans/SKILL.md",
+      "sha256": "4fd4627d2c02367879c0307d7249270bed633317ff9be82e926a6d57bf5d331b",
+      "source_id": "skill:.agents/skills/writing-plans/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/writing-skills/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/writing-skills/SKILL.md",
+      "sha256": "38ba648975ae6ba512d6695676f146163db61a496b867f716f4bdfb0ee3aca3e",
+      "source_id": "skill:.agents/skills/writing-skills/SKILL.md",
+      "source_type": "skill"
+    },
+    "standard:docs:engineering-standards:01-foundation:engineering-principles.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/01-foundation/engineering-principles.md",
+      "sha256": "f293e1610a666a43d70955b3827a0428a4420fdcc15c79696dcf979825c0aa8d",
+      "source_id": "standard:docs:engineering-standards:01-foundation:engineering-principles.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:01-foundation:terminology-and-exceptions.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/01-foundation/terminology-and-exceptions.md",
+      "sha256": "d1dcc28f0b63579a698ea20501272166097d5ec929e97c8d75fa0f24c96e8ac2",
+      "source_id": "standard:docs:engineering-standards:01-foundation:terminology-and-exceptions.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:02-collaboration:code-review.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/02-collaboration/code-review.md",
+      "sha256": "923d7d54acc8a90bd751f3dbb8ae23b265b64c161a691e967096d20e347e77b8",
+      "source_id": "standard:docs:engineering-standards:02-collaboration:code-review.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:api-design.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/api-design.md",
+      "sha256": "113c5b602e68179adffe930dea4451a531f18b8cbd105d13d4b0229855b19606",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:api-design.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:coding-standards.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/coding-standards.md",
+      "sha256": "5d1edc34e5d15d687bbf7043bc09cc10ec1b2c33ec8f84355cf149b71132f7dd",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:coding-standards.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:data-and-database.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/data-and-database.md",
+      "sha256": "0c2987cca45e5a9e43f1e5b0943de3ec940119e17292d43b4a06d27dafdd80f4",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:data-and-database.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:language-specific:dotnet-core.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md",
+      "sha256": "b6282227bf8ac650ff451d8b6fa5c7164ef06fc2c4ee9ceb73994267f26e9b84",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:dotnet-core.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:language-specific:java.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/language-specific/java.md",
+      "sha256": "d584f93940df5000af80c4475d446c792532c5725cf8e0a54cba46f908a2fd5b",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:java.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:language-specific:javascript.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/language-specific/javascript.md",
+      "sha256": "7d69a29c7506313bb8ded63bcd1fb7b7e156e04ef8893dc4b752a221dc9ed89b",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:javascript.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:language-specific:python.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/language-specific/python.md",
+      "sha256": "0462c82d719cefdc788f8e89f2c4eb43e5d691e1685deaaec069195926848ecb",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:python.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:language-specific:typescript.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/language-specific/typescript.md",
+      "sha256": "71ddab9c2e4d0c29530683064c655e180d88422910576fc42721b4aa0ad51d13",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:typescript.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:language-specific:uni-app.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/language-specific/uni-app.md",
+      "sha256": "c2621c7354fe09ce1c7578d31c054cf6ba0122cddbfce2a3a17dac36ddf38f31",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:uni-app.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:language-specific:vue.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/language-specific/vue.md",
+      "sha256": "0f84ca744ad04c44a066845c12c0aa9b3081cdef713c5c7b4ca6ee92e76f70b2",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:vue.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:project-structure.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/project-structure.md",
+      "sha256": "1a617cc1c2358272a13ec3a3c8859dc29a3de3df1128f92744210404c8fc1b80",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:project-structure.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:04-quality:dependency-and-build.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/04-quality/dependency-and-build.md",
+      "sha256": "5761ff42e81a7109d576a9dfe06a9e4051417f2538207c19d0454a537f4d0632",
+      "source_id": "standard:docs:engineering-standards:04-quality:dependency-and-build.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:04-quality:resilience-and-reliability.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/04-quality/resilience-and-reliability.md",
+      "sha256": "d99720778d108feb4a0ba01250ce153ffa3351651548cfb318f7e4310e956bd0",
+      "source_id": "standard:docs:engineering-standards:04-quality:resilience-and-reliability.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:04-quality:security-standards.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/04-quality/security-standards.md",
+      "sha256": "8ce1f172f444e66093fba44078b3991a39aec3895f98f4285b88cec1f5920ddf",
+      "source_id": "standard:docs:engineering-standards:04-quality:security-standards.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:04-quality:testing-standards.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/04-quality/testing-standards.md",
+      "sha256": "198f73b51cf7bc0064f57f3ca9da521dd966259165e78d09c8699f4fca5aac88",
+      "source_id": "standard:docs:engineering-standards:04-quality:testing-standards.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:05-delivery-and-operations:ci-cd-and-release.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/05-delivery-and-operations/ci-cd-and-release.md",
+      "sha256": "d363df51d4f5a3b5e75851c4e08417aab933de8819c5f11181d725ff7ae8083e",
+      "source_id": "standard:docs:engineering-standards:05-delivery-and-operations:ci-cd-and-release.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:05-delivery-and-operations:observability-and-operations.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/05-delivery-and-operations/observability-and-operations.md",
+      "sha256": "87d4b76e2820a15c9f295f5516376e3962d08d288b0de5b9565be65b12a0d783",
+      "source_id": "standard:docs:engineering-standards:05-delivery-and-operations:observability-and-operations.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:05-delivery-and-operations:runtime-and-infrastructure.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/05-delivery-and-operations/runtime-and-infrastructure.md",
+      "sha256": "2b2249f722a9363c5a38324c4735f3958c7936cee325715dad64316c1617bf2b",
+      "source_id": "standard:docs:engineering-standards:05-delivery-and-operations:runtime-and-infrastructure.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:06-governance:review-and-governance.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/06-governance/review-and-governance.md",
+      "sha256": "fb501dd70d3adc7e2cb152589430364a1e7a3bc9d34f675528e62a42e64b4b6a",
+      "source_id": "standard:docs:engineering-standards:06-governance:review-and-governance.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:README.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/README.md",
+      "sha256": "a181ab211b08ac8c598295deed4c927737ed0ef1dc45c5420d2d2b8c6a91f38c",
+      "source_id": "standard:docs:engineering-standards:README.md",
+      "source_type": "standard"
+    }
+  }
+}

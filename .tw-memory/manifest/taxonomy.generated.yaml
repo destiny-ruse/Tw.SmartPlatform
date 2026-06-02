@@ -1,0 +1,20 @@
+generator: tw-memory:0.1.0
+lookup_keys:
+- package
+- service
+- api
+- frontend-app
+- symbol
+memory_types:
+- package-summary
+- public-api-summary
+- service-summary
+- api-summary
+- frontend-summary
+schema_version: 1.0.0
+source_types:
+- standard
+- charter
+- contract
+- structure
+- skill

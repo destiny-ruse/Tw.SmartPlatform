@@ -1,0 +1,18 @@
+schema_version: 1.0.0
+skills:
+- .agents/skills/brainstorming/SKILL.md
+- .agents/skills/dispatching-parallel-agents/SKILL.md
+- .agents/skills/documentation-writer/SKILL.md
+- .agents/skills/executing-plans/SKILL.md
+- .agents/skills/find-skills/SKILL.md
+- .agents/skills/finishing-a-development-branch/SKILL.md
+- .agents/skills/receiving-code-review/SKILL.md
+- .agents/skills/requesting-code-review/SKILL.md
+- .agents/skills/subagent-driven-development/SKILL.md
+- .agents/skills/systematic-debugging/SKILL.md
+- .agents/skills/test-driven-development/SKILL.md
+- .agents/skills/using-git-worktrees/SKILL.md
+- .agents/skills/using-superpowers/SKILL.md
+- .agents/skills/verification-before-completion/SKILL.md
+- .agents/skills/writing-plans/SKILL.md
+- .agents/skills/writing-skills/SKILL.md
