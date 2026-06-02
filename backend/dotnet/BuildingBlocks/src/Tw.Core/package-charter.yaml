@@ -1,0 +1,33 @@
+schema_version: "1.0.0"
+package: Tw.Core
+owner: platform-team
+stability: stable
+compatibility: "semver-minor 内向后兼容"
+responsibility: >
+  跨服务复用的基础原语与无框架依赖工具：值对象、命名对象、领域异常、
+  配置异常、类型查找、反射缓存、加密哈希、通用扩展方法与一次性资源工具。
+in_scope:
+  - 基础值对象与命名对象原语
+  - 通用领域异常与配置异常
+  - 类型查找、反射缓存与类型扩展
+  - 加密、哈希与安全随机
+  - 通用集合、字符串、时间、数字等扩展方法
+out_of_scope:
+  - HTTP、中间件、过滤器、ASP.NET Core 集成
+  - 数据访问、ORM、仓储实现
+  - 具体业务领域模型
+public_capabilities:
+  - Tw.Check
+  - Tw.Collections
+  - Tw.Core.Configuration
+  - Tw.Core.Primitives
+  - Tw.Core.Reflection
+  - Tw.Core.Security.Cryptography
+  - Tw.Exceptions
+  - Tw.Extensions
+  - Tw.Utilities
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "Microsoft.EntityFrameworkCore*"
+  allow: []

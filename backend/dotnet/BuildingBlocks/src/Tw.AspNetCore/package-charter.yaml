@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.AspNetCore
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  ASP.NET Core 宿主集成的公共构建块：中间件、过滤器、模型绑定、
+  结果封装、启动扩展与 Web 层横切关注点。
+in_scope:
+  - ASP.NET Core 中间件与过滤器
+  - Web 层模型绑定与结果封装
+  - 宿主启动与依赖注入扩展
+out_of_scope:
+  - 与框架无关的基础原语
+  - 数据访问、ORM、仓储实现
+  - 具体业务领域模型
+public_capabilities:
+  - Tw.AspNetCore
+dependency_rules:
+  forbid:
+    - "Microsoft.EntityFrameworkCore*"
+  allow: []
