@@ -21,4 +21,5 @@ Load this index for every AI coding task, including implementation, refactoring,
 - Do not infer rules from this index when a formal standard file is available.
 - Combine this baseline with one language index and any matching task indexes.
 - If a task conflicts with a formal standard, follow the formal standard or record an exception according to the formal exception process.
-
+- When `.tw-memory/routes/standards.generated.yaml` exists and matches `source-index.generated.json`, use it only to locate the relevant formal-standard sections; do not treat generated memory cards as engineering rules.
+- Do not load both a generated memory summary and the same formal standard text for the same rule. Prefer the formal standard text for decisions.
