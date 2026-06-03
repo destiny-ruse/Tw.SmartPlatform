@@ -7,6 +7,7 @@
   </Folder>
   <Folder Name="/BuildingBlocks/src/Ddd/" />
   <Folder Name="/BuildingBlocks/tests/">
+    <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
   </Folder>
   <Folder Name="/Services/" />
