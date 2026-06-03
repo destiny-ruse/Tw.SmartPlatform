@@ -33,6 +33,13 @@
 - `public_capabilities` 命名空间重叠必须重新划分。
 - 职责语义重叠必须在代码评审中裁决，处理结论必须反映到相关包 charter。
 
+## 能力使用文档
+
+- 新增或修改共享包公开能力时，必须同步创建或更新 `docs/shared-packages/<language>/<package>/<feature>.md` 使用文档。
+- 必须同步更新 `docs/shared-packages/README.md`、`docs/shared-packages/<language>/README.md` 和 `docs/shared-packages/<language>/<package>/README.md` 索引，保证从总索引可跳转到能力使用文档。
+- 索引页采用 Reference 文档类型，能力使用文档采用 How-to Guide 文档类型。
+- 能力使用文档必须覆盖能力定位、DI 注册方式、各入口使用方式和注意事项。
+
 ## 检查清单
 
 - 共享包是否包含 `package-charter.yaml`？
@@ -40,3 +47,4 @@
 - `package` 是否等于 canonical key？
 - 实际依赖是否符合 `dependency_rules`？
 - `public_capabilities` 是否与其他共享包互斥？
+- 公开能力变更是否同步更新 `docs/shared-packages` 使用文档与索引？

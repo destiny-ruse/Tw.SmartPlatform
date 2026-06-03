@@ -4,9 +4,10 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  ASP.NET Core 宿主集成的公共构建块：中间件、过滤器、模型绑定、
-  结果封装、启动扩展与 Web 层横切关注点。
+  ASP.NET Core 宿主集成的公共构建块：HTTP 请求取消令牌 provider、中间件、
+  过滤器、模型绑定、结果封装、启动扩展与 Web 层横切关注点。
 in_scope:
+  - HTTP 请求取消令牌 provider
   - ASP.NET Core 中间件与过滤器
   - Web 层模型绑定与结果封装
   - 宿主启动与依赖注入扩展
@@ -16,6 +17,7 @@ out_of_scope:
   - 具体业务领域模型
 public_capabilities:
   - Tw.AspNetCore
+  - Tw.AspNetCore.Context
 dependency_rules:
   forbid:
     - "Microsoft.EntityFrameworkCore*"

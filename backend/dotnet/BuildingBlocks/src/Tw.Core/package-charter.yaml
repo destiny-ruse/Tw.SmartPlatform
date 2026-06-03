@@ -4,9 +4,10 @@ owner: platform-team
 stability: stable
 compatibility: "semver-minor 内向后兼容"
 responsibility: >
-  跨服务复用的基础原语与无框架依赖工具：值对象、命名对象、领域异常、
-  配置异常、类型查找、反射缓存、加密哈希、通用扩展方法与一次性资源工具。
+  跨服务复用的基础原语与无框架依赖工具：执行上下文、值对象、命名对象、
+  领域异常、配置异常、类型查找、反射缓存、加密哈希、通用扩展方法与一次性资源工具。
 in_scope:
+  - 执行上下文取消令牌 provider
   - 基础值对象与命名对象原语
   - 通用领域异常与配置异常
   - 类型查找、反射缓存与类型扩展
@@ -17,6 +18,7 @@ out_of_scope:
   - 数据访问、ORM、仓储实现
   - 具体业务领域模型
 public_capabilities:
+  - Tw.Context
   - Tw.Check
   - Tw.Collections
   - Tw.Core.Configuration
