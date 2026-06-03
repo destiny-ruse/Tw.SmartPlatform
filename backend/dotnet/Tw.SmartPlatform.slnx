@@ -1,2 +1,27 @@
 <Solution>
+  <Folder Name="/Aspire/" />
+  <Folder Name="/BuildingBlocks/" />
+  <Folder Name="/BuildingBlocks/src/">
+    <Project Path="BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj" Id="7ba0e388-29e1-49a5-8a18-d1ef9209c8e6" />
+    <Project Path="BuildingBlocks/src/Tw.Core/Tw.Core.csproj" Id="7acbd999-ad5a-4321-a343-f20712fc09f2" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Ddd/" />
+  <Folder Name="/BuildingBlocks/tests/" />
+  <Folder Name="/Services/" />
+  <Folder Name="/Services/Authentication/" />
+  <Folder Name="/Services/Authentication/src/" />
+  <Folder Name="/Services/Authentication/tests/" />
+  <Folder Name="/Services/Authorization/" />
+  <Folder Name="/Services/Authorization/src/" />
+  <Folder Name="/Services/Authorization/tests/" />
+  <Folder Name="/Services/Notice/" />
+  <Folder Name="/Services/Notice/src/" />
+  <Folder Name="/Services/Notice/tests/" />
+  <Folder Name="/Services/OSS/" />
+  <Folder Name="/Services/OSS/src/" />
+  <Folder Name="/Services/OSS/tests/" />
+  <Folder Name="/Services/System/" />
+  <Folder Name="/Services/System/src/">
+  </Folder>
+  <Folder Name="/Services/System/tests/" />
 </Solution>
