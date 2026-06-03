@@ -28,6 +28,7 @@ Load the matching task index when the task touches the listed area:
 - Logs, metrics, tracing, alerting, runbook, incident review: `tasks/observability-and-operations.md`
 - Environment variable, configuration, runtime, container, Kubernetes, ConfigMap, Secret: `tasks/runtime-and-infrastructure.md`
 - Code review, architecture review, quality metrics, governance, exception: `tasks/review-and-governance.md`
+- Shared package, common building block, public capability change, package charter, package boundary: `tasks/shared-package.md`
 
 ## Loading Order
 
