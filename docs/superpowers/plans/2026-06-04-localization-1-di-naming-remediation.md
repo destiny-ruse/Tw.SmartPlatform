@@ -8,7 +8,7 @@
 
 **Tech Stack:** .NET 10、C#（file-scoped namespace、nullable enable、implicit usings）、xUnit、FluentAssertions、`Microsoft.Extensions.DependencyInjection(.Abstractions)`。
 
-**依赖关系：** 本计划是多语言系列的基础计划，无前置依赖。Plan 2（Tw.Core 多语言核心）、Plan 3（Tw.AspNetCore Web 集成）在此之上构建。
+**依赖关系：** 本计划是多语言系列的基础计划，无前置依赖。Plan 2（`Tw.Localization` 核心包）、Plan 3（`Tw.Localization.AspNetCore` Web 可选适配包）在此之上构建。
 
 **适用规范（实现前必读）：**
 - `docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md`（共享包服务注册一节）
@@ -453,7 +453,7 @@ git commit -m "refactor!: remove AddTwCore/AddTwAspNetCore broad registration en
 
 本计划新增的扩展类命名空间为 `Tw.Context`、`Tw.AspNetCore.Context`、`Tw.AspNetCore`，三者均已在各自 charter 的 `public_capabilities` 列表中（`Tw.Core` 含 `Tw.Context`；`Tw.AspNetCore` 含 `Tw.AspNetCore`、`Tw.AspNetCore.Context`）。
 
-若已存在则不改动；若发现缺失则补齐。本计划不新增 `Tw.Localization` 等命名空间（属于 Plan 2/3）。
+若已存在则不改动；若发现缺失则补齐。本计划不新增 `Tw.Localization` 或 `Tw.Localization.AspNetCore` 命名空间（由 Plan 2/3 的独立包承载）。
 
 - [ ] **Step 2: 全量构建 + 测试最终确认**
 

@@ -120,18 +120,13 @@
 - `TwCoreServiceCollectionExtensions`、`TwAspNetCoreServiceCollectionExtensions` 这类宽泛扩展类名退出目标 API
 - 自有扩展类从 `Microsoft.Extensions.DependencyInjection` 命名空间迁移到对应程序集或功能命名空间
 
-## 计划文件对齐结论
+## 计划文件结构
 
-当前 `docs/superpowers/plans` 中的多语言计划审查结论：
+`docs/superpowers/plans` 中的多语言计划采用以下结构：
 
-- `2026-06-04-localization-1-di-naming-remediation.md` 与本设计中的 DI 命名整改一致，保留为前置计划
-- `2026-06-04-localization-2-core.md` 把多语言核心落入 `Tw.Core`，与独立可选包边界不一致，不再作为实施依据
-- `2026-06-04-localization-3-aspnetcore.md` 把 Web 多语言适配落入 `Tw.AspNetCore`，与独立可选包边界不一致，不再作为实施依据
-
-实现计划阶段采用以下新计划结构：
-
-- 新 Plan 2：`Tw.Localization` 核心包实现
-- 新 Plan 3：`Tw.Localization.AspNetCore` Web 可选适配包实现
+- `2026-06-04-localization-1-di-naming-remediation.md`：`Tw.Core` 与 `Tw.AspNetCore` 既有 DI 命名整改前置计划
+- `2026-06-04-localization-2-core.md`：`Tw.Localization` 核心包实现计划
+- `2026-06-04-localization-3-aspnetcore.md`：`Tw.Localization.AspNetCore` Web 可选适配包实现计划
 
 ## 核心模型
 
