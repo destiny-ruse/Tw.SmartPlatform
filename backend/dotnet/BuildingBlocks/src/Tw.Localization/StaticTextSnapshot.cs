@@ -98,7 +98,7 @@ public sealed class StaticTextSnapshot : IStaticTextSnapshot
             }
         }
 
-        return result;
+        return result.AsReadOnly();
     }
 
     // 用于 Dictionary 键的比较器：资源名和文化名均使用 OrdinalIgnoreCase 比较
@@ -112,7 +112,7 @@ public sealed class StaticTextSnapshot : IStaticTextSnapshot
 
         public int GetHashCode((string ResourceName, string CultureName) obj) =>
             HashCode.Combine(
-                obj.ResourceName.ToUpperInvariant(),
-                obj.CultureName.ToUpperInvariant());
+                StringComparer.OrdinalIgnoreCase.GetHashCode(obj.ResourceName),
+                StringComparer.OrdinalIgnoreCase.GetHashCode(obj.CultureName));
     }
 }

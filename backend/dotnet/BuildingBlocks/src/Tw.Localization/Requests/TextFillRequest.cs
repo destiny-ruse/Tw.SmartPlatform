@@ -6,7 +6,8 @@ namespace Tw.Localization.Requests;
 /// <param name="ResourceName">资源集合的名称，例如 "App"</param>
 /// <param name="Context">本次填充的本地化上下文，包含目标文化和租户信息</param>
 /// <param name="CandidateCultureNames">
-/// 按优先级排列的候选文化名称列表；填充时将按顺序依次尝试，直到找到匹配项
+/// 按优先级从高到低排列的候选文化名称列表；批量填充时作为回退链应用于整个文本集合，
+/// 高优先级文化的条目覆盖低优先级文化的同名条目，所有文化的条目均会合并到结果中
 /// </param>
 public sealed record TextFillRequest(
     string ResourceName,

@@ -85,6 +85,8 @@ public static class JsonTextResourceParser
 
             if (property.Value.ValueKind == JsonValueKind.String)
             {
+                // 若展开后的键与已有键重复（如嵌套路径与顶层键同名），后写入的值覆盖先写入的值（后写优先）；
+                // 调用方应避免在同一资源文件内出现重复键
                 texts[key] = property.Value.GetString() ?? string.Empty;
                 continue;
             }
