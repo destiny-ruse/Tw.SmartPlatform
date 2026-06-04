@@ -29,4 +29,18 @@ public class LocalizationOptionsTests
 
         act.Should().Throw<TwConfigurationException>();
     }
+
+    [Fact]
+    public void Validate_PassesForValidConfig()
+    {
+        var options = new LocalizationOptions
+        {
+            DefaultCulture = "en-US",
+            SupportedCultures = { "en-US", "zh-Hans" },
+        };
+
+        var act = () => options.Validate();
+
+        act.Should().NotThrow();
+    }
 }

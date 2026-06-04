@@ -31,7 +31,9 @@ public static class CultureFallback
     }
 
     /// <summary>
-    /// 根据上下文和系统选项展开完整的文化回退链，结果不包含重复项，顺序为：当前文化、父文化链、默认文化
+    /// 根据上下文和系统选项展开完整的文化回退链，结果不包含重复项，顺序为：当前文化、
+    /// 在 <see cref="LocalizationOptions.SupportedCultures"/> 中存在的父文化链（受上下文与选项的父级回退开关共同约束）、默认文化。
+    /// 当前文化无法解析为合法文化时不展开父文化链，但仍包含当前文化与默认文化，不抛出文化解析异常
     /// </summary>
     /// <param name="context">本次查找的本地化上下文</param>
     /// <param name="options">系统级本地化配置</param>
@@ -45,7 +47,7 @@ public static class CultureFallback
         var result = new List<string>();
         AddIfMissing(result, context.CultureName);
 
-        if (context.FallbackToParentCultures && options.FallbackToParentCultures)
+        if (context.FallbackToParentCultures && options.FallbackToParentCultures && IsValidCulture(context.CultureName))
         {
             var culture = CultureInfo.GetCultureInfo(context.CultureName);
             while (!string.IsNullOrWhiteSpace(culture.Parent.Name))
