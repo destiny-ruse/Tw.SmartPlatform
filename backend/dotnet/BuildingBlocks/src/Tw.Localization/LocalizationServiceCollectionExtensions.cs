@@ -26,6 +26,11 @@ public static class LocalizationServiceCollectionExtensions
     /// 当 <see cref="LocalizationOptions"/> 校验不通过，或声明的 JSON 资源文件路径不存在，
     /// 或 JSON 文件格式不合规时抛出
     /// </exception>
+    /// <remarks>
+    /// 如果业务应用提供了自己的 <see cref="IEntityTranslationStore"/> 实现，应将其注册为 Singleton。
+    /// 若注册为 Scoped，会产生俘虏依赖问题：单例 <see cref="IEntityTranslationService"/> 将在整个
+    /// 应用生命周期内持有同一个 Scoped 实例，导致作用域语义失效。
+    /// </remarks>
     public static IServiceCollection AddLocalization(
         this IServiceCollection services,
         Action<LocalizationOptions> configure)
@@ -66,8 +71,24 @@ public static class LocalizationServiceCollectionExtensions
                 throw new TwConfigurationException($"JSON 多语言资源路径不存在：{path}");
             }
 
-            var resourceName = Check.NotNullOrWhiteSpace(Path.GetFileName(path).Split('.')[0]);
-            var json = File.ReadAllText(path);
+            var fileName = Path.GetFileName(path);
+            var dotIndex = fileName.IndexOf('.', StringComparison.Ordinal);
+            var resourceName = dotIndex < 0 ? fileName : fileName[..dotIndex];
+            if (string.IsNullOrWhiteSpace(resourceName))
+            {
+                throw new TwConfigurationException($"无法从路径推断资源名称（文件名必须以非点字符开头）：{path}");
+            }
+
+            string json;
+            try
+            {
+                json = File.ReadAllText(path);
+            }
+            catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+            {
+                throw new TwConfigurationException($"无法读取 JSON 多语言资源文件：{path}", ex);
+            }
+
             resources.Add(JsonTextResourceParser.Parse(resourceName, path, json));
         }
 
