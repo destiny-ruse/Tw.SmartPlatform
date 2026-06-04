@@ -9,18 +9,20 @@
 非 Web 宿主注册核心能力：
 
 ```csharp
-services.AddTwCore();
+services.AddCancellationTokenProvider();
 ```
+
+> `AddCancellationTokenProvider` 位于命名空间 `Tw.Context`。
 
 ASP.NET Core 宿主注册 Web 适配，自动将 provider 替换为 HTTP provider：
 
 ```csharp
-services.AddTwAspNetCore();
+services.AddHttpContextCancellationTokenProvider();
 ```
 
 ## HTTP API
 
-注册 `AddTwAspNetCore` 后，业务服务注入 `ICancellationTokenProvider` 即可读取当前请求的 `RequestAborted`。业务方法存在显式 `CancellationToken` 参数时，使用 `FallbackToProvider` 实现显式令牌优先：
+注册 `AddHttpContextCancellationTokenProvider` 后，业务服务注入 `ICancellationTokenProvider` 即可读取当前请求的 `RequestAborted`。业务方法存在显式 `CancellationToken` 参数时，使用 `FallbackToProvider` 实现显式令牌优先：
 
 ```csharp
 public Task HandleAsync(CancellationToken cancellationToken = default)
