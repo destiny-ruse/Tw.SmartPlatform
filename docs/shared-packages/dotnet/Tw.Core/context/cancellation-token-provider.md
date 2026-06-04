@@ -20,6 +20,8 @@ ASP.NET Core 宿主注册 Web 适配，自动将 provider 替换为 HTTP provide
 services.AddHttpContextCancellationTokenProvider();
 ```
 
+> `AddHttpContextCancellationTokenProvider` 位于命名空间 `Tw.AspNetCore.Context`。
+
 ## HTTP API
 
 注册 `AddHttpContextCancellationTokenProvider` 后，业务服务注入 `ICancellationTokenProvider` 即可读取当前请求的 `RequestAborted`。业务方法存在显式 `CancellationToken` 参数时，使用 `FallbackToProvider` 实现显式令牌优先：

@@ -12,6 +12,8 @@ ASP.NET Core 宿主注册：
 services.AddHttpContextCancellationTokenProvider();
 ```
 
+> `AddHttpContextCancellationTokenProvider` 位于命名空间 `Tw.AspNetCore.Context`。
+
 `AddHttpContextCancellationTokenProvider` 会先注册 `Tw.Core` 核心能力，再注册 `IHttpContextAccessor`，并将 `ICancellationTokenProvider` 替换为 `HttpContextCancellationTokenProvider`。
 
 业务应用可改用聚合入口 `AddWebIntegration()`（命名空间 `Tw.AspNetCore`），它内部调用 `AddHttpContextCancellationTokenProvider()`。
