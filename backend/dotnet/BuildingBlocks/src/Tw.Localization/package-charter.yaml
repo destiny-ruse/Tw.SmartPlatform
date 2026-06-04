@@ -1,0 +1,26 @@
+schema_version: "1.0.0"
+package: Tw.Localization
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  独立可选的多语言核心构建块：语言上下文、系统文案资源、JSON 静态资源、
+  动态文案覆盖抽象、业务实体字段翻译抽象、回退链与本地化缓存失效契约。
+in_scope:
+  - 系统文案本地化核心抽象与默认编排
+  - JSON 静态多语言资源解析与贡献源
+  - 动态系统文案 store 接口
+  - 业务实体翻译 store 接口与服务
+  - 多租户与 culture 回退策略
+out_of_scope:
+  - ASP.NET Core 请求语言解析和 IStringLocalizer 适配
+  - EF Core 表模型、DbContext、迁移或默认数据库实现
+  - 管理端页面和管理 API
+  - 具体业务领域模型
+public_capabilities:
+  - Tw.Localization
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "Microsoft.EntityFrameworkCore*"
+  allow: []
