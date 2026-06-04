@@ -42,10 +42,10 @@ public sealed class DynamicTextContributor : ITextResourceContributor
     {
         var list = await _store.GetListAsync(request, cancellationToken).ConfigureAwait(false);
 
-        // 按候选文化从低优先级到高优先级（倒序）写入，使高优先级文化（写入更晚）覆盖低优先级
-        var reversedCultures = request.CandidateCultureNames.Reverse().ToList();
-        foreach (var culture in reversedCultures)
+        // 按候选文化从低优先级到高优先级（倒序索引）写入，使高优先级文化（写入更晚）覆盖低优先级
+        for (var i = request.CandidateCultureNames.Count - 1; i >= 0; i--)
         {
+            var culture = request.CandidateCultureNames[i];
             foreach (var item in list)
             {
                 if (string.Equals(item.CultureName, culture, StringComparison.OrdinalIgnoreCase))

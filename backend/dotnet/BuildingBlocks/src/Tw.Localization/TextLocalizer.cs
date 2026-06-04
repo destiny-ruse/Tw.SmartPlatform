@@ -9,7 +9,7 @@ namespace Tw.Localization;
 /// </summary>
 public sealed class TextLocalizer : ITextLocalizer
 {
-    private readonly List<ITextResourceContributor> _contributors;
+    private readonly ITextResourceContributor[] _contributors;
     private readonly LocalizationOptions _options;
     private readonly ICancellationTokenProvider _cancellationTokenProvider;
 
@@ -27,7 +27,7 @@ public sealed class TextLocalizer : ITextLocalizer
         LocalizationOptions options,
         ICancellationTokenProvider cancellationTokenProvider)
     {
-        _contributors = Check.NotNull(contributors).ToList();
+        _contributors = Check.NotNull(contributors).OrderBy(c => c.Priority).ToArray();
         _options = Check.NotNull(options);
         _cancellationTokenProvider = Check.NotNull(cancellationTokenProvider);
     }
@@ -43,10 +43,10 @@ public sealed class TextLocalizer : ITextLocalizer
         var candidates = CultureFallback.Expand(context, _options);
         var request = new TextLookupRequest(resourceName, name, context, candidates);
 
-        // 按优先级降序遍历贡献者，返回第一个非空结果
-        foreach (var contributor in _contributors.OrderByDescending(c => c.Priority))
+        // 按优先级降序遍历贡献者（数组已在构造时升序排列，倒向遍历即为降序），返回第一个非空结果
+        for (var i = _contributors.Length - 1; i >= 0; i--)
         {
-            var result = await contributor.GetOrNullAsync(request, token).ConfigureAwait(false);
+            var result = await _contributors[i].GetOrNullAsync(request, token).ConfigureAwait(false);
             if (result is not null)
             {
                 return result;
@@ -67,8 +67,8 @@ public sealed class TextLocalizer : ITextLocalizer
         var request = new TextFillRequest(resourceName, context, candidates);
         var texts = new Dictionary<string, LocalizedText>(StringComparer.Ordinal);
 
-        // 按优先级升序遍历贡献者，后执行的高优先级贡献者可覆盖低优先级贡献者的同名键
-        foreach (var contributor in _contributors.OrderBy(c => c.Priority))
+        // 按优先级升序遍历贡献者（数组已在构造时排序），后执行的高优先级贡献者可覆盖低优先级贡献者的同名键
+        foreach (var contributor in _contributors)
         {
             await contributor.FillAsync(request, texts, token).ConfigureAwait(false);
         }

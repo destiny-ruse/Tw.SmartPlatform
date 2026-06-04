@@ -44,11 +44,20 @@ public sealed class EntityTranslationService : IEntityTranslationService
         // 仅调用 store 一次
         var translations = await _store.GetListAsync(storeQuery, token).ConfigureAwait(false);
 
+        // 按键建立索引，避免对每个字段/文化重复线性扫描（O(keys×cultures×translations) → 近似 O(translations)）
+        var index = new Dictionary<EntityTranslationKey, List<EntityTranslation>>();
+        foreach (var t in translations)
+        {
+            var k = new EntityTranslationKey(t.EntityType, t.EntityId, t.FieldName);
+            if (!index.TryGetValue(k, out var bucket)) { bucket = []; index[k] = bucket; }
+            bucket.Add(t);
+        }
+
         var result = new Dictionary<EntityTranslationKey, EntityTranslation>();
 
         foreach (var key in query.Keys)
         {
-            var best = SelectBest(key, translations, candidates, query.Context.TenantId);
+            var best = SelectBest(key, index, candidates, query.Context.TenantId);
             if (best is not null)
             {
                 result[key] = best;
@@ -69,41 +78,44 @@ public sealed class EntityTranslationService : IEntityTranslationService
     }
 
     /// <summary>
-    /// 按候选文化顺序（高优先级在前）、当前租户优先于全局租户，选出最佳翻译记录
+    /// 按候选文化顺序（高优先级在前）、当前租户优先于全局租户，从预建索引中选出最佳翻译记录
     /// </summary>
     private static EntityTranslation? SelectBest(
         EntityTranslationKey key,
-        IReadOnlyList<EntityTranslation> translations,
+        Dictionary<EntityTranslationKey, List<EntityTranslation>> index,
         IReadOnlyList<string> candidates,
         string? currentTenantId)
     {
+        if (!index.TryGetValue(key, out var bucket))
+        {
+            return null;
+        }
+
         foreach (var culture in candidates)
         {
             // 当前租户优先
-            var tenantMatch = translations.FirstOrDefault(t =>
-                t.EntityType == key.EntityType &&
-                t.EntityId == key.EntityId &&
-                t.FieldName == key.FieldName &&
-                string.Equals(t.CultureName, culture, StringComparison.OrdinalIgnoreCase) &&
-                t.TenantId == currentTenantId);
+            EntityTranslation? tenantMatch = null;
+            EntityTranslation? globalMatch = null;
 
-            if (tenantMatch is not null)
+            foreach (var t in bucket)
             {
-                return tenantMatch;
+                if (!string.Equals(t.CultureName, culture, StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                if (t.TenantId == currentTenantId)
+                {
+                    tenantMatch = t;
+                }
+                else if (t.TenantId is null)
+                {
+                    globalMatch = t;
+                }
             }
 
-            // 当前租户无结果时回退到全局
-            var globalMatch = translations.FirstOrDefault(t =>
-                t.EntityType == key.EntityType &&
-                t.EntityId == key.EntityId &&
-                t.FieldName == key.FieldName &&
-                string.Equals(t.CultureName, culture, StringComparison.OrdinalIgnoreCase) &&
-                t.TenantId is null);
-
-            if (globalMatch is not null)
-            {
-                return globalMatch;
-            }
+            if (tenantMatch is not null) { return tenantMatch; }
+            if (globalMatch is not null) { return globalMatch; }
         }
 
         return null;

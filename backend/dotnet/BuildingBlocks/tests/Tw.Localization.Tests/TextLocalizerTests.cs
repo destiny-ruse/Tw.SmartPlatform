@@ -41,4 +41,24 @@ public class TextLocalizerTests
         text.ResourceNotFound.Should().BeTrue();
         text.Value.Should().Be("Missing");
     }
+
+    [Fact]
+    public async Task GetAllAsync_HigherPriorityContributorOverrides()
+    {
+        var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        var staticContributor = new JsonTextResourceContributor(
+            [new JsonTextResource("App", "zh-Hans", new Dictionary<string, string> { ["Menu"] = "静态菜单" })],
+            priority: 0);
+        var store = new InMemoryDynamicTextStore();
+        store.Add(new LocalizedText("App", "Menu", "动态菜单", "zh-Hans", false, LocalizedTextSource.Dynamic));
+        store.Add(new LocalizedText("App", "Title", "动态标题", "zh-Hans", false, LocalizedTextSource.Dynamic));
+        var dynamicContributor = new DynamicTextContributor(store, priority: 100);
+        var localizer = new TextLocalizer([staticContributor, dynamicContributor], options, CreateTokenProvider());
+
+        var result = await localizer.GetAllAsync("App", new LocalizationContext("zh-Hans"));
+
+        result.Single(t => t.Name == "Menu").Value.Should().Be("动态菜单");
+        result.Single(t => t.Name == "Title").Value.Should().Be("动态标题");
+        result.Should().HaveCount(2);
+    }
 }
