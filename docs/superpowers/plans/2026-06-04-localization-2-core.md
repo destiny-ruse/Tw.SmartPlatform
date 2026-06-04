@@ -557,7 +557,10 @@ public static class CultureFallback
             while (!string.IsNullOrWhiteSpace(culture.Parent.Name))
             {
                 culture = culture.Parent;
-                AddIfMissing(result, culture.Name);
+                if (options.SupportedCultures.Contains(culture.Name, StringComparer.OrdinalIgnoreCase))
+                {
+                    AddIfMissing(result, culture.Name);
+                }
             }
         }
 
@@ -582,9 +585,10 @@ public static class CultureFallback
 Rules:
 - `Validate()` throws `TwConfigurationException` for invalid default culture, invalid supported culture, empty supported list after normalization, and default culture not present in supported cultures.
 - `Expand()` includes current culture first.
-- `Expand()` includes parent culture chain only when both `context.FallbackToParentCultures` and `options.FallbackToParentCultures` are true.
+- `Expand()` includes parent culture chain only when both `context.FallbackToParentCultures` and `options.FallbackToParentCultures` are true. Parent cultures are included only when present in `options.SupportedCultures` (so an unsupported intermediate parent such as `en` is skipped); the current culture and the default culture are always included regardless of the supported list.
 - `Expand()` includes default culture only when both `context.FallbackToDefaultCulture` and `options.FallbackToDefaultCulture` are true.
 - `Expand()` removes duplicates while preserving order.
+- `Expand()` does not throw when `context.CultureName` is non-whitespace but not a valid culture: it skips parent-chain expansion (guarded by `IsValidCulture`) while still including the current culture and the default culture, consistent with the core's "invalid/missing culture is not an exception" philosophy.
 
 - [ ] **Step 4: Run tests**
 
@@ -1086,7 +1090,8 @@ Rules:
 - It registers `LocalizationOptions` singleton.
 - It registers `ITextLocalizer`, `IEntityTranslationService`, `IStaticTextSnapshot`.
 - It registers static JSON contributors loaded from `LocalizationOptions.JsonResourcePaths`.
-- It does not register `IDynamicTextStore` or `IEntityTranslationStore`; business applications implement those.
+- It does not register a real/persistent `IDynamicTextStore` and does not register a dynamic text contributor; business applications opt into dynamic overrides by registering their own `IDynamicTextStore` plus a `DynamicTextContributor`.
+- So that `IEntityTranslationService` is resolvable out of the box, it registers a default empty `IEntityTranslationStore` via `TryAddSingleton` (returns no translations); business applications override it by registering their own `IEntityTranslationStore`. The core registers no persistent store implementation.
 - It does not use `Microsoft.Extensions.DependencyInjection` as the extension class namespace.
 
 - [ ] **Step 4: Run DI tests**
