@@ -74,6 +74,28 @@
 - 实现权限、审计、管理端 API 和导入导出
 - 决定动态覆盖和业务翻译的缓存策略
 
+## 服务注册与命名规则
+
+本能力的 `IServiceCollection` 扩展按功能点命名，不使用公司前缀、包名前缀、程序集名前缀或参考框架名称表达注册入口。
+
+命名规则：
+
+- 扩展类命名空间使用当前程序集根命名空间或其功能命名空间，例如 `Tw.Localization`、`Tw.Context`、`Tw.AspNetCore.Localization`、`Tw.AspNetCore.Context`
+- 自有扩展类不放入 `Microsoft.Extensions.DependencyInjection` 命名空间
+- 扩展类按功能拆分，例如 `LocalizationServiceCollectionExtensions`、`CancellationTokenServiceCollectionExtensions`、`WebIntegrationServiceCollectionExtensions`
+- 功能级注册方法使用能力名称，例如 `AddLocalization(...)`、`AddCancellationTokenProvider(...)`
+- `Tw.AspNetCore` 提供一个入口性质的聚合注册方法 `AddWebIntegration(...)`，内部调用本程序集 Web 相关功能注册以及所需核心功能注册，避免业务应用必须了解多个功能注册顺序
+- 聚合入口不替代功能级注册方法；功能级注册方法必须能够单独测试和按需组合
+- 当功能方法名与 .NET 官方扩展同名时，通过本项目功能命名空间隔离，不通过 `Microsoft.Extensions.DependencyInjection` 命名空间抢占官方扩展
+
+本次实现同时整改既有不规范命名：
+
+- `Tw.Core` 当前 `AddTwCore()` 拆分为功能级注册入口，取消令牌 provider 注册归入 `Tw.Context.CancellationTokenServiceCollectionExtensions.AddCancellationTokenProvider(...)`
+- `Tw.AspNetCore` 当前 `AddTwAspNetCore()` 拆分为功能级注册入口，HTTP 请求取消令牌 provider 注册归入 `Tw.AspNetCore.Context.CancellationTokenServiceCollectionExtensions.AddHttpContextCancellationTokenProvider(...)`
+- `Tw.AspNetCore` 新增入口聚合注册 `Tw.AspNetCore.WebIntegrationServiceCollectionExtensions.AddWebIntegration(...)`
+- `TwCoreServiceCollectionExtensions`、`TwAspNetCoreServiceCollectionExtensions` 这类宽泛扩展类名退出目标 API
+- 自有扩展类从 `Microsoft.Extensions.DependencyInjection` 命名空间迁移到对应程序集或功能命名空间
+
 ## 核心模型
 
 ### `LanguageInfo`
@@ -342,8 +364,9 @@ var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
 
 `Tw.AspNetCore` 提供：
 
-- `AddTwAspNetCoreLocalization()`
-- `UseTwRequestLocalization()`
+- `Tw.AspNetCore.Localization.LocalizationServiceCollectionExtensions.AddLocalization(...)`
+- `Tw.AspNetCore.Localization.LocalizationApplicationBuilderExtensions.UseLocalization(...)`
+- `Tw.AspNetCore.WebIntegrationServiceCollectionExtensions.AddWebIntegration(...)`
 
 默认语言来源顺序：
 
@@ -458,6 +481,7 @@ GET /api/localization/resources/{resourceName}?cultureName=zh-Hans&onlyDynamic=t
 
 - `backend/dotnet/BuildingBlocks/src/Tw.Core/package-charter.yaml`
 - `backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/package-charter.yaml`
+- `docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md`
 - `docs/shared-packages/dotnet/Tw.Core/README.md`
 - `docs/shared-packages/dotnet/Tw.AspNetCore/README.md`
 - `docs/shared-packages/dotnet/README.md`
@@ -476,6 +500,7 @@ GET /api/localization/resources/{resourceName}?cultureName=zh-Hans&onlyDynamic=t
 
 - `Tw.Core` 核心模型、接口和默认编排服务
 - JSON 静态资源贡献源
+- 既有 `AddTwCore()`、`AddTwAspNetCore()`、宽泛扩展类和错误命名空间整改
 - 内存动态文案 store 测试替身
 - 内存实体翻译 store 测试替身
 - `Tw.AspNetCore` 请求语言解析
@@ -493,6 +518,6 @@ GET /api/localization/resources/{resourceName}?cultureName=zh-Hans&onlyDynamic=t
 
 ## 兼容性
 
-新增能力作为 `Tw.Core` 和 `Tw.AspNetCore` 的公开能力进入现有包。现有取消令牌 provider、DI 注册和 ASP.NET Core 集成保持兼容。
+新增能力作为 `Tw.Core` 和 `Tw.AspNetCore` 的公开能力进入现有包。现有取消令牌 provider 行为和 ASP.NET Core 集成行为保持兼容。既有不规范 DI 注册命名进入本次整改范围；实现计划必须在兼容性检查中明确旧入口删除、迁移或废弃转发的处理方式，并按共享包 charter 兼容性要求执行。
 
 公共 API 命名使用 `Tw.Localization`、`TextLocalizer`、`TextResource`、`EntityTranslation`、`DynamicTextStore` 等项目自有术语，不使用参考框架名称。
