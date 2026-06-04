@@ -133,7 +133,7 @@
 - 支持语言列表
 - JSON 静态资源路径
 - JSON 文件变更监听开关
-- 缺失文本策略
+- 缺失文本策略，取值为返回 key（默认）、返回空串或返回 key 并记录诊断，不含抛异常
 - 默认回退策略
 - 资源重复 key 策略
 
@@ -168,6 +168,24 @@
 - `TenantId`
 
 `EntityId` 是不透明字符串，框架不解析数据库主键结构。
+
+### 请求与查询模型
+
+接口签名使用以下查询模型，均为不可变值对象。
+
+系统文案：
+
+- `TextLookupRequest`：`ResourceName`、`Name`、`LocalizationContext`，以及由 context 展开的候选 culture 集合（当前、父级链、默认）。用于单 key 查询。
+- `TextFillRequest`：`ResourceName`、`LocalizationContext`，以及展开的候选 culture 集合。用于批量填充。
+
+业务实体翻译：
+
+- `EntityTranslationKey`：`EntityType`、`EntityId`、`FieldName` 组成的值对象，作为批量结果字典键，定义相等性。
+- `EntityTranslationLookup`：单个 `EntityTranslationKey` + `LocalizationContext`。用于单实体单字段查询。
+- `EntityTranslationQuery`：`EntityType` + `EntityId` 集合或 `FieldName` 集合 + `LocalizationContext`。供 `IEntityTranslationStore` 批量读取，store 一次返回全部命中翻译，不做回退。
+- `EntityTranslationBatchQuery`：`EntityTranslationKey` 集合 + `LocalizationContext`。供 `IEntityTranslationService` 批量查询并执行回退与结果组装。
+
+候选 culture 集合在编排层（`ITextLocalizer`、`IEntityTranslationService`）由 `LocalizationContext` 与 `LocalizationOptions` 回退策略展开后传入 store，store 不重复计算回退。
 
 ## 核心接口
 
@@ -215,6 +233,14 @@ public interface IDynamicTextStore
 ```
 
 `ITextLocalizer` 编排贡献源和回退链。`ITextResourceContributor` 表示静态 JSON、动态覆盖等来源。`IDynamicTextStore` 由业务应用实现。
+
+贡献源遍历方向规则：
+
+- `Priority` 定义唯一规范序，数值约定大者优先
+- `GetOrNullAsync` 按优先级从高到低遍历，首个非空命中即返回
+- `FillAsync` 按优先级从低到高遍历，高优先级结果覆盖低优先级结果
+
+`IDynamicTextStore` 调用契约：编排器一次性把回退链所需的全部候选维度（候选 culture 集合、当前租户与全局两层、`ResourceName`、单 key 查询附带 `Name`）封装进 `TextLookupRequest` / `TextFillRequest` 传入，store 一次返回全部命中项，编排器在内存中按回退链优先级裁决。单 key 查询不得对 store 逐级多次往返。
 
 ### 业务实体翻译接口
 
@@ -277,9 +303,9 @@ var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
 规则：
 
 - `culture` 必须是有效 culture 名称
-- `texts` 支持字符串、数字、布尔值、空值、对象和数组
+- `texts` 叶子值只能是字符串；对象仅用于分组
+- 文案值不支持数字、布尔值、空值和数组，解析到非字符串叶子值时按资源格式错误处理
 - 嵌套对象扁平化为 `Menu__Dashboard`
-- 数组扁平化为带序号的 key
 - 同一 culture 可拆分多个 JSON 文件
 - 文件按稳定顺序合并
 - 同 key 后加载值覆盖先加载值
@@ -395,8 +421,8 @@ var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
 推荐业务应用暴露只读端点：
 
 ```text
-GET /api/localization/resources/{resourceName}?cultureName=zh-Hans
-GET /api/localization/resources/{resourceName}?cultureName=zh-Hans&onlyDynamic=true
+GET /api/localization/resources/{resourceName}?culture=zh-Hans
+GET /api/localization/resources/{resourceName}?culture=zh-Hans&onlyDynamic=true
 ```
 
 `onlyDynamic=true` 用于前端先加载静态包，再叠加数据库覆盖。管理 API 由业务应用按权限和审计要求实现。
@@ -518,6 +544,10 @@ GET /api/localization/resources/{resourceName}?cultureName=zh-Hans&onlyDynamic=t
 
 ## 兼容性
 
-新增能力作为 `Tw.Core` 和 `Tw.AspNetCore` 的公开能力进入现有包。现有取消令牌 provider 行为和 ASP.NET Core 集成行为保持兼容。既有不规范 DI 注册命名进入本次整改范围；实现计划必须在兼容性检查中明确旧入口删除、迁移或废弃转发的处理方式，并按共享包 charter 兼容性要求执行。
+新增能力作为 `Tw.Core` 和 `Tw.AspNetCore` 的公开能力进入现有包。现有取消令牌 provider 的运行时行为和 ASP.NET Core 集成行为保持不变。
+
+`Tw.Core` 和 `Tw.AspNetCore` 当前未被任何具体微服务项目引用，也未发布为 NuGet 包。在此采纳前阶段，既有不规范 DI 注册命名直接做破坏性整改：删除 `AddTwCore()`、`AddTwAspNetCore()` 与 `TwCoreServiceCollectionExtensions`、`TwAspNetCoreServiceCollectionExtensions`，并把扩展类迁出 `Microsoft.Extensions.DependencyInjection` 命名空间，不保留 `[Obsolete]` 废弃转发壳。一旦该包被微服务引用或发布 NuGet，再恢复按 charter `compatibility` 承诺处理破坏性变更。
+
+本次整改同步更新两个包的 `package-charter.yaml`：在 `public_capabilities` 登记新增命名空间（`Tw.Localization`、`Tw.AspNetCore.Localization`、`Tw.AspNetCore.Context`），并核验与现有包命名空间互斥。
 
 公共 API 命名使用 `Tw.Localization`、`TextLocalizer`、`TextResource`、`EntityTranslation`、`DynamicTextStore` 等项目自有术语，不使用参考框架名称。
