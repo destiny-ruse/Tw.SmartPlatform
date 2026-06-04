@@ -23,8 +23,9 @@ public interface ITextResourceContributor
         CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// 将该贡献者持有的本地化文本批量填充到 <paramref name="texts"/> 字典中；
-    /// 已存在的键不应被覆盖
+    /// 将该贡献者持有的本地化文本批量填充到 <paramref name="texts"/> 字典中。
+    /// 贡献者按候选文化由低到高的回退顺序写入，使高优先级文化覆盖低优先级文化的同名键；
+    /// 编排器按 <see cref="Priority"/> 升序依次调用各贡献者，从而让高优先级贡献者覆盖低优先级贡献者已写入的同名键
     /// </summary>
     /// <param name="request">包含资源名称、上下文及候选文化列表的批量填充请求</param>
     /// <param name="texts">目标字典，键为文本条目键名，值为已解析的 <see cref="LocalizedText"/></param>
