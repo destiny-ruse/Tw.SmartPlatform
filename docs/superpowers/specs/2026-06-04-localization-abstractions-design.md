@@ -6,13 +6,14 @@
 
 ## 目标
 
-设计一套平台核心多语言抽象，同时覆盖系统文案本地化和业务实体内容翻译。该能力属于现有核心构建块，不独立拆包。核心层提供框架无关、ORM 无关的接口、模型、默认静态 JSON 支持和运行时编排；业务应用负责数据库实现、权限、审计、管理端 API 和迁移。
+设计一套独立可选的多语言共享包，同时覆盖系统文案本地化和业务实体内容翻译。多语言能力不进入 `Tw.Core` 和 `Tw.AspNetCore` 内置能力，由 `Tw.Localization` 承载框架无关、ORM 无关的接口、模型、默认静态 JSON 支持和运行时编排，由 `Tw.Localization.AspNetCore` 承载可选 Web 宿主适配；业务应用负责数据库实现、权限、审计、管理端 API 和迁移。
 
 设计必须满足以下约束：
 
 - 代码命名不得出现参考框架名称
-- `Tw.Core` 不依赖 ASP.NET Core、EF Core 或具体 ORM
-- `Tw.AspNetCore` 只提供 Web 宿主适配
+- `Tw.Localization` 不依赖 ASP.NET Core、EF Core 或具体 ORM
+- `Tw.Localization.AspNetCore` 只提供 Web 本地化宿主适配
+- `Tw.Core` 和 `Tw.AspNetCore` 不内置多语言实现
 - 多租户作为一等维度支持，单租户应用传空租户
 - 取消令牌与既有 `ICancellationTokenProvider` 集成，不新增独立取消令牌抽象
 - 系统文案和业务实体翻译共享语言上下文与回退策略，但使用不同存储接口
@@ -39,7 +40,18 @@
 
 ### `Tw.Core`
 
-新增公开能力命名空间 `Tw.Localization`，职责包括：
+保留基础原语与上下文能力，作为 `Tw.Localization` 的基础依赖。职责包括：
+
+- `ICancellationTokenProvider`
+- `Check` 入参校验
+- `TwConfigurationException` 等基础异常
+- 通用值对象、扩展和工具
+
+`Tw.Core` 不新增 `Tw.Localization` 命名空间，不承载多语言模型、接口、JSON 资源解析或翻译编排。
+
+### `Tw.Localization`
+
+新增独立共享包 `backend/dotnet/BuildingBlocks/src/Tw.Localization`，公开能力命名空间 `Tw.Localization`，职责包括：
 
 - 语言信息与语言上下文
 - culture 校验和回退链
@@ -50,11 +62,22 @@
 - 本地化缓存失效契约
 - 与 `ICancellationTokenProvider` 的执行上下文集成
 
-`Tw.Core` 不引用 `Microsoft.AspNetCore.*` 和 `Microsoft.EntityFrameworkCore*`。
+`Tw.Localization` 依赖 `Tw.Core`，不引用 `Microsoft.AspNetCore.*` 和 `Microsoft.EntityFrameworkCore*`。
 
 ### `Tw.AspNetCore`
 
-新增 Web 本地化适配能力，职责包括：
+保留 ASP.NET Core 宿主通用集成能力，作为 `Tw.Localization.AspNetCore` 的基础依赖。职责包括：
+
+- HTTP 请求取消令牌 provider
+- Web 通用中间件、过滤器、模型绑定和结果封装
+- 宿主启动与通用依赖注入扩展
+- `AddWebIntegration(...)` 聚合入口
+
+`Tw.AspNetCore` 不新增 `Tw.AspNetCore.Localization` 命名空间，不承载请求语言解析、`IStringLocalizer` 适配或本地化 DTO。
+
+### `Tw.Localization.AspNetCore`
+
+新增独立可选 Web 适配包 `backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore`，公开能力命名空间 `Tw.Localization.AspNetCore`，职责包括：
 
 - 请求语言解析中间件
 - Web 请求语言上下文写入
@@ -62,7 +85,7 @@
 - MVC、DataAnnotations 和视图本地化接入
 - 运行时本地化导出 DTO 契约建议
 
-`Tw.AspNetCore` 不提供管理 API 和数据库实现。
+`Tw.Localization.AspNetCore` 依赖 `Tw.Localization` 和 `Tw.AspNetCore`，不提供管理 API 和数据库实现，不引用 `Microsoft.EntityFrameworkCore*`。
 
 ### 业务应用
 
@@ -80,11 +103,12 @@
 
 命名规则：
 
-- 扩展类命名空间使用当前程序集根命名空间或其功能命名空间，例如 `Tw.Localization`、`Tw.Context`、`Tw.AspNetCore.Localization`、`Tw.AspNetCore.Context`
+- 扩展类命名空间使用当前程序集根命名空间或其功能命名空间，例如 `Tw.Localization`、`Tw.Localization.AspNetCore`、`Tw.Context`、`Tw.AspNetCore.Context`
 - 自有扩展类不放入 `Microsoft.Extensions.DependencyInjection` 命名空间
 - 扩展类按功能拆分，例如 `LocalizationServiceCollectionExtensions`、`CancellationTokenServiceCollectionExtensions`、`WebIntegrationServiceCollectionExtensions`
 - 功能级注册方法使用能力名称，例如 `AddLocalization(...)`、`AddCancellationTokenProvider(...)`
-- `Tw.AspNetCore` 提供一个入口性质的聚合注册方法 `AddWebIntegration(...)`，内部调用本程序集 Web 相关功能注册以及所需核心功能注册，避免业务应用必须了解多个功能注册顺序
+- `Tw.AspNetCore` 提供通用 Web 集成聚合注册方法 `AddWebIntegration(...)`，不包含可选多语言注册
+- `Tw.Localization.AspNetCore` 提供 Web 多语言入口注册方法 `AddLocalization(...)`，内部调用 `Tw.Localization` 核心注册以及 `Tw.AspNetCore` 所需通用 Web 集成，避免业务应用必须了解多个功能注册顺序
 - 聚合入口不替代功能级注册方法；功能级注册方法必须能够单独测试和按需组合
 - 当功能方法名与 .NET 官方扩展同名时，通过本项目功能命名空间隔离，不通过 `Microsoft.Extensions.DependencyInjection` 命名空间抢占官方扩展
 
@@ -95,6 +119,19 @@
 - `Tw.AspNetCore` 新增入口聚合注册 `Tw.AspNetCore.WebIntegrationServiceCollectionExtensions.AddWebIntegration(...)`
 - `TwCoreServiceCollectionExtensions`、`TwAspNetCoreServiceCollectionExtensions` 这类宽泛扩展类名退出目标 API
 - 自有扩展类从 `Microsoft.Extensions.DependencyInjection` 命名空间迁移到对应程序集或功能命名空间
+
+## 计划文件对齐结论
+
+当前 `docs/superpowers/plans` 中的多语言计划审查结论：
+
+- `2026-06-04-localization-1-di-naming-remediation.md` 与本设计中的 DI 命名整改一致，保留为前置计划
+- `2026-06-04-localization-2-core.md` 把多语言核心落入 `Tw.Core`，与独立可选包边界不一致，不再作为实施依据
+- `2026-06-04-localization-3-aspnetcore.md` 把 Web 多语言适配落入 `Tw.AspNetCore`，与独立可选包边界不一致，不再作为实施依据
+
+实现计划阶段采用以下新计划结构：
+
+- 新 Plan 2：`Tw.Localization` 核心包实现
+- 新 Plan 3：`Tw.Localization.AspNetCore` Web 可选适配包实现
 
 ## 核心模型
 
@@ -388,11 +425,10 @@ var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
 
 ### 请求语言解析
 
-`Tw.AspNetCore` 提供：
+`Tw.Localization.AspNetCore` 提供：
 
-- `Tw.AspNetCore.Localization.LocalizationServiceCollectionExtensions.AddLocalization(...)`
-- `Tw.AspNetCore.Localization.LocalizationApplicationBuilderExtensions.UseLocalization(...)`
-- `Tw.AspNetCore.WebIntegrationServiceCollectionExtensions.AddWebIntegration(...)`
+- `Tw.Localization.AspNetCore.LocalizationServiceCollectionExtensions.AddLocalization(...)`
+- `Tw.Localization.AspNetCore.LocalizationApplicationBuilderExtensions.UseLocalization(...)`
 
 默认语言来源顺序：
 
@@ -406,7 +442,7 @@ var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
 
 ### `IStringLocalizer` 适配
 
-`Tw.Core` 不依赖 `Microsoft.Extensions.Localization`。`Tw.AspNetCore` 提供适配器：
+`Tw.Localization` 不依赖 `Microsoft.Extensions.Localization`。`Tw.Localization.AspNetCore` 提供适配器：
 
 - `TwStringLocalizerFactory`
 - `TwStringLocalizer`
@@ -416,7 +452,7 @@ var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
 
 ### 运行时导出 API
 
-核心只提供 `ITextLocalizer.GetAllAsync`。`Tw.AspNetCore` 可提供 DTO 契约和扩展示例，不强制注册控制器。
+核心只提供 `ITextLocalizer.GetAllAsync`。`Tw.Localization.AspNetCore` 可提供 DTO 契约和扩展示例，不强制注册控制器。
 
 推荐业务应用暴露只读端点：
 
@@ -466,7 +502,7 @@ GET /api/localization/resources/{resourceName}?culture=zh-Hans&onlyDynamic=true
 
 ## 测试策略
 
-### `Tw.Core.Tests`
+### `Tw.Localization.Tests`
 
 覆盖：
 
@@ -487,7 +523,7 @@ GET /api/localization/resources/{resourceName}?culture=zh-Hans&onlyDynamic=true
 - 列表页查询避免 N+1
 - 显式 token 与 `ICancellationTokenProvider` 集成
 
-### `Tw.AspNetCore.Tests`
+### `Tw.Localization.AspNetCore.Tests`
 
 覆盖：
 
@@ -505,18 +541,22 @@ GET /api/localization/resources/{resourceName}?culture=zh-Hans&onlyDynamic=true
 
 实现该设计时必须同步更新：
 
+- `backend/dotnet/BuildingBlocks/src/Tw.Localization/package-charter.yaml`
+- `backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/package-charter.yaml`
 - `backend/dotnet/BuildingBlocks/src/Tw.Core/package-charter.yaml`
 - `backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/package-charter.yaml`
 - `docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md`
+- `docs/shared-packages/dotnet/Tw.Localization/README.md`
+- `docs/shared-packages/dotnet/Tw.Localization.AspNetCore/README.md`
 - `docs/shared-packages/dotnet/Tw.Core/README.md`
 - `docs/shared-packages/dotnet/Tw.AspNetCore/README.md`
 - `docs/shared-packages/dotnet/README.md`
 
 新增共享包能力文档：
 
-- `docs/shared-packages/dotnet/Tw.Core/localization/text-localization.md`
-- `docs/shared-packages/dotnet/Tw.Core/localization/entity-translation.md`
-- `docs/shared-packages/dotnet/Tw.AspNetCore/localization/request-localization.md`
+- `docs/shared-packages/dotnet/Tw.Localization/text-localization.md`
+- `docs/shared-packages/dotnet/Tw.Localization/entity-translation.md`
+- `docs/shared-packages/dotnet/Tw.Localization.AspNetCore/request-localization.md`
 
 能力使用文档采用 How-to Guide。包索引采用 Reference。
 
@@ -524,12 +564,14 @@ GET /api/localization/resources/{resourceName}?culture=zh-Hans&onlyDynamic=true
 
 首轮实现包含：
 
-- `Tw.Core` 核心模型、接口和默认编排服务
+- `Tw.Core`、`Tw.AspNetCore` 既有 DI 命名整改
+- `Tw.Localization` 项目、测试项目、package charter 和共享包文档
+- `Tw.Localization` 核心模型、接口和默认编排服务
 - JSON 静态资源贡献源
-- 既有 `AddTwCore()`、`AddTwAspNetCore()`、宽泛扩展类和错误命名空间整改
 - 内存动态文案 store 测试替身
 - 内存实体翻译 store 测试替身
-- `Tw.AspNetCore` 请求语言解析
+- `Tw.Localization.AspNetCore` 项目、测试项目、package charter 和共享包文档
+- `Tw.Localization.AspNetCore` 请求语言解析
 - `IStringLocalizer` 适配
 - 单元测试和共享包使用文档
 
@@ -544,10 +586,17 @@ GET /api/localization/resources/{resourceName}?culture=zh-Hans&onlyDynamic=true
 
 ## 兼容性
 
-新增能力作为 `Tw.Core` 和 `Tw.AspNetCore` 的公开能力进入现有包。现有取消令牌 provider 的运行时行为和 ASP.NET Core 集成行为保持不变。
+新增能力作为 `Tw.Localization` 和 `Tw.Localization.AspNetCore` 的公开能力进入独立可选包。`Tw.Core` 和 `Tw.AspNetCore` 的取消令牌 provider 运行时行为、ASP.NET Core 通用集成行为保持不变。
 
 `Tw.Core` 和 `Tw.AspNetCore` 当前未被任何具体微服务项目引用，也未发布为 NuGet 包。在此采纳前阶段，既有不规范 DI 注册命名直接做破坏性整改：删除 `AddTwCore()`、`AddTwAspNetCore()` 与 `TwCoreServiceCollectionExtensions`、`TwAspNetCoreServiceCollectionExtensions`，并把扩展类迁出 `Microsoft.Extensions.DependencyInjection` 命名空间，不保留 `[Obsolete]` 废弃转发壳。一旦该包被微服务引用或发布 NuGet，再恢复按 charter `compatibility` 承诺处理破坏性变更。
 
-本次整改同步更新两个包的 `package-charter.yaml`：在 `public_capabilities` 登记新增命名空间（`Tw.Localization`、`Tw.AspNetCore.Localization`、`Tw.AspNetCore.Context`），并核验与现有包命名空间互斥。
+本次整改同步更新相关包的 `package-charter.yaml`：
+
+- `Tw.Core` 保留基础能力 `Tw.Context`，不登记 `Tw.Localization`
+- `Tw.AspNetCore` 保留通用 Web 能力 `Tw.AspNetCore`、`Tw.AspNetCore.Context`，不登记 `Tw.Localization.AspNetCore`
+- `Tw.Localization` 登记 `Tw.Localization`
+- `Tw.Localization.AspNetCore` 登记 `Tw.Localization.AspNetCore`
+
+四个包的 `public_capabilities` 必须互斥。业务应用只有引用并注册 `Tw.Localization` 或 `Tw.Localization.AspNetCore` 时才启用多语言能力。
 
 公共 API 命名使用 `Tw.Localization`、`TextLocalizer`、`TextResource`、`EntityTranslation`、`DynamicTextStore` 等项目自有术语，不使用参考框架名称。
