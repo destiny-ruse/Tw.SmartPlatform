@@ -13,7 +13,11 @@ public static class RequestCultureResolver
     /// <param name="routeCulture">路由参数中传入的文化名称；无路由值时传 <see langword="null"/></param>
     /// <param name="queryCulture">查询字符串中传入的文化名称；无查询值时传 <see langword="null"/></param>
     /// <param name="cookieCulture">Cookie 中存储的文化名称；无 Cookie 时传 <see langword="null"/></param>
-    /// <param name="acceptLanguageHeader">请求的 Accept-Language 标头原始值；无标头时传 <see langword="null"/></param>
+    /// <param name="acceptLanguageHeader">
+    /// 请求的 Accept-Language 标头原始值；无标头时传 <see langword="null"/>。
+    /// 按标头给定的顺序依次匹配，首个受支持的语言即为结果；
+    /// 每个条目的 <c>;q=</c> 权重后缀会被剥离但不用于重排序，标头顺序即为权威顺序。
+    /// </param>
     /// <param name="options">本地化配置，提供已支持的文化列表和默认文化</param>
     /// <returns>
     /// 包含最终选定文化名称和是否由用户显式切换标志的 <see cref="RequestCultureResolveResult"/>
