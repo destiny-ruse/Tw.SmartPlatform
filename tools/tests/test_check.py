@@ -40,7 +40,7 @@ dependency_rules:
 )
 
 
-def seed(repo: Path) -> None:
+def seed(repo: Path, *, with_docs: bool = True) -> None:
     write_text(
         repo / ".rules/ai-coding-rules/00-always-load.md",
         "# Always\n\n## Required Formal Standards\n\n"
@@ -54,6 +54,11 @@ def seed(repo: Path) -> None:
     )
     pkg = make_csproj(repo, "Tw.Core")
     write_text(pkg / "package-charter.yaml", CHARTER)
+    if with_docs:
+        write_text(
+            repo / "docs/shared-packages/dotnet/Tw.Core/context/cancellation-token-provider.md",
+            "# 取消令牌 provider 使用指南\n",
+        )
 
 
 def test_check_passes_after_generate(repo: Path) -> None:
@@ -164,6 +169,30 @@ def test_check_fails_when_public_capability_prefix_overlaps(repo: Path) -> None:
     )
 
     assert run_generate(str(repo)) == 0
+    assert run_check(str(repo)) == 1
+
+
+def test_check_fails_when_usage_docs_are_missing(repo: Path) -> None:
+    seed(repo, with_docs=False)
+
+    assert run_generate(str(repo)) == 0
+    assert run_check(str(repo)) == 1
+
+
+def test_check_fails_when_generated_public_api_card_is_stale(repo: Path) -> None:
+    seed(repo)
+    assert run_generate(str(repo)) == 0
+
+    write_text(repo / ".tw-memory/cards/public-apis/Tw.Core.generated.md", "# stale\n")
+
+    assert run_check(str(repo)) == 1
+
+
+def test_check_fails_when_generated_package_card_is_orphaned(repo: Path) -> None:
+    seed(repo)
+    assert run_generate(str(repo)) == 0
+    write_text(repo / ".tw-memory/cards/packages/Tw.Old.generated.md", "# Package: Tw.Old\n")
+
     assert run_check(str(repo)) == 1
 
 

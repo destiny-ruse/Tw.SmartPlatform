@@ -18,7 +18,12 @@ out_of_scope:
   - 管理端页面和管理 API
   - 具体业务领域模型
 public_capabilities:
-  - Tw.Localization
+  - Tw.Localization.Context
+  - Tw.Localization.Text
+  - Tw.Localization.Json
+  - Tw.Localization.DynamicText
+  - Tw.Localization.EntityTranslation
+  - Tw.Localization.Caching
 dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"

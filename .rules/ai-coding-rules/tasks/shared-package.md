@@ -10,5 +10,5 @@ Load this index when a task creates, changes, or reviews a shared package or com
 
 ## Execution Requirements
 
-- Read the referenced formal standard file before changing this task area.
+- Read the referenced formal standard files before changing this task area.
 - If this task overlaps another task category, load the matching task index from `01-task-router.md`.

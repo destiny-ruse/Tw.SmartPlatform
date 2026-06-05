@@ -25,6 +25,21 @@ def test_generate_writes_commit_memory_without_runtime_state(repo: Path) -> None
         '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net8.0</TargetFramework></PropertyGroup></Project>',
     )
     write_text(
+        package_dir / "Context/CancellationTokenServiceCollectionExtensions.cs",
+        """using Microsoft.Extensions.DependencyInjection;
+
+namespace Tw.Context;
+
+public static class CancellationTokenServiceCollectionExtensions
+{
+    public static IServiceCollection AddCancellationTokenProvider(this IServiceCollection services)
+    {
+        return services;
+    }
+}
+""",
+    )
+    write_text(
         package_dir / "package-charter.yaml",
         """schema_version: memory.charter.v1
 package: Tw.Core
@@ -44,6 +59,10 @@ dependency_rules:
 stability: stable
 """,
     )
+    write_text(
+        repo / "docs/shared-packages/dotnet/Tw.Core/context/cancellation-token-provider.md",
+        "# 取消令牌 provider 使用指南\n",
+    )
 
     assert run_generate(str(repo)) == 0
 
@@ -56,7 +75,20 @@ stability: stable
     assert packages_route["packages"]["Tw.Core"]["card"] == ".tw-memory/cards/packages/Tw.Core.generated.md"
     assert packages_route["packages"]["Tw.Core"]["public_api_card"] == ".tw-memory/cards/public-apis/Tw.Core.generated.md"
     assert "apis" in load_yaml(repo / ".tw-memory/routes/apis.generated.yaml")
-    assert load_yaml(repo / ".tw-memory/manifest/taxonomy.generated.yaml")["generator"] == GENERATOR_VERSION
+    taxonomy = load_yaml(repo / ".tw-memory/manifest/taxonomy.generated.yaml")
+    assert taxonomy["generator"] == GENERATOR_VERSION
+    assert "package-source" in taxonomy["source_types"]
+    assert "package-doc" in taxonomy["source_types"]
 
     source_index = json.loads((repo / ".tw-memory/manifest/source-index.generated.json").read_text(encoding="utf-8"))
     assert "charter:package-charter:Tw.Core" in source_index["sources"]
+    assert "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenServiceCollectionExtensions.cs" in source_index["sources"]
+    assert "package-doc:Tw.Core:docs/shared-packages/dotnet/Tw.Core/context/cancellation-token-provider.md" in source_index["sources"]
+
+    public_api_card = (repo / ".tw-memory/cards/public-apis/Tw.Core.generated.md").read_text(encoding="utf-8")
+    assert "公开能力边界：" in public_api_card
+    assert "实现公开命名空间：" in public_api_card
+    assert "- Tw.Context" in public_api_card
+    assert "- static class CancellationTokenServiceCollectionExtensions" in public_api_card
+    assert "- Tw.Context.CancellationTokenServiceCollectionExtensions.AddCancellationTokenProvider" in public_api_card
+    assert "docs/shared-packages/dotnet/Tw.Core/context/cancellation-token-provider.md" in public_api_card

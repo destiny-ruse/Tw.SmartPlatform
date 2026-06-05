@@ -11,4 +11,16 @@ packages:
     public_api_card: .tw-memory/cards/public-apis/Tw.Core.generated.md
     source_refs:
     - charter:package-charter:Tw.Core
+  Tw.Localization:
+    card: .tw-memory/cards/packages/Tw.Localization.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Tw.Localization
+    public_api_card: .tw-memory/cards/public-apis/Tw.Localization.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Localization
+  Tw.Localization.AspNetCore:
+    card: .tw-memory/cards/packages/Tw.Localization.AspNetCore.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore
+    public_api_card: .tw-memory/cards/public-apis/Tw.Localization.AspNetCore.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Localization.AspNetCore
 schema_version: 1.0.0

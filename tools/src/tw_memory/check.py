@@ -7,8 +7,10 @@ from collections import defaultdict
 from pathlib import Path
 
 from tw_memory.charter import Charter, load_charter, validate_charter
+from tw_memory.cards import render_package_card, render_public_api_card
 from tw_memory.generated_io import repo_relative
 from tw_memory.hashing import sha256_normalized
+from tw_memory.implemented_api import PackageApi, collect_package_api
 from tw_memory.packages import DiscoveredPackage, discover_packages
 from tw_memory.repo import RepoPaths, find_repo_root
 from tw_memory.rules_boundary import find_rule_files, find_rules_boundary_violations
@@ -132,16 +134,66 @@ def _tracked_errors(repo: Path, staged: bool) -> list[str]:
     return errors
 
 
-def _package_errors(repo: Path, packages: list[DiscoveredPackage]) -> tuple[list[str], list[Charter]]:
+def _usage_doc_errors(package: DiscoveredPackage, api: PackageApi) -> list[str]:
+    if api.usage_docs:
+        return []
+    package_docs_root = f"docs/shared-packages/{'dotnet' if package.ecosystem == 'dotnet' else package.ecosystem}/{package.canonical_key}"
+    return [f"{package_docs_root}: missing shared package usage docs"]
+
+
+def _generated_text_error(path: Path, expected: str) -> list[str]:
+    if not path.exists():
+        return [f"{path}: missing generated memory file"]
+    actual = path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    if actual != expected:
+        return [f"{path}: generated memory stale; run python -m tw_memory generate"]
+    return []
+
+
+def _generated_card_errors(repo: Path, package_charters: list[tuple[DiscoveredPackage, Charter]]) -> list[str]:
+    paths = RepoPaths(repo)
     errors: list[str] = []
-    charters: list[Charter] = []
+    expected_paths: set[Path] = set()
+
+    for package, charter in package_charters:
+        api = collect_package_api(repo, package)
+        rel = repo_relative(repo, package.root_dir)
+        source_ref = f"charter:package-charter:{package.canonical_key}"
+        package_card = paths.package_cards / f"{package.canonical_key}.generated.md"
+        public_api_card = paths.public_api_cards / f"{package.canonical_key}.generated.md"
+        expected_paths.update((package_card, public_api_card))
+        errors.extend(
+            _generated_text_error(
+                package_card,
+                render_package_card(package.canonical_key, rel, charter, [source_ref]),
+            )
+        )
+        errors.extend(
+            _generated_text_error(
+                public_api_card,
+                render_public_api_card(package.canonical_key, rel, charter, [source_ref], api),
+            )
+        )
+
+    for cards_root in (paths.package_cards, paths.public_api_cards):
+        if not cards_root.exists():
+            continue
+        for card in sorted(cards_root.glob("*.generated.md")):
+            if card not in expected_paths:
+                errors.append(f"{card}: orphan generated memory card")
+    return errors
+
+
+def _package_errors(repo: Path, packages: list[DiscoveredPackage]) -> tuple[list[str], list[tuple[DiscoveredPackage, Charter]]]:
+    errors: list[str] = []
+    package_charters: list[tuple[DiscoveredPackage, Charter]] = []
     for package in packages:
         if not package.charter_path.exists():
             errors.append(f"{package.root_dir}: missing package-charter.yaml")
             continue
 
         charter = load_charter(package.charter_path)
-        charters.append(charter)
+        package_charters.append((package, charter))
         errors.extend(validate_charter(charter))
         if charter.package != package.canonical_key:
             errors.append(
@@ -149,7 +201,8 @@ def _package_errors(repo: Path, packages: list[DiscoveredPackage]) -> tuple[list
             )
         errors.extend(_dependency_errors(package, charter))
         errors.extend(_charter_secret_errors(charter))
-    return errors, charters
+        errors.extend(_usage_doc_errors(package, collect_package_api(repo, package)))
+    return errors, package_charters
 
 
 def run_check(root: str | None = None, *, staged: bool = False) -> int:
@@ -162,9 +215,11 @@ def run_check(root: str | None = None, *, staged: bool = False) -> int:
     errors.extend(find_rules_boundary_violations(repo, rule_files))
 
     packages = discover_packages(repo)
-    package_errors, charters = _package_errors(repo, packages)
+    package_errors, package_charters = _package_errors(repo, packages)
     errors.extend(package_errors)
+    charters = [charter for _, charter in package_charters]
     errors.extend(_public_capability_errors(charters))
+    errors.extend(_generated_card_errors(repo, package_charters))
 
     if paths.source_index.exists():
         errors.extend(_source_index_errors(repo, paths.source_index))

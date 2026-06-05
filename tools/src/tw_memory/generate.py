@@ -11,6 +11,7 @@ from tw_memory.charter import load_charter
 from tw_memory.codegraph_routes import default_codegraph_queries
 from tw_memory.discovery import discover_contract_files, discover_skill_files
 from tw_memory.generated_io import repo_relative, write_generated_text
+from tw_memory.implemented_api import collect_package_api
 from tw_memory.markdown_segments import segment_markdown
 from tw_memory.packages import discover_packages
 from tw_memory.repo import RepoPaths, find_repo_root
@@ -65,12 +66,35 @@ def run_generate(root: str | None = None) -> int:
         if not package.charter_path.exists():
             continue
         charter = load_charter(package.charter_path)
+        implemented_api = collect_package_api(repo, package)
         rel = repo_relative(repo, package.root_dir)
         source_key = f"package-charter:{package.canonical_key}"
         source_ref = f"charter:{source_key}"
         package_card = paths.package_cards / f"{package.canonical_key}.generated.md"
         public_api_card = paths.public_api_cards / f"{package.canonical_key}.generated.md"
         entries.append(make_source_entry(repo, package.charter_path, "charter", source_key, "package-charter:v1"))
+        for source_file in implemented_api.source_files:
+            source_path = repo_relative(repo, source_file)
+            entries.append(
+                make_source_entry(
+                    repo,
+                    source_file,
+                    "package-source",
+                    f"{package.canonical_key}:{source_path}",
+                    "implemented-public-api:v1",
+                )
+            )
+        for usage_doc in implemented_api.usage_doc_paths:
+            doc_path = repo_relative(repo, usage_doc)
+            entries.append(
+                make_source_entry(
+                    repo,
+                    usage_doc,
+                    "package-doc",
+                    f"{package.canonical_key}:{doc_path}",
+                    "shared-package-doc:v1",
+                )
+            )
         packages_route[package.canonical_key] = {
             "path": rel,
             "card": _generated_card_path(repo, package_card),
@@ -85,7 +109,7 @@ def run_generate(root: str | None = None) -> int:
         write_generated_text(
             repo,
             public_api_card,
-            render_public_api_card(package.canonical_key, rel, charter, [source_ref]),
+            render_public_api_card(package.canonical_key, rel, charter, [source_ref], implemented_api),
         )
 
     write_route(paths.packages_route, SCHEMA_VERSION, {"packages": packages_route})
@@ -100,7 +124,15 @@ def run_generate(root: str | None = None) -> int:
         {
             "schema_version": SCHEMA_VERSION,
             "generator": GENERATOR_VERSION,
-            "source_types": ["standard", "charter", "contract", "structure", "skill"],
+            "source_types": [
+                "standard",
+                "charter",
+                "package-source",
+                "package-doc",
+                "contract",
+                "structure",
+                "skill",
+            ],
             "memory_types": [
                 "package-summary",
                 "public-api-summary",

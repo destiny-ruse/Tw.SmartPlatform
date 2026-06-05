@@ -13,6 +13,8 @@
 - 项目必须记录 .NET SDK 版本、运行时版本、构建命令、测试命令和发布产物。
 - 解决方案结构和项目引用必须保持清晰，不得出现循环引用。
 - 命名空间和程序集必须使用 PascalCase 分段，并与目录、模块和领域边界一致。
+- 类型命名空间必须等于项目 `RootNamespace` 加上该类型文件相对项目根目录的文件夹路径（以 PascalCase 分段），不得手写偏离文件夹结构的命名空间。
+- 跨程序集不得向同一命名空间贡献类型。核心抽象包与执行实现包覆盖同一能力域时，抽象包命名空间统一以 `.Abstractions` 结尾区分。
 - 类型、枚举、属性、事件和公共方法必须使用 PascalCase；局部变量和参数必须使用 camelCase；私有字段应当使用 `_camelCase`。
 - 接口名称必须以 `I` 开头并表达能力或角色，不得使用 `IManager`、`IHelper` 等宽泛名称。
 - 异步方法必须以 `Async` 结尾，并返回 `Task`、`Task<T>`、`ValueTask` 或等效异步类型；同步方法不得添加 `Async` 后缀。
@@ -96,6 +98,7 @@ public IEnumerable<Type> Scan(Assembly assembly, ServiceRegistrationOptions opti
 
 - .NET SDK、运行时版本、构建命令和测试命令是否记录？
 - 解决方案结构、项目命名和命名空间是否一致？
+- 类型命名空间是否等于 `RootNamespace` 加文件夹路径，跨程序集是否避免共享命名空间并对抽象包使用 `.Abstractions` 后缀？
 - 控制器是否保持薄层，业务规则是否离开基础设施细节？
 - 共享包 `IServiceCollection` 扩展类、方法和命名空间是否按功能能力组织？
 - 异步方法命名、返回类型和调用方式是否符合要求？

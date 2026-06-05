@@ -5,7 +5,7 @@
       "extractor": "package-charter:v1",
       "hash_algorithm": "sha256",
       "path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/package-charter.yaml",
-      "sha256": "5de7ace77b9b109b13f207d031047e6389d804135dacd16eebfcc712d971f9ad",
+      "sha256": "cc161e41e4abf839c8549428b98bcfeef2f7f51f52a2b89bce29c4a1f68e0906",
       "source_id": "charter:package-charter:Tw.AspNetCore",
       "source_type": "charter"
     },
@@ -13,9 +13,993 @@
       "extractor": "package-charter:v1",
       "hash_algorithm": "sha256",
       "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/package-charter.yaml",
-      "sha256": "84bf3b85bb0aa934b7efd54247cd8ae98a34f760785ac8b6bf25803ae488153d",
+      "sha256": "e4d0a51ad48a3eddea069e7e60b0ea9473604cccae6c61af5a3e71095d820182",
       "source_id": "charter:package-charter:Tw.Core",
       "source_type": "charter"
+    },
+    "charter:package-charter:Tw.Localization": {
+      "extractor": "package-charter:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/package-charter.yaml",
+      "sha256": "49240d70cf50d6ea2c3d04728ba96b0c9aca7ba9f524b7b7ffa661e612f756c3",
+      "source_id": "charter:package-charter:Tw.Localization",
+      "source_type": "charter"
+    },
+    "charter:package-charter:Tw.Localization.AspNetCore": {
+      "extractor": "package-charter:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/package-charter.yaml",
+      "sha256": "1b2701ab5f34e49267ec70841350bb04328f4e0653fb5e4b927d57ffaa74b67a",
+      "source_id": "charter:package-charter:Tw.Localization.AspNetCore",
+      "source_type": "charter"
+    },
+    "package-doc:Tw.AspNetCore:docs/shared-packages/dotnet/Tw.AspNetCore/README.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.AspNetCore/README.md",
+      "sha256": "e85a13e1f96fa01ca06ca76ea557fc4691d874127f6eb2f7d7a4160eaa0d4752",
+      "source_id": "package-doc:Tw.AspNetCore:docs/shared-packages/dotnet/Tw.AspNetCore/README.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.AspNetCore:docs/shared-packages/dotnet/Tw.AspNetCore/context/http-context-cancellation-token-provider.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.AspNetCore/context/http-context-cancellation-token-provider.md",
+      "sha256": "b99bbee854da731ce26beb94fb43fcef9e82f4359b9dd7222ea4285195517a75",
+      "source_id": "package-doc:Tw.AspNetCore:docs/shared-packages/dotnet/Tw.AspNetCore/context/http-context-cancellation-token-provider.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.Core:docs/shared-packages/dotnet/Tw.Core/README.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.Core/README.md",
+      "sha256": "f6e093ab7e4cb66c75ba2a23847151ff5c8837aaeffe00fb4f13b4ae74f6f5b2",
+      "source_id": "package-doc:Tw.Core:docs/shared-packages/dotnet/Tw.Core/README.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.Core:docs/shared-packages/dotnet/Tw.Core/context/cancellation-token-provider.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.Core/context/cancellation-token-provider.md",
+      "sha256": "90c6875524510aa6345b746380aad71594d044d43b642e54ede479e74f89a1b0",
+      "source_id": "package-doc:Tw.Core:docs/shared-packages/dotnet/Tw.Core/context/cancellation-token-provider.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.Localization.AspNetCore:docs/shared-packages/dotnet/Tw.Localization.AspNetCore/README.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.Localization.AspNetCore/README.md",
+      "sha256": "b751e6564acf29b73a10d21686f32adacfcde9c0b7eecb15aadfdd84f2d83df9",
+      "source_id": "package-doc:Tw.Localization.AspNetCore:docs/shared-packages/dotnet/Tw.Localization.AspNetCore/README.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.Localization.AspNetCore:docs/shared-packages/dotnet/Tw.Localization.AspNetCore/request-localization.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.Localization.AspNetCore/request-localization.md",
+      "sha256": "9bdc527f62bb586c522afdd6f282efb54594694616551d3731eb5cb0cb2c709e",
+      "source_id": "package-doc:Tw.Localization.AspNetCore:docs/shared-packages/dotnet/Tw.Localization.AspNetCore/request-localization.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.Localization:docs/shared-packages/dotnet/Tw.Localization/README.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.Localization/README.md",
+      "sha256": "a6879464e851e17a38242fc4cff0b1225314781ee692022fa1af2253953bf98f",
+      "source_id": "package-doc:Tw.Localization:docs/shared-packages/dotnet/Tw.Localization/README.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.Localization:docs/shared-packages/dotnet/Tw.Localization/entity-translation.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.Localization/entity-translation.md",
+      "sha256": "1b9fa8f7a827940570e25970acdcfd711ca20fd800a37145d3b46f522e76d166",
+      "source_id": "package-doc:Tw.Localization:docs/shared-packages/dotnet/Tw.Localization/entity-translation.md",
+      "source_type": "package-doc"
+    },
+    "package-doc:Tw.Localization:docs/shared-packages/dotnet/Tw.Localization/text-localization.md": {
+      "extractor": "shared-package-doc:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/shared-packages/dotnet/Tw.Localization/text-localization.md",
+      "sha256": "f589c0574abe372a27d06a2ffbe147aba9e36c3373cf2003c61f844bbd07773b",
+      "source_id": "package-doc:Tw.Localization:docs/shared-packages/dotnet/Tw.Localization/text-localization.md",
+      "source_type": "package-doc"
+    },
+    "package-source:Tw.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Context/CancellationTokenServiceCollectionExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Context/CancellationTokenServiceCollectionExtensions.cs",
+      "sha256": "5ca3490dc2c5eea96a565b62ee29f9acd6a8d04ef5d90e001c124f1906748645",
+      "source_id": "package-source:Tw.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Context/CancellationTokenServiceCollectionExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Context/HttpContextCancellationTokenProvider.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Context/HttpContextCancellationTokenProvider.cs",
+      "sha256": "e67d3ff22433b59ae63dc456b41b713970b73ea27b2d93b4794f04c38ee3a74f",
+      "source_id": "package-source:Tw.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/Context/HttpContextCancellationTokenProvider.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/DependencyInjection/WebIntegrationServiceCollectionExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/DependencyInjection/WebIntegrationServiceCollectionExtensions.cs",
+      "sha256": "9166b02ab52b298dfc162061b0ee40144fa6c16ad1cf0d554639c3ed93b14146",
+      "source_id": "package-source:Tw.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/DependencyInjection/WebIntegrationServiceCollectionExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs",
+      "sha256": "7cc028c8619f1cdabcec80b5d458d8cc1928dc02ad78bb0bec87b79bffd72f44",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Check.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/ITypeList.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/ITypeList.cs",
+      "sha256": "a2e44e6a69b26e629f06fe8f56eff14730377b46a87d8e587e907e20dfde5789",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/ITypeList.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs",
+      "sha256": "0c7da01d49c43940ef18f0d39d002a33e2596451558463dbbd5a521d0625c7e4",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Collections/TypeList.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/IConfigurableOptions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/IConfigurableOptions.cs",
+      "sha256": "2b15dcc9027c741d1ef5af7903eaf74894f24a3856fc45f9c0ac2463005650a9",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Configuration/IConfigurableOptions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/AsyncLocalCancellationTokenScopeProvider.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/AsyncLocalCancellationTokenScopeProvider.cs",
+      "sha256": "5b354152bba00559439ebb6096bcdee6818eeb15afdd1606a7534bf0472fdb49",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/AsyncLocalCancellationTokenScopeProvider.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenOverride.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenOverride.cs",
+      "sha256": "5f2175d17b18aaa387f7b20d6eb85ecd6864b53a340e2c0e6f91ad5d3be8797c",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenOverride.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenProviderBase.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenProviderBase.cs",
+      "sha256": "5039697357fc37df265dd312a2a3425fe7caea9688d6bc6a6510f52123581f95",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenProviderBase.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenProviderExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenProviderExtensions.cs",
+      "sha256": "73944a2f1eac3341a68422654bc5684d2cb95e0ede8d5a62ed5e31e0e3eb028b",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenProviderExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenServiceCollectionExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenServiceCollectionExtensions.cs",
+      "sha256": "d7d51b4fb0d1729d99348cf04255e083212fd2eaffb07ab836de94e2b4181b05",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/CancellationTokenServiceCollectionExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICancellationTokenProvider.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICancellationTokenProvider.cs",
+      "sha256": "52fe62a6a9f2e43560c4fa158f16a27a4ecc4c2115438152ab2d78987c1e3a49",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/ICancellationTokenProvider.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/NullCancellationTokenProvider.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Context/NullCancellationTokenProvider.cs",
+      "sha256": "23739aabbd827231c4e87909cdc4aa235b2f7543e660f9b843138171b7b57b8c",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Context/NullCancellationTokenProvider.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwConfigurationException.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwConfigurationException.cs",
+      "sha256": "45d6590083d2fca1fefc0911005b86156d72f993f6a9246e61e905fd1d8c2de0",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwConfigurationException.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwException.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwException.cs",
+      "sha256": "ce6b3d8e8ee41dc666ae468c41d22ba777808f3f66765e3e0bb185946bea9d4e",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Exceptions/TwException.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ByteArrayExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ByteArrayExtensions.cs",
+      "sha256": "82c0021bef1d57548e72cddb98ad2318e602f28b25e59e5da43eb8a12990ca03",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ByteArrayExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs",
+      "sha256": "08e625d2f8857dd818b09ec7f7229f2acb4e39d365bcabdcd8969dc1142bd574",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/CollectionExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ComparableExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ComparableExtensions.cs",
+      "sha256": "2df01f6cb98d75fb4f98beac65cc9c0dd2eb01591e456ef9ece1f9460c850a85",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ComparableExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs",
+      "sha256": "363cdca63154dc6718bfb972622be2a9ad545b84ba3bec4e9ae0f2b6865eb2f1",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DateTimeExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs",
+      "sha256": "42e319bcd5adc99766c754bbe08cf1f0ad90f58b059b4eacecf44682a7c10ea5",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/DictionaryExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs",
+      "sha256": "e5bf6d71cbb1106ad9b93f63e7cfbab6950ce73ce62011b18e0da8e997b831df",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/EnumerableExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ExceptionExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ExceptionExtensions.cs",
+      "sha256": "448056df062bb27a61ae1a6ef0708019bbab0e09c004466a3d52ecc8fe02a537",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ExceptionExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/GuidExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/GuidExtensions.cs",
+      "sha256": "cfb76eb844cf96013b8dea7ed38f480f21645c414a10412f57a64ec100ec8ccc",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/GuidExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "sha256": "24e3073e1268c273f12e49b5a9f3d3783a21ffe69f2f5bc47c8c58355b8ad6b6",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ListExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs",
+      "sha256": "0ccbd5e13c44493d5615e6446bd38ab8a82bfb394c062b7807894f4cb4325d15",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/NumberExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ObjectExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ObjectExtensions.cs",
+      "sha256": "6e94086b3bb7864f84846be29c497770c27d7ba4da10c6ad6c0318bebf56abca",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/ObjectExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs",
+      "sha256": "214250d4b993c3550dafcd79c546b983b1f1ff9e53b5eb23564f1bb13b767623",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StreamExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StringExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StringExtensions.cs",
+      "sha256": "bcb401d4bb24064da127ba1a9f64935f2e8ada377bcaf9b338dafa4e44ce64e5",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/StringExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/TypeExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/TypeExtensions.cs",
+      "sha256": "8905447f6204fbc012b6e4f4b47f04dc401c3e90e1645129ccd5d4b28e080084",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Extensions/TypeExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedAction.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedAction.cs",
+      "sha256": "96add8fc6e4e9014fdd95e60782bab7c44b0cf292497e052202cfef84f5bf86a",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedAction.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedActionList.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedActionList.cs",
+      "sha256": "4940074c5750168220f026c8b3fe5adc8e2573759a41e60f5df91d784ce2b3d0",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedActionList.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObject.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObject.cs",
+      "sha256": "aab21ffc609d3be193f881c70a659ac31b0c1235b22a711b5d810a62ddf521a6",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObject.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObjectList.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObjectList.cs",
+      "sha256": "644c7a38c333ddb167a2be92898e8343c6f8fe90f3f7915e6f8a908827965964",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedObjectList.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelector.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelector.cs",
+      "sha256": "4fb14bc36b180c91c20a00fd4c028d4a62b0ed7a21cedb2d232c899282e89498",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelector.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelectorListExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelectorListExtensions.cs",
+      "sha256": "e795f055a96a5fefbad5875834a99fd1900dec367906549dfd255bbe4ee9abcd",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedTypeSelectorListExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedValue.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedValue.cs",
+      "sha256": "70209e1d2dc2ed7e1d0ee52463af7abb41ec874327096d3cbdbe84880888f135",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Primitives/NamedValue.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ITypeFinder.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ITypeFinder.cs",
+      "sha256": "03d5799c6391864720f09aff0c3ce8a60687913bd52689c463aa8d073988cff9",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ITypeFinder.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs",
+      "sha256": "e2570858e25a0b14f3e0975827e9d538359524117ae45d0d461114bc6927036e",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/ReflectionCache.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs",
+      "sha256": "f8f8b6ec54178fad67915ecd9aad0b715370e68256c3e4c11aaf6e98c88e081c",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinder.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinderExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinderExtensions.cs",
+      "sha256": "f9501fed56d0275a086af01f3e1e608f606ea7cf4201322a996d89b6099e5f23",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Reflection/TypeFinderExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/AesCryptography.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/AesCryptography.cs",
+      "sha256": "8107f316b61bc8b11490ee0b6ab78f5719d16d1aff17cd83801a4c241c9c2923",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/AesCryptography.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs",
+      "sha256": "70d84bf37622f5d1233949a59039549d1fefb1ddfba2ce1169e5f863f65775ee",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/DesCryptography.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacMd5Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacMd5Hasher.cs",
+      "sha256": "73cee04070c82221234552412b2e00060d5986ef4435d3d9043eb02150dc3c31",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacMd5Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha1Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha1Hasher.cs",
+      "sha256": "5177d6784799418fa60612f6e05497f38f76a8e4b2bf0a0138ef566f59ca6b65",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha1Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs",
+      "sha256": "5791efa71fcf22d898937015c9bb6cfadd9e27612435ea6101018464a9778a67",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha256Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3256Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3256Hasher.cs",
+      "sha256": "8c641ac02fb10a9f4c290274b4da0e9f217e33d01faa78e076c63b1b1015de16",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3256Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3384Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3384Hasher.cs",
+      "sha256": "18fbf0a1207bd825d5fe07d21a85f8ab737e67b3b6619c5bc1f2beaf25d850f3",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3384Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3512Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3512Hasher.cs",
+      "sha256": "f483b598ed450f015711f28c3b99725793b373ea513fbcb4558d68520155d7be",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha3512Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha384Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha384Hasher.cs",
+      "sha256": "4ec6ee87dc404fa61ecde33b45292caa93e66eda5103fb9d4efba0b0bcde0c65",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha384Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha512Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha512Hasher.cs",
+      "sha256": "6c2badb9877eefca52b6ae6d09aa5209fc6332e2518d1a06950b3d6e01dba2b8",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/HmacSha512Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Md5Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Md5Hasher.cs",
+      "sha256": "3557065f070030d5c22f0a10ebd02a74e34265fc57e35fe338d416f599a89d2c",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Md5Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Pbkdf2PasswordHasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Pbkdf2PasswordHasher.cs",
+      "sha256": "c32fa8b5c5e41689a32e36dcdb1a3e71becfe577f3e791d0b9188df8d62945bd",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Pbkdf2PasswordHasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaCryptography.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaCryptography.cs",
+      "sha256": "95d675a781ef67354e69e75437703a7e8fd7171121c424c7dd05d26ccfe92571",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaCryptography.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaDerKeyPair.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaDerKeyPair.cs",
+      "sha256": "1ecb882640196ea72a2cbab7e6129e09b777237e25cd29ceee2fe17caf9fb192",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaDerKeyPair.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaKeyPair.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaKeyPair.cs",
+      "sha256": "897171f8045ee3a32ca73fe8fae6cbf6bc8ea5fae75bfdaef40e88de4156d3c4",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/RsaKeyPair.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha1Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha1Hasher.cs",
+      "sha256": "570a605d603e93ea0f47c4d631ffbe5c846bfaed181a4ead77230b50fd80f790",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha1Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha256Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha256Hasher.cs",
+      "sha256": "784043ae3923cec204ca20f682f57701096f404f50219dfa631124ff5707ab83",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha256Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3256Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3256Hasher.cs",
+      "sha256": "0cc92a9f7b61da5752dc7ec65b1b2af56cb172f9f94445e520d8f3860dcf6e16",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3256Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3384Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3384Hasher.cs",
+      "sha256": "2d814a786977c62af1ac5bb29c1237c85a573dc12053d6c7535f92342f6454ea",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3384Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3512Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3512Hasher.cs",
+      "sha256": "fb313022c9651ebfdb82b868089248e04912e7691e1230aa49e1533672e876c3",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha3512Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha384Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha384Hasher.cs",
+      "sha256": "6da77aa3112ee9b31e5e277de113970c15e34117ad4ac2b509a2c1f41581523d",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha384Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha512Hasher.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha512Hasher.cs",
+      "sha256": "3b386545a0fc9d72ff1152e77cd000b1c0754ac1018f50b6714fd648d752525f",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/Sha512Hasher.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/StringCryptographyExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/StringCryptographyExtensions.cs",
+      "sha256": "f79be61cf11521c1c1f60aea1e64ad6a09492fd8517d9f6b1a5ffe9bce2f6f8c",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/StringCryptographyExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs",
+      "sha256": "6ff545d64837f7c118bb33f2bb68be56f4280e39487dfbe7a806548ffae45878",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Security/Cryptography/TripleDesCryptography.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/AsyncDisposeFunc.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/AsyncDisposeFunc.cs",
+      "sha256": "b6746b533c97e7b629fda1f19842fb3a0d6e674752369951df38e96383c63428",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/AsyncDisposeFunc.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/DisposeAction.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/DisposeAction.cs",
+      "sha256": "33b254b263f4720665ad80c2150159a671fe3c2dc84d2b1cdf8e27f5e7f5aea7",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/DisposeAction.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs",
+      "sha256": "be4b10e3f23e07345682d5197770e15de8f964375879802f01eedcc646127e21",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullAsyncDisposable.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs",
+      "sha256": "bc646c572a3f3e6253937061a56daa032b6df9664e6abe9577cf648af0989239",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/NullDisposable.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/SecureRandomGenerator.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/SecureRandomGenerator.cs",
+      "sha256": "dfdc96cb3e910b9e52ee217f9f9d73228967439e018034e601ee0e87e6bfc2ec",
+      "source_id": "package-source:Tw.Core:backend/dotnet/BuildingBlocks/src/Tw.Core/Utilities/SecureRandomGenerator.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/CurrentLocalizationContextAccessor.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/CurrentLocalizationContextAccessor.cs",
+      "sha256": "f92bf558707798dd26d0992a0dcd89980749afca97212dfa4a34aa799499d670",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/CurrentLocalizationContextAccessor.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/ICurrentLocalizationContextAccessor.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/ICurrentLocalizationContextAccessor.cs",
+      "sha256": "c3af9c65f0eab0d8bad1c681f2de76f04cff81fac656dcb4f2c21bb2f37ea478",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/ICurrentLocalizationContextAccessor.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationApplicationBuilderExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationApplicationBuilderExtensions.cs",
+      "sha256": "75374914a18204d61c065c1655400f6f58a05880395184e5523bc8ece6720775",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationApplicationBuilderExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationResourceDto.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationResourceDto.cs",
+      "sha256": "14a75cf6fb4b7bfe860d484d916be4fba2ad6da6c59ae5306118f475a6662f12",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationResourceDto.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationServiceCollectionExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationServiceCollectionExtensions.cs",
+      "sha256": "727192d9ed29e12ababb2cffdc398b278607769c02b9f3ec3e8e68e973b096f2",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationServiceCollectionExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationTextDto.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationTextDto.cs",
+      "sha256": "e6759341ebe95ab6ca6c82bbef2a3ec0e3d2033f706fedaf24a10e7ca2293a64",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/LocalizationTextDto.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestCultureResolveResult.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestCultureResolveResult.cs",
+      "sha256": "e481611388581a855f4d858ae166a1c08c1f2ad526f0cb8773f3f1c9ad60266e",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestCultureResolveResult.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestCultureResolver.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestCultureResolver.cs",
+      "sha256": "9868c4e378803175444b9c2f0c0600f405ee53092be19bf44a2537c633a325d1",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestCultureResolver.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestLocalizationMiddleware.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestLocalizationMiddleware.cs",
+      "sha256": "62d821c07ff3a4c8e1a98e73a245ab8a6e413cbaf120e237b3cb6cdc6c6c701a",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/RequestLocalizationMiddleware.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizer.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizer.cs",
+      "sha256": "ff32b882c97efd63d03b69b8b1d780b982491b1477da80a6bde0ecd2368db27a",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizer.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizerFactory.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizerFactory.cs",
+      "sha256": "b5e8b31c03ed5231f6a1bb6269c06ba1af72f50317faf9d14fb11065605fd094",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizerFactory.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizerOfT.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizerOfT.cs",
+      "sha256": "5f1ba1938da08133d526ea2ae58b84d6b2eff034730062e4e7fd7f9f8d8eecfd",
+      "source_id": "package-source:Tw.Localization.AspNetCore:backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore/TwStringLocalizerOfT.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Caching/ILocalizationCacheInvalidator.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Caching/ILocalizationCacheInvalidator.cs",
+      "sha256": "b698db82dda65f2a84c67b8f5dfd47d854768a1bfefa6a5c3b329a091f6b910f",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Caching/ILocalizationCacheInvalidator.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Caching/ILocalizationChangeToken.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Caching/ILocalizationChangeToken.cs",
+      "sha256": "36ba901c13dcd7d810005e4fa450c843be44d595817725a6e159f1e2c3368060",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Caching/ILocalizationChangeToken.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/CultureFallback.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/CultureFallback.cs",
+      "sha256": "e9c44c757f5d3f2fa13724d2e20a16f5537dbb8ba672d3c5038523990ee73789",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/CultureFallback.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/DynamicTextContributor.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/DynamicTextContributor.cs",
+      "sha256": "4e5f15847f289462bce5500dd9555a51a0516275b9cba79e95d2bddb9a93071f",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/DynamicTextContributor.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/EntityTranslation.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/EntityTranslation.cs",
+      "sha256": "994faebc6c242183c0aa08a0f1f0634975657ed6b81e376c540b9016965d6470",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/EntityTranslation.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/EntityTranslationService.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/EntityTranslationService.cs",
+      "sha256": "17b11223f37adffb1e1f085e4ea227ad31e500ae637fef7086a6513c256e32e3",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/EntityTranslationService.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IDynamicTextStore.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/IDynamicTextStore.cs",
+      "sha256": "c004813da6407cb6a73376f1d0e9a2ca18a6e16c0c85968edb31af99a0fceb97",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IDynamicTextStore.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IEntityTranslationService.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/IEntityTranslationService.cs",
+      "sha256": "d7e97069d9d58016abaf81b66c15cb3ee2518a2b9425ccb61dbb839fc4e6c317",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IEntityTranslationService.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IEntityTranslationStore.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/IEntityTranslationStore.cs",
+      "sha256": "1a5dbc1f3d3415b1140ef7253af28fab445f830856e80fadfc6cacefa3bcdd12",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IEntityTranslationStore.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IStaticTextSnapshot.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/IStaticTextSnapshot.cs",
+      "sha256": "d6c650dd7f6891529fd6ec80c4e0b1fc72824aaeabc7e08b5b6d7b050467e0ca",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/IStaticTextSnapshot.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/ITextLocalizer.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/ITextLocalizer.cs",
+      "sha256": "da8071975d2cfb9f1197c5d4567b1068643fa73e8d9e5fe8c0d107258d19524a",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/ITextLocalizer.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/ITextResourceContributor.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/ITextResourceContributor.cs",
+      "sha256": "8de10fc1d0e0e55c50cbe213bbd264614cfc294a9921769f00193404d70ce1e3",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/ITextResourceContributor.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResource.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResource.cs",
+      "sha256": "e24bfa5c4e541d4e7b8f012c2f8e8ddd2b472cdbbf0844f9846ee0c9743800b1",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResource.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResourceContributor.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResourceContributor.cs",
+      "sha256": "4231f639b965d009267fdf468c5884dd469a68b2aa8455578d82f37030df281b",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResourceContributor.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResourceParser.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResourceParser.cs",
+      "sha256": "2afbeccf81ff0a68e2e41c201c944d46c226e3371eadcf087e615bfa785f2fdc",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Json/JsonTextResourceParser.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LanguageInfo.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/LanguageInfo.cs",
+      "sha256": "6de584b1984276e8c7827bff2fecaf94e818f622e884766e1285989fba092fdd",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LanguageInfo.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationContext.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationContext.cs",
+      "sha256": "768355f1cf29101798c065b7107d4dc0871a52562aef815955809e1263dc6bd2",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationContext.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationOptions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationOptions.cs",
+      "sha256": "4032c15f799851b199d7e429031925d491e9067928d2b4030b9d4d86af8c82b5",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationOptions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationServiceCollectionExtensions.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationServiceCollectionExtensions.cs",
+      "sha256": "e83c917f2cd1e29ee646446eb81a21012ceb99be9c08a7bb2e2a96151da6ae0c",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizationServiceCollectionExtensions.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizedText.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizedText.cs",
+      "sha256": "e6ff12bad001ebbe284fa0558af3a4171c0c22276ad05f0246a9c5ecce80da98",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizedText.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizedTextSource.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizedTextSource.cs",
+      "sha256": "da8c2405b80cc129aeec04ee322457706d5cd34e4b3230d12fbc09b8283c2a51",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/LocalizedTextSource.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/MissingTextBehavior.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/MissingTextBehavior.cs",
+      "sha256": "e591fccf30d389ed7d10e71e2e061a4e81676ad383f4d580dfb933145d871b04",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/MissingTextBehavior.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationBatchQuery.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationBatchQuery.cs",
+      "sha256": "48bc116055d4d6c0c01e585f6bc518e57383237bb65af7ece721c14eeee2a1c9",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationBatchQuery.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationKey.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationKey.cs",
+      "sha256": "a0f37a9648ad3b6d0d69a5a6baa146e0e11bdb49a3caf9979403cc3320f8d976",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationKey.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationLookup.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationLookup.cs",
+      "sha256": "f3470f0e4de36461beef7c770e69bfd8b842a6490a13dce270eded64fe696e84",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationLookup.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationQuery.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationQuery.cs",
+      "sha256": "a33a038ba4b9ae14f9a1533f2097ab3c4c15a263fcf774ffc39de310aabe796e",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/EntityTranslationQuery.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/TextFillRequest.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/TextFillRequest.cs",
+      "sha256": "688a3f4ae0fb6d462911c9a9a09eb8043020913c911c01e053256565356a1a86",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/TextFillRequest.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/TextLookupRequest.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/TextLookupRequest.cs",
+      "sha256": "9faf2be114448a1701ec8695ef644cd02b3f2a70877200151d0e0d094b783802",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/Requests/TextLookupRequest.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/StaticTextSnapshot.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/StaticTextSnapshot.cs",
+      "sha256": "adf3bca5ce3f9268bc6d1ae6af5b76e7bed9c9e7eac67ba5d76d83c53e4eb05c",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/StaticTextSnapshot.cs",
+      "source_type": "package-source"
+    },
+    "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/TextLocalizer.cs": {
+      "extractor": "implemented-public-api:v1",
+      "hash_algorithm": "sha256",
+      "path": "backend/dotnet/BuildingBlocks/src/Tw.Localization/TextLocalizer.cs",
+      "sha256": "e982b494bdf16ab9c2ede21a201628b292223a6948716670032186c876e64730",
+      "source_id": "package-source:Tw.Localization:backend/dotnet/BuildingBlocks/src/Tw.Localization/TextLocalizer.cs",
+      "source_type": "package-source"
     },
     "skill:.agents/skills/brainstorming/SKILL.md": {
       "extractor": "skill-discovery:v1",
@@ -103,6 +1087,14 @@
       "path": ".agents/skills/test-driven-development/SKILL.md",
       "sha256": "7dee67b4af6bdccc7a914ca34533184d64592d0f5b23aeae631538168db14994",
       "source_id": "skill:.agents/skills/test-driven-development/SKILL.md",
+      "source_type": "skill"
+    },
+    "skill:.agents/skills/ui-ux-pro-max/SKILL.md": {
+      "extractor": "skill-discovery:v1",
+      "hash_algorithm": "sha256",
+      "path": ".agents/skills/ui-ux-pro-max/SKILL.md",
+      "sha256": "edce641405d928093f686fa18d6807d9d100ba62042981b0ebef7eae8248cdde",
+      "source_id": "skill:.agents/skills/ui-ux-pro-max/SKILL.md",
       "source_type": "skill"
     },
     "skill:.agents/skills/using-git-worktrees/SKILL.md": {
@@ -197,7 +1189,7 @@
       "extractor": "engineering-standard-segment:v1",
       "hash_algorithm": "sha256",
       "path": "docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md",
-      "sha256": "b6282227bf8ac650ff451d8b6fa5c7164ef06fc2c4ee9ceb73994267f26e9b84",
+      "sha256": "c449edbd0b21961b40b41d9a1f6f87a742bc73d36dcf826449352496fcb92233",
       "source_id": "standard:docs:engineering-standards:03-project-and-code:language-specific:dotnet-core.md",
       "source_type": "standard"
     },
@@ -255,6 +1247,14 @@
       "path": "docs/engineering-standards/03-project-and-code/project-structure.md",
       "sha256": "1a617cc1c2358272a13ec3a3c8859dc29a3de3df1128f92744210404c8fc1b80",
       "source_id": "standard:docs:engineering-standards:03-project-and-code:project-structure.md",
+      "source_type": "standard"
+    },
+    "standard:docs:engineering-standards:03-project-and-code:shared-package-charter.md": {
+      "extractor": "engineering-standard-segment:v1",
+      "hash_algorithm": "sha256",
+      "path": "docs/engineering-standards/03-project-and-code/shared-package-charter.md",
+      "sha256": "be8c74cde5dbd7e6cfc6d9a1788c12c464c2a3d375e9b49f2688a45f042483e4",
+      "source_id": "standard:docs:engineering-standards:03-project-and-code:shared-package-charter.md",
       "source_type": "standard"
     },
     "standard:docs:engineering-standards:04-quality:dependency-and-build.md": {

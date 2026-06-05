@@ -1,9 +1,10 @@
 # Package: Tw.AspNetCore
 
 标识：Tw.AspNetCore / backend/dotnet/BuildingBlocks/src/Tw.AspNetCore / platform-team
-职责：ASP.NET Core 宿主集成的公共构建块：中间件、过滤器、模型绑定、 结果封装、启动扩展与 Web 层横切关注点。
+职责：ASP.NET Core 宿主集成的公共构建块：HTTP 请求取消令牌 provider、中间件、 过滤器、模型绑定、结果封装、启动扩展与 Web 层横切关注点。
 
 适用范围：
+- HTTP 请求取消令牌 provider
 - ASP.NET Core 中间件与过滤器
 - Web 层模型绑定与结果封装
 - 宿主启动与依赖注入扩展
