@@ -89,14 +89,14 @@ public class OrderService(
 {
     public async ValueTask<string> GetStatusLabelAsync(string statusKey)
     {
-        var context = localizationAccessor.CurrentContext;
+        var context = localizationAccessor.Current;
         var result = await localizer.GetAsync("orders", statusKey, context);
         return result.Value;
     }
 }
 ```
 
-`ICurrentLocalizationContextAccessor.CurrentContext` 返回 `LocalizationContext`，包含当前请求解析到的文化名称，可直接传递给 `ITextLocalizer.GetAsync` 或 `GetAllAsync`。
+`ICurrentLocalizationContextAccessor.Current` 返回 `LocalizationContext`，包含当前请求解析到的文化名称，可直接传递给 `ITextLocalizer.GetAsync` 或 `GetAllAsync`。
 
 ## IStringLocalizer 静态快照边界
 
@@ -168,6 +168,6 @@ public async Task<LocalizationResourceDto> GetResourceAsync(
 
 ## 注意事项
 
-- `AddLocalization`（`Tw.Localization.AspNetCore`）必须替代（而非叠加）`AddLocalization`（`Tw.Localization`）的调用；两者均会注册核心服务，重复调用会触发 `TryAdd*` 幂等保护但无功能副作用。
-- `IStringLocalizerFactory`、`IStringLocalizer<>` 和 `ICurrentLocalizationContextAccessor` 均以 Scoped 方式注册，不得在 Singleton 服务中直接注入，避免捕获依赖。
+- 业务应用只应调用 `Tw.Localization.AspNetCore.AddLocalization(...)`，不要额外再调用 `Tw.Localization.AddLocalization(...)`。前者内部已调用核心注册；核心注册使用 `AddSingleton`（非 `TryAdd`），重复调用会产生重复注册（如重复的 `ITextResourceContributor` 和 `IStaticTextSnapshot`），不具备幂等保护。
+- `IStringLocalizerFactory`、`IStringLocalizer<>` 和 `ICurrentLocalizationContextAccessor` 均以 Scoped 方式注册，不得在 Singleton 服务中直接注入，避免捕获依赖；若 Singleton 确实需要读取当前本地化上下文，应注入 `IServiceScopeFactory` 并在需要时手动创建作用域获取。
 - Cookie 名称常量为 `RequestLocalizationMiddleware.CultureCookieName`（值为 `".Tw.Culture"`），如需在其他中间件或客户端代码中引用，应使用此常量而非硬编码字符串。

@@ -15,5 +15,16 @@ public class LocalizationResourceDtoTests
 
         dto.ResourceName.Should().Be("App");
         dto.Texts.Should().ContainSingle(x => x.Name == "Menu" && x.Value == "菜单");
+        dto.Texts.Should().ContainSingle(x => x.ResourceNotFound == false);
+    }
+
+    [Fact]
+    public void TextDto_ResourceNotFound_IsTrue_WhenMissing()
+    {
+        var text = new LocalizationTextDto("Missing", "Missing", true);
+
+        text.Name.Should().Be("Missing");
+        text.Value.Should().Be("Missing");
+        text.ResourceNotFound.Should().BeTrue();
     }
 }
