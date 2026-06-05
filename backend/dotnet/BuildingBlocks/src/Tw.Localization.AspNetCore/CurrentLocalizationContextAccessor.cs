@@ -1,0 +1,14 @@
+using Tw.Localization;
+
+namespace Tw.Localization.AspNetCore;
+
+/// <summary>
+/// <see cref="ICurrentLocalizationContextAccessor"/> 的默认实现，用简单属性存储当前请求的本地化上下文
+/// </summary>
+public sealed class CurrentLocalizationContextAccessor : ICurrentLocalizationContextAccessor
+{
+    /// <summary>
+    /// 获取或设置当前请求的 <see cref="LocalizationContext"/>；未设置时为 <see langword="null"/>
+    /// </summary>
+    public LocalizationContext? Current { get; set; }
+}
