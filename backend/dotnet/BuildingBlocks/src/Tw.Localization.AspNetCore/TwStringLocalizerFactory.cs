@@ -9,9 +9,9 @@ namespace Tw.Localization.AspNetCore;
 /// </summary>
 /// <remarks>
 /// 本工厂仅查询静态 JSON 快照，不访问任何动态文本覆盖来源。
-/// 注册为 Singleton 时需确保 <see cref="IStaticTextSnapshot"/> 同为 Singleton，
-/// 而 <see cref="ICurrentLocalizationContextAccessor"/> 则应以 Scoped 生命周期注入，
-/// 具体解析在每次索引器调用时发生。
+/// 工厂持有注入的 <see cref="ICurrentLocalizationContextAccessor"/>，
+/// 并在每次查找时读取其 <c>Current</c> 属性；
+/// 工厂和访问器的 DI 生命周期由注册扩展方法决定，本类不预设具体组合。
 /// </remarks>
 public sealed class TwStringLocalizerFactory : IStringLocalizerFactory
 {
@@ -44,6 +44,11 @@ public sealed class TwStringLocalizerFactory : IStringLocalizerFactory
     /// <param name="resourceSource">用于标识本地化资源范围的类型</param>
     /// <returns>以 <paramref name="resourceSource"/> 简单名称为资源名的 <see cref="TwStringLocalizer"/> 实例</returns>
     /// <exception cref="ArgumentNullException">当 <paramref name="resourceSource"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <remarks>
+    /// 资源名称取自 <see cref="Type.Name"/>（不含命名空间）。
+    /// 若不同命名空间下存在同名类型，两者将映射到同一资源名，导致查找结果混用。
+    /// 调用方必须确保在同一快照中资源名称全局唯一。
+    /// </remarks>
     public IStringLocalizer Create(Type resourceSource)
     {
         Check.NotNull(resourceSource);

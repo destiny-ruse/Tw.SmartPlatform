@@ -74,15 +74,23 @@ public sealed class TwStringLocalizer : IStringLocalizer
     /// <param name="name">文本键名</param>
     /// <param name="arguments">格式化参数，传递给 <see cref="string.Format(IFormatProvider, string, object[])"/></param>
     /// <returns>
-    /// 格式化后的本地化字符串；<see cref="LocalizedString.ResourceNotFound"/> 与未格式化版本一致
+    /// 当快照命中时，返回以 <paramref name="arguments"/> 格式化后的本地化字符串，
+    /// <see cref="LocalizedString.ResourceNotFound"/> 为 <see langword="false"/>；
+    /// 未命中时，直接返回键名本身（不执行格式化，避免键名含大括号时抛出 <see cref="FormatException"/>），
+    /// <see cref="LocalizedString.ResourceNotFound"/> 为 <see langword="true"/>
     /// </returns>
     public LocalizedString this[string name, params object[] arguments]
     {
         get
         {
             var baseString = this[name];
+            if (baseString.ResourceNotFound)
+            {
+                return baseString;
+            }
+
             var formatted = string.Format(CultureInfo.CurrentCulture, baseString.Value, arguments);
-            return new LocalizedString(name, formatted, baseString.ResourceNotFound);
+            return new LocalizedString(name, formatted, resourceNotFound: false);
         }
     }
 
@@ -94,6 +102,13 @@ public sealed class TwStringLocalizer : IStringLocalizer
     /// 为 <see langword="false"/> 时仅查询当前文化
     /// </param>
     /// <returns>当前文化范围内的所有 <see cref="LocalizedString"/> 序列</returns>
+    /// <remarks>
+    /// 当 <paramref name="includeParentCultures"/> 为 <see langword="false"/> 时，结果仅限当前文化，
+    /// 与 ASP.NET Core <c>ResourceManagerStringLocalizer</c> 的行为约定一致，
+    /// <strong>不</strong>应用上下文的父级文化或默认文化回退；
+    /// 当为 <see langword="true"/> 时，使用 <see cref="CultureFallback.Expand"/> 展开完整回退链，
+    /// 包含父级文化和默认文化的全部条目。
+    /// </remarks>
     public IEnumerable<LocalizedString> GetAllStrings(bool includeParentCultures)
     {
         var context = _accessor.Current ?? new LocalizationContext(_options.DefaultCulture);
