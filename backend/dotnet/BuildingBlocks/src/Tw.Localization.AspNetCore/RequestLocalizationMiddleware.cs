@@ -46,6 +46,10 @@ public sealed class RequestLocalizationMiddleware
     /// <exception cref="ArgumentNullException">
     /// 当 <paramref name="context"/> 或 <paramref name="accessor"/> 为 <see langword="null"/> 时抛出
     /// </exception>
+    /// <remarks>
+    /// 仅当文化由路由或查询字符串显式切换时写入 Cookie；Cookie 作用域为全站（<c>Path = "/"</c>），
+    /// 有效期约 1 年（<c>MaxAge = 365 天</c>），确保用户语言偏好在后续访问中保持一致。
+    /// </remarks>
     public async Task InvokeAsync(HttpContext context, ICurrentLocalizationContextAccessor accessor)
     {
         Check.NotNull(context);
@@ -72,7 +76,14 @@ public sealed class RequestLocalizationMiddleware
 
         if (result.IsExplicitSwitch)
         {
-            context.Response.Cookies.Append(CultureCookieName, result.CultureName);
+            context.Response.Cookies.Append(
+                CultureCookieName,
+                result.CultureName,
+                new CookieOptions
+                {
+                    Path = "/",
+                    MaxAge = TimeSpan.FromDays(365),
+                });
         }
 
         await _next(context);
