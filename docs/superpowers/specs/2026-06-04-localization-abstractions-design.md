@@ -445,6 +445,10 @@ var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
 
 资源名由类型映射得到，可通过特性或 options 注册别名。找不到 key 时返回 key 本身，并设置 `ResourceNotFound = true`，保持 ASP.NET Core 生态预期。
 
+### 服务生命周期
+
+`AddLocalization(...)` 把 `ICurrentLocalizationContextAccessor`、`IStringLocalizerFactory`（`TwStringLocalizerFactory`）和开放泛型 `IStringLocalizer<>`（`TwStringLocalizer<>`）统一注册为 Scoped。`ICurrentLocalizationContextAccessor` 由请求中间件按请求写入 `Current`，是普通可变属性类而非 `AsyncLocal`，必须为 Scoped。`TwStringLocalizerFactory` 在构造时持有该访问器，因此工厂及其创建的本地化器必须与访问器同为 Scoped；若工厂注册为 Singleton，会捕获根作用域的访问器实例（其 `Current` 永不被请求中间件赋值），导致 `IStringLocalizer` 运行时永远回退到默认 culture、忽略请求语言（俘虏依赖）。核心包注册的 `IStaticTextSnapshot`、`LocalizationOptions` 为 Singleton，被 Scoped 工厂捕获方向安全。
+
 ### 运行时导出 API
 
 核心只提供 `ITextLocalizer.GetAllAsync`。`Tw.Localization.AspNetCore` 可提供 DTO 契约和扩展示例，不强制注册控制器。

@@ -620,6 +620,7 @@ using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 using Tw.AspNetCore.Context;
+using Tw.Context;
 using Xunit;
 
 namespace Tw.Localization.AspNetCore.Tests;
@@ -637,12 +638,19 @@ public class LocalizationServiceCollectionExtensionsTests
             o.SupportedCultures.Add("en-US");
         });
 
+        // 本地化器链以 Scoped 注册，从作用域解析（见 Step 2 生命周期说明）
         using var provider = services.BuildServiceProvider();
-        provider.GetRequiredService<ITextLocalizer>().Should().NotBeNull();
-        provider.GetRequiredService<ICurrentLocalizationContextAccessor>().Should().BeOfType<CurrentLocalizationContextAccessor>();
-        provider.GetRequiredService<IStringLocalizerFactory>().Should().BeOfType<TwStringLocalizerFactory>();
-        provider.GetRequiredService<IStringLocalizer<LocalizationServiceCollectionExtensionsTests>>().Should().NotBeNull();
-        provider.GetRequiredService<HttpContextCancellationTokenProvider>().Should().NotBeNull();
+        using var scope = provider.CreateScope();
+        var sp = scope.ServiceProvider;
+
+        sp.GetRequiredService<ITextLocalizer>().Should().NotBeNull();
+        sp.GetRequiredService<ICurrentLocalizationContextAccessor>().Should().BeOfType<CurrentLocalizationContextAccessor>();
+        sp.GetRequiredService<IStringLocalizerFactory>().Should().BeOfType<TwStringLocalizerFactory>();
+        sp.GetRequiredService<IStringLocalizer<LocalizationServiceCollectionExtensionsTests>>()
+            .Should().BeOfType<TwStringLocalizer<LocalizationServiceCollectionExtensionsTests>>();
+        // 具体 HttpContextCancellationTokenProvider 仅以 ICancellationTokenProvider 接口注册（Replace），
+        // 经接口断言其实现类型可证明 AddWebIntegration() 已接入
+        sp.GetRequiredService<ICancellationTokenProvider>().Should().BeOfType<HttpContextCancellationTokenProvider>();
     }
 }
 ```
@@ -656,9 +664,11 @@ Rules:
 - It calls `services.AddWebIntegration()` from namespace `Tw.AspNetCore`.
 - It calls `global::Tw.Localization.LocalizationServiceCollectionExtensions.AddLocalization(services, configure)`.
 - It registers `ICurrentLocalizationContextAccessor` as scoped.
-- It registers `IStringLocalizerFactory` as singleton.
-- It registers open generic `IStringLocalizer<>` to `TwStringLocalizer<>`.
+- It registers `IStringLocalizerFactory` as scoped.
+- It registers open generic `IStringLocalizer<>` to `TwStringLocalizer<>` as scoped.
 - It does not use `Microsoft.Extensions.DependencyInjection` as the extension class namespace.
+
+生命周期说明（不可改为 Singleton）：`TwStringLocalizerFactory` 在构造时持有 `ICurrentLocalizationContextAccessor`。`ICurrentLocalizationContextAccessor` 是 Scoped（由请求中间件按请求写入 `Current`），因此工厂与开放泛型 `IStringLocalizer<>` 必须同为 Scoped。若工厂注册为 Singleton，会捕获根作用域的访问器实例（其 `Current` 永不被请求中间件赋值），导致 `IStringLocalizer` 运行时永远回退到默认 culture、忽略请求语言（俘虏依赖）。三者统一 Scoped 可消除该问题，并与设计规范"解析结果写入当前 `LocalizationContext` 作用域"一致。`CurrentLocalizationContextAccessor` 是普通可变属性类（非 `AsyncLocal`），不能改为 Singleton 承载请求态。
 
 - [ ] **Step 3: Run registration tests**
 
