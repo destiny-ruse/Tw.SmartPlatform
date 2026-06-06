@@ -63,6 +63,28 @@ internal static class ServiceRegistrationExecutor
     /// 工厂通过 <see cref="ServiceProviderKeyedServiceExtensions.GetRequiredKeyedService(IServiceProvider, Type, object?)"/>
     /// 取得实际实例，再构造泛型条目；生命周期与对应 keyed 实现保持一致。
     /// </summary>
+    /// <remarks>
+    /// <para><strong>生命周期设计依据（防止 captive dependency）</strong></para>
+    /// <para>
+    /// <see cref="KeyedServiceEntry{TService}"/> 条目的注册生命周期刻意等同于所包裹 keyed 服务的生命周期。
+    /// 这样可确保条目内的 <see cref="KeyedServiceEntry{TService}.Service"/> 尊重对应 keyed 注册的生命周期、
+    /// 在当前 scope 内解析、不缓存为单例。若条目被设为更长的生命周期（如 Singleton）去包裹更短生命周期
+    /// （如 Scoped / Transient）的服务，则会造成 captive dependency 问题：Singleton 条目被首次解析后缓存，
+    /// 后续 scope 无法获得新的 Scoped 实例，导致生命周期泄漏。因此此处必须保持两者一致。
+    /// </para>
+    /// <para><strong>工厂内无自依赖风险</strong></para>
+    /// <para>
+    /// 工厂委托内 <see cref="ServiceProviderKeyedServiceExtensions.GetRequiredKeyedService(IServiceProvider, Type, object?)"/>
+    /// 解析的是 keyed 服务类型（即 <c>registration.ServiceType</c>，如 <c>IPaymentProvider</c>），
+    /// 与正在注册的 <c>KeyedServiceEntry&lt;TService&gt;</c> 类型完全不同，不存在自依赖或循环依赖。
+    /// </para>
+    /// <para><strong>反射开销说明</strong></para>
+    /// <para>
+    /// <see cref="Activator.CreateInstance"/> 在解析期构造条目：Singleton 生命周期下仅触发一次反射，
+    /// Transient 生命周期下每次解析都触发一次反射。条目的用途是枚举 key 元数据，通常不在热路径，
+    /// 此处反射开销可接受。
+    /// </para>
+    /// </remarks>
     private static void AddKeyedEntry(IServiceCollection services, ServiceCandidate registration)
     {
         var entryType = typeof(KeyedServiceEntry<>).MakeGenericType(registration.ServiceType);
@@ -70,6 +92,7 @@ internal static class ServiceRegistrationExecutor
             entryType,
             provider =>
             {
+                // 工厂捕获当前迭代 registration 的快照（foreach 迭代变量每轮独立，安全）
                 var service = provider.GetRequiredKeyedService(registration.ServiceType, registration.Key);
                 return Activator.CreateInstance(entryType, registration.Key!, service)!;
             },
