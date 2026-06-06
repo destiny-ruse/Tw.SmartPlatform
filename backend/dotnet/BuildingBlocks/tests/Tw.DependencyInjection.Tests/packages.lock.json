@@ -348,6 +348,13 @@
           "Tw.Core": "[1.0.0, )"
         }
       },
+      "tw.dependencyinjection.tests.fixtures": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.4, )",
+          "Tw.Core": "[1.0.0, )"
+        }
+      },
       "Autofac": {
         "type": "CentralTransitive",
         "requested": "[9.1.0, )",
