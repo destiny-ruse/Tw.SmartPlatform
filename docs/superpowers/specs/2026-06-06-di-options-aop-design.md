@@ -18,7 +18,7 @@
 - 放弃 Middleware 与 gRPC 对统一 `IInterceptor` 的承载适配
 - 保留独立 `Tw.AspNetCore.Grpc` 包边界，但该包不把 gRPC 原生拦截器映射到统一 AOP 管线
 
-本设计放弃“并入现有 `Tw.Core` / `Tw.AspNetCore` 且 Autofac/Castle 直接进入 `Tw.Core` 依赖”的旧决策。最终包边界为：`Tw.Core` 只承载框架无关抽象；`Tw.DependencyInjection` 承载 Autofac、Castle、扫描、规划、注册、Options 与 AOP 执行；`Tw.AspNetCore.Mvc` 承载 MVC Filter 适配；`Tw.AspNetCore.Grpc` 保留 gRPC 专属包边界，不参与本规格的统一 AOP 适配。
+本设计放弃“并入现有 `Tw.Core` / `Tw.AspNetCore` 且 Autofac/Castle 直接进入 `Tw.Core` 依赖”的旧决策。最终包边界与依赖方向为：`Tw.Core` 只承载框架无关抽象；`Tw.DependencyInjection` 引用 `Tw.Core`，承载 Autofac、Castle、扫描、规划、注册、Options 与 AOP 执行；`Tw.AspNetCore` 是跨协议宿主启动包，引用 `Tw.DependencyInjection` 与 `Tw.Core`，承载 webapi、控制台后台服务、gRPC 等入口的通用宿主封装，并把容器接管与服务注册再封装为统一聚合启动入口；`Tw.AspNetCore.Mvc` 引用 `Tw.AspNetCore`，承载仅 web/webapi 适用的共享能力，包含 MVC Filter 适配；`Tw.AspNetCore.Grpc` 引用 `Tw.AspNetCore`，承载 gRPC 专属共享能力与包边界，不参与本规格的统一 AOP 适配。`Tw.AspNetCore` 处于 `experimental` 阶段，本设计按采纳前破坏性整改收窄其职责：原 charter 中“中间件与过滤器”“Web 层模型绑定与结果封装”“Web 层横切关注点”等 web 专属能力（含现有 `HttpContextCancellationTokenProvider`）下移到 `Tw.AspNetCore.Mvc`，host 包只保留跨协议宿主启动与聚合入口。
 
 ### 关键设计决策
 
@@ -30,7 +30,7 @@
 - 每个候选排序键为 `TopologyBaseValue + AssemblyPriority + TypePriority`，`DiscoveryOrder` 只用于稳定诊断输出
 - 同一程序集内通过类型优先级显式区分候选；不同平级程序集通过程序集优先级或类型优先级显式区分候选
 - 两个候选的唯一区分项是拓扑基础值且两程序集之间无依赖可达关系时启动失败
-- `UseAutofac()` 是 Host 聚合入口；服务、Options 与拦截注册入口为 `AddServiceRegistration(IConfiguration)`
+- `UseAutofac()` 与 `AddServiceRegistration(IConfiguration)` 是 `Tw.DependencyInjection` 提供的引擎级启动原语；`Tw.AspNetCore` host 包把二者再封装为统一聚合启动入口，webapi、控制台后台服务与 gRPC 宿主共用，引擎级原语仍保留以便单独测试与按需组合
 - AOP 只承载方法级调用上下文，`IInvocationContext.Method` 保持非空 `MethodInfo`
 - Middleware 与 gRPC 不适配统一 `IInterceptor`；依赖 HTTP pipeline、gRPC metadata 或 streaming 语义的能力使用对应平台原生机制
 - 同步拦截器不做规划阶段静态检测；误用于异步目标时由 `Proceed()` 在运行期抛出明确异常
@@ -47,6 +47,7 @@
 
 - 生命周期标记接口：`ITransientDependency`、`IScopedDependency`、`ISingletonDependency`
 - 注册与暴露特性：`[ServiceRegistration]`、`[DisableServiceRegistration]`、`[ExposeServices]`、`[ExposeKeyedService]`、`[ServicePriority]`、`[TwAssemblyPriority]`
+- keyed 枚举契约：`KeyedServiceEntry<TService>`
 - AOP 契约与基类：`IInterceptor`、`IInvocationContext`、`InterceptorBase`、`SyncInterceptorBase`、`[Intercept]`、`[DisableInterception]`、`[InterceptorOrder]`
 - Options 契约与特性：`IConfigurableOptions`、`IConfigurableOptions<TOptions>`、`[OptionsSection]`、`[OptionsName]`、`[DisableOptionsBinding]`、`[SensitiveConfiguration]`、`[OptionsValidator]`
 
@@ -70,28 +71,42 @@
 
 `Tw.DependencyInjection` 引用 `Tw.Core` 消费其抽象。只有组合根（宿主启动）引用 `Tw.DependencyInjection`，业务服务只依赖 `Tw.Core` 即可参与注册、Options 绑定与拦截。
 
+### Tw.AspNetCore：跨协议宿主启动包
+
+`Tw.AspNetCore` 是既有共享包，本设计将其定位为跨协议宿主启动包。它引用 `Tw.DependencyInjection` 与 `Tw.Core`，承载 webapi、控制台后台服务、gRPC 等入口的通用宿主封装，并把 `UseAutofac()` 与 `AddServiceRegistration(IConfiguration)` 再封装为统一聚合启动入口，使业务宿主只依赖 `Tw.AspNetCore` 即可完成容器接管与服务、Options、拦截注册。
+
+`Tw.AspNetCore` 当前 `stability` 为 `experimental`，未被任何具体微服务引用，处于采纳前阶段，允许直接做破坏性边界整改。本设计按下述方式收窄其职责：
+
+- host 包只保留跨协议宿主启动、聚合入口和与具体协议无关的宿主能力
+- 原 charter 的 web 专属能力（“中间件与过滤器”“Web 层模型绑定与结果封装”“Web 层横切关注点”）下移到 `Tw.AspNetCore.Mvc`
+- 现有 HTTP 专属能力 `HttpContextCancellationTokenProvider` 及其注册扩展从 host 包迁移到 `Tw.AspNetCore.Mvc`；控制台等无 `HttpContext` 的宿主不再被动获得 HTTP 取消令牌能力
+
+整改必须同步更新 `Tw.AspNetCore/package-charter.yaml` 与对应使用文档。
+
 ### Tw.AspNetCore.Mvc：MVC 承载适配
 
-新增 `Tw.AspNetCore.Mvc` 负责 MVC Filter 承载适配，不重新实现 DI 决策。它引用 `Tw.DependencyInjection` 与 `Tw.Core`，消费注册计划和 AOP 元数据，提供 Controller action 与 Razor Page handler 级 Filter 适配。MVC Controller 与 Razor Page 等 Web 边界类型默认不启用 Castle class proxy，改用 MVC/Page Filter。
+新增 `Tw.AspNetCore.Mvc` 负责 web/webapi 专属共享能力与 MVC Filter 承载适配，不重新实现 DI 决策。它引用 `Tw.AspNetCore`，并由此传递获得 `Tw.DependencyInjection` 与 `Tw.Core`，消费注册计划和 AOP 元数据，提供 Controller action 与 Razor Page handler 级 Filter 适配，并承接从 host 包下移的 HTTP 取消令牌、模型绑定、结果封装与 web 横切能力。MVC Controller 与 Razor Page 等 Web 边界类型默认不启用 Castle class proxy，改用 MVC/Page Filter。
 
 `Tw.AspNetCore.Mvc` 不提供 Middleware 适配，不把 Minimal API endpoint 纳入统一 `IInterceptor` 适配。需要 HTTP pipeline 级横切能力时，使用 ASP.NET Core 原生 Middleware。
 
 ### Tw.AspNetCore.Grpc：gRPC 包边界
 
-新增 `Tw.AspNetCore.Grpc` 作为 gRPC 专属共享包边界。它可以引用 `Tw.Core` 与 Grpc.AspNetCore，用于承载 gRPC 专属注册、文档和治理边界；本规格不在该包内实现统一 `IInterceptor` adapter，不把 `Grpc.Core.Interceptors.Interceptor` 映射到 `IInterceptorPipeline`。
+新增 `Tw.AspNetCore.Grpc` 作为 gRPC 专属共享包边界，与 `Tw.AspNetCore.Mvc` 对称。它引用 host 包 `Tw.AspNetCore`（并由此传递获得 `Tw.DependencyInjection` 与 `Tw.Core`）与 Grpc.AspNetCore，用于承载 gRPC 专属注册、文档和治理边界；gRPC 通用入口与宿主启动归 `Tw.AspNetCore` host 包。本规格不在该包内实现统一 `IInterceptor` adapter，不把 `Grpc.Core.Interceptors.Interceptor` 映射到 `IInterceptorPipeline`。
 
 gRPC 横切能力使用 gRPC 原生 interceptor 模型实现。该模型与 `Tw.DynamicProxy.Abstractions.IInterceptor` 分离，避免把 unary、client streaming、server streaming、duplex streaming 与 metadata 语义压入方法级调用上下文。
 
 ### 聚合注册入口
 
-服务应用入口使用聚合注册：
+`Tw.DependencyInjection` 提供引擎级启动原语：
 
 ```csharp
 builder.Host.UseAutofac();
 builder.Services.AddServiceRegistration(builder.Configuration);
 ```
 
-`UseAutofac()` 与 `AddServiceRegistration(IConfiguration)` 由 `Tw.DependencyInjection` 提供。`AddServiceRegistration` 直接从传入的 `IConfiguration` 读取自身扫描与优先级选项，不经过 Options 自动绑定子系统，避免自举循环。功能级注册仍然保留，便于单独测试和按需组合。
+`UseAutofac()` 与 `AddServiceRegistration(IConfiguration)` 由 `Tw.DependencyInjection` 提供。`AddServiceRegistration` 直接从传入的 `IConfiguration` 读取自身扫描与优先级选项，不经过 Options 自动绑定子系统，避免自举循环。
+
+`Tw.AspNetCore` host 包在引擎原语之上提供统一聚合启动入口，业务宿主只依赖 host 包即可完成接管与注册，无需各自编排 `UseAutofac()` 与 `AddServiceRegistration()` 的调用顺序。聚合入口内部调用引擎级原语，不替代它们；引擎级原语和功能级注册仍然保留，便于单独测试和按需组合。host 聚合入口命名遵循 `docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md` 的聚合入口命名要求，表达宿主职责，不使用包名或框架名作为宽泛入口名。
 
 ### Charter 同步
 
@@ -99,10 +114,11 @@ builder.Services.AddServiceRegistration(builder.Configuration);
 
 - 新增 `Tw.DependencyInjection/package-charter.yaml`，声明引擎包职责、公开能力与依赖边界
 - 扩展 `Tw.Core/package-charter.yaml`，把抽象命名空间扩展进公开能力，并在 `dependency_rules` 明确允许 Microsoft.Extensions.*.Abstractions 与 Options 轻量契约包、禁止 Autofac 与 Castle
-- 新增 `Tw.AspNetCore.Mvc/package-charter.yaml`，声明 MVC Filter 承载职责并允许依赖 `Tw.DependencyInjection`
-- 新增 `Tw.AspNetCore.Grpc/package-charter.yaml`，声明 gRPC 专属包边界、禁止声明统一 AOP adapter 能力
+- 修订现存 `Tw.AspNetCore/package-charter.yaml`，把职责收窄为跨协议宿主启动与聚合入口，从 `in_scope` 移除“中间件与过滤器”“Web 层模型绑定与结果封装”“Web 层横切关注点”，在 `out_of_scope` 声明这些 web 专属能力归 `Tw.AspNetCore.Mvc`，并允许依赖 `Tw.DependencyInjection`
+- 新增 `Tw.AspNetCore.Mvc/package-charter.yaml`，声明 web/webapi 专属能力与 MVC Filter 承载职责并允许依赖 `Tw.AspNetCore`
+- 新增 `Tw.AspNetCore.Grpc/package-charter.yaml`，声明 gRPC 专属包边界、允许依赖 `Tw.AspNetCore`、禁止声明统一 AOP adapter 能力
 
-各包 `public_capabilities` 命名空间互斥，不出现跨包命名空间重叠。
+各包 `public_capabilities` 命名空间互斥，不出现跨包命名空间重叠：host 包对外能力收敛到宿主启动命名空间，`Tw.AspNetCore.Mvc` 与 `Tw.AspNetCore.Grpc` 各自使用独立子命名空间，host 包不再保留与二者重叠的 web 或 gRPC 专属命名空间。
 
 ## DI 自动注册
 
@@ -187,7 +203,25 @@ public sealed class CheckoutService : IScopedDependency
 }
 ```
 
-引擎在注册同一契约的各 keyed 实现时，额外把它们登记为一个可枚举集合（携带 key 元数据），支撑“枚举某契约全部 keyed 实现”的消费场景；按单个 key 解析走原生 keyed API。
+按单个 key 解析复用 .NET 原生 `[FromKeyedServices("key")]`。枚举某契约的全部 keyed 实现使用显式契约，不复用非 keyed `IEnumerable<TService>`，也不依赖运行时是否支持 `KeyedService.AnyKey` 的容器差异。
+
+引擎为每个存在 keyed 注册的契约额外登记带 key 元数据的可枚举条目，消费方注入 `IEnumerable<KeyedServiceEntry<TService>>` 即可遍历该契约的全部 keyed 实现及其 key：
+
+```csharp
+namespace Tw.DependencyInjection.Abstractions;
+
+/// <summary>携带 key 元数据的 keyed 服务条目</summary>
+public readonly record struct KeyedServiceEntry<TService>(object Key, TService Service)
+    where TService : notnull;
+
+public sealed class PaymentRouter(IEnumerable<KeyedServiceEntry<IPaymentProvider>> providers)
+    : IScopedDependency
+{
+    private readonly IReadOnlyList<KeyedServiceEntry<IPaymentProvider>> _providers = providers.ToList();
+}
+```
+
+`KeyedServiceEntry<TService>` 定义在 `Tw.DependencyInjection.Abstractions`（归 `Tw.Core`），使业务服务无需引用引擎包即可枚举。每个条目的 `Service` 尊重对应 keyed 注册的生命周期，枚举在当前 scope 内解析，不缓存为单例。`Key` 即注册时声明的稳定 key。
 
 非 keyed 单实现注册与 keyed 注册可以同时存在。key 为空时启动失败。同一 key 指向多个候选且无法通过优先级仲裁出唯一实现时启动失败。`[FromKeyedServices]` 指向未注册的 key 时启动失败。
 
@@ -418,6 +452,8 @@ Autofac 执行阶段根据注册计划启用 Castle DynamicProxy。
 
 MVC Filter adapter 只处理 MVC 可定位到方法信息和参数字典的调用。Middleware、Minimal API endpoint 与 gRPC 方法不进入该 adapter。
 
+adapter 以 `ActionDescriptor.Parameters` 的声明顺序建立稳定的「位置 ↔ 参数名」映射：`IInvocationContext.Method` 取自 action 对应 `MethodInfo`，`Arguments` 按该顺序物化自 `ActionExecutingContext.ActionArguments`，`ArgumentsByName` 是其只读按名视图。拦截器在 `Proceed`/`ProceedAsync` 前改写 `Arguments[i]` 后，adapter 用同一映射把元素回写到 `ActionArguments[参数名]`，保证位置数组改写对 MVC action 生效。无法按名定位到 action 参数的调用不进入该 adapter，进入诊断报告。
+
 ### gRPC 不接入统一 AOP
 
 `Tw.AspNetCore.Grpc` 不提供 `IInterceptorPipeline` adapter。gRPC 服务需要横切能力时，直接实现或注册 gRPC 原生 interceptor。
@@ -486,7 +522,7 @@ MVC Filter adapter 只处理 MVC 可定位到方法信息和参数字典的调�
 
 ## 实现分期
 
-本设计覆盖 DI 自动注册、Options 自动装载、AOP 抽象、MVC 承载和 gRPC 包边界。它们共享程序集发现与拓扑基础设施，统一在一份设计内描述，但实现必须按依赖顺序切成独立可交付、可单独测试的阶段，每个阶段对应一份独立实现计划。不得在单一计划内一次性实现全部子系统。
+本设计覆盖 DI 自动注册、Options 自动装载、AOP 抽象、宿主聚合、MVC 承载和 gRPC 包边界。它们共享程序集发现与拓扑基础设施，统一在一份设计内描述，但实现必须按依赖顺序切成独立可交付、可单独测试的阶段，每个阶段对应一份独立实现计划。不得在单一计划内一次性实现全部子系统。
 
 | 阶段 | 范围 | 产出包 | 依赖 |
 | --- | --- | --- | --- |
@@ -495,10 +531,11 @@ MVC Filter adapter 只处理 MVC 可定位到方法信息和参数字典的调�
 | P2 DI 注册 | 参与注册判定、生命周期、默认与显式暴露、keyed service、open generic、非 keyed 单实现仲裁、平级失败规则、`AddServiceRegistration()` | `Tw.DependencyInjection` | P1 |
 | P3 Options 装载 | 发现、路径推导、绑定、校验、`PostConfigure`、敏感标记、命名 Options、`OptionsBindingReport` | `Tw.DependencyInjection` | P1 |
 | P4 AOP 承载 | `IInterceptorPipeline`、`IInterceptorSelector`、特性拦截、Castle interface/class proxy、`InterceptionReport` | `Tw.DependencyInjection` | P0、P2 |
-| P5 MVC 承载 | MVC Filter 复用同一 pipeline，MVC 边界类型避开 class proxy；新增 `Tw.AspNetCore.Mvc` 包与 charter | `Tw.AspNetCore.Mvc` | P4 |
-| P6 gRPC 包边界 | 新增 `Tw.AspNetCore.Grpc` 包、charter 与使用文档；明确 gRPC 不接入统一 `IInterceptorPipeline` | `Tw.AspNetCore.Grpc` | P0 |
+| P5 宿主聚合 | `Tw.AspNetCore` host 包引用 `Tw.DependencyInjection`，把 `UseAutofac()` 与 `AddServiceRegistration()` 再封装为统一聚合启动入口；更新 host 包使用文档 | `Tw.AspNetCore` | P2、P3 |
+| P6 MVC 承载 | MVC Filter 复用同一 pipeline，MVC 边界类型避开 class proxy；新增 `Tw.AspNetCore.Mvc` 包与 charter；把 `HttpContextCancellationTokenProvider` 及 web 横切、模型绑定、结果封装能力从 host 包迁入；收窄 `Tw.AspNetCore` charter | `Tw.AspNetCore.Mvc` | P4、P5 |
+| P7 gRPC 包边界 | 新增 `Tw.AspNetCore.Grpc` 包、charter 与使用文档；明确 gRPC 不接入统一 `IInterceptorPipeline` | `Tw.AspNetCore.Grpc` | P5 |
 
-P3 只依赖 P1 的扫描计划，不依赖 P2 的注册仲裁，可与 P2 并行。P5 依赖 P4。P6 只建立 gRPC 包边界和文档，不依赖 P4。各阶段计划必须包含本阶段对应的使用文档与索引联动，不把全部文档堆到最后一个阶段。
+P3 只依赖 P1 的扫描计划，不依赖 P2 的注册仲裁，可与 P2 并行。P5 依赖 P2、P3 的注册与 Options 装载入口。P6 依赖 P4 的 AOP pipeline 与 P5 的 host 聚合，并在本阶段完成 host 包 web 专属能力下移与 charter 收窄，避免 charter 声明与代码归属不一致。P7 依赖 P5 的 host 包，只建立 gRPC 包边界和文档，不依赖 P4。各阶段计划必须包含本阶段对应的使用文档与索引联动，不把全部文档堆到最后一个阶段。
 
 ## 测试策略
 
@@ -511,8 +548,12 @@ P3 只依赖 P1 的扫描计划，不依赖 P2 的注册仲裁，可与 P2 并�
 - 最终优先级计算，包括拓扑基础值、程序集优先级、类型优先级
 - 非 keyed 单实现仲裁、superseded 候选记录、优先级相等失败、平级无依赖边失败
 - keyed 多 key 注册与同 key 单实现仲裁
+- `IEnumerable<KeyedServiceEntry<TService>>` 枚举返回某契约全部 keyed 实现，携带正确 key 且尊重各实现生命周期
+- `[FromKeyedServices]` 指向未注册 key 时启动失败
 - `[ServiceRegistration]` 不存在替换属性，规划器不存在显式替换分支
 - Options 路径推导、显式路径、命名 Options、DataAnnotations、验证器、敏感标记
+- `IConfigurableOptions<TOptions>.PostConfigure` 通过闭包获得 `IConfiguration`，补默认值与组合校验生效，且不解析服务
+- 泛型 Options 契约 `TOptions` 不等于自身类型时启动失败
 - `IInterceptorPipeline` 对同步方法、`Task`、`Task<T>`、`ValueTask`、`ValueTask<T>` 的调用行为
 - `Proceed()` 命中异步目标时抛出明确异常
 
@@ -523,8 +564,10 @@ P3 只依赖 P1 的扫描计划，不依赖 P2 的注册仲裁，可与 P2 并�
 - `UseAutofac()` 接管默认容器
 - 非 keyed 单实现服务、keyed service、open generic 可以解析
 - 非 keyed 同契约多候选只注册仲裁胜者
+- 同契约多 keyed 实现可通过 `IEnumerable<KeyedServiceEntry<TService>>` 枚举，并按单 key 经 `[FromKeyedServices]` 解析
+- `Tw.AspNetCore` host 聚合入口在 webapi 宿主完成容器接管与服务、Options、拦截注册
 - Castle interface proxy 和 class proxy 执行同一套 `Tw.DynamicProxy.Abstractions.IInterceptor`
-- `Tw.AspNetCore.Mvc` 的 MVC Filter 执行同一套 `IInterceptorPipeline`
+- `Tw.AspNetCore.Mvc` 的 MVC Filter 执行同一套 `IInterceptorPipeline`，拦截器改写 `Arguments` 对 action 生效
 - `Tw.AspNetCore.Grpc` 不注册统一 AOP adapter
 - 诊断报告在真实 Host 中可读取且不泄露敏感值
 
@@ -536,8 +579,9 @@ P3 只依赖 P1 的扫描计划，不依赖 P2 的注册仲裁，可与 P2 并�
 
 - 新增 `backend/dotnet/BuildingBlocks/src/Tw.DependencyInjection/package-charter.yaml`，声明引擎包职责、公开能力与依赖边界
 - 扩展 `backend/dotnet/BuildingBlocks/src/Tw.Core/package-charter.yaml` 的抽象公开能力与依赖边界
-- 新增 `backend/dotnet/BuildingBlocks/src/Tw.AspNetCore.Mvc/package-charter.yaml`，声明 MVC Filter 承载职责并允许依赖 `Tw.DependencyInjection`
-- 新增 `backend/dotnet/BuildingBlocks/src/Tw.AspNetCore.Grpc/package-charter.yaml`，声明 gRPC 专属包边界并明确不承载统一 AOP adapter
+- 修订 `backend/dotnet/BuildingBlocks/src/Tw.AspNetCore/package-charter.yaml`，把职责收窄为跨协议宿主启动与聚合入口，移除 web 专属 `in_scope`、在 `out_of_scope` 声明 web 能力归 `Tw.AspNetCore.Mvc`、允许依赖 `Tw.DependencyInjection`
+- 新增 `backend/dotnet/BuildingBlocks/src/Tw.AspNetCore.Mvc/package-charter.yaml`，声明 web/webapi 专属能力与 MVC Filter 承载职责并允许依赖 `Tw.AspNetCore`
+- 新增 `backend/dotnet/BuildingBlocks/src/Tw.AspNetCore.Grpc/package-charter.yaml`，声明 gRPC 专属包边界、允许依赖 `Tw.AspNetCore`、明确不承载统一 AOP adapter
 
 ### 使用文档
 
@@ -546,6 +590,7 @@ P3 只依赖 P1 的扫描计划，不依赖 P2 的注册仲裁，可与 P2 并�
 - `docs/shared-packages/dotnet/Tw.DependencyInjection/service-registration.md`：DI 自动注册
 - `docs/shared-packages/dotnet/Tw.DependencyInjection/options-binding.md`：配置与 Options 自动装载
 - `docs/shared-packages/dotnet/Tw.DependencyInjection/dynamic-proxy-interception.md`：Castle AOP 拦截
+- `docs/shared-packages/dotnet/Tw.AspNetCore/host-startup.md`：跨协议宿主启动与聚合入口
 - `docs/shared-packages/dotnet/Tw.AspNetCore.Mvc/mvc-interception.md`：MVC Filter 承载适配
 - `docs/shared-packages/dotnet/Tw.AspNetCore.Grpc/grpc-integration.md`：gRPC 包边界与原生 interceptor 使用边界
 
@@ -559,6 +604,7 @@ P3 只依赖 P1 的扫描计划，不依赖 P2 的注册仲裁，可与 P2 并�
 - `docs/shared-packages/dotnet/README.md`
 - 新增 `docs/shared-packages/dotnet/Tw.DependencyInjection/README.md`
 - `docs/shared-packages/dotnet/Tw.Core/README.md`
+- `docs/shared-packages/dotnet/Tw.AspNetCore/README.md`
 - 新增 `docs/shared-packages/dotnet/Tw.AspNetCore.Mvc/README.md`
 - 新增 `docs/shared-packages/dotnet/Tw.AspNetCore.Grpc/README.md`
 
