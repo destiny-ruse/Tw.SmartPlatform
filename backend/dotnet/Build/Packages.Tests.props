@@ -1,0 +1,15 @@
+<!-- Purpose: central package versions for unit and integration test projects. -->
+<Project>
+  <ItemGroup>
+    <!-- Test framework -->
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+
+    <!-- Assertions -->
+    <PackageVersion Include="FluentAssertions" Version="8.9.0" />
+
+    <!-- Coverage -->
+    <PackageVersion Include="coverlet.collector" Version="10.0.0" />
+  </ItemGroup>
+</Project>

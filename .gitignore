@@ -16,6 +16,12 @@ dist/
 build/
 coverage/
 
+# Exception: backend/dotnet/Build holds tracked central package-version props,
+# not build output. On case-insensitive filesystems the build/ rule above would
+# otherwise ignore it.
+!backend/dotnet/Build/
+!backend/dotnet/Build/**
+
 # Package and language caches
 node_modules/
 __pycache__/
