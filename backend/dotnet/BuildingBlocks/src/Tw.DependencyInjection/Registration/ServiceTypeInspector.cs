@@ -28,6 +28,8 @@ internal static class ServiceTypeInspector
             return true;
         }
 
+        // 排除"已部分构造但仍含未绑定泛型参数的类型"；
+        // 泛型定义本身（如 Repository<>）由暴露解析按 open generic 处理，不在此跳过。
         if (type.IsGenericType && !type.IsGenericTypeDefinition && type.ContainsGenericParameters)
         {
             reason = "未闭合且非泛型定义的类型不作为普通服务实现注册";
@@ -70,6 +72,20 @@ internal static class ServiceTypeInspector
     /// <param name="lifetime">解析成功时的生命周期；失败时为 <see langword="default"/></param>
     /// <param name="failureReason">解析失败时的原因描述；成功时为 <see langword="null"/></param>
     /// <returns>解析成功时返回 <see langword="true"/></returns>
+    /// <remarks>
+    /// <para>
+    /// 本方法以 <see langword="bool"/> 返回值作为成功/失败的唯一协议门控。
+    /// 当方法返回 <see langword="false"/> 时，<paramref name="lifetime"/> 被赋值为
+    /// <see langword="default"/>（即 <c>default(DependencyLifetime)</c>），
+    /// 这仅为满足 C# <see langword="out"/> 参数的语言要求，该值无任何业务语义。
+    /// </para>
+    /// <para>
+    /// 调用方在返回 <see langword="false"/> 时不得读取或依赖 <paramref name="lifetime"/> 的值，
+    /// 应仅依据返回值与 <paramref name="failureReason"/> 判断解析结果。
+    /// <c>DependencyLifetime</c> 抽象文档禁止将 <c>default(DependencyLifetime)</c> 当作
+    /// "未设置"哨兵；本方法未将 <see langword="default"/> 用作语义哨兵。
+    /// </para>
+    /// </remarks>
     public static bool TryResolveLifetime(
         Type type,
         out DependencyLifetime lifetime,

@@ -21,6 +21,12 @@ public class DependencyLifetimeResolverTests
     private sealed class CacheOptions : IConfigurableOptions;
     private abstract class AbstractService : IScopedDependency;
 
+    private sealed class PlainService;
+    private interface IPlainContract;
+
+    [DisableServiceRegistration]
+    private sealed class DisabledService : IScopedDependency;
+
     [Fact]
     public void ResolveLifetime_UsesMarkerInterface()
     {
@@ -73,5 +79,63 @@ public class DependencyLifetimeResolverTests
     public void Mapper_MapsToMicrosoftServiceLifetime(DependencyLifetime source, ServiceLifetime expected)
     {
         DependencyLifetimeMapper.Map(source).Should().Be(expected);
+    }
+
+    // 3a. ResolveLifetime_AttributeOverridesMarker 补充 reason 断言
+    [Fact]
+    public void ResolveLifetime_AttributeOverridesMarker_ReasonIsNull()
+    {
+        ServiceTypeInspector.TryResolveLifetime(typeof(AttributeLifetimeService), out var lifetime, out var reason)
+            .Should().BeTrue();
+        lifetime.Should().Be(DependencyLifetime.Singleton);
+        reason.Should().BeNull();
+    }
+
+    // 3b. IsRegistrationParticipant 覆盖
+    [Fact]
+    public void IsRegistrationParticipant_ReturnsTrue_WhenMarkerInterface()
+    {
+        ServiceTypeInspector.IsRegistrationParticipant(typeof(ScopedService))
+            .Should().BeTrue();
+    }
+
+    [Fact]
+    public void IsRegistrationParticipant_ReturnsTrue_WhenAttributeOnly()
+    {
+        ServiceTypeInspector.IsRegistrationParticipant(typeof(NoLifetimeService))
+            .Should().BeTrue();
+    }
+
+    [Fact]
+    public void IsRegistrationParticipant_ReturnsFalse_WhenPlainType()
+    {
+        ServiceTypeInspector.IsRegistrationParticipant(typeof(PlainService))
+            .Should().BeFalse();
+    }
+
+    // 3c. ShouldSkipOrdinaryRegistration 接口分支
+    [Fact]
+    public void ShouldSkipOrdinaryRegistration_ReturnsTrue_WhenInterface()
+    {
+        ServiceTypeInspector.ShouldSkipOrdinaryRegistration(typeof(IPlainContract), out var reason)
+            .Should().BeTrue();
+        reason.Should().Contain("接口");
+    }
+
+    // 3d. ShouldSkipOrdinaryRegistration Disable 分支
+    [Fact]
+    public void ShouldSkipOrdinaryRegistration_ReturnsTrue_WhenDisabled()
+    {
+        ServiceTypeInspector.ShouldSkipOrdinaryRegistration(typeof(DisabledService), out var reason)
+            .Should().BeTrue();
+        reason.Should().Contain("DisableServiceRegistration");
+    }
+
+    // 3e. DependencyLifetimeMapper.Map 异常路径
+    [Fact]
+    public void Mapper_Map_Throws_WhenUnknownLifetime()
+    {
+        var act = () => DependencyLifetimeMapper.Map((DependencyLifetime)99);
+        act.Should().Throw<ArgumentOutOfRangeException>();
     }
 }
