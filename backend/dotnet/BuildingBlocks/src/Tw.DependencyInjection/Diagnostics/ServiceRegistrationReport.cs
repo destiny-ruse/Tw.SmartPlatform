@@ -4,8 +4,13 @@ namespace Tw.DependencyInjection.Diagnostics;
 /// 服务注册规划诊断报告
 /// </summary>
 /// <remarks>
-/// P1 仅填充程序集扫描与拓扑段落；候选服务、最终注册、仲裁结果、keyed 注册、
-/// 跳过与冲突原因等段落由后续阶段（P2 起）在本类型上扩展。报告只承载摘要元数据，不输出敏感配置值。
+/// 报告分为两组段落：程序集扫描与拓扑段落（<see cref="ScannedAssemblies"/>、
+/// <see cref="ExcludedAssemblies"/>、<see cref="Topology"/>）由 P1 扫描阶段填充；
+/// 候选、最终注册、仲裁、跳过与冲突段落（<see cref="Candidates"/>、
+/// <see cref="Registrations"/>、<see cref="SupersededCandidates"/>、
+/// <see cref="SkippedTypes"/>、<see cref="Conflicts"/>）已在本类型定义，
+/// 由注册规划器（Task 6）在运行时填充；P1 阶段这些段落为空集合。
+/// 报告只承载摘要元数据，不输出敏感配置值。
 /// </remarks>
 public sealed class ServiceRegistrationReport
 {
@@ -67,18 +72,18 @@ public sealed class ServiceRegistrationReport
     /// <summary>程序集拓扑层级</summary>
     public IReadOnlyList<AssemblyTopologyEntry> Topology { get; }
 
-    /// <summary>服务注册候选</summary>
+    /// <summary>服务注册候选列表；由注册规划器（Task 6）填充，P1 阶段为空集合</summary>
     public IReadOnlyList<ServiceCandidateDiagnostic> Candidates { get; }
 
-    /// <summary>最终注册项</summary>
+    /// <summary>最终写入容器的服务注册列表；由注册规划器（Task 6）填充，P1 阶段为空集合</summary>
     public IReadOnlyList<PlannedServiceRegistrationDiagnostic> Registrations { get; }
 
-    /// <summary>被仲裁淘汰的候选</summary>
+    /// <summary>被单实现仲裁淘汰的候选列表；由注册规划器（Task 6）填充，P1 阶段为空集合</summary>
     public IReadOnlyList<SupersededServiceCandidateDiagnostic> SupersededCandidates { get; }
 
-    /// <summary>扫描到但跳过的类型</summary>
+    /// <summary>扫描到但未参与普通服务注册的类型列表；由注册规划器（Task 6）填充，P1 阶段为空集合</summary>
     public IReadOnlyList<SkippedServiceTypeDiagnostic> SkippedTypes { get; }
 
-    /// <summary>规划阶段冲突</summary>
+    /// <summary>规划阶段检测到的冲突列表；由注册规划器（Task 6）填充，P1 阶段为空集合</summary>
     public IReadOnlyList<ServiceConflictDiagnostic> Conflicts { get; }
 }

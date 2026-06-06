@@ -9,7 +9,10 @@ namespace Tw.DependencyInjection.Diagnostics;
 /// <param name="Lifetime">服务生命周期</param>
 /// <param name="AssemblyName">实现类型所在程序集名</param>
 /// <param name="FinalPriority">仲裁后的最终优先级</param>
-/// <param name="Status">候选状态，如 selected、superseded、skipped 等</param>
+/// <param name="Status">
+/// 候选状态；合法值为 <c>selected</c>、<c>superseded</c>、<c>skipped</c>，大小写敏感，
+/// 由注册规划器统一写入，不接受其他字符串。
+/// </param>
 public sealed record ServiceCandidateDiagnostic(
     string ImplementationTypeName,
     string ServiceTypeName,
