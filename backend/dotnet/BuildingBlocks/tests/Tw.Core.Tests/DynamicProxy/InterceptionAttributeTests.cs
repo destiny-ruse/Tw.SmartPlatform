@@ -7,7 +7,10 @@ namespace Tw.Core.Tests.DynamicProxy;
 
 public class InterceptionAttributeTests
 {
-    private sealed class AuditInterceptor;
+    private sealed class AuditInterceptor : IInterceptor
+    {
+        public ValueTask InterceptAsync(IInvocationContext context) => ValueTask.CompletedTask;
+    }
 
     [Fact]
     public void IInterceptor_LivesIn_AbstractionsNamespace()

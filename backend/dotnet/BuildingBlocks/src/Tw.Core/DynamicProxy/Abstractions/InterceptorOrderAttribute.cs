@@ -3,7 +3,7 @@ namespace Tw.DynamicProxy.Abstractions;
 /// <summary>
 /// 声明拦截器在调用链中的顺序
 /// </summary>
-/// <remarks>顺序相同按类型名称稳定排序。</remarks>
+/// <remarks>引擎实现约定：顺序相同时按拦截器类型名称稳定排序。</remarks>
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 public sealed class InterceptorOrderAttribute : Attribute
 {
