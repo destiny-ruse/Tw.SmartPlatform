@@ -12,7 +12,10 @@ internal static class ServiceRegistrationPlanner
     /// <summary>
     /// 执行注册规划，返回包含最终候选列表与诊断报告的 <see cref="ServiceRegistrationPlan"/>
     /// </summary>
-    /// <param name="assemblies">参与规划的程序集列表（已按拓扑序排列，被依赖在前）</param>
+    /// <param name="assemblies">
+    /// 参与规划的程序集列表（已按拓扑序排列，被依赖在前）。
+    /// 拓扑优先级权重由 <paramref name="topologyLevelsByAssemblyName"/> 决定，本参数顺序仅影响 DiscoveryOrder 的相对先后。
+    /// </param>
     /// <param name="typesByAssemblyName">各程序集应参与规划的类型集合，key 为程序集名</param>
     /// <param name="topologyLevelsByAssemblyName">各程序集的拓扑层级，key 为程序集名；缺失时默认 0</param>
     /// <param name="reachabilityGraph">程序集有向可达性图，用于平级仲裁失败检测</param>
@@ -56,7 +59,8 @@ internal static class ServiceRegistrationPlanner
 
             foreach (var type in sortedTypes)
             {
-                // 每个 type 占一个 discoveryOrder，先取后自增，无论是否成为候选
+                // 每个被遍历的 type（含未参与/跳过者）都消耗一个序号，故 DiscoveryOrder 是"稳定相对序"，
+                // 不等于 candidates 列表下标。
                 int thisDiscoveryOrder = discoveryOrder++;
 
                 // 未声明参与注册的类型直接静默跳过（不记 skipped）
@@ -122,8 +126,16 @@ internal static class ServiceRegistrationPlanner
 
         // ── 阶段三：构造诊断 ──────────────────────────────────────────────────
 
-        // 构建 winner 集合的快速查找：(ServiceType, Key, ImplementationType) → winner
-        var winnerLookup = registrations.ToHashSet();
+        // I-1：winner 判定改用引用相等——ServiceCandidate 是 record（值相等），若两个不同候选恰好
+        // 所有字段值相同（极端情况），ToHashSet() 会去重导致误判。引用相等确保集合中每个元素
+        // 对应唯一的对象实例，彻底消除该潜在误判。
+        var winnerLookup = registrations.ToHashSet(ReferenceEqualityComparer.Instance);
+
+        // M-1：预先构建 (ServiceType, Key) → winner 的 O(1) 字典，避免后续 supersededDiagnostics
+        // 循环中对每个落选候选都执行 O(n) 的 First() 线性查找。
+        var winnerByKey = registrations.ToDictionary(
+            w => (w.ServiceType, w.Key),
+            w => w);
 
         // 候选诊断：按 DiscoveryOrder 再按 ServiceType 全名排序，保证稳定输出
         var candidateDiagnostics = candidates
@@ -131,7 +143,9 @@ internal static class ServiceRegistrationPlanner
             .ThenBy(c => c.ServiceType.FullName ?? c.ServiceType.Name, StringComparer.Ordinal)
             .Select(c =>
             {
-                // 判断该候选是否为其分组的 winner
+                // 判断该候选是否为其分组的 winner；基于引用相等，与 winnerLookup 构造方式一致
+                // 本列表 Status 取值仅 "selected"/"superseded"；"skipped" 类型走 SkippedTypes 段落，
+                // 不会出现在 Candidates 的 Status 中。
                 var status = winnerLookup.Contains(c) ? "selected" : "superseded";
                 return new ServiceCandidateDiagnostic(
                     ImplementationTypeName: c.ImplementationType.FullName ?? c.ImplementationType.Name,
@@ -154,14 +168,12 @@ internal static class ServiceRegistrationPlanner
                 FinalPriority: w.FinalPriority))
             .ToList();
 
-        // 落选候选诊断：需要同时找到对应分组的 winner
+        // 落选候选诊断：使用预建字典做 O(1) winner 查找
         var supersededDiagnostics = new List<SupersededServiceCandidateDiagnostic>();
         foreach (var s in supersededCandidates)
         {
-            // 在 registrations 中找同一 (ServiceType, Key) 分组的 winner
-            var winner = registrations.First(w =>
-                w.ServiceType == s.ServiceType &&
-                Equals(w.Key, s.Key));
+            // M-1：O(1) 查找，替代原来的 registrations.First(...) 线性扫描
+            var winner = winnerByKey[(s.ServiceType, s.Key)];
 
             supersededDiagnostics.Add(new SupersededServiceCandidateDiagnostic(
                 ServiceTypeName: s.ServiceType.FullName ?? s.ServiceType.Name,
@@ -234,8 +246,11 @@ internal static class ServiceRegistrationPlanner
 
         if (onlyTopologyDiffers && assembliesArePeers)
         {
+            // M-4：消息追加冲突双方的 ImplementationType 与程序集名，便于快速定位
             throw new Tw.DependencyInjection.ServiceRegistrationException(
-                $"服务契约 {winner.ServiceType.FullName} 的候选位于平级程序集，必须通过程序集或类型优先级显式仲裁");
+                $"服务契约 {winner.ServiceType.FullName} 的候选位于平级程序集，必须通过程序集或类型优先级显式仲裁：" +
+                $"{winner.ImplementationType.FullName}（{winner.AssemblyName}）与 " +
+                $"{runnerUp.ImplementationType.FullName}（{runnerUp.AssemblyName}）");
         }
 
         // ── 失败条件 2：最终优先级相同，无法仲裁 ─────────────────────────────
@@ -244,11 +259,17 @@ internal static class ServiceRegistrationPlanner
         // 不会被上方平级失败条件（onlyTopologyDiffers 为 false）误拦截。
         if (winner.FinalPriority == runnerUp.FinalPriority)
         {
+            // M-4：消息追加冲突双方的 ImplementationType 与程序集名，便于快速定位
             throw new Tw.DependencyInjection.ServiceRegistrationException(
-                $"服务契约 {winner.ServiceType.FullName} 的候选最终优先级相同，无法仲裁唯一实现");
+                $"服务契约 {winner.ServiceType.FullName} 的候选最终优先级相同，无法仲裁唯一实现：" +
+                $"{winner.ImplementationType.FullName}（{winner.AssemblyName}）与 " +
+                $"{runnerUp.ImplementationType.FullName}（{runnerUp.AssemblyName}）");
         }
 
-        // winner 合法产生，其余均为落选候选
+        // 单实现仲裁只需保证唯一胜者可确定。当 winner 的 FinalPriority 严格高于 runnerUp 时，
+        // 胜者唯一，runnerUp 及更低位次候选之间即便彼此平级也不影响胜者归属，按设计记为
+        // superseded 而不报错（符合设计 spec：最高者成为唯一实现，其余记入诊断）。
+        // 失败仅发生在 winner 与最接近竞争者 runnerUp 无法区分时。
         var superseded = ordered.Skip(1).ToList();
         return (winner, superseded);
     }
