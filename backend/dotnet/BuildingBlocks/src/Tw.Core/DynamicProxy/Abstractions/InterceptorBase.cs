@@ -3,6 +3,9 @@ namespace Tw.DynamicProxy.Abstractions;
 /// <summary>
 /// 异步拦截器基类，按 BeforeAsync / ProceedAsync / OnExceptionAsync / AfterAsync 编排
 /// </summary>
+/// <remarks>
+/// <see cref="BeforeAsync"/> 在保护区之外执行：若它抛出异常，目标方法不会被调用，<see cref="OnExceptionAsync"/> 与 <see cref="AfterAsync"/> 也不会执行，异常直接向上传播。
+/// </remarks>
 public abstract class InterceptorBase : IInterceptor
 {
     /// <inheritdoc />

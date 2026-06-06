@@ -30,6 +30,26 @@ public class InterceptorBaseTests
         }
     }
 
+    private sealed class ThrowingBeforeInterceptor : InterceptorBase
+    {
+        public List<string> Calls { get; } = [];
+
+        protected override ValueTask BeforeAsync(IInvocationContext context) =>
+            throw new InvalidOperationException("before-boom");
+
+        protected override ValueTask AfterAsync(IInvocationContext context)
+        {
+            Calls.Add("after");
+            return ValueTask.CompletedTask;
+        }
+
+        protected override ValueTask OnExceptionAsync(IInvocationContext context, Exception exception)
+        {
+            Calls.Add("onexception");
+            return ValueTask.CompletedTask;
+        }
+    }
+
     [Fact]
     public async Task HappyPath_RunsBeforeProceedAfter_WithoutOnException()
     {
@@ -53,5 +73,19 @@ public class InterceptorBaseTests
 
         await act.Should().ThrowAsync<InvalidOperationException>().WithMessage("boom");
         sut.Calls.Should().Equal("before", "onexception", "after");
+        context.ProceedCount.Should().Be(1);
+    }
+
+    [Fact]
+    public async Task BeforeThrows_DoesNotProceedOrRunAfterOrOnException_AndPropagates()
+    {
+        var sut = new ThrowingBeforeInterceptor();
+        var context = new FakeInvocationContext();
+
+        var act = async () => await sut.InterceptAsync(context);
+
+        await act.Should().ThrowAsync<InvalidOperationException>().WithMessage("before-boom");
+        context.ProceedCount.Should().Be(0);
+        sut.Calls.Should().BeEmpty();
     }
 }
