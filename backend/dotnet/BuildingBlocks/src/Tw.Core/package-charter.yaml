@@ -21,9 +21,11 @@ public_capabilities:
   - Tw.Context
   - Tw.Check
   - Tw.Collections
-  - Tw.Core.Configuration
+  - Tw.Configuration.Abstractions
+  - Tw.DependencyInjection.Abstractions
+  - Tw.DynamicProxy.Abstractions
   - Tw.Core.Primitives
-  - Tw.Core.Reflection
+  - Tw.Reflection
   - Tw.Core.Security.Cryptography
   - Tw.Exceptions
   - Tw.Extensions
@@ -32,4 +34,9 @@ dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"
     - "Microsoft.EntityFrameworkCore*"
-  allow: []
+    - "Autofac*"
+    - "Castle.*"
+  allow:
+    - "Microsoft.Extensions.DependencyInjection.Abstractions"
+    - "Microsoft.Extensions.Configuration.Abstractions"
+    - "Microsoft.Extensions.Options"

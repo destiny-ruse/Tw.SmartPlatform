@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
 using System.Reflection;
 
-namespace Tw.Core.Reflection;
+namespace Tw.Reflection;
 
 /// <summary>
 /// 为特性和异步方法结果类型提供带缓存的反射辅助方法

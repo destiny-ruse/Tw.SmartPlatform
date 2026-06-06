@@ -1,4 +1,4 @@
-namespace Tw.Core.Reflection;
+namespace Tw.Reflection;
 
 /// <summary>
 /// 为 <see cref="ITypeFinder"/> 提供不依赖额外组件的便利方法
