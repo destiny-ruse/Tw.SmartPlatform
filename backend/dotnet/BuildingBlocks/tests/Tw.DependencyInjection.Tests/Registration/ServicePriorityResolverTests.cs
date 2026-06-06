@@ -17,6 +17,15 @@ public class ServicePriorityResolverTests
     [ServiceRegistration(Priority = 10)]
     private sealed class ConflictingTypePriorityService;
 
+    [ServiceRegistration(Priority = 15)]
+    private sealed class RegistrationPriorityOnlyService;
+
+    [ServicePriority(7)]
+    private sealed class ServicePriorityOnlyService;
+
+    [ServicePriority(200_000)]
+    private sealed class OutOfRangeTypePriorityService;
+
     [Fact]
     public void ResolveTypePriority_UsesExplicitPriority()
     {
@@ -49,17 +58,56 @@ public class ServicePriorityResolverTests
             .Should().Be(2_000_070);
     }
 
-    [Fact]
-    public void ReachabilityGraph_DetectsTransitiveDependencyPath()
-    {
-        var graph = new AssemblyReachabilityGraph(new Dictionary<string, IReadOnlyList<string>>(StringComparer.Ordinal)
-        {
-            ["Tw.App"] = ["Tw.Domain"],
-            ["Tw.Domain"] = ["Tw.Core"],
-            ["Tw.Core"] = [],
-        });
+    // ──────────────────────────────────────────────────────────
+    // 仅 ServiceRegistrationAttribute.Priority
+    // ──────────────────────────────────────────────────────────
 
-        graph.CanReach("Tw.App", "Tw.Core").Should().BeTrue();
-        graph.CanReach("Tw.Core", "Tw.App").Should().BeFalse();
+    [Fact]
+    public void ResolveTypePriority_UsesRegistrationPriority_WhenOnlyServiceRegistrationAttribute()
+    {
+        // 只有 [ServiceRegistration(Priority = 15)]，没有 [ServicePriority]
+        ServicePriorityResolver.ResolveTypePriority(typeof(RegistrationPriorityOnlyService))
+            .Should().Be(15);
     }
+
+    // ──────────────────────────────────────────────────────────
+    // 仅 ServicePriorityAttribute
+    // ──────────────────────────────────────────────────────────
+
+    [Fact]
+    public void ResolveTypePriority_UsesServicePriority_WhenOnlyServicePriorityAttribute()
+    {
+        // 只有 [ServicePriority(7)]，没有 [ServiceRegistration]
+        ServicePriorityResolver.ResolveTypePriority(typeof(ServicePriorityOnlyService))
+            .Should().Be(7);
+    }
+
+    // ──────────────────────────────────────────────────────────
+    // 越界类型优先级 → 抛异常
+    // ──────────────────────────────────────────────────────────
+
+    [Fact]
+    public void ResolveTypePriority_Throws_WhenPriorityOutOfRange()
+    {
+        // [ServicePriority(200_000)] 超出允许范围 ±100_000
+        var act = () => ServicePriorityResolver.ResolveTypePriority(typeof(OutOfRangeTypePriorityService));
+
+        act.Should().Throw<ServiceRegistrationException>()
+            .WithMessage("*超出允许范围*");
+    }
+
+    // ──────────────────────────────────────────────────────────
+    // CalculateFinalPriority 直接传入越界值 → 抛异常
+    // ──────────────────────────────────────────────────────────
+
+    [Fact]
+    public void CalculateFinalPriority_Throws_WhenExplicitPriorityOutOfRange()
+    {
+        // assemblyPriority = 200_000 超出允许范围 ±100_000
+        var act = () => ServicePriorityResolver.CalculateFinalPriority(0, 200_000, 0);
+
+        act.Should().Throw<ServiceRegistrationException>()
+            .WithMessage("*超出允许范围*");
+    }
+
 }

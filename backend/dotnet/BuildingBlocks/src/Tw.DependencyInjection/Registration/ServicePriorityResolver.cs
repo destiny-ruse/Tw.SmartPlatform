@@ -82,6 +82,15 @@ internal static class ServicePriorityResolver
     /// <param name="typePriority">类型优先级，由 <see cref="ResolveTypePriority"/> 得出</param>
     /// <returns>最终排序权重，值越大优先级越高</returns>
     /// <exception cref="Tw.DependencyInjection.ServiceRegistrationException">优先级超出允许范围时抛出</exception>
+    /// <remarks>
+    /// <para>公式：<c>topologyLevel × <see cref="TopologyLevelStep"/>(=1_000_000) + assemblyPriority + typePriority</c>。</para>
+    /// <para>层级基值由 <c>topologyLevel × 1_000_000</c> 决定。显式优先级（程序集 + 类型）的合法范围各为 ±<see cref="ExplicitPriorityMax"/>(=100_000)，
+    /// 两项叠加绝对值最大为 200_000，严格小于步长 1_000_000，因此拓扑层级始终压倒显式优先级，相邻层级的权重区间不会重叠。</para>
+    /// <para>返回类型为 <see langword="long"/>，防止层级基值（层级数 × 1_000_000）在层级较大时产生整数溢出。</para>
+    /// <para>方法入口的范围校验是防御性兜底：正常情况下 <paramref name="assemblyPriority"/> 已经由 <see cref="ResolveAssemblyPriority"/> 校验，
+    /// <paramref name="typePriority"/> 已经由 <see cref="ResolveTypePriority"/> 校验，不会在此处触发异常。
+    /// 直接调用本方法并传入越界值时才会命中该校验。</para>
+    /// </remarks>
     public static long CalculateFinalPriority(int topologyLevel, int assemblyPriority, int typePriority)
     {
         ValidateExplicitPriority(assemblyPriority, "程序集优先级");

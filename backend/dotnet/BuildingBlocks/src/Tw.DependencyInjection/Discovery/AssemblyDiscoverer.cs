@@ -50,6 +50,7 @@ internal static class AssemblyDiscoverer
         var referencesByAssemblyName = descriptors.ToDictionary(
             descriptor => descriptor.Name,
             descriptor => descriptor.ReferencedAssemblyNames
+                // 只保留扫描范围内的引用，剔除框架与第三方程序集，避免可达图扩散到扫描边界之外
                 .Where(includedSet.Contains)
                 .ToList()
                 as IReadOnlyList<string>,
