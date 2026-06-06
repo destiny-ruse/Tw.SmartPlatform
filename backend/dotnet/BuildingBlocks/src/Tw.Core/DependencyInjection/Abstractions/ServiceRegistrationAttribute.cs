@@ -25,5 +25,9 @@ public sealed class ServiceRegistrationAttribute : Attribute
     public DependencyLifetime? Lifetime { get; }
 
     /// <summary>类型级显式优先级，参与单实现仲裁</summary>
+    /// <remarks>
+    /// setter 仅为满足 attribute 命名参数语法（<c>[ServiceRegistration(Priority = ...)]</c>）；读取后视为不可变。
+    /// 仅需声明优先级而无需生命周期时，使用独立的 <see cref="ServicePriorityAttribute"/>。
+    /// </remarks>
     public int Priority { get; set; }
 }

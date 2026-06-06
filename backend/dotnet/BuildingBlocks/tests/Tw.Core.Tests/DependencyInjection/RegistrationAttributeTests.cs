@@ -19,6 +19,9 @@ public class RegistrationAttributeTests
     [ExposeKeyedService(typeof(IContract), "wechat")]
     private sealed class Keyed;
 
+    [ServicePriority(7)]
+    private sealed class Prioritized;
+
     private interface IContract;
 
     [Fact]
@@ -44,11 +47,25 @@ public class RegistrationAttributeTests
     }
 
     [Fact]
+    public void ServiceRegistration_IsNotInherited()
+    {
+        var usage = typeof(ServiceRegistrationAttribute).GetCustomAttribute<AttributeUsageAttribute>()!;
+        usage.Inherited.Should().BeFalse();
+    }
+
+    [Fact]
     public void ExposeServices_CarriesTypesAndIncludeSelf()
     {
         var attr = typeof(Exposing).GetCustomAttribute<ExposeServicesAttribute>()!;
         attr.ServiceTypes.Should().ContainSingle().Which.Should().Be(typeof(IContract));
         attr.IncludeSelf.Should().BeTrue();
+    }
+
+    [Fact]
+    public void ExposeServices_AllowsMultiple()
+    {
+        var usage = typeof(ExposeServicesAttribute).GetCustomAttribute<AttributeUsageAttribute>()!;
+        usage.AllowMultiple.Should().BeTrue();
     }
 
     [Fact]
@@ -60,16 +77,30 @@ public class RegistrationAttributeTests
     }
 
     [Fact]
+    public void ExposeKeyedService_AllowsMultiple()
+    {
+        var usage = typeof(ExposeKeyedServiceAttribute).GetCustomAttribute<AttributeUsageAttribute>()!;
+        usage.AllowMultiple.Should().BeTrue();
+    }
+
+    [Fact]
+    public void ServicePriority_CarriesPriority()
+    {
+        var attr = typeof(Prioritized).GetCustomAttribute<ServicePriorityAttribute>()!;
+        attr.Priority.Should().Be(7);
+    }
+
+    [Fact]
+    public void DisableServiceRegistration_IsNotInherited()
+    {
+        var usage = typeof(DisableServiceRegistrationAttribute).GetCustomAttribute<AttributeUsageAttribute>()!;
+        usage.Inherited.Should().BeFalse();
+    }
+
+    [Fact]
     public void TwAssemblyPriority_TargetsAssembly()
     {
         var usage = typeof(TwAssemblyPriorityAttribute).GetCustomAttribute<AttributeUsageAttribute>()!;
         usage.ValidOn.Should().Be(AttributeTargets.Assembly);
-    }
-
-    [Fact]
-    public void ExposeServices_AllowsMultiple()
-    {
-        var usage = typeof(ExposeServicesAttribute).GetCustomAttribute<AttributeUsageAttribute>()!;
-        usage.AllowMultiple.Should().BeTrue();
     }
 }

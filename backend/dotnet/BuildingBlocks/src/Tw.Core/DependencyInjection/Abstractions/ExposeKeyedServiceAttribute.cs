@@ -8,7 +8,7 @@ public sealed class ExposeKeyedServiceAttribute : Attribute
 {
     /// <summary>声明 keyed 注册</summary>
     /// <param name="serviceType">服务契约类型</param>
-    /// <param name="key">稳定 key，不可为空</param>
+    /// <param name="key">稳定 key，不可为 null；引擎在注册规划阶段校验，key 为 null 或空时启动失败</param>
     public ExposeKeyedServiceAttribute(Type serviceType, object key)
     {
         ServiceType = serviceType;

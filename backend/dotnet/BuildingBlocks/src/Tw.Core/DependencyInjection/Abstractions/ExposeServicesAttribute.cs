@@ -7,7 +7,7 @@ namespace Tw.DependencyInjection.Abstractions;
 public sealed class ExposeServicesAttribute : Attribute
 {
     /// <summary>声明要暴露的契约类型</summary>
-    /// <param name="serviceTypes">对外暴露的契约类型</param>
+    /// <param name="serviceTypes">对外暴露的契约类型；至少声明一个，引擎在规划阶段把空列表视为无效声明</param>
     public ExposeServicesAttribute(params Type[] serviceTypes)
     {
         ServiceTypes = serviceTypes;
