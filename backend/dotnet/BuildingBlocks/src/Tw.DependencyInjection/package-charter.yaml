@@ -1,0 +1,28 @@
+schema_version: "1.0.0"
+package: Tw.DependencyInjection
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  框架绑定的依赖注入执行引擎：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、
+  Autofac 容器接管、注册规划诊断报告。消费 Tw.Core 的框架无关抽象，向宿主提供引擎级启动原语。
+in_scope:
+  - 程序集发现与白/黑名单过滤
+  - 程序集依赖拓扑排序与循环诊断
+  - Autofac 容器接管启动原语
+  - 服务注册规划诊断报告
+out_of_scope:
+  - DI 注册标记、特性、Options 与 AOP 抽象（归 Tw.Core 的 .Abstractions 命名空间）
+  - ASP.NET Core 宿主启动、MVC 与 gRPC 承载
+  - 数据访问、ORM、仓储实现
+public_capabilities:
+  - Tw.DependencyInjection
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "Microsoft.EntityFrameworkCore*"
+  allow:
+    - "Tw.Core"
+    - "Autofac*"
+    - "Castle.*"
+    - "Microsoft.Extensions.*"
