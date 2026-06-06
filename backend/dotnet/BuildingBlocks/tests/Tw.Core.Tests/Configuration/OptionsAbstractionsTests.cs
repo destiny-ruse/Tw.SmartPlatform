@@ -21,6 +21,8 @@ public class OptionsAbstractionsTests
         }
     }
 
+    private sealed class CacheOptionsValidator;
+
     [Fact]
     public void IConfigurableOptions_LivesIn_AbstractionsNamespace()
     {
@@ -67,7 +69,7 @@ public class OptionsAbstractionsTests
     [Fact]
     public void OptionsValidator_CarriesValidatorType()
     {
-        var attr = new OptionsValidatorAttribute(typeof(CacheOptions));
-        attr.ValidatorType.Should().Be(typeof(CacheOptions));
+        var attr = new OptionsValidatorAttribute(typeof(CacheOptionsValidator));
+        attr.ValidatorType.Should().Be(typeof(CacheOptionsValidator));
     }
 }

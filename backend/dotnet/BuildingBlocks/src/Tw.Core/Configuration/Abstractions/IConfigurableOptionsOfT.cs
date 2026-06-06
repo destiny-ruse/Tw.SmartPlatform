@@ -6,6 +6,10 @@ namespace Tw.Configuration.Abstractions;
 /// 支持后置配置的强类型选项契约
 /// </summary>
 /// <typeparam name="TOptions">选项自身类型，必须等于实现类型</typeparam>
+/// <remarks>
+/// <typeparamref name="TOptions"/> 在运行期必须等于实现类自身类型（即 <c>class MyOptions : IConfigurableOptions&lt;MyOptions&gt;</c>）；
+/// 绑定引擎在扫描阶段若发现不等，将抛出 <see cref="InvalidOperationException"/> 并中止启动。
+/// </remarks>
 public interface IConfigurableOptions<TOptions> : IConfigurableOptions
     where TOptions : class, IConfigurableOptions
 {
