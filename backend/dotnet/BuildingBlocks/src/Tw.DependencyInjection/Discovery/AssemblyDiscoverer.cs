@@ -1,11 +1,14 @@
 using System.Reflection;
 using Tw.DependencyInjection.Diagnostics;
+using Tw.DependencyInjection.Registration;
 
 namespace Tw.DependencyInjection.Discovery;
 
-/// <summary>发现结果：按拓扑排序的程序集与诊断报告</summary>
+/// <summary>发现结果：按拓扑排序的程序集、诊断报告与程序集可达性图</summary>
 internal sealed record AssemblyDiscoveryResult(
-    IReadOnlyList<Assembly> OrderedAssemblies, ServiceRegistrationReport Report);
+    IReadOnlyList<Assembly> OrderedAssemblies,
+    ServiceRegistrationReport Report,
+    AssemblyReachabilityGraph ReachabilityGraph);
 
 internal static class AssemblyDiscoverer
 {
@@ -44,7 +47,18 @@ internal static class AssemblyDiscoverer
             excluded,
             topology);
 
-        return new AssemblyDiscoveryResult(orderedAssemblies, report);
+        var referencesByAssemblyName = descriptors.ToDictionary(
+            descriptor => descriptor.Name,
+            descriptor => descriptor.ReferencedAssemblyNames
+                .Where(includedSet.Contains)
+                .ToList()
+                as IReadOnlyList<string>,
+            StringComparer.Ordinal);
+
+        return new AssemblyDiscoveryResult(
+            orderedAssemblies,
+            report,
+            new AssemblyReachabilityGraph(referencesByAssemblyName));
     }
 
     private static IReadOnlyList<string> ReferencedNames(Assembly assembly) =>
