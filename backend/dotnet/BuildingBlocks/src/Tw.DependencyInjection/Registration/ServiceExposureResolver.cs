@@ -1,0 +1,148 @@
+using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions;
+using Tw.DynamicProxy.Abstractions;
+
+namespace Tw.DependencyInjection.Registration;
+
+/// <summary>
+/// 根据实现类型上的标记接口与特性解析该类型应暴露的全部服务契约
+/// </summary>
+/// <remarks>
+/// 解析策略分三种路径：
+/// <list type="number">
+/// <item>若类型标注了 <see cref="ExposeServicesAttribute"/>，则以显式声明为准，<see cref="ExposeServicesAttribute.IncludeSelf"/> 控制是否附加自身类型。</item>
+/// <item>若无显式声明，则默认暴露自身类型与名称匹配的接口（接口名 = <c>I</c> + 实现类名），开放泛型实现额外匹配泛型接口定义。</item>
+/// <item>无论哪种路径，<see cref="ExposeKeyedServiceAttribute"/> 均独立追加 keyed service 暴露。</item>
+/// </list>
+/// </remarks>
+internal static class ServiceExposureResolver
+{
+    /// <summary>
+    /// 解析指定实现类型应暴露的全部服务契约列表
+    /// </summary>
+    /// <param name="implementationType">实现类型；可为开放泛型定义</param>
+    /// <returns>去重后的 <see cref="ServiceExposure"/> 只读列表</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="implementationType"/> 为 <c>null</c> 时抛出</exception>
+    public static IReadOnlyList<ServiceExposure> Resolve(Type implementationType)
+    {
+        ArgumentNullException.ThrowIfNull(implementationType);
+
+        var exposures = new List<ServiceExposure>();
+
+        // 读取显式 ExposeServicesAttribute 声明
+        var explicitExposes = implementationType
+            .GetCustomAttributes(typeof(ExposeServicesAttribute), inherit: false)
+            .OfType<ExposeServicesAttribute>()
+            .ToList();
+
+        if (explicitExposes.Count > 0)
+        {
+            // 显式声明路径：以 Attribute 声明的契约类型为准
+            foreach (var expose in explicitExposes)
+            {
+                exposures.AddRange(expose.ServiceTypes.Select(serviceType =>
+                    new ServiceExposure(NormalizeGenericServiceType(serviceType), null)));
+
+                if (expose.IncludeSelf)
+                {
+                    exposures.Add(new ServiceExposure(implementationType, null));
+                }
+            }
+        }
+        else
+        {
+            // 默认路径：暴露自身 + 名称匹配的接口
+            exposures.Add(new ServiceExposure(implementationType, null));
+            exposures.AddRange(DefaultInterfaceExposures(implementationType));
+        }
+
+        // keyed service 独立追加，不受显式/默认路径影响
+        foreach (var keyed in implementationType
+            .GetCustomAttributes(typeof(ExposeKeyedServiceAttribute), inherit: false)
+            .OfType<ExposeKeyedServiceAttribute>())
+        {
+            exposures.Add(new ServiceExposure(NormalizeGenericServiceType(keyed.ServiceType), keyed.Key));
+        }
+
+        return exposures
+            .Distinct()
+            .ToList();
+    }
+
+    /// <summary>
+    /// 按默认命名匹配策略枚举实现类型对外暴露的接口契约
+    /// </summary>
+    private static IEnumerable<ServiceExposure> DefaultInterfaceExposures(Type implementationType)
+    {
+        foreach (var interfaceType in implementationType.GetInterfaces())
+        {
+            // 跳过框架标记接口与基础设施接口
+            if (IsFrameworkOrMarkerInterface(interfaceType))
+            {
+                continue;
+            }
+
+            var normalized = NormalizeGenericServiceType(interfaceType);
+
+            if (IsNameMatchedInterface(implementationType, normalized) || IsOpenGenericContract(implementationType, normalized))
+            {
+                yield return new ServiceExposure(normalized, null);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 将封闭泛型类型归一化为其泛型定义；非泛型类型原样返回
+    /// </summary>
+    private static Type NormalizeGenericServiceType(Type serviceType)
+    {
+        return serviceType.IsGenericType ? serviceType.GetGenericTypeDefinition() : serviceType;
+    }
+
+    /// <summary>
+    /// 判断接口名称是否与实现类型名称匹配（接口名 = <c>I</c> + 实现类名）
+    /// </summary>
+    private static bool IsNameMatchedInterface(Type implementationType, Type serviceType)
+    {
+        if (!serviceType.IsInterface)
+        {
+            return false;
+        }
+
+        // 去除泛型参数数量后缀（`1、`2 等）再比较
+        var implementationName = implementationType.IsGenericType
+            ? implementationType.Name[..implementationType.Name.IndexOf('`')]
+            : implementationType.Name;
+
+        var serviceName = serviceType.IsGenericType
+            ? serviceType.Name[..serviceType.Name.IndexOf('`')]
+            : serviceType.Name;
+
+        return string.Equals(serviceName, "I" + implementationName, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// 判断实现类型是否为开放泛型定义，且 <paramref name="serviceType"/> 是泛型接口定义
+    /// </summary>
+    private static bool IsOpenGenericContract(Type implementationType, Type serviceType)
+    {
+        return implementationType.IsGenericTypeDefinition
+            && serviceType.IsInterface
+            && serviceType.IsGenericTypeDefinition;
+    }
+
+    /// <summary>
+    /// 判断接口是否为应被跳过的框架标记接口或基础设施接口
+    /// </summary>
+    private static bool IsFrameworkOrMarkerInterface(Type interfaceType)
+    {
+        var normalized = NormalizeGenericServiceType(interfaceType);
+        return normalized == typeof(ITransientDependency)
+            || normalized == typeof(IScopedDependency)
+            || normalized == typeof(ISingletonDependency)
+            || normalized == typeof(IConfigurableOptions)
+            || normalized == typeof(IInterceptor)
+            || normalized == typeof(IDisposable)
+            || normalized == typeof(IAsyncDisposable);
+    }
+}
