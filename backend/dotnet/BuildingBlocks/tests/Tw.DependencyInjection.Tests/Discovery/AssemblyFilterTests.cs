@@ -83,4 +83,12 @@ public class AssemblyFilterTests
 
         result.Should().BeEmpty();
     }
+
+    [Fact]
+    public void Options_DefaultsAssemblyPrioritiesToEmptyDictionary()
+    {
+        var options = new ServiceRegistrationOptions();
+
+        options.AssemblyPriorities.Should().BeEmpty();
+    }
 }

@@ -16,4 +16,8 @@ public sealed class ServiceRegistrationOptions
 
     /// <summary>排除出扫描的程序集名前缀，优先于任何白名单</summary>
     public IList<string> ExcludeAssemblyPrefixes { get; } = new List<string>();
+
+    /// <summary>程序集级显式优先级配置，key 为程序集名，value 越大优先级越高</summary>
+    public IDictionary<string, int> AssemblyPriorities { get; } =
+        new Dictionary<string, int>(StringComparer.Ordinal);
 }
