@@ -89,11 +89,11 @@ public class ServiceExposureResolverTests
     }
 
     /// <summary>
-    /// keyed 暴露与默认路径并存：默认路径暴露自身，keyed 独立追加，两路结果同时存在
+    /// keyed 暴露与默认路径并存：默认路径暴露自身与命名匹配接口，keyed 独立追加，三者同时存在
     /// </summary>
     /// <remarks>
-    /// KeyedOrderService 命名匹配接口应为 IKeyedOrderService（不存在），
-    /// 因此默认路径仅暴露自身（Key=null），不暴露非 keyed 的 IOrderService。
+    /// ABP 风格结尾匹配规则下，KeyedOrderService 命中 IOrderService（"KeyedOrderService".EndsWith("OrderService") 成立），
+    /// 因此默认路径暴露自身（Key=null）和非 keyed 的 IOrderService（Key=null）。
     /// ExposeKeyedServiceAttribute 独立追加 keyed IOrderService（Key="primary"）。
     /// </remarks>
     [Fact]
@@ -101,12 +101,12 @@ public class ServiceExposureResolverTests
     {
         var exposures = ServiceExposureResolver.Resolve(typeof(KeyedOrderService));
 
-        // 默认路径：暴露自身（无命名匹配接口）
+        // 默认路径：暴露自身
         exposures.Should().Contain(e => e.ServiceType == typeof(KeyedOrderService) && e.Key == null);
+        // 默认路径：ABP 结尾匹配，暴露非 keyed 的 IOrderService
+        exposures.Should().Contain(e => e.ServiceType == typeof(IOrderService) && e.Key == null);
         // keyed 独立追加
         exposures.Should().Contain(e => e.ServiceType == typeof(IOrderService) && Equals(e.Key, "primary"));
-        // 命名不匹配，默认路径不暴露非 keyed 的 IOrderService
-        exposures.Should().NotContain(e => e.ServiceType == typeof(IOrderService) && e.Key == null);
     }
 
     /// <summary>

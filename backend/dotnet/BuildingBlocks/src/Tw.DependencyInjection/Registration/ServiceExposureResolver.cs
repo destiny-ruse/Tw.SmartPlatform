@@ -1,4 +1,4 @@
-using Tw.Configuration.Abstractions;
+﻿using Tw.Configuration.Abstractions;
 using Tw.DependencyInjection.Abstractions;
 using Tw.DynamicProxy.Abstractions;
 
@@ -11,7 +11,7 @@ namespace Tw.DependencyInjection.Registration;
 /// 解析策略分三种路径：
 /// <list type="number">
 /// <item>若类型标注了 <see cref="ExposeServicesAttribute"/>，则以显式声明为准，<see cref="ExposeServicesAttribute.IncludeSelf"/> 控制是否附加自身类型。</item>
-/// <item>若无显式声明，则默认暴露自身类型与名称匹配的接口（接口名 = <c>I</c> + 实现类名）；开放泛型实现同样仅暴露命名匹配的泛型接口定义（如 <c>Repository&lt;&gt;</c> → <c>IRepository&lt;&gt;</c>），不暴露实现的其它接口，以符合"默认规则不暴露所有接口"的设计原则。</item>
+/// <item>若无显式声明，则默认暴露自身类型与 ABP 风格命名匹配的接口（实现类名以"接口名去掉前导 <c>I</c>"结尾，如 <c>DefaultPaymentProvider</c> 匹配 <c>IPaymentProvider</c>）；开放泛型实现同样仅暴露命名匹配的泛型接口定义（如 <c>Repository&lt;&gt;</c> → <c>IRepository&lt;&gt;</c>），不暴露实现的其它接口，以符合"默认规则不暴露所有接口"的设计原则。</item>
 /// <item>无论哪种路径，<see cref="ExposeKeyedServiceAttribute"/> 均独立追加 keyed service 暴露。去重基于 <see cref="ServiceExposure"/> 记录值相等；<see cref="ServiceExposure.Key"/> 为 <see cref="string"/> 等值类型时按值去重，复杂对象 key 需自身实现 <see cref="object.Equals(object)"/>/<see cref="object.GetHashCode"/>（当前 keyed key 仅来自 attribute 常量参数）。</item>
 /// </list>
 /// </remarks>
@@ -76,7 +76,7 @@ internal static class ServiceExposureResolver
     /// 按默认命名匹配策略枚举实现类型对外暴露的接口契约
     /// </summary>
     /// <remarks>
-    /// 仅暴露接口名等于 <c>I</c> + 实现类名的接口，不暴露实现类型实现的其它全部接口。
+    /// 仅暴露 ABP 风格命名匹配的接口——即实现类名以"接口名去掉前导 <c>I</c>"结尾的接口，不暴露实现类型实现的其它全部接口。
     /// 对于开放泛型实现，同样仅暴露命名匹配的泛型接口定义（<c>Repository&lt;&gt;</c> → <c>IRepository&lt;&gt;</c>）；
     /// 其余泛型接口（如 <c>IEnumerable&lt;&gt;</c>）因名称不匹配而被排除。
     /// </remarks>
@@ -108,14 +108,18 @@ internal static class ServiceExposureResolver
     }
 
     /// <summary>
-    /// 判断接口名称是否与实现类型名称匹配（接口名 = <c>I</c> + 实现类名）
+    /// 判断接口名称是否与实现类型名称匹配（ABP 风格：实现类名以"接口名去掉前导 <c>I</c>"结尾）
     /// </summary>
     /// <param name="implementationType">实现类型；可为开放泛型定义</param>
     /// <param name="serviceType">
     /// 候选服务接口类型；调用前应已通过 <see cref="NormalizeGenericServiceType"/> 归一化为泛型定义。
     /// 名称比较时将截去泛型参数数量后缀（<c>`1</c>、<c>`2</c> 等），仅比较基础名称部分。
     /// </param>
-    /// <returns>接口名等于 <c>I</c> + 实现类基础名称时返回 <see langword="true"/>；否则返回 <see langword="false"/></returns>
+    /// <returns>
+    /// 实现类基础名称以"接口基础名称去掉前导 <c>I</c>"结尾时返回 <see langword="true"/>；否则返回 <see langword="false"/>。
+    /// 例如 <c>DefaultPaymentProvider</c> 实现 <c>IPaymentProvider</c>：
+    /// 候选后缀为 <c>PaymentProvider</c>，<c>"DefaultPaymentProvider".EndsWith("PaymentProvider")</c> 成立，视为命名匹配。
+    /// </returns>
     private static bool IsNameMatchedInterface(Type implementationType, Type serviceType)
     {
         if (!serviceType.IsInterface)
@@ -124,7 +128,7 @@ internal static class ServiceExposureResolver
         }
 
         // 去除泛型参数数量后缀（`1、`2 等）再比较
-        var implementationName = implementationType.IsGenericType
+        var implName = implementationType.IsGenericType
             ? implementationType.Name[..implementationType.Name.IndexOf('`')]
             : implementationType.Name;
 
@@ -132,7 +136,12 @@ internal static class ServiceExposureResolver
             ? serviceType.Name[..serviceType.Name.IndexOf('`')]
             : serviceType.Name;
 
-        return string.Equals(serviceName, "I" + implementationName, StringComparison.Ordinal);
+        // ABP 风格结尾匹配：去掉接口名前导 I，判断实现类名是否以剩余部分结尾
+        var expected = serviceName.Length > 1 && serviceName[0] == 'I'
+            ? serviceName[1..]
+            : serviceName;
+
+        return implName.EndsWith(expected, StringComparison.Ordinal);
     }
 
     /// <summary>
