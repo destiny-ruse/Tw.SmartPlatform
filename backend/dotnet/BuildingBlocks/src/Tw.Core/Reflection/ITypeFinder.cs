@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Tw.Core.Reflection;
+namespace Tw.Reflection;
 
 /// <summary>
 /// 从配置的程序集集合中查找运行时类型

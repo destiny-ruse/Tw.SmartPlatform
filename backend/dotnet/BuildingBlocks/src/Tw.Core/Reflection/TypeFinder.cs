@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Tw.Core.Reflection;
+namespace Tw.Reflection;
 
 /// <summary>
 /// 从显式提供的程序集中查找运行时类型
