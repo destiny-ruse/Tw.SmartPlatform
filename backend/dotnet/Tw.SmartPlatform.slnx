@@ -4,6 +4,7 @@
   <Folder Name="/BuildingBlocks/src/">
     <Project Path="BuildingBlocks/src/Tw.AspNetCore/Tw.AspNetCore.csproj" Id="7ba0e388-29e1-49a5-8a18-d1ef9209c8e6" />
     <Project Path="BuildingBlocks/src/Tw.Core/Tw.Core.csproj" Id="7acbd999-ad5a-4321-a343-f20712fc09f2" />
+    <Project Path="BuildingBlocks/src/Tw.DependencyInjection/Tw.DependencyInjection.csproj" />
     <Project Path="BuildingBlocks/src/Tw.Localization.AspNetCore/Tw.Localization.AspNetCore.csproj" Id="936f3743-bb2e-4d8d-8d35-a813ecd6d67e" />
     <Project Path="BuildingBlocks/src/Tw.Localization/Tw.Localization.csproj" Id="e8620234-7f4b-4bcf-933f-815d1803224c" />
   </Folder>
@@ -11,6 +12,7 @@
   <Folder Name="/BuildingBlocks/tests/">
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Localization.AspNetCore.Tests/Tw.Localization.AspNetCore.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Localization.Tests/Tw.Localization.Tests.csproj" />
   </Folder>
