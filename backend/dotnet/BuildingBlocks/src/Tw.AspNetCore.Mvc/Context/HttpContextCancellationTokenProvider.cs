@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Http;
 using Tw.Context;
 
-namespace Tw.AspNetCore.Context;
+namespace Tw.AspNetCore.Mvc.Context;
 
 /// <summary>
-/// 在 ASP.NET Core 宿主中基于 <see cref="HttpContext.RequestAborted"/> 提供请求取消令牌
+/// 在 ASP.NET Core MVC/Razor Pages 中基于 <see cref="HttpContext.RequestAborted"/> 提供请求取消令牌
 /// </summary>
 /// <remarks>
 /// 覆盖令牌优先；存在 <see cref="HttpContext"/> 时返回 <see cref="HttpContext.RequestAborted"/>；

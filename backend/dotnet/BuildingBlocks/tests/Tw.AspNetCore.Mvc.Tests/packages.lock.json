@@ -133,20 +133,6 @@
           "Tw.Core": "[1.0.0, )"
         }
       },
-      "tw.localization": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.Core": "[1.0.0, )"
-        }
-      },
-      "tw.localization.aspnetcore": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.AspNetCore": "[1.0.0, )",
-          "Tw.AspNetCore.Mvc": "[1.0.0, )",
-          "Tw.Localization": "[1.0.0, )"
-        }
-      },
       "Autofac": {
         "type": "CentralTransitive",
         "requested": "[9.1.0, )",

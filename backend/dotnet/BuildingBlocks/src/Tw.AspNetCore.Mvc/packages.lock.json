@@ -9,12 +9,6 @@
           "Tw.DependencyInjection": "[1.0.0, )"
         }
       },
-      "tw.aspnetcore.mvc": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.AspNetCore": "[1.0.0, )"
-        }
-      },
       "tw.core": {
         "type": "Project"
       },
@@ -27,12 +21,6 @@
           "Castle.Core": "[5.2.1, )",
           "Castle.Core.AsyncInterceptor": "[2.1.0, )",
           "Microsoft.Extensions.DependencyModel": "[10.0.0, )",
-          "Tw.Core": "[1.0.0, )"
-        }
-      },
-      "tw.localization": {
-        "type": "Project",
-        "dependencies": {
           "Tw.Core": "[1.0.0, )"
         }
       },

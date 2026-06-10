@@ -1,11 +1,11 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Tw.AspNetCore.Context;
+using Tw.AspNetCore.Mvc.Context;
 using Tw.Context;
 using Xunit;
 
-namespace Tw.AspNetCore.Tests.Context;
+namespace Tw.AspNetCore.Mvc.Tests.Context;
 
 public class CancellationTokenServiceCollectionExtensionsTests
 {
