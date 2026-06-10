@@ -12,6 +12,12 @@ public sealed class CastleInvocationContext : IInvocationContext
     private static readonly MethodInfo AwaitValueTaskWithResultMethod = typeof(CastleInvocationContext)
         .GetMethod(nameof(AwaitValueTaskWithResultAsync), BindingFlags.NonPublic | BindingFlags.Static)!;
 
+    private static readonly MethodInfo CreateTaskWithResultMethod = typeof(CastleInvocationContext)
+        .GetMethod(nameof(CreateTaskWithResult), BindingFlags.NonPublic | BindingFlags.Static)!;
+
+    private static readonly MethodInfo CreateValueTaskWithResultMethod = typeof(CastleInvocationContext)
+        .GetMethod(nameof(CreateValueTaskWithResult), BindingFlags.NonPublic | BindingFlags.Static)!;
+
     private readonly CastleInvocation _invocation;
     private object? _returnValue;
 
@@ -41,7 +47,9 @@ public sealed class CastleInvocationContext : IInvocationContext
     /// <inheritdoc />
     public object?[] Arguments { get; }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// 按构造时参数名和参数值建立的只读快照，不随 <see cref="Arguments"/> 后续改写变化
+    /// </summary>
     public IReadOnlyDictionary<string, object?> ArgumentsByName { get; }
 
     /// <inheritdoc />
@@ -51,7 +59,7 @@ public sealed class CastleInvocationContext : IInvocationContext
         set
         {
             _returnValue = value;
-            _invocation.ReturnValue = value;
+            ApplyReturnValueToInvocation();
         }
     }
 
@@ -61,8 +69,9 @@ public sealed class CastleInvocationContext : IInvocationContext
         WriteArgumentsToInvocation();
 
         _invocation.Proceed();
-        ReturnValue = await ReadCompletedReturnValueAsync(_invocation.ReturnValue, Method.ReturnType)
+        _returnValue = await ReadCompletedReturnValueAsync(_invocation.ReturnValue, Method.ReturnType)
             .ConfigureAwait(false);
+        ApplyReturnValueToInvocation();
     }
 
     /// <inheritdoc />
@@ -78,6 +87,12 @@ public sealed class CastleInvocationContext : IInvocationContext
         _invocation.Proceed();
         ReturnValue = _invocation.ReturnValue;
     }
+
+    /// <summary>
+    /// 将当前逻辑返回值按目标方法签名包装后写回 Castle invocation
+    /// </summary>
+    internal void ApplyReturnValueToInvocation() =>
+        _invocation.ReturnValue = CreateCompatibleReturnValue(Method.ReturnType, _returnValue);
 
     private static IReadOnlyDictionary<string, object?> CreateArgumentsByName(MethodInfo method, object?[] arguments)
     {
@@ -142,6 +157,46 @@ public sealed class CastleInvocationContext : IInvocationContext
 
     private static async ValueTask<object?> AwaitValueTaskWithResultAsync<TResult>(ValueTask<TResult> valueTask) =>
         await valueTask.ConfigureAwait(false);
+
+    private static Task<TResult> CreateTaskWithResult<TResult>(object? returnValue) =>
+        Task.FromResult(returnValue is null ? default! : (TResult)returnValue);
+
+    private static ValueTask<TResult> CreateValueTaskWithResult<TResult>(object? returnValue) =>
+        ValueTask.FromResult(returnValue is null ? default! : (TResult)returnValue);
+
+    private static object? CreateCompatibleReturnValue(Type returnType, object? returnValue)
+    {
+        if (returnType == typeof(void))
+        {
+            return null;
+        }
+
+        if (returnType == typeof(Task))
+        {
+            return Task.CompletedTask;
+        }
+
+        if (returnType.IsGenericType && returnType.GetGenericTypeDefinition() == typeof(Task<>))
+        {
+            return CreateTaskWithResultMethod
+                .MakeGenericMethod(returnType.GenericTypeArguments[0])
+                .Invoke(null, [returnValue]);
+        }
+
+        if (returnType == typeof(ValueTask))
+        {
+            return ValueTask.CompletedTask;
+        }
+
+        if (IsValueTaskWithResult(returnType))
+        {
+            return CreateValueTaskWithResultMethod
+                .MakeGenericMethod(returnType.GenericTypeArguments[0])
+                .Invoke(null, [returnValue]);
+        }
+
+        return returnValue;
+    }
 
     private static bool IsAsyncReturnType(Type returnType) =>
         typeof(Task).IsAssignableFrom(returnType)

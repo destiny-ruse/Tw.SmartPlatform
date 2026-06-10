@@ -10,7 +10,9 @@ namespace Tw.DependencyInjection.DynamicProxy;
 /// 将 Castle.Core.AsyncInterceptor 调用适配到统一拦截器管道
 /// </summary>
 /// <remarks>
-/// 当选择器未返回拦截器类型时直接推进 Castle 调用；存在拦截器时通过 <see cref="IInterceptorPipeline"/> 执行统一调用链。
+/// 当选择器未返回拦截器类型时直接推进 Castle 调用；存在拦截器时通过 <see cref="IInterceptorPipeline"/> 执行统一调用链
+/// Castle 会把同步方法以及 <see cref="ValueTask"/>、<see cref="ValueTask{TResult}"/> 方法分派到同步入口，
+/// 同步入口会阻塞等待统一 pipeline 完成，拦截器实现不应依赖捕获同步上下文恢复
 /// </remarks>
 public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor
 {
@@ -58,6 +60,7 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor
 
         var context = new CastleInvocationContext(invocation);
         _pipeline.InvokeAsync(context, interceptors).AsTask().GetAwaiter().GetResult();
+        context.ApplyReturnValueToInvocation();
     }
 
     /// <summary>

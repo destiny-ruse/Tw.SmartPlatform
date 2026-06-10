@@ -266,6 +266,45 @@ public class CastleAsyncInterceptorAdapterTests
         target.ReceivedValues.Should().Equal("source", "source", "source");
     }
 
+    [Fact]
+    public async Task Adapter_UsesSelectorServiceProviderAndPipeline_ForValueTaskMethods()
+    {
+        var target = new AdapterTarget();
+        var interceptor = new AdapterArgumentInterceptor();
+        var services = new ServiceCollection()
+            .AddSingleton<DependencyInterceptorSelector, AttributeInterceptorSelector>()
+            .AddSingleton<IInterceptorPipeline, InterceptorPipeline>()
+            .AddSingleton(interceptor)
+            .BuildServiceProvider();
+        var adapter = new CastleAsyncInterceptorAdapter(
+            services.GetRequiredService<DependencyInterceptorSelector>(),
+            services.GetRequiredService<IInterceptorPipeline>(),
+            services);
+        var proxy = CreateAdapterProxy(target, adapter);
+
+        await proxy.ValueTaskAsync("source");
+        var valueTaskResult = await proxy.ValueTaskOfStringAsync("source");
+
+        valueTaskResult.Should().Be("intercepted:value-task:adapter");
+        target.ReceivedValues.Should().Equal("adapter", "adapter");
+        interceptor.MethodNames.Should().Equal("ValueTaskAsync", "ValueTaskOfStringAsync");
+    }
+
+    [Fact]
+    public async Task Adapter_DirectlyProceeds_ForValueTaskMethods_WhenSelectorReturnsNoInterceptors()
+    {
+        var target = new AdapterTarget();
+        var services = new ServiceCollection().BuildServiceProvider();
+        var adapter = new CastleAsyncInterceptorAdapter(new EmptySelector(), new ThrowingPipeline(), services);
+        var proxy = CreateAdapterProxy(target, adapter);
+
+        await proxy.ValueTaskAsync("source");
+        var valueTaskResult = await proxy.ValueTaskOfStringAsync("source");
+
+        valueTaskResult.Should().Be("value-task:source");
+        target.ReceivedValues.Should().Equal("source", "source");
+    }
+
     private static IAdapterTarget CreateAdapterProxy(AdapterTarget target, IAsyncInterceptor adapter)
     {
         var generator = new ProxyGenerator();
@@ -282,6 +321,10 @@ public class CastleAsyncInterceptorAdapterTests
         Task TaskAsync(string value);
 
         Task<string> TaskOfStringAsync(string value);
+
+        ValueTask ValueTaskAsync(string value);
+
+        ValueTask<string> ValueTaskOfStringAsync(string value);
     }
 
     private sealed class AdapterTarget : IAdapterTarget
@@ -307,6 +350,20 @@ public class CastleAsyncInterceptorAdapterTests
             ReceivedValues.Add(value);
 
             return Task.FromResult($"task:{value}");
+        }
+
+        public ValueTask ValueTaskAsync(string value)
+        {
+            ReceivedValues.Add(value);
+
+            return ValueTask.CompletedTask;
+        }
+
+        public ValueTask<string> ValueTaskOfStringAsync(string value)
+        {
+            ReceivedValues.Add(value);
+
+            return ValueTask.FromResult($"value-task:{value}");
         }
     }
 
