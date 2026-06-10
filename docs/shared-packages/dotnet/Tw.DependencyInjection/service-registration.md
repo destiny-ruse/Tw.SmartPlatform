@@ -97,7 +97,7 @@ public sealed class PaymentRouter : IScopedDependency
 
 ## 单实现仲裁
 
-非 keyed 契约最终只注册一个实现。多个候选通过 `TopologyBaseValue + AssemblyPriority + TypePriority` 仲裁，优先级高者胜出，落选候选记录到 `ServiceRegistrationReport.SupersededCandidates`。
+非 keyed 契约最终只注册一个实现。多个候选通过最终优先级 `拓扑层级 × 1000000 + AssemblyPriority + TypePriority`（拓扑基值 + 程序集优先级 + 类型优先级）仲裁，优先级高者胜出，落选候选记录到 `ServiceRegistrationReport.SupersededCandidates`。
 
 程序集优先级配置（`AssemblyPriorities`，key 为程序集名，value 越大优先级越高）：
 
