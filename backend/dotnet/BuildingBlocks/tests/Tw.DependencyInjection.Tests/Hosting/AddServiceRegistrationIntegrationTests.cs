@@ -2,6 +2,7 @@ using System.Reflection;
 using FluentAssertions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Tw.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
 using Tw.DependencyInjection.Diagnostics;
@@ -25,7 +26,7 @@ public class AddServiceRegistrationIntegrationTests
     public void AddServiceRegistration_RegistersDiscoveredServicesAndReport()
     {
         var services = new ServiceCollection();
-        var configuration = new ConfigurationBuilder().Build();
+        var configuration = ConfigurationForFixtures();
 
         services.AddServiceRegistration(configuration, new FakeAssemblySource(FixtureAssembly));
         using var provider = services.BuildServiceProvider();
@@ -40,13 +41,34 @@ public class AddServiceRegistrationIntegrationTests
     public void AddServiceRegistration_RegistersOpenGenericContract()
     {
         var services = new ServiceCollection();
-        var configuration = new ConfigurationBuilder().Build();
+        var configuration = ConfigurationForFixtures();
 
         services.AddServiceRegistration(configuration, new FakeAssemblySource(FixtureAssembly));
         using var provider = services.BuildServiceProvider();
 
         provider.GetRequiredService<IRepository<OrderEntity>>()
             .Should().BeOfType<Repository<OrderEntity>>();
+    }
+
+    [Fact]
+    public void AddServiceRegistration_BindsOptionsAndRegistersOptionsReport()
+    {
+        var services = new ServiceCollection();
+        var configuration = ConfigurationForFixtures();
+
+        services.AddServiceRegistration(configuration, new FakeAssemblySource(FixtureAssembly));
+        using var provider = services.BuildServiceProvider(validateScopes: true);
+
+        var cache = provider.GetRequiredService<IOptions<IntegrationCacheOptions>>().Value;
+        cache.Endpoint.Should().Be("localhost");
+        cache.EffectiveEndpoint.Should().Be("localhost");
+        provider.GetRequiredService<IOptionsMonitor<NamedRedisOptions>>()
+            .Get("primary")
+            .Endpoint
+            .Should()
+            .Be("redis");
+        provider.GetRequiredService<OptionsBindingReport>().Items.Should()
+            .Contain(item => item.SectionPath == "IntegrationCache");
     }
 
     private interface IMissingProvider;
@@ -85,4 +107,13 @@ public class AddServiceRegistrationIntegrationTests
         act.Should().Throw<ServiceRegistrationException>()
             .WithMessage("*未注册 keyed service*");
     }
+
+    private static IConfiguration ConfigurationForFixtures() =>
+        new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                ["IntegrationCache:Endpoint"] = "localhost",
+                ["Tw:Redis:Endpoint"] = "redis",
+            })
+            .Build();
 }

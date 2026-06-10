@@ -139,6 +139,6 @@ public sealed class Repository<TEntity> : IRepository<TEntity>, IScopedDependenc
 ## 注意事项
 
 - `Replace = true`、`ReplaceServices`、`TryReplace` 不属于本包服务注册模型。
-- Options 自动装载由 P3 提供，Options 类型不作为普通服务注册。
+- Options 自动装载已由 P3 提供，Options 类型不作为普通服务注册，详见 [配置与 Options 自动装载](options-binding.md)。
 - AOP 动态代理由 P4 提供，P2 只完成服务注册。
 - 诊断报告只输出类型、契约、key、优先级和原因，不输出配置值或方法参数值。
