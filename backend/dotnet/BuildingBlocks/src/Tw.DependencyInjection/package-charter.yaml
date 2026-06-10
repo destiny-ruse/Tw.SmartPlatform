@@ -6,7 +6,7 @@ compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
   框架绑定的依赖注入执行引擎：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、
   Autofac 容器接管、注册规划诊断报告。消费 Tw.Core 的框架无关抽象，向宿主提供引擎级启动原语，
-  并提供自动服务注册的参与判定、暴露、仲裁、注册入口与 Options 自动装载能力。
+  并提供自动服务注册的参与判定、暴露、仲裁、注册入口、Options 自动装载与 Castle 方法级动态代理承载能力。
 in_scope:
   - 程序集发现与白/黑名单过滤
   - 程序集依赖拓扑排序与循环诊断
@@ -15,15 +15,19 @@ in_scope:
   - 自动服务注册参与判定、生命周期解析与服务暴露
   - 非 keyed 单实现仲裁、keyed service 与 open generic 注册
   - Options 自动发现、绑定、启动校验、后置配置与诊断报告
+  - Castle interface/class 动态代理承载
+  - 基于特性的拦截器选择
+  - 方法级拦截 pipeline
+  - 方法级拦截承载诊断报告 InterceptionReport
 out_of_scope:
   - DI 注册标记、特性、Options 与 AOP 抽象（归 Tw.Core 的 .Abstractions 命名空间）
-  - ASP.NET Core 宿主启动、MVC 与 gRPC 承载
+  - ASP.NET Core 宿主启动、MVC、Minimal API、Middleware 与 gRPC 承载
   - 数据访问、ORM、仓储实现
-  - AOP 动态代理承载（P4 提供）
 public_capabilities:
   - 程序集扫描与容器接管
   - 服务自动注册入口与规划诊断报告
   - Options 自动装载与诊断报告
+  - Castle 方法级动态代理拦截与诊断报告
 dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"
