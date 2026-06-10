@@ -1,7 +1,9 @@
 using System.Reflection;
+using System.Runtime.ExceptionServices;
 using Microsoft.Extensions.DependencyInjection;
 using AbstractionInterceptor = Tw.DynamicProxy.Abstractions.IInterceptor;
 using CastleAsyncInterceptor = Castle.DynamicProxy.IAsyncInterceptor;
+using CastleInterceptor = Castle.DynamicProxy.IInterceptor;
 using CastleInvocation = Castle.DynamicProxy.IInvocation;
 
 namespace Tw.DependencyInjection.DynamicProxy;
@@ -14,8 +16,12 @@ namespace Tw.DependencyInjection.DynamicProxy;
 /// Castle 会把同步方法以及 <see cref="ValueTask"/>、<see cref="ValueTask{TResult}"/> 方法分派到同步入口，
 /// 同步入口会阻塞等待统一 pipeline 完成，拦截器实现不应依赖捕获同步上下文恢复
 /// </remarks>
-public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor
+public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, CastleInterceptor
 {
+    private static readonly MethodInfo InterceptAsynchronousWithResultMethod = typeof(CastleAsyncInterceptorAdapter)
+        .GetMethods(BindingFlags.Public | BindingFlags.Instance)
+        .Single(method => method.Name == nameof(InterceptAsynchronous) && method.IsGenericMethodDefinition);
+
     private readonly IInterceptorSelector _selector;
     private readonly IInterceptorPipeline _pipeline;
     private readonly IServiceProvider _serviceProvider;
@@ -39,6 +45,41 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor
         _selector = selector;
         _pipeline = pipeline;
         _serviceProvider = serviceProvider;
+    }
+
+    /// <summary>
+    /// 拦截 Castle DynamicProxy 的通用同步入口，并按目标方法返回类型分派到异步适配入口
+    /// </summary>
+    /// <param name="invocation">Castle 当前调用对象</param>
+    /// <exception cref="ArgumentNullException">invocation 为 null 时抛出</exception>
+    public void Intercept(CastleInvocation invocation)
+    {
+        ArgumentNullException.ThrowIfNull(invocation);
+
+        var returnType = ResolveMethod(invocation).ReturnType;
+        if (returnType == typeof(Task))
+        {
+            InterceptAsynchronous(invocation);
+            return;
+        }
+
+        if (returnType.IsGenericType && returnType.GetGenericTypeDefinition() == typeof(Task<>))
+        {
+            try
+            {
+                InterceptAsynchronousWithResultMethod
+                    .MakeGenericMethod(returnType.GenericTypeArguments[0])
+                    .Invoke(this, [invocation]);
+            }
+            catch (TargetInvocationException ex) when (ex.InnerException is not null)
+            {
+                ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+            }
+
+            return;
+        }
+
+        InterceptSynchronous(invocation);
     }
 
     /// <summary>
