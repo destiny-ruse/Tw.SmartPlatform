@@ -55,8 +55,22 @@ public sealed class RedisOptions : IConfigurableOptions
 }
 ```
 
+自动装载完成后，Microsoft Options 管线会从 DI 提供 `IOptionsMonitor<RedisOptions>`：
+
 ```csharp
-var redis = optionsMonitor.Get("primary");
+using Microsoft.Extensions.Options;
+
+public sealed class RedisClient
+{
+    private readonly IOptionsMonitor<RedisOptions> _optionsMonitor;
+
+    public RedisClient(IOptionsMonitor<RedisOptions> optionsMonitor)
+    {
+        _optionsMonitor = optionsMonitor;
+    }
+
+    public string Endpoint => _optionsMonitor.Get("primary").Endpoint;
+}
 ```
 
 未标记 `[OptionsName]` 的类型使用 `Options.DefaultName`。
@@ -111,6 +125,8 @@ public sealed class LocalOnlyOptions : IConfigurableOptions
 ## 注意事项
 
 - Options 类型不作为普通服务注册，不参与 DI 单实现仲裁。
-- 同一命名实例不得绑定到重复配置路径。
+- 同一 `OptionsType + Name` 重复会失败。
+- 同一 `SectionPath + Name` 重复会失败。
+- 配置路径判重大小写不敏感，Options name 大小写敏感。
 - 配置路径不得从环境名拼接，环境差异来自配置源。
 - 密钥、令牌、证书和连接串必须来自受控密钥来源，不写入仓库配置样例。

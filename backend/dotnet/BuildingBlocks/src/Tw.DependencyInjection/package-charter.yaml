@@ -21,7 +21,9 @@ out_of_scope:
   - 数据访问、ORM、仓储实现
   - AOP 动态代理承载（P4 提供）
 public_capabilities:
-  - Tw.DependencyInjection
+  - 程序集扫描与容器接管
+  - 服务自动注册入口与规划诊断报告
+  - Options 自动装载与诊断报告
 dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"

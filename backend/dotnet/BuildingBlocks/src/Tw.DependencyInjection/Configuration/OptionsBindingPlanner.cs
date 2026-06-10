@@ -29,8 +29,8 @@ internal static class OptionsBindingPlanner
 
         var candidates = new List<OptionsBindingCandidate>();
         var diagnostics = new List<OptionsBindingDiagnostic>();
-        var seenTypeAndName = new HashSet<string>(StringComparer.Ordinal);
-        var seenSectionAndName = new Dictionary<string, Type>(StringComparer.Ordinal);
+        var seenTypeAndName = new HashSet<(Type OptionsType, string Name)>();
+        var seenSectionAndName = new Dictionary<SectionNameKey, Type>(SectionNameKeyComparer.Instance);
 
         foreach (var type in EnumerateTypes(assemblies, typesByAssemblyName))
         {
@@ -157,17 +157,17 @@ internal static class OptionsBindingPlanner
         Type type,
         string sectionPath,
         string name,
-        HashSet<string> seenTypeAndName,
-        Dictionary<string, Type> seenSectionAndName)
+        HashSet<(Type OptionsType, string Name)> seenTypeAndName,
+        Dictionary<SectionNameKey, Type> seenSectionAndName)
     {
-        var typeKey = $"{type.AssemblyQualifiedName}|{name}";
+        var typeKey = (type, name);
         if (!seenTypeAndName.Add(typeKey))
         {
             throw new ServiceRegistrationException(
                 $"Options 类型 {type.FullName} 的命名实例 {name} 重复");
         }
 
-        var sectionKey = $"{sectionPath}|{name}";
+        var sectionKey = new SectionNameKey(sectionPath, name);
         if (seenSectionAndName.TryGetValue(sectionKey, out var existingType))
         {
             throw new ServiceRegistrationException(
@@ -181,4 +181,23 @@ internal static class OptionsBindingPlanner
         type.GetCustomAttribute<SensitiveConfigurationAttribute>() is not null ||
         type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
             .Any(property => property.GetCustomAttribute<SensitiveConfigurationAttribute>() is not null);
+
+    private readonly record struct SectionNameKey(string SectionPath, string Name);
+
+    private sealed class SectionNameKeyComparer : IEqualityComparer<SectionNameKey>
+    {
+        public static readonly SectionNameKeyComparer Instance = new();
+
+        public bool Equals(SectionNameKey x, SectionNameKey y) =>
+            StringComparer.OrdinalIgnoreCase.Equals(x.SectionPath, y.SectionPath) &&
+            StringComparer.Ordinal.Equals(x.Name, y.Name);
+
+        public int GetHashCode(SectionNameKey obj)
+        {
+            var hash = new HashCode();
+            hash.Add(obj.SectionPath, StringComparer.OrdinalIgnoreCase);
+            hash.Add(obj.Name, StringComparer.Ordinal);
+            return hash.ToHashCode();
+        }
+    }
 }
