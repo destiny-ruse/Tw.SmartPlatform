@@ -17,6 +17,12 @@ internal static class ConstructorKeyedServiceValidator
     /// <exception cref="Tw.DependencyInjection.ServiceRegistrationException">
     /// 某构造函数参数通过 <see cref="FromKeyedServicesAttribute"/> 引用了未在注册计划中出现的 keyed service 时抛出
     /// </exception>
+    /// <remarks>
+    /// 本校验遍历实现类型的<b>全部公共构造函数</b>的 <see cref="FromKeyedServicesAttribute"/> 参数，
+    /// 并要求其 key 已在计划中注册，属保守校验。
+    /// 当类型存在多个公共构造函数、而容器仅选用其一时，
+    /// 对未被选用构造函数中指向缺失 key 的参数也会报错（保守拒绝，倾向启动期暴露问题）。
+    /// </remarks>
     public static void Validate(IReadOnlyList<ServiceCandidate> registrations)
     {
         ArgumentNullException.ThrowIfNull(registrations);

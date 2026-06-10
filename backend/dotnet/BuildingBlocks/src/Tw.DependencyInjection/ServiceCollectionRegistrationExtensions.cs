@@ -1,6 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Tw.DependencyInjection.Discovery;
 using Tw.DependencyInjection.Registration;
 
@@ -36,6 +37,11 @@ public static class ServiceCollectionRegistrationExtensions
     /// <param name="assemblySource">程序集候选来源</param>
     /// <returns>同一服务集合，便于链式调用</returns>
     /// <exception cref="ArgumentNullException">任一参数为 null 时抛出</exception>
+    /// <remarks>
+    /// <see cref="ServiceRegistrationReport"/> 以 <see cref="Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton{TService}(IServiceCollection, TService)"/>
+    /// 注册，多次调用时保留首个报告，不会重复注册导致 <c>GetRequiredService</c> 歧义。
+    /// <see cref="AddServiceRegistration(IServiceCollection, IConfiguration)"/> 设计为组合根处调用一次。
+    /// </remarks>
     internal static IServiceCollection AddServiceRegistration(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -55,6 +61,7 @@ public static class ServiceCollectionRegistrationExtensions
             entry => entry.Level,
             StringComparer.Ordinal);
 
+        // OrderedAssemblies 来自 AssemblyDiscoverer，已按非 null 程序集名过滤，故此处 Name 必非 null
         var typesByAssemblyName = discovery.OrderedAssemblies.ToDictionary(
             assembly => assembly.GetName().Name!,
             SafeGetTypes,
@@ -69,7 +76,7 @@ public static class ServiceCollectionRegistrationExtensions
 
         ConstructorKeyedServiceValidator.Validate(plan.Registrations);
         ServiceRegistrationExecutor.Apply(services, plan);
-        services.AddSingleton(plan.Report);
+        services.TryAddSingleton(plan.Report);
         return services;
     }
 
