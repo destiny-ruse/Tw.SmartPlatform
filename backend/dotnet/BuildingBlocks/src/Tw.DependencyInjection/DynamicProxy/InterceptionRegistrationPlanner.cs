@@ -91,6 +91,26 @@ internal static class InterceptionRegistrationPlanner
                 "实现类型已暴露接口契约，拦截通过 Castle interface proxy 承载");
         }
 
+        if (registration.ImplementationType.IsGenericTypeDefinition)
+        {
+            return SkippedDiagnostic(
+                registration,
+                method,
+                CastleClassProxy,
+                interceptorTypes,
+                "开放泛型 class-only 服务当前不承载 Castle class proxy");
+        }
+
+        if (!IsPublicProxyType(registration.ImplementationType))
+        {
+            return SkippedDiagnostic(
+                registration,
+                method,
+                CastleClassProxy,
+                interceptorTypes,
+                "实现类型不是 public，无法使用 Castle class proxy");
+        }
+
         if (registration.ImplementationType.IsSealed)
         {
             return SkippedDiagnostic(
@@ -116,6 +136,9 @@ internal static class InterceptionRegistrationPlanner
 
     private static bool CanUseClassProxy(MethodInfo method) =>
         method.IsVirtual && !method.IsFinal && !method.IsPrivate;
+
+    private static bool IsPublicProxyType(Type type) =>
+        type.IsPublic || type.IsNestedPublic;
 
     private static InterceptionDiagnostic EnabledDiagnostic(
         Registration.ServiceCandidate registration,

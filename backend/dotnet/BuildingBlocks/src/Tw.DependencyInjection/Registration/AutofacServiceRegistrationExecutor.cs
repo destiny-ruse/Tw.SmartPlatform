@@ -1,3 +1,4 @@
+using System.Reflection;
 using Autofac;
 using Autofac.Builder;
 using Autofac.Extensions.DependencyInjection;
@@ -13,6 +14,9 @@ namespace Tw.DependencyInjection.Registration;
 /// </summary>
 internal static class AutofacServiceRegistrationExecutor
 {
+    private static readonly MethodInfo AddNonKeyedEnumerableMethod = typeof(AutofacServiceRegistrationExecutor)
+        .GetMethod(nameof(AddNonKeyedEnumerableCore), BindingFlags.NonPublic | BindingFlags.Static)!;
+
     private const string Enabled = "enabled";
     private const string CastleInterfaceProxy = "CastleInterfaceProxy";
     private const string CastleClassProxy = "CastleClassProxy";
@@ -41,6 +45,10 @@ internal static class AutofacServiceRegistrationExecutor
             if (registration.Key is not null)
             {
                 AddKeyedEntry(builder, registration);
+            }
+            else
+            {
+                AddNonKeyedEnumerable(builder, registration);
             }
         }
     }
@@ -141,6 +149,25 @@ internal static class AutofacServiceRegistrationExecutor
             .As(entryType);
 
         ApplyLifetime(registrationBuilder, registration.Lifetime);
+    }
+
+    private static void AddNonKeyedEnumerable(ContainerBuilder builder, ServiceCandidate registration)
+    {
+        if (registration.ServiceType.IsGenericTypeDefinition)
+        {
+            return;
+        }
+
+        AddNonKeyedEnumerableMethod
+            .MakeGenericMethod(registration.ServiceType)
+            .Invoke(null, [builder]);
+    }
+
+    private static void AddNonKeyedEnumerableCore<TService>(ContainerBuilder builder)
+        where TService : notnull
+    {
+        builder.Register(context => new[] { context.Resolve<TService>() })
+            .As<IEnumerable<TService>>();
     }
 
     private static void ApplyTypedInterception<TLimit, TRegistrationStyle>(
