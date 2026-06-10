@@ -6,3 +6,4 @@
 
 - [程序集扫描与容器接管](assembly-scanning.md)：扫描白/黑名单、依赖拓扑排序与循环诊断、`UseAutofac()` 启动原语（P1 落地）。
 - [服务自动注册](service-registration.md)：生命周期标记、显式暴露、keyed service、open generic 与单实现仲裁（P2 落地）。
+- [配置与 Options 自动装载](options-binding.md)：发现 `IConfigurableOptions`、绑定配置节、启动校验、命名 Options 与诊断报告（P3 落地）。

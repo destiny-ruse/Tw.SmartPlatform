@@ -2,6 +2,7 @@ using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Tw.DependencyInjection.Configuration;
 using Tw.DependencyInjection.Discovery;
 using Tw.DependencyInjection.Registration;
 
@@ -66,6 +67,13 @@ public static class ServiceCollectionRegistrationExtensions
             assembly => assembly.GetName().Name!,
             SafeGetTypes,
             StringComparer.Ordinal);
+
+        var optionsPlan = OptionsBindingPlanner.Plan(
+            discovery.OrderedAssemblies,
+            typesByAssemblyName,
+            configuration);
+        OptionsBindingExecutor.Apply(services, configuration, optionsPlan.Candidates);
+        services.TryAddSingleton(optionsPlan.Report);
 
         var plan = ServiceRegistrationPlanner.Plan(
             discovery.OrderedAssemblies,

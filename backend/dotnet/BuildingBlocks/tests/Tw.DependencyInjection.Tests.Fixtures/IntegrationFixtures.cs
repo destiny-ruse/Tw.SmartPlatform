@@ -1,4 +1,7 @@
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Tw.Configuration.Abstractions;
 using Tw.DependencyInjection.Abstractions;
 
 namespace Tw.DependencyInjection.Tests.Fixtures;
@@ -40,3 +43,38 @@ public sealed class Repository<TEntity> : IRepository<TEntity>, IScopedDependenc
 
 /// <summary>集成测试用订单实体（泛型参数占位，不参与注册）</summary>
 public sealed class OrderEntity;
+
+/// <summary>集成测试用缓存配置</summary>
+public sealed class IntegrationCacheOptions : IConfigurableOptions<IntegrationCacheOptions>
+{
+    /// <summary>缓存端点</summary>
+    [Required]
+    public string Endpoint { get; set; } = string.Empty;
+
+    /// <summary>后置配置生成的有效端点</summary>
+    public string EffectiveEndpoint { get; set; } = string.Empty;
+
+    /// <inheritdoc />
+    public void PostConfigure(IntegrationCacheOptions options, IConfiguration configuration)
+    {
+        options.EffectiveEndpoint = configuration["Endpoint"] ?? options.Endpoint;
+    }
+}
+
+/// <summary>集成测试用命名 Redis 配置</summary>
+[OptionsSection("Tw:Redis")]
+[OptionsName("primary")]
+public sealed class NamedRedisOptions : IConfigurableOptions
+{
+    /// <summary>Redis 端点</summary>
+    [Required]
+    public string Endpoint { get; set; } = string.Empty;
+}
+
+/// <summary>禁用自动绑定的测试配置</summary>
+[DisableOptionsBinding]
+public sealed class DisabledOptions : IConfigurableOptions
+{
+    /// <summary>被禁用的值</summary>
+    public string Value { get; set; } = string.Empty;
+}

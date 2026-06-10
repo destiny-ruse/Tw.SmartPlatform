@@ -2,7 +2,7 @@
 
 ## 能力定位
 
-`Tw.DependencyInjection` 是依赖注入执行引擎包，引用 `Tw.Core` 消费其框架无关抽象，直接引用 Autofac 执行容器接管。P1 阶段提供扫描地基：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、`UseAutofac()` 容器接管，以及 `ServiceRegistrationReport` 诊断骨架。服务注册仲裁已在 P2 落地，详见 [服务自动注册](service-registration.md)；Options 装载（P3）与 AOP 承载（P4）属后续阶段。
+`Tw.DependencyInjection` 是依赖注入执行引擎包，引用 `Tw.Core` 消费其框架无关抽象，直接引用 Autofac 执行容器接管。P1 阶段提供扫描地基：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、`UseAutofac()` 容器接管，以及 `ServiceRegistrationReport` 诊断骨架。服务注册仲裁已在 P2 落地，详见 [服务自动注册](service-registration.md)；Options 自动装载已在 P3 落地，详见 [配置与 Options 自动装载](options-binding.md)；AOP 承载由 P4 提供。
 
 ## 容器接管
 
