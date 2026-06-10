@@ -58,11 +58,14 @@ internal static class ServicePriorityResolver
             .OfType<ServicePriorityAttribute>()
             .SingleOrDefault();
 
-        var registrationPriority = type
+        var registrationAttributePriority = type
             .GetCustomAttributes(typeof(ServiceRegistrationAttribute), inherit: false)
             .OfType<ServiceRegistrationAttribute>()
             .SingleOrDefault()
             ?.Priority;
+        // ServiceRegistrationAttribute.Priority 默认值为 0（中性优先级），无法区分"显式设 0"与"未设"，
+        // 故把 0 视为未声明类型优先级，避免与独立的 [ServicePriority] 组合时误报不一致。
+        var registrationPriority = registrationAttributePriority is 0 ? null : registrationAttributePriority;
 
         if (servicePriority is not null && registrationPriority is not null && servicePriority.Priority != registrationPriority.Value)
         {

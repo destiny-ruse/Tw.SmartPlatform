@@ -15,6 +15,8 @@ public class ServiceRegistrationExecutorTests
     private interface IPaymentProvider;
     private sealed class WechatPaymentProvider : IPaymentProvider;
     private sealed class AlipayPaymentProvider : IPaymentProvider;
+    private interface IGenericKeyedContract<T>;
+    private sealed class GenericKeyedImpl<T> : IGenericKeyedContract<T>;
 
     [Fact]
     public void Apply_RegistersNonKeyedWinner()
@@ -131,6 +133,32 @@ public class ServiceRegistrationExecutorTests
             .Should().BeOfType<WechatPaymentProvider>();
         provider.GetRequiredKeyedService<IPaymentProvider>("alipay")
             .Should().BeOfType<AlipayPaymentProvider>();
+    }
+
+    [Fact]
+    public void Apply_DoesNotThrow_ForKeyedOpenGenericContract()
+    {
+        // keyed + 开放泛型契约（IGenericKeyedContract<>）不应在 AddKeyedEntry 中因 MakeGenericType 抛 ArgumentException
+        var services = new ServiceCollection();
+        var plan = CreatePlan(new ServiceCandidate(
+            typeof(IGenericKeyedContract<>),
+            typeof(GenericKeyedImpl<>),
+            Key: "k",
+            DependencyLifetime.Scoped,
+            AssemblyName: "Sample",
+            TopologyLevel: 0,
+            AssemblyPriority: 0,
+            TypePriority: 0,
+            FinalPriority: 0,
+            DiscoveryOrder: 0));
+
+        var act = () => ServiceRegistrationExecutor.Apply(services, plan);
+
+        // 不抛异常，且 keyed 描述符已写入（开放泛型 keyed 服务本身可正常注册）
+        act.Should().NotThrow();
+        services.Should().Contain(d =>
+            d.ServiceType == typeof(IGenericKeyedContract<>) &&
+            Equals(d.ServiceKey, "k"));
     }
 
     [Fact]

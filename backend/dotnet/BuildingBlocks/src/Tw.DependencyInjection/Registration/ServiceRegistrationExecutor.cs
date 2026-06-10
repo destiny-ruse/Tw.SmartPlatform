@@ -87,6 +87,13 @@ internal static class ServiceRegistrationExecutor
     /// </remarks>
     private static void AddKeyedEntry(IServiceCollection services, ServiceCandidate registration)
     {
+        // keyed 开放泛型契约无法构造具体 KeyedServiceEntry<TService> 枚举条目，跳过登记，避免 MakeGenericType 失败。
+        // keyed 服务本身已由 AddKeyed 完成注册，此处仅负责可枚举条目，对开放泛型无意义。
+        if (registration.ServiceType.IsGenericTypeDefinition)
+        {
+            return;
+        }
+
         var entryType = typeof(KeyedServiceEntry<>).MakeGenericType(registration.ServiceType);
         services.Add(ServiceDescriptor.Describe(
             entryType,

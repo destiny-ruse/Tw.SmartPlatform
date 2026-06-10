@@ -84,6 +84,9 @@ public sealed class ServiceRegistrationReport
     /// <summary>扫描到但未参与普通服务注册的类型列表；由注册规划器（Task 6）填充，P1 阶段为空集合</summary>
     public IReadOnlyList<SkippedServiceTypeDiagnostic> SkippedTypes { get; }
 
-    /// <summary>规划阶段检测到的冲突列表；由注册规划器（Task 6）填充，P1 阶段为空集合</summary>
+    /// <summary>
+    /// 规划阶段检测到的冲突列表；由注册规划器（Task 6）填充，P1 阶段为空集合。
+    /// P2 阶段规划期冲突以启动异常表达，本集合当前为空，保留供后续阶段填充。
+    /// </summary>
     public IReadOnlyList<ServiceConflictDiagnostic> Conflicts { get; }
 }

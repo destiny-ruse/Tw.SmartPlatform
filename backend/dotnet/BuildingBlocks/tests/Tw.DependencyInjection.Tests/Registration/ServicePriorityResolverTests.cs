@@ -26,6 +26,10 @@ public class ServicePriorityResolverTests
     [ServicePriority(200_000)]
     private sealed class OutOfRangeTypePriorityService;
 
+    [ServiceRegistration(DependencyLifetime.Singleton)]
+    [ServicePriority(5)]
+    private sealed class LifetimeWithSeparatePriorityService;
+
     [Fact]
     public void ResolveTypePriority_UsesExplicitPriority()
     {
@@ -108,6 +112,19 @@ public class ServicePriorityResolverTests
 
         act.Should().Throw<ServiceRegistrationException>()
             .WithMessage("*超出允许范围*");
+    }
+
+    // ──────────────────────────────────────────────────────────
+    // [ServiceRegistration(生命周期)] + [ServicePriority(N)] 合法组合
+    // ──────────────────────────────────────────────────────────
+
+    [Fact]
+    public void ResolveTypePriority_AllowsServiceRegistrationLifetimeWithSeparateServicePriority()
+    {
+        // [ServiceRegistration(DependencyLifetime.Singleton)] 用于声明生命周期（Priority 默认 0，视为中性/未设置）
+        // [ServicePriority(5)] 用于独立声明类型优先级，是文档推荐的合法组合，不应误报"类型优先级声明不一致"
+        ServicePriorityResolver.ResolveTypePriority(typeof(LifetimeWithSeparatePriorityService))
+            .Should().Be(5);
     }
 
 }
