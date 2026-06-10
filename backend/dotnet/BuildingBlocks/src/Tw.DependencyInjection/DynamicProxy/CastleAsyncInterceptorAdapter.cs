@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using Microsoft.Extensions.DependencyInjection;
+using Tw.DependencyInjection.Diagnostics;
 using AbstractionInterceptor = Tw.DynamicProxy.Abstractions.IInterceptor;
 using CastleAsyncInterceptor = Castle.DynamicProxy.IAsyncInterceptor;
 using CastleInterceptor = Castle.DynamicProxy.IInterceptor;
@@ -18,6 +19,9 @@ namespace Tw.DependencyInjection.DynamicProxy;
 /// </remarks>
 public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, CastleInterceptor
 {
+    private const string Enabled = "enabled";
+    private const string CastleInterfaceProxy = "CastleInterfaceProxy";
+
     private static readonly MethodInfo InterceptAsynchronousWithResultMethod = typeof(CastleAsyncInterceptorAdapter)
         .GetMethods(BindingFlags.Public | BindingFlags.Instance)
         .Single(method => method.Name == nameof(InterceptAsynchronous) && method.IsGenericMethodDefinition);
@@ -25,6 +29,7 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
     private readonly IInterceptorSelector _selector;
     private readonly IInterceptorPipeline _pipeline;
     private readonly IServiceProvider _serviceProvider;
+    private readonly InterceptionReport? _interceptionReport;
 
     /// <summary>
     /// 创建 Castle 异步拦截器适配器
@@ -45,6 +50,7 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
         _selector = selector;
         _pipeline = pipeline;
         _serviceProvider = serviceProvider;
+        _interceptionReport = serviceProvider.GetService<InterceptionReport>();
     }
 
     /// <summary>
@@ -156,16 +162,111 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
             ?? throw new InvalidOperationException("无法从 Castle invocation 解析实现类型");
     }
 
-    private static Type ResolveServiceType(CastleInvocation invocation, Type implementationType) =>
-        invocation.Method.DeclaringType
-        ?? invocation.MethodInvocationTarget?.DeclaringType
-        ?? implementationType;
+    private Type ResolveServiceType(CastleInvocation invocation, Type implementationType, MethodInfo method)
+    {
+        var declaredServiceType = invocation.Method.DeclaringType
+            ?? invocation.MethodInvocationTarget?.DeclaringType
+            ?? implementationType;
+
+        if (!declaredServiceType.IsInterface)
+        {
+            return declaredServiceType;
+        }
+
+        return ResolveMostSpecificServiceInterface(invocation, implementationType, declaredServiceType, method, _interceptionReport)
+            ?? declaredServiceType;
+    }
+
+    private static Type? ResolveMostSpecificServiceInterface(
+        CastleInvocation invocation,
+        Type implementationType,
+        Type declaredServiceType,
+        MethodInfo method,
+        InterceptionReport? report)
+    {
+        var candidateInterfaces = (invocation.Proxy?.GetType().GetInterfaces() ?? [])
+            .Where(declaredServiceType.IsAssignableFrom)
+            .Distinct()
+            .ToList();
+
+        var mostSpecificInterfaces = candidateInterfaces
+            .Where(candidate => !candidateInterfaces.Any(other =>
+                candidate != other && candidate.IsAssignableFrom(other)))
+            .ToList();
+
+        var reportedServiceTypeNames = ResolveReportedServiceTypeNames(report, implementationType, method);
+        if (reportedServiceTypeNames.Count > 0)
+        {
+            var reportedProxyInterfaces = mostSpecificInterfaces
+                .Where(candidate => TypeNames(candidate).Any(reportedServiceTypeNames.Contains))
+                .ToList();
+
+            if (reportedProxyInterfaces.Count == 1)
+            {
+                return reportedProxyInterfaces[0];
+            }
+
+            var reportedImplementationInterfaces = implementationType
+                .GetInterfaces()
+                .Where(declaredServiceType.IsAssignableFrom)
+                .Where(candidate => TypeNames(candidate).Any(reportedServiceTypeNames.Contains))
+                .Distinct()
+                .ToList();
+
+            var mostSpecificReportedInterfaces = reportedImplementationInterfaces
+                .Where(candidate => !reportedImplementationInterfaces.Any(other =>
+                    candidate != other && candidate.IsAssignableFrom(other)))
+                .ToList();
+
+            if (mostSpecificReportedInterfaces.Count == 1)
+            {
+                return mostSpecificReportedInterfaces[0];
+            }
+        }
+
+        return mostSpecificInterfaces.Count == 1 ? mostSpecificInterfaces[0] : null;
+    }
+
+    private static HashSet<string> ResolveReportedServiceTypeNames(
+        InterceptionReport? report,
+        Type implementationType,
+        MethodInfo method)
+    {
+        if (report is null)
+        {
+            return [];
+        }
+
+        var implementationTypeNames = TypeNames(implementationType);
+        return report.Items
+            .Where(item => item.Status == Enabled
+                && item.Carrier == CastleInterfaceProxy
+                && item.MethodName == method.Name
+                && implementationTypeNames.Contains(item.ImplementationTypeName))
+            .Select(item => item.ServiceTypeName)
+            .ToHashSet(StringComparer.Ordinal);
+    }
+
+    private static HashSet<string> TypeNames(Type type)
+    {
+        var names = new HashSet<string>(StringComparer.Ordinal)
+        {
+            TypeName(type),
+        };
+
+        if (type.IsGenericType && !type.IsGenericTypeDefinition)
+        {
+            names.Add(TypeName(type.GetGenericTypeDefinition()));
+        }
+
+        return names;
+    }
 
     private IReadOnlyList<AbstractionInterceptor> ResolveInterceptors(CastleInvocation invocation)
     {
         var method = ResolveMethod(invocation);
         var implementationType = ResolveImplementationType(invocation);
-        var serviceType = ResolveServiceType(invocation, implementationType);
+        var serviceType = ResolveServiceType(invocation, implementationType, method);
         var interceptorTypes = _selector.SelectInterceptors(implementationType, serviceType, method);
 
         if (interceptorTypes.Count == 0)
@@ -213,4 +314,6 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
 
         return (TResult)context.ReturnValue;
     }
+
+    private static string TypeName(Type type) => type.FullName ?? type.Name;
 }

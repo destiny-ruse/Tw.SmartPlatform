@@ -60,15 +60,47 @@ internal static class InterceptionRegistrationPlanner
 
     private static IEnumerable<MethodInfo> EnumerateCandidateMethods(Type serviceType, Type implementationType)
     {
-        var inspectedType = serviceType.IsInterface ? serviceType : implementationType;
+        var inspectedMethods = serviceType.IsInterface
+            ? EnumerateInterfaceMethods(serviceType)
+            : implementationType.GetMethods(BindingFlags.Instance | BindingFlags.Public);
 
-        return inspectedType
-            .GetMethods(BindingFlags.Instance | BindingFlags.Public)
+        return inspectedMethods
             .Where(method => !method.IsSpecialName)
+            .Where(method => method.DeclaringType != typeof(object))
             .OrderBy(method => method.Name, StringComparer.Ordinal)
+            .ThenBy(method => method.DeclaringType?.FullName ?? method.DeclaringType?.Name ?? string.Empty, StringComparer.Ordinal)
             .ThenBy(method => string.Join(",", method.GetParameters().Select(parameter =>
                 parameter.ParameterType.FullName ?? parameter.ParameterType.Name)), StringComparer.Ordinal);
     }
+
+    private static IEnumerable<MethodInfo> EnumerateInterfaceMethods(Type serviceType)
+    {
+        var methods = new List<MethodInfo>();
+        AddMethods(methods, serviceType);
+
+        foreach (var inheritedInterface in serviceType.GetInterfaces())
+        {
+            AddMethods(methods, inheritedInterface);
+        }
+
+        return methods;
+    }
+
+    private static void AddMethods(ICollection<MethodInfo> methods, Type type)
+    {
+        foreach (var method in type.GetMethods(BindingFlags.Instance | BindingFlags.Public))
+        {
+            if (methods.Any(existingMethod => IsSameMethod(existingMethod, method)))
+            {
+                continue;
+            }
+
+            methods.Add(method);
+        }
+    }
+
+    private static bool IsSameMethod(MethodInfo left, MethodInfo right) =>
+        Equals(left, right) || (left.Module == right.Module && left.MetadataToken == right.MetadataToken);
 
     private static InterceptionDiagnostic CreateDiagnostic(
         Registration.ServiceCandidate registration,
@@ -138,7 +170,7 @@ internal static class InterceptionRegistrationPlanner
         method.IsVirtual && !method.IsFinal && !method.IsPrivate;
 
     private static bool IsPublicProxyType(Type type) =>
-        type.IsPublic || type.IsNestedPublic;
+        type.IsVisible;
 
     private static InterceptionDiagnostic EnabledDiagnostic(
         Registration.ServiceCandidate registration,

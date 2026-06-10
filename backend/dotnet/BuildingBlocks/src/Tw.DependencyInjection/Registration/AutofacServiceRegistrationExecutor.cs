@@ -1,6 +1,7 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Builder;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
 using Tw.DependencyInjection.Abstractions;
@@ -51,6 +52,8 @@ internal static class AutofacServiceRegistrationExecutor
                 AddNonKeyedEnumerable(builder, registration);
             }
         }
+
+        AddNonKeyedOpenGenericEnumerableSource(builder, plan.Registrations);
     }
 
     private static void RegisterDynamicProxyServices(ContainerBuilder builder, InterceptionReport report)
@@ -163,6 +166,25 @@ internal static class AutofacServiceRegistrationExecutor
             .Invoke(null, [builder]);
     }
 
+    private static void AddNonKeyedOpenGenericEnumerableSource(
+        ContainerBuilder builder,
+        IReadOnlyList<ServiceCandidate> registrations)
+    {
+        var serviceDefinitions = registrations
+            .Where(registration => registration.Key is null)
+            .Select(registration => registration.ServiceType)
+            .Where(serviceType => serviceType.IsGenericTypeDefinition)
+            .Distinct()
+            .ToList();
+
+        if (serviceDefinitions.Count == 0)
+        {
+            return;
+        }
+
+        builder.RegisterSource(new NonKeyedOpenGenericEnumerableRegistrationSource(serviceDefinitions));
+    }
+
     private static void AddNonKeyedEnumerableCore<TService>(ContainerBuilder builder)
         where TService : notnull
     {
@@ -233,4 +255,55 @@ internal static class AutofacServiceRegistrationExecutor
     }
 
     private static string TypeName(Type type) => type.FullName ?? type.Name;
+
+    private sealed class NonKeyedOpenGenericEnumerableRegistrationSource : IRegistrationSource
+    {
+        private readonly HashSet<Type> _serviceDefinitions;
+
+        public NonKeyedOpenGenericEnumerableRegistrationSource(IEnumerable<Type> serviceDefinitions)
+        {
+            _serviceDefinitions = serviceDefinitions.ToHashSet();
+        }
+
+        public bool IsAdapterForIndividualComponents => false;
+
+        public IEnumerable<IComponentRegistration> RegistrationsFor(
+            Service service,
+            Func<Service, IEnumerable<ServiceRegistration>> registrationAccessor)
+        {
+            if (service is not TypedService typedService)
+            {
+                return [];
+            }
+
+            var collectionType = typedService.ServiceType;
+            if (!collectionType.IsGenericType
+                || collectionType.GetGenericTypeDefinition() != typeof(IEnumerable<>))
+            {
+                return [];
+            }
+
+            var serviceType = collectionType.GetGenericArguments()[0];
+            if (!serviceType.IsGenericType
+                || serviceType.IsGenericTypeDefinition
+                || serviceType.ContainsGenericParameters
+                || !_serviceDefinitions.Contains(serviceType.GetGenericTypeDefinition()))
+            {
+                return [];
+            }
+
+            var registration = RegistrationBuilder
+                .ForDelegate(collectionType, (context, _) =>
+                {
+                    var resolvedService = context.Resolve(serviceType);
+                    var services = Array.CreateInstance(serviceType, 1);
+                    services.SetValue(resolvedService, 0);
+                    return services;
+                })
+                .As(collectionType)
+                .CreateRegistration();
+
+            return [registration];
+        }
+    }
 }
