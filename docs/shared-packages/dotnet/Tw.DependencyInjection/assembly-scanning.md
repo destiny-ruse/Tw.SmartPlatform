@@ -2,7 +2,7 @@
 
 ## 能力定位
 
-`Tw.DependencyInjection` 是依赖注入执行引擎包，引用 `Tw.Core` 消费其框架无关抽象，直接引用 Autofac 执行容器接管。P1 阶段提供扫描地基：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、`UseAutofac()` 容器接管，以及 `ServiceRegistrationReport` 诊断骨架。服务注册仲裁、Options 装载与 AOP 承载属于后续阶段。
+`Tw.DependencyInjection` 是依赖注入执行引擎包，引用 `Tw.Core` 消费其框架无关抽象，直接引用 Autofac 执行容器接管。P1 阶段提供扫描地基：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、`UseAutofac()` 容器接管，以及 `ServiceRegistrationReport` 诊断骨架。服务注册仲裁已在 P2 落地，详见 [服务自动注册](service-registration.md)；Options 装载（P3）与 AOP 承载（P4）属后续阶段。
 
 ## 容器接管
 
@@ -44,7 +44,7 @@ app.Run();
 }
 ```
 
-> 说明：把配置节绑定到 `ServiceRegistrationOptions` 并驱动注册的入口 `AddServiceRegistration(IConfiguration)` 随 DI 注册阶段（P2）落地。
+> 说明：注册入口 `AddServiceRegistration(IConfiguration)` 已在 P2 落地，详见 [服务自动注册](service-registration.md)。程序集级优先级配置 `AssemblyPriorities` 属注册仲裁选项，亦在该文档说明。
 
 ## 拓扑与诊断
 

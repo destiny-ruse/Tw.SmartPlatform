@@ -341,8 +341,17 @@
         "dependencies": {
           "Autofac": "[9.1.0, )",
           "Autofac.Extensions.DependencyInjection": "[11.0.0, )",
+          "Microsoft.Extensions.Configuration.Binder": "[10.0.0, )",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.4, )",
           "Microsoft.Extensions.DependencyModel": "[10.0.0, )",
           "Microsoft.Extensions.Hosting.Abstractions": "[10.0.0, )",
+          "Tw.Core": "[1.0.0, )"
+        }
+      },
+      "tw.dependencyinjection.tests.fixtures": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.4, )",
           "Tw.Core": "[1.0.0, )"
         }
       },
