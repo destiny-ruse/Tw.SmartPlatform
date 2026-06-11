@@ -5,6 +5,7 @@
       "tw.aspnetcore": {
         "type": "Project",
         "dependencies": {
+          "Autofac": "[9.1.0, )",
           "Tw.Core": "[1.0.0, )",
           "Tw.DependencyInjection": "[1.0.0, )"
         }
@@ -12,7 +13,8 @@
       "tw.aspnetcore.mvc": {
         "type": "Project",
         "dependencies": {
-          "Tw.AspNetCore": "[1.0.0, )"
+          "Tw.AspNetCore": "[1.0.0, )",
+          "Tw.DependencyInjection": "[1.0.0, )"
         }
       },
       "tw.core": {

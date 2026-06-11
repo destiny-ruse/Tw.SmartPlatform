@@ -28,3 +28,4 @@ dependency_rules:
   allow:
     - Tw.Core
     - Tw.DependencyInjection
+    - Autofac

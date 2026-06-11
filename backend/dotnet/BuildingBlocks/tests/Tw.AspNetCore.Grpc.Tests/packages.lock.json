@@ -164,6 +164,7 @@
       "tw.aspnetcore": {
         "type": "Project",
         "dependencies": {
+          "Autofac": "[9.1.0, )",
           "Tw.Core": "[1.0.0, )",
           "Tw.DependencyInjection": "[1.0.0, )"
         }
