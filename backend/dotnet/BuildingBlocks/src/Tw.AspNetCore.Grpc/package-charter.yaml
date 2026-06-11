@@ -14,6 +14,8 @@ out_of_scope:
   - 统一拦截 pipeline adapter
   - MVC Filter
   - HTTP Middleware
+  - Minimal API endpoint filter
+  - Razor 与 MVC 能力
   - 业务 proto 契约
 public_capabilities:
   - Tw.AspNetCore.Grpc

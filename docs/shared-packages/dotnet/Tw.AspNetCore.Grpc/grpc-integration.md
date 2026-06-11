@@ -30,16 +30,21 @@ public sealed class AuditGrpcInterceptor : Grpc.Core.Interceptors.Interceptor
 注册 interceptor 时使用 ASP.NET Core gRPC 原生方式：
 
 ```csharp
+using Grpc.AspNetCore.Server;
+using Microsoft.Extensions.DependencyInjection;
 using Tw.AspNetCore;
 using Tw.AspNetCore.Grpc;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.UseTwHostStartup();
-builder.Services.AddGrpc(options => options.Interceptors.Add<AuditGrpcInterceptor>());
 builder.Services.AddGrpcIntegration();
+builder.Services.Configure<GrpcServiceOptions>(options =>
+{
+    options.Interceptors.Add<AuditGrpcInterceptor>();
+});
 ```
 
-也可以在 `AddGrpcIntegration()` 后按 ASP.NET Core gRPC 官方方式继续配置 `GrpcServiceOptions`。关键边界是：gRPC interceptor 由 ASP.NET Core gRPC 原生管线执行，不通过本仓库统一 AOP pipeline 转接。
+也可以在 `AddGrpcIntegration()` 后通过 `IConfigureOptions<GrpcServiceOptions>` 按 ASP.NET Core gRPC 官方方式集中配置 interceptor。关键边界是：gRPC interceptor 由 ASP.NET Core gRPC 原生管线执行，不通过本仓库统一 AOP pipeline 转接。
 
 ## 与统一 AOP pipeline 的关系
 
@@ -55,4 +60,4 @@ Middleware、Minimal API、MVC Filter、Razor Page handler 和 MVC/Web API 结�
 
 ## 验证与依赖边界
 
-P7 验证中使用 `rg` 检查源码和测试时排除 `packages.lock.json`。lock 文件中可能出现由 host 或其他包传递带入的 Castle 依赖记录；`Tw.AspNetCore.Grpc` 的真实边界以源码和测试不引用 AOP、MVC、Castle adapter 为准。
+依赖边界以源码引用和 package charter 为准。lock 文件可能记录由宿主或其他包传递带入的依赖，不代表 `Tw.AspNetCore.Grpc` 的公开能力。
