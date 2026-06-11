@@ -31,6 +31,8 @@ builder.Services.AddMvcIntegration();
 业务服务注入 `ICancellationTokenProvider` 后，可以用显式参数优先、请求取消令牌兜底的方式向下游传递取消信号：
 
 ```csharp
+using Tw.Context;
+
 public sealed class OrderApplicationService
 {
     private readonly ICancellationTokenProvider _cancellationTokenProvider;

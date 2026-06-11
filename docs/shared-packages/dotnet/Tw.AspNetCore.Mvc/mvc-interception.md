@@ -45,6 +45,45 @@ public sealed class AuditInterceptor : InterceptorBase
 }
 ```
 
+## 注册拦截器
+
+`TwActionInterceptionFilter` 会从 DI 解析 `[Intercept]` 选中的拦截器类型。拦截器必须先注册到服务容器：
+
+```csharp
+using Tw.AspNetCore.Mvc;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+builder.Services.AddMvcIntegration();
+builder.Services.AddScoped<AuditInterceptor>();
+```
+
+项目已经使用统一自动注册时，也可以沿用项目现有注册方式；关键要求是拦截器类型能从当前请求的 `IServiceProvider` 解析。
+
+## 标记 controller 或 action
+
+默认 selector 是 `AttributeInterceptorSelector`。controller 或 action 必须使用 `[Intercept(typeof(AuditInterceptor))]`，该 action 才会进入拦截器链。
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Tw.DynamicProxy.Abstractions;
+
+[ApiController]
+[Route("api/orders")]
+public sealed class OrdersController : ControllerBase
+{
+    [HttpPost("{orderId}")]
+    [Intercept(typeof(AuditInterceptor))]
+    public IActionResult Submit(string orderId)
+    {
+        return Ok(orderId);
+    }
+}
+```
+
+需要对整个 controller 生效时，可以把 `[Intercept(typeof(AuditInterceptor))]` 标注到 controller 类上。MVC adapter 复用 [`Tw.DependencyInjection` 方法级动态代理拦截](../Tw.DependencyInjection/dynamic-proxy-interception.md)中的 `[Intercept]`、`[DisableInterception]`、`[InterceptorOrder]` 等选择语义。
+
 ## 修改 action 参数
 
 MVC action 参数会映射到 `MvcInvocationContext.Arguments`。拦截器可以在调用 `ProceedAsync()` 前修改 `Arguments` 中的值。
