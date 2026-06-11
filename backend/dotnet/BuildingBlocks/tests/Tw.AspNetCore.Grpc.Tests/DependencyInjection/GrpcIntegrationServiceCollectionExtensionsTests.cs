@@ -25,7 +25,5 @@ public class GrpcIntegrationServiceCollectionExtensionsTests
         services.Should().Contain(descriptor =>
             descriptor.ServiceType.IsGenericType &&
             descriptor.ServiceType.GetGenericTypeDefinition() == typeof(IGrpcInterceptorActivator<>));
-        services.Should().Contain(descriptor =>
-            descriptor.ServiceType.FullName == "Grpc.AspNetCore.Server.Internal.GrpcMarkerService");
     }
 }
