@@ -1,49 +1,24 @@
-# HttpContext 取消令牌 Provider 使用指南
+# HttpContext 取消令牌 Provider 迁移说明
 
-## 能力定位
+`HttpContextCancellationTokenProvider` 当前由 `Tw.AspNetCore.Mvc` 承载。`Tw.AspNetCore` host-level 启动入口不注册 HTTP 请求取消令牌 provider。
 
-`HttpContextCancellationTokenProvider`（命名空间 `Tw.AspNetCore.Context`）是 `Tw.AspNetCore` 项目内的 ASP.NET Core 适配能力，不是独立项目。它将 `ICancellationTokenProvider` 的默认令牌来源替换为 `HttpContext.RequestAborted`，用于 HTTP API、运行在 ASP.NET Core 宿主内的 gRPC 服务，以及需要读取请求断开信号的 Web 入口。
+当前文档入口：
 
-## DI 注册
+- [`Tw.AspNetCore.Mvc` HttpContext 取消令牌 Provider](../../Tw.AspNetCore.Mvc/context/http-context-cancellation-token-provider.md)
+- [`Tw.AspNetCore.Mvc` MVC action 拦截](../../Tw.AspNetCore.Mvc/mvc-interception.md)
 
-ASP.NET Core 宿主注册：
-
-```csharp
-services.AddHttpContextCancellationTokenProvider();
-```
-
-> `AddHttpContextCancellationTokenProvider` 位于命名空间 `Tw.AspNetCore.Context`。
-
-`AddHttpContextCancellationTokenProvider` 会先注册 `Tw.Core` 核心能力，再注册 `IHttpContextAccessor`，并将 `ICancellationTokenProvider` 替换为 `HttpContextCancellationTokenProvider`。
-
-业务应用可改用聚合入口 `AddWebIntegration()`（命名空间 `Tw.AspNetCore`），它内部调用 `AddHttpContextCancellationTokenProvider()`。
-
-## HTTP API
-
-业务服务注入 `ICancellationTokenProvider` 后，默认读取当前 HTTP 请求的 `RequestAborted`：
+在 MVC/Web API 应用中，引用 `Tw.AspNetCore.Mvc` 后调用：
 
 ```csharp
-public Task SaveAsync(CancellationToken cancellationToken = default)
-{
-    var effectiveToken = cancellationTokenProvider.FallbackToProvider(cancellationToken);
-    return repository.SaveAsync(effectiveToken);
-}
+using Tw.AspNetCore.Mvc.Context;
+
+builder.Services.AddHttpContextCancellationTokenProvider();
 ```
 
-## gRPC
-
-gRPC 服务运行在 ASP.NET Core 宿主中时，默认 provider 可读取 HTTP request aborted。服务方法显式取得 `ServerCallContext.CancellationToken` 时，用 `Use(token)` 覆盖当前执行上下文：
+需要同时启用 MVC action AOP adapter 时，调用：
 
 ```csharp
-using (cancellationTokenProvider.Use(context.CancellationToken))
-{
-    return await applicationService.HandleAsync();
-}
+using Tw.AspNetCore.Mvc;
+
+builder.Services.AddMvcIntegration();
 ```
-
-## 注意事项
-
-- `Tw.AspNetCore.Context` 是 `Tw.AspNetCore` 项目内命名空间，不是独立共享包。
-- 覆盖令牌优先级高于 `HttpContext.RequestAborted`。
-- 没有 `HttpContext` 且没有覆盖令牌时，provider 返回 `CancellationToken.None`。
-- provider 不负责错误响应、状态码映射、重试或超时策略。

@@ -2,7 +2,7 @@
 
 ## 能力定位
 
-`ICancellationTokenProvider`（命名空间 `Tw.Context`）为 HTTP API、gRPC、DotNetCore.CAP 消费、HostedService、Worker、后台任务和定时任务等入口提供统一的执行上下文取消令牌。`Tw.Core` 提供框架无关的核心实现，`Tw.AspNetCore` 提供基于 `HttpContext.RequestAborted` 的适配。
+`ICancellationTokenProvider`（命名空间 `Tw.Context`）为 HTTP API、gRPC、DotNetCore.CAP 消费、HostedService、Worker、后台任务和定时任务等入口提供统一的执行上下文取消令牌。`Tw.Core` 提供框架无关的核心实现，`Tw.AspNetCore.Mvc` 提供基于 `HttpContext.RequestAborted` 的 MVC/Web API 适配。
 
 ## DI 注册
 
@@ -14,17 +14,19 @@ services.AddCancellationTokenProvider();
 
 > `AddCancellationTokenProvider` 位于命名空间 `Tw.Context`。
 
-ASP.NET Core 宿主注册 Web 适配，自动将 provider 替换为 HTTP provider：
+MVC/Web API 应用注册 HTTP 适配，自动将 provider 替换为 HTTP provider：
 
 ```csharp
-services.AddHttpContextCancellationTokenProvider();
+using Tw.AspNetCore.Mvc.Context;
+
+builder.Services.AddHttpContextCancellationTokenProvider();
 ```
 
-> `AddHttpContextCancellationTokenProvider` 位于命名空间 `Tw.AspNetCore.Context`。
+> `AddHttpContextCancellationTokenProvider` 位于命名空间 `Tw.AspNetCore.Mvc.Context`，使用文档见 [`Tw.AspNetCore.Mvc` HttpContext 取消令牌 Provider](../../Tw.AspNetCore.Mvc/context/http-context-cancellation-token-provider.md)。
 
 ## HTTP API
 
-注册 `AddHttpContextCancellationTokenProvider` 后，业务服务注入 `ICancellationTokenProvider` 即可读取当前请求的 `RequestAborted`。业务方法存在显式 `CancellationToken` 参数时，使用 `FallbackToProvider` 实现显式令牌优先：
+注册 `AddHttpContextCancellationTokenProvider` 后，业务服务注入 `ICancellationTokenProvider` 即可读取当前 MVC/Web API 请求的 `RequestAborted`。业务方法存在显式 `CancellationToken` 参数时，使用 `FallbackToProvider` 实现显式令牌优先：
 
 ```csharp
 public Task HandleAsync(CancellationToken cancellationToken = default)

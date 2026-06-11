@@ -28,6 +28,6 @@ app.Run();
 
 ## 边界
 
-该入口只负责基于 `WebApplicationBuilder` 的跨协议宿主启动聚合。MVC Filter 与 gRPC 专属 interceptor 不在 P5 宿主入口内实现，由对应包和计划承载。普通 Worker 与 Generic Host 专属入口不由当前 API 表达。
+该入口只负责基于 `WebApplicationBuilder` 的跨协议宿主启动聚合。MVC Filter、HTTP 请求取消令牌 provider 与 gRPC 专属 interceptor 不由宿主入口注册。普通 Worker 与 Generic Host 专属入口不由当前 API 表达。
 
-该入口不迁移 `HttpContextCancellationTokenProvider`；该 provider 仍按现有文档独立使用。
+需要 MVC/Web API 请求取消令牌时，引用 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md)，并调用 `AddMvcIntegration()` 或 `Tw.AspNetCore.Mvc.Context.AddHttpContextCancellationTokenProvider()`。
