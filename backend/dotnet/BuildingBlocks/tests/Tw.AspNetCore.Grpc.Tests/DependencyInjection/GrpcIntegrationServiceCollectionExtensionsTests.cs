@@ -26,4 +26,13 @@ public class GrpcIntegrationServiceCollectionExtensionsTests
             descriptor.ServiceType.IsGenericType &&
             descriptor.ServiceType.GetGenericTypeDefinition() == typeof(IGrpcInterceptorActivator<>));
     }
+
+    [Fact]
+    public void AddGrpcIntegration_ThrowsArgumentNullException_WhenServicesIsNull()
+    {
+        var act = () => ((IServiceCollection)null!).AddGrpcIntegration();
+
+        act.Should().Throw<ArgumentNullException>()
+            .WithParameterName("services");
+    }
 }
