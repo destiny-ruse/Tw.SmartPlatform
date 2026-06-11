@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.AspNetCore.Grpc
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  ASP.NET Core gRPC 服务端专属集成构建块，承载 gRPC 服务端注册入口、
+  gRPC 原生 interceptor 使用边界，以及 gRPC 包治理入口。
+in_scope:
+  - gRPC 服务端注册
+  - gRPC 原生 interceptor 使用边界
+  - gRPC 包治理入口
+out_of_scope:
+  - 统一拦截 pipeline adapter
+  - MVC Filter
+  - HTTP Middleware
+  - 业务 proto 契约
+public_capabilities:
+  - Tw.AspNetCore.Grpc
+dependency_rules:
+  allow:
+    - Tw.AspNetCore
+    - Grpc.AspNetCore
+    - "Microsoft.Extensions.*"
