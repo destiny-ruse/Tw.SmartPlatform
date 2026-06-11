@@ -1,5 +1,7 @@
 using FluentAssertions;
+using Grpc.AspNetCore.Server;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Tw.AspNetCore.Grpc;
 using Xunit;
 
@@ -12,9 +14,18 @@ public class GrpcIntegrationServiceCollectionExtensionsTests
     {
         var services = new ServiceCollection();
 
-        services.AddGrpcIntegration();
+        var result = services.AddGrpcIntegration();
 
+        result.Should().BeSameAs(services);
         services.Should().Contain(descriptor =>
-            descriptor.ServiceType.FullName!.Contains("Grpc", StringComparison.Ordinal));
+            descriptor.ServiceType == typeof(IConfigureOptions<GrpcServiceOptions>));
+        services.Should().Contain(descriptor =>
+            descriptor.ServiceType.IsGenericType &&
+            descriptor.ServiceType.GetGenericTypeDefinition() == typeof(IGrpcServiceActivator<>));
+        services.Should().Contain(descriptor =>
+            descriptor.ServiceType.IsGenericType &&
+            descriptor.ServiceType.GetGenericTypeDefinition() == typeof(IGrpcInterceptorActivator<>));
+        services.Should().Contain(descriptor =>
+            descriptor.ServiceType.FullName == "Grpc.AspNetCore.Server.Internal.GrpcMarkerService");
     }
 }
