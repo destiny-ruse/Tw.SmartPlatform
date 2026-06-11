@@ -7,19 +7,21 @@ responsibility: >
   基于 WebApplicationBuilder 的跨协议宿主启动与聚合入口，统一承载
   Web API 与 gRPC 等 ASP.NET Core 宿主在组合根中的容器接管和依赖注入自动注册。
 in_scope:
-  - HTTP 请求取消令牌 provider（P5 暂存项，P6 迁移到 Tw.AspNetCore.Mvc 前保留）
   - 宿主启动聚合入口
   - 依赖注入聚合
 out_of_scope:
   - 与框架无关的基础原语
   - 数据访问、ORM、仓储实现
   - 具体业务领域模型
-  - MVC Filter、模型绑定与结果封装等 MVC 专属能力
+  - HTTP 请求取消令牌 provider（归 Tw.AspNetCore.Mvc）
+  - MVC Filter、模型绑定与结果封装等 MVC 专属能力（归 Tw.AspNetCore.Mvc）
+  - Web 层横切关注点与 action 级 AOP adapter（归 Tw.AspNetCore.Mvc）
+  - Middleware adapter
+  - Minimal API endpoint filter adapter
   - gRPC interceptor 等 gRPC 专属能力
   - 普通 Worker 与 Generic Host 专属启动入口
 public_capabilities:
   - Tw.AspNetCore
-  - Tw.AspNetCore.Context
 dependency_rules:
   forbid:
     - "Microsoft.EntityFrameworkCore*"
