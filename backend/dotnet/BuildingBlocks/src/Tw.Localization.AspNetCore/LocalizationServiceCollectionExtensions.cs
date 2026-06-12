@@ -1,7 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Localization;
-using Tw.AspNetCore;
 using Tw.AspNetCore.Mvc.Context;
 using Tw.Localization;
 
@@ -9,7 +8,7 @@ namespace Tw.Localization.AspNetCore;
 
 /// <summary>
 /// 为 <see cref="IServiceCollection"/> 提供 Web 层本地化聚合注册入口，
-/// 串联核心本地化能力（<c>Tw.Localization</c>）、宿主级 Web 集成入口（<c>Tw.AspNetCore</c>）、
+/// 串联核心本地化能力（<c>Tw.Localization</c>）、
 /// MVC 请求取消令牌能力（<c>Tw.AspNetCore.Mvc</c>）以及 <see cref="IStringLocalizer"/> 适配器，
 /// 完成完整的 Web 本地化服务注册。
 /// </summary>
@@ -24,7 +23,6 @@ public static class LocalizationServiceCollectionExtensions
     /// 注册 Web 层本地化全部能力，包括：
     /// <list type="bullet">
     ///   <item><description>核心本地化服务（<see cref="ITextLocalizer"/>、<see cref="IStaticTextSnapshot"/> 等）</description></item>
-    ///   <item><description>宿主级 Web 集成入口</description></item>
     ///   <item><description>HTTP 请求取消令牌服务（<see cref="IHttpContextAccessor"/>、请求取消令牌 Provider 等）</description></item>
     ///   <item><description>Scoped 的 <see cref="ICurrentLocalizationContextAccessor"/>（<see cref="CurrentLocalizationContextAccessor"/>）</description></item>
     ///   <item><description>Scoped 的 <see cref="IStringLocalizerFactory"/>（<see cref="TwStringLocalizerFactory"/>）</description></item>
@@ -48,7 +46,6 @@ public static class LocalizationServiceCollectionExtensions
         Check.NotNull(services);
         Check.NotNull(configure);
 
-        services.AddWebIntegration();
         services.AddHttpContextCancellationTokenProvider();
         global::Tw.Localization.LocalizationServiceCollectionExtensions.AddLocalization(services, configure);
 

@@ -7,7 +7,6 @@
 | 依赖项 | 说明 |
 |--------|------|
 | `Tw.Localization` | 多语言核心能力（静态 JSON 快照、`ITextLocalizer`、`IStaticTextSnapshot` 等）|
-| `Tw.AspNetCore` | host-level Web 集成兼容入口 |
 | `Tw.AspNetCore.Mvc` | MVC/Web API 请求能力（`IHttpContextAccessor`、`HttpContextCancellationTokenProvider`）|
 | `Microsoft.AspNetCore.App`（FrameworkReference）| ASP.NET Core 框架引用（中间件、IStringLocalizer 抽象、HttpContext 等）|
 
@@ -35,10 +34,9 @@ services.AddLocalization(options =>
 
 `AddLocalization` 依次执行以下注册：
 
-1. 调用 `Tw.AspNetCore` 的 `AddWebIntegration()`：保留 host-level Web 集成兼容入口，不注册 MVC/HTTP 请求专属能力。
-2. 调用 `Tw.AspNetCore.Mvc.Context` 的 `AddHttpContextCancellationTokenProvider()`：注册 `IHttpContextAccessor`，并将 `ICancellationTokenProvider` 替换为 `HttpContextCancellationTokenProvider`。
-3. 调用核心 `Tw.Localization` 的 `AddLocalization(...)`：注册 `ITextLocalizer`、`IStaticTextSnapshot`、`IEntityTranslationService` 等核心服务（均为 Singleton）。
-4. 以 **Scoped** 生命周期注册以下 Web 适配服务（均使用 `TryAddScoped`，可被业务实现覆盖）：
+1. 调用 `Tw.AspNetCore.Mvc.Context` 的 `AddHttpContextCancellationTokenProvider()`：注册 `IHttpContextAccessor`，并将 `ICancellationTokenProvider` 替换为 `HttpContextCancellationTokenProvider`。
+2. 调用核心 `Tw.Localization` 的 `AddLocalization(...)`：注册 `ITextLocalizer`、`IStaticTextSnapshot`、`IEntityTranslationService` 等核心服务（均为 Singleton）。
+3. 以 **Scoped** 生命周期注册以下 Web 适配服务（均使用 `TryAddScoped`，可被业务实现覆盖）：
    - `ICurrentLocalizationContextAccessor`（实现 `CurrentLocalizationContextAccessor`）：从当前请求读取 `LocalizationContext`。
    - `IStringLocalizerFactory`（实现 `TwStringLocalizerFactory`）：`IStringLocalizer` 工厂，读取静态 JSON 快照。
    - 开放泛型 `IStringLocalizer<>`（实现 `TwStringLocalizer<>`）：`IStringLocalizer` 泛型适配器。

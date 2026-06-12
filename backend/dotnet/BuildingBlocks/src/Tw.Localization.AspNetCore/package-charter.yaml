@@ -24,6 +24,5 @@ dependency_rules:
     - "Microsoft.EntityFrameworkCore*"
   allow:
     - Tw.Localization
-    - Tw.AspNetCore
     - Tw.AspNetCore.Mvc
     - Microsoft.AspNetCore.App
