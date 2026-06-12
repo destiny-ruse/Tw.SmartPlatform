@@ -54,6 +54,20 @@ public class CastleInterceptionIntegrationTests
     }
 
     [Fact]
+    public void AddServiceRegistration_BuildThrows_WhenSelectedInterceptorTypeNotRegistered()
+    {
+        var implementationType = DynamicAuditedOrderServiceBuilder.Build();
+        var builder = new ContainerBuilder();
+        // 刻意不注册 AuditInterceptor：容器构建阶段应按「拦截器类型未注册」启动失败
+        builder.AddServiceRegistration(EmptyConfiguration(), new SingleAssemblySource(implementationType.Assembly));
+
+        var act = () => builder.Build();
+
+        act.Should().Throw<ServiceRegistrationException>()
+            .WithMessage($"*{typeof(AuditInterceptor).FullName}*");
+    }
+
+    [Fact]
     public async Task AddServiceRegistration_WithPublicClassOnlyVirtualService_UsesCastleClassProxy()
     {
         var implementationType = DynamicClassOnlyServiceBuilder.Build(

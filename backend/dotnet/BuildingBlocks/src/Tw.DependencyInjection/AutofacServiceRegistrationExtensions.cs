@@ -82,13 +82,43 @@ public static class AutofacServiceRegistrationExtensions
             options);
 
         ConstructorKeyedServiceValidator.Validate(plan.Registrations);
-        var interceptionReport = InterceptionRegistrationPlanner.Plan(
+        var interceptionPlan = InterceptionRegistrationPlanner.Plan(
             plan.Registrations,
             new AttributeInterceptorSelector());
 
-        AutofacServiceRegistrationExecutor.Apply(builder, plan, interceptionReport);
+        AutofacServiceRegistrationExecutor.Apply(builder, plan, interceptionPlan.Report);
+        RegisterInterceptorRegistrationValidation(builder, interceptionPlan.RequiredInterceptorTypes);
 
         return builder;
+    }
+
+    /// <summary>
+    /// 注册容器构建回调，在启动期校验所有被命中的拦截器类型已在容器中注册。
+    /// 拦截器可经自动注册（实现生命周期标记接口）或由组合根显式注册，
+    /// 校验必须放在容器构建阶段才能同时覆盖两种来源。
+    /// </summary>
+    private static void RegisterInterceptorRegistrationValidation(
+        ContainerBuilder builder,
+        IReadOnlyCollection<Type> requiredInterceptorTypes)
+    {
+        if (requiredInterceptorTypes.Count == 0)
+        {
+            return;
+        }
+
+        builder.RegisterBuildCallback(scope =>
+        {
+            foreach (var interceptorType in requiredInterceptorTypes)
+            {
+                if (!scope.IsRegistered(interceptorType))
+                {
+                    throw new ServiceRegistrationException(
+                        $"拦截器类型未注册: {interceptorType.FullName ?? interceptorType.Name}。" +
+                        "拦截器必须以自身类型注册，例如实现 ITransientDependency 等生命周期标记接口参与自动注册，" +
+                        "或在组合根显式注册。");
+                }
+            }
+        });
     }
 
     private static IReadOnlyList<Type> SafeGetTypes(Assembly assembly)

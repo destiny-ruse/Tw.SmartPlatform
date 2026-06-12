@@ -175,7 +175,8 @@ foreach (var item in report.Items)
 
 ## 注意事项
 
-- 拦截器类型必须能从 DI 解析，通常让拦截器实现 `ITransientDependency`、`IScopedDependency` 或 `ISingletonDependency`。
+- 拦截器类型必须能从 DI 解析，通常让拦截器实现 `ITransientDependency`、`IScopedDependency` 或 `ISingletonDependency`，也可以在组合根显式注册为自身类型。
+- 被 `[Intercept]` 或 selector 命中但未注册的拦截器类型会在容器构建阶段触发 `ServiceRegistrationException` 启动失败，不会拖到首次调用才暴露。
 - AOP 只覆盖通过 Autofac native 自动注册、满足代理条件并由 Autofac 容器解析出的服务调用；同类内部 `this.Method()` 调用不会重新经过代理。
 - 手写 Autofac 注册不会自动进入本包 AOP 规划、诊断报告和 Castle proxy 启用流程。
 - 通过 `IServiceCollection.AddServiceRegistration(...)` 组合出的服务不会启用 Castle proxy。

@@ -4,6 +4,15 @@ using Tw.DependencyInjection.Diagnostics;
 namespace Tw.DependencyInjection.DynamicProxy;
 
 /// <summary>
+/// 拦截承载规划结果：诊断报告与运行期解析所需的拦截器类型集合
+/// </summary>
+/// <param name="Report">方法级拦截承载诊断报告</param>
+/// <param name="RequiredInterceptorTypes">被 selector 命中、运行期需要按自身类型解析的拦截器类型</param>
+internal sealed record InterceptionPlan(
+    InterceptionReport Report,
+    IReadOnlyCollection<Type> RequiredInterceptorTypes);
+
+/// <summary>
 /// 根据服务注册候选与拦截器选择器规划 Castle 拦截承载方式
 /// </summary>
 internal static class InterceptionRegistrationPlanner
@@ -18,9 +27,9 @@ internal static class InterceptionRegistrationPlanner
     /// </summary>
     /// <param name="registrations">服务注册规划阶段选中的候选列表</param>
     /// <param name="selector">拦截器选择器</param>
-    /// <returns>方法级拦截承载诊断报告</returns>
+    /// <returns>拦截承载规划结果，含诊断报告与所需拦截器类型集合</returns>
     /// <exception cref="ArgumentNullException"><paramref name="registrations"/> 或 <paramref name="selector"/> 为 null 时抛出</exception>
-    public static InterceptionReport Plan(
+    public static InterceptionPlan Plan(
         IReadOnlyList<Registration.ServiceCandidate> registrations,
         IInterceptorSelector selector)
     {
@@ -28,6 +37,7 @@ internal static class InterceptionRegistrationPlanner
         ArgumentNullException.ThrowIfNull(selector);
 
         var diagnostics = new List<InterceptionDiagnostic>();
+        var requiredInterceptorTypes = new HashSet<Type>();
         var implementationsWithInterfaceContracts = registrations
             .Where(registration => registration.ServiceType.IsInterface)
             .Select(registration => registration.ImplementationType)
@@ -47,6 +57,8 @@ internal static class InterceptionRegistrationPlanner
                     continue;
                 }
 
+                requiredInterceptorTypes.UnionWith(interceptors);
+
                 diagnostics.Add(CreateDiagnostic(
                     registration,
                     method,
@@ -55,7 +67,7 @@ internal static class InterceptionRegistrationPlanner
             }
         }
 
-        return new InterceptionReport(diagnostics);
+        return new InterceptionPlan(new InterceptionReport(diagnostics), requiredInterceptorTypes);
     }
 
     private static IEnumerable<MethodInfo> EnumerateCandidateMethods(Type serviceType, Type implementationType)
