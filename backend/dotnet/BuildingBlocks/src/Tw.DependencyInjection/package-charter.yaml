@@ -24,10 +24,9 @@ out_of_scope:
   - ASP.NET Core 宿主启动、MVC、Minimal API、Middleware 与 gRPC 承载
   - 数据访问、ORM、仓储实现
 public_capabilities:
-  - 程序集扫描与容器接管
-  - 服务自动注册入口与规划诊断报告
-  - Options 自动装载与诊断报告
-  - Castle 方法级动态代理拦截与诊断报告
+  - Tw.DependencyInjection
+  - Tw.DependencyInjection.Diagnostics
+  - Tw.DependencyInjection.DynamicProxy
 dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"
