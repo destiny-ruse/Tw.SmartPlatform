@@ -1,6 +1,6 @@
-# 启用 MVC action 拦截
+# 启用 MVC action 与 Razor Page handler 拦截
 
-本指南面向使用 `Tw.AspNetCore.Mvc` 的 .NET 开发者，目标是在 MVC/Web API 应用中启用 MVC integration，并将 controller action 接入统一 AOP 拦截 pipeline。
+本指南面向使用 `Tw.AspNetCore.Mvc` 的 .NET 开发者，目标是在 MVC/Web API/Razor Pages 应用中启用 MVC integration，并将 controller action 与 Razor Page handler 接入统一 AOP 拦截 pipeline。
 
 ## 注册 MVC integration
 
@@ -24,6 +24,7 @@ app.Run();
 - `HttpContextCancellationTokenProvider`，让 `ICancellationTokenProvider` 默认读取 `HttpContext.RequestAborted`。
 - 默认 `IInterceptorSelector` 与 `IInterceptorPipeline`。
 - MVC action filter `TwActionInterceptionFilter`。
+- Razor Page handler filter `TwPageInterceptionFilter`。
 
 ## 让 action 进入统一拦截 pipeline
 
@@ -84,6 +85,27 @@ public sealed class OrdersController : ControllerBase
 
 需要对整个 controller 生效时，可以把 `[Intercept(typeof(AuditInterceptor))]` 标注到 controller 类上。MVC adapter 复用 [`Tw.DependencyInjection` 方法级动态代理拦截](../Tw.DependencyInjection/dynamic-proxy-interception.md)中的 `[Intercept]`、`[DisableInterception]`、`[InterceptorOrder]` 等选择语义。
 
+## 标记 Razor Page handler
+
+`TwPageInterceptionFilter` 把 Razor Page handler 接入同一套拦截 pipeline。`[Intercept]` 可以标注在 handler 方法或 page model 类上：
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Tw.DynamicProxy.Abstractions;
+
+public sealed class OrderModel : PageModel
+{
+    [Intercept(typeof(AuditInterceptor))]
+    public IActionResult OnPost(string orderId)
+    {
+        return Page();
+    }
+}
+```
+
+filter 解析当前 handler 的 `HandlerMethodDescriptor.MethodInfo` 并创建 `PageInvocationContext`，参数改写、短路与结果替换语义与 MVC action 一致：在 `ProceedAsync()` 前改写 `Arguments` 会回写到 `HandlerArguments`，设置 `IActionResult` 类型的 `ReturnValue` 会写入 page 的 `Result`。请求未命中具名 handler（页面没有匹配的 `OnGet`/`OnPost`）时，filter 直接继续 Razor Pages 管线，不进入拦截链。
+
 ## 修改 action 参数
 
 MVC action 参数会映射到 `MvcInvocationContext.Arguments`。拦截器可以在调用 `ProceedAsync()` 前修改 `Arguments` 中的值。
@@ -142,13 +164,12 @@ public sealed class WrapResultInterceptor : InterceptorBase
 
 ## 边界
 
-`AddMvcIntegration()` 当前只注册 MVC action filter，适用于 controller action 与 Web API action。
+`AddMvcIntegration()` 注册 MVC action filter 与 Razor Page handler filter，适用于 controller action、Web API action 与 Razor Page handler。
 
 以下入口不由本能力承载：
 
 - Middleware。
 - Minimal API。
 - gRPC。
-- Razor Page handler。当前未实现 Razor Page handler filter adapter。
 
-跨协议宿主启动入口仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseTwHostStartup()`；MVC action AOP adapter 由 `Tw.AspNetCore.Mvc` 单独注册。
+跨协议宿主启动入口仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseTwHostStartup()`；MVC/Razor Pages AOP adapter 由 `Tw.AspNetCore.Mvc` 单独注册。

@@ -4,11 +4,11 @@
 
 ## 能力索引
 
-- [启用 MVC action 拦截](mvc-interception.md)：通过 `AddMvcIntegration()` 将 MVC controller action 接入统一 `IInterceptorPipeline`。
+- [启用 MVC action 与 Razor Page handler 拦截](mvc-interception.md)：通过 `AddMvcIntegration()` 将 MVC controller action 与 Razor Page handler 接入统一 `IInterceptorPipeline`。
 - [HttpContext 取消令牌 Provider](context/http-context-cancellation-token-provider.md)：基于 `HttpContext.RequestAborted` 的请求取消令牌适配。
 
 ## 边界
 
 `Tw.AspNetCore.Mvc` 承载 MVC/Web API 专属适配能力。跨协议宿主启动入口仍归 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md)，方法级拦截核心抽象与 pipeline 承载仍归 [`Tw.Core`](../Tw.Core/README.md) 和 [`Tw.DependencyInjection`](../Tw.DependencyInjection/README.md)。
 
-本包不承载 Middleware、Minimal API、gRPC 或 Razor Page handler adapter。
+本包不承载 Middleware、Minimal API 或 gRPC adapter。

@@ -14,7 +14,7 @@ namespace Tw.AspNetCore.Mvc;
 public static class MvcIntegrationServiceCollectionExtensions
 {
     /// <summary>
-    /// 注册 MVC 集成能力，包括请求取消令牌 provider 和 action 拦截 filter
+    /// 注册 MVC 集成能力，包括请求取消令牌 provider、action 拦截 filter 和 Razor Page handler 拦截 filter
     /// </summary>
     /// <param name="services">服务容器</param>
     /// <returns>同一 <see cref="IServiceCollection"/> 实例，便于链式调用</returns>
@@ -28,16 +28,21 @@ public static class MvcIntegrationServiceCollectionExtensions
         services.TryAddSingleton<IInterceptorPipeline, InterceptorPipeline>();
         services.Configure<MvcOptions>(options =>
         {
-            if (!options.Filters.Any(IsActionInterceptionFilter))
+            if (!options.Filters.Any(IsInterceptionFilter<TwActionInterceptionFilter>))
             {
                 options.Filters.Add<TwActionInterceptionFilter>();
+            }
+
+            if (!options.Filters.Any(IsInterceptionFilter<TwPageInterceptionFilter>))
+            {
+                options.Filters.Add<TwPageInterceptionFilter>();
             }
         });
 
         return services;
     }
 
-    private static bool IsActionInterceptionFilter(IFilterMetadata filter) =>
+    private static bool IsInterceptionFilter<TFilter>(IFilterMetadata filter) =>
         filter is TypeFilterAttribute typeFilter
-        && typeFilter.ImplementationType == typeof(TwActionInterceptionFilter);
+        && typeFilter.ImplementationType == typeof(TFilter);
 }
