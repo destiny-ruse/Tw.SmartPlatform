@@ -53,7 +53,7 @@
 
 核心抽象命名空间为 `Tw.DependencyInjection.Abstractions`、`Tw.Configuration.Abstractions`、`Tw.DynamicProxy.Abstractions`、`Tw.Reflection`。`Tw.Core.csproj` 已声明 `RootNamespace` 为 `Tw`，命名空间与文件夹一一对应：DI 抽象位于 `DependencyInjection/Abstractions`，Options 抽象位于 `Configuration/Abstractions`，AOP 抽象位于 `DynamicProxy/Abstractions`，反射工具位于 `Reflection`。
 
-核心包与引擎包不得向同一命名空间贡献类型。DI、配置、动态代理三个能力域同时存在核心抽象与引擎执行，核心侧统一加 `.Abstractions` 后缀，引擎侧使用无后缀命名空间。反射能力（`ITypeFinder`、`TypeFinder`、`ReflectionCache`）全部归 `Tw.Core` 的 `Tw.Reflection`，引擎不向该命名空间贡献类型。
+核心包与引擎包不得向同一命名空间贡献类型。DI、配置、动态代理三个能力域同时存在核心抽象与引擎执行，核心侧统一加 `.Abstractions` 后缀，引擎侧使用以引擎包根命名空间 `Tw.DependencyInjection` 为前缀的执行命名空间（与「命名空间 = RootNamespace + 文件夹」规范一致），与核心侧 `.Abstractions` 命名空间互斥。反射能力（`ITypeFinder`、`TypeFinder`、`ReflectionCache`）全部归 `Tw.Core` 的 `Tw.Reflection`，引擎不向该命名空间贡献类型。
 
 现存 `Tw.Core.Configuration` 与 `Tw.Core.Reflection` 是违背 `RootNamespace` 默认、显式写死的历史命名空间。本设计将 `Tw.Core.Configuration` 迁移为 `Tw.Configuration.Abstractions`，将 `Tw.Core.Reflection` 迁移为 `Tw.Reflection`。迁移必须同步更新 `Tw.Core/package-charter.yaml` 的 `public_capabilities`，把 `Tw.Core.Configuration`、`Tw.Core.Reflection` 替换为 `Tw.Configuration.Abstractions`、`Tw.Reflection`，并新增 `Tw.DependencyInjection.Abstractions`、`Tw.DynamicProxy.Abstractions`。
 
@@ -61,7 +61,7 @@
 
 ### Tw.DependencyInjection：框架绑定执行引擎
 
-新增共享包 `Tw.DependencyInjection` 承载全部框架绑定执行实现，直接引用 Autofac、Autofac.Extensions.DependencyInjection、Autofac.Extras.DynamicProxy、Castle.Core、Castle.Core.AsyncInterceptor 和 Microsoft.Extensions.* 实现包。执行类型归入 `Tw.DependencyInjection`、`Tw.Configuration`、`Tw.DynamicProxy` 三个无后缀命名空间。它提供：
+新增共享包 `Tw.DependencyInjection` 承载全部框架绑定执行实现，直接引用 Autofac、Autofac.Extensions.DependencyInjection、Autofac.Extras.DynamicProxy、Castle.Core、Castle.Core.AsyncInterceptor 和 Microsoft.Extensions.* 实现包。执行类型归入以 `Tw.DependencyInjection` 为根、按文件夹划分的引擎命名空间（`Tw.DependencyInjection`、`Tw.DependencyInjection.Configuration`、`Tw.DependencyInjection.DynamicProxy`、`Tw.DependencyInjection.Diagnostics` 等）。它提供：
 
 - 程序集发现、拓扑排序、注册规划、单实现仲裁
 - keyed service 与泛型接口注册执行
@@ -513,12 +513,12 @@ adapter 以 `ActionDescriptor.Parameters` 的声明顺序建立稳定的「位�
 - Options 必填 section 缺失
 - Options 验证失败
 - Options 路径重复
-- 拦截器类型未注册
-- 拦截器生命周期不合法
-- 类型不可代理且没有 MVC Filter 承载
+- 拦截器类型未注册（被 `[Intercept]` 或 selector 命中但不在注册计划内）
 - `[FromKeyedServices]` 指向未注册的 key
 
 同步拦截器命中异步方法不作为启动失败规则；运行期调用 `Proceed()` 时失败。
+
+不可代理的类型或方法不作为启动失败规则：按「Castle 承载」节进入 `InterceptionReport` 诊断报告，状态记为 `skipped`。拦截器实例的生命周期由其自身注册声明决定，引擎在解析侧不做额外生命周期合法性门控。
 
 ## 实现分期
 
