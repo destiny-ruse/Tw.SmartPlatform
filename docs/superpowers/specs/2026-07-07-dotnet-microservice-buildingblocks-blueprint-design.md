@@ -24,13 +24,16 @@
 - 认证授权采用自建统一身份服务 + 外部身份源接入；OIDC/OAuth2 底层采用 OpenIddict。
 - 日志采用 Serilog，追踪和指标采用 OpenTelemetry。
 - 韧性策略采用 Polly，统一管理超时、重试、熔断、限流、隔离和降级。
+- 分布式数字 ID 采用雪花算法能力，默认底层适配 Yitter.IdGenerator，框架统一封装 WorkerId 分配、时钟回拨保护和 API 字符串输出规则。
 
 ## 包结构
 
 | 包 | 职责 |
 | --- | --- |
-| `Tw.Core` | 基础类型、结果模型、错误模型、当前用户、当前租户、关联标识、客户端上下文、时钟、ID 生成、审计抽象 |
+| `Tw.Core` | 基础类型、结果模型、错误模型、当前用户、当前租户、关联标识、客户端上下文、时钟、审计基础抽象 |
 | `Tw.DependencyInjection` | 自动依赖注入、Options 绑定、AOP 扫描和注册规划 |
+| `Tw.IdGeneration` | 分布式 ID 抽象、雪花算法契约、WorkerId 提供器、时钟回拨保护、ID 输出格式 |
+| `Tw.IdGeneration.Yitter` | Yitter.IdGenerator 适配、雪花漂移算法配置、容器环境 WorkerId 集成 |
 | `Tw.Application` | CQRS 抽象、Command/Query Dispatcher、Pipeline Behavior、应用层幂等、验证入口 |
 | `Tw.Application.FluentValidation` | FluentValidation 适配 |
 | `Tw.AspNetCore` | HTTP 上下文桥接、统一异常、健康检查、ProblemDetails、请求关联、主机集成 |
@@ -251,7 +254,35 @@ Command 默认代表写操作。Query 默认代表读操作。写操作需要声
 
 CAP 与 SqlSugar 的绑定由 `Tw.Data.SqlSugar.Cap` 负责。CAP 官方提供分布式事务和 EventBus 能力。SqlSugar 与 CAP 的事务绑定通过框架适配层完成，事实依据为 SqlSugar issue #1207 中给出的第三方 ORM 扩展方式。来源：https://github.com/DotNetNext/SqlSugar/issues/1207
 
-MassTransit 不作为默认消息底座。MassTransit v9 已进入商业授权模式，官方授权文档说明 license key 需要在运行 MassTransit 代码的机器或容器中可访问，NuGet 包页也声明 MassTransit 是需要授权的商业产品。默认底座选择 CAP 能保持开源可商用和成本边界清晰。需要 MassTransit 的项目通过独立适配包接入，并由项目自行完成商业授权确认。来源：https://masstransit.massient.com/configuration/license 与 https://www.nuget.org/packages/MassTransit/
+框架不提供其他消息框架适配包。消息能力以 CAP 为唯一默认实现，业务服务不得直接依赖消息中间件客户端完成集成事件发布。
+
+## 分布式 ID 与雪花算法
+
+`Tw.IdGeneration` 提供统一分布式 ID 能力，默认实现为 `Tw.IdGeneration.Yitter`。该能力用于数据库主键、业务流水号底层数字序列、集成事件 ID、幂等记录 ID、审计记录 ID 和内部关联实体 ID。
+
+默认生成规则：
+
+- ID 类型为正向递增趋势的 64 位整数。
+- 数据库存储使用 `bigint` 或数据库等价整型。
+- HTTP JSON、OpenAPI、gRPC JSON 转码和前端可见模型中的 ID 必须以字符串输出，避免 JavaScript number 精度损失。
+- ID 不编码租户、分片、用户、组织和权限信息，避免把安全边界泄露到公开标识。
+- 雪花算法 WorkerId 由 `IWorkerIdProvider` 提供，禁止多实例硬编码同一个 WorkerId。
+- Kubernetes 与 Aspire 本地开发通过服务名、实例标识和受控协调后端分配 WorkerId。
+- WorkerId 冲突必须在启动时失败并记录结构化日志。
+- 时钟回拨必须被检测。超过允许窗口时生成器拒绝发号并暴露健康检查异常；允许窗口内按底层库能力等待或漂移处理。
+
+`Tw.IdGeneration` 公开能力：
+
+```csharp
+public interface IDistributedIdGenerator
+{
+    long NewId();
+
+    string NewIdString();
+}
+```
+
+业务代码只依赖 `IDistributedIdGenerator`。底层库、WorkerId 获取方式、epoch、序列位数和时钟回拨策略由框架配置统一管理。
 
 ## 缓存、锁与一致性
 
@@ -432,6 +463,7 @@ TenantId -> 多租户主库 -> 租户收费服务数据源目录 -> CommunityId 
 | 多级缓存 | FusionCache | GitHub 说明支持 L1/L2、Backplane、stampede protection、fail-safe、OpenTelemetry 和 tagging，采用 MIT license。来源：https://github.com/ZiggyCreatures/FusionCache |
 | Redis 客户端 | StackExchange.Redis | NuGet 说明是高性能 RESP 客户端并采用 MIT license。来源：https://www.nuget.org/packages/StackExchange.Redis/ |
 | 分布式锁 | DistributedLock / Medallion.Threading | GitHub 说明支持 distributed mutex、reader-writer lock、semaphore 和多种后端，采用 MIT license。来源：https://github.com/madelson/DistributedLock |
+| 雪花算法 ID | Yitter.IdGenerator | GitHub 说明其为多语言高性能唯一数字 ID 生成器，支持 C#、雪花漂移算法、容器环境 WorkerId 能力；Maven Repository 标注 MIT license。来源：https://github.com/yitter/idgenerator 与 https://mvnrepository.com/artifact/com.github.yitter/yitter-idgenerator |
 | 复杂分布式事务 | DTM | GitHub 说明支持 Saga、TCC、XA、2-phase message、Outbox、Workflow 和多语言；核心项目为 BSD-3-Clause。来源：https://github.com/dtm-labs/dtm |
 | 认证授权 | OpenIddict | 官方站点说明 Apache 2.0，开源且可商用，支持 OIDC/OAuth2。来源：https://openiddict.com/ |
 | 韧性策略 | Polly | 官方文档说明支持 Retry、Circuit Breaker、Hedging、Timeout、Rate Limiter、Fallback，属于 .NET Foundation。来源：https://www.pollydocs.org/ |
@@ -452,6 +484,9 @@ TenantId -> 多租户主库 -> 租户收费服务数据源目录 -> CommunityId 
 - 多租户关闭、分片开启：服务主库分片目录解析到业务分片库。
 - 多租户开启、分片开启：租户数据源目录 + 业务分片键解析到业务分片库。
 - UoW 开启后切换分片连接对象必须失败。
+- 雪花 ID 在单实例、多线程、多实例 WorkerId 不同场景下保持唯一和趋势递增。
+- WorkerId 冲突、时钟回拨超过允许窗口、配置缺失必须触发启动失败或健康检查异常。
+- JSON/OpenAPI 对外 ID 输出必须为字符串，数据库实体内部 ID 使用 64 位整数。
 - CAP Outbox 与 SqlSugar 本地事务同提交。
 - 消费端 Inbox 幂等处理重复消息。
 - 缓存键包含租户和分片维度。
@@ -459,7 +494,7 @@ TenantId -> 多租户主库 -> 租户收费服务数据源目录 -> CommunityId 
 - 认证授权拒绝非法租户、非法服务、非法资源访问。
 - 日志和错误响应不泄露连接串、Token 和敏感载荷。
 
-单元测试覆盖解析器、路由器、Pipeline、缓存键和错误分类。集成测试覆盖 SqlSugar、Redis、CAP、OpenIddict、YARP、Aspire AppHost 和 Kubernetes 配置模板。
+单元测试覆盖解析器、路由器、Pipeline、缓存键、ID 生成器包装器、WorkerId 提供器、时钟回拨策略和错误分类。共享包单元测试行覆盖率门禁为 98%，分支覆盖率门禁为 95%。集成测试覆盖 SqlSugar、Redis、CAP、OpenIddict、YARP、Aspire AppHost 和 Kubernetes 配置模板。覆盖率不得替代关键断言、并发用例、失败路径和契约测试。
 
 ## 失败模式
 
