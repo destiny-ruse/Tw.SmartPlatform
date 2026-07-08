@@ -26,6 +26,7 @@
 - API 模型中 ID 保持 `long`，HTTP JSON 由全局格式化配置输出为字符串。
 - 文件与对象存储不作为框架级包，由独立文件存储服务承载。
 - 同一能力族的包放在同一物理文件夹与解决方案文件夹中，例如 `Web`、`Data`、`EventBus`、`TestBase`。
+- .NET 工具包放入 `backend/dotnet/tools`。仓库根目录 `tools` 只存放与开发语言和应用框架无关的仓库级工具，例如项目记忆生成、规范索引生成和仓库治理脚本。
 
 ## 最终包清单
 
@@ -236,6 +237,17 @@ backend/dotnet/BuildingBlocks/src
     |-- Tw.Data.SqlSugar.TestBase
     `-- Tw.EventBus.Cap.TestBase
 ```
+
+.NET 工具包放入 `backend/dotnet/tools`：
+
+```text
+backend/dotnet/tools
+|-- Tw.Templates
+|-- Tw.Cli
+`-- Tw.Analyzers
+```
+
+仓库根目录 `tools` 只存放与开发语言和应用框架无关的仓库级工具。.NET 模板、`dotnet tool`、Roslyn Analyzer、NuGet 打包脚本和 .NET 专属构建工具不得放入仓库根目录 `tools`。
 
 解决方案文件夹必须与物理能力族一致。项目 `RootNamespace` 等于 `.csproj` 名称，不把物理能力族目录写入命名空间。
 
@@ -1083,7 +1095,7 @@ Load Balancer
 
 ## 工具链
 
-`Tw.Templates` 发布为 NuGet 模板包，使用官方 `dotnet new` 模板体系。
+`Tw.Templates` 位于 `backend/dotnet/tools/Tw.Templates`，发布为 NuGet 模板包，使用官方 `dotnet new` 模板体系。
 
 模板：
 
@@ -1095,7 +1107,7 @@ Load Balancer
 
 模板支持自定义服务名、项目名前缀和 RootNamespace。层后缀固定。
 
-`Tw.Cli` 发布为 `dotnet tool`，命令名 `tw`。
+`Tw.Cli` 位于 `backend/dotnet/tools/Tw.Cli`，发布为 `dotnet tool`，命令名 `tw`。
 
 命令：
 
@@ -1109,7 +1121,7 @@ Load Balancer
 
 写文件命令必须可重复执行。目标文件已存在时默认失败，显式 `--force` 才覆盖。
 
-`Tw.Analyzers` 作为 Roslyn Analyzer NuGet 包安装到模板项目中，`PrivateAssets=all`。
+`Tw.Analyzers` 位于 `backend/dotnet/tools/Tw.Analyzers`，作为 Roslyn Analyzer NuGet 包安装到模板项目中，`PrivateAssets=all`。
 
 内置规则：
 
