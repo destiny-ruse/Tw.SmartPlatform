@@ -30,9 +30,9 @@
 - 自有接口、类、枚举、属性、字段、方法、扩展方法、包内部文件名和包内部功能文件夹名不得使用 `Tw`、`Abp`、`Furion` 等框架名前缀
 - `TwException` 是唯一保留 `Tw` 前缀的自有异常基类
 - 第三方技术集成入口可以使用第三方名称，例如 `UseAutofac`、`AddScriban`、`AddMiniExcel`
-- `Tw.Context` 合并到 `Tw.Core`
+- `Tw.Context` 不作为独立包；当前用户、当前租户、当前文化、关联标识和时间上下文分别归属对应能力包
 - 不创建 `Tw.Infrastructure` 大包
-- 不创建 `Tw.ExecutionPipeline` 包，共用执行管道放入 `Tw.Core` 的内部执行能力
+- 不创建 `Tw.ExecutionPipeline` 包，共用执行顺序由 `Tw.Application` Pipeline 与宿主原生管道协作承担
 - 不创建动态 API 包，不提供 ABP 或 Furion 风格的动态 Controller 生成功能
 - 不使用 MassTransit
 - OpenAPI 完全使用 Swashbuckle
@@ -41,7 +41,7 @@
 - 分布式 ID 默认使用 `Yitter.IdGenerator`
 - API 模型中 ID 保持 `long`，HTTP JSON 由全局格式化配置输出为字符串
 - 文件与对象存储不作为框架级包，由独立文件存储服务承载
-- 同一能力族的包可以放在同一物理文件夹与解决方案文件夹中，例如 `Web`、`Data`、`EventBus`、`Testing`
+- 同一能力族的包可以放在同一物理文件夹与解决方案文件夹中，例如 `Web`、`Data`、`EventBus`、`TestBase`
 
 ## 最终包清单
 
@@ -49,76 +49,99 @@
 
 | 包 | 职责 |
 | --- | --- |
-| `Tw.Core` | 基础类型、错误模型、执行上下文、当前用户、当前租户、关联标识、时钟、JSON、脱敏、验证错误模型、内部执行管道 |
-| `Tw.DependencyInjection` | 容器中立注册模型、自动依赖注入元数据、AOP 元数据、服务暴露规则、Options 绑定规则 |
-| `Tw.Autofac` | Autofac 运行时适配、Castle DynamicProxy、拦截器注册、AOP 忽略规则 |
-| `Tw.UnitOfWork` | 工作单元抽象、事务作用域、提交回调、失败回调、嵌套 UoW 规则 |
-| `Tw.Data.Abstractions` | 数据源描述、连接解析、仓储基础抽象、连接目录抽象 |
-| `Tw.Data.SqlSugar` | SqlSugar 适配、连接工厂、仓储实现、审计字段、软删除、并发检查、SqlSugar UoW 适配 |
-| `Tw.MultiTenancy` | 多租户抽象、租户上下文、租户解析、租户数据源目录、SaaS 运行模式 |
-| `Tw.Sharding` | 业务分片抽象、分片上下文、分片规则、分片切换、跨分片边界 |
-| `Tw.IdGeneration` | 分布式 ID 抽象、ID 生成器契约、WorkerId 管理、时钟回拨策略 |
+| `Tw.Core` | 模块基础、通用标识、错误模型、类型工具、轻量基础原语和公共约定 |
+| `Tw.Threading` | 取消令牌、异步辅助、后台执行上下文和线程安全工具 |
+| `Tw.Timing` | 时钟、时区、时间标准化和时间上下文 |
+| `Tw.ExceptionHandling` | 异常分类、错误码映射、异常到错误模型转换 |
+| `Tw.Security` | 加密哈希、安全随机、敏感字段标记、脱敏和写回保护 |
+| `Tw.Json.Abstractions` | JSON 序列化抽象、序列化选项和长整型 ID 输出约定 |
+| `Tw.Json.Newtonsoft` | Newtonsoft.Json 默认序列化实现 |
+| `Tw.Validation.Abstractions` | 验证错误模型、字段路径、绑定错误和验证异常 |
+| `Tw.DependencyInjection.Abstractions` | 服务生命周期、自动注册、Options 绑定、拦截元数据和服务暴露抽象 |
+| `Tw.DependencyInjection` | 程序集发现、服务注册规划、Options 自动绑定和容器中立注册执行 |
+| `Tw.DependencyInjection.Autofac` | Autofac 容器接管、Autofac 服务注册和宿主集成 |
+| `Tw.Castle.Core` | Castle DynamicProxy、方法拦截器、拦截管道和代理诊断 |
+| `Tw.Uow` | 工作单元抽象、事务作用域、提交回调、失败回调和嵌套 UoW 规则 |
+| `Tw.Data` | 数据源描述、连接解析、仓储基础抽象、审计字段、软删除和并发契约 |
+| `Tw.Data.SqlSugar` | SqlSugar 适配、连接工厂、仓储实现、并发检查和 SqlSugar UoW 适配 |
+| `Tw.MultiTenancy.Abstractions` | 租户标识、当前租户、租户解析结果和租户上下文抽象 |
+| `Tw.MultiTenancy` | 租户解析、租户数据源目录、租户作用域和 SaaS 运行模式 |
+| `Tw.Sharding.Abstractions` | 分片键、分片上下文、分片规则和分片边界抽象 |
+| `Tw.Sharding` | 业务分片解析、分片切换、跨分片读取和分片治理 |
+| `Tw.IdGeneration` | 分布式 ID 抽象、ID 生成器契约、WorkerId 管理和时钟回拨策略 |
 | `Tw.IdGeneration.Yitter` | Yitter.IdGenerator 默认实现 |
-| `Tw.TextTemplating` | 文本模板抽象、模板源、渲染上下文、模板缓存、错误诊断 |
+| `Tw.TextTemplating` | 文本模板抽象、模板源、渲染上下文、模板缓存和错误诊断 |
 | `Tw.TextTemplating.Scriban` | Scriban 模板解析与渲染实现 |
-| `Tw.Excel` | Excel 导入导出抽象、列模型、多级表头、模板定义、校验错误模型 |
+| `Tw.Excel` | Excel 导入导出抽象、列模型、多级表头、模板定义和校验错误模型 |
 | `Tw.Excel.MiniExcel` | MiniExcel 流式读写适配、OpenXML 后处理、固定下拉选项和空白模板导出 |
 
 ### 应用能力包
 
 | 包 | 职责 |
 | --- | --- |
-| `Tw.Cqrs` | MediatR 集成、Command、Query、Pipeline Behavior、验证、授权、幂等、UoW 调用顺序 |
-| `Tw.Authorization` | Permission 定义、授权检查、Grant Store、权限缓存、资源授权边界 |
+| `Tw.Domain.Shared` | 领域共享常量、错误码、枚举、基础值对象和跨层共享领域契约 |
+| `Tw.Domain` | 实体、聚合根、领域服务、领域事件和领域规则基础能力 |
+| `Tw.Application.Contracts` | Command、Query、DTO、应用服务契约、分页模型和客户端共享契约 |
+| `Tw.Application` | MediatR 集成、Command/Query Handler、Pipeline Behavior、验证、授权、幂等和 UoW 编排 |
+| `Tw.Authorization.Abstractions` | Permission 定义、授权上下文、授权结果和 Grant Store 抽象 |
+| `Tw.Authorization` | Permission Checker、Grant Store、权限缓存和资源授权边界 |
 | `Tw.Features` | Feature 定义、读取、缓存、刷新和作用域规则 |
 | `Tw.Settings` | Setting 定义、读取、缓存、刷新和作用域规则 |
 | `Tw.Identity.OpenIddict` | 统一身份中心实现、OpenIddict 集成、OIDC/OAuth2、Token 签发与验证 |
-| `Tw.Localization` | JSON 本地化资源、文化解析、Microsoft `IStringLocalizer` 适配 |
-| `Tw.Localization.AspNetCore` | HTTP 请求文化解析、本地化中间件、MVC 本地化适配 |
+| `Tw.Localization` | JSON 本地化资源、文化解析、回退链和 Microsoft `IStringLocalizer` 适配 |
 
 ### 协议与宿主包
 
 | 包 | 职责 |
 | --- | --- |
-| `Tw.AspNetCore` | HTTP 宿主集成、中间件、异常处理、认证、限流、健康端点、请求上下文 |
-| `Tw.AspNetCore.Mvc` | MVC Filter、Endpoint Filter、统一响应、模型绑定错误、CSRF/XSRF、防伪校验 |
+| `Tw.AspNetCore.Abstractions` | HTTP 请求上下文、协议错误模型、认证方案和 ASP.NET Core 适配抽象 |
+| `Tw.AspNetCore` | HTTP 宿主集成、中间件、异常处理、认证、限流和健康端点 |
+| `Tw.AspNetCore.Mvc` | MVC Filter、Endpoint Filter、统一响应、模型绑定错误、CSRF/XSRF 和防伪校验 |
+| `Tw.AspNetCore.Mvc.NewtonsoftJson` | ASP.NET Core MVC Newtonsoft.Json 配置和 JSON 契约适配 |
 | `Tw.AspNetCore.Swashbuckle` | Swashbuckle 注册、OpenAPI 分组、JWT 定义、XML 注释、Schema 和 Operation 扩展 |
-| `Tw.Http.Client` | HttpClientFactory、服务发现、韧性策略、Newtonsoft 序列化、NSwag 客户端集成 |
-| `Tw.Grpc` | gRPC 契约约定、客户端工厂、Deadline、元数据传播、错误映射 |
-| `Tw.Grpc.AspNetCore` | gRPC 服务端拦截器、ASP.NET Core 服务端注册、gRPC 宿主治理 |
+| `Tw.AspNetCore.Grpc` | gRPC 服务端拦截器、ASP.NET Core 服务端注册和 gRPC 宿主治理 |
+| `Tw.AspNetCore.Localization` | HTTP 请求文化解析、本地化中间件和 MVC 本地化适配 |
+| `Tw.Http.Abstractions` | HTTP 远程调用契约、Header 传播、错误映射和客户端上下文抽象 |
+| `Tw.Http` | HTTP 通用模型、远程服务约定、序列化约定和错误响应处理 |
+| `Tw.Http.Client` | HttpClientFactory、服务发现、韧性策略、Newtonsoft 序列化和 NSwag 客户端集成 |
+| `Tw.Grpc` | gRPC 契约约定、客户端工厂、Deadline、元数据传播和错误映射 |
 
 ### 基础设施适配包
 
 | 包 | 职责 |
 | --- | --- |
-| `Tw.EventBus.Abstractions` | 集成事件契约、事件发布抽象、事件订阅元数据、事件幂等契约 |
-| `Tw.EventBus.Cap` | CAP 集成、RabbitMQ 传输、SqlSugar CAP 存储、Outbox/Inbox、消费过滤器、清理任务 |
-| `Tw.Caching` | 多级缓存抽象、缓存键、TTL、标签、空值缓存、失效事件、防击穿 |
-| `Tw.Caching.FusionCache` | FusionCache L1/L2 缓存、Backplane、Fail-safe、Stampede protection |
-| `Tw.DistributedLocking` | 分布式锁抽象、租约、超时、锁键规范、锁失败语义 |
+| `Tw.EventBus.Abstractions` | 集成事件契约、事件发布抽象、事件订阅元数据和事件幂等契约 |
+| `Tw.EventBus` | 事件总线编排、事件处理器发现、本地事件和分布式事件基础能力 |
+| `Tw.EventBus.Cap` | CAP 集成、RabbitMQ 传输、SqlSugar CAP 存储、Outbox/Inbox、消费过滤器和清理任务 |
+| `Tw.Caching` | 多级缓存抽象、缓存键、TTL、标签、空值缓存、失效事件和防击穿策略 |
+| `Tw.Caching.FusionCache` | FusionCache L1/L2 缓存、Backplane、Fail-safe 和 Stampede protection |
+| `Tw.DistributedLocking.Abstractions` | 分布式锁、租约、锁键、等待策略和锁失败语义抽象 |
+| `Tw.DistributedLocking` | 分布式锁编排、锁键规范、租约治理和锁失败映射 |
 | `Tw.DistributedLocking.Redis` | Redis/Valkey 分布式锁实现 |
-| `Tw.Idempotency` | 幂等键、幂等窗口、请求去重、消息去重、冲突响应 |
-| `Tw.Resilience` | 超时、重试、熔断、限流、隔离、降级策略封装 |
-| `Tw.BackgroundJobs` | 后台任务抽象、任务定义、任务控制 API、任务执行管道 |
+| `Tw.Idempotency` | 幂等键、幂等窗口、请求去重、消息去重和冲突响应 |
+| `Tw.Resilience` | 超时、重试、熔断、限流、隔离和降级策略封装 |
+| `Tw.BackgroundJobs.Abstractions` | 后台任务定义、任务参数、调度描述和任务执行上下文抽象 |
+| `Tw.BackgroundJobs` | 后台任务编排、任务控制 API、任务执行管道和任务审计 |
 | `Tw.BackgroundJobs.Quartz` | Quartz.NET 调度中心、集群调度、持久化任务和调度治理 |
-| `Tw.Configuration` | 配置治理抽象、配置校验、动态配置热更新边界、配置变更审计 |
-| `Tw.Configuration.Json` | 多 JSON 配置文件加载、环境叠加、文件清单、路径安全校验 |
+| `Tw.Configuration` | 配置治理抽象、配置校验、动态配置热更新边界和配置变更审计 |
+| `Tw.Configuration.Json` | 多 JSON 配置文件加载、环境叠加、文件清单和路径安全校验 |
 | `Tw.Configuration.Nacos` | Nacos 配置源、Nacos 非 Kubernetes 服务发现桥接 |
-| `Tw.Gateway` | 网关抽象、路由模型、Header 治理、限流策略、动态路由校验 |
+| `Tw.Gateway` | 网关抽象、路由模型、Header 治理、限流策略和动态路由校验 |
 | `Tw.Gateway.Yarp` | YARP 网关适配、转发管道、服务发现、灰度权重、WebSocket/SSE/gRPC 透传 |
 
-### 观测、审计与测试包
+### 观测、审计与测试基础包
 
 | 包 | 职责 |
 | --- | --- |
-| `Tw.Observability` | 日志上下文、Trace/Metrics 抽象、健康状态模型、观测字段约定 |
+| `Tw.Observability` | 日志上下文、Trace/Metrics 抽象、健康状态模型和观测字段约定 |
 | `Tw.Observability.Serilog` | Serilog 注册、结构化日志、日志脱敏和输出管道 |
 | `Tw.Observability.OpenTelemetry` | OpenTelemetry Trace、Metrics、OTLP Exporter 和 Aspire Dashboard 集成 |
-| `Tw.Auditing` | 审计事件、审计存储抽象、审计日志、敏感操作记录 |
-| `Tw.Testing` | 测试基础、测试时钟、测试 ID、测试上下文、契约测试基础 |
-| `Tw.AspNetCore.Testing` | WebApplicationFactory、测试认证、HTTP 契约测试和 ASP.NET Core 测试宿主 |
-| `Tw.Data.SqlSugar.Testing` | SqlSugar 数据库夹具、Respawn 重置、Testcontainers 数据库支持 |
-| `Tw.EventBus.Cap.Testing` | CAP、RabbitMQ、Outbox/Inbox 和消费幂等测试支持 |
+| `Tw.Auditing.Contracts` | 审计事件契约、审计动作、审计主体和审计存储抽象 |
+| `Tw.Auditing` | 审计事件收集、审计日志、敏感操作记录和审计存储编排 |
+| `Tw.TestBase` | 测试时钟、测试 ID、测试当前用户、测试租户、测试文化和契约测试基础 |
+| `Tw.AspNetCore.TestBase` | WebApplicationFactory、测试认证、HTTP 契约测试和 ASP.NET Core 测试宿主 |
+| `Tw.Data.SqlSugar.TestBase` | SqlSugar 数据库夹具、Respawn 重置和 Testcontainers 数据库支持 |
+| `Tw.EventBus.Cap.TestBase` | CAP、RabbitMQ、Outbox/Inbox 和消费幂等测试支持 |
 
 ### 工具包
 
@@ -132,17 +155,26 @@
 
 | 现有或旧规划包 | 最终包 |
 | --- | --- |
-| `Tw.DependencyInjection.Autofac` | `Tw.Autofac` |
-| `Tw.AspNetCore.Grpc` | `Tw.Grpc.AspNetCore` |
+| `Tw.Core` | 保留，职责缩小；JSON、Timing、Threading、Security、ExceptionHandling、Validation 抽离 |
+| `Tw.DependencyInjection` | `Tw.DependencyInjection.Abstractions`、`Tw.DependencyInjection`、`Tw.DependencyInjection.Autofac`、`Tw.Castle.Core` |
+| `Tw.Autofac` | `Tw.DependencyInjection.Autofac` |
+| `Tw.AspNetCore` | `Tw.AspNetCore.Abstractions`、`Tw.AspNetCore` |
+| `Tw.AspNetCore.Mvc` | 保留；Newtonsoft.Json 适配拆到 `Tw.AspNetCore.Mvc.NewtonsoftJson` |
+| `Tw.AspNetCore.Grpc` | 保留，作为 ASP.NET Core gRPC 服务端适配包 |
+| `Tw.Localization` | 保留 |
+| `Tw.Localization.AspNetCore` | `Tw.AspNetCore.Localization` |
+| `Tw.Cqrs` | `Tw.Application.Contracts`、`Tw.Application` |
 | `Tw.Snowflake` | `Tw.IdGeneration`、`Tw.IdGeneration.Yitter` |
 | `Tw.ApplicationConfiguration` | `Tw.Settings`、`Tw.Features` |
-| `Tw.DistributedLock` | `Tw.DistributedLocking`、`Tw.DistributedLocking.Redis` |
-| `Tw.BackgroundJobs` | `Tw.BackgroundJobs`、`Tw.BackgroundJobs.Quartz` |
+| `Tw.UnitOfWork` | `Tw.Uow` |
+| `Tw.Data.Abstractions` | `Tw.Data` |
+| `Tw.DistributedLock` | `Tw.DistributedLocking.Abstractions`、`Tw.DistributedLocking`、`Tw.DistributedLocking.Redis` |
+| `Tw.BackgroundJobs` | `Tw.BackgroundJobs.Abstractions`、`Tw.BackgroundJobs`、`Tw.BackgroundJobs.Quartz` |
 | `Tw.Caching` | `Tw.Caching`、`Tw.Caching.FusionCache` |
 | `Tw.Configuration` | `Tw.Configuration`、`Tw.Configuration.Json` |
 | `Tw.Gateway` | `Tw.Gateway`、`Tw.Gateway.Yarp` |
 | `Tw.Observability` | `Tw.Observability`、`Tw.Observability.Serilog`、`Tw.Observability.OpenTelemetry` |
-| `Tw.Testing` | `Tw.Testing`、`Tw.AspNetCore.Testing`、`Tw.Data.SqlSugar.Testing`、`Tw.EventBus.Cap.Testing` |
+| `Tw.Testing` | `Tw.TestBase`、`Tw.AspNetCore.TestBase`、`Tw.Data.SqlSugar.TestBase`、`Tw.EventBus.Cap.TestBase` |
 
 包重命名直接采用破坏性变更，不保留旧包、转发类型、兼容别名和迁移壳。
 
@@ -154,15 +186,26 @@
 backend/dotnet/BuildingBlocks/src
 |-- Foundation
 |   |-- Tw.Core
+|   |-- Tw.Threading
+|   |-- Tw.Timing
+|   |-- Tw.ExceptionHandling
+|   |-- Tw.Security
+|   |-- Tw.Json.Abstractions
+|   |-- Tw.Json.Newtonsoft
+|   |-- Tw.Validation.Abstractions
+|   |-- Tw.DependencyInjection.Abstractions
 |   |-- Tw.DependencyInjection
-|   |-- Tw.Autofac
-|   `-- Tw.UnitOfWork
+|   |-- Tw.DependencyInjection.Autofac
+|   |-- Tw.Castle.Core
+|   `-- Tw.Uow
 |-- Data
-|   |-- Tw.Data.Abstractions
+|   |-- Tw.Data
 |   `-- Tw.Data.SqlSugar
 |-- MultiTenancy
+|   |-- Tw.MultiTenancy.Abstractions
 |   `-- Tw.MultiTenancy
 |-- Sharding
+|   |-- Tw.Sharding.Abstractions
 |   `-- Tw.Sharding
 |-- IdGeneration
 |   |-- Tw.IdGeneration
@@ -174,28 +217,40 @@ backend/dotnet/BuildingBlocks/src
 |   |-- Tw.Excel
 |   `-- Tw.Excel.MiniExcel
 |-- Application
-|   |-- Tw.Cqrs
+|   |-- Tw.Domain.Shared
+|   |-- Tw.Domain
+|   |-- Tw.Application.Contracts
+|   |-- Tw.Application
+|   |-- Tw.Authorization.Abstractions
 |   |-- Tw.Authorization
 |   |-- Tw.Features
 |   |-- Tw.Settings
 |   `-- Tw.Identity.OpenIddict
 |-- Localization
-|   |-- Tw.Localization
-|   `-- Tw.Localization.AspNetCore
+|   `-- Tw.Localization
 |-- Web
+|   |-- Tw.AspNetCore.Abstractions
 |   |-- Tw.AspNetCore
 |   |-- Tw.AspNetCore.Mvc
-|   `-- Tw.AspNetCore.Swashbuckle
+|   |-- Tw.AspNetCore.Mvc.NewtonsoftJson
+|   |-- Tw.AspNetCore.Swashbuckle
+|   |-- Tw.AspNetCore.Grpc
+|   `-- Tw.AspNetCore.Localization
 |-- Grpc
-|   |-- Tw.Grpc
-|   `-- Tw.Grpc.AspNetCore
+|   `-- Tw.Grpc
+|-- Http
+|   |-- Tw.Http.Abstractions
+|   |-- Tw.Http
+|   `-- Tw.Http.Client
 |-- EventBus
 |   |-- Tw.EventBus.Abstractions
+|   |-- Tw.EventBus
 |   `-- Tw.EventBus.Cap
 |-- Caching
 |   |-- Tw.Caching
 |   `-- Tw.Caching.FusionCache
 |-- DistributedLocking
+|   |-- Tw.DistributedLocking.Abstractions
 |   |-- Tw.DistributedLocking
 |   `-- Tw.DistributedLocking.Redis
 |-- Idempotency
@@ -203,6 +258,7 @@ backend/dotnet/BuildingBlocks/src
 |-- Resilience
 |   `-- Tw.Resilience
 |-- BackgroundJobs
+|   |-- Tw.BackgroundJobs.Abstractions
 |   |-- Tw.BackgroundJobs
 |   `-- Tw.BackgroundJobs.Quartz
 |-- Configuration
@@ -217,12 +273,13 @@ backend/dotnet/BuildingBlocks/src
 |   |-- Tw.Observability.Serilog
 |   `-- Tw.Observability.OpenTelemetry
 |-- Auditing
+|   |-- Tw.Auditing.Contracts
 |   `-- Tw.Auditing
-`-- Testing
-    |-- Tw.Testing
-    |-- Tw.AspNetCore.Testing
-    |-- Tw.Data.SqlSugar.Testing
-    `-- Tw.EventBus.Cap.Testing
+`-- TestBase
+    |-- Tw.TestBase
+    |-- Tw.AspNetCore.TestBase
+    |-- Tw.Data.SqlSugar.TestBase
+    `-- Tw.EventBus.Cap.TestBase
 ```
 
 解决方案文件夹必须与物理能力族一致。项目 `RootNamespace` 仍然等于 `.csproj` 名称，不把物理能力族目录写入命名空间。
@@ -244,33 +301,44 @@ backend/dotnet/BuildingBlocks/src
 - `Tw.AspNetCore.DynamicApi`
 - `Tw.ApplicationConfiguration`
 - `Tw.Snowflake`
-- `Tw.DependencyInjection.Autofac`
 - `Tw.DistributedLock`
-- `Tw.AspNetCore.Grpc`
+- `Tw.Autofac`
+- `Tw.Localization.AspNetCore`
+- `Tw.Grpc.AspNetCore`
+- `Tw.Testing`
+- 任何 `*.Testing` 运行时封装包
 - 任何 `MassTransit` 相关包
 - 任何 Conventional API、Dynamic API 或动态 Controller 生成相关包
 
 ## 包依赖规则
 
-`Tw.Core` 是底层基础包，不依赖 ASP.NET Core、SqlSugar、CAP、Autofac、Quartz、OpenIddict、YARP、Redis、FusionCache、MediatR 和测试库。
+`Tw.Core` 是底层基础包，不依赖 ASP.NET Core、SqlSugar、CAP、Autofac、Castle、Quartz、OpenIddict、YARP、Redis、FusionCache、MediatR、Newtonsoft.Json 和测试库。
+
+`Tw.Json.Abstractions` 不依赖 Newtonsoft.Json。`Tw.Json.Newtonsoft` 依赖 Newtonsoft.Json，并只暴露框架 JSON 抽象。
+
+`Tw.DependencyInjection.Abstractions` 不依赖 Autofac 和 Castle。`Tw.DependencyInjection.Autofac` 依赖 Autofac。`Tw.Castle.Core` 依赖 Castle DynamicProxy。
 
 `Tw.TextTemplating` 不依赖 Scriban。`Tw.TextTemplating.Scriban` 依赖 Scriban，并只暴露框架模板抽象。
 
 `Tw.Excel` 不依赖 MiniExcel 和 OpenXML。`Tw.Excel.MiniExcel` 依赖 MiniExcel 与 DocumentFormat.OpenXml，并只暴露框架 Excel 抽象。
 
-`Tw.UnitOfWork` 只定义工作单元抽象，不依赖 SqlSugar、CAP、ASP.NET Core、Autofac、MediatR 和 Quartz。
+`Tw.Uow` 只定义工作单元抽象，不依赖 SqlSugar、CAP、ASP.NET Core、Autofac、MediatR 和 Quartz。
 
-`Tw.Data.SqlSugar` 依赖 `Tw.Data.Abstractions`、`Tw.UnitOfWork`、`Tw.Core`。业务项目不能直接使用 SqlSugar 的 `ChangeDatabase`。
+`Tw.Data.SqlSugar` 依赖 `Tw.Data`、`Tw.Uow`、`Tw.Core`。业务项目不能直接使用 SqlSugar 的 `ChangeDatabase`。
 
-`Tw.MultiTenancy` 和 `Tw.Sharding` 独立拆包。租户解析、分片规则和连接选择通过抽象协作，业务分片必须由业务契约显式提供分片键。
+`Tw.MultiTenancy` 依赖 `Tw.MultiTenancy.Abstractions`。`Tw.Sharding` 依赖 `Tw.Sharding.Abstractions`。租户解析、分片规则和连接选择通过抽象协作，业务分片必须由业务契约显式提供分片键。
 
-`Tw.EventBus.Cap` 依赖 CAP 与 `Tw.EventBus.Abstractions`，CAP 存储使用框架自定义 SqlSugar 存储适配。业务服务只依赖 `Tw.EventBus.Abstractions` 发布集成事件。
+`Tw.Application` 依赖 `Tw.Application.Contracts`、`Tw.Domain`、`Tw.Authorization.Abstractions`、`Tw.Uow`。MediatR 只进入 `Tw.Application`，不进入 `Tw.Application.Contracts`。
 
-`Tw.AspNetCore` 只承载 HTTP 宿主基础能力。MVC、Swashbuckle、gRPC 服务端分别进入 `Tw.AspNetCore.Mvc`、`Tw.AspNetCore.Swashbuckle`、`Tw.Grpc.AspNetCore`。
+`Tw.EventBus.Cap` 依赖 CAP 与 `Tw.EventBus`，CAP 存储使用框架自定义 SqlSugar 存储适配。业务服务只依赖 `Tw.EventBus.Abstractions` 或 `Tw.EventBus` 发布集成事件。
+
+`Tw.AspNetCore` 只承载 HTTP 宿主基础能力。MVC、Newtonsoft.Json、Swashbuckle、gRPC 服务端、本地化分别进入 `Tw.AspNetCore.Mvc`、`Tw.AspNetCore.Mvc.NewtonsoftJson`、`Tw.AspNetCore.Swashbuckle`、`Tw.AspNetCore.Grpc`、`Tw.AspNetCore.Localization`。
 
 `Tw.Caching` 只定义缓存抽象、键规范和失效契约。FusionCache、Redis/Valkey 细节进入 `Tw.Caching.FusionCache`。
 
-`Tw.BackgroundJobs` 只定义后台任务抽象和执行管道。Quartz.NET 调度实现进入 `Tw.BackgroundJobs.Quartz`。
+`Tw.DistributedLocking.Abstractions` 只定义锁契约。`Tw.DistributedLocking.Redis` 依赖 Redis/Valkey 客户端并实现分布式锁。
+
+`Tw.BackgroundJobs.Abstractions` 只定义任务契约。`Tw.BackgroundJobs` 只定义后台任务编排和执行管道。Quartz.NET 调度实现进入 `Tw.BackgroundJobs.Quartz`。
 
 `Tw.Configuration` 只定义配置治理抽象。JSON 文件加载进入 `Tw.Configuration.Json`，Nacos 集成进入 `Tw.Configuration.Nacos`。
 
@@ -278,9 +346,9 @@ backend/dotnet/BuildingBlocks/src
 
 `Tw.Observability` 只定义观测字段、上下文和健康状态模型。Serilog 与 OpenTelemetry 分别进入 `Tw.Observability.Serilog`、`Tw.Observability.OpenTelemetry`。
 
-`Tw.Gateway.Yarp` 不能依赖 `Tw.Data.*`、`Tw.UnitOfWork`、`Tw.Cqrs`、`Tw.EventBus.*`、`Tw.BackgroundJobs.*`、`Tw.MultiTenancy`、`Tw.Sharding`。
+`Tw.Gateway.Yarp` 不能依赖 `Tw.Data.*`、`Tw.Uow`、`Tw.Application`、`Tw.EventBus.*`、`Tw.BackgroundJobs.*`、`Tw.MultiTenancy`、`Tw.Sharding`。
 
-所有 `*.Testing` 包只能被测试项目引用，生产项目禁止引用。
+所有 `*TestBase` 包只能被测试项目引用，生产项目禁止引用。`*TestBase` 只表示测试基础封装包，单元测试、集成测试和契约测试项目仍然使用 `*.Tests`、`UnitTests`、`IntegrationTests`、`ContractTests` 命名。
 
 ## 命名治理
 
@@ -315,7 +383,7 @@ backend/dotnet/BuildingBlocks/src
 - 类型命名空间等于项目 `RootNamespace` 加类型文件相对项目根目录的文件夹路径
 - 跨程序集不向同一命名空间贡献类型
 - 抽象包与实现包覆盖同一能力域时，抽象包命名空间使用 `.Abstractions` 结尾
-- 被合并能力使用能力名作为子命名空间，例如 `Tw.Core.Execution`、`Tw.Core.Validation`、`Tw.Core.DataMasking`
+- 被合并能力使用能力名作为子命名空间，例如 `Tw.Core.Primitives`、`Tw.Core.Reflection`
 
 ## 服务项目结构
 
@@ -357,36 +425,33 @@ Billing.ContractTests
 
 | 项目 | 默认引用 |
 | --- | --- |
-| `Contracts` | `Tw.Core`，事件合约存在时引用 `Tw.EventBus.Abstractions` |
-| `Domain` | `Tw.Core` |
-| `Application` | `Domain`、`Contracts`、`Tw.Core`、`Tw.Cqrs`、`Tw.Authorization`、`Tw.UnitOfWork` |
+| `Contracts` | `Tw.Application.Contracts`、`Tw.Core`，事件合约存在时引用 `Tw.EventBus.Abstractions` |
+| `Domain` | `Tw.Domain`、`Tw.Core` |
+| `Application` | `Domain`、`Contracts`、`Tw.Application`、`Tw.Authorization`、`Tw.Uow` |
 | `Infrastructure` | `Application`、`Domain`、`Contracts`、`Tw.Data.SqlSugar`，按能力引用缓存、锁、幂等、Http Client、ID 生成、Excel、文本模板 |
-| `HttpApi` | `Application`、`Contracts`、`Tw.AspNetCore`、`Tw.AspNetCore.Mvc`、`Tw.AspNetCore.Swashbuckle`、`Tw.Cqrs` |
+| `HttpApi` | `Application`、`Contracts`、`Tw.AspNetCore`、`Tw.AspNetCore.Mvc`、`Tw.AspNetCore.Swashbuckle` |
 | `HttpApi.Client` | `Contracts`、`Tw.Http.Client` |
 | `Host` | 服务启用的所有运行时实现包 |
-| `UnitTests` | 被测项目、`Tw.Testing`、xUnit、NSubstitute、AwesomeAssertions |
-| `IntegrationTests` | `Host` 或相关适配项目、`Tw.Testing`、`Tw.AspNetCore.Testing`、`Tw.Data.SqlSugar.Testing`、`Tw.EventBus.Cap.Testing`、Testcontainers |
-| `ContractTests` | `Contracts`、`HttpApi.Client`、`Tw.Testing` |
+| `UnitTests` | 被测项目、`Tw.TestBase`、xUnit、NSubstitute、AwesomeAssertions |
+| `IntegrationTests` | `Host` 或相关适配项目、`Tw.TestBase`、`Tw.AspNetCore.TestBase`、`Tw.Data.SqlSugar.TestBase`、`Tw.EventBus.Cap.TestBase`、Testcontainers |
+| `ContractTests` | `Contracts`、`HttpApi.Client`、`Tw.TestBase` |
 
-`Domain` 禁止引用 `Contracts`、`AspNetCore`、`Cqrs`、`Data`、`Cache`、`EventBus`、`Http.Client`。`HttpApi` 禁止引用 `Data`、`EventBus.Cap`、`BackgroundJobs`、`Grpc`、`Infrastructure`。
+`Domain` 禁止引用 `Contracts`、`AspNetCore`、`Application`、`Data`、`Cache`、`EventBus`、`Http.Client`。`HttpApi` 禁止引用 `Data`、`EventBus.Cap`、`BackgroundJobs`、`Grpc`、`Infrastructure`。
 
 ## 上下文与执行管道
 
-`Tw.Core` 提供：
+基础上下文按能力包拆分：
 
-- `ICurrentUser`
-- `ICurrentTenant`
-- `ICurrentCulture`
-- `ICorrelationContext`
-- `IExecutionContext`
-- `TimeProvider`
-- `IJsonSerializer`
-- `IDataMasker`
-- `ValidationException`
-- `ValidationError`
-- 内部 `ExecutionPipeline`
+- `Tw.Security` 提供当前用户、Principal 访问器、敏感字段标记和脱敏能力
+- `Tw.MultiTenancy.Abstractions` 提供当前租户和租户上下文抽象
+- `Tw.Localization` 提供当前文化、文化解析和本地化资源访问
+- `Tw.Observability` 提供关联标识、Trace/Metrics 上下文和日志上下文
+- `Tw.Timing` 提供时钟、时区和时间上下文
+- `Tw.Json.Abstractions` 提供 JSON 序列化抽象
+- `Tw.Validation.Abstractions` 提供验证错误模型、绑定错误和验证异常
+- `Tw.ExceptionHandling` 提供异常分类和错误模型转换
 
-`Tw.Core` 内部命名空间可以按能力使用 `Execution`、`Context`、`Json`、`DataMasking`、`Validation`。命名空间不得出现 `Tw.Context`、`Tw.ExecutionPipeline` 这类被废弃的包级概念。
+`Tw.Core` 只保留基础原语、类型工具和通用约定。命名空间不得出现 `Tw.Context`、`Tw.ExecutionPipeline` 这类被废弃的包级概念。
 
 HTTP、gRPC、CAP Consumer 和后台任务优先使用各自宿主原生管道：
 
@@ -395,13 +460,13 @@ HTTP、gRPC、CAP Consumer 和后台任务优先使用各自宿主原生管道�
 - CAP Consumer 使用 CAP Filter
 - Quartz Job 使用 Job Listener 或 Job Pipeline
 
-这些宿主适配共享 `Tw.Core` 的内部执行管道模型，使日志、审计、UoW、授权、幂等、验证和异常分类只实现一套核心逻辑。
+这些宿主适配共享 `Tw.Application` 的应用层 Pipeline 与各能力包抽象，使日志、审计、UoW、授权、幂等、验证和异常分类保持统一执行顺序。
 
 ## DI、Autofac 与 AOP
 
 `Tw.DependencyInjection` 定义容器中立的服务注册模型、自动注册规则、生命周期、服务暴露规则和 AOP 元数据。
 
-`Tw.Autofac` 是默认运行时适配，使用 Autofac 与 Castle DynamicProxy。AOP 能力参考 ABP 的忽略模式：
+`Tw.DependencyInjection.Autofac` 是默认运行时适配，使用 Autofac；`Tw.Castle.Core` 提供 Castle DynamicProxy 拦截能力。AOP 能力参考 ABP 的忽略模式：
 
 - Controller、gRPC Service、CAP Consumer、Quartz Job 优先走宿主原生 Pipeline
 - 普通应用服务、领域服务、基础设施服务通过 AOP 拦截
@@ -411,9 +476,9 @@ HTTP、gRPC、CAP Consumer 和后台任务优先使用各自宿主原生管道�
 
 内置 DI 保留为基础兼容能力。默认运行时选 Autofac，因为框架需要成熟的动态代理、拦截器和模块化注册能力。扩展方法命名为 `UseAutofac`、`AddInterception`、`AddServiceRegistration` 等能力名称，不使用 `UseTwAutofac`、`AddTwInterception` 形式。
 
-## CQRS 与 MediatR
+## Application 与 MediatR
 
-`Tw.Cqrs` 直接使用 MediatR，不额外封装 MediatR 包。默认版本锁定为 `MediatR 12.5.0`。新版本 MediatR 需要许可证 Key 配置，框架不采用该线作为默认依赖。
+`Tw.Application` 直接使用 MediatR，不额外封装 MediatR 包。默认版本锁定为 `MediatR 12.5.0`。新版本 MediatR 需要许可证 Key 配置，框架不采用该线作为默认依赖。
 
 Pipeline 顺序固定：
 
@@ -424,7 +489,7 @@ ExecutionContext
  -> Validation
  -> Idempotency
  -> Sharding
- -> UnitOfWork
+ -> Uow
  -> Concurrency
  -> Auditing
  -> Handler
@@ -437,7 +502,7 @@ HTTP、gRPC、CAP Consumer、后台任务进入业务用例时统一调用 `ISen
 
 ## Unit of Work
 
-`Tw.UnitOfWork` 独立抽象工作单元，参考 ABP 的 UoW 行为：
+`Tw.Uow` 独立抽象工作单元，参考 ABP 的 UoW 行为：
 
 - 支持 required、requires new、suppress 语义
 - 支持事务与非事务 UoW
@@ -446,11 +511,11 @@ HTTP、gRPC、CAP Consumer、后台任务进入业务用例时统一调用 `ISen
 - 支持取消令牌传递
 - 不包含具体 ORM 和消息实现
 
-`Tw.Data.SqlSugar` 实现 SqlSugar UoW。读操作不默认开启事务。写操作由 `Tw.Cqrs` 或宿主 Pipeline 建立事务边界。
+`Tw.Data.SqlSugar` 实现 SqlSugar UoW。读操作不默认开启事务。写操作由 `Tw.Application` 或宿主 Pipeline 建立事务边界。
 
 ## 并发检查
 
-`Tw.Data.Abstractions` 定义并发契约，`Tw.Data.SqlSugar` 提供 SqlSugar 乐观锁和悲观锁适配，`Tw.Cqrs` 通过 Pipeline 统一传递期望并发标识。
+`Tw.Data` 定义并发契约，`Tw.Data.SqlSugar` 提供 SqlSugar 乐观锁和悲观锁适配，`Tw.Application` 通过 Pipeline 统一传递期望并发标识。
 
 公开契约：
 
@@ -483,7 +548,7 @@ SqlSugar 适配规则：
 - 支持 SqlSugar 原生乐观锁能力的数据库优先使用原生能力
 - 不具备统一原生能力的数据库使用 `where id = @id and concurrency_stamp = @oldStamp` 或版本字段条件更新
 - 悲观锁使用数据库方言支持的行级锁或更新锁能力，并由 `Tw.Data.SqlSugar` 隔离方言差异
-- 仓储、UoW 和 CQRS Pipeline 必须共享同一并发上下文，不能让业务代码手写并发 SQL
+- 仓储、UoW 和 Application Pipeline 必须共享同一并发上下文，不能让业务代码手写并发 SQL
 
 ## 多租户与 SaaS
 
@@ -559,7 +624,7 @@ using var scope = _shardContext.Use("Community", communityId);
 await _billingRepository.CreateAsync(entity, cancellationToken);
 ```
 
-或通过 CQRS 契约：
+或通过应用层契约：
 
 ```csharp
 public sealed record CreateBillCommand(long CommunityId, decimal Amount) : ICommand, IShardedRequest;
@@ -715,7 +780,7 @@ API Versioning 由 `Tw.AspNetCore.Mvc` 统一注册，使用 URL Segment：
 - 结论为不封装动态 API
 - 当前框架采用显式 Controller、Endpoint、gRPC Proto 和 OpenAPI 契约治理
 - 动态 API 会让路由、HTTP 动词、输入来源、授权边界和版本策略来自隐式约定，削弱评审、契约测试和 Analyzer 治理
-- 当前项目已经通过模板、CLI、NSwag、CQRS 和 Analyzer 降低重复代码成本，不需要以隐藏协议层为代价换取少写 Controller
+- 当前项目已经通过模板、CLI、NSwag、应用层契约和 Analyzer 降低重复代码成本，不需要以隐藏协议层为代价换取少写 Controller
 - 不提供动态 Controller 生成
 - 不通过应用服务方法名推断 HTTP 路由和动词
 - 不通过运行时扫描把应用服务自动暴露为外部 API
@@ -746,7 +811,7 @@ CSRF/XSRF 与防伪系统由 `Tw.AspNetCore.Mvc` 封装。该能力属于 Web �
 
 ## Newtonsoft.Json
 
-`Tw.Core` 提供 `IJsonSerializer`，默认实现为 `NewtonsoftJsonSerializer`。
+`Tw.Json.Abstractions` 提供 `IJsonSerializer`，`Tw.Json.Newtonsoft` 提供默认实现 `NewtonsoftJsonSerializer`。
 
 默认设置：
 
@@ -759,7 +824,7 @@ CSRF/XSRF 与防伪系统由 `Tw.AspNetCore.Mvc` 封装。该能力属于 Web �
 - enum 字符串
 - long ID HTTP 输出 converter
 
-`Tw.AspNetCore.Mvc` 使用 `Microsoft.AspNetCore.Mvc.NewtonsoftJson`。`Tw.EventBus.Cap` 使用 Newtonsoft serializer 扩展。
+`Tw.AspNetCore.Mvc.NewtonsoftJson` 使用 `Microsoft.AspNetCore.Mvc.NewtonsoftJson`。`Tw.EventBus.Cap` 使用 Newtonsoft serializer 扩展。
 
 框架代码禁止直接使用 `System.Text.Json` 作为业务序列化入口。
 
@@ -852,7 +917,7 @@ Localization/en-US.json
 
 ## 验证与输入边界
 
-不创建 `Tw.Validation` 包。验证基础模型放入 `Tw.Core`：
+不创建完整实现型 `Tw.Validation` 包。验证基础模型放入 `Tw.Validation.Abstractions`：
 
 - `ValidationException`
 - `ValidationError`
@@ -860,13 +925,13 @@ Localization/en-US.json
 - 字段路径
 - 错误码
 
-业务验证由 `Tw.Cqrs` 执行 FluentValidation。协议绑定错误由协议包处理。字段名使用 JSON 契约字段名。
+业务验证由 `Tw.Application` 执行 FluentValidation。协议绑定错误由协议包处理。字段名使用 JSON 契约字段名。
 
 CAP Consumer 和后台任务验证失败属于不可重试错误。
 
 ## 脱敏与写回保护
 
-脱敏能力放入 `Tw.Core.DataMasking`。
+脱敏能力放入 `Tw.Security`。
 
 公开能力：
 
@@ -888,7 +953,7 @@ CAP Consumer 和后台任务验证失败属于不可重试错误。
 
 ## 认证、授权、Permission、Feature 与 Setting
 
-`Tw.Core` 提供当前用户、Principal 访问器、执行上下文和身份承载模型。
+`Tw.Security` 提供当前用户、Principal 访问器和身份承载模型。
 
 `Tw.Authorization` 提供：
 
@@ -1150,7 +1215,7 @@ framework defaults
 - 数据库访问
 - UoW
 - CAP
-- CQRS
+- Application Pipeline
 - 租户数据库切换
 - 分片业务决策
 - OpenAPI 聚合
@@ -1199,19 +1264,19 @@ Load Balancer
 
 ## 测试
 
-`Tw.Testing`、`Tw.AspNetCore.Testing`、`Tw.Data.SqlSugar.Testing`、`Tw.EventBus.Cap.Testing` 是 test-only 包，不进入生产产物。
+`Tw.TestBase`、`Tw.AspNetCore.TestBase`、`Tw.Data.SqlSugar.TestBase`、`Tw.EventBus.Cap.TestBase` 是 test-only 包，不进入生产产物。
 
 能力：
 
 - 测试时钟
 - 测试 ID
 - 测试当前用户、租户、文化和关联上下文
-- `WebApplicationFactory` 封装，由 `Tw.AspNetCore.Testing` 提供
-- 测试认证，由 `Tw.AspNetCore.Testing` 提供
+- `WebApplicationFactory` 封装，由 `Tw.AspNetCore.TestBase` 提供
+- 测试认证，由 `Tw.AspNetCore.TestBase` 提供
 - Aspire AppHost 测试
 - Testcontainers 容器编排
-- 数据库夹具，由 `Tw.Data.SqlSugar.Testing` 提供
-- CAP、RabbitMQ、Outbox/Inbox 测试支持，由 `Tw.EventBus.Cap.Testing` 提供
+- 数据库夹具，由 `Tw.Data.SqlSugar.TestBase` 提供
+- CAP、RabbitMQ、Outbox/Inbox 测试支持，由 `Tw.EventBus.Cap.TestBase` 提供
 - Redis、Nacos 测试支持按被测包能力引用
 - OpenAPI、Proto、CAP 事件、错误码契约验证
 - 日志、审计、Trace、Metric 测试采集器
@@ -1268,7 +1333,7 @@ Load Balancer
 内置规则：
 
 - 禁止引用 `MassTransit`
-- 禁止生产项目引用 `Tw.Testing`、`Tw.AspNetCore.Testing`、`Tw.Data.SqlSugar.Testing`、`Tw.EventBus.Cap.Testing`
+- 禁止生产项目引用 `Tw.TestBase`、`Tw.AspNetCore.TestBase`、`Tw.Data.SqlSugar.TestBase`、`Tw.EventBus.Cap.TestBase`
 - 禁止出现 `Tw.Infrastructure`、`Tw.Context`、`Tw.ExecutionPipeline`、`Tw.DynamicApi`、`Tw.ApplicationConfiguration`、`Tw.Snowflake`、`Tw.DistributedLock`
 - 禁止业务层直接依赖 SqlSugar、CAP 实现包、ASP.NET Core、Quartz、Gateway 包
 - 禁止 `Application`、`Domain`、`Contracts` 使用 SqlSugar `ChangeDatabase`
@@ -1328,7 +1393,7 @@ SqlSugar 迁移使用 SQL-first 迁移，不使用 EF Migration。
 | Service Discovery | `Microsoft.Extensions.ServiceDiscovery` | `10.7.0` |
 | Gateway Discovery | `Microsoft.Extensions.ServiceDiscovery.Yarp` | `10.7.0` |
 | Gateway | `Yarp.ReverseProxy` | `2.3.0` |
-| CQRS | `MediatR` | `12.5.0` |
+| Application Pipeline | `MediatR` | `12.5.0` |
 | Validation | `FluentValidation` | `12.1.1` |
 | Identity | `OpenIddict` | `7.5.0` |
 | gRPC | `Grpc.AspNetCore` | `2.80.0` |
@@ -1390,7 +1455,7 @@ SqlSugar 迁移使用 SQL-first 迁移，不使用 EF Migration。
 - 所有默认依赖进入集中版本管理
 - 所有密钥、连接串和 Token 不进入仓库
 - `Tw.Analyzers` 阻断禁止引用和架构越界
-- 所有 `*.Testing` 包不进入生产项目
+- 所有 `*TestBase` 包不进入生产项目
 - 动态 API 和动态 Controller 生成能力不存在
 - 框架自有包行覆盖率不低于 98%
 - 核心逻辑分支覆盖率不低于 90%
