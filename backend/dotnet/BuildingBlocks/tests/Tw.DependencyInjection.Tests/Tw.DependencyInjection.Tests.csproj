@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\src\Foundation\Tw.DependencyInjection.Autofac\Tw.DependencyInjection.Autofac.csproj" />
     <ProjectReference Include="..\Tw.DependencyInjection.Tests.Fixtures\Tw.DependencyInjection.Tests.Fixtures.csproj" />
   </ItemGroup>
 

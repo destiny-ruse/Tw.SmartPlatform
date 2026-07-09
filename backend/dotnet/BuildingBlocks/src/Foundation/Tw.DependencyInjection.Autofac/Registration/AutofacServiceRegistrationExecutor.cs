@@ -7,8 +7,9 @@ using Autofac.Extras.DynamicProxy;
 using Tw.DependencyInjection.Abstractions;
 using Tw.DependencyInjection.Diagnostics;
 using Tw.DependencyInjection.DynamicProxy;
+using Tw.DependencyInjection.Registration;
 
-namespace Tw.DependencyInjection.Registration;
+namespace Tw.DependencyInjection.Autofac.Registration;
 
 /// <summary>
 /// 将 <see cref="ServiceRegistrationPlan"/> 中的候选项执行写入 Autofac <see cref="ContainerBuilder"/>

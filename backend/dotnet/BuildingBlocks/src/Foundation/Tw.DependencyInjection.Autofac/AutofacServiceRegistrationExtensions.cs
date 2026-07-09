@@ -7,9 +7,10 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Tw.DependencyInjection.Configuration;
 using Tw.DependencyInjection.Discovery;
 using Tw.DependencyInjection.DynamicProxy;
+using Tw.DependencyInjection.Autofac.Registration;
 using Tw.DependencyInjection.Registration;
 
-namespace Tw.DependencyInjection;
+namespace Tw.DependencyInjection.Autofac;
 
 /// <summary>
 /// 自动发现并注册服务的 Autofac <see cref="ContainerBuilder"/> 扩展

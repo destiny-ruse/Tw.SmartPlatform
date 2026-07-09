@@ -1,7 +1,7 @@
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Tw.DependencyInjection;
+namespace Tw.DependencyInjection.Autofac;
 
 /// <summary>
 /// 在宿主构建阶段用 Autofac 接管默认依赖注入容器的扩展

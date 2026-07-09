@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Tw.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
+using Tw.DependencyInjection.Autofac;
 using Tw.DependencyInjection.Diagnostics;
 using Tw.DependencyInjection.Discovery;
 using Tw.DependencyInjection.Tests.Fixtures;

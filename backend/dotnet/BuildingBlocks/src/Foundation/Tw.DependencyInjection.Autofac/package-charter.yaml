@@ -1,0 +1,33 @@
+schema_version: "1.0.0"
+package: Tw.DependencyInjection.Autofac
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  Autofac 容器接管、服务注册执行和 Castle DynamicProxy 承载适配。
+in_scope:
+  - Autofac 宿主接管入口
+  - Autofac 服务注册执行器
+  - Autofac keyed service 注册
+  - Autofac DynamicProxy 承载
+out_of_scope:
+  - 程序集发现和注册规划
+  - Microsoft DI 容器中性注册
+  - MVC 过滤器、CAP 过滤器和 gRPC 拦截器
+public_capabilities:
+  - Tw.DependencyInjection.Autofac
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.Mvc*"
+    - "DotNetCore.CAP*"
+    - "SqlSugar*"
+    - "Quartz*"
+    - "Yarp*"
+  allow:
+    - Tw.DependencyInjection
+    - Autofac
+    - Autofac.Extensions.DependencyInjection
+    - Autofac.Extras.DynamicProxy
+    - Microsoft.Extensions.Configuration.Binder
+    - Microsoft.Extensions.DependencyInjection
+    - Microsoft.Extensions.Hosting.Abstractions

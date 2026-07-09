@@ -2,6 +2,7 @@
 using AwesomeAssertions;
 using Microsoft.Extensions.Hosting;
 using Tw.DependencyInjection;
+using Tw.DependencyInjection.Autofac;
 using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Hosting;
