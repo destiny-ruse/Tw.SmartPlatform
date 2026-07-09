@@ -21,5 +21,6 @@ dependency_rules:
     - "SqlSugar*"
     - "DotNetCore.CAP*"
   allow:
+    - "Microsoft.Extensions.DependencyInjection.Abstractions"
     - Tw.IdGeneration
     - Yitter.IdGenerator
