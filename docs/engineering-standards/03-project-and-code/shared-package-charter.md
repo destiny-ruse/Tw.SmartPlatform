@@ -12,6 +12,8 @@
 
 - 每个共享包根目录必须包含 `package-charter.yaml`。
 - charter 必须包含 `schema_version`、`package`、`owner`、`responsibility`、`in_scope`、`out_of_scope`、`public_capabilities`、`dependency_rules`。
+- `responsibility`、`in_scope`、`out_of_scope`、`compatibility` 中的自然语言内容必须使用简体中文。
+- 包名、命名空间、依赖名、命令名、错误码、协议名和 `public_capabilities` 中的能力标识可以保留原文。
 - `in_scope`、`out_of_scope`、`public_capabilities` 必须为非空列表。
 - `out_of_scope` 必须声明本包不承担的能力边界。
 - `.NET` 包的 `package` 必须等于 `.csproj` 文件名去扩展名。
