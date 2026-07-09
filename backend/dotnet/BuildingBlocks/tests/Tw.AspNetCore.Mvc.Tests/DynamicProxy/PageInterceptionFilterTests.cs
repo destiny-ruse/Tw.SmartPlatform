@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using AwesomeAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Tw.AspNetCore.Mvc.DynamicProxy;
-using Tw.DependencyInjection.DynamicProxy;
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core;
+using Tw.Castle.Core.Abstractions;
 using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;

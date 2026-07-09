@@ -15,10 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Tw.Castle.Core\Tw.Castle.Core.csproj" />
     <ProjectReference Include="..\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="Tw.DependencyInjection.Autofac.Tests" />
     <InternalsVisibleTo Include="Tw.DependencyInjection.Tests" />
   </ItemGroup>
 

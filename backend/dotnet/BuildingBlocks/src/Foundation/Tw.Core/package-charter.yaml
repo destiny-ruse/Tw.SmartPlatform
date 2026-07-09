@@ -21,7 +21,6 @@ out_of_scope:
 public_capabilities:
   - Tw.Check
   - Tw.Collections
-  - Tw.DynamicProxy.Abstractions
   - Tw.Core.Primitives
   - Tw.Reflection
   - Tw.Core.Security.Cryptography

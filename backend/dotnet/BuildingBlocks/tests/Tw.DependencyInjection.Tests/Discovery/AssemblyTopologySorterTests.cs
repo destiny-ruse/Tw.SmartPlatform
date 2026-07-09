@@ -1,8 +1,7 @@
-﻿using AwesomeAssertions;
+using AwesomeAssertions;
 using Tw.DependencyInjection;
-using Tw.DependencyInjection.Diagnostics;
 using Tw.DependencyInjection.Discovery;
-using Tw.Exceptions;
+using Tw.DependencyInjection.Diagnostics;
 using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Discovery;
@@ -13,11 +12,11 @@ public class AssemblyTopologySorterTests
         new(name, references);
 
     [Fact]
-    public void ServiceRegistrationException_DerivesFromTwException()
+    public void ServiceRegistrationException_DerivesFromException()
     {
         var exception = new ServiceRegistrationException("boom");
 
-        exception.Should().BeAssignableTo<TwException>();
+        exception.Should().BeAssignableTo<Exception>();
         exception.Message.Should().Be("boom");
     }
 

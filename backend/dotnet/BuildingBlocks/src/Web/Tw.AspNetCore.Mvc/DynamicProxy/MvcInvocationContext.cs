@@ -4,7 +4,7 @@ using System.Runtime.ExceptionServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core.Abstractions;
 
 namespace Tw.AspNetCore.Mvc.DynamicProxy;
 

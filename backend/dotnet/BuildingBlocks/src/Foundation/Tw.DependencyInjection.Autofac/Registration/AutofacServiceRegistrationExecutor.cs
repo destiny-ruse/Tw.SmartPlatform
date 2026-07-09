@@ -5,8 +5,7 @@ using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
 using Tw.DependencyInjection.Abstractions;
-using Tw.DependencyInjection.Diagnostics;
-using Tw.DependencyInjection.DynamicProxy;
+using Tw.Castle.Core;
 using Tw.DependencyInjection.Registration;
 
 namespace Tw.DependencyInjection.Autofac.Registration;

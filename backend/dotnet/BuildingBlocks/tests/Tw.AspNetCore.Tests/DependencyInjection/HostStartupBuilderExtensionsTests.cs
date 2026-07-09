@@ -1,12 +1,12 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Autofac.Extensions.DependencyInjection;
 using AwesomeAssertions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
-using Tw.DependencyInjection.Diagnostics;
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core;
+using Tw.Castle.Core.Abstractions;
 using Xunit;
 
 namespace Tw.AspNetCore.Tests.DependencyInjection;

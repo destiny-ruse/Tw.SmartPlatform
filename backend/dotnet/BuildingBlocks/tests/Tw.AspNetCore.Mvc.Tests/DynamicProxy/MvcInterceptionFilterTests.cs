@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using AwesomeAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,8 +13,8 @@ using Tw.AspNetCore.Mvc;
 using Tw.AspNetCore.Mvc.Context;
 using Tw.AspNetCore.Mvc.DynamicProxy;
 using Tw.Threading;
-using Tw.DependencyInjection.DynamicProxy;
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core;
+using Tw.Castle.Core.Abstractions;
 using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;

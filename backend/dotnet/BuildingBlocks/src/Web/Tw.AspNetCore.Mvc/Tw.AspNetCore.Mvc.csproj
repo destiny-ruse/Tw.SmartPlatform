@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tw.AspNetCore\Tw.AspNetCore.csproj" />
-    <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\Foundation\Tw.Castle.Core\Tw.Castle.Core.csproj" />
     <ProjectReference Include="..\..\Foundation\Tw.Threading\Tw.Threading.csproj" />
   </ItemGroup>
 

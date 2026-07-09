@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Tw.DependencyInjection.Configuration;
 using Tw.DependencyInjection.Discovery;
-using Tw.DependencyInjection.DynamicProxy;
+using Tw.Castle.Core;
 using Tw.DependencyInjection.Autofac.Registration;
 using Tw.DependencyInjection.Registration;
 
@@ -83,8 +83,13 @@ public static class AutofacServiceRegistrationExtensions
             options);
 
         ConstructorKeyedServiceValidator.Validate(plan.Registrations);
+        var interceptionCandidates = plan.Registrations
+            .Select(registration => new InterceptionCandidate(
+                registration.ServiceType,
+                registration.ImplementationType))
+            .ToList();
         var interceptionPlan = InterceptionRegistrationPlanner.Plan(
-            plan.Registrations,
+            interceptionCandidates,
             new AttributeInterceptorSelector());
 
         AutofacServiceRegistrationExecutor.Apply(builder, plan, interceptionPlan.Report);

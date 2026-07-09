@@ -1,4 +1,4 @@
-﻿<Solution>
+<Solution>
   <Folder Name="/Aspire/" />
   <Folder Name="/BuildingBlocks/" />
   <Folder Name="/BuildingBlocks/src/">
@@ -12,6 +12,7 @@
     <Project Path="BuildingBlocks/src/Foundation/Tw.Timing/Tw.Timing.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Uow/Tw.Uow.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Validation.Abstractions/Tw.Validation.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Castle.Core/Tw.Castle.Core.csproj" />
     <Project Path="BuildingBlocks/src/IdGeneration/Tw.IdGeneration.Yitter/Tw.IdGeneration.Yitter.csproj" />
     <Project Path="BuildingBlocks/src/IdGeneration/Tw.IdGeneration/Tw.IdGeneration.csproj" />
     <Project Path="BuildingBlocks/src/TextTemplating/Tw.TextTemplating.Scriban/Tw.TextTemplating.Scriban.csproj" />
@@ -32,6 +33,7 @@
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Mvc.Tests/Tw.AspNetCore.Mvc.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Architecture.Tests/Tw.Architecture.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Castle.Core.Tests/Tw.Castle.Core.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Abstractions.Tests/Tw.DependencyInjection.Abstractions.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Autofac.Tests/Tw.DependencyInjection.Autofac.Tests.csproj" />

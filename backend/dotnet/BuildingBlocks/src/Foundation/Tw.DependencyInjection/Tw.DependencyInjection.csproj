@@ -6,8 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Castle.Core" />
-    <PackageReference Include="Castle.Core.AsyncInterceptor" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
@@ -18,11 +16,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tw.DependencyInjection.Abstractions\Tw.DependencyInjection.Abstractions.csproj" />
-    <ProjectReference Include="..\Tw.Core\Tw.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="Tw.DependencyInjection.Autofac" />
+    <InternalsVisibleTo Include="Tw.DependencyInjection.Autofac.Tests" />
     <InternalsVisibleTo Include="Tw.DependencyInjection.Tests" />
   </ItemGroup>
 

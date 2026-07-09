@@ -6,7 +6,7 @@ compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
   框架绑定的依赖注入执行引擎：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、
   容器中性的注册规划、Microsoft DI 注册执行与注册规划诊断报告。消费 Tw.DependencyInjection.Abstractions
-  的框架无关抽象，并提供自动服务注册的参与判定、暴露、仲裁、注册入口、Options 自动装载与 Castle 方法级动态代理承载规划能力。
+  的框架无关抽象，并提供自动服务注册的参与判定、暴露、仲裁、注册入口与 Options 自动装载能力。
 in_scope:
   - 程序集发现与白/黑名单过滤
   - 程序集依赖拓扑排序与循环诊断
@@ -15,10 +15,6 @@ in_scope:
   - 自动服务注册参与判定、生命周期解析与服务暴露
   - 非 keyed 单实现仲裁、keyed service 与 open generic 注册
   - Options 自动发现、绑定、启动校验、后置配置与诊断报告
-  - Castle interface/class 动态代理承载
-  - 基于特性的拦截器选择
-  - 方法级拦截 pipeline
-  - 方法级拦截承载诊断报告 InterceptionReport
 out_of_scope:
   - DI 注册标记、特性、Options 与 AOP 抽象
   - Autofac 容器接管与 Autofac 原生注册执行
@@ -26,14 +22,10 @@ out_of_scope:
   - 数据访问、ORM、仓储实现
 public_capabilities:
   - Tw.DependencyInjection
-  - Tw.DependencyInjection.Diagnostics
-  - Tw.DependencyInjection.DynamicProxy
 dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"
     - "Microsoft.EntityFrameworkCore*"
   allow:
-    - "Tw.Core"
     - "Tw.DependencyInjection.Abstractions"
-    - "Castle.*"
     - "Microsoft.Extensions.*"

@@ -1,0 +1,32 @@
+schema_version: "1.0.0"
+package: Tw.Castle.Core
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  Castle DynamicProxy 适配、方法级拦截抽象、拦截器选择、拦截执行管线和拦截承载诊断。
+in_scope:
+  - 方法级拦截抽象
+  - Attribute 拦截器选择器
+  - 拦截器执行管线
+  - Castle DynamicProxy 调用适配
+  - 拦截承载规划与诊断
+out_of_scope:
+  - Autofac 宿主接管
+  - MVC filter 注册
+  - CAP filter 注册
+  - gRPC interceptor 注册
+public_capabilities:
+  - Tw.Castle.Core
+  - Tw.Castle.Core.Abstractions
+dependency_rules:
+  allow:
+    - Castle.Core
+    - Castle.Core.AsyncInterceptor
+    - Tw.DependencyInjection.Abstractions
+  forbid:
+    - "Autofac*"
+    - "Microsoft.AspNetCore.*"
+    - "DotNetCore.CAP*"
+    - "SqlSugar*"
+    - "Quartz*"

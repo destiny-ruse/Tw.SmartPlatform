@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Tw.AspNetCore.Mvc.Context;
 using Tw.AspNetCore.Mvc.DynamicProxy;
-using Tw.DependencyInjection.DynamicProxy;
+using Tw.Castle.Core;
 
 namespace Tw.AspNetCore.Mvc;
 

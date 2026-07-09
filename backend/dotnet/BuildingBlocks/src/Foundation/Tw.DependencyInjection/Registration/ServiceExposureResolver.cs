@@ -1,6 +1,5 @@
-﻿using Tw.DependencyInjection.Abstractions.Configuration;
+using Tw.DependencyInjection.Abstractions.Configuration;
 using Tw.DependencyInjection.Abstractions;
-using Tw.DynamicProxy.Abstractions;
 
 namespace Tw.DependencyInjection.Registration;
 
@@ -154,7 +153,6 @@ internal static class ServiceExposureResolver
             || normalized == typeof(IScopedDependency)
             || normalized == typeof(ISingletonDependency)
             || normalized == typeof(IConfigurableOptions)
-            || normalized == typeof(IInterceptor)
             || normalized == typeof(IDisposable)
             || normalized == typeof(IAsyncDisposable);
     }
