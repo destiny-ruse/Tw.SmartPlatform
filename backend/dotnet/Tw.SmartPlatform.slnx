@@ -15,6 +15,7 @@
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Grpc.Tests/Tw.AspNetCore.Grpc.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Mvc.Tests/Tw.AspNetCore.Mvc.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Architecture.Tests/Tw.Architecture.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests.Fixtures/Tw.DependencyInjection.Tests.Fixtures.csproj" />
