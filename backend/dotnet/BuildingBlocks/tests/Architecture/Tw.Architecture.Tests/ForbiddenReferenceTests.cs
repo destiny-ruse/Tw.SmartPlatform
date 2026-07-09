@@ -6,14 +6,11 @@ namespace Tw.Architecture.Tests;
 
 public sealed class ForbiddenReferenceTests
 {
-    private static readonly string RepositoryRoot = FindRepositoryRoot();
-
     [Fact]
     public void RuntimeProjects_DoNotReferenceTestingPackages()
     {
-        var srcRoot = Path.Combine(RepositoryRoot, "backend", "dotnet", "BuildingBlocks", "src");
-        var projects = Directory.GetFiles(srcRoot, "*.csproj", SearchOption.AllDirectories)
-            .Where(path => !Path.GetRelativePath(srcRoot, path).Replace('\\', '/').StartsWith("TestBase/", StringComparison.Ordinal));
+        var projects = Directory.GetFiles(RepositoryLayout.BuildingBlocksSrc, "*.csproj", SearchOption.AllDirectories)
+            .Where(path => !RepositoryLayout.IsTestBaseRuntimeProject(path));
         var forbidden = new[] { "Tw.TestBase", "Tw.AspNetCore.TestBase", "Tw.Data.SqlSugar.TestBase", "Tw.EventBus.Cap.TestBase" };
 
         foreach (var project in projects)
@@ -31,11 +28,7 @@ public sealed class ForbiddenReferenceTests
     public void GatewayYarp_DoesNotReferenceApplicationDataOrEventBusPackages()
     {
         var project = Path.Combine(
-            RepositoryRoot,
-            "backend",
-            "dotnet",
-            "BuildingBlocks",
-            "src",
+            RepositoryLayout.BuildingBlocksSrc,
             "Gateway",
             "Tw.Gateway.Yarp",
             "Tw.Gateway.Yarp.csproj");
@@ -48,21 +41,5 @@ public sealed class ForbiddenReferenceTests
         var text = File.ReadAllText(project);
 
         text.Should().NotContainAny(forbidden);
-    }
-
-    private static string FindRepositoryRoot()
-    {
-        var directory = new DirectoryInfo(AppContext.BaseDirectory);
-        while (directory is not null)
-        {
-            if (File.Exists(Path.Combine(directory.FullName, "AGENTS.md")))
-            {
-                return directory.FullName;
-            }
-
-            directory = directory.Parent;
-        }
-
-        throw new InvalidOperationException("无法定位仓库根目录");
     }
 }
