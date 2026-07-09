@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Localization\Tw.Localization\Tw.Localization.csproj" />
+    <ProjectReference Include="..\..\src\Foundation\Tw.Threading\Tw.Threading.csproj" />
   </ItemGroup>
 
 </Project>

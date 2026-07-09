@@ -1,4 +1,4 @@
-namespace Tw.Context;
+﻿namespace Tw.Threading;
 
 /// <summary>
 /// 取消令牌 provider 的抽象基类，封装作用域覆盖读取与 <see cref="ICancellationTokenProvider.Use"/> 实现
@@ -13,7 +13,8 @@ public abstract class CancellationTokenProviderBase : ICancellationTokenProvider
     /// <exception cref="ArgumentNullException">当 <paramref name="scopeProvider"/> 为 <see langword="null"/> 时抛出</exception>
     protected CancellationTokenProviderBase(AsyncLocalCancellationTokenScopeProvider scopeProvider)
     {
-        ScopeProvider = Check.NotNull(scopeProvider);
+        ArgumentNullException.ThrowIfNull(scopeProvider);
+        ScopeProvider = scopeProvider;
     }
 
     /// <summary>

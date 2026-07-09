@@ -1,7 +1,7 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Tw;
-using Tw.Context;
+using Tw.Threading;
 
 namespace Tw.AspNetCore.Mvc.Context;
 
@@ -17,7 +17,7 @@ public static class CancellationTokenServiceCollectionExtensions
     /// <returns>同一 <see cref="IServiceCollection"/> 实例，便于链式调用</returns>
     /// <exception cref="ArgumentNullException">当 <paramref name="services"/> 为 <see langword="null"/> 时抛出</exception>
     /// <remarks>
-    /// 先调用 <see cref="Tw.Context.CancellationTokenServiceCollectionExtensions.AddCancellationTokenProvider"/> 注册核心能力，
+    /// 先调用 <see cref="Tw.Threading.CancellationTokenServiceCollectionExtensions.AddCancellationTokenProvider"/> 注册核心能力，
     /// 注册 <c>IHttpContextAccessor</c>，并将 <see cref="ICancellationTokenProvider"/>
     /// 替换为 <see cref="HttpContextCancellationTokenProvider"/>。
     /// </remarks>

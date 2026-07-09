@@ -1,8 +1,7 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Tw;
 
-namespace Tw.Context;
+namespace Tw.Threading;
 
 /// <summary>
 /// 为 <see cref="IServiceCollection"/> 提供取消令牌上下文能力注册扩展
@@ -22,7 +21,7 @@ public static class CancellationTokenServiceCollectionExtensions
     /// </remarks>
     public static IServiceCollection AddCancellationTokenProvider(this IServiceCollection services)
     {
-        Check.NotNull(services);
+        ArgumentNullException.ThrowIfNull(services);
 
         services.TryAddSingleton<AsyncLocalCancellationTokenScopeProvider>();
         services.TryAddSingleton<ICancellationTokenProvider, NullCancellationTokenProvider>();

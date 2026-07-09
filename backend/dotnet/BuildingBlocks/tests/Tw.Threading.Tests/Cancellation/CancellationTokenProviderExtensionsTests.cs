@@ -1,8 +1,8 @@
 ﻿using AwesomeAssertions;
-using Tw.Context;
+using Tw.Threading;
 using Xunit;
 
-namespace Tw.Core.Tests.Context;
+namespace Tw.Threading.Tests.Cancellation;
 
 public class CancellationTokenProviderExtensionsTests
 {
@@ -26,13 +26,15 @@ public class CancellationTokenProviderExtensionsTests
     public void FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsDefault()
     {
         var provider = CreateProvider();
-        using var scopeCts = new CancellationTokenSource();
+        var scopedToken = TestContext.Current.CancellationToken;
 
-        using (provider.Use(scopeCts.Token))
+        using (provider.Use(scopedToken))
         {
+#pragma warning disable xUnit1051 // 本用例验证缺省 cancellationToken 会回退到 provider
             var result = provider.FallbackToProvider();
+#pragma warning restore xUnit1051
 
-            result.Should().Be(scopeCts.Token);
+            result.Should().Be(scopedToken);
         }
     }
 
@@ -40,13 +42,13 @@ public class CancellationTokenProviderExtensionsTests
     public void FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsNone()
     {
         var provider = CreateProvider();
-        using var scopeCts = new CancellationTokenSource();
+        var scopedToken = TestContext.Current.CancellationToken;
 
-        using (provider.Use(scopeCts.Token))
+        using (provider.Use(scopedToken))
         {
             var result = provider.FallbackToProvider(CancellationToken.None);
 
-            result.Should().Be(scopeCts.Token);
+            result.Should().Be(scopedToken);
         }
     }
 }

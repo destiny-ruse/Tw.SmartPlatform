@@ -1,4 +1,4 @@
-namespace Tw.Utilities;
+﻿namespace Tw.Threading;
 
 /// <summary>
 /// 提供释放时无任何效果的可复用异步释放实例

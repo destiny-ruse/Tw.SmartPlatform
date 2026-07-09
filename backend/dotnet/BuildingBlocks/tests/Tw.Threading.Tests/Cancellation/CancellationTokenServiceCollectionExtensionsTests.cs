@@ -1,9 +1,9 @@
 ﻿using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using Tw.Context;
+using Tw.Threading;
 using Xunit;
 
-namespace Tw.Core.Tests.Context;
+namespace Tw.Threading.Tests.Cancellation;
 
 public class CancellationTokenServiceCollectionExtensionsTests
 {

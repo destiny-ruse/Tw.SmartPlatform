@@ -1,6 +1,4 @@
-using Tw.Utilities;
-
-namespace Tw.Context;
+﻿namespace Tw.Threading;
 
 /// <summary>
 /// 使用 <see cref="AsyncLocal{T}"/> 维护异步调用链内的取消令牌作用域
@@ -28,6 +26,22 @@ public sealed class AsyncLocalCancellationTokenScopeProvider
     {
         var previous = _current.Value;
         _current.Value = new CancellationTokenOverride(cancellationToken);
-        return new DisposeAction(() => _current.Value = previous);
+        return new CancellationTokenScope(this, previous);
+    }
+
+    private sealed class CancellationTokenScope(
+        AsyncLocalCancellationTokenScopeProvider provider,
+        CancellationTokenOverride? previous) : IDisposable
+    {
+        private AsyncLocalCancellationTokenScopeProvider? providerRef = provider;
+
+        public void Dispose()
+        {
+            var currentProvider = Interlocked.Exchange(ref providerRef, null);
+            if (currentProvider is not null)
+            {
+                currentProvider._current.Value = previous;
+            }
+        }
     }
 }

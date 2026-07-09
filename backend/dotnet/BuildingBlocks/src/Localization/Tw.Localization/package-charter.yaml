@@ -28,4 +28,7 @@ dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"
     - "Microsoft.EntityFrameworkCore*"
-  allow: []
+  allow:
+    - Tw.Core
+    - Tw.Threading
+    - "Microsoft.Extensions.DependencyInjection.Abstractions"

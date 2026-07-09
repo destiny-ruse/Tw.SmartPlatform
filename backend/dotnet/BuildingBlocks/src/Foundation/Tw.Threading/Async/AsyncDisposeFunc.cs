@@ -1,4 +1,4 @@
-namespace Tw.Utilities;
+﻿namespace Tw.Threading;
 
 /// <summary>
 /// 在实例释放时调用给定异步委托
@@ -14,8 +14,8 @@ public sealed class AsyncDisposeFunc : IAsyncDisposable
     /// <exception cref="ArgumentNullException">当 <paramref name="disposeAsync"/> 为 <see langword="null"/> 时抛出</exception>
     public AsyncDisposeFunc(Func<Task> disposeAsync)
     {
-        var validatedDisposeAsync = Check.NotNull(disposeAsync);
-        this.disposeAsync = () => new ValueTask(validatedDisposeAsync.Invoke());
+        ArgumentNullException.ThrowIfNull(disposeAsync);
+        this.disposeAsync = () => new ValueTask(disposeAsync.Invoke());
     }
 
     /// <summary>
@@ -25,7 +25,8 @@ public sealed class AsyncDisposeFunc : IAsyncDisposable
     /// <exception cref="ArgumentNullException">当 <paramref name="disposeAsync"/> 为 <see langword="null"/> 时抛出</exception>
     public AsyncDisposeFunc(Func<ValueTask> disposeAsync)
     {
-        this.disposeAsync = Check.NotNull(disposeAsync);
+        ArgumentNullException.ThrowIfNull(disposeAsync);
+        this.disposeAsync = disposeAsync;
     }
 
     /// <summary>

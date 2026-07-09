@@ -1,4 +1,4 @@
-namespace Tw.Context;
+﻿namespace Tw.Threading;
 
 /// <summary>
 /// 为 <see cref="ICancellationTokenProvider"/> 提供显式令牌优先的统一取值方法
@@ -19,7 +19,7 @@ public static class CancellationTokenProviderExtensions
         this ICancellationTokenProvider provider,
         CancellationToken preferredValue = default)
     {
-        Check.NotNull(provider);
+        ArgumentNullException.ThrowIfNull(provider);
 
         return preferredValue == default || preferredValue == CancellationToken.None
             ? provider.Token
