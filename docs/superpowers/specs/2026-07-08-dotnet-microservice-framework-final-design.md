@@ -23,7 +23,7 @@
 - 事件总线统一使用 CAP。
 - DI 运行时使用 Autofac，AOP 使用 Castle DynamicProxy。
 - 分布式 ID 使用 `Yitter.IdGenerator`。
-- API 模型中 ID 保持 `long`，HTTP JSON 由全局格式化配置输出为字符串。
+- API 模型中 ID 在 C# 代码内保持 `long`，HTTP JSON、OpenAPI 和生成客户端的外部契约统一把 ID 表达为十进制字符串。
 - 文件与对象存储不作为框架级包，由独立文件存储服务承载。
 - 同一能力族的包放在同一物理文件夹与解决方案文件夹中，例如 `Web`、`Data`、`EventBus`、`TestBase`。
 - .NET 工具包放入 `backend/dotnet/tools`。仓库根目录 `tools` 只存放与开发语言和应用框架无关的仓库级工具，例如项目记忆生成、规范索引生成和仓库治理脚本。
@@ -497,6 +497,14 @@ SqlSugar 适配规则：
 3. 后台任务、CAP 消息或调度上下文。
 4. 服务默认租户。
 
+租户信任规则：
+
+- 已认证请求以认证票据中的租户声明为可信租户来源。
+- 路由、Header、子域名和网关传递的租户标识只作为定位提示，必须与认证票据租户一致。
+- 已认证请求中租户提示与认证票据租户不一致时，服务拒绝请求并返回稳定权限错误码。
+- 匿名公开接口不得使用客户端提交的租户标识绕过服务端配置的访问边界。
+- 后台任务、CAP 消息和调度上下文必须由受控生产者写入租户标识，消费端仍执行租户边界校验。
+
 `Tw.Sharding` 定义业务分片上下文、分片规则、分片切换和跨分片边界。业务请求必须显式携带分片键。框架不根据租户 ID 自动推导业务分片。
 
 分片键来源顺序：
@@ -531,7 +539,7 @@ ICurrentTenant
 
 事件总线只采用 CAP。框架包为 `Tw.EventBus.Abstractions`、`Tw.EventBus`、`Tw.EventBus.Cap`。
 
-CAP 数据库存储由框架自定义 SqlSugar 存储适配。存储适配只处理 CAP 原始实体、表结构和 SqlSugar 事务行为，不处理队列、不处理数据同步、不改变 CAP 原有实体语义。
+CAP 数据库存储由框架自定义 SqlSugar 存储适配。存储适配只处理 CAP 原始实体、表结构和当前工作单元事务接入，不处理队列、不处理数据同步、不改变 CAP 原有实体语义。
 
 CAP 数据库规则：
 
@@ -539,8 +547,9 @@ CAP 数据库规则：
 - CAP 数据不按租户拆分。
 - CAP 数据不按分片拆分。
 - 每个 SaaS 子库、分片子库、业务主库所在数据库服务器都存在对应 CAP 数据库。
-- CAP 数据库主主同步属于基础设施职责。
-- CAP 存储适配不感知主主同步。
+- CAP Outbox 原子性完全依赖当前 `Tw.Uow` 工作单元事务。
+- `Tw.EventBus.Cap` 不在当前工作单元外创建独立 Outbox 写入事务。
+- 当前工作单元无法同时覆盖业务写入和 CAP Outbox 写入时，框架拒绝发布集成事件。
 
 同一 UoW 中写业务数据和写 CAP Outbox 的流程：
 
@@ -551,10 +560,10 @@ CAP 数据库规则：
  -> 开启 SqlSugar UoW
  -> 写业务表
  -> 写 CAP Outbox
- -> 提交同一数据库事务行为
+ -> 由同一个 Tw.Uow 提交或回滚业务写入和 CAP Outbox 写入
 ```
 
-框架不承诺跨服务器强一致本地事务。一次写 UoW 涉及多个物理业务服务器时，框架拒绝同事务保存，业务必须拆为 CAP 最终一致流程。
+框架不承诺跨服务器强一致本地事务。一次写 UoW 涉及多个物理业务服务器时，框架拒绝同事务保存，业务必须拆为多个本地 UoW 并通过 CAP 最终一致流程衔接。
 
 CAP 已处理消息清理由 `Tw.EventBus.Cap` 提供调度任务：
 
@@ -570,6 +579,10 @@ CAP 已处理消息清理由 `Tw.EventBus.Cap` 提供调度任务：
 
 - C# 实体、DTO、Command、Query 中 ID 正常使用 `long`。
 - HTTP JSON 通过全局 Newtonsoft converter 输出为字符串。
+- HTTP 请求体、路径参数和查询参数中的 ID 只接受十进制字符串，协议绑定层转换为 `long`。
+- HTTP ID 输入不是十进制字符串或超出 `long` 范围时，返回稳定验证错误码。
+- OpenAPI 中 ID 字段、ID 路径参数和 ID 查询参数统一声明为 `type: string`、`format: int64`，并标记 `x-tw-id: true`。
+- NSwag 生成的 HTTP 客户端外部调用模型使用字符串 ID，服务端应用层和领域层仍使用 `long`。
 - 数据库存储使用 `bigint`。
 - WorkerId 来自配置、环境变量、数据库或部署平台分配。
 - WorkerId 禁止随机生成。
@@ -586,7 +599,7 @@ public interface IIdGenerator
 }
 ```
 
-字符串输出由序列化层负责，不在业务代码调用 `ToString()` 形成约定。
+字符串输入输出由协议层负责，不在业务代码调用 `ToString()` 或解析字符串形成 ID 契约。
 
 ## ASP.NET Core、OpenAPI、API Versioning 与响应
 
@@ -599,6 +612,7 @@ public interface IIdGenerator
 - 枚举、错误码、统一响应描述。
 - 分组与版本文档。
 - Operation Filter、Schema Filter 扩展点。
+- ID 字段、ID 路径参数和 ID 查询参数的字符串契约映射。
 
 API Versioning 由 `Tw.AspNetCore.Mvc` 统一注册，使用 URL Segment：
 
@@ -822,8 +836,12 @@ CAP Consumer 和后台任务验证失败属于不可重试错误。
 - 网关只做 JWT 验证和粗粒度路由策略。
 - 服务仍然验证 JWT、Permission、资源所有权和租户权限。
 - 内部服务调用不天然可信。
-- Gateway 转发原始 `Authorization`。
-- Gateway 清除调用方伪造的身份 Header。
+- Gateway 对用户代理请求转发原始 `Authorization`。
+- 服务间后台调用使用受控服务凭据或明确的用户委托 Token。
+- 服务接收下游调用时必须校验 Token 的签发方、受众、过期时间、scope、租户和资源边界。
+- Gateway 清除调用方伪造的身份、租户、权限和角色 Header。
+- Gateway 设置的 `X-Tenant-Id` 必须来自已验证 JWT、受控路由、受控子域名或服务端配置。
+- 服务接收 `X-Tenant-Id` 时必须与 JWT 租户声明或受控调用上下文一致。
 
 ## 缓存、分布式锁、幂等与韧性
 
@@ -867,7 +885,7 @@ CAP Consumer 和后台任务验证失败属于不可重试错误。
 - NSwag.MSBuild 生成客户端。
 - 关联标识传播。
 
-Header allowlist：
+Header 传播规则：
 
 - `Authorization`
 - `traceparent`
@@ -876,6 +894,8 @@ Header allowlist：
 - `X-Tenant-Id`
 - `X-Culture`
 - `Idempotency-Key`
+
+`Authorization` 只在用户委托调用或同一安全边界内传播。后台任务、系统作业和跨安全边界服务调用使用受控服务凭据，不复用入口用户 Token。`X-Tenant-Id` 只传播已验证租户，不传播客户端原始租户 Header。
 
 `Tw.Grpc` 使用官方 gRPC 包，采用 contract-first `.proto`。
 
@@ -945,7 +965,7 @@ framework defaults
  -> Nacos shared
  -> Nacos service
  -> Nacos role
- -> User Secrets
+ -> User Secrets (Local/Development only)
  -> environment variables
  -> command line
 ```
@@ -982,9 +1002,18 @@ framework defaults
 - 加密 Key。
 - 租户和分片拓扑。
 
+密钥轮换规则：
+
+- JWT、加密 Key、数据库连接串、Broker 凭据和第三方凭据必须来自受控密钥来源。
+- User Secrets 只允许在 Local 和 Development 环境启用，测试、预发和生产环境启用 User Secrets 时启动失败。
+- JWT 使用 Key Ring 或 JWKS 表达多个验证 Key，同一时间只有一个签名 Key。
+- JWT Key 轮换流程为新增验证 Key、切换签名 Key、等待最大 Token 生命周期、撤销旧 Key。
+- 加密 Key 轮换必须区分读取旧密文的历史 Key 和写入新密文的当前 Key。
+- 密钥轮换、撤销和失败回退必须记录审计事件。
+
 动态配置变更先校验，校验失败保留上一份有效配置并记录审计和告警。
 
-密钥来自 User Secrets、Aspire、Kubernetes Secret、环境变量或企业密钥系统，不创建 `Tw.Secrets`。
+密钥来自本地 User Secrets、Aspire、Kubernetes Secret、环境变量或企业密钥系统，不创建 `Tw.Secrets`。
 
 ## Gateway
 
