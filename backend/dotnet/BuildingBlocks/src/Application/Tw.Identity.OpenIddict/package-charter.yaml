@@ -24,5 +24,6 @@ dependency_rules:
     - OpenIddict
     - OpenIddict.Server.AspNetCore
     - OpenIddict.Validation.AspNetCore
+    - OpenIddict.Validation.ServerIntegration
     - Microsoft.Extensions.DependencyInjection.Abstractions
     - Microsoft.Extensions.Options

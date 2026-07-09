@@ -25,6 +25,9 @@
     <PackageVersion Include="MediatR" Version="12.5.0" />
     <PackageVersion Include="FluentValidation" Version="12.1.1" />
     <PackageVersion Include="OpenIddict" Version="7.5.0" />
+    <PackageVersion Include="OpenIddict.Server.AspNetCore" Version="7.5.0" />
+    <PackageVersion Include="OpenIddict.Validation.AspNetCore" Version="7.5.0" />
+    <PackageVersion Include="OpenIddict.Validation.ServerIntegration" Version="7.5.0" />
     <PackageVersion Include="Quartz" Version="3.18.2" />
     <PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />
     <PackageVersion Include="Serilog.Sinks.OpenTelemetry" Version="4.2.0" />
