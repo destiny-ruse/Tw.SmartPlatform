@@ -1,0 +1,27 @@
+schema_version: "1.0.0"
+package: Tw.Application
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  应用层用例执行管线、MediatR 集成、pipeline behavior 编排和 completed hook 执行。
+in_scope:
+  - 应用 pipeline 顺序
+  - 用例执行器
+  - completed hook
+  - MediatR 应用层集成
+out_of_scope:
+  - HTTP Controller
+  - 数据访问实现
+  - Identity Center 实现
+public_capabilities:
+  - Tw.Application
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+  allow:
+    - Tw.Core
+    - Tw.Application.Contracts
+    - MediatR
+    - FluentValidation

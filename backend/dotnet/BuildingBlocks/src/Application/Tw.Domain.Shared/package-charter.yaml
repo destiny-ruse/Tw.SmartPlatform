@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Domain.Shared
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  跨领域共享的领域值对象、枚举、错误码和领域契约。
+in_scope:
+  - 领域共享值对象
+  - 领域共享枚举
+  - 领域错误码
+out_of_scope:
+  - 聚合根实现
+  - 仓储实现
+  - 应用服务契约
+public_capabilities:
+  - Tw.Domain.Shared
+dependency_rules:
+  forbid:
+    - "MediatR"
+    - "FluentValidation"
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"

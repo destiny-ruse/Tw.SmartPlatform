@@ -1,0 +1,28 @@
+schema_version: "1.0.0"
+package: Tw.Identity.OpenIddict
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  基于 OpenIddict 的 Identity Center 边界、token 发行、token 校验和签名证书解析。
+in_scope:
+  - OpenIddict 配置入口
+  - token 发行边界
+  - token 校验边界
+  - 签名证书解析边界
+out_of_scope:
+  - 用户管理 UI
+  - 权限 grant 存储
+  - 业务权限检查执行
+public_capabilities:
+  - Tw.Identity.OpenIddict
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "Yarp*"
+  allow:
+    - OpenIddict
+    - OpenIddict.Server.AspNetCore
+    - OpenIddict.Validation.AspNetCore
+    - Microsoft.Extensions.DependencyInjection.Abstractions
+    - Microsoft.Extensions.Options

@@ -1,0 +1,26 @@
+schema_version: "1.0.0"
+package: Tw.Domain
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  领域实体、聚合根、领域事件和领域服务基础能力。
+in_scope:
+  - 领域实体与聚合根基础类型
+  - 领域事件契约
+  - 领域服务基础能力
+out_of_scope:
+  - 应用服务编排
+  - MediatR Handler
+  - 数据访问实现
+public_capabilities:
+  - Tw.Domain
+dependency_rules:
+  forbid:
+    - "MediatR"
+    - "FluentValidation"
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+  allow:
+    - Tw.Core
+    - Tw.Domain.Shared

@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.Features
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  Feature definition、分作用域 feature value、feature cache key、feature store 边界和刷新请求。
+in_scope:
+  - Feature 定义
+  - service、tenant、user 作用域 feature 值
+  - Feature 读取和刷新
+out_of_scope:
+  - Feature 管理 UI
+  - Feature 数据库实现
+  - 权限检查执行
+public_capabilities:
+  - Tw.Features
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "OpenIddict*"

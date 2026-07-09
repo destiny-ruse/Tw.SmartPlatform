@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Authorization.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  权限定义、授权上下文、授权结果和权限检查抽象。
+in_scope:
+  - 权限定义
+  - 授权上下文
+  - 权限检查接口
+  - 授权结果
+out_of_scope:
+  - 权限存储实现
+  - JWT 校验实现
+  - Identity Center 实现
+public_capabilities:
+  - Tw.Authorization.Abstractions
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "OpenIddict*"
+    - "SqlSugar*"

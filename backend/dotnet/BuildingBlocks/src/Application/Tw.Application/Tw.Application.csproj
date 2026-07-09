@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Tw.Application</RootNamespace>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tw.Application.Contracts\Tw.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
+  </ItemGroup>
+
+</Project>

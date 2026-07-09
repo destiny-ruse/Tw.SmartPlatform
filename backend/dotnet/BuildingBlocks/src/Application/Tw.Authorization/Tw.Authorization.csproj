@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Tw.Authorization</RootNamespace>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tw.Authorization.Abstractions\Tw.Authorization.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.Settings
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  Setting definition、分作用域 setting value、setting cache key、setting store 边界和刷新请求。
+in_scope:
+  - Setting 定义
+  - service、tenant、user 作用域 setting 值
+  - Setting 读取和刷新
+out_of_scope:
+  - Setting 管理 UI
+  - Setting 数据库实现
+  - 配置中心实现
+public_capabilities:
+  - Tw.Settings
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "OpenIddict*"

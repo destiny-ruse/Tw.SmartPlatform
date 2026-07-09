@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Tw.Domain</RootNamespace>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tw.Domain.Shared\Tw.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
+  </ItemGroup>
+
+</Project>

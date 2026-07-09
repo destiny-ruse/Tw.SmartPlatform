@@ -1,0 +1,26 @@
+schema_version: "1.0.0"
+package: Tw.Application.Contracts
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  Command、Query、DTO、应用服务契约、分页模型和客户端共享契约。
+in_scope:
+  - Command 和 Query 标记接口
+  - DTO 与分页模型
+  - 应用服务契约
+  - 客户端共享契约
+out_of_scope:
+  - MediatR Handler
+  - UoW 编排
+  - 权限检查执行
+public_capabilities:
+  - Tw.Application.Contracts
+dependency_rules:
+  forbid:
+    - "MediatR"
+    - "FluentValidation"
+    - "SqlSugar*"
+  allow:
+    - Tw.Core
+    - Tw.Domain.Shared

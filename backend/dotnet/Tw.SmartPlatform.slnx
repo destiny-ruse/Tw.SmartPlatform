@@ -2,6 +2,15 @@
   <Folder Name="/Aspire/" />
   <Folder Name="/BuildingBlocks/" />
   <Folder Name="/BuildingBlocks/src/">
+    <Project Path="BuildingBlocks/src/Application/Tw.Application.Contracts/Tw.Application.Contracts.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Application/Tw.Application.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Authorization.Abstractions/Tw.Authorization.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Authorization/Tw.Authorization.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Domain.Shared/Tw.Domain.Shared.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Domain/Tw.Domain.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Features/Tw.Features.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Identity.OpenIddict/Tw.Identity.OpenIddict.csproj" />
+    <Project Path="BuildingBlocks/src/Application/Tw.Settings/Tw.Settings.csproj" />
     <Project Path="BuildingBlocks/src/Excel/Tw.Excel.MiniExcel/Tw.Excel.MiniExcel.csproj" />
     <Project Path="BuildingBlocks/src/Excel/Tw.Excel/Tw.Excel.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.ExceptionHandling/Tw.ExceptionHandling.csproj" />
@@ -29,6 +38,10 @@
   </Folder>
   <Folder Name="/BuildingBlocks/src/Ddd/" />
   <Folder Name="/BuildingBlocks/tests/">
+    <Project Path="BuildingBlocks/tests/Tw.Application.Contracts.Tests/Tw.Application.Contracts.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Application.Tests/Tw.Application.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Authorization.Abstractions.Tests/Tw.Authorization.Abstractions.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Authorization.Tests/Tw.Authorization.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Grpc.Tests/Tw.AspNetCore.Grpc.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Mvc.Tests/Tw.AspNetCore.Mvc.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj" />
@@ -39,14 +52,19 @@
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Autofac.Tests/Tw.DependencyInjection.Autofac.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests.Fixtures/Tw.DependencyInjection.Tests.Fixtures.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Domain.Shared.Tests/Tw.Domain.Shared.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Domain.Tests/Tw.Domain.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Excel.MiniExcel.Tests/Tw.Excel.MiniExcel.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Excel.Tests/Tw.Excel.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.ExceptionHandling.Tests/Tw.ExceptionHandling.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.IdGeneration.Tests/Tw.IdGeneration.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.IdGeneration.Yitter.Tests/Tw.IdGeneration.Yitter.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Features.Tests/Tw.Features.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Identity.OpenIddict.Tests/Tw.Identity.OpenIddict.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Json.Abstractions.Tests/Tw.Json.Abstractions.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Json.Newtonsoft.Tests/Tw.Json.Newtonsoft.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Security.Tests/Tw.Security.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Settings.Tests/Tw.Settings.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.TextTemplating.Tests/Tw.TextTemplating.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.TextTemplating.Scriban.Tests/Tw.TextTemplating.Scriban.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Threading.Tests/Tw.Threading.Tests.csproj" />
