@@ -12,7 +12,8 @@ public sealed class ForbiddenReferenceTests
     public void RuntimeProjects_DoNotReferenceTestingPackages()
     {
         var srcRoot = Path.Combine(RepositoryRoot, "backend", "dotnet", "BuildingBlocks", "src");
-        var projects = Directory.GetFiles(srcRoot, "*.csproj", SearchOption.AllDirectories);
+        var projects = Directory.GetFiles(srcRoot, "*.csproj", SearchOption.AllDirectories)
+            .Where(path => !Path.GetRelativePath(srcRoot, path).Replace('\\', '/').StartsWith("TestBase/", StringComparison.Ordinal));
         var forbidden = new[] { "Tw.TestBase", "Tw.AspNetCore.TestBase", "Tw.Data.SqlSugar.TestBase", "Tw.EventBus.Cap.TestBase" };
 
         foreach (var project in projects)
