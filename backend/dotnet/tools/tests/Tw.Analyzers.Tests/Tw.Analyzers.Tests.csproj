@@ -11,9 +11,10 @@
     <PackageReference Include="xunit.v3" />
     <PackageReference Include="xunit.runner.visualstudio" />
     <PackageReference Include="AwesomeAssertions" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tw.Cli\Tw.Cli.csproj" />
+    <ProjectReference Include="..\..\src\Tw.Analyzers\Tw.Analyzers.csproj" />
   </ItemGroup>
 </Project>

@@ -193,12 +193,15 @@
   <Folder Name="/Services/System/src/">
   </Folder>
   <Folder Name="/Services/System/tests/" />
-  <Folder Name="/tools/">
-    <Project Path="tools/Tw.Analyzers.Tests/Tw.Analyzers.Tests.csproj" />
-    <Project Path="tools/Tw.Analyzers/Tw.Analyzers.csproj" />
-    <Project Path="tools/Tw.Cli.Tests/Tw.Cli.Tests.csproj" />
-    <Project Path="tools/Tw.Cli/Tw.Cli.csproj" />
-    <Project Path="tools/Tw.Templates.Tests/Tw.Templates.Tests.csproj" />
-    <Project Path="tools/Tw.Templates/Tw.Templates.csproj" />
+  <Folder Name="/tools/" />
+  <Folder Name="/tools/src/">
+    <Project Path="tools/src/Tw.Analyzers/Tw.Analyzers.csproj" />
+    <Project Path="tools/src/Tw.Cli/Tw.Cli.csproj" />
+    <Project Path="tools/src/Tw.Templates/Tw.Templates.csproj" />
+  </Folder>
+  <Folder Name="/tools/tests/">
+    <Project Path="tools/tests/Tw.Analyzers.Tests/Tw.Analyzers.Tests.csproj" />
+    <Project Path="tools/tests/Tw.Cli.Tests/Tw.Cli.Tests.csproj" />
+    <Project Path="tools/tests/Tw.Templates.Tests/Tw.Templates.Tests.csproj" />
   </Folder>
 </Solution>
