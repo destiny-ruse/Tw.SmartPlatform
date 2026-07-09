@@ -196,7 +196,7 @@ internal static class ServiceRegistrationPlanner
             registrations: registrationDiagnostics,
             supersededCandidates: supersededDiagnostics,
             skippedTypes: skipped,
-            conflicts: []);   // P2 通过抛异常表达冲突，conflicts 段落留空
+            conflicts: []);   // 规划期冲突通过启动异常表达，conflicts 段落留空
 
         return new ServiceRegistrationPlan(registrations, report);
     }

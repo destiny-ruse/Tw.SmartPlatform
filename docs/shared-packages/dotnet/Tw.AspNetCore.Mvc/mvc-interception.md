@@ -30,12 +30,12 @@ app.Run();
 
 `TwActionInterceptionFilter` 是 MVC filter adapter。MVC 执行 controller action 前，filter 会解析当前 action 的 `ControllerActionDescriptor.MethodInfo`，通过 `IInterceptorSelector` 选择应用到该 action 的拦截器。
 
-当当前 action 没有匹配拦截器时，filter 直接继续 MVC action 管线。当存在匹配拦截器时，filter 创建 `MvcInvocationContext`，再调用统一的 `IInterceptorPipeline` 执行拦截链。拦截器因此可以复用 `Tw.DynamicProxy.Abstractions.IInterceptor` 与 `IInvocationContext` 契约。
+当当前 action 没有匹配拦截器时，filter 直接继续 MVC action 管线。当存在匹配拦截器时，filter 创建 `MvcInvocationContext`，再调用统一的 `IInterceptorPipeline` 执行拦截链。拦截器因此可以复用 `Tw.Castle.Core.Abstractions.IInterceptor` 与 `IInvocationContext` 契约。
 
 拦截器仍按统一 AOP 模型实现：
 
 ```csharp
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core.Abstractions;
 
 public sealed class AuditInterceptor : InterceptorBase
 {
@@ -68,7 +68,7 @@ builder.Services.AddScoped<AuditInterceptor>();
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core.Abstractions;
 
 [ApiController]
 [Route("api/orders")]
@@ -83,7 +83,7 @@ public sealed class OrdersController : ControllerBase
 }
 ```
 
-需要对整个 controller 生效时，可以把 `[Intercept(typeof(AuditInterceptor))]` 标注到 controller 类上。MVC adapter 复用 [`Tw.DependencyInjection` 方法级动态代理拦截](../Tw.DependencyInjection/dynamic-proxy-interception.md)中的 `[Intercept]`、`[DisableInterception]`、`[InterceptorOrder]` 等选择语义。
+需要对整个 controller 生效时，可以把 `[Intercept(typeof(AuditInterceptor))]` 标注到 controller 类上。MVC adapter 复用 [`Tw.Castle.Core` 方法级动态代理拦截](../Tw.Castle.Core/method-interception.md)中的 `[Intercept]`、`[DisableInterception]`、`[InterceptorOrder]` 等选择语义。
 
 ## 标记 Razor Page handler
 
@@ -92,7 +92,7 @@ public sealed class OrdersController : ControllerBase
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core.Abstractions;
 
 public sealed class OrderModel : PageModel
 {
@@ -132,7 +132,7 @@ public sealed class NormalizeNameInterceptor : InterceptorBase
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
-using Tw.DynamicProxy.Abstractions;
+using Tw.Castle.Core.Abstractions;
 
 public sealed class RejectInterceptor : InterceptorBase
 {

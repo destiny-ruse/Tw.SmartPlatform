@@ -23,8 +23,8 @@ app.Run();
 `UseWebIntegration()` 聚合以下宿主启动动作：
 
 - 调用 `builder.Host.UseAutofac()`，由 Autofac 接管宿主容器。
-- 通过 Autofac native `ContainerBuilder.AddServiceRegistration(builder.Configuration)` 路径接入 `Tw.DependencyInjection`。
-- 启用 `Tw.DependencyInjection` 的服务、Options 与 AOP 自动注册能力。
+- 通过 Autofac native `ContainerBuilder.AddServiceRegistration(builder.Configuration)` 路径接入 `Tw.DependencyInjection.Autofac`。
+- 启用服务、Options 与 `Tw.Castle.Core` AOP 自动注册能力。
 
 ## 边界
 

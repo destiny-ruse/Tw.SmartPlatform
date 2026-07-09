@@ -25,6 +25,7 @@ dependency_rules:
     - "Yarp*"
   allow:
     - Tw.DependencyInjection
+    - Tw.Castle.Core
     - Autofac
     - Autofac.Extensions.DependencyInjection
     - Autofac.Extras.DynamicProxy

@@ -1,18 +1,20 @@
-# 方法级动态代理拦截
+# 启用方法级动态代理拦截
+
+本指南面向使用 `Tw.Castle.Core` 和 `Tw.DependencyInjection.Autofac` 的 .NET 开发者，目标是在 Autofac native 注册路径中启用 Castle DynamicProxy 方法级拦截。
 
 ## 能力定位
 
-`Tw.DependencyInjection` 在 P4 阶段通过 Autofac 原生注册路径承载 Castle 动态代理。业务拦截器只依赖 `Tw.Core` 中的 `Tw.DynamicProxy.Abstractions.IInterceptor`，业务服务用 `[Intercept]`、`[DisableInterception]` 与 `[InterceptorOrder]` 声明方法级拦截规则。
+`Tw.Castle.Core` 承载方法级拦截抽象、拦截器选择、拦截执行管线、Castle 调用适配和 `InterceptionReport` 诊断。业务拦截器依赖 `Tw.Castle.Core.Abstractions.IInterceptor`，业务服务用 `[Intercept]`、`[DisableInterception]` 与 `[InterceptorOrder]` 声明方法级拦截规则。
 
-Castle 承载只处理通过 Autofac native `ContainerBuilder.AddServiceRegistration(...)` 自动注册、并满足代理条件的服务方法调用。手写 Autofac 注册不会自动进入本包 AOP 规划、`InterceptionReport` 诊断和 Castle proxy 启用流程。Middleware、Minimal API 和 gRPC 不进入统一 AOP；这些入口仍按各自框架模型使用 middleware、endpoint filter、filter 或 interceptor。
+Castle 承载只处理通过 Autofac native `ContainerBuilder.AddServiceRegistration(...)` 自动注册、并满足代理条件的服务方法调用。手写 Autofac 注册不会自动进入 AOP 规划、`InterceptionReport` 诊断和 Castle proxy 启用流程。Middleware、Minimal API 和 gRPC 不进入统一 AOP；这些入口按各自框架模型使用 middleware、endpoint filter、filter 或 interceptor。
 
 ## 注册入口
 
-启用 AOP 必须使用 Autofac native `ContainerBuilder.AddServiceRegistration(...)` 路径。以下代码是 ASP.NET Core/Autofac 组合根片段：宿主接管 Autofac 后，在 `ConfigureContainer<ContainerBuilder>` 中调用注册入口。
+启用 AOP 必须使用 `Tw.DependencyInjection.Autofac` 的 Autofac native 注册路径：
 
 ```csharp
 using Autofac;
-using Tw.DependencyInjection;
+using Tw.DependencyInjection.Autofac;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,15 +25,15 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 });
 ```
 
-`IServiceCollection.AddServiceRegistration(...)` 保留为无 AOP 路径。它会继续执行程序集扫描、服务注册和 Options 自动装载，但不会启用 Castle proxy，也不会生成 `InterceptionReport`。
+`Tw.DependencyInjection` 的 `IServiceCollection.AddServiceRegistration(...)` 是无 AOP 路径。它会执行程序集扫描、服务注册和 Options 自动装载，但不会启用 Castle proxy，也不会生成 `InterceptionReport`。
 
 ## 编写拦截器
 
-业务拦截器实现 `Tw.DynamicProxy.Abstractions.IInterceptor`，并按普通服务注册规则注册到 DI。最直接的方式是实现生命周期标记接口：
+业务拦截器实现 `Tw.Castle.Core.Abstractions.IInterceptor`，并按普通服务注册规则注册到 DI。最直接的方式是实现生命周期标记接口：
 
 ```csharp
+using Tw.Castle.Core.Abstractions;
 using Tw.DependencyInjection.Abstractions;
-using Tw.DynamicProxy.Abstractions;
 
 [InterceptorOrder(-10)]
 public sealed class AuditInterceptor : IInterceptor, IScopedDependency
@@ -55,8 +57,8 @@ public sealed class AuditInterceptor : IInterceptor, IScopedDependency
 `[Intercept]` 可以标注在接口、实现类或方法上，参数是实现 `IInterceptor` 的拦截器类型：
 
 ```csharp
+using Tw.Castle.Core.Abstractions;
 using Tw.DependencyInjection.Abstractions;
-using Tw.DynamicProxy.Abstractions;
 
 public interface IOrderService
 {
@@ -153,15 +155,15 @@ public class OrderWorkflow : IScopedDependency
 }
 ```
 
-开放泛型 class-only 服务当前不承载 Castle class proxy。开放泛型通过接口契约暴露时仍按接口代理路径处理。
+开放泛型 class-only 服务不承载 Castle class proxy。开放泛型通过接口契约暴露时仍按接口代理路径处理。
 
 ## 查看诊断报告
 
-Autofac native 注册路径会注册 `Tw.DependencyInjection.Diagnostics.InterceptionReport`。以下代码是 ASP.NET Core/Autofac 组合根中的诊断读取片段，可以在容器构建后解析它，检查哪些方法启用了代理、哪些方法被跳过：
+Autofac native 注册路径会注册 `Tw.Castle.Core.InterceptionReport`。以下代码是 ASP.NET Core/Autofac 组合根中的诊断读取片段，可以在容器构建后解析它，检查哪些方法启用了代理、哪些方法被跳过：
 
 ```csharp
 using Autofac;
-using Tw.DependencyInjection.Diagnostics;
+using Tw.Castle.Core;
 
 var report = container.Resolve<InterceptionReport>();
 
@@ -178,6 +180,6 @@ foreach (var item in report.Items)
 - 拦截器类型必须能从 DI 解析，通常让拦截器实现 `ITransientDependency`、`IScopedDependency` 或 `ISingletonDependency`，也可以在组合根显式注册为自身类型。
 - 被 `[Intercept]` 或 selector 命中但未注册的拦截器类型会在容器构建阶段触发 `ServiceRegistrationException` 启动失败，不会拖到首次调用才暴露。
 - AOP 只覆盖通过 Autofac native 自动注册、满足代理条件并由 Autofac 容器解析出的服务调用；同类内部 `this.Method()` 调用不会重新经过代理。
-- 手写 Autofac 注册不会自动进入本包 AOP 规划、诊断报告和 Castle proxy 启用流程。
+- 手写 Autofac 注册不会自动进入 AOP 规划、诊断报告和 Castle proxy 启用流程。
 - 通过 `IServiceCollection.AddServiceRegistration(...)` 组合出的服务不会启用 Castle proxy。
 - Middleware、Minimal API 和 gRPC 不进入统一 AOP。

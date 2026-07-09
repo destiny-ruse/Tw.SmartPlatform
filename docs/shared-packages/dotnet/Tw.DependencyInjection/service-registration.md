@@ -2,7 +2,7 @@
 
 ## 能力定位
 
-`Tw.DependencyInjection` 在 P2 阶段提供服务自动注册。业务类型只依赖 `Tw.Core` 中的 `Tw.DependencyInjection.Abstractions` 标记接口与特性，组合根调用 `AddServiceRegistration(IConfiguration)` 完成扫描、规划与注册。
+`Tw.DependencyInjection` 提供容器中立的服务自动注册。业务类型只依赖 `Tw.DependencyInjection.Abstractions` 标记接口与特性，组合根调用 `AddServiceRegistration(IConfiguration)` 完成扫描、规划与 Microsoft DI 注册。
 
 ## 注册入口
 
@@ -10,11 +10,12 @@
 using Tw.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseAutofac();
 builder.Services.AddServiceRegistration(builder.Configuration);
 ```
 
 `AddServiceRegistration` 读取 `Tw:DependencyInjection` 配置节，复用程序集扫描结果，生成 `ServiceRegistrationReport` 并注册为 singleton。
+
+需要 Autofac native 注册、keyed service 的 Autofac 执行路径或 Castle DynamicProxy 承载时，使用 [`Tw.DependencyInjection.Autofac`](../Tw.DependencyInjection.Autofac/README.md)。
 
 ## 生命周期
 
@@ -56,7 +57,7 @@ public sealed class CustomOrderService : IOrderService, IScopedDependency
 }
 ```
 
-默认规则不暴露所有接口，生命周期标记接口、框架接口与横切接口不会被暴露为业务服务。
+默认规则不暴露所有接口，生命周期标记接口与框架接口不会被暴露为业务服务。
 
 ## Keyed Service
 
@@ -139,6 +140,6 @@ public sealed class Repository<TEntity> : IRepository<TEntity>, IScopedDependenc
 ## 注意事项
 
 - `Replace = true`、`ReplaceServices`、`TryReplace` 不属于本包服务注册模型。
-- Options 自动装载已由 P3 提供，Options 类型不作为普通服务注册，详见 [配置与 Options 自动装载](options-binding.md)。
-- AOP 动态代理由 P4 提供，P2 只完成服务注册。
+- Options 类型不作为普通服务注册，详见 [配置与 Options 自动装载](options-binding.md)。
+- 本包不依赖 Autofac 或 Castle，不启用方法级动态代理。
 - 诊断报告只输出类型、契约、key、优先级和原因，不输出配置值或方法参数值。

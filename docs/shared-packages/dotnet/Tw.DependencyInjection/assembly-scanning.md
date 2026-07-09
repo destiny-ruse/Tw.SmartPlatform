@@ -1,24 +1,24 @@
-# 程序集扫描与容器接管
+# 程序集扫描与注册规划
 
 ## 能力定位
 
-`Tw.DependencyInjection` 是依赖注入执行引擎包，引用 `Tw.Core` 消费其框架无关抽象，直接引用 Autofac 执行容器接管。P1 阶段提供扫描地基：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、`UseAutofac()` 容器接管，以及 `ServiceRegistrationReport` 诊断骨架。服务注册仲裁已在 P2 落地，详见 [服务自动注册](service-registration.md)；Options 自动装载已在 P3 落地，详见 [配置与 Options 自动装载](options-binding.md)；AOP 承载由 P4 提供。
+`Tw.DependencyInjection` 是容器中立的依赖注入运行时，引用 `Tw.DependencyInjection.Abstractions` 消费框架无关抽象。它提供程序集发现、白/黑名单过滤、依赖拓扑排序、循环诊断、服务注册规划和 `ServiceRegistrationReport` 诊断报告。服务注册仲裁详见 [服务自动注册](service-registration.md)；Options 自动装载详见 [配置与 Options 自动装载](options-binding.md)。
 
-## 容器接管
+## 容器中立注册入口
 
-在宿主构建阶段用 `UseAutofac()` 接管默认依赖注入容器：
+在组合根中调用 `AddServiceRegistration(...)`，按 `Tw:DependencyInjection` 配置节执行扫描、规划和 Microsoft DI 注册：
 
 ```csharp
 using Tw.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseAutofac();
+builder.Services.AddServiceRegistration(builder.Configuration);
 
 var app = builder.Build();
 app.Run();
 ```
 
-`UseAutofac()` 是 `IHostBuilder` 扩展，内部委托 `AutofacServiceProviderFactory`，接管后 `host.Services` 为 Autofac 服务提供程序。
+需要 Autofac 宿主接管和 Autofac native 注册执行时，使用 [`Tw.DependencyInjection.Autofac`](../Tw.DependencyInjection.Autofac/README.md)。
 
 ## 扫描选项
 
@@ -44,7 +44,7 @@ app.Run();
 }
 ```
 
-> 说明：注册入口 `AddServiceRegistration(IConfiguration)` 已在 P2 落地，详见 [服务自动注册](service-registration.md)。程序集级优先级配置 `AssemblyPriorities` 属注册仲裁选项，亦在该文档说明。
+> 说明：程序集级优先级配置 `AssemblyPriorities` 属注册仲裁选项，见 [服务自动注册](service-registration.md)。
 
 ## 拓扑与诊断
 
@@ -53,5 +53,6 @@ app.Run();
 ## 注意事项
 
 - 发现循环引用时启动失败，异常信息输出完整环路链路（如 `Tw.A -> Tw.B -> Tw.C -> Tw.A`）。
-- 引擎只应由组合根（宿主启动）引用；业务服务只依赖 `Tw.Core` 抽象。
+- 引擎只应由组合根引用；业务服务只依赖 `Tw.DependencyInjection.Abstractions`。
+- 本包不执行 Autofac 容器接管，不启用 Castle DynamicProxy。
 - 诊断报告只承载摘要元数据，不输出敏感配置值。

@@ -4,7 +4,7 @@
 
 ## 能力索引
 
-- [宿主启动聚合入口](host-startup.md)：统一调用 `UseAutofac()`，并通过 Autofac native `ContainerBuilder.AddServiceRegistration(builder.Configuration)` 接入 `Tw.DependencyInjection`。
+- [宿主启动聚合入口](host-startup.md)：统一调用 `Tw.DependencyInjection.Autofac` 的 `UseAutofac()`，并通过 Autofac native `ContainerBuilder.AddServiceRegistration(builder.Configuration)` 接入自动注册。
 
 ## 说明
 

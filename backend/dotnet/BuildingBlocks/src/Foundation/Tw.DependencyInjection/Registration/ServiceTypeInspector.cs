@@ -38,7 +38,7 @@ internal static class ServiceTypeInspector
 
         if (typeof(IConfigurableOptions).IsAssignableFrom(type))
         {
-            reason = "Options 类型由 P3 Options 装载处理，不作为普通服务注册";
+            reason = "Options 类型由 Options 自动装载处理，不作为普通服务注册";
             return true;
         }
 

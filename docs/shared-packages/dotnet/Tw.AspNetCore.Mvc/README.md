@@ -9,6 +9,6 @@
 
 ## 边界
 
-`Tw.AspNetCore.Mvc` 承载 MVC/Web API 专属适配能力。跨协议宿主启动入口仍归 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md)，方法级拦截核心抽象与 pipeline 承载仍归 [`Tw.Core`](../Tw.Core/README.md) 和 [`Tw.DependencyInjection`](../Tw.DependencyInjection/README.md)。
+`Tw.AspNetCore.Mvc` 承载 MVC/Web API 专属适配能力。跨协议宿主启动入口仍归 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md)，方法级拦截核心抽象与 pipeline 承载归 [`Tw.Castle.Core`](../Tw.Castle.Core/README.md)。
 
 本包不承载 Middleware、Minimal API 或 gRPC adapter。

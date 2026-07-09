@@ -2,7 +2,7 @@
 
 ## 能力定位
 
-`Tw.DependencyInjection` 在 P3 阶段提供 Options 自动装载。业务配置类型只依赖 `Tw.Core` 中的 `Tw.Configuration.Abstractions` 契约与特性，组合根调用 `AddServiceRegistration(IConfiguration)` 后，引擎会在已纳入扫描的程序集内发现、绑定、校验 Options，并注册 `OptionsBindingReport` 诊断报告。
+`Tw.DependencyInjection` 提供 Options 自动装载。业务配置类型只依赖 `Tw.DependencyInjection.Abstractions.Configuration` 契约与特性，组合根调用 `AddServiceRegistration(IConfiguration)` 后，引擎会在已纳入扫描的程序集内发现、绑定、校验 Options，并注册 `OptionsBindingReport` 诊断报告。
 
 ## 注册入口
 
@@ -10,7 +10,6 @@
 using Tw.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseAutofac();
 builder.Services.AddServiceRegistration(builder.Configuration);
 ```
 
@@ -22,7 +21,7 @@ builder.Services.AddServiceRegistration(builder.Configuration);
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
-using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions.Configuration;
 
 public sealed class CacheOptions : IConfigurableOptions
 {
@@ -107,7 +106,7 @@ services.AddOptions<TOptions>(name)
 
 验证始终开启，不按环境门控。缺失配置节会在注册阶段抛出 `ServiceRegistrationException`，错误消息只包含配置路径和原因，不输出配置值。
 
-类型实现 `IValidateOptions<TOptions>`，或使用 `[OptionsValidator(typeof(...))]` 指定校验器时，引擎会自动注册校验器。`Tw.Configuration.Abstractions.OptionsValidatorAttribute` 与 Microsoft Options 源生成器特性同名但命名空间不同，同一文件同时引用时使用命名空间限定或 using alias。
+类型实现 `IValidateOptions<TOptions>`，或使用 `[OptionsValidator(typeof(...))]` 指定校验器时，引擎会自动注册校验器。`Tw.DependencyInjection.Abstractions.Configuration.OptionsValidatorAttribute` 与 Microsoft Options 源生成器特性同名但命名空间不同，同一文件同时引用时使用命名空间限定或 using alias。
 
 ## 跳过与敏感配置
 

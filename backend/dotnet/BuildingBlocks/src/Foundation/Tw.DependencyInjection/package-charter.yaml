@@ -4,8 +4,8 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  框架绑定的依赖注入执行引擎：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、
-  容器中性的注册规划、Microsoft DI 注册执行与注册规划诊断报告。消费 Tw.DependencyInjection.Abstractions
+  容器中立的依赖注入运行时：程序集发现、白/黑名单过滤、依赖拓扑排序与循环诊断、
+  注册规划、Microsoft DI 注册执行与注册规划诊断报告。消费 Tw.DependencyInjection.Abstractions
   的框架无关抽象，并提供自动服务注册的参与判定、暴露、仲裁、注册入口与 Options 自动装载能力。
 in_scope:
   - 程序集发现与白/黑名单过滤
