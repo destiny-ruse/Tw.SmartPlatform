@@ -34,6 +34,7 @@
     <Project Path="BuildingBlocks/tests/Tw.Architecture.Tests/Tw.Architecture.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Abstractions.Tests/Tw.DependencyInjection.Abstractions.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Autofac.Tests/Tw.DependencyInjection.Autofac.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests.Fixtures/Tw.DependencyInjection.Tests.Fixtures.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Excel.MiniExcel.Tests/Tw.Excel.MiniExcel.Tests.csproj" />

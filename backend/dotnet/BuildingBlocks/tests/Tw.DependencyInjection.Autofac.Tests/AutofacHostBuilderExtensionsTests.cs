@@ -1,13 +1,12 @@
-﻿using Autofac.Extensions.DependencyInjection;
+using Autofac.Extensions.DependencyInjection;
 using AwesomeAssertions;
 using Microsoft.Extensions.Hosting;
-using Tw.DependencyInjection;
 using Tw.DependencyInjection.Autofac;
 using Xunit;
 
-namespace Tw.DependencyInjection.Tests.Hosting;
+namespace Tw.DependencyInjection.Autofac.Tests;
 
-public class AutofacHostBuilderExtensionsTests
+public sealed class AutofacHostBuilderExtensionsTests
 {
     [Fact]
     public void UseAutofac_ReplacesServiceProvider_WithAutofac()
