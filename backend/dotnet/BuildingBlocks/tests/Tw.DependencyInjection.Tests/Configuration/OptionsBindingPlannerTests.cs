@@ -1,7 +1,7 @@
 ﻿using AwesomeAssertions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions.Configuration;
 using Tw.DependencyInjection.Configuration;
 using Tw.DependencyInjection.Diagnostics;
 using Tw.DependencyInjection.Tests.Fixtures;

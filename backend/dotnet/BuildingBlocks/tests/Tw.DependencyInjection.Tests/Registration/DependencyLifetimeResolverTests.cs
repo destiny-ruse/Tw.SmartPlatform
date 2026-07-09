@@ -1,6 +1,6 @@
 ﻿using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions.Configuration;
 using Tw.DependencyInjection.Abstractions;
 using Tw.DependencyInjection.Registration;
 using Xunit;

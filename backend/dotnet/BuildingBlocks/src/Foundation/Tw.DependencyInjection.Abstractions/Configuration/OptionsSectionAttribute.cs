@@ -1,4 +1,4 @@
-namespace Tw.Configuration.Abstractions;
+﻿namespace Tw.DependencyInjection.Abstractions.Configuration;
 
 /// <summary>
 /// 显式声明选项绑定的配置节路径

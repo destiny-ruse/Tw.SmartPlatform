@@ -13,6 +13,7 @@ in_scope:
   - 加密、哈希与安全随机
   - 通用集合、字符串、时间、数字等扩展方法
 out_of_scope:
+  - 服务注册、Options 绑定和依赖注入元数据
   - 取消令牌 provider、异步辅助与线程上下文工具
   - HTTP、中间件、过滤器、ASP.NET Core 集成
   - 数据访问、ORM、仓储实现
@@ -20,8 +21,6 @@ out_of_scope:
 public_capabilities:
   - Tw.Check
   - Tw.Collections
-  - Tw.Configuration.Abstractions
-  - Tw.DependencyInjection.Abstractions
   - Tw.DynamicProxy.Abstractions
   - Tw.Core.Primitives
   - Tw.Reflection

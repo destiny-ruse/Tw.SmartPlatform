@@ -1,4 +1,4 @@
-namespace Tw.Configuration.Abstractions;
+﻿namespace Tw.DependencyInjection.Abstractions.Configuration;
 
 /// <summary>
 /// 为选项类型指定验证器类型

@@ -1,6 +1,6 @@
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 
-namespace Tw.Configuration.Abstractions;
+namespace Tw.DependencyInjection.Abstractions.Configuration;
 
 /// <summary>
 /// 支持后置配置的强类型选项契约

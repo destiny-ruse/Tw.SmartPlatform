@@ -415,14 +415,22 @@
           "Microsoft.Extensions.Hosting.Abstractions": "[10.0.0, )",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "[10.0.0, )",
           "Microsoft.Extensions.Options.DataAnnotations": "[10.0.0, )",
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[1.0.0, )",
+          "Tw.DependencyInjection.Abstractions": "[1.0.0, )"
+        }
+      },
+      "tw.dependencyinjection.abstractions": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "[10.0.0, )"
         }
       },
       "tw.dependencyinjection.tests.fixtures": {
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.4, )",
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[1.0.0, )",
+          "Tw.DependencyInjection.Abstractions": "[1.0.0, )"
         }
       },
       "Autofac": {

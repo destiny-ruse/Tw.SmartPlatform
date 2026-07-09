@@ -1,4 +1,4 @@
-namespace Tw.Configuration.Abstractions;
+﻿namespace Tw.DependencyInjection.Abstractions.Configuration;
 
 /// <summary>
 /// 将类型标记为可参与配置绑定的选项对象

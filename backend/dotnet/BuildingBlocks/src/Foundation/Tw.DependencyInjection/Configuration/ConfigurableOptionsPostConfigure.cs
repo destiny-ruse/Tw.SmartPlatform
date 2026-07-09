@@ -1,6 +1,6 @@
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions.Configuration;
 
 namespace Tw.DependencyInjection.Configuration;
 

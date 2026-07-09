@@ -1,9 +1,9 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.ExceptionServices;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions.Configuration;
 
 namespace Tw.DependencyInjection.Configuration;
 

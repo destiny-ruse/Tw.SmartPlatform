@@ -1,7 +1,7 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions.Configuration;
 using Tw.DependencyInjection.Diagnostics;
 
 namespace Tw.DependencyInjection.Configuration;
@@ -128,7 +128,7 @@ internal static class OptionsBindingPlanner
 
     private static Type? ResolveValidatorType(Type type)
     {
-        var validatorType = type.GetCustomAttribute<Tw.Configuration.Abstractions.OptionsValidatorAttribute>()
+        var validatorType = type.GetCustomAttribute<Tw.DependencyInjection.Abstractions.Configuration.OptionsValidatorAttribute>()
             ?.ValidatorType;
 
         if (validatorType is null &&

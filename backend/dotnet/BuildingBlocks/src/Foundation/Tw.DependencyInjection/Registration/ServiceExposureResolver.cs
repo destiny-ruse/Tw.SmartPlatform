@@ -1,4 +1,4 @@
-﻿using Tw.Configuration.Abstractions;
+﻿using Tw.DependencyInjection.Abstractions.Configuration;
 using Tw.DependencyInjection.Abstractions;
 using Tw.DynamicProxy.Abstractions;
 

@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
 using AwesomeAssertions;
 using Microsoft.Extensions.Configuration;
-using Tw.Configuration.Abstractions;
+using Tw.DependencyInjection.Abstractions.Configuration;
 using Xunit;
 
-namespace Tw.Core.Tests.Configuration;
+namespace Tw.DependencyInjection.Abstractions.Tests.Configuration;
 
 public class OptionsAbstractionsTests
 {
@@ -26,7 +26,7 @@ public class OptionsAbstractionsTests
     [Fact]
     public void IConfigurableOptions_LivesIn_AbstractionsNamespace()
     {
-        typeof(IConfigurableOptions).Namespace.Should().Be("Tw.Configuration.Abstractions");
+        typeof(IConfigurableOptions).Namespace.Should().Be("Tw.DependencyInjection.Abstractions.Configuration");
     }
 
     [Fact]

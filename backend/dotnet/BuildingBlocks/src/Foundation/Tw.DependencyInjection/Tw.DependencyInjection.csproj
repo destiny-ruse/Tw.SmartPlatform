@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Tw.DependencyInjection.Abstractions\Tw.DependencyInjection.Abstractions.csproj" />
     <ProjectReference Include="..\Tw.Core\Tw.Core.csproj" />
   </ItemGroup>
 

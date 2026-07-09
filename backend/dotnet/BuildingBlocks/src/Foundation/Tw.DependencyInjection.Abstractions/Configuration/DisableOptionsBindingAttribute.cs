@@ -1,4 +1,4 @@
-namespace Tw.Configuration.Abstractions;
+﻿namespace Tw.DependencyInjection.Abstractions.Configuration;
 
 /// <summary>
 /// 标记选项类型跳过自动绑定

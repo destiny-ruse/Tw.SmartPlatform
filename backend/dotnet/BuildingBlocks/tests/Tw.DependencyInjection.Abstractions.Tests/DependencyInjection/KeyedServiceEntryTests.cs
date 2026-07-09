@@ -2,7 +2,7 @@
 using Tw.DependencyInjection.Abstractions;
 using Xunit;
 
-namespace Tw.Core.Tests.DependencyInjection;
+namespace Tw.DependencyInjection.Abstractions.Tests.DependencyInjection;
 
 public class KeyedServiceEntryTests
 {

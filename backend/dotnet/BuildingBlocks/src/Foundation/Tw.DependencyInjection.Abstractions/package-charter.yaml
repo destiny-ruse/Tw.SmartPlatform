@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.DependencyInjection.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  服务生命周期、自动注册、Options 绑定、拦截元数据和服务暴露抽象。
+in_scope:
+  - 服务生命周期标记
+  - 服务暴露元数据
+  - Options 绑定元数据
+  - 拦截元数据
+out_of_scope:
+  - 程序集扫描执行
+  - Autofac 容器接管
+  - Castle DynamicProxy 代理创建
+public_capabilities:
+  - Tw.DependencyInjection.Abstractions
+dependency_rules:
+  forbid:
+    - "Autofac*"
+    - "Castle*"
+    - "Microsoft.AspNetCore.*"
