@@ -11,7 +11,9 @@ namespace Tw.DependencyInjection.Configuration;
 internal sealed class ConfigurableOptionsPostConfigure<TOptions> : IPostConfigureOptions<TOptions>
     where TOptions : class, IConfigurableOptions<TOptions>
 {
+    /// <summary>表示 _name 字段</summary>
     private readonly string _name;
+    /// <summary>表示 _section 字段</summary>
     private readonly IConfiguration _section;
 
     /// <summary>

@@ -11,8 +11,12 @@ namespace Tw.Localization.Tests;
 /// </summary>
 public class TextLocalizerTests
 {
+    /// <summary>验证 CreateTokenProvider 场景</summary>
+    /// <returns>CreateTokenProvider 的执行结果</returns>
     private static NullCancellationTokenProvider CreateTokenProvider() => new(new AsyncLocalCancellationTokenScopeProvider());
 
+    /// <summary>验证 GetAsync_PrefersDynamicTenantText 场景</summary>
+    /// <returns>GetAsync_PrefersDynamicTenantText 的执行结果</returns>
     [Fact]
     public async Task GetAsync_PrefersDynamicTenantText()
     {
@@ -30,6 +34,8 @@ public class TextLocalizerTests
         text.Value.Should().Be("租户菜单");
     }
 
+    /// <summary>验证 GetAsync_ReturnsNotFoundText_WhenMissing 场景</summary>
+    /// <returns>GetAsync_ReturnsNotFoundText_WhenMissing 的执行结果</returns>
     [Fact]
     public async Task GetAsync_ReturnsNotFoundText_WhenMissing()
     {
@@ -42,6 +48,8 @@ public class TextLocalizerTests
         text.Value.Should().Be("Missing");
     }
 
+    /// <summary>验证 GetAllAsync_HigherPriorityContributorOverrides 场景</summary>
+    /// <returns>GetAllAsync_HigherPriorityContributorOverrides 的执行结果</returns>
     [Fact]
     public async Task GetAllAsync_HigherPriorityContributorOverrides()
     {

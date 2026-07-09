@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using Tw.Core;
 
@@ -12,9 +12,13 @@ namespace Tw.Core.Security.Cryptography;
 /// </remarks>
 public static class RsaCryptography
 {
+    /// <summary>表示 DefaultEncoding 字段</summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
+    /// <summary>表示 DefaultEncryptionPadding 字段</summary>
     private static readonly RSAEncryptionPadding DefaultEncryptionPadding = RSAEncryptionPadding.OaepSHA256;
+    /// <summary>表示 DefaultSignatureHashAlgorithm 字段</summary>
     private static readonly HashAlgorithmName DefaultSignatureHashAlgorithm = HashAlgorithmName.SHA256;
+    /// <summary>表示 DefaultSignaturePadding 字段</summary>
     private static readonly RSASignaturePadding DefaultSignaturePadding = RSASignaturePadding.Pkcs1;
 
     /// <summary>生成编码为 PEM 的 RSA 密钥对</summary>

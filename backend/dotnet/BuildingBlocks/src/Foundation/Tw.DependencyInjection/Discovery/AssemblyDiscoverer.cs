@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Tw.DependencyInjection.Diagnostics;
 using Tw.DependencyInjection.Registration;
 
@@ -10,8 +10,13 @@ internal sealed record AssemblyDiscoveryResult(
     ServiceRegistrationReport Report,
     AssemblyReachabilityGraph ReachabilityGraph);
 
+/// <summary>表示 AssemblyDiscoverer 类型</summary>
 internal static class AssemblyDiscoverer
 {
+    /// <summary>执行 Discover 操作</summary>
+    /// <param name="options">options 参数</param>
+    /// <param name="source">source 参数</param>
+    /// <returns>Discover 的执行结果</returns>
     public static AssemblyDiscoveryResult Discover(ServiceRegistrationOptions options, IAssemblySource source)
     {
         ArgumentNullException.ThrowIfNull(options);
@@ -62,6 +67,9 @@ internal static class AssemblyDiscoverer
             new AssemblyReachabilityGraph(referencesByAssemblyName));
     }
 
+    /// <summary>执行 ReferencedNames 操作</summary>
+    /// <param name="assembly">assembly 参数</param>
+    /// <returns>ReferencedNames 的执行结果</returns>
     private static IReadOnlyList<string> ReferencedNames(Assembly assembly) =>
         assembly.GetReferencedAssemblies()
             .Select(reference => reference.Name)

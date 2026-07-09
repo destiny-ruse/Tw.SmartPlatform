@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.EventBus.Cap.Storage;
 using Xunit;
 
 namespace Tw.EventBus.Cap.Tests.Storage;
 
+/// <summary>验证 SqlSugarCapStorageSchemaTests 相关行为</summary>
 public sealed class SqlSugarCapStorageSchemaTests
 {
+    /// <summary>验证 DefaultSchema_UsesDedicatedCapTables 场景</summary>
     [Fact]
     public void DefaultSchema_UsesDedicatedCapTables()
     {

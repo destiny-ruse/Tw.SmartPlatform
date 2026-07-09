@@ -1,4 +1,4 @@
-using Tw.Localization.Requests;
+﻿using Tw.Localization.Requests;
 
 namespace Tw.Localization.Tests.Fakes;
 
@@ -7,10 +7,11 @@ namespace Tw.Localization.Tests.Fakes;
 /// </summary>
 internal sealed class InMemoryEntityTranslationStore : IEntityTranslationStore
 {
+    /// <summary>表示 _translations 字段</summary>
     private readonly List<EntityTranslation> _translations = [];
 
     /// <summary>
-    /// 获取 <see cref="GetListAsync"/> 的累计调用次数
+    /// <see cref="GetListAsync"/> 的累计调用次数
     /// </summary>
     public int GetListCallCount { get; private set; }
 

@@ -5,8 +5,11 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
+/// <summary>验证 JsonTextResourceContributorTests 相关行为</summary>
 public class JsonTextResourceContributorTests
 {
+    /// <summary>验证 GetOrNullAsync_ReturnsCurrentCultureText 场景</summary>
+    /// <returns>GetOrNullAsync_ReturnsCurrentCultureText 的执行结果</returns>
     [Fact]
     public async Task GetOrNullAsync_ReturnsCurrentCultureText()
     {
@@ -20,6 +23,7 @@ public class JsonTextResourceContributorTests
         text.Source.Should().Be(LocalizedTextSource.StaticJson);
     }
 
+    /// <summary>验证 StaticSnapshot_ReturnsFallbackCultureText 场景</summary>
     [Fact]
     public void StaticSnapshot_ReturnsFallbackCultureText()
     {
@@ -34,6 +38,8 @@ public class JsonTextResourceContributorTests
         text!.Value.Should().Be("Menu");
     }
 
+    /// <summary>验证 FillAsync_HigherPriorityCultureOverrides 场景</summary>
+    /// <returns>FillAsync_HigherPriorityCultureOverrides 的执行结果</returns>
     [Fact]
     public async Task FillAsync_HigherPriorityCultureOverrides()
     {
@@ -59,6 +65,7 @@ public class JsonTextResourceContributorTests
         texts["Only_En"].Value.Should().Be("EnOnly");
     }
 
+    /// <summary>验证 GetAll_HigherPriorityCultureOverrides 场景</summary>
     [Fact]
     public void GetAll_HigherPriorityCultureOverrides()
     {
@@ -82,6 +89,7 @@ public class JsonTextResourceContributorTests
         result["Only_En"].Value.Should().Be("EnOnly");
     }
 
+    /// <summary>验证 StaticSnapshot_MergesMultipleFilesForSameCulture 场景</summary>
     [Fact]
     public void StaticSnapshot_MergesMultipleFilesForSameCulture()
     {

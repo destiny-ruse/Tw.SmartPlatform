@@ -1,4 +1,4 @@
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Reflection;
 
 namespace Tw.Reflection;
@@ -8,11 +8,17 @@ namespace Tw.Reflection;
 /// </summary>
 public static class ReflectionCache
 {
+    /// <summary>表示 AttributeCache 字段</summary>
     private static readonly ConcurrentDictionary<AttributeCacheKey, IReadOnlyList<Attribute>> AttributeCache = new();
+    /// <summary>表示 AsyncReturnTypeCache 字段</summary>
     private static readonly ConcurrentDictionary<Type, bool> AsyncReturnTypeCache = new();
+    /// <summary>表示 InterfacesCache 字段</summary>
     private static readonly ConcurrentDictionary<Type, Type[]> InterfacesCache = new();
+    /// <summary>表示 ParameterlessConstructorCache 字段</summary>
     private static readonly ConcurrentDictionary<Type, ConstructorInfo?> ParameterlessConstructorCache = new();
+    /// <summary>表示 MethodIsAsyncCache 字段</summary>
     private static readonly ConcurrentDictionary<MethodInfo, bool> MethodIsAsyncCache = new();
+    /// <summary>表示 AsyncResultTypeCache 字段</summary>
     private static readonly ConcurrentDictionary<MethodInfo, Type> AsyncResultTypeCache = new();
 
     /// <summary>
@@ -230,5 +236,6 @@ public static class ReflectionCache
         int AsyncResultTypeCacheCount);
 #endif
 
+    /// <summary>表示 AttributeCacheKey 声明</summary>
     private readonly record struct AttributeCacheKey(MemberInfo Member, Type AttributeType, bool Inherit);
 }

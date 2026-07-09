@@ -1,4 +1,4 @@
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 
 namespace Tw.Application.Pipeline;
@@ -40,6 +40,11 @@ public sealed class MediatRApplicationPipelineBehavior<TRequest, TResponse>(
         return response!;
     }
 
+    /// <summary>执行 CreateBehaviors 操作</summary>
+    /// <param name="request">request 参数</param>
+    /// <param name="behaviors">behaviors 参数</param>
+    /// <param name="validators">validators 参数</param>
+    /// <returns>CreateBehaviors 的执行结果</returns>
     private static IReadOnlyList<IApplicationPipelineBehavior> CreateBehaviors(
         TRequest request,
         IEnumerable<IApplicationPipelineBehavior> behaviors,

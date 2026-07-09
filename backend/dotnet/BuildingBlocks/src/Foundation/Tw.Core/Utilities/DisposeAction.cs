@@ -1,10 +1,11 @@
-namespace Tw.Utilities;
+﻿namespace Tw.Utilities;
 
 /// <summary>
 /// 在实例释放时调用给定操作
 /// </summary>
 public sealed class DisposeAction : IDisposable
 {
+    /// <summary>表示 action 字段</summary>
     private Action? action;
 
     /// <summary>

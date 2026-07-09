@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 
 namespace Tw.Collections;
 
@@ -13,14 +13,15 @@ public class TypeList : TypeList<object>, ITypeList;
 /// <typeparam name="TBaseType">每个元素要求的基类型</typeparam>
 public class TypeList<TBaseType> : ITypeList<TBaseType>
 {
+    /// <summary>表示 items 字段</summary>
     private readonly List<Type> items = [];
 
     /// <summary>
-    /// 获取或替换指定索引处的类型
+    /// 指定索引处的类型；赋入值必须可赋值给 <typeparamref name="TBaseType"/>
     /// </summary>
-    /// <param name="index">要获取或替换的类型的从零开始索引</param>
+    /// <param name="index">类型所在的从零开始索引</param>
     /// <returns>存储在指定索引处的类型</returns>
-    /// <exception cref="ArgumentNullException">当设置 <see langword="null"/> 值时抛出</exception>
+    /// <exception cref="ArgumentNullException">当赋入 <see langword="null"/> 值时抛出</exception>
     /// <exception cref="ArgumentException">当分配的类型不能赋值给 <typeparamref name="TBaseType"/> 时抛出</exception>
     /// <exception cref="ArgumentOutOfRangeException">当 <paramref name="index"/> 超出列表边界时抛出</exception>
     public Type this[int index]

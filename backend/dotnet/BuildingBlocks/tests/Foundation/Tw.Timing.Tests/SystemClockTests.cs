@@ -1,12 +1,14 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.Timing;
 using Xunit;
 
 namespace Tw.Timing.Tests;
 
+/// <summary>验证 SystemClockTests 相关行为</summary>
 public sealed class SystemClockTests
 {
+    /// <summary>验证 FixedClock_ReturnsConfiguredInstant 场景</summary>
     [Fact]
     public void FixedClock_ReturnsConfiguredInstant()
     {
@@ -16,6 +18,7 @@ public sealed class SystemClockTests
         clock.Now.Should().Be(instant);
     }
 
+    /// <summary>验证 AddTiming_RegistersSystemClock 场景</summary>
     [Fact]
     public void AddTiming_RegistersSystemClock()
     {

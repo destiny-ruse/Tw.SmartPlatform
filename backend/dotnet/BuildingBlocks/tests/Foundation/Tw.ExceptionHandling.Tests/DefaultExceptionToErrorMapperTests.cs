@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.ExceptionHandling;
 using Xunit;
 
 namespace Tw.ExceptionHandling.Tests;
 
+/// <summary>验证 DefaultExceptionToErrorMapperTests 相关行为</summary>
 public sealed class DefaultExceptionToErrorMapperTests
 {
+    /// <summary>验证 Map_UnknownException_ReturnsSystemError 场景</summary>
     [Fact]
     public void Map_UnknownException_ReturnsSystemError()
     {

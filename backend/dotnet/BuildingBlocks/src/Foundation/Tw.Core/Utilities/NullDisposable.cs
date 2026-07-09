@@ -1,4 +1,4 @@
-namespace Tw.Utilities;
+﻿namespace Tw.Utilities;
 
 /// <summary>
 /// 提供释放时无任何效果的可复用释放实例
@@ -10,6 +10,7 @@ public sealed class NullDisposable : IDisposable
     /// </summary>
     public static NullDisposable Instance { get; } = new();
 
+    /// <summary>初始化 NullDisposable 实例</summary>
     private NullDisposable()
     {
     }

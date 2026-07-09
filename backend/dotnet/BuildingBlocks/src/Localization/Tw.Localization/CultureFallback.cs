@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace Tw.Localization;
 
@@ -68,6 +68,9 @@ public static class CultureFallback
         return result;
     }
 
+    /// <summary>执行 AddIfMissing 操作</summary>
+    /// <param name="cultures">cultures 参数</param>
+    /// <param name="cultureName">cultureName 参数</param>
     private static void AddIfMissing(List<string> cultures, string cultureName)
     {
         if (!cultures.Contains(cultureName, StringComparer.OrdinalIgnoreCase))

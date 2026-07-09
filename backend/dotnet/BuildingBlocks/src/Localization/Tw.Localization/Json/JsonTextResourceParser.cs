@@ -1,4 +1,4 @@
-using System.Text.Json;
+﻿using System.Text.Json;
 using Tw.Exceptions;
 
 namespace Tw.Localization.Json;
@@ -65,6 +65,11 @@ public static class JsonTextResourceParser
     }
 
     // 递归展开嵌套对象，使用 "__" 作为键分隔符；仅接受字符串叶子值
+    /// <summary>执行 FlattenTexts 操作</summary>
+    /// <param name="element">element 参数</param>
+    /// <param name="prefix">prefix 参数</param>
+    /// <param name="texts">texts 参数</param>
+    /// <param name="sourcePath">sourcePath 参数</param>
     private static void FlattenTexts(
         JsonElement element,
         string prefix,

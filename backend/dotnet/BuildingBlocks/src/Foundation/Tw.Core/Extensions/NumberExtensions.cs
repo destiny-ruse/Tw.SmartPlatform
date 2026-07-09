@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace Tw.Extensions;
 
@@ -99,6 +99,10 @@ public static class NumberExtensions
         return (source * 100).ToString($"F{decimals}", CultureInfo.InvariantCulture) + "%";
     }
 
+    /// <summary>执行 ValidateRange 操作</summary>
+    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <param name="min">min 参数</param>
+    /// <param name="max">max 参数</param>
     private static void ValidateRange<T>(T min, T max)
         where T : IComparable<T>
     {

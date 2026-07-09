@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Auditing.Contracts;
 using Xunit;
 
 namespace Tw.Auditing.Contracts.Tests;
 
+/// <summary>验证 AuditEventTests 相关行为</summary>
 public sealed class AuditEventTests
 {
+    /// <summary>验证 CreateSecurityDenied_IncludesActorTenantActionAndStableCode 场景</summary>
     [Fact]
     public void CreateSecurityDenied_IncludesActorTenantActionAndStableCode()
     {

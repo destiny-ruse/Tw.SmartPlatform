@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Reflection.Emit;
 using Autofac;
 using AwesomeAssertions;
@@ -16,8 +16,11 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Autofac.Tests;
 
+/// <summary>验证 CastleInterceptionIntegrationTests 相关行为</summary>
 public class CastleInterceptionIntegrationTests
 {
+    /// <summary>验证 AddServiceRegistration_WithInterceptedInterfaceService_UsesCastleInterfaceProxy 场景</summary>
+    /// <returns>AddServiceRegistration_WithInterceptedInterfaceService_UsesCastleInterfaceProxy 的执行结果</returns>
     [Fact]
     public async Task AddServiceRegistration_WithInterceptedInterfaceService_UsesCastleInterfaceProxy()
     {
@@ -55,6 +58,7 @@ public class CastleInterceptionIntegrationTests
             && item.Status == "skipped");
     }
 
+    /// <summary>验证 AddServiceRegistration_BuildThrows_WhenSelectedInterceptorTypeNotRegistered 场景</summary>
     [Fact]
     public void AddServiceRegistration_BuildThrows_WhenSelectedInterceptorTypeNotRegistered()
     {
@@ -69,6 +73,8 @@ public class CastleInterceptionIntegrationTests
             .WithMessage($"*{typeof(AuditInterceptor).FullName}*");
     }
 
+    /// <summary>验证 AddServiceRegistration_WithPublicClassOnlyVirtualService_UsesCastleClassProxy 场景</summary>
+    /// <returns>AddServiceRegistration_WithPublicClassOnlyVirtualService_UsesCastleClassProxy 的执行结果</returns>
     [Fact]
     public async Task AddServiceRegistration_WithPublicClassOnlyVirtualService_UsesCastleClassProxy()
     {
@@ -108,6 +114,7 @@ public class CastleInterceptionIntegrationTests
                 || item.MethodName == nameof(GetHashCode)));
     }
 
+    /// <summary>验证 AddServiceRegistration_WithPublicClassOnlyNonVirtualService_DoesNotReportEnabledClassProxy 场景</summary>
     [Fact]
     public void AddServiceRegistration_WithPublicClassOnlyNonVirtualService_DoesNotReportEnabledClassProxy()
     {
@@ -137,6 +144,7 @@ public class CastleInterceptionIntegrationTests
             && item.Status == "enabled");
     }
 
+    /// <summary>验证 AddServiceRegistration_WithOpenGenericClassOnlyService_DoesNotReportEnabledClassProxy 场景</summary>
     [Fact]
     public void AddServiceRegistration_WithOpenGenericClassOnlyService_DoesNotReportEnabledClassProxy()
     {
@@ -165,6 +173,7 @@ public class CastleInterceptionIntegrationTests
             && item.Status == "enabled");
     }
 
+    /// <summary>验证 AddServiceRegistration_WithNestedPublicClassOnlyServiceInsideNonPublicOuter_DoesNotReportEnabledClassProxy 场景</summary>
     [Fact]
     public void AddServiceRegistration_WithNestedPublicClassOnlyServiceInsideNonPublicOuter_DoesNotReportEnabledClassProxy()
     {
@@ -190,6 +199,7 @@ public class CastleInterceptionIntegrationTests
             && item.Status == "enabled");
     }
 
+    /// <summary>验证 AddServiceRegistration_WithNonPublicClassOnlyService_DoesNotReportEnabledClassProxy 场景</summary>
     [Fact]
     public void AddServiceRegistration_WithNonPublicClassOnlyService_DoesNotReportEnabledClassProxy()
     {
@@ -218,6 +228,7 @@ public class CastleInterceptionIntegrationTests
             && item.Status == "enabled");
     }
 
+    /// <summary>验证 AddServiceRegistration_WithAutofacPath_PreservesKeyedServiceEntries 场景</summary>
     [Fact]
     public void AddServiceRegistration_WithAutofacPath_PreservesKeyedServiceEntries()
     {
@@ -235,6 +246,7 @@ public class CastleInterceptionIntegrationTests
             .ContainSingle(entry => Equals(entry.Key, "wechat") && entry.Service is WechatPaymentProvider);
     }
 
+    /// <summary>验证 AddServiceRegistration_WithAutofacPath_RegistersOptionsBindingReport 场景</summary>
     [Fact]
     public void AddServiceRegistration_WithAutofacPath_RegistersOptionsBindingReport()
     {
@@ -249,6 +261,7 @@ public class CastleInterceptionIntegrationTests
         container.Resolve<IOptionsMonitor<NamedRedisOptions>>().Get("primary").Endpoint.Should().Be("redis");
     }
 
+    /// <summary>验证 AddServiceRegistration_ReplacesExistingNonKeyedEnumerableRegistration 场景</summary>
     [Fact]
     public void AddServiceRegistration_ReplacesExistingNonKeyedEnumerableRegistration()
     {
@@ -269,6 +282,7 @@ public class CastleInterceptionIntegrationTests
         services[0].Should().NotBeOfType<ExistingAuditedOrderService>();
     }
 
+    /// <summary>验证 AddServiceRegistration_ReplacesExistingOpenGenericNonKeyedEnumerableRegistration 场景</summary>
     [Fact]
     public void AddServiceRegistration_ReplacesExistingOpenGenericNonKeyedEnumerableRegistration()
     {
@@ -289,6 +303,8 @@ public class CastleInterceptionIntegrationTests
         services.Should().NotContain(item => item.GetType().GetGenericTypeDefinition() == typeof(OldRepository<>));
     }
 
+    /// <summary>验证 AddServiceRegistration_WithInheritedInterfaceMethodInterceptAttribute_UsesCastleInterfaceProxy 场景</summary>
+    /// <returns>AddServiceRegistration_WithInheritedInterfaceMethodInterceptAttribute_UsesCastleInterfaceProxy 的执行结果</returns>
     [Fact]
     public async Task AddServiceRegistration_WithInheritedInterfaceMethodInterceptAttribute_UsesCastleInterfaceProxy()
     {
@@ -319,6 +335,8 @@ public class CastleInterceptionIntegrationTests
             && item.InterceptorTypeNames.Contains(typeof(AuditInterceptor).FullName!));
     }
 
+    /// <summary>验证 AddServiceRegistration_WithChildInterfaceTypeInterceptAttribute_InterceptsInheritedInterfaceMethod 场景</summary>
+    /// <returns>AddServiceRegistration_WithChildInterfaceTypeInterceptAttribute_InterceptsInheritedInterfaceMethod 的执行结果</returns>
     [Fact]
     public async Task AddServiceRegistration_WithChildInterfaceTypeInterceptAttribute_InterceptsInheritedInterfaceMethod()
     {
@@ -340,6 +358,8 @@ public class CastleInterceptionIntegrationTests
         recorder.TargetReturnValues.Should().Equal("B");
     }
 
+    /// <summary>验证 AddServiceRegistration_WithSiblingInheritedInterfaceTypeInterceptAttribute_DoesNotApplySiblingInterceptor 场景</summary>
+    /// <returns>AddServiceRegistration_WithSiblingInheritedInterfaceTypeInterceptAttribute_DoesNotApplySiblingInterceptor 的执行结果</returns>
     [Fact]
     public async Task AddServiceRegistration_WithSiblingInheritedInterfaceTypeInterceptAttribute_DoesNotApplySiblingInterceptor()
     {
@@ -380,20 +400,31 @@ public class CastleInterceptionIntegrationTests
             && item.Status == "enabled");
     }
 
+    /// <summary>定义 IAuditedOrderService 契约</summary>
     public interface IAuditedOrderService
     {
+        /// <summary>验证 SubmitAsync 场景</summary>
+        /// <param name="id">id 参数</param>
+        /// <returns>SubmitAsync 的执行结果</returns>
         Task<string> SubmitAsync(string id);
     }
 
+    /// <summary>验证 AuditRecorder 相关行为</summary>
     public sealed class AuditRecorder
     {
+        /// <summary>表示 OriginalArguments 属性</summary>
         public List<string> OriginalArguments { get; } = [];
 
+        /// <summary>表示 TargetReturnValues 属性</summary>
         public List<string> TargetReturnValues { get; } = [];
     }
 
+    /// <summary>验证 AuditInterceptor 相关行为</summary>
     public sealed class AuditInterceptor(AuditRecorder recorder) : IInterceptor
     {
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             recorder.OriginalArguments.Add((string)context.Arguments[0]!);
@@ -406,15 +437,22 @@ public class CastleInterceptionIntegrationTests
         }
     }
 
+    /// <summary>验证 SiblingAuditRecorder 相关行为</summary>
     public sealed class SiblingAuditRecorder
     {
+        /// <summary>表示 OriginalArguments 属性</summary>
         public List<string> OriginalArguments { get; } = [];
 
+        /// <summary>表示 TargetReturnValues 属性</summary>
         public List<string> TargetReturnValues { get; } = [];
     }
 
+    /// <summary>验证 SiblingAuditInterceptor 相关行为</summary>
     public sealed class SiblingAuditInterceptor(SiblingAuditRecorder recorder) : IInterceptor
     {
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             recorder.OriginalArguments.Add((string)context.Arguments[0]!);
@@ -427,20 +465,33 @@ public class CastleInterceptionIntegrationTests
         }
     }
 
+    /// <summary>验证 ExistingAuditedOrderService 相关行为</summary>
     private sealed class ExistingAuditedOrderService : IAuditedOrderService
     {
+        /// <summary>验证 SubmitAsync 场景</summary>
+        /// <param name="id">id 参数</param>
+        /// <returns>SubmitAsync 的执行结果</returns>
         public Task<string> SubmitAsync(string id) => Task.FromResult($"existing:{id}");
     }
 
+    /// <summary>验证 OldRepository 相关行为</summary>
+    /// <typeparam name="TEntity">TEntity 类型参数</typeparam>
     private sealed class OldRepository<TEntity> : IRepository<TEntity>;
 
+    /// <summary>验证 SingleAssemblySource 相关行为</summary>
     private sealed class SingleAssemblySource(Assembly assembly) : IAssemblySource
     {
+        /// <summary>验证 GetCandidateAssemblies 场景</summary>
+        /// <returns>GetCandidateAssemblies 的执行结果</returns>
         public IReadOnlyList<Assembly> GetCandidateAssemblies() => [assembly];
     }
 
+    /// <summary>验证 EmptyConfiguration 场景</summary>
+    /// <returns>EmptyConfiguration 的执行结果</returns>
     private static IConfiguration EmptyConfiguration() => new ConfigurationBuilder().Build();
 
+    /// <summary>验证 FixtureConfiguration 场景</summary>
+    /// <returns>FixtureConfiguration 的执行结果</returns>
     private static IConfiguration FixtureConfiguration() =>
         new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
@@ -450,14 +501,22 @@ public class CastleInterceptionIntegrationTests
             })
             .Build();
 
+    /// <summary>验证 InvokeSubmitAsync 场景</summary>
+    /// <param name="service">service 参数</param>
+    /// <param name="serviceType">serviceType 参数</param>
+    /// <param name="id">id 参数</param>
+    /// <returns>InvokeSubmitAsync 的执行结果</returns>
     private static async Task<string> InvokeSubmitAsync(object service, Type serviceType, string id)
     {
         var task = (Task<string>)serviceType.GetMethod("SubmitAsync")!.Invoke(service, [id])!;
         return await task;
     }
 
+    /// <summary>验证 DynamicAuditedOrderServiceBuilder 相关行为</summary>
     private static class DynamicAuditedOrderServiceBuilder
     {
+        /// <summary>验证 Build 场景</summary>
+        /// <returns>Build 的执行结果</returns>
         public static Type Build()
         {
             var fixtureId = Guid.NewGuid().ToString("N");
@@ -505,8 +564,15 @@ public class CastleInterceptionIntegrationTests
         }
     }
 
+    /// <summary>验证 DynamicClassOnlyServiceBuilder 相关行为</summary>
     private static class DynamicClassOnlyServiceBuilder
     {
+        /// <summary>验证 Build 场景</summary>
+        /// <param name="typeName">typeName 参数</param>
+        /// <param name="isPublic">isPublic 参数</param>
+        /// <param name="isOpenGeneric">isOpenGeneric 参数</param>
+        /// <param name="isVirtual">isVirtual 参数</param>
+        /// <returns>Build 的执行结果</returns>
         public static Type Build(string typeName, bool isPublic, bool isOpenGeneric, bool isVirtual = true)
         {
             var assemblyName = new AssemblyName(
@@ -522,6 +588,8 @@ public class CastleInterceptionIntegrationTests
             return typeBuilder.CreateType();
         }
 
+        /// <summary>验证 BuildNestedPublicInNonPublicOuter 场景</summary>
+        /// <returns>BuildNestedPublicInNonPublicOuter 的执行结果</returns>
         public static Type BuildNestedPublicInNonPublicOuter()
         {
             var fixtureId = Guid.NewGuid().ToString("N");
@@ -542,6 +610,10 @@ public class CastleInterceptionIntegrationTests
             return nestedType;
         }
 
+        /// <summary>验证 DefineClassOnlyService 场景</summary>
+        /// <param name="typeBuilder">typeBuilder 参数</param>
+        /// <param name="isOpenGeneric">isOpenGeneric 参数</param>
+        /// <param name="isVirtual">isVirtual 参数</param>
         private static void DefineClassOnlyService(TypeBuilder typeBuilder, bool isOpenGeneric, bool isVirtual)
         {
             if (isOpenGeneric)
@@ -577,8 +649,11 @@ public class CastleInterceptionIntegrationTests
         }
     }
 
+    /// <summary>验证 DynamicOpenGenericRepositoryBuilder 相关行为</summary>
     private static class DynamicOpenGenericRepositoryBuilder
     {
+        /// <summary>验证 Build 场景</summary>
+        /// <returns>Build 的执行结果</returns>
         public static Type Build()
         {
             var fixtureId = Guid.NewGuid().ToString("N");
@@ -598,12 +673,14 @@ public class CastleInterceptionIntegrationTests
         }
     }
 
+    /// <summary>表示 InheritedInterfaceFixture 声明</summary>
     private sealed record InheritedInterfaceFixture(
         Assembly Assembly,
         Type BaseInterfaceType,
         Type ChildInterfaceType,
         Type ImplementationType);
 
+    /// <summary>表示 SiblingInheritedInterfaceFixture 声明</summary>
     private sealed record SiblingInheritedInterfaceFixture(
         Assembly Assembly,
         Type BaseInterfaceType,
@@ -611,8 +688,12 @@ public class CastleInterceptionIntegrationTests
         Type SiblingInterfaceType,
         Type ImplementationType);
 
+    /// <summary>验证 DynamicInheritedInterfaceServiceBuilder 相关行为</summary>
     private static class DynamicInheritedInterfaceServiceBuilder
     {
+        /// <summary>验证 Build 场景</summary>
+        /// <param name="methodLevelIntercept">methodLevelIntercept 参数</param>
+        /// <returns>Build 的执行结果</returns>
         public static InheritedInterfaceFixture Build(bool methodLevelIntercept)
         {
             var fixtureId = Guid.NewGuid().ToString("N");
@@ -692,8 +773,11 @@ public class CastleInterceptionIntegrationTests
         }
     }
 
+    /// <summary>验证 DynamicSiblingInheritedInterfaceServiceBuilder 相关行为</summary>
     private static class DynamicSiblingInheritedInterfaceServiceBuilder
     {
+        /// <summary>验证 Build 场景</summary>
+        /// <returns>Build 的执行结果</returns>
         public static SiblingInheritedInterfaceFixture Build()
         {
             var fixtureId = Guid.NewGuid().ToString("N");

@@ -1,9 +1,14 @@
-using Tw.BackgroundJobs.Abstractions;
+﻿using Tw.BackgroundJobs.Abstractions;
 
 namespace Tw.BackgroundJobs.Quartz;
 
+/// <summary>表示 QuartzBackgroundJobControlService 类型</summary>
 public sealed class QuartzBackgroundJobControlService(IBackgroundJobStateStore stateStore) : IBackgroundJobControlService
 {
+    /// <summary>执行 ExecuteAsync 操作</summary>
+    /// <param name="command">command 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ExecuteAsync 的执行结果</returns>
     public Task ExecuteAsync(BackgroundJobControlCommand command, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(command);

@@ -7,11 +7,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Localization.Tests;
 
+/// <summary>验证 TwStringLocalizerTests 相关行为</summary>
 public class TwStringLocalizerTests
 {
     // 用于工厂和泛型本地化器测试的私有标记类型
+    /// <summary>验证 SampleResource 相关行为</summary>
     private sealed class SampleResource { }
 
+    /// <summary>验证 Indexer_ReturnsStaticSnapshotText 场景</summary>
     [Fact]
     public void Indexer_ReturnsStaticSnapshotText()
     {
@@ -27,6 +30,7 @@ public class TwStringLocalizerTests
         value.ResourceNotFound.Should().BeFalse();
     }
 
+    /// <summary>验证 Indexer_ReturnsKeyForMissingText 场景</summary>
     [Fact]
     public void Indexer_ReturnsKeyForMissingText()
     {
@@ -42,6 +46,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 1：this[name, args] 对已找到的模板正确格式化
+    /// <summary>验证 FormattingIndexer_FormatFoundTemplate 场景</summary>
     [Fact]
     public void FormattingIndexer_FormatFoundTemplate()
     {
@@ -58,6 +63,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 2：this[name, args] 对缺失键返回键名（不格式化，不抛异常）
+    /// <summary>验证 FormattingIndexer_MissingKey_ReturnsKeyUnformattedWithoutThrowing 场景</summary>
     [Fact]
     public void FormattingIndexer_MissingKey_ReturnsKeyUnformattedWithoutThrowing()
     {
@@ -76,6 +82,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 3：GetAllStrings(true) 返回包含父级/默认文化的全集
+    /// <summary>验证 GetAllStrings_IncludeParentCultures_ReturnsMergedSet 场景</summary>
     [Fact]
     public void GetAllStrings_IncludeParentCultures_ReturnsMergedSet()
     {
@@ -104,6 +111,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 4：GetAllStrings(false) 仅返回当前文化条目
+    /// <summary>验证 GetAllStrings_ExcludeParentCultures_RestrictsToCurrentCulture 场景</summary>
     [Fact]
     public void GetAllStrings_ExcludeParentCultures_RestrictsToCurrentCulture()
     {
@@ -132,6 +140,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 5：accessor.Current 为 null 时回退到 options.DefaultCulture
+    /// <summary>验证 Indexer_AccessorCurrentNull_FallsBackToDefaultCulture 场景</summary>
     [Fact]
     public void Indexer_AccessorCurrentNull_FallsBackToDefaultCulture()
     {
@@ -149,6 +158,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 6：TwStringLocalizerFactory.Create(Type) 绑定到类型简单名
+    /// <summary>验证 Factory_CreateByType_BindsToSimpleName 场景</summary>
     [Fact]
     public void Factory_CreateByType_BindsToSimpleName()
     {
@@ -167,6 +177,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 7：TwStringLocalizerFactory.Create(string, string) 绑定到 baseName，忽略 location
+    /// <summary>验证 Factory_CreateByBaseName_IgnoresLocation 场景</summary>
     [Fact]
     public void Factory_CreateByBaseName_IgnoresLocation()
     {
@@ -184,6 +195,7 @@ public class TwStringLocalizerTests
     }
 
     // Fix 3 - 测试 8：TwStringLocalizer<TResource> 泛型类委托给工厂创建的 localizer
+    /// <summary>验证 GenericLocalizer_DelegatesToFactory 场景</summary>
     [Fact]
     public void GenericLocalizer_DelegatesToFactory()
     {

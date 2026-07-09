@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Cli.Governance;
 using Xunit;
 
 namespace Tw.Cli.Tests;
 
+/// <summary>验证 AuditDependenciesCommandTests 相关行为</summary>
 public sealed class AuditDependenciesCommandTests
 {
+    /// <summary>验证 Scan_FailsWhenProductionProjectReferencesTestBase 场景</summary>
     [Fact]
     public void Scan_FailsWhenProductionProjectReferencesTestBase()
     {

@@ -1,4 +1,4 @@
-using Tw.Localization.Requests;
+﻿using Tw.Localization.Requests;
 
 namespace Tw.Localization.Tests.Fakes;
 
@@ -8,10 +8,11 @@ namespace Tw.Localization.Tests.Fakes;
 internal sealed class InMemoryDynamicTextStore : IDynamicTextStore
 {
     // 键：(tenantId or null, resourceName, cultureName, name)
+    /// <summary>表示 _records 字段</summary>
     private readonly List<(string? TenantId, LocalizedText Text)> _records = [];
 
     /// <summary>
-    /// 获取 <see cref="GetListAsync"/> 的累计调用次数
+    /// <see cref="GetListAsync"/> 的累计调用次数
     /// </summary>
     public int GetListCallCount { get; private set; }
 

@@ -69,6 +69,10 @@ internal static class OptionsBindingPlanner
         return new OptionsBindingPlan(candidates, new OptionsBindingReport(diagnostics));
     }
 
+    /// <summary>执行 EnumerateTypes 操作</summary>
+    /// <param name="assemblies">assemblies 参数</param>
+    /// <param name="typesByAssemblyName">typesByAssemblyName 参数</param>
+    /// <returns>EnumerateTypes 的执行结果</returns>
     private static IEnumerable<Type> EnumerateTypes(
         IReadOnlyList<Assembly> assemblies,
         IReadOnlyDictionary<string, IReadOnlyList<Type>> typesByAssemblyName)
@@ -87,6 +91,9 @@ internal static class OptionsBindingPlanner
         }
     }
 
+    /// <summary>执行 IsBindableOptionsType 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>IsBindableOptionsType 的执行结果</returns>
     private static bool IsBindableOptionsType(Type type) =>
         type is { IsClass: true, IsAbstract: false } &&
         !type.IsGenericTypeDefinition &&
@@ -94,6 +101,8 @@ internal static class OptionsBindingPlanner
         typeof(IConfigurableOptions).IsAssignableFrom(type) &&
         type.GetCustomAttribute<DisableOptionsBindingAttribute>() is null;
 
+    /// <summary>执行 ValidateGenericContract 操作</summary>
+    /// <param name="type">type 参数</param>
     private static void ValidateGenericContract(Type type)
     {
         foreach (var contract in type.GetInterfaces()
@@ -109,6 +118,9 @@ internal static class OptionsBindingPlanner
         }
     }
 
+    /// <summary>执行 ResolveSectionPath 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>ResolveSectionPath 的执行结果</returns>
     private static string ResolveSectionPath(Type type)
     {
         var explicitPath = type.GetCustomAttribute<OptionsSectionAttribute>()?.Path;
@@ -123,9 +135,15 @@ internal static class OptionsBindingPlanner
             : type.Name;
     }
 
+    /// <summary>执行 ResolveName 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>ResolveName 的执行结果</returns>
     private static string ResolveName(Type type) =>
         type.GetCustomAttribute<OptionsNameAttribute>()?.Name ?? Options.DefaultName;
 
+    /// <summary>执行 ResolveValidatorType 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>ResolveValidatorType 的执行结果</returns>
     private static Type? ResolveValidatorType(Type type)
     {
         var validatorType = type.GetCustomAttribute<Tw.DependencyInjection.Abstractions.Configuration.OptionsValidatorAttribute>()
@@ -153,6 +171,12 @@ internal static class OptionsBindingPlanner
         return validatorType;
     }
 
+    /// <summary>执行 ValidateDuplicate 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <param name="sectionPath">sectionPath 参数</param>
+    /// <param name="name">name 参数</param>
+    /// <param name="seenTypeAndName">seenTypeAndName 参数</param>
+    /// <param name="seenSectionAndName">seenSectionAndName 参数</param>
     private static void ValidateDuplicate(
         Type type,
         string sectionPath,
@@ -177,21 +201,34 @@ internal static class OptionsBindingPlanner
         seenSectionAndName[sectionKey] = type;
     }
 
+    /// <summary>执行 IsSensitive 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>IsSensitive 的执行结果</returns>
     private static bool IsSensitive(Type type) =>
         type.GetCustomAttribute<SensitiveConfigurationAttribute>() is not null ||
         type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
             .Any(property => property.GetCustomAttribute<SensitiveConfigurationAttribute>() is not null);
 
+    /// <summary>表示 SectionNameKey 声明</summary>
     private readonly record struct SectionNameKey(string SectionPath, string Name);
 
+    /// <summary>表示 SectionNameKeyComparer 类型</summary>
     private sealed class SectionNameKeyComparer : IEqualityComparer<SectionNameKey>
     {
+        /// <summary>表示 Instance 字段</summary>
         public static readonly SectionNameKeyComparer Instance = new();
 
+        /// <summary>执行 Equals 操作</summary>
+        /// <param name="x">x 参数</param>
+        /// <param name="y">y 参数</param>
+        /// <returns>Equals 的执行结果</returns>
         public bool Equals(SectionNameKey x, SectionNameKey y) =>
             StringComparer.OrdinalIgnoreCase.Equals(x.SectionPath, y.SectionPath) &&
             StringComparer.Ordinal.Equals(x.Name, y.Name);
 
+        /// <summary>执行 GetHashCode 操作</summary>
+        /// <param name="obj">obj 参数</param>
+        /// <returns>GetHashCode 的执行结果</returns>
         public int GetHashCode(SectionNameKey obj)
         {
             var hash = new HashCode();

@@ -11,8 +11,10 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;
 
+/// <summary>验证 MvcInvocationContextTests 相关行为</summary>
 public class MvcInvocationContextTests
 {
+    /// <summary>验证 Constructor_MaterializesArgumentsInActionParameterOrder 场景</summary>
     [Fact]
     public void Constructor_MaterializesArgumentsInActionParameterOrder()
     {
@@ -34,6 +36,8 @@ public class MvcInvocationContextTests
         context.ArgumentsByName.Should().ContainKey("third").WhoseValue.Should().Be("c");
     }
 
+    /// <summary>验证 ProceedAsync_WritesModifiedArgumentsBackBeforeCallingNext 场景</summary>
+    /// <returns>ProceedAsync_WritesModifiedArgumentsBackBeforeCallingNext 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_WritesModifiedArgumentsBackBeforeCallingNext()
     {
@@ -69,6 +73,7 @@ public class MvcInvocationContextTests
         actionArguments["second"].Should().Be(42);
     }
 
+    /// <summary>验证 ArgumentsByName_IsReadOnlySnapshot 场景</summary>
     [Fact]
     public void ArgumentsByName_IsReadOnlySnapshot()
     {
@@ -96,6 +101,7 @@ public class MvcInvocationContextTests
         }
     }
 
+    /// <summary>验证 Constructor_UsesControllerActionDescriptorMethodInfo 场景</summary>
     [Fact]
     public void Constructor_UsesControllerActionDescriptorMethodInfo()
     {
@@ -116,6 +122,8 @@ public class MvcInvocationContextTests
         context.Target.Should().BeSameAs(controller);
     }
 
+    /// <summary>验证 ProceedAsync_CapturesActionExecutedResultAsReturnValue 场景</summary>
+    /// <returns>ProceedAsync_CapturesActionExecutedResultAsReturnValue 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_CapturesActionExecutedResultAsReturnValue()
     {
@@ -140,6 +148,8 @@ public class MvcInvocationContextTests
         context.ReturnValue.Should().BeOfType<BadRequestResult>();
     }
 
+    /// <summary>验证 ProceedAsync_RethrowsUnhandledActionExecutedException 场景</summary>
+    /// <returns>ProceedAsync_RethrowsUnhandledActionExecutedException 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_RethrowsUnhandledActionExecutedException()
     {
@@ -167,6 +177,8 @@ public class MvcInvocationContextTests
         assertion.Which.Should().BeSameAs(expectedException);
     }
 
+    /// <summary>验证 ReturnValueSetter_MarksActionExecutedExceptionHandled_WhenExceptionIsConvertedToActionResult 场景</summary>
+    /// <returns>ReturnValueSetter_MarksActionExecutedExceptionHandled_WhenExceptionIsConvertedToActionResult 的执行结果</returns>
     [Fact]
     public async Task ReturnValueSetter_MarksActionExecutedExceptionHandled_WhenExceptionIsConvertedToActionResult()
     {
@@ -199,6 +211,8 @@ public class MvcInvocationContextTests
         executedContext.ExceptionHandled.Should().BeTrue();
     }
 
+    /// <summary>验证 ProceedAsync_DoesNotThrowHandledActionExecutedExceptionAndCapturesResult 场景</summary>
+    /// <returns>ProceedAsync_DoesNotThrowHandledActionExecutedExceptionAndCapturesResult 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_DoesNotThrowHandledActionExecutedExceptionAndCapturesResult()
     {
@@ -228,6 +242,7 @@ public class MvcInvocationContextTests
         executingContext.Result.Should().BeSameAs(expectedResult);
     }
 
+    /// <summary>验证 ReturnValueSetter_WritesActionResultToActionExecutingContextResult 场景</summary>
     [Fact]
     public void ReturnValueSetter_WritesActionResultToActionExecutingContextResult()
     {
@@ -258,6 +273,8 @@ public class MvcInvocationContextTests
         nextCalled.Should().BeFalse();
     }
 
+    /// <summary>验证 ReturnValueSetter_UpdatesActionExecutedContextResultAfterProceedAsync 场景</summary>
+    /// <returns>ReturnValueSetter_UpdatesActionExecutedContextResultAfterProceedAsync 的执行结果</returns>
     [Fact]
     public async Task ReturnValueSetter_UpdatesActionExecutedContextResultAfterProceedAsync()
     {
@@ -288,6 +305,7 @@ public class MvcInvocationContextTests
         executingContext.Result.Should().BeSameAs(replacementResult);
     }
 
+    /// <summary>验证 Proceed_ThrowsInvalidOperationException_ForMvcAsyncFilterContext 场景</summary>
     [Fact]
     public void Proceed_ThrowsInvalidOperationException_ForMvcAsyncFilterContext()
     {
@@ -308,6 +326,7 @@ public class MvcInvocationContextTests
             .WithMessage("*ProceedAsync*");
     }
 
+    /// <summary>验证 Constructor_ThrowsInvalidOperationException_WhenArgumentMappingIsMissing 场景</summary>
     [Fact]
     public void Constructor_ThrowsInvalidOperationException_WhenArgumentMappingIsMissing()
     {
@@ -326,6 +345,8 @@ public class MvcInvocationContextTests
             .WithMessage("*MixedOrder*third*");
     }
 
+    /// <summary>验证 ProceedAsync_ThrowsInvalidOperationException_WhenArgumentMappingIsRemoved 场景</summary>
+    /// <returns>ProceedAsync_ThrowsInvalidOperationException_WhenArgumentMappingIsRemoved 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_ThrowsInvalidOperationException_WhenArgumentMappingIsRemoved()
     {
@@ -347,6 +368,7 @@ public class MvcInvocationContextTests
             .WithMessage("*MixedOrder*second*");
     }
 
+    /// <summary>验证 Constructor_ThrowsInvalidOperationException_WhenActionDescriptorIsNotControllerActionDescriptor 场景</summary>
     [Fact]
     public void Constructor_ThrowsInvalidOperationException_WhenActionDescriptorIsNotControllerActionDescriptor()
     {
@@ -363,6 +385,9 @@ public class MvcInvocationContextTests
             .WithMessage("*ControllerActionDescriptor*PlainAction*");
     }
 
+    /// <summary>验证 CreateActionContext 场景</summary>
+    /// <param name="actionName">actionName 参数</param>
+    /// <returns>CreateActionContext 的执行结果</returns>
     private static ActionContext CreateActionContext(string actionName)
     {
         var method = typeof(SampleController).GetMethod(actionName)!;
@@ -378,12 +403,24 @@ public class MvcInvocationContextTests
         return new ActionContext(new DefaultHttpContext(), new RouteData(), actionDescriptor);
     }
 
+    /// <summary>验证 CreateExecutingContext 场景</summary>
+    /// <param name="actionContext">actionContext 参数</param>
+    /// <param name="actionArguments">actionArguments 参数</param>
+    /// <param name="controller">controller 参数</param>
+    /// <returns>CreateExecutingContext 的执行结果</returns>
     private static ActionExecutingContext CreateExecutingContext(
         ActionContext actionContext,
         IDictionary<string, object?> actionArguments,
         object controller) =>
         new(actionContext, [], actionArguments, controller);
 
+    /// <summary>验证 CreateExecutedContext 场景</summary>
+    /// <param name="actionContext">actionContext 参数</param>
+    /// <param name="controller">controller 参数</param>
+    /// <param name="result">result 参数</param>
+    /// <param name="exception">exception 参数</param>
+    /// <param name="exceptionHandled">exceptionHandled 参数</param>
+    /// <returns>CreateExecutedContext 的执行结果</returns>
     private static Task<ActionExecutedContext> CreateExecutedContext(
         ActionContext actionContext,
         object controller,
@@ -399,8 +436,14 @@ public class MvcInvocationContextTests
         });
     }
 
+    /// <summary>验证 SampleController 相关行为</summary>
     private sealed class SampleController
     {
+        /// <summary>验证 MixedOrder 场景</summary>
+        /// <param name="first">first 参数</param>
+        /// <param name="second">second 参数</param>
+        /// <param name="third">third 参数</param>
+        /// <returns>MixedOrder 的执行结果</returns>
         public IActionResult MixedOrder(string first, int second, string third) => new OkResult();
     }
 }

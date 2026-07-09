@@ -1,4 +1,4 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.EventBus.Cap;
 using Tw.EventBus.Cap.Consumers;
@@ -8,8 +8,10 @@ using Xunit;
 
 namespace Tw.EventBus.Cap.Tests;
 
+/// <summary>验证 CapEventBusServiceCollectionExtensionsTests 相关行为</summary>
 public sealed class CapEventBusServiceCollectionExtensionsTests
 {
+    /// <summary>验证 AddCapEventBus_RejectsMissingRabbitMqHost 场景</summary>
     [Fact]
     public void AddCapEventBus_RejectsMissingRabbitMqHost()
     {
@@ -23,6 +25,7 @@ public sealed class CapEventBusServiceCollectionExtensionsTests
             .WithMessage("CAP RabbitMQ host is required");
     }
 
+    /// <summary>验证 AddCapEventBus_RegistersStorageInboxAndConsumerFilter 场景</summary>
     [Fact]
     public void AddCapEventBus_RegistersStorageInboxAndConsumerFilter()
     {

@@ -1,4 +1,4 @@
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 using MiniExcelLibs;
 
 namespace Tw.Excel.MiniExcel;
@@ -38,6 +38,8 @@ public sealed class MiniExcelExporter : IExcelExporter
         PostProcessBlankTemplate(stream);
     }
 
+    /// <summary>执行 PostProcessBlankTemplate 操作</summary>
+    /// <param name="stream">stream 参数</param>
     private static void PostProcessBlankTemplate(Stream stream)
     {
         if (!stream.CanSeek)

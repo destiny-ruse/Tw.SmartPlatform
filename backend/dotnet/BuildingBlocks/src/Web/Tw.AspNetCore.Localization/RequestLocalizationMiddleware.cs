@@ -20,7 +20,9 @@ public sealed class RequestLocalizationMiddleware
     /// </summary>
     public const string CultureCookieName = ".Tw.Culture";
 
+    /// <summary>表示 _next 字段</summary>
     private readonly RequestDelegate _next;
+    /// <summary>表示 _options 字段</summary>
     private readonly LocalizationOptions _options;
 
     /// <summary>

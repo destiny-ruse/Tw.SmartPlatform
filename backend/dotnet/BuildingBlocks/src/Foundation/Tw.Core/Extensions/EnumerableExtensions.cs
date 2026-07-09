@@ -1,4 +1,4 @@
-namespace Tw.Extensions;
+﻿namespace Tw.Extensions;
 
 /// <summary>提供可枚举序列的扩展方法</summary>
 public static class EnumerableExtensions
@@ -126,6 +126,11 @@ public static class EnumerableExtensions
         return BatchIterator(source, batchSize);
     }
 
+    /// <summary>执行 BatchIterator 操作</summary>
+    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <param name="source">source 参数</param>
+    /// <param name="batchSize">batchSize 参数</param>
+    /// <returns>BatchIterator 的执行结果</returns>
     private static IEnumerable<IEnumerable<T>> BatchIterator<T>(IEnumerable<T> source, int batchSize)
     {
         var batch = new List<T>(batchSize);

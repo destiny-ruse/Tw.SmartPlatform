@@ -13,6 +13,7 @@ namespace Tw.AspNetCore.Localization;
 /// <typeparam name="TResource">用于标识本地化资源范围的标记类型</typeparam>
 public sealed class TwStringLocalizer<TResource> : IStringLocalizer<TResource>
 {
+    /// <summary>表示 _inner 字段</summary>
     private readonly IStringLocalizer _inner;
 
     /// <summary>

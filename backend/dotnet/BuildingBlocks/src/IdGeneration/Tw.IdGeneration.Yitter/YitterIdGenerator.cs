@@ -1,4 +1,4 @@
-using Tw.IdGeneration;
+﻿using Tw.IdGeneration;
 using Yitter.IdGenerator;
 
 namespace Tw.IdGeneration.Yitter;
@@ -8,6 +8,7 @@ namespace Tw.IdGeneration.Yitter;
 /// </summary>
 public sealed class YitterIdGenerator : IIdGenerator
 {
+    /// <summary>初始化 YitterIdGenerator 实例</summary>
     private YitterIdGenerator()
     {
     }

@@ -1,4 +1,4 @@
-using Tw.DependencyInjection.Abstractions.Configuration;
+﻿using Tw.DependencyInjection.Abstractions.Configuration;
 using Tw.DependencyInjection.Abstractions;
 
 namespace Tw.DependencyInjection.Registration;
@@ -72,6 +72,9 @@ internal static class ServiceExposureResolver
             .ToList();
     }
 
+    /// <summary>执行 ValidateKeyedService 操作</summary>
+    /// <param name="implementationType">implementationType 参数</param>
+    /// <param name="keyed">keyed 参数</param>
     private static void ValidateKeyedService(Type implementationType, ExposeKeyedServiceAttribute keyed)
     {
         if (keyed.Key is null || keyed.Key is string stringKey && string.IsNullOrWhiteSpace(stringKey))

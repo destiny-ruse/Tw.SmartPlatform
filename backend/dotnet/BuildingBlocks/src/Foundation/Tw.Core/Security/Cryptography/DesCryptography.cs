@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 
 namespace Tw.Core.Security.Cryptography;
@@ -168,6 +168,7 @@ public static class DesCryptography
         return SymmetricCryptographyCore.DecryptStreamAsync(stream, key, iv, mode, padding, DesAlgorithm, cancellationToken);
     }
 
+    /// <summary>表示 DesAlgorithm 属性</summary>
     private static SymmetricAlgorithmProfile DesAlgorithm => new(
         DES.Create,
         ValidKeyLengths: [8],

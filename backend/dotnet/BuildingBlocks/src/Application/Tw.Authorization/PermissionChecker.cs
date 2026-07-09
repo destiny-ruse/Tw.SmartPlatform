@@ -1,4 +1,4 @@
-using Tw.Authorization.Abstractions;
+﻿using Tw.Authorization.Abstractions;
 
 namespace Tw.Authorization;
 
@@ -7,10 +7,14 @@ namespace Tw.Authorization;
 /// </summary>
 public sealed class PermissionChecker : IPermissionChecker
 {
+    /// <summary>表示 DeniedCode 常量</summary>
     private const string DeniedCode = "AUTHORIZATION:000001";
+    /// <summary>表示 DeniedMessage 常量</summary>
     private const string DeniedMessage = "没有操作权限";
 
+    /// <summary>表示 _grantStore 字段</summary>
     private readonly IGrantStore _grantStore;
+    /// <summary>表示 _grantCache 字段</summary>
     private readonly IPermissionGrantCache _grantCache;
 
     /// <summary>

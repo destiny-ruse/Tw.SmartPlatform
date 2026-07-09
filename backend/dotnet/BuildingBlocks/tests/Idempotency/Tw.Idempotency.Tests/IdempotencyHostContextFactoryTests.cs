@@ -1,12 +1,14 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Idempotency;
 using Tw.Idempotency.Hosts;
 using Xunit;
 
 namespace Tw.Idempotency.Tests;
 
+/// <summary>验证 IdempotencyHostContextFactoryTests 相关行为</summary>
 public sealed class IdempotencyHostContextFactoryTests
 {
+    /// <summary>验证 HttpFactory_BuildsTenantScopedRequestKey 场景</summary>
     [Fact]
     public void HttpFactory_BuildsTenantScopedRequestKey()
     {
@@ -15,6 +17,7 @@ public sealed class IdempotencyHostContextFactoryTests
         key.Should().Be(new IdempotencyKey(IdempotencyBoundary.Http, "tenant-a", "Order", "Create", "request-1"));
     }
 
+    /// <summary>验证 CapFactory_BuildsMessageDedupeKey 场景</summary>
     [Fact]
     public void CapFactory_BuildsMessageDedupeKey()
     {

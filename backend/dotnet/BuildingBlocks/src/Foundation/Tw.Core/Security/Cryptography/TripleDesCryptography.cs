@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 
 namespace Tw.Core.Security.Cryptography;
@@ -168,6 +168,7 @@ public static class TripleDesCryptography
         return SymmetricCryptographyCore.DecryptStreamAsync(stream, key, iv, mode, padding, TripleDesAlgorithm, cancellationToken);
     }
 
+    /// <summary>表示 TripleDesAlgorithm 属性</summary>
     private static SymmetricAlgorithmProfile TripleDesAlgorithm => new(
         TripleDES.Create,
         ValidKeyLengths: [16, 24],

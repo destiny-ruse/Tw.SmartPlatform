@@ -17,22 +17,22 @@ public sealed class LocalizationContext
     }
 
     /// <summary>
-    /// 获取本次查找期望使用的 BCP 47 文化名称，例如 "zh-Hans"
+    /// 本次查找期望使用的 BCP 47 文化名称，例如 "zh-Hans"
     /// </summary>
     public string CultureName { get; }
 
     /// <summary>
-    /// 获取或初始化当前操作所属的租户标识；为 <see langword="null"/> 时表示全局范围
+    /// 当前操作所属的租户标识；为 <see langword="null"/> 时表示全局范围
     /// </summary>
     public string? TenantId { get; init; }
 
     /// <summary>
-    /// 获取或初始化一个值，指示当指定文化没有翻译时是否回退到父文化；默认为 <see langword="true"/>
+    /// 指定文化没有翻译时回退到父文化的策略；默认为 <see langword="true"/>
     /// </summary>
     public bool FallbackToParentCultures { get; init; } = true;
 
     /// <summary>
-    /// 获取或初始化一个值，指示回退父文化仍未找到时是否再回退到系统默认文化；默认为 <see langword="true"/>
+    /// 父文化仍未命中时回退到系统默认文化的策略；默认为 <see langword="true"/>
     /// </summary>
     public bool FallbackToDefaultCulture { get; init; } = true;
 }

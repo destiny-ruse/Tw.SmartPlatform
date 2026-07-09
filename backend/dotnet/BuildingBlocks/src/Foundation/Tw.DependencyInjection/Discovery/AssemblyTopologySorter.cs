@@ -1,9 +1,13 @@
-using Tw.DependencyInjection.Diagnostics;
+﻿using Tw.DependencyInjection.Diagnostics;
 
 namespace Tw.DependencyInjection.Discovery;
 
+/// <summary>表示 AssemblyTopologySorter 类型</summary>
 internal static class AssemblyTopologySorter
 {
+    /// <summary>执行 Sort 操作</summary>
+    /// <param name="descriptors">descriptors 参数</param>
+    /// <returns>Sort 的执行结果</returns>
     public static IReadOnlyList<AssemblyTopologyEntry> Sort(IReadOnlyList<AssemblyDescriptor> descriptors)
     {
         ArgumentNullException.ThrowIfNull(descriptors);
@@ -56,9 +60,12 @@ internal static class AssemblyTopologySorter
         }
     }
 
+    /// <summary>定义 Mark 枚举</summary>
     private enum Mark
     {
+        /// <summary>表示 InProgress 枚举值</summary>
         InProgress,
+        /// <summary>表示 Done 枚举值</summary>
         Done,
     }
 }

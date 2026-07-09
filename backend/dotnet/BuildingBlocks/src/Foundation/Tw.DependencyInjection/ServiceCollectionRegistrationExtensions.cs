@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -88,6 +88,9 @@ public static class ServiceCollectionRegistrationExtensions
         return services;
     }
 
+    /// <summary>执行 SafeGetTypes 操作</summary>
+    /// <param name="assembly">assembly 参数</param>
+    /// <returns>SafeGetTypes 的执行结果</returns>
     private static IReadOnlyList<Type> SafeGetTypes(Assembly assembly)
     {
         try

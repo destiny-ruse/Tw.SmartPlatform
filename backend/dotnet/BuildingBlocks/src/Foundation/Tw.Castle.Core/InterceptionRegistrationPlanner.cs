@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Tw.Castle.Core;
 
@@ -23,9 +23,13 @@ public sealed record InterceptionPlan(
 /// </summary>
 public static class InterceptionRegistrationPlanner
 {
+    /// <summary>表示 CastleInterfaceProxy 常量</summary>
     private const string CastleInterfaceProxy = "CastleInterfaceProxy";
+    /// <summary>表示 CastleClassProxy 常量</summary>
     private const string CastleClassProxy = "CastleClassProxy";
+    /// <summary>表示 Enabled 常量</summary>
     private const string Enabled = "enabled";
+    /// <summary>表示 Skipped 常量</summary>
     private const string Skipped = "skipped";
 
     /// <summary>
@@ -76,6 +80,10 @@ public static class InterceptionRegistrationPlanner
         return new InterceptionPlan(new InterceptionReport(diagnostics), requiredInterceptorTypes);
     }
 
+    /// <summary>执行 EnumerateCandidateMethods 操作</summary>
+    /// <param name="serviceType">serviceType 参数</param>
+    /// <param name="implementationType">implementationType 参数</param>
+    /// <returns>EnumerateCandidateMethods 的执行结果</returns>
     private static IEnumerable<MethodInfo> EnumerateCandidateMethods(Type serviceType, Type implementationType)
     {
         var inspectedMethods = serviceType.IsInterface
@@ -91,6 +99,9 @@ public static class InterceptionRegistrationPlanner
                 parameter.ParameterType.FullName ?? parameter.ParameterType.Name)), StringComparer.Ordinal);
     }
 
+    /// <summary>执行 EnumerateInterfaceMethods 操作</summary>
+    /// <param name="serviceType">serviceType 参数</param>
+    /// <returns>EnumerateInterfaceMethods 的执行结果</returns>
     private static IEnumerable<MethodInfo> EnumerateInterfaceMethods(Type serviceType)
     {
         var methods = new List<MethodInfo>();
@@ -104,6 +115,9 @@ public static class InterceptionRegistrationPlanner
         return methods;
     }
 
+    /// <summary>执行 AddMethods 操作</summary>
+    /// <param name="methods">methods 参数</param>
+    /// <param name="type">type 参数</param>
     private static void AddMethods(ICollection<MethodInfo> methods, Type type)
     {
         foreach (var method in type.GetMethods(BindingFlags.Instance | BindingFlags.Public))
@@ -117,9 +131,19 @@ public static class InterceptionRegistrationPlanner
         }
     }
 
+    /// <summary>执行 IsSameMethod 操作</summary>
+    /// <param name="left">left 参数</param>
+    /// <param name="right">right 参数</param>
+    /// <returns>IsSameMethod 的执行结果</returns>
     private static bool IsSameMethod(MethodInfo left, MethodInfo right) =>
         Equals(left, right) || (left.Module == right.Module && left.MetadataToken == right.MetadataToken);
 
+    /// <summary>执行 CreateDiagnostic 操作</summary>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="method">method 参数</param>
+    /// <param name="interceptorTypes">interceptorTypes 参数</param>
+    /// <param name="implementationHasInterfaceContract">implementationHasInterfaceContract 参数</param>
+    /// <returns>CreateDiagnostic 的执行结果</returns>
     private static InterceptionDiagnostic CreateDiagnostic(
         InterceptionCandidate registration,
         MethodInfo method,
@@ -184,12 +208,24 @@ public static class InterceptionRegistrationPlanner
         return EnabledDiagnostic(registration, method, CastleClassProxy, interceptorTypes);
     }
 
+    /// <summary>执行 CanUseClassProxy 操作</summary>
+    /// <param name="method">method 参数</param>
+    /// <returns>CanUseClassProxy 的执行结果</returns>
     private static bool CanUseClassProxy(MethodInfo method) =>
         method.IsVirtual && !method.IsFinal && !method.IsPrivate;
 
+    /// <summary>执行 IsPublicProxyType 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>IsPublicProxyType 的执行结果</returns>
     private static bool IsPublicProxyType(Type type) =>
         type.IsVisible;
 
+    /// <summary>执行 EnabledDiagnostic 操作</summary>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="method">method 参数</param>
+    /// <param name="carrier">carrier 参数</param>
+    /// <param name="interceptorTypes">interceptorTypes 参数</param>
+    /// <returns>EnabledDiagnostic 的执行结果</returns>
     private static InterceptionDiagnostic EnabledDiagnostic(
         InterceptionCandidate registration,
         MethodInfo method,
@@ -204,6 +240,13 @@ public static class InterceptionRegistrationPlanner
             Status: Enabled,
             Reason: null);
 
+    /// <summary>执行 SkippedDiagnostic 操作</summary>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="method">method 参数</param>
+    /// <param name="carrier">carrier 参数</param>
+    /// <param name="interceptorTypes">interceptorTypes 参数</param>
+    /// <param name="reason">reason 参数</param>
+    /// <returns>SkippedDiagnostic 的执行结果</returns>
     private static InterceptionDiagnostic SkippedDiagnostic(
         InterceptionCandidate registration,
         MethodInfo method,
@@ -219,10 +262,16 @@ public static class InterceptionRegistrationPlanner
             Status: Skipped,
             Reason: reason);
 
+    /// <summary>执行 InterceptorTypeNames 操作</summary>
+    /// <param name="interceptorTypes">interceptorTypes 参数</param>
+    /// <returns>InterceptorTypeNames 的执行结果</returns>
     private static IReadOnlyList<string> InterceptorTypeNames(IReadOnlyList<Type> interceptorTypes) =>
         interceptorTypes
             .Select(TypeName)
             .ToList();
 
+    /// <summary>执行 TypeName 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>TypeName 的执行结果</returns>
     private static string TypeName(Type type) => type.FullName ?? type.Name;
 }

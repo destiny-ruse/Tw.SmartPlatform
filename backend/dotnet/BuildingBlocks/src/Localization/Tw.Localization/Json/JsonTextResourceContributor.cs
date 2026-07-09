@@ -1,4 +1,4 @@
-using Tw.Localization.Requests;
+﻿using Tw.Localization.Requests;
 
 namespace Tw.Localization.Json;
 
@@ -7,6 +7,7 @@ namespace Tw.Localization.Json;
 /// </summary>
 public sealed class JsonTextResourceContributor : ITextResourceContributor
 {
+    /// <summary>表示 _snapshot 字段</summary>
     private readonly StaticTextSnapshot _snapshot;
 
     /// <summary>

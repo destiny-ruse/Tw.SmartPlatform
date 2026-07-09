@@ -1,4 +1,4 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -35,6 +35,9 @@ public sealed class XmlDocumentationTests
         violations.Should().BeEmpty("all maintained C# declarations must explain their contract in Simplified Chinese XML documentation");
     }
 
+    /// <summary>验证 IsMaintainedSourceFile 场景</summary>
+    /// <param name="path">path 参数</param>
+    /// <returns>IsMaintainedSourceFile 的执行结果</returns>
     private static bool IsMaintainedSourceFile(string path)
     {
         var relative = Path.GetRelativePath(RepositoryLayout.DotnetRoot, path).Replace('\\', '/');
@@ -45,6 +48,9 @@ public sealed class XmlDocumentationTests
             && !relative.EndsWith("GlobalUsings.cs", StringComparison.Ordinal);
     }
 
+    /// <summary>验证 FindUndocumentedDeclarations 场景</summary>
+    /// <param name="path">path 参数</param>
+    /// <returns>FindUndocumentedDeclarations 的执行结果</returns>
     private static IEnumerable<string> FindUndocumentedDeclarations(string path)
     {
         var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(path));
@@ -61,6 +67,9 @@ public sealed class XmlDocumentationTests
         }
     }
 
+    /// <summary>验证 RequiresDocumentation 场景</summary>
+    /// <param name="declaration">declaration 参数</param>
+    /// <returns>RequiresDocumentation 的执行结果</returns>
     private static bool RequiresDocumentation(MemberDeclarationSyntax declaration)
     {
         return declaration is BaseTypeDeclarationSyntax
@@ -73,6 +82,9 @@ public sealed class XmlDocumentationTests
             or EventFieldDeclarationSyntax;
     }
 
+    /// <summary>验证 HasXmlDocumentation 场景</summary>
+    /// <param name="declaration">declaration 参数</param>
+    /// <returns>HasXmlDocumentation 的执行结果</returns>
     private static bool HasXmlDocumentation(MemberDeclarationSyntax declaration)
     {
         return declaration.GetLeadingTrivia()
@@ -80,6 +92,9 @@ public sealed class XmlDocumentationTests
                 || trivia.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia));
     }
 
+    /// <summary>验证 DeclarationName 场景</summary>
+    /// <param name="declaration">declaration 参数</param>
+    /// <returns>DeclarationName 的执行结果</returns>
     private static string DeclarationName(MemberDeclarationSyntax declaration)
     {
         return declaration switch

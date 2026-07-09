@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using AwesomeAssertions;
 using Tw.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
@@ -8,13 +8,18 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Discovery;
 
+/// <summary>验证 AssemblyDiscovererTests 相关行为</summary>
 public class AssemblyDiscovererTests
 {
+    /// <summary>验证 FakeAssemblySource 相关行为</summary>
     private sealed class FakeAssemblySource(params Assembly[] assemblies) : IAssemblySource
     {
+        /// <summary>验证 GetCandidateAssemblies 场景</summary>
+        /// <returns>GetCandidateAssemblies 的执行结果</returns>
         public IReadOnlyList<Assembly> GetCandidateAssemblies() => assemblies;
     }
 
+    /// <summary>验证 Report_ExposesScanAndTopologySections 场景</summary>
     [Fact]
     public void Report_ExposesScanAndTopologySections()
     {
@@ -28,6 +33,7 @@ public class AssemblyDiscovererTests
         report.Topology.Should().ContainSingle().Which.Level.Should().Be(0);
     }
 
+    /// <summary>验证 Discover_FiltersToTwPrefix_AndOrdersAbstractionsBeforeEngine 场景</summary>
     [Fact]
     public void Discover_FiltersToTwPrefix_AndOrdersAbstractionsBeforeEngine()
     {
@@ -44,6 +50,7 @@ public class AssemblyDiscovererTests
         result.Report.ExcludedAssemblies.Should().Contain(systemAssembly.GetName().Name!);
     }
 
+    /// <summary>验证 Discover_ReachabilityGraph_ReflectsInScopeReferences 场景</summary>
     [Fact]
     public void Discover_ReachabilityGraph_ReflectsInScopeReferences()
     {

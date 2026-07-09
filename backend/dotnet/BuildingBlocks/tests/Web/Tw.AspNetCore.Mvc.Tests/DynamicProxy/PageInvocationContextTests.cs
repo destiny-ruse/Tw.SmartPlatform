@@ -12,13 +12,21 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;
 
+/// <summary>验证 PageInvocationContextTests 相关行为</summary>
 public class PageInvocationContextTests
 {
+    /// <summary>验证 SamplePageModel 相关行为</summary>
     private sealed class SamplePageModel : PageModel
     {
+        /// <summary>验证 OnGet 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <param name="count">count 参数</param>
+        /// <returns>OnGet 的执行结果</returns>
         public IActionResult OnGet(string value, int count) => new OkObjectResult($"{value}:{count}");
     }
 
+    /// <summary>验证 CreatePageContext 场景</summary>
+    /// <returns>CreatePageContext 的执行结果</returns>
     private static PageContext CreatePageContext()
     {
         var actionDescriptor = new CompiledPageActionDescriptor
@@ -30,6 +38,9 @@ public class PageInvocationContextTests
             new ActionContext(new DefaultHttpContext(), new RouteData(), actionDescriptor));
     }
 
+    /// <summary>验证 CreateHandlerMethod 场景</summary>
+    /// <param name="name">name 参数</param>
+    /// <returns>CreateHandlerMethod 的执行结果</returns>
     private static HandlerMethodDescriptor CreateHandlerMethod(string name = nameof(SamplePageModel.OnGet)) =>
         new()
         {
@@ -37,6 +48,11 @@ public class PageInvocationContextTests
             Name = name,
         };
 
+    /// <summary>验证 CreateExecutingContext 场景</summary>
+    /// <param name="handlerArguments">handlerArguments 参数</param>
+    /// <param name="handlerInstance">handlerInstance 参数</param>
+    /// <param name="handlerMethod">handlerMethod 参数</param>
+    /// <returns>CreateExecutingContext 的执行结果</returns>
     private static PageHandlerExecutingContext CreateExecutingContext(
         IDictionary<string, object?> handlerArguments,
         object handlerInstance,
@@ -48,6 +64,11 @@ public class PageInvocationContextTests
             handlerArguments,
             handlerInstance);
 
+    /// <summary>验证 CreateNext 场景</summary>
+    /// <param name="executingContext">executingContext 参数</param>
+    /// <param name="result">result 参数</param>
+    /// <param name="onNext">onNext 参数</param>
+    /// <returns>CreateNext 的执行结果</returns>
     private static PageHandlerExecutionDelegate CreateNext(
         PageHandlerExecutingContext executingContext,
         IActionResult? result = null,
@@ -69,6 +90,7 @@ public class PageInvocationContextTests
             });
         };
 
+    /// <summary>验证 Constructor_MapsMethodTargetArgumentsAndNamedView 场景</summary>
     [Fact]
     public void Constructor_MapsMethodTargetArgumentsAndNamedView()
     {
@@ -86,6 +108,7 @@ public class PageInvocationContextTests
         context.ArgumentsByName["count"].Should().Be(2);
     }
 
+    /// <summary>验证 Constructor_Throws_WhenHandlerArgumentMissing 场景</summary>
     [Fact]
     public void Constructor_Throws_WhenHandlerArgumentMissing()
     {
@@ -98,6 +121,8 @@ public class PageInvocationContextTests
         act.Should().Throw<InvalidOperationException>().WithMessage("*count*");
     }
 
+    /// <summary>验证 ProceedAsync_WritesModifiedArgumentsBackToHandlerArguments 场景</summary>
+    /// <returns>ProceedAsync_WritesModifiedArgumentsBackToHandlerArguments 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_WritesModifiedArgumentsBackToHandlerArguments()
     {
@@ -115,6 +140,8 @@ public class PageInvocationContextTests
         handlerArguments["value"].Should().Be("rewritten");
     }
 
+    /// <summary>验证 ProceedAsync_CapturesHandlerResultAsReturnValue 场景</summary>
+    /// <returns>ProceedAsync_CapturesHandlerResultAsReturnValue 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_CapturesHandlerResultAsReturnValue()
     {
@@ -129,6 +156,8 @@ public class PageInvocationContextTests
         context.ReturnValue.Should().BeSameAs(result);
     }
 
+    /// <summary>验证 ProceedAsync_Rethrows_WhenHandlerThrewUnhandledException 场景</summary>
+    /// <returns>ProceedAsync_Rethrows_WhenHandlerThrewUnhandledException 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_Rethrows_WhenHandlerThrewUnhandledException()
     {
@@ -151,6 +180,7 @@ public class PageInvocationContextTests
         await act.Should().ThrowAsync<InvalidOperationException>().WithMessage("handler failed");
     }
 
+    /// <summary>验证 ReturnValue_SetBeforeProceed_ShortCircuitsExecutingContextResult 场景</summary>
     [Fact]
     public void ReturnValue_SetBeforeProceed_ShortCircuitsExecutingContextResult()
     {
@@ -165,6 +195,7 @@ public class PageInvocationContextTests
         executingContext.Result.Should().BeSameAs(result);
     }
 
+    /// <summary>验证 Proceed_Throws_BecausePageHandlerFilterIsAsyncOnly 场景</summary>
     [Fact]
     public void Proceed_Throws_BecausePageHandlerFilterIsAsyncOnly()
     {

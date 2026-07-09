@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Tw.Castle.Core.Abstractions;
 using CastleInvocation = Castle.DynamicProxy.IInvocation;
 
@@ -9,16 +9,21 @@ namespace Tw.Castle.Core;
 /// </summary>
 public sealed class CastleInvocationContext : IInvocationContext
 {
+    /// <summary>表示 AwaitValueTaskWithResultMethod 字段</summary>
     private static readonly MethodInfo AwaitValueTaskWithResultMethod = typeof(CastleInvocationContext)
         .GetMethod(nameof(AwaitValueTaskWithResultAsync), BindingFlags.NonPublic | BindingFlags.Static)!;
 
+    /// <summary>表示 CreateTaskWithResultMethod 字段</summary>
     private static readonly MethodInfo CreateTaskWithResultMethod = typeof(CastleInvocationContext)
         .GetMethod(nameof(CreateTaskWithResult), BindingFlags.NonPublic | BindingFlags.Static)!;
 
+    /// <summary>表示 CreateValueTaskWithResultMethod 字段</summary>
     private static readonly MethodInfo CreateValueTaskWithResultMethod = typeof(CastleInvocationContext)
         .GetMethod(nameof(CreateValueTaskWithResult), BindingFlags.NonPublic | BindingFlags.Static)!;
 
+    /// <summary>表示 _invocation 字段</summary>
     private readonly CastleInvocation _invocation;
+    /// <summary>表示 _returnValue 字段</summary>
     private object? _returnValue;
 
     /// <summary>
@@ -94,6 +99,10 @@ public sealed class CastleInvocationContext : IInvocationContext
     internal void ApplyReturnValueToInvocation() =>
         _invocation.ReturnValue = CreateCompatibleReturnValue(Method.ReturnType, _returnValue);
 
+    /// <summary>执行 CreateArgumentsByName 操作</summary>
+    /// <param name="method">method 参数</param>
+    /// <param name="arguments">arguments 参数</param>
+    /// <returns>CreateArgumentsByName 的执行结果</returns>
     private static IReadOnlyDictionary<string, object?> CreateArgumentsByName(MethodInfo method, object?[] arguments)
     {
         var parameters = method.GetParameters();
@@ -112,6 +121,10 @@ public sealed class CastleInvocationContext : IInvocationContext
         return argumentsByName;
     }
 
+    /// <summary>执行 ReadCompletedReturnValueAsync 操作</summary>
+    /// <param name="returnValue">returnValue 参数</param>
+    /// <param name="returnType">returnType 参数</param>
+    /// <returns>ReadCompletedReturnValueAsync 的执行结果</returns>
     private static async ValueTask<object?> ReadCompletedReturnValueAsync(object? returnValue, Type returnType)
     {
         if (returnValue is null)
@@ -145,6 +158,10 @@ public sealed class CastleInvocationContext : IInvocationContext
         return returnValue;
     }
 
+    /// <summary>执行 ReadTaskResult 操作</summary>
+    /// <param name="task">task 参数</param>
+    /// <param name="returnType">returnType 参数</param>
+    /// <returns>ReadTaskResult 的执行结果</returns>
     private static object? ReadTaskResult(Task task, Type returnType)
     {
         if (!returnType.IsGenericType || returnType.GetGenericTypeDefinition() != typeof(Task<>))
@@ -155,15 +172,31 @@ public sealed class CastleInvocationContext : IInvocationContext
         return returnType.GetProperty(nameof(Task<object>.Result))!.GetValue(task);
     }
 
+    /// <summary>执行 AwaitValueTaskWithResultAsync 操作</summary>
+    /// <typeparam name="TResult">TResult 类型参数</typeparam>
+    /// <param name="valueTask">valueTask 参数</param>
+    /// <returns>AwaitValueTaskWithResultAsync 的执行结果</returns>
     private static async ValueTask<object?> AwaitValueTaskWithResultAsync<TResult>(ValueTask<TResult> valueTask) =>
         await valueTask.ConfigureAwait(false);
 
+    /// <summary>执行 CreateTaskWithResult 操作</summary>
+    /// <typeparam name="TResult">TResult 类型参数</typeparam>
+    /// <param name="returnValue">returnValue 参数</param>
+    /// <returns>CreateTaskWithResult 的执行结果</returns>
     private static Task<TResult> CreateTaskWithResult<TResult>(object? returnValue) =>
         Task.FromResult(returnValue is null ? default! : (TResult)returnValue);
 
+    /// <summary>执行 CreateValueTaskWithResult 操作</summary>
+    /// <typeparam name="TResult">TResult 类型参数</typeparam>
+    /// <param name="returnValue">returnValue 参数</param>
+    /// <returns>CreateValueTaskWithResult 的执行结果</returns>
     private static ValueTask<TResult> CreateValueTaskWithResult<TResult>(object? returnValue) =>
         ValueTask.FromResult(returnValue is null ? default! : (TResult)returnValue);
 
+    /// <summary>执行 CreateCompatibleReturnValue 操作</summary>
+    /// <param name="returnType">returnType 参数</param>
+    /// <param name="returnValue">returnValue 参数</param>
+    /// <returns>CreateCompatibleReturnValue 的执行结果</returns>
     private static object? CreateCompatibleReturnValue(Type returnType, object? returnValue)
     {
         if (returnType == typeof(void))
@@ -198,14 +231,21 @@ public sealed class CastleInvocationContext : IInvocationContext
         return returnValue;
     }
 
+    /// <summary>执行 IsAsyncReturnType 操作</summary>
+    /// <param name="returnType">returnType 参数</param>
+    /// <returns>IsAsyncReturnType 的执行结果</returns>
     private static bool IsAsyncReturnType(Type returnType) =>
         typeof(Task).IsAssignableFrom(returnType)
         || returnType == typeof(ValueTask)
         || IsValueTaskWithResult(returnType);
 
+    /// <summary>执行 IsValueTaskWithResult 操作</summary>
+    /// <param name="returnType">returnType 参数</param>
+    /// <returns>IsValueTaskWithResult 的执行结果</returns>
     private static bool IsValueTaskWithResult(Type returnType) =>
         returnType.IsGenericType && returnType.GetGenericTypeDefinition() == typeof(ValueTask<>);
 
+    /// <summary>执行 WriteArgumentsToInvocation 操作</summary>
     private void WriteArgumentsToInvocation()
     {
         for (var index = 0; index < Arguments.Length; index++)

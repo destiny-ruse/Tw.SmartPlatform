@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +13,15 @@ namespace Tw.AspNetCore.Mvc.DynamicProxy;
 /// </summary>
 public sealed class MvcInvocationContext : IInvocationContext
 {
+    /// <summary>表示 _context 字段</summary>
     private readonly ActionExecutingContext _context;
+    /// <summary>表示 _next 字段</summary>
     private readonly ActionExecutionDelegate _next;
+    /// <summary>表示 _parameterNames 字段</summary>
     private readonly string[] _parameterNames;
+    /// <summary>表示 _executedContext 字段</summary>
     private ActionExecutedContext? _executedContext;
+    /// <summary>表示 _returnValue 字段</summary>
     private object? _returnValue;
 
     /// <summary>
@@ -105,6 +110,9 @@ public sealed class MvcInvocationContext : IInvocationContext
     public void Proceed() =>
         throw new InvalidOperationException("MVC action filter 是异步上下文，请调用 ProceedAsync");
 
+    /// <summary>执行 ResolveMethod 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <returns>ResolveMethod 的执行结果</returns>
     private static MethodInfo ResolveMethod(ActionExecutingContext context)
     {
         if (context.ActionDescriptor is not ControllerActionDescriptor actionDescriptor)
@@ -118,6 +126,10 @@ public sealed class MvcInvocationContext : IInvocationContext
                 $"MVC action '{ResolveActionName(context)}' 缺少 MethodInfo，无法建立调用上下文");
     }
 
+    /// <summary>执行 ResolveParameterNames 操作</summary>
+    /// <param name="method">method 参数</param>
+    /// <param name="context">context 参数</param>
+    /// <returns>ResolveParameterNames 的执行结果</returns>
     private static string[] ResolveParameterNames(MethodInfo method, ActionExecutingContext context)
     {
         var parameters = method.GetParameters();
@@ -138,6 +150,10 @@ public sealed class MvcInvocationContext : IInvocationContext
         return parameterNames;
     }
 
+    /// <summary>执行 CreateArguments 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <param name="parameterNames">parameterNames 参数</param>
+    /// <returns>CreateArguments 的执行结果</returns>
     private static object?[] CreateArguments(ActionExecutingContext context, IReadOnlyList<string> parameterNames)
     {
         var arguments = new object?[parameterNames.Count];
@@ -155,11 +171,19 @@ public sealed class MvcInvocationContext : IInvocationContext
         return arguments;
     }
 
+    /// <summary>执行 MissingArgumentMapping 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <param name="parameterName">parameterName 参数</param>
+    /// <returns>MissingArgumentMapping 的执行结果</returns>
     private static InvalidOperationException MissingArgumentMapping(
         ActionExecutingContext context,
         string parameterName) =>
         new($"MVC action '{ResolveActionName(context)}' 无法建立参数映射，缺失参数名 '{parameterName}'");
 
+    /// <summary>执行 ResolveActionName 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <param name="method">method 参数</param>
+    /// <returns>ResolveActionName 的执行结果</returns>
     private static string ResolveActionName(ActionExecutingContext context, MethodInfo? method = null)
     {
         if (context.ActionDescriptor is ControllerActionDescriptor { ActionName.Length: > 0 } actionDescriptor)
@@ -172,6 +196,7 @@ public sealed class MvcInvocationContext : IInvocationContext
             ?? "<unknown>";
     }
 
+    /// <summary>执行 WriteArgumentsToActionContext 操作</summary>
     private void WriteArgumentsToActionContext()
     {
         for (var index = 0; index < _parameterNames.Length; index++)

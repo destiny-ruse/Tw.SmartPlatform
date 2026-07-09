@@ -1,10 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Xunit;
 
 namespace Tw.Settings.Tests;
 
+/// <summary>验证 SettingProviderTests 相关行为</summary>
 public sealed class SettingProviderTests
 {
+    /// <summary>验证 GetAsync_UsesUserTenantServiceThenDefaultFallback 场景</summary>
+    /// <returns>GetAsync_UsesUserTenantServiceThenDefaultFallback 的执行结果</returns>
     [Fact]
     public async Task GetAsync_UsesUserTenantServiceThenDefaultFallback()
     {
@@ -27,6 +30,8 @@ public sealed class SettingProviderTests
         value.Should().Be("100");
     }
 
+    /// <summary>验证 RefreshAsync_RemovesMatchingCachedValue 场景</summary>
+    /// <returns>RefreshAsync_RemovesMatchingCachedValue 的执行结果</returns>
     [Fact]
     public async Task RefreshAsync_RemovesMatchingCachedValue()
     {
@@ -66,6 +71,8 @@ public sealed class SettingProviderTests
         refreshed.Should().Be("200");
     }
 
+    /// <summary>验证 GetAsync_ReturnsNull_WhenValueAndDefinitionMissing 场景</summary>
+    /// <returns>GetAsync_ReturnsNull_WhenValueAndDefinitionMissing 的执行结果</returns>
     [Fact]
     public async Task GetAsync_ReturnsNull_WhenValueAndDefinitionMissing()
     {
@@ -81,11 +88,19 @@ public sealed class SettingProviderTests
         value.Should().BeNull();
     }
 
+    /// <summary>验证 InMemorySettingStore 相关行为</summary>
     private sealed class InMemorySettingStore(IEnumerable<SettingValue> values) : ISettingStore
     {
+        /// <summary>表示 _values 字段</summary>
         private readonly Dictionary<SettingCacheKey, SettingValue> _values = values.ToDictionary(
             value => new SettingCacheKey(value.Name, value.Scope, value.ScopeKey));
 
+        /// <summary>验证 FindAsync 场景</summary>
+        /// <param name="name">name 参数</param>
+        /// <param name="scope">scope 参数</param>
+        /// <param name="scopeKey">scopeKey 参数</param>
+        /// <param name="cancellationToken">cancellationToken 参数</param>
+        /// <returns>FindAsync 的执行结果</returns>
         public Task<SettingValue?> FindAsync(
             string name,
             SettingScope scope,
@@ -96,27 +111,44 @@ public sealed class SettingProviderTests
             return Task.FromResult(_values.GetValueOrDefault(key));
         }
 
+        /// <summary>验证 Replace 场景</summary>
+        /// <param name="value">value 参数</param>
         public void Replace(SettingValue value)
         {
             _values[new SettingCacheKey(value.Name, value.Scope, value.ScopeKey)] = value;
         }
     }
 
+    /// <summary>验证 InMemorySettingCache 相关行为</summary>
     private sealed class InMemorySettingCache : ISettingCache
     {
+        /// <summary>表示 _values 字段</summary>
         private readonly Dictionary<SettingCacheKey, SettingValue> _values = new();
 
+        /// <summary>验证 GetAsync 场景</summary>
+        /// <param name="key">key 参数</param>
+        /// <param name="cancellationToken">cancellationToken 参数</param>
+        /// <returns>GetAsync 的执行结果</returns>
         public Task<SettingValue?> GetAsync(SettingCacheKey key, CancellationToken cancellationToken)
         {
             return Task.FromResult(_values.GetValueOrDefault(key));
         }
 
+        /// <summary>验证 SetAsync 场景</summary>
+        /// <param name="key">key 参数</param>
+        /// <param name="value">value 参数</param>
+        /// <param name="cancellationToken">cancellationToken 参数</param>
+        /// <returns>SetAsync 的执行结果</returns>
         public Task SetAsync(SettingCacheKey key, SettingValue value, CancellationToken cancellationToken)
         {
             _values[key] = value;
             return Task.CompletedTask;
         }
 
+        /// <summary>验证 RemoveAsync 场景</summary>
+        /// <param name="key">key 参数</param>
+        /// <param name="cancellationToken">cancellationToken 参数</param>
+        /// <returns>RemoveAsync 的执行结果</returns>
         public Task RemoveAsync(SettingCacheKey key, CancellationToken cancellationToken)
         {
             _values.Remove(key);

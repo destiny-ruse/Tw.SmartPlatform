@@ -7,17 +7,29 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Registration;
 
+/// <summary>验证 ServiceRegistrationExecutorTests 相关行为</summary>
 public class ServiceRegistrationExecutorTests
 {
+    /// <summary>定义 IOrderService 契约</summary>
     private interface IOrderService;
+    /// <summary>验证 OrderService 相关行为</summary>
     private sealed class OrderService : IOrderService;
+    /// <summary>验证 SomeOtherOrderService 相关行为</summary>
     private sealed class SomeOtherOrderService : IOrderService;
+    /// <summary>定义 IPaymentProvider 契约</summary>
     private interface IPaymentProvider;
+    /// <summary>验证 WechatPaymentProvider 相关行为</summary>
     private sealed class WechatPaymentProvider : IPaymentProvider;
+    /// <summary>验证 AlipayPaymentProvider 相关行为</summary>
     private sealed class AlipayPaymentProvider : IPaymentProvider;
+    /// <summary>定义 IGenericKeyedContract 契约</summary>
+    /// <typeparam name="T">T 类型参数</typeparam>
     private interface IGenericKeyedContract<T>;
+    /// <summary>验证 GenericKeyedImpl 相关行为</summary>
+    /// <typeparam name="T">T 类型参数</typeparam>
     private sealed class GenericKeyedImpl<T> : IGenericKeyedContract<T>;
 
+    /// <summary>验证 Apply_RegistersNonKeyedWinner 场景</summary>
     [Fact]
     public void Apply_RegistersNonKeyedWinner()
     {
@@ -39,6 +51,7 @@ public class ServiceRegistrationExecutorTests
         services.Should().ContainSingle(d => d.ServiceType == typeof(IOrderService));
     }
 
+    /// <summary>验证 Apply_RegistersKeyedServiceAndEnumerableEntry 场景</summary>
     [Fact]
     public void Apply_RegistersKeyedServiceAndEnumerableEntry()
     {
@@ -64,6 +77,7 @@ public class ServiceRegistrationExecutorTests
             .Should().ContainSingle(e => Equals(e.Key, "wechat") && e.Service is WechatPaymentProvider);
     }
 
+    /// <summary>验证 Apply_ReplacesExistingNonKeyedDescriptor 场景</summary>
     [Fact]
     public void Apply_ReplacesExistingNonKeyedDescriptor()
     {
@@ -91,6 +105,7 @@ public class ServiceRegistrationExecutorTests
         descriptor.ImplementationType.Should().Be(typeof(OrderService));
     }
 
+    /// <summary>验证 Apply_RegistersMultipleKeyedEntries 场景</summary>
     [Fact]
     public void Apply_RegistersMultipleKeyedEntries()
     {
@@ -135,6 +150,7 @@ public class ServiceRegistrationExecutorTests
             .Should().BeOfType<AlipayPaymentProvider>();
     }
 
+    /// <summary>验证 Apply_DoesNotThrow_ForKeyedOpenGenericContract 场景</summary>
     [Fact]
     public void Apply_DoesNotThrow_ForKeyedOpenGenericContract()
     {
@@ -161,6 +177,7 @@ public class ServiceRegistrationExecutorTests
             Equals(d.ServiceKey, "k"));
     }
 
+    /// <summary>验证 Apply_Throws_WhenServicesNull 场景</summary>
     [Fact]
     public void Apply_Throws_WhenServicesNull()
     {
@@ -172,6 +189,7 @@ public class ServiceRegistrationExecutorTests
             .WithParameterName("services");
     }
 
+    /// <summary>验证 Apply_Throws_WhenPlanNull 场景</summary>
     [Fact]
     public void Apply_Throws_WhenPlanNull()
     {
@@ -183,6 +201,9 @@ public class ServiceRegistrationExecutorTests
             .WithParameterName("plan");
     }
 
+    /// <summary>验证 CreatePlan 场景</summary>
+    /// <param name="registrations">registrations 参数</param>
+    /// <returns>CreatePlan 的执行结果</returns>
     private static ServiceRegistrationPlan CreatePlan(params ServiceCandidate[] registrations)
     {
         return new ServiceRegistrationPlan(

@@ -9,8 +9,11 @@ namespace Tw.Localization;
 /// </summary>
 public sealed class TextLocalizer : ITextLocalizer
 {
+    /// <summary>表示 _contributors 字段</summary>
     private readonly ITextResourceContributor[] _contributors;
+    /// <summary>表示 _options 字段</summary>
     private readonly LocalizationOptions _options;
+    /// <summary>表示 _cancellationTokenProvider 字段</summary>
     private readonly ICancellationTokenProvider _cancellationTokenProvider;
 
     /// <summary>

@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Autofac;
 using Autofac.Builder;
 using Autofac.Core;
@@ -15,11 +15,15 @@ namespace Tw.DependencyInjection.Autofac.Registration;
 /// </summary>
 internal static class AutofacServiceRegistrationExecutor
 {
+    /// <summary>表示 AddNonKeyedEnumerableMethod 字段</summary>
     private static readonly MethodInfo AddNonKeyedEnumerableMethod = typeof(AutofacServiceRegistrationExecutor)
         .GetMethod(nameof(AddNonKeyedEnumerableCore), BindingFlags.NonPublic | BindingFlags.Static)!;
 
+    /// <summary>表示 Enabled 常量</summary>
     private const string Enabled = "enabled";
+    /// <summary>表示 CastleInterfaceProxy 常量</summary>
     private const string CastleInterfaceProxy = "CastleInterfaceProxy";
+    /// <summary>表示 CastleClassProxy 常量</summary>
     private const string CastleClassProxy = "CastleClassProxy";
 
     /// <summary>
@@ -56,6 +60,9 @@ internal static class AutofacServiceRegistrationExecutor
         AddNonKeyedOpenGenericEnumerableSource(builder, plan.Registrations);
     }
 
+    /// <summary>执行 RegisterDynamicProxyServices 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="report">report 参数</param>
     private static void RegisterDynamicProxyServices(ContainerBuilder builder, InterceptionReport report)
     {
         builder.RegisterType<AttributeInterceptorSelector>()
@@ -78,6 +85,10 @@ internal static class AutofacServiceRegistrationExecutor
             .SingleInstance();
     }
 
+    /// <summary>执行 AddService 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="report">report 参数</param>
     private static void AddService(
         ContainerBuilder builder,
         ServiceCandidate registration,
@@ -92,6 +103,10 @@ internal static class AutofacServiceRegistrationExecutor
         AddKeyed(builder, registration, report);
     }
 
+    /// <summary>执行 AddNonKeyed 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="report">report 参数</param>
     private static void AddNonKeyed(
         ContainerBuilder builder,
         ServiceCandidate registration,
@@ -114,6 +129,10 @@ internal static class AutofacServiceRegistrationExecutor
         ApplyLifetime(typedRegistrationBuilder, registration.Lifetime);
     }
 
+    /// <summary>执行 AddKeyed 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="report">report 参数</param>
     private static void AddKeyed(
         ContainerBuilder builder,
         ServiceCandidate registration,
@@ -136,6 +155,9 @@ internal static class AutofacServiceRegistrationExecutor
         ApplyLifetime(typedRegistrationBuilder, registration.Lifetime);
     }
 
+    /// <summary>执行 AddKeyedEntry 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="registration">registration 参数</param>
     private static void AddKeyedEntry(ContainerBuilder builder, ServiceCandidate registration)
     {
         if (registration.ServiceType.IsGenericTypeDefinition)
@@ -154,6 +176,9 @@ internal static class AutofacServiceRegistrationExecutor
         ApplyLifetime(registrationBuilder, registration.Lifetime);
     }
 
+    /// <summary>执行 AddNonKeyedEnumerable 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="registration">registration 参数</param>
     private static void AddNonKeyedEnumerable(ContainerBuilder builder, ServiceCandidate registration)
     {
         if (registration.ServiceType.IsGenericTypeDefinition)
@@ -166,6 +191,9 @@ internal static class AutofacServiceRegistrationExecutor
             .Invoke(null, [builder]);
     }
 
+    /// <summary>执行 AddNonKeyedOpenGenericEnumerableSource 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="registrations">registrations 参数</param>
     private static void AddNonKeyedOpenGenericEnumerableSource(
         ContainerBuilder builder,
         IReadOnlyList<ServiceCandidate> registrations)
@@ -185,6 +213,9 @@ internal static class AutofacServiceRegistrationExecutor
         builder.RegisterSource(new NonKeyedOpenGenericEnumerableRegistrationSource(serviceDefinitions));
     }
 
+    /// <summary>执行 AddNonKeyedEnumerableCore 操作</summary>
+    /// <typeparam name="TService">TService 类型参数</typeparam>
+    /// <param name="builder">builder 参数</param>
     private static void AddNonKeyedEnumerableCore<TService>(ContainerBuilder builder)
         where TService : notnull
     {
@@ -192,6 +223,12 @@ internal static class AutofacServiceRegistrationExecutor
             .As<IEnumerable<TService>>();
     }
 
+    /// <summary>执行 ApplyTypedInterception 操作</summary>
+    /// <typeparam name="TLimit">TLimit 类型参数</typeparam>
+    /// <typeparam name="TRegistrationStyle">TRegistrationStyle 类型参数</typeparam>
+    /// <param name="registrationBuilder">registrationBuilder 参数</param>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="report">report 参数</param>
     private static void ApplyTypedInterception<TLimit, TRegistrationStyle>(
         IRegistrationBuilder<TLimit, ConcreteReflectionActivatorData, TRegistrationStyle> registrationBuilder,
         ServiceCandidate registration,
@@ -210,6 +247,14 @@ internal static class AutofacServiceRegistrationExecutor
         }
     }
 
+    /// <summary>执行 ApplyInterfaceInterception 操作</summary>
+    /// <typeparam name="TLimit">TLimit 类型参数</typeparam>
+    /// <typeparam name="TActivatorData">TActivatorData 类型参数</typeparam>
+    /// <typeparam name="TRegistrationStyle">TRegistrationStyle 类型参数</typeparam>
+    /// <param name="registrationBuilder">registrationBuilder 参数</param>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="report">report 参数</param>
+    /// <returns>ApplyInterfaceInterception 的执行结果</returns>
     private static bool ApplyInterfaceInterception<TLimit, TActivatorData, TRegistrationStyle>(
         IRegistrationBuilder<TLimit, TActivatorData, TRegistrationStyle> registrationBuilder,
         ServiceCandidate registration,
@@ -226,6 +271,11 @@ internal static class AutofacServiceRegistrationExecutor
         return false;
     }
 
+    /// <summary>执行 HasEnabledCarrier 操作</summary>
+    /// <param name="report">report 参数</param>
+    /// <param name="registration">registration 参数</param>
+    /// <param name="carrier">carrier 参数</param>
+    /// <returns>HasEnabledCarrier 的执行结果</returns>
     private static bool HasEnabledCarrier(
         InterceptionReport report,
         ServiceCandidate registration,
@@ -241,6 +291,12 @@ internal static class AutofacServiceRegistrationExecutor
             && item.ImplementationTypeName == implementationTypeName);
     }
 
+    /// <summary>执行 ApplyLifetime 操作</summary>
+    /// <typeparam name="TLimit">TLimit 类型参数</typeparam>
+    /// <typeparam name="TActivatorData">TActivatorData 类型参数</typeparam>
+    /// <typeparam name="TRegistrationStyle">TRegistrationStyle 类型参数</typeparam>
+    /// <param name="registrationBuilder">registrationBuilder 参数</param>
+    /// <param name="lifetime">lifetime 参数</param>
     private static void ApplyLifetime<TLimit, TActivatorData, TRegistrationStyle>(
         IRegistrationBuilder<TLimit, TActivatorData, TRegistrationStyle> registrationBuilder,
         DependencyLifetime lifetime)
@@ -254,19 +310,31 @@ internal static class AutofacServiceRegistrationExecutor
         };
     }
 
+    /// <summary>执行 TypeName 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>TypeName 的执行结果</returns>
     private static string TypeName(Type type) => type.FullName ?? type.Name;
 
+    /// <summary>表示 NonKeyedOpenGenericEnumerableRegistrationSource 类型</summary>
     private sealed class NonKeyedOpenGenericEnumerableRegistrationSource : IRegistrationSource
     {
+        /// <summary>表示 _serviceDefinitions 字段</summary>
         private readonly HashSet<Type> _serviceDefinitions;
 
+        /// <summary>初始化 NonKeyedOpenGenericEnumerableRegistrationSource 实例</summary>
+        /// <param name="serviceDefinitions">serviceDefinitions 参数</param>
         public NonKeyedOpenGenericEnumerableRegistrationSource(IEnumerable<Type> serviceDefinitions)
         {
             _serviceDefinitions = serviceDefinitions.ToHashSet();
         }
 
+        /// <summary>表示 IsAdapterForIndividualComponents 属性</summary>
         public bool IsAdapterForIndividualComponents => false;
 
+        /// <summary>执行 RegistrationsFor 操作</summary>
+        /// <param name="service">service 参数</param>
+        /// <param name="registrationAccessor">registrationAccessor 参数</param>
+        /// <returns>RegistrationsFor 的执行结果</returns>
         public IEnumerable<IComponentRegistration> RegistrationsFor(
             Service service,
             Func<Service, IEnumerable<ServiceRegistration>> registrationAccessor)

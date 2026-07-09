@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Tw.Castle.Core.Abstractions;
 
 namespace Tw.Castle.Core;
@@ -29,18 +29,28 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
         return pipelineExecution.ProceedAsync(nextInterceptorIndex: 0);
     }
 
+    /// <summary>表示 PipelineExecution 类型</summary>
     private sealed class PipelineExecution
     {
+        /// <summary>表示 _innerContext 字段</summary>
         private readonly IInvocationContext _innerContext;
+        /// <summary>表示 _interceptors 字段</summary>
         private readonly IReadOnlyList<IInterceptor> _interceptors;
+        /// <summary>表示 _hasProceededTarget 字段</summary>
         private bool _hasProceededTarget;
 
+        /// <summary>初始化 PipelineExecution 实例</summary>
+        /// <param name="innerContext">innerContext 参数</param>
+        /// <param name="interceptors">interceptors 参数</param>
         public PipelineExecution(IInvocationContext innerContext, IReadOnlyList<IInterceptor> interceptors)
         {
             _innerContext = innerContext;
             _interceptors = interceptors;
         }
 
+        /// <summary>执行 ProceedAsync 操作</summary>
+        /// <param name="nextInterceptorIndex">nextInterceptorIndex 参数</param>
+        /// <returns>ProceedAsync 的执行结果</returns>
         public ValueTask ProceedAsync(int nextInterceptorIndex)
         {
             if (nextInterceptorIndex >= _interceptors.Count)
@@ -59,6 +69,8 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             return interceptor.InterceptAsync(invocationContext);
         }
 
+        /// <summary>执行 Proceed 操作</summary>
+        /// <param name="nextInterceptorIndex">nextInterceptorIndex 参数</param>
         public void Proceed(int nextInterceptorIndex)
         {
             if (nextInterceptorIndex >= _interceptors.Count)
@@ -78,6 +90,7 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             interceptor.InterceptAsync(invocationContext).AsTask().GetAwaiter().GetResult();
         }
 
+        /// <summary>执行 EnsureTargetHasNotProceeded 操作</summary>
         private void EnsureTargetHasNotProceeded()
         {
             if (_hasProceededTarget)
@@ -89,13 +102,22 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
         }
     }
 
+    /// <summary>表示 PipelineInvocationContext 类型</summary>
     private sealed class PipelineInvocationContext : IInvocationContext
     {
+        /// <summary>表示 _innerContext 字段</summary>
         private readonly IInvocationContext _innerContext;
+        /// <summary>表示 _pipelineExecution 字段</summary>
         private readonly PipelineExecution _pipelineExecution;
+        /// <summary>表示 _nextInterceptorIndex 字段</summary>
         private readonly int _nextInterceptorIndex;
+        /// <summary>表示 _hasProceededFrame 字段</summary>
         private bool _hasProceededFrame;
 
+        /// <summary>初始化 PipelineInvocationContext 实例</summary>
+        /// <param name="innerContext">innerContext 参数</param>
+        /// <param name="pipelineExecution">pipelineExecution 参数</param>
+        /// <param name="nextInterceptorIndex">nextInterceptorIndex 参数</param>
         public PipelineInvocationContext(
             IInvocationContext innerContext,
             PipelineExecution pipelineExecution,
@@ -106,20 +128,27 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             _nextInterceptorIndex = nextInterceptorIndex;
         }
 
+        /// <summary>表示 Method 属性</summary>
         public MethodInfo Method => _innerContext.Method;
 
+        /// <summary>表示 Target 属性</summary>
         public object? Target => _innerContext.Target;
 
+        /// <summary>表示 Arguments 属性</summary>
         public object?[] Arguments => _innerContext.Arguments;
 
+        /// <summary>表示 ArgumentsByName 属性</summary>
         public IReadOnlyDictionary<string, object?> ArgumentsByName => _innerContext.ArgumentsByName;
 
+        /// <summary>表示 ReturnValue 属性</summary>
         public object? ReturnValue
         {
             get => _innerContext.ReturnValue;
             set => _innerContext.ReturnValue = value;
         }
 
+        /// <summary>执行 ProceedAsync 操作</summary>
+        /// <returns>ProceedAsync 的执行结果</returns>
         public ValueTask ProceedAsync()
         {
             EnsureFrameHasNotProceeded();
@@ -127,6 +156,7 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             return _pipelineExecution.ProceedAsync(_nextInterceptorIndex);
         }
 
+        /// <summary>执行 Proceed 操作</summary>
         public void Proceed()
         {
             EnsureFrameHasNotProceeded();
@@ -134,6 +164,7 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             _pipelineExecution.Proceed(_nextInterceptorIndex);
         }
 
+        /// <summary>执行 EnsureFrameHasNotProceeded 操作</summary>
         private void EnsureFrameHasNotProceeded()
         {
             if (_hasProceededFrame)

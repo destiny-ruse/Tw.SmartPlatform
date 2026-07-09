@@ -1,4 +1,4 @@
-using Tw.Localization.Requests;
+﻿using Tw.Localization.Requests;
 
 namespace Tw.Localization;
 
@@ -8,6 +8,7 @@ namespace Tw.Localization;
 /// </summary>
 public sealed class DynamicTextContributor : ITextResourceContributor
 {
+    /// <summary>表示 _store 字段</summary>
     private readonly IDynamicTextStore _store;
 
     /// <summary>

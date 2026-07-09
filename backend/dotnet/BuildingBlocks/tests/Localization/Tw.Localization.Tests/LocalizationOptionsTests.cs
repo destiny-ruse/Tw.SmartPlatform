@@ -4,8 +4,10 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
+/// <summary>验证 LocalizationOptionsTests 相关行为</summary>
 public class LocalizationOptionsTests
 {
+    /// <summary>验证 Validate_RejectsInvalidDefaultCulture 场景</summary>
     [Fact]
     public void Validate_RejectsInvalidDefaultCulture()
     {
@@ -16,6 +18,7 @@ public class LocalizationOptionsTests
         act.Should().Throw<TwConfigurationException>();
     }
 
+    /// <summary>验证 Validate_RequiresDefaultCultureInSupportedList 场景</summary>
     [Fact]
     public void Validate_RequiresDefaultCultureInSupportedList()
     {
@@ -30,6 +33,7 @@ public class LocalizationOptionsTests
         act.Should().Throw<TwConfigurationException>();
     }
 
+    /// <summary>验证 Validate_PassesForValidConfig 场景</summary>
     [Fact]
     public void Validate_PassesForValidConfig()
     {

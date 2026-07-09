@@ -1,10 +1,14 @@
-using System.Text.Json;
+﻿using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 
 namespace Tw.AspNetCore.Middleware;
 
+/// <summary>表示 ExceptionHandlingMiddleware 类型</summary>
 public sealed class ExceptionHandlingMiddleware(RequestDelegate next)
 {
+    /// <summary>执行 InvokeAsync 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <returns>InvokeAsync 的执行结果</returns>
     public async Task InvokeAsync(HttpContext context)
     {
         try
@@ -30,6 +34,7 @@ public sealed class ExceptionHandlingMiddleware(RequestDelegate next)
         }
     }
 
+    /// <summary>表示 ErrorResponse 声明</summary>
     private sealed record ErrorResponse(
         bool Success,
         string Code,

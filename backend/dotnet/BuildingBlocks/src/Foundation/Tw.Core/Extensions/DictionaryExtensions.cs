@@ -1,4 +1,4 @@
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Dynamic;
 
 namespace Tw.Extensions;
@@ -120,6 +120,9 @@ public static class DictionaryExtensions
         return ConvertStringObjectDictionary(Check.NotNull(dictionary));
     }
 
+    /// <summary>执行 ConvertStringObjectDictionary 操作</summary>
+    /// <param name="dictionary">dictionary 参数</param>
+    /// <returns>ConvertStringObjectDictionary 的执行结果</returns>
     private static ExpandoObject ConvertStringObjectDictionary(IEnumerable<KeyValuePair<string, object>> dictionary)
     {
         var expando = new ExpandoObject();
@@ -133,6 +136,9 @@ public static class DictionaryExtensions
         return expando;
     }
 
+    /// <summary>执行 ConvertDynamicValue 操作</summary>
+    /// <param name="value">value 参数</param>
+    /// <returns>ConvertDynamicValue 的执行结果</returns>
     private static object? ConvertDynamicValue(object? value)
     {
         return value switch

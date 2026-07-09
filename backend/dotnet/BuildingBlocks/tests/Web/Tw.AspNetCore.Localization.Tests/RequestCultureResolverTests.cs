@@ -4,8 +4,11 @@ using Xunit;
 
 namespace Tw.AspNetCore.Localization.Tests;
 
+/// <summary>验证 RequestCultureResolverTests 相关行为</summary>
 public class RequestCultureResolverTests
 {
+    /// <summary>验证 Options 场景</summary>
+    /// <returns>Options 的执行结果</returns>
     private static LocalizationOptions Options()
     {
         return new LocalizationOptions
@@ -15,6 +18,7 @@ public class RequestCultureResolverTests
         };
     }
 
+    /// <summary>验证 Resolve_UsesRouteBeforeQuery 场景</summary>
     [Fact]
     public void Resolve_UsesRouteBeforeQuery()
     {
@@ -29,6 +33,7 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeTrue();
     }
 
+    /// <summary>验证 Resolve_UsesDefaultForUnsupportedCulture 场景</summary>
     [Fact]
     public void Resolve_UsesDefaultForUnsupportedCulture()
     {
@@ -43,6 +48,7 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
+    /// <summary>验证 Resolve_UsesCookieCulture_WhenRouteAndQueryAreNull 场景</summary>
     [Fact]
     public void Resolve_UsesCookieCulture_WhenRouteAndQueryAreNull()
     {
@@ -57,6 +63,7 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
+    /// <summary>验证 Resolve_UsesFirstSupportedAcceptLanguage_WhenRouteQueryCookieAreNull 场景</summary>
     [Fact]
     public void Resolve_UsesFirstSupportedAcceptLanguage_WhenRouteQueryCookieAreNull()
     {
@@ -72,6 +79,7 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
+    /// <summary>验证 Resolve_StripQWeightFromAcceptLanguage 场景</summary>
     [Fact]
     public void Resolve_StripQWeightFromAcceptLanguage()
     {
@@ -87,6 +95,7 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
+    /// <summary>验证 Resolve_CaseInsensitiveMatch_ReturnsCanonicalCasing 场景</summary>
     [Fact]
     public void Resolve_CaseInsensitiveMatch_ReturnsCanonicalCasing()
     {
@@ -102,6 +111,7 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeTrue();
     }
 
+    /// <summary>验证 Resolve_ThrowsArgumentNullException_WhenOptionsIsNull 场景</summary>
     [Fact]
     public void Resolve_ThrowsArgumentNullException_WhenOptionsIsNull()
     {

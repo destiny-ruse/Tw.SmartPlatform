@@ -1,4 +1,4 @@
-namespace Tw.Architecture.Tests;
+﻿namespace Tw.Architecture.Tests;
 
 /// <summary>
 /// 提供架构测试访问仓库目录和项目映射的统一入口
@@ -102,6 +102,8 @@ internal static class RepositoryLayout
             .Split('/')[0];
     }
 
+    /// <summary>验证 FindRepositoryRoot 场景</summary>
+    /// <returns>FindRepositoryRoot 的执行结果</returns>
     private static string FindRepositoryRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

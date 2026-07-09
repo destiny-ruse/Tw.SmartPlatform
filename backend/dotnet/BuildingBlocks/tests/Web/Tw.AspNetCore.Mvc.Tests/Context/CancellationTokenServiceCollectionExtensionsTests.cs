@@ -7,8 +7,10 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.Context;
 
+/// <summary>验证 CancellationTokenServiceCollectionExtensionsTests 相关行为</summary>
 public class CancellationTokenServiceCollectionExtensionsTests
 {
+    /// <summary>验证 AddHttpContextCancellationTokenProvider_ReplacesProvider_WithHttpContextProvider 场景</summary>
     [Fact]
     public void AddHttpContextCancellationTokenProvider_ReplacesProvider_WithHttpContextProvider()
     {
@@ -21,6 +23,7 @@ public class CancellationTokenServiceCollectionExtensionsTests
             .Should().BeOfType<HttpContextCancellationTokenProvider>();
     }
 
+    /// <summary>验证 AddHttpContextCancellationTokenProvider_RegistersHttpContextAccessor 场景</summary>
     [Fact]
     public void AddHttpContextCancellationTokenProvider_RegistersHttpContextAccessor()
     {
@@ -32,6 +35,7 @@ public class CancellationTokenServiceCollectionExtensionsTests
         provider.GetService<IHttpContextAccessor>().Should().NotBeNull();
     }
 
+    /// <summary>验证 AddHttpContextCancellationTokenProvider_RegistersScopeProvider_AsSingleton 场景</summary>
     [Fact]
     public void AddHttpContextCancellationTokenProvider_RegistersScopeProvider_AsSingleton()
     {

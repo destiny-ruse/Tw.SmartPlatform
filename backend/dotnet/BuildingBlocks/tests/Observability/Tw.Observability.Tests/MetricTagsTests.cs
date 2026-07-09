@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Observability;
 using Xunit;
 
 namespace Tw.Observability.Tests;
 
+/// <summary>验证 MetricTagsTests 相关行为</summary>
 public sealed class MetricTagsTests
 {
+    /// <summary>验证 Create_IncludesServiceTenantShardAndOperation 场景</summary>
     [Fact]
     public void Create_IncludesServiceTenantShardAndOperation()
     {

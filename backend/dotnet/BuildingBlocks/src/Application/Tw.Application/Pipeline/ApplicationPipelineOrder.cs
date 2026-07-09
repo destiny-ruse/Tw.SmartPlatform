@@ -1,10 +1,11 @@
-namespace Tw.Application.Pipeline;
+﻿namespace Tw.Application.Pipeline;
 
 /// <summary>
 /// 应用用例 pipeline behavior 的固定排序规则
 /// </summary>
 public static class ApplicationPipelineOrder
 {
+    /// <summary>表示 Order 字段</summary>
     private static readonly string[] Order =
     [
         "ExecutionContext",

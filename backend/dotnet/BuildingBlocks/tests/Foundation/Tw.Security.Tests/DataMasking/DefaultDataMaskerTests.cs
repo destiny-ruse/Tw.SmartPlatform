@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Security.DataMasking;
 using Xunit;
 
 namespace Tw.Security.Tests.DataMasking;
 
+/// <summary>验证 DefaultDataMaskerTests 相关行为</summary>
 public sealed class DefaultDataMaskerTests
 {
+    /// <summary>验证 Mask_Phone_HidesMiddleDigits 场景</summary>
     [Fact]
     public void Mask_Phone_HidesMiddleDigits()
     {
@@ -16,6 +18,7 @@ public sealed class DefaultDataMaskerTests
         masked.Should().Be("138****8000");
     }
 
+    /// <summary>验证 Mask_Token_DoesNotExposeRawValue 场景</summary>
     [Fact]
     public void Mask_Token_DoesNotExposeRawValue()
     {

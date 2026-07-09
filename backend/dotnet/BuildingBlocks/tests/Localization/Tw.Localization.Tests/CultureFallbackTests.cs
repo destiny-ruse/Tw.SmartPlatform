@@ -4,8 +4,10 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
+/// <summary>验证 CultureFallbackTests 相关行为</summary>
 public class CultureFallbackTests
 {
+    /// <summary>验证 Expand_ReturnsCurrentParentAndDefault 场景</summary>
     [Fact]
     public void Expand_ReturnsCurrentParentAndDefault()
     {
@@ -19,6 +21,7 @@ public class CultureFallbackTests
         CultureFallback.Expand(context, options).Should().Equal("zh-Hans", "zh", "en-US");
     }
 
+    /// <summary>验证 Expand_DoesNotDuplicateDefault 场景</summary>
     [Fact]
     public void Expand_DoesNotDuplicateDefault()
     {
@@ -32,6 +35,7 @@ public class CultureFallbackTests
         CultureFallback.Expand(context, options).Should().Equal("en-US");
     }
 
+    /// <summary>验证 Expand_SuppressesParentChainAndDefault_WhenFallbackDisabled 场景</summary>
     [Fact]
     public void Expand_SuppressesParentChainAndDefault_WhenFallbackDisabled()
     {
@@ -47,6 +51,7 @@ public class CultureFallbackTests
         CultureFallback.Expand(context, options).Should().Equal("zh-Hans");
     }
 
+    /// <summary>验证 Expand_DoesNotThrow_WhenCurrentCultureIsInvalid 场景</summary>
     [Fact]
     public void Expand_DoesNotThrow_WhenCurrentCultureIsInvalid()
     {

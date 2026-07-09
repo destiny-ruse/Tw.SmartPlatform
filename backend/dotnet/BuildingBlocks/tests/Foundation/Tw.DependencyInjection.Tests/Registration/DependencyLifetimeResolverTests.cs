@@ -7,26 +7,37 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Registration;
 
+/// <summary>验证 DependencyLifetimeResolverTests 相关行为</summary>
 public class DependencyLifetimeResolverTests
 {
+    /// <summary>验证 ScopedService 相关行为</summary>
     private sealed class ScopedService : IScopedDependency;
+    /// <summary>验证 MultiLifetimeService 相关行为</summary>
     private sealed class MultiLifetimeService : IScopedDependency, ISingletonDependency;
 
+    /// <summary>验证 AttributeLifetimeService 相关行为</summary>
     [ServiceRegistration(DependencyLifetime.Singleton)]
     private sealed class AttributeLifetimeService : IScopedDependency;
 
+    /// <summary>验证 NoLifetimeService 相关行为</summary>
     [ServiceRegistration]
     private sealed class NoLifetimeService;
 
+    /// <summary>验证 CacheOptions 相关行为</summary>
     private sealed class CacheOptions : IConfigurableOptions;
+    /// <summary>验证 AbstractService 相关行为</summary>
     private abstract class AbstractService : IScopedDependency;
 
+    /// <summary>验证 PlainService 相关行为</summary>
     private sealed class PlainService;
+    /// <summary>定义 IPlainContract 契约</summary>
     private interface IPlainContract;
 
+    /// <summary>验证 DisabledService 相关行为</summary>
     [DisableServiceRegistration]
     private sealed class DisabledService : IScopedDependency;
 
+    /// <summary>验证 ResolveLifetime_UsesMarkerInterface 场景</summary>
     [Fact]
     public void ResolveLifetime_UsesMarkerInterface()
     {
@@ -36,6 +47,7 @@ public class DependencyLifetimeResolverTests
         reason.Should().BeNull();
     }
 
+    /// <summary>验证 ResolveLifetime_AttributeOverridesMarker 场景</summary>
     [Fact]
     public void ResolveLifetime_AttributeOverridesMarker()
     {
@@ -44,6 +56,7 @@ public class DependencyLifetimeResolverTests
         lifetime.Should().Be(DependencyLifetime.Singleton);
     }
 
+    /// <summary>验证 ResolveLifetime_FailsWhenMultipleMarkersDeclared 场景</summary>
     [Fact]
     public void ResolveLifetime_FailsWhenMultipleMarkersDeclared()
     {
@@ -52,6 +65,7 @@ public class DependencyLifetimeResolverTests
         reason.Should().Contain("多个生命周期标记");
     }
 
+    /// <summary>验证 ShouldSkipOrdinaryRegistration_SkipsOptionsAndAbstractTypes 场景</summary>
     [Fact]
     public void ShouldSkipOrdinaryRegistration_SkipsOptionsAndAbstractTypes()
     {
@@ -64,6 +78,7 @@ public class DependencyLifetimeResolverTests
         abstractReason.Should().Contain("抽象");
     }
 
+    /// <summary>验证 ResolveLifetime_SkipsWhenNoLifetimeDeclared 场景</summary>
     [Fact]
     public void ResolveLifetime_SkipsWhenNoLifetimeDeclared()
     {
@@ -72,6 +87,9 @@ public class DependencyLifetimeResolverTests
         reason.Should().Contain("未声明生命周期");
     }
 
+    /// <summary>验证 Mapper_MapsToMicrosoftServiceLifetime 场景</summary>
+    /// <param name="source">source 参数</param>
+    /// <param name="expected">expected 参数</param>
     [Theory]
     [InlineData(DependencyLifetime.Transient, ServiceLifetime.Transient)]
     [InlineData(DependencyLifetime.Scoped, ServiceLifetime.Scoped)]
@@ -82,6 +100,7 @@ public class DependencyLifetimeResolverTests
     }
 
     // 3a. ResolveLifetime_AttributeOverridesMarker 补充 reason 断言
+    /// <summary>验证 ResolveLifetime_AttributeOverridesMarker_ReasonIsNull 场景</summary>
     [Fact]
     public void ResolveLifetime_AttributeOverridesMarker_ReasonIsNull()
     {
@@ -92,6 +111,7 @@ public class DependencyLifetimeResolverTests
     }
 
     // 3b. IsRegistrationParticipant 覆盖
+    /// <summary>验证 IsRegistrationParticipant_ReturnsTrue_WhenMarkerInterface 场景</summary>
     [Fact]
     public void IsRegistrationParticipant_ReturnsTrue_WhenMarkerInterface()
     {
@@ -99,6 +119,7 @@ public class DependencyLifetimeResolverTests
             .Should().BeTrue();
     }
 
+    /// <summary>验证 IsRegistrationParticipant_ReturnsTrue_WhenAttributeOnly 场景</summary>
     [Fact]
     public void IsRegistrationParticipant_ReturnsTrue_WhenAttributeOnly()
     {
@@ -106,6 +127,7 @@ public class DependencyLifetimeResolverTests
             .Should().BeTrue();
     }
 
+    /// <summary>验证 IsRegistrationParticipant_ReturnsFalse_WhenPlainType 场景</summary>
     [Fact]
     public void IsRegistrationParticipant_ReturnsFalse_WhenPlainType()
     {
@@ -114,6 +136,7 @@ public class DependencyLifetimeResolverTests
     }
 
     // 3c. ShouldSkipOrdinaryRegistration 接口分支
+    /// <summary>验证 ShouldSkipOrdinaryRegistration_ReturnsTrue_WhenInterface 场景</summary>
     [Fact]
     public void ShouldSkipOrdinaryRegistration_ReturnsTrue_WhenInterface()
     {
@@ -123,6 +146,7 @@ public class DependencyLifetimeResolverTests
     }
 
     // 3d. ShouldSkipOrdinaryRegistration Disable 分支
+    /// <summary>验证 ShouldSkipOrdinaryRegistration_ReturnsTrue_WhenDisabled 场景</summary>
     [Fact]
     public void ShouldSkipOrdinaryRegistration_ReturnsTrue_WhenDisabled()
     {
@@ -132,6 +156,7 @@ public class DependencyLifetimeResolverTests
     }
 
     // 3e. DependencyLifetimeMapper.Map 异常路径
+    /// <summary>验证 Mapper_Map_Throws_WhenUnknownLifetime 场景</summary>
     [Fact]
     public void Mapper_Map_Throws_WhenUnknownLifetime()
     {

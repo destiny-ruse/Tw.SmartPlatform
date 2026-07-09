@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.TestBase;
 using Xunit;
 
 namespace Tw.TestBase.Tests;
 
+/// <summary>验证 TestClockTests 相关行为</summary>
 public sealed class TestClockTests
 {
+    /// <summary>验证 AdvanceBy_MovesUtcNowForward 场景</summary>
     [Fact]
     public void AdvanceBy_MovesUtcNowForward()
     {

@@ -6,8 +6,10 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
+/// <summary>验证 LocalizationServiceCollectionExtensionsTests 相关行为</summary>
 public class LocalizationServiceCollectionExtensionsTests
 {
+    /// <summary>验证 AddLocalization_RegistersCoreServices 场景</summary>
     [Fact]
     public void AddLocalization_RegistersCoreServices()
     {
@@ -25,6 +27,7 @@ public class LocalizationServiceCollectionExtensionsTests
         provider.GetRequiredService<IStaticTextSnapshot>().Should().NotBeNull();
     }
 
+    /// <summary>验证 AddLocalization_Throws_WhenOptionsInvalid 场景</summary>
     [Fact]
     public void AddLocalization_Throws_WhenOptionsInvalid()
     {
@@ -33,6 +36,7 @@ public class LocalizationServiceCollectionExtensionsTests
         act.Should().Throw<TwConfigurationException>();
     }
 
+    /// <summary>验证 AddLocalization_DoesNotOverrideBusinessEntityStore 场景</summary>
     [Fact]
     public void AddLocalization_DoesNotOverrideBusinessEntityStore()
     {
@@ -43,6 +47,7 @@ public class LocalizationServiceCollectionExtensionsTests
         provider.GetRequiredService<IEntityTranslationStore>().Should().BeOfType<InMemoryEntityTranslationStore>();
     }
 
+    /// <summary>验证 AddLocalization_Throws_WhenJsonPathMissing 场景</summary>
     [Fact]
     public void AddLocalization_Throws_WhenJsonPathMissing()
     {

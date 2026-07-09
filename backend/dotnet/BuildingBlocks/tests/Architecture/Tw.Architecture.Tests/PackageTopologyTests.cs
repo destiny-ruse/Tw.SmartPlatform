@@ -3,8 +3,10 @@ using Xunit;
 
 namespace Tw.Architecture.Tests;
 
+/// <summary>验证 PackageTopologyTests 相关行为</summary>
 public sealed class PackageTopologyTests
 {
+    /// <summary>验证 BuildingBlocks_RuntimeProjects_LiveUnderCapabilityFolders 场景</summary>
     [Fact]
     public void BuildingBlocks_RuntimeProjects_LiveUnderCapabilityFolders()
     {
@@ -16,6 +18,7 @@ public sealed class PackageTopologyTests
             "runtime projects must use src/<Capability>/<Package>/<Package>.csproj");
     }
 
+    /// <summary>验证 BuildingBlocks_TestProjects_LiveUnderCapabilityFolders 场景</summary>
     [Fact]
     public void BuildingBlocks_TestProjects_LiveUnderCapabilityFolders()
     {
@@ -27,6 +30,7 @@ public sealed class PackageTopologyTests
             "test projects must use tests/<Capability>/<TestProject>/<TestProject>.csproj");
     }
 
+    /// <summary>验证 BuildingBlocks_TestProjects_MirrorRuntimeCapabilityFolders 场景</summary>
     [Fact]
     public void BuildingBlocks_TestProjects_MirrorRuntimeCapabilityFolders()
     {
@@ -54,6 +58,7 @@ public sealed class PackageTopologyTests
         violations.Should().BeEmpty("test projects must stay beside the capability of the runtime package they validate");
     }
 
+    /// <summary>验证 BuildingBlocks_DoesNotContainAbstractionsTestProjects 场景</summary>
     [Fact]
     public void BuildingBlocks_DoesNotContainAbstractionsTestProjects()
     {
@@ -65,6 +70,7 @@ public sealed class PackageTopologyTests
         abstractionsTests.Should().BeEmpty("Abstractions packages define contracts and are validated through consuming packages");
     }
 
+    /// <summary>验证 DotnetTools_ProjectsLiveUnderSrcOrTests 场景</summary>
     [Fact]
     public void DotnetTools_ProjectsLiveUnderSrcOrTests()
     {
@@ -76,6 +82,7 @@ public sealed class PackageTopologyTests
         toolProjects.Should().OnlyContain(path => IsToolProjectInSrcOrTests(path), "tools projects must use tools/src/<Project> or tools/tests/<Project>");
     }
 
+    /// <summary>验证 ForbiddenPackages_DoNotExist 场景</summary>
     [Fact]
     public void ForbiddenPackages_DoNotExist()
     {
@@ -113,6 +120,9 @@ public sealed class PackageTopologyTests
         actualPackages.Should().NotIntersectWith(forbiddenPackages);
     }
 
+    /// <summary>验证 IsToolProjectInSrcOrTests 场景</summary>
+    /// <param name="path">path 参数</param>
+    /// <returns>IsToolProjectInSrcOrTests 的执行结果</returns>
     private static bool IsToolProjectInSrcOrTests(string path)
     {
         var relative = Path.GetRelativePath(RepositoryLayout.ToolsRoot, path).Replace('\\', '/');

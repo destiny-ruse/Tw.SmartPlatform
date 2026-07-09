@@ -1,9 +1,15 @@
-using Tw.EventBus.Cap.Inbox;
+﻿using Tw.EventBus.Cap.Inbox;
 
 namespace Tw.EventBus.Cap.Consumers;
 
+/// <summary>表示 CapConsumerExecutionFilter 类型</summary>
 public sealed class CapConsumerExecutionFilter(IInboxMessageStore inboxStore)
 {
+    /// <summary>执行 ExecuteAsync 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <param name="dispatch">dispatch 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ExecuteAsync 的执行结果</returns>
     public async Task<CapConsumerResult> ExecuteAsync(
         CapConsumerContext context,
         Func<CancellationToken, Task> dispatch,

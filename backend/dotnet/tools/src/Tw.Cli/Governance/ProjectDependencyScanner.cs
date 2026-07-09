@@ -1,9 +1,13 @@
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace Tw.Cli.Governance;
 
+/// <summary>表示 ProjectDependencyScanner 类型</summary>
 public sealed class ProjectDependencyScanner
 {
+    /// <summary>执行 ScanRepository 操作</summary>
+    /// <param name="repositoryPath">repositoryPath 参数</param>
+    /// <returns>ScanRepository 的执行结果</returns>
     public DependencyScanResult ScanRepository(string repositoryPath)
     {
         var result = new DependencyScanResult();
@@ -32,6 +36,10 @@ public sealed class ProjectDependencyScanner
         return result;
     }
 
+    /// <summary>执行 ScanProjectText 操作</summary>
+    /// <param name="projectPath">projectPath 参数</param>
+    /// <param name="projectXml">projectXml 参数</param>
+    /// <returns>ScanProjectText 的执行结果</returns>
     public DependencyScanResult ScanProjectText(string projectPath, string projectXml)
     {
         var result = new DependencyScanResult();
@@ -74,6 +82,9 @@ public sealed class ProjectDependencyScanner
         return result;
     }
 
+    /// <summary>执行 ReadReferenceIncludes 操作</summary>
+    /// <param name="document">document 参数</param>
+    /// <returns>ReadReferenceIncludes 的执行结果</returns>
     private static IEnumerable<string> ReadReferenceIncludes(XDocument document)
     {
         return document
@@ -84,6 +95,9 @@ public sealed class ProjectDependencyScanner
             .Select(value => value!);
     }
 
+    /// <summary>执行 IsProductionProject 操作</summary>
+    /// <param name="projectPath">projectPath 参数</param>
+    /// <returns>IsProductionProject 的执行结果</returns>
     private static bool IsProductionProject(string projectPath)
     {
         var normalized = projectPath.Replace('\\', '/');
@@ -92,9 +106,12 @@ public sealed class ProjectDependencyScanner
     }
 }
 
+/// <summary>表示 DependencyScanResult 类型</summary>
 public sealed class DependencyScanResult
 {
+    /// <summary>表示 Errors 属性</summary>
     public List<DependencyScanError> Errors { get; } = [];
 }
 
+/// <summary>表示 DependencyScanError 声明</summary>
 public sealed record DependencyScanError(string Code, string ProjectPath, string Message);

@@ -1,7 +1,14 @@
-namespace Tw.Idempotency;
+﻿namespace Tw.Idempotency;
 
+/// <summary>表示 IdempotencyExecutor 类型</summary>
 public sealed class IdempotencyExecutor(IIdempotencyStore store)
 {
+    /// <summary>执行 ExecuteAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="fingerprint">fingerprint 参数</param>
+    /// <param name="operation">operation 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ExecuteAsync 的执行结果</returns>
     public async Task<IdempotencyResult> ExecuteAsync(
         IdempotencyKey key,
         string fingerprint,

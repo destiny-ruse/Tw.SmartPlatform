@@ -1,5 +1,6 @@
-namespace Tw.Gateway;
+﻿namespace Tw.Gateway;
 
+/// <summary>表示 GatewayRoute 声明</summary>
 public sealed record GatewayRoute(
     string RouteId,
     string ClusterId,

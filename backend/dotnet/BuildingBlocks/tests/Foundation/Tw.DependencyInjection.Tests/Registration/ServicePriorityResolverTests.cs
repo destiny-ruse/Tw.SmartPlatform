@@ -7,35 +7,44 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Registration;
 
+/// <summary>验证 ServicePriorityResolverTests 相关行为</summary>
 public class ServicePriorityResolverTests
 {
+    /// <summary>验证 TypePriorityService 相关行为</summary>
     [ServicePriority(20)]
     [ServiceRegistration(Priority = 20)]
     private sealed class TypePriorityService;
 
+    /// <summary>验证 ConflictingTypePriorityService 相关行为</summary>
     [ServicePriority(20)]
     [ServiceRegistration(Priority = 10)]
     private sealed class ConflictingTypePriorityService;
 
+    /// <summary>验证 RegistrationPriorityOnlyService 相关行为</summary>
     [ServiceRegistration(Priority = 15)]
     private sealed class RegistrationPriorityOnlyService;
 
+    /// <summary>验证 ServicePriorityOnlyService 相关行为</summary>
     [ServicePriority(7)]
     private sealed class ServicePriorityOnlyService;
 
+    /// <summary>验证 OutOfRangeTypePriorityService 相关行为</summary>
     [ServicePriority(200_000)]
     private sealed class OutOfRangeTypePriorityService;
 
+    /// <summary>验证 LifetimeWithSeparatePriorityService 相关行为</summary>
     [ServiceRegistration(DependencyLifetime.Singleton)]
     [ServicePriority(5)]
     private sealed class LifetimeWithSeparatePriorityService;
 
+    /// <summary>验证 ResolveTypePriority_UsesExplicitPriority 场景</summary>
     [Fact]
     public void ResolveTypePriority_UsesExplicitPriority()
     {
         ServicePriorityResolver.ResolveTypePriority(typeof(TypePriorityService)).Should().Be(20);
     }
 
+    /// <summary>验证 ResolveTypePriority_FailsWhenTwoAttributesDisagree 场景</summary>
     [Fact]
     public void ResolveTypePriority_FailsWhenTwoAttributesDisagree()
     {
@@ -45,6 +54,7 @@ public class ServicePriorityResolverTests
             .WithMessage("*类型优先级声明不一致*");
     }
 
+    /// <summary>验证 ResolveAssemblyPriority_ConfigOverridesAttribute 场景</summary>
     [Fact]
     public void ResolveAssemblyPriority_ConfigOverridesAttribute()
     {
@@ -55,6 +65,7 @@ public class ServicePriorityResolverTests
             .Should().Be(50);
     }
 
+    /// <summary>验证 CalculateFinalPriority_UsesTopologyBaseAssemblyAndTypePriority 场景</summary>
     [Fact]
     public void CalculateFinalPriority_UsesTopologyBaseAssemblyAndTypePriority()
     {
@@ -66,6 +77,7 @@ public class ServicePriorityResolverTests
     // 仅 ServiceRegistrationAttribute.Priority
     // ──────────────────────────────────────────────────────────
 
+    /// <summary>验证 ResolveTypePriority_UsesRegistrationPriority_WhenOnlyServiceRegistrationAttribute 场景</summary>
     [Fact]
     public void ResolveTypePriority_UsesRegistrationPriority_WhenOnlyServiceRegistrationAttribute()
     {
@@ -78,6 +90,7 @@ public class ServicePriorityResolverTests
     // 仅 ServicePriorityAttribute
     // ──────────────────────────────────────────────────────────
 
+    /// <summary>验证 ResolveTypePriority_UsesServicePriority_WhenOnlyServicePriorityAttribute 场景</summary>
     [Fact]
     public void ResolveTypePriority_UsesServicePriority_WhenOnlyServicePriorityAttribute()
     {
@@ -90,6 +103,7 @@ public class ServicePriorityResolverTests
     // 越界类型优先级 → 抛异常
     // ──────────────────────────────────────────────────────────
 
+    /// <summary>验证 ResolveTypePriority_Throws_WhenPriorityOutOfRange 场景</summary>
     [Fact]
     public void ResolveTypePriority_Throws_WhenPriorityOutOfRange()
     {
@@ -104,6 +118,7 @@ public class ServicePriorityResolverTests
     // CalculateFinalPriority 直接传入越界值 → 抛异常
     // ──────────────────────────────────────────────────────────
 
+    /// <summary>验证 CalculateFinalPriority_Throws_WhenExplicitPriorityOutOfRange 场景</summary>
     [Fact]
     public void CalculateFinalPriority_Throws_WhenExplicitPriorityOutOfRange()
     {
@@ -118,6 +133,7 @@ public class ServicePriorityResolverTests
     // [ServiceRegistration(生命周期)] + [ServicePriority(N)] 合法组合
     // ──────────────────────────────────────────────────────────
 
+    /// <summary>验证 ResolveTypePriority_AllowsServiceRegistrationLifetimeWithSeparateServicePriority 场景</summary>
     [Fact]
     public void ResolveTypePriority_AllowsServiceRegistrationLifetimeWithSeparateServicePriority()
     {

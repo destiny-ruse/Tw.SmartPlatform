@@ -1,4 +1,4 @@
-using Castle.DynamicProxy;
+﻿using Castle.DynamicProxy;
 using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.Castle.Core;
@@ -10,8 +10,11 @@ using DependencyInterceptorSelector = Tw.Castle.Core.IInterceptorSelector;
 
 namespace Tw.Castle.Core.Tests;
 
+/// <summary>验证 CastleInvocationContextTests 相关行为</summary>
 public class CastleInvocationContextTests
 {
+    /// <summary>验证 ProceedAsync_ProceedsTargetAndCapturesReturnValue_ForSyncTaskAndValueTaskMethods 场景</summary>
+    /// <returns>ProceedAsync_ProceedsTargetAndCapturesReturnValue_ForSyncTaskAndValueTaskMethods 的执行结果</returns>
     [Fact]
     public async Task ProceedAsync_ProceedsTargetAndCapturesReturnValue_ForSyncTaskAndValueTaskMethods()
     {
@@ -38,6 +41,7 @@ public class CastleInvocationContextTests
         ]);
     }
 
+    /// <summary>验证 ProceedAsync_WritesArgumentChangesBackToCastleInvocation 场景</summary>
     [Fact]
     public void ProceedAsync_WritesArgumentChangesBackToCastleInvocation()
     {
@@ -51,6 +55,7 @@ public class CastleInvocationContextTests
         interceptor.InvocationArgumentValues.Should().Equal("rewritten");
     }
 
+    /// <summary>验证 ReturnValueSetter_WritesModifiedValueBackToCastleInvocation 场景</summary>
     [Fact]
     public void ReturnValueSetter_WritesModifiedValueBackToCastleInvocation()
     {
@@ -63,6 +68,7 @@ public class CastleInvocationContextTests
         result.Should().Be("intercepted");
     }
 
+    /// <summary>验证 Proceed_ThrowsInvalidOperationException_WhenTargetMethodReturnsTask 场景</summary>
     [Fact]
     public void Proceed_ThrowsInvalidOperationException_WhenTargetMethodReturnsTask()
     {
@@ -76,6 +82,7 @@ public class CastleInvocationContextTests
             .WithMessage("*异步目标方法*");
     }
 
+    /// <summary>验证 Proceed_ThrowsInvalidOperationException_WhenTargetMethodReturnsValueTask 场景</summary>
     [Fact]
     public void Proceed_ThrowsInvalidOperationException_WhenTargetMethodReturnsValueTask()
     {
@@ -89,6 +96,10 @@ public class CastleInvocationContextTests
             .WithMessage("*异步目标方法*");
     }
 
+    /// <summary>验证 CreateProxy 场景</summary>
+    /// <param name="target">target 参数</param>
+    /// <param name="interceptor">interceptor 参数</param>
+    /// <returns>CreateProxy 的执行结果</returns>
     private static IInvocationTarget CreateProxy(InvocationTarget target, CastleInterceptor interceptor)
     {
         var generator = new ProxyGenerator();
@@ -96,23 +107,44 @@ public class CastleInvocationContextTests
         return generator.CreateInterfaceProxyWithTargetInterface<IInvocationTarget>(target, interceptor);
     }
 
+    /// <summary>定义 IInvocationTarget 契约</summary>
     public interface IInvocationTarget
     {
+        /// <summary>验证 Sync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Sync 的执行结果</returns>
         string Sync(string value);
 
+        /// <summary>验证 TaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskAsync 的执行结果</returns>
         Task TaskAsync(string value);
 
+        /// <summary>验证 TaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskOfStringAsync 的执行结果</returns>
         Task<string> TaskOfStringAsync(string value);
 
+        /// <summary>验证 ValueTaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskAsync 的执行结果</returns>
         ValueTask ValueTaskAsync(string value);
 
+        /// <summary>验证 ValueTaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskOfStringAsync 的执行结果</returns>
         ValueTask<string> ValueTaskOfStringAsync(string value);
     }
 
+    /// <summary>验证 InvocationTarget 相关行为</summary>
     private sealed class InvocationTarget : IInvocationTarget
     {
+        /// <summary>表示 ReceivedValues 属性</summary>
         public List<string> ReceivedValues { get; } = [];
 
+        /// <summary>验证 Sync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Sync 的执行结果</returns>
         public string Sync(string value)
         {
             ReceivedValues.Add(value);
@@ -120,6 +152,9 @@ public class CastleInvocationContextTests
             return $"sync:{value}";
         }
 
+        /// <summary>验证 TaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskAsync 的执行结果</returns>
         public Task TaskAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -127,6 +162,9 @@ public class CastleInvocationContextTests
             return Task.CompletedTask;
         }
 
+        /// <summary>验证 TaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskOfStringAsync 的执行结果</returns>
         public Task<string> TaskOfStringAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -134,6 +172,9 @@ public class CastleInvocationContextTests
             return Task.FromResult($"task:{value}");
         }
 
+        /// <summary>验证 ValueTaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskAsync 的执行结果</returns>
         public ValueTask ValueTaskAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -141,6 +182,9 @@ public class CastleInvocationContextTests
             return ValueTask.CompletedTask;
         }
 
+        /// <summary>验证 ValueTaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskOfStringAsync 的执行结果</returns>
         public ValueTask<string> ValueTaskOfStringAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -149,12 +193,17 @@ public class CastleInvocationContextTests
         }
     }
 
+    /// <summary>验证 ProceedAsyncRecordingInterceptor 相关行为</summary>
     private sealed class ProceedAsyncRecordingInterceptor : CastleInterceptor
     {
+        /// <summary>表示 ReturnValues 属性</summary>
         public List<object?> ReturnValues { get; } = [];
 
+        /// <summary>表示 InvocationArgumentValues 属性</summary>
         public List<object?> InvocationArgumentValues { get; } = [];
 
+        /// <summary>验证 Intercept 场景</summary>
+        /// <param name="invocation">invocation 参数</param>
         public void Intercept(IInvocation invocation)
         {
             var context = new CastleInvocationContext(invocation);
@@ -168,8 +217,11 @@ public class CastleInvocationContextTests
         }
     }
 
+    /// <summary>验证 ReturnValueOverrideInterceptor 相关行为</summary>
     private sealed class ReturnValueOverrideInterceptor : CastleInterceptor
     {
+        /// <summary>验证 Intercept 场景</summary>
+        /// <param name="invocation">invocation 参数</param>
         public void Intercept(IInvocation invocation)
         {
             var context = new CastleInvocationContext(invocation);
@@ -179,8 +231,11 @@ public class CastleInvocationContextTests
         }
     }
 
+    /// <summary>验证 SynchronousProceedInterceptor 相关行为</summary>
     private sealed class SynchronousProceedInterceptor : CastleInterceptor
     {
+        /// <summary>验证 Intercept 场景</summary>
+        /// <param name="invocation">invocation 参数</param>
         public void Intercept(IInvocation invocation)
         {
             var context = new CastleInvocationContext(invocation);
@@ -189,6 +244,10 @@ public class CastleInvocationContextTests
         }
     }
 
+    /// <summary>验证 CreateCompatibleReturnValue 场景</summary>
+    /// <param name="returnType">returnType 参数</param>
+    /// <param name="returnValue">returnValue 参数</param>
+    /// <returns>CreateCompatibleReturnValue 的执行结果</returns>
     private static object? CreateCompatibleReturnValue(Type returnType, object? returnValue)
     {
         if (returnType == typeof(Task))
@@ -215,14 +274,18 @@ public class CastleInvocationContextTests
     }
 }
 
+/// <summary>验证 CastleAsyncInterceptorAdapterTests 相关行为</summary>
 public class CastleAsyncInterceptorAdapterTests
 {
+    /// <summary>验证 Type_ImplementsCastleAsyncInterceptor 场景</summary>
     [Fact]
     public void Type_ImplementsCastleAsyncInterceptor()
     {
         typeof(CastleAsyncInterceptorAdapter).Should().BeAssignableTo<IAsyncInterceptor>();
     }
 
+    /// <summary>验证 Adapter_UsesSelectorServiceProviderAndPipeline_ForSyncTaskAndTaskOfTMethods 场景</summary>
+    /// <returns>Adapter_UsesSelectorServiceProviderAndPipeline_ForSyncTaskAndTaskOfTMethods 的执行结果</returns>
     [Fact]
     public async Task Adapter_UsesSelectorServiceProviderAndPipeline_ForSyncTaskAndTaskOfTMethods()
     {
@@ -249,6 +312,8 @@ public class CastleAsyncInterceptorAdapterTests
         interceptor.MethodNames.Should().Equal("Sync", "TaskAsync", "TaskOfStringAsync");
     }
 
+    /// <summary>验证 Adapter_DirectlyProceeds_WhenSelectorReturnsNoInterceptors 场景</summary>
+    /// <returns>Adapter_DirectlyProceeds_WhenSelectorReturnsNoInterceptors 的执行结果</returns>
     [Fact]
     public async Task Adapter_DirectlyProceeds_WhenSelectorReturnsNoInterceptors()
     {
@@ -266,6 +331,8 @@ public class CastleAsyncInterceptorAdapterTests
         target.ReceivedValues.Should().Equal("source", "source", "source");
     }
 
+    /// <summary>验证 Adapter_UsesSelectorServiceProviderAndPipeline_ForValueTaskMethods 场景</summary>
+    /// <returns>Adapter_UsesSelectorServiceProviderAndPipeline_ForValueTaskMethods 的执行结果</returns>
     [Fact]
     public async Task Adapter_UsesSelectorServiceProviderAndPipeline_ForValueTaskMethods()
     {
@@ -290,6 +357,8 @@ public class CastleAsyncInterceptorAdapterTests
         interceptor.MethodNames.Should().Equal("ValueTaskAsync", "ValueTaskOfStringAsync");
     }
 
+    /// <summary>验证 Adapter_DirectlyProceeds_ForValueTaskMethods_WhenSelectorReturnsNoInterceptors 场景</summary>
+    /// <returns>Adapter_DirectlyProceeds_ForValueTaskMethods_WhenSelectorReturnsNoInterceptors 的执行结果</returns>
     [Fact]
     public async Task Adapter_DirectlyProceeds_ForValueTaskMethods_WhenSelectorReturnsNoInterceptors()
     {
@@ -305,6 +374,10 @@ public class CastleAsyncInterceptorAdapterTests
         target.ReceivedValues.Should().Equal("source", "source");
     }
 
+    /// <summary>验证 CreateAdapterProxy 场景</summary>
+    /// <param name="target">target 参数</param>
+    /// <param name="adapter">adapter 参数</param>
+    /// <returns>CreateAdapterProxy 的执行结果</returns>
     private static IAdapterTarget CreateAdapterProxy(AdapterTarget target, IAsyncInterceptor adapter)
     {
         var generator = new ProxyGenerator();
@@ -313,24 +386,45 @@ public class CastleAsyncInterceptorAdapterTests
         return generator.CreateInterfaceProxyWithTargetInterface<IAdapterTarget>(target, castleInterceptor);
     }
 
+    /// <summary>定义 IAdapterTarget 契约</summary>
     [Intercept(typeof(AdapterArgumentInterceptor))]
     public interface IAdapterTarget
     {
+        /// <summary>验证 Sync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Sync 的执行结果</returns>
         string Sync(string value);
 
+        /// <summary>验证 TaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskAsync 的执行结果</returns>
         Task TaskAsync(string value);
 
+        /// <summary>验证 TaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskOfStringAsync 的执行结果</returns>
         Task<string> TaskOfStringAsync(string value);
 
+        /// <summary>验证 ValueTaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskAsync 的执行结果</returns>
         ValueTask ValueTaskAsync(string value);
 
+        /// <summary>验证 ValueTaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskOfStringAsync 的执行结果</returns>
         ValueTask<string> ValueTaskOfStringAsync(string value);
     }
 
+    /// <summary>验证 AdapterTarget 相关行为</summary>
     private sealed class AdapterTarget : IAdapterTarget
     {
+        /// <summary>表示 ReceivedValues 属性</summary>
         public List<string> ReceivedValues { get; } = [];
 
+        /// <summary>验证 Sync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Sync 的执行结果</returns>
         public string Sync(string value)
         {
             ReceivedValues.Add(value);
@@ -338,6 +432,9 @@ public class CastleAsyncInterceptorAdapterTests
             return $"sync:{value}";
         }
 
+        /// <summary>验证 TaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskAsync 的执行结果</returns>
         public Task TaskAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -345,6 +442,9 @@ public class CastleAsyncInterceptorAdapterTests
             return Task.CompletedTask;
         }
 
+        /// <summary>验证 TaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>TaskOfStringAsync 的执行结果</returns>
         public Task<string> TaskOfStringAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -352,6 +452,9 @@ public class CastleAsyncInterceptorAdapterTests
             return Task.FromResult($"task:{value}");
         }
 
+        /// <summary>验证 ValueTaskAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskAsync 的执行结果</returns>
         public ValueTask ValueTaskAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -359,6 +462,9 @@ public class CastleAsyncInterceptorAdapterTests
             return ValueTask.CompletedTask;
         }
 
+        /// <summary>验证 ValueTaskOfStringAsync 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>ValueTaskOfStringAsync 的执行结果</returns>
         public ValueTask<string> ValueTaskOfStringAsync(string value)
         {
             ReceivedValues.Add(value);
@@ -367,10 +473,15 @@ public class CastleAsyncInterceptorAdapterTests
         }
     }
 
+    /// <summary>验证 AdapterArgumentInterceptor 相关行为</summary>
     private sealed class AdapterArgumentInterceptor : AbstractionInterceptor
     {
+        /// <summary>表示 MethodNames 属性</summary>
         public List<string> MethodNames { get; } = [];
 
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             context.Arguments[0] = "adapter";
@@ -384,14 +495,25 @@ public class CastleAsyncInterceptorAdapterTests
         }
     }
 
+    /// <summary>验证 EmptySelector 相关行为</summary>
     private sealed class EmptySelector : DependencyInterceptorSelector
     {
+        /// <summary>验证 SelectInterceptors 场景</summary>
+        /// <param name="implementationType">implementationType 参数</param>
+        /// <param name="serviceType">serviceType 参数</param>
+        /// <param name="method">method 参数</param>
+        /// <returns>SelectInterceptors 的执行结果</returns>
         public IReadOnlyList<Type> SelectInterceptors(Type implementationType, Type serviceType, System.Reflection.MethodInfo method) =>
             [];
     }
 
+    /// <summary>验证 ThrowingPipeline 相关行为</summary>
     private sealed class ThrowingPipeline : IInterceptorPipeline
     {
+        /// <summary>验证 InvokeAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <param name="interceptors">interceptors 参数</param>
+        /// <returns>InvokeAsync 的执行结果</returns>
         public ValueTask InvokeAsync(IInvocationContext context, IReadOnlyList<AbstractionInterceptor> interceptors) =>
             throw new InvalidOperationException("空拦截器链不应调用 pipeline");
     }

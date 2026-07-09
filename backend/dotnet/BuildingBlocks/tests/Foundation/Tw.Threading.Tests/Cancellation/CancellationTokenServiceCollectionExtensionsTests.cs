@@ -5,8 +5,10 @@ using Xunit;
 
 namespace Tw.Threading.Tests.Cancellation;
 
+/// <summary>验证 CancellationTokenServiceCollectionExtensionsTests 相关行为</summary>
 public class CancellationTokenServiceCollectionExtensionsTests
 {
+    /// <summary>验证 AddCancellationTokenProvider_RegistersNullProvider_AsDefault 场景</summary>
     [Fact]
     public void AddCancellationTokenProvider_RegistersNullProvider_AsDefault()
     {
@@ -19,6 +21,7 @@ public class CancellationTokenServiceCollectionExtensionsTests
             .Should().BeOfType<NullCancellationTokenProvider>();
     }
 
+    /// <summary>验证 AddCancellationTokenProvider_RegistersScopeProvider_AsSingleton 场景</summary>
     [Fact]
     public void AddCancellationTokenProvider_RegistersScopeProvider_AsSingleton()
     {
@@ -32,6 +35,7 @@ public class CancellationTokenServiceCollectionExtensionsTests
         first.Should().BeSameAs(second);
     }
 
+    /// <summary>验证 AddCancellationTokenProvider_DoesNotOverride_ExistingProvider 场景</summary>
     [Fact]
     public void AddCancellationTokenProvider_DoesNotOverride_ExistingProvider()
     {

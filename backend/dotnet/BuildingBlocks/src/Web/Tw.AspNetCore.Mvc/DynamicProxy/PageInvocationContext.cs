@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +12,15 @@ namespace Tw.AspNetCore.Mvc.DynamicProxy;
 /// </summary>
 public sealed class PageInvocationContext : IInvocationContext
 {
+    /// <summary>表示 _context 字段</summary>
     private readonly PageHandlerExecutingContext _context;
+    /// <summary>表示 _next 字段</summary>
     private readonly PageHandlerExecutionDelegate _next;
+    /// <summary>表示 _parameterNames 字段</summary>
     private readonly string[] _parameterNames;
+    /// <summary>表示 _executedContext 字段</summary>
     private PageHandlerExecutedContext? _executedContext;
+    /// <summary>表示 _returnValue 字段</summary>
     private object? _returnValue;
 
     /// <summary>
@@ -104,11 +109,18 @@ public sealed class PageInvocationContext : IInvocationContext
     public void Proceed() =>
         throw new InvalidOperationException("Razor Page handler filter 是异步上下文，请调用 ProceedAsync");
 
+    /// <summary>执行 ResolveMethod 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <returns>ResolveMethod 的执行结果</returns>
     private static MethodInfo ResolveMethod(PageHandlerExecutingContext context) =>
         context.HandlerMethod?.MethodInfo
         ?? throw new InvalidOperationException(
             $"Razor Page '{ResolveHandlerName(context)}' 缺少 handler MethodInfo，无法建立调用上下文");
 
+    /// <summary>执行 ResolveParameterNames 操作</summary>
+    /// <param name="method">method 参数</param>
+    /// <param name="context">context 参数</param>
+    /// <returns>ResolveParameterNames 的执行结果</returns>
     private static string[] ResolveParameterNames(MethodInfo method, PageHandlerExecutingContext context)
     {
         var parameters = method.GetParameters();
@@ -129,6 +141,10 @@ public sealed class PageInvocationContext : IInvocationContext
         return parameterNames;
     }
 
+    /// <summary>执行 CreateArguments 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <param name="parameterNames">parameterNames 参数</param>
+    /// <returns>CreateArguments 的执行结果</returns>
     private static object?[] CreateArguments(PageHandlerExecutingContext context, IReadOnlyList<string> parameterNames)
     {
         var arguments = new object?[parameterNames.Count];
@@ -146,11 +162,19 @@ public sealed class PageInvocationContext : IInvocationContext
         return arguments;
     }
 
+    /// <summary>执行 MissingArgumentMapping 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <param name="parameterName">parameterName 参数</param>
+    /// <returns>MissingArgumentMapping 的执行结果</returns>
     private static InvalidOperationException MissingArgumentMapping(
         PageHandlerExecutingContext context,
         string parameterName) =>
         new($"Razor Page handler '{ResolveHandlerName(context)}' 无法建立参数映射，缺失参数名 '{parameterName}'");
 
+    /// <summary>执行 ResolveHandlerName 操作</summary>
+    /// <param name="context">context 参数</param>
+    /// <param name="method">method 参数</param>
+    /// <returns>ResolveHandlerName 的执行结果</returns>
     private static string ResolveHandlerName(PageHandlerExecutingContext context, MethodInfo? method = null)
     {
         if (context.HandlerMethod is { Name.Length: > 0 } handlerMethod)
@@ -163,6 +187,7 @@ public sealed class PageInvocationContext : IInvocationContext
             ?? "<unknown>";
     }
 
+    /// <summary>执行 WriteArgumentsToHandlerContext 操作</summary>
     private void WriteArgumentsToHandlerContext()
     {
         for (var index = 0; index < _parameterNames.Length; index++)

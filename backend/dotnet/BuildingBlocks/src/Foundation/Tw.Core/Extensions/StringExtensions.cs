@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Tw.Extensions;
@@ -341,6 +341,10 @@ public static class StringExtensions
         return value is null ? null : (encoding ?? Encoding.UTF8).GetString(Convert.FromBase64String(value));
     }
 
+    /// <summary>执行 ChangeFirstCharacterCase 操作</summary>
+    /// <param name="source">source 参数</param>
+    /// <param name="converter">converter 参数</param>
+    /// <returns>ChangeFirstCharacterCase 的执行结果</returns>
     private static string? ChangeFirstCharacterCase(string? source, Func<char, char> converter)
     {
         if (string.IsNullOrEmpty(source))
@@ -351,6 +355,9 @@ public static class StringExtensions
         return converter(source[0]) + source[1..];
     }
 
+    /// <summary>执行 AppendSeparator 操作</summary>
+    /// <param name="builder">builder 参数</param>
+    /// <param name="previousWasSeparator">previousWasSeparator 参数</param>
     private static void AppendSeparator(StringBuilder builder, ref bool previousWasSeparator)
     {
         if (builder.Length > 0 && !previousWasSeparator)

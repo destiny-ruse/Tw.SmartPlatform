@@ -1,10 +1,12 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Xunit;
 
 namespace Tw.Excel.Tests;
 
+/// <summary>验证 ExcelTemplateDefinitionTests 相关行为</summary>
 public sealed class ExcelTemplateDefinitionTests
 {
+    /// <summary>验证 Create_RejectsDynamicColumnCountOverLimit 场景</summary>
     [Fact]
     public void Create_RejectsDynamicColumnCountOverLimit()
     {

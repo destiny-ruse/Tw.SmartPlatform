@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using Tw.Core;
 
@@ -175,10 +175,19 @@ public static class HmacMd5Hasher
     }
 }
 
+/// <summary>表示 HmacComputation 类型</summary>
 internal static class HmacComputation
 {
+    /// <summary>表示 DefaultEncoding 字段</summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
 
+    /// <summary>执行 ComputeHash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="input">input 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>ComputeHash 的执行结果</returns>
     public static string ComputeHash(
         string key,
         string input,
@@ -193,6 +202,12 @@ internal static class HmacComputation
         return ComputeHash(effectiveEncoding.GetBytes(key), effectiveEncoding.GetBytes(input), useUpperCase, computeHash);
     }
 
+    /// <summary>执行 ComputeHash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>ComputeHash 的执行结果</returns>
     public static string ComputeHash(byte[] key, byte[] bytes, bool useUpperCase, Func<byte[], byte[], byte[]> computeHash)
     {
         Check.NotNull(key);
@@ -202,6 +217,14 @@ internal static class HmacComputation
         return HexEncoding.ToHex(computeHash(key, bytes), useUpperCase);
     }
 
+    /// <summary>执行 ComputeMd5Hash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="input">input 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>ComputeMd5Hash 的执行结果</returns>
     public static string ComputeMd5Hash(
         string key,
         string input,
@@ -217,6 +240,13 @@ internal static class HmacComputation
         return ComputeMd5Hash(effectiveEncoding.GetBytes(key), effectiveEncoding.GetBytes(input), useUpperCase, useShortHash, computeHash);
     }
 
+    /// <summary>执行 ComputeMd5Hash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>ComputeMd5Hash 的执行结果</returns>
     public static string ComputeMd5Hash(
         byte[] key,
         byte[] bytes,
@@ -231,6 +261,14 @@ internal static class HmacComputation
         return FormatMd5Hash(computeHash(key, bytes), useUpperCase, useShortHash);
     }
 
+    /// <summary>执行 ComputeFileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="filePath">filePath 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeFileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeFileHashAsync(
         string key,
         string filePath,
@@ -250,6 +288,13 @@ internal static class HmacComputation
             cancellationToken);
     }
 
+    /// <summary>执行 ComputeFileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="filePath">filePath 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeFileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeFileHashAsync(
         byte[] key,
         string filePath,
@@ -271,6 +316,14 @@ internal static class HmacComputation
         return await ComputeFileHashAsync(key, stream, useUpperCase, computeHashAsync, cancellationToken);
     }
 
+    /// <summary>执行 ComputeFileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeFileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeFileHashAsync(
         string key,
         Stream stream,
@@ -290,6 +343,13 @@ internal static class HmacComputation
             cancellationToken);
     }
 
+    /// <summary>执行 ComputeFileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeFileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeFileHashAsync(
         byte[] key,
         Stream stream,
@@ -305,6 +365,15 @@ internal static class HmacComputation
         return HexEncoding.ToHex(hash, useUpperCase);
     }
 
+    /// <summary>执行 ComputeMd5FileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="filePath">filePath 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeMd5FileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeMd5FileHashAsync(
         string key,
         string filePath,
@@ -326,6 +395,14 @@ internal static class HmacComputation
             cancellationToken);
     }
 
+    /// <summary>执行 ComputeMd5FileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="filePath">filePath 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeMd5FileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeMd5FileHashAsync(
         byte[] key,
         string filePath,
@@ -348,6 +425,15 @@ internal static class HmacComputation
         return await ComputeMd5FileHashAsync(key, stream, useUpperCase, useShortHash, computeHashAsync, cancellationToken);
     }
 
+    /// <summary>执行 ComputeMd5FileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeMd5FileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeMd5FileHashAsync(
         string key,
         Stream stream,
@@ -369,6 +455,14 @@ internal static class HmacComputation
             cancellationToken);
     }
 
+    /// <summary>执行 ComputeMd5FileHashAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="computeHashAsync">computeHashAsync 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeMd5FileHashAsync 的执行结果</returns>
     public static async Task<string> ComputeMd5FileHashAsync(
         byte[] key,
         Stream stream,
@@ -385,6 +479,13 @@ internal static class HmacComputation
         return FormatMd5Hash(hash, useUpperCase, useShortHash);
     }
 
+    /// <summary>执行 VerifyHash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="input">input 参数</param>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>VerifyHash 的执行结果</returns>
     public static bool VerifyHash(
         string key,
         string input,
@@ -398,6 +499,12 @@ internal static class HmacComputation
         return HashComparison.FixedTimeEqualsHex(computedHash, hash);
     }
 
+    /// <summary>执行 VerifyHash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>VerifyHash 的执行结果</returns>
     public static bool VerifyHash(byte[] key, byte[] bytes, string hash, Func<byte[], byte[], byte[]> computeHash)
     {
         Check.NotNull(hash);
@@ -406,6 +513,14 @@ internal static class HmacComputation
         return HashComparison.FixedTimeEqualsHex(computedHash, hash);
     }
 
+    /// <summary>执行 VerifyMd5Hash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="input">input 参数</param>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="encoding">encoding 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>VerifyMd5Hash 的执行结果</returns>
     public static bool VerifyMd5Hash(
         string key,
         string input,
@@ -420,6 +535,13 @@ internal static class HmacComputation
         return HashComparison.FixedTimeEqualsHex(computedHash, hash);
     }
 
+    /// <summary>执行 VerifyMd5Hash 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <param name="computeHash">computeHash 参数</param>
+    /// <returns>VerifyMd5Hash 的执行结果</returns>
     public static bool VerifyMd5Hash(
         byte[] key,
         byte[] bytes,
@@ -433,6 +555,11 @@ internal static class HmacComputation
         return HashComparison.FixedTimeEqualsHex(computedHash, hash);
     }
 
+    /// <summary>执行 FormatMd5Hash 操作</summary>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="useUpperCase">useUpperCase 参数</param>
+    /// <param name="useShortHash">useShortHash 参数</param>
+    /// <returns>FormatMd5Hash 的执行结果</returns>
     private static string FormatMd5Hash(byte[] hash, bool useUpperCase, bool useShortHash)
     {
         var hashString = HexEncoding.ToHex(hash, useUpperCase);
@@ -440,23 +567,41 @@ internal static class HmacComputation
     }
 }
 
+/// <summary>表示 HmacSha3Hash 类型</summary>
 internal static class HmacSha3Hash
 {
+    /// <summary>执行 Hash256 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <returns>Hash256 的执行结果</returns>
     public static byte[] Hash256(byte[] key, byte[] bytes)
     {
         return HMACSHA3_256.IsSupported ? HMACSHA3_256.HashData(key, bytes) : ComputeHmac(key, bytes, Sha3Hash.Hash256, rateBytes: 136);
     }
 
+    /// <summary>执行 Hash384 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <returns>Hash384 的执行结果</returns>
     public static byte[] Hash384(byte[] key, byte[] bytes)
     {
         return HMACSHA3_384.IsSupported ? HMACSHA3_384.HashData(key, bytes) : ComputeHmac(key, bytes, Sha3Hash.Hash384, rateBytes: 104);
     }
 
+    /// <summary>执行 Hash512 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <returns>Hash512 的执行结果</returns>
     public static byte[] Hash512(byte[] key, byte[] bytes)
     {
         return HMACSHA3_512.IsSupported ? HMACSHA3_512.HashData(key, bytes) : ComputeHmac(key, bytes, Sha3Hash.Hash512, rateBytes: 72);
     }
 
+    /// <summary>执行 Hash256Async 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>Hash256Async 的执行结果</returns>
     public static async ValueTask<byte[]> Hash256Async(byte[] key, Stream stream, CancellationToken cancellationToken)
     {
         if (HMACSHA3_256.IsSupported)
@@ -467,6 +612,11 @@ internal static class HmacSha3Hash
         return await ComputeHmacAsync(key, stream, Sha3Hash.Hash256, Sha3Hash.Hash256Async, rateBytes: 136, cancellationToken);
     }
 
+    /// <summary>执行 Hash384Async 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>Hash384Async 的执行结果</returns>
     public static async ValueTask<byte[]> Hash384Async(byte[] key, Stream stream, CancellationToken cancellationToken)
     {
         if (HMACSHA3_384.IsSupported)
@@ -477,6 +627,11 @@ internal static class HmacSha3Hash
         return await ComputeHmacAsync(key, stream, Sha3Hash.Hash384, Sha3Hash.Hash384Async, rateBytes: 104, cancellationToken);
     }
 
+    /// <summary>执行 Hash512Async 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>Hash512Async 的执行结果</returns>
     public static async ValueTask<byte[]> Hash512Async(byte[] key, Stream stream, CancellationToken cancellationToken)
     {
         if (HMACSHA3_512.IsSupported)
@@ -487,6 +642,12 @@ internal static class HmacSha3Hash
         return await ComputeHmacAsync(key, stream, Sha3Hash.Hash512, Sha3Hash.Hash512Async, rateBytes: 72, cancellationToken);
     }
 
+    /// <summary>执行 ComputeHmac 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="bytes">bytes 参数</param>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="rateBytes">rateBytes 参数</param>
+    /// <returns>ComputeHmac 的执行结果</returns>
     private static byte[] ComputeHmac(byte[] key, byte[] bytes, Func<byte[], byte[]> hash, int rateBytes)
     {
         Check.NotNull(key);
@@ -501,6 +662,14 @@ internal static class HmacSha3Hash
         return hash(Concat(outerPad, innerHash));
     }
 
+    /// <summary>执行 ComputeHmacAsync 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="stream">stream 参数</param>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="hashAsync">hashAsync 参数</param>
+    /// <param name="rateBytes">rateBytes 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ComputeHmacAsync 的执行结果</returns>
     private static async ValueTask<byte[]> ComputeHmacAsync(
         byte[] key,
         Stream stream,
@@ -523,6 +692,11 @@ internal static class HmacSha3Hash
         return hash(Concat(outerPad, innerHash));
     }
 
+    /// <summary>执行 CreateKeyBlock 操作</summary>
+    /// <param name="key">key 参数</param>
+    /// <param name="hash">hash 参数</param>
+    /// <param name="rateBytes">rateBytes 参数</param>
+    /// <returns>CreateKeyBlock 的执行结果</returns>
     private static byte[] CreateKeyBlock(byte[] key, Func<byte[], byte[]> hash, int rateBytes)
     {
         var normalizedKey = key.Length > rateBytes ? hash(key) : key;
@@ -532,6 +706,10 @@ internal static class HmacSha3Hash
         return keyBlock;
     }
 
+    /// <summary>执行 CreatePad 操作</summary>
+    /// <param name="keyBlock">keyBlock 参数</param>
+    /// <param name="value">value 参数</param>
+    /// <returns>CreatePad 的执行结果</returns>
     private static byte[] CreatePad(byte[] keyBlock, byte value)
     {
         var pad = new byte[keyBlock.Length];
@@ -544,6 +722,10 @@ internal static class HmacSha3Hash
         return pad;
     }
 
+    /// <summary>执行 Concat 操作</summary>
+    /// <param name="prefix">prefix 参数</param>
+    /// <param name="suffix">suffix 参数</param>
+    /// <returns>Concat 的执行结果</returns>
     private static byte[] Concat(byte[] prefix, byte[] suffix)
     {
         var bytes = new byte[prefix.Length + suffix.Length];
@@ -553,33 +735,49 @@ internal static class HmacSha3Hash
         return bytes;
     }
 
+    /// <summary>表示 PrefixStream 类型</summary>
     private sealed class PrefixStream(byte[] prefix, Stream innerStream) : Stream
     {
+        /// <summary>表示 _prefixOffset 字段</summary>
         private int _prefixOffset;
 
+        /// <summary>表示 CanRead 属性</summary>
         public override bool CanRead => true;
 
+        /// <summary>表示 CanSeek 属性</summary>
         public override bool CanSeek => false;
 
+        /// <summary>表示 CanWrite 属性</summary>
         public override bool CanWrite => false;
 
+        /// <summary>表示 Length 属性</summary>
         public override long Length => throw new NotSupportedException("前缀流不支持获取长度。");
 
+        /// <summary>表示 Position 属性</summary>
         public override long Position
         {
             get => throw new NotSupportedException("前缀流不支持获取位置。");
             set => throw new NotSupportedException("前缀流不支持设置位置。");
         }
 
+        /// <summary>执行 Flush 操作</summary>
         public override void Flush()
         {
         }
 
+        /// <summary>执行 Read 操作</summary>
+        /// <param name="buffer">buffer 参数</param>
+        /// <param name="offset">offset 参数</param>
+        /// <param name="count">count 参数</param>
+        /// <returns>Read 的执行结果</returns>
         public override int Read(byte[] buffer, int offset, int count)
         {
             return Read(buffer.AsSpan(offset, count));
         }
 
+        /// <summary>执行 Read 操作</summary>
+        /// <param name="buffer">buffer 参数</param>
+        /// <returns>Read 的执行结果</returns>
         public override int Read(Span<byte> buffer)
         {
             if (_prefixOffset < prefix.Length)
@@ -594,6 +792,10 @@ internal static class HmacSha3Hash
             return innerStream.Read(buffer);
         }
 
+        /// <summary>执行 ReadAsync 操作</summary>
+        /// <param name="buffer">buffer 参数</param>
+        /// <param name="cancellationToken">cancellationToken 参数</param>
+        /// <returns>ReadAsync 的执行结果</returns>
         public override async ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default)
         {
             if (_prefixOffset < prefix.Length)
@@ -608,21 +810,33 @@ internal static class HmacSha3Hash
             return await innerStream.ReadAsync(buffer, cancellationToken);
         }
 
+        /// <summary>执行 Seek 操作</summary>
+        /// <param name="offset">offset 参数</param>
+        /// <param name="origin">origin 参数</param>
+        /// <returns>Seek 的执行结果</returns>
         public override long Seek(long offset, SeekOrigin origin)
         {
             throw new NotSupportedException("前缀流不支持定位。");
         }
 
+        /// <summary>执行 SetLength 操作</summary>
+        /// <param name="value">value 参数</param>
         public override void SetLength(long value)
         {
             throw new NotSupportedException("前缀流不支持设置长度。");
         }
 
+        /// <summary>执行 Write 操作</summary>
+        /// <param name="buffer">buffer 参数</param>
+        /// <param name="offset">offset 参数</param>
+        /// <param name="count">count 参数</param>
         public override void Write(byte[] buffer, int offset, int count)
         {
             throw new NotSupportedException("前缀流不支持写入。");
         }
 
+        /// <summary>执行 Dispose 操作</summary>
+        /// <param name="disposing">disposing 参数</param>
         protected override void Dispose(bool disposing)
         {
             _prefixOffset = prefix.Length;

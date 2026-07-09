@@ -1,4 +1,4 @@
-namespace Tw.Security.DataMasking;
+﻿namespace Tw.Security.DataMasking;
 
 /// <summary>
 /// 默认敏感数据脱敏器
@@ -39,6 +39,9 @@ public sealed class DefaultDataMasker : IDataMasker, ISensitiveValueDetector
         return !string.IsNullOrWhiteSpace(value) && value.Contains('*', StringComparison.Ordinal);
     }
 
+    /// <summary>执行 MaskEmail 操作</summary>
+    /// <param name="value">value 参数</param>
+    /// <returns>MaskEmail 的执行结果</returns>
     private static string MaskEmail(string value)
     {
         var atIndex = value.IndexOf('@', StringComparison.Ordinal);

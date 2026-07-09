@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using AwesomeAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,8 +19,11 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;
 
+/// <summary>验证 MvcInterceptionFilterTests 相关行为</summary>
 public class MvcInterceptionFilterTests
 {
+    /// <summary>验证 OnActionExecutionAsync_WithSelectedInterceptor_InvokesPipelineAndWritesModifiedArgumentsToAction 场景</summary>
+    /// <returns>OnActionExecutionAsync_WithSelectedInterceptor_InvokesPipelineAndWritesModifiedArgumentsToAction 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WithSelectedInterceptor_InvokesPipelineAndWritesModifiedArgumentsToAction()
     {
@@ -52,6 +55,8 @@ public class MvcInterceptionFilterTests
         RewriteArgumentInterceptor.WasCalled.Should().BeTrue();
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WithoutSelectedInterceptor_CallsNextAndDoesNotInvokePipeline 场景</summary>
+    /// <returns>OnActionExecutionAsync_WithoutSelectedInterceptor_CallsNextAndDoesNotInvokePipeline 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WithoutSelectedInterceptor_CallsNextAndDoesNotInvokePipeline()
     {
@@ -82,6 +87,8 @@ public class MvcInterceptionFilterTests
         pipeline.InvokeCount.Should().Be(0);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WithoutSelectedInterceptor_DoesNotResolvePipeline 场景</summary>
+    /// <returns>OnActionExecutionAsync_WithoutSelectedInterceptor_DoesNotResolvePipeline 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WithoutSelectedInterceptor_DoesNotResolvePipeline()
     {
@@ -112,6 +119,8 @@ public class MvcInterceptionFilterTests
         nextCalled.Should().BeTrue();
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WhenInterceptorShortCircuits_SetsExecutingResultAndDoesNotCallNext 场景</summary>
+    /// <returns>OnActionExecutionAsync_WhenInterceptorShortCircuits_SetsExecutingResultAndDoesNotCallNext 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WhenInterceptorShortCircuits_SetsExecutingResultAndDoesNotCallNext()
     {
@@ -140,6 +149,8 @@ public class MvcInterceptionFilterTests
         executingContext.Result.Should().BeSameAs(ShortCircuitInterceptor.Result);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WhenInterceptorReplacesResultAfterProceed_UpdatesExecutedContextResult 场景</summary>
+    /// <returns>OnActionExecutionAsync_WhenInterceptorReplacesResultAfterProceed_UpdatesExecutedContextResult 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WhenInterceptorReplacesResultAfterProceed_UpdatesExecutedContextResult()
     {
@@ -164,6 +175,8 @@ public class MvcInterceptionFilterTests
         executingContext.Result.Should().BeSameAs(ReplaceResultAfterProceedInterceptor.Result);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WhenInterceptorConvertsExceptionToResult_MarksExceptionHandled 场景</summary>
+    /// <returns>OnActionExecutionAsync_WhenInterceptorConvertsExceptionToResult_MarksExceptionHandled 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WhenInterceptorConvertsExceptionToResult_MarksExceptionHandled()
     {
@@ -190,6 +203,8 @@ public class MvcInterceptionFilterTests
         executingContext.Result.Should().BeSameAs(ConvertExceptionToResultInterceptor.Result);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WithAttributeSelectorAndMethodInterceptAttribute_InvokesInterceptor 场景</summary>
+    /// <returns>OnActionExecutionAsync_WithAttributeSelectorAndMethodInterceptAttribute_InvokesInterceptor 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WithAttributeSelectorAndMethodInterceptAttribute_InvokesInterceptor()
     {
@@ -212,6 +227,8 @@ public class MvcInterceptionFilterTests
         AttributeRecordingInterceptor.CallCount.Should().Be(1);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WithAttributeSelectorAndControllerInterceptAttribute_InvokesInterceptor 场景</summary>
+    /// <returns>OnActionExecutionAsync_WithAttributeSelectorAndControllerInterceptAttribute_InvokesInterceptor 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WithAttributeSelectorAndControllerInterceptAttribute_InvokesInterceptor()
     {
@@ -234,6 +251,8 @@ public class MvcInterceptionFilterTests
         AttributeRecordingInterceptor.CallCount.Should().Be(1);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WithAttributeSelectorAndMethodDisableInterception_DoesNotInvokeInterceptor 场景</summary>
+    /// <returns>OnActionExecutionAsync_WithAttributeSelectorAndMethodDisableInterception_DoesNotInvokeInterceptor 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WithAttributeSelectorAndMethodDisableInterception_DoesNotInvokeInterceptor()
     {
@@ -264,6 +283,8 @@ public class MvcInterceptionFilterTests
         AttributeRecordingInterceptor.CallCount.Should().Be(0);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WithAttributeSelectorAndControllerDisableInterception_DoesNotInvokeInterceptor 场景</summary>
+    /// <returns>OnActionExecutionAsync_WithAttributeSelectorAndControllerDisableInterception_DoesNotInvokeInterceptor 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WithAttributeSelectorAndControllerDisableInterception_DoesNotInvokeInterceptor()
     {
@@ -294,6 +315,8 @@ public class MvcInterceptionFilterTests
         AttributeRecordingInterceptor.CallCount.Should().Be(0);
     }
 
+    /// <summary>验证 OnActionExecutionAsync_WhenSelectedTypeDoesNotImplementInterceptor_ThrowsClearInvalidOperationException 场景</summary>
+    /// <returns>OnActionExecutionAsync_WhenSelectedTypeDoesNotImplementInterceptor_ThrowsClearInvalidOperationException 的执行结果</returns>
     [Fact]
     public async Task OnActionExecutionAsync_WhenSelectedTypeDoesNotImplementInterceptor_ThrowsClearInvalidOperationException()
     {
@@ -318,6 +341,7 @@ public class MvcInterceptionFilterTests
             .WithMessage($"*必须实现*{typeof(IInterceptor).FullName}*");
     }
 
+    /// <summary>验证 AddMvcIntegration_ReturnsSameServicesAndRegistersMvcFilterAndCancellationTokenProvider 场景</summary>
     [Fact]
     public void AddMvcIntegration_ReturnsSameServicesAndRegistersMvcFilterAndCancellationTokenProvider()
     {
@@ -336,6 +360,7 @@ public class MvcInterceptionFilterTests
         hasActionInterceptionFilter.Should().BeTrue();
     }
 
+    /// <summary>验证 AddMvcIntegration_WhenCalledTwice_RegistersActionInterceptionFilterOnce 场景</summary>
     [Fact]
     public void AddMvcIntegration_WhenCalledTwice_RegistersActionInterceptionFilterOnce()
     {
@@ -349,6 +374,9 @@ public class MvcInterceptionFilterTests
         mvcOptions.Filters.Count(IsActionInterceptionFilter).Should().Be(1);
     }
 
+    /// <summary>验证 CreateServices 场景</summary>
+    /// <param name="interceptorTypes">interceptorTypes 参数</param>
+    /// <returns>CreateServices 的执行结果</returns>
     private static ServiceCollection CreateServices(IReadOnlyList<Type> interceptorTypes)
     {
         var services = new ServiceCollection();
@@ -359,6 +387,8 @@ public class MvcInterceptionFilterTests
         return services;
     }
 
+    /// <summary>验证 CreateAttributeSelectorServices 场景</summary>
+    /// <returns>CreateAttributeSelectorServices 的执行结果</returns>
     private static ServiceCollection CreateAttributeSelectorServices()
     {
         var services = new ServiceCollection();
@@ -369,9 +399,16 @@ public class MvcInterceptionFilterTests
         return services;
     }
 
+    /// <summary>验证 CreateActionContext 场景</summary>
+    /// <param name="actionName">actionName 参数</param>
+    /// <returns>CreateActionContext 的执行结果</returns>
     private static ActionContext CreateActionContext(string actionName) =>
         CreateActionContext<SampleController>(actionName);
 
+    /// <summary>验证 CreateActionContext 场景</summary>
+    /// <typeparam name="TController">TController 类型参数</typeparam>
+    /// <param name="actionName">actionName 参数</param>
+    /// <returns>CreateActionContext 的执行结果</returns>
     private static ActionContext CreateActionContext<TController>(string actionName)
     {
         var controllerType = typeof(TController);
@@ -388,12 +425,22 @@ public class MvcInterceptionFilterTests
         return new ActionContext(new DefaultHttpContext(), new RouteData(), actionDescriptor);
     }
 
+    /// <summary>验证 CreateExecutingContext 场景</summary>
+    /// <param name="actionContext">actionContext 参数</param>
+    /// <param name="actionArguments">actionArguments 参数</param>
+    /// <param name="controller">controller 参数</param>
+    /// <returns>CreateExecutingContext 的执行结果</returns>
     private static ActionExecutingContext CreateExecutingContext(
         ActionContext actionContext,
         IDictionary<string, object?> actionArguments,
         object controller) =>
         new(actionContext, [], actionArguments, controller);
 
+    /// <summary>验证 CreateExecutedContext 场景</summary>
+    /// <param name="actionContext">actionContext 参数</param>
+    /// <param name="controller">controller 参数</param>
+    /// <param name="result">result 参数</param>
+    /// <returns>CreateExecutedContext 的执行结果</returns>
     private static Task<ActionExecutedContext> CreateExecutedContext(
         ActionContext actionContext,
         object controller,
@@ -403,20 +450,35 @@ public class MvcInterceptionFilterTests
             Result = result,
         });
 
+    /// <summary>验证 IsActionInterceptionFilter 场景</summary>
+    /// <param name="filter">filter 参数</param>
+    /// <returns>IsActionInterceptionFilter 的执行结果</returns>
     private static bool IsActionInterceptionFilter(IFilterMetadata filter) =>
         filter is TypeFilterAttribute typeFilter
         && typeFilter.ImplementationType == typeof(TwActionInterceptionFilter);
 
+    /// <summary>验证 FixedInterceptorSelector 相关行为</summary>
     private sealed class FixedInterceptorSelector(IReadOnlyList<Type> interceptorTypes) : IInterceptorSelector
     {
+        /// <summary>验证 SelectInterceptors 场景</summary>
+        /// <param name="implementationType">implementationType 参数</param>
+        /// <param name="serviceType">serviceType 参数</param>
+        /// <param name="method">method 参数</param>
+        /// <returns>SelectInterceptors 的执行结果</returns>
         public IReadOnlyList<Type> SelectInterceptors(Type implementationType, Type serviceType, MethodInfo method) =>
             interceptorTypes;
     }
 
+    /// <summary>验证 CountingPipeline 相关行为</summary>
     private sealed class CountingPipeline : IInterceptorPipeline
     {
+        /// <summary>表示 InvokeCount 属性</summary>
         public int InvokeCount { get; private set; }
 
+        /// <summary>验证 InvokeAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <param name="interceptors">interceptors 参数</param>
+        /// <returns>InvokeAsync 的执行结果</returns>
         public ValueTask InvokeAsync(IInvocationContext context, IReadOnlyList<IInterceptor> interceptors)
         {
             InvokeCount++;
@@ -425,43 +487,69 @@ public class MvcInterceptionFilterTests
         }
     }
 
+    /// <summary>验证 SampleController 相关行为</summary>
     private sealed class SampleController
     {
+        /// <summary>验证 Echo 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Echo 的执行结果</returns>
         public IActionResult Echo(string value) => new OkObjectResult(value);
     }
 
+    /// <summary>验证 MethodInterceptController 相关行为</summary>
     private sealed class MethodInterceptController
     {
+        /// <summary>验证 Echo 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Echo 的执行结果</returns>
         [Intercept(typeof(AttributeRecordingInterceptor))]
         public IActionResult Echo(string value) => new OkObjectResult(value);
     }
 
+    /// <summary>验证 ControllerInterceptController 相关行为</summary>
     [Intercept(typeof(AttributeRecordingInterceptor))]
     private sealed class ControllerInterceptController
     {
+        /// <summary>验证 Echo 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Echo 的执行结果</returns>
         public IActionResult Echo(string value) => new OkObjectResult(value);
     }
 
+    /// <summary>验证 MethodDisableInterceptionController 相关行为</summary>
     [Intercept(typeof(AttributeRecordingInterceptor))]
     private sealed class MethodDisableInterceptionController
     {
+        /// <summary>验证 Echo 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Echo 的执行结果</returns>
         [DisableInterception]
         public IActionResult Echo(string value) => new OkObjectResult(value);
     }
 
+    /// <summary>验证 ControllerDisableInterceptionController 相关行为</summary>
     [Intercept(typeof(AttributeRecordingInterceptor))]
     [DisableInterception]
     private sealed class ControllerDisableInterceptionController
     {
+        /// <summary>验证 Echo 场景</summary>
+        /// <param name="value">value 参数</param>
+        /// <returns>Echo 的执行结果</returns>
         public IActionResult Echo(string value) => new OkObjectResult(value);
     }
 
+    /// <summary>验证 NonInterceptor 相关行为</summary>
     private sealed class NonInterceptor;
 
+    /// <summary>验证 RewriteArgumentInterceptor 相关行为</summary>
     private sealed class RewriteArgumentInterceptor : IInterceptor
     {
+        /// <summary>表示 WasCalled 属性</summary>
         public static bool WasCalled { get; set; }
 
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             WasCalled = true;
@@ -471,10 +559,15 @@ public class MvcInterceptionFilterTests
         }
     }
 
+    /// <summary>验证 AttributeRecordingInterceptor 相关行为</summary>
     private sealed class AttributeRecordingInterceptor : IInterceptor
     {
+        /// <summary>表示 CallCount 属性</summary>
         public static int CallCount { get; set; }
 
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             CallCount++;
@@ -483,10 +576,15 @@ public class MvcInterceptionFilterTests
         }
     }
 
+    /// <summary>验证 ShortCircuitInterceptor 相关行为</summary>
     private sealed class ShortCircuitInterceptor : IInterceptor
     {
+        /// <summary>表示 Result 字段</summary>
         public static readonly OkResult Result = new();
 
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public ValueTask InterceptAsync(IInvocationContext context)
         {
             context.ReturnValue = Result;
@@ -495,10 +593,15 @@ public class MvcInterceptionFilterTests
         }
     }
 
+    /// <summary>验证 ReplaceResultAfterProceedInterceptor 相关行为</summary>
     private sealed class ReplaceResultAfterProceedInterceptor : IInterceptor
     {
+        /// <summary>表示 Result 字段</summary>
         public static readonly OkObjectResult Result = new("replacement");
 
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             await context.ProceedAsync().ConfigureAwait(false);
@@ -507,10 +610,15 @@ public class MvcInterceptionFilterTests
         }
     }
 
+    /// <summary>验证 ConvertExceptionToResultInterceptor 相关行为</summary>
     private sealed class ConvertExceptionToResultInterceptor : IInterceptor
     {
+        /// <summary>表示 Result 字段</summary>
         public static readonly OkResult Result = new();
 
+        /// <summary>验证 InterceptAsync 场景</summary>
+        /// <param name="context">context 参数</param>
+        /// <returns>InterceptAsync 的执行结果</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             try

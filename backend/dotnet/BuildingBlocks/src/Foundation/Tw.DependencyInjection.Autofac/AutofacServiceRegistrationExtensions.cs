@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -127,6 +127,9 @@ public static class AutofacServiceRegistrationExtensions
         });
     }
 
+    /// <summary>执行 SafeGetTypes 操作</summary>
+    /// <param name="assembly">assembly 参数</param>
+    /// <returns>SafeGetTypes 的执行结果</returns>
     private static IReadOnlyList<Type> SafeGetTypes(Assembly assembly)
     {
         try

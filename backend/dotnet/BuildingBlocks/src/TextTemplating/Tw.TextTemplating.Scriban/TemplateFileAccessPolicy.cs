@@ -1,4 +1,4 @@
-namespace Tw.TextTemplating.Scriban;
+﻿namespace Tw.TextTemplating.Scriban;
 
 /// <summary>
 /// 模板文件访问越界异常
@@ -19,6 +19,7 @@ public sealed class TemplateFileAccessException : Exception
 /// </summary>
 public sealed class TemplateFileAccessPolicy
 {
+    /// <summary>表示 _allowedRoots 字段</summary>
     private readonly string[] _allowedRoots;
 
     /// <summary>
@@ -52,6 +53,9 @@ public sealed class TemplateFileAccessPolicy
         throw new TemplateFileAccessException();
     }
 
+    /// <summary>执行 NormalizeRoot 操作</summary>
+    /// <param name="root">root 参数</param>
+    /// <returns>NormalizeRoot 的执行结果</returns>
     private static string NormalizeRoot(string root)
     {
         var fullPath = Path.GetFullPath(root);

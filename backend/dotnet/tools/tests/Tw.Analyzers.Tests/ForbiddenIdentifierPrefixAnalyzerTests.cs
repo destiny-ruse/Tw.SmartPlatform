@@ -1,4 +1,4 @@
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using AwesomeAssertions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -8,8 +8,11 @@ using Xunit;
 
 namespace Tw.Analyzers.Tests;
 
+/// <summary>验证 ForbiddenIdentifierPrefixAnalyzerTests 相关行为</summary>
 public sealed class ForbiddenIdentifierPrefixAnalyzerTests
 {
+    /// <summary>验证 ReportsTwPrefixExceptTwException 场景</summary>
+    /// <returns>ReportsTwPrefixExceptTwException 的执行结果</returns>
     [Fact]
     public async Task ReportsTwPrefixExceptTwException()
     {

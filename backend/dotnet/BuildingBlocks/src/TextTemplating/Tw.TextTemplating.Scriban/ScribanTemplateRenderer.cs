@@ -1,4 +1,4 @@
-using Scriban;
+﻿using Scriban;
 using Scriban.Runtime;
 using Scriban.Syntax;
 using Tw.TextTemplating;
@@ -60,6 +60,9 @@ public sealed class ScribanTemplateRenderer : ITemplateRenderer
         }
     }
 
+    /// <summary>执行 CreateContext 操作</summary>
+    /// <param name="variables">variables 参数</param>
+    /// <returns>CreateContext 的执行结果</returns>
     private static TemplateContext CreateContext(IReadOnlyDictionary<string, object?> variables)
     {
         var scriptObject = new ScriptObject();

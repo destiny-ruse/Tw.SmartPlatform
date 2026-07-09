@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.AspNetCore.Security;
 using Xunit;
 
 namespace Tw.AspNetCore.Tests.Security;
 
+/// <summary>验证 AuthenticationBoundaryOptionsTests 相关行为</summary>
 public sealed class AuthenticationBoundaryOptionsTests
 {
+    /// <summary>验证 Validate_RejectsMissingIssuer 场景</summary>
     [Fact]
     public void Validate_RejectsMissingIssuer()
     {

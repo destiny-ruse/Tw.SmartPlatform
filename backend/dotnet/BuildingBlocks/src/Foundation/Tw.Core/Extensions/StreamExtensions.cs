@@ -1,10 +1,11 @@
-using System.Text;
+﻿using System.Text;
 
 namespace Tw.Extensions;
 
 /// <summary>提供流扩展方法</summary>
 public static class StreamExtensions
 {
+    /// <summary>表示 DefaultEncoding 字段</summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
 
     /// <summary>从流当前位置读取所有字节，且不释放该流</summary>

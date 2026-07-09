@@ -1,12 +1,14 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Gateway;
 using Tw.Gateway.Yarp;
 using Xunit;
 
 namespace Tw.Gateway.Yarp.Tests;
 
+/// <summary>验证 YarpRouteValidationTests 相关行为</summary>
 public sealed class YarpRouteValidationTests
 {
+    /// <summary>验证 Validate_RejectsStrictGlobalLimitWithGatewayLocalLimit 场景</summary>
     [Fact]
     public void Validate_RejectsStrictGlobalLimitWithGatewayLocalLimit()
     {

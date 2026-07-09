@@ -1,10 +1,11 @@
-namespace Tw.Security.DataMasking;
+﻿namespace Tw.Security.DataMasking;
 
 /// <summary>
 /// 防止脱敏展示值被写回敏感字段
 /// </summary>
 public sealed class MaskWriteBackGuard
 {
+    /// <summary>表示 _detector 字段</summary>
     private readonly ISensitiveValueDetector _detector;
 
     /// <summary>

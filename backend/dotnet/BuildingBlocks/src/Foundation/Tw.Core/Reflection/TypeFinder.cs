@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Tw.Reflection;
 
@@ -7,6 +7,7 @@ namespace Tw.Reflection;
 /// </summary>
 public sealed class TypeFinder : ITypeFinder
 {
+    /// <summary>表示 SkippedAssemblyNamePrefixes 字段</summary>
     private static readonly string[] SkippedAssemblyNamePrefixes = ["System", "Microsoft", "Windows"];
 
     /// <summary>
@@ -69,6 +70,9 @@ public sealed class TypeFinder : ITypeFinder
         return FindTypes(typeof(TBaseType));
     }
 
+    /// <summary>执行 ShouldSkipAssembly 操作</summary>
+    /// <param name="assembly">assembly 参数</param>
+    /// <returns>ShouldSkipAssembly 的执行结果</returns>
     private static bool ShouldSkipAssembly(Assembly assembly)
     {
         var assemblyName = assembly.GetName().Name;
@@ -79,6 +83,9 @@ public sealed class TypeFinder : ITypeFinder
                 || assemblyName.StartsWith(prefix + ".", StringComparison.Ordinal));
     }
 
+    /// <summary>执行 GetLoadableTypes 操作</summary>
+    /// <param name="assembly">assembly 参数</param>
+    /// <returns>GetLoadableTypes 的执行结果</returns>
     private static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
     {
         try
@@ -91,6 +98,9 @@ public sealed class TypeFinder : ITypeFinder
         }
     }
 
+    /// <summary>执行 IsConcrete 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>IsConcrete 的执行结果</returns>
     private static bool IsConcrete(Type type)
     {
         return !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;

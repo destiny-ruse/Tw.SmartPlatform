@@ -12,6 +12,7 @@ namespace Tw.AspNetCore.Mvc.Context;
 /// </remarks>
 public sealed class HttpContextCancellationTokenProvider : CancellationTokenProviderBase
 {
+    /// <summary>表示 _httpContextAccessor 字段</summary>
     private readonly IHttpContextAccessor _httpContextAccessor;
 
     /// <summary>

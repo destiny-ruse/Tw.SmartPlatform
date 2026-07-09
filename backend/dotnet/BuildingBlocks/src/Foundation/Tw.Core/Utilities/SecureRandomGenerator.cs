@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 
 namespace Tw.Utilities;
 
@@ -7,11 +7,17 @@ namespace Tw.Utilities;
 /// </summary>
 public static class SecureRandomGenerator
 {
+    /// <summary>表示 LowercaseChars 常量</summary>
     private const string LowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    /// <summary>表示 UppercaseChars 常量</summary>
     private const string UppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    /// <summary>表示 NumericChars 常量</summary>
     private const string NumericChars = "0123456789";
+    /// <summary>表示 AlphaChars 常量</summary>
     private const string AlphaChars = LowercaseChars + UppercaseChars;
+    /// <summary>表示 AlphanumericChars 常量</summary>
     private const string AlphanumericChars = AlphaChars + NumericChars;
+    /// <summary>表示 SpecialChars 常量</summary>
     private const string SpecialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
     /// <summary>
@@ -328,6 +334,11 @@ public static class SecureRandomGenerator
         return result;
     }
 
+    /// <summary>执行 EnsureMinLessThanMax 操作</summary>
+    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <param name="minValue">minValue 参数</param>
+    /// <param name="maxValue">maxValue 参数</param>
+    /// <param name="parameterName">parameterName 参数</param>
     private static void EnsureMinLessThanMax<T>(T minValue, T maxValue, string parameterName)
         where T : IComparable<T>
     {
@@ -337,6 +348,9 @@ public static class SecureRandomGenerator
         }
     }
 
+    /// <summary>执行 EnsureFinite 操作</summary>
+    /// <param name="value">value 参数</param>
+    /// <param name="parameterName">parameterName 参数</param>
     private static void EnsureFinite(double value, string parameterName)
     {
         if (!double.IsFinite(value))
@@ -345,6 +359,9 @@ public static class SecureRandomGenerator
         }
     }
 
+    /// <summary>执行 GetRandomChar 操作</summary>
+    /// <param name="chars">chars 参数</param>
+    /// <returns>GetRandomChar 的执行结果</returns>
     private static char GetRandomChar(string chars)
     {
         return chars[GetInt(chars.Length)];

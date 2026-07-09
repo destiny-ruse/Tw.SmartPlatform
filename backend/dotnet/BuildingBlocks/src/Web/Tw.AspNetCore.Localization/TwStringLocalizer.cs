@@ -16,9 +16,13 @@ namespace Tw.AspNetCore.Localization;
 /// </remarks>
 public sealed class TwStringLocalizer : IStringLocalizer
 {
+    /// <summary>表示 _snapshot 字段</summary>
     private readonly IStaticTextSnapshot _snapshot;
+    /// <summary>表示 _accessor 字段</summary>
     private readonly ICurrentLocalizationContextAccessor _accessor;
+    /// <summary>表示 _options 字段</summary>
     private readonly TwLocalizationOptions _options;
+    /// <summary>表示 _resourceName 字段</summary>
     private readonly string _resourceName;
 
     /// <summary>
@@ -47,7 +51,7 @@ public sealed class TwStringLocalizer : IStringLocalizer
     }
 
     /// <summary>
-    /// 获取指定名称的本地化字符串
+    /// 指定名称对应的本地化字符串
     /// </summary>
     /// <param name="name">文本键名</param>
     /// <returns>
@@ -70,7 +74,7 @@ public sealed class TwStringLocalizer : IStringLocalizer
     }
 
     /// <summary>
-    /// 获取指定名称的本地化字符串，并以 <paramref name="arguments"/> 格式化占位符
+    /// 指定名称对应的本地化字符串，并以 <paramref name="arguments"/> 格式化占位符
     /// </summary>
     /// <param name="name">文本键名</param>
     /// <param name="arguments">格式化参数，传递给 <see cref="string.Format(IFormatProvider, string, object[])"/></param>
@@ -123,6 +127,8 @@ public sealed class TwStringLocalizer : IStringLocalizer
     }
 
     // 构建当前请求的文化候选列表；上下文未设置时退回默认文化
+    /// <summary>执行 BuildCandidates 操作</summary>
+    /// <returns>BuildCandidates 的执行结果</returns>
     private IReadOnlyList<string> BuildCandidates()
     {
         var context = _accessor.Current ?? new LocalizationContext(_options.DefaultCulture);

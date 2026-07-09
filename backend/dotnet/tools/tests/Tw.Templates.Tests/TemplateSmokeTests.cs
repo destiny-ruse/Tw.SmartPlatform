@@ -1,10 +1,12 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Xunit;
 
 namespace Tw.Templates.Tests;
 
+/// <summary>验证 TemplateSmokeTests 相关行为</summary>
 public sealed class TemplateSmokeTests
 {
+    /// <summary>验证 ServiceTemplate_DoesNotReferenceForbiddenPackages 场景</summary>
     [Fact]
     public void ServiceTemplate_DoesNotReferenceForbiddenPackages()
     {
@@ -18,6 +20,8 @@ public sealed class TemplateSmokeTests
         text.Should().NotContain("MassTransit");
     }
 
+    /// <summary>验证 FindToolRoot 场景</summary>
+    /// <returns>FindToolRoot 的执行结果</returns>
     private static string FindToolRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

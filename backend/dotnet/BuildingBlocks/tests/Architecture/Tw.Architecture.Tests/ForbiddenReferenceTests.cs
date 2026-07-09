@@ -1,11 +1,13 @@
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using AwesomeAssertions;
 using Xunit;
 
 namespace Tw.Architecture.Tests;
 
+/// <summary>验证 ForbiddenReferenceTests 相关行为</summary>
 public sealed class ForbiddenReferenceTests
 {
+    /// <summary>验证 RuntimeProjects_DoNotReferenceTestingPackages 场景</summary>
     [Fact]
     public void RuntimeProjects_DoNotReferenceTestingPackages()
     {
@@ -24,6 +26,7 @@ public sealed class ForbiddenReferenceTests
         }
     }
 
+    /// <summary>验证 GatewayYarp_DoesNotReferenceApplicationDataOrEventBusPackages 场景</summary>
     [Fact]
     public void GatewayYarp_DoesNotReferenceApplicationDataOrEventBusPackages()
     {

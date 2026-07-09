@@ -5,8 +5,10 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
+/// <summary>验证 LocalizationModelsTests 相关行为</summary>
 public sealed class LocalizationModelsTests
 {
+    /// <summary>验证 LanguageInfo_DefaultsUiCultureToCulture 场景</summary>
     [Fact]
     public void LanguageInfo_DefaultsUiCultureToCulture()
     {
@@ -17,6 +19,7 @@ public sealed class LocalizationModelsTests
         language.SortOrder.Should().Be(0);
     }
 
+    /// <summary>验证 LocalizedText_NotFound_ReturnsKeyAsValue 场景</summary>
     [Fact]
     public void LocalizedText_NotFound_ReturnsKeyAsValue()
     {
@@ -30,6 +33,7 @@ public sealed class LocalizationModelsTests
         text.Source.Should().Be(LocalizedTextSource.NotFound);
     }
 
+    /// <summary>验证 EntityTranslationKey_UsesValueEquality 场景</summary>
     [Fact]
     public void EntityTranslationKey_UsesValueEquality()
     {
@@ -39,6 +43,7 @@ public sealed class LocalizationModelsTests
         left.Should().Be(right);
     }
 
+    /// <summary>验证 BatchQuery_ReusesContext 场景</summary>
     [Fact]
     public void BatchQuery_ReusesContext()
     {

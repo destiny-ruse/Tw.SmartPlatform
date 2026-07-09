@@ -7,8 +7,10 @@ using Xunit;
 
 namespace Tw.AspNetCore.Grpc.Tests.DependencyInjection;
 
+/// <summary>验证 GrpcIntegrationServiceCollectionExtensionsTests 相关行为</summary>
 public class GrpcIntegrationServiceCollectionExtensionsTests
 {
+    /// <summary>验证 AddGrpcIntegration_RegistersGrpcServices 场景</summary>
     [Fact]
     public void AddGrpcIntegration_RegistersGrpcServices()
     {
@@ -27,6 +29,7 @@ public class GrpcIntegrationServiceCollectionExtensionsTests
             descriptor.ServiceType.GetGenericTypeDefinition() == typeof(IGrpcInterceptorActivator<>));
     }
 
+    /// <summary>验证 AddGrpcIntegration_ThrowsArgumentNullException_WhenServicesIsNull 场景</summary>
     [Fact]
     public void AddGrpcIntegration_ThrowsArgumentNullException_WhenServicesIsNull()
     {

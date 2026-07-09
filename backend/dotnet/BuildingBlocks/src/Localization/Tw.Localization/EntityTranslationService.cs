@@ -9,8 +9,11 @@ namespace Tw.Localization;
 /// </summary>
 public sealed class EntityTranslationService : IEntityTranslationService
 {
+    /// <summary>表示 _store 字段</summary>
     private readonly IEntityTranslationStore _store;
+    /// <summary>表示 _options 字段</summary>
     private readonly LocalizationOptions _options;
+    /// <summary>表示 _cancellationTokenProvider 字段</summary>
     private readonly ICancellationTokenProvider _cancellationTokenProvider;
 
     /// <summary>

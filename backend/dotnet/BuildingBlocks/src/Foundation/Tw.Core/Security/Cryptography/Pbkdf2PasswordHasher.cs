@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using Tw.Core;
@@ -13,10 +13,15 @@ namespace Tw.Core.Security.Cryptography;
 /// </remarks>
 public static class Pbkdf2PasswordHasher
 {
+    /// <summary>表示 MinimumSaltLength 常量</summary>
     private const int MinimumSaltLength = 8;
+    /// <summary>表示 HashPartSeparator 常量</summary>
     private const char HashPartSeparator = '$';
+    /// <summary>表示 FormatMarker 常量</summary>
     private const string FormatMarker = "PBKDF2";
+    /// <summary>表示 DefaultEncoding 字段</summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
+    /// <summary>表示 DefaultHashAlgorithm 字段</summary>
     private static readonly HashAlgorithmName DefaultHashAlgorithm = HashAlgorithmName.SHA256;
 
     /// <summary>从密码字符串派生 PBKDF2 密钥并以 Base64 返回</summary>
@@ -183,6 +188,10 @@ public static class Pbkdf2PasswordHasher
         return HexEncoding.ToHex(key, useUpperCase);
     }
 
+    /// <summary>执行 TryParseHash 操作</summary>
+    /// <param name="hashedPassword">hashedPassword 参数</param>
+    /// <param name="parsedHash">parsedHash 参数</param>
+    /// <returns>TryParseHash 的执行结果</returns>
     private static bool TryParseHash(string hashedPassword, out ParsedPasswordHash parsedHash)
     {
         parsedHash = default;
@@ -229,6 +238,9 @@ public static class Pbkdf2PasswordHasher
         return true;
     }
 
+    /// <summary>执行 IsSupportedHashAlgorithm 操作</summary>
+    /// <param name="hashAlgorithm">hashAlgorithm 参数</param>
+    /// <returns>IsSupportedHashAlgorithm 的执行结果</returns>
     private static bool IsSupportedHashAlgorithm(HashAlgorithmName hashAlgorithm)
     {
         return hashAlgorithm.Equals(HashAlgorithmName.SHA1) ||
@@ -237,6 +249,7 @@ public static class Pbkdf2PasswordHasher
             hashAlgorithm.Equals(HashAlgorithmName.SHA512);
     }
 
+    /// <summary>表示 ParsedPasswordHash 声明</summary>
     private readonly record struct ParsedPasswordHash(
         HashAlgorithmName HashAlgorithm,
         int Iterations,

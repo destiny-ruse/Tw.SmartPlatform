@@ -1,13 +1,18 @@
-using MediatR;
+﻿using MediatR;
 
 namespace Tw.BackgroundJobs;
 
+/// <summary>表示 BackgroundJobPipeline 类型</summary>
 public sealed class BackgroundJobPipeline(
     ISender sender,
     IBackgroundJobAuditSink auditSink,
     IBackgroundJobTraceSink traceSink,
     IBackgroundJobMetricSink metricSink)
 {
+    /// <summary>执行 ExecuteAsync 操作</summary>
+    /// <param name="command">command 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>ExecuteAsync 的执行结果</returns>
     public async Task ExecuteAsync(BackgroundJobCommand command, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(command);

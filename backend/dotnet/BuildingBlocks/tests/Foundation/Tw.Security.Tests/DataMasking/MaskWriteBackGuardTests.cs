@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Security.DataMasking;
 using Xunit;
 
 namespace Tw.Security.Tests.DataMasking;
 
+/// <summary>验证 MaskWriteBackGuardTests 相关行为</summary>
 public sealed class MaskWriteBackGuardTests
 {
+    /// <summary>验证 EnsureNotMaskedValue_RejectsMaskedPhoneWriteBack 场景</summary>
     [Fact]
     public void EnsureNotMaskedValue_RejectsMaskedPhoneWriteBack()
     {

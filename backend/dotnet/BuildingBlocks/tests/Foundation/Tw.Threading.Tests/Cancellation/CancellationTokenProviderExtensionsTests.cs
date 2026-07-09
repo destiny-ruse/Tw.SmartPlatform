@@ -4,13 +4,17 @@ using Xunit;
 
 namespace Tw.Threading.Tests.Cancellation;
 
+/// <summary>验证 CancellationTokenProviderExtensionsTests 相关行为</summary>
 public class CancellationTokenProviderExtensionsTests
 {
+    /// <summary>验证 CreateProvider 场景</summary>
+    /// <returns>CreateProvider 的执行结果</returns>
     private static NullCancellationTokenProvider CreateProvider()
     {
         return new NullCancellationTokenProvider(new AsyncLocalCancellationTokenScopeProvider());
     }
 
+    /// <summary>验证 FallbackToProvider_ReturnsExplicitToken_WhenProvided 场景</summary>
     [Fact]
     public void FallbackToProvider_ReturnsExplicitToken_WhenProvided()
     {
@@ -22,6 +26,7 @@ public class CancellationTokenProviderExtensionsTests
         result.Should().Be(explicitCts.Token);
     }
 
+    /// <summary>验证 FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsDefault 场景</summary>
     [Fact]
     public void FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsDefault()
     {
@@ -38,6 +43,7 @@ public class CancellationTokenProviderExtensionsTests
         }
     }
 
+    /// <summary>验证 FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsNone 场景</summary>
     [Fact]
     public void FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsNone()
     {

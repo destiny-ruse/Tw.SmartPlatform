@@ -1,12 +1,15 @@
-namespace Tw.Settings;
+﻿namespace Tw.Settings;
 
 /// <summary>
 /// 按 user、tenant、service、definition default 顺序解析 Setting 值的读取服务
 /// </summary>
 public sealed class SettingProvider : ISettingProvider
 {
+    /// <summary>表示 _store 字段</summary>
     private readonly ISettingStore _store;
+    /// <summary>表示 _cache 字段</summary>
     private readonly ISettingCache _cache;
+    /// <summary>表示 _definitions 字段</summary>
     private readonly IReadOnlyDictionary<string, SettingDefinition> _definitions;
 
     /// <summary>
@@ -60,6 +63,12 @@ public sealed class SettingProvider : ISettingProvider
             cancellationToken);
     }
 
+    /// <summary>执行 FindValueAsync 操作</summary>
+    /// <param name="name">name 参数</param>
+    /// <param name="scope">scope 参数</param>
+    /// <param name="scopeKey">scopeKey 参数</param>
+    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <returns>FindValueAsync 的执行结果</returns>
     private async Task<SettingValue?> FindValueAsync(
         string name,
         SettingScope scope,

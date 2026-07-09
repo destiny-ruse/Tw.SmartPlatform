@@ -12,6 +12,7 @@ namespace Tw.DependencyInjection.Configuration;
 /// </summary>
 internal static class OptionsBindingExecutor
 {
+    /// <summary>表示 ApplyOneMethod 字段</summary>
     private static readonly MethodInfo ApplyOneMethod = typeof(OptionsBindingExecutor)
         .GetMethod(nameof(ApplyOne), BindingFlags.NonPublic | BindingFlags.Static)!;
 
@@ -46,6 +47,11 @@ internal static class OptionsBindingExecutor
         }
     }
 
+    /// <summary>执行 ApplyOne 操作</summary>
+    /// <typeparam name="TOptions">TOptions 类型参数</typeparam>
+    /// <param name="services">services 参数</param>
+    /// <param name="configuration">configuration 参数</param>
+    /// <param name="candidate">candidate 参数</param>
     private static void ApplyOne<TOptions>(
         IServiceCollection services,
         IConfiguration configuration,

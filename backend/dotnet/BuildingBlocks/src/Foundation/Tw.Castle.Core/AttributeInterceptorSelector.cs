@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Tw.Castle.Core.Abstractions;
 
 namespace Tw.Castle.Core;
@@ -48,6 +48,9 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
             .ToArray();
     }
 
+    /// <summary>执行 AddInterceptorTypes 操作</summary>
+    /// <param name="member">member 参数</param>
+    /// <param name="interceptorTypes">interceptorTypes 参数</param>
     private static void AddInterceptorTypes(MemberInfo member, ICollection<Type> interceptorTypes)
     {
         foreach (var attribute in member.GetCustomAttributes<InterceptAttribute>(inherit: true))
@@ -56,12 +59,23 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         }
     }
 
+    /// <summary>执行 IsInterceptionDisabled 操作</summary>
+    /// <param name="member">member 参数</param>
+    /// <returns>IsInterceptionDisabled 的执行结果</returns>
     private static bool IsInterceptionDisabled(MemberInfo member) =>
         member.IsDefined(typeof(DisableInterceptionAttribute), inherit: true);
 
+    /// <summary>执行 GetInterceptorOrder 操作</summary>
+    /// <param name="interceptorType">interceptorType 参数</param>
+    /// <returns>GetInterceptorOrder 的执行结果</returns>
     private static int GetInterceptorOrder(Type interceptorType) =>
         interceptorType.GetCustomAttribute<InterceptorOrderAttribute>(inherit: false)?.Order ?? 0;
 
+    /// <summary>执行 ResolveRelatedMethods 操作</summary>
+    /// <param name="implementationType">implementationType 参数</param>
+    /// <param name="serviceType">serviceType 参数</param>
+    /// <param name="method">method 参数</param>
+    /// <returns>ResolveRelatedMethods 的执行结果</returns>
     private static IReadOnlyList<MethodInfo> ResolveRelatedMethods(
         Type implementationType,
         Type serviceType,
@@ -97,6 +111,9 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         return methods;
     }
 
+    /// <summary>执行 EnumerateServiceInterfaces 操作</summary>
+    /// <param name="serviceType">serviceType 参数</param>
+    /// <returns>EnumerateServiceInterfaces 的执行结果</returns>
     private static IEnumerable<Type> EnumerateServiceInterfaces(Type serviceType)
     {
         if (!serviceType.IsInterface)
@@ -112,6 +129,9 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         }
     }
 
+    /// <summary>执行 AddMethod 操作</summary>
+    /// <param name="methods">methods 参数</param>
+    /// <param name="method">method 参数</param>
     private static void AddMethod(ICollection<MethodInfo> methods, MethodInfo method)
     {
         if (methods.Any(existingMethod => IsSameMethod(existingMethod, method)))
@@ -122,6 +142,10 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         methods.Add(method);
     }
 
+    /// <summary>执行 IsSameMethod 操作</summary>
+    /// <param name="left">left 参数</param>
+    /// <param name="right">right 参数</param>
+    /// <returns>IsSameMethod 的执行结果</returns>
     private static bool IsSameMethod(MethodInfo left, MethodInfo right) =>
         Equals(left, right) || (left.Module == right.Module && left.MetadataToken == right.MetadataToken);
 }

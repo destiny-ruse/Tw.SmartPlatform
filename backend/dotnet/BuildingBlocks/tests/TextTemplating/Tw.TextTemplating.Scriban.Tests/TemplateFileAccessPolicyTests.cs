@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.TextTemplating.Scriban;
 using Xunit;
 
 namespace Tw.TextTemplating.Scriban.Tests;
 
+/// <summary>验证 TemplateFileAccessPolicyTests 相关行为</summary>
 public sealed class TemplateFileAccessPolicyTests
 {
+    /// <summary>验证 Validate_RejectsPathOutsideRegisteredRoot 场景</summary>
     [Fact]
     public void Validate_RejectsPathOutsideRegisteredRoot()
     {

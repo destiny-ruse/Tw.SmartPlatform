@@ -8,42 +8,42 @@ namespace Tw.Localization;
 public sealed class LocalizationOptions
 {
     /// <summary>
-    /// 获取或设置系统默认文化的 BCP 47 名称；当所有回退均失败时使用该文化。默认为 "en-US"
+    /// 系统默认文化的 BCP 47 名称；当所有回退均失败时使用该文化，默认为 "en-US"
     /// </summary>
     public string DefaultCulture { get; set; } = "en-US";
 
     /// <summary>
-    /// 获取已支持文化的 BCP 47 名称列表
+    /// 已支持文化的 BCP 47 名称列表
     /// </summary>
     public List<string> SupportedCultures { get; } = [];
 
     /// <summary>
-    /// 获取 JSON 资源文件的路径列表
+    /// JSON 资源文件的路径列表
     /// </summary>
     public List<string> JsonResourcePaths { get; } = [];
 
     /// <summary>
-    /// 获取或设置一个值，指示是否在运行时监视 JSON 资源文件的变更；默认为 <see langword="false"/>
+    /// 运行时监视 JSON 资源文件变更的开关；默认为 <see langword="false"/>
     /// </summary>
     public bool WatchJsonFiles { get; set; }
 
     /// <summary>
-    /// 获取或设置当本地化键缺失时的回退行为；默认为 <see cref="MissingTextBehavior.ReturnKey"/>
+    /// 本地化键缺失时的回退行为；默认为 <see cref="MissingTextBehavior.ReturnKey"/>
     /// </summary>
     public MissingTextBehavior MissingTextBehavior { get; set; } = MissingTextBehavior.ReturnKey;
 
     /// <summary>
-    /// 获取或设置一个值，指示系统层面是否允许回退到父文化；默认为 <see langword="true"/>
+    /// 系统层面回退到父文化的开关；默认为 <see langword="true"/>
     /// </summary>
     public bool FallbackToParentCultures { get; set; } = true;
 
     /// <summary>
-    /// 获取或设置一个值，指示系统层面是否允许回退到默认文化；默认为 <see langword="true"/>
+    /// 系统层面回退到默认文化的开关；默认为 <see langword="true"/>
     /// </summary>
     public bool FallbackToDefaultCulture { get; set; } = true;
 
     /// <summary>
-    /// 获取或设置一个值，指示是否允许不同资源文件包含相同的键；默认为 <see langword="true"/>
+    /// 不同资源文件包含相同键的允许策略；默认为 <see langword="true"/>
     /// </summary>
     public bool AllowDuplicateResourceKeys { get; set; } = true;
 

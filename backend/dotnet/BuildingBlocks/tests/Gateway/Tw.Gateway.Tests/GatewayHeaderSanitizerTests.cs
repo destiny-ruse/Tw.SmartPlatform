@@ -1,11 +1,13 @@
-using AwesomeAssertions;
+﻿using AwesomeAssertions;
 using Tw.Gateway;
 using Xunit;
 
 namespace Tw.Gateway.Tests;
 
+/// <summary>验证 GatewayHeaderSanitizerTests 相关行为</summary>
 public sealed class GatewayHeaderSanitizerTests
 {
+    /// <summary>验证 Sanitize_RemovesCallerSuppliedIdentityTenantPermissionAndRoleHeaders 场景</summary>
     [Fact]
     public void Sanitize_RemovesCallerSuppliedIdentityTenantPermissionAndRoleHeaders()
     {

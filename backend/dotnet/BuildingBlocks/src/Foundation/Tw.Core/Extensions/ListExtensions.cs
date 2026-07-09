@@ -1,4 +1,4 @@
-namespace Tw.Extensions;
+﻿namespace Tw.Extensions;
 
 /// <summary>提供可变列表扩展方法</summary>
 public static class ListExtensions
@@ -253,6 +253,11 @@ public static class ListExtensions
         list.Insert(targetIndex, item);
     }
 
+    /// <summary>执行 FindRequiredIndex 操作</summary>
+    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <param name="source">source 参数</param>
+    /// <param name="selector">selector 参数</param>
+    /// <returns>FindRequiredIndex 的执行结果</returns>
     private static int FindRequiredIndex<T>(this IList<T> source, Predicate<T> selector)
     {
         var index = source.FindIndex(selector);

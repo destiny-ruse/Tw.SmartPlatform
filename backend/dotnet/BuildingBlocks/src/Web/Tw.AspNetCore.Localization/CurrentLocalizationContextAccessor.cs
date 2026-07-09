@@ -8,7 +8,7 @@ namespace Tw.AspNetCore.Localization;
 public sealed class CurrentLocalizationContextAccessor : ICurrentLocalizationContextAccessor
 {
     /// <summary>
-    /// 获取或设置当前请求的 <see cref="LocalizationContext"/>；未设置时为 <see langword="null"/>
+    /// 当前请求的 <see cref="LocalizationContext"/>；未指定时为 <see langword="null"/>
     /// </summary>
     public LocalizationContext? Current { get; set; }
 }

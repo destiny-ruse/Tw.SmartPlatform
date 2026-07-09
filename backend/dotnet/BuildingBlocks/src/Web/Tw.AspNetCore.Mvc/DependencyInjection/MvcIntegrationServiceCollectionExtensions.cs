@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -42,6 +42,10 @@ public static class MvcIntegrationServiceCollectionExtensions
         return services;
     }
 
+    /// <summary>执行 IsInterceptionFilter 操作</summary>
+    /// <typeparam name="TFilter">TFilter 类型参数</typeparam>
+    /// <param name="filter">filter 参数</param>
+    /// <returns>IsInterceptionFilter 的执行结果</returns>
     private static bool IsInterceptionFilter<TFilter>(IFilterMetadata filter) =>
         filter is TypeFilterAttribute typeFilter
         && typeFilter.ImplementationType == typeof(TFilter);

@@ -1,4 +1,4 @@
-namespace Tw.Reflection;
+﻿namespace Tw.Reflection;
 
 /// <summary>
 /// 为 <see cref="ITypeFinder"/> 提供不依赖额外组件的便利方法
@@ -44,6 +44,9 @@ public static class TypeFinderExtensions
         return Check.NotNull(typeFinder).FindTypes(baseType);
     }
 
+    /// <summary>执行 IsConcrete 操作</summary>
+    /// <param name="type">type 参数</param>
+    /// <returns>IsConcrete 的执行结果</returns>
     private static bool IsConcrete(Type type)
     {
         return !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;
