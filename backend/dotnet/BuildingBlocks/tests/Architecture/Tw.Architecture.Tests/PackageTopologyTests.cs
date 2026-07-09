@@ -82,6 +82,17 @@ public sealed class PackageTopologyTests
         toolProjects.Should().OnlyContain(path => IsToolProjectInSrcOrTests(path), "tools projects must use tools/src/<Project> or tools/tests/<Project>");
     }
 
+    /// <summary>验证 DotnetTestProjectClassification_DoesNotTreatTestBasePackagesAsExecutableTests 场景</summary>
+    [Fact]
+    public void DotnetTestProjectClassification_DoesNotTreatTestBasePackagesAsExecutableTests()
+    {
+        var directoryBuildProps = File.ReadAllText(Path.Combine(RepositoryLayout.DotnetRoot, "Directory.Build.props"));
+
+        directoryBuildProps.Should().NotContain(
+            "EndsWith('.TestBase')",
+            "TestBase source packages provide reusable fixtures and must not be executed as VSTest projects by solution-level dotnet test");
+    }
+
     /// <summary>验证 ForbiddenPackages_DoNotExist 场景</summary>
     [Fact]
     public void ForbiddenPackages_DoNotExist()

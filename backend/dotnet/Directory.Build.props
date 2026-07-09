@@ -6,7 +6,7 @@
     <WarningsAsErrors>Nullable</WarningsAsErrors>
 	  <LangVersion>latest</LangVersion>
 	
-    <IsTestProject Condition="$(MSBuildProjectName.EndsWith('.Tests')) or $(MSBuildProjectName.EndsWith('.TestBase'))">true</IsTestProject>
+    <IsTestProject Condition="$(MSBuildProjectName.EndsWith('.Tests'))">true</IsTestProject>
     
     <!-- 开启 NuGet 锁定文件 -->
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
