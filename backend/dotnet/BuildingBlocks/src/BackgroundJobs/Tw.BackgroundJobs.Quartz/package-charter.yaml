@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.BackgroundJobs.Quartz
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Quartz scheduler adapter, Cron validation, scheduler store options, and job control service.
+in_scope:
+  - Cron validation
+  - Quartz scheduler adapter
+  - job control service
+out_of_scope:
+  - business job handlers
+public_capabilities:
+  - Tw.BackgroundJobs.Quartz
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.BackgroundJobs
+    - Tw.BackgroundJobs.Abstractions
+    - Quartz

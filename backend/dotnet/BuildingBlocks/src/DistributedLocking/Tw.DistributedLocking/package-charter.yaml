@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+package: Tw.DistributedLocking
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Tenant and shard aware distributed lock key construction.
+in_scope:
+  - distributed lock key builder
+out_of_scope:
+  - Redis implementation
+public_capabilities:
+  - Tw.DistributedLocking
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.DistributedLocking.Abstractions

@@ -1,0 +1,10 @@
+package: Tw.Sample
+kind: building-block
+owner: dotnet-framework
+lifecycle: draft
+purpose: Replace with the package purpose before publishing.
+public_api: []
+allowed_dependencies: []
+forbidden_dependencies:
+  - test-only packages
+  - retired framework package names

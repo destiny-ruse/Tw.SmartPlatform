@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Company.Service.Domain\Company.Service.Domain.csproj" />
+    <ProjectReference Include="..\Company.Service.Application.Contracts\Company.Service.Application.Contracts.csproj" />
+  </ItemGroup>
+</Project>

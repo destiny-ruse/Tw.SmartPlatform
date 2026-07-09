@@ -8,6 +8,10 @@ responsibility: >
   MVC action 与 Razor Page handler 的 filter AOP adapter，
   以及面向 MVC/Razor Pages 的统一拦截 pipeline 接入。
 in_scope:
+  - MVC model binding errors
+  - unified API response contracts
+  - API Versioning URL Segment registration
+  - CSRF and antiforgery validation policy
   - HTTP 请求取消令牌 provider
   - MVC action AOP filter adapter
   - Razor Page handler AOP filter adapter
@@ -21,6 +25,10 @@ out_of_scope:
   - 与框架无关的基础原语
   - 数据访问、ORM、仓储实现
 public_capabilities:
+  - Tw.AspNetCore.Mvc.ModelBinding
+  - Tw.AspNetCore.Mvc.Responses
+  - Tw.AspNetCore.Mvc.Security
+  - Tw.AspNetCore.Mvc.ApiVersioning
   - Tw.AspNetCore.Mvc
   - Tw.AspNetCore.Mvc.Context
   - Tw.AspNetCore.Mvc.DynamicProxy
@@ -28,6 +36,8 @@ dependency_rules:
   forbid:
     - "Microsoft.EntityFrameworkCore*"
   allow:
+    - Asp.Versioning.Mvc
+    - Asp.Versioning.Mvc.ApiExplorer
     - Tw.AspNetCore
     - Tw.DependencyInjection
     - Tw.Core

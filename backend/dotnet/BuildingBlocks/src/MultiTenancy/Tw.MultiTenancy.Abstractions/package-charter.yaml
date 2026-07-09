@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.MultiTenancy.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Tenant identity value objects and current tenant contracts.
+in_scope:
+  - tenant value contract
+  - current tenant abstraction
+out_of_scope:
+  - HTTP tenant resolution
+  - token validation
+  - data sharding
+public_capabilities:
+  - Tw.MultiTenancy.Abstractions
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

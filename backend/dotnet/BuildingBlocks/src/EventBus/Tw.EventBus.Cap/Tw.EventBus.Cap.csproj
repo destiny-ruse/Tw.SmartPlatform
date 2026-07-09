@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetCore.CAP" />
+    <PackageReference Include="DotNetCore.CAP.RabbitMQ" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tw.EventBus\Tw.EventBus.csproj" />
+    <ProjectReference Include="..\Tw.EventBus.Abstractions\Tw.EventBus.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Data\Tw.Data.SqlSugar\Tw.Data.SqlSugar.csproj" />
+    <ProjectReference Include="..\..\Foundation\Tw.Uow\Tw.Uow.csproj" />
+  </ItemGroup>
+</Project>

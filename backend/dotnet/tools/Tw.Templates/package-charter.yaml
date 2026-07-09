@@ -1,0 +1,18 @@
+package: Tw.Templates
+kind: tool
+owner: dotnet-framework
+lifecycle: active
+purpose: Official dotnet new templates for service, gateway, building block, and contract package skeletons.
+public_api:
+  - dotnet new tw-service
+  - dotnet new tw-gateway
+  - dotnet new tw-building-block
+  - dotnet new tw-contract-package
+allowed_dependencies:
+  - Microsoft.NET.Sdk
+forbidden_dependencies:
+  - runtime framework packages
+  - compatibility aliases
+governance:
+  - Templates must not emit retired package names.
+  - Generated projects must keep service boundaries explicit.

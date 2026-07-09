@@ -1,0 +1,21 @@
+schema_version: "1.0.0"
+package: Tw.TestBase
+owner: platform-team
+stability: experimental
+test_only: true
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Common test helpers and deterministic test primitives. Production projects must not reference this package.
+in_scope:
+  - test clock
+  - test current user
+  - test current tenant
+  - contract JSON options
+out_of_scope:
+  - production runtime behavior
+public_capabilities:
+  - Tw.TestBase
+dependency_rules:
+  forbid:
+    - production project references
+  allow: []

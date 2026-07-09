@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.Grpc
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  gRPC metadata propagation, deadline contracts, and contract-first boundary helpers.
+in_scope:
+  - metadata propagation allow-list
+  - client deadline options
+  - contract-first proto governance
+out_of_scope:
+  - ASP.NET Core gRPC server hosting
+  - CAP transport
+  - data access
+public_capabilities:
+  - Tw.Grpc
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

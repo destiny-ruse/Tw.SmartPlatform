@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.Data
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Data access contracts, audit fields, soft-delete fields, repository abstractions, and optimistic concurrency contracts.
+in_scope:
+  - audit field contracts
+  - soft-delete contracts
+  - optimistic concurrency contracts
+  - repository abstraction
+out_of_scope:
+  - SqlSugar client creation
+  - CAP Outbox storage
+  - business entity mappings
+public_capabilities:
+  - Tw.Data
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+    - "Microsoft.AspNetCore.*"
+  allow: []

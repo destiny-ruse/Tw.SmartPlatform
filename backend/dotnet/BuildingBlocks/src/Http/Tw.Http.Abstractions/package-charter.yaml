@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+package: Tw.Http.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  HTTP client and header propagation contracts.
+in_scope:
+  - header propagation options
+out_of_scope:
+  - HttpClient registration
+  - ASP.NET Core middleware
+public_capabilities:
+  - Tw.Http.Abstractions
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

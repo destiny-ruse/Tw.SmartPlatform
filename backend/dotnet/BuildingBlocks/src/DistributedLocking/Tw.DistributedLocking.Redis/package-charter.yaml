@@ -1,0 +1,21 @@
+schema_version: "1.0.0"
+package: Tw.DistributedLocking.Redis
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Redis adapter for distributed locking.
+in_scope:
+  - Redis distributed lock adapter
+out_of_scope:
+  - lock key governance
+public_capabilities:
+  - Tw.DistributedLocking.Redis
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.DistributedLocking.Abstractions
+    - StackExchange.Redis
+    - DistributedLock.Redis

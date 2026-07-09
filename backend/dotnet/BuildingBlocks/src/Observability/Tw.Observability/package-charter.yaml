@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.Observability
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Shared log, trace, metric, health, and correlation contracts. Redaction is consumed from Tw.Security.DataMasking.
+in_scope:
+  - correlation context
+  - trace context
+  - metric tags
+  - health status model
+out_of_scope:
+  - masking engine
+  - Serilog sink registration
+  - OpenTelemetry exporter registration
+public_capabilities:
+  - Tw.Observability
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Security

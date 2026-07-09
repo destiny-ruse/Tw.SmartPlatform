@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tw.Gateway" />
+    <PackageReference Include="Tw.Gateway.Yarp" />
+    <PackageReference Include="Tw.AspNetCore" />
+    <PackageReference Include="Tw.Observability" />
+    <PackageReference Include="Tw.Configuration" />
+  </ItemGroup>
+</Project>

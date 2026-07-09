@@ -1,0 +1,34 @@
+schema_version: "1.0.0"
+package: Tw.EventBus.Cap
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  CAP transport binding, RabbitMQ options, custom SqlSugar CAP storage metadata, Inbox dedupe, consumer context filter, cleanup contracts,
+  and Outbox writes bound to the active Tw.Uow transaction. Publishing is rejected when the active unit of work cannot cover both
+  business writes and CAP Outbox writes.
+in_scope:
+  - RabbitMQ transport binding
+  - custom SqlSugar CAP storage metadata
+  - Inbox persistence contract
+  - CAP consumer filter
+  - CAP cleanup job contract
+  - current UoW Outbox guard
+out_of_scope:
+  - business event contracts
+  - SqlSugar business repository implementation
+  - ASP.NET Core middleware
+public_capabilities:
+  - Tw.EventBus.Cap
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "Quartz"
+    - "Yarp.*"
+  allow:
+    - DotNetCore.CAP
+    - DotNetCore.CAP.RabbitMQ
+    - Tw.EventBus
+    - Tw.EventBus.Abstractions
+    - Tw.Uow
+    - Tw.Data.SqlSugar

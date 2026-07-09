@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Tw SmartPlatform",
+  "classifications": [ "Tw", "Contracts" ],
+  "identity": "Tw.Templates.ContractPackage",
+  "name": "Tw contract package",
+  "shortName": "tw-contract-package",
+  "sourceName": "Company.Contracts",
+  "preferNameDirectory": true
+}

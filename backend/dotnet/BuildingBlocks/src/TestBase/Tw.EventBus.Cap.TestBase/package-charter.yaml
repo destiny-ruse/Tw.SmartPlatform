@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.EventBus.Cap.TestBase
+owner: platform-team
+stability: experimental
+test_only: true
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  CAP and RabbitMQ test fixtures plus Outbox/Inbox assertions. Production projects must not reference this package.
+in_scope:
+  - CAP RabbitMQ fixture
+  - Outbox Inbox assertions
+out_of_scope:
+  - production CAP transport
+public_capabilities:
+  - Tw.EventBus.Cap.TestBase
+dependency_rules:
+  forbid:
+    - production project references
+  allow:
+    - Tw.TestBase
+    - Tw.EventBus.Cap
+    - Testcontainers

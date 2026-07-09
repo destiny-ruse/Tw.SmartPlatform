@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+package: Tw.Observability.Serilog
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Serilog structured logging adapter and sensitive scalar property redaction through Tw.Security.DataMasking.
+in_scope:
+  - Serilog enricher
+  - sensitive log property redaction
+  - OpenTelemetry sink boundary
+out_of_scope:
+  - masking engine
+  - audit storage
+public_capabilities:
+  - Tw.Observability.Serilog
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Observability
+    - Tw.Security
+    - Serilog.AspNetCore
+    - Serilog.Sinks.OpenTelemetry

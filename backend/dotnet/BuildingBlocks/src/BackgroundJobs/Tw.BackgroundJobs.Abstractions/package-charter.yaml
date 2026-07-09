@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.BackgroundJobs.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Background job definition, context, execution, control, and state store contracts.
+in_scope:
+  - job definitions
+  - job context
+  - control commands
+  - state store contract
+out_of_scope:
+  - Quartz adapter
+  - MediatR runtime pipeline
+public_capabilities:
+  - Tw.BackgroundJobs.Abstractions
+dependency_rules:
+  forbid:
+    - "Quartz"
+    - "SqlSugar*"
+  allow: []

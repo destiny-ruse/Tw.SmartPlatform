@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.EventBus.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Integration event, publisher, transport, and handler contracts.
+in_scope:
+  - integration event contract
+  - event publisher contract
+  - event transport contract
+  - event handler contract
+out_of_scope:
+  - CAP implementation
+  - RabbitMQ transport
+  - Outbox storage
+public_capabilities:
+  - Tw.EventBus.Abstractions
+dependency_rules:
+  forbid:
+    - "DotNetCore.CAP*"
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+  allow: []

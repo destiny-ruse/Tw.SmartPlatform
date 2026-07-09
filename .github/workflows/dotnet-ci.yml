@@ -1,0 +1,32 @@
+name: dotnet-ci
+
+on:
+  pull_request:
+    paths:
+      - "backend/dotnet/**"
+      - ".github/workflows/dotnet-ci.yml"
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: backend/dotnet/global.json
+      - name: Restore
+        run: dotnet restore backend/dotnet/Tw.SmartPlatform.slnx --nologo
+      - name: Compile
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Compile
+      - name: Test
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Test
+      - name: Package charters
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/PackageCharterGuard.ps1
+      - name: Forbidden packages
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/ForbiddenPackageGuard.ps1
+      - name: Package boundaries
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/PackageBoundaryGuard.ps1
+      - name: Contracts
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/ContractCompatibilityGuard.ps1
+      - name: Long IDs
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/LongIdContractGuard.ps1

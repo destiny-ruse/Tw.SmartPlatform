@@ -1,0 +1,20 @@
+schema_version: "1.0.0"
+package: Tw.Caching
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Cache key contracts and cache invalidation contracts.
+in_scope:
+  - tenant and shard aware cache keys
+  - invalidation publisher contract
+out_of_scope:
+  - FusionCache adapter
+  - Redis adapter
+public_capabilities:
+  - Tw.Caching
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

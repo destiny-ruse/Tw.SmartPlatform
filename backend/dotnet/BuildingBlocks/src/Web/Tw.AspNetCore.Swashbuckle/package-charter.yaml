@@ -1,0 +1,26 @@
+schema_version: "1.0.0"
+package: Tw.AspNetCore.Swashbuckle
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Swashbuckle registration, Newtonsoft support, JWT operation metadata, stable error response metadata, XML comments, and long id string schema mapping.
+in_scope:
+  - SwaggerGen registration
+  - Newtonsoft support
+  - JWT operation filter
+  - unified error response operation filter
+  - long id schema filter
+out_of_scope:
+  - MVC model binding
+  - runtime authentication
+  - generated client publishing
+public_capabilities:
+  - Tw.AspNetCore.Swashbuckle
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Swashbuckle.AspNetCore
+    - Swashbuckle.AspNetCore.Newtonsoft

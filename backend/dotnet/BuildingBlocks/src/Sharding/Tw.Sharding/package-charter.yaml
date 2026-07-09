@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Sharding
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Async-flow shard context for tenant and resource aware routing decisions.
+in_scope:
+  - shard context
+  - scoped shard changes
+out_of_scope:
+  - SqlSugar connection routing
+  - tenant resolution
+  - CAP storage partitioning
+public_capabilities:
+  - Tw.Sharding
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Sharding.Abstractions

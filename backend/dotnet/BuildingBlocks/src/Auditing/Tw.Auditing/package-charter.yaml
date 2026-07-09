@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Auditing
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Audit collection runtime, sensitive detail redaction, and audit scopes.
+in_scope:
+  - audit collector
+  - audit scope
+  - sensitive audit detail redaction
+out_of_scope:
+  - storage-specific implementation
+public_capabilities:
+  - Tw.Auditing
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Auditing.Contracts
+    - Tw.Observability
+    - Tw.Security

@@ -1,0 +1,19 @@
+package: Tw.Cli
+kind: tool
+owner: dotnet-framework
+lifecycle: active
+purpose: Command line entry point for project creation, capability wiring, contract validation, dependency audit, and diagnostics.
+public_api:
+  - tw new
+  - tw add capability
+  - tw validate contracts
+  - tw audit dependencies
+  - tw diagnose
+allowed_dependencies:
+  - System.CommandLine
+  - Spectre.Console
+forbidden_dependencies:
+  - runtime-only framework implementation packages outside command services
+governance:
+  - Commands must return stable non-zero exit codes on violations.
+  - Governance services must be reusable by CI gates.

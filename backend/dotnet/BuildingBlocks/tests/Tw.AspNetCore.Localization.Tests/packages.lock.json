@@ -39,6 +39,19 @@
           "xunit.v3.mtp-v1": "[3.2.2]"
         }
       },
+      "Asp.Versioning.Abstractions": {
+        "type": "Transitive",
+        "resolved": "10.0.0",
+        "contentHash": "cMRE5nvNMfBgfkb0XFWst/7UtyXCjoAXnV0L4Scx4P9fcf0idgrj1Z0c+3ylsy01K4cOib7dKhCBfpg5z3r0Kg=="
+      },
+      "Asp.Versioning.Http": {
+        "type": "Transitive",
+        "resolved": "10.0.0",
+        "contentHash": "xmNm9FM2d20NKy7i1osEQysf7pJ4iJjWnM6e8CoeIhUREqG8nugsfC82pGpmzlatjAJL5T52ieSpyW+GFdSsSQ==",
+        "dependencies": {
+          "Asp.Versioning.Abstractions": "10.0.0"
+        }
+      },
       "Microsoft.ApplicationInsights": {
         "type": "Transitive",
         "resolved": "2.23.0",
@@ -174,8 +187,12 @@
         "type": "Project",
         "dependencies": {
           "Autofac": "[9.1.0, )",
+          "Tw.AspNetCore.Abstractions": "[1.0.0, )",
           "Tw.DependencyInjection.Autofac": "[1.0.0, )"
         }
+      },
+      "tw.aspnetcore.abstractions": {
+        "type": "Project"
       },
       "tw.aspnetcore.localization": {
         "type": "Project",
@@ -188,6 +205,8 @@
       "tw.aspnetcore.mvc": {
         "type": "Project",
         "dependencies": {
+          "Asp.Versioning.Mvc": "[10.0.0, )",
+          "Asp.Versioning.Mvc.ApiExplorer": "[10.0.0, )",
           "Tw.AspNetCore": "[1.0.0, )",
           "Tw.Castle.Core": "[1.0.0, )",
           "Tw.Core": "[1.0.0, )",
@@ -208,7 +227,7 @@
       "tw.dependencyinjection": {
         "type": "Project",
         "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "[10.0.0, )",
+          "Microsoft.Extensions.DependencyModel": "[10.0.9, )",
           "Tw.DependencyInjection.Abstractions": "[1.0.0, )"
         }
       },
@@ -234,6 +253,24 @@
       },
       "tw.threading": {
         "type": "Project"
+      },
+      "Asp.Versioning.Mvc": {
+        "type": "CentralTransitive",
+        "requested": "[10.0.0, )",
+        "resolved": "10.0.0",
+        "contentHash": "W0wZ+0uZ0UK4KstjvEkNBZ0xxhBmxunwNg8582SVyyW7txQmSXibtm8fC4o82LaemPquYskms67bIbJOSrnlug==",
+        "dependencies": {
+          "Asp.Versioning.Http": "10.0.0"
+        }
+      },
+      "Asp.Versioning.Mvc.ApiExplorer": {
+        "type": "CentralTransitive",
+        "requested": "[10.0.0, )",
+        "resolved": "10.0.0",
+        "contentHash": "H54UOpRoc4RmhQ4RA2lzDz43a/hAu/JN19Yyy/DNmH4XlRxhemfhifJyh9BaXNJOtGa2Dnu2xEeP4VSiTdUdAg==",
+        "dependencies": {
+          "Asp.Versioning.Mvc": "10.0.0"
+        }
       },
       "Autofac": {
         "type": "CentralTransitive",
@@ -277,9 +314,9 @@
       },
       "Microsoft.Extensions.DependencyModel": {
         "type": "CentralTransitive",
-        "requested": "[10.0.0, )",
-        "resolved": "10.0.0",
-        "contentHash": "RFYJR7APio/BiqdQunRq6DB+nDB6nc2qhHr77mlvZ0q0BT8PubMXN7XicmfzCbrDE/dzhBnUKBRXLTcqUiZDGg=="
+        "requested": "[10.0.9, )",
+        "resolved": "10.0.9",
+        "contentHash": "SCDTQ6HubnRvTUjR7dgMKHZvNoCb03t44ttHL8trlFTGgfDteWn/0nRdOxDhcI+lTWhKgd/flCVJEtAOPhSLNg=="
       },
       "Newtonsoft.Json": {
         "type": "CentralTransitive",

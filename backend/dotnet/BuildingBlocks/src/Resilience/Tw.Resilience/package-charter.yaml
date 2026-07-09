@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.Resilience
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Operation resilience descriptors, retry safety rules, and HTTP resilience integration.
+in_scope:
+  - operation kind
+  - resilience policy descriptor
+  - retry disablement for non-idempotent writes
+out_of_scope:
+  - business fallback behavior
+public_capabilities:
+  - Tw.Resilience
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Polly
+    - Microsoft.Extensions.Http.Resilience

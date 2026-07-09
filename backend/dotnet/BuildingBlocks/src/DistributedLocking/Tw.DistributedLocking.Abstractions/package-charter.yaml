@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+package: Tw.DistributedLocking.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Distributed lock key and lock acquisition contracts.
+in_scope:
+  - distributed lock key
+  - lock abstraction
+out_of_scope:
+  - Redis implementation
+public_capabilities:
+  - Tw.DistributedLocking.Abstractions
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

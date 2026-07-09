@@ -1,0 +1,28 @@
+schema_version: "1.0.0"
+package: Tw.Observability.OpenTelemetry
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  OpenTelemetry traces, metrics, OTLP exporter, ASP.NET Core instrumentation, HTTP instrumentation, and Aspire Dashboard options.
+in_scope:
+  - OpenTelemetry registration options
+  - OTLP exporter boundary
+  - ASP.NET Core instrumentation
+  - HTTP instrumentation
+out_of_scope:
+  - default gRPC client instrumentation
+  - masking engine
+public_capabilities:
+  - Tw.Observability.OpenTelemetry
+dependency_rules:
+  forbid:
+    - default gRPC client instrumentation package
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Observability
+    - OpenTelemetry.Extensions.Hosting
+    - OpenTelemetry.Exporter.OpenTelemetryProtocol
+    - OpenTelemetry.Instrumentation.AspNetCore
+    - OpenTelemetry.Instrumentation.Http

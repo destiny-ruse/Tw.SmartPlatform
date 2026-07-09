@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Http.Client
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Outbound HTTP client header propagation and resilience integration rules.
+in_scope:
+  - trusted header propagation policy
+  - HTTP client resilience integration
+out_of_scope:
+  - ASP.NET Core inbound middleware
+  - gateway routing
+public_capabilities:
+  - Tw.Http.Client
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Http
+    - Tw.Http.Abstractions
+    - Microsoft.Extensions.Http.Resilience

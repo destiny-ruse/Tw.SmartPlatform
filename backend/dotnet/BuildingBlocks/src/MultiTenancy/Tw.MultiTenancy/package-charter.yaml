@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.MultiTenancy
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Tenant resolution and tenant consistency rules after authentication.
+in_scope:
+  - tenant resolver
+  - token tenant and hinted tenant conflict detection
+out_of_scope:
+  - JWT validation
+  - data access
+  - sharding strategy
+public_capabilities:
+  - Tw.MultiTenancy
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.MultiTenancy.Abstractions

@@ -1,0 +1,27 @@
+schema_version: "1.0.0"
+package: Tw.Gateway
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Gateway route model, trusted header governance, and gateway rate limit policy contracts.
+in_scope:
+  - gateway route model
+  - caller-supplied identity header stripping
+  - gateway rate limit model
+out_of_scope:
+  - YARP adapter
+  - business authorization
+  - data access
+public_capabilities:
+  - Tw.Gateway
+dependency_rules:
+  forbid:
+    - "Tw.Data*"
+    - "Tw.Uow"
+    - "Tw.Application"
+    - "Tw.EventBus*"
+    - "Tw.BackgroundJobs*"
+    - "Tw.MultiTenancy"
+    - "Tw.Sharding"
+  allow: []

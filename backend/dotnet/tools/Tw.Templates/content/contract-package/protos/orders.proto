@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package company.contracts.orders.v1;
+
+message OrderReference {
+  string id = 1;
+}

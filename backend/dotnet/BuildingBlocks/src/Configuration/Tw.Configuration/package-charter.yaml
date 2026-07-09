@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Configuration
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Configuration source governance, sensitive configuration key contracts, and configuration change events.
+in_scope:
+  - user secrets environment policy
+  - configuration change event
+  - sensitive key model
+out_of_scope:
+  - JSON file loading
+  - Nacos client implementation
+  - secret storage
+public_capabilities:
+  - Tw.Configuration
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+    - "Microsoft.AspNetCore.*"
+  allow: []

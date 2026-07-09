@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.Configuration.Json
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  JSON configuration manifest and path validation.
+in_scope:
+  - JSON configuration file manifest
+  - allowed-root path validation
+  - wildcard scan rejection
+out_of_scope:
+  - secret storage
+  - Nacos bridge
+public_capabilities:
+  - Tw.Configuration.Json
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Configuration

@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.EventBus
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Event publisher orchestration over an injected transport.
+in_scope:
+  - event publisher implementation
+  - transport delegation
+out_of_scope:
+  - CAP implementation
+  - RabbitMQ configuration
+  - Outbox storage
+public_capabilities:
+  - Tw.EventBus
+dependency_rules:
+  forbid:
+    - "DotNetCore.CAP*"
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+  allow:
+    - Tw.EventBus.Abstractions

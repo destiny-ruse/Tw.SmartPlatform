@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+package: Tw.BackgroundJobs
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Background job runtime pipeline that enters application use cases through MediatR ISender and records audit, trace, and metric events.
+in_scope:
+  - job command
+  - runtime pipeline
+  - audit sink contract
+  - trace sink contract
+  - metric sink contract
+out_of_scope:
+  - Quartz scheduler adapter
+  - SQL scheduler store
+public_capabilities:
+  - Tw.BackgroundJobs
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.BackgroundJobs.Abstractions
+    - MediatR

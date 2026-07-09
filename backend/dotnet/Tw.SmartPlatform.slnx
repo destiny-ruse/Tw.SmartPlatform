@@ -36,36 +36,138 @@
     <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Localization/Tw.AspNetCore.Localization.csproj" Id="936f3743-bb2e-4d8d-8d35-a813ecd6d67e" />
     <Project Path="BuildingBlocks/src/Localization/Tw.Localization/Tw.Localization.csproj" Id="e8620234-7f4b-4bcf-933f-815d1803224c" />
   </Folder>
+  <Folder Name="/BuildingBlocks/src/Auditing/">
+    <Project Path="BuildingBlocks/src/Auditing/Tw.Auditing.Contracts/Tw.Auditing.Contracts.csproj" />
+    <Project Path="BuildingBlocks/src/Auditing/Tw.Auditing/Tw.Auditing.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/BackgroundJobs/">
+    <Project Path="BuildingBlocks/src/BackgroundJobs/Tw.BackgroundJobs.Abstractions/Tw.BackgroundJobs.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/BackgroundJobs/Tw.BackgroundJobs.Quartz/Tw.BackgroundJobs.Quartz.csproj" />
+    <Project Path="BuildingBlocks/src/BackgroundJobs/Tw.BackgroundJobs/Tw.BackgroundJobs.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Caching/">
+    <Project Path="BuildingBlocks/src/Caching/Tw.Caching.FusionCache/Tw.Caching.FusionCache.csproj" />
+    <Project Path="BuildingBlocks/src/Caching/Tw.Caching/Tw.Caching.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Configuration/">
+    <Project Path="BuildingBlocks/src/Configuration/Tw.Configuration.Json/Tw.Configuration.Json.csproj" />
+    <Project Path="BuildingBlocks/src/Configuration/Tw.Configuration.Nacos/Tw.Configuration.Nacos.csproj" />
+    <Project Path="BuildingBlocks/src/Configuration/Tw.Configuration/Tw.Configuration.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Data/">
+    <Project Path="BuildingBlocks/src/Data/Tw.Data.SqlSugar/Tw.Data.SqlSugar.csproj" />
+    <Project Path="BuildingBlocks/src/Data/Tw.Data/Tw.Data.csproj" />
+  </Folder>
   <Folder Name="/BuildingBlocks/src/Ddd/" />
+  <Folder Name="/BuildingBlocks/src/DistributedLocking/">
+    <Project Path="BuildingBlocks/src/DistributedLocking/Tw.DistributedLocking.Abstractions/Tw.DistributedLocking.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/DistributedLocking/Tw.DistributedLocking.Redis/Tw.DistributedLocking.Redis.csproj" />
+    <Project Path="BuildingBlocks/src/DistributedLocking/Tw.DistributedLocking/Tw.DistributedLocking.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/EventBus/">
+    <Project Path="BuildingBlocks/src/EventBus/Tw.EventBus.Abstractions/Tw.EventBus.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/EventBus/Tw.EventBus.Cap/Tw.EventBus.Cap.csproj" />
+    <Project Path="BuildingBlocks/src/EventBus/Tw.EventBus/Tw.EventBus.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Foundation/" />
+  <Folder Name="/BuildingBlocks/src/Gateway/">
+    <Project Path="BuildingBlocks/src/Gateway/Tw.Gateway.Yarp/Tw.Gateway.Yarp.csproj" />
+    <Project Path="BuildingBlocks/src/Gateway/Tw.Gateway/Tw.Gateway.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Grpc/">
+    <Project Path="BuildingBlocks/src/Grpc/Tw.Grpc/Tw.Grpc.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Http/">
+    <Project Path="BuildingBlocks/src/Http/Tw.Http.Abstractions/Tw.Http.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/Http/Tw.Http.Client/Tw.Http.Client.csproj" />
+    <Project Path="BuildingBlocks/src/Http/Tw.Http/Tw.Http.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Idempotency/">
+    <Project Path="BuildingBlocks/src/Idempotency/Tw.Idempotency/Tw.Idempotency.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/MultiTenancy/">
+    <Project Path="BuildingBlocks/src/MultiTenancy/Tw.MultiTenancy.Abstractions/Tw.MultiTenancy.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/MultiTenancy/Tw.MultiTenancy/Tw.MultiTenancy.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Observability/">
+    <Project Path="BuildingBlocks/src/Observability/Tw.Observability.OpenTelemetry/Tw.Observability.OpenTelemetry.csproj" />
+    <Project Path="BuildingBlocks/src/Observability/Tw.Observability.Serilog/Tw.Observability.Serilog.csproj" />
+    <Project Path="BuildingBlocks/src/Observability/Tw.Observability/Tw.Observability.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Resilience/">
+    <Project Path="BuildingBlocks/src/Resilience/Tw.Resilience/Tw.Resilience.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Sharding/">
+    <Project Path="BuildingBlocks/src/Sharding/Tw.Sharding.Abstractions/Tw.Sharding.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/Sharding/Tw.Sharding/Tw.Sharding.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/TestBase/">
+    <Project Path="BuildingBlocks/src/TestBase/Tw.AspNetCore.TestBase/Tw.AspNetCore.TestBase.csproj" />
+    <Project Path="BuildingBlocks/src/TestBase/Tw.Data.SqlSugar.TestBase/Tw.Data.SqlSugar.TestBase.csproj" />
+    <Project Path="BuildingBlocks/src/TestBase/Tw.EventBus.Cap.TestBase/Tw.EventBus.Cap.TestBase.csproj" />
+    <Project Path="BuildingBlocks/src/TestBase/Tw.TestBase/Tw.TestBase.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/src/Web/">
+    <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Abstractions/Tw.AspNetCore.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Mvc.NewtonsoftJson/Tw.AspNetCore.Mvc.NewtonsoftJson.csproj" />
+    <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Swashbuckle/Tw.AspNetCore.Swashbuckle.csproj" />
+  </Folder>
   <Folder Name="/BuildingBlocks/tests/">
     <Project Path="BuildingBlocks/tests/Tw.Application.Contracts.Tests/Tw.Application.Contracts.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Application.Tests/Tw.Application.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Auditing.Contracts.Tests/Tw.Auditing.Contracts.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Auditing.Tests/Tw.Auditing.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Authorization.Abstractions.Tests/Tw.Authorization.Abstractions.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Authorization.Tests/Tw.Authorization.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Abstractions.Tests/Tw.AspNetCore.Abstractions.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Grpc.Tests/Tw.AspNetCore.Grpc.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Mvc.NewtonsoftJson.Tests/Tw.AspNetCore.Mvc.NewtonsoftJson.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Mvc.Tests/Tw.AspNetCore.Mvc.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Swashbuckle.Tests/Tw.AspNetCore.Swashbuckle.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Tests/Tw.AspNetCore.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Architecture.Tests/Tw.Architecture.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.BackgroundJobs.Quartz.Tests/Tw.BackgroundJobs.Quartz.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.BackgroundJobs.Tests/Tw.BackgroundJobs.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Caching.Tests/Tw.Caching.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Castle.Core.Tests/Tw.Castle.Core.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Configuration.Json.Tests/Tw.Configuration.Json.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Configuration.Tests/Tw.Configuration.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Data.SqlSugar.Tests/Tw.Data.SqlSugar.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Data.Tests/Tw.Data.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Abstractions.Tests/Tw.DependencyInjection.Abstractions.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Autofac.Tests/Tw.DependencyInjection.Autofac.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests.Fixtures/Tw.DependencyInjection.Tests.Fixtures.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.DistributedLocking.Tests/Tw.DistributedLocking.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Domain.Shared.Tests/Tw.Domain.Shared.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Domain.Tests/Tw.Domain.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.EventBus.Cap.Tests/Tw.EventBus.Cap.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.EventBus.Tests/Tw.EventBus.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Excel.MiniExcel.Tests/Tw.Excel.MiniExcel.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Excel.Tests/Tw.Excel.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.ExceptionHandling.Tests/Tw.ExceptionHandling.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.IdGeneration.Tests/Tw.IdGeneration.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.IdGeneration.Yitter.Tests/Tw.IdGeneration.Yitter.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Features.Tests/Tw.Features.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Gateway.Tests/Tw.Gateway.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Gateway.Yarp.Tests/Tw.Gateway.Yarp.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Grpc.Tests/Tw.Grpc.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Http.Client.Tests/Tw.Http.Client.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Idempotency.Tests/Tw.Idempotency.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Identity.OpenIddict.Tests/Tw.Identity.OpenIddict.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Json.Abstractions.Tests/Tw.Json.Abstractions.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Json.Newtonsoft.Tests/Tw.Json.Newtonsoft.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.MultiTenancy.Tests/Tw.MultiTenancy.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Observability.OpenTelemetry.Tests/Tw.Observability.OpenTelemetry.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Observability.Serilog.Tests/Tw.Observability.Serilog.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Observability.Tests/Tw.Observability.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Resilience.Tests/Tw.Resilience.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Security.Tests/Tw.Security.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Settings.Tests/Tw.Settings.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.TextTemplating.Tests/Tw.TextTemplating.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Sharding.Tests/Tw.Sharding.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.TestBase.Tests/Tw.TestBase.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.TextTemplating.Scriban.Tests/Tw.TextTemplating.Scriban.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Threading.Tests/Tw.Threading.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Timing.Tests/Tw.Timing.Tests.csproj" />
@@ -91,4 +193,12 @@
   <Folder Name="/Services/System/src/">
   </Folder>
   <Folder Name="/Services/System/tests/" />
+  <Folder Name="/tools/">
+    <Project Path="tools/Tw.Analyzers.Tests/Tw.Analyzers.Tests.csproj" />
+    <Project Path="tools/Tw.Analyzers/Tw.Analyzers.csproj" />
+    <Project Path="tools/Tw.Cli.Tests/Tw.Cli.Tests.csproj" />
+    <Project Path="tools/Tw.Cli/Tw.Cli.csproj" />
+    <Project Path="tools/Tw.Templates.Tests/Tw.Templates.Tests.csproj" />
+    <Project Path="tools/Tw.Templates/Tw.Templates.csproj" />
+  </Folder>
 </Solution>

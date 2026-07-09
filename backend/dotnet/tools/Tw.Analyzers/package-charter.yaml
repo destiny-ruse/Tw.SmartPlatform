@@ -1,0 +1,20 @@
+package: Tw.Analyzers
+kind: analyzer
+owner: dotnet-framework
+lifecycle: active
+purpose: Compile-time governance rules for framework package names, references, direct third-party usage, user secrets, and long ID contracts.
+public_api:
+  - TWGOV001
+  - TWGOV002
+  - TWGOV003
+  - TWGOV004
+  - TWGOV005
+  - TWGOV006
+allowed_dependencies:
+  - Microsoft.CodeAnalysis.CSharp
+  - Microsoft.CodeAnalysis.Analyzers
+forbidden_dependencies:
+  - runtime framework packages
+governance:
+  - Package has no runtime API.
+  - Analyzer diagnostics must use stable IDs.

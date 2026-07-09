@@ -1,0 +1,39 @@
+name: dotnet-release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: backend/dotnet/global.json
+      - name: Restore
+        run: dotnet restore backend/dotnet/Tw.SmartPlatform.slnx --nologo
+      - name: Compile
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Compile
+      - name: Test
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Test
+      - name: Validate contracts
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target ValidateContracts
+      - name: Package boundaries
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target ValidatePackageBoundaries
+      - name: Pack
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Pack
+      - name: SBOM
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Sbom
+      - name: Image scan
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target ImageScan
+      - name: Sign
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Sign
+      - name: Helm lint
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target HelmLint
+      - name: Argo CD validate
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target ArgoCdValidate
+      - name: Publish
+        run: dotnet run --project backend/dotnet/Build/Build.csproj -- --target Publish

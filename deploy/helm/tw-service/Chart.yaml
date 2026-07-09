@@ -1,0 +1,6 @@
+apiVersion: v2
+name: tw-service
+description: Standard Helm chart for Tw service deployments.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

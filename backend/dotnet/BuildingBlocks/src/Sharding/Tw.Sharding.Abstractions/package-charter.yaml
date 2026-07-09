@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.Sharding.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Shard descriptor and current shard contracts.
+in_scope:
+  - shard descriptor
+  - current shard abstraction
+out_of_scope:
+  - ORM routing
+  - tenant resolution
+  - gateway routing
+public_capabilities:
+  - Tw.Sharding.Abstractions
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

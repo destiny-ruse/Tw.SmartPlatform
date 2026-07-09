@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Tw SmartPlatform",
+  "classifications": [ "Tw", "BuildingBlock" ],
+  "identity": "Tw.Templates.BuildingBlock",
+  "name": "Tw building block",
+  "shortName": "tw-building-block",
+  "sourceName": "Tw.Sample",
+  "preferNameDirectory": true
+}

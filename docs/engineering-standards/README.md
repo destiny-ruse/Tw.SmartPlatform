@@ -86,6 +86,7 @@
 ### 治理规范
 
 - [评审与治理规范](06-governance/review-and-governance.md)
+- [.NET Framework Governance](10-governance/dotnet-framework-governance.md)
 
 ## 例外处理
 

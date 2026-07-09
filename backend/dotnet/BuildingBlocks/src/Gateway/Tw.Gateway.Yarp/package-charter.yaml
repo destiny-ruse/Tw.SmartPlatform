@@ -1,0 +1,34 @@
+schema_version: "1.0.0"
+package: Tw.Gateway.Yarp
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  YARP adapter, service discovery binding, transforms, and route validation for the gateway runtime.
+in_scope:
+  - YARP registration
+  - route validation
+  - header transform factory
+out_of_scope:
+  - data access
+  - unit of work
+  - application pipeline
+  - event bus and CAP messaging
+  - background jobs
+  - tenancy runtime
+  - sharding runtime
+public_capabilities:
+  - Tw.Gateway.Yarp
+dependency_rules:
+  forbid:
+    - data access packages
+    - unit-of-work package
+    - application pipeline package
+    - event bus packages
+    - background job packages
+    - tenancy runtime package
+    - sharding runtime package
+  allow:
+    - Tw.Gateway
+    - Yarp.ReverseProxy
+    - Microsoft.Extensions.ServiceDiscovery.Yarp

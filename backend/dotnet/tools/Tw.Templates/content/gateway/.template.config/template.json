@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Tw SmartPlatform",
+  "classifications": [ "Tw", "Gateway" ],
+  "identity": "Tw.Templates.Gateway",
+  "name": "Tw gateway",
+  "shortName": "tw-gateway",
+  "sourceName": "Company.Gateway",
+  "preferNameDirectory": true
+}

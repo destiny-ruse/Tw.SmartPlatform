@@ -1,0 +1,30 @@
+schema_version: "1.0.0"
+package: Tw.Data.SqlSugar
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  SqlSugar connection abstraction and Unit of Work adapter that exposes a transaction boundary for CAP Outbox coordination.
+in_scope:
+  - SqlSugar client factory abstraction
+  - connection configuration resolution
+  - SqlSugar unit of work manager
+  - current unit of work transaction boundary
+out_of_scope:
+  - CAP transport
+  - ASP.NET Core middleware
+  - Quartz scheduling
+  - Gateway routing
+public_capabilities:
+  - Tw.Data.SqlSugar
+dependency_rules:
+  forbid:
+    - "DotNetCore.CAP*"
+    - "Microsoft.AspNetCore.*"
+    - "Quartz"
+    - "Yarp.*"
+  allow:
+    - SqlSugarCore
+    - Tw.Data
+    - Tw.Uow
+    - Tw.Core

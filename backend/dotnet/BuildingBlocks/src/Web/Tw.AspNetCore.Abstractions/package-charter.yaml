@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.AspNetCore.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Protocol-neutral ASP.NET Core boundary contracts for errors, correlation, and authentication scheme names.
+in_scope:
+  - protocol error model
+  - request correlation model
+  - authentication scheme constants
+out_of_scope:
+  - middleware implementation
+  - MVC filters
+  - OpenAPI registration
+public_capabilities:
+  - Tw.AspNetCore.Abstractions
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

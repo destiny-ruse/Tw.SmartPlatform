@@ -174,8 +174,12 @@
         "type": "Project",
         "dependencies": {
           "Autofac": "[9.1.0, )",
+          "Tw.AspNetCore.Abstractions": "[1.0.0, )",
           "Tw.DependencyInjection.Autofac": "[1.0.0, )"
         }
+      },
+      "tw.aspnetcore.abstractions": {
+        "type": "Project"
       },
       "tw.castle.core": {
         "type": "Project",
@@ -188,7 +192,7 @@
       "tw.dependencyinjection": {
         "type": "Project",
         "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "[10.0.0, )",
+          "Microsoft.Extensions.DependencyModel": "[10.0.9, )",
           "Tw.DependencyInjection.Abstractions": "[1.0.0, )"
         }
       },
@@ -247,9 +251,9 @@
       },
       "Microsoft.Extensions.DependencyModel": {
         "type": "CentralTransitive",
-        "requested": "[10.0.0, )",
-        "resolved": "10.0.0",
-        "contentHash": "RFYJR7APio/BiqdQunRq6DB+nDB6nc2qhHr77mlvZ0q0BT8PubMXN7XicmfzCbrDE/dzhBnUKBRXLTcqUiZDGg=="
+        "requested": "[10.0.9, )",
+        "resolved": "10.0.9",
+        "contentHash": "SCDTQ6HubnRvTUjR7dgMKHZvNoCb03t44ttHL8trlFTGgfDteWn/0nRdOxDhcI+lTWhKgd/flCVJEtAOPhSLNg=="
       },
       "Newtonsoft.Json": {
         "type": "CentralTransitive",

@@ -1,0 +1,20 @@
+schema_version: "1.0.0"
+package: Tw.Caching.FusionCache
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  FusionCache adapter for cache runtime integration.
+in_scope:
+  - FusionCache binding
+out_of_scope:
+  - cache key governance
+public_capabilities:
+  - Tw.Caching.FusionCache
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Caching
+    - ZiggyCreatures.FusionCache

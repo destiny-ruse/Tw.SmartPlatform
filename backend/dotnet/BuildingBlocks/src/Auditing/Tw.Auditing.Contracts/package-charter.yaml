@@ -1,0 +1,20 @@
+schema_version: "1.0.0"
+package: Tw.Auditing.Contracts
+owner: platform-team
+stability: experimental
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  Audit actor, action, event, and store contracts.
+in_scope:
+  - audit event contracts
+  - audit store abstraction
+out_of_scope:
+  - audit collection runtime
+  - storage-specific implementation
+public_capabilities:
+  - Tw.Auditing.Contracts
+dependency_rules:
+  forbid:
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

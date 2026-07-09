@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection.Autofac\Tw.DependencyInjection.Autofac.csproj" />
+    <ProjectReference Include="..\Tw.AspNetCore.Abstractions\Tw.AspNetCore.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

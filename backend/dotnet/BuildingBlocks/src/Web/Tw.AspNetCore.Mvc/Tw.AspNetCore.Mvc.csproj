@@ -13,6 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Tw.AspNetCore\Tw.AspNetCore.csproj" />
     <ProjectReference Include="..\..\Foundation\Tw.Castle.Core\Tw.Castle.Core.csproj" />
     <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />

@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Data.SqlSugar.TestBase
+owner: platform-team
+stability: experimental
+test_only: true
+compatibility: "experimental stage does not promise compatibility"
+responsibility: >
+  SqlSugar database test fixtures and reset helpers. Production projects must not reference this package.
+in_scope:
+  - database fixture
+  - Respawn reset helper
+out_of_scope:
+  - production database access
+public_capabilities:
+  - Tw.Data.SqlSugar.TestBase
+dependency_rules:
+  forbid:
+    - production project references
+  allow:
+    - Tw.TestBase
+    - Tw.Data.SqlSugar
+    - Testcontainers
+    - Respawn
