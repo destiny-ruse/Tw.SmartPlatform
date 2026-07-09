@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+package: Tw.TextTemplating.Scriban
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  基于 Scriban 的文本模板渲染适配器和模板文件访问边界。
+in_scope:
+  - Scriban 渲染器适配
+  - 模板文件根目录访问策略
+  - 模板安全执行边界
+out_of_scope:
+  - 模板管理后台
+  - 业务模板内容
+  - 任意文件系统访问
+public_capabilities:
+  - Tw.TextTemplating.Scriban
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.TextTemplating
+    - Scriban

@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.Excel
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  Excel 导入导出契约、模板定义、导入错误和公式注入防护基础能力。
+in_scope:
+  - Excel 列定义
+  - Excel 模板定义
+  - 导入校验错误
+  - 公式注入防护
+out_of_scope:
+  - 具体 Excel 引擎实现
+  - HTTP 文件上传下载
+  - 业务模板管理
+public_capabilities:
+  - Tw.Excel
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "MiniExcel"
+    - "DocumentFormat.OpenXml"
+  allow: []

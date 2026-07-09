@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.TextTemplating
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  文本模板渲染请求、结果、诊断和渲染器抽象。
+in_scope:
+  - 模板来源类型
+  - 模板渲染请求
+  - 模板渲染结果
+  - 模板渲染器接口
+out_of_scope:
+  - 具体模板引擎实现
+  - 文件系统访问策略实现
+  - 模板管理后台
+public_capabilities:
+  - Tw.TextTemplating
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "Scriban"
+    - "SqlSugar*"
+  allow: []

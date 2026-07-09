@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+package: Tw.IdGeneration
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  分布式 ID 生成的基础抽象契约。
+in_scope:
+  - 长整型 ID 生成接口
+  - ID 生成调用契约
+out_of_scope:
+  - 具体 ID 算法实现
+  - WorkerId 分配服务
+  - 数据库序列实现
+public_capabilities:
+  - Tw.IdGeneration
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

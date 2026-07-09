@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dependencies": {
+    "net10.0": {
+      "Yitter.IdGenerator": {
+        "type": "Direct",
+        "requested": "[1.0.15, )",
+        "resolved": "1.0.15",
+        "contentHash": "E2NlNnFNE/p40r/bgS9TD1PBmbJphuK3mgxLpAmb7Xh1+kiepnaKD1RZl6TtJgbDIK/d24RAnnBgNNU4nCLUqA=="
+      },
+      "tw.idgeneration": {
+        "type": "Project"
+      }
+    }
+  }
+}

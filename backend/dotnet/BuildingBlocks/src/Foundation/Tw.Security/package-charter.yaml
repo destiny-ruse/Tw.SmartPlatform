@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+package: Tw.Security
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  敏感数据标记、脱敏、脱敏值识别和写回保护基础能力。
+in_scope:
+  - 敏感数据类型声明
+  - 脱敏策略和规则契约
+  - 默认脱敏实现
+  - 脱敏值写回保护
+out_of_scope:
+  - 认证授权
+  - 密钥管理服务
+  - 审计日志落库
+public_capabilities:
+  - Tw.Security
+  - Tw.Security.DataMasking
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

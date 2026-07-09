@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+package: Tw.Json.Abstractions
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  JSON 序列化与反序列化的框架级抽象契约。
+in_scope:
+  - JSON 序列化接口
+  - JSON 反序列化接口
+  - 通用序列化选项模型
+out_of_scope:
+  - 具体 JSON 库实现
+  - HTTP JSON formatter
+  - OpenAPI Schema 生成
+public_capabilities:
+  - Tw.Json.Abstractions
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "Newtonsoft.Json"
+    - "System.Text.Json"
+  allow: []

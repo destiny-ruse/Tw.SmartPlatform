@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.ExceptionHandling
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  异常到稳定错误描述的映射契约和默认系统错误分类。
+in_scope:
+  - 错误描述模型
+  - 错误分类枚举
+  - 异常映射接口
+  - 默认异常映射器
+out_of_scope:
+  - HTTP 错误响应格式
+  - 日志记录实现
+  - 业务异常层级治理
+public_capabilities:
+  - Tw.ExceptionHandling
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []

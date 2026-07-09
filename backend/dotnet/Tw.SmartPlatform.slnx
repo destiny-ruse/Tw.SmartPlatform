@@ -2,6 +2,20 @@
   <Folder Name="/Aspire/" />
   <Folder Name="/BuildingBlocks/" />
   <Folder Name="/BuildingBlocks/src/">
+    <Project Path="BuildingBlocks/src/Excel/Tw.Excel.MiniExcel/Tw.Excel.MiniExcel.csproj" />
+    <Project Path="BuildingBlocks/src/Excel/Tw.Excel/Tw.Excel.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.ExceptionHandling/Tw.ExceptionHandling.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Json.Abstractions/Tw.Json.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Json.Newtonsoft/Tw.Json.Newtonsoft.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Security/Tw.Security.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Threading/Tw.Threading.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Timing/Tw.Timing.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Uow/Tw.Uow.csproj" />
+    <Project Path="BuildingBlocks/src/Foundation/Tw.Validation.Abstractions/Tw.Validation.Abstractions.csproj" />
+    <Project Path="BuildingBlocks/src/IdGeneration/Tw.IdGeneration.Yitter/Tw.IdGeneration.Yitter.csproj" />
+    <Project Path="BuildingBlocks/src/IdGeneration/Tw.IdGeneration/Tw.IdGeneration.csproj" />
+    <Project Path="BuildingBlocks/src/TextTemplating/Tw.TextTemplating.Scriban/Tw.TextTemplating.Scriban.csproj" />
+    <Project Path="BuildingBlocks/src/TextTemplating/Tw.TextTemplating/Tw.TextTemplating.csproj" />
     <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Grpc/Tw.AspNetCore.Grpc.csproj" />
     <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Mvc/Tw.AspNetCore.Mvc.csproj" />
     <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore/Tw.AspNetCore.csproj" Id="7ba0e388-29e1-49a5-8a18-d1ef9209c8e6" />
@@ -19,6 +33,20 @@
     <Project Path="BuildingBlocks/tests/Tw.Core.Tests/Tw.Core.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.DependencyInjection.Tests.Fixtures/Tw.DependencyInjection.Tests.Fixtures.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Excel.MiniExcel.Tests/Tw.Excel.MiniExcel.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Excel.Tests/Tw.Excel.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.ExceptionHandling.Tests/Tw.ExceptionHandling.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.IdGeneration.Tests/Tw.IdGeneration.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.IdGeneration.Yitter.Tests/Tw.IdGeneration.Yitter.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Json.Abstractions.Tests/Tw.Json.Abstractions.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Json.Newtonsoft.Tests/Tw.Json.Newtonsoft.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Security.Tests/Tw.Security.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.TextTemplating.Tests/Tw.TextTemplating.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.TextTemplating.Scriban.Tests/Tw.TextTemplating.Scriban.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Threading.Tests/Tw.Threading.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Timing.Tests/Tw.Timing.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Uow.Tests/Tw.Uow.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Tw.Validation.Abstractions.Tests/Tw.Validation.Abstractions.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.AspNetCore.Localization.Tests/Tw.AspNetCore.Localization.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Tw.Localization.Tests/Tw.Localization.Tests.csproj" />
   </Folder>

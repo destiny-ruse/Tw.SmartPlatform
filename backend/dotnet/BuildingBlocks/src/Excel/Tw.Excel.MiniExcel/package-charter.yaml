@@ -1,0 +1,26 @@
+schema_version: "1.0.0"
+package: Tw.Excel.MiniExcel
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  基于 MiniExcel 与 OpenXML 的 Excel 模板导出适配实现。
+in_scope:
+  - MiniExcel 流式写入适配
+  - OpenXML 模板后处理
+  - 多级表头和数据验证支持
+out_of_scope:
+  - HTTP 文件传输
+  - 业务模板管理
+  - 数据库存储
+public_capabilities:
+  - Tw.Excel.MiniExcel
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Excel
+    - MiniExcel
+    - DocumentFormat.OpenXml

@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+package: Tw.Json.Newtonsoft
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  基于 Newtonsoft.Json 的 JSON 序列化适配实现。
+in_scope:
+  - Newtonsoft JSON 序列化器
+  - 长整型安全序列化规则
+  - 基础反序列化适配
+out_of_scope:
+  - System.Text.Json 实现
+  - ASP.NET Core MVC formatter
+  - API 文档生成
+public_capabilities:
+  - Tw.Json.Newtonsoft
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.Json.Abstractions
+    - Newtonsoft.Json

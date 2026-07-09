@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+package: Tw.IdGeneration.Yitter
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  基于 Yitter.IdGenerator 的分布式 ID 生成适配器。
+in_scope:
+  - Yitter ID 生成器适配
+  - WorkerId 初始化入口
+  - ID 生成服务注册入口
+out_of_scope:
+  - WorkerId 分配中心
+  - 数据库号段实现
+  - 雪花算法二次实现
+public_capabilities:
+  - Tw.IdGeneration.Yitter
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow:
+    - Tw.IdGeneration
+    - Yitter.IdGenerator

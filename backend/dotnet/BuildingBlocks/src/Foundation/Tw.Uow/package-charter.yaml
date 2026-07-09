@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+package: Tw.Uow
+owner: platform-team
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
+responsibility: >
+  工作单元范围、事务行为和工作单元管理器基础契约。
+in_scope:
+  - 工作单元接口
+  - 工作单元管理器接口
+  - 工作单元范围选项
+  - 事务行为枚举
+out_of_scope:
+  - ORM 事务实现
+  - CAP 发布事务实现
+  - 数据库连接管理
+public_capabilities:
+  - Tw.Uow
+dependency_rules:
+  forbid:
+    - "Microsoft.AspNetCore.*"
+    - "SqlSugar*"
+    - "DotNetCore.CAP*"
+  allow: []
