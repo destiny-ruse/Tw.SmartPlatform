@@ -13,8 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tw.AspNetCore\Tw.AspNetCore.csproj" />
-    <ProjectReference Include="..\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
+    <PackageReference Include="Autofac" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
+    <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

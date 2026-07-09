@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Tw.Core\Tw.Core.csproj" />
+    <ProjectReference Include="..\..\src\Foundation\Tw.Core\Tw.Core.csproj" />
   </ItemGroup>
 
 </Project>

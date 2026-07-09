@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\src\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
     <ProjectReference Include="..\Tw.DependencyInjection.Tests.Fixtures\Tw.DependencyInjection.Tests.Fixtures.csproj" />
   </ItemGroup>
 

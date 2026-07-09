@@ -1,5 +1,5 @@
 schema_version: "1.0.0"
-package: Tw.Localization.AspNetCore
+package: Tw.AspNetCore.Localization
 owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
@@ -18,7 +18,7 @@ out_of_scope:
   - 管理端页面和管理 API
   - 具体业务领域模型
 public_capabilities:
-  - Tw.Localization.AspNetCore
+  - Tw.AspNetCore.Localization
 dependency_rules:
   forbid:
     - "Microsoft.EntityFrameworkCore*"

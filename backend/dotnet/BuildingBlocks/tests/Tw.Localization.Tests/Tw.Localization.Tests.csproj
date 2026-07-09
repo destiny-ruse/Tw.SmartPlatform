@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Tw.Localization\Tw.Localization.csproj" />
+    <ProjectReference Include="..\..\src\Localization\Tw.Localization\Tw.Localization.csproj" />
   </ItemGroup>
 
 </Project>
