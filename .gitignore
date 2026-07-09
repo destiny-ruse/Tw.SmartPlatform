@@ -26,6 +26,7 @@ coverage/
 node_modules/
 __pycache__/
 .pytest_cache/
+.temp/
 
 # Local databases and generated search/vector caches
 *.sqlite

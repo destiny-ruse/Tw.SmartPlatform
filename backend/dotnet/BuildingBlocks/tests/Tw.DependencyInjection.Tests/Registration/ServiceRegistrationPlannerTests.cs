@@ -24,6 +24,9 @@ public class ServiceRegistrationPlannerTests
     [ServicePriority(5)]
     private sealed class PreferredWechatPaymentProvider : IPaymentProvider, IScopedDependency;
 
+    [ExposeKeyedService(typeof(IPaymentProvider), "")]
+    private sealed class EmptyKeyPaymentProvider : IPaymentProvider, IScopedDependency;
+
     [ExposeServices(typeof(IPaymentProvider))]
     private sealed class DefaultPaymentProviderClone : IPaymentProvider, IScopedDependency;
 
@@ -34,6 +37,8 @@ public class ServiceRegistrationPlannerTests
 
     [DisableServiceRegistration]
     private sealed class DisabledScoped : IScopedDependency;
+
+    private sealed class MultiLifetimeScoped : IScopedDependency, ISingletonDependency;
 
     // ── 用于平级对照测试的私有类型（同一程序集、不同 typePriority）────────────
     private sealed class LowPriorityService : IScopedDependency;
@@ -72,6 +77,24 @@ public class ServiceRegistrationPlannerTests
 
         act.Should().Throw<ServiceRegistrationException>()
             .WithMessage("*最终优先级相同*");
+    }
+
+    [Fact]
+    public void Planner_ThrowsWhenTypeDeclaresMultipleLifetimeMarkers()
+    {
+        var act = () => PlanTypes(typeof(MultiLifetimeScoped));
+
+        act.Should().Throw<ServiceRegistrationException>()
+            .WithMessage("*多个生命周期标记*");
+    }
+
+    [Fact]
+    public void Planner_ThrowsWhenKeyedServiceKeyIsEmpty()
+    {
+        var act = () => PlanTypes(typeof(EmptyKeyPaymentProvider));
+
+        act.Should().Throw<ServiceRegistrationException>()
+            .WithMessage("*key*不能为空*");
     }
 
     /// <summary>

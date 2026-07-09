@@ -63,12 +63,23 @@ internal static class ServiceExposureResolver
             .GetCustomAttributes(typeof(ExposeKeyedServiceAttribute), inherit: false)
             .OfType<ExposeKeyedServiceAttribute>())
         {
+            ValidateKeyedService(implementationType, keyed);
             exposures.Add(new ServiceExposure(NormalizeGenericServiceType(keyed.ServiceType), keyed.Key));
         }
 
         return exposures
             .Distinct()
             .ToList();
+    }
+
+    private static void ValidateKeyedService(Type implementationType, ExposeKeyedServiceAttribute keyed)
+    {
+        if (keyed.Key is null || keyed.Key is string stringKey && string.IsNullOrWhiteSpace(stringKey))
+        {
+            throw new Tw.DependencyInjection.ServiceRegistrationException(
+                $"Keyed service 的 key 不能为空: {implementationType.FullName ?? implementationType.Name} / " +
+                $"{keyed.ServiceType.FullName ?? keyed.ServiceType.Name}");
+        }
     }
 
     /// <summary>

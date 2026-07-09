@@ -76,9 +76,15 @@ internal static class ServiceRegistrationPlanner
                     continue;
                 }
 
-                // 无法解析生命周期（多标记/未声明）则记 skipped 跳过，不抛异常
+                // 多生命周期标记属于启动失败；未声明生命周期只跳过普通注册
                 if (!ServiceTypeInspector.TryResolveLifetime(type, out var lifetime, out var lifeReason))
                 {
+                    if (lifeReason?.Contains("多个生命周期标记", StringComparison.Ordinal) == true)
+                    {
+                        throw new Tw.DependencyInjection.ServiceRegistrationException(
+                            $"类型 {type.FullName ?? type.Name} 声明多个生命周期标记，无法自动注册");
+                    }
+
                     skipped.Add(new SkippedServiceTypeDiagnostic(
                         type.FullName ?? type.Name,
                         lifeReason ?? "无法解析生命周期"));

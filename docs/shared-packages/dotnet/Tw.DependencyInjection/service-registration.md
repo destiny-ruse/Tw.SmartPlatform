@@ -32,7 +32,7 @@ public sealed class CacheService : ICacheService
 }
 ```
 
-同一类型不得同时实现多个生命周期标记。未声明生命周期的类型不会注册。
+同一类型不得同时实现多个生命周期标记；命中时启动失败。未声明生命周期的类型不会注册。
 
 ## 暴露服务
 
@@ -95,6 +95,7 @@ public sealed class PaymentRouter : IScopedDependency
 ```
 
 `[FromKeyedServices]` 指向未注册的 key 时启动失败。
+`[ExposeKeyedService]` 的 key 不得为空；空 key 在注册规划阶段启动失败。
 
 ## 单实现仲裁
 
