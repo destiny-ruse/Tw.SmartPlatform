@@ -1,6 +1,6 @@
-using Microsoft.Extensions.Localization;
+﻿using Microsoft.Extensions.Localization;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// <see cref="IStringLocalizer{TResource}"/> 的实现，将泛型资源类型转发给

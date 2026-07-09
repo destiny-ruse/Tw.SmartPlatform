@@ -1,8 +1,8 @@
-# 请求本地化使用指南
+﻿# 请求本地化使用指南
 
 ## 能力定位
 
-`Tw.Localization.AspNetCore` 提供基于 ASP.NET Core 请求管道的文化解析能力，将 `Tw.Localization` 核心服务与 HTTP 请求上下文对接。主要能力：
+`Tw.AspNetCore.Localization` 提供基于 ASP.NET Core 请求管道的文化解析能力，将 `Tw.Localization` 核心服务与 HTTP 请求上下文对接。主要能力：
 
 - `RequestLocalizationMiddleware`：从请求上下文中解析当前文化，写入 `ICurrentLocalizationContextAccessor`；当文化来自路由或查询参数显式切换时自动写入持久化 Cookie。
 - `ICurrentLocalizationContextAccessor`：在业务代码中无需直接依赖 `HttpContext` 即可读取当前请求的 `LocalizationContext`。
@@ -15,7 +15,7 @@
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
-using Tw.Localization.AspNetCore;
+using Tw.AspNetCore.Localization;
 
 builder.Services.AddLocalization(options =>
 {
@@ -27,14 +27,14 @@ builder.Services.AddLocalization(options =>
 });
 ```
 
-`AddLocalization`（命名空间 `Tw.Localization.AspNetCore`）同时完成核心服务、Web 集成和 `IStringLocalizer` 适配器的完整注册，调用方无需单独调用 `Tw.Localization.AddLocalization`。
+`AddLocalization`（命名空间 `Tw.AspNetCore.Localization`）同时完成核心服务、Web 集成和 `IStringLocalizer` 适配器的完整注册，调用方无需单独调用 `Tw.Localization.AddLocalization`。
 
 ## 中间件注册
 
 在 `Program.cs` 或 Startup 的 `Configure` 中注册中间件：
 
 ```csharp
-using Tw.Localization.AspNetCore;
+using Tw.AspNetCore.Localization;
 
 // UseRouting 之后，MVC / Endpoints / UseAuthorization 之前
 app.UseRouting();
@@ -81,7 +81,7 @@ Cookie 来源、`Accept-Language` 或默认文化兜底命中时，不写入 Coo
 
 ```csharp
 using Tw.Localization;
-using Tw.Localization.AspNetCore;
+using Tw.AspNetCore.Localization;
 
 public class OrderService(
     ICurrentLocalizationContextAccessor localizationAccessor,
@@ -168,6 +168,6 @@ public async Task<LocalizationResourceDto> GetResourceAsync(
 
 ## 注意事项
 
-- 业务应用只应调用 `Tw.Localization.AspNetCore.AddLocalization(...)`，不要额外再调用 `Tw.Localization.AddLocalization(...)`。前者内部已调用核心注册；核心注册使用 `AddSingleton`（非 `TryAdd`），重复调用会产生重复注册（如重复的 `ITextResourceContributor` 和 `IStaticTextSnapshot`），不具备幂等保护。
+- 业务应用只应调用 `Tw.AspNetCore.Localization.AddLocalization(...)`，不要额外再调用 `Tw.Localization.AddLocalization(...)`。前者内部已调用核心注册；核心注册使用 `AddSingleton`（非 `TryAdd`），重复调用会产生重复注册（如重复的 `ITextResourceContributor` 和 `IStaticTextSnapshot`），不具备幂等保护。
 - `IStringLocalizerFactory`、`IStringLocalizer<>` 和 `ICurrentLocalizationContextAccessor` 均以 Scoped 方式注册，不得在 Singleton 服务中直接注入，避免捕获依赖；若 Singleton 确实需要读取当前本地化上下文，应注入 `IServiceScopeFactory` 并在需要时手动创建作用域获取。
 - Cookie 名称常量为 `RequestLocalizationMiddleware.CultureCookieName`（值为 `".Tw.Culture"`），如需在其他中间件或客户端代码中引用，应使用此常量而非硬编码字符串。

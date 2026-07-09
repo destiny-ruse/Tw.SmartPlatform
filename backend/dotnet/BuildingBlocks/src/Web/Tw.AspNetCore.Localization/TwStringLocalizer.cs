@@ -1,8 +1,9 @@
-using System.Globalization;
+﻿using System.Globalization;
 using Microsoft.Extensions.Localization;
 using Tw.Localization;
+using TwLocalizationOptions = Tw.Localization.LocalizationOptions;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// <see cref="IStringLocalizer"/> 的同步静态快照适配器，将 <see cref="IStaticTextSnapshot"/>
@@ -17,7 +18,7 @@ public sealed class TwStringLocalizer : IStringLocalizer
 {
     private readonly IStaticTextSnapshot _snapshot;
     private readonly ICurrentLocalizationContextAccessor _accessor;
-    private readonly LocalizationOptions _options;
+    private readonly TwLocalizationOptions _options;
     private readonly string _resourceName;
 
     /// <summary>
@@ -36,7 +37,7 @@ public sealed class TwStringLocalizer : IStringLocalizer
     public TwStringLocalizer(
         IStaticTextSnapshot snapshot,
         ICurrentLocalizationContextAccessor accessor,
-        LocalizationOptions options,
+        TwLocalizationOptions options,
         string resourceName)
     {
         _snapshot = Check.NotNull(snapshot);

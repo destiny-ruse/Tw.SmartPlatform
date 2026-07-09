@@ -1,4 +1,4 @@
-namespace Tw.Localization.AspNetCore;
+﻿namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 表示一个运行时导出的本地化资源集合，包含资源名称、文化名称及所有文本条目列表

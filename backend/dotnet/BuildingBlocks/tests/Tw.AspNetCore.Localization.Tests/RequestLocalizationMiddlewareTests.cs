@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Tw.Localization;
 using Xunit;
 
-namespace Tw.Localization.AspNetCore.Tests;
+namespace Tw.AspNetCore.Localization.Tests;
 
 public class RequestLocalizationMiddlewareTests
 {

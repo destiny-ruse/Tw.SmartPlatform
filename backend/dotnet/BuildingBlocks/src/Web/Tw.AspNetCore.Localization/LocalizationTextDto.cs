@@ -1,4 +1,4 @@
-namespace Tw.Localization.AspNetCore;
+﻿namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 表示一条运行时导出的本地化文本条目，包含键名、已解析文本值及是否未找到资源的标志

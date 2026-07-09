@@ -1,7 +1,7 @@
 ﻿using AwesomeAssertions;
 using Xunit;
 
-namespace Tw.Localization.AspNetCore.Tests;
+namespace Tw.AspNetCore.Localization.Tests;
 
 public class LocalizationResourceDtoTests
 {

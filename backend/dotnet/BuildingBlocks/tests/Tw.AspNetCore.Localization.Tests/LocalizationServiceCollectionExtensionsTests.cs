@@ -4,9 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 using Tw.AspNetCore.Mvc.Context;
 using Tw.Context;
+using Tw.Localization;
 using Xunit;
 
-namespace Tw.Localization.AspNetCore.Tests;
+namespace Tw.AspNetCore.Localization.Tests;
 
 public class LocalizationServiceCollectionExtensionsTests
 {

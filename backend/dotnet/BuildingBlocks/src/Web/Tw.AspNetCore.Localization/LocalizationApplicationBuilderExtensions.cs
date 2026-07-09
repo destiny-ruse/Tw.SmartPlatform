@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 为 <see cref="IApplicationBuilder"/> 提供本地化中间件注册扩展

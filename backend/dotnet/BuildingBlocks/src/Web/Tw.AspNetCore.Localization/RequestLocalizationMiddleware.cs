@@ -1,8 +1,8 @@
-using System.Globalization;
+﻿using System.Globalization;
 using Microsoft.AspNetCore.Http;
 using Tw.Localization;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 在每个 HTTP 请求进入管道时，根据路由参数、查询字符串、Cookie 和 Accept-Language 标头

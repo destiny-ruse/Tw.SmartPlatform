@@ -1,6 +1,6 @@
-using Tw.Localization;
+﻿using Tw.Localization;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 表示可读写当前请求本地化上下文的访问器接口

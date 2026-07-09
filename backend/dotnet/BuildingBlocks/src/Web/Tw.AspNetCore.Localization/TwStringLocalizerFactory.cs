@@ -1,7 +1,8 @@
-using Microsoft.Extensions.Localization;
+﻿using Microsoft.Extensions.Localization;
 using Tw.Localization;
+using TwLocalizationOptions = Tw.Localization.LocalizationOptions;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// <see cref="IStringLocalizerFactory"/> 的实现，基于 <see cref="IStaticTextSnapshot"/>
@@ -17,7 +18,7 @@ public sealed class TwStringLocalizerFactory : IStringLocalizerFactory
 {
     private readonly IStaticTextSnapshot _snapshot;
     private readonly ICurrentLocalizationContextAccessor _accessor;
-    private readonly LocalizationOptions _options;
+    private readonly TwLocalizationOptions _options;
 
     /// <summary>
     /// 初始化 <see cref="TwStringLocalizerFactory"/> 类的新实例
@@ -31,7 +32,7 @@ public sealed class TwStringLocalizerFactory : IStringLocalizerFactory
     public TwStringLocalizerFactory(
         IStaticTextSnapshot snapshot,
         ICurrentLocalizationContextAccessor accessor,
-        LocalizationOptions options)
+        TwLocalizationOptions options)
     {
         _snapshot = Check.NotNull(snapshot);
         _accessor = Check.NotNull(accessor);

@@ -1,6 +1,6 @@
-# Tw.Localization.AspNetCore
+﻿# Tw.AspNetCore.Localization
 
-`Tw.Localization.AspNetCore` 是 `Tw.Localization` 的可选 ASP.NET Core 适配包，提供请求文化解析中间件、`IStringLocalizer` 适配器和运行时导出 DTO。本包不依赖 EF Core 或任何 ORM/数据库驱动，可选接入 ASP.NET Core 宿主。
+`Tw.AspNetCore.Localization` 是 `Tw.Localization` 的可选 ASP.NET Core 适配包，提供请求文化解析中间件、`IStringLocalizer` 适配器和运行时导出 DTO。本包不依赖 EF Core 或任何 ORM/数据库驱动，可选接入 ASP.NET Core 宿主。
 
 ## 依赖边界
 
@@ -16,7 +16,7 @@
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
-using Tw.Localization.AspNetCore;
+using Tw.AspNetCore.Localization;
 
 services.AddLocalization(options =>
 {
@@ -28,7 +28,7 @@ services.AddLocalization(options =>
 });
 ```
 
-`AddLocalization` 位于命名空间 `Tw.Localization.AspNetCore`（扩展类 `LocalizationServiceCollectionExtensions`）。
+`AddLocalization` 位于命名空间 `Tw.AspNetCore.Localization`（扩展类 `LocalizationServiceCollectionExtensions`）。
 
 ### 注册行为
 

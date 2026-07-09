@@ -1,6 +1,6 @@
-using Tw.Localization;
+﻿using Tw.Localization;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 根据路由参数、查询字符串、Cookie 和 Accept-Language 标头，按优先级顺序解析当前请求应使用的文化

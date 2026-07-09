@@ -1,6 +1,6 @@
-using Tw.Localization;
+﻿using Tw.Localization;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// <see cref="ICurrentLocalizationContextAccessor"/> 的默认实现，用简单属性存储当前请求的本地化上下文

@@ -1,10 +1,11 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Localization;
 using Tw.AspNetCore.Mvc.Context;
 using Tw.Localization;
+using TwLocalizationOptions = Tw.Localization.LocalizationOptions;
 
-namespace Tw.Localization.AspNetCore;
+namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 为 <see cref="IServiceCollection"/> 提供 Web 层本地化聚合注册入口，
@@ -30,7 +31,7 @@ public static class LocalizationServiceCollectionExtensions
     /// </list>
     /// </summary>
     /// <param name="services">服务容器</param>
-    /// <param name="configure">用于配置 <see cref="LocalizationOptions"/> 的委托</param>
+    /// <param name="configure">用于配置 <see cref="Tw.Localization.LocalizationOptions"/> 的委托</param>
     /// <returns>同一 <see cref="IServiceCollection"/> 实例，便于链式调用</returns>
     /// <exception cref="ArgumentNullException">
     /// 当 <paramref name="services"/> 或 <paramref name="configure"/> 为 <see langword="null"/> 时抛出
@@ -41,7 +42,7 @@ public static class LocalizationServiceCollectionExtensions
     /// </remarks>
     public static IServiceCollection AddLocalization(
         this IServiceCollection services,
-        Action<LocalizationOptions> configure)
+        Action<TwLocalizationOptions> configure)
     {
         Check.NotNull(services);
         Check.NotNull(configure);

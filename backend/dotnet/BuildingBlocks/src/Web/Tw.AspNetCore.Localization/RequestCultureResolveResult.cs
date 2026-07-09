@@ -1,4 +1,4 @@
-namespace Tw.Localization.AspNetCore;
+﻿namespace Tw.AspNetCore.Localization;
 
 /// <summary>
 /// 封装请求文化解析的结果，包含最终选定的文化名称和是否由用户显式切换的标志
