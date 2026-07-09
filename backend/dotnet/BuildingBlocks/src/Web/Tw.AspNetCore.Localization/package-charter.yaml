@@ -23,6 +23,7 @@ dependency_rules:
   forbid:
     - "Microsoft.EntityFrameworkCore*"
   allow:
+    - Tw.Core
     - Tw.Localization
     - Tw.AspNetCore.Mvc
     - Microsoft.AspNetCore.App

@@ -17,8 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
-    <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection.Autofac\Tw.DependencyInjection.Autofac.csproj" />
   </ItemGroup>
 
 </Project>

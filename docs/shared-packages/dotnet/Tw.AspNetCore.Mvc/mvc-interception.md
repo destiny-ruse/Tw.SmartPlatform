@@ -172,4 +172,4 @@ public sealed class WrapResultInterceptor : InterceptorBase
 - Minimal API。
 - gRPC。
 
-跨协议宿主启动入口仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseTwHostStartup()`；MVC/Razor Pages AOP adapter 由 `Tw.AspNetCore.Mvc` 单独注册。
+跨协议宿主启动入口仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseWebIntegration()`；MVC/Razor Pages AOP adapter 由 `Tw.AspNetCore.Mvc` 单独注册。

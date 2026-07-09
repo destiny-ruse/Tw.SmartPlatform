@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
+using Tw.DependencyInjection.Diagnostics;
 using Tw.Castle.Core;
 using Tw.Castle.Core.Abstractions;
 using Xunit;
@@ -14,12 +15,12 @@ namespace Tw.AspNetCore.Tests.DependencyInjection;
 public class HostStartupBuilderExtensionsTests
 {
     [Fact]
-    public void UseTwHostStartup_ConfiguresAutofacAndServiceRegistration()
+    public void UseWebIntegration_ConfiguresAutofacAndServiceRegistration()
     {
         HostStartupSampleInterceptor.Reset();
         var builder = CreateBuilderWithTestAssembly();
 
-        builder.UseTwHostStartup();
+        builder.UseWebIntegration();
 
         using var app = builder.Build();
         app.Services.Should().BeOfType<AutofacServiceProvider>();
@@ -44,21 +45,21 @@ public class HostStartupBuilderExtensionsTests
     }
 
     [Fact]
-    public void UseTwHostStartup_ReturnsSameBuilder_ForChaining()
+    public void UseWebIntegration_ReturnsSameBuilder_ForChaining()
     {
         var builder = CreateBuilderWithTestAssembly();
 
-        var result = builder.UseTwHostStartup();
+        var result = builder.UseWebIntegration();
 
         result.Should().BeSameAs(builder);
     }
 
     [Fact]
-    public void UseTwHostStartup_Throws_WhenBuilderIsNull()
+    public void UseWebIntegration_Throws_WhenBuilderIsNull()
     {
         WebApplicationBuilder builder = null!;
 
-        var act = () => builder.UseTwHostStartup();
+        var act = () => builder.UseWebIntegration();
 
         act.Should().Throw<ArgumentNullException>()
             .WithParameterName("builder");

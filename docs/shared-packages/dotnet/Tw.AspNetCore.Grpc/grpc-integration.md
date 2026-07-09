@@ -11,7 +11,7 @@ using Tw.AspNetCore;
 using Tw.AspNetCore.Grpc;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.UseTwHostStartup();
+builder.UseWebIntegration();
 builder.Services.AddGrpcIntegration();
 ```
 
@@ -36,7 +36,7 @@ using Tw.AspNetCore;
 using Tw.AspNetCore.Grpc;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.UseTwHostStartup();
+builder.UseWebIntegration();
 builder.Services.AddGrpcIntegration();
 builder.Services.Configure<GrpcServiceOptions>(options =>
 {
@@ -50,7 +50,7 @@ builder.Services.Configure<GrpcServiceOptions>(options =>
 
 `Tw.DynamicProxy.Abstractions.IInterceptor`、`IInterceptorPipeline`、Castle 动态代理和 MVC 方法级拦截器不进入 gRPC 调用链。需要为 gRPC 请求增加审计、日志、异常转换或指标时，应实现 `Grpc.Core.Interceptors.Interceptor`，并按 ASP.NET Core gRPC 的服务端 interceptor 规则注册。
 
-MVC/Web API action 级拦截仍使用 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md) 的 `AddMvcIntegration()`；跨协议宿主启动仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseTwHostStartup()`。
+MVC/Web API action 级拦截仍使用 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md) 的 `AddMvcIntegration()`；跨协议宿主启动仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseWebIntegration()`。
 
 ## 契约与协议边界
 

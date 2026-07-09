@@ -1,7 +1,7 @@
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
-using Tw.DependencyInjection;
+using Tw.DependencyInjection.Autofac;
 
 namespace Tw.AspNetCore;
 
@@ -16,7 +16,7 @@ public static class HostStartupBuilderExtensions
     /// <param name="builder">ASP.NET Core 应用构建器</param>
     /// <returns>同一应用构建器，便于链式调用</returns>
     /// <exception cref="ArgumentNullException"><paramref name="builder"/> 为 <see langword="null"/> 时抛出</exception>
-    public static WebApplicationBuilder UseTwHostStartup(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder UseWebIntegration(this WebApplicationBuilder builder)
     {
         ArgumentNullException.ThrowIfNull(builder);
 

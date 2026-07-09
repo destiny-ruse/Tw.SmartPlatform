@@ -4,23 +4,23 @@
 
 ## 在组合根调用入口
 
-在创建 `WebApplicationBuilder` 后调用一次 `UseTwHostStartup()`：
+在创建 `WebApplicationBuilder` 后调用一次 `UseWebIntegration()`：
 
 ```csharp
 using Tw.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.UseTwHostStartup();
+builder.UseWebIntegration();
 
 var app = builder.Build();
 app.Run();
 ```
 
-`UseTwHostStartup()` 是组合根入口，应在应用启动配置中调用一次。该入口适用于使用 `WebApplicationBuilder` 的 Web API 与 gRPC 等 ASP.NET Core 宿主组合根。
+`UseWebIntegration()` 是组合根入口，应在应用启动配置中调用一次。该入口适用于使用 `WebApplicationBuilder` 的 Web API 与 gRPC 等 ASP.NET Core 宿主组合根。
 
 ## 入口聚合的能力
 
-`UseTwHostStartup()` 聚合以下宿主启动动作：
+`UseWebIntegration()` 聚合以下宿主启动动作：
 
 - 调用 `builder.Host.UseAutofac()`，由 Autofac 接管宿主容器。
 - 通过 Autofac native `ContainerBuilder.AddServiceRegistration(builder.Configuration)` 路径接入 `Tw.DependencyInjection`。
