@@ -1,4 +1,4 @@
-using FluentAssertions;
+﻿using AwesomeAssertions;
 using Tw.DependencyInjection.Registration;
 using Xunit;
 

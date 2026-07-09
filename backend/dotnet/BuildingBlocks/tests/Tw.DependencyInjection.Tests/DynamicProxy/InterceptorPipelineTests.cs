@@ -1,5 +1,5 @@
-using System.Reflection;
-using FluentAssertions;
+﻿using System.Reflection;
+using AwesomeAssertions;
 using Tw.DependencyInjection.DynamicProxy;
 using Tw.DependencyInjection.Diagnostics;
 using Tw.DynamicProxy.Abstractions;

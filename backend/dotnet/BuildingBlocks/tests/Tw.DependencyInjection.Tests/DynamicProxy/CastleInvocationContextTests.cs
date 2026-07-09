@@ -1,5 +1,5 @@
-using Castle.DynamicProxy;
-using FluentAssertions;
+﻿using Castle.DynamicProxy;
+using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.DependencyInjection.DynamicProxy;
 using Tw.DynamicProxy.Abstractions;

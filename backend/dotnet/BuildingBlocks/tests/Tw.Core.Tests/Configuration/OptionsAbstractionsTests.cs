@@ -1,5 +1,5 @@
-using System.Reflection;
-using FluentAssertions;
+﻿using System.Reflection;
+using AwesomeAssertions;
 using Microsoft.Extensions.Configuration;
 using Tw.Configuration.Abstractions;
 using Xunit;

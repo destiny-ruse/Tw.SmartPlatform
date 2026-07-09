@@ -1,4 +1,4 @@
-using FluentAssertions;
+﻿using AwesomeAssertions;
 using Tw.Core.Tests.DynamicProxy.Fakes;
 using Tw.DynamicProxy.Abstractions;
 using Xunit;

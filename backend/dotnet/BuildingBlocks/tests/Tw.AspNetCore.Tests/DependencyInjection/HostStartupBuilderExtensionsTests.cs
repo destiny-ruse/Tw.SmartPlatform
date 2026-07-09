@@ -1,6 +1,6 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Autofac.Extensions.DependencyInjection;
-using FluentAssertions;
+using AwesomeAssertions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

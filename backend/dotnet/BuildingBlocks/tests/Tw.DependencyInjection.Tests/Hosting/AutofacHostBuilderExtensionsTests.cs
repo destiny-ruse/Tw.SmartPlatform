@@ -1,5 +1,5 @@
-using Autofac.Extensions.DependencyInjection;
-using FluentAssertions;
+﻿using Autofac.Extensions.DependencyInjection;
+using AwesomeAssertions;
 using Microsoft.Extensions.Hosting;
 using Tw.DependencyInjection;
 using Xunit;

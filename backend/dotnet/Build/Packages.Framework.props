@@ -1,0 +1,40 @@
+<!-- 用途: 管理 Tw 微服务框架默认依赖版本 -->
+<Project>
+  <ItemGroup>
+    <PackageVersion Include="DotNetCore.CAP" Version="10.0.1" />
+    <PackageVersion Include="DotNetCore.CAP.RabbitMQ" Version="10.0.1" />
+    <PackageVersion Include="SqlSugarCore" Version="5.1.4.216" />
+    <PackageVersion Include="Yitter.IdGenerator" Version="1.0.15" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.9" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.Newtonsoft" Version="10.2.3" />
+    <PackageVersion Include="Asp.Versioning.Mvc" Version="10.0.0" />
+    <PackageVersion Include="Asp.Versioning.Mvc.ApiExplorer" Version="10.0.0" />
+    <PackageVersion Include="Scriban" Version="7.2.5" />
+    <PackageVersion Include="MiniExcel" Version="1.45.0" />
+    <PackageVersion Include="DocumentFormat.OpenXml" Version="3.5.1" />
+    <PackageVersion Include="ZiggyCreatures.FusionCache" Version="2.6.0" />
+    <PackageVersion Include="StackExchange.Redis" Version="3.0.11" />
+    <PackageVersion Include="DistributedLock.Redis" Version="1.1.1" />
+    <PackageVersion Include="Polly" Version="8.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="10.7.0" />
+    <PackageVersion Include="Yarp.ReverseProxy" Version="2.3.0" />
+    <PackageVersion Include="MediatR" Version="12.5.0" />
+    <PackageVersion Include="FluentValidation" Version="12.1.1" />
+    <PackageVersion Include="OpenIddict" Version="7.5.0" />
+    <PackageVersion Include="Quartz" Version="3.18.2" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageVersion Include="Serilog.Sinks.OpenTelemetry" Version="4.2.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.16.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.16.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.16.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.16.0" />
+    <PackageVersion Include="nacos-sdk-csharp" Version="1.3.10" />
+    <PackageVersion Include="nacos-sdk-csharp.Extensions.Configuration" Version="1.3.10" />
+    <PackageVersion Include="nacos-sdk-csharp.Extensions.ServiceDiscovery" Version="1.3.10" />
+    <PackageVersion Include="NSwag.MSBuild" Version="14.7.1" />
+  </ItemGroup>
+</Project>

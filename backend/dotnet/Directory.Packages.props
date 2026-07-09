@@ -11,6 +11,7 @@
   <!-- 核心：引入 Build 目录下的分类配置 -->
   <Import Project="Build/Packages.Microsoft.props" />
   <Import Project="Build/Packages.ThirdParty.props" />
+  <Import Project="Build/Packages.Framework.props" />
   <Import Project="Build/Packages.Tests.props" />
   <Import Project="Build/Packages.Internal.props" />
 

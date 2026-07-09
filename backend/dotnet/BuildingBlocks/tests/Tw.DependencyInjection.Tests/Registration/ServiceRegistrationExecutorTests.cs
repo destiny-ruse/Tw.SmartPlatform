@@ -1,4 +1,4 @@
-using FluentAssertions;
+﻿using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
 using Tw.DependencyInjection.Diagnostics;
