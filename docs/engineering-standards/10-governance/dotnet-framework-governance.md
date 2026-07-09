@@ -17,18 +17,9 @@ This standard defines mandatory governance gates for the Tw .NET framework.
 ## Local Commands
 
 ```powershell
-dotnet run --project backend/dotnet/Build/Build.csproj -- --target Compile
-dotnet run --project backend/dotnet/Build/Build.csproj -- --target Test
-dotnet run --project backend/dotnet/Build/Build.csproj -- --target ValidatePackageBoundaries
-dotnet run --project backend/dotnet/Build/Build.csproj -- --target ValidateContracts
-dotnet run --project backend/dotnet/Build/Build.csproj -- --target HelmLint
-dotnet run --project backend/dotnet/Build/Build.csproj -- --target ArgoCdValidate
+dotnet test backend/dotnet/BuildingBlocks/tests/Architecture/Tw.Architecture.Tests/Tw.Architecture.Tests.csproj
+python -m pytest tools/tests/test_charter.py
+dotnet test backend/dotnet/Tw.SmartPlatform.slnx
 ```
 
-PowerShell gates can be run directly with Windows PowerShell:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/ForbiddenPackageGuard.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/PackageBoundaryGuard.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File backend/dotnet/Build/QualityGates/LongIdContractGuard.ps1
-```
+治理检查由架构测试、Python charter 校验和解决方案测试承载。`backend/dotnet/Build` 只保存中央包版本 `.props` 与必要锁定文件。
