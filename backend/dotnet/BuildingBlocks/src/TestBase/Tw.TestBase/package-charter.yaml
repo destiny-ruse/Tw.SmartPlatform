@@ -3,19 +3,19 @@ package: Tw.TestBase
 owner: platform-team
 stability: experimental
 test_only: true
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Common test helpers and deterministic test primitives. Production projects must not reference this package.
+  提供通用测试辅助能力与确定性测试原语，生产项目不得引用该包。
 in_scope:
-  - test clock
-  - test current user
-  - test current tenant
-  - contract JSON options
+  - 测试时钟
+  - 测试当前用户
+  - 测试当前租户
+  - 契约 JSON 选项
 out_of_scope:
-  - production runtime behavior
+  - 生产运行时行为
 public_capabilities:
   - Tw.TestBase
 dependency_rules:
   forbid:
-    - production project references
+    - 生产项目引用
   allow: []

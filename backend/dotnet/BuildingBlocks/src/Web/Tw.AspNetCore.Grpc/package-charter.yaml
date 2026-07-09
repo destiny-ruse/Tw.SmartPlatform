@@ -7,16 +7,16 @@ responsibility: >
   ASP.NET Core gRPC 服务端专属集成构建块，承载 gRPC 服务端注册入口、
   gRPC 原生 interceptor 使用边界，以及 gRPC 包治理入口。
 in_scope:
-  - ASP.NET Core gRPC server registration
-  - gRPC service host integration
-  - gRPC protocol boundary adapters
+  - ASP.NET Core gRPC 服务端注册
+  - gRPC 服务宿主集成
+  - gRPC 协议边界适配器
   - gRPC 服务端注册
   - gRPC 原生 interceptor 使用边界
   - gRPC 包治理入口
 out_of_scope:
-  - 统一拦截 pipeline adapter
+  - 统一拦截 pipeline 适配器
   - MVC Filter
-  - HTTP Middleware
+  - HTTP 中间件
   - Minimal API endpoint filter
   - Razor 与 MVC 能力
   - 业务 proto 契约

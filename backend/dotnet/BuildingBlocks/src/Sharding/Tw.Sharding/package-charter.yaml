@@ -2,16 +2,16 @@ schema_version: "1.0.0"
 package: Tw.Sharding
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Async-flow shard context for tenant and resource aware routing decisions.
+  提供面向租户与资源感知路由决策的异步流分片上下文。
 in_scope:
-  - shard context
-  - scoped shard changes
+  - 分片上下文
+  - 作用域内分片切换
 out_of_scope:
-  - SqlSugar connection routing
-  - tenant resolution
-  - CAP storage partitioning
+  - SqlSugar 连接路由
+  - 租户解析
+  - CAP 存储分区
 public_capabilities:
   - Tw.Sharding
 dependency_rules:

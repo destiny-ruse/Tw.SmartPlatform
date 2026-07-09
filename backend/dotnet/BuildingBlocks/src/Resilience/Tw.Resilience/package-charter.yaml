@@ -2,15 +2,15 @@ schema_version: "1.0.0"
 package: Tw.Resilience
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Operation resilience descriptors, retry safety rules, and HTTP resilience integration.
+  提供操作韧性描述、重试安全规则与 HTTP 韧性集成。
 in_scope:
-  - operation kind
-  - resilience policy descriptor
-  - retry disablement for non-idempotent writes
+  - 操作类型
+  - 韧性策略描述
+  - 非幂等写入的重试禁用规则
 out_of_scope:
-  - business fallback behavior
+  - 业务降级行为
 public_capabilities:
   - Tw.Resilience
 dependency_rules:

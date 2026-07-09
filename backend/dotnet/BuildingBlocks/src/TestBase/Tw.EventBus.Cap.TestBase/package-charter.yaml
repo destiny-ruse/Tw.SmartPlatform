@@ -3,19 +3,19 @@ package: Tw.EventBus.Cap.TestBase
 owner: platform-team
 stability: experimental
 test_only: true
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  CAP and RabbitMQ test fixtures plus Outbox/Inbox assertions. Production projects must not reference this package.
+  提供 CAP 与 RabbitMQ 测试夹具以及 Outbox/Inbox 断言，生产项目不得引用该包。
 in_scope:
-  - CAP RabbitMQ fixture
-  - Outbox Inbox assertions
+  - CAP RabbitMQ 测试夹具
+  - Outbox/Inbox 断言
 out_of_scope:
-  - production CAP transport
+  - 生产 CAP 传输
 public_capabilities:
   - Tw.EventBus.Cap.TestBase
 dependency_rules:
   forbid:
-    - production project references
+    - 生产项目引用
   allow:
     - Tw.TestBase
     - Tw.EventBus.Cap

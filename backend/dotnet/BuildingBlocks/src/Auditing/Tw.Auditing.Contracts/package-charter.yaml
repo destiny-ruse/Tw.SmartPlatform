@@ -2,15 +2,15 @@ schema_version: "1.0.0"
 package: Tw.Auditing.Contracts
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Audit actor, action, event, and store contracts.
+  提供审计主体、动作、事件与存储的基础契约。
 in_scope:
-  - audit event contracts
-  - audit store abstraction
+  - 审计事件契约
+  - 审计存储抽象
 out_of_scope:
-  - audit collection runtime
-  - storage-specific implementation
+  - 审计采集运行时
+  - 特定存储实现
 public_capabilities:
   - Tw.Auditing.Contracts
 dependency_rules:

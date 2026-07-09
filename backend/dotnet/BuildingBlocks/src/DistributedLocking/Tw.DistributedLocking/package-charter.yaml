@@ -2,13 +2,13 @@ schema_version: "1.0.0"
 package: Tw.DistributedLocking
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Tenant and shard aware distributed lock key construction.
+  提供租户与分片感知的分布式锁键构造。
 in_scope:
-  - distributed lock key builder
+  - 分布式锁键构造器
 out_of_scope:
-  - Redis implementation
+  - Redis 实现
 public_capabilities:
   - Tw.DistributedLocking
 dependency_rules:

@@ -2,22 +2,22 @@ schema_version: "1.0.0"
 package: Tw.EventBus.Cap
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  CAP transport binding, RabbitMQ options, custom SqlSugar CAP storage metadata, Inbox dedupe, consumer context filter, cleanup contracts,
-  and Outbox writes bound to the active Tw.Uow transaction. Publishing is rejected when the active unit of work cannot cover both
-  business writes and CAP Outbox writes.
+  提供 CAP 传输绑定、RabbitMQ 选项、自定义 SqlSugar CAP 存储元数据、Inbox 去重、消费者上下文过滤器、
+  清理契约，以及绑定到当前 Tw.Uow 事务的 Outbox 写入。当当前工作单元无法同时覆盖业务写入与
+  CAP Outbox 写入时拒绝发布。
 in_scope:
-  - RabbitMQ transport binding
-  - custom SqlSugar CAP storage metadata
-  - Inbox persistence contract
-  - CAP consumer filter
-  - CAP cleanup job contract
-  - current UoW Outbox guard
+  - RabbitMQ 传输绑定
+  - 自定义 SqlSugar CAP 存储元数据
+  - Inbox 持久化契约
+  - CAP 消费者过滤器
+  - CAP 清理任务契约
+  - 当前 UoW Outbox 守卫
 out_of_scope:
-  - business event contracts
-  - SqlSugar business repository implementation
-  - ASP.NET Core middleware
+  - 业务事件契约
+  - SqlSugar 业务仓储实现
+  - ASP.NET Core 中间件
 public_capabilities:
   - Tw.EventBus.Cap
 dependency_rules:

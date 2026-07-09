@@ -3,19 +3,19 @@ package: Tw.Data.SqlSugar.TestBase
 owner: platform-team
 stability: experimental
 test_only: true
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  SqlSugar database test fixtures and reset helpers. Production projects must not reference this package.
+  提供 SqlSugar 数据库测试夹具与重置辅助能力，生产项目不得引用该包。
 in_scope:
-  - database fixture
-  - Respawn reset helper
+  - 数据库测试夹具
+  - Respawn 重置辅助能力
 out_of_scope:
-  - production database access
+  - 生产数据库访问
 public_capabilities:
   - Tw.Data.SqlSugar.TestBase
 dependency_rules:
   forbid:
-    - production project references
+    - 生产项目引用
   allow:
     - Tw.TestBase
     - Tw.Data.SqlSugar

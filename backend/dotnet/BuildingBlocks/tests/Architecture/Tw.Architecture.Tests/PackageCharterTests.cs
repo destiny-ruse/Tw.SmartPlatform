@@ -54,7 +54,20 @@ public sealed class PackageCharterTests
 
     private static bool ContainsChineseValue(string[] lines, string key)
     {
-        return lines.Any(line => line.StartsWith($"{key}:", StringComparison.Ordinal) && ContainsCjk(line));
+        var start = Array.FindIndex(lines, line => line.StartsWith($"{key}:", StringComparison.Ordinal));
+        if (start < 0)
+        {
+            return false;
+        }
+
+        if (ContainsCjk(lines[start]))
+        {
+            return true;
+        }
+
+        return lines.Skip(start + 1)
+            .TakeWhile(line => string.IsNullOrWhiteSpace(line) || line.StartsWith(" ", StringComparison.Ordinal))
+            .Any(ContainsCjk);
     }
 
     private static bool ContainsChineseListValue(string[] lines, string key)

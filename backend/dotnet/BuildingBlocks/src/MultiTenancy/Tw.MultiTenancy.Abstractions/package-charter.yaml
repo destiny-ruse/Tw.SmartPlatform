@@ -2,16 +2,16 @@ schema_version: "1.0.0"
 package: Tw.MultiTenancy.Abstractions
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Tenant identity value objects and current tenant contracts.
+  提供租户身份值对象与当前租户契约。
 in_scope:
-  - tenant value contract
-  - current tenant abstraction
+  - 租户值契约
+  - 当前租户抽象
 out_of_scope:
-  - HTTP tenant resolution
-  - token validation
-  - data sharding
+  - HTTP 租户解析
+  - 令牌校验
+  - 数据分片
 public_capabilities:
   - Tw.MultiTenancy.Abstractions
 dependency_rules:

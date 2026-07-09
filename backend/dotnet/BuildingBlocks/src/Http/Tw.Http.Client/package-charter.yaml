@@ -2,15 +2,15 @@ schema_version: "1.0.0"
 package: Tw.Http.Client
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Outbound HTTP client header propagation and resilience integration rules.
+  提供出站 HTTP 客户端请求头传播与韧性集成规则。
 in_scope:
-  - trusted header propagation policy
-  - HTTP client resilience integration
+  - 可信请求头传播策略
+  - HTTP 客户端韧性集成
 out_of_scope:
-  - ASP.NET Core inbound middleware
-  - gateway routing
+  - ASP.NET Core 入站中间件
+  - 网关路由
 public_capabilities:
   - Tw.Http.Client
 dependency_rules:

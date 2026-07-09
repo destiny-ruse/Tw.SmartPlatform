@@ -2,17 +2,17 @@ schema_version: "1.0.0"
 package: Tw.AspNetCore.Abstractions
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Protocol-neutral ASP.NET Core boundary contracts for errors, correlation, and authentication scheme names.
+  提供协议中立的 ASP.NET Core 边界契约，覆盖错误、关联标识与认证方案名称。
 in_scope:
-  - protocol error model
-  - request correlation model
-  - authentication scheme constants
+  - 协议错误模型
+  - 请求关联模型
+  - 认证方案常量
 out_of_scope:
-  - middleware implementation
-  - MVC filters
-  - OpenAPI registration
+  - 中间件实现
+  - MVC 过滤器
+  - OpenAPI 注册
 public_capabilities:
   - Tw.AspNetCore.Abstractions
 dependency_rules:

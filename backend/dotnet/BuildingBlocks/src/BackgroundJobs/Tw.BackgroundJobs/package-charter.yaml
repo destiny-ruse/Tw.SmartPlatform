@@ -2,18 +2,18 @@ schema_version: "1.0.0"
 package: Tw.BackgroundJobs
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Background job runtime pipeline that enters application use cases through MediatR ISender and records audit, trace, and metric events.
+  提供通过 MediatR ISender 进入应用用例的后台任务运行时管道，并记录审计、追踪与指标事件。
 in_scope:
-  - job command
-  - runtime pipeline
-  - audit sink contract
-  - trace sink contract
-  - metric sink contract
+  - 后台任务命令
+  - 后台任务运行时管道
+  - 审计写入契约
+  - 追踪写入契约
+  - 指标写入契约
 out_of_scope:
-  - Quartz scheduler adapter
-  - SQL scheduler store
+  - Quartz 调度器适配
+  - SQL 调度器存储
 public_capabilities:
   - Tw.BackgroundJobs
 dependency_rules:

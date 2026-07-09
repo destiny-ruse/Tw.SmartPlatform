@@ -2,18 +2,18 @@ schema_version: "1.0.0"
 package: Tw.EventBus.Abstractions
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Integration event, publisher, transport, and handler contracts.
+  提供集成事件、发布器、传输与处理器契约。
 in_scope:
-  - integration event contract
-  - event publisher contract
-  - event transport contract
-  - event handler contract
+  - 集成事件契约
+  - 事件发布器契约
+  - 事件传输契约
+  - 事件处理器契约
 out_of_scope:
-  - CAP implementation
-  - RabbitMQ transport
-  - Outbox storage
+  - CAP 实现
+  - RabbitMQ 传输
+  - Outbox 存储
 public_capabilities:
   - Tw.EventBus.Abstractions
 dependency_rules:

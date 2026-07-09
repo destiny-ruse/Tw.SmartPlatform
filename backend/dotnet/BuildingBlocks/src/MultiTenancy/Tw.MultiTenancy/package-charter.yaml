@@ -2,16 +2,16 @@ schema_version: "1.0.0"
 package: Tw.MultiTenancy
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Tenant resolution and tenant consistency rules after authentication.
+  提供认证后的租户解析与租户一致性规则。
 in_scope:
-  - tenant resolver
-  - token tenant and hinted tenant conflict detection
+  - 租户解析器
+  - 令牌租户与提示租户冲突检测
 out_of_scope:
-  - JWT validation
-  - data access
-  - sharding strategy
+  - JWT 校验
+  - 数据访问
+  - 分片策略
 public_capabilities:
   - Tw.MultiTenancy
 dependency_rules:

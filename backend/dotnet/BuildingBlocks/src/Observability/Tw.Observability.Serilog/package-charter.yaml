@@ -2,16 +2,16 @@ schema_version: "1.0.0"
 package: Tw.Observability.Serilog
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Serilog structured logging adapter and sensitive scalar property redaction through Tw.Security.DataMasking.
+  提供 Serilog 结构化日志适配，并通过 Tw.Security.DataMasking 对敏感标量属性脱敏。
 in_scope:
   - Serilog enricher
-  - sensitive log property redaction
-  - OpenTelemetry sink boundary
+  - 敏感日志属性脱敏
+  - OpenTelemetry sink 边界
 out_of_scope:
-  - masking engine
-  - audit storage
+  - 脱敏引擎
+  - 审计存储
 public_capabilities:
   - Tw.Observability.Serilog
 dependency_rules:

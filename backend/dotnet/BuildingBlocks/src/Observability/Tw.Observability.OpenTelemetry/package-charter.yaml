@@ -2,22 +2,22 @@ schema_version: "1.0.0"
 package: Tw.Observability.OpenTelemetry
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  OpenTelemetry traces, metrics, OTLP exporter, ASP.NET Core instrumentation, HTTP instrumentation, and Aspire Dashboard options.
+  提供 OpenTelemetry 追踪、指标、OTLP 导出器、ASP.NET Core 插桩、HTTP 插桩与 Aspire Dashboard 选项。
 in_scope:
-  - OpenTelemetry registration options
-  - OTLP exporter boundary
-  - ASP.NET Core instrumentation
-  - HTTP instrumentation
+  - OpenTelemetry 注册选项
+  - OTLP 导出器边界
+  - ASP.NET Core 插桩
+  - HTTP 插桩
 out_of_scope:
-  - default gRPC client instrumentation
-  - masking engine
+  - 默认 gRPC 客户端插桩
+  - 脱敏引擎
 public_capabilities:
   - Tw.Observability.OpenTelemetry
 dependency_rules:
   forbid:
-    - default gRPC client instrumentation package
+    - 默认 gRPC 客户端插桩包
     - "SqlSugar*"
     - "DotNetCore.CAP*"
   allow:

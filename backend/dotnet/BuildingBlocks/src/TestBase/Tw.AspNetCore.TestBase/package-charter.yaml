@@ -3,19 +3,19 @@ package: Tw.AspNetCore.TestBase
 owner: platform-team
 stability: experimental
 test_only: true
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  ASP.NET Core test helpers. Production projects must not reference this package.
+  提供 ASP.NET Core 测试辅助能力，生产项目不得引用该包。
 in_scope:
-  - authenticated web application factory
-  - test authentication handler
+  - 带认证的 WebApplicationFactory
+  - 测试认证处理器
 out_of_scope:
-  - production authentication
+  - 生产认证
 public_capabilities:
   - Tw.AspNetCore.TestBase
 dependency_rules:
   forbid:
-    - production project references
+    - 生产项目引用
   allow:
     - Tw.TestBase
     - Microsoft.AspNetCore.Mvc.Testing

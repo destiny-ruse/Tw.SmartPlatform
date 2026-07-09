@@ -2,17 +2,17 @@ schema_version: "1.0.0"
 package: Tw.BackgroundJobs.Abstractions
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Background job definition, context, execution, control, and state store contracts.
+  提供后台任务定义、上下文、执行、控制与状态存储契约。
 in_scope:
-  - job definitions
-  - job context
-  - control commands
-  - state store contract
+  - 后台任务定义
+  - 后台任务上下文
+  - 控制命令
+  - 状态存储契约
 out_of_scope:
-  - Quartz adapter
-  - MediatR runtime pipeline
+  - Quartz 适配器
+  - MediatR 运行时管道
 public_capabilities:
   - Tw.BackgroundJobs.Abstractions
 dependency_rules:

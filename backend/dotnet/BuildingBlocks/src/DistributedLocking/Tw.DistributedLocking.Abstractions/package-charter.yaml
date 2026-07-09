@@ -2,14 +2,14 @@ schema_version: "1.0.0"
 package: Tw.DistributedLocking.Abstractions
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Distributed lock key and lock acquisition contracts.
+  提供分布式锁键与锁获取契约。
 in_scope:
-  - distributed lock key
-  - lock abstraction
+  - 分布式锁键
+  - 锁抽象
 out_of_scope:
-  - Redis implementation
+  - Redis 实现
 public_capabilities:
   - Tw.DistributedLocking.Abstractions
 dependency_rules:

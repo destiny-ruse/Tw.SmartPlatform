@@ -2,18 +2,18 @@ schema_version: "1.0.0"
 package: Tw.Observability
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Shared log, trace, metric, health, and correlation contracts. Redaction is consumed from Tw.Security.DataMasking.
+  提供共享日志、追踪、指标、健康状态与关联上下文契约，脱敏能力由 Tw.Security.DataMasking 提供。
 in_scope:
-  - correlation context
-  - trace context
-  - metric tags
-  - health status model
+  - 关联上下文
+  - 追踪上下文
+  - 指标标签
+  - 健康状态模型
 out_of_scope:
-  - masking engine
-  - Serilog sink registration
-  - OpenTelemetry exporter registration
+  - 脱敏引擎
+  - Serilog sink 注册
+  - OpenTelemetry 导出器注册
 public_capabilities:
   - Tw.Observability
 dependency_rules:

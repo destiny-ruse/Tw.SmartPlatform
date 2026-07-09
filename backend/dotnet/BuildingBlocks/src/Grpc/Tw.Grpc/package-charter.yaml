@@ -2,17 +2,17 @@ schema_version: "1.0.0"
 package: Tw.Grpc
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  gRPC metadata propagation, deadline contracts, and contract-first boundary helpers.
+  提供 gRPC 元数据传播、调用期限契约与契约优先边界辅助能力。
 in_scope:
-  - metadata propagation allow-list
-  - client deadline options
-  - contract-first proto governance
+  - 元数据传播允许列表
+  - 客户端调用期限选项
+  - 契约优先 proto 治理
 out_of_scope:
-  - ASP.NET Core gRPC server hosting
-  - CAP transport
-  - data access
+  - ASP.NET Core gRPC 服务端宿主
+  - CAP 传输
+  - 数据访问
 public_capabilities:
   - Tw.Grpc
 dependency_rules:

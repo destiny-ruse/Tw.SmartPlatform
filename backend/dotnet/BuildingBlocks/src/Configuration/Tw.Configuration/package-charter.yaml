@@ -2,17 +2,17 @@ schema_version: "1.0.0"
 package: Tw.Configuration
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Configuration source governance, sensitive configuration key contracts, and configuration change events.
+  提供配置来源治理、敏感配置键契约与配置变更事件。
 in_scope:
-  - user secrets environment policy
-  - configuration change event
-  - sensitive key model
+  - 用户密钥环境策略
+  - 配置变更事件
+  - 敏感配置键模型
 out_of_scope:
-  - JSON file loading
-  - Nacos client implementation
-  - secret storage
+  - JSON 文件加载
+  - Nacos 客户端实现
+  - 密钥存储
 public_capabilities:
   - Tw.Configuration
 dependency_rules:

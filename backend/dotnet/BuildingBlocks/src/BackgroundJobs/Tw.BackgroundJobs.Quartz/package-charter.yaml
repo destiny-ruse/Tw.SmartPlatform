@@ -2,15 +2,15 @@ schema_version: "1.0.0"
 package: Tw.BackgroundJobs.Quartz
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Quartz scheduler adapter, Cron validation, scheduler store options, and job control service.
+  提供 Quartz 调度器适配、Cron 校验、调度器存储选项与任务控制服务。
 in_scope:
-  - Cron validation
-  - Quartz scheduler adapter
-  - job control service
+  - Cron 表达式校验
+  - Quartz 调度器适配
+  - 后台任务控制服务
 out_of_scope:
-  - business job handlers
+  - 业务任务处理器
 public_capabilities:
   - Tw.BackgroundJobs.Quartz
 dependency_rules:

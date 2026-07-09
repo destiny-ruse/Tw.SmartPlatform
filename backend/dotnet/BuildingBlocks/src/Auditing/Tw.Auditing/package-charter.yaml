@@ -2,15 +2,15 @@ schema_version: "1.0.0"
 package: Tw.Auditing
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Audit collection runtime, sensitive detail redaction, and audit scopes.
+  提供审计采集运行时、敏感审计明细脱敏与审计作用域。
 in_scope:
-  - audit collector
-  - audit scope
-  - sensitive audit detail redaction
+  - 审计采集器
+  - 审计作用域
+  - 敏感审计明细脱敏
 out_of_scope:
-  - storage-specific implementation
+  - 特定存储实现
 public_capabilities:
   - Tw.Auditing
 dependency_rules:

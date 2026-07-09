@@ -2,14 +2,14 @@ schema_version: "1.0.0"
 package: Tw.Http
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Shared HTTP constants and protocol-neutral helpers.
+  提供共享 HTTP 常量与协议中立辅助能力。
 in_scope:
-  - HTTP header names
+  - HTTP 请求头名称
 out_of_scope:
-  - outbound HttpClient policies
-  - ASP.NET Core middleware
+  - 出站 HttpClient 策略
+  - ASP.NET Core 中间件
 public_capabilities:
   - Tw.Http
 dependency_rules:

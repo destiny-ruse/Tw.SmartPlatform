@@ -4,23 +4,23 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  ASP.NET Core MVC 与 Web API 专属集成构建块，承载 HTTP 请求取消令牌 provider、
-  MVC action 与 Razor Page handler 的 filter AOP adapter，
+  ASP.NET Core MVC 与 Web API 专属集成构建块，承载 HTTP 请求取消令牌提供器、
+  MVC action 与 Razor Page handler 的 filter AOP 适配器，
   以及面向 MVC/Razor Pages 的统一拦截 pipeline 接入。
 in_scope:
-  - MVC model binding errors
-  - unified API response contracts
-  - API Versioning URL Segment registration
-  - CSRF and antiforgery validation policy
-  - HTTP 请求取消令牌 provider
-  - MVC action AOP filter adapter
-  - Razor Page handler AOP filter adapter
+  - MVC 模型绑定错误
+  - 统一 API 响应契约
+  - API Versioning URL Segment 注册
+  - CSRF 与防伪校验策略
+  - HTTP 请求取消令牌提供器
+  - MVC action AOP filter 适配器
+  - Razor Page handler AOP filter 适配器
   - MVC action 与 Razor Page handler invocation context
   - MVC 集成依赖注入入口
 out_of_scope:
   - 跨协议 ASP.NET Core 宿主启动聚合入口
-  - Middleware adapter
-  - Minimal API endpoint filter adapter
+  - 中间件适配器
+  - Minimal API endpoint filter 适配器
   - gRPC interceptor 与 gRPC 专属能力
   - 与框架无关的基础原语
   - 数据访问、ORM、仓储实现

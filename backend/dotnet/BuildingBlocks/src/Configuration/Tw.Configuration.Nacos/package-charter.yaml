@@ -2,16 +2,16 @@ schema_version: "1.0.0"
 package: Tw.Configuration.Nacos
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Nacos configuration and service discovery bridge without secret storage.
+  提供不承载密钥存储的 Nacos 配置与服务发现桥接。
 in_scope:
-  - validated configuration key import
-  - service discovery metadata import
-  - configuration change events
+  - 已校验配置键导入
+  - 服务发现元数据导入
+  - 配置变更事件
 out_of_scope:
-  - secret storage
-  - JSON path scanning
+  - 密钥存储
+  - JSON 路径扫描
 public_capabilities:
   - Tw.Configuration.Nacos
 dependency_rules:

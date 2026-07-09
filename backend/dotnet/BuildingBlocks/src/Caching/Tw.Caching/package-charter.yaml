@@ -2,15 +2,15 @@ schema_version: "1.0.0"
 package: Tw.Caching
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Cache key contracts and cache invalidation contracts.
+  提供缓存键契约与缓存失效通知契约。
 in_scope:
-  - tenant and shard aware cache keys
-  - invalidation publisher contract
+  - 租户与分片感知缓存键
+  - 缓存失效发布契约
 out_of_scope:
-  - FusionCache adapter
-  - Redis adapter
+  - FusionCache 适配器
+  - Redis 适配器
 public_capabilities:
   - Tw.Caching
 dependency_rules:

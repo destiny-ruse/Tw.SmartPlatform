@@ -2,17 +2,17 @@ schema_version: "1.0.0"
 package: Tw.Gateway
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Gateway route model, trusted header governance, and gateway rate limit policy contracts.
+  提供网关路由模型、可信请求头治理与网关限流策略契约。
 in_scope:
-  - gateway route model
-  - caller-supplied identity header stripping
-  - gateway rate limit model
+  - 网关路由模型
+  - 调用方传入身份请求头剥离
+  - 网关限流模型
 out_of_scope:
-  - YARP adapter
-  - business authorization
-  - data access
+  - YARP 适配器
+  - 业务授权
+  - 数据访问
 public_capabilities:
   - Tw.Gateway
 dependency_rules:

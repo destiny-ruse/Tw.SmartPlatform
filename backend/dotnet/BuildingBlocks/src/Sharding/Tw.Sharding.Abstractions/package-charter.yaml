@@ -2,16 +2,16 @@ schema_version: "1.0.0"
 package: Tw.Sharding.Abstractions
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Shard descriptor and current shard contracts.
+  提供分片描述与当前分片契约。
 in_scope:
-  - shard descriptor
-  - current shard abstraction
+  - 分片描述
+  - 当前分片抽象
 out_of_scope:
-  - ORM routing
-  - tenant resolution
-  - gateway routing
+  - ORM 路由
+  - 租户解析
+  - 网关路由
 public_capabilities:
   - Tw.Sharding.Abstractions
 dependency_rules:

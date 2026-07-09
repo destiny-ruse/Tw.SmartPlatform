@@ -2,14 +2,14 @@ schema_version: "1.0.0"
 package: Tw.Http.Abstractions
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  HTTP client and header propagation contracts.
+  提供 HTTP 客户端与请求头传播契约。
 in_scope:
-  - header propagation options
+  - 请求头传播选项
 out_of_scope:
-  - HttpClient registration
-  - ASP.NET Core middleware
+  - HttpClient 注册
+  - ASP.NET Core 中间件
 public_capabilities:
   - Tw.Http.Abstractions
 dependency_rules:

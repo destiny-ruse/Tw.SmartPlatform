@@ -2,13 +2,13 @@ schema_version: "1.0.0"
 package: Tw.DistributedLocking.Redis
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Redis adapter for distributed locking.
+  提供分布式锁的 Redis 适配器。
 in_scope:
-  - Redis distributed lock adapter
+  - Redis 分布式锁适配器
 out_of_scope:
-  - lock key governance
+  - 锁键治理
 public_capabilities:
   - Tw.DistributedLocking.Redis
 dependency_rules:

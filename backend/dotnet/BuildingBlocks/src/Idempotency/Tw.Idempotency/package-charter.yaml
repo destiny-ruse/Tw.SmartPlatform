@@ -2,18 +2,18 @@ schema_version: "1.0.0"
 package: Tw.Idempotency
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Idempotency key models, reservations, stable conflict exception, executor, and trusted host context factories.
+  提供幂等键模型、预留记录、稳定冲突异常、执行器与可信宿主上下文工厂。
 in_scope:
-  - HTTP idempotency keys
-  - gRPC idempotency keys
-  - CAP message dedupe keys
-  - background job fire keys
-  - idempotency executor
+  - HTTP 幂等键
+  - gRPC 幂等键
+  - CAP 消息去重键
+  - 后台任务触发键
+  - 幂等执行器
 out_of_scope:
-  - SQL persistence
-  - Redis persistence
+  - SQL 持久化
+  - Redis 持久化
 public_capabilities:
   - Tw.Idempotency
 dependency_rules:

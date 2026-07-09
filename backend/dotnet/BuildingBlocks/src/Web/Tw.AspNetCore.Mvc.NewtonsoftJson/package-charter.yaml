@@ -2,15 +2,15 @@ schema_version: "1.0.0"
 package: Tw.AspNetCore.Mvc.NewtonsoftJson
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Newtonsoft.Json MVC integration helpers including decimal-string long id conversion.
+  提供 Newtonsoft.Json MVC 集成辅助能力，包括 long id 十进制字符串转换。
 in_scope:
-  - long id JSON converter
-  - Newtonsoft.Json MVC support helpers
+  - long id JSON 转换器
+  - Newtonsoft.Json MVC 支持辅助能力
 out_of_scope:
-  - System.Text.Json converters
-  - OpenAPI schema filters
+  - System.Text.Json 转换器
+  - OpenAPI schema 过滤器
 public_capabilities:
   - Tw.AspNetCore.Mvc.NewtonsoftJson
 dependency_rules:

@@ -2,18 +2,18 @@ schema_version: "1.0.0"
 package: Tw.Data
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Data access contracts, audit fields, soft-delete fields, repository abstractions, and optimistic concurrency contracts.
+  提供数据访问契约、审计字段、软删除字段、仓储抽象与乐观并发契约。
 in_scope:
-  - audit field contracts
-  - soft-delete contracts
-  - optimistic concurrency contracts
-  - repository abstraction
+  - 审计字段契约
+  - 软删除契约
+  - 乐观并发契约
+  - 仓储抽象
 out_of_scope:
-  - SqlSugar client creation
-  - CAP Outbox storage
-  - business entity mappings
+  - SqlSugar 客户端创建
+  - CAP Outbox 存储
+  - 业务实体映射
 public_capabilities:
   - Tw.Data
 dependency_rules:

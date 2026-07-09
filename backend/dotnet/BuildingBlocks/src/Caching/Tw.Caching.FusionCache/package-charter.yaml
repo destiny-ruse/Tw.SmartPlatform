@@ -2,13 +2,13 @@ schema_version: "1.0.0"
 package: Tw.Caching.FusionCache
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  FusionCache adapter for cache runtime integration.
+  提供缓存运行时集成所需的 FusionCache 适配器。
 in_scope:
-  - FusionCache binding
+  - FusionCache 绑定
 out_of_scope:
-  - cache key governance
+  - 缓存键治理
 public_capabilities:
   - Tw.Caching.FusionCache
 dependency_rules:

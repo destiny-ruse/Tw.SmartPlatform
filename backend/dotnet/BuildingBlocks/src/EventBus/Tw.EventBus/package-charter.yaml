@@ -2,16 +2,16 @@ schema_version: "1.0.0"
 package: Tw.EventBus
 owner: platform-team
 stability: experimental
-compatibility: "experimental stage does not promise compatibility"
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  Event publisher orchestration over an injected transport.
+  提供基于注入传输实现的事件发布编排。
 in_scope:
-  - event publisher implementation
-  - transport delegation
+  - 事件发布器实现
+  - 传输委托
 out_of_scope:
-  - CAP implementation
-  - RabbitMQ configuration
-  - Outbox storage
+  - CAP 实现
+  - RabbitMQ 配置
+  - Outbox 存储
 public_capabilities:
   - Tw.EventBus
 dependency_rules:
