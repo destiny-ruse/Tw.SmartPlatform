@@ -1,10 +1,18 @@
+schema_version: "1.0.0"
 package: Tw.Sample
-kind: building-block
 owner: dotnet-framework
-lifecycle: draft
-purpose: Replace with the package purpose before publishing.
-public_api: []
-allowed_dependencies: []
-forbidden_dependencies:
-  - test-only packages
-  - retired framework package names
+responsibility: 示例构建块模板的占位职责说明，生成后必须改为真实包职责。
+in_scope:
+  - 示例公共能力占位
+out_of_scope:
+  - 测试专用包
+  - 已退役框架包名
+public_capabilities:
+  - Tw.Sample
+dependency_rules:
+  forbid:
+    - test-only packages
+    - retired framework package names
+  allow: []
+stability: experimental
+compatibility: 模板生成内容不承诺对外兼容，生成后的真实包必须声明自身兼容性。

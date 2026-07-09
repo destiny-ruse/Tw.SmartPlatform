@@ -1,19 +1,27 @@
+schema_version: "1.0.0"
 package: Tw.Cli
-kind: tool
 owner: dotnet-framework
-lifecycle: active
-purpose: Command line entry point for project creation, capability wiring, contract validation, dependency audit, and diagnostics.
-public_api:
+responsibility: 提供项目创建、能力接入、契约校验、依赖审计和诊断的命令行入口。
+in_scope:
+  - `tw new` 项目创建入口
+  - `tw add capability` 能力接入入口
+  - `tw validate contracts` 契约校验入口
+  - `tw audit dependencies` 依赖审计入口
+  - `tw diagnose` 诊断入口
+out_of_scope:
+  - 业务运行时代码
+  - 微服务内的领域逻辑
+public_capabilities:
   - tw new
   - tw add capability
   - tw validate contracts
   - tw audit dependencies
   - tw diagnose
-allowed_dependencies:
-  - System.CommandLine
-  - Spectre.Console
-forbidden_dependencies:
-  - runtime-only framework implementation packages outside command services
-governance:
-  - Commands must return stable non-zero exit codes on violations.
-  - Governance services must be reusable by CI gates.
+dependency_rules:
+  forbid:
+    - runtime-only framework implementation packages outside command services
+  allow:
+    - System.CommandLine
+    - Spectre.Console
+stability: experimental
+compatibility: 命令名称和非零退出码作为自动化脚本契约保持稳定。

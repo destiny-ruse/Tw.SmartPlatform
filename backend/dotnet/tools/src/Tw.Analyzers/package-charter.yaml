@@ -1,20 +1,24 @@
+schema_version: "1.0.0"
 package: Tw.Analyzers
-kind: analyzer
 owner: dotnet-framework
-lifecycle: active
-purpose: Compile-time governance rules for framework package names, references, direct third-party usage, user secrets, and long ID contracts.
-public_api:
+responsibility: 提供 .NET 框架治理规则的 Roslyn 编译期诊断。
+in_scope:
+  - 框架包命名、项目引用、第三方依赖、用户密钥和 long ID 契约的编译期诊断
+out_of_scope:
+  - 运行时业务能力
+  - 服务启动和依赖注入注册
+public_capabilities:
   - TWGOV001
   - TWGOV002
   - TWGOV003
   - TWGOV004
   - TWGOV005
   - TWGOV006
-allowed_dependencies:
-  - Microsoft.CodeAnalysis.CSharp
-  - Microsoft.CodeAnalysis.Analyzers
-forbidden_dependencies:
-  - runtime framework packages
-governance:
-  - Package has no runtime API.
-  - Analyzer diagnostics must use stable IDs.
+dependency_rules:
+  forbid:
+    - runtime framework packages
+  allow:
+    - Microsoft.CodeAnalysis.CSharp
+    - Microsoft.CodeAnalysis.Analyzers
+stability: experimental
+compatibility: 诊断 ID 保持稳定，诊断触发条件随治理规则同步调整。

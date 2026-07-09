@@ -1,18 +1,25 @@
+schema_version: "1.0.0"
 package: Tw.Templates
-kind: tool
 owner: dotnet-framework
-lifecycle: active
-purpose: Official dotnet new templates for service, gateway, building block, and contract package skeletons.
-public_api:
+responsibility: 提供 service、gateway、building-block 和 contract-package 的官方 `dotnet new` 模板。
+in_scope:
+  - `tw-service` 模板
+  - `tw-gateway` 模板
+  - `tw-building-block` 模板
+  - `tw-contract-package` 模板
+out_of_scope:
+  - 模板生成后的业务功能实现
+  - 运行时框架包兼容壳
+public_capabilities:
   - dotnet new tw-service
   - dotnet new tw-gateway
   - dotnet new tw-building-block
   - dotnet new tw-contract-package
-allowed_dependencies:
-  - Microsoft.NET.Sdk
-forbidden_dependencies:
-  - runtime framework packages
-  - compatibility aliases
-governance:
-  - Templates must not emit retired package names.
-  - Generated projects must keep service boundaries explicit.
+dependency_rules:
+  forbid:
+    - runtime framework packages
+    - compatibility aliases
+  allow:
+    - Microsoft.NET.Sdk
+stability: experimental
+compatibility: 模板短名称和输出目录结构作为项目创建契约保持稳定。
