@@ -63,6 +63,11 @@ def _list(value: Any) -> list[str]:
     return [str(item) for item in value] if isinstance(value, list) else []
 
 
+def _contains_cjk(text: str) -> bool:
+    """判断文本是否包含中文字符。"""
+    return any("\u4e00" <= char <= "\u9fff" for char in text)
+
+
 def load_charter(path: Path) -> Charter:
     """Load a package charter from YAML while preserving raw validation input."""
     data = load_yaml(path)
@@ -122,5 +127,16 @@ def validate_charter(charter: Charter) -> list[str]:
     for term in PLACEHOLDER_TERMS:
         if (term.isascii() and term.lower() in lowered) or (not term.isascii() and term in text):
             errors.append(f"{charter.path}: placeholder term {term}")
+
+    if charter.responsibility and not _contains_cjk(charter.responsibility):
+        errors.append(f"{charter.path}: responsibility must use Simplified Chinese")
+
+    for field_name in ("in_scope", "out_of_scope"):
+        values = getattr(charter, field_name)
+        if values and not any(_contains_cjk(value) for value in values):
+            errors.append(f"{charter.path}: {field_name} must use Simplified Chinese")
+
+    if charter.compatibility and not _contains_cjk(charter.compatibility):
+        errors.append(f"{charter.path}: compatibility must use Simplified Chinese")
 
     return errors

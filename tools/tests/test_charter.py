@@ -114,3 +114,34 @@ def test_validate_rejects_invalid_stability_type(tmp_path: Path) -> None:
     errors = validate_charter(load_charter(path))
 
     assert any("invalid stability" in error for error in errors)
+
+
+def test_validate_rejects_english_responsibility(tmp_path: Path) -> None:
+    path = write_text(
+        tmp_path / "package-charter.yaml",
+        VALID.replace("跨服务复用的基础原语与无框架依赖工具。", "Reusable primitives for services."),
+    )
+
+    errors = validate_charter(load_charter(path))
+
+    assert any("responsibility must use Simplified Chinese" in error for error in errors)
+
+
+def test_validate_rejects_english_scope_items(tmp_path: Path) -> None:
+    path = write_text(
+        tmp_path / "package-charter.yaml",
+        VALID.replace("  - 基础值对象", "  - Value objects").replace("  - HTTP 中间件", "  - HTTP middleware"),
+    )
+
+    errors = validate_charter(load_charter(path))
+
+    assert any("in_scope must use Simplified Chinese" in error for error in errors)
+    assert any("out_of_scope must use Simplified Chinese" in error for error in errors)
+
+
+def test_validate_allows_english_public_capability_identifiers(tmp_path: Path) -> None:
+    path = write_text(tmp_path / "package-charter.yaml", VALID)
+
+    errors = validate_charter(load_charter(path))
+
+    assert errors == []
