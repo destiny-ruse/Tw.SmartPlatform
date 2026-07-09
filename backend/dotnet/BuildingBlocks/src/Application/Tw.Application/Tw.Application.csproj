@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Tw.Application.Contracts\Tw.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
   </ItemGroup>
