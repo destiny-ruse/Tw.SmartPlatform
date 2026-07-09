@@ -189,7 +189,8 @@
         "type": "Project",
         "dependencies": {
           "Tw.AspNetCore": "[1.0.0, )",
-          "Tw.DependencyInjection": "[1.0.0, )"
+          "Tw.DependencyInjection": "[1.0.0, )",
+          "Tw.Threading": "[1.0.0, )"
         }
       },
       "tw.core": {
@@ -210,8 +211,12 @@
       "tw.localization": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[1.0.0, )",
+          "Tw.Threading": "[1.0.0, )"
         }
+      },
+      "tw.threading": {
+        "type": "Project"
       },
       "Autofac": {
         "type": "CentralTransitive",

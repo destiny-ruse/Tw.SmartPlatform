@@ -25,6 +25,9 @@
           "Tw.Core": "[1.0.0, )"
         }
       },
+      "tw.threading": {
+        "type": "Project"
+      },
       "Autofac": {
         "type": "CentralTransitive",
         "requested": "[9.1.0, )",
