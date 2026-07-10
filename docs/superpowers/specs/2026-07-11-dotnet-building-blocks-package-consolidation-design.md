@@ -26,6 +26,9 @@
 - 让业务代码依赖公司拥有的能力契约，第三方类型停留在 provider、宿主或基础设施边界
 - 将入口协议横切逻辑放回各入口原生管道，将跨入口业务横切逻辑收敛到应用用例管道
 - 为新功能和新第三方库建立可重复执行的单包、抽象包、provider 包决策流程
+- 生产项目、测试项目、解决方案文件夹、charter、文档、模板、锁文件和生成工具作为同一个迁移单元同步调整
+- 让 `BuildingBlocks/src` 与 `BuildingBlocks/tests` 的物理能力目录和 `.slnx` 解决方案文件夹严格一致，并用架构测试持续约束
+- 清理会误导职责或暴露公司品牌前缀的代码标识符；除 `TwException` 外，公开和内部代码标识符不再使用独立的 `Tw` 品牌词段
 
 ## 非目标
 
@@ -34,6 +37,7 @@
 - 不为未知的第二实现预建空 provider 包
 - 不通过一个通用动态代理管道统一 HTTP、gRPC、CAP、Quartz 和 Worker 的异常、重试或上下文语义
 - 不把业务系统的领域模型、领域共享枚举或 DTO 放入全公司通用的 `Tw.Domain.Shared`
+- 不在一次结构迁移中把所有尚未完成的 provider 占位实现同时宣称为生产可用；每个 provider 需要独立设计、真实依赖集成验证和发布决策
 
 ## 总体决策
 
@@ -219,6 +223,45 @@
 | `Tw.Data.SqlSugar.TestBase` | 保留专项测试边界；补实前不发布 stable | 隔离 Testcontainers、Respawn 和 SqlSugar fixture |
 | `Tw.EventBus.Cap.TestBase` | 保留专项测试边界；补实前不发布 stable | 隔离 CAP/RabbitMQ 集成 fixture 和 Inbox/Outbox 断言 |
 
+## 测试项目、物理目录与解决方案结构
+
+### 目录和 `.slnx` 约束
+
+生产项目和测试项目采用同一能力目录，不允许只在物理目录或只在解决方案视图中分类：
+
+```text
+backend/dotnet/BuildingBlocks/src/<Capability>/<Package>/<Package>.csproj
+backend/dotnet/BuildingBlocks/tests/<Capability>/<TestProject>/<TestProject>.csproj
+
+/BuildingBlocks/src/<Capability>/
+/BuildingBlocks/tests/<Capability>/
+```
+
+- `.slnx` 中每个 BuildingBlocks 项目必须且只能出现一次，路径必须指向真实 `.csproj`
+- `<Folder Name>` 必须与项目物理路径中的 `src|tests/<Capability>` 精确对应；`/BuildingBlocks/src/` 和 `/BuildingBlocks/tests/` 只能作为空父节点，不能直接承载项目
+- 普通测试项目与被测运行时项目使用同一能力目录；`Tw.Architecture.Tests` 作为整仓结构门禁保留在 `tests/Architecture`
+- `Tw.DependencyInjection.Tests.Fixtures` 归属 `Tw.DependencyInjection`，保留在 `tests/Foundation`；四个 TestBase 源码包保留在 `src/TestBase`，现有 `Tw.TestBase.Tests` 保留在 `tests/TestBase`，未来专项 TestBase 测试也必须位于该能力目录
+- 测试项目不得因为运行时项目已删除而成为孤儿；架构门禁必须把“找不到对应运行时或 fixture owner”判为失败，不能静默跳过
+
+当前 57 个测试项目在合并后收敛为 50 个。生产包和测试项目必须在同一个迁移提交中处理：
+
+| 生产项目动作 | 测试项目动作 |
+| --- | --- |
+| 删除 `Tw.Domain.Shared` | 删除空的 `Tw.Domain.Shared.Tests`；领域原语测试并入 `Tw.Domain.Tests`，业务共享 DTO/枚举不迁入 BuildingBlocks |
+| `Tw.Configuration.Json` 合并到 `Tw.Configuration` | 将 `JsonConfigurationPathValidatorTests` 并入 `Tw.Configuration.Tests`，删除 `Tw.Configuration.Json.Tests` |
+| `Tw.Uow` 合并到 `Tw.Data` | 将工作单元契约与选项测试并入 `Tw.Data.Tests`，删除 `Tw.Uow.Tests` |
+| 三个 HTTP 项目合并为 `Tw.Http` | 将 `Tw.Http.Client.Tests` 重命名为 `Tw.Http.Tests`，保留 header propagation 与出站 HTTP 行为测试 |
+| 删除 Castle 和 Autofac 路径 | 删除 `Tw.Castle.Core.Tests`；`Tw.DependencyInjection.Autofac.Tests` 仅把容器中立语义迁入 `Tw.DependencyInjection.Tests`，删除 provider 专属断言 |
+| 删除 `Tw.Threading` | 删除 ambient cancellation 测试；为迁入 `Tw.Core` 的异步释放辅助类型在 `Tw.Core.Tests` 补测试 |
+| 删除 `Tw.Timing` | 删除自有 clock/DI wrapper 测试；消费方用受控 `TimeProvider` 验证自身行为 |
+| 合并薄 `.Abstractions` 和 Validation 契约 | 扩展同能力测试项目，不建立或保留 `*.Abstractions.Tests` |
+
+每次项目删除、合并或重命名还必须同步 `.csproj`、`ProjectReference`、命名空间、测试命名空间、`.slnx`、`packages.lock.json`、charter、文档与生成索引。只移动生产代码而留下旧测试项目、旧 lock 或旧 solution entry 视为未完成。
+
+合并后不得继续保留会暗示旧独立边界的 `Tw.Authorization.Abstractions`、`Tw.EventBus.Abstractions`、`Tw.Http.Client` 等 retired namespace。`Tw.Configuration.Json` 作为 `Tw.Configuration` 内部清晰的功能子命名空间可以保留；仍独立发包的 `Tw.BackgroundJobs.Abstractions`、`Tw.DependencyInjection.Abstractions` 和 `Tw.Json.Abstractions` 也不属于 retired namespace。
+
+`Tw.Cli`、`Tw.Analyzers` 和 `Tw.Templates` 是跨团队使用并可独立打包的 .NET 工具，同样纳入 charter、文档和生成索引治理，但不计入 BuildingBlocks 的 57 个目标项目。迁移完成后的受治理 .NET 项目总数为 60：57 个 BuildingBlocks 项目加 3 个工具项目。
+
 ## DependencyInjection、Autofac 与 Castle 决策
 
 默认宿主只使用 Microsoft DI：
@@ -236,6 +279,35 @@ Autofac 不是常规可插拔 provider。只有出现以下已验证需求之一
 - 已经通过基准、集成测试和架构评审证明必须采用的服务方法动态代理
 
 重新引入也不得让 `Tw.AspNetCore` 默认依赖 Autofac，provider 选择必须留在具体宿主组合根。
+
+## 语义命名与品牌词段治理
+
+`Tw.*` 继续作为 PackageId、程序集名和根命名空间；`Tw:` 配置根、`TWGOV000` 至 `TWGOV006` 诊断号以及迁移资料中的旧包名也不属于代码标识符重命名范围。代码中的品牌词段按大小写不敏感规则治理：
+
+- `TwConfigurationException`、`AddTwYarpGateway`、`twOrder`、`TW_ORDER` 等包含独立 `Tw` 词段的类型、方法、属性、字段、事件或参数名均禁止新增
+- `Tw.Core` 程序集中的 `Tw.Exceptions.TwException` 异常类型是唯一批准保留的品牌前缀代码标识符；同名方法、变量、其他程序集或其他命名空间中的同名类型不继承该豁免
+- `Between`、`Write`、`Twice`、`Twin` 等正常英文单词不包含独立品牌词段，不得因简单子串匹配被误报或机械改名
+- analyzer 的受控负例源码可以保留一个违规标识符以验证诊断，但不得编译进入生产制品
+- 名称清理必须依据真实职责选择语义名，不允许只删除两个字符后形成新的含混名称；正式规范已禁止宽泛 `Manager`、`Helper`、`Util` 等角色名
+
+本次迁移采用以下已审计映射：
+
+| 旧标识符 | 目标标识符或动作 | 理由 |
+| --- | --- | --- |
+| `TwConfigurationException` | 移入 `Tw.Localization` 并改为 `LocalizationConfigurationException` | 当前真实调用全部属于本地化配置，不应继续暴露为 Core 的宽泛异常 |
+| `TwAssemblyPriorityAttribute` | `AssemblyRegistrationPriorityAttribute` | 与类型级 `ServicePriorityAttribute` 区分，准确表达程序集注册排序 |
+| `TwStringLocalizer`、`TwStringLocalizer<T>` | `StaticSnapshotStringLocalizer`、`StaticSnapshotStringLocalizer<T>` | 名称表达基于静态快照的实现语义，而非公司前缀 |
+| `TwStringLocalizerFactory` | `StaticSnapshotStringLocalizerFactory` | 与对应实现保持一致 |
+| `MapTwHealthEndpoints` | `MapHealthEndpoint` | 当前只映射一个 `/health` 端点 |
+| `AddTwYarpGateway` | 真实 wiring 完成后使用 `AddYarpGateway`；当前 no-op API 删除或内部化 | 不发布无行为的稳定扩展入口 |
+| `AddTwHttpResilience` | 从 `Tw.Resilience` 删除；真实 HTTP 集成迁入 `Tw.Http` 后使用 `AddHttpResilience` | provider-neutral resilience 不承担 HTTP 注册 |
+| `EnrichWithTwRedaction` | `EnrichWithSensitiveDataRedaction` | 直接表达脱敏行为 |
+| `AddTwOpenTelemetry` | 真实 wiring 完成后使用 `AddOpenTelemetryIntegration`；当前 no-op API 删除或内部化 | 未完成 provider 不应公开占位入口 |
+| `TwActionInterceptionFilter`、`TwPageInterceptionFilter` | 随 Castle/MVC 动态代理路径删除 | Web 横切逻辑改用原生 Filter/Middleware |
+| `IUnitOfWorkManager` | `IUnitOfWorkCoordinator` | 该角色创建并暴露当前工作单元，且 `Manager` 不符合正式命名规范 |
+| `SqlSugarUnitOfWorkManager` 及测试替身 | 对应改为 `*UnitOfWorkCoordinator` | 与契约和真实协调职责一致 |
+
+`Tw.Analyzers` 必须把该规则实现为符号级、大小写不敏感且词段边界明确的诊断，并在存量清理完成后作为 analyzer 接入全部 .NET 项目；不能用对源码文本执行不区分语义的全局替换代替。
 
 ## 入口与横切逻辑模型
 
@@ -424,15 +496,23 @@ Tw.Pinyin.<ProviderName>
 - 核查内部 NuGet 源、具体服务引用和 `Tw.Core` 的 stable 标记
 - 固化当前公开 API、配置键、错误码、序列化、数据库和消息契约清单
 - 确认所有允许破坏性变更的包满足“无稳定消费者且无稳定制品”条件
+- 先增加目标项目集合、测试项目集合、solution parity、retired reference 和品牌标识符的失败门禁，证明迁移前基线确实不满足目标
 
-### 第二阶段：删除错误主路径
+### 第二阶段：目录与治理工具基线
+
+- 先把现有生产和测试项目在 `.slnx` 中移动到与物理能力目录一致的 solution folder
+- 在破坏性删除前先用架构测试锁定“57 个保留项目 + 尚未迁移的 retired 子集”、真实 ProjectReference 与 solution parity；`tw_memory` 的三层发现、fixture 和完整仓库门禁必须在发布阶段前修复并接管 charter/docs/generated-memory 事实校验
+- 修复 charter `public_capabilities` 的前缀重叠判定：规范化后完全相同的能力 ID 仍然冲突，`Tw.Data` 与 `Tw.Data.SqlSugar` 等不同的层级 ID 不因点号前缀自动冲突；语义重叠继续由 charter 的职责、范围和架构评审裁决
+- 扩展架构测试、CLI 禁包目录、模板 smoke test 和 analyzer；门禁在对应存量清理完成前可以按任务逐步启用，但最终不得保留永久 suppression
+
+### 第三阶段：删除错误主路径
 
 - 删除 `Tw.DependencyInjection.Autofac`、`Tw.Castle.Core` 及专用测试
 - `Tw.AspNetCore` 回归 Microsoft DI
 - MVC 删除通用 Castle 管道，保留和补齐原生 Filter
 - 应用横切逻辑统一进入 `Tw.Application`
 
-### 第三阶段：同能力合并
+### 第四阶段：同能力合并
 
 - 合并 Authorization、Configuration.Json、DistributedLocking、EventBus、Http、MultiTenancy、Sharding 和 AspNetCore 的薄分层
 - `Tw.Uow` 合并到 `Tw.Data`
@@ -441,20 +521,24 @@ Tw.Pinyin.<ProviderName>
 - `Tw.Timing` 迁移到 `TimeProvider`
 - 密码学实现从 `Tw.Core` 迁入 `Tw.Security`
 - 删除 `Tw.Domain.Shared`，补齐 `Tw.Domain` 的 provider-neutral 领域原语
+- 每个生产项目动作同步完成测试合并/删除、solution entry、charter、文档和 lock 文件，不把这些工作推迟到最后集中补账
 
-### 第四阶段：provider 补实
+### 第五阶段：provider 补实
 
 - Quartz、FusionCache、Nacos、SqlSugar、Redis、CAP、YARP、OpenTelemetry、gRPC host 和专项 TestBase 逐包完成真实集成
 - 删除 `object`、no-op handle、空注册、空 scheduler 和 `CompletedTask` 占位行为
 - 每个 provider 增加真实依赖集成测试、失败语义、健康与可观测性验证
 - 未补实的 provider 保持 `experimental`，不进入稳定包目录
+- Quartz、FusionCache、Nacos、SqlSugar、Redis、CAP、YARP、OpenTelemetry、gRPC host 和专项 TestBase 分别建立专项 spec 与实施计划；结构合并计划只负责边界、引用和 stable gate，不以一次大迁移替代各 provider 的生产设计
 
-### 第五阶段：发布与迁移资料
+### 第六阶段：工具、发布与迁移资料
 
 - 更新 `.slnx`、项目引用、命名空间、中央版本、锁文件和测试目录
 - 更新全部受影响的 `package-charter.yaml`
 - 更新 `docs/shared-packages/dotnet` 总索引、包索引和能力 How-to
 - 为被删除和改名的包提供迁移映射与禁止新引用门禁
+- 更新 `Tw.Cli` 禁包检查、`Tw.Analyzers`、`Tw.Templates`、Python `tw_memory`、`.tw-memory` 生成结果、pre-commit 与正式治理命令
+- 从中央版本文件移除 Autofac/Castle 和不再属于目标包的依赖；对全部保留项目和模板重新生成 lock 文件
 - 从同一提交构建统一版本的 prerelease 包，并使用真实服务完成安装验证
 
 ## 验证设计
@@ -462,12 +546,19 @@ Tw.Pinyin.<ProviderName>
 ### 架构与包验证
 
 - 架构测试验证目标项目数、目录、PackageId、命名空间和项目引用方向
+- 架构测试验证精确的 57 个目标生产项目和 50 个目标测试项目，不只比较数量
+- `backend/dotnet/BuildingBlocks/building-blocks-topology.json` 是 runtime/test 路径、retired PackageId/namespace、替代映射、批准契约包和工具项目的唯一机器可读清单；架构测试、CLI、模板测试、Python 治理和 pack/consume 脚本共同读取它，不分别硬编码清单
+- `.slnx` 中的 BuildingBlocks 项目集合与磁盘 `.csproj` 集合完全一致、无重复，solution folder 与物理 capability folder 完全一致
+- 每个普通测试项目必须映射到现存运行时项目或明确 fixture owner，不允许孤儿测试项目
 - 禁止生产项目引用 `*TestBase`
 - 禁止 `Tw.AspNetCore` 引用 Autofac、Castle 和基础设施 provider
 - 禁止业务/Application 项目引用第三方 provider 类型
 - 禁止 provider 反向向 `.Abstractions` 命名空间贡献类型
 - 使用包验证或公开 API 基线检测 stable 包的破坏性变化
 - 每个包执行 `dotnet pack` 与最小消费者安装测试
+- 禁止项目、模板和文档新增 retired PackageId；禁止除 `TwException` 外的独立 `Tw` 品牌词段代码标识符
+- charter 检查必须扫描真实三层目录并验证仓库中的 charter 事实，不能只运行 validator 自身的单元测试
+- charter 与生成索引覆盖 57 个 BuildingBlocks 项目和 3 个 .NET 工具项目；BuildingBlocks 的目标集合断言仍保持独立，不能用 60 混淆包结构验收
 
 ### 行为与集成验证
 
@@ -487,12 +578,19 @@ Tw.Pinyin.<ProviderName>
 ### 推荐验证命令
 
 ```powershell
+dotnet restore backend/dotnet/Tw.SmartPlatform.slnx --locked-mode
 dotnet test backend/dotnet/BuildingBlocks/tests/Architecture/Tw.Architecture.Tests/Tw.Architecture.Tests.csproj
-python -m pytest tools/tests/test_charter.py
-dotnet test backend/dotnet/Tw.SmartPlatform.slnx
+dotnet test backend/dotnet/tools/tests/Tw.Analyzers.Tests/Tw.Analyzers.Tests.csproj
+dotnet test backend/dotnet/tools/tests/Tw.Cli.Tests/Tw.Cli.Tests.csproj
+dotnet test backend/dotnet/tools/tests/Tw.Templates.Tests/Tw.Templates.Tests.csproj
+$env:PYTHONPATH = "tools/src"
+python -m pytest tools/tests
+python -m tw_memory check --root .
+dotnet build backend/dotnet/Tw.SmartPlatform.slnx --no-restore
+dotnet test backend/dotnet/Tw.SmartPlatform.slnx --no-build --no-restore
 ```
 
-实现阶段还必须运行受影响 provider 的真实依赖集成测试和 pack/consume 验证；上述三条命令不是完整发布门禁的替代品。
+实现阶段还必须运行受影响 provider 的真实依赖集成测试和 pack/consume 验证；上述命令不是完整发布门禁的替代品。
 
 ## 兼容、弃用和回滚
 
@@ -506,6 +604,8 @@ dotnet test backend/dotnet/Tw.SmartPlatform.slnx
 ## 验收标准
 
 - 73 个现有项目全部有明确保留、合并、删除或迁移目标，目标结构为 57 个项目
+- 测试项目从 57 个收敛为设计批准的 50 个；生产包合并、删除和重命名均有对应测试迁移，且不存在孤儿测试项目
+- `BuildingBlocks/src`、`BuildingBlocks/tests` 的物理 capability folder 与 `.slnx` solution folder 完全一致，磁盘和解决方案项目集合一一对应
 - `Tw.DependencyInjection.Abstractions` 与 `Tw.DependencyInjection` 独立保留，默认宿主不再引用 Autofac/Castle
 - 不存在 `Tw.Interception` 或其他覆盖所有入口的通用动态代理包
 - 保留的 `.Abstractions`、`.Contracts` 和 provider 包逐一满足本文门槛
@@ -514,4 +614,7 @@ dotnet test backend/dotnet/Tw.SmartPlatform.slnx
 - 入口原生管道与应用用例管道职责清晰，异常、重试、取消和幂等语义经过入口级测试
 - 新能力可以根据本文决策顺序确定留在服务内部、进入现有包、建立单包或拆分 provider
 - 拼音转换示例能够以单包起步，并在真实依赖隔离出现时按规则升级，不预建空抽象
+- 除 `TwException` 外，代码标识符不再包含独立的 `Tw` 品牌词段；普通英文单词、PackageId、程序集名、根命名空间、配置根和诊断号不被误伤
+- CLI、analyzer、模板、Python 包发现、charter gate、`.tw-memory`、中央版本与 lock 文件均与目标结构一致，不再接受 retired 包或旧扁平目录
+- `tw_memory` 的 .NET charter、文档和生成索引精确覆盖 57 个 BuildingBlocks 项目与 3 个工具项目，无漏项和孤儿项
 - 统一版本发布、公开 API 基线、charter、使用文档、迁移说明和 pack/consume 验证完整
