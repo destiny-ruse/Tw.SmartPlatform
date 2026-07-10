@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Caching.Tests;
 
-/// <summary>验证 CacheKeyBuilderTests 相关行为</summary>
+/// <summary>
+/// 覆盖缓存键构建器的核心行为和边界条件
+/// </summary>
 public sealed class CacheKeyBuilderTests
 {
-    /// <summary>验证 Build_IncludesTenantShardResourceAndVersion 场景</summary>
+    /// <summary>
+    /// 验证BuildIncludes租户Shard资源和Version
+    /// </summary>
     [Fact]
     public void Build_IncludesTenantShardResourceAndVersion()
     {

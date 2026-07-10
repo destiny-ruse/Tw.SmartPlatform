@@ -1,8 +1,12 @@
 ﻿namespace Tw.Observability.OpenTelemetry;
 
-/// <summary>表示 OpenTelemetryRegistrationOptions 声明</summary>
+/// <summary>
+/// 配置OpenTelemetryRegistration的运行行为
+/// </summary>
 public sealed record OpenTelemetryRegistrationOptions(bool EnableGrpcNetClientInstrumentation)
 {
-    /// <summary>表示 Default 属性</summary>
+    /// <summary>
+    /// new在当前对象中的业务含义
+    /// </summary>
     public static OpenTelemetryRegistrationOptions Default { get; } = new(EnableGrpcNetClientInstrumentation: false);
 }

@@ -9,11 +9,17 @@ namespace Tw.Localization;
 /// </summary>
 public sealed class EntityTranslationService : IEntityTranslationService
 {
-    /// <summary>表示 _store 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的存储
+    /// </summary>
     private readonly IEntityTranslationStore _store;
-    /// <summary>表示 _options 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的选项
+    /// </summary>
     private readonly LocalizationOptions _options;
-    /// <summary>表示 _cancellationTokenProvider 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的cancellation令牌提供器
+    /// </summary>
     private readonly ICancellationTokenProvider _cancellationTokenProvider;
 
     /// <summary>

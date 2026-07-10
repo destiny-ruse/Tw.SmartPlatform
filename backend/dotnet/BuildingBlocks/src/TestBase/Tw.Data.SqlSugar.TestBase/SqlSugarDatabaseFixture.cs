@@ -1,6 +1,8 @@
 ﻿namespace Tw.Data.SqlSugar.TestBase;
 
-/// <summary>表示 SqlSugarDatabaseFixture 类型</summary>
+/// <summary>
+/// 封装SqlSugarDatabaseFixture相关的数据和行为
+/// </summary>
 public sealed class SqlSugarDatabaseFixture
 {
 }

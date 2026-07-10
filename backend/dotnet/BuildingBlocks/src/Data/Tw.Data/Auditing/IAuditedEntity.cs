@@ -1,17 +1,27 @@
 ﻿namespace Tw.Data.Auditing;
 
-/// <summary>定义 IAuditedEntity 契约</summary>
+/// <summary>
+/// 定义AuditedEntity的能力边界
+/// </summary>
 public interface IAuditedEntity
 {
-    /// <summary>表示 CreatedAt 属性</summary>
+    /// <summary>
+    /// CreatedAt在当前对象中的业务含义
+    /// </summary>
     DateTimeOffset CreatedAt { get; set; }
 
-    /// <summary>表示 UpdatedAt 属性</summary>
+    /// <summary>
+    /// UpdatedAt在当前对象中的业务含义
+    /// </summary>
     DateTimeOffset UpdatedAt { get; set; }
 
-    /// <summary>表示 CreatedBy 属性</summary>
+    /// <summary>
+    /// CreatedBy在当前对象中的业务含义
+    /// </summary>
     string? CreatedBy { get; set; }
 
-    /// <summary>表示 UpdatedBy 属性</summary>
+    /// <summary>
+    /// UpdatedBy在当前对象中的业务含义
+    /// </summary>
     string? UpdatedBy { get; set; }
 }

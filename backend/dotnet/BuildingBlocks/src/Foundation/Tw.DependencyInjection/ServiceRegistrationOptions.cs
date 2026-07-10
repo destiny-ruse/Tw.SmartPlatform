@@ -5,19 +5,29 @@ namespace Tw.DependencyInjection;
 /// </summary>
 public sealed class ServiceRegistrationOptions
 {
-    /// <summary>额外纳入扫描的程序集名（精确匹配），在内置 <c>Tw.</c> 前缀之外补充白名单</summary>
+    /// <summary>
+    /// 额外纳入扫描的程序集名（精确匹配），在内置 <c>Tw.</c> 前缀之外补充白名单
+    /// </summary>
     public IList<string> IncludeAssemblies { get; } = new List<string>();
 
-    /// <summary>排除出扫描的程序集名（精确匹配），优先于任何白名单</summary>
+    /// <summary>
+    /// 排除出扫描的程序集名（精确匹配），优先于任何白名单
+    /// </summary>
     public IList<string> ExcludeAssemblies { get; } = new List<string>();
 
-    /// <summary>额外纳入扫描的程序集名前缀，叠加在内置 <c>Tw.</c> 前缀之上</summary>
+    /// <summary>
+    /// 额外纳入扫描的程序集名前缀，叠加在内置 <c>Tw.</c> 前缀之上
+    /// </summary>
     public IList<string> IncludeAssemblyPrefixes { get; } = new List<string>();
 
-    /// <summary>排除出扫描的程序集名前缀，优先于任何白名单</summary>
+    /// <summary>
+    /// 排除出扫描的程序集名前缀，优先于任何白名单
+    /// </summary>
     public IList<string> ExcludeAssemblyPrefixes { get; } = new List<string>();
 
-    /// <summary>程序集级显式优先级配置，key 为程序集名，value 越大优先级越高</summary>
+    /// <summary>
+    /// 程序集级显式优先级配置，key 为程序集名，value 越大优先级越高
+    /// </summary>
     public IDictionary<string, int> AssemblyPriorities { get; } =
         new Dictionary<string, int>(StringComparer.Ordinal);
 }

@@ -5,45 +5,69 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Registration;
 
-/// <summary>验证 ServiceExposureResolverTests 相关行为</summary>
+/// <summary>
+/// 覆盖服务ExposureResolver的核心行为和边界条件
+/// </summary>
 public class ServiceExposureResolverTests
 {
-    /// <summary>定义 IOrderService 契约</summary>
+    /// <summary>
+    /// 定义Order服务的能力边界
+    /// </summary>
     private interface IOrderService;
-    /// <summary>定义 IRepository 契约</summary>
-    /// <typeparam name="TEntity">TEntity 类型参数</typeparam>
+    /// <summary>
+    /// 定义仓库的能力边界
+    /// </summary>
+    /// <typeparam name="TEntity">响应数据的运行时类型</typeparam>
     private interface IRepository<TEntity>;
-    /// <summary>定义 IWidgetStore 契约</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <summary>
+    /// 定义Widget存储的能力边界
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
     private interface IWidgetStore<T>;
-    /// <summary>定义 IUnrelatedGeneric 契约</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <summary>
+    /// 定义UnrelatedGeneric的能力边界
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
     private interface IUnrelatedGeneric<T>;
 
-    /// <summary>验证 OrderService 相关行为</summary>
+    /// <summary>
+    /// 覆盖Order服务的核心行为和边界条件
+    /// </summary>
     private sealed class OrderService : IOrderService, IScopedDependency;
 
-    /// <summary>验证 ExplicitOrderService 相关行为</summary>
+    /// <summary>
+    /// 覆盖ExplicitOrder服务的核心行为和边界条件
+    /// </summary>
     [ExposeServices(typeof(IOrderService), IncludeSelf = true)]
     private sealed class ExplicitOrderService : IOrderService, IScopedDependency;
 
-    /// <summary>验证 ExplicitNoSelfService 相关行为</summary>
+    /// <summary>
+    /// 覆盖ExplicitNoSelf服务的核心行为和边界条件
+    /// </summary>
     [ExposeServices(typeof(IOrderService))]
     private sealed class ExplicitNoSelfService : IOrderService, IScopedDependency;
 
-    /// <summary>验证 KeyedOrderService 相关行为</summary>
+    /// <summary>
+    /// 覆盖KeyedOrder服务的核心行为和边界条件
+    /// </summary>
     [ExposeKeyedService(typeof(IOrderService), "primary")]
     private sealed class KeyedOrderService : IOrderService, IScopedDependency;
 
-    /// <summary>验证 Repository 相关行为</summary>
-    /// <typeparam name="TEntity">TEntity 类型参数</typeparam>
+    /// <summary>
+    /// 覆盖Repository的核心行为和边界条件
+    /// </summary>
+    /// <typeparam name="TEntity">响应数据的运行时类型</typeparam>
     private sealed class Repository<TEntity> : IRepository<TEntity>, IScopedDependency;
 
-    /// <summary>验证 WidgetStore 相关行为</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <summary>
+    /// 覆盖Widget存储的核心行为和边界条件
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
     private sealed class WidgetStore<T> : IWidgetStore<T>, IUnrelatedGeneric<T>, IScopedDependency;
 
-    /// <summary>验证 Resolve_DefaultExposesSelfAndMatchingInterface 场景</summary>
+    /// <summary>
+    /// 验证Resolve默认ExposesSelf和MatchingInterface
+    /// </summary>
     [Fact]
     public void Resolve_DefaultExposesSelfAndMatchingInterface()
     {
@@ -54,7 +78,9 @@ public class ServiceExposureResolverTests
         exposures.Should().NotContain(e => e.ServiceType == typeof(IScopedDependency));
     }
 
-    /// <summary>验证 Resolve_ExplicitExposeServicesHonorsIncludeSelf 场景</summary>
+    /// <summary>
+    /// 验证ResolveExplicitExposeServicesHonorsIncludeSelf
+    /// </summary>
     [Fact]
     public void Resolve_ExplicitExposeServicesHonorsIncludeSelf()
     {
@@ -64,7 +90,9 @@ public class ServiceExposureResolverTests
         exposures.Should().Contain(e => e.ServiceType == typeof(ExplicitOrderService) && e.Key == null);
     }
 
-    /// <summary>验证 Resolve_KeyedExposureCarriesKey 场景</summary>
+    /// <summary>
+    /// 验证ResolveKeyedExposureCarries键
+    /// </summary>
     [Fact]
     public void Resolve_KeyedExposureCarriesKey()
     {
@@ -73,7 +101,9 @@ public class ServiceExposureResolverTests
         exposures.Should().ContainSingle(e => e.ServiceType == typeof(IOrderService) && Equals(e.Key, "primary"));
     }
 
-    /// <summary>验证 Resolve_OpenGenericExposesGenericInterfaceDefinition 场景</summary>
+    /// <summary>
+    /// 验证ResolveOpenGenericExposesGenericInterface定义
+    /// </summary>
     [Fact]
     public void Resolve_OpenGenericExposesGenericInterfaceDefinition()
     {

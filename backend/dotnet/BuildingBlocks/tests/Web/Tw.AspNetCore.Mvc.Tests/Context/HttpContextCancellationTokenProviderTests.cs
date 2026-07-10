@@ -6,19 +6,27 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.Context;
 
-/// <summary>验证 HttpContextCancellationTokenProviderTests 相关行为</summary>
+/// <summary>
+/// 覆盖Http上下文Cancellation令牌提供器的核心行为和边界条件
+/// </summary>
 public class HttpContextCancellationTokenProviderTests
 {
-    /// <summary>验证 FakeHttpContextAccessor 相关行为</summary>
+    /// <summary>
+    /// 覆盖FakeHttp上下文Accessor的核心行为和边界条件
+    /// </summary>
     private sealed class FakeHttpContextAccessor : IHttpContextAccessor
     {
-        /// <summary>表示 HttpContext 属性</summary>
+        /// <summary>
+        /// Http上下文在当前对象中的业务含义
+        /// </summary>
         public HttpContext? HttpContext { get; set; }
     }
 
-    /// <summary>验证 CreateSut 场景</summary>
-    /// <param name="accessor">accessor 参数</param>
-    /// <returns>CreateSut 的执行结果</returns>
+    /// <summary>
+    /// 创建Sut测试对象
+    /// </summary>
+    /// <param name="accessor">用于提供accessor</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static HttpContextCancellationTokenProvider CreateSut(IHttpContextAccessor accessor)
     {
         return new HttpContextCancellationTokenProvider(
@@ -26,7 +34,9 @@ public class HttpContextCancellationTokenProviderTests
             accessor);
     }
 
-    /// <summary>验证 Token_ReturnsRequestAborted_WhenHttpContextExists 场景</summary>
+    /// <summary>
+    /// 验证令牌返回请求Aborted当Http上下文Exists
+    /// </summary>
     [Fact]
     public void Token_ReturnsRequestAborted_WhenHttpContextExists()
     {
@@ -40,7 +50,9 @@ public class HttpContextCancellationTokenProviderTests
         sut.Token.Should().Be(cts.Token);
     }
 
-    /// <summary>验证 Token_PrefersOverride_OverRequestAborted 场景</summary>
+    /// <summary>
+    /// 验证令牌PrefersOverrideOver请求Aborted
+    /// </summary>
     [Fact]
     public void Token_PrefersOverride_OverRequestAborted()
     {
@@ -60,7 +72,9 @@ public class HttpContextCancellationTokenProviderTests
         sut.Token.Should().Be(requestCts.Token);
     }
 
-    /// <summary>验证 Token_ReturnsNone_WhenNoHttpContextAndNoOverride 场景</summary>
+    /// <summary>
+    /// 验证令牌返回None当NoHttp上下文和NoOverride
+    /// </summary>
     [Fact]
     public void Token_ReturnsNone_WhenNoHttpContextAndNoOverride()
     {

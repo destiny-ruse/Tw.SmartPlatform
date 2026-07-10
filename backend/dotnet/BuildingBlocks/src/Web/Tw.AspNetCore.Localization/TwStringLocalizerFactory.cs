@@ -16,11 +16,17 @@ namespace Tw.AspNetCore.Localization;
 /// </remarks>
 public sealed class TwStringLocalizerFactory : IStringLocalizerFactory
 {
-    /// <summary>表示 _snapshot 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的snapshot
+    /// </summary>
     private readonly IStaticTextSnapshot _snapshot;
-    /// <summary>表示 _accessor 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的accessor
+    /// </summary>
     private readonly ICurrentLocalizationContextAccessor _accessor;
-    /// <summary>表示 _options 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的选项
+    /// </summary>
     private readonly TwLocalizationOptions _options;
 
     /// <summary>

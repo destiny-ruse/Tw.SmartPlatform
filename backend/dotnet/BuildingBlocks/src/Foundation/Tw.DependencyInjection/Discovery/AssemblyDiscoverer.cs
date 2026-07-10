@@ -4,19 +4,25 @@ using Tw.DependencyInjection.Registration;
 
 namespace Tw.DependencyInjection.Discovery;
 
-/// <summary>发现结果：按拓扑排序的程序集、诊断报告与程序集可达性图</summary>
+/// <summary>
+/// 发现结果：按拓扑排序的程序集、诊断报告与程序集可达性图
+/// </summary>
 internal sealed record AssemblyDiscoveryResult(
     IReadOnlyList<Assembly> OrderedAssemblies,
     ServiceRegistrationReport Report,
     AssemblyReachabilityGraph ReachabilityGraph);
 
-/// <summary>表示 AssemblyDiscoverer 类型</summary>
+/// <summary>
+/// 封装AssemblyDiscoverer相关的数据和行为
+/// </summary>
 internal static class AssemblyDiscoverer
 {
-    /// <summary>执行 Discover 操作</summary>
-    /// <param name="options">options 参数</param>
-    /// <param name="source">source 参数</param>
-    /// <returns>Discover 的执行结果</returns>
+    /// <summary>
+    /// 说明Discover在当前类型中的职责
+    /// </summary>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <param name="source">用于提供source</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static AssemblyDiscoveryResult Discover(ServiceRegistrationOptions options, IAssemblySource source)
     {
         ArgumentNullException.ThrowIfNull(options);
@@ -67,9 +73,11 @@ internal static class AssemblyDiscoverer
             new AssemblyReachabilityGraph(referencesByAssemblyName));
     }
 
-    /// <summary>执行 ReferencedNames 操作</summary>
-    /// <param name="assembly">assembly 参数</param>
-    /// <returns>ReferencedNames 的执行结果</returns>
+    /// <summary>
+    /// 说明Referenced名称集合在当前类型中的职责
+    /// </summary>
+    /// <param name="assembly">用于提供assembly</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static IReadOnlyList<string> ReferencedNames(Assembly assembly) =>
         assembly.GetReferencedAssemblies()
             .Select(reference => reference.Name)

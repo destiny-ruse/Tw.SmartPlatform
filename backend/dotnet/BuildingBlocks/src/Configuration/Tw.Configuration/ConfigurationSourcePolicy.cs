@@ -1,11 +1,15 @@
 ﻿namespace Tw.Configuration;
 
-/// <summary>表示 ConfigurationSourcePolicy 类型</summary>
+/// <summary>
+/// 封装ConfigurationSource策略相关的数据和行为
+/// </summary>
 public static class ConfigurationSourcePolicy
 {
-    /// <summary>执行 IsUserSecretsAllowed 操作</summary>
-    /// <param name="environmentName">environmentName 参数</param>
-    /// <returns>IsUserSecretsAllowed 的执行结果</returns>
+    /// <summary>
+    /// 判断用户SecretsAllowed是否满足条件
+    /// </summary>
+    /// <param name="environmentName">用于提供环境Name</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     public static bool IsUserSecretsAllowed(string environmentName)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(environmentName);

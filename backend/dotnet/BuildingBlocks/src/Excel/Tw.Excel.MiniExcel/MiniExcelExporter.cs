@@ -38,8 +38,10 @@ public sealed class MiniExcelExporter : IExcelExporter
         PostProcessBlankTemplate(stream);
     }
 
-    /// <summary>执行 PostProcessBlankTemplate 操作</summary>
-    /// <param name="stream">stream 参数</param>
+    /// <summary>
+    /// 说明PostProcessBlank模板在当前类型中的职责
+    /// </summary>
+    /// <param name="stream">用于提供stream</param>
     private static void PostProcessBlankTemplate(Stream stream)
     {
         if (!stream.CanSeek)

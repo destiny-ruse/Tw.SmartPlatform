@@ -7,13 +7,17 @@ namespace Tw.DependencyInjection.Abstractions;
 [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = false, Inherited = false)]
 public sealed class TwAssemblyPriorityAttribute : Attribute
 {
-    /// <summary>声明程序集级优先级</summary>
+    /// <summary>
+    /// 声明程序集级优先级
+    /// </summary>
     /// <param name="priority">优先级数值，越大优先级越高</param>
     public TwAssemblyPriorityAttribute(int priority)
     {
         Priority = priority;
     }
 
-    /// <summary>程序集级优先级</summary>
+    /// <summary>
+    /// 程序集级优先级
+    /// </summary>
     public int Priority { get; }
 }

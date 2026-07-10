@@ -12,10 +12,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Tests.DependencyInjection;
 
-/// <summary>验证 HostStartupBuilderExtensionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖主机启动构建器Extensions的核心行为和边界条件
+/// </summary>
 public class HostStartupBuilderExtensionsTests
 {
-    /// <summary>验证 UseWebIntegration_ConfiguresAutofacAndServiceRegistration 场景</summary>
+    /// <summary>
+    /// 验证UseWebIntegrationConfiguresAutofac和服务Registration
+    /// </summary>
     [Fact]
     public void UseWebIntegration_ConfiguresAutofacAndServiceRegistration()
     {
@@ -46,7 +50,9 @@ public class HostStartupBuilderExtensionsTests
         HostStartupSampleInterceptor.InvocationCount.Should().Be(1);
     }
 
-    /// <summary>验证 UseWebIntegration_ReturnsSameBuilder_ForChaining 场景</summary>
+    /// <summary>
+    /// 验证UseWebIntegration返回Same构建器针对Chaining
+    /// </summary>
     [Fact]
     public void UseWebIntegration_ReturnsSameBuilder_ForChaining()
     {
@@ -57,7 +63,9 @@ public class HostStartupBuilderExtensionsTests
         result.Should().BeSameAs(builder);
     }
 
-    /// <summary>验证 UseWebIntegration_Throws_WhenBuilderIsNull 场景</summary>
+    /// <summary>
+    /// 验证UseWebIntegration抛出异常当构建器Is空值
+    /// </summary>
     [Fact]
     public void UseWebIntegration_Throws_WhenBuilderIsNull()
     {
@@ -69,8 +77,10 @@ public class HostStartupBuilderExtensionsTests
             .WithParameterName("builder");
     }
 
-    /// <summary>验证 CreateBuilderWithTestAssembly 场景</summary>
-    /// <returns>CreateBuilderWithTestAssembly 的执行结果</returns>
+    /// <summary>
+    /// 创建构建器带有TestAssembly测试对象
+    /// </summary>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static WebApplicationBuilder CreateBuilderWithTestAssembly()
     {
         var builder = WebApplication.CreateBuilder();
@@ -82,37 +92,55 @@ public class HostStartupBuilderExtensionsTests
         return builder;
     }
 
-    /// <summary>定义 IHostStartupSampleService 契约</summary>
+    /// <summary>
+    /// 定义主机启动示例服务的能力边界
+    /// </summary>
     public interface IHostStartupSampleService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [Intercept(typeof(HostStartupSampleInterceptor))]
         void Execute();
     }
 
-    /// <summary>验证 HostStartupSampleService 相关行为</summary>
+    /// <summary>
+    /// 覆盖主机启动示例服务的核心行为和边界条件
+    /// </summary>
     public sealed class HostStartupSampleService : IHostStartupSampleService, IScopedDependency
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         public void Execute()
         {
         }
     }
 
-    /// <summary>验证 HostStartupSampleInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖主机启动示例拦截器的核心行为和边界条件
+    /// </summary>
     public sealed class HostStartupSampleInterceptor : SyncInterceptorBase, ITransientDependency
     {
-        /// <summary>表示 _invocationCount 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的调用数量
+        /// </summary>
         private static int _invocationCount;
 
-        /// <summary>表示 InvocationCount 属性</summary>
+        /// <summary>
+        /// Read在当前对象中的业务含义
+        /// </summary>
         public static int InvocationCount => Volatile.Read(ref _invocationCount);
 
-        /// <summary>验证 Reset 场景</summary>
+        /// <summary>
+        /// 清空测试替身记录的调用状态
+        /// </summary>
         public static void Reset() => Interlocked.Exchange(ref _invocationCount, 0);
 
-        /// <summary>验证 Before 场景</summary>
-        /// <param name="context">context 参数</param>
+        /// <summary>
+        /// 在目标调用前运行拦截器逻辑
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
         protected override void Before(IInvocationContext context)
         {
             Interlocked.Increment(ref _invocationCount);

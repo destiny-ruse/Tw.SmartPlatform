@@ -5,7 +5,9 @@ namespace Tw.DependencyInjection;
 /// </summary>
 public sealed class ServiceRegistrationException : Exception
 {
-    /// <summary>使用错误消息初始化 <see cref="ServiceRegistrationException"/> 的新实例</summary>
+    /// <summary>
+    /// 使用错误消息初始化 <see cref="ServiceRegistrationException"/> 的新实例
+    /// </summary>
     /// <param name="message">描述失败原因的消息</param>
     public ServiceRegistrationException(string message)
         : base(message)

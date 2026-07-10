@@ -6,11 +6,15 @@ using Xunit;
 
 namespace Tw.Data.SqlSugar.Tests.Uow;
 
-/// <summary>验证 SqlSugarUnitOfWorkManagerTests 相关行为</summary>
+/// <summary>
+/// 覆盖SqlSugarUnitOfWorkManager的核心行为和边界条件
+/// </summary>
 public sealed class SqlSugarUnitOfWorkManagerTests
 {
-    /// <summary>验证 BeginAsync_SetsCurrentUnitOfWork 场景</summary>
-    /// <returns>BeginAsync_SetsCurrentUnitOfWork 的执行结果</returns>
+    /// <summary>
+    /// 验证Begin异步SetsCurrentUnitOfWork
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task BeginAsync_SetsCurrentUnitOfWork()
     {
@@ -21,8 +25,10 @@ public sealed class SqlSugarUnitOfWorkManagerTests
         manager.Current.Should().BeSameAs(uow);
     }
 
-    /// <summary>验证 DisposeAsync_ClearsCurrentUnitOfWork 场景</summary>
-    /// <returns>DisposeAsync_ClearsCurrentUnitOfWork 的执行结果</returns>
+    /// <summary>
+    /// 验证Dispose异步ClearsCurrentUnitOfWork
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task DisposeAsync_ClearsCurrentUnitOfWork()
     {
@@ -34,8 +40,10 @@ public sealed class SqlSugarUnitOfWorkManagerTests
         manager.Current.Should().BeNull();
     }
 
-    /// <summary>验证 CommitAsync_MarksOutboxBoundaryAsCommitted 场景</summary>
-    /// <returns>CommitAsync_MarksOutboxBoundaryAsCommitted 的执行结果</returns>
+    /// <summary>
+    /// 验证Commit异步MarksOutbox边界作为Committed
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task CommitAsync_MarksOutboxBoundaryAsCommitted()
     {
@@ -49,12 +57,16 @@ public sealed class SqlSugarUnitOfWorkManagerTests
         boundary.IsCompleted.Should().BeTrue();
     }
 
-    /// <summary>验证 FakeSqlSugarClientFactory 相关行为</summary>
+    /// <summary>
+    /// 覆盖FakeSqlSugarClientFactory的核心行为和边界条件
+    /// </summary>
     private sealed class FakeSqlSugarClientFactory : ISqlSugarClientFactory
     {
-        /// <summary>验证 CreateClient 场景</summary>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>CreateClient 的执行结果</returns>
+        /// <summary>
+        /// 创建Client测试对象
+        /// </summary>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>方法完成后返回给调用方的结果对象</returns>
         public object CreateClient(CancellationToken cancellationToken)
         {
             return new object();

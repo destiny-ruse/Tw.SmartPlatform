@@ -1,9 +1,13 @@
 ﻿namespace Tw.Cli.Governance;
 
-/// <summary>表示 ForbiddenPackageCatalog 类型</summary>
+/// <summary>
+/// 维护禁止Package目录
+/// </summary>
 public static class ForbiddenPackageCatalog
 {
-    /// <summary>表示 Names 属性</summary>
+    /// <summary>
+    /// Hash写入在当前对象中的业务含义
+    /// </summary>
     public static IReadOnlySet<string> Names { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     {
         "Tw.Infrastructure",

@@ -29,28 +29,40 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
         return pipelineExecution.ProceedAsync(nextInterceptorIndex: 0);
     }
 
-    /// <summary>表示 PipelineExecution 类型</summary>
+    /// <summary>
+    /// 封装管道Execution相关的数据和行为
+    /// </summary>
     private sealed class PipelineExecution
     {
-        /// <summary>表示 _innerContext 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的inner上下文
+        /// </summary>
         private readonly IInvocationContext _innerContext;
-        /// <summary>表示 _interceptors 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的interceptors
+        /// </summary>
         private readonly IReadOnlyList<IInterceptor> _interceptors;
-        /// <summary>表示 _hasProceededTarget 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的hasProceededTarget
+        /// </summary>
         private bool _hasProceededTarget;
 
-        /// <summary>初始化 PipelineExecution 实例</summary>
-        /// <param name="innerContext">innerContext 参数</param>
-        /// <param name="interceptors">interceptors 参数</param>
+        /// <summary>
+        /// 初始化 PipelineExecution 实例
+        /// </summary>
+        /// <param name="innerContext">用于提供nner上下文</param>
+        /// <param name="interceptors">参与当前测试场景的拦截器集合</param>
         public PipelineExecution(IInvocationContext innerContext, IReadOnlyList<IInterceptor> interceptors)
         {
             _innerContext = innerContext;
             _interceptors = interceptors;
         }
 
-        /// <summary>执行 ProceedAsync 操作</summary>
-        /// <param name="nextInterceptorIndex">nextInterceptorIndex 参数</param>
-        /// <returns>ProceedAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明ProceedAsync在当前类型中的职责
+        /// </summary>
+        /// <param name="nextInterceptorIndex">用于提供next拦截器Index</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask ProceedAsync(int nextInterceptorIndex)
         {
             if (nextInterceptorIndex >= _interceptors.Count)
@@ -69,8 +81,10 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             return interceptor.InterceptAsync(invocationContext);
         }
 
-        /// <summary>执行 Proceed 操作</summary>
-        /// <param name="nextInterceptorIndex">nextInterceptorIndex 参数</param>
+        /// <summary>
+        /// 说明Proceed在当前类型中的职责
+        /// </summary>
+        /// <param name="nextInterceptorIndex">用于提供next拦截器Index</param>
         public void Proceed(int nextInterceptorIndex)
         {
             if (nextInterceptorIndex >= _interceptors.Count)
@@ -90,7 +104,9 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             interceptor.InterceptAsync(invocationContext).AsTask().GetAwaiter().GetResult();
         }
 
-        /// <summary>执行 EnsureTargetHasNotProceeded 操作</summary>
+        /// <summary>
+        /// 说明EnsureTarget存在不Proceeded在当前类型中的职责
+        /// </summary>
         private void EnsureTargetHasNotProceeded()
         {
             if (_hasProceededTarget)
@@ -102,22 +118,34 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
         }
     }
 
-    /// <summary>表示 PipelineInvocationContext 类型</summary>
+    /// <summary>
+    /// 封装管道调用上下文相关的数据和行为
+    /// </summary>
     private sealed class PipelineInvocationContext : IInvocationContext
     {
-        /// <summary>表示 _innerContext 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的inner上下文
+        /// </summary>
         private readonly IInvocationContext _innerContext;
-        /// <summary>表示 _pipelineExecution 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的管道Execution
+        /// </summary>
         private readonly PipelineExecution _pipelineExecution;
-        /// <summary>表示 _nextInterceptorIndex 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的next拦截器Index
+        /// </summary>
         private readonly int _nextInterceptorIndex;
-        /// <summary>表示 _hasProceededFrame 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的hasProceededFrame
+        /// </summary>
         private bool _hasProceededFrame;
 
-        /// <summary>初始化 PipelineInvocationContext 实例</summary>
-        /// <param name="innerContext">innerContext 参数</param>
-        /// <param name="pipelineExecution">pipelineExecution 参数</param>
-        /// <param name="nextInterceptorIndex">nextInterceptorIndex 参数</param>
+        /// <summary>
+        /// 初始化 PipelineInvocationContext 实例
+        /// </summary>
+        /// <param name="innerContext">用于提供nner上下文</param>
+        /// <param name="pipelineExecution">用于提供pipelineExecution</param>
+        /// <param name="nextInterceptorIndex">用于提供next拦截器Index</param>
         public PipelineInvocationContext(
             IInvocationContext innerContext,
             PipelineExecution pipelineExecution,
@@ -128,27 +156,39 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             _nextInterceptorIndex = nextInterceptorIndex;
         }
 
-        /// <summary>表示 Method 属性</summary>
+        /// <summary>
+        /// 方法在当前对象中的业务含义
+        /// </summary>
         public MethodInfo Method => _innerContext.Method;
 
-        /// <summary>表示 Target 属性</summary>
+        /// <summary>
+        /// 目标在当前对象中的业务含义
+        /// </summary>
         public object? Target => _innerContext.Target;
 
-        /// <summary>表示 Arguments 属性</summary>
+        /// <summary>
+        /// 参数在当前对象中的业务含义
+        /// </summary>
         public object?[] Arguments => _innerContext.Arguments;
 
-        /// <summary>表示 ArgumentsByName 属性</summary>
+        /// <summary>
+        /// 当前调用按名称索引后的参数集合
+        /// </summary>
         public IReadOnlyDictionary<string, object?> ArgumentsByName => _innerContext.ArgumentsByName;
 
-        /// <summary>表示 ReturnValue 属性</summary>
+        /// <summary>
+        /// 当前对象用于完成处理流程的内部状态
+        /// </summary>
         public object? ReturnValue
         {
             get => _innerContext.ReturnValue;
             set => _innerContext.ReturnValue = value;
         }
 
-        /// <summary>执行 ProceedAsync 操作</summary>
-        /// <returns>ProceedAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明ProceedAsync在当前类型中的职责
+        /// </summary>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask ProceedAsync()
         {
             EnsureFrameHasNotProceeded();
@@ -156,7 +196,9 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             return _pipelineExecution.ProceedAsync(_nextInterceptorIndex);
         }
 
-        /// <summary>执行 Proceed 操作</summary>
+        /// <summary>
+        /// 说明Proceed在当前类型中的职责
+        /// </summary>
         public void Proceed()
         {
             EnsureFrameHasNotProceeded();
@@ -164,7 +206,9 @@ public sealed class InterceptorPipeline : IInterceptorPipeline
             _pipelineExecution.Proceed(_nextInterceptorIndex);
         }
 
-        /// <summary>执行 EnsureFrameHasNotProceeded 操作</summary>
+        /// <summary>
+        /// 说明EnsureFrame存在不Proceeded在当前类型中的职责
+        /// </summary>
         private void EnsureFrameHasNotProceeded()
         {
             if (_hasProceededFrame)

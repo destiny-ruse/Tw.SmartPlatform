@@ -2,14 +2,18 @@
 
 namespace Tw.EventBus.Cap.Consumers;
 
-/// <summary>表示 CapConsumerExecutionFilter 类型</summary>
+/// <summary>
+/// 封装CapConsumerExecution过滤器相关的数据和行为
+/// </summary>
 public sealed class CapConsumerExecutionFilter(IInboxMessageStore inboxStore)
 {
-    /// <summary>执行 ExecuteAsync 操作</summary>
-    /// <param name="context">context 参数</param>
-    /// <param name="dispatch">dispatch 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ExecuteAsync 的执行结果</returns>
+    /// <summary>
+    /// 异步执行当前组件的核心处理流程
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <param name="dispatch">用于提供dispatch</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的CapConsumer结果</returns>
     public async Task<CapConsumerResult> ExecuteAsync(
         CapConsumerContext context,
         Func<CancellationToken, Task> dispatch,

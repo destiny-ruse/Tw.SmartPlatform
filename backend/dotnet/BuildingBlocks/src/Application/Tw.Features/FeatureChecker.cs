@@ -5,11 +5,17 @@
 /// </summary>
 public sealed class FeatureChecker : IFeatureChecker
 {
-    /// <summary>表示 _store 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的存储
+    /// </summary>
     private readonly IFeatureStore _store;
-    /// <summary>表示 _cache 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的缓存
+    /// </summary>
     private readonly IFeatureCache _cache;
-    /// <summary>表示 _definitions 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的definitions
+    /// </summary>
     private readonly IReadOnlyDictionary<string, FeatureDefinition> _definitions;
 
     /// <summary>
@@ -62,12 +68,14 @@ public sealed class FeatureChecker : IFeatureChecker
             cancellationToken);
     }
 
-    /// <summary>执行 FindValueAsync 操作</summary>
-    /// <param name="name">name 参数</param>
-    /// <param name="scope">scope 参数</param>
-    /// <param name="scopeKey">scopeKey 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>FindValueAsync 的执行结果</returns>
+    /// <summary>
+    /// 异步查找值并在不存在时返回空值
+    /// </summary>
+    /// <param name="name">待匹配成员或资源的名称</param>
+    /// <param name="scope">功能值生效的作用域</param>
+    /// <param name="scopeKey">作用域内定位主体或租户的键</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的功能值</returns>
     private async Task<FeatureValue?> FindValueAsync(
         string name,
         FeatureScope scope,

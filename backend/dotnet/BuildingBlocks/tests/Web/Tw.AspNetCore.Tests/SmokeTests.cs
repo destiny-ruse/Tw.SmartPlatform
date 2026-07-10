@@ -3,10 +3,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Tests;
 
-/// <summary>验证 SmokeTests 相关行为</summary>
+/// <summary>
+/// 覆盖冒烟的核心行为和边界条件
+/// </summary>
 public class SmokeTests
 {
-    /// <summary>验证 TestProject_IsWired 场景</summary>
+    /// <summary>
+    /// 验证Test项目IsWired
+    /// </summary>
     [Fact]
     public void TestProject_IsWired()
     {

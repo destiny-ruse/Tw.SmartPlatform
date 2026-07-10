@@ -1,8 +1,12 @@
 ﻿namespace Tw.Sharding.Abstractions;
 
-/// <summary>定义 IShardContext 契约</summary>
+/// <summary>
+/// 定义Shard上下文的能力边界
+/// </summary>
 public interface IShardContext
 {
-    /// <summary>表示 Current 属性</summary>
+    /// <summary>
+    /// Current在当前对象中的业务含义
+    /// </summary>
     ShardDescriptor Current { get; }
 }

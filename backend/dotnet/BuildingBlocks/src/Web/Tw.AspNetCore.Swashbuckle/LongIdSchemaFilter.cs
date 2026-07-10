@@ -4,12 +4,16 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Tw.AspNetCore.Swashbuckle;
 
-/// <summary>表示 LongIdSchemaFilter 类型</summary>
+/// <summary>
+/// 封装长整型标识架构过滤器相关的数据和行为
+/// </summary>
 public sealed class LongIdSchemaFilter : ISchemaFilter
 {
-    /// <summary>执行 Apply 操作</summary>
-    /// <param name="schema">schema 参数</param>
-    /// <param name="context">context 参数</param>
+    /// <summary>
+    /// 将当前过滤器规则应用到 OpenAPI 文档上下文
+    /// </summary>
+    /// <param name="schema">当前正在生成或调整的 OpenAPI schema</param>
+    /// <param name="context">当前调用携带的上下文信息</param>
     public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
     {
         if (context.Type == typeof(long) || context.Type == typeof(long?))

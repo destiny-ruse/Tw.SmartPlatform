@@ -8,7 +8,9 @@ namespace Tw.Core.Security.Cryptography;
 /// </summary>
 public static class HmacSha384Hasher
 {
-    /// <summary>计算字符串的 HMAC-SHA384 哈希</summary>
+    /// <summary>
+    /// 计算字符串的 HMAC-SHA384 哈希
+    /// </summary>
     /// <param name="key">HMAC 密钥</param>
     /// <param name="input">要计算哈希的字符串</param>
     /// <param name="useUpperCase">是否返回大写十六进制字符</param>
@@ -19,7 +21,9 @@ public static class HmacSha384Hasher
         return HmacComputation.ComputeHash(key, input, useUpperCase, encoding, HMACSHA384.HashData);
     }
 
-    /// <summary>计算字节的 HMAC-SHA384 哈希</summary>
+    /// <summary>
+    /// 计算字节的 HMAC-SHA384 哈希
+    /// </summary>
     /// <param name="key">HMAC 密钥字节</param>
     /// <param name="bytes">要计算哈希的字节</param>
     /// <param name="useUpperCase">是否返回大写十六进制字符</param>
@@ -29,7 +33,9 @@ public static class HmacSha384Hasher
         return HmacComputation.ComputeHash(key, bytes, useUpperCase, HMACSHA384.HashData);
     }
 
-    /// <summary>计算文件的 HMAC-SHA384 哈希</summary>
+    /// <summary>
+    /// 计算文件的 HMAC-SHA384 哈希
+    /// </summary>
     /// <param name="key">HMAC 密钥</param>
     /// <param name="filePath">要读取的文件路径</param>
     /// <param name="useUpperCase">是否返回大写十六进制字符</param>
@@ -46,7 +52,9 @@ public static class HmacSha384Hasher
         return HmacComputation.ComputeFileHashAsync(key, filePath, useUpperCase, encoding, HMACSHA384.HashDataAsync, cancellationToken);
     }
 
-    /// <summary>计算文件的 HMAC-SHA384 哈希</summary>
+    /// <summary>
+    /// 计算文件的 HMAC-SHA384 哈希
+    /// </summary>
     /// <param name="key">HMAC 密钥字节</param>
     /// <param name="filePath">要读取的文件路径</param>
     /// <param name="useUpperCase">是否返回大写十六进制字符</param>
@@ -61,7 +69,9 @@ public static class HmacSha384Hasher
         return HmacComputation.ComputeFileHashAsync(key, filePath, useUpperCase, HMACSHA384.HashDataAsync, cancellationToken);
     }
 
-    /// <summary>计算流的 HMAC-SHA384 哈希且不释放该流</summary>
+    /// <summary>
+    /// 计算流的 HMAC-SHA384 哈希且不释放该流
+    /// </summary>
     /// <param name="key">HMAC 密钥</param>
     /// <param name="stream">要从当前位置开始计算哈希的流</param>
     /// <param name="useUpperCase">是否返回大写十六进制字符</param>
@@ -78,7 +88,9 @@ public static class HmacSha384Hasher
         return HmacComputation.ComputeFileHashAsync(key, stream, useUpperCase, encoding, HMACSHA384.HashDataAsync, cancellationToken);
     }
 
-    /// <summary>计算流的 HMAC-SHA384 哈希且不释放该流</summary>
+    /// <summary>
+    /// 计算流的 HMAC-SHA384 哈希且不释放该流
+    /// </summary>
     /// <param name="key">HMAC 密钥字节</param>
     /// <param name="stream">要从当前位置开始计算哈希的流</param>
     /// <param name="useUpperCase">是否返回大写十六进制字符</param>
@@ -93,7 +105,9 @@ public static class HmacSha384Hasher
         return HmacComputation.ComputeFileHashAsync(key, stream, useUpperCase, HMACSHA384.HashDataAsync, cancellationToken);
     }
 
-    /// <summary>使用固定时间字节比较验证字符串的 HMAC-SHA384 哈希</summary>
+    /// <summary>
+    /// 使用固定时间字节比较验证字符串的 HMAC-SHA384 哈希
+    /// </summary>
     /// <param name="key">HMAC 密钥</param>
     /// <param name="input">要计算并验证哈希的字符串</param>
     /// <param name="hash">预期的十六进制哈希</param>
@@ -104,7 +118,9 @@ public static class HmacSha384Hasher
         return HmacComputation.VerifyHash(key, input, hash, encoding, HMACSHA384.HashData);
     }
 
-    /// <summary>使用固定时间字节比较验证字节的 HMAC-SHA384 哈希</summary>
+    /// <summary>
+    /// 使用固定时间字节比较验证字节的 HMAC-SHA384 哈希
+    /// </summary>
     /// <param name="key">HMAC 密钥字节</param>
     /// <param name="bytes">要计算并验证哈希的字节</param>
     /// <param name="hash">预期的十六进制哈希</param>

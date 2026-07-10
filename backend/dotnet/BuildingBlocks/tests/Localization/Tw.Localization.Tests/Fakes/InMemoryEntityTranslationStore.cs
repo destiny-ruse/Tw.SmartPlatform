@@ -7,7 +7,9 @@ namespace Tw.Localization.Tests.Fakes;
 /// </summary>
 internal sealed class InMemoryEntityTranslationStore : IEntityTranslationStore
 {
-    /// <summary>表示 _translations 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的translations
+    /// </summary>
     private readonly List<EntityTranslation> _translations = [];
 
     /// <summary>

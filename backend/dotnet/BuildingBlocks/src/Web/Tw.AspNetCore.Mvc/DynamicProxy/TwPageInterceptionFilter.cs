@@ -11,9 +11,13 @@ namespace Tw.AspNetCore.Mvc.DynamicProxy;
 /// </summary>
 public sealed class TwPageInterceptionFilter : IAsyncPageFilter
 {
-    /// <summary>表示 _serviceProvider 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的服务提供器
+    /// </summary>
     private readonly IServiceProvider _serviceProvider;
-    /// <summary>表示 _selector 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的selector
+    /// </summary>
     private readonly IInterceptorSelector _selector;
 
     /// <summary>
@@ -76,19 +80,23 @@ public sealed class TwPageInterceptionFilter : IAsyncPageFilter
         await pipeline.InvokeAsync(invocationContext, interceptors).ConfigureAwait(false);
     }
 
-    /// <summary>执行 ResolveImplementationType 操作</summary>
-    /// <param name="context">context 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <returns>ResolveImplementationType 的执行结果</returns>
+    /// <summary>
+    /// 说明解析实现类型在当前类型中的职责
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static Type ResolveImplementationType(PageHandlerExecutingContext context, MethodInfo method) =>
         context.HandlerInstance?.GetType()
         ?? method.DeclaringType
         ?? throw new InvalidOperationException(
             $"Razor Page handler '{method.Name}' 无法解析 page model 实现类型，不能选择拦截器");
 
-    /// <summary>执行 ResolveInterceptors 操作</summary>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
-    /// <returns>ResolveInterceptors 的执行结果</returns>
+    /// <summary>
+    /// 说明解析拦截器集合在当前类型中的职责
+    /// </summary>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private IReadOnlyList<IInterceptor> ResolveInterceptors(IReadOnlyList<Type> interceptorTypes)
     {
         var interceptors = new List<IInterceptor>(interceptorTypes.Count);
@@ -107,8 +115,10 @@ public sealed class TwPageInterceptionFilter : IAsyncPageFilter
         return interceptors;
     }
 
-    /// <summary>执行 ValidateInterceptorTypes 操作</summary>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
+    /// <summary>
+    /// 校验nterceptor类型集合并在非法时抛出异常
+    /// </summary>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
     private static void ValidateInterceptorTypes(IEnumerable<Type> interceptorTypes)
     {
         foreach (var interceptorType in interceptorTypes)

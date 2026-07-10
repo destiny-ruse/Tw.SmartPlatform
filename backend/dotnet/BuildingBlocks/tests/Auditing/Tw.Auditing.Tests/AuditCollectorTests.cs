@@ -5,11 +5,15 @@ using Xunit;
 
 namespace Tw.Auditing.Tests;
 
-/// <summary>验证 AuditCollectorTests 相关行为</summary>
+/// <summary>
+/// 覆盖审计Collector的核心行为和边界条件
+/// </summary>
 public sealed class AuditCollectorTests
 {
-    /// <summary>验证 CollectAsync_RedactsRawSensitivePayload 场景</summary>
-    /// <returns>CollectAsync_RedactsRawSensitivePayload 的执行结果</returns>
+    /// <summary>
+    /// 验证Collect异步RedactsRawSensitivePayload
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task CollectAsync_RedactsRawSensitivePayload()
     {
@@ -27,16 +31,22 @@ public sealed class AuditCollectorTests
         store.Events.Single().Details.Should().NotContain("Password=new");
     }
 
-    /// <summary>验证 InMemoryAuditStore 相关行为</summary>
+    /// <summary>
+    /// 覆盖InMemory审计存储的核心行为和边界条件
+    /// </summary>
     private sealed class InMemoryAuditStore : IAuditStore
     {
-        /// <summary>表示 Events 属性</summary>
+        /// <summary>
+        /// Events在当前对象中的业务含义
+        /// </summary>
         public List<AuditEvent> Events { get; } = [];
 
-        /// <summary>验证 StoreAsync 场景</summary>
-        /// <param name="auditEvent">auditEvent 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>StoreAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明存储Async在当前类型中的职责
+        /// </summary>
+        /// <param name="auditEvent">用于提供auditEvent</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task StoreAsync(AuditEvent auditEvent, CancellationToken cancellationToken = default)
         {
             Events.Add(auditEvent);

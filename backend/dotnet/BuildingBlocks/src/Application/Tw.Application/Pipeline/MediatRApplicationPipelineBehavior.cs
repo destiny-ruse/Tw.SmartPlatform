@@ -40,11 +40,13 @@ public sealed class MediatRApplicationPipelineBehavior<TRequest, TResponse>(
         return response!;
     }
 
-    /// <summary>执行 CreateBehaviors 操作</summary>
-    /// <param name="request">request 参数</param>
-    /// <param name="behaviors">behaviors 参数</param>
-    /// <param name="validators">validators 参数</param>
-    /// <returns>CreateBehaviors 的执行结果</returns>
+    /// <summary>
+    /// 创建Behaviors测试对象
+    /// </summary>
+    /// <param name="request">用于提供请求</param>
+    /// <param name="behaviors">用于提供behaviors</param>
+    /// <param name="validators">用于提供validators</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IReadOnlyList<IApplicationPipelineBehavior> CreateBehaviors(
         TRequest request,
         IEnumerable<IApplicationPipelineBehavior> behaviors,

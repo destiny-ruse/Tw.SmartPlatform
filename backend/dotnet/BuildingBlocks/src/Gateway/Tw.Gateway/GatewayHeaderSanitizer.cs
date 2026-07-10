@@ -1,11 +1,15 @@
 ﻿namespace Tw.Gateway;
 
-/// <summary>表示 GatewayHeaderSanitizer 类型</summary>
+/// <summary>
+/// 封装GatewayHeaderSanitizer相关的数据和行为
+/// </summary>
 public static class GatewayHeaderSanitizer
 {
-    /// <summary>执行 Sanitize 操作</summary>
-    /// <param name="headers">headers 参数</param>
-    /// <returns>Sanitize 的执行结果</returns>
+    /// <summary>
+    /// 说明Sanitize在当前类型中的职责
+    /// </summary>
+    /// <param name="headers">用于提供headers</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static IReadOnlyDictionary<string, string> Sanitize(IReadOnlyDictionary<string, string> headers)
     {
         ArgumentNullException.ThrowIfNull(headers);

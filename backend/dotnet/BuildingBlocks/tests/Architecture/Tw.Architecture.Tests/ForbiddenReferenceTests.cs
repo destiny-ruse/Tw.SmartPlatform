@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Architecture.Tests;
 
-/// <summary>验证 ForbiddenReferenceTests 相关行为</summary>
+/// <summary>
+/// 覆盖禁止Reference的核心行为和边界条件
+/// </summary>
 public sealed class ForbiddenReferenceTests
 {
-    /// <summary>验证 RuntimeProjects_DoNotReferenceTestingPackages 场景</summary>
+    /// <summary>
+    /// 验证RuntimeProjectsDo不引用Testing包
+    /// </summary>
     [Fact]
     public void RuntimeProjects_DoNotReferenceTestingPackages()
     {
@@ -26,7 +30,9 @@ public sealed class ForbiddenReferenceTests
         }
     }
 
-    /// <summary>验证 GatewayYarp_DoesNotReferenceApplicationDataOrEventBusPackages 场景</summary>
+    /// <summary>
+    /// 验证GatewayYarp不引用ApplicationDataOr事件Bus包
+    /// </summary>
     [Fact]
     public void GatewayYarp_DoesNotReferenceApplicationDataOrEventBusPackages()
     {

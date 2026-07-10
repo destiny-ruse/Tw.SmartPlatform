@@ -1,10 +1,16 @@
 ﻿namespace Tw.BackgroundJobs;
 
-/// <summary>表示 BackgroundJobAuditEvent 声明</summary>
+/// <summary>
+/// 封装后台作业审计事件相关的数据和行为
+/// </summary>
 public sealed record BackgroundJobAuditEvent(string TenantId, string ShardId, string JobId, DateTimeOffset StartedAt);
 
-/// <summary>表示 BackgroundJobTraceEvent 声明</summary>
+/// <summary>
+/// 封装后台作业Trace事件相关的数据和行为
+/// </summary>
 public sealed record BackgroundJobTraceEvent(string TenantId, string ShardId, string JobId, string EventName, DateTimeOffset OccurredAt);
 
-/// <summary>表示 BackgroundJobMetricEvent 声明</summary>
+/// <summary>
+/// 封装后台作业Metric事件相关的数据和行为
+/// </summary>
 public sealed record BackgroundJobMetricEvent(string TenantId, string ShardId, string JobId, string MetricName, double Value);

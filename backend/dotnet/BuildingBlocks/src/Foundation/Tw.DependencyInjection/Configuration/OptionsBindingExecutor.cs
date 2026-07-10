@@ -12,7 +12,9 @@ namespace Tw.DependencyInjection.Configuration;
 /// </summary>
 internal static class OptionsBindingExecutor
 {
-    /// <summary>表示 ApplyOneMethod 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的ApplyOneMethod
+    /// </summary>
     private static readonly MethodInfo ApplyOneMethod = typeof(OptionsBindingExecutor)
         .GetMethod(nameof(ApplyOne), BindingFlags.NonPublic | BindingFlags.Static)!;
 
@@ -47,11 +49,13 @@ internal static class OptionsBindingExecutor
         }
     }
 
-    /// <summary>执行 ApplyOne 操作</summary>
-    /// <typeparam name="TOptions">TOptions 类型参数</typeparam>
-    /// <param name="services">services 参数</param>
-    /// <param name="configuration">configuration 参数</param>
-    /// <param name="candidate">candidate 参数</param>
+    /// <summary>
+    /// 说明ApplyOne在当前类型中的职责
+    /// </summary>
+    /// <typeparam name="TOptions">响应数据的运行时类型</typeparam>
+    /// <param name="services">需要注册组件依赖的服务集合</param>
+    /// <param name="configuration">用于提供configuration</param>
+    /// <param name="candidate">用于提供candidate</param>
     private static void ApplyOne<TOptions>(
         IServiceCollection services,
         IConfiguration configuration,

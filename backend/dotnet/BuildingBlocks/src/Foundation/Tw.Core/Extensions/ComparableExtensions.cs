@@ -1,9 +1,13 @@
 namespace Tw.Extensions;
 
-/// <summary>提供可比较值的扩展方法</summary>
+/// <summary>
+/// 提供可比较值的扩展方法
+/// </summary>
 public static class ComparableExtensions
 {
-    /// <summary>返回值是否位于闭区间内</summary>
+    /// <summary>
+    /// 返回值是否位于闭区间内
+    /// </summary>
     /// <typeparam name="T">可比较值类型</typeparam>
     /// <param name="value">要比较的值</param>
     /// <param name="minInclusiveValue">闭区间下界</param>

@@ -18,23 +18,37 @@ namespace Tw.Castle.Core;
 /// </remarks>
 public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, CastleInterceptor
 {
-    /// <summary>表示 Enabled 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的Enabled常量值
+    /// </summary>
     private const string Enabled = "enabled";
-    /// <summary>表示 CastleInterfaceProxy 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的CastleInterface代理常量值
+    /// </summary>
     private const string CastleInterfaceProxy = "CastleInterfaceProxy";
 
-    /// <summary>表示 InterceptAsynchronousWithResultMethod 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的InterceptAsynchronous使用结果Method
+    /// </summary>
     private static readonly MethodInfo InterceptAsynchronousWithResultMethod = typeof(CastleAsyncInterceptorAdapter)
         .GetMethods(BindingFlags.Public | BindingFlags.Instance)
         .Single(method => method.Name == nameof(InterceptAsynchronous) && method.IsGenericMethodDefinition);
 
-    /// <summary>表示 _selector 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的selector
+    /// </summary>
     private readonly IInterceptorSelector _selector;
-    /// <summary>表示 _pipeline 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的管道
+    /// </summary>
     private readonly IInterceptorPipeline _pipeline;
-    /// <summary>表示 _serviceProvider 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的服务提供器
+    /// </summary>
     private readonly IServiceProvider _serviceProvider;
-    /// <summary>表示 _interceptionReport 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的interceptionReport
+    /// </summary>
     private readonly InterceptionReport? _interceptionReport;
 
     /// <summary>
@@ -157,15 +171,19 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
         invocation.ReturnValue = InvokePipelineAsTaskAsync<TResult>(invocation, interceptors);
     }
 
-    /// <summary>执行 ResolveMethod 操作</summary>
-    /// <param name="invocation">invocation 参数</param>
-    /// <returns>ResolveMethod 的执行结果</returns>
+    /// <summary>
+    /// 说明解析方法在当前类型中的职责
+    /// </summary>
+    /// <param name="invocation">用于提供nvocation</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static MethodInfo ResolveMethod(CastleInvocation invocation) =>
         invocation.MethodInvocationTarget ?? invocation.Method;
 
-    /// <summary>执行 ResolveImplementationType 操作</summary>
-    /// <param name="invocation">invocation 参数</param>
-    /// <returns>ResolveImplementationType 的执行结果</returns>
+    /// <summary>
+    /// 说明解析实现类型在当前类型中的职责
+    /// </summary>
+    /// <param name="invocation">用于提供nvocation</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static Type ResolveImplementationType(CastleInvocation invocation)
     {
         return invocation.MethodInvocationTarget?.DeclaringType
@@ -174,11 +192,13 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
             ?? throw new InvalidOperationException("无法从 Castle invocation 解析实现类型");
     }
 
-    /// <summary>执行 ResolveServiceType 操作</summary>
-    /// <param name="invocation">invocation 参数</param>
-    /// <param name="implementationType">implementationType 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <returns>ResolveServiceType 的执行结果</returns>
+    /// <summary>
+    /// 说明解析服务类型在当前类型中的职责
+    /// </summary>
+    /// <param name="invocation">用于提供nvocation</param>
+    /// <param name="implementationType">服务注册中使用的实现类型</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private Type ResolveServiceType(CastleInvocation invocation, Type implementationType, MethodInfo method)
     {
         var declaredServiceType = invocation.Method.DeclaringType
@@ -194,13 +214,15 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
             ?? declaredServiceType;
     }
 
-    /// <summary>执行 ResolveMostSpecificServiceInterface 操作</summary>
-    /// <param name="invocation">invocation 参数</param>
-    /// <param name="implementationType">implementationType 参数</param>
-    /// <param name="declaredServiceType">declaredServiceType 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <param name="report">report 参数</param>
-    /// <returns>ResolveMostSpecificServiceInterface 的执行结果</returns>
+    /// <summary>
+    /// 说明解析MostSpecific服务Interface在当前类型中的职责
+    /// </summary>
+    /// <param name="invocation">用于提供nvocation</param>
+    /// <param name="implementationType">服务注册中使用的实现类型</param>
+    /// <param name="declaredServiceType">用于提供declared服务类型</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <param name="report">用于提供报告</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static Type? ResolveMostSpecificServiceInterface(
         CastleInvocation invocation,
         Type implementationType,
@@ -251,11 +273,13 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
         return mostSpecificInterfaces.Count == 1 ? mostSpecificInterfaces[0] : null;
     }
 
-    /// <summary>执行 ResolveReportedServiceTypeNames 操作</summary>
-    /// <param name="report">report 参数</param>
-    /// <param name="implementationType">implementationType 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <returns>ResolveReportedServiceTypeNames 的执行结果</returns>
+    /// <summary>
+    /// 说明解析Reported服务类型名称集合在当前类型中的职责
+    /// </summary>
+    /// <param name="report">用于提供报告</param>
+    /// <param name="implementationType">服务注册中使用的实现类型</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static HashSet<string> ResolveReportedServiceTypeNames(
         InterceptionReport? report,
         Type implementationType,
@@ -276,9 +300,11 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
             .ToHashSet(StringComparer.Ordinal);
     }
 
-    /// <summary>执行 TypeNames 操作</summary>
-    /// <param name="type">type 参数</param>
-    /// <returns>TypeNames 的执行结果</returns>
+    /// <summary>
+    /// 说明类型名称集合在当前类型中的职责
+    /// </summary>
+    /// <param name="type">用于提供类型</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static HashSet<string> TypeNames(Type type)
     {
         var names = new HashSet<string>(StringComparer.Ordinal)
@@ -294,9 +320,11 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
         return names;
     }
 
-    /// <summary>执行 ResolveInterceptors 操作</summary>
-    /// <param name="invocation">invocation 参数</param>
-    /// <returns>ResolveInterceptors 的执行结果</returns>
+    /// <summary>
+    /// 说明解析拦截器集合在当前类型中的职责
+    /// </summary>
+    /// <param name="invocation">用于提供nvocation</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private IReadOnlyList<AbstractionInterceptor> ResolveInterceptors(CastleInvocation invocation)
     {
         var method = ResolveMethod(invocation);
@@ -327,10 +355,12 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
         return interceptors;
     }
 
-    /// <summary>执行 InvokePipelineAsTaskAsync 操作</summary>
-    /// <param name="invocation">invocation 参数</param>
-    /// <param name="interceptors">interceptors 参数</param>
-    /// <returns>InvokePipelineAsTaskAsync 的执行结果</returns>
+    /// <summary>
+    /// 说明nvokePipelineAsTaskAsync在当前类型中的职责
+    /// </summary>
+    /// <param name="invocation">用于提供nvocation</param>
+    /// <param name="interceptors">参与当前测试场景的拦截器集合</param>
+    /// <returns>表示异步流程完成状态的任务</returns>
     private async Task InvokePipelineAsTaskAsync(
         CastleInvocation invocation,
         IReadOnlyList<AbstractionInterceptor> interceptors)
@@ -340,11 +370,13 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
         await _pipeline.InvokeAsync(context, interceptors).ConfigureAwait(false);
     }
 
-    /// <summary>执行 InvokePipelineAsTaskAsync 操作</summary>
-    /// <typeparam name="TResult">TResult 类型参数</typeparam>
-    /// <param name="invocation">invocation 参数</param>
-    /// <param name="interceptors">interceptors 参数</param>
-    /// <returns>InvokePipelineAsTaskAsync 的执行结果</returns>
+    /// <summary>
+    /// 说明nvokePipelineAsTaskAsync在当前类型中的职责
+    /// </summary>
+    /// <typeparam name="TResult">响应数据的运行时类型</typeparam>
+    /// <param name="invocation">用于提供nvocation</param>
+    /// <param name="interceptors">参与当前测试场景的拦截器集合</param>
+    /// <returns>异步流程完成后产生的T结果</returns>
     private async Task<TResult> InvokePipelineAsTaskAsync<TResult>(
         CastleInvocation invocation,
         IReadOnlyList<AbstractionInterceptor> interceptors)
@@ -361,8 +393,10 @@ public sealed class CastleAsyncInterceptorAdapter : CastleAsyncInterceptor, Cast
         return (TResult)context.ReturnValue;
     }
 
-    /// <summary>执行 TypeName 操作</summary>
-    /// <param name="type">type 参数</param>
-    /// <returns>TypeName 的执行结果</returns>
+    /// <summary>
+    /// 说明类型Name在当前类型中的职责
+    /// </summary>
+    /// <param name="type">用于提供类型</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static string TypeName(Type type) => type.FullName ?? type.Name;
 }

@@ -2,13 +2,17 @@
 
 namespace Tw.Identity.OpenIddict;
 
-/// <summary>表示 StoreIdentitySigningCertificateResolver 类型</summary>
+/// <summary>
+/// 封装存储身份SigningCertificateResolver相关的数据和行为
+/// </summary>
 internal sealed class StoreIdentitySigningCertificateResolver : IIdentitySigningCertificateResolver
 {
-    /// <summary>执行 ResolveAsync 操作</summary>
-    /// <param name="certificateName">certificateName 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ResolveAsync 的执行结果</returns>
+    /// <summary>
+    /// 解析测试场景所需的签名证书
+    /// </summary>
+    /// <param name="certificateName">用于提供certificateName</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的X509Certificate2</returns>
     public Task<X509Certificate2> ResolveAsync(string certificateName, CancellationToken cancellationToken)
     {
         throw new NotSupportedException("签名证书解析必须由 Identity Center 宿主提供存储适配");

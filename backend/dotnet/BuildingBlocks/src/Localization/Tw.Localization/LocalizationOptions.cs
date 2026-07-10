@@ -8,9 +8,9 @@ namespace Tw.Localization;
 public sealed class LocalizationOptions
 {
     /// <summary>
-    /// 系统默认文化的 BCP 47 名称；当所有回退均失败时使用该文化，默认为 "en-US"
+    /// 系统默认文化的 BCP 47 名称；当所有回退均失败时使用该文化，默认为 "zh-Hans"
     /// </summary>
-    public string DefaultCulture { get; set; } = "en-US";
+    public string DefaultCulture { get; set; } = "zh-Hans";
 
     /// <summary>
     /// 已支持文化的 BCP 47 名称列表

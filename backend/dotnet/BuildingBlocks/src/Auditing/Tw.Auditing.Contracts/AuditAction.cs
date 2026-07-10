@@ -1,4 +1,6 @@
 ﻿namespace Tw.Auditing.Contracts;
 
-/// <summary>表示 AuditAction 声明</summary>
+/// <summary>
+/// 封装审计Action相关的数据和行为
+/// </summary>
 public sealed record AuditAction(string Name);

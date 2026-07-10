@@ -5,13 +5,19 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.NewtonsoftJson.Tests;
 
-/// <summary>验证 LongIdJsonConverterTests 相关行为</summary>
+/// <summary>
+/// 覆盖 long 标识 JSON 转换器的核心行为和边界条件
+/// </summary>
 public sealed class LongIdJsonConverterTests
 {
-    /// <summary>表示 Sample 声明</summary>
+    /// <summary>
+    /// 封装示例相关的数据和行为
+    /// </summary>
     private sealed record Sample(long Id);
 
-    /// <summary>验证 Serialize_WritesLongAsString 场景</summary>
+    /// <summary>
+    /// 验证Serialize写回长整型作为String
+    /// </summary>
     [Fact]
     public void Serialize_WritesLongAsString()
     {

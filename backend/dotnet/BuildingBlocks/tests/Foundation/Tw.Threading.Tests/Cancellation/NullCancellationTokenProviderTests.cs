@@ -4,17 +4,23 @@ using Xunit;
 
 namespace Tw.Threading.Tests.Cancellation;
 
-/// <summary>验证 NullCancellationTokenProviderTests 相关行为</summary>
+/// <summary>
+/// 覆盖空值Cancellation令牌提供器的核心行为和边界条件
+/// </summary>
 public class NullCancellationTokenProviderTests
 {
-    /// <summary>验证 CreateSut 场景</summary>
-    /// <returns>CreateSut 的执行结果</returns>
+    /// <summary>
+    /// 创建Sut测试对象
+    /// </summary>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static NullCancellationTokenProvider CreateSut()
     {
         return new NullCancellationTokenProvider(new AsyncLocalCancellationTokenScopeProvider());
     }
 
-    /// <summary>验证 Token_IsNone_WhenNoOverride 场景</summary>
+    /// <summary>
+    /// 验证令牌IsNone当NoOverride
+    /// </summary>
     [Fact]
     public void Token_IsNone_WhenNoOverride()
     {
@@ -23,7 +29,9 @@ public class NullCancellationTokenProviderTests
         sut.Token.Should().Be(CancellationToken.None);
     }
 
-    /// <summary>验证 Token_ReturnsOverride_WithinScope 场景</summary>
+    /// <summary>
+    /// 验证令牌返回OverrideWithin作用域
+    /// </summary>
     [Fact]
     public void Token_ReturnsOverride_WithinScope()
     {
@@ -36,7 +44,9 @@ public class NullCancellationTokenProviderTests
         }
     }
 
-    /// <summary>验证 Token_RestoresNone_AfterScopeDisposed 场景</summary>
+    /// <summary>
+    /// 验证令牌RestoresNoneAfter作用域Disposed
+    /// </summary>
     [Fact]
     public void Token_RestoresNone_AfterScopeDisposed()
     {
@@ -50,7 +60,9 @@ public class NullCancellationTokenProviderTests
         sut.Token.Should().Be(CancellationToken.None);
     }
 
-    /// <summary>验证 Token_RestoresOuterToken_AfterNestedScopeDisposed 场景</summary>
+    /// <summary>
+    /// 验证令牌RestoresOuter令牌AfterNested作用域Disposed
+    /// </summary>
     [Fact]
     public void Token_RestoresOuterToken_AfterNestedScopeDisposed()
     {
@@ -69,8 +81,10 @@ public class NullCancellationTokenProviderTests
         }
     }
 
-    /// <summary>验证 Token_ReadsOverride_AfterAwaitBoundary 场景</summary>
-    /// <returns>Token_ReadsOverride_AfterAwaitBoundary 的执行结果</returns>
+    /// <summary>
+    /// 验证令牌ReadsOverrideAfterAwait边界
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task Token_ReadsOverride_AfterAwaitBoundary()
     {

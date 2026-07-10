@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Threading.Tests.Cancellation;
 
-/// <summary>验证 AsyncLocalCancellationTokenScopeProviderTests 相关行为</summary>
+/// <summary>
+/// 覆盖异步LocalCancellation令牌Scope提供器的核心行为和边界条件
+/// </summary>
 public class AsyncLocalCancellationTokenScopeProviderTests
 {
-    /// <summary>验证 Current_IsNull_WhenNoScope 场景</summary>
+    /// <summary>
+    /// 验证CurrentIs空值当No作用域
+    /// </summary>
     [Fact]
     public void Current_IsNull_WhenNoScope()
     {
@@ -16,7 +20,9 @@ public class AsyncLocalCancellationTokenScopeProviderTests
         sut.Current.Should().BeNull();
     }
 
-    /// <summary>验证 BeginScope_SetsCurrent_AndRestoresOnDispose 场景</summary>
+    /// <summary>
+    /// 验证Begin作用域SetsCurrent和RestoresOnDispose
+    /// </summary>
     [Fact]
     public void BeginScope_SetsCurrent_AndRestoresOnDispose()
     {
@@ -32,7 +38,9 @@ public class AsyncLocalCancellationTokenScopeProviderTests
         sut.Current.Should().BeNull();
     }
 
-    /// <summary>验证 BeginScope_RestoresOuterScope_AfterNestedDispose 场景</summary>
+    /// <summary>
+    /// 验证Begin作用域RestoresOuter作用域AfterNestedDispose
+    /// </summary>
     [Fact]
     public void BeginScope_RestoresOuterScope_AfterNestedDispose()
     {
@@ -51,8 +59,10 @@ public class AsyncLocalCancellationTokenScopeProviderTests
         }
     }
 
-    /// <summary>验证 Current_FlowsAcross_AwaitBoundary 场景</summary>
-    /// <returns>Current_FlowsAcross_AwaitBoundary 的执行结果</returns>
+    /// <summary>
+    /// 验证CurrentFlowsAcrossAwait边界
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task Current_FlowsAcross_AwaitBoundary()
     {

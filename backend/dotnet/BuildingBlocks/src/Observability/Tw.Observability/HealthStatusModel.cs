@@ -1,4 +1,6 @@
 ﻿namespace Tw.Observability;
 
-/// <summary>表示 HealthStatusModel 声明</summary>
+/// <summary>
+/// 封装HealthStatus模型相关的数据和行为
+/// </summary>
 public sealed record HealthStatusModel(string Status, IReadOnlyDictionary<string, string> Details);

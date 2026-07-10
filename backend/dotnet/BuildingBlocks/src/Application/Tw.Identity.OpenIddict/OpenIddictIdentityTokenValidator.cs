@@ -1,12 +1,16 @@
 ﻿namespace Tw.Identity.OpenIddict;
 
-/// <summary>表示 OpenIddictIdentityTokenValidator 类型</summary>
+/// <summary>
+/// 封装OpenIddict身份令牌Validator相关的数据和行为
+/// </summary>
 internal sealed class OpenIddictIdentityTokenValidator : IIdentityTokenValidator
 {
-    /// <summary>执行 ValidateAsync 操作</summary>
-    /// <param name="request">request 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ValidateAsync 的执行结果</returns>
+    /// <summary>
+    /// 校验异步并在非法时抛出异常
+    /// </summary>
+    /// <param name="request">用于提供请求</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的身份令牌Validation结果</returns>
     public Task<IdentityTokenValidationResult> ValidateAsync(
         IdentityTokenValidationRequest request,
         CancellationToken cancellationToken)

@@ -5,10 +5,14 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
-/// <summary>验证 JsonTextResourceParserTests 相关行为</summary>
+/// <summary>
+/// 覆盖JSONText资源Parser的核心行为和边界条件
+/// </summary>
 public class JsonTextResourceParserTests
 {
-    /// <summary>验证 Parse_FlattensNestedObjects 场景</summary>
+    /// <summary>
+    /// 验证ParseFlattensNestedObjects
+    /// </summary>
     [Fact]
     public void Parse_FlattensNestedObjects()
     {
@@ -29,7 +33,9 @@ public class JsonTextResourceParserTests
         resource.Texts["Validation__Required"].Should().Be("必填");
     }
 
-    /// <summary>验证 Parse_RejectsNonStringLeaf 场景</summary>
+    /// <summary>
+    /// 验证Parse拒绝NonStringLeaf
+    /// </summary>
     [Fact]
     public void Parse_RejectsNonStringLeaf()
     {

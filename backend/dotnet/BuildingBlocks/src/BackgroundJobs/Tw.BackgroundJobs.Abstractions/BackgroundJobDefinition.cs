@@ -1,6 +1,8 @@
 ﻿namespace Tw.BackgroundJobs.Abstractions;
 
-/// <summary>表示 BackgroundJobDefinition 声明</summary>
+/// <summary>
+/// 封装后台作业定义相关的数据和行为
+/// </summary>
 public sealed record BackgroundJobDefinition(
     string Name,
     Type ArgumentType,

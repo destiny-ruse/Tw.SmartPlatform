@@ -10,7 +10,9 @@ public sealed class NullDisposable : IDisposable
     /// </summary>
     public static NullDisposable Instance { get; } = new();
 
-    /// <summary>初始化 NullDisposable 实例</summary>
+    /// <summary>
+    /// 初始化 NullDisposable 实例
+    /// </summary>
     private NullDisposable()
     {
     }

@@ -1,11 +1,17 @@
 ﻿namespace Tw.AspNetCore.Abstractions;
 
-/// <summary>表示 AuthenticationSchemeNames 类型</summary>
+/// <summary>
+/// 封装认证Scheme名称集合相关的数据和行为
+/// </summary>
 public static class AuthenticationSchemeNames
 {
-    /// <summary>表示 Bearer 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的Bearer常量值
+    /// </summary>
     public const string Bearer = "Bearer";
 
-    /// <summary>表示 Cookies 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的Cookies常量值
+    /// </summary>
     public const string Cookies = "Cookies";
 }

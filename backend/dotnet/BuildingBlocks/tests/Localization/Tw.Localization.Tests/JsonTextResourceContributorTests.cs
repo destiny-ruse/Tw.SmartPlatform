@@ -5,11 +5,15 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
-/// <summary>验证 JsonTextResourceContributorTests 相关行为</summary>
+/// <summary>
+/// 覆盖JSONText资源Contributor的核心行为和边界条件
+/// </summary>
 public class JsonTextResourceContributorTests
 {
-    /// <summary>验证 GetOrNullAsync_ReturnsCurrentCultureText 场景</summary>
-    /// <returns>GetOrNullAsync_ReturnsCurrentCultureText 的执行结果</returns>
+    /// <summary>
+    /// 验证读取Or空值异步返回Current文化文本
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetOrNullAsync_ReturnsCurrentCultureText()
     {
@@ -23,7 +27,9 @@ public class JsonTextResourceContributorTests
         text.Source.Should().Be(LocalizedTextSource.StaticJson);
     }
 
-    /// <summary>验证 StaticSnapshot_ReturnsFallbackCultureText 场景</summary>
+    /// <summary>
+    /// 验证StaticSnapshot返回回退文化文本
+    /// </summary>
     [Fact]
     public void StaticSnapshot_ReturnsFallbackCultureText()
     {
@@ -38,8 +44,10 @@ public class JsonTextResourceContributorTests
         text!.Value.Should().Be("Menu");
     }
 
-    /// <summary>验证 FillAsync_HigherPriorityCultureOverrides 场景</summary>
-    /// <returns>FillAsync_HigherPriorityCultureOverrides 的执行结果</returns>
+    /// <summary>
+    /// 验证Fill异步HigherPriority文化Overrides
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task FillAsync_HigherPriorityCultureOverrides()
     {
@@ -65,7 +73,9 @@ public class JsonTextResourceContributorTests
         texts["Only_En"].Value.Should().Be("EnOnly");
     }
 
-    /// <summary>验证 GetAll_HigherPriorityCultureOverrides 场景</summary>
+    /// <summary>
+    /// 验证读取AllHigherPriority文化Overrides
+    /// </summary>
     [Fact]
     public void GetAll_HigherPriorityCultureOverrides()
     {
@@ -89,7 +99,9 @@ public class JsonTextResourceContributorTests
         result["Only_En"].Value.Should().Be("EnOnly");
     }
 
-    /// <summary>验证 StaticSnapshot_MergesMultipleFilesForSameCulture 场景</summary>
+    /// <summary>
+    /// 验证StaticSnapshotMergesMultipleFiles针对Same文化
+    /// </summary>
     [Fact]
     public void StaticSnapshot_MergesMultipleFilesForSameCulture()
     {

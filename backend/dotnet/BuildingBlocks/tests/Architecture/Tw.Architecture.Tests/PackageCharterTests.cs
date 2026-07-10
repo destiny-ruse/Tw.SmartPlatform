@@ -3,10 +3,14 @@ using Xunit;
 
 namespace Tw.Architecture.Tests;
 
-/// <summary>验证 PackageCharterTests 相关行为</summary>
+/// <summary>
+/// 覆盖PackageCharter的核心行为和边界条件
+/// </summary>
 public sealed class PackageCharterTests
 {
-    /// <summary>表示 RequiredFields 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的必需Fields
+    /// </summary>
     private static readonly string[] RequiredFields =
     [
         "schema_version:",
@@ -19,7 +23,9 @@ public sealed class PackageCharterTests
         "dependency_rules:"
     ];
 
-    /// <summary>验证 EveryRuntimeProject_HasPackageCharterWithCanonicalPackageName 场景</summary>
+    /// <summary>
+    /// 验证EveryRuntime项目HasPackageCharter带有CanonicalPackage名称
+    /// </summary>
     [Fact]
     public void EveryRuntimeProject_HasPackageCharterWithCanonicalPackageName()
     {
@@ -41,7 +47,9 @@ public sealed class PackageCharterTests
         }
     }
 
-    /// <summary>验证 EveryRuntimeProject_UsesChineseNaturalLanguageCharterContent 场景</summary>
+    /// <summary>
+    /// 验证EveryRuntime项目UsesChineseNaturalLanguageCharterContent
+    /// </summary>
     [Fact]
     public void EveryRuntimeProject_UsesChineseNaturalLanguageCharterContent()
     {
@@ -56,10 +64,12 @@ public sealed class PackageCharterTests
         violations.Should().BeEmpty("charter responsibility, in_scope and out_of_scope must be written in Simplified Chinese");
     }
 
-    /// <summary>验证 ContainsChineseValue 场景</summary>
-    /// <param name="lines">lines 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <returns>ContainsChineseValue 的执行结果</returns>
+    /// <summary>
+    /// 说明ContainsChinese值在当前类型中的职责
+    /// </summary>
+    /// <param name="lines">用于提供lines</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool ContainsChineseValue(string[] lines, string key)
     {
         var start = Array.FindIndex(lines, line => line.StartsWith($"{key}:", StringComparison.Ordinal));
@@ -78,10 +88,12 @@ public sealed class PackageCharterTests
             .Any(ContainsCjk);
     }
 
-    /// <summary>验证 ContainsChineseListValue 场景</summary>
-    /// <param name="lines">lines 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <returns>ContainsChineseListValue 的执行结果</returns>
+    /// <summary>
+    /// 说明ContainsChineseList值在当前类型中的职责
+    /// </summary>
+    /// <param name="lines">用于提供lines</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool ContainsChineseListValue(string[] lines, string key)
     {
         var start = Array.FindIndex(lines, line => line.StartsWith($"{key}:", StringComparison.Ordinal));
@@ -95,9 +107,11 @@ public sealed class PackageCharterTests
             .Any(ContainsCjk);
     }
 
-    /// <summary>验证 ContainsCjk 场景</summary>
-    /// <param name="text">text 参数</param>
-    /// <returns>ContainsCjk 的执行结果</returns>
+    /// <summary>
+    /// 说明ContainsCjk在当前类型中的职责
+    /// </summary>
+    /// <param name="text">用于提供text</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool ContainsCjk(string text)
     {
         return text.Any(ch => ch >= '\u4e00' && ch <= '\u9fff');

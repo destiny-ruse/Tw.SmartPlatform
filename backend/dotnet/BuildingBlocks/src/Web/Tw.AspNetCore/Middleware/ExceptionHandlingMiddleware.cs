@@ -3,12 +3,16 @@ using Microsoft.AspNetCore.Http;
 
 namespace Tw.AspNetCore.Middleware;
 
-/// <summary>表示 ExceptionHandlingMiddleware 类型</summary>
+/// <summary>
+/// 封装异常HandlingMiddleware相关的数据和行为
+/// </summary>
 public sealed class ExceptionHandlingMiddleware(RequestDelegate next)
 {
-    /// <summary>执行 InvokeAsync 操作</summary>
-    /// <param name="context">context 参数</param>
-    /// <returns>InvokeAsync 的执行结果</returns>
+    /// <summary>
+    /// 执行测试管道委托并记录调用
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <returns>表示异步流程完成状态的任务</returns>
     public async Task InvokeAsync(HttpContext context)
     {
         try
@@ -34,7 +38,9 @@ public sealed class ExceptionHandlingMiddleware(RequestDelegate next)
         }
     }
 
-    /// <summary>表示 ErrorResponse 声明</summary>
+    /// <summary>
+    /// 封装错误响应相关的数据和行为
+    /// </summary>
     private sealed record ErrorResponse(
         bool Success,
         string Code,

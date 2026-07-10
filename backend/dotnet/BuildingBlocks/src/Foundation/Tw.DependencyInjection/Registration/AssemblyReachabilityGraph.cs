@@ -5,7 +5,9 @@ namespace Tw.DependencyInjection.Registration;
 /// </summary>
 internal sealed class AssemblyReachabilityGraph
 {
-    /// <summary>以程序集名为键的直接引用表</summary>
+    /// <summary>
+    /// 以程序集名为键的直接引用表
+    /// </summary>
     private readonly IReadOnlyDictionary<string, IReadOnlyList<string>> _referencesByAssemblyName;
 
     /// <summary>

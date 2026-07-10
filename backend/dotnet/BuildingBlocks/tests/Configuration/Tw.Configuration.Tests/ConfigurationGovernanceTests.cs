@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Configuration.Tests;
 
-/// <summary>验证 ConfigurationGovernanceTests 相关行为</summary>
+/// <summary>
+/// 覆盖ConfigurationGovernance的核心行为和边界条件
+/// </summary>
 public sealed class ConfigurationGovernanceTests
 {
-    /// <summary>验证 UserSecrets_AreAllowedOnlyInLocalOrDevelopment 场景</summary>
+    /// <summary>
+    /// 验证用户SecretsAreAllowedOnlyInLocalOrDevelopment
+    /// </summary>
     [Fact]
     public void UserSecrets_AreAllowedOnlyInLocalOrDevelopment()
     {

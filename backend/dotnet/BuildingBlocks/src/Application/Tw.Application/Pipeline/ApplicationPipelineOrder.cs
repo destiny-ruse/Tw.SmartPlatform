@@ -5,7 +5,9 @@
 /// </summary>
 public static class ApplicationPipelineOrder
 {
-    /// <summary>表示 Order 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的Order
+    /// </summary>
     private static readonly string[] Order =
     [
         "ExecutionContext",

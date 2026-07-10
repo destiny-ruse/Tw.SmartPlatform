@@ -1,11 +1,15 @@
 ﻿namespace Tw.Configuration.Json;
 
-/// <summary>表示 JsonConfigurationBuilderExtensions 类型</summary>
+/// <summary>
+/// 封装JSONConfiguration构建器Extensions相关的数据和行为
+/// </summary>
 public static class JsonConfigurationBuilderExtensions
 {
-    /// <summary>执行 CreateManifest 操作</summary>
-    /// <param name="files">files 参数</param>
-    /// <returns>CreateManifest 的执行结果</returns>
+    /// <summary>
+    /// 创建Manifest测试对象
+    /// </summary>
+    /// <param name="files">用于提供files</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static JsonConfigurationManifest CreateManifest(params string[] files)
     {
         return new JsonConfigurationManifest(files);

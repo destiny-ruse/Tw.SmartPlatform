@@ -5,10 +5,14 @@ using Xunit;
 
 namespace Tw.Threading.Tests.Cancellation;
 
-/// <summary>验证 CancellationTokenServiceCollectionExtensionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖Cancellation令牌服务CollectionExtensions的核心行为和边界条件
+/// </summary>
 public class CancellationTokenServiceCollectionExtensionsTests
 {
-    /// <summary>验证 AddCancellationTokenProvider_RegistersNullProvider_AsDefault 场景</summary>
+    /// <summary>
+    /// 验证添加Cancellation令牌提供器注册空值提供器作为默认
+    /// </summary>
     [Fact]
     public void AddCancellationTokenProvider_RegistersNullProvider_AsDefault()
     {
@@ -21,7 +25,9 @@ public class CancellationTokenServiceCollectionExtensionsTests
             .Should().BeOfType<NullCancellationTokenProvider>();
     }
 
-    /// <summary>验证 AddCancellationTokenProvider_RegistersScopeProvider_AsSingleton 场景</summary>
+    /// <summary>
+    /// 验证添加Cancellation令牌提供器注册作用域提供器作为Singleton
+    /// </summary>
     [Fact]
     public void AddCancellationTokenProvider_RegistersScopeProvider_AsSingleton()
     {
@@ -35,7 +41,9 @@ public class CancellationTokenServiceCollectionExtensionsTests
         first.Should().BeSameAs(second);
     }
 
-    /// <summary>验证 AddCancellationTokenProvider_DoesNotOverride_ExistingProvider 场景</summary>
+    /// <summary>
+    /// 验证添加Cancellation令牌提供器不OverrideExisting提供器
+    /// </summary>
     [Fact]
     public void AddCancellationTokenProvider_DoesNotOverride_ExistingProvider()
     {

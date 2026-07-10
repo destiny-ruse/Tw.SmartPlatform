@@ -1,15 +1,23 @@
 ﻿namespace Tw.Data.Concurrency;
 
-/// <summary>表示 ConcurrencyConflictException 类型</summary>
+/// <summary>
+/// 封装ConcurrencyConflict异常相关的数据和行为
+/// </summary>
 public sealed class ConcurrencyConflictException(string resourceType, string resourceId)
     : Exception("Data has been changed by another request.")
 {
-    /// <summary>表示 Code 属性</summary>
+    /// <summary>
+    /// 代码在当前对象中的业务含义
+    /// </summary>
     public string Code { get; } = "DATA:CONFLICT";
 
-    /// <summary>表示 ResourceType 属性</summary>
+    /// <summary>
+    /// 资源类型在当前对象中的业务含义
+    /// </summary>
     public string ResourceType { get; } = resourceType;
 
-    /// <summary>表示 ResourceId 属性</summary>
+    /// <summary>
+    /// 资源标识在当前对象中的业务含义
+    /// </summary>
     public string ResourceId { get; } = resourceId;
 }

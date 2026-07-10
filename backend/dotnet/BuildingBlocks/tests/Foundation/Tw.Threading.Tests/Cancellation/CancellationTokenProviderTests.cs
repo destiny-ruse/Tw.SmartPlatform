@@ -5,10 +5,14 @@ using Xunit;
 
 namespace Tw.Threading.Tests.Cancellation;
 
-/// <summary>验证 CancellationTokenProviderTests 相关行为</summary>
+/// <summary>
+/// 覆盖Cancellation令牌提供器的核心行为和边界条件
+/// </summary>
 public sealed class CancellationTokenProviderTests
 {
-    /// <summary>验证 AddCancellationTokenProvider_RegistersDefaultProvider 场景</summary>
+    /// <summary>
+    /// 验证添加Cancellation令牌提供器注册默认提供器
+    /// </summary>
     [Fact]
     public void AddCancellationTokenProvider_RegistersDefaultProvider()
     {

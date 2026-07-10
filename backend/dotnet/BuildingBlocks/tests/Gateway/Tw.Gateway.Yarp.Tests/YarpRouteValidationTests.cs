@@ -5,10 +5,14 @@ using Xunit;
 
 namespace Tw.Gateway.Yarp.Tests;
 
-/// <summary>验证 YarpRouteValidationTests 相关行为</summary>
+/// <summary>
+/// 覆盖YarpRouteValidation的核心行为和边界条件
+/// </summary>
 public sealed class YarpRouteValidationTests
 {
-    /// <summary>验证 Validate_RejectsStrictGlobalLimitWithGatewayLocalLimit 场景</summary>
+    /// <summary>
+    /// 验证校验拒绝StrictGlobalLimit带有GatewayLocalLimit
+    /// </summary>
     [Fact]
     public void Validate_RejectsStrictGlobalLimitWithGatewayLocalLimit()
     {

@@ -5,10 +5,14 @@ using Xunit;
 
 namespace Tw.Timing.Tests;
 
-/// <summary>验证 SystemClockTests 相关行为</summary>
+/// <summary>
+/// 覆盖SystemClock的核心行为和边界条件
+/// </summary>
 public sealed class SystemClockTests
 {
-    /// <summary>验证 FixedClock_ReturnsConfiguredInstant 场景</summary>
+    /// <summary>
+    /// 验证FixedClock返回ConfiguredInstant
+    /// </summary>
     [Fact]
     public void FixedClock_ReturnsConfiguredInstant()
     {
@@ -18,7 +22,9 @@ public sealed class SystemClockTests
         clock.Now.Should().Be(instant);
     }
 
-    /// <summary>验证 AddTiming_RegistersSystemClock 场景</summary>
+    /// <summary>
+    /// 验证添加Timing注册SystemClock
+    /// </summary>
     [Fact]
     public void AddTiming_RegistersSystemClock()
     {

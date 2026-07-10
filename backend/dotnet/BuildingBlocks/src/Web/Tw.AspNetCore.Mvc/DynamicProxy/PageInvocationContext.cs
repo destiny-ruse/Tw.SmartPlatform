@@ -12,15 +12,25 @@ namespace Tw.AspNetCore.Mvc.DynamicProxy;
 /// </summary>
 public sealed class PageInvocationContext : IInvocationContext
 {
-    /// <summary>表示 _context 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的上下文
+    /// </summary>
     private readonly PageHandlerExecutingContext _context;
-    /// <summary>表示 _next 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的next
+    /// </summary>
     private readonly PageHandlerExecutionDelegate _next;
-    /// <summary>表示 _parameterNames 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的parameterNames
+    /// </summary>
     private readonly string[] _parameterNames;
-    /// <summary>表示 _executedContext 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的executed上下文
+    /// </summary>
     private PageHandlerExecutedContext? _executedContext;
-    /// <summary>表示 _returnValue 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的return值
+    /// </summary>
     private object? _returnValue;
 
     /// <summary>
@@ -109,18 +119,22 @@ public sealed class PageInvocationContext : IInvocationContext
     public void Proceed() =>
         throw new InvalidOperationException("Razor Page handler filter 是异步上下文，请调用 ProceedAsync");
 
-    /// <summary>执行 ResolveMethod 操作</summary>
-    /// <param name="context">context 参数</param>
-    /// <returns>ResolveMethod 的执行结果</returns>
+    /// <summary>
+    /// 说明解析方法在当前类型中的职责
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static MethodInfo ResolveMethod(PageHandlerExecutingContext context) =>
         context.HandlerMethod?.MethodInfo
         ?? throw new InvalidOperationException(
             $"Razor Page '{ResolveHandlerName(context)}' 缺少 handler MethodInfo，无法建立调用上下文");
 
-    /// <summary>执行 ResolveParameterNames 操作</summary>
-    /// <param name="method">method 参数</param>
-    /// <param name="context">context 参数</param>
-    /// <returns>ResolveParameterNames 的执行结果</returns>
+    /// <summary>
+    /// 说明解析Parameter名称集合在当前类型中的职责
+    /// </summary>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static string[] ResolveParameterNames(MethodInfo method, PageHandlerExecutingContext context)
     {
         var parameters = method.GetParameters();
@@ -141,10 +155,12 @@ public sealed class PageInvocationContext : IInvocationContext
         return parameterNames;
     }
 
-    /// <summary>执行 CreateArguments 操作</summary>
-    /// <param name="context">context 参数</param>
-    /// <param name="parameterNames">parameterNames 参数</param>
-    /// <returns>CreateArguments 的执行结果</returns>
+    /// <summary>
+    /// 创建参数测试对象
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <param name="parameterNames">用于提供parameter名称集合</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static object?[] CreateArguments(PageHandlerExecutingContext context, IReadOnlyList<string> parameterNames)
     {
         var arguments = new object?[parameterNames.Count];
@@ -162,19 +178,23 @@ public sealed class PageInvocationContext : IInvocationContext
         return arguments;
     }
 
-    /// <summary>执行 MissingArgumentMapping 操作</summary>
-    /// <param name="context">context 参数</param>
-    /// <param name="parameterName">parameterName 参数</param>
-    /// <returns>MissingArgumentMapping 的执行结果</returns>
+    /// <summary>
+    /// 说明MissingArgumentMapping在当前类型中的职责
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <param name="parameterName">用于提供parameterName</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static InvalidOperationException MissingArgumentMapping(
         PageHandlerExecutingContext context,
         string parameterName) =>
         new($"Razor Page handler '{ResolveHandlerName(context)}' 无法建立参数映射，缺失参数名 '{parameterName}'");
 
-    /// <summary>执行 ResolveHandlerName 操作</summary>
-    /// <param name="context">context 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <returns>ResolveHandlerName 的执行结果</returns>
+    /// <summary>
+    /// 说明解析处理器Name在当前类型中的职责
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static string ResolveHandlerName(PageHandlerExecutingContext context, MethodInfo? method = null)
     {
         if (context.HandlerMethod is { Name.Length: > 0 } handlerMethod)
@@ -187,7 +207,9 @@ public sealed class PageInvocationContext : IInvocationContext
             ?? "<unknown>";
     }
 
-    /// <summary>执行 WriteArgumentsToHandlerContext 操作</summary>
+    /// <summary>
+    /// 说明写入ArgumentsTo处理器上下文在当前类型中的职责
+    /// </summary>
     private void WriteArgumentsToHandlerContext()
     {
         for (var index = 0; index < _parameterNames.Length; index++)

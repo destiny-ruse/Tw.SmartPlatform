@@ -7,7 +7,9 @@ namespace Tw.Reflection;
 /// </summary>
 public sealed class TypeFinder : ITypeFinder
 {
-    /// <summary>表示 SkippedAssemblyNamePrefixes 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的SkippedAssembly名称Prefixes
+    /// </summary>
     private static readonly string[] SkippedAssemblyNamePrefixes = ["System", "Microsoft", "Windows"];
 
     /// <summary>
@@ -70,9 +72,11 @@ public sealed class TypeFinder : ITypeFinder
         return FindTypes(typeof(TBaseType));
     }
 
-    /// <summary>执行 ShouldSkipAssembly 操作</summary>
-    /// <param name="assembly">assembly 参数</param>
-    /// <returns>ShouldSkipAssembly 的执行结果</returns>
+    /// <summary>
+    /// 说明ShouldSkipAssembly在当前类型中的职责
+    /// </summary>
+    /// <param name="assembly">用于提供assembly</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool ShouldSkipAssembly(Assembly assembly)
     {
         var assemblyName = assembly.GetName().Name;
@@ -83,9 +87,11 @@ public sealed class TypeFinder : ITypeFinder
                 || assemblyName.StartsWith(prefix + ".", StringComparison.Ordinal));
     }
 
-    /// <summary>执行 GetLoadableTypes 操作</summary>
-    /// <param name="assembly">assembly 参数</param>
-    /// <returns>GetLoadableTypes 的执行结果</returns>
+    /// <summary>
+    /// 说明读取Loadable类型集合在当前类型中的职责
+    /// </summary>
+    /// <param name="assembly">用于提供assembly</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
     {
         try
@@ -98,9 +104,11 @@ public sealed class TypeFinder : ITypeFinder
         }
     }
 
-    /// <summary>执行 IsConcrete 操作</summary>
-    /// <param name="type">type 参数</param>
-    /// <returns>IsConcrete 的执行结果</returns>
+    /// <summary>
+    /// 判断Concrete是否满足条件
+    /// </summary>
+    /// <param name="type">用于提供类型</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsConcrete(Type type)
     {
         return !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;

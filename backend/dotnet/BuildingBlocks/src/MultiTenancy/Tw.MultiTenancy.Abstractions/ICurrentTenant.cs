@@ -1,8 +1,12 @@
 ﻿namespace Tw.MultiTenancy.Abstractions;
 
-/// <summary>定义 ICurrentTenant 契约</summary>
+/// <summary>
+/// 定义Current租户的能力边界
+/// </summary>
 public interface ICurrentTenant
 {
-    /// <summary>表示 Value 属性</summary>
+    /// <summary>
+    /// 值在当前对象中的业务含义
+    /// </summary>
     CurrentTenant Value { get; }
 }

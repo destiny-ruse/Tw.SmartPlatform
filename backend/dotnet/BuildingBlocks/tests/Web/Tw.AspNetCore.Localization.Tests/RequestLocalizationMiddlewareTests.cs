@@ -5,11 +5,15 @@ using Xunit;
 
 namespace Tw.AspNetCore.Localization.Tests;
 
-/// <summary>验证 RequestLocalizationMiddlewareTests 相关行为</summary>
+/// <summary>
+/// 覆盖请求本地化Middleware的核心行为和边界条件
+/// </summary>
 public class RequestLocalizationMiddlewareTests
 {
-    /// <summary>验证 InvokeAsync_WritesCurrentContext 场景</summary>
-    /// <returns>InvokeAsync_WritesCurrentContext 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步写回Current上下文
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_WritesCurrentContext()
     {
@@ -34,8 +38,10 @@ public class RequestLocalizationMiddlewareTests
         capturedUICulture!.TwoLetterISOLanguageName.Should().Be("zh");
     }
 
-    /// <summary>验证 InvokeAsync_WritesCookieForExplicitSwitch 场景</summary>
-    /// <returns>InvokeAsync_WritesCookieForExplicitSwitch 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步写回Cookie针对ExplicitSwitch
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_WritesCookieForExplicitSwitch()
     {
@@ -50,8 +56,10 @@ public class RequestLocalizationMiddlewareTests
         context.Response.Headers.SetCookie.ToString().Should().Contain(".Tw.Culture=zh-Hans");
     }
 
-    /// <summary>验证 InvokeAsync_DoesNotWriteCookie_WhenNotExplicitSwitch 场景</summary>
-    /// <returns>InvokeAsync_DoesNotWriteCookie_WhenNotExplicitSwitch 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步不WriteCookie当不ExplicitSwitch
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_DoesNotWriteCookie_WhenNotExplicitSwitch()
     {

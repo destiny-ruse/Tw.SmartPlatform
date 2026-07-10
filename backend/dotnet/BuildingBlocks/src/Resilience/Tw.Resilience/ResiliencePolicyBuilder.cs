@@ -1,11 +1,15 @@
 ﻿namespace Tw.Resilience;
 
-/// <summary>表示 ResiliencePolicyBuilder 类型</summary>
+/// <summary>
+/// 封装Resilience策略构建器相关的数据和行为
+/// </summary>
 public static class ResiliencePolicyBuilder
 {
-    /// <summary>执行 Build 操作</summary>
-    /// <param name="descriptor">descriptor 参数</param>
-    /// <returns>Build 的执行结果</returns>
+    /// <summary>
+    /// 说明Build在当前类型中的职责
+    /// </summary>
+    /// <param name="descriptor">用于提供描述符</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static ResiliencePolicy Build(ResiliencePolicyDescriptor descriptor)
     {
         ArgumentNullException.ThrowIfNull(descriptor);
@@ -15,5 +19,7 @@ public static class ResiliencePolicyBuilder
     }
 }
 
-/// <summary>表示 ResiliencePolicy 声明</summary>
+/// <summary>
+/// 封装Resilience策略相关的数据和行为
+/// </summary>
 public sealed record ResiliencePolicy(bool RetryEnabled, TimeSpan Timeout);

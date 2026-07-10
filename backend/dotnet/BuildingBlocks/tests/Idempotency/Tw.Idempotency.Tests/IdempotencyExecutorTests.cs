@@ -4,11 +4,15 @@ using Xunit;
 
 namespace Tw.Idempotency.Tests;
 
-/// <summary>验证 IdempotencyExecutorTests 相关行为</summary>
+/// <summary>
+/// 覆盖幂等执行器的核心行为和边界条件
+/// </summary>
 public sealed class IdempotencyExecutorTests
 {
-    /// <summary>验证 ExecuteAsync_ReturnsFirstResultForDuplicateRequest 场景</summary>
-    /// <returns>ExecuteAsync_ReturnsFirstResultForDuplicateRequest 的执行结果</returns>
+    /// <summary>
+    /// 验证执行异步返回第一个结果针对重复请求
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ExecuteAsync_ReturnsFirstResultForDuplicateRequest()
     {
@@ -23,8 +27,10 @@ public sealed class IdempotencyExecutorTests
         duplicate.Should().Be(IdempotencyResult.Success(201, "created"));
     }
 
-    /// <summary>验证 ExecuteAsync_ThrowsStableConflictCode_WhenSameKeyHasDifferentFingerprint 场景</summary>
-    /// <returns>ExecuteAsync_ThrowsStableConflictCode_WhenSameKeyHasDifferentFingerprint 的执行结果</returns>
+    /// <summary>
+    /// 验证执行异步抛出异常StableConflict代码当Same键HasDifferent指纹
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ExecuteAsync_ThrowsStableConflictCode_WhenSameKeyHasDifferentFingerprint()
     {
@@ -40,17 +46,23 @@ public sealed class IdempotencyExecutorTests
             .Where(exception => exception.Code == "IDEMPOTENCY:000409");
     }
 
-    /// <summary>验证 InMemoryIdempotencyStore 相关行为</summary>
+    /// <summary>
+    /// 覆盖内存幂等存储的核心行为和边界条件
+    /// </summary>
     private sealed class InMemoryIdempotencyStore : IIdempotencyStore
     {
-        /// <summary>表示 _entries 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的entries
+        /// </summary>
         private readonly Dictionary<IdempotencyKey, (string Fingerprint, IdempotencyResult? Result)> _entries = [];
 
-        /// <summary>验证 TryBeginAsync 场景</summary>
-        /// <param name="key">key 参数</param>
-        /// <param name="fingerprint">fingerprint 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>TryBeginAsync 的执行结果</returns>
+        /// <summary>
+        /// 尝试开始幂等请求处理并返回占用状态
+        /// </summary>
+        /// <param name="key">用于定位目标数据或缓存项的键</param>
+        /// <param name="fingerprint">用于区分幂等请求负载的指纹</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>异步流程完成后产生的幂等占用结果</returns>
         public Task<IdempotencyReservation> TryBeginAsync(IdempotencyKey key, string fingerprint, CancellationToken cancellationToken = default)
         {
             if (!_entries.TryGetValue(key, out var entry))
@@ -67,20 +79,24 @@ public sealed class IdempotencyExecutorTests
             return Task.FromResult(new IdempotencyReservation(IdempotencyReservationStatus.Duplicate, entry.Result));
         }
 
-        /// <summary>验证 GetAsync 场景</summary>
-        /// <param name="key">key 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>GetAsync 的执行结果</returns>
+        /// <summary>
+        /// 从测试替身中读取指定条目
+        /// </summary>
+        /// <param name="key">用于定位目标数据或缓存项的键</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>异步流程完成后产生的幂等处理结果</returns>
         public Task<IdempotencyResult?> GetAsync(IdempotencyKey key, CancellationToken cancellationToken = default)
         {
             return Task.FromResult(_entries.TryGetValue(key, out var entry) ? entry.Result : null);
         }
 
-        /// <summary>验证 CompleteAsync 场景</summary>
-        /// <param name="key">key 参数</param>
-        /// <param name="result">result 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>CompleteAsync 的执行结果</returns>
+        /// <summary>
+        /// 将幂等请求标记为完成并保存结果
+        /// </summary>
+        /// <param name="key">用于定位目标数据或缓存项的键</param>
+        /// <param name="result">当前流程预置或返回的结果</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task CompleteAsync(IdempotencyKey key, IdempotencyResult result, CancellationToken cancellationToken = default)
         {
             var entry = _entries[key];

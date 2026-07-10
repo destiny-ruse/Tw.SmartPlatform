@@ -1,9 +1,13 @@
 namespace Tw.Extensions;
 
-/// <summary>提供可变集合的扩展方法</summary>
+/// <summary>
+/// 提供可变集合的扩展方法
+/// </summary>
 public static class CollectionExtensions
 {
-    /// <summary>当集合尚未包含元素时添加该元素</summary>
+    /// <summary>
+    /// 当集合尚未包含元素时添加该元素
+    /// </summary>
     /// <param name="source">要更新的集合</param>
     /// <param name="item">要添加的元素</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -22,7 +26,9 @@ public static class CollectionExtensions
         return true;
     }
 
-    /// <summary>添加每个缺失元素，并返回实际添加的元素</summary>
+    /// <summary>
+    /// 添加每个缺失元素，并返回实际添加的元素
+    /// </summary>
     /// <param name="source">要更新的集合</param>
     /// <param name="items">要添加的候选元素。序列会在调用时枚举一次</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -44,7 +50,9 @@ public static class CollectionExtensions
         return addedItems;
     }
 
-    /// <summary>当没有现有元素匹配谓词时添加由工厂创建的元素</summary>
+    /// <summary>
+    /// 当没有现有元素匹配谓词时添加由工厂创建的元素
+    /// </summary>
     /// <param name="source">要更新的集合</param>
     /// <param name="predicate">用于测试现有元素的谓词</param>
     /// <param name="itemFactory">仅在无匹配元素时使用的工厂</param>
@@ -66,7 +74,9 @@ public static class CollectionExtensions
         return true;
     }
 
-    /// <summary>移除所有匹配元素，并按原始枚举顺序返回这些元素</summary>
+    /// <summary>
+    /// 移除所有匹配元素，并按原始枚举顺序返回这些元素
+    /// </summary>
     /// <param name="source">要更新的集合</param>
     /// <param name="predicate">用于选择待移除元素的谓词</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -86,7 +96,9 @@ public static class CollectionExtensions
         return removedItems;
     }
 
-    /// <summary>从集合中移除所有给定元素</summary>
+    /// <summary>
+    /// 从集合中移除所有给定元素
+    /// </summary>
     /// <param name="source">要更新的集合</param>
     /// <param name="items">要移除的元素。序列会在变更前创建快照</param>
     /// <typeparam name="T">元素类型</typeparam>

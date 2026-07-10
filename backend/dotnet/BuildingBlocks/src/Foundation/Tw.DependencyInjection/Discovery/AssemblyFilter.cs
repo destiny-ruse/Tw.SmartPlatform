@@ -1,15 +1,21 @@
 ﻿namespace Tw.DependencyInjection.Discovery;
 
-/// <summary>表示 AssemblyFilter 类型</summary>
+/// <summary>
+/// 封装Assembly过滤器相关的数据和行为
+/// </summary>
 internal static class AssemblyFilter
 {
-    /// <summary>表示 DefaultPrefix 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的默认前缀常量值
+    /// </summary>
     private const string DefaultPrefix = "Tw.";
 
-    /// <summary>执行 Filter 操作</summary>
-    /// <param name="assemblyNames">assemblyNames 参数</param>
-    /// <param name="options">options 参数</param>
-    /// <returns>Filter 的执行结果</returns>
+    /// <summary>
+    /// 说明过滤器在当前类型中的职责
+    /// </summary>
+    /// <param name="assemblyNames">用于提供assembly名称集合</param>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static IReadOnlyList<string> Filter(
         IEnumerable<string> assemblyNames, ServiceRegistrationOptions options)
     {
@@ -28,10 +34,12 @@ internal static class AssemblyFilter
         return included;
     }
 
-    /// <summary>执行 IsIncluded 操作</summary>
-    /// <param name="name">name 参数</param>
-    /// <param name="options">options 参数</param>
-    /// <returns>IsIncluded 的执行结果</returns>
+    /// <summary>
+    /// 判断ncluded是否满足条件
+    /// </summary>
+    /// <param name="name">待匹配成员或资源的名称</param>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsIncluded(string name, ServiceRegistrationOptions options)
     {
         if (options.IncludeAssemblies.Contains(name, StringComparer.Ordinal))
@@ -55,10 +63,12 @@ internal static class AssemblyFilter
         return false;
     }
 
-    /// <summary>执行 IsExcluded 操作</summary>
-    /// <param name="name">name 参数</param>
-    /// <param name="options">options 参数</param>
-    /// <returns>IsExcluded 的执行结果</returns>
+    /// <summary>
+    /// 判断Excluded是否满足条件
+    /// </summary>
+    /// <param name="name">待匹配成员或资源的名称</param>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsExcluded(string name, ServiceRegistrationOptions options)
     {
         if (options.ExcludeAssemblies.Contains(name, StringComparer.Ordinal))

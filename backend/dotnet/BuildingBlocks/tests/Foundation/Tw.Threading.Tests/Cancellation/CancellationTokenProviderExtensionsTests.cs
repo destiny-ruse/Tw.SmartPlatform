@@ -4,17 +4,23 @@ using Xunit;
 
 namespace Tw.Threading.Tests.Cancellation;
 
-/// <summary>验证 CancellationTokenProviderExtensionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖Cancellation令牌提供器Extensions的核心行为和边界条件
+/// </summary>
 public class CancellationTokenProviderExtensionsTests
 {
-    /// <summary>验证 CreateProvider 场景</summary>
-    /// <returns>CreateProvider 的执行结果</returns>
+    /// <summary>
+    /// 创建提供器测试对象
+    /// </summary>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static NullCancellationTokenProvider CreateProvider()
     {
         return new NullCancellationTokenProvider(new AsyncLocalCancellationTokenScopeProvider());
     }
 
-    /// <summary>验证 FallbackToProvider_ReturnsExplicitToken_WhenProvided 场景</summary>
+    /// <summary>
+    /// 验证回退到提供器返回Explicit令牌当Provided
+    /// </summary>
     [Fact]
     public void FallbackToProvider_ReturnsExplicitToken_WhenProvided()
     {
@@ -26,7 +32,9 @@ public class CancellationTokenProviderExtensionsTests
         result.Should().Be(explicitCts.Token);
     }
 
-    /// <summary>验证 FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsDefault 场景</summary>
+    /// <summary>
+    /// 验证回退到提供器返回提供器令牌当Explicit令牌Is默认
+    /// </summary>
     [Fact]
     public void FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsDefault()
     {
@@ -43,7 +51,9 @@ public class CancellationTokenProviderExtensionsTests
         }
     }
 
-    /// <summary>验证 FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsNone 场景</summary>
+    /// <summary>
+    /// 验证回退到提供器返回提供器令牌当Explicit令牌IsNone
+    /// </summary>
     [Fact]
     public void FallbackToProvider_ReturnsProviderToken_WhenExplicitTokenIsNone()
     {

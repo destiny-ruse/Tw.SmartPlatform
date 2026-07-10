@@ -10,7 +10,9 @@ public sealed class NullAsyncDisposable : IAsyncDisposable
     /// </summary>
     public static NullAsyncDisposable Instance { get; } = new();
 
-    /// <summary>初始化 NullAsyncDisposable 实例</summary>
+    /// <summary>
+    /// 初始化 NullAsyncDisposable 实例
+    /// </summary>
     private NullAsyncDisposable()
     {
     }

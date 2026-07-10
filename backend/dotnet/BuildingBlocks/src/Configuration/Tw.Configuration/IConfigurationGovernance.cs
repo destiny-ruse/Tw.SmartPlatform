@@ -1,11 +1,15 @@
 ﻿namespace Tw.Configuration;
 
-/// <summary>定义 IConfigurationGovernance 契约</summary>
+/// <summary>
+/// 定义ConfigurationGovernance的能力边界
+/// </summary>
 public interface IConfigurationGovernance
 {
-    /// <summary>执行 IsSourceAllowed 操作</summary>
-    /// <param name="sourceName">sourceName 参数</param>
-    /// <param name="environmentName">environmentName 参数</param>
-    /// <returns>IsSourceAllowed 的执行结果</returns>
+    /// <summary>
+    /// 判断SourceAllowed是否满足条件
+    /// </summary>
+    /// <param name="sourceName">用于提供sourceName</param>
+    /// <param name="environmentName">用于提供环境Name</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     bool IsSourceAllowed(string sourceName, string environmentName);
 }

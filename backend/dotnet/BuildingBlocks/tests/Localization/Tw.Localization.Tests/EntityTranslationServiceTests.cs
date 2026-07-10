@@ -11,12 +11,16 @@ namespace Tw.Localization.Tests;
 /// </summary>
 public class EntityTranslationServiceTests
 {
-    /// <summary>验证 CreateTokenProvider 场景</summary>
-    /// <returns>CreateTokenProvider 的执行结果</returns>
+    /// <summary>
+    /// 创建令牌提供器测试对象
+    /// </summary>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static NullCancellationTokenProvider CreateTokenProvider() => new(new AsyncLocalCancellationTokenScopeProvider());
 
-    /// <summary>验证 GetFieldsAsync_UsesBatchStoreAndFallback 场景</summary>
-    /// <returns>GetFieldsAsync_UsesBatchStoreAndFallback 的执行结果</returns>
+    /// <summary>
+    /// 验证读取Fields异步UsesBatch存储和回退
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetFieldsAsync_UsesBatchStoreAndFallback()
     {
@@ -34,8 +38,10 @@ public class EntityTranslationServiceTests
         store.GetListCallCount.Should().Be(1);
     }
 
-    /// <summary>验证 GetFieldAsync_ReturnsNull_WhenMissing 场景</summary>
-    /// <returns>GetFieldAsync_ReturnsNull_WhenMissing 的执行结果</returns>
+    /// <summary>
+    /// 验证读取Field异步返回空值当缺少
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetFieldAsync_ReturnsNull_WhenMissing()
     {
@@ -51,8 +57,10 @@ public class EntityTranslationServiceTests
         result.Should().BeNull();
     }
 
-    /// <summary>验证 GetFieldsAsync_PrefersCurrentTenantOverGlobal 场景</summary>
-    /// <returns>GetFieldsAsync_PrefersCurrentTenantOverGlobal 的执行结果</returns>
+    /// <summary>
+    /// 验证读取Fields异步PrefersCurrent租户OverGlobal
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetFieldsAsync_PrefersCurrentTenantOverGlobal()
     {
@@ -71,8 +79,10 @@ public class EntityTranslationServiceTests
         result[key].Value.Should().Be("租户名称");
     }
 
-    /// <summary>验证 GetFieldsAsync_FallsBackToGlobal_WhenTenantMissing 场景</summary>
-    /// <returns>GetFieldsAsync_FallsBackToGlobal_WhenTenantMissing 的执行结果</returns>
+    /// <summary>
+    /// 验证读取Fields异步Falls回到Global当租户缺少
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetFieldsAsync_FallsBackToGlobal_WhenTenantMissing()
     {

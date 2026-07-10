@@ -6,10 +6,14 @@ using Xunit;
 
 namespace Tw.Castle.Core.Tests;
 
-/// <summary>验证 InterceptorPipelineTests 相关行为</summary>
+/// <summary>
+/// 覆盖拦截器管道的核心行为和边界条件
+/// </summary>
 public class InterceptorPipelineTests
 {
-    /// <summary>验证 InterceptionReport_ExposesDiagnostics 场景</summary>
+    /// <summary>
+    /// 验证nterception报告Exposes诊断集合
+    /// </summary>
     [Fact]
     public void InterceptionReport_ExposesDiagnostics()
     {
@@ -27,8 +31,10 @@ public class InterceptorPipelineTests
         report.Items.Should().ContainSingle().Which.Should().BeSameAs(item);
     }
 
-    /// <summary>验证 InvokeAsync_ExecutesInterceptorsInOrderAndProceedsOnce 场景</summary>
-    /// <returns>InvokeAsync_ExecutesInterceptorsInOrderAndProceedsOnce 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步Executes拦截器集合InOrder和Proceeds一次
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_ExecutesInterceptorsInOrderAndProceedsOnce()
     {
@@ -47,8 +53,10 @@ public class InterceptorPipelineTests
         context.ProceedAsyncCallCount.Should().Be(1);
     }
 
-    /// <summary>验证 InvokeAsync_WithEmptyInterceptorChain_ProceedsTargetOnce 场景</summary>
-    /// <returns>InvokeAsync_WithEmptyInterceptorChain_ProceedsTargetOnce 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步带有空拦截器ChainProceeds目标一次
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_WithEmptyInterceptorChain_ProceedsTargetOnce()
     {
@@ -62,8 +70,10 @@ public class InterceptorPipelineTests
         context.ProceedAsyncCallCount.Should().Be(1);
     }
 
-    /// <summary>验证 InvokeAsync_AllowsInterceptorToShortCircuitWithoutProceedingTarget 场景</summary>
-    /// <returns>InvokeAsync_AllowsInterceptorToShortCircuitWithoutProceedingTarget 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步Allows拦截器到短路Circuit不带Proceeding目标
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_AllowsInterceptorToShortCircuitWithoutProceedingTarget()
     {
@@ -77,8 +87,10 @@ public class InterceptorPipelineTests
         context.ProceedAsyncCallCount.Should().Be(0);
     }
 
-    /// <summary>验证 InvokeAsync_ThrowsAndKeepsTargetOnce_WhenInterceptorCallsProceedAsyncTwice 场景</summary>
-    /// <returns>InvokeAsync_ThrowsAndKeepsTargetOnce_WhenInterceptorCallsProceedAsyncTwice 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步抛出异常和Keeps目标一次当拦截器Calls继续处理异步两次
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_ThrowsAndKeepsTargetOnce_WhenInterceptorCallsProceedAsyncTwice()
     {
@@ -94,8 +106,10 @@ public class InterceptorPipelineTests
         events.Should().Equal("first-proceed", "target", "second-proceed");
     }
 
-    /// <summary>验证 InvokeAsync_ThrowsAndKeepsTargetUncalled_WhenOuterInterceptorCallsProceedAsyncTwiceAfterInnerShortCircuit 场景</summary>
-    /// <returns>InvokeAsync_ThrowsAndKeepsTargetUncalled_WhenOuterInterceptorCallsProceedAsyncTwiceAfterInnerShortCircuit 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步抛出异常和Keeps目标Uncalled当Outer拦截器Calls继续处理异步两次AfterInner短路Circuit
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_ThrowsAndKeepsTargetUncalled_WhenOuterInterceptorCallsProceedAsyncTwiceAfterInnerShortCircuit()
     {
@@ -114,8 +128,10 @@ public class InterceptorPipelineTests
         events.Should().Equal("first-proceed", "short-circuit", "second-proceed");
     }
 
-    /// <summary>验证 InvokeAsync_PropagatesTargetException 场景</summary>
-    /// <returns>InvokeAsync_PropagatesTargetException 的执行结果</returns>
+    /// <summary>
+    /// 验证nvoke异步Propagates目标异常
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task InvokeAsync_PropagatesTargetException()
     {
@@ -132,26 +148,36 @@ public class InterceptorPipelineTests
         events.Should().Equal("first:before", "target");
     }
 
-    /// <summary>验证 RecordingInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingInterceptor : IInterceptor
     {
-        /// <summary>表示 _name 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的名称
+        /// </summary>
         private readonly string _name;
-        /// <summary>表示 _events 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的events
+        /// </summary>
         private readonly List<string> _events;
 
-        /// <summary>初始化 RecordingInterceptor 实例</summary>
-        /// <param name="name">name 参数</param>
-        /// <param name="events">events 参数</param>
+        /// <summary>
+        /// 初始化 RecordingInterceptor 实例
+        /// </summary>
+        /// <param name="name">待匹配成员或资源的名称</param>
+        /// <param name="events">用于提供events</param>
         public RecordingInterceptor(string name, List<string> events)
         {
             _name = name;
             _events = events;
         }
 
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             _events.Add($"{_name}:before");
@@ -160,22 +186,30 @@ public class InterceptorPipelineTests
         }
     }
 
-    /// <summary>验证 ShortCircuitInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖短路Circuit拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ShortCircuitInterceptor : IInterceptor
     {
-        /// <summary>表示 _events 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的events
+        /// </summary>
         private readonly List<string> _events;
 
-        /// <summary>初始化 ShortCircuitInterceptor 实例</summary>
-        /// <param name="events">events 参数</param>
+        /// <summary>
+        /// 初始化 ShortCircuitInterceptor 实例
+        /// </summary>
+        /// <param name="events">用于提供events</param>
         public ShortCircuitInterceptor(List<string> events)
         {
             _events = events;
         }
 
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context)
         {
             _events.Add("short-circuit");
@@ -185,22 +219,30 @@ public class InterceptorPipelineTests
         }
     }
 
-    /// <summary>验证 DoubleProceedInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Double继续处理拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class DoubleProceedInterceptor : IInterceptor
     {
-        /// <summary>表示 _events 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的events
+        /// </summary>
         private readonly List<string> _events;
 
-        /// <summary>初始化 DoubleProceedInterceptor 实例</summary>
-        /// <param name="events">events 参数</param>
+        /// <summary>
+        /// 初始化 DoubleProceedInterceptor 实例
+        /// </summary>
+        /// <param name="events">用于提供events</param>
         public DoubleProceedInterceptor(List<string> events)
         {
             _events = events;
         }
 
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             _events.Add("first-proceed");
@@ -210,45 +252,67 @@ public class InterceptorPipelineTests
         }
     }
 
-    /// <summary>验证 RecordingInvocationContext 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording调用上下文的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingInvocationContext : IInvocationContext
     {
-        /// <summary>表示 _events 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的events
+        /// </summary>
         private readonly List<string> _events;
-        /// <summary>表示 _proceedException 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的继续处理Exception
+        /// </summary>
         private readonly Exception? _proceedException;
 
-        /// <summary>初始化 RecordingInvocationContext 实例</summary>
-        /// <param name="events">events 参数</param>
-        /// <param name="proceedException">proceedException 参数</param>
+        /// <summary>
+        /// 初始化 RecordingInvocationContext 实例
+        /// </summary>
+        /// <param name="events">用于提供events</param>
+        /// <param name="proceedException">用于提供proceed异常</param>
         public RecordingInvocationContext(List<string> events, Exception? proceedException = null)
         {
             _events = events;
             _proceedException = proceedException;
         }
 
-        /// <summary>表示 Method 属性</summary>
+        /// <summary>
+        /// typeof在当前对象中的业务含义
+        /// </summary>
         public MethodInfo Method { get; } = typeof(RecordingInvocationContext)
             .GetMethod(nameof(TargetMethod), BindingFlags.NonPublic | BindingFlags.Static)!;
 
-        /// <summary>表示 Target 属性</summary>
+        /// <summary>
+        /// 目标在当前对象中的业务含义
+        /// </summary>
         public object? Target => null;
 
-        /// <summary>表示 Arguments 属性</summary>
+        /// <summary>
+        /// 参数在当前对象中的业务含义
+        /// </summary>
         public object?[] Arguments { get; } = [];
 
-        /// <summary>表示 ArgumentsByName 属性</summary>
+        /// <summary>
+        /// 当前调用按名称索引后的参数集合
+        /// </summary>
         public IReadOnlyDictionary<string, object?> ArgumentsByName { get; } =
             new Dictionary<string, object?>(StringComparer.Ordinal);
 
-        /// <summary>表示 ReturnValue 属性</summary>
+        /// <summary>
+        /// 拦截流程返回给调用方的结果对象
+        /// </summary>
         public object? ReturnValue { get; set; }
 
-        /// <summary>表示 ProceedAsyncCallCount 属性</summary>
+        /// <summary>
+        /// 继续处理异步Call数量在当前对象中的业务含义
+        /// </summary>
         public int ProceedAsyncCallCount { get; private set; }
 
-        /// <summary>验证 ProceedAsync 场景</summary>
-        /// <returns>ProceedAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明ProceedAsync在当前类型中的职责
+        /// </summary>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask ProceedAsync()
         {
             ProceedAsyncCallCount++;
@@ -263,10 +327,14 @@ public class InterceptorPipelineTests
             return ValueTask.CompletedTask;
         }
 
-        /// <summary>验证 Proceed 场景</summary>
+        /// <summary>
+        /// 说明Proceed在当前类型中的职责
+        /// </summary>
         public void Proceed() => throw new NotSupportedException("测试上下文仅支持异步 Proceed");
 
-        /// <summary>验证 TargetMethod 场景</summary>
+        /// <summary>
+        /// 说明Target方法在当前类型中的职责
+        /// </summary>
         private static void TargetMethod()
         {
         }

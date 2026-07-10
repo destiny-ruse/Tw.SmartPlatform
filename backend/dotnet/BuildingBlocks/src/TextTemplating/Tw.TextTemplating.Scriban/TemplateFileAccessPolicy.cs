@@ -19,7 +19,9 @@ public sealed class TemplateFileAccessException : Exception
 /// </summary>
 public sealed class TemplateFileAccessPolicy
 {
-    /// <summary>表示 _allowedRoots 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的allowedRoots
+    /// </summary>
     private readonly string[] _allowedRoots;
 
     /// <summary>
@@ -53,9 +55,11 @@ public sealed class TemplateFileAccessPolicy
         throw new TemplateFileAccessException();
     }
 
-    /// <summary>执行 NormalizeRoot 操作</summary>
-    /// <param name="root">root 参数</param>
-    /// <returns>NormalizeRoot 的执行结果</returns>
+    /// <summary>
+    /// 说明Normalize根目录在当前类型中的职责
+    /// </summary>
+    /// <param name="root">用于提供根目录</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static string NormalizeRoot(string root)
     {
         var fullPath = Path.GetFullPath(root);

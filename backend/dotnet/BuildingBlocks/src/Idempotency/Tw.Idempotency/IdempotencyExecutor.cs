@@ -1,14 +1,18 @@
 ﻿namespace Tw.Idempotency;
 
-/// <summary>表示 IdempotencyExecutor 类型</summary>
+/// <summary>
+/// 协调幂等请求的占用、复用、冲突检测和结果保存
+/// </summary>
 public sealed class IdempotencyExecutor(IIdempotencyStore store)
 {
-    /// <summary>执行 ExecuteAsync 操作</summary>
-    /// <param name="key">key 参数</param>
-    /// <param name="fingerprint">fingerprint 参数</param>
-    /// <param name="operation">operation 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ExecuteAsync 的执行结果</returns>
+    /// <summary>
+    /// 异步执行当前组件的核心处理流程
+    /// </summary>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="fingerprint">用于区分幂等请求负载的指纹</param>
+    /// <param name="operation">需要在幂等保护下运行的业务委托</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的幂等处理结果</returns>
     public async Task<IdempotencyResult> ExecuteAsync(
         IdempotencyKey key,
         string fingerprint,

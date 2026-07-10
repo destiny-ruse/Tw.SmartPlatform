@@ -5,19 +5,27 @@ using Xunit;
 
 namespace Tw.Castle.Core.Tests.Abstractions;
 
-/// <summary>验证 InterceptionAttributeTests 相关行为</summary>
+/// <summary>
+/// 覆盖Interception特性的核心行为和边界条件
+/// </summary>
 public class InterceptionAttributeTests
 {
-    /// <summary>验证 AuditInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖审计拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class AuditInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => ValueTask.CompletedTask;
     }
 
-    /// <summary>验证 IInterceptor_LivesIn_AbstractionsNamespace 场景</summary>
+    /// <summary>
+    /// 验证拦截器LivesInAbstractionsNamespace
+    /// </summary>
     [Fact]
     public void IInterceptor_LivesIn_AbstractionsNamespace()
     {
@@ -25,7 +33,9 @@ public class InterceptionAttributeTests
         typeof(IInvocationContext).Namespace.Should().Be("Tw.Castle.Core.Abstractions");
     }
 
-    /// <summary>验证 Intercept_CarriesInterceptorType 场景</summary>
+    /// <summary>
+    /// 验证nterceptCarries拦截器类型
+    /// </summary>
     [Fact]
     public void Intercept_CarriesInterceptorType()
     {
@@ -33,7 +43,9 @@ public class InterceptionAttributeTests
         attr.InterceptorType.Should().Be(typeof(AuditInterceptor));
     }
 
-    /// <summary>验证 Intercept_TargetsClassInterfaceMethod_AndAllowsMultiple 场景</summary>
+    /// <summary>
+    /// 验证nterceptTargetsClassInterface方法和AllowsMultiple
+    /// </summary>
     [Fact]
     public void Intercept_TargetsClassInterfaceMethod_AndAllowsMultiple()
     {
@@ -43,7 +55,9 @@ public class InterceptionAttributeTests
         usage.AllowMultiple.Should().BeTrue();
     }
 
-    /// <summary>验证 DisableInterception_TargetsClassAndMethod 场景</summary>
+    /// <summary>
+    /// 验证DisableInterceptionTargetsClass和方法
+    /// </summary>
     [Fact]
     public void DisableInterception_TargetsClassAndMethod()
     {
@@ -51,7 +65,9 @@ public class InterceptionAttributeTests
         usage.ValidOn.Should().Be(AttributeTargets.Class | AttributeTargets.Method);
     }
 
-    /// <summary>验证 InterceptorOrder_CarriesOrder 场景</summary>
+    /// <summary>
+    /// 验证nterceptorOrderCarriesOrder
+    /// </summary>
     [Fact]
     public void InterceptorOrder_CarriesOrder()
     {

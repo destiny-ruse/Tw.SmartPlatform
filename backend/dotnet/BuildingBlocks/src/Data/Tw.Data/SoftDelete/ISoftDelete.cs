@@ -1,14 +1,22 @@
 ﻿namespace Tw.Data.SoftDelete;
 
-/// <summary>定义 ISoftDelete 契约</summary>
+/// <summary>
+/// 定义Soft删除的能力边界
+/// </summary>
 public interface ISoftDelete
 {
-    /// <summary>表示 IsDeleted 属性</summary>
+    /// <summary>
+    /// sDeleted在当前对象中的业务含义
+    /// </summary>
     bool IsDeleted { get; set; }
 
-    /// <summary>表示 DeletedAt 属性</summary>
+    /// <summary>
+    /// DeletedAt在当前对象中的业务含义
+    /// </summary>
     DateTimeOffset? DeletedAt { get; set; }
 
-    /// <summary>表示 DeletedBy 属性</summary>
+    /// <summary>
+    /// DeletedBy在当前对象中的业务含义
+    /// </summary>
     string? DeletedBy { get; set; }
 }

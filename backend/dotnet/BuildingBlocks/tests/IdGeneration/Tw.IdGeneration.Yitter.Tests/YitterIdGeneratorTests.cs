@@ -6,10 +6,14 @@ using Xunit;
 
 namespace Tw.IdGeneration.Yitter.Tests;
 
-/// <summary>验证 YitterIdGeneratorTests 相关行为</summary>
+/// <summary>
+/// 覆盖Yitter标识Generator的核心行为和边界条件
+/// </summary>
 public sealed class YitterIdGeneratorTests
 {
-    /// <summary>验证 NewId_ReturnsPositiveLong 场景</summary>
+    /// <summary>
+    /// 验证New标识返回Positive长整型
+    /// </summary>
     [Fact]
     public void NewId_ReturnsPositiveLong()
     {
@@ -20,7 +24,9 @@ public sealed class YitterIdGeneratorTests
         id.Should().BePositive();
     }
 
-    /// <summary>验证 AddYitterIdGeneration_RegistersGenerator 场景</summary>
+    /// <summary>
+    /// 验证添加Yitter标识Generation注册Generator
+    /// </summary>
     [Fact]
     public void AddYitterIdGeneration_RegistersGenerator()
     {

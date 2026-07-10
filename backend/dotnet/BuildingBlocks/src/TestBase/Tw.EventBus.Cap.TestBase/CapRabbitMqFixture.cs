@@ -1,6 +1,8 @@
 ﻿namespace Tw.EventBus.Cap.TestBase;
 
-/// <summary>表示 CapRabbitMqFixture 类型</summary>
+/// <summary>
+/// 封装CapRabbitMqFixture相关的数据和行为
+/// </summary>
 public sealed class CapRabbitMqFixture
 {
 }

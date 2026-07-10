@@ -3,13 +3,17 @@ using Tw.Security.DataMasking;
 
 namespace Tw.Observability.Serilog;
 
-/// <summary>表示 SerilogBuilderExtensions 类型</summary>
+/// <summary>
+/// 封装Serilog构建器Extensions相关的数据和行为
+/// </summary>
 public static class SerilogBuilderExtensions
 {
-    /// <summary>执行 EnrichWithTwRedaction 操作</summary>
-    /// <param name="configuration">configuration 参数</param>
-    /// <param name="dataMasker">dataMasker 参数</param>
-    /// <returns>EnrichWithTwRedaction 的执行结果</returns>
+    /// <summary>
+    /// 说明EnrichWithTwRedaction在当前类型中的职责
+    /// </summary>
+    /// <param name="configuration">用于提供configuration</param>
+    /// <param name="dataMasker">用于提供dataMasker</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static LoggerConfiguration EnrichWithTwRedaction(this LoggerConfiguration configuration, IDataMasker dataMasker)
     {
         ArgumentNullException.ThrowIfNull(configuration);

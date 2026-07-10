@@ -7,10 +7,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.Context;
 
-/// <summary>验证 CancellationTokenServiceCollectionExtensionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖Cancellation令牌服务CollectionExtensions的核心行为和边界条件
+/// </summary>
 public class CancellationTokenServiceCollectionExtensionsTests
 {
-    /// <summary>验证 AddHttpContextCancellationTokenProvider_ReplacesProvider_WithHttpContextProvider 场景</summary>
+    /// <summary>
+    /// 验证添加Http上下文Cancellation令牌提供器Replaces提供器带有Http上下文提供器
+    /// </summary>
     [Fact]
     public void AddHttpContextCancellationTokenProvider_ReplacesProvider_WithHttpContextProvider()
     {
@@ -23,7 +27,9 @@ public class CancellationTokenServiceCollectionExtensionsTests
             .Should().BeOfType<HttpContextCancellationTokenProvider>();
     }
 
-    /// <summary>验证 AddHttpContextCancellationTokenProvider_RegistersHttpContextAccessor 场景</summary>
+    /// <summary>
+    /// 验证添加Http上下文Cancellation令牌提供器注册Http上下文Accessor
+    /// </summary>
     [Fact]
     public void AddHttpContextCancellationTokenProvider_RegistersHttpContextAccessor()
     {
@@ -35,7 +41,9 @@ public class CancellationTokenServiceCollectionExtensionsTests
         provider.GetService<IHttpContextAccessor>().Should().NotBeNull();
     }
 
-    /// <summary>验证 AddHttpContextCancellationTokenProvider_RegistersScopeProvider_AsSingleton 场景</summary>
+    /// <summary>
+    /// 验证添加Http上下文Cancellation令牌提供器注册作用域提供器作为Singleton
+    /// </summary>
     [Fact]
     public void AddHttpContextCancellationTokenProvider_RegistersScopeProvider_AsSingleton()
     {

@@ -5,37 +5,49 @@ using Xunit;
 
 namespace Tw.Castle.Core.Tests.Abstractions;
 
-/// <summary>验证 InterceptorBaseTests 相关行为</summary>
+/// <summary>
+/// 覆盖拦截器Base的核心行为和边界条件
+/// </summary>
 public class InterceptorBaseTests
 {
-    /// <summary>验证 RecordingInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingInterceptor : InterceptorBase
     {
-        /// <summary>表示 Calls 属性</summary>
+        /// <summary>
+        /// Calls在当前对象中的业务含义
+        /// </summary>
         public List<string> Calls { get; } = [];
 
-        /// <summary>验证 BeforeAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>BeforeAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明BeforeAsync在当前类型中的职责
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         protected override ValueTask BeforeAsync(IInvocationContext context)
         {
             Calls.Add("before");
             return ValueTask.CompletedTask;
         }
 
-        /// <summary>验证 AfterAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>AfterAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明AfterAsync在当前类型中的职责
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         protected override ValueTask AfterAsync(IInvocationContext context)
         {
             Calls.Add("after");
             return ValueTask.CompletedTask;
         }
 
-        /// <summary>验证 OnExceptionAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <param name="exception">exception 参数</param>
-        /// <returns>OnExceptionAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明On异常Async在当前类型中的职责
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <param name="exception">用于模拟异常流程的异常实例</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         protected override ValueTask OnExceptionAsync(IInvocationContext context, Exception exception)
         {
             Calls.Add("onexception");
@@ -43,31 +55,41 @@ public class InterceptorBaseTests
         }
     }
 
-    /// <summary>验证 ThrowingBeforeInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Throwing前置处理拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ThrowingBeforeInterceptor : InterceptorBase
     {
-        /// <summary>表示 Calls 属性</summary>
+        /// <summary>
+        /// Calls在当前对象中的业务含义
+        /// </summary>
         public List<string> Calls { get; } = [];
 
-        /// <summary>验证 BeforeAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>BeforeAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明BeforeAsync在当前类型中的职责
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         protected override ValueTask BeforeAsync(IInvocationContext context) =>
             throw new InvalidOperationException("before-boom");
 
-        /// <summary>验证 AfterAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>AfterAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明AfterAsync在当前类型中的职责
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         protected override ValueTask AfterAsync(IInvocationContext context)
         {
             Calls.Add("after");
             return ValueTask.CompletedTask;
         }
 
-        /// <summary>验证 OnExceptionAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <param name="exception">exception 参数</param>
-        /// <returns>OnExceptionAsync 的执行结果</returns>
+        /// <summary>
+        /// 说明On异常Async在当前类型中的职责
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <param name="exception">用于模拟异常流程的异常实例</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         protected override ValueTask OnExceptionAsync(IInvocationContext context, Exception exception)
         {
             Calls.Add("onexception");
@@ -75,8 +97,10 @@ public class InterceptorBaseTests
         }
     }
 
-    /// <summary>验证 HappyPath_RunsBeforeProceedAfter_WithoutOnException 场景</summary>
-    /// <returns>HappyPath_RunsBeforeProceedAfter_WithoutOnException 的执行结果</returns>
+    /// <summary>
+    /// 验证Happy路径Runs前置处理继续处理After不带On异常
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task HappyPath_RunsBeforeProceedAfter_WithoutOnException()
     {
@@ -89,8 +113,10 @@ public class InterceptorBaseTests
         context.ProceedCount.Should().Be(1);
     }
 
-    /// <summary>验证 ExceptionPath_RunsOnExceptionThenAfter_AndRethrows 场景</summary>
-    /// <returns>ExceptionPath_RunsOnExceptionThenAfter_AndRethrows 的执行结果</returns>
+    /// <summary>
+    /// 验证异常路径RunsOn异常ThenAfter和重新抛出
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ExceptionPath_RunsOnExceptionThenAfter_AndRethrows()
     {
@@ -105,8 +131,10 @@ public class InterceptorBaseTests
         context.ProceedCount.Should().Be(1);
     }
 
-    /// <summary>验证 BeforeThrows_DoesNotProceedOrRunAfterOrOnException_AndPropagates 场景</summary>
-    /// <returns>BeforeThrows_DoesNotProceedOrRunAfterOrOnException_AndPropagates 的执行结果</returns>
+    /// <summary>
+    /// 验证前置处理抛出异常不继续处理OrRunAfterOrOn异常和Propagates
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task BeforeThrows_DoesNotProceedOrRunAfterOrOnException_AndPropagates()
     {

@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Gateway.Tests;
 
-/// <summary>验证 GatewayHeaderSanitizerTests 相关行为</summary>
+/// <summary>
+/// 覆盖GatewayHeaderSanitizer的核心行为和边界条件
+/// </summary>
 public sealed class GatewayHeaderSanitizerTests
 {
-    /// <summary>验证 Sanitize_RemovesCallerSuppliedIdentityTenantPermissionAndRoleHeaders 场景</summary>
+    /// <summary>
+    /// 验证SanitizeRemovesCallerSupplied身份租户权限和RoleHeaders
+    /// </summary>
     [Fact]
     public void Sanitize_RemovesCallerSuppliedIdentityTenantPermissionAndRoleHeaders()
     {

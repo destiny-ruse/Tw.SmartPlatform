@@ -8,7 +8,9 @@ namespace Tw.Localization.Tests.Fakes;
 internal sealed class InMemoryDynamicTextStore : IDynamicTextStore
 {
     // 键：(tenantId or null, resourceName, cultureName, name)
-    /// <summary>表示 _records 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的records
+    /// </summary>
     private readonly List<(string? TenantId, LocalizedText Text)> _records = [];
 
     /// <summary>

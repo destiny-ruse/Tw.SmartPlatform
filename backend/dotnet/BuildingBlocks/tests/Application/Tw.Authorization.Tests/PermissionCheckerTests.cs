@@ -5,11 +5,15 @@ using Xunit;
 
 namespace Tw.Authorization.Tests;
 
-/// <summary>验证 PermissionCheckerTests 相关行为</summary>
+/// <summary>
+/// 覆盖权限Checker的核心行为和边界条件
+/// </summary>
 public sealed class PermissionCheckerTests
 {
-    /// <summary>验证 CheckAsync_ReturnsDenied_WhenPermissionMissing 场景</summary>
-    /// <returns>CheckAsync_ReturnsDenied_WhenPermissionMissing 的执行结果</returns>
+    /// <summary>
+    /// 验证Check异步返回拒绝当权限缺少
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task CheckAsync_ReturnsDenied_WhenPermissionMissing()
     {
@@ -28,13 +32,17 @@ public sealed class PermissionCheckerTests
         result.Code.Should().Be("AUTHORIZATION:000001");
     }
 
-    /// <summary>验证 InMemoryGrantStore 相关行为</summary>
+    /// <summary>
+    /// 覆盖InMemory授权记录存储的核心行为和边界条件
+    /// </summary>
     private sealed class InMemoryGrantStore(IReadOnlySet<string> grants) : IGrantStore
     {
-        /// <summary>验证 HasGrantAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>HasGrantAsync 的执行结果</returns>
+        /// <summary>
+        /// 判断测试授权存储中是否存在匹配授权记录
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>异步流程完成后产生的bool</returns>
         public Task<bool> HasGrantAsync(AuthorizationContext context, CancellationToken cancellationToken)
         {
             var key = $"{context.SubjectId}:{context.TenantId}:{context.Permission}:{context.ResourceType}:{context.ResourceId}";
@@ -42,26 +50,34 @@ public sealed class PermissionCheckerTests
         }
     }
 
-    /// <summary>验证 InMemoryPermissionGrantCache 相关行为</summary>
+    /// <summary>
+    /// 覆盖InMemory权限授权记录缓存的核心行为和边界条件
+    /// </summary>
     private sealed class InMemoryPermissionGrantCache : IPermissionGrantCache
     {
-        /// <summary>表示 _values 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的values
+        /// </summary>
         private readonly Dictionary<PermissionGrantCacheKey, bool> _values = new();
 
-        /// <summary>验证 GetAsync 场景</summary>
-        /// <param name="key">key 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>GetAsync 的执行结果</returns>
+        /// <summary>
+        /// 从测试替身中读取指定条目
+        /// </summary>
+        /// <param name="key">用于定位目标数据或缓存项的键</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>异步流程完成后产生的bool</returns>
         public Task<bool?> GetAsync(PermissionGrantCacheKey key, CancellationToken cancellationToken)
         {
             return Task.FromResult(_values.TryGetValue(key, out var allowed) ? allowed : (bool?)null);
         }
 
-        /// <summary>验证 SetAsync 场景</summary>
-        /// <param name="key">key 参数</param>
-        /// <param name="allowed">allowed 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>SetAsync 的执行结果</returns>
+        /// <summary>
+        /// 将指定条目写入测试替身
+        /// </summary>
+        /// <param name="key">用于定位目标数据或缓存项的键</param>
+        /// <param name="allowed">用于提供allowed</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task SetAsync(PermissionGrantCacheKey key, bool allowed, CancellationToken cancellationToken)
         {
             _values[key] = allowed;

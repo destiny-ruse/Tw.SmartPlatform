@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Data.Tests.Concurrency;
 
-/// <summary>验证 ConcurrencyConflictExceptionTests 相关行为</summary>
+/// <summary>
+/// 覆盖ConcurrencyConflictException的核心行为和边界条件
+/// </summary>
 public sealed class ConcurrencyConflictExceptionTests
 {
-    /// <summary>验证 Constructor_UsesStableErrorCode 场景</summary>
+    /// <summary>
+    /// 验证构造函数UsesStable错误代码
+    /// </summary>
     [Fact]
     public void Constructor_UsesStableErrorCode()
     {

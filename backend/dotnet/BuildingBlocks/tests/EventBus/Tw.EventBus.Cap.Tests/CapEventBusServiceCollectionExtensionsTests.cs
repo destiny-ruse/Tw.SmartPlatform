@@ -8,10 +8,14 @@ using Xunit;
 
 namespace Tw.EventBus.Cap.Tests;
 
-/// <summary>验证 CapEventBusServiceCollectionExtensionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖Cap事件Bus服务CollectionExtensions的核心行为和边界条件
+/// </summary>
 public sealed class CapEventBusServiceCollectionExtensionsTests
 {
-    /// <summary>验证 AddCapEventBus_RejectsMissingRabbitMqHost 场景</summary>
+    /// <summary>
+    /// 验证添加Cap事件Bus拒绝缺少RabbitMq主机
+    /// </summary>
     [Fact]
     public void AddCapEventBus_RejectsMissingRabbitMqHost()
     {
@@ -25,7 +29,9 @@ public sealed class CapEventBusServiceCollectionExtensionsTests
             .WithMessage("CAP RabbitMQ host is required");
     }
 
-    /// <summary>验证 AddCapEventBus_RegistersStorageInboxAndConsumerFilter 场景</summary>
+    /// <summary>
+    /// 验证添加Cap事件Bus注册StorageInbox和Consumer过滤器
+    /// </summary>
     [Fact]
     public void AddCapEventBus_RegistersStorageInboxAndConsumerFilter()
     {

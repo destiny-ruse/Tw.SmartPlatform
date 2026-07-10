@@ -1,13 +1,17 @@
 ﻿namespace Tw.BackgroundJobs.Abstractions;
 
-/// <summary>定义 IBackgroundJob 契约</summary>
-/// <typeparam name="TArgs">TArgs 类型参数</typeparam>
+/// <summary>
+/// 定义后台作业的能力边界
+/// </summary>
+/// <typeparam name="TArgs">响应数据的运行时类型</typeparam>
 public interface IBackgroundJob<TArgs>
 {
-    /// <summary>执行 ExecuteAsync 操作</summary>
-    /// <param name="args">args 参数</param>
-    /// <param name="context">context 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ExecuteAsync 的执行结果</returns>
+    /// <summary>
+    /// 异步执行当前组件的核心处理流程
+    /// </summary>
+    /// <param name="args">用于提供args</param>
+    /// <param name="context">当前调用携带的上下文信息</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>表示异步流程完成状态的任务</returns>
     Task ExecuteAsync(TArgs args, BackgroundJobContext context, CancellationToken cancellationToken = default);
 }

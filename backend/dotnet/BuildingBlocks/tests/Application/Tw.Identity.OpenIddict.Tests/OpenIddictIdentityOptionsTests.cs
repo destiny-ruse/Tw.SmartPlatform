@@ -3,10 +3,14 @@ using Xunit;
 
 namespace Tw.Identity.OpenIddict.Tests;
 
-/// <summary>验证 OpenIddictIdentityOptionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖开放Iddict身份选项的核心行为和边界条件
+/// </summary>
 public sealed class OpenIddictIdentityOptionsTests
 {
-    /// <summary>验证 Validate_RejectsMissingSigningCertificate 场景</summary>
+    /// <summary>
+    /// 验证校验拒绝缺少SigningCertificate
+    /// </summary>
     [Fact]
     public void Validate_RejectsMissingSigningCertificate()
     {
@@ -22,7 +26,9 @@ public sealed class OpenIddictIdentityOptionsTests
             .WithMessage("OpenIddict token signing certificate is required");
     }
 
-    /// <summary>验证 Defaults_DoNotEnablePasswordGrant 场景</summary>
+    /// <summary>
+    /// 验证DefaultsDo不EnablePassword授权记录
+    /// </summary>
     [Fact]
     public void Defaults_DoNotEnablePasswordGrant()
     {

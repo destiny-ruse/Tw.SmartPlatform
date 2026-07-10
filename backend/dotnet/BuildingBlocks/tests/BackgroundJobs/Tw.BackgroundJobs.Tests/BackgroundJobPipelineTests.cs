@@ -7,11 +7,15 @@ using Xunit;
 
 namespace Tw.BackgroundJobs.Tests;
 
-/// <summary>验证 BackgroundJobPipelineTests 相关行为</summary>
+/// <summary>
+/// 覆盖后台作业管道的核心行为和边界条件
+/// </summary>
 public sealed class BackgroundJobPipelineTests
 {
-    /// <summary>验证 ExecuteAsync_SendsCommandAndRecordsAuditTraceAndMetrics 场景</summary>
-    /// <returns>ExecuteAsync_SendsCommandAndRecordsAuditTraceAndMetrics 的执行结果</returns>
+    /// <summary>
+    /// 验证执行异步Sends命令和Records审计Trace和Metrics
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ExecuteAsync_SendsCommandAndRecordsAuditTraceAndMetrics()
     {
@@ -31,19 +35,27 @@ public sealed class BackgroundJobPipelineTests
         metricSink.Events.Should().Contain(e => e.JobId == "job-1" && e.MetricName == "background_job.succeeded");
     }
 
-    /// <summary>表示 SampleCommand 声明</summary>
+    /// <summary>
+    /// 提供 CLI 中示例命令的入口描述
+    /// </summary>
     private sealed record SampleCommand(string OrderId) : IRequest;
 
-    /// <summary>验证 RecordingJobAuditSink 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording作业审计Sink的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingJobAuditSink : IBackgroundJobAuditSink
     {
-        /// <summary>表示 Events 属性</summary>
+        /// <summary>
+        /// Events在当前对象中的业务含义
+        /// </summary>
         public List<BackgroundJobAuditEvent> Events { get; } = [];
 
-        /// <summary>验证 RecordAsync 场景</summary>
-        /// <param name="auditEvent">auditEvent 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>RecordAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录后台作业管道的执行步骤
+        /// </summary>
+        /// <param name="auditEvent">用于提供auditEvent</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task RecordAsync(BackgroundJobAuditEvent auditEvent, CancellationToken cancellationToken)
         {
             Events.Add(auditEvent);
@@ -51,16 +63,22 @@ public sealed class BackgroundJobPipelineTests
         }
     }
 
-    /// <summary>验证 RecordingJobTraceSink 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording作业TraceSink的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingJobTraceSink : IBackgroundJobTraceSink
     {
-        /// <summary>表示 Events 属性</summary>
+        /// <summary>
+        /// Events在当前对象中的业务含义
+        /// </summary>
         public List<BackgroundJobTraceEvent> Events { get; } = [];
 
-        /// <summary>验证 RecordAsync 场景</summary>
-        /// <param name="traceEvent">traceEvent 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>RecordAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录后台作业管道的执行步骤
+        /// </summary>
+        /// <param name="traceEvent">用于提供traceEvent</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task RecordAsync(BackgroundJobTraceEvent traceEvent, CancellationToken cancellationToken)
         {
             Events.Add(traceEvent);
@@ -68,16 +86,22 @@ public sealed class BackgroundJobPipelineTests
         }
     }
 
-    /// <summary>验证 RecordingJobMetricSink 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording作业MetricSink的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingJobMetricSink : IBackgroundJobMetricSink
     {
-        /// <summary>表示 Events 属性</summary>
+        /// <summary>
+        /// Events在当前对象中的业务含义
+        /// </summary>
         public List<BackgroundJobMetricEvent> Events { get; } = [];
 
-        /// <summary>验证 RecordAsync 场景</summary>
-        /// <param name="metricEvent">metricEvent 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>RecordAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录后台作业管道的执行步骤
+        /// </summary>
+        /// <param name="metricEvent">用于提供metricEvent</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task RecordAsync(BackgroundJobMetricEvent metricEvent, CancellationToken cancellationToken)
         {
             Events.Add(metricEvent);

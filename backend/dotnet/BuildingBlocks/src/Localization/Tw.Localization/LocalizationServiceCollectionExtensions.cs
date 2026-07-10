@@ -55,9 +55,11 @@ public static class LocalizationServiceCollectionExtensions
         return services;
     }
 
-    /// <summary>执行 LoadJsonResources 操作</summary>
-    /// <param name="options">options 参数</param>
-    /// <returns>LoadJsonResources 的执行结果</returns>
+    /// <summary>
+    /// 说明LoadJSONResources在当前类型中的职责
+    /// </summary>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IReadOnlyList<JsonTextResource> LoadJsonResources(LocalizationOptions options)
     {
         if (options.JsonResourcePaths.Count == 0)

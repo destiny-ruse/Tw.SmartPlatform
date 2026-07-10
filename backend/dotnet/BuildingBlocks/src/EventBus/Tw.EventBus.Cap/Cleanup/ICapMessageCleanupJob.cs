@@ -1,11 +1,15 @@
 ﻿namespace Tw.EventBus.Cap.Cleanup;
 
-/// <summary>定义 ICapMessageCleanupJob 契约</summary>
+/// <summary>
+/// 定义Cap消息Cleanup作业的能力边界
+/// </summary>
 public interface ICapMessageCleanupJob
 {
-    /// <summary>执行 ExecuteAsync 操作</summary>
-    /// <param name="options">options 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ExecuteAsync 的执行结果</returns>
+    /// <summary>
+    /// 异步执行当前组件的核心处理流程
+    /// </summary>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>表示异步流程完成状态的任务</returns>
     Task ExecuteAsync(CapMessageCleanupOptions options, CancellationToken cancellationToken = default);
 }

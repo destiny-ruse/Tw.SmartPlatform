@@ -8,10 +8,14 @@ using Xunit;
 
 namespace Tw.Observability.Serilog.Tests;
 
-/// <summary>验证 RedactingLogEventEnricherTests 相关行为</summary>
+/// <summary>
+/// 覆盖RedactingLog事件Enricher的核心行为和边界条件
+/// </summary>
 public sealed class RedactingLogEventEnricherTests
 {
-    /// <summary>验证 Enrich_RedactsSensitiveScalarProperties 场景</summary>
+    /// <summary>
+    /// 验证EnrichRedactsSensitiveScalarProperties
+    /// </summary>
     [Fact]
     public void Enrich_RedactsSensitiveScalarProperties()
     {
@@ -30,14 +34,18 @@ public sealed class RedactingLogEventEnricherTests
         logEvent.Properties["Password"].ToString().Should().NotContain("secret");
     }
 
-    /// <summary>验证 TestLogEventPropertyFactory 相关行为</summary>
+    /// <summary>
+    /// 覆盖TestLog事件PropertyFactory的核心行为和边界条件
+    /// </summary>
     private sealed class TestLogEventPropertyFactory : ILogEventPropertyFactory
     {
-        /// <summary>验证 CreateProperty 场景</summary>
-        /// <param name="name">name 参数</param>
-        /// <param name="value">value 参数</param>
-        /// <param name="destructureObjects">destructureObjects 参数</param>
-        /// <returns>CreateProperty 的执行结果</returns>
+        /// <summary>
+        /// 创建Property测试对象
+        /// </summary>
+        /// <param name="name">待匹配成员或资源的名称</param>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
+        /// <param name="destructureObjects">用于提供destructureObjects</param>
+        /// <returns>条件满足时返回 <see langword="true"/></returns>
         public LogEventProperty CreateProperty(string name, object? value, bool destructureObjects = false)
         {
             return new LogEventProperty(name, value is LogEventPropertyValue propertyValue ? propertyValue : new ScalarValue(value));

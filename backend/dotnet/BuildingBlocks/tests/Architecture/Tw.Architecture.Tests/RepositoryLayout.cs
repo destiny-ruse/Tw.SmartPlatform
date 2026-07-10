@@ -102,8 +102,10 @@ internal static class RepositoryLayout
             .Split('/')[0];
     }
 
-    /// <summary>验证 FindRepositoryRoot 场景</summary>
-    /// <returns>FindRepositoryRoot 的执行结果</returns>
+    /// <summary>
+    /// 查找仓库根目录并返回匹配结果
+    /// </summary>
+    /// <returns>方法计算得到的文本值</returns>
     private static string FindRepositoryRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

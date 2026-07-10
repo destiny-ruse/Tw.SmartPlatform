@@ -4,11 +4,15 @@ using Xunit;
 
 namespace Tw.AspNetCore.Localization.Tests;
 
-/// <summary>验证 RequestCultureResolverTests 相关行为</summary>
+/// <summary>
+/// 覆盖请求文化Resolver的核心行为和边界条件
+/// </summary>
 public class RequestCultureResolverTests
 {
-    /// <summary>验证 Options 场景</summary>
-    /// <returns>Options 的执行结果</returns>
+    /// <summary>
+    /// 构造测试所需的本地化选项
+    /// </summary>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static LocalizationOptions Options()
     {
         return new LocalizationOptions
@@ -18,7 +22,9 @@ public class RequestCultureResolverTests
         };
     }
 
-    /// <summary>验证 Resolve_UsesRouteBeforeQuery 场景</summary>
+    /// <summary>
+    /// 验证ResolveUsesRoute前置处理Query
+    /// </summary>
     [Fact]
     public void Resolve_UsesRouteBeforeQuery()
     {
@@ -33,7 +39,9 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeTrue();
     }
 
-    /// <summary>验证 Resolve_UsesDefaultForUnsupportedCulture 场景</summary>
+    /// <summary>
+    /// 验证ResolveUses默认针对Unsupported文化
+    /// </summary>
     [Fact]
     public void Resolve_UsesDefaultForUnsupportedCulture()
     {
@@ -48,7 +56,9 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
-    /// <summary>验证 Resolve_UsesCookieCulture_WhenRouteAndQueryAreNull 场景</summary>
+    /// <summary>
+    /// 验证ResolveUsesCookie文化当Route和QueryAre空值
+    /// </summary>
     [Fact]
     public void Resolve_UsesCookieCulture_WhenRouteAndQueryAreNull()
     {
@@ -63,7 +73,9 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
-    /// <summary>验证 Resolve_UsesFirstSupportedAcceptLanguage_WhenRouteQueryCookieAreNull 场景</summary>
+    /// <summary>
+    /// 验证ResolveUses第一个支持AcceptLanguage当RouteQueryCookieAre空值
+    /// </summary>
     [Fact]
     public void Resolve_UsesFirstSupportedAcceptLanguage_WhenRouteQueryCookieAreNull()
     {
@@ -79,7 +91,9 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
-    /// <summary>验证 Resolve_StripQWeightFromAcceptLanguage 场景</summary>
+    /// <summary>
+    /// 验证ResolveStripQWeightFromAcceptLanguage
+    /// </summary>
     [Fact]
     public void Resolve_StripQWeightFromAcceptLanguage()
     {
@@ -95,7 +109,9 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeFalse();
     }
 
-    /// <summary>验证 Resolve_CaseInsensitiveMatch_ReturnsCanonicalCasing 场景</summary>
+    /// <summary>
+    /// 验证ResolveCaseInsensitiveMatch返回CanonicalCasing
+    /// </summary>
     [Fact]
     public void Resolve_CaseInsensitiveMatch_ReturnsCanonicalCasing()
     {
@@ -111,7 +127,9 @@ public class RequestCultureResolverTests
         result.IsExplicitSwitch.Should().BeTrue();
     }
 
-    /// <summary>验证 Resolve_ThrowsArgumentNullException_WhenOptionsIsNull 场景</summary>
+    /// <summary>
+    /// 验证Resolve抛出异常参数空值异常当选项Is空值
+    /// </summary>
     [Fact]
     public void Resolve_ThrowsArgumentNullException_WhenOptionsIsNull()
     {

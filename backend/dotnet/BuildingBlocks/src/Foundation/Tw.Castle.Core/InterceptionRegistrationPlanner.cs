@@ -23,13 +23,21 @@ public sealed record InterceptionPlan(
 /// </summary>
 public static class InterceptionRegistrationPlanner
 {
-    /// <summary>表示 CastleInterfaceProxy 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的CastleInterface代理常量值
+    /// </summary>
     private const string CastleInterfaceProxy = "CastleInterfaceProxy";
-    /// <summary>表示 CastleClassProxy 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的CastleClass代理常量值
+    /// </summary>
     private const string CastleClassProxy = "CastleClassProxy";
-    /// <summary>表示 Enabled 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的Enabled常量值
+    /// </summary>
     private const string Enabled = "enabled";
-    /// <summary>表示 Skipped 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的Skipped常量值
+    /// </summary>
     private const string Skipped = "skipped";
 
     /// <summary>
@@ -80,10 +88,12 @@ public static class InterceptionRegistrationPlanner
         return new InterceptionPlan(new InterceptionReport(diagnostics), requiredInterceptorTypes);
     }
 
-    /// <summary>执行 EnumerateCandidateMethods 操作</summary>
-    /// <param name="serviceType">serviceType 参数</param>
-    /// <param name="implementationType">implementationType 参数</param>
-    /// <returns>EnumerateCandidateMethods 的执行结果</returns>
+    /// <summary>
+    /// 说明EnumerateCandidateMethods在当前类型中的职责
+    /// </summary>
+    /// <param name="serviceType">服务注册中暴露的服务类型</param>
+    /// <param name="implementationType">服务注册中使用的实现类型</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IEnumerable<MethodInfo> EnumerateCandidateMethods(Type serviceType, Type implementationType)
     {
         var inspectedMethods = serviceType.IsInterface
@@ -99,9 +109,11 @@ public static class InterceptionRegistrationPlanner
                 parameter.ParameterType.FullName ?? parameter.ParameterType.Name)), StringComparer.Ordinal);
     }
 
-    /// <summary>执行 EnumerateInterfaceMethods 操作</summary>
-    /// <param name="serviceType">serviceType 参数</param>
-    /// <returns>EnumerateInterfaceMethods 的执行结果</returns>
+    /// <summary>
+    /// 说明EnumerateInterfaceMethods在当前类型中的职责
+    /// </summary>
+    /// <param name="serviceType">服务注册中暴露的服务类型</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IEnumerable<MethodInfo> EnumerateInterfaceMethods(Type serviceType)
     {
         var methods = new List<MethodInfo>();
@@ -115,9 +127,11 @@ public static class InterceptionRegistrationPlanner
         return methods;
     }
 
-    /// <summary>执行 AddMethods 操作</summary>
-    /// <param name="methods">methods 参数</param>
-    /// <param name="type">type 参数</param>
+    /// <summary>
+    /// 注册Methods所需服务
+    /// </summary>
+    /// <param name="methods">用于提供methods</param>
+    /// <param name="type">用于提供类型</param>
     private static void AddMethods(ICollection<MethodInfo> methods, Type type)
     {
         foreach (var method in type.GetMethods(BindingFlags.Instance | BindingFlags.Public))
@@ -131,19 +145,23 @@ public static class InterceptionRegistrationPlanner
         }
     }
 
-    /// <summary>执行 IsSameMethod 操作</summary>
-    /// <param name="left">left 参数</param>
-    /// <param name="right">right 参数</param>
-    /// <returns>IsSameMethod 的执行结果</returns>
+    /// <summary>
+    /// 判断Same方法是否满足条件
+    /// </summary>
+    /// <param name="left">用于提供left</param>
+    /// <param name="right">用于提供right</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsSameMethod(MethodInfo left, MethodInfo right) =>
         Equals(left, right) || (left.Module == right.Module && left.MetadataToken == right.MetadataToken);
 
-    /// <summary>执行 CreateDiagnostic 操作</summary>
-    /// <param name="registration">registration 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
-    /// <param name="implementationHasInterfaceContract">implementationHasInterfaceContract 参数</param>
-    /// <returns>CreateDiagnostic 的执行结果</returns>
+    /// <summary>
+    /// 创建诊断测试对象
+    /// </summary>
+    /// <param name="registration">用于提供registration</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
+    /// <param name="implementationHasInterfaceContract">用于提供mplementation存在Interface契约</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static InterceptionDiagnostic CreateDiagnostic(
         InterceptionCandidate registration,
         MethodInfo method,
@@ -208,24 +226,30 @@ public static class InterceptionRegistrationPlanner
         return EnabledDiagnostic(registration, method, CastleClassProxy, interceptorTypes);
     }
 
-    /// <summary>执行 CanUseClassProxy 操作</summary>
-    /// <param name="method">method 参数</param>
-    /// <returns>CanUseClassProxy 的执行结果</returns>
+    /// <summary>
+    /// 说明CanUse类Proxy在当前类型中的职责
+    /// </summary>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool CanUseClassProxy(MethodInfo method) =>
         method.IsVirtual && !method.IsFinal && !method.IsPrivate;
 
-    /// <summary>执行 IsPublicProxyType 操作</summary>
-    /// <param name="type">type 参数</param>
-    /// <returns>IsPublicProxyType 的执行结果</returns>
+    /// <summary>
+    /// 判断Public代理类型是否满足条件
+    /// </summary>
+    /// <param name="type">用于提供类型</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsPublicProxyType(Type type) =>
         type.IsVisible;
 
-    /// <summary>执行 EnabledDiagnostic 操作</summary>
-    /// <param name="registration">registration 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <param name="carrier">carrier 参数</param>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
-    /// <returns>EnabledDiagnostic 的执行结果</returns>
+    /// <summary>
+    /// 说明EnabledDiagnostic在当前类型中的职责
+    /// </summary>
+    /// <param name="registration">用于提供registration</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <param name="carrier">用于提供carrier</param>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static InterceptionDiagnostic EnabledDiagnostic(
         InterceptionCandidate registration,
         MethodInfo method,
@@ -240,13 +264,15 @@ public static class InterceptionRegistrationPlanner
             Status: Enabled,
             Reason: null);
 
-    /// <summary>执行 SkippedDiagnostic 操作</summary>
-    /// <param name="registration">registration 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <param name="carrier">carrier 参数</param>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
-    /// <param name="reason">reason 参数</param>
-    /// <returns>SkippedDiagnostic 的执行结果</returns>
+    /// <summary>
+    /// 说明SkippedDiagnostic在当前类型中的职责
+    /// </summary>
+    /// <param name="registration">用于提供registration</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <param name="carrier">用于提供carrier</param>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
+    /// <param name="reason">用于提供reason</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static InterceptionDiagnostic SkippedDiagnostic(
         InterceptionCandidate registration,
         MethodInfo method,
@@ -262,16 +288,20 @@ public static class InterceptionRegistrationPlanner
             Status: Skipped,
             Reason: reason);
 
-    /// <summary>执行 InterceptorTypeNames 操作</summary>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
-    /// <returns>InterceptorTypeNames 的执行结果</returns>
+    /// <summary>
+    /// 说明nterceptor类型名称集合在当前类型中的职责
+    /// </summary>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static IReadOnlyList<string> InterceptorTypeNames(IReadOnlyList<Type> interceptorTypes) =>
         interceptorTypes
             .Select(TypeName)
             .ToList();
 
-    /// <summary>执行 TypeName 操作</summary>
-    /// <param name="type">type 参数</param>
-    /// <returns>TypeName 的执行结果</returns>
+    /// <summary>
+    /// 说明类型Name在当前类型中的职责
+    /// </summary>
+    /// <param name="type">用于提供类型</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static string TypeName(Type type) => type.FullName ?? type.Name;
 }

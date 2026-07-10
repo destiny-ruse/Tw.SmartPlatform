@@ -11,12 +11,16 @@ namespace Tw.Localization.Tests;
 /// </summary>
 public class TextLocalizerTests
 {
-    /// <summary>验证 CreateTokenProvider 场景</summary>
-    /// <returns>CreateTokenProvider 的执行结果</returns>
+    /// <summary>
+    /// 创建令牌提供器测试对象
+    /// </summary>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static NullCancellationTokenProvider CreateTokenProvider() => new(new AsyncLocalCancellationTokenScopeProvider());
 
-    /// <summary>验证 GetAsync_PrefersDynamicTenantText 场景</summary>
-    /// <returns>GetAsync_PrefersDynamicTenantText 的执行结果</returns>
+    /// <summary>
+    /// 验证读取异步Prefers动态租户文本
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetAsync_PrefersDynamicTenantText()
     {
@@ -34,8 +38,10 @@ public class TextLocalizerTests
         text.Value.Should().Be("租户菜单");
     }
 
-    /// <summary>验证 GetAsync_ReturnsNotFoundText_WhenMissing 场景</summary>
-    /// <returns>GetAsync_ReturnsNotFoundText_WhenMissing 的执行结果</returns>
+    /// <summary>
+    /// 验证读取异步返回不Found文本当缺少
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetAsync_ReturnsNotFoundText_WhenMissing()
     {
@@ -48,8 +54,10 @@ public class TextLocalizerTests
         text.Value.Should().Be("Missing");
     }
 
-    /// <summary>验证 GetAllAsync_HigherPriorityContributorOverrides 场景</summary>
-    /// <returns>GetAllAsync_HigherPriorityContributorOverrides 的执行结果</returns>
+    /// <summary>
+    /// 验证读取All异步HigherPriorityContributorOverrides
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task GetAllAsync_HigherPriorityContributorOverrides()
     {

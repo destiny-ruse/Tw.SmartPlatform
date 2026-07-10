@@ -9,7 +9,9 @@
 /// </remarks>
 public sealed class AsyncLocalCancellationTokenScopeProvider
 {
-    /// <summary>表示 _current 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的current
+    /// </summary>
     private readonly AsyncLocal<CancellationTokenOverride?> _current = new();
 
     /// <summary>
@@ -30,15 +32,21 @@ public sealed class AsyncLocalCancellationTokenScopeProvider
         return new CancellationTokenScope(this, previous);
     }
 
-    /// <summary>表示 CancellationTokenScope 类型</summary>
+    /// <summary>
+    /// 封装Cancellation令牌作用域相关的数据和行为
+    /// </summary>
     private sealed class CancellationTokenScope(
         AsyncLocalCancellationTokenScopeProvider provider,
         CancellationTokenOverride? previous) : IDisposable
     {
-        /// <summary>表示 providerRef 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的提供器Ref
+        /// </summary>
         private AsyncLocalCancellationTokenScopeProvider? providerRef = provider;
 
-        /// <summary>执行 Dispose 操作</summary>
+        /// <summary>
+        /// 说明释放在当前类型中的职责
+        /// </summary>
         public void Dispose()
         {
             var currentProvider = Interlocked.Exchange(ref providerRef, null);

@@ -2,13 +2,17 @@
 
 namespace Tw.MultiTenancy;
 
-/// <summary>表示 TenantResolver 类型</summary>
+/// <summary>
+/// 封装租户Resolver相关的数据和行为
+/// </summary>
 public sealed class TenantResolver
 {
-    /// <summary>执行 Resolve 操作</summary>
-    /// <param name="tokenTenantId">tokenTenantId 参数</param>
-    /// <param name="hintedTenantId">hintedTenantId 参数</param>
-    /// <returns>Resolve 的执行结果</returns>
+    /// <summary>
+    /// 说明解析在当前类型中的职责
+    /// </summary>
+    /// <param name="tokenTenantId">用于提供tokenTenant标识</param>
+    /// <param name="hintedTenantId">用于提供hintedTenant标识</param>
+    /// <returns>方法计算得到的文本值</returns>
     public CurrentTenant Resolve(string? tokenTenantId, string? hintedTenantId)
     {
         if (!string.IsNullOrWhiteSpace(tokenTenantId)

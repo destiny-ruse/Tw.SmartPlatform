@@ -4,12 +4,16 @@ using Microsoft.AspNetCore.Routing;
 
 namespace Tw.AspNetCore.Health;
 
-/// <summary>表示 HealthEndpointRouteBuilderExtensions 类型</summary>
+/// <summary>
+/// 封装HealthEndpointRoute构建器Extensions相关的数据和行为
+/// </summary>
 public static class HealthEndpointRouteBuilderExtensions
 {
-    /// <summary>执行 MapTwHealthEndpoints 操作</summary>
-    /// <param name="endpoints">endpoints 参数</param>
-    /// <returns>MapTwHealthEndpoints 的执行结果</returns>
+    /// <summary>
+    /// 将TwHealthEndpoints注册到路由或映射表
+    /// </summary>
+    /// <param name="endpoints">用于注册 HTTP 路由的端点构建器</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static IEndpointRouteBuilder MapTwHealthEndpoints(this IEndpointRouteBuilder endpoints)
     {
         ArgumentNullException.ThrowIfNull(endpoints);

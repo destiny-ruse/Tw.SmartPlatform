@@ -88,9 +88,11 @@ public static class ServiceCollectionRegistrationExtensions
         return services;
     }
 
-    /// <summary>执行 SafeGetTypes 操作</summary>
-    /// <param name="assembly">assembly 参数</param>
-    /// <returns>SafeGetTypes 的执行结果</returns>
+    /// <summary>
+    /// 说明Safe读取类型集合在当前类型中的职责
+    /// </summary>
+    /// <param name="assembly">用于提供assembly</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IReadOnlyList<Type> SafeGetTypes(Assembly assembly)
     {
         try

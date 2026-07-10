@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.TestBase.Tests;
 
-/// <summary>验证 TestClockTests 相关行为</summary>
+/// <summary>
+/// 覆盖TestClock的核心行为和边界条件
+/// </summary>
 public sealed class TestClockTests
 {
-    /// <summary>验证 AdvanceBy_MovesUtcNowForward 场景</summary>
+    /// <summary>
+    /// 验证AdvanceByMovesUtcNowForward
+    /// </summary>
     [Fact]
     public void AdvanceBy_MovesUtcNowForward()
     {

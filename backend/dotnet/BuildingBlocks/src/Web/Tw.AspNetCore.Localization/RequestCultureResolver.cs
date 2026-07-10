@@ -58,11 +58,13 @@ public static class RequestCultureResolver
         return new RequestCultureResolveResult(options.DefaultCulture, false);
     }
 
-    /// <summary>执行 TrySelect 操作</summary>
-    /// <param name="value">value 参数</param>
-    /// <param name="options">options 参数</param>
-    /// <param name="cultureName">cultureName 参数</param>
-    /// <returns>TrySelect 的执行结果</returns>
+    /// <summary>
+    /// 说明尝试选择在当前类型中的职责
+    /// </summary>
+    /// <param name="value">用于转换、回显或断言的输入值</param>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <param name="cultureName">用于提供cultureName</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool TrySelect(string? value, LocalizationOptions options, out string cultureName)
     {
         cultureName = string.Empty;
@@ -82,9 +84,11 @@ public static class RequestCultureResolver
         return true;
     }
 
-    /// <summary>执行 ParseAcceptLanguage 操作</summary>
-    /// <param name="header">header 参数</param>
-    /// <returns>ParseAcceptLanguage 的执行结果</returns>
+    /// <summary>
+    /// 说明ParseAcceptLanguage在当前类型中的职责
+    /// </summary>
+    /// <param name="header">用于提供header</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static IEnumerable<string> ParseAcceptLanguage(string? header)
     {
         if (string.IsNullOrWhiteSpace(header))

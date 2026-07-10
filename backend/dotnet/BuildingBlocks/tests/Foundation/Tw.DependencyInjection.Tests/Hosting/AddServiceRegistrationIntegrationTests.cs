@@ -13,21 +13,31 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Hosting;
 
-/// <summary>验证 AddServiceRegistrationIntegrationTests 相关行为</summary>
+/// <summary>
+/// 覆盖添加服务RegistrationIntegration的核心行为和边界条件
+/// </summary>
 public class AddServiceRegistrationIntegrationTests
 {
-    /// <summary>验证 FakeAssemblySource 相关行为</summary>
+    /// <summary>
+    /// 覆盖FakeAssemblySource的核心行为和边界条件
+    /// </summary>
     private sealed class FakeAssemblySource(params Assembly[] assemblies) : IAssemblySource
     {
-        /// <summary>验证 GetCandidateAssemblies 场景</summary>
-        /// <returns>GetCandidateAssemblies 的执行结果</returns>
+        /// <summary>
+        /// 说明读取CandidateAssemblies在当前类型中的职责
+        /// </summary>
+        /// <returns>匹配当前查询条件的结果集合</returns>
         public IReadOnlyList<Assembly> GetCandidateAssemblies() => assemblies;
     }
 
-    /// <summary>表示 FixtureAssembly 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的FixtureAssembly
+    /// </summary>
     private static readonly Assembly FixtureAssembly = typeof(OrderService).Assembly;
 
-    /// <summary>验证 AddServiceRegistration_RegistersDiscoveredServicesAndReport 场景</summary>
+    /// <summary>
+    /// 验证添加服务Registration注册DiscoveredServices和报告
+    /// </summary>
     [Fact]
     public void AddServiceRegistration_RegistersDiscoveredServicesAndReport()
     {
@@ -43,7 +53,9 @@ public class AddServiceRegistrationIntegrationTests
         provider.GetRequiredService<ServiceRegistrationReport>().Registrations.Should().NotBeEmpty();
     }
 
-    /// <summary>验证 AddServiceRegistration_RegistersOpenGenericContract 场景</summary>
+    /// <summary>
+    /// 验证添加服务Registration注册OpenGenericContract
+    /// </summary>
     [Fact]
     public void AddServiceRegistration_RegistersOpenGenericContract()
     {
@@ -57,7 +69,9 @@ public class AddServiceRegistrationIntegrationTests
             .Should().BeOfType<Repository<OrderEntity>>();
     }
 
-    /// <summary>验证 AddServiceRegistration_BindsOptionsAndRegistersOptionsReport 场景</summary>
+    /// <summary>
+    /// 验证添加服务RegistrationBinds选项和注册选项报告
+    /// </summary>
     [Fact]
     public void AddServiceRegistration_BindsOptionsAndRegistersOptionsReport()
     {
@@ -79,24 +93,34 @@ public class AddServiceRegistrationIntegrationTests
             .Contain(item => item.SectionPath == "IntegrationCache");
     }
 
-    /// <summary>定义 IMissingProvider 契约</summary>
+    /// <summary>
+    /// 定义缺少提供器的能力边界
+    /// </summary>
     private interface IMissingProvider;
 
-    /// <summary>验证 MissingKeyConsumer 相关行为</summary>
+    /// <summary>
+    /// 覆盖缺少键Consumer的核心行为和边界条件
+    /// </summary>
     private sealed class MissingKeyConsumer : IScopedDependency
     {
-        /// <summary>初始化 MissingKeyConsumer 实例</summary>
-        /// <param name="provider">provider 参数</param>
+        /// <summary>
+        /// 初始化 MissingKeyConsumer 实例
+        /// </summary>
+        /// <param name="provider">用于提供provider</param>
         public MissingKeyConsumer([FromKeyedServices("missing")] IMissingProvider provider)
         {
             Provider = provider;
         }
 
-        /// <summary>表示 Provider 属性</summary>
+        /// <summary>
+        /// 提供器在当前对象中的业务含义
+        /// </summary>
         public IMissingProvider Provider { get; }
     }
 
-    /// <summary>验证 ConstructorKeyedServiceValidator_ThrowsWhenFromKeyedServicesReferencesMissingKey 场景</summary>
+    /// <summary>
+    /// 验证构造函数Keyed服务Validator抛出异常当FromKeyedServicesReferences缺少键
+    /// </summary>
     [Fact]
     public void ConstructorKeyedServiceValidator_ThrowsWhenFromKeyedServicesReferencesMissingKey()
     {
@@ -122,8 +146,10 @@ public class AddServiceRegistrationIntegrationTests
             .WithMessage("*未注册 keyed service*");
     }
 
-    /// <summary>验证 ConfigurationForFixtures 场景</summary>
-    /// <returns>ConfigurationForFixtures 的执行结果</returns>
+    /// <summary>
+    /// 说明ConfigurationForFixtures在当前类型中的职责
+    /// </summary>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static IConfiguration ConfigurationForFixtures() =>
         new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>

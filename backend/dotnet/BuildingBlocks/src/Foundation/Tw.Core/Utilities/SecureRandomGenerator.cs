@@ -7,17 +7,29 @@ namespace Tw.Utilities;
 /// </summary>
 public static class SecureRandomGenerator
 {
-    /// <summary>表示 LowercaseChars 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的LowercaseChars常量值
+    /// </summary>
     private const string LowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-    /// <summary>表示 UppercaseChars 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的UppercaseChars常量值
+    /// </summary>
     private const string UppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    /// <summary>表示 NumericChars 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的NumericChars常量值
+    /// </summary>
     private const string NumericChars = "0123456789";
-    /// <summary>表示 AlphaChars 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的AlphaChars常量值
+    /// </summary>
     private const string AlphaChars = LowercaseChars + UppercaseChars;
-    /// <summary>表示 AlphanumericChars 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的AlphanumericChars常量值
+    /// </summary>
     private const string AlphanumericChars = AlphaChars + NumericChars;
-    /// <summary>表示 SpecialChars 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的SpecialChars常量值
+    /// </summary>
     private const string SpecialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
     /// <summary>
@@ -334,11 +346,13 @@ public static class SecureRandomGenerator
         return result;
     }
 
-    /// <summary>执行 EnsureMinLessThanMax 操作</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
-    /// <param name="minValue">minValue 参数</param>
-    /// <param name="maxValue">maxValue 参数</param>
-    /// <param name="parameterName">parameterName 参数</param>
+    /// <summary>
+    /// 说明EnsureMinLessThanMax在当前类型中的职责
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
+    /// <param name="minValue">用于提供min值</param>
+    /// <param name="maxValue">用于提供max值</param>
+    /// <param name="parameterName">用于提供parameterName</param>
     private static void EnsureMinLessThanMax<T>(T minValue, T maxValue, string parameterName)
         where T : IComparable<T>
     {
@@ -348,9 +362,11 @@ public static class SecureRandomGenerator
         }
     }
 
-    /// <summary>执行 EnsureFinite 操作</summary>
-    /// <param name="value">value 参数</param>
-    /// <param name="parameterName">parameterName 参数</param>
+    /// <summary>
+    /// 说明EnsureFinite在当前类型中的职责
+    /// </summary>
+    /// <param name="value">用于转换、回显或断言的输入值</param>
+    /// <param name="parameterName">用于提供parameterName</param>
     private static void EnsureFinite(double value, string parameterName)
     {
         if (!double.IsFinite(value))
@@ -359,9 +375,11 @@ public static class SecureRandomGenerator
         }
     }
 
-    /// <summary>执行 GetRandomChar 操作</summary>
-    /// <param name="chars">chars 参数</param>
-    /// <returns>GetRandomChar 的执行结果</returns>
+    /// <summary>
+    /// 说明读取RandomChar在当前类型中的职责
+    /// </summary>
+    /// <param name="chars">用于提供chars</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static char GetRandomChar(string chars)
     {
         return chars[GetInt(chars.Length)];

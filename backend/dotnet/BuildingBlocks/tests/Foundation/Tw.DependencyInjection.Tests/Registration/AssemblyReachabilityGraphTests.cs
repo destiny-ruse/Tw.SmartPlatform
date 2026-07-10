@@ -4,14 +4,18 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Registration;
 
-/// <summary>验证 AssemblyReachabilityGraphTests 相关行为</summary>
+/// <summary>
+/// 覆盖AssemblyReachabilityGraph的核心行为和边界条件
+/// </summary>
 public class AssemblyReachabilityGraphTests
 {
     // ──────────────────────────────────────────────────────────
     // 基础可达性
     // ──────────────────────────────────────────────────────────
 
-    /// <summary>验证 ReachabilityGraph_DetectsTransitiveDependencyPath 场景</summary>
+    /// <summary>
+    /// 验证ReachabilityGraphDetectsTransitive依赖路径
+    /// </summary>
     [Fact]
     public void ReachabilityGraph_DetectsTransitiveDependencyPath()
     {
@@ -30,7 +34,9 @@ public class AssemblyReachabilityGraphTests
     // 未知 from 名 → false
     // ──────────────────────────────────────────────────────────
 
-    /// <summary>验证 CanReach_ReturnsFalse_WhenFromAssemblyUnknown 场景</summary>
+    /// <summary>
+    /// 验证CanReach返回false当FromAssemblyUnknown
+    /// </summary>
     [Fact]
     public void CanReach_ReturnsFalse_WhenFromAssemblyUnknown()
     {
@@ -47,7 +53,9 @@ public class AssemblyReachabilityGraphTests
     // 有环图：不死循环，且可达判断正确
     // ──────────────────────────────────────────────────────────
 
-    /// <summary>验证 CanReach_DoesNotInfiniteLoop_WhenGraphHasCycle 场景</summary>
+    /// <summary>
+    /// 验证CanReach不InfiniteLoop当GraphHasCycle
+    /// </summary>
     [Fact]
     public void CanReach_DoesNotInfiniteLoop_WhenGraphHasCycle()
     {
@@ -69,7 +77,9 @@ public class AssemblyReachabilityGraphTests
     // from == to 且无自引用 → false（锁定当前约定）
     // ──────────────────────────────────────────────────────────
 
-    /// <summary>验证 CanReach_ReturnsFalse_WhenFromEqualsToAndNoSelfReference 场景</summary>
+    /// <summary>
+    /// 验证CanReach返回false当FromEquals到和NoSelf引用
+    /// </summary>
     [Fact]
     public void CanReach_ReturnsFalse_WhenFromEqualsToAndNoSelfReference()
     {

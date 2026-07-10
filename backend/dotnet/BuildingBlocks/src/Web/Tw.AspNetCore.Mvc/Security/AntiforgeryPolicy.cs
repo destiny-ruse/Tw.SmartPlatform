@@ -1,9 +1,13 @@
 ﻿namespace Tw.AspNetCore.Mvc.Security;
 
-/// <summary>表示 AntiforgeryPolicy 类型</summary>
+/// <summary>
+/// 封装防伪策略相关的数据和行为
+/// </summary>
 public static class AntiforgeryPolicy
 {
-    /// <summary>表示 SafeMethods 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的SafeMethods
+    /// </summary>
     private static readonly HashSet<string> SafeMethods = new(StringComparer.OrdinalIgnoreCase)
     {
         "GET",
@@ -12,10 +16,12 @@ public static class AntiforgeryPolicy
         "TRACE"
     };
 
-    /// <summary>执行 RequiresValidation 操作</summary>
-    /// <param name="method">method 参数</param>
-    /// <param name="authenticationScheme">authenticationScheme 参数</param>
-    /// <returns>RequiresValidation 的执行结果</returns>
+    /// <summary>
+    /// 判断请求是否需要执行防伪校验
+    /// </summary>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <param name="authenticationScheme">当前请求使用的认证方案</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     public static bool RequiresValidation(string method, string authenticationScheme)
     {
         return !SafeMethods.Contains(method)

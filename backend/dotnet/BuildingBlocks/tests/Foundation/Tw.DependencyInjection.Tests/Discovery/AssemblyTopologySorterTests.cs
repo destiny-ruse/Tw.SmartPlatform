@@ -6,17 +6,23 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Discovery;
 
-/// <summary>验证 AssemblyTopologySorterTests 相关行为</summary>
+/// <summary>
+/// 覆盖AssemblyTopologySorter的核心行为和边界条件
+/// </summary>
 public class AssemblyTopologySorterTests
 {
-    /// <summary>验证 Node 场景</summary>
-    /// <param name="name">name 参数</param>
-    /// <param name="references">references 参数</param>
-    /// <returns>Node 的执行结果</returns>
+    /// <summary>
+    /// 说明Node在当前类型中的职责
+    /// </summary>
+    /// <param name="name">待匹配成员或资源的名称</param>
+    /// <param name="references">用于提供引用</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static AssemblyDescriptor Node(string name, params string[] references) =>
         new(name, references);
 
-    /// <summary>验证 ServiceRegistrationException_DerivesFromException 场景</summary>
+    /// <summary>
+    /// 验证服务Registration异常DerivesFrom异常
+    /// </summary>
     [Fact]
     public void ServiceRegistrationException_DerivesFromException()
     {
@@ -26,7 +32,9 @@ public class AssemblyTopologySorterTests
         exception.Message.Should().Be("boom");
     }
 
-    /// <summary>验证 Sort_OrdersDependenciesBeforeDependents 场景</summary>
+    /// <summary>
+    /// 验证SortOrders依赖前置处理Dependents
+    /// </summary>
     [Fact]
     public void Sort_OrdersDependenciesBeforeDependents()
     {
@@ -41,7 +49,9 @@ public class AssemblyTopologySorterTests
             .ContainInOrder("Tw.Core", "Tw.Domain", "Tw.App");
     }
 
-    /// <summary>验证 Sort_AssignsLevels_ByDependencyDepth 场景</summary>
+    /// <summary>
+    /// 验证SortAssignsLevelsBy依赖Depth
+    /// </summary>
     [Fact]
     public void Sort_AssignsLevels_ByDependencyDepth()
     {
@@ -57,7 +67,9 @@ public class AssemblyTopologySorterTests
         result.Should().Contain(e => e.AssemblyName == "Tw.App" && e.Level == 2);
     }
 
-    /// <summary>验证 Sort_IgnoresReferences_OutsideScannedSet 场景</summary>
+    /// <summary>
+    /// 验证SortIgnoresReferencesOutsideScanned写入
+    /// </summary>
     [Fact]
     public void Sort_IgnoresReferences_OutsideScannedSet()
     {
@@ -70,7 +82,9 @@ public class AssemblyTopologySorterTests
             .Which.Should().BeEquivalentTo(new AssemblyTopologyEntry("Tw.Core", 0));
     }
 
-    /// <summary>验证 Sort_Throws_WithFullCycleChain_OnCircularDependency 场景</summary>
+    /// <summary>
+    /// 验证Sort抛出异常带有FullCycleChainOnCircular依赖
+    /// </summary>
     [Fact]
     public void Sort_Throws_WithFullCycleChain_OnCircularDependency()
     {

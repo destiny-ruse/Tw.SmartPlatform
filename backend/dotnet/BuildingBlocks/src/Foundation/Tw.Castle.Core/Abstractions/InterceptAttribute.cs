@@ -10,13 +10,17 @@ namespace Tw.Castle.Core.Abstractions;
     Inherited = true)]
 public sealed class InterceptAttribute : Attribute
 {
-    /// <summary>声明拦截器类型</summary>
+    /// <summary>
+    /// 声明拦截器类型
+    /// </summary>
     /// <param name="interceptorType">实现 <see cref="IInterceptor"/> 的拦截器类型</param>
     public InterceptAttribute(Type interceptorType)
     {
         InterceptorType = interceptorType;
     }
 
-    /// <summary>拦截器类型</summary>
+    /// <summary>
+    /// 拦截器类型
+    /// </summary>
     public Type InterceptorType { get; }
 }

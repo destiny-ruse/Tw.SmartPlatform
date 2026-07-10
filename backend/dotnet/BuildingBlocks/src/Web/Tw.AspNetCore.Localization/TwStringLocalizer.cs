@@ -16,13 +16,21 @@ namespace Tw.AspNetCore.Localization;
 /// </remarks>
 public sealed class TwStringLocalizer : IStringLocalizer
 {
-    /// <summary>表示 _snapshot 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的snapshot
+    /// </summary>
     private readonly IStaticTextSnapshot _snapshot;
-    /// <summary>表示 _accessor 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的accessor
+    /// </summary>
     private readonly ICurrentLocalizationContextAccessor _accessor;
-    /// <summary>表示 _options 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的选项
+    /// </summary>
     private readonly TwLocalizationOptions _options;
-    /// <summary>表示 _resourceName 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的资源名称
+    /// </summary>
     private readonly string _resourceName;
 
     /// <summary>
@@ -127,8 +135,10 @@ public sealed class TwStringLocalizer : IStringLocalizer
     }
 
     // 构建当前请求的文化候选列表；上下文未设置时退回默认文化
-    /// <summary>执行 BuildCandidates 操作</summary>
-    /// <returns>BuildCandidates 的执行结果</returns>
+    /// <summary>
+    /// 说明BuildCandidates在当前类型中的职责
+    /// </summary>
+    /// <returns>方法计算得到的文本值</returns>
     private IReadOnlyList<string> BuildCandidates()
     {
         var context = _accessor.Current ?? new LocalizationContext(_options.DefaultCulture);

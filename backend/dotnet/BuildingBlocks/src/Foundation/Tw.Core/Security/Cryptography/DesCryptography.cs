@@ -8,7 +8,9 @@ namespace Tw.Core.Security.Cryptography;
 /// </summary>
 public static class DesCryptography
 {
-    /// <summary>加密字符串并返回 Base64 密文</summary>
+    /// <summary>
+    /// 加密字符串并返回 Base64 密文
+    /// </summary>
     /// <param name="input">要加密的明文字符串</param>
     /// <param name="key">文本形式的加密密钥；当 <paramref name="isKeyBase64"/> 为 <see langword="true"/> 时表示 Base64 密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -30,7 +32,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.EncryptString(input, key, iv, mode, padding, isKeyBase64, encoding, DesAlgorithm);
     }
 
-    /// <summary>加密字节并返回密文字节</summary>
+    /// <summary>
+    /// 加密字节并返回密文字节
+    /// </summary>
     /// <param name="bytes">要加密的明文字节</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -48,7 +52,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.EncryptBytes(bytes, key, iv, mode, padding, DesAlgorithm);
     }
 
-    /// <summary>解密 Base64 密文字符串</summary>
+    /// <summary>
+    /// 解密 Base64 密文字符串
+    /// </summary>
     /// <param name="input">要解密的 Base64 密文</param>
     /// <param name="key">文本形式的加密密钥；当 <paramref name="isKeyBase64"/> 为 <see langword="true"/> 时表示 Base64 密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -70,7 +76,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.DecryptString(input, key, iv, mode, padding, isKeyBase64, encoding, DesAlgorithm);
     }
 
-    /// <summary>解密密文字节</summary>
+    /// <summary>
+    /// 解密密文字节
+    /// </summary>
     /// <param name="bytes">密文字节，包含生成时前置的 IV</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -88,7 +96,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.DecryptBytes(bytes, key, iv, mode, padding, DesAlgorithm);
     }
 
-    /// <summary>加密文件路径并释放已打开的文件流</summary>
+    /// <summary>
+    /// 加密文件路径并释放已打开的文件流
+    /// </summary>
     /// <param name="filePath">要加密的文件路径</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -108,7 +118,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.EncryptFileAsync(filePath, key, iv, mode, padding, DesAlgorithm, cancellationToken);
     }
 
-    /// <summary>加密流且不释放调用方拥有的流</summary>
+    /// <summary>
+    /// 加密流且不释放调用方拥有的流
+    /// </summary>
     /// <param name="stream">要从当前位置开始加密的流</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -128,7 +140,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.EncryptStreamAsync(stream, key, iv, mode, padding, DesAlgorithm, cancellationToken);
     }
 
-    /// <summary>解密文件路径并释放已打开的文件流</summary>
+    /// <summary>
+    /// 解密文件路径并释放已打开的文件流
+    /// </summary>
     /// <param name="filePath">要解密的加密文件路径</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -148,7 +162,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.DecryptFileAsync(filePath, key, iv, mode, padding, DesAlgorithm, cancellationToken);
     }
 
-    /// <summary>解密流且不释放调用方拥有的流</summary>
+    /// <summary>
+    /// 解密流且不释放调用方拥有的流
+    /// </summary>
     /// <param name="stream">要从当前位置开始解密的加密流</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -168,7 +184,9 @@ public static class DesCryptography
         return SymmetricCryptographyCore.DecryptStreamAsync(stream, key, iv, mode, padding, DesAlgorithm, cancellationToken);
     }
 
-    /// <summary>表示 DesAlgorithm 属性</summary>
+    /// <summary>
+    /// new在当前对象中的业务含义
+    /// </summary>
     private static SymmetricAlgorithmProfile DesAlgorithm => new(
         DES.Create,
         ValidKeyLengths: [8],

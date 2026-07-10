@@ -4,17 +4,23 @@ using Xunit;
 
 namespace Tw.AspNetCore.Localization.Tests;
 
-/// <summary>验证 CurrentLocalizationContextAccessorTests 相关行为</summary>
+/// <summary>
+/// 覆盖Current本地化上下文Accessor的核心行为和边界条件
+/// </summary>
 public class CurrentLocalizationContextAccessorTests
 {
-    /// <summary>验证 Current_DefaultsToNull 场景</summary>
+    /// <summary>
+    /// 验证CurrentDefaults到空值
+    /// </summary>
     [Fact]
     public void Current_DefaultsToNull()
     {
         new CurrentLocalizationContextAccessor().Current.Should().BeNull();
     }
 
-    /// <summary>验证 Current_RoundTripsAssignedContext 场景</summary>
+    /// <summary>
+    /// 验证CurrentRoundTripsAssigned上下文
+    /// </summary>
     [Fact]
     public void Current_RoundTripsAssignedContext()
     {

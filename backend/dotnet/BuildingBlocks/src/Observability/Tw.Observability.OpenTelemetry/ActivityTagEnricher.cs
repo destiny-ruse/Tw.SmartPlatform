@@ -1,6 +1,8 @@
 ﻿namespace Tw.Observability.OpenTelemetry;
 
-/// <summary>表示 ActivityTagEnricher 类型</summary>
+/// <summary>
+/// 封装ActivityTagEnricher相关的数据和行为
+/// </summary>
 public sealed class ActivityTagEnricher
 {
 }

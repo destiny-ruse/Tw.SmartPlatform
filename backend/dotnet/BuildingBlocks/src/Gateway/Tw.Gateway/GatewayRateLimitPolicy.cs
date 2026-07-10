@@ -1,4 +1,6 @@
 ﻿namespace Tw.Gateway;
 
-/// <summary>表示 GatewayRateLimitPolicy 声明</summary>
+/// <summary>
+/// 封装GatewayRateLimit策略相关的数据和行为
+/// </summary>
 public sealed record GatewayRateLimitPolicy(bool StrictGlobalLimit, bool GatewayLocalLimit);

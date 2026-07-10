@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.ModelBinding;
 
-/// <summary>验证 LongIdModelBinderTests 相关行为</summary>
+/// <summary>
+/// 覆盖长整型标识模型绑定器的核心行为和边界条件
+/// </summary>
 public sealed class LongIdModelBinderTests
 {
-    /// <summary>验证 TryParse_ReturnsFalse_WhenValueExceedsLong 场景</summary>
+    /// <summary>
+    /// 验证TryParse返回false当值Exceeds长整型
+    /// </summary>
     [Fact]
     public void TryParse_ReturnsFalse_WhenValueExceedsLong()
     {

@@ -9,22 +9,30 @@ namespace Tw.DependencyInjection.Abstractions;
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 public sealed class ServiceRegistrationAttribute : Attribute
 {
-    /// <summary>使用默认规则注册，生命周期由标记接口决定</summary>
+    /// <summary>
+    /// 使用默认规则注册，生命周期由标记接口决定
+    /// </summary>
     public ServiceRegistrationAttribute()
     {
     }
 
-    /// <summary>使用显式生命周期注册</summary>
+    /// <summary>
+    /// 使用显式生命周期注册
+    /// </summary>
     /// <param name="lifetime">服务生命周期</param>
     public ServiceRegistrationAttribute(DependencyLifetime lifetime)
     {
         Lifetime = lifetime;
     }
 
-    /// <summary>显式生命周期；为 <see langword="null"/> 时回退到标记接口</summary>
+    /// <summary>
+    /// 显式生命周期；为 <see langword="null"/> 时回退到标记接口
+    /// </summary>
     public DependencyLifetime? Lifetime { get; }
 
-    /// <summary>类型级显式优先级，参与单实现仲裁</summary>
+    /// <summary>
+    /// 类型级显式优先级，参与单实现仲裁
+    /// </summary>
     /// <remarks>
     /// setter 仅为满足 attribute 命名参数语法（<c>[ServiceRegistration(Priority = ...)]</c>）；读取后视为不可变。
     /// 仅需声明优先级而无需生命周期时，使用独立的 <see cref="ServicePriorityAttribute"/>。

@@ -2,10 +2,14 @@ using System.Text;
 
 namespace Tw.Extensions;
 
-/// <summary>提供字节数组扩展方法</summary>
+/// <summary>
+/// 提供字节数组扩展方法
+/// </summary>
 public static class ByteArrayExtensions
 {
-    /// <summary>将字节数组转换为十六进制字符串</summary>
+    /// <summary>
+    /// 将字节数组转换为十六进制字符串
+    /// </summary>
     /// <param name="bytes">要转换的字节</param>
     /// <param name="useUpperCase">是否使用大写十六进制字符</param>
     /// <returns><paramref name="bytes"/> 的十六进制表示</returns>

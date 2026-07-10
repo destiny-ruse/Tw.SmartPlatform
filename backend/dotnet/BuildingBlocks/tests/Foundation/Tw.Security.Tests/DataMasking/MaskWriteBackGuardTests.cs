@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Security.Tests.DataMasking;
 
-/// <summary>验证 MaskWriteBackGuardTests 相关行为</summary>
+/// <summary>
+/// 覆盖MaskWriteBackGuard的核心行为和边界条件
+/// </summary>
 public sealed class MaskWriteBackGuardTests
 {
-    /// <summary>验证 EnsureNotMaskedValue_RejectsMaskedPhoneWriteBack 场景</summary>
+    /// <summary>
+    /// 验证Ensure不Masked值拒绝MaskedPhoneWrite回
+    /// </summary>
     [Fact]
     public void EnsureNotMaskedValue_RejectsMaskedPhoneWriteBack()
     {

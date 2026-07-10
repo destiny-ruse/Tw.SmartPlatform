@@ -5,7 +5,9 @@
 /// </summary>
 public sealed class DisposeAction : IDisposable
 {
-    /// <summary>表示 action 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的action
+    /// </summary>
     private Action? action;
 
     /// <summary>

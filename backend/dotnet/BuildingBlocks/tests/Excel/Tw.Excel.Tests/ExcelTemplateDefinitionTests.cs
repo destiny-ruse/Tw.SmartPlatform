@@ -3,10 +3,14 @@ using Xunit;
 
 namespace Tw.Excel.Tests;
 
-/// <summary>验证 ExcelTemplateDefinitionTests 相关行为</summary>
+/// <summary>
+/// 覆盖Excel模板Definition的核心行为和边界条件
+/// </summary>
 public sealed class ExcelTemplateDefinitionTests
 {
-    /// <summary>验证 Create_RejectsDynamicColumnCountOverLimit 场景</summary>
+    /// <summary>
+    /// 验证创建拒绝动态Column数量OverLimit
+    /// </summary>
     [Fact]
     public void Create_RejectsDynamicColumnCountOverLimit()
     {

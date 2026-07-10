@@ -3,10 +3,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Localization.Tests;
 
-/// <summary>验证 LocalizationResourceDtoTests 相关行为</summary>
+/// <summary>
+/// 覆盖本地化资源Dto的核心行为和边界条件
+/// </summary>
 public class LocalizationResourceDtoTests
 {
-    /// <summary>验证 ResourceDto_HoldsTexts 场景</summary>
+    /// <summary>
+    /// 验证资源DtoHoldsTexts
+    /// </summary>
     [Fact]
     public void ResourceDto_HoldsTexts()
     {
@@ -20,7 +24,9 @@ public class LocalizationResourceDtoTests
         dto.Texts.Should().ContainSingle(x => x.ResourceNotFound == false);
     }
 
-    /// <summary>验证 TextDto_ResourceNotFound_IsTrue_WhenMissing 场景</summary>
+    /// <summary>
+    /// 验证文本Dto资源不FoundIstrue当缺少
+    /// </summary>
     [Fact]
     public void TextDto_ResourceNotFound_IsTrue_WhenMissing()
     {

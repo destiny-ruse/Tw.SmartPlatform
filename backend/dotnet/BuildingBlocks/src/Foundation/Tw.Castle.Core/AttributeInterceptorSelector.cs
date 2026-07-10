@@ -48,9 +48,11 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
             .ToArray();
     }
 
-    /// <summary>执行 AddInterceptorTypes 操作</summary>
-    /// <param name="member">member 参数</param>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
+    /// <summary>
+    /// 注册nterceptor类型集合所需服务
+    /// </summary>
+    /// <param name="member">用于提供member</param>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
     private static void AddInterceptorTypes(MemberInfo member, ICollection<Type> interceptorTypes)
     {
         foreach (var attribute in member.GetCustomAttributes<InterceptAttribute>(inherit: true))
@@ -59,23 +61,29 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         }
     }
 
-    /// <summary>执行 IsInterceptionDisabled 操作</summary>
-    /// <param name="member">member 参数</param>
-    /// <returns>IsInterceptionDisabled 的执行结果</returns>
+    /// <summary>
+    /// 判断nterceptionDisabled是否满足条件
+    /// </summary>
+    /// <param name="member">用于提供member</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsInterceptionDisabled(MemberInfo member) =>
         member.IsDefined(typeof(DisableInterceptionAttribute), inherit: true);
 
-    /// <summary>执行 GetInterceptorOrder 操作</summary>
-    /// <param name="interceptorType">interceptorType 参数</param>
-    /// <returns>GetInterceptorOrder 的执行结果</returns>
+    /// <summary>
+    /// 说明读取拦截器顺序在当前类型中的职责
+    /// </summary>
+    /// <param name="interceptorType">用于提供nterceptor类型</param>
+    /// <returns>读取到的拦截器Order</returns>
     private static int GetInterceptorOrder(Type interceptorType) =>
         interceptorType.GetCustomAttribute<InterceptorOrderAttribute>(inherit: false)?.Order ?? 0;
 
-    /// <summary>执行 ResolveRelatedMethods 操作</summary>
-    /// <param name="implementationType">implementationType 参数</param>
-    /// <param name="serviceType">serviceType 参数</param>
-    /// <param name="method">method 参数</param>
-    /// <returns>ResolveRelatedMethods 的执行结果</returns>
+    /// <summary>
+    /// 说明解析RelatedMethods在当前类型中的职责
+    /// </summary>
+    /// <param name="implementationType">服务注册中使用的实现类型</param>
+    /// <param name="serviceType">服务注册中暴露的服务类型</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IReadOnlyList<MethodInfo> ResolveRelatedMethods(
         Type implementationType,
         Type serviceType,
@@ -111,9 +119,11 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         return methods;
     }
 
-    /// <summary>执行 EnumerateServiceInterfaces 操作</summary>
-    /// <param name="serviceType">serviceType 参数</param>
-    /// <returns>EnumerateServiceInterfaces 的执行结果</returns>
+    /// <summary>
+    /// 说明Enumerate服务Interfaces在当前类型中的职责
+    /// </summary>
+    /// <param name="serviceType">服务注册中暴露的服务类型</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IEnumerable<Type> EnumerateServiceInterfaces(Type serviceType)
     {
         if (!serviceType.IsInterface)
@@ -129,9 +139,11 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         }
     }
 
-    /// <summary>执行 AddMethod 操作</summary>
-    /// <param name="methods">methods 参数</param>
-    /// <param name="method">method 参数</param>
+    /// <summary>
+    /// 注册方法所需服务
+    /// </summary>
+    /// <param name="methods">用于提供methods</param>
+    /// <param name="method">用于构造测试场景的方法元数据</param>
     private static void AddMethod(ICollection<MethodInfo> methods, MethodInfo method)
     {
         if (methods.Any(existingMethod => IsSameMethod(existingMethod, method)))
@@ -142,10 +154,12 @@ public sealed class AttributeInterceptorSelector : IInterceptorSelector
         methods.Add(method);
     }
 
-    /// <summary>执行 IsSameMethod 操作</summary>
-    /// <param name="left">left 参数</param>
-    /// <param name="right">right 参数</param>
-    /// <returns>IsSameMethod 的执行结果</returns>
+    /// <summary>
+    /// 判断Same方法是否满足条件
+    /// </summary>
+    /// <param name="left">用于提供left</param>
+    /// <param name="right">用于提供right</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsSameMethod(MethodInfo left, MethodInfo right) =>
         Equals(left, right) || (left.Module == right.Module && left.MetadataToken == right.MetadataToken);
 }

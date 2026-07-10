@@ -9,7 +9,9 @@ namespace Tw.Core.Security.Cryptography;
 /// </summary>
 public static class AesCryptography
 {
-    /// <summary>加密字符串并返回 Base64 密文</summary>
+    /// <summary>
+    /// 加密字符串并返回 Base64 密文
+    /// </summary>
     /// <param name="input">要加密的明文字符串</param>
     /// <param name="key">文本形式的加密密钥；当 <paramref name="isKeyBase64"/> 为 <see langword="true"/> 时表示 Base64 密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -39,7 +41,9 @@ public static class AesCryptography
             AesAlgorithm);
     }
 
-    /// <summary>加密字节并返回密文字节</summary>
+    /// <summary>
+    /// 加密字节并返回密文字节
+    /// </summary>
     /// <param name="bytes">要加密的明文字节</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -57,7 +61,9 @@ public static class AesCryptography
         return SymmetricCryptographyCore.EncryptBytes(bytes, key, iv, mode, padding, AesAlgorithm);
     }
 
-    /// <summary>解密 Base64 密文字符串</summary>
+    /// <summary>
+    /// 解密 Base64 密文字符串
+    /// </summary>
     /// <param name="input">要解密的 Base64 密文</param>
     /// <param name="key">文本形式的加密密钥；当 <paramref name="isKeyBase64"/> 为 <see langword="true"/> 时表示 Base64 密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -87,7 +93,9 @@ public static class AesCryptography
             AesAlgorithm);
     }
 
-    /// <summary>解密密文字节</summary>
+    /// <summary>
+    /// 解密密文字节
+    /// </summary>
     /// <param name="bytes">密文字节，包含生成时前置的 IV</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -105,7 +113,9 @@ public static class AesCryptography
         return SymmetricCryptographyCore.DecryptBytes(bytes, key, iv, mode, padding, AesAlgorithm);
     }
 
-    /// <summary>加密文件路径并释放已打开的文件流</summary>
+    /// <summary>
+    /// 加密文件路径并释放已打开的文件流
+    /// </summary>
     /// <param name="filePath">要加密的文件路径</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -125,7 +135,9 @@ public static class AesCryptography
         return SymmetricCryptographyCore.EncryptFileAsync(filePath, key, iv, mode, padding, AesAlgorithm, cancellationToken);
     }
 
-    /// <summary>加密流且不释放调用方拥有的流</summary>
+    /// <summary>
+    /// 加密流且不释放调用方拥有的流
+    /// </summary>
     /// <param name="stream">要从当前位置开始加密的流</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会前置生成的 IV</param>
@@ -145,7 +157,9 @@ public static class AesCryptography
         return SymmetricCryptographyCore.EncryptStreamAsync(stream, key, iv, mode, padding, AesAlgorithm, cancellationToken);
     }
 
-    /// <summary>解密文件路径并释放已打开的文件流</summary>
+    /// <summary>
+    /// 解密文件路径并释放已打开的文件流
+    /// </summary>
     /// <param name="filePath">要解密的加密文件路径</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -165,7 +179,9 @@ public static class AesCryptography
         return SymmetricCryptographyCore.DecryptFileAsync(filePath, key, iv, mode, padding, AesAlgorithm, cancellationToken);
     }
 
-    /// <summary>解密流且不释放调用方拥有的流</summary>
+    /// <summary>
+    /// 解密流且不释放调用方拥有的流
+    /// </summary>
     /// <param name="stream">要从当前位置开始解密的加密流</param>
     /// <param name="key">加密密钥字节</param>
     /// <param name="iv">初始化向量；对非 ECB 模式传入 <see langword="null"/> 时会读取前置 IV</param>
@@ -185,7 +201,9 @@ public static class AesCryptography
         return SymmetricCryptographyCore.DecryptStreamAsync(stream, key, iv, mode, padding, AesAlgorithm, cancellationToken);
     }
 
-    /// <summary>表示 AesAlgorithm 属性</summary>
+    /// <summary>
+    /// new在当前对象中的业务含义
+    /// </summary>
     private static SymmetricAlgorithmProfile AesAlgorithm => new(
         Aes.Create,
         ValidKeyLengths: [16, 24, 32],
@@ -194,7 +212,9 @@ public static class AesCryptography
         IvLengthMessage: "IV 长度必须为 16 字节。");
 }
 
-/// <summary>表示 SymmetricAlgorithmProfile 声明</summary>
+/// <summary>
+/// 封装struct相关的数据和行为
+/// </summary>
 internal readonly record struct SymmetricAlgorithmProfile(
     Func<SymmetricAlgorithm> Create,
     int[] ValidKeyLengths,
@@ -202,22 +222,28 @@ internal readonly record struct SymmetricAlgorithmProfile(
     string KeyLengthMessage,
     string IvLengthMessage);
 
-/// <summary>表示 SymmetricCryptographyCore 类型</summary>
+/// <summary>
+/// 封装SymmetricCryptographyCore相关的数据和行为
+/// </summary>
 internal static class SymmetricCryptographyCore
 {
-    /// <summary>表示 DefaultEncoding 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认Encoding
+    /// </summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
 
-    /// <summary>执行 EncryptString 操作</summary>
-    /// <param name="input">input 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="isKeyBase64">isKeyBase64 参数</param>
-    /// <param name="encoding">encoding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <returns>EncryptString 的执行结果</returns>
+    /// <summary>
+    /// 说明EncryptString在当前类型中的职责
+    /// </summary>
+    /// <param name="input">用于提供nput</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="isKeyBase64">用于提供s键Base64</param>
+    /// <param name="encoding">用于提供encoding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static string EncryptString(
         string input,
         string key,
@@ -238,16 +264,18 @@ internal static class SymmetricCryptographyCore
         return Convert.ToBase64String(encrypted);
     }
 
-    /// <summary>执行 DecryptString 操作</summary>
-    /// <param name="input">input 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="isKeyBase64">isKeyBase64 参数</param>
-    /// <param name="encoding">encoding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <returns>DecryptString 的执行结果</returns>
+    /// <summary>
+    /// 说明DecryptString在当前类型中的职责
+    /// </summary>
+    /// <param name="input">用于提供nput</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="isKeyBase64">用于提供s键Base64</param>
+    /// <param name="encoding">用于提供encoding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static string DecryptString(
         string input,
         string key,
@@ -268,14 +296,16 @@ internal static class SymmetricCryptographyCore
         return textEncoding.GetString(decrypted);
     }
 
-    /// <summary>执行 EncryptBytes 操作</summary>
-    /// <param name="bytes">bytes 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <returns>EncryptBytes 的执行结果</returns>
+    /// <summary>
+    /// 说明EncryptBytes在当前类型中的职责
+    /// </summary>
+    /// <param name="bytes">用于提供bytes</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static byte[] EncryptBytes(
         byte[] bytes,
         byte[] key,
@@ -295,14 +325,16 @@ internal static class SymmetricCryptographyCore
             : cipherBytes;
     }
 
-    /// <summary>执行 DecryptBytes 操作</summary>
-    /// <param name="bytes">bytes 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <returns>DecryptBytes 的执行结果</returns>
+    /// <summary>
+    /// 说明DecryptBytes在当前类型中的职责
+    /// </summary>
+    /// <param name="bytes">用于提供bytes</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static byte[] DecryptBytes(
         byte[] bytes,
         byte[] key,
@@ -325,15 +357,17 @@ internal static class SymmetricCryptographyCore
         return decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
     }
 
-    /// <summary>执行 EncryptFileAsync 操作</summary>
-    /// <param name="filePath">filePath 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>EncryptFileAsync 的执行结果</returns>
+    /// <summary>
+    /// 说明EncryptFileAsync在当前类型中的职责
+    /// </summary>
+    /// <param name="filePath">用于提供filePath</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的byte</returns>
     public static async Task<byte[]> EncryptFileAsync(
         string filePath,
         byte[] key,
@@ -356,15 +390,17 @@ internal static class SymmetricCryptographyCore
         return await EncryptStreamAsync(stream, key, iv, mode, padding, profile, cancellationToken);
     }
 
-    /// <summary>执行 EncryptStreamAsync 操作</summary>
-    /// <param name="stream">stream 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>EncryptStreamAsync 的执行结果</returns>
+    /// <summary>
+    /// 说明EncryptStreamAsync在当前类型中的职责
+    /// </summary>
+    /// <param name="stream">用于提供stream</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的byte</returns>
     public static async Task<byte[]> EncryptStreamAsync(
         Stream stream,
         byte[] key,
@@ -392,15 +428,17 @@ internal static class SymmetricCryptographyCore
         return output.ToArray();
     }
 
-    /// <summary>执行 DecryptFileAsync 操作</summary>
-    /// <param name="filePath">filePath 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>DecryptFileAsync 的执行结果</returns>
+    /// <summary>
+    /// 说明DecryptFileAsync在当前类型中的职责
+    /// </summary>
+    /// <param name="filePath">用于提供filePath</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的byte</returns>
     public static async Task<byte[]> DecryptFileAsync(
         string filePath,
         byte[] key,
@@ -423,15 +461,17 @@ internal static class SymmetricCryptographyCore
         return await DecryptStreamAsync(stream, key, iv, mode, padding, profile, cancellationToken);
     }
 
-    /// <summary>执行 DecryptStreamAsync 操作</summary>
-    /// <param name="stream">stream 参数</param>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>DecryptStreamAsync 的执行结果</returns>
+    /// <summary>
+    /// 说明DecryptStreamAsync在当前类型中的职责
+    /// </summary>
+    /// <param name="stream">用于提供stream</param>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的byte</returns>
     public static async Task<byte[]> DecryptStreamAsync(
         Stream stream,
         byte[] key,
@@ -459,13 +499,15 @@ internal static class SymmetricCryptographyCore
         return output.ToArray();
     }
 
-    /// <summary>执行 CreateAlgorithm 操作</summary>
-    /// <param name="key">key 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="padding">padding 参数</param>
-    /// <param name="profile">profile 参数</param>
-    /// <returns>CreateAlgorithm 的执行结果</returns>
+    /// <summary>
+    /// 创建Algorithm测试对象
+    /// </summary>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="padding">用于提供padding</param>
+    /// <param name="profile">用于提供profile</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static SymmetricAlgorithm CreateAlgorithm(
         byte[] key,
         byte[]? iv,
@@ -490,18 +532,22 @@ internal static class SymmetricCryptographyCore
         return algorithm;
     }
 
-    /// <summary>执行 ShouldPrefixIv 操作</summary>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="iv">iv 参数</param>
-    /// <returns>ShouldPrefixIv 的执行结果</returns>
+    /// <summary>
+    /// 说明Should前缀Iv在当前类型中的职责
+    /// </summary>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="iv">用于提供v</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool ShouldPrefixIv(CipherMode mode, byte[]? iv)
     {
         return mode != CipherMode.ECB && iv is null;
     }
 
-    /// <summary>执行 ValidateKeyLength 操作</summary>
-    /// <param name="key">key 参数</param>
-    /// <param name="profile">profile 参数</param>
+    /// <summary>
+    /// 校验键Length并在非法时抛出异常
+    /// </summary>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="profile">用于提供profile</param>
     private static void ValidateKeyLength(byte[] key, SymmetricAlgorithmProfile profile)
     {
         if (!profile.ValidKeyLengths.Contains(key.Length))
@@ -510,10 +556,12 @@ internal static class SymmetricCryptographyCore
         }
     }
 
-    /// <summary>执行 ValidateIvLength 操作</summary>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="mode">mode 参数</param>
-    /// <param name="profile">profile 参数</param>
+    /// <summary>
+    /// 校验vLength并在非法时抛出异常
+    /// </summary>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="mode">用于提供mode</param>
+    /// <param name="profile">用于提供profile</param>
     private static void ValidateIvLength(byte[]? iv, CipherMode mode, SymmetricAlgorithmProfile profile)
     {
         if (mode != CipherMode.ECB && iv is not null && iv.Length != profile.IvLength)
@@ -522,10 +570,12 @@ internal static class SymmetricCryptographyCore
         }
     }
 
-    /// <summary>执行 PrefixIv 操作</summary>
-    /// <param name="iv">iv 参数</param>
-    /// <param name="cipherBytes">cipherBytes 参数</param>
-    /// <returns>PrefixIv 的执行结果</returns>
+    /// <summary>
+    /// 说明前缀Iv在当前类型中的职责
+    /// </summary>
+    /// <param name="iv">用于提供v</param>
+    /// <param name="cipherBytes">用于提供cipherBytes</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static byte[] PrefixIv(byte[] iv, byte[] cipherBytes)
     {
         var result = new byte[iv.Length + cipherBytes.Length];
@@ -535,10 +585,12 @@ internal static class SymmetricCryptographyCore
         return result;
     }
 
-    /// <summary>执行 SplitPrefixedIv 操作</summary>
-    /// <param name="bytes">bytes 参数</param>
-    /// <param name="ivLength">ivLength 参数</param>
-    /// <returns>SplitPrefixedIv 的执行结果</returns>
+    /// <summary>
+    /// 说明static在当前类型中的职责
+    /// </summary>
+    /// <param name="bytes">用于提供bytes</param>
+    /// <param name="ivLength">用于提供vLength</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static (byte[] Iv, byte[] CipherBytes) SplitPrefixedIv(byte[] bytes, int ivLength)
     {
         if (bytes.Length < ivLength)
@@ -552,11 +604,13 @@ internal static class SymmetricCryptographyCore
         return (iv, cipherBytes);
     }
 
-    /// <summary>执行 ReadPrefixedIvAsync 操作</summary>
-    /// <param name="stream">stream 参数</param>
-    /// <param name="ivLength">ivLength 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ReadPrefixedIvAsync 的执行结果</returns>
+    /// <summary>
+    /// 读取PrefixedIv异步内容
+    /// </summary>
+    /// <param name="stream">用于提供stream</param>
+    /// <param name="ivLength">用于提供vLength</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的byte</returns>
     private static async Task<byte[]> ReadPrefixedIvAsync(
         Stream stream,
         int ivLength,

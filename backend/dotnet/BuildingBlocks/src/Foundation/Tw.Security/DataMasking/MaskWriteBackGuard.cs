@@ -5,7 +5,9 @@
 /// </summary>
 public sealed class MaskWriteBackGuard
 {
-    /// <summary>表示 _detector 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的detector
+    /// </summary>
     private readonly ISensitiveValueDetector _detector;
 
     /// <summary>

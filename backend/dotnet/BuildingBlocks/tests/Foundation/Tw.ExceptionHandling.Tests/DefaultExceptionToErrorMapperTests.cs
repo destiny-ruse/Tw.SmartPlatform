@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.ExceptionHandling.Tests;
 
-/// <summary>验证 DefaultExceptionToErrorMapperTests 相关行为</summary>
+/// <summary>
+/// 覆盖默认ExceptionToErrorMapper的核心行为和边界条件
+/// </summary>
 public sealed class DefaultExceptionToErrorMapperTests
 {
-    /// <summary>验证 Map_UnknownException_ReturnsSystemError 场景</summary>
+    /// <summary>
+    /// 验证映射Unknown异常返回System错误
+    /// </summary>
     [Fact]
     public void Map_UnknownException_ReturnsSystemError()
     {

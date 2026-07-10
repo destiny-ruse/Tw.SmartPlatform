@@ -1,12 +1,16 @@
 ﻿namespace Tw.EventBus.Cap.Cleanup;
 
-/// <summary>表示 CapMessageCleanupJob 类型</summary>
+/// <summary>
+/// 封装Cap消息Cleanup作业相关的数据和行为
+/// </summary>
 public sealed class CapMessageCleanupJob : ICapMessageCleanupJob
 {
-    /// <summary>执行 ExecuteAsync 操作</summary>
-    /// <param name="options">options 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>ExecuteAsync 的执行结果</returns>
+    /// <summary>
+    /// 异步执行当前组件的核心处理流程
+    /// </summary>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>表示异步流程完成状态的任务</returns>
     public Task ExecuteAsync(CapMessageCleanupOptions options, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(options);

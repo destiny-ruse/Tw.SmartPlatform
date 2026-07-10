@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.TextTemplating.Scriban.Tests;
 
-/// <summary>验证 TemplateFileAccessPolicyTests 相关行为</summary>
+/// <summary>
+/// 覆盖模板FileAccess策略的核心行为和边界条件
+/// </summary>
 public sealed class TemplateFileAccessPolicyTests
 {
-    /// <summary>验证 Validate_RejectsPathOutsideRegisteredRoot 场景</summary>
+    /// <summary>
+    /// 验证校验拒绝路径OutsideRegistered根目录
+    /// </summary>
     [Fact]
     public void Validate_RejectsPathOutsideRegisteredRoot()
     {

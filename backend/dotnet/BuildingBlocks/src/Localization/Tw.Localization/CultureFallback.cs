@@ -68,9 +68,11 @@ public static class CultureFallback
         return result;
     }
 
-    /// <summary>执行 AddIfMissing 操作</summary>
-    /// <param name="cultures">cultures 参数</param>
-    /// <param name="cultureName">cultureName 参数</param>
+    /// <summary>
+    /// 注册f缺少所需服务
+    /// </summary>
+    /// <param name="cultures">用于提供cultures</param>
+    /// <param name="cultureName">用于提供cultureName</param>
     private static void AddIfMissing(List<string> cultures, string cultureName)
     {
         if (!cultures.Contains(cultureName, StringComparer.OrdinalIgnoreCase))

@@ -4,11 +4,15 @@ using Xunit;
 
 namespace Tw.Excel.MiniExcel.Tests;
 
-/// <summary>验证 MiniExcelExporterTests 相关行为</summary>
+/// <summary>
+/// 覆盖MiniExcelExporter的核心行为和边界条件
+/// </summary>
 public sealed class MiniExcelExporterTests
 {
-    /// <summary>验证 ExportBlankTemplateAsync_WritesWorkbookStream 场景</summary>
-    /// <returns>ExportBlankTemplateAsync_WritesWorkbookStream 的执行结果</returns>
+    /// <summary>
+    /// 验证ExportBlank模板异步写回WorkbookStream
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ExportBlankTemplateAsync_WritesWorkbookStream()
     {

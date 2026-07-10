@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Tests.Security;
 
-/// <summary>验证 AuthenticationBoundaryOptionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖认证边界选项的核心行为和边界条件
+/// </summary>
 public sealed class AuthenticationBoundaryOptionsTests
 {
-    /// <summary>验证 Validate_RejectsMissingIssuer 场景</summary>
+    /// <summary>
+    /// 验证校验拒绝缺少签发方
+    /// </summary>
     [Fact]
     public void Validate_RejectsMissingIssuer()
     {

@@ -10,7 +10,9 @@ public sealed class StaticTextSnapshot : IStaticTextSnapshot
 {
     // 索引：(resourceName, cultureName) → (key → value)；
     // 同一 (resource, culture) 的多个资源文件在构造时合并，后加载的条目覆盖先加载的
-    /// <summary>表示 _index 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的index
+    /// </summary>
     private readonly Dictionary<(string ResourceName, string CultureName), Dictionary<string, string>> _index;
 
     /// <summary>
@@ -103,23 +105,31 @@ public sealed class StaticTextSnapshot : IStaticTextSnapshot
     }
 
     // 用于 Dictionary 键的比较器：资源名和文化名均使用 OrdinalIgnoreCase 比较
-    /// <summary>表示 ResourceCultureComparer 类型</summary>
+    /// <summary>
+    /// 封装资源文化Comparer相关的数据和行为
+    /// </summary>
     private sealed class ResourceCultureComparer : IEqualityComparer<(string ResourceName, string CultureName)>
     {
-        /// <summary>表示 Instance 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的Instance
+        /// </summary>
         public static readonly ResourceCultureComparer Instance = new();
 
-        /// <summary>执行 Equals 操作</summary>
-        /// <param name="x">x 参数</param>
-        /// <param name="y">y 参数</param>
-        /// <returns>Equals 的执行结果</returns>
+        /// <summary>
+        /// 说明Equals在当前类型中的职责
+        /// </summary>
+        /// <param name="x">用于提供x</param>
+        /// <param name="y">用于提供y</param>
+        /// <returns>条件满足时返回 <see langword="true"/></returns>
         public bool Equals((string ResourceName, string CultureName) x, (string ResourceName, string CultureName) y) =>
             string.Equals(x.ResourceName, y.ResourceName, StringComparison.OrdinalIgnoreCase) &&
             string.Equals(x.CultureName, y.CultureName, StringComparison.OrdinalIgnoreCase);
 
-        /// <summary>执行 GetHashCode 操作</summary>
-        /// <param name="obj">obj 参数</param>
-        /// <returns>GetHashCode 的执行结果</returns>
+        /// <summary>
+        /// 说明读取Hash代码在当前类型中的职责
+        /// </summary>
+        /// <param name="obj">用于提供obj</param>
+        /// <returns>方法计算得到的文本值</returns>
         public int GetHashCode((string ResourceName, string CultureName) obj) =>
             HashCode.Combine(
                 StringComparer.OrdinalIgnoreCase.GetHashCode(obj.ResourceName),

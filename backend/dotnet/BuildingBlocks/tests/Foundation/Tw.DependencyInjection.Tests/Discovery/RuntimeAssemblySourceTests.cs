@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Discovery;
 
-/// <summary>验证 RuntimeAssemblySourceTests 相关行为</summary>
+/// <summary>
+/// 覆盖RuntimeAssemblySource的核心行为和边界条件
+/// </summary>
 public class RuntimeAssemblySourceTests
 {
-    /// <summary>验证 GetCandidateAssemblies_IncludesLoadedTwAssemblies 场景</summary>
+    /// <summary>
+    /// 验证读取CandidateAssembliesIncludesLoadedTwAssemblies
+    /// </summary>
     [Fact]
     public void GetCandidateAssemblies_IncludesLoadedTwAssemblies()
     {

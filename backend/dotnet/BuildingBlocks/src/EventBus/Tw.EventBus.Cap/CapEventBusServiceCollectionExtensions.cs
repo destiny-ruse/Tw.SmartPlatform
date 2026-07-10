@@ -9,14 +9,18 @@ using Tw.EventBus.Cap.Storage;
 
 namespace Tw.EventBus.Cap;
 
-/// <summary>表示 CapEventBusServiceCollectionExtensions 类型</summary>
+/// <summary>
+/// 封装Cap事件Bus服务CollectionExtensions相关的数据和行为
+/// </summary>
 public static class CapEventBusServiceCollectionExtensions
 {
-    /// <summary>执行 AddCapEventBus 操作</summary>
-    /// <param name="services">services 参数</param>
-    /// <param name="configureRabbitMq">configureRabbitMq 参数</param>
-    /// <param name="configureStorage">configureStorage 参数</param>
-    /// <returns>AddCapEventBus 的执行结果</returns>
+    /// <summary>
+    /// 注册Cap事件Bus所需服务
+    /// </summary>
+    /// <param name="services">需要注册组件依赖的服务集合</param>
+    /// <param name="configureRabbitMq">用于提供configureRabbitMq</param>
+    /// <param name="configureStorage">用于提供configureStorage</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static IServiceCollection AddCapEventBus(
         this IServiceCollection services,
         Action<CapRabbitMqOptions> configureRabbitMq,

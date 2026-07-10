@@ -13,18 +13,30 @@ namespace Tw.Core.Security.Cryptography;
 /// </remarks>
 public static class Pbkdf2PasswordHasher
 {
-    /// <summary>表示 MinimumSaltLength 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的MinimumSaltLength常量值
+    /// </summary>
     private const int MinimumSaltLength = 8;
-    /// <summary>表示 HashPartSeparator 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的HashPartSeparator常量值
+    /// </summary>
     private const char HashPartSeparator = '$';
-    /// <summary>表示 FormatMarker 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的FormatMarker常量值
+    /// </summary>
     private const string FormatMarker = "PBKDF2";
-    /// <summary>表示 DefaultEncoding 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认Encoding
+    /// </summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
-    /// <summary>表示 DefaultHashAlgorithm 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认HashAlgorithm
+    /// </summary>
     private static readonly HashAlgorithmName DefaultHashAlgorithm = HashAlgorithmName.SHA256;
 
-    /// <summary>从密码字符串派生 PBKDF2 密钥并以 Base64 返回</summary>
+    /// <summary>
+    /// 从密码字符串派生 PBKDF2 密钥并以 Base64 返回
+    /// </summary>
     /// <param name="password">用于派生的密码</param>
     /// <param name="salt">盐值字节</param>
     /// <param name="iterations">PBKDF2 迭代次数</param>
@@ -46,7 +58,9 @@ public static class Pbkdf2PasswordHasher
         return Convert.ToBase64String(key);
     }
 
-    /// <summary>从密码字节派生 PBKDF2 密钥</summary>
+    /// <summary>
+    /// 从密码字节派生 PBKDF2 密钥
+    /// </summary>
     /// <param name="password">用于派生的密码字节</param>
     /// <param name="salt">盐值字节</param>
     /// <param name="iterations">PBKDF2 迭代次数</param>
@@ -78,7 +92,9 @@ public static class Pbkdf2PasswordHasher
             keyLength);
     }
 
-    /// <summary>生成密码学随机盐值并以 Base64 返回</summary>
+    /// <summary>
+    /// 生成密码学随机盐值并以 Base64 返回
+    /// </summary>
     /// <param name="length">盐值长度，单位为字节</param>
     /// <returns>Base64 编码的盐值</returns>
     public static string GenerateSalt(int length = 16)
@@ -86,7 +102,9 @@ public static class Pbkdf2PasswordHasher
         return Convert.ToBase64String(GenerateSaltBytes(length));
     }
 
-    /// <summary>生成密码学随机盐值字节</summary>
+    /// <summary>
+    /// 生成密码学随机盐值字节
+    /// </summary>
     /// <param name="length">盐值长度，单位为字节</param>
     /// <returns>盐值字节</returns>
     public static byte[] GenerateSaltBytes(int length = 16)
@@ -99,7 +117,9 @@ public static class Pbkdf2PasswordHasher
         return RandomNumberGenerator.GetBytes(length);
     }
 
-    /// <summary>使用 PBKDF2 和生成的盐值对密码进行哈希</summary>
+    /// <summary>
+    /// 使用 PBKDF2 和生成的盐值对密码进行哈希
+    /// </summary>
     /// <param name="password">要哈希的密码</param>
     /// <param name="iterations">PBKDF2 迭代次数</param>
     /// <param name="keyLength">派生密钥长度，单位为字节</param>
@@ -131,7 +151,9 @@ public static class Pbkdf2PasswordHasher
             Convert.ToBase64String(key));
     }
 
-    /// <summary>根据自描述 PBKDF2 密码哈希验证密码</summary>
+    /// <summary>
+    /// 根据自描述 PBKDF2 密码哈希验证密码
+    /// </summary>
     /// <param name="password">要验证的密码</param>
     /// <param name="hashedPassword"><see cref="HashPassword"/> 生成的密码哈希</param>
     /// <param name="iterations">为保持签名兼容而保留；自描述哈希使用其中存储的迭代次数</param>
@@ -164,7 +186,9 @@ public static class Pbkdf2PasswordHasher
             CryptographicOperations.FixedTimeEquals(key, parsedHash.Hash);
     }
 
-    /// <summary>从密码字符串派生 PBKDF2 密钥并以十六进制返回</summary>
+    /// <summary>
+    /// 从密码字符串派生 PBKDF2 密钥并以十六进制返回
+    /// </summary>
     /// <param name="password">用于派生的密码</param>
     /// <param name="salt">盐值字节</param>
     /// <param name="iterations">PBKDF2 迭代次数</param>
@@ -188,10 +212,12 @@ public static class Pbkdf2PasswordHasher
         return HexEncoding.ToHex(key, useUpperCase);
     }
 
-    /// <summary>执行 TryParseHash 操作</summary>
-    /// <param name="hashedPassword">hashedPassword 参数</param>
-    /// <param name="parsedHash">parsedHash 参数</param>
-    /// <returns>TryParseHash 的执行结果</returns>
+    /// <summary>
+    /// 说明尝试ParseHash在当前类型中的职责
+    /// </summary>
+    /// <param name="hashedPassword">用于提供hashedPassword</param>
+    /// <param name="parsedHash">用于提供parsedHash</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool TryParseHash(string hashedPassword, out ParsedPasswordHash parsedHash)
     {
         parsedHash = default;
@@ -238,9 +264,11 @@ public static class Pbkdf2PasswordHasher
         return true;
     }
 
-    /// <summary>执行 IsSupportedHashAlgorithm 操作</summary>
-    /// <param name="hashAlgorithm">hashAlgorithm 参数</param>
-    /// <returns>IsSupportedHashAlgorithm 的执行结果</returns>
+    /// <summary>
+    /// 判断支持HashAlgorithm是否满足条件
+    /// </summary>
+    /// <param name="hashAlgorithm">用于提供hashAlgorithm</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsSupportedHashAlgorithm(HashAlgorithmName hashAlgorithm)
     {
         return hashAlgorithm.Equals(HashAlgorithmName.SHA1) ||
@@ -249,7 +277,9 @@ public static class Pbkdf2PasswordHasher
             hashAlgorithm.Equals(HashAlgorithmName.SHA512);
     }
 
-    /// <summary>表示 ParsedPasswordHash 声明</summary>
+    /// <summary>
+    /// 封装struct相关的数据和行为
+    /// </summary>
     private readonly record struct ParsedPasswordHash(
         HashAlgorithmName HashAlgorithm,
         int Iterations,

@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Grpc.Tests;
 
-/// <summary>验证 GrpcMetadataPropagationPolicyTests 相关行为</summary>
+/// <summary>
+/// 覆盖GrpcMetadataPropagation策略的核心行为和边界条件
+/// </summary>
 public sealed class GrpcMetadataPropagationPolicyTests
 {
-    /// <summary>验证 AllowedMetadata_IncludesTraceTenantCultureAndAuthorization 场景</summary>
+    /// <summary>
+    /// 验证AllowedMetadataIncludesTrace租户文化和授权
+    /// </summary>
     [Fact]
     public void AllowedMetadata_IncludesTraceTenantCultureAndAuthorization()
     {

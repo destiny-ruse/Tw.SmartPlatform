@@ -1,6 +1,8 @@
 namespace Tw.DependencyInjection.Diagnostics;
 
-/// <summary>被单实现仲裁淘汰的候选诊断项</summary>
+/// <summary>
+/// 被单实现仲裁淘汰的候选诊断项
+/// </summary>
 /// <param name="ServiceTypeName">服务类型全名</param>
 /// <param name="ImplementationTypeName">被淘汰的实现类型全名</param>
 /// <param name="Key">Keyed 服务的键；非 keyed 服务为 <see langword="null"/></param>

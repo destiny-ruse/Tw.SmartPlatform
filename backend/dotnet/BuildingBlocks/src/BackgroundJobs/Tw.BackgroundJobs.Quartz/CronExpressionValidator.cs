@@ -1,10 +1,14 @@
 ﻿namespace Tw.BackgroundJobs.Quartz;
 
-/// <summary>表示 CronExpressionValidator 类型</summary>
+/// <summary>
+/// 封装CronExpressionValidator相关的数据和行为
+/// </summary>
 public static class CronExpressionValidator
 {
-    /// <summary>执行 Validate 操作</summary>
-    /// <param name="cronExpression">cronExpression 参数</param>
+    /// <summary>
+    /// 校验当前配置或输入约束，并在非法时抛出异常
+    /// </summary>
+    /// <param name="cronExpression">用于提供cronExpression</param>
     public static void Validate(string cronExpression)
     {
         if (!global::Quartz.CronExpression.IsValidExpression(cronExpression))

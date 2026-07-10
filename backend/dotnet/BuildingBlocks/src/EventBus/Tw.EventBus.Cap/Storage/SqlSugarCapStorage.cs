@@ -1,6 +1,8 @@
 ﻿namespace Tw.EventBus.Cap.Storage;
 
-/// <summary>表示 SqlSugarCapStorage 类型</summary>
+/// <summary>
+/// 封装SqlSugarCapStorage相关的数据和行为
+/// </summary>
 public sealed class SqlSugarCapStorage
 {
 }

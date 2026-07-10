@@ -2,13 +2,19 @@
 
 namespace Tw.Extensions;
 
-/// <summary>提供流扩展方法</summary>
+/// <summary>
+/// 提供流扩展方法
+/// </summary>
 public static class StreamExtensions
 {
-    /// <summary>表示 DefaultEncoding 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认Encoding
+    /// </summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
 
-    /// <summary>从流当前位置读取所有字节，且不释放该流</summary>
+    /// <summary>
+    /// 从流当前位置读取所有字节，且不释放该流
+    /// </summary>
     /// <param name="stream">要读取的流</param>
     /// <returns>从当前位置到末尾读取到的字节</returns>
     /// <exception cref="ArgumentNullException">当 <paramref name="stream"/> 为 <see langword="null"/> 时抛出</exception>
@@ -20,7 +26,9 @@ public static class StreamExtensions
         return memoryStream.ToArray();
     }
 
-    /// <summary>从流当前位置异步读取所有字节，且不释放该流</summary>
+    /// <summary>
+    /// 从流当前位置异步读取所有字节，且不释放该流
+    /// </summary>
     /// <param name="stream">要读取的流</param>
     /// <param name="cancellationToken">取消异步复制的令牌</param>
     /// <returns>从当前位置到末尾读取到的字节</returns>
@@ -33,7 +41,9 @@ public static class StreamExtensions
         return memoryStream.ToArray();
     }
 
-    /// <summary>在可定位源流重置到开头后，将源流复制到目标流</summary>
+    /// <summary>
+    /// 在可定位源流重置到开头后，将源流复制到目标流
+    /// </summary>
     /// <param name="stream">源流</param>
     /// <param name="destination">目标流</param>
     /// <param name="cancellationToken">取消异步复制的令牌</param>
@@ -52,7 +62,9 @@ public static class StreamExtensions
         await source.CopyToAsync(destination, cancellationToken);
     }
 
-    /// <summary>创建包含流当前位置后续字节的内存流</summary>
+    /// <summary>
+    /// 创建包含流当前位置后续字节的内存流
+    /// </summary>
     /// <param name="stream">要复制的流</param>
     /// <returns>定位在复制字节开头的内存流</returns>
     /// <exception cref="ArgumentNullException">当 <paramref name="stream"/> 为 <see langword="null"/> 时抛出</exception>
@@ -61,7 +73,9 @@ public static class StreamExtensions
         return new MemoryStream(stream.GetAllBytes());
     }
 
-    /// <summary>从流当前位置读取所有文本，默认使用无字节顺序标记的 UTF-8</summary>
+    /// <summary>
+    /// 从流当前位置读取所有文本，默认使用无字节顺序标记的 UTF-8
+    /// </summary>
     /// <param name="stream">要读取的流</param>
     /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
     /// <param name="cancellationToken">取消异步读取的令牌</param>
@@ -73,7 +87,9 @@ public static class StreamExtensions
         return await reader.ReadToEndAsync(cancellationToken);
     }
 
-    /// <summary>在流当前位置写入文本，默认使用无字节顺序标记的 UTF-8，且不重置位置</summary>
+    /// <summary>
+    /// 在流当前位置写入文本，默认使用无字节顺序标记的 UTF-8，且不重置位置
+    /// </summary>
     /// <param name="stream">要写入的流</param>
     /// <param name="text">要写入的文本</param>
     /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
@@ -87,7 +103,9 @@ public static class StreamExtensions
         }
     }
 
-    /// <summary>在流当前位置异步写入文本，默认使用无字节顺序标记的 UTF-8，且不重置位置</summary>
+    /// <summary>
+    /// 在流当前位置异步写入文本，默认使用无字节顺序标记的 UTF-8，且不重置位置
+    /// </summary>
     /// <param name="stream">要写入的流</param>
     /// <param name="text">要写入的文本</param>
     /// <param name="encoding">文本编码；省略时使用无字节顺序标记的 UTF-8</param>
@@ -103,7 +121,9 @@ public static class StreamExtensions
         }
     }
 
-    /// <summary>将可定位流重置到零位置，并返回同一个流</summary>
+    /// <summary>
+    /// 将可定位流重置到零位置，并返回同一个流
+    /// </summary>
     /// <param name="stream">要重置的流</param>
     /// <returns>位于零位置的同一个流实例</returns>
     /// <exception cref="ArgumentNullException">当 <paramref name="stream"/> 为 <see langword="null"/> 时抛出</exception>

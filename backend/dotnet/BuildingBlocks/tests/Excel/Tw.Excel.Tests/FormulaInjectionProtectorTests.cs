@@ -3,11 +3,15 @@ using Xunit;
 
 namespace Tw.Excel.Tests;
 
-/// <summary>验证 FormulaInjectionProtectorTests 相关行为</summary>
+/// <summary>
+/// 覆盖Formula注入Protector的核心行为和边界条件
+/// </summary>
 public sealed class FormulaInjectionProtectorTests
 {
-    /// <summary>验证 Protect_PrefixesFormulaLikeUserText 场景</summary>
-    /// <param name="value">value 参数</param>
+    /// <summary>
+    /// 验证ProtectPrefixesFormulaLike用户文本
+    /// </summary>
+    /// <param name="value">用于转换、回显或断言的输入值</param>
     [Theory]
     [InlineData("=cmd|'/C calc'!A0")]
     [InlineData("+SUM(A1:A2)")]

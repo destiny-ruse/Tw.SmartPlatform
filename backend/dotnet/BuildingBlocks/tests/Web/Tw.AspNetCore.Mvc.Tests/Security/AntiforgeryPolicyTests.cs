@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.Security;
 
-/// <summary>验证 AntiforgeryPolicyTests 相关行为</summary>
+/// <summary>
+/// 覆盖防伪策略的核心行为和边界条件
+/// </summary>
 public sealed class AntiforgeryPolicyTests
 {
-    /// <summary>验证 RequiresValidation_ReturnsFalse_ForBearerGetRequest 场景</summary>
+    /// <summary>
+    /// 验证要求Validation返回false针对Bearer读取请求
+    /// </summary>
     [Fact]
     public void RequiresValidation_ReturnsFalse_ForBearerGetRequest()
     {
@@ -16,7 +20,9 @@ public sealed class AntiforgeryPolicyTests
             .BeFalse();
     }
 
-    /// <summary>验证 RequiresValidation_ReturnsTrue_ForCookiePostRequest 场景</summary>
+    /// <summary>
+    /// 验证要求Validation返回true针对CookiePOST请求
+    /// </summary>
     [Fact]
     public void RequiresValidation_ReturnsTrue_ForCookiePostRequest()
     {

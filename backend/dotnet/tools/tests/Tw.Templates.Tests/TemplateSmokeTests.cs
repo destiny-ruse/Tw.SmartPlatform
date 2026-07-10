@@ -3,10 +3,14 @@ using Xunit;
 
 namespace Tw.Templates.Tests;
 
-/// <summary>验证 TemplateSmokeTests 相关行为</summary>
+/// <summary>
+/// 覆盖模板冒烟的核心行为和边界条件
+/// </summary>
 public sealed class TemplateSmokeTests
 {
-    /// <summary>验证 ServiceTemplate_DoesNotReferenceForbiddenPackages 场景</summary>
+    /// <summary>
+    /// 验证服务模板不引用禁止包
+    /// </summary>
     [Fact]
     public void ServiceTemplate_DoesNotReferenceForbiddenPackages()
     {
@@ -20,8 +24,10 @@ public sealed class TemplateSmokeTests
         text.Should().NotContain("MassTransit");
     }
 
-    /// <summary>验证 FindToolRoot 场景</summary>
-    /// <returns>FindToolRoot 的执行结果</returns>
+    /// <summary>
+    /// 查找工具根目录并返回匹配结果
+    /// </summary>
+    /// <returns>当前工具源码根目录路径</returns>
     private static string FindToolRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

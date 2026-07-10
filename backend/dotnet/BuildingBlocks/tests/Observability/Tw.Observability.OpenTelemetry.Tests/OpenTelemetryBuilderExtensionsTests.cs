@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Observability.OpenTelemetry.Tests;
 
-/// <summary>验证 OpenTelemetryBuilderExtensionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖开放Telemetry构建器Extensions的核心行为和边界条件
+/// </summary>
 public sealed class OpenTelemetryBuilderExtensionsTests
 {
-    /// <summary>验证 DefaultOptions_DoNotEnableGrpcNetClientInstrumentation 场景</summary>
+    /// <summary>
+    /// 验证默认选项Do不EnableGrpc.NETClientInstrumentation
+    /// </summary>
     [Fact]
     public void DefaultOptions_DoNotEnableGrpcNetClientInstrumentation()
     {

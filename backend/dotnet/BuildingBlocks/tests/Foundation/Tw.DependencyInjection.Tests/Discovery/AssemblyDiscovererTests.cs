@@ -8,18 +8,26 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Discovery;
 
-/// <summary>验证 AssemblyDiscovererTests 相关行为</summary>
+/// <summary>
+/// 覆盖AssemblyDiscoverer的核心行为和边界条件
+/// </summary>
 public class AssemblyDiscovererTests
 {
-    /// <summary>验证 FakeAssemblySource 相关行为</summary>
+    /// <summary>
+    /// 覆盖FakeAssemblySource的核心行为和边界条件
+    /// </summary>
     private sealed class FakeAssemblySource(params Assembly[] assemblies) : IAssemblySource
     {
-        /// <summary>验证 GetCandidateAssemblies 场景</summary>
-        /// <returns>GetCandidateAssemblies 的执行结果</returns>
+        /// <summary>
+        /// 说明读取CandidateAssemblies在当前类型中的职责
+        /// </summary>
+        /// <returns>匹配当前查询条件的结果集合</returns>
         public IReadOnlyList<Assembly> GetCandidateAssemblies() => assemblies;
     }
 
-    /// <summary>验证 Report_ExposesScanAndTopologySections 场景</summary>
+    /// <summary>
+    /// 验证报告ExposesScan和TopologySections
+    /// </summary>
     [Fact]
     public void Report_ExposesScanAndTopologySections()
     {
@@ -33,7 +41,9 @@ public class AssemblyDiscovererTests
         report.Topology.Should().ContainSingle().Which.Level.Should().Be(0);
     }
 
-    /// <summary>验证 Discover_FiltersToTwPrefix_AndOrdersAbstractionsBeforeEngine 场景</summary>
+    /// <summary>
+    /// 验证Discover过滤器集合到Tw前缀和OrdersAbstractions前置处理Engine
+    /// </summary>
     [Fact]
     public void Discover_FiltersToTwPrefix_AndOrdersAbstractionsBeforeEngine()
     {
@@ -50,7 +60,9 @@ public class AssemblyDiscovererTests
         result.Report.ExcludedAssemblies.Should().Contain(systemAssembly.GetName().Name!);
     }
 
-    /// <summary>验证 Discover_ReachabilityGraph_ReflectsInScopeReferences 场景</summary>
+    /// <summary>
+    /// 验证DiscoverReachabilityGraphReflectsIn作用域References
+    /// </summary>
     [Fact]
     public void Discover_ReachabilityGraph_ReflectsInScopeReferences()
     {

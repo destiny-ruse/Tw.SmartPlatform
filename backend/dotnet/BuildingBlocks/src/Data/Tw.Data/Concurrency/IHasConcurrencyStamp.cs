@@ -1,8 +1,12 @@
 ﻿namespace Tw.Data.Concurrency;
 
-/// <summary>定义 IHasConcurrencyStamp 契约</summary>
+/// <summary>
+/// 定义HasConcurrencyStamp的能力边界
+/// </summary>
 public interface IHasConcurrencyStamp
 {
-    /// <summary>表示 ConcurrencyStamp 属性</summary>
+    /// <summary>
+    /// ConcurrencyStamp在当前对象中的业务含义
+    /// </summary>
     string ConcurrencyStamp { get; set; }
 }

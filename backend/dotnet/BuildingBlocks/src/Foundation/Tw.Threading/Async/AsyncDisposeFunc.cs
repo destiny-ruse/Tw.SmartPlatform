@@ -5,7 +5,9 @@
 /// </summary>
 public sealed class AsyncDisposeFunc : IAsyncDisposable
 {
-    /// <summary>表示 disposeAsync 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的dispose异步
+    /// </summary>
     private Func<ValueTask>? disposeAsync;
 
     /// <summary>

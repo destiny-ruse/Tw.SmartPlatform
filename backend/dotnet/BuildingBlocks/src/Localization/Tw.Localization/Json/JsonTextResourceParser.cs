@@ -65,11 +65,13 @@ public static class JsonTextResourceParser
     }
 
     // 递归展开嵌套对象，使用 "__" 作为键分隔符；仅接受字符串叶子值
-    /// <summary>执行 FlattenTexts 操作</summary>
-    /// <param name="element">element 参数</param>
-    /// <param name="prefix">prefix 参数</param>
-    /// <param name="texts">texts 参数</param>
-    /// <param name="sourcePath">sourcePath 参数</param>
+    /// <summary>
+    /// 说明FlattenTexts在当前类型中的职责
+    /// </summary>
+    /// <param name="element">用于提供element</param>
+    /// <param name="prefix">用于提供前缀</param>
+    /// <param name="texts">用于提供texts</param>
+    /// <param name="sourcePath">用于提供sourcePath</param>
     private static void FlattenTexts(
         JsonElement element,
         string prefix,

@@ -8,59 +8,89 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Registration;
 
-/// <summary>验证 ServiceRegistrationPlannerTests 相关行为</summary>
+/// <summary>
+/// 覆盖服务RegistrationPlanner的核心行为和边界条件
+/// </summary>
 public class ServiceRegistrationPlannerTests
 {
-    /// <summary>定义 IPaymentProvider 契约</summary>
+    /// <summary>
+    /// 定义Payment提供器的能力边界
+    /// </summary>
     private interface IPaymentProvider;
 
-    /// <summary>验证 DefaultPaymentProvider 相关行为</summary>
+    /// <summary>
+    /// 覆盖默认Payment提供器的核心行为和边界条件
+    /// </summary>
     private sealed class DefaultPaymentProvider : IPaymentProvider, IScopedDependency;
 
-    /// <summary>验证 PreferredPaymentProvider 相关行为</summary>
+    /// <summary>
+    /// 覆盖PreferredPayment提供器的核心行为和边界条件
+    /// </summary>
     [ServicePriority(10)]
     private sealed class PreferredPaymentProvider : IPaymentProvider, IScopedDependency;
 
-    /// <summary>验证 WechatPaymentProvider 相关行为</summary>
+    /// <summary>
+    /// 覆盖WechatPayment提供器的核心行为和边界条件
+    /// </summary>
     [ExposeKeyedService(typeof(IPaymentProvider), "wechat")]
     private sealed class WechatPaymentProvider : IPaymentProvider, IScopedDependency;
 
-    /// <summary>验证 PreferredWechatPaymentProvider 相关行为</summary>
+    /// <summary>
+    /// 覆盖PreferredWechatPayment提供器的核心行为和边界条件
+    /// </summary>
     [ExposeKeyedService(typeof(IPaymentProvider), "wechat")]
     [ServicePriority(5)]
     private sealed class PreferredWechatPaymentProvider : IPaymentProvider, IScopedDependency;
 
-    /// <summary>验证 EmptyKeyPaymentProvider 相关行为</summary>
+    /// <summary>
+    /// 覆盖空键Payment提供器的核心行为和边界条件
+    /// </summary>
     [ExposeKeyedService(typeof(IPaymentProvider), "")]
     private sealed class EmptyKeyPaymentProvider : IPaymentProvider, IScopedDependency;
 
-    /// <summary>验证 DefaultPaymentProviderClone 相关行为</summary>
+    /// <summary>
+    /// 覆盖默认Payment提供器Clone的核心行为和边界条件
+    /// </summary>
     [ExposeServices(typeof(IPaymentProvider))]
     private sealed class DefaultPaymentProviderClone : IPaymentProvider, IScopedDependency;
 
     // ── 用于 skipped 路径测试的私有类型 ──────────────────────────────────────
-    /// <summary>定义 IScopedDependencyMarker 契约</summary>
+    /// <summary>
+    /// 作为Scoped依赖程序集扫描标记
+    /// </summary>
     private interface IScopedDependencyMarker : IScopedDependency;
 
-    /// <summary>验证 AbstractScoped 相关行为</summary>
+    /// <summary>
+    /// 覆盖AbstractScoped的核心行为和边界条件
+    /// </summary>
     private abstract class AbstractScoped : IScopedDependency;
 
-    /// <summary>验证 DisabledScoped 相关行为</summary>
+    /// <summary>
+    /// 覆盖DisabledScoped的核心行为和边界条件
+    /// </summary>
     [DisableServiceRegistration]
     private sealed class DisabledScoped : IScopedDependency;
 
-    /// <summary>验证 MultiLifetimeScoped 相关行为</summary>
+    /// <summary>
+    /// 覆盖MultiLifetimeScoped的核心行为和边界条件
+    /// </summary>
     private sealed class MultiLifetimeScoped : IScopedDependency, ISingletonDependency;
 
     // ── 用于平级对照测试的私有类型（同一程序集、不同 typePriority）────────────
-    /// <summary>验证 LowPriorityService 相关行为</summary>
+    /// <summary>
+    /// 覆盖LowPriority服务的核心行为和边界条件
+    /// </summary>
     private sealed class LowPriorityService : IScopedDependency;
 
-    /// <summary>验证 HighPriorityService 相关行为</summary>
+    /// <summary>
+    /// 覆盖HighPriority服务的核心行为和边界条件
+    /// </summary>
     [ServicePriority(5)]
     private sealed class HighPriorityService : IScopedDependency;
 
-    /// <summary>验证 Planner_SelectsHighestPriorityNonKeyedCandidate 场景</summary>
+    /// <summary>
+    /// 验证PlannerSelectsHighestPriorityNonKeyedCandidate
+    /// </summary>
     [Fact]
     public void Planner_SelectsHighestPriorityNonKeyedCandidate()
     {
@@ -74,7 +104,9 @@ public class ServiceRegistrationPlannerTests
             s.ImplementationTypeName.Contains(nameof(DefaultPaymentProvider), StringComparison.Ordinal));
     }
 
-    /// <summary>验证 Planner_ArbitratesKeyedCandidatesPerKey 场景</summary>
+    /// <summary>
+    /// 验证PlannerArbitratesKeyedCandidatesPer键
+    /// </summary>
     [Fact]
     public void Planner_ArbitratesKeyedCandidatesPerKey()
     {
@@ -86,7 +118,9 @@ public class ServiceRegistrationPlannerTests
             && Equals(r.Key, "wechat"));
     }
 
-    /// <summary>验证 Planner_ThrowsWhenFinalPriorityTies 场景</summary>
+    /// <summary>
+    /// 验证Planner抛出异常当FinalPriorityTies
+    /// </summary>
     [Fact]
     public void Planner_ThrowsWhenFinalPriorityTies()
     {
@@ -96,7 +130,9 @@ public class ServiceRegistrationPlannerTests
             .WithMessage("*最终优先级相同*");
     }
 
-    /// <summary>验证 Planner_ThrowsWhenTypeDeclaresMultipleLifetimeMarkers 场景</summary>
+    /// <summary>
+    /// 验证Planner抛出异常当类型DeclaresMultipleLifetimeMarkers
+    /// </summary>
     [Fact]
     public void Planner_ThrowsWhenTypeDeclaresMultipleLifetimeMarkers()
     {
@@ -106,7 +142,9 @@ public class ServiceRegistrationPlannerTests
             .WithMessage("*多个生命周期标记*");
     }
 
-    /// <summary>验证 Planner_ThrowsWhenKeyedServiceKeyIsEmpty 场景</summary>
+    /// <summary>
+    /// 验证Planner抛出异常当Keyed服务键Is空
+    /// </summary>
     [Fact]
     public void Planner_ThrowsWhenKeyedServiceKeyIsEmpty()
     {
@@ -239,9 +277,11 @@ public class ServiceRegistrationPlannerTests
             r.ImplementationType == typeof(DisabledScoped));
     }
 
-    /// <summary>验证 PlanTypes 场景</summary>
-    /// <param name="types">types 参数</param>
-    /// <returns>PlanTypes 的执行结果</returns>
+    /// <summary>
+    /// 说明Plan类型集合在当前类型中的职责
+    /// </summary>
+    /// <param name="types">用于提供类型集合</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static ServiceRegistrationPlan PlanTypes(params Type[] types)
     {
         var assembly = typeof(ServiceRegistrationPlannerTests).Assembly;
@@ -262,7 +302,9 @@ public class ServiceRegistrationPlannerTests
             options: new ServiceRegistrationOptions());
     }
 
-    /// <summary>验证 Report_ExposesRegistrationPlanningSections 场景</summary>
+    /// <summary>
+    /// 验证报告ExposesRegistrationPlanningSections
+    /// </summary>
     [Fact]
     public void Report_ExposesRegistrationPlanningSections()
     {

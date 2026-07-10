@@ -1,11 +1,15 @@
 ﻿namespace Tw.Auditing;
 
-/// <summary>表示 AuditRedactionPolicy 类型</summary>
+/// <summary>
+/// 封装审计Redaction策略相关的数据和行为
+/// </summary>
 public static class AuditRedactionPolicy
 {
-    /// <summary>执行 Redact 操作</summary>
-    /// <param name="details">details 参数</param>
-    /// <returns>Redact 的执行结果</returns>
+    /// <summary>
+    /// 说明Redact在当前类型中的职责
+    /// </summary>
+    /// <param name="details">用于提供details</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static string? Redact(string? details)
     {
         if (string.IsNullOrWhiteSpace(details))

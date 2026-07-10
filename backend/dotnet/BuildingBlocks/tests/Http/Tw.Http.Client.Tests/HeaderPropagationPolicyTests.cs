@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Http.Client.Tests;
 
-/// <summary>验证 HeaderPropagationPolicyTests 相关行为</summary>
+/// <summary>
+/// 覆盖HeaderPropagation策略的核心行为和边界条件
+/// </summary>
 public sealed class HeaderPropagationPolicyTests
 {
-    /// <summary>验证 ShouldPropagate_DoesNotPropagateClientTenantHeader 场景</summary>
+    /// <summary>
+    /// 验证ShouldPropagate不PropagateClient租户Header
+    /// </summary>
     [Fact]
     public void ShouldPropagate_DoesNotPropagateClientTenantHeader()
     {
@@ -16,7 +20,9 @@ public sealed class HeaderPropagationPolicyTests
             .BeFalse();
     }
 
-    /// <summary>验证 ShouldPropagate_PropagatesVerifiedTenantHeader 场景</summary>
+    /// <summary>
+    /// 验证ShouldPropagatePropagatesVerified租户Header
+    /// </summary>
     [Fact]
     public void ShouldPropagate_PropagatesVerifiedTenantHeader()
     {

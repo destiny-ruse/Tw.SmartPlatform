@@ -1,8 +1,12 @@
 ﻿namespace Tw.Caching.FusionCache;
 
-/// <summary>表示 FusionCacheAdapter 类型</summary>
+/// <summary>
+/// 封装Fusion缓存Adapter相关的数据和行为
+/// </summary>
 public sealed class FusionCacheAdapter
 {
-    /// <summary>表示 ProviderName 属性</summary>
+    /// <summary>
+    /// 提供器名称在当前对象中的业务含义
+    /// </summary>
     public string ProviderName => "FusionCache";
 }

@@ -1,4 +1,6 @@
 ﻿namespace Tw.Http.Abstractions;
 
-/// <summary>表示 HeaderPropagationOptions 声明</summary>
+/// <summary>
+/// 配置HeaderPropagation的运行行为
+/// </summary>
 public sealed record HeaderPropagationOptions(IReadOnlySet<string> AllowedHeaders);

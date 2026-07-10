@@ -5,10 +5,14 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Discovery;
 
-/// <summary>验证 AssemblyFilterTests 相关行为</summary>
+/// <summary>
+/// 覆盖Assembly过滤器的核心行为和边界条件
+/// </summary>
 public class AssemblyFilterTests
 {
-    /// <summary>验证 Options_DefaultsToEmptyLists 场景</summary>
+    /// <summary>
+    /// 验证选项Defaults到空Lists
+    /// </summary>
     [Fact]
     public void Options_DefaultsToEmptyLists()
     {
@@ -20,7 +24,9 @@ public class AssemblyFilterTests
         options.ExcludeAssemblyPrefixes.Should().BeEmpty();
     }
 
-    /// <summary>验证 Filter_KeepsTwPrefix_ByDefault 场景</summary>
+    /// <summary>
+    /// 验证过滤器KeepsTw前缀By默认
+    /// </summary>
     [Fact]
     public void Filter_KeepsTwPrefix_ByDefault()
     {
@@ -31,7 +37,9 @@ public class AssemblyFilterTests
         result.Should().BeEquivalentTo("Tw.Core", "Tw.Order.Application");
     }
 
-    /// <summary>验证 Filter_IncludesExplicitAssembly_WithoutTwPrefix 场景</summary>
+    /// <summary>
+    /// 验证过滤器IncludesExplicitAssembly不带Tw前缀
+    /// </summary>
     [Fact]
     public void Filter_IncludesExplicitAssembly_WithoutTwPrefix()
     {
@@ -43,7 +51,9 @@ public class AssemblyFilterTests
         result.Should().BeEquivalentTo("Acme.Payments");
     }
 
-    /// <summary>验证 Filter_IncludesCustomPrefix_InAdditionToTw 场景</summary>
+    /// <summary>
+    /// 验证过滤器IncludesCustom前缀InAddition到Tw
+    /// </summary>
     [Fact]
     public void Filter_IncludesCustomPrefix_InAdditionToTw()
     {
@@ -55,7 +65,9 @@ public class AssemblyFilterTests
         result.Should().BeEquivalentTo("Tw.Core", "Acme.Payments");
     }
 
-    /// <summary>验证 Filter_ExcludesByName_EvenWhenTwPrefix 场景</summary>
+    /// <summary>
+    /// 验证过滤器ExcludesBy名称Even当Tw前缀
+    /// </summary>
     [Fact]
     public void Filter_ExcludesByName_EvenWhenTwPrefix()
     {
@@ -67,7 +79,9 @@ public class AssemblyFilterTests
         result.Should().BeEquivalentTo("Tw.Core");
     }
 
-    /// <summary>验证 Filter_ExcludesByPrefix_EvenWhenTwPrefix 场景</summary>
+    /// <summary>
+    /// 验证过滤器ExcludesBy前缀Even当Tw前缀
+    /// </summary>
     [Fact]
     public void Filter_ExcludesByPrefix_EvenWhenTwPrefix()
     {
@@ -79,7 +93,9 @@ public class AssemblyFilterTests
         result.Should().BeEquivalentTo("Tw.Core");
     }
 
-    /// <summary>验证 Filter_BlacklistWins_WhenNameBothIncludedAndExcluded 场景</summary>
+    /// <summary>
+    /// 验证过滤器BlacklistWins当名称BothIncluded和Excluded
+    /// </summary>
     [Fact]
     public void Filter_BlacklistWins_WhenNameBothIncludedAndExcluded()
     {
@@ -92,7 +108,9 @@ public class AssemblyFilterTests
         result.Should().BeEmpty();
     }
 
-    /// <summary>验证 Options_DefaultsAssemblyPrioritiesToEmptyDictionary 场景</summary>
+    /// <summary>
+    /// 验证选项DefaultsAssemblyPriorities到空Dictionary
+    /// </summary>
     [Fact]
     public void Options_DefaultsAssemblyPrioritiesToEmptyDictionary()
     {

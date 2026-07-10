@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Security.Tests.DataMasking;
 
-/// <summary>验证 DefaultDataMaskerTests 相关行为</summary>
+/// <summary>
+/// 覆盖默认DataMasker的核心行为和边界条件
+/// </summary>
 public sealed class DefaultDataMaskerTests
 {
-    /// <summary>验证 Mask_Phone_HidesMiddleDigits 场景</summary>
+    /// <summary>
+    /// 验证MaskPhoneHidesMiddleDigits
+    /// </summary>
     [Fact]
     public void Mask_Phone_HidesMiddleDigits()
     {
@@ -18,7 +22,9 @@ public sealed class DefaultDataMaskerTests
         masked.Should().Be("138****8000");
     }
 
-    /// <summary>验证 Mask_Token_DoesNotExposeRawValue 场景</summary>
+    /// <summary>
+    /// 验证Mask令牌不ExposeRaw值
+    /// </summary>
     [Fact]
     public void Mask_Token_DoesNotExposeRawValue()
     {

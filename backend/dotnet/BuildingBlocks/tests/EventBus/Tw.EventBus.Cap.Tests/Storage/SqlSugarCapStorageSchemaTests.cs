@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.EventBus.Cap.Tests.Storage;
 
-/// <summary>验证 SqlSugarCapStorageSchemaTests 相关行为</summary>
+/// <summary>
+/// 覆盖SqlSugarCapStorage架构的核心行为和边界条件
+/// </summary>
 public sealed class SqlSugarCapStorageSchemaTests
 {
-    /// <summary>验证 DefaultSchema_UsesDedicatedCapTables 场景</summary>
+    /// <summary>
+    /// 验证默认架构UsesDedicatedCapTables
+    /// </summary>
     [Fact]
     public void DefaultSchema_UsesDedicatedCapTables()
     {

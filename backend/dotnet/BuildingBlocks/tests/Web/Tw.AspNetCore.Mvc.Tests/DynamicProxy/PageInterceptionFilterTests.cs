@@ -16,11 +16,15 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;
 
-/// <summary>验证 PageInterceptionFilterTests 相关行为</summary>
+/// <summary>
+/// 覆盖页面Interception过滤器的核心行为和边界条件
+/// </summary>
 public class PageInterceptionFilterTests
 {
-    /// <summary>验证 OnPageHandlerExecutionAsync_WithSelectedInterceptor_InvokesPipelineAndWritesModifiedArgumentsToHandler 场景</summary>
-    /// <returns>OnPageHandlerExecutionAsync_WithSelectedInterceptor_InvokesPipelineAndWritesModifiedArgumentsToHandler 的执行结果</returns>
+    /// <summary>
+    /// 验证On页面处理器Execution异步带有已选择拦截器Invokes管道和写回已修改参数到处理器
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task OnPageHandlerExecutionAsync_WithSelectedInterceptor_InvokesPipelineAndWritesModifiedArgumentsToHandler()
     {
@@ -48,8 +52,10 @@ public class PageInterceptionFilterTests
         RewriteArgumentInterceptor.WasCalled.Should().BeTrue();
     }
 
-    /// <summary>验证 OnPageHandlerExecutionAsync_WithoutSelectedInterceptor_CallsNextAndDoesNotInvokePipeline 场景</summary>
-    /// <returns>OnPageHandlerExecutionAsync_WithoutSelectedInterceptor_CallsNextAndDoesNotInvokePipeline 的执行结果</returns>
+    /// <summary>
+    /// 验证On页面处理器Execution异步不带已选择拦截器CallsNext和不调用管道
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task OnPageHandlerExecutionAsync_WithoutSelectedInterceptor_CallsNextAndDoesNotInvokePipeline()
     {
@@ -77,8 +83,10 @@ public class PageInterceptionFilterTests
         pipeline.InvokeCount.Should().Be(0);
     }
 
-    /// <summary>验证 OnPageHandlerExecutionAsync_WhenHandlerMethodMissing_CallsNextWithoutSelection 场景</summary>
-    /// <returns>OnPageHandlerExecutionAsync_WhenHandlerMethodMissing_CallsNextWithoutSelection 的执行结果</returns>
+    /// <summary>
+    /// 验证On页面处理器Execution异步当处理器方法缺少CallsNext不带Selection
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task OnPageHandlerExecutionAsync_WhenHandlerMethodMissing_CallsNextWithoutSelection()
     {
@@ -110,8 +118,10 @@ public class PageInterceptionFilterTests
         pipeline.InvokeCount.Should().Be(0);
     }
 
-    /// <summary>验证 OnPageHandlerExecutionAsync_WhenInterceptorShortCircuits_SetsExecutingResultAndDoesNotCallNext 场景</summary>
-    /// <returns>OnPageHandlerExecutionAsync_WhenInterceptorShortCircuits_SetsExecutingResultAndDoesNotCallNext 的执行结果</returns>
+    /// <summary>
+    /// 验证On页面处理器Execution异步当拦截器短路流程SetsExecuting结果和不CallNext
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task OnPageHandlerExecutionAsync_WhenInterceptorShortCircuits_SetsExecutingResultAndDoesNotCallNext()
     {
@@ -137,8 +147,10 @@ public class PageInterceptionFilterTests
         executingContext.Result.Should().BeSameAs(ShortCircuitInterceptor.Result);
     }
 
-    /// <summary>验证 OnPageHandlerExecutionAsync_WithAttributeSelectorAndHandlerInterceptAttribute_InvokesInterceptor 场景</summary>
-    /// <returns>OnPageHandlerExecutionAsync_WithAttributeSelectorAndHandlerInterceptAttribute_InvokesInterceptor 的执行结果</returns>
+    /// <summary>
+    /// 验证On页面处理器Execution异步带有特性Selector和处理器Intercept特性Invokes拦截器
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task OnPageHandlerExecutionAsync_WithAttributeSelectorAndHandlerInterceptAttribute_InvokesInterceptor()
     {
@@ -163,7 +175,9 @@ public class PageInterceptionFilterTests
         AttributeRecordingInterceptor.CallCount.Should().Be(1);
     }
 
-    /// <summary>验证 AddMvcIntegration_RegistersPageInterceptionFilter 场景</summary>
+    /// <summary>
+    /// 验证添加MVCIntegration注册页面Interception过滤器
+    /// </summary>
     [Fact]
     public void AddMvcIntegration_RegistersPageInterceptionFilter()
     {
@@ -176,7 +190,9 @@ public class PageInterceptionFilterTests
         mvcOptions.Filters.Count(IsPageInterceptionFilter).Should().Be(1);
     }
 
-    /// <summary>验证 AddMvcIntegration_WhenCalledTwice_RegistersPageInterceptionFilterOnce 场景</summary>
+    /// <summary>
+    /// 验证添加MVCIntegration当调用两次注册页面Interception过滤器一次
+    /// </summary>
     [Fact]
     public void AddMvcIntegration_WhenCalledTwice_RegistersPageInterceptionFilterOnce()
     {
@@ -190,9 +206,11 @@ public class PageInterceptionFilterTests
         mvcOptions.Filters.Count(IsPageInterceptionFilter).Should().Be(1);
     }
 
-    /// <summary>验证 CreateServices 场景</summary>
-    /// <param name="interceptorTypes">interceptorTypes 参数</param>
-    /// <returns>CreateServices 的执行结果</returns>
+    /// <summary>
+    /// 创建Services测试对象
+    /// </summary>
+    /// <param name="interceptorTypes">需要注册或选择的拦截器类型集合</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static ServiceCollection CreateServices(IReadOnlyList<Type> interceptorTypes)
     {
         var services = new ServiceCollection();
@@ -203,18 +221,22 @@ public class PageInterceptionFilterTests
         return services;
     }
 
-    /// <summary>验证 CreatePageContext 场景</summary>
-    /// <returns>CreatePageContext 的执行结果</returns>
+    /// <summary>
+    /// 创建页面上下文测试对象
+    /// </summary>
+    /// <returns>Razor Page 测试上下文</returns>
     private static PageContext CreatePageContext() =>
         new(new ActionContext(
             new DefaultHttpContext(),
             new RouteData(),
             new CompiledPageActionDescriptor { DisplayName = "/Sample" }));
 
-    /// <summary>验证 CreateHandlerMethod 场景</summary>
-    /// <typeparam name="TPageModel">TPageModel 类型参数</typeparam>
-    /// <param name="name">name 参数</param>
-    /// <returns>CreateHandlerMethod 的执行结果</returns>
+    /// <summary>
+    /// 创建处理器方法测试对象
+    /// </summary>
+    /// <typeparam name="TPageModel">响应数据的运行时类型</typeparam>
+    /// <param name="name">待匹配成员或资源的名称</param>
+    /// <returns>页面处理器方法描述符</returns>
     private static HandlerMethodDescriptor CreateHandlerMethod<TPageModel>(string name) =>
         new()
         {
@@ -222,11 +244,13 @@ public class PageInterceptionFilterTests
             Name = name,
         };
 
-    /// <summary>验证 CreateExecutingContext 场景</summary>
-    /// <param name="handlerArguments">handlerArguments 参数</param>
-    /// <param name="handlerInstance">handlerInstance 参数</param>
-    /// <param name="handlerMethod">handlerMethod 参数</param>
-    /// <returns>CreateExecutingContext 的执行结果</returns>
+    /// <summary>
+    /// 创建Executing上下文测试对象
+    /// </summary>
+    /// <param name="handlerArguments">页面处理器调用时使用的参数字典</param>
+    /// <param name="handlerInstance">页面处理器所属的页面模型实例</param>
+    /// <param name="handlerMethod">当前页面处理器的方法元数据</param>
+    /// <returns>页面处理器执行阶段的测试上下文</returns>
     private static PageHandlerExecutingContext CreateExecutingContext(
         IDictionary<string, object?> handlerArguments,
         object handlerInstance,
@@ -238,10 +262,12 @@ public class PageInterceptionFilterTests
             handlerArguments,
             handlerInstance);
 
-    /// <summary>验证 CreateExecutedContext 场景</summary>
-    /// <param name="executingContext">executingContext 参数</param>
-    /// <param name="result">result 参数</param>
-    /// <returns>CreateExecutedContext 的执行结果</returns>
+    /// <summary>
+    /// 创建Executed上下文测试对象
+    /// </summary>
+    /// <param name="executingContext">页面处理器执行阶段的上下文</param>
+    /// <param name="result">当前流程预置或返回的结果</param>
+    /// <returns>异步流程完成后产生的页面处理器Executed上下文</returns>
     private static Task<PageHandlerExecutedContext> CreateExecutedContext(
         PageHandlerExecutingContext executingContext,
         IActionResult? result = null) =>
@@ -254,47 +280,63 @@ public class PageInterceptionFilterTests
             Result = result,
         });
 
-    /// <summary>验证 IsPageInterceptionFilter 场景</summary>
-    /// <param name="filter">filter 参数</param>
-    /// <returns>IsPageInterceptionFilter 的执行结果</returns>
+    /// <summary>
+    /// 判断页面Interception过滤器是否满足条件
+    /// </summary>
+    /// <param name="filter">参与测试的 MVC 或页面过滤器实例</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsPageInterceptionFilter(IFilterMetadata filter) =>
         filter is TypeFilterAttribute typeFilter
         && typeFilter.ImplementationType == typeof(TwPageInterceptionFilter);
 
-    /// <summary>验证 FixedInterceptorSelector 相关行为</summary>
+    /// <summary>
+    /// 覆盖Fixed拦截器Selector的核心行为和边界条件
+    /// </summary>
     private sealed class FixedInterceptorSelector(IReadOnlyList<Type> interceptorTypes) : IInterceptorSelector
     {
-        /// <summary>验证 SelectInterceptors 场景</summary>
-        /// <param name="implementationType">implementationType 参数</param>
-        /// <param name="serviceType">serviceType 参数</param>
-        /// <param name="method">method 参数</param>
-        /// <returns>SelectInterceptors 的执行结果</returns>
+        /// <summary>
+        /// 按服务类型和方法选择拦截器类型
+        /// </summary>
+        /// <param name="implementationType">服务注册中使用的实现类型</param>
+        /// <param name="serviceType">服务注册中暴露的服务类型</param>
+        /// <param name="method">用于构造测试场景的方法元数据</param>
+        /// <returns>匹配当前查询条件的结果集合</returns>
         public IReadOnlyList<Type> SelectInterceptors(Type implementationType, Type serviceType, MethodInfo method) =>
             interceptorTypes;
     }
 
-    /// <summary>验证 ThrowingInterceptorSelector 相关行为</summary>
+    /// <summary>
+    /// 覆盖Throwing拦截器Selector的核心行为和边界条件
+    /// </summary>
     private sealed class ThrowingInterceptorSelector : IInterceptorSelector
     {
-        /// <summary>验证 SelectInterceptors 场景</summary>
-        /// <param name="implementationType">implementationType 参数</param>
-        /// <param name="serviceType">serviceType 参数</param>
-        /// <param name="method">method 参数</param>
-        /// <returns>SelectInterceptors 的执行结果</returns>
+        /// <summary>
+        /// 按服务类型和方法选择拦截器类型
+        /// </summary>
+        /// <param name="implementationType">服务注册中使用的实现类型</param>
+        /// <param name="serviceType">服务注册中暴露的服务类型</param>
+        /// <param name="method">用于构造测试场景的方法元数据</param>
+        /// <returns>匹配当前查询条件的结果集合</returns>
         public IReadOnlyList<Type> SelectInterceptors(Type implementationType, Type serviceType, MethodInfo method) =>
             throw new InvalidOperationException("selector should not run when handler method is missing");
     }
 
-    /// <summary>验证 CountingPipeline 相关行为</summary>
+    /// <summary>
+    /// 覆盖Counting管道的核心行为和边界条件
+    /// </summary>
     private sealed class CountingPipeline : IInterceptorPipeline
     {
-        /// <summary>表示 InvokeCount 属性</summary>
+        /// <summary>
+        /// 测试替身记录的调用次数
+        /// </summary>
         public int InvokeCount { get; private set; }
 
-        /// <summary>验证 InvokeAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <param name="interceptors">interceptors 参数</param>
-        /// <returns>InvokeAsync 的执行结果</returns>
+        /// <summary>
+        /// 执行测试管道委托并记录调用
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <param name="interceptors">参与当前测试场景的拦截器集合</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InvokeAsync(IInvocationContext context, IReadOnlyList<IInterceptor> interceptors)
         {
             InvokeCount++;
@@ -303,34 +345,48 @@ public class PageInterceptionFilterTests
         }
     }
 
-    /// <summary>验证 SamplePageModel 相关行为</summary>
+    /// <summary>
+    /// 覆盖示例页面模型的核心行为和边界条件
+    /// </summary>
     private sealed class SamplePageModel : PageModel
     {
-        /// <summary>验证 OnGet 场景</summary>
-        /// <param name="value">value 参数</param>
-        /// <returns>OnGet 的执行结果</returns>
+        /// <summary>
+        /// 处理页面 GET 请求并返回响应结果
+        /// </summary>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
+        /// <returns>MVC 或 Razor Page 处理结果</returns>
         public IActionResult OnGet(string value) => new OkObjectResult(value);
     }
 
-    /// <summary>验证 InterceptedPageModel 相关行为</summary>
+    /// <summary>
+    /// 覆盖Intercepted页面模型的核心行为和边界条件
+    /// </summary>
     private sealed class InterceptedPageModel : PageModel
     {
-        /// <summary>验证 OnGet 场景</summary>
-        /// <param name="value">value 参数</param>
-        /// <returns>OnGet 的执行结果</returns>
+        /// <summary>
+        /// 处理页面 GET 请求并返回响应结果
+        /// </summary>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
+        /// <returns>MVC 或 Razor Page 处理结果</returns>
         [Intercept(typeof(AttributeRecordingInterceptor))]
         public IActionResult OnGet(string value) => new OkObjectResult(value);
     }
 
-    /// <summary>验证 RewriteArgumentInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖RewriteArgument拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class RewriteArgumentInterceptor : IInterceptor
     {
-        /// <summary>表示 WasCalled 属性</summary>
+        /// <summary>
+        /// 测试替身是否已经被调用
+        /// </summary>
         public static bool WasCalled { get; set; }
 
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             WasCalled = true;
@@ -340,15 +396,21 @@ public class PageInterceptionFilterTests
         }
     }
 
-    /// <summary>验证 AttributeRecordingInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖特性Recording拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class AttributeRecordingInterceptor : IInterceptor
     {
-        /// <summary>表示 CallCount 属性</summary>
+        /// <summary>
+        /// 测试替身记录的调用次数
+        /// </summary>
         public static int CallCount { get; set; }
 
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public async ValueTask InterceptAsync(IInvocationContext context)
         {
             CallCount++;
@@ -357,15 +419,21 @@ public class PageInterceptionFilterTests
         }
     }
 
-    /// <summary>验证 ShortCircuitInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖短路Circuit拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ShortCircuitInterceptor : IInterceptor
     {
-        /// <summary>表示 Result 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的结果
+        /// </summary>
         public static readonly OkResult Result = new();
 
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context)
         {
             context.ReturnValue = Result;

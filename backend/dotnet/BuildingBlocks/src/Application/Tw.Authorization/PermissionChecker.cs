@@ -7,14 +7,22 @@ namespace Tw.Authorization;
 /// </summary>
 public sealed class PermissionChecker : IPermissionChecker
 {
-    /// <summary>表示 DeniedCode 常量</summary>
+    /// <summary>
+    /// 当前模块对外暴露的稳定错误码
+    /// </summary>
     private const string DeniedCode = "AUTHORIZATION:000001";
-    /// <summary>表示 DeniedMessage 常量</summary>
+    /// <summary>
+    /// 当前模块对外返回的安全提示文本
+    /// </summary>
     private const string DeniedMessage = "没有操作权限";
 
-    /// <summary>表示 _grantStore 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的授权记录存储
+    /// </summary>
     private readonly IGrantStore _grantStore;
-    /// <summary>表示 _grantCache 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的授权记录缓存
+    /// </summary>
     private readonly IPermissionGrantCache _grantCache;
 
     /// <summary>

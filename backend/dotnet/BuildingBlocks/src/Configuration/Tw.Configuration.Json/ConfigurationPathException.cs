@@ -1,4 +1,6 @@
 ﻿namespace Tw.Configuration.Json;
 
-/// <summary>表示 ConfigurationPathException 类型</summary>
+/// <summary>
+/// 封装Configuration路径异常相关的数据和行为
+/// </summary>
 public sealed class ConfigurationPathException(string message) : Exception(message);

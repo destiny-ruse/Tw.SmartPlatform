@@ -3,12 +3,16 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Tw.AspNetCore.Mvc.ApiVersioning;
 
-/// <summary>表示 ApiVersioningServiceCollectionExtensions 类型</summary>
+/// <summary>
+/// 封装ApiVersioning服务CollectionExtensions相关的数据和行为
+/// </summary>
 public static class ApiVersioningServiceCollectionExtensions
 {
-    /// <summary>执行 AddApiVersioningIntegration 操作</summary>
-    /// <param name="services">services 参数</param>
-    /// <returns>AddApiVersioningIntegration 的执行结果</returns>
+    /// <summary>
+    /// 注册ApiVersioningIntegration所需服务
+    /// </summary>
+    /// <param name="services">需要注册组件依赖的服务集合</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static IServiceCollection AddApiVersioningIntegration(this IServiceCollection services)
     {
         ArgumentNullException.ThrowIfNull(services);

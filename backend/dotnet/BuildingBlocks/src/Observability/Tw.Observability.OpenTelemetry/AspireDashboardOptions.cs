@@ -1,4 +1,6 @@
 ﻿namespace Tw.Observability.OpenTelemetry;
 
-/// <summary>表示 AspireDashboardOptions 声明</summary>
+/// <summary>
+/// 配置AspireDashboard的运行行为
+/// </summary>
 public sealed record AspireDashboardOptions(string? OtlpEndpoint);

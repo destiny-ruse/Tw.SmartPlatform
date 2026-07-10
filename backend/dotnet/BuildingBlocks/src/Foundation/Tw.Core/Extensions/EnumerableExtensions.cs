@@ -1,9 +1,13 @@
 ﻿namespace Tw.Extensions;
 
-/// <summary>提供可枚举序列的扩展方法</summary>
+/// <summary>
+/// 提供可枚举序列的扩展方法
+/// </summary>
 public static class EnumerableExtensions
 {
-    /// <summary>返回序列是否为 <see langword="null"/> 或不包含任何元素</summary>
+    /// <summary>
+    /// 返回序列是否为 <see langword="null"/> 或不包含任何元素
+    /// </summary>
     /// <param name="source">要检查的序列</param>
     /// <typeparam name="T">元素类型</typeparam>
     /// <returns>序列为 <see langword="null"/> 或空序列时返回 <see langword="true"/></returns>
@@ -12,7 +16,9 @@ public static class EnumerableExtensions
         return source is null || !source.Any();
     }
 
-    /// <summary>使用给定分隔符拼接字符串</summary>
+    /// <summary>
+    /// 使用给定分隔符拼接字符串
+    /// </summary>
     /// <param name="source">要拼接的序列</param>
     /// <param name="separator">要使用的分隔符；<see langword="null"/> 会按空字符串处理</param>
     /// <returns>拼接后的字符串</returns>
@@ -22,7 +28,9 @@ public static class EnumerableExtensions
         return string.Join(separator ?? string.Empty, Check.NotNull(source));
     }
 
-    /// <summary>使用给定分隔符拼接元素的字符串表示</summary>
+    /// <summary>
+    /// 使用给定分隔符拼接元素的字符串表示
+    /// </summary>
     /// <param name="source">要拼接的序列</param>
     /// <param name="separator">要使用的分隔符；<see langword="null"/> 会按空字符串处理</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -33,7 +41,9 @@ public static class EnumerableExtensions
         return string.Join(separator ?? string.Empty, Check.NotNull(source));
     }
 
-    /// <summary>为每个元素调用操作</summary>
+    /// <summary>
+    /// 为每个元素调用操作
+    /// </summary>
     /// <param name="source">要枚举的序列</param>
     /// <param name="action">要调用的操作</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -49,7 +59,9 @@ public static class EnumerableExtensions
         }
     }
 
-    /// <summary>为每个元素及其从零开始索引调用操作</summary>
+    /// <summary>
+    /// 为每个元素及其从零开始索引调用操作
+    /// </summary>
     /// <param name="source">要枚举的序列</param>
     /// <param name="action">要调用的操作</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -66,7 +78,9 @@ public static class EnumerableExtensions
         }
     }
 
-    /// <summary>按顺序为每个元素调用异步操作</summary>
+    /// <summary>
+    /// 按顺序为每个元素调用异步操作
+    /// </summary>
     /// <param name="source">要枚举的序列</param>
     /// <param name="action">每个元素要等待的异步操作</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -83,7 +97,9 @@ public static class EnumerableExtensions
         }
     }
 
-    /// <summary>以受限并行度为每个元素调用异步操作</summary>
+    /// <summary>
+    /// 以受限并行度为每个元素调用异步操作
+    /// </summary>
     /// <param name="source">要枚举的序列</param>
     /// <param name="action">每个元素要等待的异步操作</param>
     /// <param name="maxDegreeOfParallelism">最大并发操作数；为零时使用 <see cref="Environment.ProcessorCount"/></param>
@@ -111,7 +127,9 @@ public static class EnumerableExtensions
         await Parallel.ForEachAsync(source, options, async (item, _) => await action(item));
     }
 
-    /// <summary>将序列拆分为已物化的批次</summary>
+    /// <summary>
+    /// 将序列拆分为已物化的批次
+    /// </summary>
     /// <param name="source">要拆分的序列</param>
     /// <param name="batchSize">每个批次的最大元素数</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -126,11 +144,13 @@ public static class EnumerableExtensions
         return BatchIterator(source, batchSize);
     }
 
-    /// <summary>执行 BatchIterator 操作</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
-    /// <param name="source">source 参数</param>
-    /// <param name="batchSize">batchSize 参数</param>
-    /// <returns>BatchIterator 的执行结果</returns>
+    /// <summary>
+    /// 说明BatchIterator在当前类型中的职责
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
+    /// <param name="source">用于提供source</param>
+    /// <param name="batchSize">用于提供batchSize</param>
+    /// <returns>匹配当前查询条件的结果集合</returns>
     private static IEnumerable<IEnumerable<T>> BatchIterator<T>(IEnumerable<T> source, int batchSize)
     {
         var batch = new List<T>(batchSize);
@@ -150,7 +170,9 @@ public static class EnumerableExtensions
         }
     }
 
-    /// <summary>仅在条件为真时筛选序列</summary>
+    /// <summary>
+    /// 仅在条件为真时筛选序列
+    /// </summary>
     /// <param name="source">要筛选的序列</param>
     /// <param name="condition">是否应用谓词</param>
     /// <param name="predicate">当 <paramref name="condition"/> 为真时应用的谓词</param>
@@ -164,7 +186,9 @@ public static class EnumerableExtensions
         return condition ? source.Where(predicate) : source;
     }
 
-    /// <summary>仅在条件为真时使用带索引谓词筛选序列</summary>
+    /// <summary>
+    /// 仅在条件为真时使用带索引谓词筛选序列
+    /// </summary>
     /// <param name="source">要筛选的序列</param>
     /// <param name="condition">是否应用谓词</param>
     /// <param name="predicate">当 <paramref name="condition"/> 为真时应用的带索引谓词</param>
@@ -178,7 +202,9 @@ public static class EnumerableExtensions
         return condition ? source.Where(predicate) : source;
     }
 
-    /// <summary>使用从一开始的页码返回序列中的一页</summary>
+    /// <summary>
+    /// 使用从一开始的页码返回序列中的一页
+    /// </summary>
     /// <param name="source">要分页的序列</param>
     /// <param name="pageNumber">从一开始的页码</param>
     /// <param name="pageSize">每页元素数</param>
@@ -201,7 +227,9 @@ public static class EnumerableExtensions
         return source.Skip((int)offset).Take(pageSize);
     }
 
-    /// <summary>将序列作为只读集合返回</summary>
+    /// <summary>
+    /// 将序列作为只读集合返回
+    /// </summary>
     /// <param name="source">要暴露的序列</param>
     /// <typeparam name="T">元素类型</typeparam>
     /// <returns>可行时返回原始只读集合；否则返回已物化数组</returns>

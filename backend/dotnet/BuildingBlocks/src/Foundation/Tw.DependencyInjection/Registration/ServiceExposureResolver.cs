@@ -72,9 +72,11 @@ internal static class ServiceExposureResolver
             .ToList();
     }
 
-    /// <summary>执行 ValidateKeyedService 操作</summary>
-    /// <param name="implementationType">implementationType 参数</param>
-    /// <param name="keyed">keyed 参数</param>
+    /// <summary>
+    /// 校验Keyed服务并在非法时抛出异常
+    /// </summary>
+    /// <param name="implementationType">服务注册中使用的实现类型</param>
+    /// <param name="keyed">用于提供keyed</param>
     private static void ValidateKeyedService(Type implementationType, ExposeKeyedServiceAttribute keyed)
     {
         if (keyed.Key is null || keyed.Key is string stringKey && string.IsNullOrWhiteSpace(stringKey))

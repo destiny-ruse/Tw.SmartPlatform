@@ -3,10 +3,14 @@ using System.Dynamic;
 
 namespace Tw.Extensions;
 
-/// <summary>提供字典扩展方法</summary>
+/// <summary>
+/// 提供字典扩展方法
+/// </summary>
 public static class DictionaryExtensions
 {
-    /// <summary>按键获取值；键不存在时返回值类型默认值</summary>
+    /// <summary>
+    /// 按键获取值；键不存在时返回值类型默认值
+    /// </summary>
     /// <param name="dictionary">要读取的字典</param>
     /// <param name="key">要查找的键</param>
     /// <typeparam name="TKey">键类型</typeparam>
@@ -19,7 +23,9 @@ public static class DictionaryExtensions
         return Check.NotNull(dictionary).TryGetValue(key, out var value) ? value : default;
     }
 
-    /// <summary>按键获取值；键不存在时返回值类型默认值</summary>
+    /// <summary>
+    /// 按键获取值；键不存在时返回值类型默认值
+    /// </summary>
     /// <param name="dictionary">要读取的字典</param>
     /// <param name="key">要查找的键</param>
     /// <typeparam name="TKey">键类型</typeparam>
@@ -31,7 +37,9 @@ public static class DictionaryExtensions
         return Check.NotNull(dictionary).TryGetValue(key, out var value) ? value : default;
     }
 
-    /// <summary>获取现有值，或添加由缺失键创建的值</summary>
+    /// <summary>
+    /// 获取现有值，或添加由缺失键创建的值
+    /// </summary>
     /// <param name="dictionary">要更新的字典</param>
     /// <param name="key">要查找或添加的键</param>
     /// <param name="factory">键不存在时调用一次的工厂</param>
@@ -54,7 +62,9 @@ public static class DictionaryExtensions
         return value;
     }
 
-    /// <summary>获取现有值，或添加由工厂创建的值</summary>
+    /// <summary>
+    /// 获取现有值，或添加由工厂创建的值
+    /// </summary>
     /// <param name="dictionary">要更新的字典</param>
     /// <param name="key">要查找或添加的键</param>
     /// <param name="factory">键不存在时调用一次的工厂</param>
@@ -68,7 +78,9 @@ public static class DictionaryExtensions
         return dictionary.GetOrAdd(key, _ => factory());
     }
 
-    /// <summary>按键获取值；键不存在时返回值类型默认值</summary>
+    /// <summary>
+    /// 按键获取值；键不存在时返回值类型默认值
+    /// </summary>
     /// <param name="dictionary">要读取的字典</param>
     /// <param name="key">要查找的键</param>
     /// <typeparam name="TKey">键类型</typeparam>
@@ -80,7 +92,9 @@ public static class DictionaryExtensions
         return Check.NotNull(dictionary).TryGetValue(key, out var value) ? value : default;
     }
 
-    /// <summary>按键获取值；键不存在时返回值类型默认值</summary>
+    /// <summary>
+    /// 按键获取值；键不存在时返回值类型默认值
+    /// </summary>
     /// <param name="dictionary">要读取的并发字典</param>
     /// <param name="key">要查找的键</param>
     /// <typeparam name="TKey">键类型</typeparam>
@@ -93,7 +107,9 @@ public static class DictionaryExtensions
         return Check.NotNull(dictionary).TryGetValue(key, out var value) ? value : default;
     }
 
-    /// <summary>获取现有并发值，或添加由工厂创建的值</summary>
+    /// <summary>
+    /// 获取现有并发值，或添加由工厂创建的值
+    /// </summary>
     /// <param name="dictionary">要更新的并发字典</param>
     /// <param name="key">要查找或添加的键</param>
     /// <param name="factory"><see cref="ConcurrentDictionary{TKey,TValue}.GetOrAdd(TKey,Func{TKey,TValue})"/> 使用的值工厂</param>
@@ -110,7 +126,9 @@ public static class DictionaryExtensions
         return map.GetOrAdd(key, _ => factory());
     }
 
-    /// <summary>将字符串到对象的字典转换为动态对象</summary>
+    /// <summary>
+    /// 将字符串到对象的字典转换为动态对象
+    /// </summary>
     /// <param name="dictionary">要转换的字典</param>
     /// <returns>包含字典值的 <see cref="ExpandoObject"/></returns>
     /// <remarks>具有字符串键和对象值的嵌套字典会递归转换；其他键类型的字典保持不变</remarks>
@@ -120,9 +138,11 @@ public static class DictionaryExtensions
         return ConvertStringObjectDictionary(Check.NotNull(dictionary));
     }
 
-    /// <summary>执行 ConvertStringObjectDictionary 操作</summary>
-    /// <param name="dictionary">dictionary 参数</param>
-    /// <returns>ConvertStringObjectDictionary 的执行结果</returns>
+    /// <summary>
+    /// 说明ConvertStringObjectDictionary在当前类型中的职责
+    /// </summary>
+    /// <param name="dictionary">用于提供dictionary</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static ExpandoObject ConvertStringObjectDictionary(IEnumerable<KeyValuePair<string, object>> dictionary)
     {
         var expando = new ExpandoObject();
@@ -136,9 +156,11 @@ public static class DictionaryExtensions
         return expando;
     }
 
-    /// <summary>执行 ConvertDynamicValue 操作</summary>
-    /// <param name="value">value 参数</param>
-    /// <returns>ConvertDynamicValue 的执行结果</returns>
+    /// <summary>
+    /// 说明ConvertDynamic值在当前类型中的职责
+    /// </summary>
+    /// <param name="value">用于转换、回显或断言的输入值</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static object? ConvertDynamicValue(object? value)
     {
         return value switch

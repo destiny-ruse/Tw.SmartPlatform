@@ -14,7 +14,9 @@ namespace Tw.DependencyInjection.Diagnostics;
 /// </remarks>
 public sealed class ServiceRegistrationReport
 {
-    /// <summary>初始化 <see cref="ServiceRegistrationReport"/> 的新实例（仅含程序集扫描与拓扑段落）</summary>
+    /// <summary>
+    /// 初始化 <see cref="ServiceRegistrationReport"/> 的新实例（仅含程序集扫描与拓扑段落）
+    /// </summary>
     /// <param name="scannedAssemblies">按拓扑顺序（被依赖在前）纳入扫描的程序集名</param>
     /// <param name="excludedAssemblies">被白/黑名单排除的程序集名</param>
     /// <param name="topology">程序集拓扑层级</param>
@@ -34,7 +36,9 @@ public sealed class ServiceRegistrationReport
     {
     }
 
-    /// <summary>初始化 <see cref="ServiceRegistrationReport"/> 的新实例（含完整注册规划诊断段落）</summary>
+    /// <summary>
+    /// 初始化 <see cref="ServiceRegistrationReport"/> 的新实例（含完整注册规划诊断段落）
+    /// </summary>
     /// <param name="scannedAssemblies">按拓扑顺序（被依赖在前）纳入扫描的程序集名</param>
     /// <param name="excludedAssemblies">被白/黑名单排除的程序集名</param>
     /// <param name="topology">程序集拓扑层级</param>
@@ -63,25 +67,39 @@ public sealed class ServiceRegistrationReport
         Conflicts = conflicts;
     }
 
-    /// <summary>按拓扑顺序（被依赖在前）纳入扫描的程序集名</summary>
+    /// <summary>
+    /// 按拓扑顺序（被依赖在前）纳入扫描的程序集名
+    /// </summary>
     public IReadOnlyList<string> ScannedAssemblies { get; }
 
-    /// <summary>被白/黑名单排除的程序集名</summary>
+    /// <summary>
+    /// 被白/黑名单排除的程序集名
+    /// </summary>
     public IReadOnlyList<string> ExcludedAssemblies { get; }
 
-    /// <summary>程序集拓扑层级</summary>
+    /// <summary>
+    /// 程序集拓扑层级
+    /// </summary>
     public IReadOnlyList<AssemblyTopologyEntry> Topology { get; }
 
-    /// <summary>服务注册候选列表</summary>
+    /// <summary>
+    /// 服务注册候选列表
+    /// </summary>
     public IReadOnlyList<ServiceCandidateDiagnostic> Candidates { get; }
 
-    /// <summary>最终写入容器的服务注册列表</summary>
+    /// <summary>
+    /// 最终写入容器的服务注册列表
+    /// </summary>
     public IReadOnlyList<PlannedServiceRegistrationDiagnostic> Registrations { get; }
 
-    /// <summary>被单实现仲裁淘汰的候选列表</summary>
+    /// <summary>
+    /// 被单实现仲裁淘汰的候选列表
+    /// </summary>
     public IReadOnlyList<SupersededServiceCandidateDiagnostic> SupersededCandidates { get; }
 
-    /// <summary>扫描到但未参与普通服务注册的类型列表</summary>
+    /// <summary>
+    /// 扫描到但未参与普通服务注册的类型列表
+    /// </summary>
     public IReadOnlyList<SkippedServiceTypeDiagnostic> SkippedTypes { get; }
 
     /// <summary>

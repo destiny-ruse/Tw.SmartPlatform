@@ -6,10 +6,14 @@ using Xunit;
 
 namespace Tw.Castle.Core.Tests;
 
-/// <summary>验证 AttributeInterceptorSelectorTests 相关行为</summary>
+/// <summary>
+/// 覆盖特性拦截器Selector的核心行为和边界条件
+/// </summary>
 public class AttributeInterceptorSelectorTests
 {
-    /// <summary>验证 SelectInterceptors_ReadsInterceptAttributesFromServiceImplementationAndMethod 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合ReadsInterceptAttributesFrom服务实现和方法
+    /// </summary>
     [Fact]
     public void SelectInterceptors_ReadsInterceptAttributesFromServiceImplementationAndMethod()
     {
@@ -25,7 +29,9 @@ public class AttributeInterceptorSelectorTests
         ]);
     }
 
-    /// <summary>验证 SelectInterceptors_ReturnsEmpty_WhenMethodDisablesInterception 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合返回空当方法DisablesInterception
+    /// </summary>
     [Fact]
     public void SelectInterceptors_ReturnsEmpty_WhenMethodDisablesInterception()
     {
@@ -40,7 +46,9 @@ public class AttributeInterceptorSelectorTests
         interceptors.Should().BeEmpty();
     }
 
-    /// <summary>验证 SelectInterceptors_ReturnsEmpty_WhenClassDisablesInterception 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合返回空当ClassDisablesInterception
+    /// </summary>
     [Fact]
     public void SelectInterceptors_ReturnsEmpty_WhenClassDisablesInterception()
     {
@@ -55,7 +63,9 @@ public class AttributeInterceptorSelectorTests
         interceptors.Should().BeEmpty();
     }
 
-    /// <summary>验证 SelectInterceptors_DeduplicatesInterceptorTypes 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合Deduplicates拦截器类型集合
+    /// </summary>
     [Fact]
     public void SelectInterceptors_DeduplicatesInterceptorTypes()
     {
@@ -67,7 +77,9 @@ public class AttributeInterceptorSelectorTests
         interceptors.Should().Equal(typeof(DuplicateInterceptor));
     }
 
-    /// <summary>验证 SelectInterceptors_OrdersByInterceptorOrderThenFullName 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合OrdersBy拦截器OrderThenFull名称
+    /// </summary>
     [Fact]
     public void SelectInterceptors_OrdersByInterceptorOrderThenFullName()
     {
@@ -83,7 +95,9 @@ public class AttributeInterceptorSelectorTests
             typeof(LateInterceptor));
     }
 
-    /// <summary>验证 SelectInterceptors_ReadsInterfaceMethodAttribute_WhenImplementationMethodProvided 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合ReadsInterface方法特性当实现方法Provided
+    /// </summary>
     [Fact]
     public void SelectInterceptors_ReadsInterfaceMethodAttribute_WhenImplementationMethodProvided()
     {
@@ -102,7 +116,9 @@ public class AttributeInterceptorSelectorTests
         ]);
     }
 
-    /// <summary>验证 SelectInterceptors_ReadsExplicitInterfaceAndImplementationAttributes_WhenImplementationMethodProvided 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合ReadsExplicitInterface和实现Attributes当实现方法Provided
+    /// </summary>
     [Fact]
     public void SelectInterceptors_ReadsExplicitInterfaceAndImplementationAttributes_WhenImplementationMethodProvided()
     {
@@ -117,7 +133,9 @@ public class AttributeInterceptorSelectorTests
         ]);
     }
 
-    /// <summary>验证 SelectInterceptors_UsesInterfaceMap_WhenMultipleInterfacesShareSignature 场景</summary>
+    /// <summary>
+    /// 验证Select拦截器集合UsesInterface映射当MultipleInterfacesShareSignature
+    /// </summary>
     [Fact]
     public void SelectInterceptors_UsesInterfaceMap_WhenMultipleInterfacesShareSignature()
     {
@@ -139,18 +157,22 @@ public class AttributeInterceptorSelectorTests
         ]);
     }
 
-    /// <summary>验证 GetServiceMethod 场景</summary>
-    /// <typeparam name="TService">TService 类型参数</typeparam>
-    /// <param name="methodName">methodName 参数</param>
-    /// <returns>GetServiceMethod 的执行结果</returns>
+    /// <summary>
+    /// 说明读取服务方法在当前类型中的职责
+    /// </summary>
+    /// <typeparam name="TService">响应数据的运行时类型</typeparam>
+    /// <param name="methodName">用于提供方法Name</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static MethodInfo GetServiceMethod<TService>(string methodName = "Execute") =>
         typeof(TService).GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance)!;
 
-    /// <summary>验证 GetImplementationMethod 场景</summary>
-    /// <typeparam name="TImplementation">TImplementation 类型参数</typeparam>
-    /// <typeparam name="TService">TService 类型参数</typeparam>
-    /// <param name="methodName">methodName 参数</param>
-    /// <returns>GetImplementationMethod 的执行结果</returns>
+    /// <summary>
+    /// 说明读取实现方法在当前类型中的职责
+    /// </summary>
+    /// <typeparam name="TImplementation">响应数据的运行时类型</typeparam>
+    /// <typeparam name="TService">响应数据的运行时类型</typeparam>
+    /// <param name="methodName">用于提供方法Name</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static MethodInfo GetImplementationMethod<TImplementation, TService>(string methodName = "Execute")
     {
         var interfaceMethod = GetServiceMethod<TService>(methodName);
@@ -160,38 +182,54 @@ public class AttributeInterceptorSelectorTests
         return interfaceMap.TargetMethods[methodIndex];
     }
 
-    /// <summary>定义 ICompositeService 契约</summary>
+    /// <summary>
+    /// 定义Composite服务的能力边界
+    /// </summary>
     [Intercept(typeof(InterfaceInterceptor))]
     private interface ICompositeService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         void Execute();
     }
 
-    /// <summary>验证 CompositeService 相关行为</summary>
+    /// <summary>
+    /// 覆盖Composite服务的核心行为和边界条件
+    /// </summary>
     [Intercept(typeof(ClassInterceptor))]
     private sealed class CompositeService : ICompositeService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [Intercept(typeof(MethodInterceptor))]
         public void Execute()
         {
         }
     }
 
-    /// <summary>定义 IMethodDisabledService 契约</summary>
+    /// <summary>
+    /// 定义方法Disabled服务的能力边界
+    /// </summary>
     [Intercept(typeof(InterfaceInterceptor))]
     private interface IMethodDisabledService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         void Execute();
     }
 
-    /// <summary>验证 MethodDisabledService 相关行为</summary>
+    /// <summary>
+    /// 覆盖MethodDisabled服务的核心行为和边界条件
+    /// </summary>
     [Intercept(typeof(ClassInterceptor))]
     private sealed class MethodDisabledService : IMethodDisabledService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [DisableInterception]
         [Intercept(typeof(MethodInterceptor))]
         public void Execute()
@@ -199,279 +237,397 @@ public class AttributeInterceptorSelectorTests
         }
     }
 
-    /// <summary>定义 IClassDisabledService 契约</summary>
+    /// <summary>
+    /// 定义ClassDisabled服务的能力边界
+    /// </summary>
     [Intercept(typeof(InterfaceInterceptor))]
     private interface IClassDisabledService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         void Execute();
     }
 
-    /// <summary>验证 ClassDisabledService 相关行为</summary>
+    /// <summary>
+    /// 覆盖ClassDisabled服务的核心行为和边界条件
+    /// </summary>
     [DisableInterception]
     [Intercept(typeof(ClassInterceptor))]
     private sealed class ClassDisabledService : IClassDisabledService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         public void Execute()
         {
         }
     }
 
-    /// <summary>定义 IDuplicateService 契约</summary>
+    /// <summary>
+    /// 定义重复服务的能力边界
+    /// </summary>
     [Intercept(typeof(DuplicateInterceptor))]
     private interface IDuplicateService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         void Execute();
     }
 
-    /// <summary>验证 DuplicateService 相关行为</summary>
+    /// <summary>
+    /// 覆盖重复服务的核心行为和边界条件
+    /// </summary>
     [Intercept(typeof(DuplicateInterceptor))]
     private sealed class DuplicateService : IDuplicateService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [Intercept(typeof(DuplicateInterceptor))]
         public void Execute()
         {
         }
     }
 
-    /// <summary>定义 IOrderedService 契约</summary>
+    /// <summary>
+    /// 定义Ordered服务的能力边界
+    /// </summary>
     [Intercept(typeof(SameOrderBetaInterceptor))]
     [Intercept(typeof(LateInterceptor))]
     [Intercept(typeof(EarlyInterceptor))]
     [Intercept(typeof(SameOrderAlphaInterceptor))]
     private interface IOrderedService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         void Execute();
     }
 
-    /// <summary>验证 OrderedService 相关行为</summary>
+    /// <summary>
+    /// 覆盖Ordered服务的核心行为和边界条件
+    /// </summary>
     private sealed class OrderedService : IOrderedService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         public void Execute()
         {
         }
     }
 
-    /// <summary>定义 IImplementationMethodInputService 契约</summary>
+    /// <summary>
+    /// 定义实现方法Input服务的能力边界
+    /// </summary>
     private interface IImplementationMethodInputService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [Intercept(typeof(ImplementationInputInterfaceMethodInterceptor))]
         void Execute();
     }
 
-    /// <summary>验证 ImplementationMethodInputService 相关行为</summary>
+    /// <summary>
+    /// 覆盖ImplementationMethodInput服务的核心行为和边界条件
+    /// </summary>
     private sealed class ImplementationMethodInputService : IImplementationMethodInputService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [Intercept(typeof(ImplementationInputMethodInterceptor))]
         public void Execute()
         {
         }
     }
 
-    /// <summary>定义 IExplicitService 契约</summary>
+    /// <summary>
+    /// 定义Explicit服务的能力边界
+    /// </summary>
     private interface IExplicitService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [Intercept(typeof(ExplicitInterfaceMethodInterceptor))]
         void Execute();
     }
 
-    /// <summary>验证 ExplicitService 相关行为</summary>
+    /// <summary>
+    /// 覆盖Explicit服务的核心行为和边界条件
+    /// </summary>
     private sealed class ExplicitService : IExplicitService
     {
-        /// <summary>验证 Execute 场景</summary>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
         [Intercept(typeof(ExplicitImplementationMethodInterceptor))]
         void IExplicitService.Execute()
         {
         }
     }
 
-    /// <summary>定义 IFirstSharedSignatureService 契约</summary>
+    /// <summary>
+    /// 定义第一个SharedSignature服务的能力边界
+    /// </summary>
     private interface IFirstSharedSignatureService
     {
-        /// <summary>验证 Execute 场景</summary>
-        /// <param name="value">value 参数</param>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
         [Intercept(typeof(FirstSharedInterfaceMethodInterceptor))]
         void Execute(string value);
     }
 
-    /// <summary>定义 ISecondSharedSignatureService 契约</summary>
+    /// <summary>
+    /// 定义第二个SharedSignature服务的能力边界
+    /// </summary>
     private interface ISecondSharedSignatureService
     {
-        /// <summary>验证 Execute 场景</summary>
-        /// <param name="value">value 参数</param>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
         [Intercept(typeof(SecondSharedInterfaceMethodInterceptor))]
         void Execute(string value);
     }
 
-    /// <summary>验证 SharedSignatureService 相关行为</summary>
+    /// <summary>
+    /// 覆盖SharedSignature服务的核心行为和边界条件
+    /// </summary>
     private sealed class SharedSignatureService : IFirstSharedSignatureService, ISecondSharedSignatureService
     {
-        /// <summary>验证 Execute 场景</summary>
-        /// <param name="value">value 参数</param>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
         [Intercept(typeof(FirstSharedImplementationMethodInterceptor))]
         void IFirstSharedSignatureService.Execute(string value)
         {
         }
 
-        /// <summary>验证 Execute 场景</summary>
-        /// <param name="value">value 参数</param>
+        /// <summary>
+        /// 说明Execute在当前类型中的职责
+        /// </summary>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
         [Intercept(typeof(SecondSharedImplementationMethodInterceptor))]
         void ISecondSharedSignatureService.Execute(string value)
         {
         }
     }
 
-    /// <summary>验证 InterfaceInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Interface拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class InterfaceInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 ClassInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Class拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ClassInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 MethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Method拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class MethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 DuplicateInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖重复拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class DuplicateInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 EarlyInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Early拦截器的核心行为和边界条件
+    /// </summary>
     [InterceptorOrder(-10)]
     private sealed class EarlyInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 LateInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖Late拦截器的核心行为和边界条件
+    /// </summary>
     [InterceptorOrder(20)]
     private sealed class LateInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 SameOrderAlphaInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖SameOrderAlpha拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class SameOrderAlphaInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 SameOrderBetaInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖SameOrderBeta拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class SameOrderBetaInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 ImplementationInputInterfaceMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖ImplementationInputInterfaceMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ImplementationInputInterfaceMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 ImplementationInputMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖ImplementationInputMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ImplementationInputMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 ExplicitInterfaceMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖ExplicitInterfaceMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ExplicitInterfaceMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 ExplicitImplementationMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖ExplicitImplementationMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class ExplicitImplementationMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 FirstSharedInterfaceMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖FirstSharedInterfaceMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class FirstSharedInterfaceMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 FirstSharedImplementationMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖FirstSharedImplementationMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class FirstSharedImplementationMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 SecondSharedInterfaceMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖SecondSharedInterfaceMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class SecondSharedInterfaceMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 
-    /// <summary>验证 SecondSharedImplementationMethodInterceptor 相关行为</summary>
+    /// <summary>
+    /// 覆盖SecondSharedImplementationMethod拦截器的核心行为和边界条件
+    /// </summary>
     private sealed class SecondSharedImplementationMethodInterceptor : IInterceptor
     {
-        /// <summary>验证 InterceptAsync 场景</summary>
-        /// <param name="context">context 参数</param>
-        /// <returns>InterceptAsync 的执行结果</returns>
+        /// <summary>
+        /// 记录拦截调用并继续执行后续委托
+        /// </summary>
+        /// <param name="context">当前调用携带的上下文信息</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public ValueTask InterceptAsync(IInvocationContext context) => context.ProceedAsync();
     }
 }

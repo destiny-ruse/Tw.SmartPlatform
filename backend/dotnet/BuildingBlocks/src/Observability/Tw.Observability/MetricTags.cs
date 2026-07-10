@@ -1,14 +1,18 @@
 ﻿namespace Tw.Observability;
 
-/// <summary>表示 MetricTags 声明</summary>
+/// <summary>
+/// 封装MetricTags相关的数据和行为
+/// </summary>
 public sealed record MetricTags(IReadOnlyDictionary<string, string> Values)
 {
-    /// <summary>执行 Create 操作</summary>
-    /// <param name="serviceName">serviceName 参数</param>
-    /// <param name="tenantId">tenantId 参数</param>
-    /// <param name="shardId">shardId 参数</param>
-    /// <param name="operationName">operationName 参数</param>
-    /// <returns>Create 的执行结果</returns>
+    /// <summary>
+    /// 创建统一 API 错误响应对象
+    /// </summary>
+    /// <param name="serviceName">用于提供服务Name</param>
+    /// <param name="tenantId">用于提供tenant标识</param>
+    /// <param name="shardId">用于提供shard标识</param>
+    /// <param name="operationName">用于提供操作Name</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static MetricTags Create(string serviceName, string tenantId, string shardId, string operationName)
     {
         return new MetricTags(new Dictionary<string, string>(StringComparer.Ordinal)

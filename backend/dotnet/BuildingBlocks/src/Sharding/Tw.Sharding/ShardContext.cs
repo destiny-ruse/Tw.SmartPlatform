@@ -2,18 +2,26 @@
 
 namespace Tw.Sharding;
 
-/// <summary>表示 ShardContext 类型</summary>
+/// <summary>
+/// 封装Shard上下文相关的数据和行为
+/// </summary>
 public sealed class ShardContext : IShardContext
 {
-    /// <summary>表示 _current 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的current
+    /// </summary>
     private readonly AsyncLocal<ShardDescriptor?> _current = new();
 
-    /// <summary>表示 Current 属性</summary>
+    /// <summary>
+    /// Current在当前对象中的业务含义
+    /// </summary>
     public ShardDescriptor Current => _current.Value ?? ShardDescriptor.None;
 
-    /// <summary>执行 Change 操作</summary>
-    /// <param name="descriptor">descriptor 参数</param>
-    /// <returns>Change 的执行结果</returns>
+    /// <summary>
+    /// 说明Change在当前类型中的职责
+    /// </summary>
+    /// <param name="descriptor">用于提供描述符</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public IDisposable Change(ShardDescriptor descriptor)
     {
         ArgumentNullException.ThrowIfNull(descriptor);
@@ -23,13 +31,19 @@ public sealed class ShardContext : IShardContext
         return new RestoreScope(() => _current.Value = previous);
     }
 
-    /// <summary>表示 RestoreScope 类型</summary>
+    /// <summary>
+    /// 封装Restore作用域相关的数据和行为
+    /// </summary>
     private sealed class RestoreScope(Action restore) : IDisposable
     {
-        /// <summary>表示 _disposed 字段</summary>
+        /// <summary>
+        /// 保存当前类型处理流程依赖的disposed
+        /// </summary>
         private bool _disposed;
 
-        /// <summary>执行 Dispose 操作</summary>
+        /// <summary>
+        /// 说明释放在当前类型中的职责
+        /// </summary>
         public void Dispose()
         {
             if (_disposed)

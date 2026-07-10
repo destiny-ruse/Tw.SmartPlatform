@@ -60,9 +60,11 @@ public sealed class ScribanTemplateRenderer : ITemplateRenderer
         }
     }
 
-    /// <summary>执行 CreateContext 操作</summary>
-    /// <param name="variables">variables 参数</param>
-    /// <returns>CreateContext 的执行结果</returns>
+    /// <summary>
+    /// 创建上下文测试对象
+    /// </summary>
+    /// <param name="variables">用于提供variables</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static TemplateContext CreateContext(IReadOnlyDictionary<string, object?> variables)
     {
         var scriptObject = new ScriptObject();

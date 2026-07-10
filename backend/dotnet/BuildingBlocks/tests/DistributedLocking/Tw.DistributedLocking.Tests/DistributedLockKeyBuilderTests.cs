@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.DistributedLocking.Tests;
 
-/// <summary>验证 DistributedLockKeyBuilderTests 相关行为</summary>
+/// <summary>
+/// 覆盖DistributedLock键构建器的核心行为和边界条件
+/// </summary>
 public sealed class DistributedLockKeyBuilderTests
 {
-    /// <summary>验证 Build_IncludesTenantShardResourceAndIdentifier 场景</summary>
+    /// <summary>
+    /// 验证BuildIncludes租户Shard资源和标识符
+    /// </summary>
     [Fact]
     public void Build_IncludesTenantShardResourceAndIdentifier()
     {

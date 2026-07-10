@@ -2,22 +2,34 @@
 
 namespace Tw.Extensions;
 
-/// <summary>提供数值扩展方法</summary>
+/// <summary>
+/// 提供数值扩展方法
+/// </summary>
 public static class NumberExtensions
 {
-    /// <summary>返回整数是否为偶数</summary>
+    /// <summary>
+    /// 返回整数是否为偶数
+    /// </summary>
     public static bool IsEven(this int source) => source % 2 == 0;
 
-    /// <summary>返回整数是否为奇数</summary>
+    /// <summary>
+    /// 返回整数是否为奇数
+    /// </summary>
     public static bool IsOdd(this int source) => !source.IsEven();
 
-    /// <summary>返回长整数是否为偶数</summary>
+    /// <summary>
+    /// 返回长整数是否为偶数
+    /// </summary>
     public static bool IsEven(this long source) => source % 2 == 0;
 
-    /// <summary>返回长整数是否为奇数</summary>
+    /// <summary>
+    /// 返回长整数是否为奇数
+    /// </summary>
     public static bool IsOdd(this long source) => !source.IsEven();
 
-    /// <summary>将整数限制在闭区间内</summary>
+    /// <summary>
+    /// 将整数限制在闭区间内
+    /// </summary>
     /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static int Clamp(this int source, int min, int max)
     {
@@ -25,7 +37,9 @@ public static class NumberExtensions
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>将长整数限制在闭区间内</summary>
+    /// <summary>
+    /// 将长整数限制在闭区间内
+    /// </summary>
     /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static long Clamp(this long source, long min, long max)
     {
@@ -33,7 +47,9 @@ public static class NumberExtensions
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>将双精度浮点数限制在闭区间内</summary>
+    /// <summary>
+    /// 将双精度浮点数限制在闭区间内
+    /// </summary>
     /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static double Clamp(this double source, double min, double max)
     {
@@ -41,7 +57,9 @@ public static class NumberExtensions
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>将十进制数限制在闭区间内</summary>
+    /// <summary>
+    /// 将十进制数限制在闭区间内
+    /// </summary>
     /// <exception cref="ArgumentException">当 <paramref name="max"/> 小于 <paramref name="min"/> 时抛出</exception>
     public static decimal Clamp(this decimal source, decimal min, decimal max)
     {
@@ -49,7 +67,9 @@ public static class NumberExtensions
         return Math.Min(Math.Max(source, min), max);
     }
 
-    /// <summary>使用二进制文件大小单位格式化字节数</summary>
+    /// <summary>
+    /// 使用二进制文件大小单位格式化字节数
+    /// </summary>
     /// <param name="source">字节数</param>
     /// <param name="decimalPlaces">小数位数</param>
     /// <returns>格式化后的文件大小</returns>
@@ -71,13 +91,19 @@ public static class NumberExtensions
         return $"{size.ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture)} {units[unitIndex]}";
     }
 
-    /// <summary>将双精度浮点数舍入到指定小数位数</summary>
+    /// <summary>
+    /// 将双精度浮点数舍入到指定小数位数
+    /// </summary>
     public static double Round(this double source, int decimals = 0) => Math.Round(source, decimals);
 
-    /// <summary>将十进制数舍入到指定小数位数</summary>
+    /// <summary>
+    /// 将十进制数舍入到指定小数位数
+    /// </summary>
     public static decimal Round(this decimal source, int decimals = 0) => Math.Round(source, decimals);
 
-    /// <summary>将双精度浮点数格式化为百分比字符串</summary>
+    /// <summary>
+    /// 将双精度浮点数格式化为百分比字符串
+    /// </summary>
     /// <param name="source">源值，其中 1.0 表示 100%</param>
     /// <param name="decimals">小数位数</param>
     /// <returns>格式化后的百分比</returns>
@@ -88,7 +114,9 @@ public static class NumberExtensions
         return (source * 100).ToString($"F{decimals}", CultureInfo.InvariantCulture) + "%";
     }
 
-    /// <summary>将十进制数格式化为百分比字符串</summary>
+    /// <summary>
+    /// 将十进制数格式化为百分比字符串
+    /// </summary>
     /// <param name="source">源值，其中 1.0 表示 100%</param>
     /// <param name="decimals">小数位数</param>
     /// <returns>格式化后的百分比</returns>
@@ -99,10 +127,12 @@ public static class NumberExtensions
         return (source * 100).ToString($"F{decimals}", CultureInfo.InvariantCulture) + "%";
     }
 
-    /// <summary>执行 ValidateRange 操作</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
-    /// <param name="min">min 参数</param>
-    /// <param name="max">max 参数</param>
+    /// <summary>
+    /// 校验Range并在非法时抛出异常
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
+    /// <param name="min">用于提供min</param>
+    /// <param name="max">用于提供max</param>
     private static void ValidateRange<T>(T min, T max)
         where T : IComparable<T>
     {

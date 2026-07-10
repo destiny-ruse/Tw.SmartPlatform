@@ -11,10 +11,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;
 
-/// <summary>验证 MvcInvocationContextTests 相关行为</summary>
+/// <summary>
+/// 覆盖MVC调用上下文的核心行为和边界条件
+/// </summary>
 public class MvcInvocationContextTests
 {
-    /// <summary>验证 Constructor_MaterializesArgumentsInActionParameterOrder 场景</summary>
+    /// <summary>
+    /// 验证构造函数Materializes参数InActionParameterOrder
+    /// </summary>
     [Fact]
     public void Constructor_MaterializesArgumentsInActionParameterOrder()
     {
@@ -36,8 +40,10 @@ public class MvcInvocationContextTests
         context.ArgumentsByName.Should().ContainKey("third").WhoseValue.Should().Be("c");
     }
 
-    /// <summary>验证 ProceedAsync_WritesModifiedArgumentsBackBeforeCallingNext 场景</summary>
-    /// <returns>ProceedAsync_WritesModifiedArgumentsBackBeforeCallingNext 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步写回已修改参数回前置处理CallingNext
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_WritesModifiedArgumentsBackBeforeCallingNext()
     {
@@ -73,7 +79,9 @@ public class MvcInvocationContextTests
         actionArguments["second"].Should().Be(42);
     }
 
-    /// <summary>验证 ArgumentsByName_IsReadOnlySnapshot 场景</summary>
+    /// <summary>
+    /// 验证参数By名称IsReadOnlySnapshot
+    /// </summary>
     [Fact]
     public void ArgumentsByName_IsReadOnlySnapshot()
     {
@@ -101,7 +109,9 @@ public class MvcInvocationContextTests
         }
     }
 
-    /// <summary>验证 Constructor_UsesControllerActionDescriptorMethodInfo 场景</summary>
+    /// <summary>
+    /// 验证构造函数Uses控制器ActionDescriptor方法Info
+    /// </summary>
     [Fact]
     public void Constructor_UsesControllerActionDescriptorMethodInfo()
     {
@@ -122,8 +132,10 @@ public class MvcInvocationContextTests
         context.Target.Should().BeSameAs(controller);
     }
 
-    /// <summary>验证 ProceedAsync_CapturesActionExecutedResultAsReturnValue 场景</summary>
-    /// <returns>ProceedAsync_CapturesActionExecutedResultAsReturnValue 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步捕获ActionExecuted结果作为返回值
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_CapturesActionExecutedResultAsReturnValue()
     {
@@ -148,8 +160,10 @@ public class MvcInvocationContextTests
         context.ReturnValue.Should().BeOfType<BadRequestResult>();
     }
 
-    /// <summary>验证 ProceedAsync_RethrowsUnhandledActionExecutedException 场景</summary>
-    /// <returns>ProceedAsync_RethrowsUnhandledActionExecutedException 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步重新抛出未处理ActionExecuted异常
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_RethrowsUnhandledActionExecutedException()
     {
@@ -177,8 +191,10 @@ public class MvcInvocationContextTests
         assertion.Which.Should().BeSameAs(expectedException);
     }
 
-    /// <summary>验证 ReturnValueSetter_MarksActionExecutedExceptionHandled_WhenExceptionIsConvertedToActionResult 场景</summary>
-    /// <returns>ReturnValueSetter_MarksActionExecutedExceptionHandled_WhenExceptionIsConvertedToActionResult 的执行结果</returns>
+    /// <summary>
+    /// 验证返回值SetterMarksActionExecuted异常Handled当异常IsConverted到Action结果
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ReturnValueSetter_MarksActionExecutedExceptionHandled_WhenExceptionIsConvertedToActionResult()
     {
@@ -211,8 +227,10 @@ public class MvcInvocationContextTests
         executedContext.ExceptionHandled.Should().BeTrue();
     }
 
-    /// <summary>验证 ProceedAsync_DoesNotThrowHandledActionExecutedExceptionAndCapturesResult 场景</summary>
-    /// <returns>ProceedAsync_DoesNotThrowHandledActionExecutedExceptionAndCapturesResult 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步不ThrowHandledActionExecuted异常和捕获结果
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_DoesNotThrowHandledActionExecutedExceptionAndCapturesResult()
     {
@@ -242,7 +260,9 @@ public class MvcInvocationContextTests
         executingContext.Result.Should().BeSameAs(expectedResult);
     }
 
-    /// <summary>验证 ReturnValueSetter_WritesActionResultToActionExecutingContextResult 场景</summary>
+    /// <summary>
+    /// 验证返回值Setter写回Action结果到ActionExecuting上下文结果
+    /// </summary>
     [Fact]
     public void ReturnValueSetter_WritesActionResultToActionExecutingContextResult()
     {
@@ -273,8 +293,10 @@ public class MvcInvocationContextTests
         nextCalled.Should().BeFalse();
     }
 
-    /// <summary>验证 ReturnValueSetter_UpdatesActionExecutedContextResultAfterProceedAsync 场景</summary>
-    /// <returns>ReturnValueSetter_UpdatesActionExecutedContextResultAfterProceedAsync 的执行结果</returns>
+    /// <summary>
+    /// 验证返回值SetterUpdatesActionExecuted上下文结果After继续处理异步
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ReturnValueSetter_UpdatesActionExecutedContextResultAfterProceedAsync()
     {
@@ -305,7 +327,9 @@ public class MvcInvocationContextTests
         executingContext.Result.Should().BeSameAs(replacementResult);
     }
 
-    /// <summary>验证 Proceed_ThrowsInvalidOperationException_ForMvcAsyncFilterContext 场景</summary>
+    /// <summary>
+    /// 验证继续处理抛出异常非法业务委托异常针对MVC异步过滤器上下文
+    /// </summary>
     [Fact]
     public void Proceed_ThrowsInvalidOperationException_ForMvcAsyncFilterContext()
     {
@@ -326,7 +350,9 @@ public class MvcInvocationContextTests
             .WithMessage("*ProceedAsync*");
     }
 
-    /// <summary>验证 Constructor_ThrowsInvalidOperationException_WhenArgumentMappingIsMissing 场景</summary>
+    /// <summary>
+    /// 验证构造函数抛出异常非法业务委托异常当参数MappingIs缺少
+    /// </summary>
     [Fact]
     public void Constructor_ThrowsInvalidOperationException_WhenArgumentMappingIsMissing()
     {
@@ -345,8 +371,10 @@ public class MvcInvocationContextTests
             .WithMessage("*MixedOrder*third*");
     }
 
-    /// <summary>验证 ProceedAsync_ThrowsInvalidOperationException_WhenArgumentMappingIsRemoved 场景</summary>
-    /// <returns>ProceedAsync_ThrowsInvalidOperationException_WhenArgumentMappingIsRemoved 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步抛出异常非法业务委托异常当参数MappingIsRemoved
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_ThrowsInvalidOperationException_WhenArgumentMappingIsRemoved()
     {
@@ -368,7 +396,9 @@ public class MvcInvocationContextTests
             .WithMessage("*MixedOrder*second*");
     }
 
-    /// <summary>验证 Constructor_ThrowsInvalidOperationException_WhenActionDescriptorIsNotControllerActionDescriptor 场景</summary>
+    /// <summary>
+    /// 验证构造函数抛出异常非法业务委托异常当ActionDescriptorIs不控制器ActionDescriptor
+    /// </summary>
     [Fact]
     public void Constructor_ThrowsInvalidOperationException_WhenActionDescriptorIsNotControllerActionDescriptor()
     {
@@ -385,9 +415,11 @@ public class MvcInvocationContextTests
             .WithMessage("*ControllerActionDescriptor*PlainAction*");
     }
 
-    /// <summary>验证 CreateActionContext 场景</summary>
-    /// <param name="actionName">actionName 参数</param>
-    /// <returns>CreateActionContext 的执行结果</returns>
+    /// <summary>
+    /// 创建Action上下文测试对象
+    /// </summary>
+    /// <param name="actionName">目标 MVC Action 的名称</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static ActionContext CreateActionContext(string actionName)
     {
         var method = typeof(SampleController).GetMethod(actionName)!;
@@ -403,24 +435,28 @@ public class MvcInvocationContextTests
         return new ActionContext(new DefaultHttpContext(), new RouteData(), actionDescriptor);
     }
 
-    /// <summary>验证 CreateExecutingContext 场景</summary>
-    /// <param name="actionContext">actionContext 参数</param>
-    /// <param name="actionArguments">actionArguments 参数</param>
-    /// <param name="controller">controller 参数</param>
-    /// <returns>CreateExecutingContext 的执行结果</returns>
+    /// <summary>
+    /// 创建Executing上下文测试对象
+    /// </summary>
+    /// <param name="actionContext">MVC Action 执行所需的上下文</param>
+    /// <param name="actionArguments">MVC Action 调用时使用的参数字典</param>
+    /// <param name="controller">承载当前 Action 的控制器实例</param>
+    /// <returns>页面处理器执行阶段的测试上下文</returns>
     private static ActionExecutingContext CreateExecutingContext(
         ActionContext actionContext,
         IDictionary<string, object?> actionArguments,
         object controller) =>
         new(actionContext, [], actionArguments, controller);
 
-    /// <summary>验证 CreateExecutedContext 场景</summary>
-    /// <param name="actionContext">actionContext 参数</param>
-    /// <param name="controller">controller 参数</param>
-    /// <param name="result">result 参数</param>
-    /// <param name="exception">exception 参数</param>
-    /// <param name="exceptionHandled">exceptionHandled 参数</param>
-    /// <returns>CreateExecutedContext 的执行结果</returns>
+    /// <summary>
+    /// 创建Executed上下文测试对象
+    /// </summary>
+    /// <param name="actionContext">MVC Action 执行所需的上下文</param>
+    /// <param name="controller">承载当前 Action 的控制器实例</param>
+    /// <param name="result">当前流程预置或返回的结果</param>
+    /// <param name="exception">用于模拟异常流程的异常实例</param>
+    /// <param name="exceptionHandled">指示异常是否已被过滤器处理</param>
+    /// <returns>异步流程完成后产生的ActionExecuted上下文</returns>
     private static Task<ActionExecutedContext> CreateExecutedContext(
         ActionContext actionContext,
         object controller,
@@ -436,14 +472,18 @@ public class MvcInvocationContextTests
         });
     }
 
-    /// <summary>验证 SampleController 相关行为</summary>
+    /// <summary>
+    /// 覆盖示例Controller的核心行为和边界条件
+    /// </summary>
     private sealed class SampleController
     {
-        /// <summary>验证 MixedOrder 场景</summary>
-        /// <param name="first">first 参数</param>
-        /// <param name="second">second 参数</param>
-        /// <param name="third">third 参数</param>
-        /// <returns>MixedOrder 的执行结果</returns>
+        /// <summary>
+        /// 按混合顺序返回参数以验证名称绑定
+        /// </summary>
+        /// <param name="first">用于校验参数顺序的第一个值</param>
+        /// <param name="second">用于校验参数顺序的第二个值</param>
+        /// <param name="third">用于校验参数顺序的第三个值</param>
+        /// <returns>MVC 或 Razor Page 处理结果</returns>
         public IActionResult MixedOrder(string first, int second, string third) => new OkResult();
     }
 }

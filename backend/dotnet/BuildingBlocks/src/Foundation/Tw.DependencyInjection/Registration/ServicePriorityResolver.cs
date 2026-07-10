@@ -8,13 +8,19 @@ namespace Tw.DependencyInjection.Registration;
 /// </summary>
 internal static class ServicePriorityResolver
 {
-    /// <summary>拓扑层级权重步长：每层间距 1_000_000，确保层间隔离</summary>
+    /// <summary>
+    /// 拓扑层级权重步长：每层间距 1_000_000，确保层间隔离
+    /// </summary>
     public const int TopologyLevelStep = 1_000_000;
 
-    /// <summary>显式优先级下限（含），超出范围时抛出 <see cref="Tw.DependencyInjection.ServiceRegistrationException"/></summary>
+    /// <summary>
+    /// 显式优先级下限（含），超出范围时抛出 <see cref="Tw.DependencyInjection.ServiceRegistrationException"/>
+    /// </summary>
     public const int ExplicitPriorityMin = -100_000;
 
-    /// <summary>显式优先级上限（含），超出范围时抛出 <see cref="Tw.DependencyInjection.ServiceRegistrationException"/></summary>
+    /// <summary>
+    /// 显式优先级上限（含），超出范围时抛出 <see cref="Tw.DependencyInjection.ServiceRegistrationException"/>
+    /// </summary>
     public const int ExplicitPriorityMax = 100_000;
 
     /// <summary>
@@ -101,7 +107,9 @@ internal static class ServicePriorityResolver
         return (long)topologyLevel * TopologyLevelStep + assemblyPriority + typePriority;
     }
 
-    /// <summary>验证显式优先级在允许范围内，超出则抛出异常</summary>
+    /// <summary>
+    /// 验证显式优先级在允许范围内，超出则抛出异常
+    /// </summary>
     private static void ValidateExplicitPriority(int priority, string label)
     {
         if (priority is < ExplicitPriorityMin or > ExplicitPriorityMax)

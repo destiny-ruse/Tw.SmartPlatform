@@ -1,4 +1,6 @@
 ﻿namespace Company.Service.Application.Contracts;
 
-/// <summary>表示 OrderDto 声明</summary>
+/// <summary>
+/// 承载Order跨边界传输的数据
+/// </summary>
 public sealed record OrderDto(string Id, string Number);

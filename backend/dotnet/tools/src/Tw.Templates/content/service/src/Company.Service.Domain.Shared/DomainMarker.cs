@@ -1,4 +1,6 @@
 ﻿namespace Company.Service.Domain.Shared;
 
-/// <summary>表示 DomainMarker 类型</summary>
+/// <summary>
+/// 作为Domain程序集扫描标记
+/// </summary>
 public static class DomainMarker;

@@ -2,12 +2,16 @@
 
 namespace Tw.Gateway.Yarp;
 
-/// <summary>表示 YarpGatewayBuilderExtensions 类型</summary>
+/// <summary>
+/// 封装YarpGateway构建器Extensions相关的数据和行为
+/// </summary>
 public static class YarpGatewayBuilderExtensions
 {
-    /// <summary>执行 AddTwYarpGateway 操作</summary>
-    /// <param name="services">services 参数</param>
-    /// <returns>AddTwYarpGateway 的执行结果</returns>
+    /// <summary>
+    /// 注册TwYarpGateway所需服务
+    /// </summary>
+    /// <param name="services">需要注册组件依赖的服务集合</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static IServiceCollection AddTwYarpGateway(this IServiceCollection services)
     {
         ArgumentNullException.ThrowIfNull(services);

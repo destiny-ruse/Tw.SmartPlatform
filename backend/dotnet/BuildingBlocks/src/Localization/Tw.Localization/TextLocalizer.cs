@@ -9,11 +9,17 @@ namespace Tw.Localization;
 /// </summary>
 public sealed class TextLocalizer : ITextLocalizer
 {
-    /// <summary>表示 _contributors 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的contributors
+    /// </summary>
     private readonly ITextResourceContributor[] _contributors;
-    /// <summary>表示 _options 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的选项
+    /// </summary>
     private readonly LocalizationOptions _options;
-    /// <summary>表示 _cancellationTokenProvider 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的cancellation令牌提供器
+    /// </summary>
     private readonly ICancellationTokenProvider _cancellationTokenProvider;
 
     /// <summary>

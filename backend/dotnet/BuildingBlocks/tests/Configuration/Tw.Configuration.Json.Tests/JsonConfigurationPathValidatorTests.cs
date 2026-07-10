@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Configuration.Json.Tests;
 
-/// <summary>验证 JsonConfigurationPathValidatorTests 相关行为</summary>
+/// <summary>
+/// 覆盖JSONConfiguration路径Validator的核心行为和边界条件
+/// </summary>
 public sealed class JsonConfigurationPathValidatorTests
 {
-    /// <summary>验证 Validate_RejectsPathOutsideAllowedRoots 场景</summary>
+    /// <summary>
+    /// 验证校验拒绝路径OutsideAllowedRoots
+    /// </summary>
     [Fact]
     public void Validate_RejectsPathOutsideAllowedRoots()
     {

@@ -6,7 +6,9 @@ namespace Tw.DependencyInjection.Abstractions;
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
 public sealed class ExposeKeyedServiceAttribute : Attribute
 {
-    /// <summary>声明 keyed 注册</summary>
+    /// <summary>
+    /// 声明 keyed 注册
+    /// </summary>
     /// <param name="serviceType">服务契约类型</param>
     /// <param name="key">稳定 key，不可为 null；引擎在注册规划阶段校验，key 为 null 或空时启动失败</param>
     public ExposeKeyedServiceAttribute(Type serviceType, object key)
@@ -15,9 +17,13 @@ public sealed class ExposeKeyedServiceAttribute : Attribute
         Key = key;
     }
 
-    /// <summary>服务契约类型</summary>
+    /// <summary>
+    /// 服务契约类型
+    /// </summary>
     public Type ServiceType { get; }
 
-    /// <summary>注册 key</summary>
+    /// <summary>
+    /// 注册 key
+    /// </summary>
     public object Key { get; }
 }

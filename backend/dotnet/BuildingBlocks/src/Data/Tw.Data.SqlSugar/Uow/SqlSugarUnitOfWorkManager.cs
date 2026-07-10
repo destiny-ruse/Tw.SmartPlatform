@@ -3,19 +3,27 @@ using Tw.Uow;
 
 namespace Tw.Data.SqlSugar.Uow;
 
-/// <summary>表示 SqlSugarUnitOfWorkManager 类型</summary>
+/// <summary>
+/// 封装SqlSugarUnitOfWorkManager相关的数据和行为
+/// </summary>
 public sealed class SqlSugarUnitOfWorkManager(ISqlSugarClientFactory clientFactory) : IUnitOfWorkManager
 {
-    /// <summary>表示 _current 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的current
+    /// </summary>
     private readonly AsyncLocal<IUnitOfWork?> _current = new();
 
-    /// <summary>表示 Current 属性</summary>
+    /// <summary>
+    /// Current在当前对象中的业务含义
+    /// </summary>
     public IUnitOfWork? Current => _current.Value;
 
-    /// <summary>执行 BeginAsync 操作</summary>
-    /// <param name="options">options 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>BeginAsync 的执行结果</returns>
+    /// <summary>
+    /// 开始测试事务并返回事务上下文
+    /// </summary>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>异步流程完成后产生的IUnitOfWork</returns>
     public Task<IUnitOfWork> BeginAsync(UnitOfWorkOptions options, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(options);

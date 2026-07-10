@@ -2,13 +2,17 @@
 
 namespace Tw.Core.Security.Cryptography;
 
-/// <summary>表示 HexEncoding 类型</summary>
+/// <summary>
+/// 封装HexEncoding相关的数据和行为
+/// </summary>
 internal static class HexEncoding
 {
-    /// <summary>执行 ToHex 操作</summary>
-    /// <param name="bytes">bytes 参数</param>
-    /// <param name="useUpperCase">useUpperCase 参数</param>
-    /// <returns>ToHex 的执行结果</returns>
+    /// <summary>
+    /// 说明ToHex在当前类型中的职责
+    /// </summary>
+    /// <param name="bytes">用于提供bytes</param>
+    /// <param name="useUpperCase">用于提供useUpperCase</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     public static string ToHex(byte[] bytes, bool useUpperCase = false)
     {
         Check.NotNull(bytes);
@@ -17,9 +21,11 @@ internal static class HexEncoding
         return useUpperCase ? hex : hex.ToLowerInvariant();
     }
 
-    /// <summary>执行 FromHex 操作</summary>
-    /// <param name="hex">hex 参数</param>
-    /// <returns>FromHex 的执行结果</returns>
+    /// <summary>
+    /// 说明FromHex在当前类型中的职责
+    /// </summary>
+    /// <param name="hex">用于提供hex</param>
+    /// <returns>方法计算得到的文本值</returns>
     public static byte[] FromHex(string hex)
     {
         Check.NotNull(hex);

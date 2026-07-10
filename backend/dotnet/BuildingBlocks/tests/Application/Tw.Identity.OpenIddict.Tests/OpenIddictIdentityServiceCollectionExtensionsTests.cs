@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Identity.OpenIddict.Tests;
 
-/// <summary>验证 OpenIddictIdentityServiceCollectionExtensionsTests 相关行为</summary>
+/// <summary>
+/// 覆盖开放Iddict身份服务CollectionExtensions的核心行为和边界条件
+/// </summary>
 public sealed class OpenIddictIdentityServiceCollectionExtensionsTests
 {
-    /// <summary>验证 AddIdentityOpenIddict_RegistersIssuerValidatorAndOpenIddictServices 场景</summary>
+    /// <summary>
+    /// 验证添加身份OpenIddict注册签发方Validator和OpenIddictServices
+    /// </summary>
     [Fact]
     public void AddIdentityOpenIddict_RegistersIssuerValidatorAndOpenIddictServices()
     {
@@ -25,8 +29,10 @@ public sealed class OpenIddictIdentityServiceCollectionExtensionsTests
         services.Should().Contain(descriptor => descriptor.ServiceType == typeof(IIdentitySigningCertificateResolver));
     }
 
-    /// <summary>验证 AddIdentityOpenIddict_KeepsHostProvidedTokenAdapters 场景</summary>
-    /// <returns>AddIdentityOpenIddict_KeepsHostProvidedTokenAdapters 的执行结果</returns>
+    /// <summary>
+    /// 验证添加身份OpenIddictKeeps主机Provided令牌Adapters
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task AddIdentityOpenIddict_KeepsHostProvidedTokenAdapters()
     {
@@ -49,8 +55,10 @@ public sealed class OpenIddictIdentityServiceCollectionExtensionsTests
         provider.GetRequiredService<IIdentitySigningCertificateResolver>().Should().BeOfType<HostProvidedSigningCertificateResolver>();
     }
 
-    /// <summary>验证 DefaultTokenAdapters_ThrowHostAdapterRequiredMessage 场景</summary>
-    /// <returns>DefaultTokenAdapters_ThrowHostAdapterRequiredMessage 的执行结果</returns>
+    /// <summary>
+    /// 验证默认令牌AdaptersThrow主机Adapter必需消息
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task DefaultTokenAdapters_ThrowHostAdapterRequiredMessage()
     {
@@ -79,37 +87,49 @@ public sealed class OpenIddictIdentityServiceCollectionExtensionsTests
             .WithMessage("*宿主*");
     }
 
-    /// <summary>验证 HostProvidedTokenIssuer 相关行为</summary>
+    /// <summary>
+    /// 覆盖主机Provided令牌签发方的核心行为和边界条件
+    /// </summary>
     private sealed class HostProvidedTokenIssuer : IIdentityTokenIssuer
     {
-        /// <summary>验证 IssueAsync 场景</summary>
-        /// <param name="request">request 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>IssueAsync 的执行结果</returns>
+        /// <summary>
+        /// 判断sue异步是否满足条件
+        /// </summary>
+        /// <param name="request">用于提供请求</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>异步流程完成后产生的string</returns>
         public Task<string> IssueAsync(IdentityTokenRequest request, CancellationToken cancellationToken) =>
             Task.FromResult("host-token");
     }
 
-    /// <summary>验证 HostProvidedTokenValidator 相关行为</summary>
+    /// <summary>
+    /// 覆盖主机Provided令牌Validator的核心行为和边界条件
+    /// </summary>
     private sealed class HostProvidedTokenValidator : IIdentityTokenValidator
     {
-        /// <summary>验证 ValidateAsync 场景</summary>
-        /// <param name="request">request 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>ValidateAsync 的执行结果</returns>
+        /// <summary>
+        /// 校验异步并在非法时抛出异常
+        /// </summary>
+        /// <param name="request">用于提供请求</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>异步流程完成后产生的身份令牌Validation结果</returns>
         public Task<IdentityTokenValidationResult> ValidateAsync(
             IdentityTokenValidationRequest request,
             CancellationToken cancellationToken) =>
             Task.FromResult(new IdentityTokenValidationResult(true, "user-1", new HashSet<string>(), "SYSTEM:000000"));
     }
 
-    /// <summary>验证 HostProvidedSigningCertificateResolver 相关行为</summary>
+    /// <summary>
+    /// 覆盖主机ProvidedSigningCertificateResolver的核心行为和边界条件
+    /// </summary>
     private sealed class HostProvidedSigningCertificateResolver : IIdentitySigningCertificateResolver
     {
-        /// <summary>验证 ResolveAsync 场景</summary>
-        /// <param name="certificateName">certificateName 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>ResolveAsync 的执行结果</returns>
+        /// <summary>
+        /// 解析测试场景所需的签名证书
+        /// </summary>
+        /// <param name="certificateName">用于提供certificateName</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>异步流程完成后产生的SystemSecurityCryptographyX509CertificatesX509Certificate2</returns>
         public Task<System.Security.Cryptography.X509Certificates.X509Certificate2> ResolveAsync(
             string certificateName,
             CancellationToken cancellationToken) =>

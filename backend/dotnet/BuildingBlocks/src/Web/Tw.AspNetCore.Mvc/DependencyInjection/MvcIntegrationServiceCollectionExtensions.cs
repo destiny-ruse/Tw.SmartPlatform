@@ -42,10 +42,12 @@ public static class MvcIntegrationServiceCollectionExtensions
         return services;
     }
 
-    /// <summary>执行 IsInterceptionFilter 操作</summary>
-    /// <typeparam name="TFilter">TFilter 类型参数</typeparam>
-    /// <param name="filter">filter 参数</param>
-    /// <returns>IsInterceptionFilter 的执行结果</returns>
+    /// <summary>
+    /// 判断nterception过滤器是否满足条件
+    /// </summary>
+    /// <typeparam name="TFilter">响应数据的运行时类型</typeparam>
+    /// <param name="filter">参与测试的 MVC 或页面过滤器实例</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsInterceptionFilter<TFilter>(IFilterMetadata filter) =>
         filter is TypeFilterAttribute typeFilter
         && typeFilter.ImplementationType == typeof(TFilter);

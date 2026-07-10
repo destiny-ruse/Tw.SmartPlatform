@@ -2,12 +2,16 @@
 
 namespace Tw.Cli.Governance;
 
-/// <summary>表示 ProjectDependencyScanner 类型</summary>
+/// <summary>
+/// 扫描项目依赖并返回治理结果
+/// </summary>
 public sealed class ProjectDependencyScanner
 {
-    /// <summary>执行 ScanRepository 操作</summary>
-    /// <param name="repositoryPath">repositoryPath 参数</param>
-    /// <returns>ScanRepository 的执行结果</returns>
+    /// <summary>
+    /// 扫描仓库并返回发现的治理问题
+    /// </summary>
+    /// <param name="repositoryPath">待扫描仓库的根目录路径</param>
+    /// <returns>依赖扫描发现的治理违规结果</returns>
     public DependencyScanResult ScanRepository(string repositoryPath)
     {
         var result = new DependencyScanResult();
@@ -36,10 +40,12 @@ public sealed class ProjectDependencyScanner
         return result;
     }
 
-    /// <summary>执行 ScanProjectText 操作</summary>
-    /// <param name="projectPath">projectPath 参数</param>
-    /// <param name="projectXml">projectXml 参数</param>
-    /// <returns>ScanProjectText 的执行结果</returns>
+    /// <summary>
+    /// 扫描项目文本并返回发现的治理问题
+    /// </summary>
+    /// <param name="projectPath">待分析项目文件的路径</param>
+    /// <param name="projectXml">项目文件的 XML 文本内容</param>
+    /// <returns>依赖扫描发现的治理违规结果</returns>
     public DependencyScanResult ScanProjectText(string projectPath, string projectXml)
     {
         var result = new DependencyScanResult();
@@ -82,9 +88,11 @@ public sealed class ProjectDependencyScanner
         return result;
     }
 
-    /// <summary>执行 ReadReferenceIncludes 操作</summary>
-    /// <param name="document">document 参数</param>
-    /// <returns>ReadReferenceIncludes 的执行结果</returns>
+    /// <summary>
+    /// 读取项目文件中的 PackageReference 和 ProjectReference Include 值
+    /// </summary>
+    /// <param name="document">已经解析的项目 XML 文档</param>
+    /// <returns>项目引用 Include 值集合</returns>
     private static IEnumerable<string> ReadReferenceIncludes(XDocument document)
     {
         return document
@@ -95,9 +103,11 @@ public sealed class ProjectDependencyScanner
             .Select(value => value!);
     }
 
-    /// <summary>执行 IsProductionProject 操作</summary>
-    /// <param name="projectPath">projectPath 参数</param>
-    /// <returns>IsProductionProject 的执行结果</returns>
+    /// <summary>
+    /// 判断生产项目是否满足条件
+    /// </summary>
+    /// <param name="projectPath">待分析项目文件的路径</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsProductionProject(string projectPath)
     {
         var normalized = projectPath.Replace('\\', '/');
@@ -106,12 +116,18 @@ public sealed class ProjectDependencyScanner
     }
 }
 
-/// <summary>表示 DependencyScanResult 类型</summary>
+/// <summary>
+/// 承载依赖扫描处理后的结果数据
+/// </summary>
 public sealed class DependencyScanResult
 {
-    /// <summary>表示 Errors 属性</summary>
+    /// <summary>
+    /// 依赖扫描发现的治理违规列表
+    /// </summary>
     public List<DependencyScanError> Errors { get; } = [];
 }
 
-/// <summary>表示 DependencyScanError 声明</summary>
+/// <summary>
+/// 描述依赖扫描过程中发现的错误项
+/// </summary>
 public sealed record DependencyScanError(string Code, string ProjectPath, string Message);

@@ -1,9 +1,13 @@
 ﻿namespace Tw.Extensions;
 
-/// <summary>提供可变列表扩展方法</summary>
+/// <summary>
+/// 提供可变列表扩展方法
+/// </summary>
 public static class ListExtensions
 {
-    /// <summary>返回列表的只读视图或快照</summary>
+    /// <summary>
+    /// 返回列表的只读视图或快照
+    /// </summary>
     /// <param name="source">要暴露的列表</param>
     /// <typeparam name="T">元素类型</typeparam>
     /// <returns>只读列表</returns>
@@ -14,7 +18,9 @@ public static class ListExtensions
         return list as IReadOnlyList<T> ?? list.ToArray();
     }
 
-    /// <summary>从某个索引开始插入元素序列</summary>
+    /// <summary>
+    /// 从某个索引开始插入元素序列
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="index">插入索引</param>
     /// <param name="items">要插入的元素</param>
@@ -37,7 +43,9 @@ public static class ListExtensions
         }
     }
 
-    /// <summary>查找第一个匹配谓词的索引</summary>
+    /// <summary>
+    /// 查找第一个匹配谓词的索引
+    /// </summary>
     /// <param name="source">要搜索的列表</param>
     /// <param name="selector">要匹配的谓词</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -59,7 +67,9 @@ public static class ListExtensions
         return -1;
     }
 
-    /// <summary>在列表开头添加元素</summary>
+    /// <summary>
+    /// 在列表开头添加元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="item">要添加的元素</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -69,7 +79,9 @@ public static class ListExtensions
         Check.NotNull(source).Insert(0, item);
     }
 
-    /// <summary>在列表末尾添加元素</summary>
+    /// <summary>
+    /// 在列表末尾添加元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="item">要添加的元素</param>
     /// <typeparam name="T">元素类型</typeparam>
@@ -79,7 +91,9 @@ public static class ListExtensions
         Check.NotNull(source).Add(item);
     }
 
-    /// <summary>在第一个匹配的现有元素之后插入元素</summary>
+    /// <summary>
+    /// 在第一个匹配的现有元素之后插入元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="existingItem">要查找的现有元素</param>
     /// <param name="item">要插入的元素</param>
@@ -91,7 +105,9 @@ public static class ListExtensions
         source.InsertAfter(value => EqualityComparer<T>.Default.Equals(value, existingItem), item);
     }
 
-    /// <summary>在第一个匹配谓词的元素之后插入元素</summary>
+    /// <summary>
+    /// 在第一个匹配谓词的元素之后插入元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="selector">用于选择锚点元素的谓词</param>
     /// <param name="item">要插入的元素</param>
@@ -104,7 +120,9 @@ public static class ListExtensions
         source.Insert(index + 1, item);
     }
 
-    /// <summary>在第一个匹配的现有元素之前插入元素</summary>
+    /// <summary>
+    /// 在第一个匹配的现有元素之前插入元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="existingItem">要查找的现有元素</param>
     /// <param name="item">要插入的元素</param>
@@ -116,7 +134,9 @@ public static class ListExtensions
         source.InsertBefore(value => EqualityComparer<T>.Default.Equals(value, existingItem), item);
     }
 
-    /// <summary>在第一个匹配谓词的元素之前插入元素</summary>
+    /// <summary>
+    /// 在第一个匹配谓词的元素之前插入元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="selector">用于选择锚点元素的谓词</param>
     /// <param name="item">要插入的元素</param>
@@ -129,7 +149,9 @@ public static class ListExtensions
         source.Insert(index, item);
     }
 
-    /// <summary>用给定元素替换每个匹配元素</summary>
+    /// <summary>
+    /// 用给定元素替换每个匹配元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="selector">用于选择待替换元素的谓词</param>
     /// <param name="item">替换元素</param>
@@ -140,7 +162,9 @@ public static class ListExtensions
         source.ReplaceWhile(selector, _ => item);
     }
 
-    /// <summary>用基于当前元素创建的值替换每个匹配元素</summary>
+    /// <summary>
+    /// 用基于当前元素创建的值替换每个匹配元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="selector">用于选择待替换元素的谓词</param>
     /// <param name="itemFactory">接收当前元素的工厂</param>
@@ -161,7 +185,9 @@ public static class ListExtensions
         }
     }
 
-    /// <summary>用给定元素替换第一个匹配元素</summary>
+    /// <summary>
+    /// 用给定元素替换第一个匹配元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="selector">用于选择待替换元素的谓词</param>
     /// <param name="item">替换元素</param>
@@ -173,7 +199,9 @@ public static class ListExtensions
         source.ReplaceOne(selector, _ => item);
     }
 
-    /// <summary>用基于当前元素创建的值替换第一个匹配元素</summary>
+    /// <summary>
+    /// 用基于当前元素创建的值替换第一个匹配元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="selector">用于选择待替换元素的谓词</param>
     /// <param name="itemFactory">接收当前元素的工厂</param>
@@ -186,7 +214,9 @@ public static class ListExtensions
         source[index] = Check.NotNull(itemFactory)(source[index]);
     }
 
-    /// <summary>用另一个元素替换第一个相等元素</summary>
+    /// <summary>
+    /// 用另一个元素替换第一个相等元素
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="item">要查找的元素</param>
     /// <param name="replaceWith">替换元素</param>
@@ -198,7 +228,9 @@ public static class ListExtensions
         source.ReplaceOne(value => EqualityComparer<T>.Default.Equals(value, item), replaceWith);
     }
 
-    /// <summary>获取第一个匹配元素，或添加由工厂创建的元素</summary>
+    /// <summary>
+    /// 获取第一个匹配元素，或添加由工厂创建的元素
+    /// </summary>
     /// <param name="source">要搜索并更新的列表</param>
     /// <param name="selector">用于选择现有元素的谓词</param>
     /// <param name="factory">仅在无匹配元素时调用的工厂</param>
@@ -224,7 +256,9 @@ public static class ListExtensions
         return newItem;
     }
 
-    /// <summary>将第一个匹配元素移动到目标索引</summary>
+    /// <summary>
+    /// 将第一个匹配元素移动到目标索引
+    /// </summary>
     /// <param name="source">要更新的列表</param>
     /// <param name="selector">用于选择待移动元素的谓词</param>
     /// <param name="targetIndex">原始列表范围内从零开始的目标索引</param>
@@ -253,11 +287,13 @@ public static class ListExtensions
         list.Insert(targetIndex, item);
     }
 
-    /// <summary>执行 FindRequiredIndex 操作</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
-    /// <param name="source">source 参数</param>
-    /// <param name="selector">selector 参数</param>
-    /// <returns>FindRequiredIndex 的执行结果</returns>
+    /// <summary>
+    /// 查找必需Index并返回匹配结果
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
+    /// <param name="source">用于提供source</param>
+    /// <param name="selector">根据当前 handler 选择拦截器类型的选择器</param>
+    /// <returns>查找到的必需Index</returns>
     private static int FindRequiredIndex<T>(this IList<T> source, Predicate<T> selector)
     {
         var index = source.FindIndex(selector);

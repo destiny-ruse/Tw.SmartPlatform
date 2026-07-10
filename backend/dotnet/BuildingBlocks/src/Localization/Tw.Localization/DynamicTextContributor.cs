@@ -8,7 +8,9 @@ namespace Tw.Localization;
 /// </summary>
 public sealed class DynamicTextContributor : ITextResourceContributor
 {
-    /// <summary>表示 _store 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的存储
+    /// </summary>
     private readonly IDynamicTextStore _store;
 
     /// <summary>

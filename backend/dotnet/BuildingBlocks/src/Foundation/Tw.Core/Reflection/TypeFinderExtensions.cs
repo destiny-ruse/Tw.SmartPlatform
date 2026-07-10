@@ -44,9 +44,11 @@ public static class TypeFinderExtensions
         return Check.NotNull(typeFinder).FindTypes(baseType);
     }
 
-    /// <summary>执行 IsConcrete 操作</summary>
-    /// <param name="type">type 参数</param>
-    /// <returns>IsConcrete 的执行结果</returns>
+    /// <summary>
+    /// 判断Concrete是否满足条件
+    /// </summary>
+    /// <param name="type">用于提供类型</param>
+    /// <returns>条件满足时返回 <see langword="true"/></returns>
     private static bool IsConcrete(Type type)
     {
         return !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;

@@ -12,21 +12,29 @@ using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DynamicProxy;
 
-/// <summary>验证 PageInvocationContextTests 相关行为</summary>
+/// <summary>
+/// 覆盖页面调用上下文的核心行为和边界条件
+/// </summary>
 public class PageInvocationContextTests
 {
-    /// <summary>验证 SamplePageModel 相关行为</summary>
+    /// <summary>
+    /// 覆盖示例页面模型的核心行为和边界条件
+    /// </summary>
     private sealed class SamplePageModel : PageModel
     {
-        /// <summary>验证 OnGet 场景</summary>
-        /// <param name="value">value 参数</param>
-        /// <param name="count">count 参数</param>
-        /// <returns>OnGet 的执行结果</returns>
+        /// <summary>
+        /// 处理页面 GET 请求并返回响应结果
+        /// </summary>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
+        /// <param name="count">用于构造测试输入或断言的数量</param>
+        /// <returns>MVC 或 Razor Page 处理结果</returns>
         public IActionResult OnGet(string value, int count) => new OkObjectResult($"{value}:{count}");
     }
 
-    /// <summary>验证 CreatePageContext 场景</summary>
-    /// <returns>CreatePageContext 的执行结果</returns>
+    /// <summary>
+    /// 创建页面上下文测试对象
+    /// </summary>
+    /// <returns>Razor Page 测试上下文</returns>
     private static PageContext CreatePageContext()
     {
         var actionDescriptor = new CompiledPageActionDescriptor
@@ -38,9 +46,11 @@ public class PageInvocationContextTests
             new ActionContext(new DefaultHttpContext(), new RouteData(), actionDescriptor));
     }
 
-    /// <summary>验证 CreateHandlerMethod 场景</summary>
-    /// <param name="name">name 参数</param>
-    /// <returns>CreateHandlerMethod 的执行结果</returns>
+    /// <summary>
+    /// 创建处理器方法测试对象
+    /// </summary>
+    /// <param name="name">待匹配成员或资源的名称</param>
+    /// <returns>页面处理器方法描述符</returns>
     private static HandlerMethodDescriptor CreateHandlerMethod(string name = nameof(SamplePageModel.OnGet)) =>
         new()
         {
@@ -48,11 +58,13 @@ public class PageInvocationContextTests
             Name = name,
         };
 
-    /// <summary>验证 CreateExecutingContext 场景</summary>
-    /// <param name="handlerArguments">handlerArguments 参数</param>
-    /// <param name="handlerInstance">handlerInstance 参数</param>
-    /// <param name="handlerMethod">handlerMethod 参数</param>
-    /// <returns>CreateExecutingContext 的执行结果</returns>
+    /// <summary>
+    /// 创建Executing上下文测试对象
+    /// </summary>
+    /// <param name="handlerArguments">页面处理器调用时使用的参数字典</param>
+    /// <param name="handlerInstance">页面处理器所属的页面模型实例</param>
+    /// <param name="handlerMethod">当前页面处理器的方法元数据</param>
+    /// <returns>页面处理器执行阶段的测试上下文</returns>
     private static PageHandlerExecutingContext CreateExecutingContext(
         IDictionary<string, object?> handlerArguments,
         object handlerInstance,
@@ -64,11 +76,13 @@ public class PageInvocationContextTests
             handlerArguments,
             handlerInstance);
 
-    /// <summary>验证 CreateNext 场景</summary>
-    /// <param name="executingContext">executingContext 参数</param>
-    /// <param name="result">result 参数</param>
-    /// <param name="onNext">onNext 参数</param>
-    /// <returns>CreateNext 的执行结果</returns>
+    /// <summary>
+    /// 创建Next测试对象
+    /// </summary>
+    /// <param name="executingContext">页面处理器执行阶段的上下文</param>
+    /// <param name="result">当前流程预置或返回的结果</param>
+    /// <param name="onNext">用于模拟后续过滤器或处理器的委托</param>
+    /// <returns>模拟 ASP.NET Core 过滤器管道下一步的委托</returns>
     private static PageHandlerExecutionDelegate CreateNext(
         PageHandlerExecutingContext executingContext,
         IActionResult? result = null,
@@ -90,7 +104,9 @@ public class PageInvocationContextTests
             });
         };
 
-    /// <summary>验证 Constructor_MapsMethodTargetArgumentsAndNamedView 场景</summary>
+    /// <summary>
+    /// 验证构造函数映射方法目标参数和命名视图
+    /// </summary>
     [Fact]
     public void Constructor_MapsMethodTargetArgumentsAndNamedView()
     {
@@ -108,7 +124,9 @@ public class PageInvocationContextTests
         context.ArgumentsByName["count"].Should().Be(2);
     }
 
-    /// <summary>验证 Constructor_Throws_WhenHandlerArgumentMissing 场景</summary>
+    /// <summary>
+    /// 验证构造函数抛出异常当处理器参数缺少
+    /// </summary>
     [Fact]
     public void Constructor_Throws_WhenHandlerArgumentMissing()
     {
@@ -121,8 +139,10 @@ public class PageInvocationContextTests
         act.Should().Throw<InvalidOperationException>().WithMessage("*count*");
     }
 
-    /// <summary>验证 ProceedAsync_WritesModifiedArgumentsBackToHandlerArguments 场景</summary>
-    /// <returns>ProceedAsync_WritesModifiedArgumentsBackToHandlerArguments 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步写回已修改参数回到处理器参数
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_WritesModifiedArgumentsBackToHandlerArguments()
     {
@@ -140,8 +160,10 @@ public class PageInvocationContextTests
         handlerArguments["value"].Should().Be("rewritten");
     }
 
-    /// <summary>验证 ProceedAsync_CapturesHandlerResultAsReturnValue 场景</summary>
-    /// <returns>ProceedAsync_CapturesHandlerResultAsReturnValue 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步捕获处理器结果作为返回值
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_CapturesHandlerResultAsReturnValue()
     {
@@ -156,8 +178,10 @@ public class PageInvocationContextTests
         context.ReturnValue.Should().BeSameAs(result);
     }
 
-    /// <summary>验证 ProceedAsync_Rethrows_WhenHandlerThrewUnhandledException 场景</summary>
-    /// <returns>ProceedAsync_Rethrows_WhenHandlerThrewUnhandledException 的执行结果</returns>
+    /// <summary>
+    /// 验证继续处理异步重新抛出当处理器抛出未处理异常
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ProceedAsync_Rethrows_WhenHandlerThrewUnhandledException()
     {
@@ -180,7 +204,9 @@ public class PageInvocationContextTests
         await act.Should().ThrowAsync<InvalidOperationException>().WithMessage("handler failed");
     }
 
-    /// <summary>验证 ReturnValue_SetBeforeProceed_ShortCircuitsExecutingContextResult 场景</summary>
+    /// <summary>
+    /// 验证返回值写入前置处理继续处理短路流程Executing上下文结果
+    /// </summary>
     [Fact]
     public void ReturnValue_SetBeforeProceed_ShortCircuitsExecutingContextResult()
     {
@@ -195,7 +221,9 @@ public class PageInvocationContextTests
         executingContext.Result.Should().BeSameAs(result);
     }
 
-    /// <summary>验证 Proceed_Throws_BecausePageHandlerFilterIsAsyncOnly 场景</summary>
+    /// <summary>
+    /// 验证继续处理抛出异常Because页面处理器过滤器Is异步Only
+    /// </summary>
     [Fact]
     public void Proceed_Throws_BecausePageHandlerFilterIsAsyncOnly()
     {

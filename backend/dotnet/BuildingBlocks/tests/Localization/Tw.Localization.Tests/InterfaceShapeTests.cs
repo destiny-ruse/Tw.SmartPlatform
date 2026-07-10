@@ -3,10 +3,14 @@ using Xunit;
 
 namespace Tw.Localization.Tests;
 
-/// <summary>验证 InterfaceShapeTests 相关行为</summary>
+/// <summary>
+/// 覆盖InterfaceShape的核心行为和边界条件
+/// </summary>
 public class InterfaceShapeTests
 {
-    /// <summary>验证 PublicInterfaces_LiveInTwLocalizationNamespace 场景</summary>
+    /// <summary>
+    /// 验证PublicInterfacesLiveInTw本地化Namespace
+    /// </summary>
     [Fact]
     public void PublicInterfaces_LiveInTwLocalizationNamespace()
     {

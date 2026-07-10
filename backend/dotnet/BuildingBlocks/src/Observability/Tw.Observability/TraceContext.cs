@@ -1,4 +1,6 @@
 ﻿namespace Tw.Observability;
 
-/// <summary>表示 TraceContext 声明</summary>
+/// <summary>
+/// 封装Trace上下文相关的数据和行为
+/// </summary>
 public sealed record TraceContext(string TraceId, string? SpanId, string OperationName);

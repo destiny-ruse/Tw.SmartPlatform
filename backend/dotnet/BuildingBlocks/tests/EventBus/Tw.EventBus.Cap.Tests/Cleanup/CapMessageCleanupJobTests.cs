@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.EventBus.Cap.Tests.Cleanup;
 
-/// <summary>验证 CapMessageCleanupJobTests 相关行为</summary>
+/// <summary>
+/// 覆盖Cap消息Cleanup作业的核心行为和边界条件
+/// </summary>
 public sealed class CapMessageCleanupJobTests
 {
-    /// <summary>验证 Options_Defaults_DoNotDeleteFailedMessages 场景</summary>
+    /// <summary>
+    /// 验证选项DefaultsDo不删除FailedMessages
+    /// </summary>
     [Fact]
     public void Options_Defaults_DoNotDeleteFailedMessages()
     {

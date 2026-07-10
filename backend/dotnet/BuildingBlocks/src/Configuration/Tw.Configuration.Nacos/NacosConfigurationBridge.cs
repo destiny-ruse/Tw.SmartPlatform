@@ -2,13 +2,17 @@
 
 namespace Tw.Configuration.Nacos;
 
-/// <summary>表示 NacosConfigurationBridge 类型</summary>
+/// <summary>
+/// 封装NacosConfigurationBridge相关的数据和行为
+/// </summary>
 public sealed class NacosConfigurationBridge
 {
-    /// <summary>执行 AcceptChange 操作</summary>
-    /// <param name="key">key 参数</param>
-    /// <param name="source">source 参数</param>
-    /// <returns>AcceptChange 的执行结果</returns>
+    /// <summary>
+    /// 说明AcceptChange在当前类型中的职责
+    /// </summary>
+    /// <param name="key">用于定位目标数据或缓存项的键</param>
+    /// <param name="source">用于提供source</param>
+    /// <returns>方法计算得到的文本值</returns>
     public ConfigurationChangeEvent AcceptChange(string key, string source)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(key);

@@ -4,17 +4,25 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace Tw.Analyzers.Rules;
 
-/// <summary>表示 ForbiddenIdentifierPrefixAnalyzer 类型</summary>
+/// <summary>
+/// 分析禁止标识符前缀规则并报告 Roslyn 诊断
+/// </summary>
 [DiagnosticAnalyzer(LanguageNames.CSharp)]
 public sealed class ForbiddenIdentifierPrefixAnalyzer : DiagnosticAnalyzer
 {
-    /// <summary>表示 DiagnosticId 常量</summary>
+    /// <summary>
+    /// 当前类型内部复用的Diagnostic标识常量值
+    /// </summary>
     public const string DiagnosticId = "TWGOV001";
 
-    /// <summary>表示 ForbiddenPrefixes 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的禁止Prefixes
+    /// </summary>
     private static readonly ImmutableArray<string> ForbiddenPrefixes = ImmutableArray.Create("Tw", "Abp", "Furion");
 
-    /// <summary>表示 Rule 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的Rule
+    /// </summary>
     private static readonly DiagnosticDescriptor Rule = new(
         DiagnosticId,
         "Avoid framework-owned identifier prefixes",
@@ -23,11 +31,15 @@ public sealed class ForbiddenIdentifierPrefixAnalyzer : DiagnosticAnalyzer
         DiagnosticSeverity.Warning,
         isEnabledByDefault: true);
 
-    /// <summary>表示 SupportedDiagnostics 属性</summary>
+    /// <summary>
+    /// 创建在当前对象中的业务含义
+    /// </summary>
     public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
-    /// <summary>执行 Initialize 操作</summary>
-    /// <param name="context">context 参数</param>
+    /// <summary>
+    /// 初始化分析器的并发执行和语法节点注册
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
     public override void Initialize(AnalysisContext context)
     {
         context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
@@ -35,8 +47,10 @@ public sealed class ForbiddenIdentifierPrefixAnalyzer : DiagnosticAnalyzer
         context.RegisterSymbolAction(AnalyzeNamedType, SymbolKind.NamedType);
     }
 
-    /// <summary>执行 AnalyzeNamedType 操作</summary>
-    /// <param name="context">context 参数</param>
+    /// <summary>
+    /// 分析命名类型并报告匹配的诊断
+    /// </summary>
+    /// <param name="context">当前调用携带的上下文信息</param>
     private static void AnalyzeNamedType(SymbolAnalysisContext context)
     {
         var symbol = (INamedTypeSymbol)context.Symbol;

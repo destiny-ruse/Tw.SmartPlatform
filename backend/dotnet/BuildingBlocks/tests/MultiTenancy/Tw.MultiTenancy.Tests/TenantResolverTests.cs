@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.MultiTenancy.Tests;
 
-/// <summary>验证 TenantResolverTests 相关行为</summary>
+/// <summary>
+/// 覆盖租户Resolver的核心行为和边界条件
+/// </summary>
 public sealed class TenantResolverTests
 {
-    /// <summary>验证 Resolve_RejectsHeaderTenantWhenTokenTenantDiffers 场景</summary>
+    /// <summary>
+    /// 验证Resolve拒绝Header租户当令牌租户Differs
+    /// </summary>
     [Fact]
     public void Resolve_RejectsHeaderTenantWhenTokenTenantDiffers()
     {
@@ -19,7 +23,9 @@ public sealed class TenantResolverTests
             .WithMessage("Tenant id does not match the authenticated token tenant.");
     }
 
-    /// <summary>验证 Resolve_UsesDefaultTenant_WhenNoTenantIsProvided 场景</summary>
+    /// <summary>
+    /// 验证ResolveUses默认租户当No租户IsProvided
+    /// </summary>
     [Fact]
     public void Resolve_UsesDefaultTenant_WhenNoTenantIsProvided()
     {

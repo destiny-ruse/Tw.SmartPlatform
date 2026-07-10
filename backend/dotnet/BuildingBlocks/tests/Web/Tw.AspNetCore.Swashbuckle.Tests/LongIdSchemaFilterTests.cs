@@ -6,10 +6,14 @@ using Xunit;
 
 namespace Tw.AspNetCore.Swashbuckle.Tests;
 
-/// <summary>验证 LongIdSchemaFilterTests 相关行为</summary>
+/// <summary>
+/// 覆盖长整型标识架构过滤器的核心行为和边界条件
+/// </summary>
 public sealed class LongIdSchemaFilterTests
 {
-    /// <summary>验证 Apply_MapsLongToStringInt64 场景</summary>
+    /// <summary>
+    /// 验证Apply映射长整型到StringInt64
+    /// </summary>
     [Fact]
     public void Apply_MapsLongToStringInt64()
     {

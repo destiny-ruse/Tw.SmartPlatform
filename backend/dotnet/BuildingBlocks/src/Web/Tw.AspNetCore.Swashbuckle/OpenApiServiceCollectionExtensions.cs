@@ -3,13 +3,17 @@ using Microsoft.OpenApi;
 
 namespace Tw.AspNetCore.Swashbuckle;
 
-/// <summary>表示 OpenApiServiceCollectionExtensions 类型</summary>
+/// <summary>
+/// 封装OpenApi服务CollectionExtensions相关的数据和行为
+/// </summary>
 public static class OpenApiServiceCollectionExtensions
 {
-    /// <summary>执行 AddOpenApiIntegration 操作</summary>
-    /// <param name="services">services 参数</param>
-    /// <param name="options">options 参数</param>
-    /// <returns>AddOpenApiIntegration 的执行结果</returns>
+    /// <summary>
+    /// 注册OpenApiIntegration所需服务
+    /// </summary>
+    /// <param name="services">需要注册组件依赖的服务集合</param>
+    /// <param name="options">用于配置当前组件行为的选项</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     public static IServiceCollection AddOpenApiIntegration(
         this IServiceCollection services,
         OpenApiRegistrationOptions options)

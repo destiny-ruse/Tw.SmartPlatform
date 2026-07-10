@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Cli.Tests;
 
-/// <summary>验证 AuditDependenciesCommandTests 相关行为</summary>
+/// <summary>
+/// 覆盖审计Dependencies命令的核心行为和边界条件
+/// </summary>
 public sealed class AuditDependenciesCommandTests
 {
-    /// <summary>验证 Scan_FailsWhenProductionProjectReferencesTestBase 场景</summary>
+    /// <summary>
+    /// 验证生产项目引用测试基类时依赖扫描会失败
+    /// </summary>
     [Fact]
     public void Scan_FailsWhenProductionProjectReferencesTestBase()
     {

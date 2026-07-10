@@ -5,11 +5,15 @@ using Xunit;
 
 namespace Tw.EventBus.Tests;
 
-/// <summary>验证 EventPublisherTests 相关行为</summary>
+/// <summary>
+/// 覆盖事件Publisher的核心行为和边界条件
+/// </summary>
 public sealed class EventPublisherTests
 {
-    /// <summary>验证 PublishAsync_DelegatesToTransport 场景</summary>
-    /// <returns>PublishAsync_DelegatesToTransport 的执行结果</returns>
+    /// <summary>
+    /// 验证Publish异步Delegates到Transport
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task PublishAsync_DelegatesToTransport()
     {
@@ -22,19 +26,27 @@ public sealed class EventPublisherTests
         transport.Published.Should().ContainSingle().Which.Should().Be(integrationEvent);
     }
 
-    /// <summary>表示 SampleEvent 声明</summary>
+    /// <summary>
+    /// 封装示例事件相关的数据和行为
+    /// </summary>
     private sealed record SampleEvent(string EventId) : IIntegrationEvent;
 
-    /// <summary>验证 RecordingEventTransport 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording事件Transport的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingEventTransport : IEventTransport
     {
-        /// <summary>表示 Published 属性</summary>
+        /// <summary>
+        /// Published在当前对象中的业务含义
+        /// </summary>
         public List<IIntegrationEvent> Published { get; } = [];
 
-        /// <summary>验证 PublishAsync 场景</summary>
-        /// <param name="integrationEvent">integrationEvent 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>PublishAsync 的执行结果</returns>
+        /// <summary>
+        /// 发布集成事件到测试事件总线
+        /// </summary>
+        /// <param name="integrationEvent">用于提供ntegrationEvent</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task PublishAsync(IIntegrationEvent integrationEvent, CancellationToken cancellationToken)
         {
             Published.Add(integrationEvent);

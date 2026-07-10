@@ -1,10 +1,14 @@
 ﻿namespace Tw.Data.SqlSugar.Connection;
 
-/// <summary>定义 ISqlSugarClientFactory 契约</summary>
+/// <summary>
+/// 定义SqlSugarClientFactory的能力边界
+/// </summary>
 public interface ISqlSugarClientFactory
 {
-    /// <summary>执行 CreateClient 操作</summary>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>CreateClient 的执行结果</returns>
+    /// <summary>
+    /// 创建Client测试对象
+    /// </summary>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     object CreateClient(CancellationToken cancellationToken = default);
 }

@@ -5,10 +5,14 @@ using Xunit;
 
 namespace Tw.Sharding.Tests;
 
-/// <summary>验证 ShardContextTests 相关行为</summary>
+/// <summary>
+/// 覆盖Shard上下文的核心行为和边界条件
+/// </summary>
 public sealed class ShardContextTests
 {
-    /// <summary>验证 Current_DefaultsToNone 场景</summary>
+    /// <summary>
+    /// 验证CurrentDefaults到None
+    /// </summary>
     [Fact]
     public void Current_DefaultsToNone()
     {
@@ -17,7 +21,9 @@ public sealed class ShardContextTests
         context.Current.Should().Be(ShardDescriptor.None);
     }
 
-    /// <summary>验证 Change_SetsCurrentShardInsideScopeAndRestoresPreviousValue 场景</summary>
+    /// <summary>
+    /// 验证ChangeSetsCurrentShardInside作用域和RestoresPrevious值
+    /// </summary>
     [Fact]
     public void Change_SetsCurrentShardInsideScopeAndRestoresPreviousValue()
     {

@@ -39,9 +39,11 @@ public sealed class DefaultDataMasker : IDataMasker, ISensitiveValueDetector
         return !string.IsNullOrWhiteSpace(value) && value.Contains('*', StringComparison.Ordinal);
     }
 
-    /// <summary>执行 MaskEmail 操作</summary>
-    /// <param name="value">value 参数</param>
-    /// <returns>MaskEmail 的执行结果</returns>
+    /// <summary>
+    /// 说明MaskEmail在当前类型中的职责
+    /// </summary>
+    /// <param name="value">用于转换、回显或断言的输入值</param>
+    /// <returns>方法计算得到的文本值</returns>
     private static string MaskEmail(string value)
     {
         var atIndex = value.IndexOf('@', StringComparison.Ordinal);

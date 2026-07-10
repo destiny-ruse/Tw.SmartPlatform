@@ -13,7 +13,9 @@ public class TypeList : TypeList<object>, ITypeList;
 /// <typeparam name="TBaseType">每个元素要求的基类型</typeparam>
 public class TypeList<TBaseType> : ITypeList<TBaseType>
 {
-    /// <summary>表示 items 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的items
+    /// </summary>
     private readonly List<Type> items = [];
 
     /// <summary>

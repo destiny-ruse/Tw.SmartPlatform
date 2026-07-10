@@ -3,18 +3,26 @@ using Tw.Uow;
 
 namespace Tw.Data.SqlSugar.Uow;
 
-/// <summary>表示 SqlSugarUnitOfWork 类型</summary>
+/// <summary>
+/// 封装SqlSugarUnitOfWork相关的数据和行为
+/// </summary>
 public sealed class SqlSugarUnitOfWork : IUnitOfWork, IOutboxTransactionBoundary
 {
-    /// <summary>表示 _restoreCurrent 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的restoreCurrent
+    /// </summary>
     private readonly Action _restoreCurrent;
-    /// <summary>表示 _disposed 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的disposed
+    /// </summary>
     private bool _disposed;
 
-    /// <summary>初始化 SqlSugarUnitOfWork 实例</summary>
-    /// <param name="clientFactory">clientFactory 参数</param>
-    /// <param name="restoreCurrent">restoreCurrent 参数</param>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
+    /// <summary>
+    /// 初始化 SqlSugarUnitOfWork 实例
+    /// </summary>
+    /// <param name="clientFactory">用于提供client工厂</param>
+    /// <param name="restoreCurrent">用于提供restoreCurrent</param>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
     public SqlSugarUnitOfWork(
         ISqlSugarClientFactory clientFactory,
         Action restoreCurrent,
@@ -28,24 +36,36 @@ public sealed class SqlSugarUnitOfWork : IUnitOfWork, IOutboxTransactionBoundary
         CancellationToken = cancellationToken;
     }
 
-    /// <summary>表示 Client 属性</summary>
+    /// <summary>
+    /// Client在当前对象中的业务含义
+    /// </summary>
     public object Client { get; }
 
-    /// <summary>表示 CancellationToken 属性</summary>
+    /// <summary>
+    /// Cancellation令牌在当前对象中的业务含义
+    /// </summary>
     public CancellationToken CancellationToken { get; }
 
-    /// <summary>表示 CanWriteOutbox 属性</summary>
+    /// <summary>
+    /// CanWriteOutbox在当前对象中的业务含义
+    /// </summary>
     public bool CanWriteOutbox => !_disposed;
 
-    /// <summary>表示 IsCompleted 属性</summary>
+    /// <summary>
+    /// sCompleted在当前对象中的业务含义
+    /// </summary>
     public bool IsCompleted { get; private set; }
 
-    /// <summary>表示 IsRolledBack 属性</summary>
+    /// <summary>
+    /// sRolled回在当前对象中的业务含义
+    /// </summary>
     public bool IsRolledBack { get; private set; }
 
-    /// <summary>执行 CommitAsync 操作</summary>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>CommitAsync 的执行结果</returns>
+    /// <summary>
+    /// 提交测试事务上下文
+    /// </summary>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>表示异步流程完成状态的任务</returns>
     public Task CommitAsync(CancellationToken cancellationToken = default)
     {
         cancellationToken.ThrowIfCancellationRequested();
@@ -53,9 +73,11 @@ public sealed class SqlSugarUnitOfWork : IUnitOfWork, IOutboxTransactionBoundary
         return Task.CompletedTask;
     }
 
-    /// <summary>执行 RollbackAsync 操作</summary>
-    /// <param name="cancellationToken">cancellationToken 参数</param>
-    /// <returns>RollbackAsync 的执行结果</returns>
+    /// <summary>
+    /// 回滚测试事务上下文
+    /// </summary>
+    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+    /// <returns>表示异步流程完成状态的任务</returns>
     public Task RollbackAsync(CancellationToken cancellationToken = default)
     {
         cancellationToken.ThrowIfCancellationRequested();
@@ -64,8 +86,10 @@ public sealed class SqlSugarUnitOfWork : IUnitOfWork, IOutboxTransactionBoundary
         return Task.CompletedTask;
     }
 
-    /// <summary>执行 DisposeAsync 操作</summary>
-    /// <returns>DisposeAsync 的执行结果</returns>
+    /// <summary>
+    /// 释放测试事务上下文
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     public ValueTask DisposeAsync()
     {
         if (_disposed)

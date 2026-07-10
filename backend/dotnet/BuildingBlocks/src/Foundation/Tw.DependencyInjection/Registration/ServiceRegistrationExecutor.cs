@@ -38,7 +38,9 @@ internal static class ServiceRegistrationExecutor
         }
     }
 
-    /// <summary>注册非 keyed 服务描述符</summary>
+    /// <summary>
+    /// 注册非 keyed 服务描述符
+    /// </summary>
     private static void AddNonKeyed(IServiceCollection services, ServiceCandidate registration)
     {
         services.Add(ServiceDescriptor.Describe(
@@ -47,7 +49,9 @@ internal static class ServiceRegistrationExecutor
             DependencyLifetimeMapper.Map(registration.Lifetime)));
     }
 
-    /// <summary>注册带 key 的 keyed 服务描述符</summary>
+    /// <summary>
+    /// 注册带 key 的 keyed 服务描述符
+    /// </summary>
     private static void AddKeyed(IServiceCollection services, ServiceCandidate registration)
     {
         var lifetime = DependencyLifetimeMapper.Map(registration.Lifetime);

@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.Auditing.Contracts.Tests;
 
-/// <summary>验证 AuditEventTests 相关行为</summary>
+/// <summary>
+/// 覆盖审计事件的核心行为和边界条件
+/// </summary>
 public sealed class AuditEventTests
 {
-    /// <summary>验证 CreateSecurityDenied_IncludesActorTenantActionAndStableCode 场景</summary>
+    /// <summary>
+    /// 验证创建Security拒绝IncludesActor租户Action和Stable代码
+    /// </summary>
     [Fact]
     public void CreateSecurityDenied_IncludesActorTenantActionAndStableCode()
     {

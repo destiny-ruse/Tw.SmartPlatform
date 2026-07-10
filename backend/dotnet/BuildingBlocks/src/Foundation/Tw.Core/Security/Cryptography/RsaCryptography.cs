@@ -12,16 +12,26 @@ namespace Tw.Core.Security.Cryptography;
 /// </remarks>
 public static class RsaCryptography
 {
-    /// <summary>表示 DefaultEncoding 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认Encoding
+    /// </summary>
     private static readonly Encoding DefaultEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
-    /// <summary>表示 DefaultEncryptionPadding 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认EncryptionPadding
+    /// </summary>
     private static readonly RSAEncryptionPadding DefaultEncryptionPadding = RSAEncryptionPadding.OaepSHA256;
-    /// <summary>表示 DefaultSignatureHashAlgorithm 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认SignatureHashAlgorithm
+    /// </summary>
     private static readonly HashAlgorithmName DefaultSignatureHashAlgorithm = HashAlgorithmName.SHA256;
-    /// <summary>表示 DefaultSignaturePadding 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的默认SignaturePadding
+    /// </summary>
     private static readonly RSASignaturePadding DefaultSignaturePadding = RSASignaturePadding.Pkcs1;
 
-    /// <summary>生成编码为 PEM 的 RSA 密钥对</summary>
+    /// <summary>
+    /// 生成编码为 PEM 的 RSA 密钥对
+    /// </summary>
     /// <param name="keySize">RSA 密钥位数</param>
     /// <returns>生成的 RSA 密钥对</returns>
     public static RsaKeyPair GenerateKeyPair(int keySize = 2048)
@@ -32,7 +42,9 @@ public static class RsaCryptography
         return new RsaKeyPair(rsa.ExportRSAPublicKeyPem(), rsa.ExportRSAPrivateKeyPem());
     }
 
-    /// <summary>生成编码为 DER 字节的 RSA 密钥对</summary>
+    /// <summary>
+    /// 生成编码为 DER 字节的 RSA 密钥对
+    /// </summary>
     /// <param name="keySize">RSA 密钥位数</param>
     /// <returns>生成的 RSA 密钥对</returns>
     public static RsaDerKeyPair GenerateDerKeyPair(int keySize = 2048)
@@ -43,7 +55,9 @@ public static class RsaCryptography
         return new RsaDerKeyPair(rsa.ExportRSAPublicKey(), rsa.ExportRSAPrivateKey());
     }
 
-    /// <summary>使用 PEM 公钥加密字符串并返回 Base64 密文</summary>
+    /// <summary>
+    /// 使用 PEM 公钥加密字符串并返回 Base64 密文
+    /// </summary>
     /// <param name="input">要加密的文本</param>
     /// <param name="publicKeyPem">PEM 格式的公钥</param>
     /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
@@ -61,7 +75,9 @@ public static class RsaCryptography
         return Convert.ToBase64String(encrypted);
     }
 
-    /// <summary>使用 PEM 公钥加密字节</summary>
+    /// <summary>
+    /// 使用 PEM 公钥加密字节
+    /// </summary>
     /// <param name="bytes">要加密的字节</param>
     /// <param name="publicKeyPem">PEM 格式的公钥</param>
     /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
@@ -76,7 +92,9 @@ public static class RsaCryptography
         return rsa.Encrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>使用 DER 公钥加密字节</summary>
+    /// <summary>
+    /// 使用 DER 公钥加密字节
+    /// </summary>
     /// <param name="bytes">要加密的字节</param>
     /// <param name="publicKeyDer">DER 格式的公钥</param>
     /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
@@ -91,7 +109,9 @@ public static class RsaCryptography
         return rsa.Encrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>使用 PEM 私钥解密 Base64 密文</summary>
+    /// <summary>
+    /// 使用 PEM 私钥解密 Base64 密文
+    /// </summary>
     /// <param name="input">要解密的 Base64 密文</param>
     /// <param name="privateKeyPem">PEM 格式的私钥</param>
     /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
@@ -109,7 +129,9 @@ public static class RsaCryptography
         return (encoding ?? DefaultEncoding).GetString(decrypted);
     }
 
-    /// <summary>使用 PEM 私钥解密字节</summary>
+    /// <summary>
+    /// 使用 PEM 私钥解密字节
+    /// </summary>
     /// <param name="bytes">要解密的字节</param>
     /// <param name="privateKeyPem">PEM 格式的私钥</param>
     /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
@@ -124,7 +146,9 @@ public static class RsaCryptography
         return rsa.Decrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>使用 DER 私钥解密字节</summary>
+    /// <summary>
+    /// 使用 DER 私钥解密字节
+    /// </summary>
     /// <param name="bytes">要解密的字节</param>
     /// <param name="privateKeyDer">DER 格式的私钥</param>
     /// <param name="padding">RSA 加密填充；省略时使用 OAEP SHA-256</param>
@@ -139,7 +163,9 @@ public static class RsaCryptography
         return rsa.Decrypt(bytes, padding ?? DefaultEncryptionPadding);
     }
 
-    /// <summary>使用 PEM 私钥为字符串签名并返回 Base64 签名</summary>
+    /// <summary>
+    /// 使用 PEM 私钥为字符串签名并返回 Base64 签名
+    /// </summary>
     /// <param name="input">要签名的文本</param>
     /// <param name="privateKeyPem">PEM 格式的私钥</param>
     /// <param name="hashAlgorithm">签名哈希算法；省略时使用 SHA-256</param>
@@ -159,7 +185,9 @@ public static class RsaCryptography
         return Convert.ToBase64String(signature);
     }
 
-    /// <summary>使用 PEM 私钥为字节签名</summary>
+    /// <summary>
+    /// 使用 PEM 私钥为字节签名
+    /// </summary>
     /// <param name="bytes">要签名的字节</param>
     /// <param name="privateKeyPem">PEM 格式的私钥</param>
     /// <param name="hashAlgorithm">签名哈希算法；省略时使用 SHA-256</param>
@@ -179,7 +207,9 @@ public static class RsaCryptography
         return rsa.SignData(bytes, hashAlgorithm ?? DefaultSignatureHashAlgorithm, padding ?? DefaultSignaturePadding);
     }
 
-    /// <summary>使用 PEM 公钥验证字符串的 Base64 签名</summary>
+    /// <summary>
+    /// 使用 PEM 公钥验证字符串的 Base64 签名
+    /// </summary>
     /// <param name="input">要验证签名的文本</param>
     /// <param name="signature">Base64 签名</param>
     /// <param name="publicKeyPem">PEM 格式的公钥</param>
@@ -217,7 +247,9 @@ public static class RsaCryptography
             padding);
     }
 
-    /// <summary>使用 PEM 公钥验证字节签名</summary>
+    /// <summary>
+    /// 使用 PEM 公钥验证字节签名
+    /// </summary>
     /// <param name="bytes">要验证签名的字节</param>
     /// <param name="signature">签名字节</param>
     /// <param name="publicKeyPem">PEM 格式的公钥</param>

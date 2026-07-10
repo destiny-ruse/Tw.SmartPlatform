@@ -10,7 +10,9 @@ namespace Tw.Json.Newtonsoft;
 /// </summary>
 public sealed class NewtonsoftJsonSerializer : IJsonSerializer
 {
-    /// <summary>表示 Settings 字段</summary>
+    /// <summary>
+    /// 保存当前类型处理流程依赖的设置
+    /// </summary>
     private static readonly JsonSerializerSettings Settings = new()
     {
         ContractResolver = new CamelCasePropertyNamesContractResolver(),
@@ -36,25 +38,31 @@ public sealed class NewtonsoftJsonSerializer : IJsonSerializer
         return JsonConvert.DeserializeObject<T>(json, Settings);
     }
 
-    /// <summary>表示 Int64StringJsonConverter 类型</summary>
+    /// <summary>
+    /// 在 Newtonsoft.Json 中将 long 值序列化为字符串
+    /// </summary>
     private sealed class Int64StringJsonConverter : JsonConverter<long>
     {
-        /// <summary>执行 WriteJson 操作</summary>
-        /// <param name="writer">writer 参数</param>
-        /// <param name="value">value 参数</param>
-        /// <param name="serializer">serializer 参数</param>
+        /// <summary>
+        /// 将长整型标识写入 JSON 输出
+        /// </summary>
+        /// <param name="writer">写入 JSON 内容的输出器</param>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
+        /// <param name="serializer">当前 JSON 序列化器实例</param>
         public override void WriteJson(JsonWriter writer, long value, JsonSerializer serializer)
         {
             writer.WriteValue(value.ToString(CultureInfo.InvariantCulture));
         }
 
-        /// <summary>执行 ReadJson 操作</summary>
-        /// <param name="reader">reader 参数</param>
-        /// <param name="objectType">objectType 参数</param>
-        /// <param name="existingValue">existingValue 参数</param>
-        /// <param name="hasExistingValue">hasExistingValue 参数</param>
-        /// <param name="serializer">serializer 参数</param>
-        /// <returns>ReadJson 的执行结果</returns>
+        /// <summary>
+        /// 从 JSON 输入读取长整型标识
+        /// </summary>
+        /// <param name="reader">读取 JSON 内容的输入器</param>
+        /// <param name="objectType">需要判断或创建的目标对象类型</param>
+        /// <param name="existingValue">反序列化前已有的对象值</param>
+        /// <param name="hasExistingValue">用于提供存在Existing值</param>
+        /// <param name="serializer">当前 JSON 序列化器实例</param>
+        /// <returns>方法完成后返回给调用方的结果对象</returns>
         public override long ReadJson(
             JsonReader reader,
             Type objectType,
@@ -71,13 +79,17 @@ public sealed class NewtonsoftJsonSerializer : IJsonSerializer
         }
     }
 
-    /// <summary>表示 NullableInt64StringJsonConverter 类型</summary>
+    /// <summary>
+    /// 在 Newtonsoft.Json 中将可空 long 值序列化为字符串
+    /// </summary>
     private sealed class NullableInt64StringJsonConverter : JsonConverter<long?>
     {
-        /// <summary>执行 WriteJson 操作</summary>
-        /// <param name="writer">writer 参数</param>
-        /// <param name="value">value 参数</param>
-        /// <param name="serializer">serializer 参数</param>
+        /// <summary>
+        /// 将长整型标识写入 JSON 输出
+        /// </summary>
+        /// <param name="writer">写入 JSON 内容的输出器</param>
+        /// <param name="value">用于转换、回显或断言的输入值</param>
+        /// <param name="serializer">当前 JSON 序列化器实例</param>
         public override void WriteJson(JsonWriter writer, long? value, JsonSerializer serializer)
         {
             if (value is null)
@@ -89,13 +101,15 @@ public sealed class NewtonsoftJsonSerializer : IJsonSerializer
             writer.WriteValue(value.Value.ToString(CultureInfo.InvariantCulture));
         }
 
-        /// <summary>执行 ReadJson 操作</summary>
-        /// <param name="reader">reader 参数</param>
-        /// <param name="objectType">objectType 参数</param>
-        /// <param name="existingValue">existingValue 参数</param>
-        /// <param name="hasExistingValue">hasExistingValue 参数</param>
-        /// <param name="serializer">serializer 参数</param>
-        /// <returns>ReadJson 的执行结果</returns>
+        /// <summary>
+        /// 从 JSON 输入读取长整型标识
+        /// </summary>
+        /// <param name="reader">读取 JSON 内容的输入器</param>
+        /// <param name="objectType">需要判断或创建的目标对象类型</param>
+        /// <param name="existingValue">反序列化前已有的对象值</param>
+        /// <param name="hasExistingValue">用于提供存在Existing值</param>
+        /// <param name="serializer">当前 JSON 序列化器实例</param>
+        /// <returns>方法完成后返回给调用方的结果对象</returns>
         public override long? ReadJson(
             JsonReader reader,
             Type objectType,
@@ -107,9 +121,11 @@ public sealed class NewtonsoftJsonSerializer : IJsonSerializer
         }
     }
 
-    /// <summary>执行 ReadInt64 操作</summary>
-    /// <param name="value">value 参数</param>
-    /// <returns>ReadInt64 的执行结果</returns>
+    /// <summary>
+    /// 读取nt64内容
+    /// </summary>
+    /// <param name="value">用于转换、回显或断言的输入值</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static long ReadInt64(object? value)
     {
         if (value is long longValue)

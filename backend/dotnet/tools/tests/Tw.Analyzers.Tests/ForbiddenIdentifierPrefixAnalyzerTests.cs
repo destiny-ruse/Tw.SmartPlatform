@@ -8,11 +8,15 @@ using Xunit;
 
 namespace Tw.Analyzers.Tests;
 
-/// <summary>验证 ForbiddenIdentifierPrefixAnalyzerTests 相关行为</summary>
+/// <summary>
+/// 覆盖禁止标识符前缀分析器的核心行为和边界条件
+/// </summary>
 public sealed class ForbiddenIdentifierPrefixAnalyzerTests
 {
-    /// <summary>验证 ReportsTwPrefixExceptTwException 场景</summary>
-    /// <returns>ReportsTwPrefixExceptTwException 的执行结果</returns>
+    /// <summary>
+    /// 验证分析器报告 Tw 前缀命名并豁免 TwException
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ReportsTwPrefixExceptTwException()
     {

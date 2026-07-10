@@ -7,29 +7,49 @@ using Xunit;
 
 namespace Tw.DependencyInjection.Tests.Registration;
 
-/// <summary>验证 ServiceRegistrationExecutorTests 相关行为</summary>
+/// <summary>
+/// 覆盖服务RegistrationExecutor的核心行为和边界条件
+/// </summary>
 public class ServiceRegistrationExecutorTests
 {
-    /// <summary>定义 IOrderService 契约</summary>
+    /// <summary>
+    /// 定义Order服务的能力边界
+    /// </summary>
     private interface IOrderService;
-    /// <summary>验证 OrderService 相关行为</summary>
+    /// <summary>
+    /// 覆盖Order服务的核心行为和边界条件
+    /// </summary>
     private sealed class OrderService : IOrderService;
-    /// <summary>验证 SomeOtherOrderService 相关行为</summary>
+    /// <summary>
+    /// 覆盖SomeOtherOrder服务的核心行为和边界条件
+    /// </summary>
     private sealed class SomeOtherOrderService : IOrderService;
-    /// <summary>定义 IPaymentProvider 契约</summary>
+    /// <summary>
+    /// 定义Payment提供器的能力边界
+    /// </summary>
     private interface IPaymentProvider;
-    /// <summary>验证 WechatPaymentProvider 相关行为</summary>
+    /// <summary>
+    /// 覆盖WechatPayment提供器的核心行为和边界条件
+    /// </summary>
     private sealed class WechatPaymentProvider : IPaymentProvider;
-    /// <summary>验证 AlipayPaymentProvider 相关行为</summary>
+    /// <summary>
+    /// 覆盖AlipayPayment提供器的核心行为和边界条件
+    /// </summary>
     private sealed class AlipayPaymentProvider : IPaymentProvider;
-    /// <summary>定义 IGenericKeyedContract 契约</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <summary>
+    /// 定义GenericKeyedContract的能力边界
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
     private interface IGenericKeyedContract<T>;
-    /// <summary>验证 GenericKeyedImpl 相关行为</summary>
-    /// <typeparam name="T">T 类型参数</typeparam>
+    /// <summary>
+    /// 覆盖GenericKeyedImpl的核心行为和边界条件
+    /// </summary>
+    /// <typeparam name="T">响应数据的运行时类型</typeparam>
     private sealed class GenericKeyedImpl<T> : IGenericKeyedContract<T>;
 
-    /// <summary>验证 Apply_RegistersNonKeyedWinner 场景</summary>
+    /// <summary>
+    /// 验证Apply注册NonKeyedWinner
+    /// </summary>
     [Fact]
     public void Apply_RegistersNonKeyedWinner()
     {
@@ -51,7 +71,9 @@ public class ServiceRegistrationExecutorTests
         services.Should().ContainSingle(d => d.ServiceType == typeof(IOrderService));
     }
 
-    /// <summary>验证 Apply_RegistersKeyedServiceAndEnumerableEntry 场景</summary>
+    /// <summary>
+    /// 验证Apply注册Keyed服务和EnumerableEntry
+    /// </summary>
     [Fact]
     public void Apply_RegistersKeyedServiceAndEnumerableEntry()
     {
@@ -77,7 +99,9 @@ public class ServiceRegistrationExecutorTests
             .Should().ContainSingle(e => Equals(e.Key, "wechat") && e.Service is WechatPaymentProvider);
     }
 
-    /// <summary>验证 Apply_ReplacesExistingNonKeyedDescriptor 场景</summary>
+    /// <summary>
+    /// 验证ApplyReplacesExistingNonKeyedDescriptor
+    /// </summary>
     [Fact]
     public void Apply_ReplacesExistingNonKeyedDescriptor()
     {
@@ -105,7 +129,9 @@ public class ServiceRegistrationExecutorTests
         descriptor.ImplementationType.Should().Be(typeof(OrderService));
     }
 
-    /// <summary>验证 Apply_RegistersMultipleKeyedEntries 场景</summary>
+    /// <summary>
+    /// 验证Apply注册MultipleKeyedEntries
+    /// </summary>
     [Fact]
     public void Apply_RegistersMultipleKeyedEntries()
     {
@@ -150,7 +176,9 @@ public class ServiceRegistrationExecutorTests
             .Should().BeOfType<AlipayPaymentProvider>();
     }
 
-    /// <summary>验证 Apply_DoesNotThrow_ForKeyedOpenGenericContract 场景</summary>
+    /// <summary>
+    /// 验证Apply不Throw针对KeyedOpenGenericContract
+    /// </summary>
     [Fact]
     public void Apply_DoesNotThrow_ForKeyedOpenGenericContract()
     {
@@ -177,7 +205,9 @@ public class ServiceRegistrationExecutorTests
             Equals(d.ServiceKey, "k"));
     }
 
-    /// <summary>验证 Apply_Throws_WhenServicesNull 场景</summary>
+    /// <summary>
+    /// 验证Apply抛出异常当Services空值
+    /// </summary>
     [Fact]
     public void Apply_Throws_WhenServicesNull()
     {
@@ -189,7 +219,9 @@ public class ServiceRegistrationExecutorTests
             .WithParameterName("services");
     }
 
-    /// <summary>验证 Apply_Throws_WhenPlanNull 场景</summary>
+    /// <summary>
+    /// 验证Apply抛出异常当Plan空值
+    /// </summary>
     [Fact]
     public void Apply_Throws_WhenPlanNull()
     {
@@ -201,9 +233,11 @@ public class ServiceRegistrationExecutorTests
             .WithParameterName("plan");
     }
 
-    /// <summary>验证 CreatePlan 场景</summary>
-    /// <param name="registrations">registrations 参数</param>
-    /// <returns>CreatePlan 的执行结果</returns>
+    /// <summary>
+    /// 创建Plan测试对象
+    /// </summary>
+    /// <param name="registrations">用于提供registrations</param>
+    /// <returns>方法完成后返回给调用方的结果对象</returns>
     private static ServiceRegistrationPlan CreatePlan(params ServiceCandidate[] registrations)
     {
         return new ServiceRegistrationPlan(

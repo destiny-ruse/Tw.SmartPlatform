@@ -4,11 +4,15 @@ using Xunit;
 
 namespace Tw.Application.Tests.Pipeline;
 
-/// <summary>验证 ApplicationPipelineExecutorTests 相关行为</summary>
+/// <summary>
+/// 覆盖Application管道Executor的核心行为和边界条件
+/// </summary>
 public sealed class ApplicationPipelineExecutorTests
 {
-    /// <summary>验证 ExecuteAsync_RunsBehaviorsInSpecOrder 场景</summary>
-    /// <returns>ExecuteAsync_RunsBehaviorsInSpecOrder 的执行结果</returns>
+    /// <summary>
+    /// 验证执行异步RunsBehaviorsInSpecOrder
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ExecuteAsync_RunsBehaviorsInSpecOrder()
     {
@@ -38,8 +42,10 @@ public sealed class ApplicationPipelineExecutorTests
             "Authorization-after");
     }
 
-    /// <summary>验证 ExecuteAsync_RunsCompletedHooksAfterHandler 场景</summary>
-    /// <returns>ExecuteAsync_RunsCompletedHooksAfterHandler 的执行结果</returns>
+    /// <summary>
+    /// 验证执行异步RunsCompletedHooksAfter处理器
+    /// </summary>
+    /// <returns>表示异步流程完成状态的任务</returns>
     [Fact]
     public async Task ExecuteAsync_RunsCompletedHooksAfterHandler()
     {
@@ -59,16 +65,22 @@ public sealed class ApplicationPipelineExecutorTests
         calls.Should().Equal("Handler", "CompletedHook");
     }
 
-    /// <summary>验证 RecordingBehavior 相关行为</summary>
+    /// <summary>
+    /// 覆盖Recording行为的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingBehavior(string name, List<string> calls) : IApplicationPipelineBehavior
     {
-        /// <summary>表示 Name 属性</summary>
+        /// <summary>
+        /// 名称在当前对象中的业务含义
+        /// </summary>
         public string Name => name;
 
-        /// <summary>验证 InvokeAsync 场景</summary>
-        /// <param name="next">next 参数</param>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>InvokeAsync 的执行结果</returns>
+        /// <summary>
+        /// 执行测试管道委托并记录调用
+        /// </summary>
+        /// <param name="next">用于提供next</param>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public async Task InvokeAsync(Func<Task> next, CancellationToken cancellationToken)
         {
             calls.Add($"{name}-before");
@@ -77,12 +89,16 @@ public sealed class ApplicationPipelineExecutorTests
         }
     }
 
-    /// <summary>验证 RecordingCompletedHook 相关行为</summary>
+    /// <summary>
+    /// 覆盖RecordingCompletedHook的核心行为和边界条件
+    /// </summary>
     private sealed class RecordingCompletedHook(List<string> calls) : ICompletedHook
     {
-        /// <summary>验证 RunAsync 场景</summary>
-        /// <param name="cancellationToken">cancellationToken 参数</param>
-        /// <returns>RunAsync 的执行结果</returns>
+        /// <summary>
+        /// 运行测试管道委托
+        /// </summary>
+        /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
+        /// <returns>表示异步流程完成状态的任务</returns>
         public Task RunAsync(CancellationToken cancellationToken)
         {
             calls.Add("CompletedHook");

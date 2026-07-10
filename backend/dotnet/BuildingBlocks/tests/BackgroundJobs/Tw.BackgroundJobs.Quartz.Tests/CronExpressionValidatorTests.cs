@@ -4,10 +4,14 @@ using Xunit;
 
 namespace Tw.BackgroundJobs.Quartz.Tests;
 
-/// <summary>验证 CronExpressionValidatorTests 相关行为</summary>
+/// <summary>
+/// 覆盖CronExpressionValidator的核心行为和边界条件
+/// </summary>
 public sealed class CronExpressionValidatorTests
 {
-    /// <summary>验证 Validate_RejectsInvalidCron 场景</summary>
+    /// <summary>
+    /// 验证校验拒绝非法Cron
+    /// </summary>
     [Fact]
     public void Validate_RejectsInvalidCron()
     {
