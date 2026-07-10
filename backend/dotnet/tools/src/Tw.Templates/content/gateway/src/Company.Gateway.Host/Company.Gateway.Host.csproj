@@ -3,9 +3,18 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UseRepositoryProjectReferences Condition="Exists('../../../../../../../BuildingBlocks/src/Gateway/Tw.Gateway/Tw.Gateway.csproj')">true</UseRepositoryProjectReferences>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(UseRepositoryProjectReferences)' == 'true'">
+    <ProjectReference Include="../../../../../../../BuildingBlocks/src/Gateway/Tw.Gateway/Tw.Gateway.csproj" />
+    <ProjectReference Include="../../../../../../../BuildingBlocks/src/Gateway/Tw.Gateway.Yarp/Tw.Gateway.Yarp.csproj" />
+    <ProjectReference Include="../../../../../../../BuildingBlocks/src/Web/Tw.AspNetCore/Tw.AspNetCore.csproj" />
+    <ProjectReference Include="../../../../../../../BuildingBlocks/src/Observability/Tw.Observability/Tw.Observability.csproj" />
+    <ProjectReference Include="../../../../../../../BuildingBlocks/src/Configuration/Tw.Configuration/Tw.Configuration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UseRepositoryProjectReferences)' != 'true'">
     <PackageReference Include="Tw.Gateway" />
     <PackageReference Include="Tw.Gateway.Yarp" />
     <PackageReference Include="Tw.AspNetCore" />

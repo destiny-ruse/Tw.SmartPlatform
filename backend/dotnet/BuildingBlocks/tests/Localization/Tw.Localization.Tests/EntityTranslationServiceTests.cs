@@ -1,7 +1,7 @@
 ﻿using AwesomeAssertions;
-using Tw.Threading;
 using Tw.Localization.Requests;
 using Tw.Localization.Tests.Fakes;
+using Tw.Threading;
 using Xunit;
 
 namespace Tw.Localization.Tests;
@@ -32,7 +32,7 @@ public class EntityTranslationServiceTests
             [new EntityTranslationKey("Product", "42", "Name")],
             new LocalizationContext("zh-Hans") { TenantId = "t1" });
 
-        var result = await service.GetFieldsAsync(query);
+        var result = await service.GetFieldsAsync(query, TestContext.Current.CancellationToken);
 
         result[new EntityTranslationKey("Product", "42", "Name")].Value.Should().Be("父级名称");
         store.GetListCallCount.Should().Be(1);
@@ -52,7 +52,8 @@ public class EntityTranslationServiceTests
         var result = await service.GetFieldAsync(
             new EntityTranslationLookup(
                 new EntityTranslationKey("Product", "42", "Name"),
-                new LocalizationContext("en-US")));
+                new LocalizationContext("en-US")),
+            TestContext.Current.CancellationToken);
 
         result.Should().BeNull();
     }
@@ -74,7 +75,7 @@ public class EntityTranslationServiceTests
             [key],
             new LocalizationContext("zh-Hans") { TenantId = "t1" });
 
-        var result = await service.GetFieldsAsync(query);
+        var result = await service.GetFieldsAsync(query, TestContext.Current.CancellationToken);
 
         result[key].Value.Should().Be("租户名称");
     }
@@ -95,7 +96,7 @@ public class EntityTranslationServiceTests
             [key],
             new LocalizationContext("zh-Hans") { TenantId = "t1" });
 
-        var result = await service.GetFieldsAsync(query);
+        var result = await service.GetFieldsAsync(query, TestContext.Current.CancellationToken);
 
         result[key].Value.Should().Be("全局名称");
     }

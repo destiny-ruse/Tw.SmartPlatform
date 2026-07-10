@@ -20,7 +20,7 @@ public sealed class SqlSugarUnitOfWorkManagerTests
     {
         var manager = new SqlSugarUnitOfWorkManager(new FakeSqlSugarClientFactory());
 
-        await using var uow = await manager.BeginAsync(UnitOfWorkOptions.Default);
+        await using var uow = await manager.BeginAsync(UnitOfWorkOptions.Default, TestContext.Current.CancellationToken);
 
         manager.Current.Should().BeSameAs(uow);
     }
@@ -34,7 +34,7 @@ public sealed class SqlSugarUnitOfWorkManagerTests
     {
         var manager = new SqlSugarUnitOfWorkManager(new FakeSqlSugarClientFactory());
 
-        var uow = await manager.BeginAsync(UnitOfWorkOptions.Default);
+        var uow = await manager.BeginAsync(UnitOfWorkOptions.Default, TestContext.Current.CancellationToken);
         await uow.DisposeAsync();
 
         manager.Current.Should().BeNull();
@@ -49,8 +49,8 @@ public sealed class SqlSugarUnitOfWorkManagerTests
     {
         var manager = new SqlSugarUnitOfWorkManager(new FakeSqlSugarClientFactory());
 
-        await using var uow = await manager.BeginAsync(UnitOfWorkOptions.Default);
-        await uow.CommitAsync();
+        await using var uow = await manager.BeginAsync(UnitOfWorkOptions.Default, TestContext.Current.CancellationToken);
+        await uow.CommitAsync(TestContext.Current.CancellationToken);
 
         var boundary = uow.Should().BeAssignableTo<IOutboxTransactionBoundary>().Subject;
         boundary.CanWriteOutbox.Should().BeTrue();

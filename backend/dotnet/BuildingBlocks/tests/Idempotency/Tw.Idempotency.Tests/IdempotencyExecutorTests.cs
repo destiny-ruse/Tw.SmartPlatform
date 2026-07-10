@@ -20,8 +20,16 @@ public sealed class IdempotencyExecutorTests
         var executor = new IdempotencyExecutor(store);
         var key = new IdempotencyKey(IdempotencyBoundary.Http, "tenant-a", "Order", "Create", "request-1");
 
-        var first = await executor.ExecuteAsync(key, "body-hash-1", () => Task.FromResult(IdempotencyResult.Success(201, "created")));
-        var duplicate = await executor.ExecuteAsync(key, "body-hash-1", () => Task.FromResult(IdempotencyResult.Success(201, "duplicate-created")));
+        var first = await executor.ExecuteAsync(
+            key,
+            "body-hash-1",
+            () => Task.FromResult(IdempotencyResult.Success(201, "created")),
+            TestContext.Current.CancellationToken);
+        var duplicate = await executor.ExecuteAsync(
+            key,
+            "body-hash-1",
+            () => Task.FromResult(IdempotencyResult.Success(201, "duplicate-created")),
+            TestContext.Current.CancellationToken);
 
         first.Should().Be(IdempotencyResult.Success(201, "created"));
         duplicate.Should().Be(IdempotencyResult.Success(201, "created"));
@@ -38,9 +46,17 @@ public sealed class IdempotencyExecutorTests
         var executor = new IdempotencyExecutor(store);
         var key = new IdempotencyKey(IdempotencyBoundary.Http, "tenant-a", "Order", "Create", "request-1");
 
-        await executor.ExecuteAsync(key, "body-hash-1", () => Task.FromResult(IdempotencyResult.Success(201, "created")));
+        await executor.ExecuteAsync(
+            key,
+            "body-hash-1",
+            () => Task.FromResult(IdempotencyResult.Success(201, "created")),
+            TestContext.Current.CancellationToken);
 
-        var act = () => executor.ExecuteAsync(key, "body-hash-2", () => Task.FromResult(IdempotencyResult.Success(201, "created")));
+        var act = () => executor.ExecuteAsync(
+            key,
+            "body-hash-2",
+            () => Task.FromResult(IdempotencyResult.Success(201, "created")),
+            TestContext.Current.CancellationToken);
 
         await act.Should().ThrowAsync<IdempotencyConflictException>()
             .Where(exception => exception.Code == "IDEMPOTENCY:000409");

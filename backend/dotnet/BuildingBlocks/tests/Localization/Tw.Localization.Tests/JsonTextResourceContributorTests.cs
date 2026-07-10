@@ -21,7 +21,7 @@ public class JsonTextResourceContributorTests
         var contributor = new JsonTextResourceContributor([resource], priority: 0);
         var request = new TextLookupRequest("App", "Menu", new LocalizationContext("zh-Hans"), ["zh-Hans"]);
 
-        var text = await contributor.GetOrNullAsync(request);
+        var text = await contributor.GetOrNullAsync(request, TestContext.Current.CancellationToken);
 
         text!.Value.Should().Be("菜单");
         text.Source.Should().Be(LocalizedTextSource.StaticJson);
@@ -67,7 +67,7 @@ public class JsonTextResourceContributorTests
         var request = new TextFillRequest("App", new LocalizationContext("zh-Hans"), ["zh-Hans", "en-US"]);
         var texts = new Dictionary<string, LocalizedText>();
 
-        await contributor.FillAsync(request, texts);
+        await contributor.FillAsync(request, texts, TestContext.Current.CancellationToken);
 
         texts["Menu"].Value.Should().Be("菜单");
         texts["Only_En"].Value.Should().Be("EnOnly");

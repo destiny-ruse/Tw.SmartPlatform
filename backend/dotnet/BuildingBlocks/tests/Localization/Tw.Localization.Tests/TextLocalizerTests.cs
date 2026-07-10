@@ -1,7 +1,7 @@
 ﻿using AwesomeAssertions;
-using Tw.Threading;
 using Tw.Localization.Json;
 using Tw.Localization.Tests.Fakes;
+using Tw.Threading;
 using Xunit;
 
 namespace Tw.Localization.Tests;
@@ -33,7 +33,11 @@ public class TextLocalizerTests
         var dynamicContributor = new DynamicTextContributor(store, priority: 100);
         var localizer = new TextLocalizer([staticContributor, dynamicContributor], options, CreateTokenProvider());
 
-        var text = await localizer.GetAsync("App", "Menu", new LocalizationContext("zh-Hans") { TenantId = "t1" });
+        var text = await localizer.GetAsync(
+            "App",
+            "Menu",
+            new LocalizationContext("zh-Hans") { TenantId = "t1" },
+            TestContext.Current.CancellationToken);
 
         text.Value.Should().Be("租户菜单");
     }
@@ -48,7 +52,11 @@ public class TextLocalizerTests
         var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US" } };
         var localizer = new TextLocalizer([], options, CreateTokenProvider());
 
-        var text = await localizer.GetAsync("App", "Missing", new LocalizationContext("en-US"));
+        var text = await localizer.GetAsync(
+            "App",
+            "Missing",
+            new LocalizationContext("en-US"),
+            TestContext.Current.CancellationToken);
 
         text.ResourceNotFound.Should().BeTrue();
         text.Value.Should().Be("Missing");
@@ -71,7 +79,10 @@ public class TextLocalizerTests
         var dynamicContributor = new DynamicTextContributor(store, priority: 100);
         var localizer = new TextLocalizer([staticContributor, dynamicContributor], options, CreateTokenProvider());
 
-        var result = await localizer.GetAllAsync("App", new LocalizationContext("zh-Hans"));
+        var result = await localizer.GetAllAsync(
+            "App",
+            new LocalizationContext("zh-Hans"),
+            TestContext.Current.CancellationToken);
 
         result.Single(t => t.Name == "Menu").Value.Should().Be("动态菜单");
         result.Single(t => t.Name == "Title").Value.Should().Be("动态标题");
