@@ -51,10 +51,8 @@
     <Project Path="BuildingBlocks/src/Excel/Tw.Excel/Tw.Excel.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Foundation/">
-    <Project Path="BuildingBlocks/src/Foundation/Tw.Castle.Core/Tw.Castle.Core.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Core/Tw.Core.csproj" Id="7acbd999-ad5a-4321-a343-f20712fc09f2" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.DependencyInjection.Abstractions/Tw.DependencyInjection.Abstractions.csproj" />
-    <Project Path="BuildingBlocks/src/Foundation/Tw.DependencyInjection.Autofac/Tw.DependencyInjection.Autofac.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.DependencyInjection/Tw.DependencyInjection.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.ExceptionHandling/Tw.ExceptionHandling.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Json.Abstractions/Tw.Json.Abstractions.csproj" />
@@ -167,9 +165,7 @@
     <Project Path="BuildingBlocks/tests/Excel/Tw.Excel.Tests/Tw.Excel.Tests.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/tests/Foundation/">
-    <Project Path="BuildingBlocks/tests/Foundation/Tw.Castle.Core.Tests/Tw.Castle.Core.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Foundation/Tw.Core.Tests/Tw.Core.Tests.csproj" />
-    <Project Path="BuildingBlocks/tests/Foundation/Tw.DependencyInjection.Autofac.Tests/Tw.DependencyInjection.Autofac.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Foundation/Tw.DependencyInjection.Tests.Fixtures/Tw.DependencyInjection.Tests.Fixtures.csproj" />
     <Project Path="BuildingBlocks/tests/Foundation/Tw.DependencyInjection.Tests/Tw.DependencyInjection.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Foundation/Tw.ExceptionHandling.Tests/Tw.ExceptionHandling.Tests.csproj" />

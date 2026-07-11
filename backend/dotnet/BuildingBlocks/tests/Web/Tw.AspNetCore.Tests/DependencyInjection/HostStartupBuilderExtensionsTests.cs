@@ -1,13 +1,10 @@
 ﻿using System.Reflection;
-using Autofac.Extensions.DependencyInjection;
 using AwesomeAssertions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
 using Tw.DependencyInjection.Diagnostics;
-using Tw.Castle.Core;
-using Tw.Castle.Core.Abstractions;
 using Xunit;
 
 namespace Tw.AspNetCore.Tests.DependencyInjection;
@@ -18,36 +15,26 @@ namespace Tw.AspNetCore.Tests.DependencyInjection;
 public class HostStartupBuilderExtensionsTests
 {
     /// <summary>
-    /// 验证UseWebIntegrationConfiguresAutofac和服务Registration
+    /// 验证UseWebIntegration通过 Microsoft DI 注册并解析服务
     /// </summary>
     [Fact]
-    public void UseWebIntegration_ConfiguresAutofacAndServiceRegistration()
+    public void UseWebIntegration_RegistersAndResolvesServicesThroughMicrosoftDependencyInjection()
     {
-        HostStartupSampleInterceptor.Reset();
         var builder = CreateBuilderWithTestAssembly();
 
         builder.UseWebIntegration();
 
         using var app = builder.Build();
-        app.Services.Should().BeOfType<AutofacServiceProvider>();
+        app.Services.Should().BeOfType<ServiceProvider>();
 
         var registrationReport = app.Services.GetRequiredService<ServiceRegistrationReport>();
         registrationReport.Registrations.Should().Contain(registration =>
             registration.ServiceTypeName == typeof(IHostStartupSampleService).FullName
             && registration.ImplementationTypeName == typeof(HostStartupSampleService).FullName);
 
-        var interceptionReport = app.Services.GetRequiredService<InterceptionReport>();
-        interceptionReport.Items.Should().Contain(item =>
-            item.ServiceTypeName == typeof(IHostStartupSampleService).FullName
-            && item.ImplementationTypeName == typeof(HostStartupSampleService).FullName
-            && item.MethodName == nameof(IHostStartupSampleService.Execute)
-            && item.Carrier == "CastleInterfaceProxy"
-            && item.Status == "enabled");
-
-        var service = app.Services.GetRequiredService<IHostStartupSampleService>();
-        service.Execute();
-
-        HostStartupSampleInterceptor.InvocationCount.Should().Be(1);
+        using var scope = app.Services.CreateScope();
+        scope.ServiceProvider.GetRequiredService<IHostStartupSampleService>()
+            .Should().BeOfType<HostStartupSampleService>();
     }
 
     /// <summary>
@@ -78,6 +65,24 @@ public class HostStartupBuilderExtensionsTests
     }
 
     /// <summary>
+    /// 验证 Tw.AspNetCore 运行时程序集不再引用已移除的容器和代理程序集
+    /// </summary>
+    [Fact]
+    public void TwAspNetCoreAssembly_DoesNotReferenceAutofacOrCastle()
+    {
+        var referencedAssemblyNames = typeof(HostStartupBuilderExtensions).Assembly
+            .GetReferencedAssemblies()
+            .Select(assemblyName => assemblyName.Name);
+
+        referencedAssemblyNames.Should().NotContain(name =>
+            name != null
+            && (name.StartsWith("Autofac", StringComparison.Ordinal)
+                || name.StartsWith("Castle.", StringComparison.Ordinal)
+                || name.StartsWith("Tw.Castle.", StringComparison.Ordinal)
+                || name.StartsWith("Tw.DependencyInjection.Autofac", StringComparison.Ordinal)));
+    }
+
+    /// <summary>
     /// 创建构建器带有TestAssembly测试对象
     /// </summary>
     /// <returns>方法完成后返回给调用方的结果对象</returns>
@@ -97,11 +102,6 @@ public class HostStartupBuilderExtensionsTests
     /// </summary>
     public interface IHostStartupSampleService
     {
-        /// <summary>
-        /// 说明Execute在当前类型中的职责
-        /// </summary>
-        [Intercept(typeof(HostStartupSampleInterceptor))]
-        void Execute();
     }
 
     /// <summary>
@@ -109,41 +109,5 @@ public class HostStartupBuilderExtensionsTests
     /// </summary>
     public sealed class HostStartupSampleService : IHostStartupSampleService, IScopedDependency
     {
-        /// <summary>
-        /// 说明Execute在当前类型中的职责
-        /// </summary>
-        public void Execute()
-        {
-        }
-    }
-
-    /// <summary>
-    /// 覆盖主机启动示例拦截器的核心行为和边界条件
-    /// </summary>
-    public sealed class HostStartupSampleInterceptor : SyncInterceptorBase, ITransientDependency
-    {
-        /// <summary>
-        /// 保存当前类型处理流程依赖的调用数量
-        /// </summary>
-        private static int _invocationCount;
-
-        /// <summary>
-        /// Read在当前对象中的业务含义
-        /// </summary>
-        public static int InvocationCount => Volatile.Read(ref _invocationCount);
-
-        /// <summary>
-        /// 清空测试替身记录的调用状态
-        /// </summary>
-        public static void Reset() => Interlocked.Exchange(ref _invocationCount, 0);
-
-        /// <summary>
-        /// 在目标调用前运行拦截器逻辑
-        /// </summary>
-        /// <param name="context">当前调用携带的上下文信息</param>
-        protected override void Before(IInvocationContext context)
-        {
-            Interlocked.Increment(ref _invocationCount);
-        }
     }
 }

@@ -17,7 +17,7 @@ in_scope:
   - Options 自动发现、绑定、启动校验、后置配置与诊断报告
 out_of_scope:
   - DI 注册标记、特性、Options 与 AOP 抽象
-  - Autofac 容器接管与 Autofac 原生注册执行
+  - 其他依赖注入容器接管与容器专属注册执行
   - ASP.NET Core 宿主启动、MVC、Minimal API、Middleware 与 gRPC 承载
   - 数据访问、ORM、仓储实现
 public_capabilities:
@@ -26,6 +26,10 @@ dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"
     - "Microsoft.EntityFrameworkCore*"
+    - "Autofac*"
+    - "Castle.*"
+    - "Tw.Castle.*"
+    - "Tw.DependencyInjection.Autofac"
   allow:
     - "Tw.DependencyInjection.Abstractions"
     - "Microsoft.Extensions.*"

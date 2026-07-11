@@ -10,15 +10,20 @@ namespace Tw.DependencyInjection.Tests.Registration;
 public sealed class ContainerNeutralRegistrationTests
 {
     /// <summary>
-    /// 验证服务RegistrationPlan不ExposeAutofac类型集合
+    /// 验证 Tw.DependencyInjection 运行时程序集不引用已移除的容器和代理程序集
     /// </summary>
     [Fact]
-    public void ServiceRegistrationPlan_DoesNotExposeAutofacTypes()
+    public void TwDependencyInjectionAssembly_DoesNotReferenceAutofacOrCastle()
     {
         typeof(ServiceRegistrationPlan).Assembly
             .GetReferencedAssemblies()
             .Select(name => name.Name)
             .Should()
-            .NotContain("Autofac");
+            .NotContain(name =>
+                name != null
+                && (name.StartsWith("Autofac", StringComparison.Ordinal)
+                    || name.StartsWith("Castle.", StringComparison.Ordinal)
+                    || name.StartsWith("Tw.Castle.", StringComparison.Ordinal)
+                    || name.StartsWith("Tw.DependencyInjection.Autofac", StringComparison.Ordinal)));
     }
 }

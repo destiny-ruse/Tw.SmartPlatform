@@ -1,6 +1,6 @@
 # Tw.DependencyInjection
 
-`Tw.DependencyInjection` 是容器中立的依赖注入运行时，消费 `Tw.DependencyInjection.Abstractions` 的框架无关抽象，承载程序集发现、拓扑排序、注册规划诊断、Microsoft DI 注册执行与 Options 自动装载。本包不依赖 Autofac 或 Castle。
+`Tw.DependencyInjection` 是容器中立的依赖注入运行时，消费 `Tw.DependencyInjection.Abstractions` 的框架无关抽象，承载程序集发现、拓扑排序、注册规划诊断、Microsoft DI 注册执行与 Options 自动装载。本包不依赖替代容器或动态代理库。
 
 ## 能力索引
 
@@ -11,5 +11,6 @@
 ## 相关包
 
 - [`Tw.DependencyInjection.Abstractions`](../Tw.DependencyInjection.Abstractions/README.md)：DI 与 Options 元数据抽象。
-- [`Tw.DependencyInjection.Autofac`](../Tw.DependencyInjection.Autofac/README.md)：Autofac 宿主接管与 Autofac native 注册执行。
-- [`Tw.Castle.Core`](../Tw.Castle.Core/README.md)：方法级拦截抽象、pipeline、Castle adapter 与 `InterceptionReport`。
+- [`Tw.AspNetCore`](../Tw.AspNetCore/README.md)：以 Microsoft DI 为默认容器的宿主启动聚合入口。
+
+`Tw.DependencyInjection` 只执行 Microsoft DI 注册，不提供通用动态代理。横切关注点应使用宿主框架的原生扩展点：HTTP middleware、认证授权 policy、MVC filter、Minimal API endpoint filter、gRPC interceptor、CAP filter、Quartz listener 或应用管线。

@@ -10,4 +10,4 @@
 
 `Tw.AspNetCore.Grpc` 只承载 gRPC 服务端集成入口与 gRPC 原生 interceptor 使用边界。跨协议宿主启动入口仍归 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md)；MVC/Web API action filter adapter 与 HTTP cancellation provider 仍归 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md)。
 
-本包不承载统一 `IInterceptorPipeline` adapter、MVC Filter、HTTP Middleware、Minimal API、业务 proto 契约或 Razor/MVC 能力。
+本包不承载通用动态代理、MVC filter、HTTP middleware、Minimal API、业务 proto 契约或 Razor/MVC 能力。

@@ -11,8 +11,6 @@
 - [Tw.Core](dotnet/Tw.Core/README.md)
 - [Tw.DependencyInjection.Abstractions](dotnet/Tw.DependencyInjection.Abstractions/README.md)
 - [Tw.DependencyInjection](dotnet/Tw.DependencyInjection/README.md)
-- [Tw.DependencyInjection.Autofac](dotnet/Tw.DependencyInjection.Autofac/README.md)
-- [Tw.Castle.Core](dotnet/Tw.Castle.Core/README.md)
 - [Tw.AspNetCore](dotnet/Tw.AspNetCore/README.md)
 - [Tw.AspNetCore.Mvc](dotnet/Tw.AspNetCore.Mvc/README.md)
 - [Tw.AspNetCore.Grpc](dotnet/Tw.AspNetCore.Grpc/README.md)

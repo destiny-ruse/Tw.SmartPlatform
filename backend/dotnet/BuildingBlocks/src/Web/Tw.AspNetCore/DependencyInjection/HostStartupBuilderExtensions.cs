@@ -1,7 +1,5 @@
-using Autofac;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Hosting;
-using Tw.DependencyInjection.Autofac;
+using Tw.DependencyInjection;
 
 namespace Tw.AspNetCore;
 
@@ -11,7 +9,7 @@ namespace Tw.AspNetCore;
 public static class HostStartupBuilderExtensions
 {
     /// <summary>
-    /// 使用 Autofac 接管宿主容器，并在 Autofac 原生注册路径启用服务自动注册
+    /// 使用 Microsoft DI 注册自动发现的服务与 Options
     /// </summary>
     /// <param name="builder">ASP.NET Core 应用构建器</param>
     /// <returns>同一应用构建器，便于链式调用</returns>
@@ -20,9 +18,7 @@ public static class HostStartupBuilderExtensions
     {
         ArgumentNullException.ThrowIfNull(builder);
 
-        builder.Host.UseAutofac();
-        builder.Host.ConfigureContainer<ContainerBuilder>(
-            containerBuilder => containerBuilder.AddServiceRegistration(builder.Configuration));
+        builder.Services.AddServiceRegistration(builder.Configuration);
 
         return builder;
     }

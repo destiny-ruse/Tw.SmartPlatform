@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Reflection.Emit;
 using AwesomeAssertions;
 using Tw.DependencyInjection;
 using Tw.DependencyInjection.Abstractions;
@@ -73,16 +74,29 @@ public class ServicePriorityResolverTests
     }
 
     /// <summary>
-    /// 验证ResolveAssemblyPriorityConfigOverrides特性
+    /// 验证配置优先级覆盖程序集特性声明
     /// </summary>
     [Fact]
-    public void ResolveAssemblyPriority_ConfigOverridesAttribute()
+    public void ResolveAssemblyPriority_ConfigWinsOverAssemblyRegistrationPriorityAttribute()
     {
+        var assembly = CreateAssemblyWithRegistrationPriority(priority: 25);
         var options = new ServiceRegistrationOptions();
-        options.AssemblyPriorities.Add(typeof(TypePriorityService).Assembly.GetName().Name!, 50);
+        options.AssemblyPriorities.Add(assembly.GetName().Name!, 50);
 
-        ServicePriorityResolver.ResolveAssemblyPriority(typeof(TypePriorityService).Assembly, options)
+        ServicePriorityResolver.ResolveAssemblyPriority(assembly, options)
             .Should().Be(50);
+    }
+
+    /// <summary>
+    /// 验证未配置优先级时使用程序集级 AssemblyRegistrationPriorityAttribute
+    /// </summary>
+    [Fact]
+    public void ResolveAssemblyPriority_UsesAssemblyRegistrationPriorityAttribute_WhenNotConfigured()
+    {
+        var assembly = CreateAssemblyWithRegistrationPriority(priority: 25);
+
+        ServicePriorityResolver.ResolveAssemblyPriority(assembly, new ServiceRegistrationOptions())
+            .Should().Be(25);
     }
 
     /// <summary>
@@ -115,10 +129,10 @@ public class ServicePriorityResolverTests
     // ──────────────────────────────────────────────────────────
 
     /// <summary>
-    /// 验证Resolve类型PriorityUses服务Priority当Only服务Priority特性
+    /// 验证类型级 ServicePriorityAttribute 的优先级行为保持不变
     /// </summary>
     [Fact]
-    public void ResolveTypePriority_UsesServicePriority_WhenOnlyServicePriorityAttribute()
+    public void ResolveTypePriority_UsesServicePriorityAttribute_WhenOnlyServicePriorityAttribute()
     {
         // 只有 [ServicePriority(7)]，没有 [ServiceRegistration]
         ServicePriorityResolver.ResolveTypePriority(typeof(ServicePriorityOnlyService))
@@ -173,6 +187,21 @@ public class ServicePriorityResolverTests
         // [ServicePriority(5)] 用于独立声明类型优先级，是文档推荐的合法组合，不应误报"类型优先级声明不一致"
         ServicePriorityResolver.ResolveTypePriority(typeof(LifetimeWithSeparatePriorityService))
             .Should().Be(5);
+    }
+
+    /// <summary>
+    /// 创建带有程序集注册优先级特性的动态程序集
+    /// </summary>
+    /// <param name="priority">程序集注册优先级</param>
+    /// <returns>带有指定程序集特性的动态程序集</returns>
+    private static Assembly CreateAssemblyWithRegistrationPriority(int priority)
+    {
+        var assemblyName = new AssemblyName($"Tw.DependencyInjection.Tests.Priority.{Guid.NewGuid():N}");
+        var assembly = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
+        var attributeConstructor = typeof(AssemblyRegistrationPriorityAttribute)
+            .GetConstructor([typeof(int)])!;
+        assembly.SetCustomAttribute(new CustomAttributeBuilder(attributeConstructor, [priority]));
+        return assembly;
     }
 
 }

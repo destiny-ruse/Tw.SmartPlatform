@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Foundation\Tw.Castle.Core\Tw.Castle.Core.csproj" />
     <ProjectReference Include="..\..\..\src\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
     <ProjectReference Include="..\..\..\src\Foundation\Tw.DependencyInjection.Abstractions\Tw.DependencyInjection.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\src\Web\Tw.AspNetCore\Tw.AspNetCore.csproj" />

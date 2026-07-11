@@ -9,4 +9,4 @@
 
 ## 边界
 
-DI 与 Options 元数据由 [`Tw.DependencyInjection.Abstractions`](../Tw.DependencyInjection.Abstractions/README.md) 承载。方法级拦截抽象与 Castle adapter 由 [`Tw.Castle.Core`](../Tw.Castle.Core/README.md) 承载。
+DI 与 Options 元数据由 [`Tw.DependencyInjection.Abstractions`](../Tw.DependencyInjection.Abstractions/README.md) 承载。横切关注点由宿主框架的 middleware、filter、interceptor 或应用管线承载。

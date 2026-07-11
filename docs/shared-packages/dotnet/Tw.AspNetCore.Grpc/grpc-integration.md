@@ -15,7 +15,7 @@ builder.UseWebIntegration();
 builder.Services.AddGrpcIntegration();
 ```
 
-`AddGrpcIntegration()` 会调用 ASP.NET Core gRPC 原生 `AddGrpc()`，注册 gRPC 服务端能力。该入口不注册 MVC Filter、HTTP Middleware、Minimal API endpoint filter，也不把 gRPC 调用接入统一 `IInterceptorPipeline`。
+`AddGrpcIntegration()` 会调用 ASP.NET Core gRPC 原生 `AddGrpc()`，注册 gRPC 服务端能力。该入口不注册 MVC filter、HTTP middleware、Minimal API endpoint filter，也不把 gRPC 调用接入通用动态代理。
 
 ## 使用 gRPC 原生 interceptor
 
@@ -44,13 +44,13 @@ builder.Services.Configure<GrpcServiceOptions>(options =>
 });
 ```
 
-也可以在 `AddGrpcIntegration()` 后通过 `IConfigureOptions<GrpcServiceOptions>` 按 ASP.NET Core gRPC 官方方式集中配置 interceptor。关键边界是：gRPC interceptor 由 ASP.NET Core gRPC 原生管线执行，不通过本仓库统一 AOP pipeline 转接。
+也可以在 `AddGrpcIntegration()` 后通过 `IConfigureOptions<GrpcServiceOptions>` 按 ASP.NET Core gRPC 官方方式集中配置 interceptor。关键边界是：gRPC interceptor 由 ASP.NET Core gRPC 原生管线执行，不通过通用动态代理转接。
 
-## 与统一 AOP pipeline 的关系
+## 横切关注点边界
 
-`Tw.Castle.Core.Abstractions.IInterceptor`、`IInterceptorPipeline`、Castle 动态代理和 MVC 方法级拦截器不进入 gRPC 调用链。需要为 gRPC 请求增加审计、日志、异常转换或指标时，应实现 `Grpc.Core.Interceptors.Interceptor`，并按 ASP.NET Core gRPC 的服务端 interceptor 规则注册。
+通用动态代理和 MVC filter 不进入 gRPC 调用链。需要为 gRPC 请求增加审计、日志、异常转换或指标时，应实现 `Grpc.Core.Interceptors.Interceptor`，并按 ASP.NET Core gRPC 的服务端 interceptor 规则注册。
 
-MVC/Web API action 级拦截仍使用 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md) 的 `AddMvcIntegration()`；跨协议宿主启动仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseWebIntegration()`。
+MVC/Web API 横切关注点使用原生 MVC filter；跨协议宿主启动仍使用 [`Tw.AspNetCore`](../Tw.AspNetCore/README.md) 的 `UseWebIntegration()`。
 
 ## 契约与协议边界
 

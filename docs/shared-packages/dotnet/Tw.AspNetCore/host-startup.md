@@ -22,12 +22,24 @@ app.Run();
 
 `UseWebIntegration()` 聚合以下宿主启动动作：
 
-- 调用 `builder.Host.UseAutofac()`，由 Autofac 接管宿主容器。
-- 通过 Autofac native `ContainerBuilder.AddServiceRegistration(builder.Configuration)` 路径接入 `Tw.DependencyInjection.Autofac`。
-- 启用服务、Options 与 `Tw.Castle.Core` AOP 自动注册能力。
+- 通过 `builder.Services.AddServiceRegistration(builder.Configuration)` 执行 Microsoft DI 自动服务注册。
+- 自动装载服务注册与 Options 诊断报告。
+
+## 横切关注点
+
+Microsoft DI 是默认容器，`UseWebIntegration()` 不接管其他容器，也不注册通用动态代理。横切关注点按宿主框架的原生扩展点实现：
+
+- HTTP 请求处理使用 middleware。
+- 认证与授权使用 policy。
+- MVC/Web API 使用 MVC filter。
+- Minimal API 使用 endpoint filter。
+- gRPC 使用 server interceptor。
+- CAP 使用 filter。
+- Quartz 使用 listener。
+- 应用启动或请求处理顺序使用应用管线。
 
 ## 边界
 
-该入口只负责基于 `WebApplicationBuilder` 的跨协议宿主启动聚合。MVC Filter、HTTP 请求取消令牌 provider 与 gRPC 专属 interceptor 不由宿主入口注册。普通 Worker 与 Generic Host 专属入口不由当前 API 表达。
+该入口只负责基于 `WebApplicationBuilder` 的跨协议宿主启动聚合。MVC filter、HTTP 请求取消令牌 provider 与 gRPC 专属 interceptor 不由宿主入口注册。普通 Worker 与 Generic Host 专属入口不由当前 API 表达。
 
 需要 MVC/Web API 请求取消令牌时，引用 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md)，并调用 `AddMvcIntegration()`；只注册 HTTP provider 时，引入 `using Tw.AspNetCore.Mvc.Context;` 后调用 `builder.Services.AddHttpContextCancellationTokenProvider();`。

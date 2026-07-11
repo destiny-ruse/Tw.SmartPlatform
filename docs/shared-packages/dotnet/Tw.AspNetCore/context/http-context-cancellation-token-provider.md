@@ -5,7 +5,6 @@
 当前文档入口：
 
 - [`Tw.AspNetCore.Mvc` HttpContext 取消令牌 Provider](../../Tw.AspNetCore.Mvc/context/http-context-cancellation-token-provider.md)
-- [`Tw.AspNetCore.Mvc` MVC action 拦截](../../Tw.AspNetCore.Mvc/mvc-interception.md)
 
 在 MVC/Web API 应用中，引用 `Tw.AspNetCore.Mvc` 后调用：
 
@@ -15,7 +14,7 @@ using Tw.AspNetCore.Mvc.Context;
 builder.Services.AddHttpContextCancellationTokenProvider();
 ```
 
-需要同时启用 MVC action AOP adapter 时，调用：
+需要启用 MVC 集成能力时，调用：
 
 ```csharp
 using Tw.AspNetCore.Mvc;

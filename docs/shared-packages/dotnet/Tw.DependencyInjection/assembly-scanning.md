@@ -18,7 +18,7 @@ var app = builder.Build();
 app.Run();
 ```
 
-需要 Autofac 宿主接管和 Autofac native 注册执行时，使用 [`Tw.DependencyInjection.Autofac`](../Tw.DependencyInjection.Autofac/README.md)。
+该入口使用 Microsoft DI 默认容器完成服务注册。
 
 ## 扫描选项
 
@@ -54,5 +54,5 @@ app.Run();
 
 - 发现循环引用时启动失败，异常信息输出完整环路链路（如 `Tw.A -> Tw.B -> Tw.C -> Tw.A`）。
 - 引擎只应由组合根引用；业务服务只依赖 `Tw.DependencyInjection.Abstractions`。
-- 本包不执行 Autofac 容器接管，不启用 Castle DynamicProxy。
+- 本包不接管其他容器，也不启用通用动态代理。
 - 诊断报告只承载摘要元数据，不输出敏感配置值。

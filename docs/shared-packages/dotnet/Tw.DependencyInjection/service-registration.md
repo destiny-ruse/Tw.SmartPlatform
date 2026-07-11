@@ -15,7 +15,7 @@ builder.Services.AddServiceRegistration(builder.Configuration);
 
 `AddServiceRegistration` 读取 `Tw:DependencyInjection` 配置节，复用程序集扫描结果，生成 `ServiceRegistrationReport` 并注册为 singleton。
 
-需要 Autofac native 注册、keyed service 的 Autofac 执行路径或 Castle DynamicProxy 承载时，使用 [`Tw.DependencyInjection.Autofac`](../Tw.DependencyInjection.Autofac/README.md)。
+服务注册始终使用 Microsoft DI；keyed service 也通过 Microsoft.Extensions.DependencyInjection 的原生能力注册和解析。
 
 ## 生命周期
 
@@ -115,6 +115,16 @@ public sealed class PaymentRouter : IScopedDependency
 }
 ```
 
+未配置 `AssemblyPriorities` 时，可在程序集级别声明默认优先级：
+
+```csharp
+using Tw.DependencyInjection.Abstractions;
+
+[assembly: AssemblyRegistrationPriority(50)]
+```
+
+同一程序集配置了 `AssemblyPriorities` 时，配置值优先于 `AssemblyRegistrationPriorityAttribute`。
+
 类型优先级：
 
 ```csharp
@@ -142,5 +152,5 @@ public sealed class Repository<TEntity> : IRepository<TEntity>, IScopedDependenc
 
 - `Replace = true`、`ReplaceServices`、`TryReplace` 不属于本包服务注册模型。
 - Options 类型不作为普通服务注册，详见 [配置与 Options 自动装载](options-binding.md)。
-- 本包不依赖 Autofac 或 Castle，不启用方法级动态代理。
+- 本包只提供 Microsoft DI 服务注册，不启用通用动态代理。
 - 诊断报告只输出类型、契约、key、优先级和原因，不输出配置值或方法参数值。

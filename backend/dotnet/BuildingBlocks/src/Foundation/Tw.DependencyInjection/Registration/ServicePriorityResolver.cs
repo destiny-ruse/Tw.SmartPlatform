@@ -24,7 +24,7 @@ internal static class ServicePriorityResolver
     public const int ExplicitPriorityMax = 100_000;
 
     /// <summary>
-    /// 解析指定程序集的程序集级优先级：配置项优先于 <see cref="TwAssemblyPriorityAttribute"/>，缺省为 0
+    /// 解析指定程序集的程序集级优先级：配置项优先于 <see cref="AssemblyRegistrationPriorityAttribute"/>，缺省为 0
     /// </summary>
     /// <param name="assembly">目标程序集</param>
     /// <param name="options">包含 <c>AssemblyPriorities</c> 配置的选项对象</param>
@@ -42,8 +42,8 @@ internal static class ServicePriorityResolver
         }
 
         var attribute = assembly
-            .GetCustomAttributes(typeof(TwAssemblyPriorityAttribute))
-            .OfType<TwAssemblyPriorityAttribute>()
+            .GetCustomAttributes(typeof(AssemblyRegistrationPriorityAttribute))
+            .OfType<AssemblyRegistrationPriorityAttribute>()
             .SingleOrDefault();
 
         var priority = attribute?.Priority ?? 0;

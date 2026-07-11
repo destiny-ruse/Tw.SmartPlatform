@@ -5,7 +5,7 @@ stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
   基于 WebApplicationBuilder 的跨协议宿主启动与聚合入口，统一承载
-  Web API 与 gRPC 等 ASP.NET Core 宿主在组合根中的容器接管和依赖注入自动注册。
+  Web API 与 gRPC 等 ASP.NET Core 宿主在组合根中的 Microsoft DI 自动注册。
 in_scope:
   - HTTP 宿主治理
   - 异常处理中间件
@@ -20,7 +20,7 @@ out_of_scope:
   - 具体业务领域模型
   - HTTP 请求取消令牌提供器（归 Tw.AspNetCore.Mvc）
   - MVC Filter、模型绑定与结果封装等 MVC 专属能力（归 Tw.AspNetCore.Mvc）
-  - Web 层横切关注点与 action 级 AOP 适配器（归 Tw.AspNetCore.Mvc）
+  - 通用动态代理与 action 级 AOP 适配器
   - 中间件适配器
   - Minimal API endpoint filter 适配器
   - gRPC interceptor 等 gRPC 专属能力
@@ -34,7 +34,10 @@ public_capabilities:
 dependency_rules:
   forbid:
     - "Microsoft.EntityFrameworkCore*"
+    - "Autofac*"
+    - "Castle.*"
+    - "Tw.Castle.*"
+    - "Tw.DependencyInjection.Autofac"
   allow:
     - Tw.AspNetCore.Abstractions
-    - Autofac
-    - Tw.DependencyInjection.Autofac
+    - Tw.DependencyInjection

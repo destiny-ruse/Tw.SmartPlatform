@@ -7,8 +7,6 @@
 - [Tw.Core](Tw.Core/README.md)
 - [Tw.DependencyInjection.Abstractions](Tw.DependencyInjection.Abstractions/README.md)
 - [Tw.DependencyInjection](Tw.DependencyInjection/README.md)
-- [Tw.DependencyInjection.Autofac](Tw.DependencyInjection.Autofac/README.md)
-- [Tw.Castle.Core](Tw.Castle.Core/README.md)
 - [Tw.AspNetCore](Tw.AspNetCore/README.md)
 - [Tw.AspNetCore.Mvc](Tw.AspNetCore.Mvc/README.md)
 - [Tw.AspNetCore.Grpc](Tw.AspNetCore.Grpc/README.md)

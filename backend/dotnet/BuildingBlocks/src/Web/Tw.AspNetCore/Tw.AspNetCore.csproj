@@ -13,11 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection.Autofac\Tw.DependencyInjection.Autofac.csproj" />
+    <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
     <ProjectReference Include="..\Tw.AspNetCore.Abstractions\Tw.AspNetCore.Abstractions.csproj" />
   </ItemGroup>
 
