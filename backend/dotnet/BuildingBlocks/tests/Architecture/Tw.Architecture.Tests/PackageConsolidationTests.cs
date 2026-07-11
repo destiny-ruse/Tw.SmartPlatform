@@ -1,0 +1,333 @@
+using System.Xml.Linq;
+using System.Text.Json.Nodes;
+using AwesomeAssertions;
+using Xunit;
+
+namespace Tw.Architecture.Tests;
+
+/// <summary>
+/// 锁定 BuildingBlocks 目标库存，并允许清单中明确的项目逐步退出
+/// </summary>
+public sealed class PackageConsolidationTests
+{
+    /// <summary>
+    /// 验证所有保留运行时项目存在且使用批准的有效根命名空间
+    /// </summary>
+    [Fact]
+    public void TargetRuntimeProjects_ExistAndUseApprovedRootNamespaces()
+    {
+        var topology = RepositoryLayout.Topology;
+
+        topology.RuntimeProjects.Count.Should().Be(57, "the topology manifest defines the complete retained runtime inventory");
+
+        foreach (var project in topology.RuntimeProjects)
+        {
+            var projectPath = ProjectPath(RepositoryLayout.BuildingBlocksSrc, project.Path);
+            File.Exists(projectPath).Should().BeTrue($"retained runtime project {project.Path} must not be deleted");
+
+            EffectiveRootNamespace(projectPath).Should().Be(
+                project.RootNamespace,
+                $"{project.Path} must keep its approved root namespace");
+        }
+    }
+
+    /// <summary>
+    /// 验证当前运行时项目只能属于目标库存或清单明确的淘汰库存
+    /// </summary>
+    [Fact]
+    public void CurrentRuntimeProjects_AreTargetOrRetired()
+    {
+        var expectedPaths = RepositoryLayout.Topology.RuntimeProjects
+            .Select(project => project.Path)
+            .Concat(RepositoryLayout.Topology.RetiredPackages
+                .Select(package => package.RuntimeProjectPath)
+                .Where(path => path is not null)
+                .Cast<string>())
+            .ToHashSet(StringComparer.Ordinal);
+        var unexpectedPaths = CurrentProjectPaths(RepositoryLayout.BuildingBlocksSrc)
+            .Where(path => !expectedPaths.Contains(path))
+            .ToArray();
+
+        unexpectedPaths.Should().BeEmpty("new runtime packages must be added to the topology manifest before they enter BuildingBlocks");
+    }
+
+    /// <summary>
+    /// 验证当前测试项目只能属于目标库存或具有明确迁移记录的历史测试
+    /// </summary>
+    [Fact]
+    public void CurrentTestProjects_AreTargetOrMigrating()
+    {
+        var expectedPaths = RepositoryLayout.Topology.TestProjects
+            .Select(project => project.Path)
+            .Concat(RepositoryLayout.Topology.RetiredPackages
+                .Select(package => package.TestProjectPath)
+                .Where(path => path is not null)
+                .Cast<string>())
+            .ToHashSet(StringComparer.Ordinal);
+        var unexpectedPaths = CurrentProjectPaths(RepositoryLayout.BuildingBlocksTests)
+            .Where(path => !expectedPaths.Contains(path))
+            .ToArray();
+
+        unexpectedPaths.Should().BeEmpty("new test projects must be target projects or have an explicit migration record");
+    }
+
+    /// <summary>
+    /// 验证目标测试在迁移前由现存前身承接，迁移后不会被静默删除
+    /// </summary>
+    [Fact]
+    public void TargetTestProjects_ExistUnlessAnActivePredecessorIsMigrating()
+    {
+        var topology = RepositoryLayout.Topology;
+        topology.TestProjects.Count.Should().Be(50, "the topology manifest defines the complete retained test inventory");
+
+        var missingTargets = topology.TestProjects
+            .Where(project => !File.Exists(ProjectPath(RepositoryLayout.BuildingBlocksTests, project.Path)))
+            .Where(project => !HasActivePredecessor(project.Path))
+            .Select(project => project.Path)
+            .ToArray();
+
+        missingTargets.Should().BeEmpty("a target test project may be absent only while its recorded predecessor still exists");
+    }
+
+    /// <summary>
+    /// 验证清单中的工具项目均存在于固定工具目录
+    /// </summary>
+    [Fact]
+    public void ToolProjects_ExistAtApprovedPaths()
+    {
+        var topology = RepositoryLayout.Topology;
+        topology.ToolProjects.Count.Should().Be(3, "the topology manifest has three governed .NET tool projects");
+
+        foreach (var projectPath in topology.ToolProjects)
+        {
+            File.Exists(ProjectPath(RepositoryLayout.Root, projectPath)).Should().BeTrue(
+                $"tool project {projectPath} must remain available to the solution");
+        }
+    }
+
+    /// <summary>
+    /// 验证独立契约包全部对应保留的运行时项目
+    /// </summary>
+    [Fact]
+    public void IndependentContractPackages_AreRetainedRuntimePackages()
+    {
+        var topology = RepositoryLayout.Topology;
+        topology.IndependentContractPackages.Count.Should().Be(5, "the topology manifest approves five independently consumable contract packages");
+
+        var retainedPackageIds = topology.RuntimeProjects
+            .Select(project => Path.GetFileNameWithoutExtension(project.Path))
+            .ToHashSet(StringComparer.Ordinal);
+        topology.IndependentContractPackages.Should().OnlyContain(
+            package => retainedPackageIds.Contains(package),
+            "independent contracts must be part of the retained runtime inventory");
+    }
+
+    /// <summary>
+    /// 验证淘汰映射覆盖现存历史项目、迁移测试和保留的拦截器身份
+    /// </summary>
+    [Fact]
+    public void RetiredPackageMappings_CoverCurrentProjectsAndReservedIdentity()
+    {
+        var retiredPackages = RepositoryLayout.Topology.RetiredPackages;
+
+        retiredPackages.Count.Should().Be(17, "sixteen current retired projects and the reserved Tw.Interception identity are governed");
+        retiredPackages.Count(package => package.RuntimeProjectPath is not null).Should().Be(16);
+        retiredPackages.Count(package => package.TestProjectPath is not null).Should().Be(8);
+        retiredPackages.Should().ContainSingle(package => package.PackageId == "Tw.Interception"
+            && package.RuntimeProjectPath == null
+            && package.TestProjectPath == null);
+        retiredPackages.Should().OnlyContain(package => package.RetiredNamespaces.Count > 0);
+    }
+
+    /// <summary>
+    /// 验证淘汰包的替代包必须属于清单中的运行时目标项目
+    /// </summary>
+    [Fact]
+    public void TopologyManifest_RejectsReplacementPackageOutsideRuntimeTargets()
+    {
+        var temporaryTopologyFile = Path.GetTempFileName();
+        try
+        {
+            var manifest = JsonNode.Parse(File.ReadAllText(RepositoryLayout.BuildingBlocksTopologyFile))
+                ?? throw new InvalidOperationException("无法解析用于拓扑校验的测试清单");
+            var retiredPackage = manifest["retiredPackages"]?
+                .AsArray()
+                .Select(node => node?.AsObject())
+                .FirstOrDefault(package => package?["replacementPackageId"] is not null)
+                ?? throw new InvalidOperationException("测试清单缺少具有替代包的淘汰映射");
+            retiredPackage["replacementPackageId"] = "Tw.Unknown";
+            File.WriteAllText(temporaryTopologyFile, manifest.ToJsonString());
+
+            var loadTopology = () => RepositoryLayout.LoadTopology(temporaryTopologyFile);
+
+            loadTopology.Should().Throw<InvalidOperationException>()
+                .WithMessage("*替代运行时包必须是运行时目标项目*");
+        }
+        finally
+        {
+            File.Delete(temporaryTopologyFile);
+        }
+    }
+
+    /// <summary>
+    /// 验证非 HTTP 的淘汰测试前身不能放行缺失的目标测试项目
+    /// </summary>
+    [Fact]
+    public void NonHttpPredecessor_CannotTemporarilyCoverMissingTargetTest()
+    {
+        HasActivePredecessor("Application/Tw.Domain.Tests/Tw.Domain.Tests.csproj").Should().BeFalse(
+            "only the manifest's Tw.Http.Client.Tests predecessor may temporarily cover a missing target test");
+    }
+
+    /// <summary>
+    /// 验证 HTTP 客户端测试前身可以在重命名期间承接目标测试职责
+    /// </summary>
+    [Fact]
+    public void HttpClientPredecessor_CanTemporarilyCoverHttpTargetTest()
+    {
+        HasActivePredecessor("Http/Tw.Http.Tests/Tw.Http.Tests.csproj").Should().BeTrue();
+    }
+
+    /// <summary>
+    /// 验证淘汰项目删除后不会遗留原有的 runtime 或 test 项目目录
+    /// </summary>
+    [Fact]
+    public void RemovedRetiredProjects_DoNotLeaveProjectDirectoriesBehind()
+    {
+        var staleDirectories = RepositoryLayout.Topology.RetiredPackages
+            .SelectMany(RetiredProjectFiles)
+            .Where(projectPath => !File.Exists(projectPath) && Directory.Exists(Path.GetDirectoryName(projectPath)!))
+            .Select(RepositoryLayout.RepositoryRelativePath)
+            .ToArray();
+
+        staleDirectories.Should().BeEmpty("retiring a project requires deleting its complete runtime or test project directory");
+    }
+
+    /// <summary>
+    /// 验证 BuildingBlocks 中每条项目引用均指向现存项目文件
+    /// </summary>
+    [Fact]
+    public void BuildingBlocks_ProjectReferences_Resolve()
+    {
+        var violations = Directory.GetFiles(RepositoryLayout.BuildingBlocksSrc, "*.csproj", SearchOption.AllDirectories)
+            .Concat(Directory.GetFiles(RepositoryLayout.BuildingBlocksTests, "*.csproj", SearchOption.AllDirectories))
+            .SelectMany(FindUnresolvedProjectReferences)
+            .ToArray();
+
+        violations.Should().BeEmpty("retired project directories cannot be removed while ProjectReference entries still resolve to them");
+    }
+
+    /// <summary>
+    /// 判断缺失的目标测试是否仍由清单记录的前身测试项目承接
+    /// </summary>
+    /// <param name="targetTestPath">相对于 BuildingBlocks/tests 的目标测试路径</param>
+    /// <returns>存在现存前身测试项目时返回 true</returns>
+    private static bool HasActivePredecessor(string targetTestPath)
+    {
+        if (!string.Equals(
+                targetTestPath,
+                "Http/Tw.Http.Tests/Tw.Http.Tests.csproj",
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        return RepositoryLayout.Topology.RetiredPackages
+            .Where(package => string.Equals(package.PackageId, "Tw.Http.Client", StringComparison.Ordinal))
+            .Where(package => string.Equals(
+                package.TestProjectPath,
+                "Http/Tw.Http.Client.Tests/Tw.Http.Client.Tests.csproj",
+                StringComparison.Ordinal))
+            .Where(package => string.Equals(package.ReplacementTestProjectPath, targetTestPath, StringComparison.Ordinal))
+            .Select(package => package.TestProjectPath)
+            .Where(path => path is not null)
+            .Cast<string>()
+            .Any(path => File.Exists(ProjectPath(RepositoryLayout.BuildingBlocksTests, path)));
+    }
+
+    /// <summary>
+    /// 返回清单中每个淘汰包仍可能存在的 runtime 和测试项目文件路径
+    /// </summary>
+    /// <param name="retiredPackage">需要检查目录清理状态的淘汰包映射</param>
+    /// <returns>相对于文件系统的历史项目文件路径</returns>
+    private static IEnumerable<string> RetiredProjectFiles(RetiredPackageTopology retiredPackage)
+    {
+        if (retiredPackage.RuntimeProjectPath is not null)
+        {
+            yield return ProjectPath(RepositoryLayout.BuildingBlocksSrc, retiredPackage.RuntimeProjectPath);
+        }
+
+        if (retiredPackage.TestProjectPath is not null)
+        {
+            yield return ProjectPath(RepositoryLayout.BuildingBlocksTests, retiredPackage.TestProjectPath);
+        }
+    }
+
+    /// <summary>
+    /// 获取当前目录下全部项目文件的能力相对路径
+    /// </summary>
+    /// <param name="projectsRoot">BuildingBlocks 的生产或测试项目根目录</param>
+    /// <returns>使用正斜杠表示的项目相对路径集合</returns>
+    private static IEnumerable<string> CurrentProjectPaths(string projectsRoot)
+    {
+        return Directory.GetFiles(projectsRoot, "*.csproj", SearchOption.AllDirectories)
+            .Select(projectPath => RepositoryLayout.NormalizePath(Path.GetRelativePath(projectsRoot, projectPath)));
+    }
+
+    /// <summary>
+    /// 读取项目的有效根命名空间，未显式设置时使用 SDK 的项目名默认值
+    /// </summary>
+    /// <param name="projectPath">需要读取的项目文件</param>
+    /// <returns>项目编译时使用的根命名空间</returns>
+    private static string EffectiveRootNamespace(string projectPath)
+    {
+        var document = XDocument.Load(projectPath);
+        return document.Descendants("RootNamespace")
+            .Select(element => element.Value)
+            .FirstOrDefault(value => !string.IsNullOrWhiteSpace(value))
+            ?? Path.GetFileNameWithoutExtension(projectPath);
+    }
+
+    /// <summary>
+    /// 查找指定项目中引用缺失或无法作为文件路径解析的 ProjectReference
+    /// </summary>
+    /// <param name="projectPath">需要检查的项目文件</param>
+    /// <returns>每条无法解析引用的可读诊断信息</returns>
+    private static IEnumerable<string> FindUnresolvedProjectReferences(string projectPath)
+    {
+        var document = XDocument.Load(projectPath);
+        var projectDirectory = Path.GetDirectoryName(projectPath)!;
+        foreach (var reference in document.Descendants("ProjectReference"))
+        {
+            var include = reference.Attribute("Include")?.Value;
+            if (string.IsNullOrWhiteSpace(include))
+            {
+                yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} has a ProjectReference without Include";
+                continue;
+            }
+
+            if (include.Contains("$(", StringComparison.Ordinal))
+            {
+                yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} uses an unresolved ProjectReference expression: {include}";
+                continue;
+            }
+
+            var referencedPath = Path.GetFullPath(Path.Combine(projectDirectory, include));
+            if (!File.Exists(referencedPath))
+            {
+                yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} references missing project {RepositoryLayout.NormalizePath(include)}";
+            }
+        }
+    }
+
+    /// <summary>
+    /// 根据根目录和清单相对路径生成本机文件系统路径
+    /// </summary>
+    /// <param name="root">相对路径的根目录</param>
+    /// <param name="relativePath">使用正斜杠表示的清单路径</param>
+    /// <returns>可用于文件系统访问的绝对路径</returns>
+    private static string ProjectPath(string root, string relativePath)
+    {
+        return Path.Combine(root, relativePath.Replace('/', Path.DirectorySeparatorChar));
+    }
+}

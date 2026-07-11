@@ -51,7 +51,6 @@ public sealed class PackageTopologyTests
                 Capability = RepositoryLayout.TestCapability(path)
             })
             .Where(project => project.ProjectName != "Tw.Architecture.Tests")
-            .Where(project => !RepositoryLayout.IsAbstractionsTestProject(project.ProjectName))
             .Select(project => new
             {
                 project.Path,
@@ -59,8 +58,14 @@ public sealed class PackageTopologyTests
                 project.Capability,
                 RuntimePackage = RepositoryLayout.RuntimePackageNameForTestProject(project.ProjectName)
             })
-            .Where(project => runtimeCapabilities.TryGetValue(project.RuntimePackage, out var capability) && capability != project.Capability)
-            .Select(project => $"{project.ProjectName} expected {runtimeCapabilities[project.RuntimePackage]} but was {project.Capability}")
+            .Select(project => new
+            {
+                project.ProjectName,
+                project.Capability,
+                RuntimeCapability = runtimeCapabilities.GetValueOrDefault(project.RuntimePackage)
+            })
+            .Where(project => project.RuntimeCapability is null || project.RuntimeCapability != project.Capability)
+            .Select(project => $"{project.ProjectName} expected {project.RuntimeCapability ?? "a matching runtime owner"} but was {project.Capability}")
             .ToArray();
 
         violations.Should().BeEmpty("test projects must stay beside the capability of the runtime package they validate");
@@ -74,7 +79,7 @@ public sealed class PackageTopologyTests
     {
         var abstractionsTests = Directory.GetFiles(RepositoryLayout.BuildingBlocksTests, "*.csproj", SearchOption.AllDirectories)
             .Select(path => Path.GetFileNameWithoutExtension(path)!)
-            .Where(RepositoryLayout.IsAbstractionsTestProject)
+            .Where(projectName => projectName.EndsWith(".Abstractions.Tests", StringComparison.Ordinal))
             .ToArray();
 
         abstractionsTests.Should().BeEmpty("Abstractions packages define contracts and are validated through consuming packages");
