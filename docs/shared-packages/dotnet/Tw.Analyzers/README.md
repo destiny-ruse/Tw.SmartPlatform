@@ -2,13 +2,14 @@
 
 `Tw.Analyzers` provides compile-time governance diagnostics for the Tw .NET framework. The package has no runtime API and is packed under `analyzers/dotnet/cs`.
 
-## Diagnostics
+## Diagnostic index
 
-- `TWGOV001`: self-owned identifiers must not use framework-owned prefixes.
-- `TWGOV002`: forbidden package names and retired package names are errors.
-- `TWGOV003`: production projects must not reference `*TestBase` packages.
-- `TWGOV004`: business projects must not directly reference implementation packages outside allowed layers.
-- `TWGOV005`: User Secrets are limited to local and development entry points.
-- `TWGOV006`: external HTTP JSON, OpenAPI, and generated client contracts expose long IDs as decimal strings.
+| ID | Scope | Rule |
+| --- | --- | --- |
+| `TWGOV001` | C# declaration identifiers | Reports `Tw`, `Abp`, or `Furion` as a case-insensitive identifier segment. Segments are split at `_`, lower-to-upper transitions, and acronym boundaries. |
 
-`TwException` is the allowed exception for `TWGOV001`.
+The sole `TWGOV001` exemption is the `Tw.Exceptions.TwException` type when it derives from `System.Exception` in the `Tw.Core` assembly.
+
+## Governance boundaries
+
+Retired-package checks and dependency-boundary checks belong to `Tw.Cli` and architecture tests until dedicated Roslyn diagnostics exist.
