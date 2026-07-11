@@ -58,7 +58,6 @@
     <Project Path="BuildingBlocks/src/Foundation/Tw.Json.Abstractions/Tw.Json.Abstractions.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Json.Newtonsoft/Tw.Json.Newtonsoft.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Security/Tw.Security.csproj" />
-    <Project Path="BuildingBlocks/src/Foundation/Tw.Timing/Tw.Timing.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Uow/Tw.Uow.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Validation.Abstractions/Tw.Validation.Abstractions.csproj" />
   </Folder>
@@ -170,7 +169,6 @@
     <Project Path="BuildingBlocks/tests/Foundation/Tw.ExceptionHandling.Tests/Tw.ExceptionHandling.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Foundation/Tw.Json.Newtonsoft.Tests/Tw.Json.Newtonsoft.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Foundation/Tw.Security.Tests/Tw.Security.Tests.csproj" />
-    <Project Path="BuildingBlocks/tests/Foundation/Tw.Timing.Tests/Tw.Timing.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Foundation/Tw.Uow.Tests/Tw.Uow.Tests.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/tests/Gateway/">

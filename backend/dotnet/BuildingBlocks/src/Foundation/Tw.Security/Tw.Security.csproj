@@ -5,4 +5,8 @@
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tw.Core\Tw.Core.csproj" />
+  </ItemGroup>
 </Project>

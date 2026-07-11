@@ -249,6 +249,14 @@
           "xunit.v3.runner.common": "[3.2.2]"
         }
       },
+      "tw.core": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "[10.0.9, )",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )",
+          "Microsoft.Extensions.Options": "[10.0.9, )"
+        }
+      },
       "tw.observability": {
         "type": "Project",
         "dependencies": {
@@ -266,7 +274,10 @@
         }
       },
       "tw.security": {
-        "type": "Project"
+        "type": "Project",
+        "dependencies": {
+          "Tw.Core": "[1.0.0, )"
+        }
       },
       "Microsoft.Extensions.Configuration": {
         "type": "CentralTransitive",

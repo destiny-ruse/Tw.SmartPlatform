@@ -5,12 +5,11 @@ stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
   跨服务复用的基础原语与无框架依赖工具：值对象、命名对象、领域异常、
-  配置异常、类型查找、反射缓存、加密哈希、通用扩展方法与同步、异步资源释放工具。
+  类型查找、反射缓存、通用扩展方法与同步、异步资源释放工具。
 in_scope:
   - 基础值对象与命名对象原语
-  - 通用领域异常与配置异常
+  - 通用领域异常
   - 类型查找、反射缓存与类型扩展
-  - 加密、哈希与安全随机
   - 通用集合、字符串、时间、数字等扩展方法
   - 同步与异步资源释放工具
 out_of_scope:
@@ -19,12 +18,12 @@ out_of_scope:
   - HTTP、中间件、过滤器、ASP.NET Core 集成
   - 数据访问、ORM、仓储实现
   - 具体业务领域模型
+  - 加密、哈希、密码学随机、密码哈希和密钥解析
 public_capabilities:
   - Tw.Check
   - Tw.Collections
   - Tw.Core.Primitives
   - Tw.Reflection
-  - Tw.Core.Security.Cryptography
   - Tw.Exceptions
   - Tw.Extensions
   - Tw.Utilities

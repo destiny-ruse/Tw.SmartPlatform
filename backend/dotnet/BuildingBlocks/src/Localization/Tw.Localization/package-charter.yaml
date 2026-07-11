@@ -9,6 +9,7 @@ responsibility: >
 in_scope:
   - 系统文案本地化核心抽象与默认编排
   - JSON 静态多语言资源解析与贡献源
+  - 本地化配置异常
   - 动态系统文案 store 接口
   - 业务实体翻译 store 接口与服务
   - 多租户与 culture 回退策略
@@ -19,6 +20,7 @@ out_of_scope:
   - 管理端页面和管理 API
   - 具体业务领域模型
 public_capabilities:
+  - Tw.Localization
   - Tw.Localization.Context
   - Tw.Localization.Text
   - Tw.Localization.Json

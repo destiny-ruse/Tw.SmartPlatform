@@ -11,6 +11,10 @@
 
 不依赖：ASP.NET Core、EF Core、任何数据库驱动或 HTTP 框架。
 
+## 配置异常
+
+`LocalizationOptions.Validate`、`AddLocalization` 和 JSON 资源解析失败时抛出 `Tw.Localization.LocalizationConfigurationException`。该异常继承 `TwException`，用于区分本地化配置或资源格式错误与通用基础异常。
+
 ## 注册入口
 
 ```csharp

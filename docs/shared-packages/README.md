@@ -9,6 +9,7 @@
 ## .NET Building Blocks
 
 - [Tw.Core](dotnet/Tw.Core/README.md)
+- [Tw.Security](dotnet/Tw.Security/README.md)
 - [Tw.DependencyInjection.Abstractions](dotnet/Tw.DependencyInjection.Abstractions/README.md)
 - [Tw.DependencyInjection](dotnet/Tw.DependencyInjection/README.md)
 - [Tw.AspNetCore](dotnet/Tw.AspNetCore/README.md)

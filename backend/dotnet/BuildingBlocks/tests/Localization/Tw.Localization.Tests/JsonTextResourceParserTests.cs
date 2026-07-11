@@ -1,5 +1,4 @@
 ﻿using AwesomeAssertions;
-using Tw.Exceptions;
 using Tw.Localization.Json;
 using Xunit;
 
@@ -43,6 +42,6 @@ public class JsonTextResourceParserTests
 
         var act = () => JsonTextResourceParser.Parse("App", "bad.json", json);
 
-        act.Should().Throw<TwConfigurationException>();
+        act.Should().Throw<LocalizationConfigurationException>();
     }
 }

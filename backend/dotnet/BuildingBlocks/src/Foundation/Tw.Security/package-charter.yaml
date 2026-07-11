@@ -4,8 +4,11 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  敏感数据标记、脱敏、脱敏值识别和写回保护基础能力。
+  加密、哈希、密码哈希、密钥解析，以及敏感数据标记、脱敏、脱敏值识别和写回保护基础能力。
 in_scope:
+  - 哈希、HMAC、PBKDF2 和密码学随机
+  - AES、DES、TripleDES、RSA 加解密与签名
+  - 密文布局和密钥格式解析
   - 敏感数据类型声明
   - 脱敏策略和规则契约
   - 默认脱敏实现
@@ -16,10 +19,12 @@ out_of_scope:
   - 审计日志落库
 public_capabilities:
   - Tw.Security
+  - Tw.Security.Cryptography
   - Tw.Security.DataMasking
 dependency_rules:
   forbid:
     - "Microsoft.AspNetCore.*"
     - "SqlSugar*"
     - "DotNetCore.CAP*"
-  allow: []
+  allow:
+    - Tw.Core

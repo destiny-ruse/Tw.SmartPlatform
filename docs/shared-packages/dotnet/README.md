@@ -5,6 +5,7 @@
 ## Current Packages
 
 - [Tw.Core](Tw.Core/README.md)
+- [Tw.Security](Tw.Security/README.md)
 - [Tw.DependencyInjection.Abstractions](Tw.DependencyInjection.Abstractions/README.md)
 - [Tw.DependencyInjection](Tw.DependencyInjection/README.md)
 - [Tw.AspNetCore](Tw.AspNetCore/README.md)

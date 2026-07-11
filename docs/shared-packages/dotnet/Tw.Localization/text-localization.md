@@ -41,7 +41,7 @@ services.AddLocalization(options =>
 - `culture`（字符串）：文件所属 BCP 47 文化名称。
 - `texts`（对象）：文本键值对；支持嵌套对象，嵌套层级以 `__` 拼接为扁平键。
 
-叶子值必须是字符串；非字符串叶子值（数字、布尔、数组等）会在解析时抛出 `TwConfigurationException`。
+叶子值必须是字符串；非字符串叶子值（数字、布尔、数组等）会在解析时抛出 `LocalizationConfigurationException`。
 
 ```json
 {
@@ -218,6 +218,6 @@ services.AddSingleton<ITextResourceContributor>(sp =>
 
 ## 注意事项
 
-- `JsonResourcePaths` 中的路径在 `AddLocalization` 调用时立即读取并解析；文件不存在或格式不合规时抛出 `TwConfigurationException`，阻止应用启动。
+- `JsonResourcePaths` 中的路径在 `AddLocalization` 调用时立即读取并解析；文件不存在或格式不合规时抛出 `LocalizationConfigurationException`，阻止应用启动。
 - 同一资源文件内若出现重复的嵌套展开键，后解析的值覆盖先解析的值；应避免同一文件内出现重复键。
 - `GetAllAsync` 的结果不保证顺序；若需有序呈现，调用方自行排序。

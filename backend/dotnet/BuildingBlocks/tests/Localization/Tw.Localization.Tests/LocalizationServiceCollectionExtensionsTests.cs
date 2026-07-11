@@ -1,6 +1,5 @@
 ﻿using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using Tw.Exceptions;
 using Tw.Localization.Tests.Fakes;
 using Xunit;
 
@@ -39,7 +38,7 @@ public class LocalizationServiceCollectionExtensionsTests
     {
         var services = new ServiceCollection();
         var act = () => services.AddLocalization(o => { o.DefaultCulture = "en-US"; });
-        act.Should().Throw<TwConfigurationException>();
+        act.Should().Throw<LocalizationConfigurationException>();
     }
 
     /// <summary>
@@ -68,6 +67,6 @@ public class LocalizationServiceCollectionExtensionsTests
             o.SupportedCultures.Add("en-US");
             o.JsonResourcePaths.Add("does-not-exist.app.json");
         });
-        act.Should().Throw<TwConfigurationException>();
+        act.Should().Throw<LocalizationConfigurationException>();
     }
 }

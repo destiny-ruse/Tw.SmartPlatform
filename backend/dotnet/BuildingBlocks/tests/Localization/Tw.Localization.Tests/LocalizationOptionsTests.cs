@@ -1,5 +1,4 @@
 ﻿using AwesomeAssertions;
-using Tw.Exceptions;
 using Xunit;
 
 namespace Tw.Localization.Tests;
@@ -30,7 +29,7 @@ public class LocalizationOptionsTests
 
         var act = () => options.Validate();
 
-        act.Should().Throw<TwConfigurationException>();
+        act.Should().Throw<LocalizationConfigurationException>();
     }
 
     /// <summary>
@@ -47,7 +46,7 @@ public class LocalizationOptionsTests
 
         var act = () => options.Validate();
 
-        act.Should().Throw<TwConfigurationException>();
+        act.Should().Throw<LocalizationConfigurationException>();
     }
 
     /// <summary>

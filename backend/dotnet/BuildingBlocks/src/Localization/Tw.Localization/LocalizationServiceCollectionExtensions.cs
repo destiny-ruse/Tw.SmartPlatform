@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Tw.Exceptions;
 using Tw.Localization.Json;
 
 namespace Tw.Localization;
@@ -21,7 +20,7 @@ public static class LocalizationServiceCollectionExtensions
     /// <exception cref="ArgumentNullException">
     /// 当 <paramref name="services"/> 或 <paramref name="configure"/> 为 <see langword="null"/> 时抛出
     /// </exception>
-    /// <exception cref="TwConfigurationException">
+    /// <exception cref="LocalizationConfigurationException">
     /// 当 <see cref="LocalizationOptions"/> 校验不通过，或声明的 JSON 资源文件路径不存在，
     /// 或 JSON 文件格式不合规时抛出
     /// </exception>
@@ -71,7 +70,7 @@ public static class LocalizationServiceCollectionExtensions
         {
             if (!File.Exists(path))
             {
-                throw new TwConfigurationException($"JSON 多语言资源路径不存在：{path}");
+                throw new LocalizationConfigurationException($"JSON 多语言资源路径不存在：{path}");
             }
 
             var fileName = Path.GetFileName(path);
@@ -79,7 +78,7 @@ public static class LocalizationServiceCollectionExtensions
             var resourceName = dotIndex < 0 ? fileName : fileName[..dotIndex];
             if (string.IsNullOrWhiteSpace(resourceName))
             {
-                throw new TwConfigurationException($"无法从路径推断资源名称（文件名必须以非点字符开头）：{path}");
+                throw new LocalizationConfigurationException($"无法从路径推断资源名称（文件名必须以非点字符开头）：{path}");
             }
 
             string json;
@@ -89,7 +88,7 @@ public static class LocalizationServiceCollectionExtensions
             }
             catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
             {
-                throw new TwConfigurationException($"无法读取 JSON 多语言资源文件：{path}", ex);
+                throw new LocalizationConfigurationException($"无法读取 JSON 多语言资源文件：{path}", ex);
             }
 
             resources.Add(JsonTextResourceParser.Parse(resourceName, path, json));

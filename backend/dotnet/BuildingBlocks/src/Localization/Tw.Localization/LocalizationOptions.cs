@@ -1,5 +1,3 @@
-using Tw.Exceptions;
-
 namespace Tw.Localization;
 
 /// <summary>
@@ -50,7 +48,7 @@ public sealed class LocalizationOptions
     /// <summary>
     /// 校验当前配置的合法性
     /// </summary>
-    /// <exception cref="TwConfigurationException">
+    /// <exception cref="LocalizationConfigurationException">
     /// 当 <see cref="DefaultCulture"/> 不是合法的 BCP 47 文化名称时抛出；
     /// 当 <see cref="SupportedCultures"/> 为空时抛出；
     /// 当 <see cref="SupportedCultures"/> 中包含非法文化名称时抛出；
@@ -60,25 +58,25 @@ public sealed class LocalizationOptions
     {
         if (!CultureFallback.IsValidCulture(DefaultCulture))
         {
-            throw new TwConfigurationException($"默认 culture 无效：{DefaultCulture}");
+            throw new LocalizationConfigurationException($"默认 culture 无效：{DefaultCulture}");
         }
 
         if (SupportedCultures.Count == 0)
         {
-            throw new TwConfigurationException("支持语言列表不能为空");
+            throw new LocalizationConfigurationException("支持语言列表不能为空");
         }
 
         foreach (var culture in SupportedCultures)
         {
             if (!CultureFallback.IsValidCulture(culture))
             {
-                throw new TwConfigurationException($"支持语言 culture 无效：{culture}");
+                throw new LocalizationConfigurationException($"支持语言 culture 无效：{culture}");
             }
         }
 
         if (!SupportedCultures.Contains(DefaultCulture, StringComparer.OrdinalIgnoreCase))
         {
-            throw new TwConfigurationException($"默认 culture 必须包含在支持语言列表中：{DefaultCulture}");
+            throw new LocalizationConfigurationException($"默认 culture 必须包含在支持语言列表中：{DefaultCulture}");
         }
     }
 }
