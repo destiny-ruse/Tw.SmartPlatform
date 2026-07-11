@@ -1,4 +1,4 @@
-﻿namespace Tw.Threading;
+﻿namespace Tw.Async;
 
 /// <summary>
 /// 在实例释放时调用给定异步委托

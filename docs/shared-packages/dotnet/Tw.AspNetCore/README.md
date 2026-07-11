@@ -8,6 +8,6 @@
 
 ## 说明
 
-MVC/Web API 专属能力（HTTP cancellation provider、MVC filter）不内置于本包，归 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md) 承载。
+MVC/Web API 专属能力（MVC filter）不内置于本包，归 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md) 承载。请求取消信号应由 controller 或 endpoint 在边界处显式接收并向下游传递。
 
 Web 本地化能力（请求文化解析、`IStringLocalizer` 适配）不内置于本包，刻意分离至独立的可选包 [`Tw.AspNetCore.Localization`](../Tw.AspNetCore.Localization/README.md)。`Tw.AspNetCore` 保持 host-level 宿主启动聚合职责，不承担本地化语义。

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Tw.Threading;
 using Tw.Exceptions;
 using Tw.Localization.Json;
 
@@ -44,7 +43,6 @@ public static class LocalizationServiceCollectionExtensions
 
         var resources = LoadJsonResources(options);
 
-        services.AddCancellationTokenProvider();
         services.AddSingleton(options);
         services.AddSingleton<ITextResourceContributor>(new JsonTextResourceContributor(resources, priority: 0));
         services.AddSingleton<IStaticTextSnapshot>(new StaticTextSnapshot(resources));

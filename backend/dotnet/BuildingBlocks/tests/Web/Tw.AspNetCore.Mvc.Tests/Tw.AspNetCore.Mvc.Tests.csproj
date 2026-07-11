@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Web\Tw.AspNetCore.Mvc\Tw.AspNetCore.Mvc.csproj" />
-    <ProjectReference Include="..\..\..\src\Foundation\Tw.Threading\Tw.Threading.csproj" />
   </ItemGroup>
 
 </Project>

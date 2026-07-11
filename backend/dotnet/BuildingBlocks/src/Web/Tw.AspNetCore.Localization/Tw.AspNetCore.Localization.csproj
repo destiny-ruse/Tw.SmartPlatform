@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tw.AspNetCore.Mvc\Tw.AspNetCore.Mvc.csproj" />
     <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
     <ProjectReference Include="..\..\Localization\Tw.Localization\Tw.Localization.csproj" />
   </ItemGroup>

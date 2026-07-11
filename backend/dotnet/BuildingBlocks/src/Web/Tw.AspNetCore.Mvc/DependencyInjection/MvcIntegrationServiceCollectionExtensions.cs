@@ -1,5 +1,4 @@
 using Microsoft.Extensions.DependencyInjection;
-using Tw.AspNetCore.Mvc.Context;
 
 namespace Tw.AspNetCore.Mvc;
 
@@ -9,7 +8,7 @@ namespace Tw.AspNetCore.Mvc;
 public static class MvcIntegrationServiceCollectionExtensions
 {
     /// <summary>
-    /// 注册 MVC 集成能力，包括请求取消令牌 provider
+    /// 验证服务集合并保留 MVC 集成扩展入口
     /// </summary>
     /// <param name="services">服务容器</param>
     /// <returns>同一 <see cref="IServiceCollection"/> 实例，便于链式调用</returns>
@@ -17,9 +16,6 @@ public static class MvcIntegrationServiceCollectionExtensions
     public static IServiceCollection AddMvcIntegration(this IServiceCollection services)
     {
         ArgumentNullException.ThrowIfNull(services);
-
-        services.AddHttpContextCancellationTokenProvider();
-
         return services;
     }
 }

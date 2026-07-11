@@ -18,7 +18,7 @@ public interface ITextLocalizer
         string resourceName,
         string name,
         LocalizationContext context,
-        CancellationToken cancellationToken = default);
+        CancellationToken cancellationToken);
 
     /// <summary>
     /// 获取指定资源集合在当前上下文下的所有本地化文本条目
@@ -30,5 +30,5 @@ public interface ITextLocalizer
     ValueTask<IReadOnlyList<LocalizedText>> GetAllAsync(
         string resourceName,
         LocalizationContext context,
-        CancellationToken cancellationToken = default);
+        CancellationToken cancellationToken);
 }

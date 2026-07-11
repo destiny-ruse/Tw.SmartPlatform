@@ -6,7 +6,7 @@
 
 | 依赖项 | 说明 |
 |--------|------|
-| `Tw.Core` | 取消令牌 Provider、Guard 工具 |
+| `Tw.Core` | Guard 与基础原语工具 |
 | `Microsoft.Extensions.DependencyInjection.Abstractions` | DI 抽象（仅 Abstractions，不依赖宿主） |
 
 不依赖：ASP.NET Core、EF Core、任何数据库驱动或 HTTP 框架。

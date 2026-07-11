@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
-    <ProjectReference Include="..\..\Foundation\Tw.Threading\Tw.Threading.csproj" />
   </ItemGroup>
 
 </Project>

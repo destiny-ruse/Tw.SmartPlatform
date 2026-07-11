@@ -15,7 +15,7 @@ public interface IEntityTranslationService
     /// <returns>找到翻译时返回翻译文本；否则返回 <see langword="null"/></returns>
     ValueTask<string?> GetFieldAsync(
         EntityTranslationLookup lookup,
-        CancellationToken cancellationToken = default);
+        CancellationToken cancellationToken);
 
     /// <summary>
     /// 批量查找多个实体字段的翻译，以 <see cref="EntityTranslationKey"/> 为键返回结果字典
@@ -25,5 +25,5 @@ public interface IEntityTranslationService
     /// <returns>以 <see cref="EntityTranslationKey"/> 为键、<see cref="EntityTranslation"/> 为值的只读字典；未找到的键不出现在字典中</returns>
     ValueTask<IReadOnlyDictionary<EntityTranslationKey, EntityTranslation>> GetFieldsAsync(
         EntityTranslationBatchQuery query,
-        CancellationToken cancellationToken = default);
+        CancellationToken cancellationToken);
 }

@@ -173,24 +173,11 @@
       "tw.sharding": {
         "type": "Project",
         "dependencies": {
-          "Tw.Sharding.Abstractions": "[1.0.0, )",
-          "Tw.Threading": "[1.0.0, )"
+          "Tw.Sharding.Abstractions": "[1.0.0, )"
         }
       },
       "tw.sharding.abstractions": {
         "type": "Project"
-      },
-      "tw.threading": {
-        "type": "Project",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )"
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions": {
-        "type": "CentralTransitive",
-        "requested": "[10.0.9, )",
-        "resolved": "10.0.9",
-        "contentHash": "g41l/30G3K4B/d/L8kjux0+30e27c8D0FVQ/PFCpbekgfDpj9mnDhieP67EqXWvl1EWNeZh2rpR4F5B/jcDOHA=="
       },
       "Newtonsoft.Json": {
         "type": "CentralTransitive",

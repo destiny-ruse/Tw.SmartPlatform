@@ -1,7 +1,6 @@
 ﻿using AwesomeAssertions;
 using Tw.Localization.Json;
 using Tw.Localization.Tests.Fakes;
-using Tw.Threading;
 using Xunit;
 
 namespace Tw.Localization.Tests;
@@ -11,12 +10,6 @@ namespace Tw.Localization.Tests;
 /// </summary>
 public class TextLocalizerTests
 {
-    /// <summary>
-    /// 创建令牌提供器测试对象
-    /// </summary>
-    /// <returns>方法完成后返回给调用方的结果对象</returns>
-    private static NullCancellationTokenProvider CreateTokenProvider() => new(new AsyncLocalCancellationTokenScopeProvider());
-
     /// <summary>
     /// 验证读取异步Prefers动态租户文本
     /// </summary>
@@ -31,7 +24,7 @@ public class TextLocalizerTests
         var store = new InMemoryDynamicTextStore();
         store.Add(new LocalizedText("App", "Menu", "租户菜单", "zh-Hans", false, LocalizedTextSource.Dynamic), tenantId: "t1");
         var dynamicContributor = new DynamicTextContributor(store, priority: 100);
-        var localizer = new TextLocalizer([staticContributor, dynamicContributor], options, CreateTokenProvider());
+        var localizer = new TextLocalizer([staticContributor, dynamicContributor], options);
 
         var text = await localizer.GetAsync(
             "App",
@@ -50,7 +43,7 @@ public class TextLocalizerTests
     public async Task GetAsync_ReturnsNotFoundText_WhenMissing()
     {
         var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US" } };
-        var localizer = new TextLocalizer([], options, CreateTokenProvider());
+        var localizer = new TextLocalizer([], options);
 
         var text = await localizer.GetAsync(
             "App",
@@ -77,7 +70,7 @@ public class TextLocalizerTests
         store.Add(new LocalizedText("App", "Menu", "动态菜单", "zh-Hans", false, LocalizedTextSource.Dynamic));
         store.Add(new LocalizedText("App", "Title", "动态标题", "zh-Hans", false, LocalizedTextSource.Dynamic));
         var dynamicContributor = new DynamicTextContributor(store, priority: 100);
-        var localizer = new TextLocalizer([staticContributor, dynamicContributor], options, CreateTokenProvider());
+        var localizer = new TextLocalizer([staticContributor, dynamicContributor], options);
 
         var result = await localizer.GetAllAsync(
             "App",
@@ -87,5 +80,63 @@ public class TextLocalizerTests
         result.Single(t => t.Name == "Menu").Value.Should().Be("动态菜单");
         result.Single(t => t.Name == "Title").Value.Should().Be("动态标题");
         result.Should().HaveCount(2);
+    }
+
+    /// <summary>
+    /// 验证调用方显式提供的已取消令牌会传递给文本贡献者
+    /// </summary>
+    [Fact]
+    public async Task GetAsync_ForwardsExplicitCanceledTokenToContributor()
+    {
+        var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US" } };
+        var contributor = new CancellationAwareTextContributor();
+        var localizer = new TextLocalizer([contributor], options);
+        using var cancellationTokenSource = new CancellationTokenSource();
+        cancellationTokenSource.Cancel();
+
+        var act = async () => await localizer.GetAsync(
+            "App",
+            "Menu",
+            new LocalizationContext("en-US"),
+            cancellationTokenSource.Token);
+
+        var exception = await act.Should().ThrowAsync<OperationCanceledException>();
+        exception.Which.CancellationToken.Should().Be(cancellationTokenSource.Token);
+        contributor.ObservedCancellationToken.Should().Be(cancellationTokenSource.Token);
+    }
+
+    /// <summary>
+    /// 记录本地化编排器传入的令牌，并在已取消时模拟可取消的异步贡献者
+    /// </summary>
+    private sealed class CancellationAwareTextContributor : ITextResourceContributor
+    {
+        /// <summary>
+        /// 最近一次调用接收的取消令牌
+        /// </summary>
+        public CancellationToken ObservedCancellationToken { get; private set; }
+
+        /// <inheritdoc />
+        public int Priority => 0;
+
+        /// <inheritdoc />
+        public ValueTask<LocalizedText?> GetOrNullAsync(
+            Requests.TextLookupRequest request,
+            CancellationToken cancellationToken = default)
+        {
+            ObservedCancellationToken = cancellationToken;
+            cancellationToken.ThrowIfCancellationRequested();
+            return ValueTask.FromResult<LocalizedText?>(null);
+        }
+
+        /// <inheritdoc />
+        public ValueTask FillAsync(
+            Requests.TextFillRequest request,
+            IDictionary<string, LocalizedText> texts,
+            CancellationToken cancellationToken = default)
+        {
+            ObservedCancellationToken = cancellationToken;
+            cancellationToken.ThrowIfCancellationRequested();
+            return ValueTask.CompletedTask;
+        }
     }
 }

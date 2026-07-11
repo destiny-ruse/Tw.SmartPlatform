@@ -35,9 +35,6 @@
       },
       "tw.core": {
         "type": "Project"
-      },
-      "tw.threading": {
-        "type": "Project"
       }
     }
   }

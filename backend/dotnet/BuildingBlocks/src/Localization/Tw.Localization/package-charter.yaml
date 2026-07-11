@@ -14,6 +14,7 @@ in_scope:
   - 多租户与 culture 回退策略
 out_of_scope:
   - ASP.NET Core 请求语言解析和 IStringLocalizer 适配
+  - 环境式取消令牌与请求上下文传递
   - EF Core 表模型、DbContext、迁移或默认数据库实现
   - 管理端页面和管理 API
   - 具体业务领域模型
@@ -30,5 +31,4 @@ dependency_rules:
     - "Microsoft.EntityFrameworkCore*"
   allow:
     - Tw.Core
-    - Tw.Threading
     - "Microsoft.Extensions.DependencyInjection.Abstractions"

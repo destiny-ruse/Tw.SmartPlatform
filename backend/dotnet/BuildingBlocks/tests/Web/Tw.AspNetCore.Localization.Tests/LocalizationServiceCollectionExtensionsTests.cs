@@ -1,9 +1,8 @@
 ﻿using System;
 using AwesomeAssertions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
-using Tw.AspNetCore.Mvc.Context;
-using Tw.Threading;
 using Tw.Localization;
 using Xunit;
 
@@ -28,6 +27,8 @@ public class LocalizationServiceCollectionExtensionsTests
             o.SupportedCultures.Add("en-US");
         });
 
+        services.Any(descriptor => descriptor.ServiceType == typeof(IHttpContextAccessor)).Should().BeFalse();
+
         using var provider = services.BuildServiceProvider();
         using var scope = provider.CreateScope();
         var sp = scope.ServiceProvider;
@@ -37,7 +38,6 @@ public class LocalizationServiceCollectionExtensionsTests
         sp.GetRequiredService<IStringLocalizerFactory>().Should().BeOfType<TwStringLocalizerFactory>();
         sp.GetRequiredService<IStringLocalizer<LocalizationServiceCollectionExtensionsTests>>()
           .Should().BeOfType<TwStringLocalizer<LocalizationServiceCollectionExtensionsTests>>();
-        sp.GetRequiredService<ICancellationTokenProvider>().Should().BeOfType<HttpContextCancellationTokenProvider>();
     }
 
     /// <summary>

@@ -8,6 +8,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tw.Sharding.Abstractions\Tw.Sharding.Abstractions.csproj" />
-    <ProjectReference Include="..\..\Foundation\Tw.Threading\Tw.Threading.csproj" />
   </ItemGroup>
 </Project>

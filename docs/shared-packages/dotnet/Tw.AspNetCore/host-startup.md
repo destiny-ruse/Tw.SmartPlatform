@@ -40,6 +40,6 @@ Microsoft DI 是默认容器，`UseWebIntegration()` 不接管其他容器，也
 
 ## 边界
 
-该入口只负责基于 `WebApplicationBuilder` 的跨协议宿主启动聚合。MVC filter、HTTP 请求取消令牌 provider 与 gRPC 专属 interceptor 不由宿主入口注册。普通 Worker 与 Generic Host 专属入口不由当前 API 表达。
+该入口只负责基于 `WebApplicationBuilder` 的跨协议宿主启动聚合。MVC filter 与 gRPC 专属 interceptor 不由宿主入口注册。普通 Worker 与 Generic Host 专属入口不由当前 API 表达。
 
-需要 MVC/Web API 请求取消令牌时，引用 [`Tw.AspNetCore.Mvc`](../Tw.AspNetCore.Mvc/README.md)，并调用 `AddMvcIntegration()`；只注册 HTTP provider 时，引入 `using Tw.AspNetCore.Mvc.Context;` 后调用 `builder.Services.AddHttpContextCancellationTokenProvider();`。
+MVC controller action 与 endpoint 应显式接收 `CancellationToken`；无法由框架绑定时，在 HTTP 边界读取 `HttpContext.RequestAborted` 后显式向下游传递。

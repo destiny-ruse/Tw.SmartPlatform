@@ -1,8 +1,7 @@
 using AwesomeAssertions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Tw.AspNetCore.Mvc;
-using Tw.AspNetCore.Mvc.Context;
-using Tw.Threading;
 using Xunit;
 
 namespace Tw.AspNetCore.Mvc.Tests.DependencyInjection;
@@ -13,19 +12,17 @@ namespace Tw.AspNetCore.Mvc.Tests.DependencyInjection;
 public sealed class MvcIntegrationServiceCollectionExtensionsTests
 {
     /// <summary>
-    /// 验证 AddMvcIntegration 保留取消令牌提供器注册并返回同一服务集合
+    /// 验证 AddMvcIntegration 不注册请求取消基础设施并返回同一服务集合
     /// </summary>
     [Fact]
-    public void AddMvcIntegration_RegistersCancellationTokenProviderAndReturnsSameServices()
+    public void AddMvcIntegration_ReturnsSameServicesWithoutRequestCancellationInfrastructure()
     {
         IServiceCollection services = new ServiceCollection();
 
         var result = services.AddMvcIntegration();
 
         result.Should().BeSameAs(services);
-        using var provider = services.BuildServiceProvider();
-        provider.GetRequiredService<ICancellationTokenProvider>()
-            .Should().BeOfType<HttpContextCancellationTokenProvider>();
+        services.Any(descriptor => descriptor.ServiceType == typeof(IHttpContextAccessor)).Should().BeFalse();
     }
 
     /// <summary>

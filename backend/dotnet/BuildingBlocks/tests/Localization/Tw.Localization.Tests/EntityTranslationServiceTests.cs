@@ -1,7 +1,6 @@
 ﻿using AwesomeAssertions;
 using Tw.Localization.Requests;
 using Tw.Localization.Tests.Fakes;
-using Tw.Threading;
 using Xunit;
 
 namespace Tw.Localization.Tests;
@@ -12,12 +11,6 @@ namespace Tw.Localization.Tests;
 public class EntityTranslationServiceTests
 {
     /// <summary>
-    /// 创建令牌提供器测试对象
-    /// </summary>
-    /// <returns>方法完成后返回给调用方的结果对象</returns>
-    private static NullCancellationTokenProvider CreateTokenProvider() => new(new AsyncLocalCancellationTokenScopeProvider());
-
-    /// <summary>
     /// 验证读取Fields异步UsesBatch存储和回退
     /// </summary>
     /// <returns>表示异步流程完成状态的任务</returns>
@@ -27,7 +20,7 @@ public class EntityTranslationServiceTests
         var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh", "zh-Hans" } };
         var store = new InMemoryEntityTranslationStore();
         store.Add(new EntityTranslation("Product", "42", "Name", "zh", "父级名称", "t1"));
-        var service = new EntityTranslationService(store, options, CreateTokenProvider());
+        var service = new EntityTranslationService(store, options);
         var query = new EntityTranslationBatchQuery(
             [new EntityTranslationKey("Product", "42", "Name")],
             new LocalizationContext("zh-Hans") { TenantId = "t1" });
@@ -47,7 +40,7 @@ public class EntityTranslationServiceTests
     {
         var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US" } };
         var store = new InMemoryEntityTranslationStore();
-        var service = new EntityTranslationService(store, options, CreateTokenProvider());
+        var service = new EntityTranslationService(store, options);
 
         var result = await service.GetFieldAsync(
             new EntityTranslationLookup(
@@ -69,7 +62,7 @@ public class EntityTranslationServiceTests
         var store = new InMemoryEntityTranslationStore();
         store.Add(new EntityTranslation("Product", "42", "Name", "zh-Hans", "全局名称", null));
         store.Add(new EntityTranslation("Product", "42", "Name", "zh-Hans", "租户名称", "t1"));
-        var service = new EntityTranslationService(store, options, CreateTokenProvider());
+        var service = new EntityTranslationService(store, options);
         var key = new EntityTranslationKey("Product", "42", "Name");
         var query = new EntityTranslationBatchQuery(
             [key],
@@ -90,7 +83,7 @@ public class EntityTranslationServiceTests
         var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
         var store = new InMemoryEntityTranslationStore();
         store.Add(new EntityTranslation("Product", "42", "Name", "zh-Hans", "全局名称", null));
-        var service = new EntityTranslationService(store, options, CreateTokenProvider());
+        var service = new EntityTranslationService(store, options);
         var key = new EntityTranslationKey("Product", "42", "Name");
         var query = new EntityTranslationBatchQuery(
             [key],
@@ -99,5 +92,27 @@ public class EntityTranslationServiceTests
         var result = await service.GetFieldsAsync(query, TestContext.Current.CancellationToken);
 
         result[key].Value.Should().Be("全局名称");
+    }
+
+    /// <summary>
+    /// 验证调用方显式提供的已取消令牌会传递给实体翻译存储
+    /// </summary>
+    [Fact]
+    public async Task GetFieldsAsync_ForwardsExplicitCanceledTokenToStore()
+    {
+        var options = new LocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US" } };
+        var store = new InMemoryEntityTranslationStore();
+        var service = new EntityTranslationService(store, options);
+        var query = new EntityTranslationBatchQuery(
+            [new EntityTranslationKey("Product", "42", "Name")],
+            new LocalizationContext("en-US"));
+        using var cancellationTokenSource = new CancellationTokenSource();
+        cancellationTokenSource.Cancel();
+
+        var act = async () => await service.GetFieldsAsync(query, cancellationTokenSource.Token);
+
+        var exception = await act.Should().ThrowAsync<OperationCanceledException>();
+        exception.Which.CancellationToken.Should().Be(cancellationTokenSource.Token);
+        store.LastCancellationToken.Should().Be(cancellationTokenSource.Token);
     }
 }

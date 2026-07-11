@@ -21,12 +21,6 @@
           "Microsoft.Extensions.Options": "[10.0.9, )"
         }
       },
-      "tw.threading": {
-        "type": "Project",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )"
-        }
-      },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "CentralTransitive",
         "requested": "[10.0.9, )",

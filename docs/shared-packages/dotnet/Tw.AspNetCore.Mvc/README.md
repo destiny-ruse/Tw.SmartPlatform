@@ -2,9 +2,9 @@
 
 `Tw.AspNetCore.Mvc` 提供 ASP.NET Core MVC 与 Web API 专属集成能力。本页按功能跳转到使用文档。
 
-## 能力索引
+## 能力范围
 
-- [HttpContext 取消令牌 Provider](context/http-context-cancellation-token-provider.md)：基于 `HttpContext.RequestAborted` 的请求取消令牌适配。
+- MVC 模型绑定、统一 API 响应契约、API Versioning URL Segment 注册与 CSRF 防伪校验策略。
 
 ## 边界
 

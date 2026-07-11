@@ -18,6 +18,11 @@ internal sealed class InMemoryEntityTranslationStore : IEntityTranslationStore
     public int GetListCallCount { get; private set; }
 
     /// <summary>
+    /// 最近一次查询接收的取消令牌
+    /// </summary>
+    public CancellationToken LastCancellationToken { get; private set; }
+
+    /// <summary>
     /// 向存储中添加一条实体翻译记录
     /// </summary>
     /// <param name="translation">要添加的实体翻译</param>
@@ -30,6 +35,8 @@ internal sealed class InMemoryEntityTranslationStore : IEntityTranslationStore
     public ValueTask<IReadOnlyList<EntityTranslation>> GetListAsync(EntityTranslationQuery query, CancellationToken cancellationToken = default)
     {
         GetListCallCount++;
+        LastCancellationToken = cancellationToken;
+        cancellationToken.ThrowIfCancellationRequested();
 
         var matchingCultures = new HashSet<string>(query.CandidateCultureNames, StringComparer.OrdinalIgnoreCase);
 

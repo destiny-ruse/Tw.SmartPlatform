@@ -1,4 +1,3 @@
-﻿using Tw.Threading;
 using Tw.Localization.Requests;
 
 namespace Tw.Localization;
@@ -18,40 +17,31 @@ public sealed class EntityTranslationService : IEntityTranslationService
     /// </summary>
     private readonly LocalizationOptions _options;
     /// <summary>
-    /// 保存当前类型处理流程依赖的cancellation令牌提供器
-    /// </summary>
-    private readonly ICancellationTokenProvider _cancellationTokenProvider;
-
-    /// <summary>
     /// 初始化 <see cref="EntityTranslationService"/> 类的新实例
     /// </summary>
     /// <param name="store">实体翻译持久化存储</param>
     /// <param name="options">系统级本地化配置</param>
-    /// <param name="cancellationTokenProvider">取消令牌 provider</param>
     /// <exception cref="ArgumentNullException">
-    /// 当 <paramref name="store"/>、<paramref name="options"/> 或 <paramref name="cancellationTokenProvider"/> 为 <see langword="null"/> 时抛出
+    /// 当 <paramref name="store"/> 或 <paramref name="options"/> 为 <see langword="null"/> 时抛出
     /// </exception>
     public EntityTranslationService(
         IEntityTranslationStore store,
-        LocalizationOptions options,
-        ICancellationTokenProvider cancellationTokenProvider)
+        LocalizationOptions options)
     {
         _store = Check.NotNull(store);
         _options = Check.NotNull(options);
-        _cancellationTokenProvider = Check.NotNull(cancellationTokenProvider);
     }
 
     /// <inheritdoc />
     public async ValueTask<IReadOnlyDictionary<EntityTranslationKey, EntityTranslation>> GetFieldsAsync(
         EntityTranslationBatchQuery query,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken)
     {
-        var token = _cancellationTokenProvider.FallbackToProvider(cancellationToken);
         var candidates = CultureFallback.Expand(query.Context, _options);
         var storeQuery = new EntityTranslationQuery(query.Keys, query.Context, candidates);
 
         // 仅调用 store 一次
-        var translations = await _store.GetListAsync(storeQuery, token).ConfigureAwait(false);
+        var translations = await _store.GetListAsync(storeQuery, cancellationToken).ConfigureAwait(false);
 
         // 按键建立索引，避免对每个字段/文化重复线性扫描（O(keys×cultures×translations) → 近似 O(translations)）
         var index = new Dictionary<EntityTranslationKey, List<EntityTranslation>>();
@@ -79,7 +69,7 @@ public sealed class EntityTranslationService : IEntityTranslationService
     /// <inheritdoc />
     public async ValueTask<string?> GetFieldAsync(
         EntityTranslationLookup lookup,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken)
     {
         var batchQuery = new EntityTranslationBatchQuery([lookup.Key], lookup.Context);
         var result = await GetFieldsAsync(batchQuery, cancellationToken).ConfigureAwait(false);

@@ -93,18 +93,29 @@ public class ProductDisplayService(IEntityTranslationService translationService)
 }
 ```
 
+顶层实体翻译查询要求调用方显式传递 `CancellationToken`。HTTP 入口可使用 action 或 endpoint 参数，后台任务和消息消费者应将其入口令牌逐层传入。
+
 ### GetFieldAsync：单字段查找
 
 ```csharp
-var lookup = new EntityTranslationLookup(
-    Key: new EntityTranslationKey("Product", "42", "Name"),
-    Context: new LocalizationContext("zh-Hans"));
-
-string? translatedName = await translationService.GetFieldAsync(lookup);
-
-if (translatedName is null)
+public static async ValueTask<string?> GetProductNameAsync(
+    IEntityTranslationService translationService,
+    CancellationToken cancellationToken)
 {
-    // 未找到翻译，使用实体原字段值
+    var lookup = new EntityTranslationLookup(
+        Key: new EntityTranslationKey("Product", "42", "Name"),
+        Context: new LocalizationContext("zh-Hans"));
+
+    var translatedName = await translationService.GetFieldAsync(
+        lookup,
+        cancellationToken);
+
+    if (translatedName is null)
+    {
+        // 未找到翻译，使用实体原字段值
+    }
+
+    return translatedName;
 }
 ```
 
@@ -122,31 +133,40 @@ if (translatedName is null)
 批量查询多个实体字段时，使用 `GetFieldsAsync` 以单次存储访问替代多次 `GetFieldAsync`，避免 N+1：
 
 ```csharp
-var keys = new List<EntityTranslationKey>
+public static async ValueTask<IReadOnlyDictionary<EntityTranslationKey, EntityTranslation>>
+    GetDisplayTranslationsAsync(
+        IEntityTranslationService translationService,
+        CancellationToken cancellationToken)
 {
-    new("Product", "1", "Name"),
-    new("Product", "1", "Description"),
-    new("Product", "2", "Name"),
-    new("Category", "10", "Title"),
-};
-
-var batchQuery = new EntityTranslationBatchQuery(
-    Keys: keys,
-    Context: new LocalizationContext("zh-Hans"));
-
-IReadOnlyDictionary<EntityTranslationKey, EntityTranslation> results =
-    await translationService.GetFieldsAsync(batchQuery);
-
-foreach (var key in keys)
-{
-    if (results.TryGetValue(key, out var translation))
+    var keys = new List<EntityTranslationKey>
     {
-        // 使用 translation.Value
-    }
-    else
+        new("Product", "1", "Name"),
+        new("Product", "1", "Description"),
+        new("Product", "2", "Name"),
+        new("Category", "10", "Title"),
+    };
+
+    var batchQuery = new EntityTranslationBatchQuery(
+        Keys: keys,
+        Context: new LocalizationContext("zh-Hans"));
+
+    var results = await translationService.GetFieldsAsync(
+        batchQuery,
+        cancellationToken);
+
+    foreach (var key in keys)
     {
-        // 该字段无翻译，使用实体原字段值
+        if (results.TryGetValue(key, out var translation))
+        {
+            // 使用 translation.Value
+        }
+        else
+        {
+            // 该字段无翻译，使用实体原字段值
+        }
     }
+
+    return results;
 }
 ```
 

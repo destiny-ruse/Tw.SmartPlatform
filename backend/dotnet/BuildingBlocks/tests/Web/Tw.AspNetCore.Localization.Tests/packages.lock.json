@@ -39,19 +39,6 @@
           "xunit.v3.mtp-v1": "[3.2.2]"
         }
       },
-      "Asp.Versioning.Abstractions": {
-        "type": "Transitive",
-        "resolved": "10.0.0",
-        "contentHash": "cMRE5nvNMfBgfkb0XFWst/7UtyXCjoAXnV0L4Scx4P9fcf0idgrj1Z0c+3ylsy01K4cOib7dKhCBfpg5z3r0Kg=="
-      },
-      "Asp.Versioning.Http": {
-        "type": "Transitive",
-        "resolved": "10.0.0",
-        "contentHash": "xmNm9FM2d20NKy7i1osEQysf7pJ4iJjWnM6e8CoeIhUREqG8nugsfC82pGpmzlatjAJL5T52ieSpyW+GFdSsSQ==",
-        "dependencies": {
-          "Asp.Versioning.Abstractions": "10.0.0"
-        }
-      },
       "Microsoft.ApplicationInsights": {
         "type": "Transitive",
         "resolved": "2.23.0",
@@ -186,18 +173,8 @@
       "tw.aspnetcore.localization": {
         "type": "Project",
         "dependencies": {
-          "Tw.AspNetCore.Mvc": "[1.0.0, )",
           "Tw.Core": "[1.0.0, )",
           "Tw.Localization": "[1.0.0, )"
-        }
-      },
-      "tw.aspnetcore.mvc": {
-        "type": "Project",
-        "dependencies": {
-          "Asp.Versioning.Mvc": "[10.0.0, )",
-          "Asp.Versioning.Mvc.ApiExplorer": "[10.0.0, )",
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Threading": "[1.0.0, )"
         }
       },
       "tw.core": {
@@ -206,29 +183,7 @@
       "tw.localization": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Threading": "[1.0.0, )"
-        }
-      },
-      "tw.threading": {
-        "type": "Project"
-      },
-      "Asp.Versioning.Mvc": {
-        "type": "CentralTransitive",
-        "requested": "[10.0.0, )",
-        "resolved": "10.0.0",
-        "contentHash": "W0wZ+0uZ0UK4KstjvEkNBZ0xxhBmxunwNg8582SVyyW7txQmSXibtm8fC4o82LaemPquYskms67bIbJOSrnlug==",
-        "dependencies": {
-          "Asp.Versioning.Http": "10.0.0"
-        }
-      },
-      "Asp.Versioning.Mvc.ApiExplorer": {
-        "type": "CentralTransitive",
-        "requested": "[10.0.0, )",
-        "resolved": "10.0.0",
-        "contentHash": "H54UOpRoc4RmhQ4RA2lzDz43a/hAu/JN19Yyy/DNmH4XlRxhemfhifJyh9BaXNJOtGa2Dnu2xEeP4VSiTdUdAg==",
-        "dependencies": {
-          "Asp.Versioning.Mvc": "10.0.0"
+          "Tw.Core": "[1.0.0, )"
         }
       },
       "Newtonsoft.Json": {

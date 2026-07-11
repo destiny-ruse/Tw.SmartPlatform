@@ -28,5 +28,4 @@ dependency_rules:
   allow:
     - Tw.Core
     - Tw.Localization
-    - Tw.AspNetCore.Mvc
     - Microsoft.AspNetCore.App

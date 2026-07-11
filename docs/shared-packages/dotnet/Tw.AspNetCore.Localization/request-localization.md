@@ -87,16 +87,18 @@ public class OrderService(
     ICurrentLocalizationContextAccessor localizationAccessor,
     ITextLocalizer localizer)
 {
-    public async ValueTask<string> GetStatusLabelAsync(string statusKey)
+    public async ValueTask<string> GetStatusLabelAsync(
+        string statusKey,
+        CancellationToken cancellationToken)
     {
         var context = localizationAccessor.Current;
-        var result = await localizer.GetAsync("orders", statusKey, context);
+        var result = await localizer.GetAsync("orders", statusKey, context, cancellationToken);
         return result.Value;
     }
 }
 ```
 
-`ICurrentLocalizationContextAccessor.Current` 返回 `LocalizationContext`，包含当前请求解析到的文化名称，可直接传递给 `ITextLocalizer.GetAsync` 或 `GetAllAsync`。
+`ICurrentLocalizationContextAccessor.Current` 返回 `LocalizationContext`，包含当前请求解析到的文化名称。调用 `ITextLocalizer.GetAsync` 或 `GetAllAsync` 时，还必须显式传递由调用边界提供的 `CancellationToken`。
 
 ## IStringLocalizer 静态快照边界
 
@@ -112,8 +114,17 @@ IStringLocalizer<MyResource> staticLocalizer = ...;
 var label = staticLocalizer["Menu__Home"].Value;
 
 // 动态 + 静态（异步，优先动态覆盖）
-ITextLocalizer dynamicLocalizer = ...;
-var result = await dynamicLocalizer.GetAsync("app", "Menu__Home", context);
+public static ValueTask<LocalizedText> GetDynamicMenuHomeAsync(
+    ITextLocalizer dynamicLocalizer,
+    LocalizationContext context,
+    CancellationToken cancellationToken)
+{
+    return dynamicLocalizer.GetAsync(
+        "app",
+        "Menu__Home",
+        context,
+        cancellationToken);
+}
 ```
 
 ## 运行时导出 DTO
@@ -150,11 +161,11 @@ GET /api/localization/resources/{resourceName}?culture=zh-Hans&onlyDynamic=true
 public async Task<LocalizationResourceDto> GetResourceAsync(
     string resourceName,
     [FromQuery] string culture,
-    [FromQuery] bool onlyDynamic = false,
-    CancellationToken ct = default)
+    CancellationToken cancellationToken,
+    [FromQuery] bool onlyDynamic = false)
 {
     var context = new LocalizationContext(culture);
-    var texts = await localizer.GetAllAsync(resourceName, context, ct);
+    var texts = await localizer.GetAllAsync(resourceName, context, cancellationToken);
 
     return new LocalizationResourceDto(
         resourceName,
@@ -163,6 +174,8 @@ public async Task<LocalizationResourceDto> GetResourceAsync(
              .ToList());
 }
 ```
+
+`CancellationToken cancellationToken` 由 ASP.NET Core action 参数绑定为当前请求的 `HttpContext.RequestAborted`，并作为显式参数传递给本地化查询。
 
 `onlyDynamic=true` 的过滤逻辑由业务应用自行实现（例如过滤 `Source != LocalizedTextSource.Dynamic` 的条目）；鉴权策略、审计日志和缓存均由业务应用负责。
 

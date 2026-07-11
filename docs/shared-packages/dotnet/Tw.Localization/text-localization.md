@@ -91,10 +91,13 @@ using Tw.Localization;
 
 public class MyService(ITextLocalizer localizer)
 {
-    public async ValueTask<string> GetLabelAsync(string key, string cultureName)
+    public async ValueTask<string> GetLabelAsync(
+        string key,
+        string cultureName,
+        CancellationToken cancellationToken)
     {
         var context = new LocalizationContext(cultureName);
-        var result = await localizer.GetAsync("app", key, context);
+        var result = await localizer.GetAsync("app", key, context, cancellationToken);
 
         if (result.ResourceNotFound)
         {
@@ -105,6 +108,8 @@ public class MyService(ITextLocalizer localizer)
     }
 }
 ```
+
+顶层本地化查询要求调用方显式传递 `CancellationToken`。HTTP 入口可使用 action 或 endpoint 参数，后台任务和消息消费者应将其入口令牌逐层传入。
 
 `LocalizationContext` 构造参数：
 
@@ -127,10 +132,16 @@ var context = new LocalizationContext("zh-Hans")
 ### GetAsync：单条查找
 
 ```csharp
-ValueTask<LocalizedText> result = await localizer.GetAsync(
-    resourceName: "app",
-    name: "Common__Save",
-    context: new LocalizationContext("zh-Hans"));
+public static ValueTask<LocalizedText> GetSaveTextAsync(
+    ITextLocalizer localizer,
+    CancellationToken cancellationToken)
+{
+    return localizer.GetAsync(
+        resourceName: "app",
+        name: "Common__Save",
+        context: new LocalizationContext("zh-Hans"),
+        cancellationToken: cancellationToken);
+}
 ```
 
 返回值 `LocalizedText` 的主要属性：
@@ -147,9 +158,15 @@ ValueTask<LocalizedText> result = await localizer.GetAsync(
 ### GetAllAsync：获取资源集合内全部文本
 
 ```csharp
-IReadOnlyList<LocalizedText> allTexts = await localizer.GetAllAsync(
-    resourceName: "app",
-    context: new LocalizationContext("zh-Hans"));
+public static ValueTask<IReadOnlyList<LocalizedText>> GetAllAppTextsAsync(
+    ITextLocalizer localizer,
+    CancellationToken cancellationToken)
+{
+    return localizer.GetAllAsync(
+        resourceName: "app",
+        context: new LocalizationContext("zh-Hans"),
+        cancellationToken: cancellationToken);
+}
 ```
 
 返回该资源名称下当前上下文能解析到的所有文本条目。高优先级来源的同名键会覆盖低优先级来源的同名键。

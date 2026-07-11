@@ -196,14 +196,7 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )",
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Threading": "[1.0.0, )"
-        }
-      },
-      "tw.threading": {
-        "type": "Project",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )"
+          "Tw.Core": "[1.0.0, )"
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
