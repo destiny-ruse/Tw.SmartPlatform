@@ -1,8 +1,8 @@
 schema_version: "1.0.0"
 package: Tw.Core
 owner: platform-team
-stability: stable
-compatibility: "semver-minor 内向后兼容"
+stability: experimental
+compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
   跨服务复用的基础原语与无框架依赖工具：值对象、命名对象、领域异常、
   配置异常、类型查找、反射缓存、加密哈希、通用扩展方法与一次性资源工具。
