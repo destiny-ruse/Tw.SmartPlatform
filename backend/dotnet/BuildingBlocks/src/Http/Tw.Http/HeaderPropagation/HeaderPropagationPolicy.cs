@@ -1,0 +1,109 @@
+using System.Collections.Frozen;
+
+namespace Tw.Http.HeaderPropagation;
+
+/// <summary>
+/// 标识请求头值进入当前出站调用前经过的信任校验级别
+/// </summary>
+public enum HeaderTrustLevel
+{
+    /// <summary>
+    /// 请求头值直接来自调用方且未经服务端验证
+    /// </summary>
+    ClientSupplied,
+
+    /// <summary>
+    /// 请求头值已经由可信服务端边界验证
+    /// </summary>
+    Verified
+}
+
+/// <summary>
+/// 按平台安全基线和调用方允许列表选择出站请求头
+/// </summary>
+public static class HeaderPropagationPolicy
+{
+    /// <summary>
+    /// 平台允许跨出站调用边界复制的请求头名称
+    /// </summary>
+    private static readonly FrozenSet<string> SafeHeaders = new[]
+    {
+        "traceparent",
+        "tracestate",
+        "X-Correlation-Id",
+        "X-Tenant-Id",
+        "X-Culture",
+        "Idempotency-Key"
+    }.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// 即使调用方显式配置也不得自动复制的身份凭据与 Cookie 请求头
+    /// </summary>
+    private static readonly FrozenSet<string> SensitiveHeaders = new[]
+    {
+        "Authorization",
+        "Cookie",
+        "Set-Cookie",
+        "Proxy-Authorization"
+    }.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// 判断请求头是否满足平台传播安全基线
+    /// </summary>
+    /// <param name="headerName">需要检查的请求头名称</param>
+    /// <param name="trustLevel">请求头值进入当前出站调用前的信任级别</param>
+    /// <returns>平台允许在指定信任级别传播时返回 <see langword="true"/></returns>
+    public static bool ShouldPropagate(string headerName, HeaderTrustLevel trustLevel)
+    {
+        if (string.IsNullOrWhiteSpace(headerName) || SensitiveHeaders.Contains(headerName))
+        {
+            return false;
+        }
+
+        return SafeHeaders.Contains(headerName)
+            && (!string.Equals(headerName, "X-Tenant-Id", StringComparison.OrdinalIgnoreCase)
+                || trustLevel == HeaderTrustLevel.Verified);
+    }
+
+    /// <summary>
+    /// 从输入快照中选择调用方配置且平台允许传播的请求头
+    /// </summary>
+    /// <param name="headers">当前请求提供的请求头名称和值</param>
+    /// <param name="options">调用方明确允许传播的请求头名称</param>
+    /// <param name="trustLevel">请求头值进入当前出站调用前的信任级别</param>
+    /// <returns>不区分大小写且不可修改的出站请求头快照</returns>
+    /// <exception cref="ArgumentNullException">headers 或 options 为 null 时抛出</exception>
+    /// <exception cref="ArgumentException">输入包含仅大小写不同的可传播同名请求头时抛出</exception>
+    public static IReadOnlyDictionary<string, string> SelectHeaders(
+        IReadOnlyDictionary<string, string> headers,
+        HeaderPropagationOptions options,
+        HeaderTrustLevel trustLevel)
+    {
+        if (headers is null)
+        {
+            throw new ArgumentNullException(nameof(headers), "请求头集合不能为空");
+        }
+
+        if (options is null)
+        {
+            throw new ArgumentNullException(nameof(options), "请求头传播选项不能为空");
+        }
+
+        var selectedHeaders = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var (headerName, headerValue) in headers)
+        {
+            if (!options.AllowedHeaders.Contains(headerName)
+                || !ShouldPropagate(headerName, trustLevel))
+            {
+                continue;
+            }
+
+            if (!selectedHeaders.TryAdd(headerName, headerValue))
+            {
+                throw new ArgumentException("请求头名称不得仅因大小写不同而重复", nameof(headers));
+            }
+        }
+
+        return selectedHeaders.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
+    }
+}

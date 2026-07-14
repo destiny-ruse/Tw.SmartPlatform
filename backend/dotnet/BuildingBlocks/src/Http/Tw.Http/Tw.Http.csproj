@@ -6,7 +6,4 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Tw.Http.Abstractions\Tw.Http.Abstractions.csproj" />
-  </ItemGroup>
 </Project>

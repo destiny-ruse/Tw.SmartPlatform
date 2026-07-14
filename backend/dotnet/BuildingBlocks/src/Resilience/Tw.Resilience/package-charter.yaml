@@ -4,12 +4,15 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供操作韧性描述、重试安全规则与 HTTP 韧性集成。
+  提供 provider-neutral 操作分类、韧性策略描述、输入校验与重试安全规则。
 in_scope:
-  - 操作类型
-  - 韧性策略描述
-  - 非幂等写入的重试禁用规则
+  - 操作幂等分类
+  - 公司自有韧性策略描述
+  - 超时与重试配置校验
+  - 非幂等写入的自动重试禁用规则
 out_of_scope:
+  - 具体 HTTP handler 与 HttpClient 注册
+  - Polly 或其他第三方 provider 集成
   - 业务降级行为
 public_capabilities:
   - Tw.Resilience
@@ -17,6 +20,6 @@ dependency_rules:
   forbid:
     - "SqlSugar*"
     - "DotNetCore.CAP*"
-  allow:
-    - Polly
-    - Microsoft.Extensions.Http.Resilience
+    - "Polly*"
+    - "Microsoft.Extensions.Http.Resilience*"
+  allow: []

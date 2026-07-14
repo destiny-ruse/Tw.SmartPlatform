@@ -180,12 +180,15 @@ public sealed partial class PackageConsolidationTests
     }
 
     /// <summary>
-    /// 验证 HTTP 客户端测试前身可以在重命名期间承接目标测试职责
+    /// 验证 HTTP 目标测试迁移完成后不再依赖已淘汰的测试前身
     /// </summary>
     [Fact]
-    public void HttpClientPredecessor_CanTemporarilyCoverHttpTargetTest()
+    public void HttpTargetTest_DoesNotDependOnRetiredPredecessorAfterMigration()
     {
-        HasActivePredecessor("Http/Tw.Http.Tests/Tw.Http.Tests.csproj").Should().BeTrue();
+        const string targetTestPath = "Http/Tw.Http.Tests/Tw.Http.Tests.csproj";
+
+        File.Exists(ProjectPath(RepositoryLayout.BuildingBlocksTests, targetTestPath)).Should().BeTrue();
+        HasActivePredecessor(targetTestPath).Should().BeFalse();
     }
 
     /// <summary>

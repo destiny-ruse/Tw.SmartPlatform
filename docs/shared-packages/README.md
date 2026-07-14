@@ -32,3 +32,5 @@
 - [Tw.DistributedLocking.Redis](dotnet/Tw.DistributedLocking.Redis/README.md)
 - [Tw.EventBus](dotnet/Tw.EventBus/README.md)
 - [Tw.EventBus.Cap](dotnet/Tw.EventBus.Cap/README.md)
+- [Tw.Http](dotnet/Tw.Http/README.md)
+- [Tw.Resilience](dotnet/Tw.Resilience/README.md)

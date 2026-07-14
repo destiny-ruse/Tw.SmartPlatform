@@ -1,17 +1,17 @@
-﻿namespace Tw.Http;
+namespace Tw.Http;
 
 /// <summary>
-/// 封装HttpHeader名称集合相关的数据和行为
+/// 提供平台 HTTP 协议边界使用的稳定请求头名称
 /// </summary>
 public static class HttpHeaderNames
 {
     /// <summary>
-    /// 当前类型内部复用的Correlation标识常量值
+    /// 跨服务关联一次业务请求的请求头名称
     /// </summary>
     public const string CorrelationId = "X-Correlation-Id";
 
     /// <summary>
-    /// 当前类型内部复用的租户标识常量值
+    /// 仅在可信服务端边界验证后传播的租户标识请求头名称
     /// </summary>
     public const string TenantId = "X-Tenant-Id";
 }

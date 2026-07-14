@@ -4,17 +4,22 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供共享 HTTP 常量与协议中立辅助能力。
+  提供出站 HTTP 请求头名称、可信传播策略与安全选择边界。
 in_scope:
   - HTTP 请求头名称
+  - 出站请求头允许列表与可信级别
+  - 不可变请求头选择结果
 out_of_scope:
-  - 出站 HttpClient 策略
-  - ASP.NET Core 中间件
+  - ASP.NET Core 入站中间件
+  - 未经真实集成测试的 HttpClient 注册
+  - provider-neutral 韧性策略描述
 public_capabilities:
   - Tw.Http
+  - Tw.Http.HeaderPropagation
 dependency_rules:
   forbid:
     - "SqlSugar*"
     - "DotNetCore.CAP*"
-  allow:
-    - Tw.Http.Abstractions
+    - "Polly*"
+    - "Microsoft.Extensions.Http.Resilience*"
+  allow: []

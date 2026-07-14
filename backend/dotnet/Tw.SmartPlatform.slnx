@@ -63,8 +63,6 @@
     <Project Path="BuildingBlocks/src/Grpc/Tw.Grpc/Tw.Grpc.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Http/">
-    <Project Path="BuildingBlocks/src/Http/Tw.Http.Abstractions/Tw.Http.Abstractions.csproj" />
-    <Project Path="BuildingBlocks/src/Http/Tw.Http.Client/Tw.Http.Client.csproj" />
     <Project Path="BuildingBlocks/src/Http/Tw.Http/Tw.Http.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Idempotency/">
@@ -170,7 +168,7 @@
     <Project Path="BuildingBlocks/tests/Grpc/Tw.Grpc.Tests/Tw.Grpc.Tests.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/tests/Http/">
-    <Project Path="BuildingBlocks/tests/Http/Tw.Http.Client.Tests/Tw.Http.Client.Tests.csproj" />
+    <Project Path="BuildingBlocks/tests/Http/Tw.Http.Tests/Tw.Http.Tests.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/tests/Idempotency/">
     <Project Path="BuildingBlocks/tests/Idempotency/Tw.Idempotency.Tests/Tw.Idempotency.Tests.csproj" />
