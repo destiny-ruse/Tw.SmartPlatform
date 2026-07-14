@@ -353,7 +353,7 @@ public sealed class CapEventTransportTests
         /// </summary>
         /// <param name="unitOfWork">覆盖当前 Outbox 写入的工作单元</param>
         /// <param name="integrationEvent">当前写入的集成事件</param>
-        /// <param name="cancellationToken">未使用的取消令牌</param>
+        /// <param name="cancellationToken">写入时透传并记录的取消令牌</param>
         /// <returns>记录完成任务</returns>
         public Task WriteAsync(
             IUnitOfWork unitOfWork,

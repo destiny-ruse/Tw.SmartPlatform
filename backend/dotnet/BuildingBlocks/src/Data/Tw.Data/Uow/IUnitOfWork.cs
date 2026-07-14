@@ -5,7 +5,8 @@ namespace Tw.Data.Uow;
 /// </summary>
 /// <remarks>
 /// 成功提交、成功回滚或释放工作单元后均不得继续写入 Outbox
-/// 释放仅结束当前作用域，不隐式提交数据变更；调用方不得重复提交或回滚同一工作单元
+/// 调用方必须在释放前显式调用 <see cref="CommitAsync"/> 或 <see cref="RollbackAsync"/> 完成事务边界
+/// 释放仅结束当前作用域且不隐式提交数据变更；调用方不得重复提交或回滚同一工作单元
 /// </remarks>
 public interface IUnitOfWork : IAsyncDisposable
 {
@@ -19,6 +20,7 @@ public interface IUnitOfWork : IAsyncDisposable
     /// </summary>
     /// <param name="cancellationToken">等待提交完成时使用的取消令牌</param>
     /// <returns>提交完成任务</returns>
+    /// <exception cref="OperationCanceledException"><paramref name="cancellationToken"/> 已请求取消</exception>
     /// <remarks>成功返回后，当前事务边界进入完成状态且不再允许 Outbox 写入</remarks>
     Task CommitAsync(CancellationToken cancellationToken = default);
 
@@ -27,6 +29,7 @@ public interface IUnitOfWork : IAsyncDisposable
     /// </summary>
     /// <param name="cancellationToken">等待回滚完成时使用的取消令牌</param>
     /// <returns>回滚完成任务</returns>
+    /// <exception cref="OperationCanceledException"><paramref name="cancellationToken"/> 已请求取消</exception>
     /// <remarks>成功返回后，当前事务边界进入完成状态且不再允许 Outbox 写入</remarks>
     Task RollbackAsync(CancellationToken cancellationToken = default);
 }
