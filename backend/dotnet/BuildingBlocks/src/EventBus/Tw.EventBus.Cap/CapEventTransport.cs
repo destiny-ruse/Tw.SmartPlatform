@@ -33,7 +33,7 @@ public sealed class CapEventTransport(
             throw new InvalidOperationException("CAP Outbox 写入要求当前存在活动工作单元事务。");
         }
 
-        if (current is not IOutboxTransactionBoundary { CanWriteOutbox: true })
+        if (current is not IOutboxTransactionBoundary { CanWriteOutbox: true, IsCompleted: false })
         {
             throw new InvalidOperationException("当前工作单元无法同时覆盖业务写入与 CAP Outbox 写入。");
         }

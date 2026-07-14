@@ -17,6 +17,7 @@ public interface IUnitOfWorkCoordinator
     /// <param name="cancellationToken">创建工作单元时使用的取消令牌</param>
     /// <returns>新建或按作用域规则复用的工作单元</returns>
     /// <exception cref="ArgumentNullException"><paramref name="options"/> 为 <see langword="null"/></exception>
+    /// <exception cref="OperationCanceledException"><paramref name="cancellationToken"/> 已请求取消</exception>
     Task<IUnitOfWork> BeginAsync(
         UnitOfWorkOptions options,
         CancellationToken cancellationToken = default);

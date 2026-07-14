@@ -51,7 +51,7 @@ public sealed class SqlSugarUnitOfWork : IUnitOfWork, IOutboxTransactionBoundary
     /// <summary>
     /// 当前工作单元是否仍允许写入同一事务边界内的 Outbox
     /// </summary>
-    public bool CanWriteOutbox => !_disposed;
+    public bool CanWriteOutbox => !_disposed && !IsCompleted;
 
     /// <summary>
     /// 当前事务边界是否已经提交或回滚
