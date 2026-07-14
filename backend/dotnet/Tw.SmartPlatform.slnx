@@ -53,7 +53,6 @@
     <Project Path="BuildingBlocks/src/Foundation/Tw.Json.Abstractions/Tw.Json.Abstractions.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Json.Newtonsoft/Tw.Json.Newtonsoft.csproj" />
     <Project Path="BuildingBlocks/src/Foundation/Tw.Security/Tw.Security.csproj" />
-    <Project Path="BuildingBlocks/src/Foundation/Tw.Validation.Abstractions/Tw.Validation.Abstractions.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Gateway/">
     <Project Path="BuildingBlocks/src/Gateway/Tw.Gateway.Yarp/Tw.Gateway.Yarp.csproj" />

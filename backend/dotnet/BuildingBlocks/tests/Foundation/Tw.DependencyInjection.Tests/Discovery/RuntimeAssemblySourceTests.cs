@@ -10,10 +10,10 @@ namespace Tw.DependencyInjection.Tests.Discovery;
 public class RuntimeAssemblySourceTests
 {
     /// <summary>
-    /// 验证读取CandidateAssembliesIncludesLoadedTwAssemblies
+    /// 默认前缀程序集已加载时进入候选程序集集合
     /// </summary>
     [Fact]
-    public void GetCandidateAssemblies_IncludesLoadedTwAssemblies()
+    public void GetCandidateAssemblies_IncludesLoadedDefaultPrefixAssemblies()
     {
         // 触碰 Tw.Core 类型，确保其程序集已加载
         _ = typeof(Tw.Check).Assembly;

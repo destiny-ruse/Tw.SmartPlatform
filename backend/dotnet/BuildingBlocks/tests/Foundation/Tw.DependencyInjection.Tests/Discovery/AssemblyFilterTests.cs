@@ -25,10 +25,10 @@ public class AssemblyFilterTests
     }
 
     /// <summary>
-    /// 验证过滤器KeepsTw前缀By默认
+    /// 未配置显式规则时保留使用默认程序集前缀的候选项
     /// </summary>
     [Fact]
-    public void Filter_KeepsTwPrefix_ByDefault()
+    public void Filter_KeepsDefaultAssemblyPrefix_ByDefault()
     {
         var result = AssemblyFilter.Filter(
             ["Tw.Core", "Tw.Order.Application", "System.Text.Json", "Newtonsoft.Json"],
@@ -38,10 +38,10 @@ public class AssemblyFilterTests
     }
 
     /// <summary>
-    /// 验证过滤器IncludesExplicitAssembly不带Tw前缀
+    /// 显式包含规则允许没有默认程序集前缀的候选项
     /// </summary>
     [Fact]
-    public void Filter_IncludesExplicitAssembly_WithoutTwPrefix()
+    public void Filter_IncludesExplicitAssembly_WithoutDefaultAssemblyPrefix()
     {
         var options = new ServiceRegistrationOptions();
         options.IncludeAssemblies.Add("Acme.Payments");
@@ -52,10 +52,10 @@ public class AssemblyFilterTests
     }
 
     /// <summary>
-    /// 验证过滤器IncludesCustom前缀InAddition到Tw
+    /// 自定义前缀与默认程序集前缀共同参与包含判断
     /// </summary>
     [Fact]
-    public void Filter_IncludesCustomPrefix_InAdditionToTw()
+    public void Filter_IncludesCustomPrefix_InAdditionToDefaultAssemblyPrefix()
     {
         var options = new ServiceRegistrationOptions();
         options.IncludeAssemblyPrefixes.Add("Acme.");
@@ -66,10 +66,10 @@ public class AssemblyFilterTests
     }
 
     /// <summary>
-    /// 验证过滤器ExcludesBy名称Even当Tw前缀
+    /// 名称排除规则优先于默认程序集前缀
     /// </summary>
     [Fact]
-    public void Filter_ExcludesByName_EvenWhenTwPrefix()
+    public void Filter_ExcludesByName_EvenWhenDefaultAssemblyPrefix()
     {
         var options = new ServiceRegistrationOptions();
         options.ExcludeAssemblies.Add("Tw.Legacy");
@@ -80,10 +80,10 @@ public class AssemblyFilterTests
     }
 
     /// <summary>
-    /// 验证过滤器ExcludesBy前缀Even当Tw前缀
+    /// 前缀排除规则优先于默认程序集前缀
     /// </summary>
     [Fact]
-    public void Filter_ExcludesByPrefix_EvenWhenTwPrefix()
+    public void Filter_ExcludesByPrefix_EvenWhenDefaultAssemblyPrefix()
     {
         var options = new ServiceRegistrationOptions();
         options.ExcludeAssemblyPrefixes.Add("Tw.Test");

@@ -12,6 +12,7 @@ ASP.NET Core 入口协议契约、健康检查路由与宿主集成统一由 `Tw
 
 - [Tw.Core](dotnet/Tw.Core/README.md)
 - [Tw.Security](dotnet/Tw.Security/README.md)
+- [Tw.ExceptionHandling](dotnet/Tw.ExceptionHandling/README.md)
 - [Tw.DependencyInjection.Abstractions](dotnet/Tw.DependencyInjection.Abstractions/README.md)
 - [Tw.DependencyInjection](dotnet/Tw.DependencyInjection/README.md)
 - [Tw.AspNetCore](dotnet/Tw.AspNetCore/README.md)
@@ -38,3 +39,6 @@ ASP.NET Core 入口协议契约、健康检查路由与宿主集成统一由 `Tw
 - [Tw.EventBus.Cap](dotnet/Tw.EventBus.Cap/README.md)
 - [Tw.Http](dotnet/Tw.Http/README.md)
 - [Tw.Resilience](dotnet/Tw.Resilience/README.md)
+- [Tw.Gateway.Yarp](dotnet/Tw.Gateway.Yarp/README.md)
+- [Tw.Observability.Serilog](dotnet/Tw.Observability.Serilog/README.md)
+- [Tw.Observability.OpenTelemetry](dotnet/Tw.Observability.OpenTelemetry/README.md)

@@ -4,12 +4,13 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供网关运行时的 YARP 适配、服务发现绑定、转换器与路由校验。
+  提供网关运行时的 YARP 路由校验与请求头转换边界。
 in_scope:
-  - YARP 注册
   - 路由校验
   - 请求头转换工厂
 out_of_scope:
+  - YARP 服务注册与宿主装配
+  - 服务发现绑定
   - 数据访问
   - 工作单元
   - 应用管道

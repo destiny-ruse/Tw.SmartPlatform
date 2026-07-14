@@ -10,19 +10,19 @@ namespace Tw.Core.Tests.Reflection;
 public class ReflectionNamespaceTests
 {
     /// <summary>
-    /// 验证类型FinderLivesInTwReflectionNamespace
+    /// 类型查找实现位于约定的反射功能命名空间
     /// </summary>
     [Fact]
-    public void TypeFinder_LivesIn_TwReflectionNamespace()
+    public void TypeFinder_LivesIn_ReflectionNamespace()
     {
         typeof(TypeFinder).Namespace.Should().Be("Tw.Reflection");
     }
 
     /// <summary>
-    /// 验证类型FinderLivesInTwReflectionNamespace
+    /// 类型查找契约位于约定的反射功能命名空间
     /// </summary>
     [Fact]
-    public void ITypeFinder_LivesIn_TwReflectionNamespace()
+    public void ITypeFinder_LivesIn_ReflectionNamespace()
     {
         typeof(ITypeFinder).Namespace.Should().Be("Tw.Reflection");
     }

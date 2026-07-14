@@ -1,20 +1,23 @@
-﻿using Serilog;
+using Serilog;
 using Tw.Security.DataMasking;
 
 namespace Tw.Observability.Serilog;
 
 /// <summary>
-/// 封装Serilog构建器Extensions相关的数据和行为
+/// 提供Serilog敏感属性脱敏配置入口
 /// </summary>
 public static class SerilogBuilderExtensions
 {
     /// <summary>
-    /// 说明EnrichWithTwRedaction在当前类型中的职责
+    /// 为日志管道注册使用指定数据脱敏器的结构化属性脱敏器
     /// </summary>
-    /// <param name="configuration">用于提供configuration</param>
-    /// <param name="dataMasker">用于提供dataMasker</param>
-    /// <returns>方法完成后返回给调用方的结果对象</returns>
-    public static LoggerConfiguration EnrichWithTwRedaction(this LoggerConfiguration configuration, IDataMasker dataMasker)
+    /// <param name="configuration">需要追加脱敏器的Serilog配置</param>
+    /// <param name="dataMasker">替换敏感标量属性值的数据脱敏器</param>
+    /// <returns>已追加敏感属性脱敏器的原Serilog配置</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="configuration"/> 或 <paramref name="dataMasker"/> 为 <see langword="null"/> 时抛出</exception>
+    public static LoggerConfiguration EnrichWithSensitiveDataRedaction(
+        this LoggerConfiguration configuration,
+        IDataMasker dataMasker)
     {
         ArgumentNullException.ThrowIfNull(configuration);
         ArgumentNullException.ThrowIfNull(dataMasker);

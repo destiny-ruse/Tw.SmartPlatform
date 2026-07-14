@@ -1,3 +1,5 @@
+using Tw.ExceptionHandling.Validation;
+
 namespace Tw.ExceptionHandling;
 
 /// <summary>
@@ -49,7 +51,13 @@ public enum ErrorCategory
 /// <summary>
 /// 对外稳定错误描述
 /// </summary>
-/// <param name="Code">稳定错误码</param>
+/// <param name="Code">供协议调用方稳定判断失败原因的错误码</param>
 /// <param name="Message">可安全返回给调用方的错误消息</param>
-/// <param name="Category">错误类别</param>
-public sealed record ErrorDescriptor(string Code, string Message, ErrorCategory Category);
+/// <param name="Category">决定协议边界失败分类的错误类别</param>
+public sealed record ErrorDescriptor(string Code, string Message, ErrorCategory Category)
+{
+    /// <summary>
+    /// 输入验证失败时保留的字段级结构化错误，其他错误类别为空集合
+    /// </summary>
+    public IReadOnlyList<ValidationError> ValidationErrors { get; init; } = Array.Empty<ValidationError>();
+}

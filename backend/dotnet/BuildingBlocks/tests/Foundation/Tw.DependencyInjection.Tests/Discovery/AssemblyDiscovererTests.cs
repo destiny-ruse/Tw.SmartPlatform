@@ -42,10 +42,10 @@ public class AssemblyDiscovererTests
     }
 
     /// <summary>
-    /// 验证Discover过滤器集合到Tw前缀和OrdersAbstractions前置处理Engine
+    /// 发现流程使用默认程序集前缀过滤并按依赖拓扑排序
     /// </summary>
     [Fact]
-    public void Discover_FiltersToTwPrefix_AndOrdersAbstractionsBeforeEngine()
+    public void Discover_FiltersToDefaultPrefix_AndOrdersAbstractionsBeforeEngine()
     {
         var abstractionsAssembly = typeof(DependencyLifetime).Assembly;
         var engineAssembly = typeof(ServiceRegistrationOptions).Assembly;

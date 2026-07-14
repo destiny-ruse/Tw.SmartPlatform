@@ -8,6 +8,7 @@
 
 - [Tw.Core](Tw.Core/README.md)
 - [Tw.Security](Tw.Security/README.md)
+- [Tw.ExceptionHandling](Tw.ExceptionHandling/README.md)
 - [Tw.DependencyInjection.Abstractions](Tw.DependencyInjection.Abstractions/README.md)
 - [Tw.DependencyInjection](Tw.DependencyInjection/README.md)
 - [Tw.AspNetCore](Tw.AspNetCore/README.md)
@@ -40,6 +41,7 @@
 - [Tw.Configuration](Tw.Configuration/README.md)
 - [Tw.Configuration.Nacos](Tw.Configuration.Nacos/README.md)
 - [Tw.Gateway](Tw.Gateway/README.md)
+- [Tw.Gateway.Yarp](Tw.Gateway.Yarp/README.md)
 - [Tw.Observability](Tw.Observability/README.md)
 - [Tw.Observability.Serilog](Tw.Observability.Serilog/README.md)
 - [Tw.Observability.OpenTelemetry](Tw.Observability.OpenTelemetry/README.md)

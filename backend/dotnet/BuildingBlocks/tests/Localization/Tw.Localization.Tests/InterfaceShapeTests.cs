@@ -9,10 +9,10 @@ namespace Tw.Localization.Tests;
 public class InterfaceShapeTests
 {
     /// <summary>
-    /// 验证PublicInterfacesLiveInTw本地化Namespace
+    /// 本地化公开接口统一位于本地化功能命名空间
     /// </summary>
     [Fact]
-    public void PublicInterfaces_LiveInTwLocalizationNamespace()
+    public void PublicInterfaces_LiveInLocalizationNamespace()
     {
         typeof(ITextLocalizer).Namespace.Should().Be("Tw.Localization");
         typeof(ITextResourceContributor).Namespace.Should().Be("Tw.Localization");
