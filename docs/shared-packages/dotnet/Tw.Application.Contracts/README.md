@@ -1,6 +1,6 @@
 # Tw.Application.Contracts
 
-`Tw.Application.Contracts` 提供应用层公开契约，包括 command、query、DTO、分页请求和分页结果。它面向客户端共享契约和跨程序集用例调用，不承载 handler 实现。
+`Tw.Application.Contracts` 提供 provider-neutral 的 command、query 标记和通用分页契约。它不依赖 MediatR、FluentValidation 或基础设施 provider，也不承载 handler 实现。
 
 ## 使用方式
 
@@ -24,6 +24,6 @@ var result = new PagedResult<OrderDto>(items, totalCount);
 
 ## 注意事项
 
-- 本包不得依赖 MediatR 或 FluentValidation
-- handler、事务编排、权限执行和协议适配放在其他包或服务实现中
-- DTO 和契约字段变更必须按兼容性要求评估调用方影响
+- MediatR handler、FluentValidation validator、事务编排、权限执行和协议适配属于应用实现或基础设施边界
+- 具体服务的 DTO、共享枚举、错误码和服务契约必须保留在对应限界上下文内
+- 跨边界契约字段变更必须按兼容性要求评估调用方影响

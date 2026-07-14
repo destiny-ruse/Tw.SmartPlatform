@@ -15,9 +15,6 @@
           "Microsoft.Extensions.Options": "[10.0.9, )"
         }
       },
-      "tw.domain.shared": {
-        "type": "Project"
-      },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "CentralTransitive",
         "requested": "[10.0.9, )",

@@ -1,6 +1,6 @@
 # Tw.Domain
 
-`Tw.Domain` 承载领域实体、值对象、领域服务、领域异常，以及不依赖 ORM 或数据库提供程序的实体形状契约。它可以依赖 `Tw.Domain.Shared` 和 `Tw.Core`，但不承载应用用例编排或数据访问实现。
+`Tw.Domain` 提供不依赖 ORM 或数据库 provider 的实体审计、乐观并发与软删除形状契约。它不承载全局业务 DTO、共享枚举或服务专用领域契约；这些契约必须保留在各自限界上下文内。
 
 ## 公开能力
 
@@ -31,4 +31,4 @@ public sealed class Order : IHasVersionStamp, ISoftDelete
 - 不得在本包定义 MediatR handler 或应用 pipeline
 - 不得依赖 SqlSugar、CAP、OpenIddict、ASP.NET Core 等基础设施或协议包
 - 并发检查异常、仓储和工作单元属于 `Tw.Data`，不属于实体形状契约
-- 跨服务共享前先确认规则确实属于平台领域基础，而不是单个服务私有模型
+- 服务专用 DTO、共享枚举、错误码和领域契约属于具体限界上下文，不得放入全局 Building Block

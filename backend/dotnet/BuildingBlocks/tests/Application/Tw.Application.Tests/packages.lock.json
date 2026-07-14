@@ -218,8 +218,7 @@
       "tw.application.contracts": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Domain.Shared": "[1.0.0, )"
+          "Tw.Core": "[1.0.0, )"
         }
       },
       "tw.core": {
@@ -229,9 +228,6 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )",
           "Microsoft.Extensions.Options": "[10.0.9, )"
         }
-      },
-      "tw.domain.shared": {
-        "type": "Project"
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "CentralTransitive",

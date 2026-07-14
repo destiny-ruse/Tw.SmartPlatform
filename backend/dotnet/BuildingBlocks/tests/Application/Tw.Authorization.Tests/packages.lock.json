@@ -171,12 +171,6 @@
         }
       },
       "tw.authorization": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.Authorization.Abstractions": "[1.0.0, )"
-        }
-      },
-      "tw.authorization.abstractions": {
         "type": "Project"
       },
       "Newtonsoft.Json": {

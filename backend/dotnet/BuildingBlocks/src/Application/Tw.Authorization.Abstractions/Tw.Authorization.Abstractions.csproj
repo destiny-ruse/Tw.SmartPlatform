@@ -1,8 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <RootNamespace>Tw.Authorization.Abstractions</RootNamespace>
-    <IsPackable>true</IsPackable>
-  </PropertyGroup>
-
-</Project>

@@ -5,8 +5,4 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Tw.Authorization.Abstractions\Tw.Authorization.Abstractions.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -186,12 +186,8 @@
       "tw.domain": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Domain.Shared": "[1.0.0, )"
+          "Tw.Core": "[1.0.0, )"
         }
-      },
-      "tw.domain.shared": {
-        "type": "Project"
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "CentralTransitive",

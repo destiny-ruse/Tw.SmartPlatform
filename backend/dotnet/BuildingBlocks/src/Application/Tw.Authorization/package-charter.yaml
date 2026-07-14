@@ -4,13 +4,16 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  权限检查执行、授权 grant store 边界和权限 grant 缓存边界。
+  提供权限定义、授权上下文、稳定授权结果、权限 grant 存储与缓存边界，以及默认权限检查执行能力。
 in_scope:
-  - 权限检查执行
-  - grant store 抽象使用
-  - 权限 grant 缓存抽象使用
+  - 权限定义与授权上下文
+  - 稳定授权结果
+  - 权限检查接口与默认实现
+  - 权限 grant 存储读取边界
+  - 权限 grant 缓存边界与稳定缓存键
 out_of_scope:
-  - 权限数据库模型
+  - 权限 grant 持久化实现
+  - 分布式缓存实现
   - JWT 发行和校验
   - OpenIddict Identity Center
 public_capabilities:
@@ -20,5 +23,3 @@ dependency_rules:
     - "Microsoft.AspNetCore.*"
     - "OpenIddict*"
     - "SqlSugar*"
-  allow:
-    - Tw.Authorization.Abstractions

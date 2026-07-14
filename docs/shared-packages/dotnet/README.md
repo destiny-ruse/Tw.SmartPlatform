@@ -2,7 +2,7 @@
 
 本页是 `backend/dotnet/BuildingBlocks/src` 下 .NET 共享包的使用文档索引，按包跳转。
 
-领域实体审计、并发与软删除标记由 `Tw.Domain` 提供；工作单元、事务边界和数据访问契约由 `Tw.Data` 提供。
+领域实体审计、并发与软删除标记由 `Tw.Domain` 提供；工作单元、事务边界和数据访问契约由 `Tw.Data` 提供。服务专用 DTO、共享枚举、错误码和领域契约保留在各自限界上下文内，不进入全局 Building Block。
 
 ## Current Packages
 
@@ -15,11 +15,9 @@
 - [Tw.AspNetCore.Grpc](Tw.AspNetCore.Grpc/README.md)
 - [Tw.AspNetCore.Localization](Tw.AspNetCore.Localization/README.md)
 - [Tw.Localization](Tw.Localization/README.md)
-- [Tw.Domain.Shared](Tw.Domain.Shared/README.md)
 - [Tw.Domain](Tw.Domain/README.md)
 - [Tw.Application.Contracts](Tw.Application.Contracts/README.md)
 - [Tw.Application](Tw.Application/README.md)
-- [Tw.Authorization.Abstractions](Tw.Authorization.Abstractions/README.md)
 - [Tw.Authorization](Tw.Authorization/README.md)
 - [Tw.Features](Tw.Features/README.md)
 - [Tw.Settings](Tw.Settings/README.md)

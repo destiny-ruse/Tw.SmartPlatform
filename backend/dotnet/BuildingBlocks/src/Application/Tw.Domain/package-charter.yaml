@@ -4,20 +4,17 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供领域实体、聚合根、领域事件、领域服务及提供程序无关的实体标记基础能力。
+  提供不依赖 ORM 或数据库 provider 的实体审计、乐观并发与软删除形状契约。
 in_scope:
-  - 领域实体与聚合根基础类型
   - 实体创建与更新审计标记
   - 实体并发戳与版本戳标记
   - 实体软删除标记
-  - 领域事件契约
-  - 领域服务基础能力
 out_of_scope:
-  - 应用服务编排
-  - MediatR Handler
-  - 数据访问实现
+  - 具体限界上下文的业务 DTO、共享枚举与领域契约
+  - 领域实体与聚合根基础类型
+  - 应用服务编排与 MediatR Handler
+  - 仓储、工作单元与数据访问实现
 public_capabilities:
-  - Tw.Domain
   - Tw.Domain.Auditing
   - Tw.Domain.Concurrency
   - Tw.Domain.SoftDelete
@@ -29,4 +26,3 @@ dependency_rules:
     - "SqlSugar*"
   allow:
     - Tw.Core
-    - Tw.Domain.Shared
