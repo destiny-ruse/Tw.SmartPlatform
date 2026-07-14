@@ -1,3 +1,4 @@
+using System.Collections.Frozen;
 using System.Text.Json.Nodes;
 using System.Xml.Linq;
 using AwesomeAssertions;
@@ -6,75 +7,123 @@ using Xunit;
 namespace Tw.Architecture.Tests;
 
 /// <summary>
-/// 验证 Tw.Resilience 项目与锁文件保持 provider-neutral
+/// 验证 Tw.Resilience 项目、锁文件与包章程保持零依赖边界
 /// </summary>
 public sealed class ResilienceDependencyBoundaryTests
 {
     /// <summary>
-    /// 项目直接依赖与所有目标框架锁依赖均不得出现 HTTP 韧性 provider
+    /// MSBuild 中能够向生产程序集引入编译或运行依赖的项目项
+    /// </summary>
+    private static readonly FrozenSet<string> DependencyItemNames = new[]
+    {
+        "PackageReference",
+        "ProjectReference",
+        "FrameworkReference",
+        "Reference"
+    }.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// 项目依赖声明与章程允许列表必须同时保持为空
     /// </summary>
     [Fact]
-    public void ProjectAndLockDependencies_DoNotContainHttpProviderIdentities()
+    public void ProjectAndCharter_DeclareNoDependencies()
     {
-        var resilienceRoot = Path.Combine(
-            RepositoryLayout.BuildingBlocksSrc,
-            "Resilience",
-            "Tw.Resilience");
-        var projectFile = Path.Combine(resilienceRoot, "Tw.Resilience.csproj");
-        var lockFile = Path.Combine(resilienceRoot, "packages.lock.json");
+        var resilienceRoot = ResilienceRoot();
+        var projectDependencies = ReadProjectDependencyItems(
+            Path.Combine(resilienceRoot, "Tw.Resilience.csproj"));
+        var allowedDependencies = PackageCharterDependencyRules.ReadAllowedDependencies(
+            Path.Combine(resilienceRoot, "package-charter.yaml"));
 
-        var violations = ReadProjectPackageIdentities(projectFile)
-            .Select(identity => $"Tw.Resilience.csproj: {identity}")
-            .Concat(ReadLockPackageIdentities(lockFile)
-                .Select(identity => $"packages.lock.json: {identity}"))
-            .Where(entry => IsForbiddenProviderIdentity(entry[(entry.IndexOf(':') + 1)..].Trim()))
-            .ToArray();
-
-        violations.Should().BeEmpty(
-            "Tw.Resilience must not acquire HTTP, DI HTTP registration, or third-party resilience providers");
+        projectDependencies.Should().BeEmpty(
+            "Tw.Resilience is a self-contained provider-neutral policy package");
+        allowedDependencies.Should().BeEmpty(
+            "the Tw.Resilience charter must agree with the zero-dependency project boundary");
+        projectDependencies.Should().BeEquivalentTo(allowedDependencies);
     }
 
     /// <summary>
-    /// 读取项目文件中 Include 或 Update 声明的包标识
+    /// 锁文件中每个目标框架的直接与传递依赖图必须为空
+    /// </summary>
+    [Fact]
+    public void LockDependencyGraphs_AreEmptyForEveryTargetFramework()
+    {
+        var lockDependencies = ReadLockPackageIdentities(
+            Path.Combine(ResilienceRoot(), "packages.lock.json"));
+
+        lockDependencies.Should().BeEmpty(
+            "Tw.Resilience must remain free of direct and transitive dependencies in every target framework");
+    }
+
+    /// <summary>
+    /// 读取项目文件中全部 MSBuild 依赖项声明并展开分号分隔的身份
     /// </summary>
     /// <param name="projectFile">Tw.Resilience 项目文件路径</param>
-    /// <returns>项目直接声明的包标识</returns>
-    private static IEnumerable<string> ReadProjectPackageIdentities(string projectFile)
+    /// <returns>包含项目项类型与依赖身份的诊断集合</returns>
+    private static IReadOnlyList<string> ReadProjectDependencyItems(string projectFile)
     {
-        return XDocument.Load(projectFile)
-            .Descendants("PackageReference")
-            .Select(reference => reference.Attribute("Include")?.Value
-                ?? reference.Attribute("Update")?.Value)
-            .Where(identity => !string.IsNullOrWhiteSpace(identity))
-            .Cast<string>();
+        var dependencyItems = new List<string>();
+        foreach (var item in XDocument.Load(projectFile)
+                     .Descendants()
+                     .Where(element => DependencyItemNames.Contains(element.Name.LocalName)))
+        {
+            var identityAttribute = item.Attributes().FirstOrDefault(attribute =>
+                string.Equals(attribute.Name.LocalName, "Include", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(attribute.Name.LocalName, "Update", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(attribute.Name.LocalName, "Remove", StringComparison.OrdinalIgnoreCase));
+            var identities = identityAttribute?.Value.Split(
+                ';',
+                StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries) ?? [];
+
+            if (identities.Length == 0)
+            {
+                dependencyItems.Add($"{item.Name.LocalName}: <empty identity>");
+                continue;
+            }
+
+            dependencyItems.AddRange(identities.Select(identity => $"{item.Name.LocalName}: {identity}"));
+        }
+
+        return dependencyItems;
     }
 
     /// <summary>
     /// 读取锁文件全部目标框架下的直接与传递依赖标识
     /// </summary>
     /// <param name="lockFile">Tw.Resilience 锁文件路径</param>
-    /// <returns>所有目标框架记录的依赖标识</returns>
-    private static IEnumerable<string> ReadLockPackageIdentities(string lockFile)
+    /// <returns>包含目标框架与包身份的依赖集合</returns>
+    /// <exception cref="InvalidOperationException">锁文件无法解析或 dependencies 图结构无效时抛出</exception>
+    private static IReadOnlyList<string> ReadLockPackageIdentities(string lockFile)
     {
         var lockRoot = JsonNode.Parse(File.ReadAllText(lockFile))?.AsObject()
             ?? throw new InvalidOperationException("无法解析 Tw.Resilience 锁文件");
         var targetFrameworks = lockRoot["dependencies"]?.AsObject()
             ?? throw new InvalidOperationException("Tw.Resilience 锁文件缺少 dependencies");
+        var dependencyIdentities = new List<string>();
 
-        return targetFrameworks
-            .SelectMany(targetFramework => targetFramework.Value?.AsObject().Select(package => package.Key)
-                ?? []);
+        foreach (var targetFramework in targetFrameworks)
+        {
+            if (targetFramework.Value is not JsonObject dependencies)
+            {
+                throw new InvalidOperationException(
+                    $"Tw.Resilience 锁文件目标框架依赖图无效：{targetFramework.Key}");
+            }
+
+            dependencyIdentities.AddRange(
+                dependencies.Select(package => $"{targetFramework.Key}: {package.Key}"));
+        }
+
+        return dependencyIdentities;
     }
 
     /// <summary>
-    /// 判断包标识是否属于禁止引入的 HTTP 或第三方韧性 provider
+    /// 定位 Tw.Resilience 生产项目根目录
     /// </summary>
-    /// <param name="identity">项目或锁文件中的包标识</param>
-    /// <returns>包标识属于禁止边界时返回 <see langword="true"/></returns>
-    private static bool IsForbiddenProviderIdentity(string identity)
+    /// <returns>包含项目文件、锁文件和包章程的绝对目录</returns>
+    private static string ResilienceRoot()
     {
-        return identity.StartsWith("Polly", StringComparison.OrdinalIgnoreCase)
-            || identity.StartsWith("Microsoft.Extensions.Http", StringComparison.OrdinalIgnoreCase)
-            || identity.StartsWith("System.Net.Http", StringComparison.OrdinalIgnoreCase);
+        return Path.Combine(
+            RepositoryLayout.BuildingBlocksSrc,
+            "Resilience",
+            "Tw.Resilience");
     }
 }

@@ -53,25 +53,66 @@ public static class ResiliencePolicyBuilder
             ? 0
             : descriptor.RetryCount;
 
-        return new ResiliencePolicy(descriptor.Timeout, effectiveRetryCount);
+        return new ResiliencePolicy(
+            descriptor.OperationName,
+            descriptor.OperationKind,
+            descriptor.Timeout,
+            effectiveRetryCount,
+            descriptor.CircuitBreakerEnabled,
+            descriptor.RateLimiterEnabled,
+            descriptor.ConcurrencyLimiterEnabled,
+            descriptor.FallbackEnabled);
     }
 }
 
 /// <summary>
-/// 表示通过验证且完成重试次数归一化的韧性策略结果
+/// 表示供具体适配器消费且完整保留已验证意图的 provider-neutral 策略结果
 /// </summary>
+/// <remarks>
+/// 具体适配器只能消费该结果，不得直接把未经验证的 <see cref="ResiliencePolicyDescriptor"/> 映射为 provider 配置
+/// </remarks>
 public sealed record ResiliencePolicy
 {
     /// <summary>
     /// 仅允许构建器在完成输入验证与幂等归一化后创建策略结果
     /// </summary>
+    /// <param name="operationName">用于诊断、配置和治理的稳定操作名称</param>
+    /// <param name="operationKind">决定自动重试安全性的已验证操作分类</param>
     /// <param name="timeout">单次操作允许的最长时间</param>
     /// <param name="retryCount">完成幂等归一化后的有效重试次数</param>
-    internal ResiliencePolicy(TimeSpan timeout, int retryCount)
+    /// <param name="circuitBreakerEnabled">是否要求具体适配器启用熔断</param>
+    /// <param name="rateLimiterEnabled">是否要求具体适配器启用速率限制</param>
+    /// <param name="concurrencyLimiterEnabled">是否要求具体适配器启用并发隔离</param>
+    /// <param name="fallbackEnabled">是否存在已声明用户行为和数据边界的降级策略</param>
+    internal ResiliencePolicy(
+        string operationName,
+        OperationKind operationKind,
+        TimeSpan timeout,
+        int retryCount,
+        bool circuitBreakerEnabled,
+        bool rateLimiterEnabled,
+        bool concurrencyLimiterEnabled,
+        bool fallbackEnabled)
     {
+        OperationName = operationName;
+        OperationKind = operationKind;
         Timeout = timeout;
         RetryCount = retryCount;
+        CircuitBreakerEnabled = circuitBreakerEnabled;
+        RateLimiterEnabled = rateLimiterEnabled;
+        ConcurrencyLimiterEnabled = concurrencyLimiterEnabled;
+        FallbackEnabled = fallbackEnabled;
     }
+
+    /// <summary>
+    /// 用于诊断、配置和治理的稳定操作名称
+    /// </summary>
+    public string OperationName { get; }
+
+    /// <summary>
+    /// 决定自动重试安全性的已验证操作分类
+    /// </summary>
+    public OperationKind OperationKind { get; }
 
     /// <summary>
     /// 有效重试次数大于零时为 <see langword="true"/>
@@ -93,4 +134,24 @@ public sealed record ResiliencePolicy
     /// 非幂等写操作固定为零，具体适配器必须在消费前额外校验自身支持的上限
     /// </remarks>
     public int RetryCount { get; }
+
+    /// <summary>
+    /// 是否要求具体适配器启用熔断
+    /// </summary>
+    public bool CircuitBreakerEnabled { get; }
+
+    /// <summary>
+    /// 是否要求具体适配器启用速率限制
+    /// </summary>
+    public bool RateLimiterEnabled { get; }
+
+    /// <summary>
+    /// 是否要求具体适配器启用并发隔离
+    /// </summary>
+    public bool ConcurrencyLimiterEnabled { get; }
+
+    /// <summary>
+    /// 是否存在已声明用户行为和数据边界的降级策略
+    /// </summary>
+    public bool FallbackEnabled { get; }
 }

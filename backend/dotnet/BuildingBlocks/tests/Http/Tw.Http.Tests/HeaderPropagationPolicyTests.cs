@@ -114,6 +114,32 @@ public sealed class HeaderPropagationPolicyTests
     }
 
     /// <summary>
+    /// 每个请求头值列表只通过一次枚举形成独立快照
+    /// </summary>
+    [Fact]
+    public void SelectHeaders_MaterializesEachValueListOnlyOnce()
+    {
+        var traceStateValues = new SingleEnumerationReadOnlyList<string>(
+            ["vendor-a=1", "vendor-b=2"]);
+        var correlationValues = new SingleEnumerationReadOnlyList<string>(["correlation-1"]);
+        var headers = new Dictionary<string, IReadOnlyList<string>>
+        {
+            ["tracestate"] = traceStateValues,
+            ["X-Correlation-Id"] = correlationValues
+        };
+
+        var selectedHeaders = HeaderPropagationPolicy.SelectHeaders(
+            headers,
+            CreateOptions("tracestate", "X-Correlation-Id"),
+            HeaderTrustLevel.Verified);
+
+        selectedHeaders["tracestate"].Should().Equal("vendor-a=1", "vendor-b=2");
+        selectedHeaders["X-Correlation-Id"].Should().Equal("correlation-1");
+        traceStateValues.EnumerationCount.Should().Be(1);
+        correlationValues.EnumerationCount.Should().Be(1);
+    }
+
+    /// <summary>
     /// 输出不会受到输入字典和值列表后续修改影响
     /// </summary>
     [Fact]
@@ -134,13 +160,15 @@ public sealed class HeaderPropagationPolicyTests
         headers["tracestate"] = ["replacement=1"];
 
         selectedHeaders["tracestate"].Should().Equal("vendor-a=1", "vendor-b=2");
-        selectedHeaders.Should().NotBeAssignableTo<Dictionary<string, IReadOnlyList<string>>>();
-        selectedHeaders["tracestate"].Should().NotBeAssignableTo<string[]>();
+        var dictionarySurface = selectedHeaders as IDictionary<string, IReadOnlyList<string>>;
+        dictionarySurface.Should().NotBeNull();
+        var dictionaryMutation = () => dictionarySurface!.Add("traceparent", ["forbidden"]);
+        dictionaryMutation.Should().Throw<NotSupportedException>();
         var listSurface = selectedHeaders["tracestate"] as IList<string>;
         listSurface.Should().NotBeNull();
         listSurface!.IsReadOnly.Should().BeTrue();
-        var mutation = () => listSurface.Add("forbidden");
-        mutation.Should().Throw<NotSupportedException>();
+        var listMutation = () => listSurface.Add("forbidden");
+        listMutation.Should().Throw<NotSupportedException>();
     }
 
     /// <summary>
@@ -402,6 +430,71 @@ public sealed class HeaderPropagationPolicyTests
 
         /// <summary>
         /// 通过泛型枚举入口遍历输入元素
+        /// </summary>
+        /// <returns>首次遍历输入元素的枚举器</returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+
+    /// <summary>
+    /// 提供禁止 Count 与索引访问且仅允许枚举一次的只读列表
+    /// </summary>
+    /// <typeparam name="T">集合元素类型</typeparam>
+    private sealed class SingleEnumerationReadOnlyList<T> : IReadOnlyList<T>
+    {
+        /// <summary>
+        /// 首次枚举时返回的元素
+        /// </summary>
+        private readonly IEnumerable<T> _items;
+
+        /// <summary>
+        /// 创建只允许单次枚举的只读列表测试输入
+        /// </summary>
+        /// <param name="items">首次枚举时返回的元素</param>
+        public SingleEnumerationReadOnlyList(IEnumerable<T> items)
+        {
+            _items = items;
+        }
+
+        /// <summary>
+        /// 已请求枚举器的次数
+        /// </summary>
+        public int EnumerationCount { get; private set; }
+
+        /// <summary>
+        /// 禁止被测代码通过 Count 重复读取源列表
+        /// </summary>
+        /// <exception cref="InvalidOperationException">访问 Count 时抛出</exception>
+        public int Count => throw new InvalidOperationException("测试输入只能通过单次枚举物化");
+
+        /// <summary>
+        /// 禁止被测代码通过索引重复读取源列表
+        /// </summary>
+        /// <param name="index">被测代码尝试读取的元素位置</param>
+        /// <returns>该测试列表不支持索引读取</returns>
+        /// <exception cref="InvalidOperationException">访问任意索引时抛出</exception>
+        public T this[int index] => throw new InvalidOperationException("测试输入只能通过单次枚举物化");
+
+        /// <summary>
+        /// 首次调用返回底层枚举器，后续调用抛出异常
+        /// </summary>
+        /// <returns>首次遍历输入元素的枚举器</returns>
+        /// <exception cref="InvalidOperationException">输入被重复枚举时抛出</exception>
+        public IEnumerator<T> GetEnumerator()
+        {
+            EnumerationCount++;
+            if (EnumerationCount > 1)
+            {
+                throw new InvalidOperationException("测试输入不得重复枚举");
+            }
+
+            return _items.GetEnumerator();
+        }
+
+        /// <summary>
+        /// 通过非泛型枚举入口遍历输入元素
         /// </summary>
         /// <returns>首次遍历输入元素的枚举器</returns>
         IEnumerator IEnumerable.GetEnumerator()

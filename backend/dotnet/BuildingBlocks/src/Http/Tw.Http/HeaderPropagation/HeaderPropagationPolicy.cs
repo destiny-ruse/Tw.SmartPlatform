@@ -103,16 +103,10 @@ public static class HeaderPropagationPolicy
                 throw new ArgumentException("请求头值集合不能为空", nameof(headers));
             }
 
-            var headerValueSnapshot = new string[headerValues.Count];
-            for (var index = 0; index < headerValues.Count; index++)
+            var headerValueSnapshot = headerValues.ToArray();
+            if (headerValueSnapshot.Any(headerValue => headerValue is null))
             {
-                var headerValue = headerValues[index];
-                if (headerValue is null)
-                {
-                    throw new ArgumentException("请求头值不能为空", nameof(headers));
-                }
-
-                headerValueSnapshot[index] = headerValue;
+                throw new ArgumentException("请求头值不能为空", nameof(headers));
             }
 
             if (!options.AllowedHeaders.Contains(headerName)

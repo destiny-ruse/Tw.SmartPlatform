@@ -35,6 +35,7 @@ public sealed class HttpRetirementBoundaryTests
     /// </summary>
     /// <param name="repositoryRoot">需要检查的仓库根目录</param>
     /// <returns>重新出现的仓库相对路径</returns>
+    /// <exception cref="InvalidOperationException">无法从已淘汰项目路径解析项目目录时抛出</exception>
     private static IEnumerable<string> FindReintroducedHttpBoundaries(string repositoryRoot)
     {
         foreach (var relativeProjectPath in RetiredHttpProjectPaths)

@@ -130,4 +130,25 @@ public sealed partial class PackageConsolidationTests
             .Throw<InvalidDataException>()
             .WithMessage($"*{Path.GetFileName(charterPath)}*");
     }
+
+    /// <summary>
+    /// 零依赖门禁要求章程显式声明空 allow，不能把缺失节点解释为空列表
+    /// </summary>
+    [Fact]
+    public void ReadAllowedDependencies_ThrowsDiagnosticFailure_WhenAllowNodeIsMissing()
+    {
+        using var directory = new TemporaryTestDirectory();
+        var charterPath = directory.WriteFile(
+            "package-charter.yaml",
+            """
+            dependency_rules:
+              forbid: [Polly*]
+            """);
+
+        Action act = () => PackageCharterDependencyRules.ReadAllowedDependencies(charterPath);
+
+        act.Should()
+            .Throw<InvalidDataException>()
+            .WithMessage("*dependency_rules.allow 必须存在*");
+    }
 }

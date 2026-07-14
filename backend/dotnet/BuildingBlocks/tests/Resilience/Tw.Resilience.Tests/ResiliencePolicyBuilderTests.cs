@@ -10,6 +10,35 @@ namespace Tw.Resilience.Tests;
 public sealed class ResiliencePolicyBuilderTests
 {
     /// <summary>
+    /// 已验证策略完整保留具体适配器需要的公司自有策略意图
+    /// </summary>
+    [Fact]
+    public void Build_CopiesCompleteValidatedPolicyIntent()
+    {
+        var descriptor = new ResiliencePolicyDescriptor(
+            OperationName: "CreateOrder",
+            OperationKind.NonIdempotentWrite,
+            Timeout: TimeSpan.FromSeconds(7),
+            RetryCount: 42,
+            CircuitBreakerEnabled: false,
+            RateLimiterEnabled: true,
+            ConcurrencyLimiterEnabled: false,
+            FallbackEnabled: true);
+
+        var policy = ResiliencePolicyBuilder.Build(descriptor);
+
+        policy.OperationName.Should().Be("CreateOrder");
+        policy.OperationKind.Should().Be(OperationKind.NonIdempotentWrite);
+        policy.Timeout.Should().Be(TimeSpan.FromSeconds(7));
+        policy.RetryCount.Should().Be(0);
+        policy.RetryEnabled.Should().BeFalse();
+        policy.CircuitBreakerEnabled.Should().BeFalse();
+        policy.RateLimiterEnabled.Should().BeTrue();
+        policy.ConcurrencyLimiterEnabled.Should().BeFalse();
+        policy.FallbackEnabled.Should().BeTrue();
+    }
+
+    /// <summary>
     /// 非幂等写操作始终把有效重试次数归零
     /// </summary>
     [Fact]

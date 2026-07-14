@@ -176,11 +176,10 @@ public sealed class ResiliencePublicApiBoundaryTests
         var typeNamespace = type.Namespace ?? string.Empty;
         var fullName = type.FullName ?? string.Empty;
 
-        return typeNamespace.Equals("System.Net.Http", StringComparison.Ordinal)
+        return typeNamespace.StartsWith("System.Net.Http", StringComparison.Ordinal)
             || typeNamespace.StartsWith("Polly", StringComparison.Ordinal)
-            || typeNamespace.StartsWith("Microsoft.Extensions.Http.Resilience", StringComparison.Ordinal)
-            || fullName.Equals(
-                "Microsoft.Extensions.DependencyInjection.IServiceCollection",
-                StringComparison.Ordinal);
+            || typeNamespace.StartsWith("Microsoft.Extensions.Http", StringComparison.Ordinal)
+            || fullName is "Microsoft.Extensions.DependencyInjection.IServiceCollection"
+                or "Microsoft.Extensions.DependencyInjection.IHttpClientBuilder";
     }
 }
