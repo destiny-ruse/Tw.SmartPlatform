@@ -26,6 +26,19 @@ public sealed partial class PackageConsolidationTests
     ];
 
     /// <summary>
+    /// 网关项目模板的源码、项目文件和依赖锁根目录
+    /// </summary>
+    private static readonly string GatewayTemplateRoot = Path.Combine(
+        RepositoryLayout.Root,
+        "backend",
+        "dotnet",
+        "tools",
+        "src",
+        "Tw.Templates",
+        "content",
+        "gateway");
+
+    /// <summary>
     /// 已删除的 ASP.NET Core 抽象项目文件和目录不能重新出现
     /// </summary>
     [Fact]
@@ -48,6 +61,66 @@ public sealed partial class PackageConsolidationTests
             .ToArray();
 
         violations.Should().BeEmpty("第十二项任务移除的包边界与 API 名称不得重新进入活动制品");
+    }
+
+    /// <summary>
+    /// 历史标识扫描以不区分大小写方式识别 NuGet 锁文件的小写包键
+    /// </summary>
+    [Fact]
+    public void RetiredIdentifierScanner_DetectsLowercaseLockKey()
+    {
+        using var directory = new TemporaryTestDirectory();
+        var lockPath = directory.WriteFile(
+            "packages.lock.json",
+            """
+            {
+              "dependencies": {
+                "net10.0": {
+                  "tw.aspnetcore.abstractions": {
+                    "type": "Project"
+                  }
+                }
+              }
+            }
+            """);
+
+        var violations = FindRetiredAspNetCoreIdentifiers(lockPath).ToArray();
+
+        violations.Should().ContainSingle();
+    }
+
+    /// <summary>
+    /// 网关模板的全部源码、项目文件与锁文件都进入历史标识扫描
+    /// </summary>
+    [Fact]
+    public void AspNetCoreArtifactFiles_IncludeGatewayTemplateSourcesProjectsAndLocks()
+    {
+        var expectedFiles = Directory
+            .GetFiles(GatewayTemplateRoot, "*", SearchOption.AllDirectories)
+            .Where(file => !file.Contains(
+                $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}",
+                StringComparison.OrdinalIgnoreCase))
+            .Where(file => !file.Contains(
+                $"{Path.DirectorySeparatorChar}obj{Path.DirectorySeparatorChar}",
+                StringComparison.OrdinalIgnoreCase))
+            .Where(file => Path.GetExtension(file).Equals(
+                    ".cs",
+                    StringComparison.OrdinalIgnoreCase)
+                || Path.GetExtension(file).Equals(
+                    ".csproj",
+                    StringComparison.OrdinalIgnoreCase)
+                || Path.GetFileName(file).Equals(
+                    "packages.lock.json",
+                    StringComparison.OrdinalIgnoreCase));
+        var scannedFiles = AspNetCoreArtifactFiles()
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var missingFiles = expectedFiles
+            .Except(scannedFiles, StringComparer.OrdinalIgnoreCase)
+            .Select(RepositoryLayout.RepositoryRelativePath)
+            .ToArray();
+
+        missingFiles.Should().BeEmpty(
+            "网关模板中的源码、项目定义和依赖锁都可能恢复退休运行时边界");
     }
 
     /// <summary>
@@ -81,13 +154,14 @@ public sealed partial class PackageConsolidationTests
     private static IEnumerable<string> AspNetCoreArtifactFiles()
     {
         var extensions = new HashSet<string>(
-            [".cs", ".csproj", ".json", ".yaml", ".md", ".slnx"],
+            [".cs", ".csproj", ".json", ".yaml", ".md", ".props", ".targets", ".slnx"],
             StringComparer.OrdinalIgnoreCase);
         var roots = new[]
         {
             RepositoryLayout.BuildingBlocksSrc,
             RepositoryLayout.BuildingBlocksTests,
-            Path.Combine(RepositoryLayout.Root, "docs", "shared-packages")
+            Path.Combine(RepositoryLayout.Root, "docs", "shared-packages"),
+            GatewayTemplateRoot
         };
 
         var files = roots
@@ -106,22 +180,8 @@ public sealed partial class PackageConsolidationTests
                 $"{Path.DirectorySeparatorChar}migrations{Path.DirectorySeparatorChar}",
                 StringComparison.OrdinalIgnoreCase));
 
-        return files.Concat(
-        [
-            Path.Combine(RepositoryLayout.Root, "backend", "dotnet", "Tw.SmartPlatform.slnx"),
-            Path.Combine(
-                RepositoryLayout.Root,
-                "backend",
-                "dotnet",
-                "tools",
-                "src",
-                "Tw.Templates",
-                "content",
-                "gateway",
-                "src",
-                "Company.Gateway.Host",
-                "packages.lock.json")
-        ]);
+        return files.Append(
+            Path.Combine(RepositoryLayout.Root, "backend", "dotnet", "Tw.SmartPlatform.slnx"));
     }
 
     /// <summary>
@@ -136,8 +196,8 @@ public sealed partial class PackageConsolidationTests
 
         foreach (var retiredIdentifier in RetiredAspNetCoreIdentifiers)
         {
-            if (relativePath.Contains(retiredIdentifier, StringComparison.Ordinal)
-                || content.Contains(retiredIdentifier, StringComparison.Ordinal))
+            if (relativePath.Contains(retiredIdentifier, StringComparison.OrdinalIgnoreCase)
+                || content.Contains(retiredIdentifier, StringComparison.OrdinalIgnoreCase))
             {
                 yield return $"{relativePath}：{retiredIdentifier}";
             }

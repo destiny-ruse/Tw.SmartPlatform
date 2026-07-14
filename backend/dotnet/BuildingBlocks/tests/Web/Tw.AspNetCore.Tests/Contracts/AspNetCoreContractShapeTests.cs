@@ -48,6 +48,110 @@ public sealed class AspNetCoreContractShapeTests
     }
 
     /// <summary>
+    /// 协议错误构造函数拒绝 null 或空白错误码
+    /// </summary>
+    /// <param name="code">需要验证的错误码</param>
+    /// <param name="exceptionType">无效输入对应的精确异常类型</param>
+    [Theory]
+    [InlineData(null, typeof(ArgumentNullException))]
+    [InlineData("", typeof(ArgumentException))]
+    [InlineData("  ", typeof(ArgumentException))]
+    public void ProtocolErrorConstructor_RejectsInvalidCode(
+        string? code,
+        Type exceptionType)
+    {
+        Action act = () => _ = new ProtocolError(400, code!, "请求无效", null);
+
+        AssertInvalidRequiredText(act, exceptionType, "code", "协议错误码不能为空");
+    }
+
+    /// <summary>
+    /// 协议错误构造函数拒绝 null 或空白安全消息
+    /// </summary>
+    /// <param name="message">需要验证的安全消息</param>
+    /// <param name="exceptionType">无效输入对应的精确异常类型</param>
+    [Theory]
+    [InlineData(null, typeof(ArgumentNullException))]
+    [InlineData("", typeof(ArgumentException))]
+    [InlineData("  ", typeof(ArgumentException))]
+    public void ProtocolErrorConstructor_RejectsInvalidMessage(
+        string? message,
+        Type exceptionType)
+    {
+        Action act = () => _ = new ProtocolError(400, "request.invalid", message!, null);
+
+        AssertInvalidRequiredText(act, exceptionType, "message", "协议错误消息不能为空");
+    }
+
+    /// <summary>
+    /// 冲突工厂拒绝 null 或空白错误码
+    /// </summary>
+    /// <param name="code">需要验证的错误码</param>
+    /// <param name="exceptionType">无效输入对应的精确异常类型</param>
+    [Theory]
+    [InlineData(null, typeof(ArgumentNullException))]
+    [InlineData("", typeof(ArgumentException))]
+    [InlineData("  ", typeof(ArgumentException))]
+    public void ProtocolErrorConflict_RejectsInvalidCode(
+        string? code,
+        Type exceptionType)
+    {
+        Action act = () => _ = ProtocolError.Conflict(code!, "请求冲突");
+
+        AssertInvalidRequiredText(act, exceptionType, "code", "协议错误码不能为空");
+    }
+
+    /// <summary>
+    /// 冲突工厂拒绝 null 或空白安全消息
+    /// </summary>
+    /// <param name="message">需要验证的安全消息</param>
+    /// <param name="exceptionType">无效输入对应的精确异常类型</param>
+    [Theory]
+    [InlineData(null, typeof(ArgumentNullException))]
+    [InlineData("", typeof(ArgumentException))]
+    [InlineData("  ", typeof(ArgumentException))]
+    public void ProtocolErrorConflict_RejectsInvalidMessage(
+        string? message,
+        Type exceptionType)
+    {
+        Action act = () => _ = ProtocolError.Conflict("request.conflict", message!);
+
+        AssertInvalidRequiredText(act, exceptionType, "message", "协议错误消息不能为空");
+    }
+
+    /// <summary>
+    /// init 更新不能把错误码改为空白值
+    /// </summary>
+    [Fact]
+    public void ProtocolErrorWithExpression_RejectsInvalidCode()
+    {
+        var error = new ProtocolError(400, "request.invalid", "请求无效", null);
+        Action act = () => _ = error with { Code = " " };
+
+        AssertInvalidRequiredText(
+            act,
+            typeof(ArgumentException),
+            nameof(ProtocolError.Code),
+            "协议错误码不能为空");
+    }
+
+    /// <summary>
+    /// init 更新不能把安全消息改为 null
+    /// </summary>
+    [Fact]
+    public void ProtocolErrorWithExpression_RejectsNullMessage()
+    {
+        var error = new ProtocolError(400, "request.invalid", "请求无效", null);
+        Action act = () => _ = error with { Message = null! };
+
+        AssertInvalidRequiredText(
+            act,
+            typeof(ArgumentNullException),
+            nameof(ProtocolError.Message),
+            "协议错误消息不能为空");
+    }
+
+    /// <summary>
     /// 请求关联契约同时保留追踪标识与业务关联标识
     /// </summary>
     [Fact]
@@ -58,5 +162,25 @@ public sealed class AspNetCoreContractShapeTests
         correlation.TraceId.Should().Be("trace-3");
         correlation.CorrelationId.Should().Be("correlation-3");
         correlation.Should().Be(new RequestCorrelation("trace-3", "correlation-3"));
+    }
+
+    /// <summary>
+    /// 断言必填协议文本使用精确异常类型、参数名和中文消息拒绝无效值
+    /// </summary>
+    /// <param name="act">触发协议文本校验的操作</param>
+    /// <param name="exceptionType">预期的精确异常类型</param>
+    /// <param name="parameterName">预期写入异常的参数名</param>
+    /// <param name="messagePrefix">预期中文异常消息前缀</param>
+    private static void AssertInvalidRequiredText(
+        Action act,
+        Type exceptionType,
+        string parameterName,
+        string messagePrefix)
+    {
+        var exception = act.Should().Throw<ArgumentException>().Which;
+
+        exception.GetType().Should().Be(exceptionType);
+        exception.ParamName.Should().Be(parameterName);
+        exception.Message.Should().StartWith(messagePrefix);
     }
 }

@@ -18,13 +18,16 @@
 using Tw.AspNetCore.Health;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHealthChecks();
 var app = builder.Build();
 
 app.MapHealthEndpoint();
 app.Run();
 ```
 
-该方法只映射 `/health`，并返回调用方传入的同一 `IEndpointRouteBuilder`，便于继续链式配置其他端点。
+调用方必须先通过 `AddHealthChecks()` 注册 ASP.NET Core 内置健康检查服务。该方法使用框架默认健康检查端点语义：健康和降级状态返回 HTTP 200，不健康状态返回 HTTP 503，响应正文由框架默认写入器生成。
+
+同一 `IEndpointRouteBuilder` 上的重复或并发调用只会产生一个 `/health` 端点。方法始终返回调用方传入的同一端点构建器，便于继续链式配置其他端点。
 
 ## 边界说明
 
