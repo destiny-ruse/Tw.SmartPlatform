@@ -28,6 +28,7 @@ dependency_rules:
   allow:
     - DotNetCore.CAP
     - DotNetCore.CAP.RabbitMQ
+    - Microsoft.Extensions.DependencyInjection.Abstractions
     - Tw.EventBus
     - Tw.Data
     - Tw.Data.SqlSugar

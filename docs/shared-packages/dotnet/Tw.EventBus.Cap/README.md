@@ -18,7 +18,7 @@ CAP Outbox 只允许写入当前 `Tw.Data.Uow` 工作单元覆盖的活动事务
 
 ## 依赖边界
 
-本包可以依赖 CAP、RabbitMQ、`Tw.EventBus`、`Tw.Data` 和 `Tw.Data.SqlSugar`，不得承载业务事件契约、业务处理器或 ASP.NET Core 中间件。`Tw.EventBus` 的公开契约不包含 CAP 类型。
+本包可以依赖 CAP、RabbitMQ、`Microsoft.Extensions.DependencyInjection.Abstractions`、`Tw.EventBus`、`Tw.Data` 和 `Tw.Data.SqlSugar`，不得承载业务事件契约、业务处理器或 ASP.NET Core 中间件。`Tw.EventBus` 的公开契约不包含 CAP 类型。
 
 ## 使用方式
 
