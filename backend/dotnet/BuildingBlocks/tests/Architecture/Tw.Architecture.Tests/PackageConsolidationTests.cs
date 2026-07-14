@@ -8,7 +8,7 @@ namespace Tw.Architecture.Tests;
 /// <summary>
 /// 锁定 BuildingBlocks 目标库存，并允许清单中明确的项目逐步退出
 /// </summary>
-public sealed class PackageConsolidationTests
+public sealed partial class PackageConsolidationTests
 {
     /// <summary>
     /// 验证所有保留运行时项目存在且使用批准的有效根命名空间
@@ -246,15 +246,17 @@ public sealed class PackageConsolidationTests
     /// <returns>存在 Tw.Core 引用时返回 <see langword="true"/></returns>
     private static bool ReferencesTwCore(string projectPath)
     {
-        return XDocument.Load(projectPath)
-            .Descendants()
-            .Where(reference => reference.Name.LocalName is "ProjectReference" or "PackageReference")
+        return MsBuildProjectItems
+            .Read(projectPath, "ProjectReference", "PackageReference")
+            .SelectMany(reference => reference.ItemSpecs.Select(itemSpec => (reference.ItemName, ItemSpec: itemSpec)))
             .Any(reference =>
             {
-                var include = reference.Attribute("Include")?.Value;
-                var dependencyName = reference.Name.LocalName == "ProjectReference"
-                    ? Path.GetFileNameWithoutExtension(include)
-                    : include;
+                var dependencyName = string.Equals(
+                    reference.ItemName,
+                    "ProjectReference",
+                    StringComparison.OrdinalIgnoreCase)
+                    ? Path.GetFileNameWithoutExtension(reference.ItemSpec)
+                    : reference.ItemSpec;
 
                 return string.Equals(dependencyName, "Tw.Core", StringComparison.OrdinalIgnoreCase);
             });
@@ -267,32 +269,7 @@ public sealed class PackageConsolidationTests
     /// <returns>依赖白名单包含 Tw.Core 时返回 <see langword="true"/></returns>
     private static bool CharterAllowsTwCore(string charterPath)
     {
-        var lines = File.ReadAllLines(charterPath);
-        var dependencyRulesStart = Array.FindIndex(
-            lines,
-            line => string.Equals(line.Trim(), "dependency_rules:", StringComparison.Ordinal));
-        if (dependencyRulesStart < 0)
-        {
-            return false;
-        }
-
-        var dependencyRules = lines
-            .Skip(dependencyRulesStart + 1)
-            .TakeWhile(line => string.IsNullOrWhiteSpace(line) || char.IsWhiteSpace(line[0]))
-            .ToArray();
-        var allowStart = Array.FindIndex(
-            dependencyRules,
-            line => string.Equals(line.Trim(), "allow:", StringComparison.Ordinal));
-        if (allowStart < 0)
-        {
-            return false;
-        }
-
-        return dependencyRules
-            .Skip(allowStart + 1)
-            .TakeWhile(line => line.StartsWith("    - ", StringComparison.Ordinal))
-            .Select(line => line[6..].Trim().Trim('"', '\''))
-            .Any(dependency => string.Equals(dependency, "Tw.Core", StringComparison.OrdinalIgnoreCase));
+        return PackageCharterDependencyRules.AllowsDependency(charterPath, "Tw.Core");
     }
 
     /// <summary>
@@ -373,27 +350,28 @@ public sealed class PackageConsolidationTests
     /// <returns>每条无法解析引用的可读诊断信息</returns>
     private static IEnumerable<string> FindUnresolvedProjectReferences(string projectPath)
     {
-        var document = XDocument.Load(projectPath);
         var projectDirectory = Path.GetDirectoryName(projectPath)!;
-        foreach (var reference in document.Descendants("ProjectReference"))
+        foreach (var reference in MsBuildProjectItems.Read(projectPath, "ProjectReference"))
         {
-            var include = reference.Attribute("Include")?.Value;
-            if (string.IsNullOrWhiteSpace(include))
+            if (string.IsNullOrWhiteSpace(reference.Include) || reference.ItemSpecs.Count == 0)
             {
                 yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} has a ProjectReference without Include";
                 continue;
             }
 
-            if (include.Contains("$(", StringComparison.Ordinal))
+            foreach (var itemSpec in reference.ItemSpecs)
             {
-                yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} uses an unresolved ProjectReference expression: {include}";
-                continue;
-            }
+                if (MsBuildProjectItems.ContainsExpression(itemSpec))
+                {
+                    yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} uses an unresolved ProjectReference expression: {itemSpec}";
+                    continue;
+                }
 
-            var referencedPath = Path.GetFullPath(Path.Combine(projectDirectory, include));
-            if (!File.Exists(referencedPath))
-            {
-                yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} references missing project {RepositoryLayout.NormalizePath(include)}";
+                var referencedPath = Path.GetFullPath(Path.Combine(projectDirectory, itemSpec));
+                if (!File.Exists(referencedPath))
+                {
+                    yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} references missing project {RepositoryLayout.NormalizePath(itemSpec)}";
+                }
             }
         }
     }
