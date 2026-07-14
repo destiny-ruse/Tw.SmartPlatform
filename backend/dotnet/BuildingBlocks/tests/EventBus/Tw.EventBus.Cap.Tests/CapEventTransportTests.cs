@@ -135,7 +135,10 @@ public sealed class CapEventTransportTests
                 await unitOfWork.DisposeAsync();
                 break;
             default:
-                throw new ArgumentOutOfRangeException(nameof(terminalAction), terminalAction, null);
+                throw new ArgumentOutOfRangeException(
+                    nameof(terminalAction),
+                    terminalAction,
+                    "工作单元终态操作仅支持提交、回滚或释放");
         }
     }
 

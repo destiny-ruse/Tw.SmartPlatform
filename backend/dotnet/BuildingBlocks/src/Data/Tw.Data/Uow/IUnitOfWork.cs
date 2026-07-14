@@ -4,8 +4,8 @@ namespace Tw.Data.Uow;
 /// 封装一次提交或回滚的数据变更边界
 /// </summary>
 /// <remarks>
-/// 成功提交、成功回滚或释放工作单元后均不得继续写入 Outbox。
-/// 释放仅结束当前作用域，不隐式提交数据变更；调用方不得重复提交或回滚同一工作单元。
+/// 成功提交、成功回滚或释放工作单元后均不得继续写入 Outbox
+/// 释放仅结束当前作用域，不隐式提交数据变更；调用方不得重复提交或回滚同一工作单元
 /// </remarks>
 public interface IUnitOfWork : IAsyncDisposable
 {
