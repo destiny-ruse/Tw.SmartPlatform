@@ -17,7 +17,7 @@ using var scope = shardContext.Change(
     new ShardDescriptor("month", "orders-2026"));
 ```
 
-嵌套作用域释放后恢复外层描述；作用域可以重复释放且只恢复一次。`Change` 不接受 `null`。
+嵌套作用域释放后恢复外层描述。同一作用域的释放状态在每个继承的 `ExecutionContext`（异步流）内分别记录：每个异步流首次释放时各自恢复进入作用域前的描述，同一异步流重复释放不产生副作用。子异步流释放只恢复子异步流，不会释放或改写父异步流；父异步流仍需自行释放作用域。`Change` 不接受 `null`。
 
 ## 能力边界
 

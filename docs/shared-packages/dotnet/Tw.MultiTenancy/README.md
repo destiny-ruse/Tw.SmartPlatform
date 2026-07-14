@@ -7,7 +7,7 @@
 - `CurrentTenant`：当前租户身份值对象，`Default` 表示未解析到显式租户
 - `ICurrentTenant`：由宿主实现的当前租户读取契约
 - `TenantResolver`：比较令牌租户与提示租户并生成 `CurrentTenant`
-- `TenantMismatchException`：两个非空租户标识不一致时的失败类型
+- `TenantMismatchException`：两个非缺失租户标识不一致时的失败类型
 
 ## 使用方式
 
@@ -20,7 +20,7 @@ var tenant = resolver.Resolve(
     hintedTenantId: "tenant-a");
 ```
 
-仅提供一个租户标识时，解析器返回该租户；两个标识均缺失时返回 `CurrentTenant.Default`；两个非空标识不一致时抛出 `TenantMismatchException`。
+解析器将 `null`、空字符串（`""`）和仅包含空白字符的字符串统一视为缺失。仅提供一个非缺失租户标识时，解析器返回该租户；两个标识均缺失时返回 `CurrentTenant.Default`；两个非缺失标识不一致时抛出 `TenantMismatchException`。
 
 ## 能力边界
 

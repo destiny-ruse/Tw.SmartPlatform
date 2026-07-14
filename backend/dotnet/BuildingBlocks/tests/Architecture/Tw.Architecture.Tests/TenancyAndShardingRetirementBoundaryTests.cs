@@ -80,21 +80,30 @@ public sealed partial class PackageConsolidationTests
     }
 
     /// <summary>
-    /// 退休命名空间扫描覆盖文件作用域、块作用域与包含空白的声明
+    /// 退休命名空间扫描覆盖文件作用域、块作用域、嵌套与包含空白的声明
     /// </summary>
     /// <param name="source">包含退休命名空间声明的 C# 源码</param>
+    /// <param name="retiredNamespace">源码应当命中的退休命名空间</param>
     [Theory]
-    [InlineData("namespace Tw.MultiTenancy.Abstractions;")]
-    [InlineData("namespace Tw.MultiTenancy.Abstractions { }")]
-    [InlineData("namespace Tw . MultiTenancy . Abstractions ;")]
-    public void RetiredNamespaceScanner_DetectsSupportedNamespaceSyntax(string source)
+    [InlineData("namespace Tw.MultiTenancy.Abstractions;", "Tw.MultiTenancy.Abstractions")]
+    [InlineData("namespace Tw.MultiTenancy.Abstractions { }", "Tw.MultiTenancy.Abstractions")]
+    [InlineData("namespace Tw . MultiTenancy . Abstractions ;", "Tw.MultiTenancy.Abstractions")]
+    [InlineData(
+        "namespace Tw { namespace MultiTenancy.Abstractions { } }",
+        "Tw.MultiTenancy.Abstractions")]
+    [InlineData(
+        "namespace Tw { namespace Sharding.Abstractions { } }",
+        "Tw.Sharding.Abstractions")]
+    public void RetiredNamespaceScanner_DetectsSupportedNamespaceSyntax(
+        string source,
+        string retiredNamespace)
     {
         using var directory = new TemporaryTestDirectory();
         var sourcePath = directory.WriteFile("RetiredNamespace.cs", source);
 
         var violations = FindRetiredNamespaceDeclarations(
             [sourcePath],
-            new HashSet<string>(["Tw.MultiTenancy.Abstractions"], StringComparer.Ordinal));
+            new HashSet<string>([retiredNamespace], StringComparer.Ordinal));
 
         violations.Should().ContainSingle()
             .Which.Should().Be(sourcePath);
@@ -146,16 +155,19 @@ public sealed partial class PackageConsolidationTests
     }
 
     /// <summary>
-    /// 将命名空间语法节点归一为不含格式空白的点分名称
+    /// 组合祖先命名空间并归一为不含格式空白的点分名称
     /// </summary>
-    /// <param name="namespaceDeclaration">文件作用域或块作用域命名空间声明</param>
+    /// <param name="namespaceDeclaration">需要还原完整名称的文件作用域或块作用域声明</param>
     /// <returns>由标识符组成的点分命名空间</returns>
     private static string NormalizeNamespaceName(BaseNamespaceDeclarationSyntax namespaceDeclaration)
     {
         return string.Join(
             ".",
-            namespaceDeclaration.Name
-                .DescendantTokens()
+            namespaceDeclaration
+                .AncestorsAndSelf()
+                .OfType<BaseNamespaceDeclarationSyntax>()
+                .Reverse()
+                .SelectMany(declaration => declaration.Name.DescendantTokens())
                 .Where(token => token.IsKind(SyntaxKind.IdentifierToken))
                 .Select(token => token.ValueText));
     }

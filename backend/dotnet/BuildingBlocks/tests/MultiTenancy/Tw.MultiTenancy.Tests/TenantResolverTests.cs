@@ -76,7 +76,7 @@ public sealed class TenantResolverTests
         var act = () => resolver.Resolve(tokenTenantId, hintedTenantId);
 
         act.Should().Throw<TenantMismatchException>()
-            .WithMessage("Tenant id does not match the authenticated token tenant.");
+            .WithMessage("提示租户标识与认证令牌中的租户标识不一致。");
     }
 
     /// <summary>
