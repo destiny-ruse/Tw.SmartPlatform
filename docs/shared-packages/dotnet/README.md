@@ -2,6 +2,8 @@
 
 本页是 `backend/dotnet/BuildingBlocks/src` 下 .NET 共享包的使用文档索引，按包跳转。
 
+领域实体审计、并发与软删除标记由 `Tw.Domain` 提供；工作单元、事务边界和数据访问契约由 `Tw.Data` 提供。
+
 ## Current Packages
 
 - [Tw.Core](Tw.Core/README.md)

@@ -1,17 +1,17 @@
-namespace Tw.Uow;
+namespace Tw.Data.Uow;
 
 /// <summary>
-/// 工作单元事务行为
+/// 工作单元的数据事务行为
 /// </summary>
 public enum UnitOfWorkTransactionBehavior
 {
     /// <summary>
-    /// 不启用事务
+    /// 不创建数据事务
     /// </summary>
     NonTransactional,
 
     /// <summary>
-    /// 启用事务
+    /// 在数据事务中执行工作单元
     /// </summary>
     Transactional
 }

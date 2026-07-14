@@ -1,16 +1,16 @@
-﻿using AwesomeAssertions;
-using Tw.Uow;
+using AwesomeAssertions;
+using Tw.Data.Uow;
 using Xunit;
 
-namespace Tw.Uow.Tests;
+namespace Tw.Data.Tests.Uow;
 
 /// <summary>
-/// 覆盖UnitOfWork选项的核心行为和边界条件
+/// 验证工作单元创建选项的默认事务语义
 /// </summary>
 public sealed class UnitOfWorkOptionsTests
 {
     /// <summary>
-    /// 验证默认选项Use必需Transactional行为
+    /// 默认选项复用当前工作单元并启用事务
     /// </summary>
     [Fact]
     public void DefaultOptions_UseRequiredTransactionalBehavior()

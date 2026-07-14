@@ -1,19 +1,22 @@
-﻿using Tw.EventBus.Abstractions;
-using Tw.Uow;
+using Tw.Data.Uow;
+using Tw.EventBus.Abstractions;
 
 namespace Tw.EventBus.Cap.Outbox;
 
 /// <summary>
-/// 定义OutboxWriter的能力边界
+/// 在工作单元覆盖的事务边界中持久化 CAP Outbox 事件
 /// </summary>
 public interface IOutboxWriter
 {
     /// <summary>
-    /// 写入待发送或待持久化的测试消息
+    /// 将集成事件写入指定工作单元覆盖的 Outbox
     /// </summary>
-    /// <param name="unitOfWork">用于提供unitOfWork</param>
-    /// <param name="integrationEvent">用于提供ntegrationEvent</param>
-    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
-    /// <returns>表示异步流程完成状态的任务</returns>
-    Task WriteAsync(IUnitOfWork unitOfWork, IIntegrationEvent integrationEvent, CancellationToken cancellationToken = default);
+    /// <param name="unitOfWork">覆盖业务写入与 Outbox 写入的工作单元</param>
+    /// <param name="integrationEvent">需要持久化到 Outbox 的集成事件</param>
+    /// <param name="cancellationToken">等待 Outbox 写入完成时使用的取消令牌</param>
+    /// <returns>Outbox 写入完成任务</returns>
+    Task WriteAsync(
+        IUnitOfWork unitOfWork,
+        IIntegrationEvent integrationEvent,
+        CancellationToken cancellationToken = default);
 }

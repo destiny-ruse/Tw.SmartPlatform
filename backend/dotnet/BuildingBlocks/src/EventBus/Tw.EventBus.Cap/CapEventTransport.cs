@@ -1,33 +1,41 @@
-﻿using Tw.EventBus.Abstractions;
+using Tw.Data.Uow;
+using Tw.EventBus.Abstractions;
 using Tw.EventBus.Cap.Outbox;
-using Tw.Uow;
 
 namespace Tw.EventBus.Cap;
 
 /// <summary>
-/// 封装Cap事件Transport相关的数据和行为
+/// 将集成事件写入当前工作单元覆盖的 CAP Outbox 事务边界
 /// </summary>
-public sealed class CapEventTransport(IUnitOfWorkManager unitOfWorkManager, IOutboxWriter outboxWriter) : IEventTransport
+/// <param name="unitOfWorkCoordinator">提供当前活动工作单元的协调器</param>
+/// <param name="outboxWriter">在当前工作单元中持久化集成事件的写入器</param>
+public sealed class CapEventTransport(
+    IUnitOfWorkCoordinator unitOfWorkCoordinator,
+    IOutboxWriter outboxWriter) : IEventTransport
 {
     /// <summary>
-    /// 发布集成事件到测试事件总线
+    /// 在当前活动工作单元中写入集成事件
     /// </summary>
-    /// <param name="integrationEvent">用于提供ntegrationEvent</param>
-    /// <param name="cancellationToken">用于传播调用方取消请求的令牌</param>
-    /// <returns>表示异步流程完成状态的任务</returns>
-    public Task PublishAsync(IIntegrationEvent integrationEvent, CancellationToken cancellationToken = default)
+    /// <param name="integrationEvent">需要持久化到 Outbox 的集成事件</param>
+    /// <param name="cancellationToken">等待 Outbox 写入完成时使用的取消令牌</param>
+    /// <returns>Outbox 写入完成任务</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="integrationEvent"/> 为 <see langword="null"/></exception>
+    /// <exception cref="InvalidOperationException">当前不存在工作单元，或工作单元无法覆盖 Outbox 写入</exception>
+    public Task PublishAsync(
+        IIntegrationEvent integrationEvent,
+        CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(integrationEvent);
 
-        var current = unitOfWorkManager.Current;
+        var current = unitOfWorkCoordinator.Current;
         if (current is null)
         {
-            throw new InvalidOperationException("CAP Outbox writes require the current unit of work transaction.");
+            throw new InvalidOperationException("CAP Outbox 写入要求当前存在活动工作单元事务。");
         }
 
         if (current is not IOutboxTransactionBoundary { CanWriteOutbox: true })
         {
-            throw new InvalidOperationException("The current unit of work cannot cover business writes and CAP Outbox writes.");
+            throw new InvalidOperationException("当前工作单元无法同时覆盖业务写入与 CAP Outbox 写入。");
         }
 
         return outboxWriter.WriteAsync(current, integrationEvent, cancellationToken);

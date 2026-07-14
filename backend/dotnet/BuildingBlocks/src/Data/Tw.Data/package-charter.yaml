@@ -4,18 +4,20 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供数据访问契约、审计字段、软删除字段、仓储抽象与乐观并发契约。
+  提供存储中立的数据访问、工作单元、事务边界、仓储与乐观并发检查契约。
 in_scope:
-  - 审计字段契约
-  - 软删除契约
-  - 乐观并发契约
+  - 工作单元及当前作用域协调契约
+  - 工作单元事务行为与 Outbox 事务边界
+  - 乐观并发检查契约
   - 仓储抽象
 out_of_scope:
+  - 领域实体审计、并发戳与软删除标记
   - SqlSugar 客户端创建
   - CAP Outbox 存储
   - 业务实体映射
 public_capabilities:
   - Tw.Data
+  - Tw.Data.Uow
 dependency_rules:
   forbid:
     - "SqlSugar*"

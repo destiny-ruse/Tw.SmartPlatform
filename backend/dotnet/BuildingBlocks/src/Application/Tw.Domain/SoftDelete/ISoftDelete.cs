@@ -1,22 +1,22 @@
-﻿namespace Tw.Data.SoftDelete;
+namespace Tw.Domain.SoftDelete;
 
 /// <summary>
-/// 定义Soft删除的能力边界
+/// 标记通过逻辑删除保留历史状态的领域实体
 /// </summary>
 public interface ISoftDelete
 {
     /// <summary>
-    /// sDeleted在当前对象中的业务含义
+    /// 实体是否已逻辑删除
     /// </summary>
     bool IsDeleted { get; set; }
 
     /// <summary>
-    /// DeletedAt在当前对象中的业务含义
+    /// 实体逻辑删除时间
     /// </summary>
     DateTimeOffset? DeletedAt { get; set; }
 
     /// <summary>
-    /// DeletedBy在当前对象中的业务含义
+    /// 执行逻辑删除的主体标识
     /// </summary>
     string? DeletedBy { get; set; }
 }

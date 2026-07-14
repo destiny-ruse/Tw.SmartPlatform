@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tw.Data\Tw.Data.csproj" />
-    <ProjectReference Include="..\..\Foundation\Tw.Uow\Tw.Uow.csproj" />
     <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
   </ItemGroup>
 </Project>

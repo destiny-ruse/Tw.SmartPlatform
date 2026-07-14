@@ -8,7 +8,7 @@ responsibility: >
 in_scope:
   - SqlSugar 客户端工厂抽象
   - 连接配置解析
-  - SqlSugar 工作单元管理器
+  - SqlSugar 工作单元协调器
   - 当前工作单元事务边界
 out_of_scope:
   - CAP 传输
@@ -26,5 +26,4 @@ dependency_rules:
   allow:
     - SqlSugarCore
     - Tw.Data
-    - Tw.Uow
     - Tw.Core

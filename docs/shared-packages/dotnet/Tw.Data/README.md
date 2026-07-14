@@ -1,25 +1,31 @@
 # Tw.Data
 
-`Tw.Data` contains storage-neutral data contracts: audited entities, soft delete, optimistic concurrency, and repository abstractions.
+`Tw.Data` 提供存储中立的数据访问、乐观并发检查和工作单元契约。领域实体的审计、并发戳、版本戳与软删除标记由 `Tw.Domain` 提供。
 
-## Public Capabilities
+## 公开能力
 
-- `IAuditedEntity`
-- `ISoftDelete`
-- `IHasConcurrencyStamp`
-- `IHasVersionStamp`
-- `ConcurrencyConflictException`
 - `IRepository<TEntity, TKey>`
+- `IConcurrencyCheckContext`
+- `ConcurrencyConflictException`
+- `IUnitOfWork`
+- `IUnitOfWorkCoordinator`
+- `UnitOfWorkOptions`
+- `UnitOfWorkScope`
+- `UnitOfWorkTransactionBehavior`
+- `IOutboxTransactionBoundary`
 
-## Dependency Boundary
+工作单元类型位于 `Tw.Data.Uow` 命名空间。
 
-This package does not reference SqlSugar, CAP, ASP.NET Core, or any infrastructure adapter package.
+## 依赖边界
 
-## Usage
+本包不得依赖 SqlSugar、CAP、ASP.NET Core 或其他基础设施适配包。ORM 工作单元实现进入对应的数据适配包。
+
+## 使用方式
 
 ```csharp
-public sealed class Order : IHasConcurrencyStamp
-{
-    public string ConcurrencyStamp { get; set; } = Guid.NewGuid().ToString("N");
-}
+await using var unitOfWork = await unitOfWorkCoordinator.BeginAsync(
+    UnitOfWorkOptions.Default,
+    cancellationToken);
+
+await unitOfWork.CommitAsync(cancellationToken);
 ```

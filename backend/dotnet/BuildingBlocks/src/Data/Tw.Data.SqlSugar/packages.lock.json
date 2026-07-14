@@ -292,9 +292,6 @@
       "tw.data": {
         "type": "Project"
       },
-      "tw.uow": {
-        "type": "Project"
-      },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "CentralTransitive",
         "requested": "[10.0.9, )",

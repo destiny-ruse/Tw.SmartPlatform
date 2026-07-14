@@ -4,9 +4,12 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  领域实体、聚合根、领域事件和领域服务基础能力。
+  提供领域实体、聚合根、领域事件、领域服务及提供程序无关的实体标记基础能力。
 in_scope:
   - 领域实体与聚合根基础类型
+  - 实体创建与更新审计标记
+  - 实体并发戳与版本戳标记
+  - 实体软删除标记
   - 领域事件契约
   - 领域服务基础能力
 out_of_scope:
@@ -15,6 +18,9 @@ out_of_scope:
   - 数据访问实现
 public_capabilities:
   - Tw.Domain
+  - Tw.Domain.Auditing
+  - Tw.Domain.Concurrency
+  - Tw.Domain.SoftDelete
 dependency_rules:
   forbid:
     - "MediatR"

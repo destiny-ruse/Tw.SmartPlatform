@@ -1,12 +1,12 @@
 # Tw.EventBus.Cap
 
-`Tw.EventBus.Cap` binds CAP-oriented publishing, RabbitMQ options, SqlSugar CAP storage metadata, Inbox dedupe, consumer context validation, and cleanup contracts.
+`Tw.EventBus.Cap` 提供 CAP 发布、RabbitMQ 选项、SqlSugar CAP 存储元数据、Inbox 去重、消费者上下文校验和清理契约。
 
-## Transaction Rule
+## 事务规则
 
-CAP Outbox writes are valid only inside the active `Tw.Uow` transaction. The package does not create a separate Outbox transaction outside the current unit of work. CAP consumption uses Inbox records to deduplicate delivered messages. Host CAP consumers call `ISender.Send(...)` inside the dispatch delegate after tenant, shard, and culture headers are validated.
+CAP Outbox 只允许写入当前 `Tw.Data.Uow` 工作单元覆盖的事务边界。本包不会在当前工作单元之外创建独立 Outbox 事务；当前工作单元不存在或不能覆盖 Outbox 写入时，发布会被拒绝。CAP 消费通过 Inbox 记录去重，宿主消费者在租户、分片和区域性请求头校验后，由分发委托调用 `ISender.Send(...)`。
 
-## Public Capabilities
+## 公开能力
 
 - `CapEventTransport`
 - `IOutboxWriter`
@@ -16,11 +16,11 @@ CAP Outbox writes are valid only inside the active `Tw.Uow` transaction. The pac
 - `CapConsumerExecutionFilter`
 - `CapMessageCleanupOptions`
 
-## Dependency Boundary
+## 依赖边界
 
-The package can reference CAP, RabbitMQ, `Tw.EventBus`, `Tw.Uow`, and `Tw.Data.SqlSugar`. It must not host business handlers or ASP.NET Core middleware.
+本包可以依赖 CAP、RabbitMQ、`Tw.EventBus`、`Tw.Data` 和 `Tw.Data.SqlSugar`，不得承载业务处理器或 ASP.NET Core 中间件。
 
-## Usage
+## 使用方式
 
 ```csharp
 services.AddCapEventBus(

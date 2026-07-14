@@ -1,21 +1,26 @@
 # Tw.Data.SqlSugar
 
-`Tw.Data.SqlSugar` adapts the shared `Tw.Uow` contract to SqlSugar client creation and exposes a transaction boundary for Outbox coordination.
+`Tw.Data.SqlSugar` 将 `Tw.Data.Uow` 工作单元契约适配到 SqlSugar 客户端创建，并公开 CAP Outbox 协调所需的事务边界。
 
-## Public Capabilities
+## 公开能力
 
 - `IConnectionConfigResolver`
 - `ISqlSugarClientFactory`
-- `SqlSugarUnitOfWorkManager`
+- `SqlSugarUnitOfWorkCoordinator`
 - `SqlSugarUnitOfWork`
 
-## Dependency Boundary
+## 依赖边界
 
-This package can reference `SqlSugarCore`, `Tw.Data`, `Tw.Uow`, and `Tw.Core`. It must not reference CAP, ASP.NET Core, Quartz, or Gateway packages.
+本包可以依赖 `SqlSugarCore`、`Tw.Data` 和 `Tw.Core`，不得依赖 CAP、ASP.NET Core、Quartz 或 Gateway 包。
 
-## Usage
+## 使用方式
 
 ```csharp
-await using var uow = await unitOfWorkManager.BeginAsync(UnitOfWorkOptions.Default, cancellationToken);
-await uow.CommitAsync(cancellationToken);
+await using var unitOfWork = await unitOfWorkCoordinator.BeginAsync(
+    UnitOfWorkOptions.Default,
+    cancellationToken);
+
+await unitOfWork.CommitAsync(cancellationToken);
 ```
+
+调用方负责提交或回滚，并在作用域结束时异步释放工作单元。`Required` 作用域会复用当前活动工作单元。

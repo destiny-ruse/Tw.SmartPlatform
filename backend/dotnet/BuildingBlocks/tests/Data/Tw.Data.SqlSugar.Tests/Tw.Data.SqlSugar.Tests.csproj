@@ -15,6 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Data\Tw.Data.SqlSugar\Tw.Data.SqlSugar.csproj" />
-    <ProjectReference Include="..\..\..\src\Foundation\Tw.Uow\Tw.Uow.csproj" />
+    <ProjectReference Include="..\..\..\src\Data\Tw.Data\Tw.Data.csproj" />
   </ItemGroup>
 </Project>

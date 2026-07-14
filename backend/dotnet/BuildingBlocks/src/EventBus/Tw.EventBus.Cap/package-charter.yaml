@@ -5,7 +5,7 @@ stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
   提供 CAP 传输绑定、RabbitMQ 选项、自定义 SqlSugar CAP 存储元数据、Inbox 去重、消费者上下文过滤器、
-  清理契约，以及绑定到当前 Tw.Uow 事务的 Outbox 写入。当当前工作单元无法同时覆盖业务写入与
+  清理契约，以及绑定到当前 Tw.Data.Uow 工作单元事务的 Outbox 写入。当当前工作单元无法同时覆盖业务写入与
   CAP Outbox 写入时拒绝发布。
 in_scope:
   - RabbitMQ 传输绑定
@@ -30,5 +30,5 @@ dependency_rules:
     - DotNetCore.CAP.RabbitMQ
     - Tw.EventBus
     - Tw.EventBus.Abstractions
-    - Tw.Uow
+    - Tw.Data
     - Tw.Data.SqlSugar

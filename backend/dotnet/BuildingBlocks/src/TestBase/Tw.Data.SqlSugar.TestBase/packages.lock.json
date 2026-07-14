@@ -387,14 +387,10 @@
         "dependencies": {
           "SqlSugarCore": "[5.1.4.216, )",
           "Tw.Core": "[1.0.0, )",
-          "Tw.Data": "[1.0.0, )",
-          "Tw.Uow": "[1.0.0, )"
+          "Tw.Data": "[1.0.0, )"
         }
       },
       "tw.testbase": {
-        "type": "Project"
-      },
-      "tw.uow": {
         "type": "Project"
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
