@@ -1,5 +1,5 @@
 using Tw.Data.Uow;
-using Tw.EventBus.Abstractions;
+using Tw.EventBus;
 using Tw.EventBus.Cap.Outbox;
 
 namespace Tw.EventBus.Cap;

@@ -34,6 +34,7 @@
 - [Tw.Grpc](Tw.Grpc/README.md)
 - [Tw.Caching](Tw.Caching/README.md)
 - [Tw.DistributedLocking](Tw.DistributedLocking/README.md)
+- [Tw.DistributedLocking.Redis](Tw.DistributedLocking.Redis/README.md)
 - [Tw.Idempotency](Tw.Idempotency/README.md)
 - [Tw.Resilience](Tw.Resilience/README.md)
 - [Tw.BackgroundJobs](Tw.BackgroundJobs/README.md)

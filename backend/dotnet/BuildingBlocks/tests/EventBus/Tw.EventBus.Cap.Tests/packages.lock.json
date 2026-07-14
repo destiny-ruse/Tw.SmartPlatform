@@ -494,12 +494,6 @@
         }
       },
       "tw.eventbus": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.EventBus.Abstractions": "[1.0.0, )"
-        }
-      },
-      "tw.eventbus.abstractions": {
         "type": "Project"
       },
       "tw.eventbus.cap": {
@@ -510,8 +504,7 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )",
           "Tw.Data": "[1.0.0, )",
           "Tw.Data.SqlSugar": "[1.0.0, )",
-          "Tw.EventBus": "[1.0.0, )",
-          "Tw.EventBus.Abstractions": "[1.0.0, )"
+          "Tw.EventBus": "[1.0.0, )"
         }
       },
       "DotNetCore.CAP": {

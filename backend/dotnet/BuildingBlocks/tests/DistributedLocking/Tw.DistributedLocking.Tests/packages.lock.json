@@ -171,12 +171,6 @@
         }
       },
       "tw.distributedlocking": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.DistributedLocking.Abstractions": "[1.0.0, )"
-        }
-      },
-      "tw.distributedlocking.abstractions": {
         "type": "Project"
       },
       "Newtonsoft.Json": {

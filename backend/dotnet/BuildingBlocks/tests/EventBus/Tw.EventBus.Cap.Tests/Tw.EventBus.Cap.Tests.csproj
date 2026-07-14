@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\EventBus\Tw.EventBus.Cap\Tw.EventBus.Cap.csproj" />
-    <ProjectReference Include="..\..\..\src\EventBus\Tw.EventBus.Abstractions\Tw.EventBus.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\src\EventBus\Tw.EventBus\Tw.EventBus.csproj" />
     <ProjectReference Include="..\..\..\src\Data\Tw.Data\Tw.Data.csproj" />
   </ItemGroup>
 </Project>

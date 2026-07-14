@@ -4,10 +4,11 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供基于注入传输实现的事件发布编排。
+  提供集成事件元数据、发布器、处理器与 transport 契约，以及基于注入传输实现的发布编排。
 in_scope:
+  - 集成事件元数据契约
   - 事件发布器实现
-  - 传输委托
+  - 事件处理器与传输契约
 out_of_scope:
   - CAP 实现
   - RabbitMQ 配置
@@ -19,5 +20,4 @@ dependency_rules:
     - "DotNetCore.CAP*"
     - "Microsoft.AspNetCore.*"
     - "SqlSugar*"
-  allow:
-    - Tw.EventBus.Abstractions
+  allow: []

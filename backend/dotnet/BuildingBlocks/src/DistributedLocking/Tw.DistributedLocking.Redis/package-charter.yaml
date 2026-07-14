@@ -4,11 +4,14 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供分布式锁的 Redis 适配器。
+  隔离 Redis 分布式锁依赖并提供实验阶段的 provider 适配边界。
 in_scope:
   - Redis 分布式锁适配器
+  - Redis provider 依赖隔离
 out_of_scope:
   - 锁键治理
+  - 业务锁编排
+  - 未经真实依赖验证的租约、续租、失锁和 fencing 稳定承诺
 public_capabilities:
   - Tw.DistributedLocking.Redis
 dependency_rules:
@@ -16,6 +19,6 @@ dependency_rules:
     - "SqlSugar*"
     - "DotNetCore.CAP*"
   allow:
-    - Tw.DistributedLocking.Abstractions
+    - Tw.DistributedLocking
     - StackExchange.Redis
     - DistributedLock.Redis

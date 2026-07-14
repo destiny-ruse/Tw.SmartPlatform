@@ -5,8 +5,4 @@
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Tw.EventBus.Abstractions\Tw.EventBus.Abstractions.csproj" />
-  </ItemGroup>
 </Project>

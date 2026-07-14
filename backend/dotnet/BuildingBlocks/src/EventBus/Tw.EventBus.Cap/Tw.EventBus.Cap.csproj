@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tw.EventBus\Tw.EventBus.csproj" />
-    <ProjectReference Include="..\Tw.EventBus.Abstractions\Tw.EventBus.Abstractions.csproj" />
     <ProjectReference Include="..\..\Data\Tw.Data\Tw.Data.csproj" />
     <ProjectReference Include="..\..\Data\Tw.Data.SqlSugar\Tw.Data.SqlSugar.csproj" />
   </ItemGroup>

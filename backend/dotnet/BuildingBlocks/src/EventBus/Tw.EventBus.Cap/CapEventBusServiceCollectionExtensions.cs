@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Tw.EventBus.Abstractions;
+using Tw.EventBus;
 using Tw.EventBus.Cap.Consumers;
 using Tw.EventBus.Cap.Inbox;
 using Tw.EventBus.Cap.Outbox;

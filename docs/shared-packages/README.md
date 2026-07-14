@@ -28,5 +28,7 @@
 - [Tw.Data.SqlSugar](dotnet/Tw.Data.SqlSugar/README.md)
 - [Tw.Configuration](dotnet/Tw.Configuration/README.md)
 - [Tw.Configuration.Nacos](dotnet/Tw.Configuration.Nacos/README.md)
+- [Tw.DistributedLocking](dotnet/Tw.DistributedLocking/README.md)
+- [Tw.DistributedLocking.Redis](dotnet/Tw.DistributedLocking.Redis/README.md)
 - [Tw.EventBus](dotnet/Tw.EventBus/README.md)
 - [Tw.EventBus.Cap](dotnet/Tw.EventBus.Cap/README.md)

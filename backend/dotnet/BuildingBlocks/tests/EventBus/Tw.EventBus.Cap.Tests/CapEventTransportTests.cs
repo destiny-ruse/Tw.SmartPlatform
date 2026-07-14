@@ -1,6 +1,6 @@
 using AwesomeAssertions;
 using Tw.Data.Uow;
-using Tw.EventBus.Abstractions;
+using Tw.EventBus;
 using Tw.EventBus.Cap;
 using Tw.EventBus.Cap.Outbox;
 using Xunit;

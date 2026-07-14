@@ -171,12 +171,6 @@
         }
       },
       "tw.eventbus": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.EventBus.Abstractions": "[1.0.0, )"
-        }
-      },
-      "tw.eventbus.abstractions": {
         "type": "Project"
       },
       "Newtonsoft.Json": {

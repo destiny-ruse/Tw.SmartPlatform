@@ -4,16 +4,17 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供租户与分片感知的分布式锁键构造。
+  提供 provider-neutral 分布式锁契约，以及租户与分片感知的稳定锁键构造。
 in_scope:
+  - 分布式锁获取与句柄所有权契约
   - 分布式锁键构造器
 out_of_scope:
   - Redis 实现
+  - 租约续期与 fencing 实现
 public_capabilities:
   - Tw.DistributedLocking
 dependency_rules:
   forbid:
     - "SqlSugar*"
     - "DotNetCore.CAP*"
-  allow:
-    - Tw.DistributedLocking.Abstractions
+  allow: []
