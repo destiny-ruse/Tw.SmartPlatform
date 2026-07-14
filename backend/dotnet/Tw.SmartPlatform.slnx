@@ -25,7 +25,6 @@
     <Project Path="BuildingBlocks/src/Caching/Tw.Caching/Tw.Caching.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Configuration/">
-    <Project Path="BuildingBlocks/src/Configuration/Tw.Configuration.Json/Tw.Configuration.Json.csproj" />
     <Project Path="BuildingBlocks/src/Configuration/Tw.Configuration.Nacos/Tw.Configuration.Nacos.csproj" />
     <Project Path="BuildingBlocks/src/Configuration/Tw.Configuration/Tw.Configuration.csproj" />
   </Folder>
@@ -140,7 +139,6 @@
     <Project Path="BuildingBlocks/tests/Caching/Tw.Caching.Tests/Tw.Caching.Tests.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/tests/Configuration/">
-    <Project Path="BuildingBlocks/tests/Configuration/Tw.Configuration.Json.Tests/Tw.Configuration.Json.Tests.csproj" />
     <Project Path="BuildingBlocks/tests/Configuration/Tw.Configuration.Tests/Tw.Configuration.Tests.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/tests/Data/">

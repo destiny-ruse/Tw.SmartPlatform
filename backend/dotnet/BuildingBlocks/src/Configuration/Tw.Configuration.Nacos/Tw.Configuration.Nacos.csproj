@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <RootNamespace>Tw.Configuration.Nacos</RootNamespace>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,7 +10,6 @@
   <ItemGroup>
     <PackageReference Include="nacos-sdk-csharp" />
     <PackageReference Include="nacos-sdk-csharp.Extensions.Configuration" />
-    <PackageReference Include="nacos-sdk-csharp.Extensions.ServiceDiscovery" />
   </ItemGroup>
 
   <ItemGroup>

@@ -26,5 +26,7 @@
 - [Tw.Identity.OpenIddict](dotnet/Tw.Identity.OpenIddict/README.md)
 - [Tw.Data](dotnet/Tw.Data/README.md)
 - [Tw.Data.SqlSugar](dotnet/Tw.Data.SqlSugar/README.md)
+- [Tw.Configuration](dotnet/Tw.Configuration/README.md)
+- [Tw.Configuration.Nacos](dotnet/Tw.Configuration.Nacos/README.md)
 - [Tw.EventBus](dotnet/Tw.EventBus/README.md)
 - [Tw.EventBus.Cap](dotnet/Tw.EventBus.Cap/README.md)

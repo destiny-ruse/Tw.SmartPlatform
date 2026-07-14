@@ -38,6 +38,7 @@
 - [Tw.Resilience](Tw.Resilience/README.md)
 - [Tw.BackgroundJobs](Tw.BackgroundJobs/README.md)
 - [Tw.Configuration](Tw.Configuration/README.md)
+- [Tw.Configuration.Nacos](Tw.Configuration.Nacos/README.md)
 - [Tw.Gateway](Tw.Gateway/README.md)
 - [Tw.Observability](Tw.Observability/README.md)
 - [Tw.Observability.Serilog](Tw.Observability.Serilog/README.md)
