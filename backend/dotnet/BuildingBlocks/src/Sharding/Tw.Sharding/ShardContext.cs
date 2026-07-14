@@ -37,22 +37,22 @@ public sealed class ShardContext : IShardContext
     private sealed class RestoreScope(Action restore) : IDisposable
     {
         /// <summary>
-        /// 作用域是否已经执行恢复操作
+        /// 当前执行上下文是否已经执行恢复操作
         /// </summary>
-        private bool _disposed;
+        private readonly AsyncLocal<bool> _disposed = new();
 
         /// <summary>
         /// 首次调用时恢复先前分片描述，后续调用不产生副作用
         /// </summary>
         public void Dispose()
         {
-            if (_disposed)
+            if (_disposed.Value)
             {
                 return;
             }
 
             restore();
-            _disposed = true;
+            _disposed.Value = true;
         }
     }
 }

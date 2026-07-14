@@ -80,6 +80,38 @@ public sealed class ShardContextTests
     }
 
     /// <summary>
+    /// 继承作用域的子异步流各自释放后恢复先前描述且不影响创建流
+    /// </summary>
+    [Fact]
+    public async Task ChangeScope_DisposeInInheritedFlows_RestoresEachFlowIndependently()
+    {
+        var context = new ShardContext();
+        var previousDescriptor = new ShardDescriptor("region", "west");
+        using var previousScope = context.Change(previousDescriptor);
+        var currentDescriptor = new ShardDescriptor("tenant", "tenant-a");
+        var scope = context.Change(currentDescriptor);
+
+        var firstChildDescriptor = await Task.Run(() =>
+        {
+            scope.Dispose();
+            return context.Current;
+        });
+        var secondChildDescriptor = await Task.Run(() =>
+        {
+            scope.Dispose();
+            return context.Current;
+        });
+
+        firstChildDescriptor.Should().Be(previousDescriptor);
+        secondChildDescriptor.Should().Be(previousDescriptor);
+        context.Current.Should().Be(currentDescriptor);
+
+        scope.Dispose();
+
+        context.Current.Should().Be(previousDescriptor);
+    }
+
+    /// <summary>
     /// 分片作用域重复释放时只恢复一次先前描述
     /// </summary>
     [Fact]

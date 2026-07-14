@@ -1,5 +1,4 @@
 using System.Collections.Frozen;
-using System.Text.Json.Nodes;
 using System.Xml.Linq;
 using AwesomeAssertions;
 using Xunit;
@@ -35,9 +34,9 @@ public sealed class ResilienceDependencyBoundaryTests
             Path.Combine(resilienceRoot, "package-charter.yaml"));
 
         projectDependencies.Should().BeEmpty(
-            "Tw.Resilience is a self-contained provider-neutral policy package");
+            "Tw.Resilience 是提供方无关且自包含的策略包");
         allowedDependencies.Should().BeEmpty(
-            "the Tw.Resilience charter must agree with the zero-dependency project boundary");
+            "Tw.Resilience 包章程必须与项目零依赖边界一致");
         projectDependencies.Should().BeEquivalentTo(allowedDependencies);
     }
 
@@ -47,11 +46,11 @@ public sealed class ResilienceDependencyBoundaryTests
     [Fact]
     public void LockDependencyGraphs_AreEmptyForEveryTargetFramework()
     {
-        var lockDependencies = ReadLockPackageIdentities(
+        var lockDependencies = NuGetLockFileDependencies.ReadPackageIdentities(
             Path.Combine(ResilienceRoot(), "packages.lock.json"));
 
         lockDependencies.Should().BeEmpty(
-            "Tw.Resilience must remain free of direct and transitive dependencies in every target framework");
+            "Tw.Resilience 的每个目标框架都不得包含直接或传递依赖");
     }
 
     /// <summary>
@@ -84,35 +83,6 @@ public sealed class ResilienceDependencyBoundaryTests
         }
 
         return dependencyItems;
-    }
-
-    /// <summary>
-    /// 读取锁文件全部目标框架下的直接与传递依赖标识
-    /// </summary>
-    /// <param name="lockFile">Tw.Resilience 锁文件路径</param>
-    /// <returns>包含目标框架与包身份的依赖集合</returns>
-    /// <exception cref="InvalidOperationException">锁文件无法解析或 dependencies 图结构无效时抛出</exception>
-    private static IReadOnlyList<string> ReadLockPackageIdentities(string lockFile)
-    {
-        var lockRoot = JsonNode.Parse(File.ReadAllText(lockFile))?.AsObject()
-            ?? throw new InvalidOperationException("无法解析 Tw.Resilience 锁文件");
-        var targetFrameworks = lockRoot["dependencies"]?.AsObject()
-            ?? throw new InvalidOperationException("Tw.Resilience 锁文件缺少 dependencies");
-        var dependencyIdentities = new List<string>();
-
-        foreach (var targetFramework in targetFrameworks)
-        {
-            if (targetFramework.Value is not JsonObject dependencies)
-            {
-                throw new InvalidOperationException(
-                    $"Tw.Resilience 锁文件目标框架依赖图无效：{targetFramework.Key}");
-            }
-
-            dependencyIdentities.AddRange(
-                dependencies.Select(package => $"{targetFramework.Key}: {package.Key}"));
-        }
-
-        return dependencyIdentities;
     }
 
     /// <summary>

@@ -14,13 +14,16 @@ public sealed class TenantResolver
     /// <exception cref="TenantMismatchException">令牌租户与提示租户不一致时抛出</exception>
     public CurrentTenant Resolve(string? tokenTenantId, string? hintedTenantId)
     {
-        if (!string.IsNullOrWhiteSpace(tokenTenantId)
-            && !string.IsNullOrWhiteSpace(hintedTenantId)
-            && !string.Equals(tokenTenantId, hintedTenantId, StringComparison.Ordinal))
+        var resolvedTokenTenantId = string.IsNullOrWhiteSpace(tokenTenantId) ? null : tokenTenantId;
+        var resolvedHintedTenantId = string.IsNullOrWhiteSpace(hintedTenantId) ? null : hintedTenantId;
+
+        if (resolvedTokenTenantId is not null
+            && resolvedHintedTenantId is not null
+            && !string.Equals(resolvedTokenTenantId, resolvedHintedTenantId, StringComparison.Ordinal))
         {
             throw new TenantMismatchException();
         }
 
-        return new CurrentTenant(tokenTenantId ?? hintedTenantId ?? CurrentTenant.Default.Id);
+        return new CurrentTenant(resolvedTokenTenantId ?? resolvedHintedTenantId ?? CurrentTenant.Default.Id);
     }
 }

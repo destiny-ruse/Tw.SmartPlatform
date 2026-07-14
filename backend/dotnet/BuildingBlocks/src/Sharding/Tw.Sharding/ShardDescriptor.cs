@@ -1,7 +1,7 @@
 namespace Tw.Sharding;
 
 /// <summary>
-/// 表示 provider-neutral 的分片策略与分片键
+/// 表示提供方无关的分片策略与分片键
 /// </summary>
 /// <param name="Strategy">调用方选择的分片策略标识</param>
 /// <param name="Key">调用方选择的不透明分片键</param>

@@ -21,10 +21,15 @@ public sealed class TenantResolverTests
     /// <summary>
     /// 仅存在令牌租户时返回令牌租户
     /// </summary>
-    [Fact]
-    public void Resolve_ReturnsTokenTenant_WhenOnlyTokenTenantIsProvided()
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Resolve_ReturnsTokenTenant_WhenHintedTenantIsMissing(string? hintedTenantId)
     {
-        var tenant = new TenantResolver().Resolve(tokenTenantId: "tenant-a", hintedTenantId: null);
+        var tenant = new TenantResolver().Resolve(
+            tokenTenantId: "tenant-a",
+            hintedTenantId: hintedTenantId);
 
         tenant.Should().Be(new CurrentTenant("tenant-a"));
     }
@@ -32,10 +37,15 @@ public sealed class TenantResolverTests
     /// <summary>
     /// 仅存在提示租户时返回提示租户
     /// </summary>
-    [Fact]
-    public void Resolve_ReturnsHintedTenant_WhenOnlyHintedTenantIsProvided()
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void Resolve_ReturnsHintedTenant_WhenTokenTenantIsMissing(string? tokenTenantId)
     {
-        var tenant = new TenantResolver().Resolve(tokenTenantId: null, hintedTenantId: "tenant-a");
+        var tenant = new TenantResolver().Resolve(
+            tokenTenantId: tokenTenantId,
+            hintedTenantId: "tenant-a");
 
         tenant.Should().Be(new CurrentTenant("tenant-a"));
     }
@@ -54,12 +64,16 @@ public sealed class TenantResolverTests
     /// <summary>
     /// 令牌租户与提示租户不同时拒绝解析
     /// </summary>
-    [Fact]
-    public void Resolve_RejectsHintedTenant_WhenTokenTenantDiffers()
+    [Theory]
+    [InlineData("tenant-a", "tenant-b")]
+    [InlineData("tenant-a", "TENANT-A")]
+    public void Resolve_RejectsHintedTenant_WhenOrdinalTenantIdsDiffer(
+        string tokenTenantId,
+        string hintedTenantId)
     {
         var resolver = new TenantResolver();
 
-        var act = () => resolver.Resolve(tokenTenantId: "tenant-a", hintedTenantId: "tenant-b");
+        var act = () => resolver.Resolve(tokenTenantId, hintedTenantId);
 
         act.Should().Throw<TenantMismatchException>()
             .WithMessage("Tenant id does not match the authenticated token tenant.");
@@ -68,12 +82,18 @@ public sealed class TenantResolverTests
     /// <summary>
     /// 未提供租户时返回默认租户
     /// </summary>
-    [Fact]
-    public void Resolve_UsesDefaultTenant_WhenNoTenantIsProvided()
+    [Theory]
+    [InlineData(null, null)]
+    [InlineData("", "")]
+    [InlineData("   ", "")]
+    [InlineData("", "   ")]
+    public void Resolve_UsesDefaultTenant_WhenBothTenantsAreMissing(
+        string? tokenTenantId,
+        string? hintedTenantId)
     {
         var resolver = new TenantResolver();
 
-        var tenant = resolver.Resolve(tokenTenantId: null, hintedTenantId: null);
+        var tenant = resolver.Resolve(tokenTenantId, hintedTenantId);
 
         tenant.Id.Should().Be("default");
     }

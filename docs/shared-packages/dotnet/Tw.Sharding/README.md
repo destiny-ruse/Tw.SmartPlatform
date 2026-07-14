@@ -1,6 +1,6 @@
 # Tw.Sharding
 
-`Tw.Sharding` 提供 provider-neutral 的分片描述契约，并在异步调用链中保存当前分片选择。包内不执行数据库连接路由，也不决定分片策略。
+`Tw.Sharding` 是提供方无关的分片描述契约包，并在异步调用链中保存当前分片选择。包内不执行数据库连接路由，也不决定分片策略。
 
 ## 公开能力
 
@@ -21,7 +21,7 @@ using var scope = shardContext.Change(
 
 ## 能力边界
 
-- 包保持 provider-neutral，不依赖 ASP.NET Core、SqlSugar、CAP 或数据库 provider
-- 分片键计算、路由策略和数据库连接选择由具体 provider 负责
-- 包不提供 shard router、database selector 或租户存储 API
+- 包保持提供方无关，不依赖 ASP.NET Core、SqlSugar、CAP 或数据库提供方
+- 分片键计算、路由策略和数据库连接选择由具体提供方负责
+- 包不提供分片路由器、数据库选择器或租户存储 API
 - `ShardDescriptor.Key` 是不透明值，调用方不得依赖包解析其结构
