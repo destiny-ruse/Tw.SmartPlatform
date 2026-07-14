@@ -218,6 +218,84 @@ public sealed class PackageConsolidationTests
     }
 
     /// <summary>
+    /// 验证 provider-neutral 的应用契约与领域形状包不保留未使用的 Tw.Core 引用
+    /// </summary>
+    [Fact]
+    public void ProviderNeutralApplicationPackages_DoNotReferenceTwCore()
+    {
+        var projectPaths = new[]
+        {
+            "Application/Tw.Application.Contracts/Tw.Application.Contracts.csproj",
+            "Application/Tw.Domain/Tw.Domain.csproj"
+        };
+        var violations = projectPaths
+            .Select(path => ProjectPath(RepositoryLayout.BuildingBlocksSrc, path))
+            .Where(path => ReferencesTwCore(path)
+                || CharterAllowsTwCore(Path.Combine(Path.GetDirectoryName(path)!, "package-charter.yaml")))
+            .Select(RepositoryLayout.RepositoryRelativePath)
+            .ToArray();
+
+        violations.Should().BeEmpty(
+            "provider-neutral contracts with no Tw.Core source usage must not retain a transitive framework dependency");
+    }
+
+    /// <summary>
+    /// 判断项目是否通过源码项目或 NuGet 包身份引用 Tw.Core
+    /// </summary>
+    /// <param name="projectPath">待检查的项目文件路径</param>
+    /// <returns>存在 Tw.Core 引用时返回 <see langword="true"/></returns>
+    private static bool ReferencesTwCore(string projectPath)
+    {
+        return XDocument.Load(projectPath)
+            .Descendants()
+            .Where(reference => reference.Name.LocalName is "ProjectReference" or "PackageReference")
+            .Any(reference =>
+            {
+                var include = reference.Attribute("Include")?.Value;
+                var dependencyName = reference.Name.LocalName == "ProjectReference"
+                    ? Path.GetFileNameWithoutExtension(include)
+                    : include;
+
+                return string.Equals(dependencyName, "Tw.Core", StringComparison.OrdinalIgnoreCase);
+            });
+    }
+
+    /// <summary>
+    /// 判断包章程的依赖白名单是否允许 Tw.Core
+    /// </summary>
+    /// <param name="charterPath">待检查的包章程路径</param>
+    /// <returns>依赖白名单包含 Tw.Core 时返回 <see langword="true"/></returns>
+    private static bool CharterAllowsTwCore(string charterPath)
+    {
+        var lines = File.ReadAllLines(charterPath);
+        var dependencyRulesStart = Array.FindIndex(
+            lines,
+            line => string.Equals(line.Trim(), "dependency_rules:", StringComparison.Ordinal));
+        if (dependencyRulesStart < 0)
+        {
+            return false;
+        }
+
+        var dependencyRules = lines
+            .Skip(dependencyRulesStart + 1)
+            .TakeWhile(line => string.IsNullOrWhiteSpace(line) || char.IsWhiteSpace(line[0]))
+            .ToArray();
+        var allowStart = Array.FindIndex(
+            dependencyRules,
+            line => string.Equals(line.Trim(), "allow:", StringComparison.Ordinal));
+        if (allowStart < 0)
+        {
+            return false;
+        }
+
+        return dependencyRules
+            .Skip(allowStart + 1)
+            .TakeWhile(line => line.StartsWith("    - ", StringComparison.Ordinal))
+            .Select(line => line[6..].Trim().Trim('"', '\''))
+            .Any(dependency => string.Equals(dependency, "Tw.Core", StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>
     /// 判断缺失的目标测试是否仍由清单记录的前身测试项目承接
     /// </summary>
     /// <param name="targetTestPath">相对于 BuildingBlocks/tests 的目标测试路径</param>

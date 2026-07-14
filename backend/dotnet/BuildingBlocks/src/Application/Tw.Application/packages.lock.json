@@ -35,10 +35,7 @@
         "contentHash": "fmEbAUFsaIKirgLt/lYhuFRBwhcSJN31jjHgCdbQxJiWOum6EdLjkbgGuukSP9z/a+9LibaxII/kF+GwOXgC4g=="
       },
       "tw.application.contracts": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.Core": "[1.0.0, )"
-        }
+        "type": "Project"
       },
       "tw.core": {
         "type": "Project",

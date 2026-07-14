@@ -216,10 +216,7 @@
         }
       },
       "tw.application.contracts": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.Core": "[1.0.0, )"
-        }
+        "type": "Project"
       },
       "tw.core": {
         "type": "Project",

@@ -24,5 +24,3 @@ dependency_rules:
     - "FluentValidation"
     - "Microsoft.AspNetCore.*"
     - "SqlSugar*"
-  allow:
-    - Tw.Core

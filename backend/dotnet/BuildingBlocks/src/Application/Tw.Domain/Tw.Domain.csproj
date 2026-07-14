@@ -5,8 +5,4 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Foundation\Tw.Core\Tw.Core.csproj" />
-  </ItemGroup>
-
 </Project>
