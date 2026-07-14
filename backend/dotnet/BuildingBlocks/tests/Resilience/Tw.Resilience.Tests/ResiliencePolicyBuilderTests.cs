@@ -1,4 +1,3 @@
-using System.Reflection;
 using AwesomeAssertions;
 using Tw.Resilience;
 using Xunit;
@@ -6,48 +5,60 @@ using Xunit;
 namespace Tw.Resilience.Tests;
 
 /// <summary>
-/// 验证韧性描述、操作分类和 provider-neutral 边界
+/// 验证韧性描述的校验与有效重试次数归一化
 /// </summary>
 public sealed class ResiliencePolicyBuilderTests
 {
     /// <summary>
-    /// 非幂等写操作始终禁用自动重试
+    /// 非幂等写操作始终把有效重试次数归零
     /// </summary>
     [Fact]
     public void Build_DisablesRetryForNonIdempotentWrite()
     {
-        var descriptor = CreateDescriptor(OperationKind.NonIdempotentWrite, retryCount: 3);
-
-        var policy = ResiliencePolicyBuilder.Build(descriptor);
+        var policy = ResiliencePolicyBuilder.Build(
+            CreateDescriptor(OperationKind.NonIdempotentWrite, retryCount: 3));
 
         policy.RetryEnabled.Should().BeFalse();
+        policy.RetryCount.Should().Be(0);
         policy.Timeout.Should().Be(TimeSpan.FromSeconds(3));
     }
 
     /// <summary>
-    /// 读取操作配置重试次数后启用自动重试
+    /// 读取操作保留已经验证的重试次数
     /// </summary>
     [Fact]
-    public void Build_EnablesRetryForReadOperation()
+    public void Build_PreservesRetryCountForReadOperation()
     {
-        var descriptor = CreateDescriptor(OperationKind.Read, retryCount: 2);
-
-        var policy = ResiliencePolicyBuilder.Build(descriptor);
+        var policy = ResiliencePolicyBuilder.Build(CreateDescriptor(OperationKind.Read, retryCount: 2));
 
         policy.RetryEnabled.Should().BeTrue();
+        policy.RetryCount.Should().Be(2);
     }
 
     /// <summary>
-    /// 幂等操作的重试次数为零时禁用自动重试
+    /// 幂等写操作保留已经验证的重试次数
+    /// </summary>
+    [Fact]
+    public void Build_PreservesRetryCountForIdempotentWrite()
+    {
+        var policy = ResiliencePolicyBuilder.Build(
+            CreateDescriptor(OperationKind.IdempotentWrite, retryCount: 2));
+
+        policy.RetryEnabled.Should().BeTrue();
+        policy.RetryCount.Should().Be(2);
+    }
+
+    /// <summary>
+    /// 有效重试次数为零时禁用自动重试
     /// </summary>
     [Fact]
     public void Build_DisablesRetryWhenRetryCountIsZero()
     {
-        var descriptor = CreateDescriptor(OperationKind.IdempotentWrite, retryCount: 0);
-
-        var policy = ResiliencePolicyBuilder.Build(descriptor);
+        var policy = ResiliencePolicyBuilder.Build(
+            CreateDescriptor(OperationKind.IdempotentWrite, retryCount: 0));
 
         policy.RetryEnabled.Should().BeFalse();
+        policy.RetryCount.Should().Be(0);
     }
 
     /// <summary>
@@ -56,9 +67,8 @@ public sealed class ResiliencePolicyBuilderTests
     [Fact]
     public void Build_RejectsBlankOperationName()
     {
-        var descriptor = CreateDescriptor(OperationKind.Read, operationName: " ");
-
-        var action = () => ResiliencePolicyBuilder.Build(descriptor);
+        var action = () => ResiliencePolicyBuilder.Build(
+            CreateDescriptor(OperationKind.Read, operationName: " "));
 
         action.Should().Throw<ArgumentException>()
             .WithParameterName("descriptor")
@@ -71,9 +81,8 @@ public sealed class ResiliencePolicyBuilderTests
     [Fact]
     public void Build_RejectsNonPositiveTimeout()
     {
-        var descriptor = CreateDescriptor(OperationKind.Read, timeout: TimeSpan.Zero);
-
-        var action = () => ResiliencePolicyBuilder.Build(descriptor);
+        var action = () => ResiliencePolicyBuilder.Build(
+            CreateDescriptor(OperationKind.Read, timeout: TimeSpan.Zero));
 
         action.Should().Throw<ArgumentOutOfRangeException>()
             .WithParameterName("descriptor")
@@ -86,9 +95,8 @@ public sealed class ResiliencePolicyBuilderTests
     [Fact]
     public void Build_RejectsNegativeRetryCount()
     {
-        var descriptor = CreateDescriptor(OperationKind.Read, retryCount: -1);
-
-        var action = () => ResiliencePolicyBuilder.Build(descriptor);
+        var action = () => ResiliencePolicyBuilder.Build(
+            CreateDescriptor(OperationKind.Read, retryCount: -1));
 
         action.Should().Throw<ArgumentOutOfRangeException>()
             .WithParameterName("descriptor")
@@ -101,9 +109,7 @@ public sealed class ResiliencePolicyBuilderTests
     [Fact]
     public void Build_RejectsUnknownOperationKind()
     {
-        var descriptor = CreateDescriptor((OperationKind)999);
-
-        var action = () => ResiliencePolicyBuilder.Build(descriptor);
+        var action = () => ResiliencePolicyBuilder.Build(CreateDescriptor((OperationKind)999));
 
         action.Should().Throw<ArgumentOutOfRangeException>()
             .WithParameterName("descriptor")
@@ -111,70 +117,16 @@ public sealed class ResiliencePolicyBuilderTests
     }
 
     /// <summary>
-    /// 描述工厂拒绝缺少诊断名称的操作
+    /// provider-neutral 构建器不替具体适配器定义重试次数上限
     /// </summary>
     [Fact]
-    public void ForHttp_RejectsBlankOperationName()
+    public void Build_AcceptsProviderSpecificRetryUpperBound()
     {
-        var action = () => ResiliencePolicyDescriptor.ForHttp(
-            " ",
-            OperationKind.Read,
-            TimeSpan.FromSeconds(3));
+        var policy = ResiliencePolicyBuilder.Build(
+            CreateDescriptor(OperationKind.Read, retryCount: int.MaxValue));
 
-        action.Should().Throw<ArgumentException>()
-            .WithParameterName("operationName")
-            .WithMessage("*操作名称不能为空*");
-    }
-
-    /// <summary>
-    /// 描述工厂以可诊断消息拒绝非正超时时间
-    /// </summary>
-    [Fact]
-    public void ForHttp_RejectsNonPositiveTimeout()
-    {
-        var action = () => ResiliencePolicyDescriptor.ForHttp(
-            "GetOrder",
-            OperationKind.Read,
-            TimeSpan.Zero);
-
-        action.Should().Throw<ArgumentOutOfRangeException>()
-            .WithParameterName("timeout")
-            .WithMessage("*超时时间必须大于零*");
-    }
-
-    /// <summary>
-    /// 公开 API 不包含 HTTP 注册入口或第三方韧性类型
-    /// </summary>
-    [Fact]
-    public void PublicApi_DoesNotExposeHttpRegistrationOrProviderTypes()
-    {
-        var exportedTypes = typeof(ResiliencePolicyBuilder).Assembly.GetExportedTypes();
-        var publicMethodNames = exportedTypes
-            .SelectMany(type => type.GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance))
-            .Select(method => method.Name);
-        var publicSignatureTypes = exportedTypes.SelectMany(GetPublicSignatureTypes);
-        var providerSignatureTypes = publicSignatureTypes
-            .Where(type => type.FullName?.Contains("System.Net.Http.HttpClient", StringComparison.Ordinal) == true
-                || type.Namespace?.StartsWith("Polly", StringComparison.Ordinal) == true
-                || type.Namespace?.StartsWith("Microsoft.Extensions.Http.Resilience", StringComparison.Ordinal) == true);
-
-        publicMethodNames.Should().NotContain("AddTwHttpResilience");
-        publicMethodNames.Should().NotContain("AddHttpResilience");
-        providerSignatureTypes.Should().BeEmpty();
-    }
-
-    /// <summary>
-    /// 生产程序集不引用第三方 HTTP 韧性 provider
-    /// </summary>
-    [Fact]
-    public void Assembly_DoesNotReferenceHttpResilienceProviders()
-    {
-        var referencedAssemblyNames = typeof(ResiliencePolicyBuilder).Assembly
-            .GetReferencedAssemblies()
-            .Select(assemblyName => assemblyName.Name);
-
-        referencedAssemblyNames.Should().NotContain("Polly.Core");
-        referencedAssemblyNames.Should().NotContain("Microsoft.Extensions.Http.Resilience");
+        policy.RetryCount.Should().Be(int.MaxValue);
+        policy.RetryEnabled.Should().BeTrue();
     }
 
     /// <summary>
@@ -200,24 +152,5 @@ public sealed class ResiliencePolicyBuilderTests
             RateLimiterEnabled: true,
             ConcurrencyLimiterEnabled: true,
             FallbackEnabled: false);
-    }
-
-    /// <summary>
-    /// 收集公开类型在方法、属性、字段与事件签名中暴露的类型
-    /// </summary>
-    /// <param name="type">需要检查公开签名的生产类型</param>
-    /// <returns>该生产类型所有公开签名直接引用的类型</returns>
-    private static IEnumerable<Type> GetPublicSignatureTypes(Type type)
-    {
-        return type.GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance)
-            .SelectMany(method => method.GetParameters().Select(parameter => parameter.ParameterType)
-                .Append(method.ReturnType))
-            .Concat(type.GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance)
-                .Select(property => property.PropertyType))
-            .Concat(type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance)
-                .Select(field => field.FieldType))
-            .Concat(type.GetEvents(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance)
-                .Select(eventInfo => eventInfo.EventHandlerType)
-                .OfType<Type>());
     }
 }

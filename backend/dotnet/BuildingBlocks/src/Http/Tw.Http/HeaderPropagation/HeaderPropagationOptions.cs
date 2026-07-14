@@ -13,19 +13,20 @@ public sealed record HeaderPropagationOptions
     /// <param name="allowedHeaders">调用方明确允许传播的请求头名称集合</param>
     /// <exception cref="ArgumentNullException">allowedHeaders 为 null 时抛出</exception>
     /// <exception cref="ArgumentException">集合包含空白请求头名称时抛出</exception>
-    public HeaderPropagationOptions(IReadOnlySet<string> allowedHeaders)
+    public HeaderPropagationOptions(IEnumerable<string> allowedHeaders)
     {
         if (allowedHeaders is null)
         {
             throw new ArgumentNullException(nameof(allowedHeaders), "允许传播的请求头集合不能为空");
         }
 
-        if (allowedHeaders.Any(string.IsNullOrWhiteSpace))
+        var allowedHeaderSnapshot = allowedHeaders.ToArray();
+        if (allowedHeaderSnapshot.Any(string.IsNullOrWhiteSpace))
         {
             throw new ArgumentException("允许传播的请求头名称不能为空", nameof(allowedHeaders));
         }
 
-        AllowedHeaders = allowedHeaders.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
+        AllowedHeaders = allowedHeaderSnapshot.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
     }
 
     /// <summary>

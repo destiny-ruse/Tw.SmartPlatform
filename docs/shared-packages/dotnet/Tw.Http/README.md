@@ -6,7 +6,7 @@
 
 - `HttpHeaderNames` 提供平台约定的 Correlation 与租户请求头名称。
 - `HeaderPropagationOptions` 保存调用方允许列表的不可变、不区分大小写快照。
-- `HeaderPropagationPolicy` 只选择同时命中平台安全列表与调用方允许列表的现有请求头，不修改输入集合。
+- `HeaderPropagationPolicy` 只选择同时命中平台安全列表与调用方允许列表的现有请求头，不修改输入集合，并保留每个请求头的值顺序和值边界。
 - `X-Tenant-Id` 只有在服务端完成租户验证并使用 `HeaderTrustLevel.Verified` 时才允许传播。
 - `Authorization`、`Cookie`、`Set-Cookie` 和 `Proxy-Authorization` 始终拒绝自动传播，即使调用方把它们加入允许列表。
 
@@ -17,17 +17,19 @@
 ```csharp
 using Tw.Http.HeaderPropagation;
 
-var inboundHeaders = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+var inboundHeaders = new Dictionary<string, IReadOnlyList<string>>(StringComparer.OrdinalIgnoreCase)
 {
-    ["traceparent"] = "00-trace-parent",
-    ["X-Correlation-Id"] = "correlation-1",
-    ["X-Tenant-Id"] = "tenant-1"
+    ["traceparent"] = ["00-trace-parent"],
+    ["tracestate"] = ["vendor-a=value-a", "vendor-b=value-b"],
+    ["X-Correlation-Id"] = ["correlation-1"],
+    ["X-Tenant-Id"] = ["tenant-1"]
 };
 
 var options = new HeaderPropagationOptions(
     new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     {
         "traceparent",
+        "tracestate",
         "X-Correlation-Id",
         "X-Tenant-Id"
     });
@@ -38,7 +40,7 @@ var selectedHeaders = HeaderPropagationPolicy.SelectHeaders(
     HeaderTrustLevel.Verified);
 ```
 
-调用方应当把 `selectedHeaders` 复制到新建的出站请求，不得修改或复用入站请求头集合。输入存在仅大小写不同的可传播同名请求头时，策略会拒绝产生歧义结果。
+`selectedHeaders` 是不区分名称大小写的不可变字典，每个值列表也都是独立的不可变快照；原始字典或值列表的后续修改不会影响结果。调用方应当把这些值逐项复制到新建的出站请求，不能用分隔符拼接多值。输入存在 null 值集合、null 值项或仅大小写不同的可传播同名请求头时，策略会拒绝产生结果；未定义的 `HeaderTrustLevel` 同样按失败关闭处理。
 
 ## 重试边界
 
