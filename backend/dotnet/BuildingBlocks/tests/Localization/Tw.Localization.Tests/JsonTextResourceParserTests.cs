@@ -1,4 +1,5 @@
 ﻿using AwesomeAssertions;
+using System.Text.Json;
 using Tw.Localization.Json;
 using Xunit;
 
@@ -43,5 +44,19 @@ public class JsonTextResourceParserTests
         var act = () => JsonTextResourceParser.Parse("App", "bad.json", json);
 
         act.Should().Throw<LocalizationConfigurationException>();
+    }
+
+    /// <summary>
+    /// 验证畸形 JSON 保留底层解析异常作为诊断上下文
+    /// </summary>
+    [Fact]
+    public void Parse_WithMalformedJson_PreservesJsonExceptionAsInnerException()
+    {
+        const string json = """{ "culture": "zh-Hans", "texts": { "Greeting": "你好" }""";
+        var act = () => JsonTextResourceParser.Parse("App", "malformed.json", json);
+
+        var exception = act.Should().Throw<LocalizationConfigurationException>().Which;
+
+        exception.InnerException.Should().BeAssignableTo<JsonException>();
     }
 }

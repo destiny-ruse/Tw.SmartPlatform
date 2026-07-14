@@ -48,7 +48,7 @@ var ciphertext = AesCryptography.Encrypt("payload", Convert.ToBase64String(key),
 var plaintext = AesCryptography.Decrypt(ciphertext, Convert.ToBase64String(key), isKeyBase64: true);
 ```
 
-CBC 等非 ECB 模式在未显式传入 IV 时会将生成的 IV 前置到密文载荷；解密时会读取该前缀。显式传入 IV 时，调用方必须以相同 IV 解密。密钥必须来自受控密钥来源，不得写入代码、日志、测试夹具或文档示例。
+CBC 等非 ECB 模式在未显式传入 IV 时会将生成的 IV 前置到密文载荷；解密时会读取该前缀。显式传入 IV 时，调用方必须以相同 IV 解密。密钥必须来自受控密钥来源。真实密钥和生产密钥不得进入代码、日志、测试夹具或文档示例；兼容性测试允许使用公开、合成、非秘密的标准兼容性测试向量，并必须明确其测试用途。
 
 ## RSA
 

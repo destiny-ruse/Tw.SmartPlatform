@@ -25,6 +25,9 @@
       "tw.configuration": {
         "type": "Project"
       },
+      "tw.core": {
+        "type": "Project"
+      },
       "tw.dependencyinjection": {
         "type": "Project",
         "dependencies": {
@@ -53,7 +56,10 @@
         }
       },
       "tw.security": {
-        "type": "Project"
+        "type": "Project",
+        "dependencies": {
+          "Tw.Core": "[1.0.0, )"
+        }
       },
       "Microsoft.Extensions.DependencyModel": {
         "type": "CentralTransitive",
