@@ -4,7 +4,7 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供 provider-neutral 的分片描述契约与异步调用链分片上下文。
+  提供与具体提供方无关的分片描述契约与异步调用链分片上下文。
 in_scope:
   - 分片描述值对象
   - 当前分片契约
@@ -13,7 +13,7 @@ in_scope:
 out_of_scope:
   - 数据库连接路由
   - 分片路由策略
-  - provider-specific 分片存储
+  - 特定提供方的分片存储
 public_capabilities:
   - Tw.Sharding
 dependency_rules:

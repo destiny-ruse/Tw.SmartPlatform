@@ -6,7 +6,7 @@ namespace Tw.Architecture.Tests;
 /// <summary>
 /// 固定多租户与分片契约合并后的项目和命名空间边界
 /// </summary>
-public sealed class TenancyAndShardingRetirementBoundaryTests
+public sealed partial class PackageConsolidationTests
 {
     /// <summary>
     /// Task 11 删除的两个运行时项目路径

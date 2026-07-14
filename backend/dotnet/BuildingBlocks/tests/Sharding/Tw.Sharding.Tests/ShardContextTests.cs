@@ -86,11 +86,12 @@ public sealed class ShardContextTests
     public void ChangeScope_Dispose_IsIdempotent()
     {
         var context = new ShardContext();
-        var scope = context.Change(new ShardDescriptor("month", "orders-2026"));
+        var retiredScope = context.Change(new ShardDescriptor("month", "orders-2026"));
 
-        scope.Dispose();
-        scope.Dispose();
+        retiredScope.Dispose();
+        using var activeScope = context.Change(new ShardDescriptor("tenant", "tenant-a"));
+        retiredScope.Dispose();
 
-        context.Current.Should().Be(ShardDescriptor.None);
+        context.Current.Should().Be(new ShardDescriptor("tenant", "tenant-a"));
     }
 }
