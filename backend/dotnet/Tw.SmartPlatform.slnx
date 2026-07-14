@@ -100,7 +100,6 @@
     <Project Path="BuildingBlocks/src/TextTemplating/Tw.TextTemplating/Tw.TextTemplating.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Web/">
-    <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Abstractions/Tw.AspNetCore.Abstractions.csproj" />
     <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Grpc/Tw.AspNetCore.Grpc.csproj" />
     <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Localization/Tw.AspNetCore.Localization.csproj" Id="936f3743-bb2e-4d8d-8d35-a813ecd6d67e" />
     <Project Path="BuildingBlocks/src/Web/Tw.AspNetCore.Mvc.NewtonsoftJson/Tw.AspNetCore.Mvc.NewtonsoftJson.csproj" />

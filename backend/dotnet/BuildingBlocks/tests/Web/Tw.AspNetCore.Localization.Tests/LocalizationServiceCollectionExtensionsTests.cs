@@ -35,9 +35,9 @@ public class LocalizationServiceCollectionExtensionsTests
 
         sp.GetRequiredService<ITextLocalizer>().Should().NotBeNull();
         sp.GetRequiredService<ICurrentLocalizationContextAccessor>().Should().BeOfType<CurrentLocalizationContextAccessor>();
-        sp.GetRequiredService<IStringLocalizerFactory>().Should().BeOfType<TwStringLocalizerFactory>();
+        sp.GetRequiredService<IStringLocalizerFactory>().Should().BeOfType<StaticSnapshotStringLocalizerFactory>();
         sp.GetRequiredService<IStringLocalizer<LocalizationServiceCollectionExtensionsTests>>()
-          .Should().BeOfType<TwStringLocalizer<LocalizationServiceCollectionExtensionsTests>>();
+          .Should().BeOfType<StaticSnapshotStringLocalizer<LocalizationServiceCollectionExtensionsTests>>();
     }
 
     /// <summary>

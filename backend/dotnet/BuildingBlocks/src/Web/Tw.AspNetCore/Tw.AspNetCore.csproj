@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Foundation\Tw.DependencyInjection\Tw.DependencyInjection.csproj" />
-    <ProjectReference Include="..\Tw.AspNetCore.Abstractions\Tw.AspNetCore.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -72,12 +72,8 @@
       "tw.aspnetcore": {
         "type": "Project",
         "dependencies": {
-          "Tw.AspNetCore.Abstractions": "[1.0.0, )",
           "Tw.DependencyInjection": "[1.0.0, )"
         }
-      },
-      "tw.aspnetcore.abstractions": {
-        "type": "Project"
       },
       "tw.dependencyinjection": {
         "type": "Project",

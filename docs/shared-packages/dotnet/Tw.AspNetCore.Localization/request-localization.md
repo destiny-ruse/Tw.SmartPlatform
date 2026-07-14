@@ -6,7 +6,7 @@
 
 - `RequestLocalizationMiddleware`：从请求上下文中解析当前文化，写入 `ICurrentLocalizationContextAccessor`；当文化来自路由或查询参数显式切换时自动写入持久化 Cookie。
 - `ICurrentLocalizationContextAccessor`：在业务代码中无需直接依赖 `HttpContext` 即可读取当前请求的 `LocalizationContext`。
-- `TwStringLocalizer` / `TwStringLocalizer<TResource>`：`IStringLocalizer` 适配器，桥接 ASP.NET Core 标准接口与 `Tw.Localization` 静态 JSON 快照。
+- `StaticSnapshotStringLocalizer` / `StaticSnapshotStringLocalizer<TResource>`：`IStringLocalizer` 适配器，桥接 ASP.NET Core 标准接口与 `Tw.Localization` 静态 JSON 快照。
 - `LocalizationResourceDto` / `LocalizationTextDto`：运行时导出 DTO，供业务应用构建本地化资源查询接口。
 
 ## DI 注册
@@ -102,7 +102,7 @@ public class OrderService(
 
 ## IStringLocalizer 静态快照边界
 
-`TwStringLocalizer` 和 `TwStringLocalizer<TResource>` 实现了 ASP.NET Core 标准的 `IStringLocalizer` 接口，适用于与现有 ASP.NET Core 本地化生态（如 DataAnnotations 验证消息）集成的场景。
+`StaticSnapshotStringLocalizer` 和 `StaticSnapshotStringLocalizer<TResource>` 实现了 ASP.NET Core 标准的 `IStringLocalizer` 接口，适用于与现有 ASP.NET Core 本地化生态（如 DataAnnotations 验证消息）集成的场景。
 
 **边界约束**：`IStringLocalizer` 适配器只读取**静态 JSON 快照**（`IStaticTextSnapshot`），不访问动态文本覆盖（`IDynamicTextStore`）。同步 `IStringLocalizer` 接口不支持异步 I/O，因此无法访问可能涉及数据库的动态来源。
 

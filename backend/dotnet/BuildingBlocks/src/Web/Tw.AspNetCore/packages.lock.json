@@ -2,9 +2,6 @@
   "version": 2,
   "dependencies": {
     "net10.0": {
-      "tw.aspnetcore.abstractions": {
-        "type": "Project"
-      },
       "tw.dependencyinjection": {
         "type": "Project",
         "dependencies": {

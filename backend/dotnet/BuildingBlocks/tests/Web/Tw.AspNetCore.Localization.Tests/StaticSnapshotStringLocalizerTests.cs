@@ -2,24 +2,25 @@
 using Microsoft.Extensions.Localization;
 using Tw.Localization;
 using Tw.Localization.Json;
-using TwLocalizationOptions = Tw.Localization.LocalizationOptions;
+using CoreLocalizationOptions = Tw.Localization.LocalizationOptions;
 using Xunit;
 
 namespace Tw.AspNetCore.Localization.Tests;
 
 /// <summary>
-/// 覆盖TwStringLocalizer的核心行为和边界条件
+/// 覆盖静态快照字符串本地化器的核心行为和边界条件
 /// </summary>
-public class TwStringLocalizerTests
+public sealed class StaticSnapshotStringLocalizerTests
 {
-    // 用于工厂和泛型本地化器测试的私有标记类型
     /// <summary>
-    /// 覆盖示例资源的核心行为和边界条件
+    /// 标识工厂与泛型本地化器测试使用的资源范围
     /// </summary>
-    private sealed class SampleResource { }
+    private sealed class SampleResource
+    {
+    }
 
     /// <summary>
-    /// 验证ndexer返回StaticSnapshot文本
+    /// 索引器返回静态快照中命中的文本
     /// </summary>
     [Fact]
     public void Indexer_ReturnsStaticSnapshotText()
@@ -27,8 +28,8 @@ public class TwStringLocalizerTests
         var snapshot = new StaticTextSnapshot(
             [new JsonTextResource("App", "zh-Hans", new Dictionary<string, string> { ["Menu"] = "菜单" })]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        IStringLocalizer localizer = new TwStringLocalizer(snapshot, accessor, options, "App");
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        IStringLocalizer localizer = new StaticSnapshotStringLocalizer(snapshot, accessor, options, "App");
 
         var value = localizer["Menu"];
 
@@ -37,15 +38,15 @@ public class TwStringLocalizerTests
     }
 
     /// <summary>
-    /// 验证ndexer返回键针对缺少文本
+    /// 索引器在文本缺失时返回原始键
     /// </summary>
     [Fact]
     public void Indexer_ReturnsKeyForMissingText()
     {
         var snapshot = new StaticTextSnapshot([]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        IStringLocalizer localizer = new TwStringLocalizer(snapshot, accessor, options, "App");
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        IStringLocalizer localizer = new StaticSnapshotStringLocalizer(snapshot, accessor, options, "App");
 
         var value = localizer["Missing"];
 
@@ -53,9 +54,8 @@ public class TwStringLocalizerTests
         value.ResourceNotFound.Should().BeTrue();
     }
 
-    // Fix 3 - 测试 1：this[name, args] 对已找到的模板正确格式化
     /// <summary>
-    /// 验证FormattingIndexerFormatFound模板
+    /// 格式化索引器使用调用参数格式化命中的模板
     /// </summary>
     [Fact]
     public void FormattingIndexer_FormatFoundTemplate()
@@ -63,8 +63,8 @@ public class TwStringLocalizerTests
         var snapshot = new StaticTextSnapshot(
             [new JsonTextResource("App", "zh-Hans", new Dictionary<string, string> { ["Greeting"] = "你好 {0}" })]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        IStringLocalizer localizer = new TwStringLocalizer(snapshot, accessor, options, "App");
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        IStringLocalizer localizer = new StaticSnapshotStringLocalizer(snapshot, accessor, options, "App");
 
         var value = localizer["Greeting", "张三"];
 
@@ -72,17 +72,16 @@ public class TwStringLocalizerTests
         value.ResourceNotFound.Should().BeFalse();
     }
 
-    // Fix 3 - 测试 2：this[name, args] 对缺失键返回键名（不格式化，不抛异常）
     /// <summary>
-    /// 验证FormattingIndexer缺少键返回键Unformatted不带Throwing
+    /// 格式化索引器在文本缺失时返回未格式化的原始键
     /// </summary>
     [Fact]
     public void FormattingIndexer_MissingKey_ReturnsKeyUnformattedWithoutThrowing()
     {
         var snapshot = new StaticTextSnapshot([]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        IStringLocalizer localizer = new TwStringLocalizer(snapshot, accessor, options, "App");
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        IStringLocalizer localizer = new StaticSnapshotStringLocalizer(snapshot, accessor, options, "App");
 
         // 键名含大括号，若对键名本身调用 string.Format 会抛出 FormatException
         var act = () => localizer["Key.{missing}", "arg1"];
@@ -93,9 +92,8 @@ public class TwStringLocalizerTests
         value.ResourceNotFound.Should().BeTrue();
     }
 
-    // Fix 3 - 测试 3：GetAllStrings(true) 返回包含父级/默认文化的全集
     /// <summary>
-    /// 验证读取AllStringsInclude父级Cultures返回Merged写入
+    /// 包含父级文化时返回当前文化与默认文化的合并结果
     /// </summary>
     [Fact]
     public void GetAllStrings_IncludeParentCultures_ReturnsMergedSet()
@@ -113,8 +111,8 @@ public class TwStringLocalizerTests
             })
         ]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        IStringLocalizer localizer = new TwStringLocalizer(snapshot, accessor, options, "App");
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        IStringLocalizer localizer = new StaticSnapshotStringLocalizer(snapshot, accessor, options, "App");
 
         var all = localizer.GetAllStrings(includeParentCultures: true).ToList();
         var keys = all.Select(s => s.Name).ToHashSet();
@@ -124,9 +122,8 @@ public class TwStringLocalizerTests
         keys.Should().Contain("World");
     }
 
-    // Fix 3 - 测试 4：GetAllStrings(false) 仅返回当前文化条目
     /// <summary>
-    /// 验证读取AllStringsExclude父级CulturesRestricts到Current文化
+    /// 不包含父级文化时只返回当前文化的条目
     /// </summary>
     [Fact]
     public void GetAllStrings_ExcludeParentCultures_RestrictsToCurrentCulture()
@@ -144,8 +141,8 @@ public class TwStringLocalizerTests
             })
         ]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        IStringLocalizer localizer = new TwStringLocalizer(snapshot, accessor, options, "App");
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        IStringLocalizer localizer = new StaticSnapshotStringLocalizer(snapshot, accessor, options, "App");
 
         var all = localizer.GetAllStrings(includeParentCultures: false).ToList();
         var keys = all.Select(s => s.Name).ToHashSet();
@@ -155,9 +152,8 @@ public class TwStringLocalizerTests
         keys.Should().NotContain("OnlyEnUs");
     }
 
-    // Fix 3 - 测试 5：accessor.Current 为 null 时回退到 options.DefaultCulture
     /// <summary>
-    /// 验证ndexerAccessorCurrent空值Falls回到默认文化
+    /// 请求上下文缺失时索引器回退到默认文化
     /// </summary>
     [Fact]
     public void Indexer_AccessorCurrentNull_FallsBackToDefaultCulture()
@@ -166,8 +162,8 @@ public class TwStringLocalizerTests
             [new JsonTextResource("App", "en-US", new Dictionary<string, string> { ["Title"] = "Title" })]);
         // accessor.Current 故意保持 null
         var accessor = new CurrentLocalizationContextAccessor { Current = null };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        IStringLocalizer localizer = new TwStringLocalizer(snapshot, accessor, options, "App");
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        IStringLocalizer localizer = new StaticSnapshotStringLocalizer(snapshot, accessor, options, "App");
 
         var value = localizer["Title"];
 
@@ -175,19 +171,18 @@ public class TwStringLocalizerTests
         value.ResourceNotFound.Should().BeFalse();
     }
 
-    // Fix 3 - 测试 6：TwStringLocalizerFactory.Create(Type) 绑定到类型简单名
     /// <summary>
-    /// 验证Factory创建By类型Binds到Simple名称
+    /// 工厂使用资源类型的简单名称定位静态快照资源
     /// </summary>
     [Fact]
     public void Factory_CreateByType_BindsToSimpleName()
     {
-        var resourceName = typeof(SampleResource).Name; // "SampleResource"
+        var resourceName = typeof(SampleResource).Name;
         var snapshot = new StaticTextSnapshot(
             [new JsonTextResource(resourceName, "zh-Hans", new Dictionary<string, string> { ["Key"] = "值" })]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        var factory = new TwStringLocalizerFactory(snapshot, accessor, options);
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        var factory = new StaticSnapshotStringLocalizerFactory(snapshot, accessor, options);
 
         var localizer = factory.Create(typeof(SampleResource));
         var value = localizer["Key"];
@@ -196,9 +191,8 @@ public class TwStringLocalizerTests
         value.ResourceNotFound.Should().BeFalse();
     }
 
-    // Fix 3 - 测试 7：TwStringLocalizerFactory.Create(string, string) 绑定到 baseName，忽略 location
     /// <summary>
-    /// 验证Factory创建By基类名称IgnoresLocation
+    /// 工厂使用资源基础名称定位资源并忽略程序集位置
     /// </summary>
     [Fact]
     public void Factory_CreateByBaseName_IgnoresLocation()
@@ -206,8 +200,8 @@ public class TwStringLocalizerTests
         var snapshot = new StaticTextSnapshot(
             [new JsonTextResource("App", "zh-Hans", new Dictionary<string, string> { ["Footer"] = "页脚" })]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        var factory = new TwStringLocalizerFactory(snapshot, accessor, options);
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        var factory = new StaticSnapshotStringLocalizerFactory(snapshot, accessor, options);
 
         var localizer = factory.Create("App", "ignored-location");
         var value = localizer["Footer"];
@@ -216,21 +210,20 @@ public class TwStringLocalizerTests
         value.ResourceNotFound.Should().BeFalse();
     }
 
-    // Fix 3 - 测试 8：TwStringLocalizer<TResource> 泛型类委托给工厂创建的 localizer
     /// <summary>
-    /// 验证GenericLocalizerDelegates到Factory
+    /// 泛型本地化器委托给工厂创建的资源专用本地化器
     /// </summary>
     [Fact]
     public void GenericLocalizer_DelegatesToFactory()
     {
-        var resourceName = typeof(SampleResource).Name; // "SampleResource"
+        var resourceName = typeof(SampleResource).Name;
         var snapshot = new StaticTextSnapshot(
             [new JsonTextResource(resourceName, "zh-Hans", new Dictionary<string, string> { ["Name"] = "名称" })]);
         var accessor = new CurrentLocalizationContextAccessor { Current = new LocalizationContext("zh-Hans") };
-        var options = new TwLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
-        var factory = new TwStringLocalizerFactory(snapshot, accessor, options);
+        var options = new CoreLocalizationOptions { DefaultCulture = "en-US", SupportedCultures = { "en-US", "zh-Hans" } };
+        var factory = new StaticSnapshotStringLocalizerFactory(snapshot, accessor, options);
 
-        IStringLocalizer<SampleResource> localizer = new TwStringLocalizer<SampleResource>(factory);
+        IStringLocalizer<SampleResource> localizer = new StaticSnapshotStringLocalizer<SampleResource>(factory);
         var value = localizer["Name"];
 
         value.Value.Should().Be("名称");

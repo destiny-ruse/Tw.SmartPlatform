@@ -36,8 +36,8 @@ services.AddLocalization(options =>
 1. 调用核心 `Tw.Localization` 的 `AddLocalization(...)`：注册 `ITextLocalizer`、`IStaticTextSnapshot`、`IEntityTranslationService` 等核心服务（均为 Singleton）。
 2. 以 **Scoped** 生命周期注册以下 Web 适配服务（均使用 `TryAddScoped`，可被业务实现覆盖）：
    - `ICurrentLocalizationContextAccessor`（实现 `CurrentLocalizationContextAccessor`）：从当前请求读取 `LocalizationContext`。
-   - `IStringLocalizerFactory`（实现 `TwStringLocalizerFactory`）：`IStringLocalizer` 工厂，读取静态 JSON 快照。
-   - 开放泛型 `IStringLocalizer<>`（实现 `TwStringLocalizer<>`）：`IStringLocalizer` 泛型适配器。
+   - `IStringLocalizerFactory`（实现 `StaticSnapshotStringLocalizerFactory`）：创建只读取静态 JSON 快照的字符串本地化器。
+   - 开放泛型 `IStringLocalizer<>`（实现 `StaticSnapshotStringLocalizer<>`）：将资源类型绑定到静态快照字符串本地化器。
 
 > **生命周期说明**：工厂与适配器刻意注册为 Scoped 而非 Singleton，避免对 Scoped 的 `ICurrentLocalizationContextAccessor` 产生捕获依赖（captive dependency）。
 

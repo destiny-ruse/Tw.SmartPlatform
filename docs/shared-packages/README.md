@@ -2,6 +2,8 @@
 
 本目录是共享包对内使用文档总索引，按语言分区。
 
+ASP.NET Core 入口协议契约、健康检查路由与宿主集成统一由 `Tw.AspNetCore` 提供，本地化适配仍由可选包 `Tw.AspNetCore.Localization` 提供。
+
 ## 语言分区
 
 - [.NET 共享包](dotnet/README.md)

@@ -2,7 +2,7 @@
 
 本页是 `backend/dotnet/BuildingBlocks/src` 下 .NET 共享包的使用文档索引，按包跳转。
 
-领域实体审计、并发与软删除标记由 `Tw.Domain` 提供；工作单元、事务边界和数据访问契约由 `Tw.Data` 提供；提供方无关的租户与分片契约分别由 `Tw.MultiTenancy` 和 `Tw.Sharding` 提供。服务专用 DTO、共享枚举、错误码和领域契约保留在各自限界上下文内，不进入全局 Building Block。
+领域实体审计、并发与软删除标记由 `Tw.Domain` 提供；工作单元、事务边界和数据访问契约由 `Tw.Data` 提供；提供方无关的租户与分片契约分别由 `Tw.MultiTenancy` 和 `Tw.Sharding` 提供；ASP.NET Core 入口协议契约由 `Tw.AspNetCore` 提供。服务专用 DTO、共享枚举、错误码和领域契约保留在各自限界上下文内，不进入全局 Building Block。
 
 ## Current Packages
 
@@ -28,7 +28,6 @@
 - [Tw.Sharding](Tw.Sharding/README.md)
 - [Tw.EventBus](Tw.EventBus/README.md)
 - [Tw.EventBus.Cap](Tw.EventBus.Cap/README.md)
-- [Tw.AspNetCore.Abstractions](Tw.AspNetCore.Abstractions/README.md)
 - [Tw.AspNetCore.Swashbuckle](Tw.AspNetCore.Swashbuckle/README.md)
 - [Tw.Http](Tw.Http/README.md)
 - [Tw.Grpc](Tw.Grpc/README.md)

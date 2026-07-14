@@ -1,55 +1,43 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Localization;
 using Tw.Localization;
-using TwLocalizationOptions = Tw.Localization.LocalizationOptions;
+using CoreLocalizationOptions = Tw.Localization.LocalizationOptions;
 
 namespace Tw.AspNetCore.Localization;
 
 /// <summary>
-/// 为 <see cref="IServiceCollection"/> 提供 Web 层本地化聚合注册入口，
-/// 串联核心本地化能力（<c>Tw.Localization</c>）、
-/// 以及 <see cref="IStringLocalizer"/> 适配器，
-/// 完成完整的 Web 本地化服务注册。
+/// 提供 ASP.NET Core 请求本地化与字符串本地化的服务注册入口
 /// </summary>
-/// <remarks>
-/// 本类中注册的 <see cref="ICurrentLocalizationContextAccessor"/>、<see cref="IStringLocalizerFactory"/>
-/// 和开放泛型 <see cref="IStringLocalizer{T}"/> 均以 <b>Scoped</b> 生命周期注册，确保每个 HTTP 请求
-/// 拥有独立的上下文访问器实例，避免单例工厂捕获 Scoped 访问器所引发的俘虏依赖问题。
-/// </remarks>
 public static class LocalizationServiceCollectionExtensions
 {
     /// <summary>
-    /// 注册 Web 层本地化全部能力，包括：
-    /// <list type="bullet">
-    ///   <item><description>核心本地化服务（<see cref="ITextLocalizer"/>、<see cref="IStaticTextSnapshot"/> 等）</description></item>
-    ///   <item><description>Scoped 的 <see cref="ICurrentLocalizationContextAccessor"/>（<see cref="CurrentLocalizationContextAccessor"/>）</description></item>
-    ///   <item><description>Scoped 的 <see cref="IStringLocalizerFactory"/>（<see cref="TwStringLocalizerFactory"/>）</description></item>
-    ///   <item><description>Scoped 的开放泛型 <see cref="IStringLocalizer{T}"/>（<see cref="TwStringLocalizer{TResource}"/>）</description></item>
-    /// </list>
+    /// 注册核心本地化、请求上下文和静态快照字符串本地化适配器
     /// </summary>
-    /// <param name="services">服务容器</param>
-    /// <param name="configure">用于配置 <see cref="Tw.Localization.LocalizationOptions"/> 的委托</param>
-    /// <returns>同一 <see cref="IServiceCollection"/> 实例，便于链式调用</returns>
+    /// <param name="services">接收本地化服务注册的服务集合</param>
+    /// <param name="configure">配置默认文化与支持文化范围的委托</param>
+    /// <returns>调用方传入的同一服务集合</returns>
     /// <exception cref="ArgumentNullException">
-    /// 当 <paramref name="services"/> 或 <paramref name="configure"/> 为 <see langword="null"/> 时抛出
+    /// <paramref name="services"/> 或 <paramref name="configure"/> 为 <see langword="null"/> 时抛出
     /// </exception>
     /// <remarks>
-    /// 使用 <see cref="ServiceCollectionDescriptorExtensions.TryAddScoped"/> 注册适配器服务，
-    /// 业务应用可在调用本方法前注册自定义实现以覆盖默认值。
+    /// 请求上下文访问器、字符串本地化器工厂和开放泛型本地化器使用 Scoped 生命周期
+    /// 调用方可在本方法执行前注册自定义实现以覆盖默认适配器
     /// </remarks>
     public static IServiceCollection AddLocalization(
         this IServiceCollection services,
-        Action<TwLocalizationOptions> configure)
+        Action<CoreLocalizationOptions> configure)
     {
         Check.NotNull(services);
         Check.NotNull(configure);
 
-        global::Tw.Localization.LocalizationServiceCollectionExtensions.AddLocalization(services, configure);
+        global::Tw.Localization.LocalizationServiceCollectionExtensions.AddLocalization(
+            services,
+            configure);
 
         services.TryAddScoped<ICurrentLocalizationContextAccessor, CurrentLocalizationContextAccessor>();
-        services.TryAddScoped<IStringLocalizerFactory, TwStringLocalizerFactory>();
-        services.TryAddScoped(typeof(IStringLocalizer<>), typeof(TwStringLocalizer<>));
+        services.TryAddScoped<IStringLocalizerFactory, StaticSnapshotStringLocalizerFactory>();
+        services.TryAddScoped(typeof(IStringLocalizer<>), typeof(StaticSnapshotStringLocalizer<>));
 
         return services;
     }

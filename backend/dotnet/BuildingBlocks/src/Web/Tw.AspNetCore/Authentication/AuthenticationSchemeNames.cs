@@ -1,17 +1,17 @@
-﻿namespace Tw.AspNetCore.Abstractions;
+namespace Tw.AspNetCore.Authentication;
 
 /// <summary>
-/// 封装认证Scheme名称集合相关的数据和行为
+/// 提供 ASP.NET Core 认证边界使用的标准方案名称
 /// </summary>
 public static class AuthenticationSchemeNames
 {
     /// <summary>
-    /// 当前类型内部复用的Bearer常量值
+    /// HTTP Bearer 令牌认证方案名称
     /// </summary>
     public const string Bearer = "Bearer";
 
     /// <summary>
-    /// 当前类型内部复用的Cookies常量值
+    /// Cookie 认证方案名称
     /// </summary>
     public const string Cookies = "Cookies";
 }

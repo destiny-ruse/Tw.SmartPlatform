@@ -5,11 +5,15 @@ stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
   基于 WebApplicationBuilder 的跨协议宿主启动与聚合入口，统一承载
-  Web API 与 gRPC 等 ASP.NET Core 宿主在组合根中的 Microsoft DI 自动注册。
+  Web API 与 gRPC 等 ASP.NET Core 宿主在组合根中的 Microsoft DI 自动注册，
+  并提供认证方案、协议错误和请求关联等入口协议契约。
 in_scope:
   - HTTP 宿主治理
   - 异常处理中间件
   - 认证边界选项
+  - 认证方案名称契约
+  - 协议错误契约
+  - 请求关联契约
   - 应用限流
   - 健康检查端点
   - 宿主启动聚合入口
@@ -26,6 +30,9 @@ out_of_scope:
   - gRPC interceptor 等 gRPC 专属能力
   - 普通 Worker 与 Generic Host 专属启动入口
 public_capabilities:
+  - Tw.AspNetCore.Authentication
+  - Tw.AspNetCore.Correlation
+  - Tw.AspNetCore.Errors
   - Tw.AspNetCore.Middleware
   - Tw.AspNetCore.Security
   - Tw.AspNetCore.RateLimiting
@@ -39,5 +46,4 @@ dependency_rules:
     - "Tw.Castle.*"
     - "Tw.DependencyInjection.Autofac"
   allow:
-    - Tw.AspNetCore.Abstractions
     - Tw.DependencyInjection
