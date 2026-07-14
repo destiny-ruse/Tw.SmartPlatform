@@ -171,12 +171,6 @@
         }
       },
       "tw.sharding": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.Sharding.Abstractions": "[1.0.0, )"
-        }
-      },
-      "tw.sharding.abstractions": {
         "type": "Project"
       },
       "Newtonsoft.Json": {

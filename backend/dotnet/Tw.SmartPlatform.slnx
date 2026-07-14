@@ -76,7 +76,6 @@
     <Project Path="BuildingBlocks/src/Localization/Tw.Localization/Tw.Localization.csproj" Id="e8620234-7f4b-4bcf-933f-815d1803224c" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/MultiTenancy/">
-    <Project Path="BuildingBlocks/src/MultiTenancy/Tw.MultiTenancy.Abstractions/Tw.MultiTenancy.Abstractions.csproj" />
     <Project Path="BuildingBlocks/src/MultiTenancy/Tw.MultiTenancy/Tw.MultiTenancy.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Observability/">
@@ -88,7 +87,6 @@
     <Project Path="BuildingBlocks/src/Resilience/Tw.Resilience/Tw.Resilience.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/Sharding/">
-    <Project Path="BuildingBlocks/src/Sharding/Tw.Sharding.Abstractions/Tw.Sharding.Abstractions.csproj" />
     <Project Path="BuildingBlocks/src/Sharding/Tw.Sharding/Tw.Sharding.csproj" />
   </Folder>
   <Folder Name="/BuildingBlocks/src/TestBase/">

@@ -1,12 +1,12 @@
-﻿namespace Tw.MultiTenancy.Abstractions;
+namespace Tw.MultiTenancy;
 
 /// <summary>
-/// 定义Current租户的能力边界
+/// 提供当前调用链已经解析的租户身份
 /// </summary>
 public interface ICurrentTenant
 {
     /// <summary>
-    /// 值在当前对象中的业务含义
+    /// 当前调用链使用的租户身份
     /// </summary>
     CurrentTenant Value { get; }
 }

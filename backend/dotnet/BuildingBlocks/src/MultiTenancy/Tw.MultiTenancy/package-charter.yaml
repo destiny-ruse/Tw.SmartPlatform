@@ -4,13 +4,16 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供认证后的租户解析与租户一致性规则。
+  提供 provider-neutral 的当前租户契约、租户身份值对象与认证后租户一致性解析。
 in_scope:
+  - 当前租户契约
+  - 租户身份值对象
   - 租户解析器
   - 令牌租户与提示租户冲突检测
 out_of_scope:
   - JWT 校验
-  - 数据访问
+  - HTTP 租户访问器
+  - provider-specific 租户存储
   - 分片策略
 public_capabilities:
   - Tw.MultiTenancy
@@ -19,5 +22,4 @@ dependency_rules:
     - "Microsoft.AspNetCore.*"
     - "SqlSugar*"
     - "DotNetCore.CAP*"
-  allow:
-    - Tw.MultiTenancy.Abstractions
+  allow: []

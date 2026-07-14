@@ -4,14 +4,16 @@ owner: platform-team
 stability: experimental
 compatibility: "experimental 阶段不承诺兼容"
 responsibility: >
-  提供面向租户与资源感知路由决策的异步流分片上下文。
+  提供 provider-neutral 的分片描述契约与异步调用链分片上下文。
 in_scope:
+  - 分片描述值对象
+  - 当前分片契约
   - 分片上下文
   - 作用域内分片切换
 out_of_scope:
-  - SqlSugar 连接路由
-  - 租户解析
-  - CAP 存储分区
+  - 数据库连接路由
+  - 分片路由策略
+  - provider-specific 分片存储
 public_capabilities:
   - Tw.Sharding
 dependency_rules:
@@ -19,5 +21,4 @@ dependency_rules:
     - "Microsoft.AspNetCore.*"
     - "SqlSugar*"
     - "DotNetCore.CAP*"
-  allow:
-    - Tw.Sharding.Abstractions
+  allow: []

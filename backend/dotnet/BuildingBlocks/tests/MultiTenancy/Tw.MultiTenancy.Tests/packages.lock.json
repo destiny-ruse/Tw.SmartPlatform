@@ -171,12 +171,6 @@
         }
       },
       "tw.multitenancy": {
-        "type": "Project",
-        "dependencies": {
-          "Tw.MultiTenancy.Abstractions": "[1.0.0, )"
-        }
-      },
-      "tw.multitenancy.abstractions": {
         "type": "Project"
       },
       "Newtonsoft.Json": {

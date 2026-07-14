@@ -1,27 +1,26 @@
-﻿using Tw.Sharding.Abstractions;
-
 namespace Tw.Sharding;
 
 /// <summary>
-/// 封装Shard上下文相关的数据和行为
+/// 在异步调用链中保存并恢复当前分片描述
 /// </summary>
 public sealed class ShardContext : IShardContext
 {
     /// <summary>
-    /// 保存当前类型处理流程依赖的current
+    /// 当前异步调用链显式选择的分片描述
     /// </summary>
     private readonly AsyncLocal<ShardDescriptor?> _current = new();
 
     /// <summary>
-    /// Current在当前对象中的业务含义
+    /// 当前作用域的分片描述；未指定时为空分片描述
     /// </summary>
     public ShardDescriptor Current => _current.Value ?? ShardDescriptor.None;
 
     /// <summary>
-    /// 说明Change在当前类型中的职责
+    /// 在新作用域内切换分片描述，并在作用域释放时恢复先前描述
     /// </summary>
-    /// <param name="descriptor">用于提供描述符</param>
-    /// <returns>方法完成后返回给调用方的结果对象</returns>
+    /// <param name="descriptor">新作用域使用的分片描述</param>
+    /// <returns>负责恢复先前分片描述的作用域</returns>
+    /// <exception cref="ArgumentNullException">descriptor 为 null 时抛出</exception>
     public IDisposable Change(ShardDescriptor descriptor)
     {
         ArgumentNullException.ThrowIfNull(descriptor);
@@ -32,17 +31,18 @@ public sealed class ShardContext : IShardContext
     }
 
     /// <summary>
-    /// 封装Restore作用域相关的数据和行为
+    /// 释放时恢复先前分片描述的幂等作用域
     /// </summary>
+    /// <param name="restore">首次释放作用域时调用的恢复操作</param>
     private sealed class RestoreScope(Action restore) : IDisposable
     {
         /// <summary>
-        /// 保存当前类型处理流程依赖的disposed
+        /// 作用域是否已经执行恢复操作
         /// </summary>
         private bool _disposed;
 
         /// <summary>
-        /// 说明释放在当前类型中的职责
+        /// 首次调用时恢复先前分片描述，后续调用不产生副作用
         /// </summary>
         public void Dispose()
         {
