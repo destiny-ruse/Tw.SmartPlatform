@@ -13,4 +13,8 @@
     <PackageReference Include="System.CommandLine" />
     <PackageReference Include="Spectre.Console" />
   </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Tw.Cli.Tests" />
+  </ItemGroup>
 </Project>

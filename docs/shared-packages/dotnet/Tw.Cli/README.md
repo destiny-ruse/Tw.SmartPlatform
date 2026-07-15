@@ -24,7 +24,7 @@ dotnet run --project backend/dotnet/tools/src/Tw.Cli/Tw.Cli.csproj -- audit depe
 - `Tw.AspNetCore` 对 Autofac、Castle 和基础设施提供程序的引用
 - Application、Domain 项目对 SqlSugar、CAP、Quartz、YARP、Redis、Autofac 和 Castle 的引用
 
-扫描器从仓库根到项目目录读取 `Directory.Build.props` 和 `Directory.Build.targets`，并递归读取静态显式 `Import`。为避免条件分支成为治理绕过，扫描器保守检查所有条件下声明的受治理引用；动态属性、item、metadata 或动态导入无法静态求值时返回 `TWGOV000`。导入循环通过已访问文件集合终止，导入不得越出仓库边界。`bin`、`obj`、模板目录与 `Tw.Templates/content` 不进入仓库项目枚举。
+扫描器从仓库根到项目目录读取 `Directory.Build.props` 和 `Directory.Build.targets`，并递归读取静态显式 `Import`。为避免条件分支成为治理绕过，扫描器保守检查所有条件下声明的受治理引用；动态属性、item、metadata 或动态导入无法静态求值时返回 `TWGOV000`。导入循环通过遵循宿主文件系统大小写语义的已访问文件集合终止。导入除词法路径必须位于仓库内之外，还会逐组件解析文件、符号链接与 Windows 重解析点的最终物理目标；任何指向仓库外或无法安全解析的链接均返回 `TWGOV000`，且不会读取目标内容。`bin`、`obj`、模板目录与 `Tw.Templates/content` 不进入仓库项目枚举。
 
 ### 诊断仓库
 

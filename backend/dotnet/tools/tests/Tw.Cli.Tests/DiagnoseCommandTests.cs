@@ -99,6 +99,81 @@ public sealed class DiagnoseCommandTests
     }
 
     /// <summary>
+    /// 分号分隔且混用 Windows/Unix 分隔符的 ProjectReference 必须逐项解析
+    /// </summary>
+    [Fact]
+    public void Diagnose_ResolvesEachSemicolonSeparatedProjectReference()
+    {
+        using var repository = TestRepository.Create();
+        var projectDirectory = Path.GetDirectoryName(repository.RuntimeProjectPath)!;
+        var firstReference = Path.Combine(projectDirectory, "References", "A", "A.csproj");
+        var secondReference = Path.Combine(projectDirectory, "References", "B", "B.csproj");
+        Directory.CreateDirectory(Path.GetDirectoryName(firstReference)!);
+        Directory.CreateDirectory(Path.GetDirectoryName(secondReference)!);
+        File.WriteAllText(firstReference, "<Project />");
+        File.WriteAllText(secondReference, "<Project />");
+        File.WriteAllText(
+            repository.RuntimeProjectPath,
+            "<Project><ItemGroup><ProjectReference Include=\"References/A/A.csproj;References\\B\\B.csproj\" /></ItemGroup></Project>");
+        var service = new RepositoryDiagnosisService(
+            new ProjectDependencyScanner(),
+            new RecordingLockedRestoreRunner(0));
+
+        var report = service.Diagnose(repository.RootPath);
+
+        report.UnresolvedProjectReferences.Should().BeEmpty();
+    }
+
+    /// <summary>
+    /// 分号引用中只有缺失项必须产生诊断，现存项不得被合并误报
+    /// </summary>
+    [Fact]
+    public void Diagnose_ReportsOnlyMissingSemicolonSeparatedProjectReference()
+    {
+        using var repository = TestRepository.Create();
+        var projectDirectory = Path.GetDirectoryName(repository.RuntimeProjectPath)!;
+        var existingReference = Path.Combine(projectDirectory, "References", "A", "A.csproj");
+        Directory.CreateDirectory(Path.GetDirectoryName(existingReference)!);
+        File.WriteAllText(existingReference, "<Project />");
+        File.WriteAllText(
+            repository.RuntimeProjectPath,
+            "<Project><ItemGroup><ProjectReference Include=\"References/A/A.csproj;References\\B\\B.csproj\" /></ItemGroup></Project>");
+        var service = new RepositoryDiagnosisService(
+            new ProjectDependencyScanner(),
+            new RecordingLockedRestoreRunner(0));
+
+        var report = service.Diagnose(repository.RootPath);
+
+        report.UnresolvedProjectReferences.Should().ContainSingle()
+            .Which.Should().EndWith(" -> References/B/B.csproj");
+    }
+
+    /// <summary>
+    /// 分号引用中的动态表达式必须逐项 fail closed，不得污染静态现存项
+    /// </summary>
+    [Fact]
+    public void Diagnose_ReportsDynamicSemicolonSeparatedProjectReferencePerItem()
+    {
+        using var repository = TestRepository.Create();
+        var projectDirectory = Path.GetDirectoryName(repository.RuntimeProjectPath)!;
+        var existingReference = Path.Combine(projectDirectory, "References", "A", "A.csproj");
+        Directory.CreateDirectory(Path.GetDirectoryName(existingReference)!);
+        File.WriteAllText(existingReference, "<Project />");
+        File.WriteAllText(
+            repository.RuntimeProjectPath,
+            "<Project><ItemGroup><ProjectReference Include=\"References/A/A.csproj;$(GeneratedRoot)/B.csproj\" /></ItemGroup></Project>");
+        var service = new RepositoryDiagnosisService(
+            new ProjectDependencyScanner(),
+            new RecordingLockedRestoreRunner(0));
+
+        var report = service.Diagnose(repository.RootPath);
+
+        report.UnresolvedProjectReferences.Should().ContainSingle()
+            .Which.Should().EndWith(
+                " has unresolved ProjectReference expression $(GeneratedRoot)/B.csproj");
+    }
+
+    /// <summary>
     /// 验证 locked restore 的非零退出码由诊断命令原样传播
     /// </summary>
     [Fact]

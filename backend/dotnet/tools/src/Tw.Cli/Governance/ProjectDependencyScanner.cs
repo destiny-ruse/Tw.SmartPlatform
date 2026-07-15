@@ -30,6 +30,39 @@ public sealed class ProjectDependencyScanner
     ];
 
     /// <summary>
+    /// 已访问导入路径使用的宿主文件系统比较器
+    /// </summary>
+    private readonly StringComparer _visitedPathComparer;
+
+    /// <summary>
+    /// 已存在导入文件的物理仓库边界检查器
+    /// </summary>
+    private readonly IRepositoryPhysicalPathInspector _physicalPathInspector;
+
+    /// <summary>
+    /// 使用当前宿主路径语义与真实物理边界检查器创建扫描器
+    /// </summary>
+    public ProjectDependencyScanner()
+        : this(
+            MsBuildPath.FileSystemPathComparer(OperatingSystem.IsWindows()),
+            new RepositoryPhysicalPathInspector())
+    {
+    }
+
+    /// <summary>
+    /// 使用可控路径语义与物理边界检查器创建扫描器
+    /// </summary>
+    /// <param name="visitedPathComparer">已访问导入路径比较器</param>
+    /// <param name="physicalPathInspector">已存在导入文件的物理边界检查器</param>
+    internal ProjectDependencyScanner(
+        StringComparer visitedPathComparer,
+        IRepositoryPhysicalPathInspector physicalPathInspector)
+    {
+        _visitedPathComparer = visitedPathComparer ?? throw new ArgumentNullException(nameof(visitedPathComparer));
+        _physicalPathInspector = physicalPathInspector ?? throw new ArgumentNullException(nameof(physicalPathInspector));
+    }
+
+    /// <summary>
     /// 扫描仓库并返回发现的治理问题
     /// </summary>
     /// <param name="repositoryPath">待扫描仓库的根目录路径</param>
@@ -101,13 +134,13 @@ public sealed class ProjectDependencyScanner
     /// <param name="repositoryPath">限制导入读取范围的仓库根目录</param>
     /// <param name="packageCatalog">当前仓库淘汰包目录</param>
     /// <returns>项目及其导入文件产生的治理结果</returns>
-    private static DependencyScanResult ScanProjectFile(
+    private DependencyScanResult ScanProjectFile(
         string projectPath,
         string repositoryPath,
         ForbiddenPackageCatalog packageCatalog)
     {
         var result = new DependencyScanResult();
-        var visitedFiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var visitedFiles = new HashSet<string>(_visitedPathComparer);
         var repositoryRoot = Path.GetFullPath(repositoryPath);
         var automaticImportDirectories = AncestorDirectories(
             Path.GetDirectoryName(projectPath)!,
@@ -159,7 +192,7 @@ public sealed class ProjectDependencyScanner
     /// <param name="visitedFiles">用于终止导入循环的已访问路径集合</param>
     /// <param name="result">累计治理错误的扫描结果</param>
     /// <param name="required">文件缺失时是否报告配置错误</param>
-    private static void ScanImportedFile(
+    private void ScanImportedFile(
         string filePath,
         string consumerProjectPath,
         string repositoryRoot,
@@ -188,6 +221,15 @@ public sealed class ProjectDependencyScanner
                     $"MSBuild import does not exist: {filePath}"));
             }
 
+            return;
+        }
+
+        if (!_physicalPathInspector.IsWithinRepository(fullPath, repositoryRoot))
+        {
+            result.Errors.Add(new DependencyScanError(
+                "TWGOV000",
+                consumerProjectPath,
+                $"MSBuild import crosses the physical repository boundary: {filePath}"));
             return;
         }
 
@@ -335,9 +377,7 @@ public sealed class ProjectDependencyScanner
                         || string.Equals(attribute.Name.LocalName, "Update", StringComparison.OrdinalIgnoreCase)))
             })
             .Where(entry => entry.Attribute is not null)
-            .SelectMany(entry => entry.Attribute!.Value.Split(
-                    ';',
-                    StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .SelectMany(entry => MsBuildPath.SplitItemSpecs(entry.Attribute!.Value)
                 .Select(itemSpec => new ProjectReferenceEntry(
                     entry.Element.Name.LocalName,
                     entry.Attribute.Name.LocalName,
@@ -357,9 +397,7 @@ public sealed class ProjectDependencyScanner
                 .Where(attribute => attribute.Name.Namespace == XNamespace.None
                     && string.Equals(attribute.Name.LocalName, "Project", StringComparison.OrdinalIgnoreCase))
                 .Take(1)
-                .SelectMany(attribute => attribute.Value.Split(
-                    ';',
-                    StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)));
+                .SelectMany(attribute => MsBuildPath.SplitItemSpecs(attribute.Value)));
     }
 
     /// <summary>
@@ -509,6 +547,113 @@ public sealed class ProjectDependencyScanner
 }
 
 /// <summary>
+/// 检查已存在路径的最终物理位置是否仍位于仓库根内
+/// </summary>
+internal interface IRepositoryPhysicalPathInspector
+{
+    /// <summary>
+    /// 判断已存在路径的物理解析结果是否保持在仓库根内
+    /// </summary>
+    /// <param name="existingPath">已确认存在的文件绝对路径</param>
+    /// <param name="repositoryRoot">仓库根绝对路径</param>
+    /// <returns>路径未通过物理链接越界时返回 <see langword="true"/></returns>
+    bool IsWithinRepository(string existingPath, string repositoryRoot);
+}
+
+/// <summary>
+/// 生产环境的仓库物理路径检查器
+/// </summary>
+internal sealed class RepositoryPhysicalPathInspector : IRepositoryPhysicalPathInspector
+{
+    /// <inheritdoc />
+    public bool IsWithinRepository(string existingPath, string repositoryRoot)
+    {
+        try
+        {
+            var fullRepositoryRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(repositoryRoot));
+            var fullExistingPath = Path.GetFullPath(existingPath);
+            var relativePath = Path.GetRelativePath(fullRepositoryRoot, fullExistingPath);
+            if (!IsWithinRoot(relativePath))
+            {
+                return false;
+            }
+
+            var rootInfo = new DirectoryInfo(fullRepositoryRoot);
+            var physicalRepositoryRoot = ResolveComponent(rootInfo);
+            if (physicalRepositoryRoot is null)
+            {
+                return false;
+            }
+
+            var currentPhysicalPath = physicalRepositoryRoot;
+            foreach (var segment in relativePath.Split(
+                         [Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar],
+                         StringSplitOptions.RemoveEmptyEntries))
+            {
+                var candidatePath = Path.Combine(currentPhysicalPath, segment);
+                FileSystemInfo component = Directory.Exists(candidatePath)
+                    ? new DirectoryInfo(candidatePath)
+                    : new FileInfo(candidatePath);
+                if (!component.Exists)
+                {
+                    return false;
+                }
+
+                var resolvedComponent = ResolveComponent(component);
+                if (resolvedComponent is null
+                    || !IsWithinRoot(Path.GetRelativePath(physicalRepositoryRoot, resolvedComponent)))
+                {
+                    return false;
+                }
+
+                currentPhysicalPath = resolvedComponent;
+            }
+
+            return true;
+        }
+        catch (Exception exception) when (exception is IOException
+            or UnauthorizedAccessException
+            or NotSupportedException
+            or System.Security.SecurityException)
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 返回组件本身或链接链的最终目标；无法安全解析重解析点时返回空
+    /// </summary>
+    /// <param name="component">已存在的目录或文件组件</param>
+    /// <returns>规范化物理路径，无法解析时返回 <see langword="null"/></returns>
+    private static string? ResolveComponent(FileSystemInfo component)
+    {
+        var isLink = component.LinkTarget is not null
+            || (component.Attributes & FileAttributes.ReparsePoint) != 0;
+        if (!isLink)
+        {
+            return Path.GetFullPath(component.FullName);
+        }
+
+        var finalTarget = component.ResolveLinkTarget(returnFinalTarget: true);
+        return finalTarget is null
+            ? null
+            : Path.GetFullPath(finalTarget.FullName);
+    }
+
+    /// <summary>
+    /// 判断相对路径是否表示根目录本身或根目录内部
+    /// </summary>
+    /// <param name="relativePath">由 <see cref="Path.GetRelativePath(string, string)"/> 返回的路径</param>
+    /// <returns>相对路径未逃逸根目录时返回 <see langword="true"/></returns>
+    private static bool IsWithinRoot(string relativePath)
+    {
+        return !relativePath.Equals("..", StringComparison.Ordinal)
+            && !relativePath.StartsWith($"..{Path.DirectorySeparatorChar}", StringComparison.Ordinal)
+            && !Path.IsPathRooted(relativePath);
+    }
+}
+
+/// <summary>
 /// 承载依赖扫描处理后的结果数据
 /// </summary>
 public sealed class DependencyScanResult
@@ -545,5 +690,31 @@ internal static class MsBuildPath
         return itemSpec
             .Replace('\\', directorySeparator)
             .Replace('/', directorySeparator);
+    }
+
+    /// <summary>
+    /// 返回符合目标宿主文件系统大小写语义的路径比较器
+    /// </summary>
+    /// <param name="isWindows">目标宿主是否为 Windows</param>
+    /// <returns>Windows 不区分大小写，其他宿主区分大小写的序数比较器</returns>
+    internal static StringComparer FileSystemPathComparer(bool isWindows)
+    {
+        return isWindows
+            ? StringComparer.OrdinalIgnoreCase
+            : StringComparer.Ordinal;
+    }
+
+    /// <summary>
+    /// 将分号分隔的 MSBuild item-spec 拆分为独立静态项
+    /// </summary>
+    /// <param name="itemSpecs">来自 Include、Update 或 Project 的原始值</param>
+    /// <returns>去除空项和首尾空白后的 item-spec 集合</returns>
+    internal static IReadOnlyList<string> SplitItemSpecs(string? itemSpecs)
+    {
+        return string.IsNullOrWhiteSpace(itemSpecs)
+            ? []
+            : itemSpecs.Split(
+                ';',
+                StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
     }
 }

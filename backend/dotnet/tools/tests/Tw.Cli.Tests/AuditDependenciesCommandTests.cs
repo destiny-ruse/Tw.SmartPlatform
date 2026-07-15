@@ -336,6 +336,156 @@ public sealed class AuditDependenciesCommandTests
     }
 
     /// <summary>
+    /// 已访问导入路径必须按目标宿主的文件系统大小写语义去重
+    /// </summary>
+    /// <param name="isWindows">是否模拟 Windows 宿主</param>
+    /// <param name="expectedCount">两个仅大小写不同路径的预期集合大小</param>
+    [Theory]
+    [InlineData(false, 2)]
+    [InlineData(true, 1)]
+    public void MsBuildPath_SelectsVisitedFileComparerForTargetHost(bool isWindows, int expectedCount)
+    {
+        var pathType = typeof(ProjectDependencyScanner).Assembly.GetType("Tw.Cli.Governance.MsBuildPath");
+        var comparerMethod = pathType?.GetMethod(
+            "FileSystemPathComparer",
+            System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
+
+        comparerMethod.Should().NotBeNull();
+        var comparer = (StringComparer)comparerMethod!.Invoke(null, [isWindows])!;
+        var visitedFiles = new HashSet<string>(comparer)
+        {
+            "rules/A.props",
+            "rules/a.props"
+        };
+
+        visitedFiles.Should().HaveCount(expectedCount);
+    }
+
+    /// <summary>
+    /// 大小写敏感文件系统中的两个同名异大小写导入必须分别扫描
+    /// </summary>
+    [Fact]
+    public void ScanRepository_ScansCaseDistinctImportsOnCaseSensitiveHosts()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        repository.WriteFile("rules/A.props", "<Project><Import Project=\"a.props\" /></Project>");
+        repository.WriteFile(
+            "rules/a.props",
+            "<Project><ItemGroup><PackageReference Include=\"Tw.Http.Client\" /></ItemGroup></Project>");
+        if (Directory.GetFiles(Path.Combine(repository.RootPath, "rules"), "*.props").Length != 2)
+        {
+            return;
+        }
+
+        repository.WriteFile(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project><Import Project=\"..\\..\\rules\\A.props\" /></Project>");
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV002");
+        result.Errors.Should().NotContain(error => error.Code == "TWGOV000");
+    }
+
+    /// <summary>
+    /// Windows 中同一文件的大小写变体导入循环必须由已访问集合终止
+    /// </summary>
+    [Fact]
+    public void ScanRepository_TerminatesCaseVariantImportLoopOnWindows()
+    {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
+        using var repository = TemporaryAuditRepository.Create();
+        repository.WriteFile("rules/A.props", "<Project><Import Project=\"a.props\" /></Project>");
+        repository.WriteFile(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project><Import Project=\"..\\..\\rules\\A.props\" /></Project>");
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().BeEmpty();
+    }
+
+    /// <summary>
+    /// 物理路径检查器拒绝导入时必须 fail closed，且不得解析被拒绝文件内容
+    /// </summary>
+    [Fact]
+    public void ScanRepository_RejectsImportWhenPhysicalInspectorReportsBoundaryEscape()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        var deniedImportPath = repository.WriteFile(
+            "rules/linked.props",
+            "<Project><ItemGroup><PackageReference Include=\"Tw.Http.Client\" /></ItemGroup></Project>");
+        repository.WriteFile(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project><Import Project=\"..\\..\\rules\\linked.props\" /></Project>");
+        var inspector = new DenyingPhysicalPathInspector(deniedImportPath);
+        var scanner = new ProjectDependencyScanner(
+            MsBuildPath.FileSystemPathComparer(OperatingSystem.IsWindows()),
+            inspector);
+
+        var result = scanner.ScanRepository(repository.RootPath);
+
+        inspector.InspectedPaths.Should().Contain(path => path == Path.GetFullPath(deniedImportPath));
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV000");
+        result.Errors.Should().NotContain(error => error.Code == "TWGOV002");
+    }
+
+    /// <summary>
+    /// 仓库内目录链接指向仓库外导入时必须拒绝，且不得读取外部项目内容
+    /// </summary>
+    [Fact]
+    public void ScanRepository_RejectsImportThroughExternalDirectoryLink()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        var externalRoot = Path.Combine(Path.GetTempPath(), $"tw-audit-external-{Guid.NewGuid():N}");
+        var linkPath = Path.Combine(repository.RootPath, "rules", "external");
+        var linkCreated = false;
+        try
+        {
+            Directory.CreateDirectory(externalRoot);
+            File.WriteAllText(
+                Path.Combine(externalRoot, "retired.props"),
+                "<Project><ItemGroup><PackageReference Include=\"Tw.Http.Client\" /></ItemGroup></Project>");
+            Directory.CreateDirectory(Path.GetDirectoryName(linkPath)!);
+            try
+            {
+                Directory.CreateSymbolicLink(linkPath, externalRoot);
+                linkCreated = true;
+            }
+            catch (Exception exception) when (OperatingSystem.IsWindows()
+                && exception is UnauthorizedAccessException or IOException or PlatformNotSupportedException)
+            {
+                return;
+            }
+
+            repository.WriteFile(
+                "src/Billing.Application/Billing.Application.csproj",
+                "<Project><Import Project=\"..\\..\\rules\\external\\retired.props\" /></Project>");
+
+            var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+            result.Errors.Should().ContainSingle(error => error.Code == "TWGOV000");
+            result.Errors.Should().NotContain(error => error.Code == "TWGOV002");
+        }
+        finally
+        {
+            if (linkCreated)
+            {
+                Directory.Delete(linkPath);
+            }
+
+            if (Directory.Exists(externalRoot))
+            {
+                Directory.Delete(externalRoot, recursive: true);
+            }
+        }
+    }
+
+    /// <summary>
     /// 坏 XML 与动态显式导入必须统一返回 TWGOV000
     /// </summary>
     [Fact]
@@ -575,6 +725,44 @@ public sealed class AuditDependenciesCommandTests
             {
                 Directory.Delete(RootPath, recursive: true);
             }
+        }
+    }
+
+    /// <summary>
+    /// 对指定路径返回越界结果的确定性物理路径检查器
+    /// </summary>
+    private sealed class DenyingPhysicalPathInspector : IRepositoryPhysicalPathInspector
+    {
+        /// <summary>
+        /// 模拟物理越界的规范化绝对路径
+        /// </summary>
+        private readonly string _deniedPath;
+
+        /// <summary>
+        /// 当前宿主文件系统使用的路径比较器
+        /// </summary>
+        private readonly StringComparer _pathComparer = MsBuildPath.FileSystemPathComparer(OperatingSystem.IsWindows());
+
+        /// <summary>
+        /// 使用需要拒绝的绝对路径创建检查器
+        /// </summary>
+        /// <param name="deniedPath">需要模拟物理越界的已存在文件</param>
+        internal DenyingPhysicalPathInspector(string deniedPath)
+        {
+            _deniedPath = Path.GetFullPath(deniedPath);
+        }
+
+        /// <summary>
+        /// 记录扫描器实际请求检查的路径
+        /// </summary>
+        internal List<string> InspectedPaths { get; } = [];
+
+        /// <inheritdoc />
+        public bool IsWithinRepository(string existingPath, string repositoryRoot)
+        {
+            var fullPath = Path.GetFullPath(existingPath);
+            InspectedPaths.Add(fullPath);
+            return !_pathComparer.Equals(fullPath, _deniedPath);
         }
     }
 }

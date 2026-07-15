@@ -205,26 +205,30 @@ public sealed class RepositoryDiagnosisService
                          .Where(element => element.Name.LocalName == "ProjectReference")
                          .Select(element => element.Attribute("Include")?.Value))
             {
-                if (string.IsNullOrWhiteSpace(include))
+                var itemSpecs = MsBuildPath.SplitItemSpecs(include);
+                if (itemSpecs.Count == 0)
                 {
                     yield return $"{RelativePath(repositoryPath, projectPath)} has ProjectReference without Include";
                     continue;
                 }
 
-                if (include.Contains("$(", StringComparison.Ordinal)
-                    || include.Contains("@(", StringComparison.Ordinal)
-                    || include.Contains("%(", StringComparison.Ordinal))
+                foreach (var itemSpec in itemSpecs)
                 {
-                    yield return $"{RelativePath(repositoryPath, projectPath)} has unresolved ProjectReference expression {include}";
-                    continue;
-                }
+                    if (itemSpec.Contains("$(", StringComparison.Ordinal)
+                        || itemSpec.Contains("@(", StringComparison.Ordinal)
+                        || itemSpec.Contains("%(", StringComparison.Ordinal))
+                    {
+                        yield return $"{RelativePath(repositoryPath, projectPath)} has unresolved ProjectReference expression {itemSpec}";
+                        continue;
+                    }
 
-                var referencedPath = Path.GetFullPath(Path.Combine(
-                    Path.GetDirectoryName(projectPath)!,
-                    MsBuildPath.NormalizeFileSystemPath(include, Path.DirectorySeparatorChar)));
-                if (!File.Exists(referencedPath))
-                {
-                    yield return $"{RelativePath(repositoryPath, projectPath)} -> {NormalizePath(include)}";
+                    var referencedPath = Path.GetFullPath(Path.Combine(
+                        Path.GetDirectoryName(projectPath)!,
+                        MsBuildPath.NormalizeFileSystemPath(itemSpec, Path.DirectorySeparatorChar)));
+                    if (!File.Exists(referencedPath))
+                    {
+                        yield return $"{RelativePath(repositoryPath, projectPath)} -> {NormalizePath(itemSpec)}";
+                    }
                 }
             }
         }
