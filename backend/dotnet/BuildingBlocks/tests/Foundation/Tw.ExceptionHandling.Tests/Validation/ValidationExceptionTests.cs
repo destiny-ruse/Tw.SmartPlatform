@@ -42,4 +42,22 @@ public sealed class ValidationExceptionTests
         act.Should().Throw<ArgumentNullException>()
             .WithParameterName("errors");
     }
+
+    /// <summary>
+    /// 错误集合包含空元素时拒绝创建存在不完整诊断上下文的验证异常
+    /// </summary>
+    [Fact]
+    public void Constructor_NullErrorElement_ThrowsArgumentException()
+    {
+        ValidationError[] errors =
+        [
+            new("customer.name", "VALIDATION:REQUIRED", "客户名称不能为空"),
+            null!
+        ];
+
+        var act = () => new ValidationException(errors);
+
+        act.Should().Throw<ArgumentException>()
+            .WithParameterName("errors");
+    }
 }

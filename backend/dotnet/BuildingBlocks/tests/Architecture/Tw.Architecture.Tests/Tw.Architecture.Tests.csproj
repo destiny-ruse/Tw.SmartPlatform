@@ -16,4 +16,8 @@
     <PackageReference Include="YamlDotNet" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\tools\src\Tw.Analyzers\Tw.Analyzers.csproj" />
+  </ItemGroup>
+
 </Project>

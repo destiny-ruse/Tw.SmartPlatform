@@ -39,12 +39,15 @@ public sealed class DefaultExceptionToErrorMapperTests
         ];
         var mapper = new DefaultExceptionToErrorMapper();
 
-        var error = mapper.Map(new ValidationException(validationErrors));
+        var exception = new ValidationException(validationErrors);
+
+        var error = mapper.Map(exception);
 
         error.Code.Should().Be("VALIDATION:000001");
         error.Message.Should().Be("输入验证失败");
         error.Category.Should().Be(ErrorCategory.Validation);
         error.ValidationErrors.Should().Equal(validationErrors);
+        error.ValidationErrors.Should().NotBeSameAs(exception.Errors);
     }
 
     /// <summary>

@@ -14,7 +14,7 @@ namespace Tw.Observability.Serilog.Tests;
 public sealed class SerilogBuilderExtensionsTests
 {
     /// <summary>
-    /// 注册脱敏扩展后，写入管道的敏感标量属性由脱敏器替换
+    /// 注册脱敏扩展后敏感标量属性由脱敏器替换
     /// </summary>
     [Fact]
     public void EnrichWithSensitiveDataRedaction_RegistersRedactingEnricher()
@@ -31,6 +31,52 @@ public sealed class SerilogBuilderExtensionsTests
         var sensitiveProperty = logEvent.Properties["AccessToken"]
             .Should().BeOfType<ScalarValue>().Subject;
         sensitiveProperty.Value.Should().Be("***");
+    }
+
+    /// <summary>
+    /// 对同一配置重复注册时仅首个脱敏器生效且单个事件只脱敏一次
+    /// </summary>
+    [Fact]
+    public void EnrichWithSensitiveDataRedaction_RepeatedRegistration_UsesFirstMaskerOnce()
+    {
+        var firstMasker = new RecordingDataMasker("first-mask");
+        var secondMasker = new RecordingDataMasker("second-mask");
+        var sink = new CapturingSink();
+        var configuration = new LoggerConfiguration();
+
+        configuration.EnrichWithSensitiveDataRedaction(firstMasker);
+        configuration.EnrichWithSensitiveDataRedaction(secondMasker);
+
+        using var logger = configuration.WriteTo.Sink(sink).CreateLogger();
+        logger.Information("访问凭据 {AccessToken}", "token-abcdef");
+
+        firstMasker.CallCount.Should().Be(1);
+        secondMasker.CallCount.Should().Be(0);
+        sink.Events.Should().ContainSingle().Subject.Properties["AccessToken"]
+            .Should().BeEquivalentTo(new ScalarValue("first-mask"));
+    }
+
+    /// <summary>
+    /// 并发注册同一个脱敏器时仅安装一个事件丰富器
+    /// </summary>
+    [Fact]
+    public void EnrichWithSensitiveDataRedaction_ConcurrentRegistration_InstallsSingleEnricher()
+    {
+        var dataMasker = new RecordingDataMasker("concurrent-mask");
+        var sink = new CapturingSink();
+        var configuration = new LoggerConfiguration();
+
+        Parallel.For(
+            fromInclusive: 0,
+            toExclusive: 32,
+            _ => configuration.EnrichWithSensitiveDataRedaction(dataMasker));
+
+        using var logger = configuration.WriteTo.Sink(sink).CreateLogger();
+        logger.Information("访问凭据 {AccessToken}", "token-abcdef");
+
+        dataMasker.CallCount.Should().Be(1);
+        sink.Events.Should().ContainSingle().Subject.Properties["AccessToken"]
+            .Should().BeEquivalentTo(new ScalarValue("concurrent-mask"));
     }
 
     /// <summary>
@@ -60,6 +106,34 @@ public sealed class SerilogBuilderExtensionsTests
     }
 
     /// <summary>
+    /// 记录脱敏调用次数并返回固定替换值
+    /// </summary>
+    private sealed class RecordingDataMasker(string replacement) : IDataMasker
+    {
+        /// <summary>
+        /// 已执行的脱敏调用次数
+        /// </summary>
+        private int _callCount;
+
+        /// <summary>
+        /// 获取已执行的脱敏调用次数
+        /// </summary>
+        public int CallCount => Volatile.Read(ref _callCount);
+
+        /// <summary>
+        /// 记录调用并返回固定替换值
+        /// </summary>
+        /// <param name="value">原始值</param>
+        /// <param name="kind">敏感数据类别</param>
+        /// <returns>固定替换值</returns>
+        public string Mask(string? value, SensitiveDataKind kind)
+        {
+            Interlocked.Increment(ref _callCount);
+            return replacement;
+        }
+    }
+
+    /// <summary>
     /// 保存测试期间写入的结构化日志事件
     /// </summary>
     private sealed class CapturingSink : ILogEventSink
@@ -70,7 +144,7 @@ public sealed class SerilogBuilderExtensionsTests
         private readonly List<LogEvent> _events = [];
 
         /// <summary>
-        /// 测试断言可读取的日志事件快照
+        /// 获取测试断言可读取的日志事件快照
         /// </summary>
         public IReadOnlyList<LogEvent> Events => _events;
 

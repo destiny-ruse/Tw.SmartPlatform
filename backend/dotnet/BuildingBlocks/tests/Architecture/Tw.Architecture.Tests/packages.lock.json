@@ -194,6 +194,9 @@
           "xunit.v3.runner.common": "[3.2.2]"
         }
       },
+      "tw.analyzers": {
+        "type": "Project"
+      },
       "Microsoft.CodeAnalysis.Analyzers": {
         "type": "CentralTransitive",
         "requested": "[5.3.0, )",

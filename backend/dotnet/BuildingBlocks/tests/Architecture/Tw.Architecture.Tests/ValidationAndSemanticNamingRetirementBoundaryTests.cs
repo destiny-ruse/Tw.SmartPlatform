@@ -1,7 +1,10 @@
+using System.Collections.Immutable;
+using System.Xml.Linq;
 using AwesomeAssertions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Diagnostics;
+using Tw.Analyzers.Rules;
 using Xunit;
 
 namespace Tw.Architecture.Tests;
@@ -29,15 +32,10 @@ public sealed partial class PackageConsolidationTests
     ];
 
     /// <summary>
-    /// 生产声明中受治理的框架品牌分段
+    /// 运行真实分析器所需的平台元数据引用
     /// </summary>
-    private const string FrameworkBrandSegment = "Tw";
-
-    /// <summary>
-    /// 唯一允许保留品牌分段的生产类型声明路径
-    /// </summary>
-    private const string ApprovedExceptionTypePath =
-        "backend/dotnet/BuildingBlocks/src/Foundation/Tw.Core/Exceptions/TwException.cs";
+    private static readonly ImmutableArray<MetadataReference> PlatformMetadataReferences =
+        CreatePlatformMetadataReferences();
 
     /// <summary>
     /// 验证契约历史项目、引用、依赖锁与活动文档不能重新出现
@@ -82,40 +80,100 @@ public sealed partial class PackageConsolidationTests
     }
 
     /// <summary>
-    /// BuildingBlocks 与工具生产源码的声明标识符只能为批准异常类型保留品牌分段
+    /// BuildingBlocks 与工具生产项目必须通过正式品牌标识符分析器
     /// </summary>
+    /// <returns>异步分析全部生产项目的任务</returns>
     [Fact]
-    public void ProductionDeclarations_OnlyApprovedExceptionTypeUsesBrandIdentifierSegment()
+    public async Task ProductionProjects_PassForbiddenBrandIdentifierAnalyzer()
     {
-        var scan = ScanBrandIdentifierDeclarations(ProductionSourceFiles());
+        var violations = new List<string>();
 
-        scan.ApprovedExceptionTypeCount.Should().Be(
-            1,
-            "Tw.Exceptions.TwException 必须是生产源码中唯一批准的品牌标识符声明");
-        scan.Violations.Should().BeEmpty(
-            "生产声明应当使用职责语义名称，测试负例和历史文本不属于生产源码扫描范围");
+        foreach (var project in ProductionProjects())
+        {
+            var diagnostics = await AnalyzeProjectAsync(project);
+            violations.AddRange(diagnostics.Select(FormatDiagnostic));
+        }
+
+        violations.Should().BeEmpty(
+            "生产声明必须使用职责语义名称，品牌规则只能由 ForbiddenBrandIdentifierAnalyzer 定义");
     }
 
     /// <summary>
-    /// 文件扫描能够识别旧批准方法名称，并允许不含品牌分段的语义名称
+    /// 正式分析器必须识别旧批准方法名并允许不含品牌分段的语义名称
     /// </summary>
+    /// <returns>异步分析差异样例的任务</returns>
     [Fact]
-    public void BrandIdentifierDeclarationScanner_DetectsLegacyApprovedMethodName()
+    public async Task ForbiddenBrandIdentifierAnalyzer_DetectsLegacyApprovedMethodName()
     {
-        using var directory = new TemporaryTestDirectory();
-        var legacySource = directory.WriteFile(
-            "LegacyAnalyzer.cs",
-            "internal static bool IsApprovedTwException() => true;");
-        var semanticSource = directory.WriteFile(
-            "SemanticAnalyzer.cs",
-            "internal static bool IsApprovedExceptionType() => true;");
+        const string source = """
+        internal static class AnalyzerHelpers
+        {
+            internal static bool IsApprovedTwException() => true;
+            internal static bool IsApprovedExceptionType() => true;
+        }
+        """;
 
-        var legacyScan = ScanBrandIdentifierDeclarations([legacySource]);
-        var semanticScan = ScanBrandIdentifierDeclarations([semanticSource]);
+        var diagnostics = await AnalyzeSourceAsync(source, "Tw.Analyzers");
 
-        legacyScan.Violations.Should().ContainSingle()
-            .Which.Should().Contain("IsApprovedTwException");
-        semanticScan.Violations.Should().BeEmpty();
+        diagnostics.Should().ContainSingle();
+        DiagnosticText(source, diagnostics[0]).Should().Be("IsApprovedTwException");
+    }
+
+    /// <summary>
+    /// 正式分析器必须治理三类品牌分段且不得误报包含相同字母的普通单词
+    /// </summary>
+    /// <returns>异步分析正反例矩阵的任务</returns>
+    [Fact]
+    public async Task ForbiddenBrandIdentifierAnalyzer_ReportsBrandMatrixWithoutSubstringFalsePositives()
+    {
+        const string source = """
+        internal sealed class TwOrderService { }
+        internal sealed class AbpModule { }
+        internal sealed class FurionService { }
+        internal sealed class Twin
+        {
+            internal string Twice { get; init; } = string.Empty;
+            internal string Between { get; init; } = string.Empty;
+        }
+        """;
+
+        var diagnostics = await AnalyzeSourceAsync(source, "SemanticNames");
+
+        diagnostics
+            .Select(diagnostic => DiagnosticText(source, diagnostic))
+            .Should()
+            .BeEquivalentTo(["TwOrderService", "AbpModule", "FurionService"]);
+    }
+
+    /// <summary>
+    /// 仅允许Tw.Core中顶层非泛型且继承Exception的Tw.Exceptions.TwException
+    /// </summary>
+    /// <returns>异步分析完整例外边界的任务</returns>
+    [Fact]
+    public async Task ForbiddenBrandIdentifierAnalyzer_EnforcesCompleteTwExceptionExceptionBoundary()
+    {
+        const string approvedSource = """
+        namespace Tw.Exceptions;
+        public sealed class TwException : System.Exception { }
+        """;
+        var approvedDiagnostics = await AnalyzeSourceAsync(approvedSource, "Tw.Core");
+        approvedDiagnostics.Should().BeEmpty();
+
+        var invalidScenarios = new (string AssemblyName, string Source)[]
+        {
+            ("Other.Core", approvedSource),
+            ("Tw.Core", "namespace Other; public sealed class TwException : System.Exception { }"),
+            ("Tw.Core", "namespace Tw.Exceptions; public sealed class TwException<T> : System.Exception { }"),
+            ("Tw.Core", "namespace Tw.Exceptions; public sealed class Container { public sealed class TwException : System.Exception { } }"),
+            ("Tw.Core", "namespace Tw.Exceptions; public sealed class TwException { }")
+        };
+
+        foreach (var scenario in invalidScenarios)
+        {
+            var diagnostics = await AnalyzeSourceAsync(scenario.Source, scenario.AssemblyName);
+            diagnostics.Should().ContainSingle();
+            DiagnosticText(scenario.Source, diagnostics[0]).Should().Be("TwException");
+        }
     }
 
     /// <summary>
@@ -177,10 +235,10 @@ public sealed partial class PackageConsolidationTests
     }
 
     /// <summary>
-    /// 枚举 BuildingBlocks 与工具目录下需要治理声明名称的生产 C# 源码
+    /// 枚举BuildingBlocks与工具目录中的生产项目及其编译源文件
     /// </summary>
-    /// <returns>排除构建输出后的生产源码绝对路径</returns>
-    private static IEnumerable<string> ProductionSourceFiles()
+    /// <returns>具有至少一个编译源文件的生产项目</returns>
+    private static IEnumerable<ProductionProject> ProductionProjects()
     {
         var roots = new[]
         {
@@ -189,178 +247,175 @@ public sealed partial class PackageConsolidationTests
         };
 
         return roots
-            .SelectMany(root => Directory.GetFiles(root, "*.cs", SearchOption.AllDirectories))
-            .Where(file => !IsGeneratedOrHistoricalArtifact(file));
+            .SelectMany(root => Directory.GetFiles(root, "*.csproj", SearchOption.AllDirectories))
+            .Where(IsProductionProject)
+            .Select(CreateProductionProject)
+            .Where(project => project.SourceFiles.Count > 0)
+            .OrderBy(project => project.ProjectFile, StringComparer.Ordinal);
     }
 
     /// <summary>
-    /// 使用 Roslyn 声明语法扫描源码中的框架品牌标识符分段
+    /// 判断项目是否属于生产项目而非模板测试项目
     /// </summary>
-    /// <param name="sourceFiles">需要扫描的生产或临时 C# 源文件</param>
-    /// <returns>违规诊断与批准异常类型声明数量</returns>
-    private static BrandIdentifierScan ScanBrandIdentifierDeclarations(IEnumerable<string> sourceFiles)
+    /// <param name="projectFile">待判断的项目文件</param>
+    /// <returns>项目路径不包含tests目录时返回 <see langword="true"/></returns>
+    private static bool IsProductionProject(string projectFile)
     {
-        var violations = new List<string>();
-        var approvedExceptionTypeCount = 0;
+        return !RepositoryLayout.RepositoryRelativePath(projectFile)
+            .Split('/', StringSplitOptions.RemoveEmptyEntries)
+            .Any(segment => segment.Equals("tests", StringComparison.OrdinalIgnoreCase));
+    }
 
-        foreach (var sourceFile in sourceFiles)
+    /// <summary>
+    /// 从项目文件解析程序集名和编译源文件
+    /// </summary>
+    /// <param name="projectFile">生产项目文件</param>
+    /// <returns>生产项目分析输入</returns>
+    private static ProductionProject CreateProductionProject(string projectFile)
+    {
+        var document = XDocument.Load(projectFile);
+        var projectDirectory = Path.GetDirectoryName(projectFile)
+            ?? throw new InvalidOperationException($"无法解析项目目录: {projectFile}");
+        var assemblyName = document
+            .Descendants()
+            .FirstOrDefault(element => element.Name.LocalName == "AssemblyName")?
+            .Value
+            .Trim();
+        if (string.IsNullOrWhiteSpace(assemblyName))
         {
-            var root = CSharpSyntaxTree.ParseText(File.ReadAllText(sourceFile)).GetRoot();
-            foreach (var identifier in DeclarationIdentifiers(root))
-            {
-                if (!ContainsFrameworkBrandSegment(identifier.ValueText))
-                {
-                    continue;
-                }
-
-                if (IsApprovedExceptionTypeDeclaration(identifier, sourceFile))
-                {
-                    approvedExceptionTypeCount++;
-                    continue;
-                }
-
-                var line = identifier.GetLocation().GetLineSpan().StartLinePosition.Line + 1;
-                violations.Add(
-                    $"{RepositoryLayout.RepositoryRelativePath(sourceFile)}:{line}：{identifier.ValueText}");
-            }
+            assemblyName = Path.GetFileNameWithoutExtension(projectFile);
         }
 
-        return new BrandIdentifierScan(violations, approvedExceptionTypeCount);
+        var defaultCompileEnabled = !document
+            .Descendants()
+            .Where(element => element.Name.LocalName is "EnableDefaultItems" or "EnableDefaultCompileItems")
+            .Any(element => element.Value.Trim().Equals("false", StringComparison.OrdinalIgnoreCase));
+        var sourceFiles = defaultCompileEnabled
+            ? Directory.GetFiles(projectDirectory, "*.cs", SearchOption.AllDirectories)
+                .Where(file => !IsBuildOutput(file))
+                .ToArray()
+            : ExplicitCompileFiles(document, projectDirectory).ToArray();
+
+        return new ProductionProject(projectFile, assemblyName, sourceFiles);
     }
 
     /// <summary>
-    /// 枚举 Roslyn 语法树中具有自有名称的声明标识符
+    /// 枚举关闭默认编译项项目中的显式源文件
     /// </summary>
-    /// <param name="root">待扫描 C# 文件的语法树根节点</param>
-    /// <returns>类型、成员、参数、变量及补充声明的标识符</returns>
-    private static IEnumerable<SyntaxToken> DeclarationIdentifiers(SyntaxNode root)
+    /// <param name="document">已加载的项目文档</param>
+    /// <param name="projectDirectory">项目目录</param>
+    /// <returns>存在于磁盘的显式编译源文件</returns>
+    private static IEnumerable<string> ExplicitCompileFiles(XDocument document, string projectDirectory)
     {
-        foreach (var node in root.DescendantNodes())
-        {
-            var identifier = node switch
-            {
-                BaseTypeDeclarationSyntax declaration => declaration.Identifier,
-                DelegateDeclarationSyntax declaration => declaration.Identifier,
-                MethodDeclarationSyntax declaration => declaration.Identifier,
-                LocalFunctionStatementSyntax declaration => declaration.Identifier,
-                PropertyDeclarationSyntax declaration => declaration.Identifier,
-                EventDeclarationSyntax declaration => declaration.Identifier,
-                VariableDeclaratorSyntax declaration => declaration.Identifier,
-                ParameterSyntax declaration => declaration.Identifier,
-                TypeParameterSyntax declaration => declaration.Identifier,
-                EnumMemberDeclarationSyntax declaration => declaration.Identifier,
-                ForEachStatementSyntax declaration => declaration.Identifier,
-                CatchDeclarationSyntax declaration => declaration.Identifier,
-                SingleVariableDesignationSyntax declaration => declaration.Identifier,
-                LabeledStatementSyntax declaration => declaration.Identifier,
-                FromClauseSyntax declaration => declaration.Identifier,
-                LetClauseSyntax declaration => declaration.Identifier,
-                JoinClauseSyntax declaration => declaration.Identifier,
-                JoinIntoClauseSyntax declaration => declaration.Identifier,
-                QueryContinuationSyntax declaration => declaration.Identifier,
-                UsingDirectiveSyntax { Alias: not null } declaration => declaration.Alias.Name.Identifier,
-                _ => default
-            };
-
-            if (!identifier.IsKind(SyntaxKind.None))
-            {
-                yield return identifier;
-            }
-        }
+        return document
+            .Descendants()
+            .Where(element => element.Name.LocalName == "Compile")
+            .Select(element => element.Attribute("Include")?.Value)
+            .Where(include => !string.IsNullOrWhiteSpace(include))
+            .Select(include => Path.GetFullPath(include!, projectDirectory))
+            .Where(File.Exists)
+            .Where(file => !IsBuildOutput(file));
     }
 
     /// <summary>
-    /// 判断声明标识符是否包含独立的框架品牌语义分段
+    /// 使用项目程序集名和全部源文件运行正式品牌分析器
     /// </summary>
-    /// <param name="identifier">待按大小写与下划线边界切分的声明标识符</param>
-    /// <returns>存在受治理品牌分段时返回 <see langword="true"/></returns>
-    private static bool ContainsFrameworkBrandSegment(string identifier)
+    /// <param name="project">生产项目分析输入</param>
+    /// <returns>正式分析器报告的全部诊断</returns>
+    private static async Task<ImmutableArray<Diagnostic>> AnalyzeProjectAsync(ProductionProject project)
     {
-        var tokenStart = 0;
+        var syntaxTrees = project.SourceFiles
+            .Select(file => CSharpSyntaxTree.ParseText(
+                File.ReadAllText(file),
+                CSharpParseOptions.Default.WithLanguageVersion(LanguageVersion.Preview),
+                file,
+                cancellationToken: TestContext.Current.CancellationToken))
+            .Append(CSharpSyntaxTree.ParseText(
+                "global using System;",
+                CSharpParseOptions.Default.WithLanguageVersion(LanguageVersion.Preview),
+                Path.Combine(Path.GetDirectoryName(project.ProjectFile)!, "obj", "Architecture.GlobalUsings.g.cs"),
+                cancellationToken: TestContext.Current.CancellationToken));
+        var compilation = CSharpCompilation.Create(
+            project.AssemblyName,
+            syntaxTrees,
+            PlatformMetadataReferences,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
-        for (var index = 0; index <= identifier.Length; index++)
-        {
-            var isEnd = index == identifier.Length;
-            var isUnderscore = !isEnd && identifier[index] == '_';
-            var startsNewToken = !isEnd && !isUnderscore && StartsNewIdentifierToken(identifier, index);
-            if (!isEnd && !isUnderscore && !startsNewToken)
-            {
-                continue;
-            }
-
-            if (index - tokenStart == FrameworkBrandSegment.Length &&
-                string.Compare(
-                    identifier,
-                    tokenStart,
-                    FrameworkBrandSegment,
-                    0,
-                    FrameworkBrandSegment.Length,
-                    StringComparison.OrdinalIgnoreCase) == 0)
-            {
-                return true;
-            }
-
-            tokenStart = isUnderscore ? index + 1 : index;
-        }
-
-        return false;
+        return await RunForbiddenBrandAnalyzerAsync(compilation);
     }
 
     /// <summary>
-    /// 判断标识符当前位置是否形成新的大小写语义分段
+    /// 使用指定程序集名编译临时源码并运行正式品牌分析器
     /// </summary>
-    /// <param name="identifier">待切分的声明标识符</param>
-    /// <param name="index">当前字符索引</param>
-    /// <returns>当前位置开始新的语义分段时返回 <see langword="true"/></returns>
-    private static bool StartsNewIdentifierToken(string identifier, int index)
+    /// <param name="source">待分析的C#源码</param>
+    /// <param name="assemblyName">编译单元程序集名</param>
+    /// <returns>正式分析器报告的全部诊断</returns>
+    private static Task<ImmutableArray<Diagnostic>> AnalyzeSourceAsync(string source, string assemblyName)
     {
-        if (index == 0 || identifier[index - 1] == '_')
-        {
-            return false;
-        }
+        var syntaxTree = CSharpSyntaxTree.ParseText(
+            source,
+            CSharpParseOptions.Default.WithLanguageVersion(LanguageVersion.Preview),
+            cancellationToken: TestContext.Current.CancellationToken);
+        var compilation = CSharpCompilation.Create(
+            assemblyName,
+            [syntaxTree],
+            PlatformMetadataReferences,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
-        var previous = identifier[index - 1];
-        var current = identifier[index];
-
-        return (char.IsLower(previous) && char.IsUpper(current)) ||
-            (char.IsUpper(previous) &&
-             char.IsUpper(current) &&
-             index + 1 < identifier.Length &&
-             char.IsLower(identifier[index + 1]));
+        return RunForbiddenBrandAnalyzerAsync(compilation);
     }
 
     /// <summary>
-    /// 判断声明是否为唯一批准保留品牌分段的异常类型
+    /// 在给定编译单元上运行生产使用的品牌标识符分析器
     /// </summary>
-    /// <param name="identifier">包含待判断类型名称的声明标识符</param>
-    /// <param name="sourceFile">声明所在 C# 源文件</param>
-    /// <returns>声明路径、命名空间与类型名称全部匹配时返回 <see langword="true"/></returns>
-    private static bool IsApprovedExceptionTypeDeclaration(SyntaxToken identifier, string sourceFile)
+    /// <param name="compilation">待分析的编译单元</param>
+    /// <returns>分析器报告的全部诊断</returns>
+    private static async Task<ImmutableArray<Diagnostic>> RunForbiddenBrandAnalyzerAsync(Compilation compilation)
     {
-        return identifier.Parent is ClassDeclarationSyntax declaration &&
-            identifier.ValueText.Equals("TwException", StringComparison.Ordinal) &&
-            RepositoryLayout.RepositoryRelativePath(sourceFile).Equals(
-                ApprovedExceptionTypePath,
-                StringComparison.Ordinal) &&
-            DeclaredNamespace(declaration).Equals("Tw.Exceptions", StringComparison.Ordinal);
+        return await compilation
+            .WithAnalyzers(ImmutableArray.Create<DiagnosticAnalyzer>(new ForbiddenBrandIdentifierAnalyzer()))
+            .GetAnalyzerDiagnosticsAsync(TestContext.Current.CancellationToken);
     }
 
     /// <summary>
-    /// 组合类型声明的祖先命名空间并返回规范点分名称
+    /// 创建当前运行时可信平台程序集的元数据引用
     /// </summary>
-    /// <param name="declaration">需要解析完整命名空间的类型声明</param>
-    /// <returns>由标识符组成的完整命名空间</returns>
-    private static string DeclaredNamespace(BaseTypeDeclarationSyntax declaration)
+    /// <returns>供真实项目与差异样例使用的元数据引用</returns>
+    private static ImmutableArray<MetadataReference> CreatePlatformMetadataReferences()
     {
-        return string.Join(
-            ".",
-            declaration
-                .Ancestors()
-                .OfType<BaseNamespaceDeclarationSyntax>()
-                .Reverse()
-                .SelectMany(item => item.Name.DescendantTokens())
-                .Where(token => token.IsKind(SyntaxKind.IdentifierToken))
-                .Select(token => token.ValueText));
+        var trustedAssemblies = AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES") as string
+            ?? throw new InvalidOperationException("运行时未提供可信平台程序集列表");
+        return trustedAssemblies
+            .Split(Path.PathSeparator, StringSplitOptions.RemoveEmptyEntries)
+            .Select(path => MetadataReference.CreateFromFile(path))
+            .ToImmutableArray<MetadataReference>();
+    }
+
+    /// <summary>
+    /// 格式化生产项目分析器诊断以便定位源码
+    /// </summary>
+    /// <param name="diagnostic">待格式化的分析器诊断</param>
+    /// <returns>包含仓库路径、行号和消息的诊断文本</returns>
+    private static string FormatDiagnostic(Diagnostic diagnostic)
+    {
+        var lineSpan = diagnostic.Location.GetLineSpan();
+        var path = string.IsNullOrWhiteSpace(lineSpan.Path)
+            ? "<unknown>"
+            : RepositoryLayout.RepositoryRelativePath(lineSpan.Path);
+        return $"{path}:{lineSpan.StartLinePosition.Line + 1} {diagnostic.Id} {diagnostic.GetMessage()}";
+    }
+
+    /// <summary>
+    /// 从差异样例源码提取诊断命中的声明文本
+    /// </summary>
+    /// <param name="source">差异样例源码</param>
+    /// <param name="diagnostic">分析器诊断</param>
+    /// <returns>诊断命中的原始文本</returns>
+    private static string DiagnosticText(string source, Diagnostic diagnostic)
+    {
+        return source.Substring(
+            diagnostic.Location.SourceSpan.Start,
+            diagnostic.Location.SourceSpan.Length);
     }
 
     /// <summary>
@@ -384,11 +439,31 @@ public sealed partial class PackageConsolidationTests
     }
 
     /// <summary>
-    /// 保存品牌声明扫描产生的违规诊断与批准例外数量
+    /// 判断生产源码路径是否属于SDK构建输出
     /// </summary>
-    /// <param name="Violations">包含文件、行号和声明标识符的违规诊断</param>
-    /// <param name="ApprovedExceptionTypeCount">扫描范围内批准异常类型声明的数量</param>
-    private sealed record BrandIdentifierScan(
-        IReadOnlyList<string> Violations,
-        int ApprovedExceptionTypeCount);
+    /// <param name="filePath">需要判定的绝对文件路径</param>
+    /// <returns>文件位于bin或obj目录时返回 <see langword="true"/></returns>
+    private static bool IsBuildOutput(string filePath)
+    {
+        var outputSegments = new[]
+        {
+            $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}",
+            $"{Path.DirectorySeparatorChar}obj{Path.DirectorySeparatorChar}"
+        };
+
+        return outputSegments.Any(segment => filePath.Contains(
+            segment,
+            StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>
+    /// 保存生产项目文件、程序集名和编译源文件
+    /// </summary>
+    /// <param name="ProjectFile">项目文件绝对路径</param>
+    /// <param name="AssemblyName">项目编译使用的程序集名</param>
+    /// <param name="SourceFiles">项目编译包含的源文件</param>
+    private sealed record ProductionProject(
+        string ProjectFile,
+        string AssemblyName,
+        IReadOnlyList<string> SourceFiles);
 }

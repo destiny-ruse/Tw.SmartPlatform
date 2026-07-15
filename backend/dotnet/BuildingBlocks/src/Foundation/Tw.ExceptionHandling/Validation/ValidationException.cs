@@ -10,15 +10,23 @@ public sealed class ValidationException : Exception
     /// </summary>
     /// <param name="errors">需要保留字段路径、错误码和消息的验证错误集合</param>
     /// <exception cref="ArgumentNullException"><paramref name="errors"/> 为 <see langword="null"/> 时抛出</exception>
+    /// <exception cref="ArgumentException"><paramref name="errors"/> 包含空元素时抛出</exception>
     public ValidationException(IEnumerable<ValidationError> errors)
         : base("输入验证失败")
     {
         ArgumentNullException.ThrowIfNull(errors);
-        Errors = Array.AsReadOnly(errors.ToArray());
+        var snapshot = errors.ToArray();
+
+        if (snapshot.Any(static error => error is null))
+        {
+            throw new ArgumentException("验证错误集合不得包含空元素", nameof(errors));
+        }
+
+        Errors = Array.AsReadOnly(snapshot);
     }
 
     /// <summary>
-    /// 构造异常时捕获的结构化验证错误只读快照
+    /// 获取构造异常时捕获的结构化验证错误只读快照
     /// </summary>
     public IReadOnlyList<ValidationError> Errors { get; }
 }
