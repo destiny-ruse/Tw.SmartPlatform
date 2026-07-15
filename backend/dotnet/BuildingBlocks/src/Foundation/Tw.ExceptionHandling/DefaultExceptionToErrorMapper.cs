@@ -14,10 +14,11 @@ public sealed class DefaultExceptionToErrorMapper : IExceptionToErrorMapper
 
         if (exception is ValidationException validationException)
         {
-            return new ErrorDescriptor("VALIDATION:000001", validationException.Message, ErrorCategory.Validation)
-            {
-                ValidationErrors = validationException.Errors
-            };
+            return new ErrorDescriptor(
+                "VALIDATION:000001",
+                validationException.Message,
+                ErrorCategory.Validation,
+                validationException.Errors);
         }
 
         return new ErrorDescriptor("SYSTEM:999999", "系统异常", ErrorCategory.System);

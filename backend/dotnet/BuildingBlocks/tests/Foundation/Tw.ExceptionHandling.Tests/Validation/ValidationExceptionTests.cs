@@ -32,6 +32,17 @@ public sealed class ValidationExceptionTests
     }
 
     /// <summary>
+    /// 空字段错误集合允许表达对象级输入验证失败
+    /// </summary>
+    [Fact]
+    public void Constructor_EmptyErrors_AllowsObjectLevelValidation()
+    {
+        var exception = new ValidationException([]);
+
+        exception.Errors.Should().BeEmpty();
+    }
+
+    /// <summary>
     /// 缺少错误集合时拒绝创建没有诊断上下文的验证异常
     /// </summary>
     [Fact]

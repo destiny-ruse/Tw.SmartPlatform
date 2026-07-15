@@ -51,6 +51,20 @@ public sealed class DefaultExceptionToErrorMapperTests
     }
 
     /// <summary>
+    /// 空字段错误集合映射为对象级输入验证失败
+    /// </summary>
+    [Fact]
+    public void Map_ValidationExceptionWithEmptyErrors_ReturnsValidationDescriptor()
+    {
+        var mapper = new DefaultExceptionToErrorMapper();
+
+        var error = mapper.Map(new ValidationException([]));
+
+        error.Category.Should().Be(ErrorCategory.Validation);
+        error.ValidationErrors.Should().BeEmpty();
+    }
+
+    /// <summary>
     /// 缺少异常对象时拒绝生成失去诊断来源的错误描述
     /// </summary>
     [Fact]

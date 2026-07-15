@@ -22,9 +22,12 @@ public sealed class RedactingLogEventEnricherTests
     [InlineData("PasswordHash")]
     [InlineData("user_password")]
     [InlineData("ClientSecret")]
+    [InlineData("CLIENTSECRET")]
     [InlineData("ClientSecretValue")]
     [InlineData("client-secret")]
     [InlineData("AccessToken")]
+    [InlineData("ACCESSTOKEN")]
+    [InlineData("accesstoken")]
     [InlineData("TokenPayload")]
     [InlineData("TokenPasswordPolicy")]
     [InlineData("access.token")]
@@ -52,6 +55,8 @@ public sealed class RedactingLogEventEnricherTests
     [InlineData("CookieValue")]
     [InlineData("set-cookie")]
     [InlineData("CookieHeader")]
+    [InlineData("PASSWORDHASH")]
+    [InlineData("XAPIKEYVALUE")]
     public void Enrich_SensitivePropertyName_RedactsScalarValue(string propertyName)
     {
         var logEvent = CreateLogEvent(propertyName, "sensitive-value");
@@ -77,6 +82,24 @@ public sealed class RedactingLogEventEnricherTests
     [InlineData("CredentialProvider")]
     [InlineData("PrivateKeyAlgorithm")]
     [InlineData("CookiePolicy")]
+    [InlineData("CancellationTokenRequested")]
+    [InlineData("CANCELLATIONTOKENREQUESTED")]
+    [InlineData("cancellationtokenrequested")]
+    [InlineData("TokenBucketCapacity")]
+    [InlineData("TOKENBUCKETCAPACITY")]
+    [InlineData("tokenbucketcapacity")]
+    [InlineData("PasswordPolicyName")]
+    [InlineData("PASSWORDPOLICYNAME")]
+    [InlineData("passwordpolicyname")]
+    [InlineData("AuthorizationPolicyName")]
+    [InlineData("AUTHORIZATIONPOLICYNAME")]
+    [InlineData("authorizationpolicyname")]
+    [InlineData("CredentialProviderName")]
+    [InlineData("CREDENTIALPROVIDERNAME")]
+    [InlineData("credentialprovidername")]
+    [InlineData("ConnectionStringBuilderType")]
+    [InlineData("CONNECTIONSTRINGBUILDERTYPE")]
+    [InlineData("connectionstringbuildertype")]
     public void Enrich_BenignPropertyName_PreservesScalarValue(string propertyName)
     {
         var logEvent = CreateLogEvent(propertyName, "ordinary-value");

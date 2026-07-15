@@ -10,10 +10,10 @@ namespace Tw.Observability.Serilog;
 public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEventEnricher
 {
     /// <summary>
-    /// 不含分隔符时允许精确匹配的敏感属性名
+    /// 无可靠单词边界时需要识别的敏感紧凑片段
     /// </summary>
-    private static readonly HashSet<string> CompactSensitiveNames = new(StringComparer.OrdinalIgnoreCase)
-    {
+    private static readonly string[] SensitiveCompactFragments =
+    [
         "password",
         "secret",
         "token",
@@ -23,7 +23,7 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
         "credential",
         "privatekey",
         "cookie"
-    };
+    ];
 
     /// <summary>
     /// 属性名任意语义位置都需要识别的单个敏感词
@@ -51,17 +51,46 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
     ];
 
     /// <summary>
-    /// 明确描述规则或实现元数据而非敏感值的属性名后缀
+    /// 明确描述框架概念、规则或实现元数据的受控 benign 语义序列
     /// </summary>
-    private static readonly string[][] BenignMetadataSuffixes =
+    private static readonly string[][] BenignSequences =
     [
+        ["cancellation", "token"],
+        ["token", "bucket"],
         ["password", "policy"],
         ["authorization", "policy"],
         ["credential", "provider"],
         ["private", "key", "algorithm"],
         ["connection", "string", "builder"],
-        ["cookie", "policy"]
+        ["cookie", "policy"],
+        ["secretariat"],
+        ["tokenization"],
+        ["api", "keyboard"]
     ];
+
+    /// <summary>
+    /// 允许跟随受控 benign 序列的元数据尾词
+    /// </summary>
+    private static readonly HashSet<string> BenignMetadataTailWords = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "requested",
+        "capacity",
+        "name",
+        "type",
+        "count",
+        "layout"
+    };
+
+    /// <summary>
+    /// 受控 benign 语义序列对应的紧凑形式
+    /// </summary>
+    private static readonly string[] BenignCompactSequences =
+        BenignSequences.Select(static sequence => string.Concat(sequence)).ToArray();
+
+    /// <summary>
+    /// 受控元数据尾词对应的紧凑形式
+    /// </summary>
+    private static readonly string[] BenignCompactMetadataTails = BenignMetadataTailWords.ToArray();
 
     /// <summary>
     /// 对日志事件中的受控敏感标量属性执行脱敏
@@ -83,14 +112,15 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
     }
 
     /// <summary>
-    /// 按属性名的单词边界判断是否属于受控敏感属性
+    /// 按紧凑片段和属性名语义边界判断是否属于受控敏感属性
     /// </summary>
     /// <param name="name">待判断的属性名</param>
     /// <returns>属于受控敏感属性时返回 <see langword="true"/></returns>
     private static bool IsSensitive(string name)
     {
         var compactName = new string(name.Where(char.IsLetterOrDigit).ToArray());
-        if (CompactSensitiveNames.Contains(compactName))
+        var compactSearchLength = GetSensitiveCompactLength(compactName);
+        if (ContainsSensitiveCompactFragment(compactName, compactSearchLength))
         {
             return true;
         }
@@ -101,20 +131,76 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
             return false;
         }
 
-        var searchWordCount = words.Count;
-        foreach (var suffix in BenignMetadataSuffixes)
+        var searchWordCount = GetSensitiveWordCount(words);
+
+        return words.Take(searchWordCount).Any(SensitiveWords.Contains)
+            || SensitivePhrases.Any(phrase => ContainsSequence(words, searchWordCount, phrase));
+    }
+
+    /// <summary>
+    /// 计算紧凑属性名中需要参与敏感片段扫描的前缀长度
+    /// </summary>
+    /// <param name="compactName">移除分隔符后的属性名</param>
+    /// <returns>排除受控 benign 后缀后的扫描长度</returns>
+    private static int GetSensitiveCompactLength(string compactName)
+    {
+        var searchLength = compactName.Length;
+        foreach (var metadataTail in BenignCompactMetadataTails)
         {
-            if (!HasSuffix(words, suffix))
+            if (!EndsWith(compactName, searchLength, metadataTail))
             {
                 continue;
             }
 
-            searchWordCount -= suffix.Length;
+            searchLength -= metadataTail.Length;
             break;
         }
 
-        return words.Take(searchWordCount).Any(SensitiveWords.Contains)
-            || SensitivePhrases.Any(phrase => ContainsSequence(words, searchWordCount, phrase));
+        foreach (var benignSequence in BenignCompactSequences)
+        {
+            if (EndsWith(compactName, searchLength, benignSequence))
+            {
+                return searchLength - benignSequence.Length;
+            }
+        }
+
+        return searchLength;
+    }
+
+    /// <summary>
+    /// 判断紧凑属性名的受控前缀是否包含敏感片段
+    /// </summary>
+    /// <param name="compactName">移除分隔符后的属性名</param>
+    /// <param name="searchLength">参与扫描的前缀长度</param>
+    /// <returns>扫描范围包含敏感片段时返回 <see langword="true"/></returns>
+    private static bool ContainsSensitiveCompactFragment(string compactName, int searchLength)
+    {
+        return SensitiveCompactFragments.Any(
+            fragment => compactName.IndexOf(fragment, 0, searchLength, StringComparison.OrdinalIgnoreCase) >= 0);
+    }
+
+    /// <summary>
+    /// 计算语义词列表中需要参与敏感语义扫描的前缀长度
+    /// </summary>
+    /// <param name="words">属性名语义词列表</param>
+    /// <returns>排除受控 benign 后缀后的语义词数量</returns>
+    private static int GetSensitiveWordCount(IReadOnlyList<string> words)
+    {
+        var searchWordCount = words.Count;
+        if (searchWordCount > 0 && BenignMetadataTailWords.Contains(words[searchWordCount - 1]))
+        {
+            searchWordCount--;
+        }
+
+        foreach (var benignSequence in BenignSequences)
+        {
+            if (HasSuffix(words, searchWordCount, benignSequence))
+            {
+                return searchWordCount - benignSequence.Length;
+            }
+        }
+
+        return searchWordCount;
     }
 
     /// <summary>
@@ -197,19 +283,23 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
     }
 
     /// <summary>
-    /// 判断语义词列表是否以指定元数据组合结束
+    /// 判断指定范围的语义词列表是否以受控组合结束
     /// </summary>
     /// <param name="words">属性名语义词列表</param>
-    /// <param name="suffix">允许保留的元数据后缀</param>
+    /// <param name="wordCount">参与匹配的语义词数量</param>
+    /// <param name="suffix">需要匹配的受控组合</param>
     /// <returns>后缀匹配时返回 <see langword="true"/></returns>
-    private static bool HasSuffix(IReadOnlyList<string> words, IReadOnlyList<string> suffix)
+    private static bool HasSuffix(
+        IReadOnlyList<string> words,
+        int wordCount,
+        IReadOnlyList<string> suffix)
     {
-        if (words.Count < suffix.Count)
+        if (wordCount < suffix.Count)
         {
             return false;
         }
 
-        var start = words.Count - suffix.Count;
+        var start = wordCount - suffix.Count;
         for (var index = 0; index < suffix.Count; index++)
         {
             if (!string.Equals(words[start + index], suffix[index], StringComparison.OrdinalIgnoreCase))
@@ -254,5 +344,19 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// 判断紧凑属性名的指定范围是否以受控文本结束
+    /// </summary>
+    /// <param name="compactName">移除分隔符后的属性名</param>
+    /// <param name="searchLength">参与匹配的前缀长度</param>
+    /// <param name="suffix">需要匹配的受控文本</param>
+    /// <returns>指定范围以后缀结束时返回 <see langword="true"/></returns>
+    private static bool EndsWith(string compactName, int searchLength, string suffix)
+    {
+        return searchLength >= suffix.Length
+            && compactName.AsSpan(searchLength - suffix.Length, suffix.Length)
+                .Equals(suffix, StringComparison.OrdinalIgnoreCase);
     }
 }

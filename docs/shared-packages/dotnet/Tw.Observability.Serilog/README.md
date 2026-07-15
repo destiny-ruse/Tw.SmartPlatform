@@ -21,14 +21,16 @@ using var logger = new LoggerConfiguration()
 
 ## 脱敏边界
 
-属性名会按非字母数字分隔符、大小写转换和缩写边界拆分为语义词，匹配不区分大小写。下列敏感语义可位于属性名的任意词位置：
+属性名存在可靠边界时，会按非字母数字分隔符、大小写转换和缩写边界拆分为语义词，匹配不区分大小写。下列敏感语义可位于属性名的任意词位置：
 
 - 单词：`password`、`secret`、`token`、`authorization`、`credential`、`cookie`
 - 连续短语：`connection string`、`api key`、`private key`、`authorization header`、`cookie header`
 
-例如 `PasswordHash`、`ClientSecretValue`、`TokenPayload`、`ConnectionStringValue`、`ApiKeyValue` 和 `PrivateKeyPem` 的标量值都会按 `SensitiveDataKind.Token` 交给 `IDataMasker` 处理。
+当全大写或全小写属性名没有可靠单词边界时，enricher 会在移除受控 benign 后缀后扫描相同敏感语义的紧凑形式。因此 `ACCESSTOKEN`、`accesstoken`、`CLIENTSECRET`、`PASSWORDHASH` 和 `XAPIKEYVALUE` 也会脱敏。匹配到的标量值统一按 `SensitiveDataKind.Token` 交给 `IDataMasker` 处理。
 
-为避免把规则或实现元数据误判为敏感值，以下语义后缀属于明确的 benign 元数据边界：`PasswordPolicy`、`AuthorizationPolicy`、`CredentialProvider`、`PrivateKeyAlgorithm`、`ConnectionStringBuilder` 和 `CookiePolicy`。普通词中的字母片段也不会被当作完整敏感词，例如 `SecretariatName`、`TokenizationCount` 和 `ApiKeyboardLayout` 不会被脱敏。
+为避免把框架概念、规则或实现元数据误判为敏感值，以下受控序列可作为 benign 后缀：`CancellationToken`、`TokenBucket`、`PasswordPolicy`、`AuthorizationPolicy`、`CredentialProvider`、`PrivateKeyAlgorithm`、`ConnectionStringBuilder`、`CookiePolicy`、`Secretariat`、`Tokenization` 和 `ApiKeyboard`。这些后缀可以直接结束，也可以追加一个受控元数据尾词：`Requested`、`Capacity`、`Name`、`Type`、`Count` 或 `Layout`。
+
+例如 `CancellationTokenRequested`、`TokenBucketCapacity`、`PasswordPolicyName`、`AuthorizationPolicyName`、`CredentialProviderName`、`ConnectionStringBuilderType`、`SecretariatName`、`TokenizationCount` 和 `ApiKeyboardLayout` 不会被脱敏；对应的全大写或全小写紧凑形式遵循相同边界。
 
 benign 元数据边界只忽略后缀本身，前缀仍会继续检查。例如 `TokenPasswordPolicy` 因前缀包含完整的 `token` 语义词，仍会被脱敏。
 
