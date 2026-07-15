@@ -123,7 +123,7 @@ public sealed class ProjectDependencyScanner
             return result;
         }
 
-        ScanDocument(projectPath, document, packageCatalog, result);
+        ScanDocument(projectPath, projectPath, document, packageCatalog, result);
         return result;
     }
 
@@ -252,7 +252,7 @@ public sealed class ProjectDependencyScanner
             return;
         }
 
-        ScanDocument(consumerProjectPath, document, packageCatalog, result);
+        ScanDocument(consumerProjectPath, fullPath, document, packageCatalog, result);
         foreach (var import in ReadImports(document))
         {
             if (ContainsExpression(import) || import.IndexOfAny(['*', '?']) >= 0)
@@ -282,11 +282,13 @@ public sealed class ProjectDependencyScanner
     /// 对单个已解析 MSBuild 文档执行保守依赖治理
     /// </summary>
     /// <param name="projectPath">导入内容最终应用的项目路径</param>
+    /// <param name="documentPath">当前正在扫描的项目或导入文件路径</param>
     /// <param name="document">已经解析的项目或导入文档</param>
     /// <param name="packageCatalog">当前仓库淘汰包目录</param>
     /// <param name="result">累计治理错误的扫描结果</param>
     private static void ScanDocument(
         string projectPath,
+        string documentPath,
         XDocument document,
         ForbiddenPackageCatalog packageCatalog,
         DependencyScanResult result)
@@ -295,7 +297,16 @@ public sealed class ProjectDependencyScanner
         var projectName = Path.GetFileNameWithoutExtension(projectPath);
         foreach (var reference in ReadReferences(document))
         {
-            if (ContainsExpression(reference.ItemSpec))
+            var evaluatedReference = string.Equals(
+                    reference.ReferenceType,
+                    "ProjectReference",
+                    StringComparison.OrdinalIgnoreCase)
+                ? reference with
+                {
+                    ItemSpec = ExpandMsBuildThisFileDirectory(reference.ItemSpec, documentPath)
+                }
+                : reference;
+            if (ContainsExpression(evaluatedReference.ItemSpec))
             {
                 result.Errors.Add(new DependencyScanError(
                     "TWGOV000",
@@ -304,9 +315,9 @@ public sealed class ProjectDependencyScanner
                 continue;
             }
 
-            var packageId = ReferencePackageId(reference);
+            var packageId = ReferencePackageId(evaluatedReference);
             if (packageId.EndsWith("TestBase", StringComparison.OrdinalIgnoreCase)
-                || reference.ItemSpec.Contains("TestBase", StringComparison.OrdinalIgnoreCase))
+                || evaluatedReference.ItemSpec.Contains("TestBase", StringComparison.OrdinalIgnoreCase))
             {
                 if (isProductionProject)
                 {
@@ -424,6 +435,25 @@ public sealed class ProjectDependencyScanner
         return value.Contains("$(", StringComparison.Ordinal)
             || value.Contains("@(", StringComparison.Ordinal)
             || value.Contains("%(", StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// 将 MSBuild 内建的当前文件目录属性展开为绝对路径
+    /// </summary>
+    /// <param name="value">ProjectReference item-spec</param>
+    /// <param name="documentPath">定义该引用的项目、props 或 targets 文件</param>
+    /// <returns>仅展开 MSBuildThisFileDirectory 后的 item-spec，其他表达式保持不变</returns>
+    private static string ExpandMsBuildThisFileDirectory(string value, string documentPath)
+    {
+        const string propertyExpression = "$(MSBuildThisFileDirectory)";
+        var documentDirectory = Path.GetDirectoryName(Path.GetFullPath(documentPath))!;
+        var directoryWithSeparator = Path.EndsInDirectorySeparator(documentDirectory)
+            ? documentDirectory
+            : $"{documentDirectory}{Path.DirectorySeparatorChar}";
+        return value.Replace(
+            propertyExpression,
+            directoryWithSeparator,
+            StringComparison.OrdinalIgnoreCase);
     }
 
     /// <summary>

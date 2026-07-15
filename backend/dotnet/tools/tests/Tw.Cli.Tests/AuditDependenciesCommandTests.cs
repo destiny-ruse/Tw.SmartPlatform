@@ -306,6 +306,45 @@ public sealed class AuditDependenciesCommandTests
     }
 
     /// <summary>
+    /// 自动导入文件中的 MSBuildThisFileDirectory 是可静态求值的内建属性，不应产生配置误报
+    /// </summary>
+    [Fact]
+    public void ScanRepository_AllowsMsBuildThisFileDirectoryProjectReference()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        repository.WriteFile(
+            "Directory.Build.targets",
+            "<Project><ItemGroup><ProjectReference Include=\"$(MSBuildThisFileDirectory)tools/src/Tw.Analyzers/Tw.Analyzers.csproj\" /></ItemGroup></Project>");
+        repository.WriteFile(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project />");
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().NotContain(error => error.Code == "TWGOV000");
+    }
+
+    /// <summary>
+    /// 展开 MSBuildThisFileDirectory 后仍必须对项目文件名执行淘汰包治理
+    /// </summary>
+    [Fact]
+    public void ScanRepository_GovernsRetiredProjectReferenceUsingMsBuildThisFileDirectory()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        repository.WriteFile(
+            "Directory.Build.targets",
+            "<Project><ItemGroup><ProjectReference Include=\"$(MSBuildThisFileDirectory)src/Tw.Http.Client/Tw.Http.Client.csproj\" /></ItemGroup></Project>");
+        repository.WriteFile(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project />");
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV002");
+        result.Errors.Should().NotContain(error => error.Code == "TWGOV000");
+    }
+
+    /// <summary>
     /// 仓库扫描必须递归读取根与祖先自动导入以及显式导入，并安全终止导入循环
     /// </summary>
     [Fact]
