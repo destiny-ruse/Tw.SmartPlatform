@@ -34,6 +34,42 @@ public sealed class AuditDependenciesCommandTests
     }
 
     /// <summary>
+    /// 返回仓库中央版本表中的锁实现与 YARP 服务发现提供程序在受治理层和引用类型下的组合
+    /// </summary>
+    /// <returns>项目路径、提供程序包、引用类型和预期治理错误码</returns>
+    public static IEnumerable<object[]> CanonicalInfrastructureProviderCases()
+    {
+        var providerPackages = new[]
+        {
+            "DistributedLock.Redis",
+            "Microsoft.Extensions.ServiceDiscovery.Yarp"
+        };
+        var governedProjects = new[]
+        {
+            (Path: "backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore/Tw.AspNetCore.csproj", ErrorCode: "TWGOV004"),
+            (Path: "src/Billing.Application/Billing.Application.csproj", ErrorCode: "TWGOV005"),
+            (Path: "src/Billing.Domain/Billing.Domain.csproj", ErrorCode: "TWGOV005")
+        };
+        var referenceTypes = new[] { "PackageReference", "ProjectReference" };
+
+        foreach (var providerPackage in providerPackages)
+        {
+            foreach (var governedProject in governedProjects)
+            {
+                foreach (var referenceType in referenceTypes)
+                {
+                    var referencePackage = providerPackage == "DistributedLock.Redis"
+                        && governedProject.ErrorCode == "TWGOV004"
+                        && referenceType == "ProjectReference"
+                            ? providerPackage.ToUpperInvariant()
+                            : providerPackage;
+                    yield return [governedProject.Path, referencePackage, referenceType, governedProject.ErrorCode];
+                }
+            }
+        }
+    }
+
+    /// <summary>
     /// 验证拓扑清单中的每个淘汰包会同时阻止项目引用和包引用
     /// </summary>
     /// <param name="packageId">拓扑清单中的淘汰包标识</param>
@@ -135,6 +171,32 @@ public sealed class AuditDependenciesCommandTests
         var result = ScanPackageReference(projectPath, providerPackage);
 
         result.Errors.Should().ContainSingle(error => error.Code == "TWGOV005");
+    }
+
+    /// <summary>
+    /// 验证中央版本表中的锁实现和 YARP 服务发现提供程序在所有受治理层与引用类型中均被拒绝
+    /// </summary>
+    /// <param name="projectPath">待检查的 Tw.AspNetCore、Application 或 Domain 项目路径</param>
+    /// <param name="providerPackage">中央版本表中的 canonical 提供程序包标识</param>
+    /// <param name="referenceType">PackageReference 或 ProjectReference</param>
+    /// <param name="expectedErrorCode">项目层对应的稳定治理错误码</param>
+    [Theory]
+    [MemberData(nameof(CanonicalInfrastructureProviderCases))]
+    public void Scan_RejectsCanonicalInfrastructureProviderReferences(
+        string projectPath,
+        string providerPackage,
+        string referenceType,
+        string expectedErrorCode)
+    {
+        var include = referenceType == "ProjectReference"
+            ? $"..\\{providerPackage}\\{providerPackage}.csproj"
+            : providerPackage;
+        var result = new ProjectDependencyScanner().ScanProjectText(
+            projectPath,
+            $"<Project><ItemGroup><{referenceType} Include=\"{include}\" /></ItemGroup></Project>",
+            LoadCatalog());
+
+        result.Errors.Should().ContainSingle(error => error.Code == expectedErrorCode);
     }
 
     /// <summary>

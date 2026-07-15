@@ -20,6 +20,8 @@ public sealed class ProjectDependencyScanner
         "Quartz",
         "Yarp",
         "StackExchange.Redis",
+        "DistributedLock.Redis",
+        "Microsoft.Extensions.ServiceDiscovery.Yarp",
         "Tw.Data.SqlSugar",
         "Tw.EventBus.Cap",
         "Tw.BackgroundJobs.Quartz",

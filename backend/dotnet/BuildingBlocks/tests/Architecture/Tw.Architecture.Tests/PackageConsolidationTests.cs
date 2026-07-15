@@ -140,7 +140,18 @@ public sealed partial class PackageConsolidationTests
     public void IndependentContractPackages_AreRetainedRuntimePackages()
     {
         var topology = RepositoryLayout.Topology;
-        topology.IndependentContractPackages.Count.Should().Be(5, "the topology manifest approves five independently consumable contract packages");
+        var expectedIndependentContractPackages = new[]
+        {
+            "Tw.Application.Contracts",
+            "Tw.Auditing.Contracts",
+            "Tw.BackgroundJobs.Abstractions",
+            "Tw.DependencyInjection.Abstractions",
+            "Tw.Json.Abstractions"
+        };
+
+        topology.IndependentContractPackages.Should().BeEquivalentTo(
+            expectedIndependentContractPackages,
+            "only the five explicitly approved contract projects may be independently packaged");
 
         var retainedPackageIds = topology.RuntimeProjects
             .Select(project => Path.GetFileNameWithoutExtension(project.Path))
