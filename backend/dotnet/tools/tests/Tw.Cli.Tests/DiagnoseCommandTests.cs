@@ -1,4 +1,6 @@
 using AwesomeAssertions;
+using System.Diagnostics;
+using System.Reflection;
 using Tw.Cli.Commands;
 using Tw.Cli.Governance;
 using Xunit;
@@ -10,6 +12,17 @@ namespace Tw.Cli.Tests;
 /// </summary>
 public sealed class DiagnoseCommandTests
 {
+    /// <summary>
+    /// --repository 缺少值或下一 token 为其他 option 的命令组合
+    /// </summary>
+    public static IEnumerable<object[]> MissingRepositoryOptionValueCases()
+    {
+        yield return new object[] { new[] { "diagnose", "--repository" } };
+        yield return new object[] { new[] { "diagnose", "--repository", "--help" } };
+        yield return new object[] { new[] { "audit", "dependencies", "--repository" } };
+        yield return new object[] { new[] { "audit", "dependencies", "--repository", "--help" } };
+    }
+
     /// <summary>
     /// 验证诊断服务报告物理项目数量、解决方案一致性和真实仓库事实
     /// </summary>
@@ -67,6 +80,25 @@ public sealed class DiagnoseCommandTests
     }
 
     /// <summary>
+    /// Windows 风格 ProjectReference 在 Unix 与 Windows 宿主上均应解析到现存目标
+    /// </summary>
+    [Fact]
+    public void Diagnose_ResolvesWindowsProjectReferenceOnAnyHost()
+    {
+        using var repository = TestRepository.Create();
+        File.WriteAllText(
+            repository.RuntimeProjectPath,
+            "<Project><ItemGroup><ProjectReference Include=\"..\\..\\..\\tests\\Sample\\Tw.Sample.Tests\\Tw.Sample.Tests.csproj\" /></ItemGroup></Project>");
+        var service = new RepositoryDiagnosisService(
+            new ProjectDependencyScanner(),
+            new RecordingLockedRestoreRunner(0));
+
+        var report = service.Diagnose(repository.RootPath);
+
+        report.UnresolvedProjectReferences.Should().BeEmpty();
+    }
+
+    /// <summary>
     /// 验证 locked restore 的非零退出码由诊断命令原样传播
     /// </summary>
     [Fact]
@@ -97,7 +129,87 @@ public sealed class DiagnoseCommandTests
 
         report.ExitCode.Should().Be(1);
         report.RepositoryExists.Should().BeFalse();
+        ((int?)report.LockedRestoreExitCode).Should().BeNull();
         restoreRunner.SolutionPath.Should().BeNull();
+    }
+
+    /// <summary>
+    /// 缺失解决方案时不得运行 restore，报告必须显式标记未运行
+    /// </summary>
+    [Fact]
+    public void Diagnose_ReportsLockedRestoreNotRunWhenSolutionIsMissing()
+    {
+        using var repository = TestRepository.Create();
+        File.Delete(repository.SolutionPath);
+        var restoreRunner = new RecordingLockedRestoreRunner(0);
+        var service = new RepositoryDiagnosisService(new ProjectDependencyScanner(), restoreRunner);
+
+        var report = service.Diagnose(repository.RootPath);
+
+        ((int?)report.LockedRestoreExitCode).Should().BeNull();
+        report.ExitCode.Should().Be(1);
+        restoreRunner.SolutionPath.Should().BeNull();
+    }
+
+    /// <summary>
+    /// 未运行 restore 时 CLI 输出必须显示 not run 而不是成功退出码零
+    /// </summary>
+    [Fact]
+    public void CliApplication_PrintsLockedRestoreNotRun()
+    {
+        var missingRepository = Path.Combine(Path.GetTempPath(), $"tw-cli-missing-{Guid.NewGuid():N}");
+        var application = new CliApplication(
+            new ProjectDependencyScanner(),
+            new RepositoryDiagnosisService(new ProjectDependencyScanner(), new RecordingLockedRestoreRunner(0)));
+        using var standardOutput = new StringWriter();
+        using var standardError = new StringWriter();
+
+        var exitCode = application.Run(
+            ["diagnose", "--repository", missingRepository],
+            standardOutput,
+            standardError);
+
+        exitCode.Should().Be(1);
+        standardOutput.ToString().Should().Contain("locked restore exit code: not run");
+        standardOutput.ToString().Should().NotContain("locked restore exit code: 0");
+    }
+
+    /// <summary>
+    /// 显式 --repository 缺少值时必须返回稳定 usage 退出码
+    /// </summary>
+    /// <param name="args">缺少 repository 值的完整命令参数</param>
+    [Theory]
+    [MemberData(nameof(MissingRepositoryOptionValueCases))]
+    public void CliApplication_RejectsMissingRepositoryOptionValue(string[] args)
+    {
+        var application = new CliApplication(
+            new ProjectDependencyScanner(),
+            new RepositoryDiagnosisService(new ProjectDependencyScanner(), new RecordingLockedRestoreRunner(0)));
+        using var standardOutput = new StringWriter();
+        using var standardError = new StringWriter();
+
+        var exitCode = application.Run(args, standardOutput, standardError);
+
+        exitCode.Should().Be(2);
+        standardError.ToString().Should().Contain("--repository requires a path value");
+    }
+
+    /// <summary>
+    /// 未提供 --repository 时命令应使用当前目录而不是返回缺参 usage 错误
+    /// </summary>
+    [Fact]
+    public void CliApplication_AllowsRepositoryOptionToBeAbsent()
+    {
+        var application = new CliApplication(
+            new ProjectDependencyScanner(),
+            new RepositoryDiagnosisService(new ProjectDependencyScanner(), new RecordingLockedRestoreRunner(0)));
+        using var standardOutput = new StringWriter();
+        using var standardError = new StringWriter();
+
+        var exitCode = application.Run(["audit", "dependencies"], standardOutput, standardError);
+
+        exitCode.Should().NotBe(2);
+        standardError.ToString().Should().NotContain("--repository requires a path value");
     }
 
     /// <summary>
@@ -133,6 +245,79 @@ public sealed class DiagnoseCommandTests
     }
 
     /// <summary>
+    /// CLI 必须分别传播 locked restore 的标准输出和标准错误
+    /// </summary>
+    [Fact]
+    public void CliApplication_PropagatesLockedRestoreStandardStreams()
+    {
+        using var repository = TestRepository.Create();
+        var runner = new RecordingLockedRestoreRunner(
+            17,
+            standardOutput: "restore stdout marker\n",
+            standardError: "restore stderr marker\n");
+        var application = new CliApplication(
+            new ProjectDependencyScanner(),
+            new RepositoryDiagnosisService(new ProjectDependencyScanner(), runner));
+        using var standardOutput = new StringWriter();
+        using var standardError = new StringWriter();
+
+        var exitCode = application.Run(
+            ["diagnose", "--repository", repository.RootPath],
+            standardOutput,
+            standardError);
+
+        exitCode.Should().Be(17);
+        standardOutput.ToString().Should().Contain("restore stdout marker");
+        standardError.ToString().Should().Contain("restore stderr marker");
+    }
+
+    /// <summary>
+    /// locked restore 超时必须返回稳定退出码并终止后代进程
+    /// </summary>
+    [Fact]
+    public void DotnetLockedRestoreRunner_TimesOutAndKillsEntireProcessTree()
+    {
+        using var directory = new TemporaryProcessDirectory();
+        var markerPath = Path.Combine(directory.RootPath, "child-survived.txt");
+        var command = OperatingSystem.IsWindows()
+            ? $"start \"\" /b cmd.exe /d /s /c \"ping 127.0.0.1 -n 3 >nul & echo survived>{QuoteForWindowsCommand(markerPath)}\" & ping 127.0.0.1 -n 30 >nul"
+            : $"(sleep 2; echo survived > {QuoteForPosixShell(markerPath)}) & sleep 30";
+        var runner = CreateProcessRunner(
+            TimeSpan.FromMilliseconds(250),
+            (_, _) => CreateShellStartInfo(command, directory.RootPath));
+        var stopwatch = Stopwatch.StartNew();
+
+        var result = runner.Run("ignored.slnx", directory.RootPath);
+
+        stopwatch.Stop();
+        result.ExitCode.Should().Be(124);
+        stopwatch.Elapsed.Should().BeLessThan(TimeSpan.FromSeconds(5));
+        Thread.Sleep(TimeSpan.FromSeconds(3));
+        File.Exists(markerPath).Should().BeFalse("the timed-out shell's child must be terminated with the process tree");
+    }
+
+    /// <summary>
+    /// 成功子进程退出后必须排空异步标准输出和标准错误
+    /// </summary>
+    [Fact]
+    public void DotnetLockedRestoreRunner_DrainsStandardStreamsAfterSuccessfulExit()
+    {
+        using var directory = new TemporaryProcessDirectory();
+        var command = OperatingSystem.IsWindows()
+            ? "(for /L %i in (1,1,200) do @echo stdout-%i) & (for /L %i in (1,1,200) do @echo stderr-%i 1>&2)"
+            : "i=1; while [ $i -le 200 ]; do echo stdout-$i; echo stderr-$i >&2; i=$((i+1)); done";
+        var runner = CreateProcessRunner(
+            TimeSpan.FromSeconds(10),
+            (_, _) => CreateShellStartInfo(command, directory.RootPath));
+
+        var result = runner.Run("ignored.slnx", directory.RootPath);
+
+        result.ExitCode.Should().Be(0);
+        result.StandardOutput.Should().Contain("stdout-200");
+        result.StandardError.Should().Contain("stderr-200");
+    }
+
+    /// <summary>
     /// 验证未执行仓库检查的命令不会宣称事实已经检查
     /// </summary>
     [Fact]
@@ -158,15 +343,30 @@ public sealed class DiagnoseCommandTests
         /// 构造具有固定退出码的进程替身
         /// </summary>
         /// <param name="exitCode">运行 restore 时返回的退出码</param>
-        public RecordingLockedRestoreRunner(int exitCode)
+        public RecordingLockedRestoreRunner(
+            int exitCode,
+            string standardOutput = "",
+            string standardError = "")
         {
             ExitCode = exitCode;
+            StandardOutput = standardOutput;
+            StandardError = standardError;
         }
 
         /// <summary>
         /// restore 调用应返回的进程退出码
         /// </summary>
         private int ExitCode { get; }
+
+        /// <summary>
+        /// restore 调用应返回的标准输出
+        /// </summary>
+        private string StandardOutput { get; }
+
+        /// <summary>
+        /// restore 调用应返回的标准错误
+        /// </summary>
+        private string StandardError { get; }
 
         /// <summary>
         /// 最近一次 restore 请求的解决方案路径
@@ -182,7 +382,105 @@ public sealed class DiagnoseCommandTests
         public LockedRestoreResult Run(string solutionPath, string workingDirectory)
         {
             SolutionPath = solutionPath;
-            return new LockedRestoreResult(ExitCode, string.Empty, string.Empty);
+            return new LockedRestoreResult(ExitCode, StandardOutput, StandardError);
+        }
+    }
+
+    /// <summary>
+    /// 通过非公开可测试构造函数创建具有可控超时和进程启动信息的 runner
+    /// </summary>
+    /// <param name="timeout">子进程最大运行时间</param>
+    /// <param name="startInfoFactory">测试进程启动信息工厂</param>
+    /// <returns>可执行测试进程的 locked restore runner</returns>
+    private static ILockedRestoreRunner CreateProcessRunner(
+        TimeSpan timeout,
+        Func<string, string, ProcessStartInfo> startInfoFactory)
+    {
+        var constructor = typeof(DotnetLockedRestoreRunner).GetConstructor(
+            BindingFlags.Instance | BindingFlags.NonPublic,
+            binder: null,
+            [typeof(TimeSpan), typeof(Func<string, string, ProcessStartInfo>)],
+            modifiers: null);
+        constructor.Should().NotBeNull("the process timeout and process start boundary must be injectable in tests");
+        return (ILockedRestoreRunner)constructor!.Invoke([timeout, startInfoFactory]);
+    }
+
+    /// <summary>
+    /// 创建当前宿主可执行的 shell 子进程
+    /// </summary>
+    /// <param name="command">shell 命令文本</param>
+    /// <param name="workingDirectory">子进程工作目录</param>
+    /// <returns>不经 shell execute 的进程启动信息</returns>
+    private static ProcessStartInfo CreateShellStartInfo(string command, string workingDirectory)
+    {
+        var startInfo = new ProcessStartInfo
+        {
+            FileName = OperatingSystem.IsWindows() ? "cmd.exe" : "/bin/sh",
+            WorkingDirectory = workingDirectory
+        };
+        if (OperatingSystem.IsWindows())
+        {
+            startInfo.ArgumentList.Add("/d");
+            startInfo.ArgumentList.Add("/s");
+            startInfo.ArgumentList.Add("/c");
+        }
+        else
+        {
+            startInfo.ArgumentList.Add("-c");
+        }
+
+        startInfo.ArgumentList.Add(command);
+        return startInfo;
+    }
+
+    /// <summary>
+    /// 为 Windows cmd 重定向目标添加双引号
+    /// </summary>
+    /// <param name="path">不包含双引号的测试路径</param>
+    /// <returns>cmd 可消费的带引号路径</returns>
+    private static string QuoteForWindowsCommand(string path)
+    {
+        return $"\"{path}\"";
+    }
+
+    /// <summary>
+    /// 为 POSIX shell 路径添加单引号并转义内部单引号
+    /// </summary>
+    /// <param name="path">测试进程要写入的路径</param>
+    /// <returns>POSIX shell 可消费的带引号路径</returns>
+    private static string QuoteForPosixShell(string path)
+    {
+        return $"'{path.Replace("'", "'\\''", StringComparison.Ordinal)}'";
+    }
+
+    /// <summary>
+    /// 提供可回收的子进程测试目录
+    /// </summary>
+    private sealed class TemporaryProcessDirectory : IDisposable
+    {
+        /// <summary>
+        /// 初始化并创建唯一临时目录
+        /// </summary>
+        internal TemporaryProcessDirectory()
+        {
+            RootPath = Path.Combine(Path.GetTempPath(), $"tw-restore-tests-{Guid.NewGuid():N}");
+            Directory.CreateDirectory(RootPath);
+        }
+
+        /// <summary>
+        /// 子进程工作目录
+        /// </summary>
+        internal string RootPath { get; }
+
+        /// <summary>
+        /// 删除测试创建的临时目录
+        /// </summary>
+        public void Dispose()
+        {
+            if (Directory.Exists(RootPath))
+            {
+                Directory.Delete(RootPath, recursive: true);
+            }
         }
     }
 

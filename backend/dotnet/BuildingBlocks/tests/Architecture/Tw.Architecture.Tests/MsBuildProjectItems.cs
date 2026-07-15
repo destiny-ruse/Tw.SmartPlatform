@@ -49,6 +49,19 @@ internal static class MsBuildProjectItems
             || itemSpec.Contains("@(", StringComparison.Ordinal)
             || itemSpec.Contains("%(", StringComparison.Ordinal);
     }
+
+    /// <summary>
+    /// 按指定宿主分隔符转换 MSBuild item-spec
+    /// </summary>
+    /// <param name="itemSpec">来自 Include 的静态 item-spec</param>
+    /// <param name="directorySeparator">目标文件系统目录分隔符</param>
+    /// <returns>可交给 <see cref="Path"/> API 的路径文本</returns>
+    internal static string NormalizeFileSystemPath(string itemSpec, char directorySeparator)
+    {
+        return itemSpec
+            .Replace('\\', directorySeparator)
+            .Replace('/', directorySeparator);
+    }
 }
 
 /// <summary>

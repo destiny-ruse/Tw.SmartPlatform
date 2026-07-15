@@ -97,6 +97,22 @@ public sealed class PackageTopologyTests
     }
 
     /// <summary>
+    /// 重复身份属性必须使用 MSBuild 最后生效的显式值
+    /// </summary>
+    /// <param name="propertyName">PackageId、AssemblyName 或 RootNamespace</param>
+    [Theory]
+    [InlineData("PackageId")]
+    [InlineData("AssemblyName")]
+    [InlineData("RootNamespace")]
+    public void EffectiveProjectProperty_UsesLastExplicitIdentityValue(string propertyName)
+    {
+        var document = XDocument.Parse(
+            $"<Project><PropertyGroup><{propertyName}>Tw.Approved</{propertyName}><{propertyName}>Tw.Unapproved</{propertyName}></PropertyGroup></Project>");
+
+        EffectiveProjectProperty(document, propertyName, "Tw.Default").Should().Be("Tw.Unapproved");
+    }
+
+    /// <summary>
     /// 验证自有类型名称不使用含义模糊的角色后缀
     /// </summary>
     [Fact]
@@ -311,7 +327,7 @@ public sealed class PackageTopologyTests
     {
         return document.Descendants(propertyName)
             .Select(element => element.Value.Trim())
-            .FirstOrDefault(value => !string.IsNullOrWhiteSpace(value))
+            .LastOrDefault(value => !string.IsNullOrWhiteSpace(value))
             ?? defaultValue;
     }
 

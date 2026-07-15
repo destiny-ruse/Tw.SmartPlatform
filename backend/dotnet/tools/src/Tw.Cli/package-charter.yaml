@@ -6,9 +6,9 @@ in_scope:
   - `tw new` 项目创建入口
   - `tw add capability` 能力接入入口
   - `tw validate contracts` 契约校验入口
-  - `tw audit dependencies` 对淘汰包、测试依赖和分层依赖执行审计
-  - `tw diagnose` 报告项目库存、解决方案一致性、项目引用和锁文件状态
-  - 通过 `dotnet restore --locked-mode` 判定 NuGet 锁图是否陈旧
+  - `tw audit dependencies` 对项目、Directory.Build 与显式导入中的淘汰包、测试依赖和分层依赖执行保守审计
+  - `tw diagnose` 报告项目库存、解决方案一致性、项目引用、锁文件状态和 restore 未运行状态
+  - 通过具有十分钟超时和进程树终止边界的 `dotnet restore --locked-mode` 判定 NuGet 锁图是否陈旧
 out_of_scope:
   - 业务运行时代码
   - 微服务内的领域逻辑
@@ -25,4 +25,4 @@ dependency_rules:
     - System.CommandLine
     - Spectre.Console
 stability: experimental
-compatibility: 命令名称和非零退出码作为自动化脚本契约保持稳定。
+compatibility: 命令名称、usage 退出码 2、locked restore 超时退出码 124 和其他非零退出码作为自动化脚本契约保持稳定。

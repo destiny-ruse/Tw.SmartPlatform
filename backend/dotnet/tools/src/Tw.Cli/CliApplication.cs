@@ -37,7 +37,7 @@ public sealed class CliApplication
     /// <param name="args">命令行参数</param>
     /// <param name="standardOutput">普通命令输出目标</param>
     /// <param name="standardError">错误和治理违规输出目标</param>
-    /// <returns>成功为零、治理或 restore 失败为非零、未知命令为二</returns>
+    /// <returns>成功为零、治理或 restore 失败为非零、未知命令或 usage 错误为二</returns>
     public int Run(string[] args, TextWriter standardOutput, TextWriter standardError)
     {
         ArgumentNullException.ThrowIfNull(args);
@@ -50,7 +50,14 @@ public sealed class CliApplication
             return 0;
         }
 
-        var repository = GetOptionValue(args, "--repository") ?? Directory.GetCurrentDirectory();
+        if (!TryGetOptionValue(args, "--repository", out var repositoryOptionValue))
+        {
+            standardError.WriteLine("--repository requires a path value.");
+            PrintUsage(standardError);
+            return 2;
+        }
+
+        var repository = repositoryOptionValue ?? Directory.GetCurrentDirectory();
 
         if (args[0].Equals("diagnose", StringComparison.OrdinalIgnoreCase))
         {
@@ -118,7 +125,8 @@ public sealed class CliApplication
         standardOutput.WriteLine($"retired references: {report.RetiredReferences.Count}");
         standardOutput.WriteLine($"missing lock files: {report.MissingLockFiles.Count}");
         standardOutput.WriteLine($"retired lock dependencies: {report.RetiredLockDependencies.Count}");
-        standardOutput.WriteLine($"locked restore exit code: {report.LockedRestoreExitCode}");
+        standardOutput.WriteLine(
+            $"locked restore exit code: {report.LockedRestoreExitCode?.ToString() ?? "not run"}");
 
         foreach (var unresolvedReference in report.UnresolvedProjectReferences)
         {
@@ -146,6 +154,11 @@ public sealed class CliApplication
             standardError.WriteLine($"diagnosis error: {inspectionError}");
         }
 
+        if (!string.IsNullOrWhiteSpace(report.LockedRestoreStandardOutput))
+        {
+            standardOutput.Write(report.LockedRestoreStandardOutput);
+        }
+
         if (!string.IsNullOrWhiteSpace(report.LockedRestoreStandardError))
         {
             standardError.Write(report.LockedRestoreStandardError);
@@ -163,22 +176,33 @@ public sealed class CliApplication
     }
 
     /// <summary>
-    /// 查找命令行选项后紧邻的参数值
+    /// 查找命令行选项后紧邻的参数值并区分选项缺省与缺值
     /// </summary>
     /// <param name="args">完整命令行参数</param>
     /// <param name="optionName">需要查找的选项名称</param>
-    /// <returns>找到时返回选项值，否则返回 <see langword="null"/></returns>
-    private static string? GetOptionValue(string[] args, string optionName)
+    /// <param name="optionValue">选项存在且有效时返回路径；选项缺省时为 <see langword="null"/></param>
+    /// <returns>选项缺省或具有有效值时返回 <see langword="true"/>；显式选项缺值时返回 <see langword="false"/></returns>
+    private static bool TryGetOptionValue(string[] args, string optionName, out string? optionValue)
     {
-        for (var index = 0; index < args.Length - 1; index++)
+        for (var index = 0; index < args.Length; index++)
         {
-            if (args[index].Equals(optionName, StringComparison.OrdinalIgnoreCase))
+            if (!args[index].Equals(optionName, StringComparison.OrdinalIgnoreCase))
             {
-                return args[index + 1];
+                continue;
             }
+
+            if (index == args.Length - 1 || args[index + 1].StartsWith("-", StringComparison.Ordinal))
+            {
+                optionValue = null;
+                return false;
+            }
+
+            optionValue = args[index + 1];
+            return true;
         }
 
-        return null;
+        optionValue = null;
+        return true;
     }
 
     /// <summary>

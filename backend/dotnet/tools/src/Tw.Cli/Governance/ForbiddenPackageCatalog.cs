@@ -60,18 +60,26 @@ public sealed class ForbiddenPackageCatalog
             var topology = JsonSerializer.Deserialize<TopologyManifest>(
                 File.ReadAllText(topologyPath),
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            if (topology is null || topology.RetiredPackages.Count == 0)
+            if (topology?.RetiredPackages is null || topology.RetiredPackages.Count == 0)
             {
                 throw new GovernanceConfigurationException("BuildingBlocks topology manifest contains no retired packages.");
             }
 
-            if (topology.RetiredPackages.Any(package => string.IsNullOrWhiteSpace(package.PackageId)))
+            if (topology.RetiredPackages.Any(package => package is null))
+            {
+                throw new GovernanceConfigurationException("BuildingBlocks topology manifest contains a null retired package entry.");
+            }
+
+            var retiredPackages = topology.RetiredPackages
+                .Cast<RetiredPackageManifestEntry>()
+                .ToArray();
+            if (retiredPackages.Any(package => string.IsNullOrWhiteSpace(package.PackageId)))
             {
                 throw new GovernanceConfigurationException("BuildingBlocks topology manifest contains an empty retired PackageId.");
             }
 
-            var duplicates = topology.RetiredPackages
-                .GroupBy(package => package.PackageId, StringComparer.OrdinalIgnoreCase)
+            var duplicates = retiredPackages
+                .GroupBy(package => package.PackageId.Trim(), StringComparer.OrdinalIgnoreCase)
                 .Where(group => group.Count() > 1)
                 .Select(group => group.Key)
                 .ToArray();
@@ -81,8 +89,8 @@ public sealed class ForbiddenPackageCatalog
                     $"BuildingBlocks topology manifest contains duplicate retired PackageIds: {string.Join(", ", duplicates)}");
             }
 
-            return new ForbiddenPackageCatalog(topology.RetiredPackages
-                .Select(package => new RetiredPackageRule(package.PackageId, package.ReplacementPackageId))
+            return new ForbiddenPackageCatalog(retiredPackages
+                .Select(package => new RetiredPackageRule(package.PackageId.Trim(), package.ReplacementPackageId))
                 .ToArray());
         }
         catch (JsonException exception)
@@ -110,7 +118,7 @@ public sealed class ForbiddenPackageCatalog
         /// <summary>
         /// 淘汰包及替代目标集合
         /// </summary>
-        public List<RetiredPackageManifestEntry> RetiredPackages { get; init; } = [];
+        public List<RetiredPackageManifestEntry?>? RetiredPackages { get; init; } = [];
     }
 
     /// <summary>

@@ -142,4 +142,55 @@ public sealed partial class PackageConsolidationTests
         violations.Should().Equal(
             $"{RepositoryLayout.RepositoryRelativePath(projectPath)} uses an unresolved ProjectReference expression: {expression}");
     }
+
+    /// <summary>
+    /// Windows 与 Unix 风格分隔符都必须转换为目标宿主可解析的 item-spec
+    /// </summary>
+    /// <param name="itemSpec">包含混合分隔符的项目引用路径</param>
+    /// <param name="directorySeparator">模拟目标宿主的目录分隔符</param>
+    /// <param name="expected">目标宿主应接收的路径文本</param>
+    [Theory]
+    [InlineData("..\\Tw.Http.Client/Tw.Http.Client.csproj", '/', "../Tw.Http.Client/Tw.Http.Client.csproj")]
+    [InlineData("../Tw.Http.Client\\Tw.Http.Client.csproj", '\\', "..\\Tw.Http.Client\\Tw.Http.Client.csproj")]
+    public void NormalizeFileSystemPath_UsesTargetHostSeparator(
+        string itemSpec,
+        char directorySeparator,
+        string expected)
+    {
+        MsBuildProjectItems.NormalizeFileSystemPath(itemSpec, directorySeparator).Should().Be(expected);
+    }
+
+    /// <summary>
+    /// Windows 风格 ProjectReference 在任意宿主上均应解析到现存目标并提取规范项目名
+    /// </summary>
+    [Fact]
+    public void WindowsProjectReference_ResolvesExistingTargetAndCanonicalProjectName()
+    {
+        using var directory = new TemporaryTestDirectory();
+        directory.WriteFile("Referenced/Tw.Http.Client.csproj", "<Project />");
+        var projectPath = directory.WriteFile(
+            "Consumer.csproj",
+            "<Project><ItemGroup><ProjectReference Include=\"Referenced\\Tw.Http.Client.csproj\" /></ItemGroup></Project>");
+
+        var normalized = MsBuildProjectItems.NormalizeFileSystemPath(
+            "Referenced\\Tw.Http.Client.csproj",
+            Path.DirectorySeparatorChar);
+
+        Path.GetFileNameWithoutExtension(normalized).Should().Be("Tw.Http.Client");
+        FindUnresolvedProjectReferences(projectPath).Should().BeEmpty();
+    }
+
+    /// <summary>
+    /// 根命名空间重复声明时合并门禁必须读取最后生效值
+    /// </summary>
+    [Fact]
+    public void EffectiveRootNamespace_UsesLastExplicitValue()
+    {
+        using var directory = new TemporaryTestDirectory();
+        var projectPath = directory.WriteFile(
+            "Tw.Sample.csproj",
+            "<Project><PropertyGroup><RootNamespace>Tw.Sample</RootNamespace><RootNamespace>Tw.Unapproved</RootNamespace></PropertyGroup></Project>");
+
+        EffectiveRootNamespace(projectPath).Should().Be("Tw.Unapproved");
+    }
 }

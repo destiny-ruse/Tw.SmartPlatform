@@ -1,7 +1,6 @@
 namespace Tw.Cli.Commands;
 
 using System.Diagnostics;
-using System.Text;
 using System.Text.Json;
 using System.Xml.Linq;
 using Tw.Cli.Governance;
@@ -220,7 +219,9 @@ public sealed class RepositoryDiagnosisService
                     continue;
                 }
 
-                var referencedPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(projectPath)!, include));
+                var referencedPath = Path.GetFullPath(Path.Combine(
+                    Path.GetDirectoryName(projectPath)!,
+                    MsBuildPath.NormalizeFileSystemPath(include, Path.DirectorySeparatorChar)));
                 if (!File.Exists(referencedPath))
                 {
                     yield return $"{RelativePath(repositoryPath, projectPath)} -> {NormalizePath(include)}";
@@ -332,7 +333,7 @@ public interface ILockedRestoreRunner
     /// </summary>
     /// <param name="solutionPath">需要还原的 .slnx 路径</param>
     /// <param name="workingDirectory">dotnet 子进程工作目录</param>
-    /// <returns>子进程退出码和标准输出</returns>
+    /// <returns>子进程退出码、标准输出和标准错误</returns>
     LockedRestoreResult Run(string solutionPath, string workingDirectory);
 }
 
@@ -342,58 +343,126 @@ public interface ILockedRestoreRunner
 public sealed class DotnetLockedRestoreRunner : ILockedRestoreRunner
 {
     /// <summary>
+    /// locked restore 的稳定超时退出码
+    /// </summary>
+    private const int TimeoutExitCode = 124;
+
+    /// <summary>
+    /// 默认 locked restore 最大执行时间
+    /// </summary>
+    private static readonly TimeSpan DefaultTimeout = TimeSpan.FromMinutes(10);
+
+    /// <summary>
+    /// 子进程最大执行时间
+    /// </summary>
+    private readonly TimeSpan _timeout;
+
+    /// <summary>
+    /// 根据解决方案与工作目录创建子进程启动信息
+    /// </summary>
+    private readonly Func<string, string, ProcessStartInfo> _startInfoFactory;
+
+    /// <summary>
+    /// 使用十分钟默认超时初始化真实 dotnet restore runner
+    /// </summary>
+    public DotnetLockedRestoreRunner()
+        : this(DefaultTimeout, CreateDotnetRestoreStartInfo)
+    {
+    }
+
+    /// <summary>
+    /// 使用可控超时与进程启动边界初始化测试 runner
+    /// </summary>
+    /// <param name="timeout">子进程最大执行时间</param>
+    /// <param name="startInfoFactory">根据解决方案与工作目录创建进程启动信息的工厂</param>
+    internal DotnetLockedRestoreRunner(
+        TimeSpan timeout,
+        Func<string, string, ProcessStartInfo> startInfoFactory)
+    {
+        if (timeout <= TimeSpan.Zero)
+        {
+            throw new ArgumentOutOfRangeException(nameof(timeout), "locked restore 超时必须大于零");
+        }
+
+        _timeout = timeout;
+        _startInfoFactory = startInfoFactory ?? throw new ArgumentNullException(nameof(startInfoFactory));
+    }
+
+    /// <summary>
     /// 以 locked mode 执行 dotnet restore 并完整捕获进程输出
     /// </summary>
     /// <param name="solutionPath">需要还原的 .slnx 路径</param>
     /// <param name="workingDirectory">dotnet 子进程工作目录</param>
-    /// <returns>子进程退出码和标准输出</returns>
+    /// <returns>子进程退出码、标准输出和标准错误</returns>
     public LockedRestoreResult Run(string solutionPath, string workingDirectory)
     {
-        var startInfo = new ProcessStartInfo
-        {
-            FileName = "dotnet",
-            WorkingDirectory = workingDirectory,
-            UseShellExecute = false,
-            RedirectStandardOutput = true,
-            RedirectStandardError = true,
-            CreateNoWindow = true
-        };
-        startInfo.ArgumentList.Add("restore");
-        startInfo.ArgumentList.Add(solutionPath);
-        startInfo.ArgumentList.Add("--locked-mode");
+        var startInfo = _startInfoFactory(solutionPath, workingDirectory);
+        startInfo.UseShellExecute = false;
+        startInfo.RedirectStandardOutput = true;
+        startInfo.RedirectStandardError = true;
+        startInfo.CreateNoWindow = true;
 
         using var process = new Process { StartInfo = startInfo };
-        var standardOutput = new StringBuilder();
-        var standardError = new StringBuilder();
-        process.OutputDataReceived += (_, eventArgs) => AppendProcessLine(standardOutput, eventArgs.Data);
-        process.ErrorDataReceived += (_, eventArgs) => AppendProcessLine(standardError, eventArgs.Data);
         if (!process.Start())
         {
             throw new InvalidOperationException("无法启动 dotnet restore 子进程");
         }
 
-        process.BeginOutputReadLine();
-        process.BeginErrorReadLine();
-        process.WaitForExit();
-        return new LockedRestoreResult(process.ExitCode, standardOutput.ToString(), standardError.ToString());
+        var standardOutputTask = process.StandardOutput.ReadToEndAsync();
+        var standardErrorTask = process.StandardError.ReadToEndAsync();
+        using var timeoutCancellation = new CancellationTokenSource(_timeout);
+        try
+        {
+            process.WaitForExitAsync(timeoutCancellation.Token).GetAwaiter().GetResult();
+        }
+        catch (OperationCanceledException) when (timeoutCancellation.IsCancellationRequested)
+        {
+            try
+            {
+                process.Kill(entireProcessTree: true);
+            }
+            catch (InvalidOperationException)
+            {
+                // 进程恰好在超时边界退出时继续排空输出并返回稳定超时结果
+            }
+
+            process.WaitForExit();
+            Task.WhenAll(standardOutputTask, standardErrorTask).GetAwaiter().GetResult();
+            var timeoutMessage = $"Locked restore timed out after {_timeout}.";
+            var standardError = standardErrorTask.Result;
+            if (!string.IsNullOrEmpty(standardError) && !standardError.EndsWith(Environment.NewLine, StringComparison.Ordinal))
+            {
+                standardError += Environment.NewLine;
+            }
+
+            return new LockedRestoreResult(
+                TimeoutExitCode,
+                standardOutputTask.Result,
+                standardError + timeoutMessage + Environment.NewLine);
+        }
+
+        Task.WhenAll(standardOutputTask, standardErrorTask).GetAwaiter().GetResult();
+        return new LockedRestoreResult(process.ExitCode, standardOutputTask.Result, standardErrorTask.Result);
     }
 
     /// <summary>
-    /// 将子进程异步输出行追加到对应缓冲区
+    /// 创建生产环境使用的 dotnet restore 启动信息
     /// </summary>
-    /// <param name="builder">线程安全写入的目标缓冲区</param>
-    /// <param name="line">进程输出行，流结束时为 <see langword="null"/></param>
-    private static void AppendProcessLine(StringBuilder builder, string? line)
+    /// <param name="solutionPath">需要以 locked mode 还原的解决方案路径</param>
+    /// <param name="workingDirectory">dotnet 子进程工作目录</param>
+    /// <returns>包含 locked mode 参数的进程启动信息</returns>
+    private static ProcessStartInfo CreateDotnetRestoreStartInfo(string solutionPath, string workingDirectory)
     {
-        if (line is null)
+        var startInfo = new ProcessStartInfo
         {
-            return;
-        }
+            FileName = "dotnet",
+            WorkingDirectory = workingDirectory
+        };
+        startInfo.ArgumentList.Add("restore");
+        startInfo.ArgumentList.Add(solutionPath);
+        startInfo.ArgumentList.Add("--locked-mode");
 
-        lock (builder)
-        {
-            builder.AppendLine(line);
-        }
+        return startInfo;
     }
 }
 
@@ -477,9 +546,9 @@ public sealed class RepositoryDiagnosisReport
     public List<string> InspectionErrors { get; } = [];
 
     /// <summary>
-    /// locked restore 子进程退出码，未执行时为零
+    /// locked restore 子进程退出码，未执行时为 <see langword="null"/>
     /// </summary>
-    public int LockedRestoreExitCode { get; internal set; }
+    public int? LockedRestoreExitCode { get; internal set; }
 
     /// <summary>
     /// locked restore 标准输出
@@ -498,9 +567,9 @@ public sealed class RepositoryDiagnosisReport
     {
         get
         {
-            if (LockedRestoreExitCode != 0)
+            if (LockedRestoreExitCode is int restoreExitCode && restoreExitCode != 0)
             {
-                return LockedRestoreExitCode;
+                return restoreExitCode;
             }
 
             return RepositoryExists

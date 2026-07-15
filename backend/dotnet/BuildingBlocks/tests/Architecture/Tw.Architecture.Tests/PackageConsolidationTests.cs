@@ -29,7 +29,8 @@ public sealed partial class PackageConsolidationTests
                 {
                     ProjectPath = projectPath,
                     Reference = reference,
-                    PackageId = Path.GetFileNameWithoutExtension(reference)
+                    PackageId = Path.GetFileNameWithoutExtension(
+                        MsBuildProjectItems.NormalizeFileSystemPath(reference, Path.DirectorySeparatorChar))
                 }))
             .Where(reference => retiredPackageIds.Contains(reference.PackageId))
             .Select(reference => $"{RepositoryLayout.RepositoryRelativePath(reference.ProjectPath)} -> {reference.Reference}")
@@ -412,7 +413,7 @@ public sealed partial class PackageConsolidationTests
         var document = XDocument.Load(projectPath);
         return document.Descendants("RootNamespace")
             .Select(element => element.Value)
-            .FirstOrDefault(value => !string.IsNullOrWhiteSpace(value))
+            .LastOrDefault(value => !string.IsNullOrWhiteSpace(value))
             ?? Path.GetFileNameWithoutExtension(projectPath);
     }
 
@@ -440,7 +441,9 @@ public sealed partial class PackageConsolidationTests
                     continue;
                 }
 
-                var referencedPath = Path.GetFullPath(Path.Combine(projectDirectory, itemSpec));
+                var referencedPath = Path.GetFullPath(Path.Combine(
+                    projectDirectory,
+                    MsBuildProjectItems.NormalizeFileSystemPath(itemSpec, Path.DirectorySeparatorChar)));
                 if (!File.Exists(referencedPath))
                 {
                     yield return $"{RepositoryLayout.RepositoryRelativePath(projectPath)} references missing project {RepositoryLayout.NormalizePath(itemSpec)}";

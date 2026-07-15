@@ -70,6 +70,18 @@ public sealed class AuditDependenciesCommandTests
     }
 
     /// <summary>
+    /// 拓扑清单中必须统一映射为配置错误的非法 retiredPackages 结构
+    /// </summary>
+    public static TheoryData<string> InvalidCatalogJsonCases => new()
+    {
+        { "{\"retiredPackages\":null}" },
+        { "{\"retiredPackages\":[null]}" },
+        { "{\"retiredPackages\":{}}" },
+        { "{\"retiredPackages\":[{\"packageId\":\"   \"}]}" },
+        { "{\"retiredPackages\":[{\"packageId\":\"Tw.Legacy\"},{\"packageId\":\"tw.legacy\"}]}" }
+    };
+
+    /// <summary>
     /// 验证拓扑清单中的每个淘汰包会同时阻止项目引用和包引用
     /// </summary>
     /// <param name="packageId">拓扑清单中的淘汰包标识</param>
@@ -214,6 +226,182 @@ public sealed class AuditDependenciesCommandTests
     }
 
     /// <summary>
+    /// Include、Update 与分号 item-spec 都必须逐项执行淘汰包治理
+    /// </summary>
+    /// <param name="referenceType">PackageReference 或 ProjectReference</param>
+    /// <param name="itemOperation">Include 或 Update</param>
+    [Theory]
+    [InlineData("PackageReference", "Include")]
+    [InlineData("PackageReference", "Update")]
+    [InlineData("ProjectReference", "Include")]
+    [InlineData("ProjectReference", "Update")]
+    public void Scan_GovernsSemicolonSeparatedIncludeAndUpdateItems(
+        string referenceType,
+        string itemOperation)
+    {
+        var governedItem = referenceType == "ProjectReference"
+            ? "..\\Tw.Http.Client\\Tw.Http.Client.csproj"
+            : "Tw.Http.Client";
+        var allowedItem = referenceType == "ProjectReference"
+            ? "..\\Tw.Http\\Tw.Http.csproj"
+            : "Tw.Http";
+        var result = new ProjectDependencyScanner().ScanProjectText(
+            "src/Billing.Application/Billing.Application.csproj",
+            $"<Project><ItemGroup><{referenceType} {itemOperation}=\"{governedItem}; {allowedItem}\" /></ItemGroup></Project>",
+            LoadCatalog());
+
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV002");
+    }
+
+    /// <summary>
+    /// MSBuild item 类型大小写不能绕过依赖治理
+    /// </summary>
+    /// <param name="referenceType">混合大小写的 PackageReference 或 ProjectReference</param>
+    /// <param name="itemSpec">对应淘汰包的 item-spec</param>
+    [Theory]
+    [InlineData("pAcKaGeReFeReNcE", "Tw.Http.Client")]
+    [InlineData("pRoJeCtReFeReNcE", "..\\Tw.Http.Client\\Tw.Http.Client.csproj")]
+    public void Scan_GovernsMsBuildItemNamesCaseInsensitively(string referenceType, string itemSpec)
+    {
+        var result = new ProjectDependencyScanner().ScanProjectText(
+            "src/Billing.Application/Billing.Application.csproj",
+            $"<Project><ItemGroup><{referenceType} Include=\"{itemSpec}\" /></ItemGroup></Project>",
+            LoadCatalog());
+
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV002");
+    }
+
+    /// <summary>
+    /// Update 中的基础设施包标识不能绕过应用层边界
+    /// </summary>
+    [Fact]
+    public void Scan_GovernsInfrastructureProviderUpdateItems()
+    {
+        var result = new ProjectDependencyScanner().ScanProjectText(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project><ItemGroup><PackageReference Update=\"DistributedLock.Redis\" /></ItemGroup></Project>",
+            LoadCatalog());
+
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV005");
+    }
+
+    /// <summary>
+    /// 无法静态求值的引用身份必须返回稳定配置错误而不是静默跳过
+    /// </summary>
+    /// <param name="referenceType">PackageReference 或 ProjectReference</param>
+    /// <param name="itemOperation">Include 或 Update</param>
+    [Theory]
+    [InlineData("PackageReference", "Include")]
+    [InlineData("PackageReference", "Update")]
+    [InlineData("ProjectReference", "Include")]
+    [InlineData("ProjectReference", "Update")]
+    public void Scan_ReportsDynamicItemExpressions(string referenceType, string itemOperation)
+    {
+        var result = new ProjectDependencyScanner().ScanProjectText(
+            "src/Billing.Application/Billing.Application.csproj",
+            $"<Project><ItemGroup><{referenceType} {itemOperation}=\"$(GovernedDependency)\" /></ItemGroup></Project>",
+            LoadCatalog());
+
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV000");
+    }
+
+    /// <summary>
+    /// 仓库扫描必须递归读取根与祖先自动导入以及显式导入，并安全终止导入循环
+    /// </summary>
+    [Fact]
+    public void ScanRepository_GovernsAutomaticAndExplicitImportsConservatively()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        repository.WriteFile(
+            "Directory.Build.props",
+            "<Project><ItemGroup Condition=\"'$(Configuration)' == 'Never'\"><PackageReference Include=\"Tw.Http.Client\" /></ItemGroup></Project>");
+        repository.WriteFile(
+            "src/Directory.Build.targets",
+            "<Project><ItemGroup><PackageReference Update=\"DistributedLock.Redis\" /></ItemGroup></Project>");
+        repository.WriteFile(
+            "rules/one.props",
+            "<Project><Import Project=\"two.targets\" /><ItemGroup><ProjectReference Include=\"..\\Tw.Http.Client\\Tw.Http.Client.csproj\" /></ItemGroup></Project>");
+        repository.WriteFile(
+            "rules/two.targets",
+            "<Project><Import Project=\"one.props\" /><ItemGroup><PackageReference Include=\"Microsoft.Extensions.ServiceDiscovery.Yarp\" /></ItemGroup></Project>");
+        repository.WriteFile(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project><Import Project=\"..\\..\\rules\\one.props\" /></Project>");
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().Contain(error => error.Code == "TWGOV002");
+        result.Errors.Should().Contain(error => error.Code == "TWGOV005");
+        result.Errors.Should().NotContain(error => error.Code == "TWGOV000");
+    }
+
+    /// <summary>
+    /// 坏 XML 与动态显式导入必须统一返回 TWGOV000
+    /// </summary>
+    [Fact]
+    public void ScanRepository_ReportsInvalidAndDynamicImports()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        repository.WriteFile("rules/broken.props", "<Project><ItemGroup>");
+        repository.WriteFile(
+            "src/Billing.Application/Billing.Application.csproj",
+            "<Project><Import Project=\"..\\..\\rules\\broken.props\" /><Import Project=\"$(RulePath)\" /></Project>");
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().HaveCount(2)
+            .And.OnlyContain(error => error.Code == "TWGOV000");
+    }
+
+    /// <summary>
+    /// 模板与构建输出中的项目样例不得进入仓库治理扫描
+    /// </summary>
+    [Fact]
+    public void ScanRepository_SkipsTemplatesAndBuildOutputs()
+    {
+        using var repository = TemporaryAuditRepository.Create();
+        var retiredProject = "<Project><ItemGroup><PackageReference Include=\"Tw.Http.Client\" /></ItemGroup></Project>";
+        repository.WriteFile("templates/service/Template.csproj", retiredProject);
+        repository.WriteFile("src/Billing.Application/bin/Debug/Generated.csproj", retiredProject);
+        repository.WriteFile("src/Billing.Application/obj/Generated.csproj", retiredProject);
+        repository.WriteFile("src/Billing.Application/Billing.Application.csproj", "<Project />");
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().BeEmpty();
+    }
+
+    /// <summary>
+    /// 非法 catalog JSON shape 必须统一抛出 GovernanceConfigurationException
+    /// </summary>
+    /// <param name="topologyJson">包含非法 retiredPackages 结构的清单文本</param>
+    [Theory]
+    [MemberData(nameof(InvalidCatalogJsonCases))]
+    public void ForbiddenPackageCatalog_RejectsInvalidJsonShapes(string topologyJson)
+    {
+        using var repository = TemporaryAuditRepository.Create(topologyJson);
+
+        var load = () => ForbiddenPackageCatalog.Load(repository.RootPath);
+
+        load.Should().Throw<GovernanceConfigurationException>();
+    }
+
+    /// <summary>
+    /// 仓库扫描必须把所有非法 catalog shape 映射为稳定 TWGOV000
+    /// </summary>
+    /// <param name="topologyJson">包含非法 retiredPackages 结构的清单文本</param>
+    [Theory]
+    [MemberData(nameof(InvalidCatalogJsonCases))]
+    public void ScanRepository_MapsInvalidCatalogShapesToTwGov000(string topologyJson)
+    {
+        using var repository = TemporaryAuditRepository.Create(topologyJson);
+
+        var result = new ProjectDependencyScanner().ScanRepository(repository.RootPath);
+
+        result.Errors.Should().ContainSingle(error => error.Code == "TWGOV000");
+    }
+
+    /// <summary>
     /// 验证仓库目录缺失时扫描以稳定输入错误结束
     /// </summary>
     [Fact]
@@ -253,6 +441,30 @@ public sealed class AuditDependenciesCommandTests
             LoadCatalog());
 
         result.Errors.Should().NotContain(error => error.Code == "TWGOV003");
+    }
+
+    /// <summary>
+    /// CLI 路径规范化必须同时处理 Windows 与 Unix 分隔符
+    /// </summary>
+    /// <param name="itemSpec">包含混合分隔符的项目引用路径</param>
+    /// <param name="directorySeparator">模拟目标宿主的目录分隔符</param>
+    /// <param name="expected">目标宿主应接收的路径文本</param>
+    [Theory]
+    [InlineData("..\\Tw.Http.Client/Tw.Http.Client.csproj", '/', "../Tw.Http.Client/Tw.Http.Client.csproj")]
+    [InlineData("../Tw.Http.Client\\Tw.Http.Client.csproj", '\\', "..\\Tw.Http.Client\\Tw.Http.Client.csproj")]
+    public void MsBuildPath_UsesTargetHostSeparator(
+        string itemSpec,
+        char directorySeparator,
+        string expected)
+    {
+        var helperType = typeof(ProjectDependencyScanner).Assembly.GetType(
+            "Tw.Cli.Governance.MsBuildPath",
+            throwOnError: true)!;
+        var method = helperType.GetMethod(
+            "NormalizeFileSystemPath",
+            System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic)!;
+
+        method.Invoke(null, [itemSpec, directorySeparator]).Should().Be(expected);
     }
 
     /// <summary>
@@ -302,5 +514,67 @@ public sealed class AuditDependenciesCommandTests
         }
 
         throw new InvalidOperationException("无法定位测试仓库根目录");
+    }
+
+    /// <summary>
+    /// 提供可回收的最小依赖审计仓库
+    /// </summary>
+    private sealed class TemporaryAuditRepository : IDisposable
+    {
+        /// <summary>
+        /// 初始化临时仓库路径
+        /// </summary>
+        /// <param name="rootPath">测试专用仓库根目录</param>
+        private TemporaryAuditRepository(string rootPath)
+        {
+            RootPath = rootPath;
+        }
+
+        /// <summary>
+        /// 临时仓库根目录
+        /// </summary>
+        internal string RootPath { get; }
+
+        /// <summary>
+        /// 创建包含最小有效拓扑清单的临时仓库
+        /// </summary>
+        /// <returns>需要在用例结束后释放的仓库</returns>
+        internal static TemporaryAuditRepository Create(string? topologyJson = null)
+        {
+            var repository = new TemporaryAuditRepository(
+                Path.Combine(Path.GetTempPath(), $"tw-audit-tests-{Guid.NewGuid():N}"));
+            repository.WriteFile(
+                "backend/dotnet/BuildingBlocks/building-blocks-topology.json",
+                topologyJson
+                ?? "{\"retiredPackages\":[{\"packageId\":\"Tw.Http.Client\",\"replacementPackageId\":\"Tw.Http\"}]}");
+            return repository;
+        }
+
+        /// <summary>
+        /// 在仓库相对路径写入测试文本
+        /// </summary>
+        /// <param name="relativePath">使用正斜杠的仓库相对路径</param>
+        /// <param name="content">写入文件的完整文本</param>
+        /// <returns>写入文件的绝对路径</returns>
+        internal string WriteFile(string relativePath, string content)
+        {
+            var path = Path.Combine(
+                RootPath,
+                relativePath.Replace('/', Path.DirectorySeparatorChar));
+            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+            File.WriteAllText(path, content);
+            return path;
+        }
+
+        /// <summary>
+        /// 删除测试创建的临时目录
+        /// </summary>
+        public void Dispose()
+        {
+            if (Directory.Exists(RootPath))
+            {
+                Directory.Delete(RootPath, recursive: true);
+            }
+        }
     }
 }
