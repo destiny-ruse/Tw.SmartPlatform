@@ -150,7 +150,7 @@ public sealed partial class PackageConsolidationTests
     /// </summary>
     /// <returns>异步分析完整例外边界的任务</returns>
     [Fact]
-    public async Task ForbiddenBrandIdentifierAnalyzer_EnforcesCompleteTwExceptionExceptionBoundary()
+    public async Task ForbiddenBrandIdentifierAnalyzer_EnforcesApprovedExceptionBoundary()
     {
         const string approvedSource = """
         namespace Tw.Exceptions;
@@ -198,7 +198,63 @@ public sealed partial class PackageConsolidationTests
             .SelectMany(root => Directory.GetFiles(root, "*", SearchOption.AllDirectories))
             .Where(file => extensions.Contains(Path.GetExtension(file)))
             .Where(file => !IsGeneratedOrHistoricalArtifact(file))
+            .Where(file => !IsTemplatePackageCharter(file))
             .Append(Path.Combine(RepositoryLayout.Root, "backend", "dotnet", "Tw.SmartPlatform.slnx"));
+    }
+
+    /// <summary>
+    /// 验证模板 charter 排除仅覆盖模板 content 目录的真实后代
+    /// </summary>
+    [Fact]
+    public void TemplatePackageCharterExclusion_RequiresExactContentDirectoryBoundary()
+    {
+        var templateContentRoot = Path.Combine(
+            RepositoryLayout.Root,
+            "backend",
+            "dotnet",
+            "tools",
+            "src",
+            "Tw.Templates",
+            "content");
+
+        IsTemplatePackageCharter(Path.Combine(
+            templateContentRoot,
+            "building-block",
+            "package-charter.yaml")).Should().BeTrue();
+        IsTemplatePackageCharter(Path.Combine(
+            $"{templateContentRoot}-shadow",
+            "package-charter.yaml")).Should().BeFalse();
+        IsTemplatePackageCharter(Path.Combine(
+            templateContentRoot,
+            "building-block",
+            "other.yaml")).Should().BeFalse();
+    }
+
+    /// <summary>
+    /// 判断文件是否为模板中的负向包依赖规则
+    /// </summary>
+    /// <param name="filePath">需要判定的绝对文件路径</param>
+    /// <returns>文件为模板包章程时返回 <see langword="true"/></returns>
+    private static bool IsTemplatePackageCharter(string filePath)
+    {
+        if (!Path.GetFileName(filePath).Equals("package-charter.yaml", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        var templateContentRoot = Path.GetFullPath(Path.Combine(
+            RepositoryLayout.Root,
+            "backend",
+            "dotnet",
+            "tools",
+            "src",
+            "Tw.Templates",
+            "content")).TrimEnd(
+                Path.DirectorySeparatorChar,
+                Path.AltDirectorySeparatorChar) + Path.DirectorySeparatorChar;
+        var normalizedFilePath = Path.GetFullPath(filePath);
+
+        return normalizedFilePath.StartsWith(templateContentRoot, StringComparison.OrdinalIgnoreCase);
     }
 
     /// <summary>

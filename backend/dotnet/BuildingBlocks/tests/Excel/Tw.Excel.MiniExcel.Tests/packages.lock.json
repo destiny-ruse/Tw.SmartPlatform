@@ -191,7 +191,7 @@
         "dependencies": {
           "DocumentFormat.OpenXml": "[3.5.1, )",
           "MiniExcel": "[1.45.0, )",
-          "Tw.Excel": "[1.0.0, )"
+          "Tw.Excel": "[0.1.0-alpha.1, )"
         }
       },
       "DocumentFormat.OpenXml": {

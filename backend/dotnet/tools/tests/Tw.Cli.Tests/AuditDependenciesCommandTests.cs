@@ -154,7 +154,7 @@ public sealed class AuditDependenciesCommandTests
     [InlineData("Quartz")]
     [InlineData("Yarp.ReverseProxy")]
     [InlineData("StackExchange.Redis")]
-    public void Scan_FailsWhenTwAspNetCoreReferencesInfrastructureProvider(string providerPackage)
+    public void Scan_FailsWhenWebHostPackageReferencesInfrastructureProvider(string providerPackage)
     {
         var result = ScanPackageReference(
             "backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore/Tw.AspNetCore.csproj",
@@ -542,7 +542,7 @@ public sealed class AuditDependenciesCommandTests
     /// <param name="topologyJson">包含非法 retiredPackages 结构的清单文本</param>
     [Theory]
     [MemberData(nameof(InvalidCatalogJsonCases))]
-    public void ScanRepository_MapsInvalidCatalogShapesToTwGov000(string topologyJson)
+    public void ScanRepository_MapsInvalidCatalogShapesToGovernanceDiagnostic(string topologyJson)
     {
         using var repository = TemporaryAuditRepository.Create(topologyJson);
 

@@ -1,6 +1,5 @@
 ﻿using AwesomeAssertions;
 using MediatR;
-using NSubstitute;
 using Tw.BackgroundJobs;
 using Tw.BackgroundJobs.Abstractions;
 using Xunit;
@@ -19,7 +18,7 @@ public sealed class BackgroundJobPipelineTests
     [Fact]
     public async Task ExecuteAsync_SendsCommandAndRecordsAuditTraceAndMetrics()
     {
-        var sender = Substitute.For<ISender>();
+        var sender = new RecordingSender();
         var auditSink = new RecordingJobAuditSink();
         var traceSink = new RecordingJobTraceSink();
         var metricSink = new RecordingJobMetricSink();
@@ -29,7 +28,7 @@ public sealed class BackgroundJobPipelineTests
 
         await pipeline.ExecuteAsync(new BackgroundJobCommand(request, context), TestContext.Current.CancellationToken);
 
-        await sender.Received(1).Send(request, Arg.Any<CancellationToken>());
+        sender.Requests.Should().ContainSingle().Which.Should().BeSameAs(request);
         auditSink.Events.Should().Contain(e => e.TenantId == "tenant-a" && e.JobId == "job-1");
         traceSink.Events.Should().Contain(e => e.JobId == "job-1" && e.EventName == "background_job.started");
         metricSink.Events.Should().Contain(e => e.JobId == "job-1" && e.MetricName == "background_job.succeeded");
@@ -39,6 +38,57 @@ public sealed class BackgroundJobPipelineTests
     /// 提供 CLI 中示例命令的入口描述
     /// </summary>
     private sealed record SampleCommand(string OrderId) : IRequest;
+
+    /// <summary>
+    /// 记录后台作业管道发送的请求，避免测试替身引入动态代理依赖
+    /// </summary>
+    private sealed class RecordingSender : ISender
+    {
+        /// <summary>
+        /// 已发送的请求
+        /// </summary>
+        public List<object> Requests { get; } = [];
+
+        /// <inheritdoc />
+        public Task<TResponse> Send<TResponse>(
+            IRequest<TResponse> request,
+            CancellationToken cancellationToken = default)
+        {
+            Requests.Add(request);
+            return Task.FromResult(default(TResponse)!);
+        }
+
+        /// <inheritdoc />
+        public Task Send<TRequest>(TRequest request, CancellationToken cancellationToken = default)
+            where TRequest : IRequest
+        {
+            Requests.Add(request);
+            return Task.CompletedTask;
+        }
+
+        /// <inheritdoc />
+        public Task<object?> Send(object request, CancellationToken cancellationToken = default)
+        {
+            Requests.Add(request);
+            return Task.FromResult<object?>(null);
+        }
+
+        /// <inheritdoc />
+        public IAsyncEnumerable<TResponse> CreateStream<TResponse>(
+            IStreamRequest<TResponse> request,
+            CancellationToken cancellationToken = default)
+        {
+            throw new NotSupportedException();
+        }
+
+        /// <inheritdoc />
+        public IAsyncEnumerable<object?> CreateStream(
+            object request,
+            CancellationToken cancellationToken = default)
+        {
+            throw new NotSupportedException();
+        }
+    }
 
     /// <summary>
     /// 覆盖Recording作业审计Sink的核心行为和边界条件

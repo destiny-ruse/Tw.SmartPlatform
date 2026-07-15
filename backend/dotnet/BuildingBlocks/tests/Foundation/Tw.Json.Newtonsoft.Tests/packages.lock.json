@@ -177,7 +177,7 @@
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.4, )",
-          "Tw.Json.Abstractions": "[1.0.0, )"
+          "Tw.Json.Abstractions": "[0.1.0-alpha.1, )"
         }
       },
       "Newtonsoft.Json": {

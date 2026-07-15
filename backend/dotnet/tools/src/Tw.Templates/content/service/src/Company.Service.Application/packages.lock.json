@@ -5,13 +5,13 @@
       "company.service.application.contracts": {
         "type": "Project",
         "dependencies": {
-          "Company.Service.Domain.Shared": "[1.0.0, )"
+          "Company.Service.Domain.Shared": "[0.1.0-alpha.1, )"
         }
       },
       "company.service.domain": {
         "type": "Project",
         "dependencies": {
-          "Company.Service.Domain.Shared": "[1.0.0, )"
+          "Company.Service.Domain.Shared": "[0.1.0-alpha.1, )"
         }
       },
       "company.service.domain.shared": {

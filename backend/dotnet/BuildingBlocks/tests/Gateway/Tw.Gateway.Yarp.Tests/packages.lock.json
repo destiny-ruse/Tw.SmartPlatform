@@ -256,7 +256,7 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.ServiceDiscovery.Yarp": "[10.7.0, )",
-          "Tw.Gateway": "[1.0.0, )",
+          "Tw.Gateway": "[0.1.0-alpha.1, )",
           "Yarp.ReverseProxy": "[2.3.0, )"
         }
       },

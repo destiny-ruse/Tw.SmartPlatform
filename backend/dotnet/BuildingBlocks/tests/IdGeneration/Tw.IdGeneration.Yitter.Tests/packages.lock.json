@@ -186,7 +186,7 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )",
-          "Tw.IdGeneration": "[1.0.0, )",
+          "Tw.IdGeneration": "[0.1.0-alpha.1, )",
           "Yitter.IdGenerator": "[1.0.15, )"
         }
       },

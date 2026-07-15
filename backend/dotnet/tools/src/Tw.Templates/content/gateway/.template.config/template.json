@@ -6,5 +6,13 @@
   "name": "Tw gateway",
   "shortName": "tw-gateway",
   "sourceName": "Company.Gateway",
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "symbols": {
+    "frameworkVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "0.1.0-alpha.1",
+      "replaces": "0.1.0-alpha.1"
+    }
+  }
 }

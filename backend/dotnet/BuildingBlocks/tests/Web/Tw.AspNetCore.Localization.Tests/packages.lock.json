@@ -173,8 +173,8 @@
       "tw.aspnetcore.localization": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Localization": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )",
+          "Tw.Localization": "[0.1.0-alpha.1, )"
         }
       },
       "tw.core": {
@@ -183,7 +183,7 @@
       "tw.localization": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )"
         }
       },
       "Newtonsoft.Json": {

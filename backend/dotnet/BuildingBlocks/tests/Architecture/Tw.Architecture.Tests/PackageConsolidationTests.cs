@@ -295,7 +295,7 @@ public sealed partial class PackageConsolidationTests
     /// 验证 provider-neutral 的应用契约与领域形状包不保留未使用的 Tw.Core 引用
     /// </summary>
     [Fact]
-    public void ProviderNeutralApplicationPackages_DoNotReferenceTwCore()
+    public void ProviderNeutralApplicationPackages_DoNotReferenceCorePackage()
     {
         var projectPaths = new[]
         {
@@ -304,8 +304,8 @@ public sealed partial class PackageConsolidationTests
         };
         var violations = projectPaths
             .Select(path => ProjectPath(RepositoryLayout.BuildingBlocksSrc, path))
-            .Where(path => ReferencesTwCore(path)
-                || CharterAllowsTwCore(Path.Combine(Path.GetDirectoryName(path)!, "package-charter.yaml")))
+            .Where(path => ReferencesCorePackage(path)
+                || CharterAllowsCorePackage(Path.Combine(Path.GetDirectoryName(path)!, "package-charter.yaml")))
             .Select(RepositoryLayout.RepositoryRelativePath)
             .ToArray();
 
@@ -318,7 +318,7 @@ public sealed partial class PackageConsolidationTests
     /// </summary>
     /// <param name="projectPath">待检查的项目文件路径</param>
     /// <returns>存在 Tw.Core 引用时返回 <see langword="true"/></returns>
-    private static bool ReferencesTwCore(string projectPath)
+    private static bool ReferencesCorePackage(string projectPath)
     {
         return MsBuildProjectItems
             .Read(projectPath, "ProjectReference", "PackageReference")
@@ -341,7 +341,7 @@ public sealed partial class PackageConsolidationTests
     /// </summary>
     /// <param name="charterPath">待检查的包章程路径</param>
     /// <returns>依赖白名单包含 Tw.Core 时返回 <see langword="true"/></returns>
-    private static bool CharterAllowsTwCore(string charterPath)
+    private static bool CharterAllowsCorePackage(string charterPath)
     {
         return PackageCharterDependencyRules.AllowsDependency(charterPath, "Tw.Core");
     }

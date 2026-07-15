@@ -1,5 +1,10 @@
 <!-- 用途: 专门管理内部包 -->
 <Project>
   <ItemGroup>
+    <PackageVersion Include="Tw.Gateway" Version="$(TwPackageVersion)" />
+    <PackageVersion Include="Tw.Gateway.Yarp" Version="$(TwPackageVersion)" />
+    <PackageVersion Include="Tw.AspNetCore" Version="$(TwPackageVersion)" />
+    <PackageVersion Include="Tw.Observability" Version="$(TwPackageVersion)" />
+    <PackageVersion Include="Tw.Configuration" Version="$(TwPackageVersion)" />
   </ItemGroup>
 </Project>

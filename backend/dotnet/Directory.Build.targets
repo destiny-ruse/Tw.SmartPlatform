@@ -1,0 +1,34 @@
+<Project>
+  <PropertyGroup>
+    <_TwPathComparisonMode Condition="'$(_TwPathComparisonMode)' == '' and $([MSBuild]::IsOSPlatform('Windows'))">Windows</_TwPathComparisonMode>
+    <_TwPathComparisonMode Condition="'$(_TwPathComparisonMode)' == ''">Unix</_TwPathComparisonMode>
+    <_TwAnalyzerProjectFullPathInput Condition="'$(_TwAnalyzerProjectFullPathInput)' == ''">$(MSBuildThisFileDirectory)tools/src/Tw.Analyzers/Tw.Analyzers.csproj</_TwAnalyzerProjectFullPathInput>
+    <_TwAnalyzerTestsProjectFullPathInput Condition="'$(_TwAnalyzerTestsProjectFullPathInput)' == ''">$(MSBuildThisFileDirectory)tools/tests/Tw.Analyzers.Tests/Tw.Analyzers.Tests.csproj</_TwAnalyzerTestsProjectFullPathInput>
+    <_TwTemplateContentRootInput Condition="'$(_TwTemplateContentRootInput)' == ''">$(MSBuildThisFileDirectory)tools/src/Tw.Templates/content</_TwTemplateContentRootInput>
+    <_TwNormalizedProjectFullPath>$([System.String]::Copy('$(MSBuildProjectFullPath)').Replace('\', '/'))</_TwNormalizedProjectFullPath>
+    <_TwAnalyzerProjectFullPath>$([System.String]::Copy('$(_TwAnalyzerProjectFullPathInput)').Replace('\', '/'))</_TwAnalyzerProjectFullPath>
+    <_TwAnalyzerTestsProjectFullPath>$([System.String]::Copy('$(_TwAnalyzerTestsProjectFullPathInput)').Replace('\', '/'))</_TwAnalyzerTestsProjectFullPath>
+    <_TwTemplateContentRoot>$([System.String]::Copy('$(_TwTemplateContentRootInput)').Replace('\', '/').TrimEnd('/'))/</_TwTemplateContentRoot>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(_TwPathComparisonMode)' == 'Windows'">
+    <_TwNormalizedProjectFullPath>$([System.String]::Copy('$(_TwNormalizedProjectFullPath)').ToLowerInvariant())</_TwNormalizedProjectFullPath>
+    <_TwAnalyzerProjectFullPath>$([System.String]::Copy('$(_TwAnalyzerProjectFullPath)').ToLowerInvariant())</_TwAnalyzerProjectFullPath>
+    <_TwAnalyzerTestsProjectFullPath>$([System.String]::Copy('$(_TwAnalyzerTestsProjectFullPath)').ToLowerInvariant())</_TwAnalyzerTestsProjectFullPath>
+    <_TwTemplateContentRoot>$([System.String]::Copy('$(_TwTemplateContentRoot)').ToLowerInvariant())</_TwTemplateContentRoot>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <_TwIsApprovedAnalyzerProject Condition="$([System.String]::Equals('$(_TwNormalizedProjectFullPath)', '$(_TwAnalyzerProjectFullPath)', System.StringComparison.Ordinal)) or $([System.String]::Equals('$(_TwNormalizedProjectFullPath)', '$(_TwAnalyzerTestsProjectFullPath)', System.StringComparison.Ordinal))">true</_TwIsApprovedAnalyzerProject>
+    <_TwIsTemplateContentProject Condition="$([System.String]::Copy('$(_TwNormalizedProjectFullPath)').StartsWith('$(_TwTemplateContentRoot)', System.StringComparison.Ordinal)) == 'true'">true</_TwIsTemplateContentProject>
+    <_TwUseRepositoryBrandAnalyzer Condition="'$(_TwIsApprovedAnalyzerProject)' != 'true' and '$(_TwIsTemplateContentProject)' != 'true'">true</_TwUseRepositoryBrandAnalyzer>
+    <WarningsAsErrors Condition="'$(_TwUseRepositoryBrandAnalyzer)' == 'true'">$(WarningsAsErrors);TWGOV001</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(_TwUseRepositoryBrandAnalyzer)' == 'true'">
+    <ProjectReference Include="$(MSBuildThisFileDirectory)tools/src/Tw.Analyzers/Tw.Analyzers.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+  </ItemGroup>
+</Project>

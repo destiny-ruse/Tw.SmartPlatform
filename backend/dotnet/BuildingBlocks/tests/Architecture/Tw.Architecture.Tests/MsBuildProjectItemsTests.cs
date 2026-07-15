@@ -11,7 +11,7 @@ public sealed partial class PackageConsolidationTests
     /// <summary>
     /// 用于验证静态扫描能力的 Tw.Core XML 输入，不声明具体 NuGet item-spec 的合法性
     /// </summary>
-    public static TheoryData<string> ProjectReferencingTwCoreCases => new()
+    public static TheoryData<string> ProjectReferencingCorePackageCases => new()
     {
         {
             """
@@ -57,13 +57,13 @@ public sealed partial class PackageConsolidationTests
     /// </summary>
     /// <param name="projectXml">写入临时项目的 MSBuild XML 文本</param>
     [Theory]
-    [MemberData(nameof(ProjectReferencingTwCoreCases))]
-    public void ReferencesTwCore_ReturnsTrue_ForStaticScannerInputForms(string projectXml)
+    [MemberData(nameof(ProjectReferencingCorePackageCases))]
+    public void ReferencesCorePackage_ReturnsTrue_ForStaticScannerInputForms(string projectXml)
     {
         using var directory = new TemporaryTestDirectory();
         var projectPath = directory.WriteFile("Consumer.csproj", projectXml);
 
-        ReferencesTwCore(projectPath).Should().BeTrue();
+        ReferencesCorePackage(projectPath).Should().BeTrue();
     }
 
     /// <summary>

@@ -2,8 +2,8 @@
   <PropertyGroup>
     <!-- 开启中央包管理 -->
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <!-- 允许浮动版本 -->
-    <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
+    <!-- 禁止浮动版本 -->
+    <CentralPackageFloatingVersionsEnabled>false</CentralPackageFloatingVersionsEnabled>
     <!-- 开启传递依赖固定 -->
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>

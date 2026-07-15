@@ -11,7 +11,7 @@ public sealed partial class PackageConsolidationTests
     /// <summary>
     /// 包含 Tw.Core 的有效 YAML 白名单写法
     /// </summary>
-    public static TheoryData<string> CharterAllowingTwCoreCases => new()
+    public static TheoryData<string> CharterAllowingCorePackageCases => new()
     {
         {
             """
@@ -39,7 +39,7 @@ public sealed partial class PackageConsolidationTests
     /// <summary>
     /// 不允许 Tw.Core 的有效 YAML 章程写法
     /// </summary>
-    public static TheoryData<string> CharterNotAllowingTwCoreCases => new()
+    public static TheoryData<string> CharterNotAllowingCorePackageCases => new()
     {
         {
             """
@@ -90,13 +90,13 @@ public sealed partial class PackageConsolidationTests
     /// </summary>
     /// <param name="yaml">写入临时章程的 YAML 文本</param>
     [Theory]
-    [MemberData(nameof(CharterAllowingTwCoreCases))]
-    public void CharterAllowsTwCore_ReturnsTrue_ForSupportedYamlForms(string yaml)
+    [MemberData(nameof(CharterAllowingCorePackageCases))]
+    public void CharterAllowsCorePackage_ReturnsTrue_ForSupportedYamlForms(string yaml)
     {
         using var directory = new TemporaryTestDirectory();
         var charterPath = directory.WriteFile("package-charter.yaml", yaml);
 
-        CharterAllowsTwCore(charterPath).Should().BeTrue();
+        CharterAllowsCorePackage(charterPath).Should().BeTrue();
     }
 
     /// <summary>
@@ -104,13 +104,13 @@ public sealed partial class PackageConsolidationTests
     /// </summary>
     /// <param name="yaml">写入临时章程的 YAML 文本</param>
     [Theory]
-    [MemberData(nameof(CharterNotAllowingTwCoreCases))]
-    public void CharterAllowsTwCore_ReturnsFalse_WhenAllowDoesNotContainTwCore(string yaml)
+    [MemberData(nameof(CharterNotAllowingCorePackageCases))]
+    public void CharterAllowsCorePackage_ReturnsFalse_WhenAllowDoesNotContainCorePackage(string yaml)
     {
         using var directory = new TemporaryTestDirectory();
         var charterPath = directory.WriteFile("package-charter.yaml", yaml);
 
-        CharterAllowsTwCore(charterPath).Should().BeFalse();
+        CharterAllowsCorePackage(charterPath).Should().BeFalse();
     }
 
     /// <summary>
@@ -119,12 +119,12 @@ public sealed partial class PackageConsolidationTests
     /// <param name="yaml">写入临时章程的无效 YAML 文本</param>
     [Theory]
     [MemberData(nameof(InvalidCharterCases))]
-    public void CharterAllowsTwCore_ThrowsDiagnosticFailure_WhenYamlIsInvalid(string yaml)
+    public void CharterAllowsCorePackage_ThrowsDiagnosticFailure_WhenYamlIsInvalid(string yaml)
     {
         using var directory = new TemporaryTestDirectory();
         var charterPath = directory.WriteFile("invalid-package-charter.yaml", yaml);
 
-        Action act = () => CharterAllowsTwCore(charterPath);
+        Action act = () => CharterAllowsCorePackage(charterPath);
 
         act.Should()
             .Throw<InvalidDataException>()

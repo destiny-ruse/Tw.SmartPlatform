@@ -8,7 +8,7 @@
       "tw.localization": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )"
         }
       }
     }

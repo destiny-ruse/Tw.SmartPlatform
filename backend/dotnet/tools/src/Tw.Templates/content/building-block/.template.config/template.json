@@ -6,5 +6,74 @@
   "name": "Tw building block",
   "shortName": "tw-building-block",
   "sourceName": "Tw.Sample",
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "symbols": {
+    "capability": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "replaces": "Capability",
+      "fileRename": "Capability"
+    },
+    "owner": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true
+    },
+    "responsibility": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true
+    },
+    "inScope": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true
+    },
+    "outOfScope": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true
+    },
+    "publicCapability": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true
+    },
+    "ownerYaml": {
+      "type": "derived",
+      "valueSource": "owner",
+      "valueTransform": "jsonEncode",
+      "replaces": "__OWNER__"
+    },
+    "responsibilityYaml": {
+      "type": "derived",
+      "valueSource": "responsibility",
+      "valueTransform": "jsonEncode",
+      "replaces": "__RESPONSIBILITY__"
+    },
+    "inScopeYaml": {
+      "type": "derived",
+      "valueSource": "inScope",
+      "valueTransform": "jsonEncode",
+      "replaces": "__IN_SCOPE__"
+    },
+    "outOfScopeYaml": {
+      "type": "derived",
+      "valueSource": "outOfScope",
+      "valueTransform": "jsonEncode",
+      "replaces": "__OUT_OF_SCOPE__"
+    },
+    "publicCapabilityYaml": {
+      "type": "derived",
+      "valueSource": "publicCapability",
+      "valueTransform": "jsonEncode",
+      "replaces": "__PUBLIC_CAPABILITY__"
+    }
+  },
+  "forms": {
+    "jsonEncode": {
+      "identifier": "jsonEncode"
+    }
+  }
 }

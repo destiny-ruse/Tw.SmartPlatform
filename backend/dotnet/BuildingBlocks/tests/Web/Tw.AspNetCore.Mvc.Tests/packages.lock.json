@@ -188,7 +188,7 @@
         "dependencies": {
           "Asp.Versioning.Mvc": "[10.0.0, )",
           "Asp.Versioning.Mvc.ApiExplorer": "[10.0.0, )",
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )"
         }
       },
       "tw.core": {

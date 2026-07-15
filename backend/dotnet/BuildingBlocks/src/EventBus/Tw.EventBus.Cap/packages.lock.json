@@ -344,8 +344,8 @@
         "type": "Project",
         "dependencies": {
           "SqlSugarCore": "[5.1.4.216, )",
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Data": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )",
+          "Tw.Data": "[0.1.0-alpha.1, )"
         }
       },
       "tw.eventbus": {

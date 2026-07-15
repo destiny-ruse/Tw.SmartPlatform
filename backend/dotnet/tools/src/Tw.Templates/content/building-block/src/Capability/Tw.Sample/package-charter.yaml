@@ -1,0 +1,33 @@
+schema_version: "1.0.0"
+package: Tw.Sample
+owner: __OWNER__
+responsibility: __RESPONSIBILITY__
+in_scope:
+  - __IN_SCOPE__
+out_of_scope:
+  - __OUT_OF_SCOPE__
+public_capabilities:
+  - __PUBLIC_CAPABILITY__
+dependency_rules:
+  forbid:
+    - "*TestBase"
+    - Tw.Authorization.Abstractions
+    - Tw.Domain.Shared
+    - Tw.Configuration.Json
+    - Tw.Uow
+    - Tw.DistributedLocking.Abstractions
+    - Tw.EventBus.Abstractions
+    - Tw.Castle.Core
+    - Tw.Threading
+    - Tw.Timing
+    - Tw.DependencyInjection.Autofac
+    - Tw.Validation.Abstractions
+    - Tw.Http.Abstractions
+    - Tw.Http.Client
+    - Tw.MultiTenancy.Abstractions
+    - Tw.Sharding.Abstractions
+    - Tw.AspNetCore.Abstractions
+    - Tw.Interception
+  allow: []
+stability: experimental
+compatibility: 首个稳定版本发布前允许调整公开能力，稳定版本发布后遵循语义化版本。

@@ -12,4 +12,8 @@
     <PackageReference Include="xunit.runner.visualstudio" />
     <PackageReference Include="AwesomeAssertions" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../src/Capability/Tw.Sample/Tw.Sample.csproj" />
+  </ItemGroup>
 </Project>

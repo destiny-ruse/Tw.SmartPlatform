@@ -29,7 +29,7 @@ public sealed class MvcIntegrationServiceCollectionExtensionsTests
     /// 验证 Tw.AspNetCore.Mvc 运行时程序集不再引用已移除的容器和代理程序集
     /// </summary>
     [Fact]
-    public void TwAspNetCoreMvcAssembly_DoesNotReferenceAutofacOrCastle()
+    public void AspNetCoreMvcAssembly_DoesNotReferenceAutofacOrCastle()
     {
         var referencedAssemblyNames = typeof(MvcIntegrationServiceCollectionExtensions).Assembly
             .GetReferencedAssemblies()

@@ -5,20 +5,20 @@
       "company.service.application": {
         "type": "Project",
         "dependencies": {
-          "Company.Service.Application.Contracts": "[1.0.0, )",
-          "Company.Service.Domain": "[1.0.0, )"
+          "Company.Service.Application.Contracts": "[0.1.0-alpha.1, )",
+          "Company.Service.Domain": "[0.1.0-alpha.1, )"
         }
       },
       "company.service.application.contracts": {
         "type": "Project",
         "dependencies": {
-          "Company.Service.Domain.Shared": "[1.0.0, )"
+          "Company.Service.Domain.Shared": "[0.1.0-alpha.1, )"
         }
       },
       "company.service.domain": {
         "type": "Project",
         "dependencies": {
-          "Company.Service.Domain.Shared": "[1.0.0, )"
+          "Company.Service.Domain.Shared": "[0.1.0-alpha.1, )"
         }
       },
       "company.service.domain.shared": {
@@ -27,7 +27,7 @@
       "company.service.httpapi": {
         "type": "Project",
         "dependencies": {
-          "Company.Service.Application": "[1.0.0, )"
+          "Company.Service.Application": "[0.1.0-alpha.1, )"
         }
       }
     }

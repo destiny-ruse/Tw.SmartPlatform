@@ -13,7 +13,7 @@ public sealed class ContainerNeutralRegistrationTests
     /// 验证 Tw.DependencyInjection 运行时程序集不引用已移除的容器和代理程序集
     /// </summary>
     [Fact]
-    public void TwDependencyInjectionAssembly_DoesNotReferenceAutofacOrCastle()
+    public void DependencyInjectionAssembly_DoesNotReferenceAutofacOrCastle()
     {
         typeof(ServiceRegistrationPlan).Assembly
             .GetReferencedAssemblies()

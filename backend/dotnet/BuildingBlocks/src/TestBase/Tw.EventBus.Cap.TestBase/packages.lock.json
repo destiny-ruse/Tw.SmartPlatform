@@ -410,8 +410,8 @@
         "type": "Project",
         "dependencies": {
           "SqlSugarCore": "[5.1.4.216, )",
-          "Tw.Core": "[1.0.0, )",
-          "Tw.Data": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )",
+          "Tw.Data": "[0.1.0-alpha.1, )"
         }
       },
       "tw.eventbus": {
@@ -423,9 +423,9 @@
           "DotNetCore.CAP": "[10.0.1, )",
           "DotNetCore.CAP.RabbitMQ": "[10.0.1, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )",
-          "Tw.Data": "[1.0.0, )",
-          "Tw.Data.SqlSugar": "[1.0.0, )",
-          "Tw.EventBus": "[1.0.0, )"
+          "Tw.Data": "[0.1.0-alpha.1, )",
+          "Tw.Data.SqlSugar": "[0.1.0-alpha.1, )",
+          "Tw.EventBus": "[0.1.0-alpha.1, )"
         }
       },
       "tw.testbase": {

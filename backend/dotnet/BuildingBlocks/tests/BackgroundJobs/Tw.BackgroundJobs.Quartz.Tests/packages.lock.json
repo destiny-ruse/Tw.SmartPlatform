@@ -184,7 +184,7 @@
         "type": "Project",
         "dependencies": {
           "MediatR": "[12.5.0, )",
-          "Tw.BackgroundJobs.Abstractions": "[1.0.0, )"
+          "Tw.BackgroundJobs.Abstractions": "[0.1.0-alpha.1, )"
         }
       },
       "tw.backgroundjobs.abstractions": {
@@ -194,8 +194,8 @@
         "type": "Project",
         "dependencies": {
           "Quartz": "[3.18.2, )",
-          "Tw.BackgroundJobs": "[1.0.0, )",
-          "Tw.BackgroundJobs.Abstractions": "[1.0.0, )"
+          "Tw.BackgroundJobs": "[0.1.0-alpha.1, )",
+          "Tw.BackgroundJobs.Abstractions": "[0.1.0-alpha.1, )"
         }
       },
       "MediatR": {

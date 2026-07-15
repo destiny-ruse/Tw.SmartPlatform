@@ -72,14 +72,14 @@
       "tw.aspnetcore": {
         "type": "Project",
         "dependencies": {
-          "Tw.DependencyInjection": "[1.0.0, )"
+          "Tw.DependencyInjection": "[0.1.0-alpha.1, )"
         }
       },
       "tw.dependencyinjection": {
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "[10.0.9, )",
-          "Tw.DependencyInjection.Abstractions": "[1.0.0, )"
+          "Tw.DependencyInjection.Abstractions": "[0.1.0-alpha.1, )"
         }
       },
       "tw.dependencyinjection.abstractions": {

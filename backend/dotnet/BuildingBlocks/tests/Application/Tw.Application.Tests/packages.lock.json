@@ -211,8 +211,8 @@
           "FluentValidation": "[12.1.1, )",
           "MediatR": "[12.5.0, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[10.0.9, )",
-          "Tw.Application.Contracts": "[1.0.0, )",
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Application.Contracts": "[0.1.0-alpha.1, )",
+          "Tw.Core": "[0.1.0-alpha.1, )"
         }
       },
       "tw.application.contracts": {

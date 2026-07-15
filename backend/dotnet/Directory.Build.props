@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <WarningsAsErrors>Nullable</WarningsAsErrors>
 	  <LangVersion>latest</LangVersion>
+	  <TwPackageVersion Condition="'$(TwPackageVersion)' == ''">0.1.0-alpha.1</TwPackageVersion>
+	  <PackageVersion>$(TwPackageVersion)</PackageVersion>
 	
     <IsTestProject Condition="$(MSBuildProjectName.EndsWith('.Tests'))">true</IsTestProject>
     

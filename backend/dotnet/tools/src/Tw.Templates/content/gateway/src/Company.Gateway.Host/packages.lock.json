@@ -15,7 +15,7 @@
       "tw.aspnetcore": {
         "type": "Project",
         "dependencies": {
-          "Tw.DependencyInjection": "[1.0.0, )"
+          "Tw.DependencyInjection": "[0.1.0-alpha.1, )"
         }
       },
       "tw.configuration": {
@@ -28,7 +28,7 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "[10.0.9, )",
-          "Tw.DependencyInjection.Abstractions": "[1.0.0, )"
+          "Tw.DependencyInjection.Abstractions": "[0.1.0-alpha.1, )"
         }
       },
       "tw.dependencyinjection.abstractions": {
@@ -41,20 +41,20 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.ServiceDiscovery.Yarp": "[10.7.0, )",
-          "Tw.Gateway": "[1.0.0, )",
+          "Tw.Gateway": "[0.1.0-alpha.1, )",
           "Yarp.ReverseProxy": "[2.3.0, )"
         }
       },
       "tw.observability": {
         "type": "Project",
         "dependencies": {
-          "Tw.Security": "[1.0.0, )"
+          "Tw.Security": "[0.1.0-alpha.1, )"
         }
       },
       "tw.security": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )"
         }
       },
       "Microsoft.Extensions.DependencyModel": {

@@ -170,6 +170,9 @@
           "xunit.v3.runner.common": "[3.2.2]"
         }
       },
+      "tw.sample": {
+        "type": "Project"
+      },
       "Newtonsoft.Json": {
         "type": "CentralTransitive",
         "requested": "[13.0.4, )",

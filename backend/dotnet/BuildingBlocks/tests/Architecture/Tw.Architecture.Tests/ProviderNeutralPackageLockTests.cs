@@ -13,7 +13,7 @@ public sealed partial class PackageConsolidationTests
     /// provider-neutral 应用包的有效锁文件依赖图不包含 Tw.Core 身份
     /// </summary>
     [Fact]
-    public void ProviderNeutralApplicationPackageLocks_DoNotContainTwCore()
+    public void ProviderNeutralApplicationPackageLocks_DoNotContainCorePackage()
     {
         var lockPaths = new[]
         {
@@ -22,7 +22,7 @@ public sealed partial class PackageConsolidationTests
         };
         var violations = lockPaths
             .Select(path => Path.Combine(RepositoryLayout.BuildingBlocksSrc, path.Replace('/', Path.DirectorySeparatorChar)))
-            .Where(LockFileContainsTwCore)
+            .Where(LockFileContainsCorePackage)
             .Select(RepositoryLayout.RepositoryRelativePath)
             .ToArray();
 
@@ -34,7 +34,7 @@ public sealed partial class PackageConsolidationTests
     /// </summary>
     /// <param name="lockPath">待读取的 NuGet 锁文件</param>
     /// <returns>依赖图包含 Tw.Core 时返回 <see langword="true"/></returns>
-    private static bool LockFileContainsTwCore(string lockPath)
+    private static bool LockFileContainsCorePackage(string lockPath)
     {
         var document = JsonNode.Parse(File.ReadAllText(lockPath))
             ?? throw new InvalidDataException($"NuGet 锁文件为空：{lockPath}");

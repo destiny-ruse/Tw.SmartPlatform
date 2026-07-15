@@ -331,7 +331,7 @@
       "tw.observability": {
         "type": "Project",
         "dependencies": {
-          "Tw.Security": "[1.0.0, )"
+          "Tw.Security": "[0.1.0-alpha.1, )"
         }
       },
       "tw.observability.serilog": {
@@ -339,14 +339,14 @@
         "dependencies": {
           "Serilog.AspNetCore": "[10.0.0, )",
           "Serilog.Sinks.OpenTelemetry": "[4.2.0, )",
-          "Tw.Observability": "[1.0.0, )",
-          "Tw.Security": "[1.0.0, )"
+          "Tw.Observability": "[0.1.0-alpha.1, )",
+          "Tw.Security": "[0.1.0-alpha.1, )"
         }
       },
       "tw.security": {
         "type": "Project",
         "dependencies": {
-          "Tw.Core": "[1.0.0, )"
+          "Tw.Core": "[0.1.0-alpha.1, )"
         }
       },
       "Microsoft.Extensions.Configuration": {

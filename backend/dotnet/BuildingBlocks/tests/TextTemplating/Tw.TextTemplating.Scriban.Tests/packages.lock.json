@@ -177,7 +177,7 @@
         "type": "Project",
         "dependencies": {
           "Scriban": "[7.2.5, )",
-          "Tw.TextTemplating": "[1.0.0, )"
+          "Tw.TextTemplating": "[0.1.0-alpha.1, )"
         }
       },
       "Newtonsoft.Json": {

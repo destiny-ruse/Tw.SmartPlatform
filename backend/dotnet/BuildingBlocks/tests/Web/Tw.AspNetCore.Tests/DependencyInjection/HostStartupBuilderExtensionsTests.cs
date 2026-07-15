@@ -68,7 +68,7 @@ public class HostStartupBuilderExtensionsTests
     /// 验证 Tw.AspNetCore 运行时程序集不再引用已移除的容器和代理程序集
     /// </summary>
     [Fact]
-    public void TwAspNetCoreAssembly_DoesNotReferenceAutofacOrCastle()
+    public void AspNetCoreAssembly_DoesNotReferenceAutofacOrCastle()
     {
         var referencedAssemblyNames = typeof(HostStartupBuilderExtensions).Assembly
             .GetReferencedAssemblies()
