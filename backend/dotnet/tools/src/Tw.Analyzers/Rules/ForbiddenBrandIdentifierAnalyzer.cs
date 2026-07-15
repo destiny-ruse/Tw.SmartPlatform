@@ -153,7 +153,7 @@ public sealed class ForbiddenBrandIdentifierAnalyzer : DiagnosticAnalyzer
     {
         if (symbol.IsImplicitlyDeclared ||
             symbol is IMethodSymbol { AssociatedSymbol: not null } ||
-            IsApprovedTwException(symbol, compilation))
+            IsApprovedExceptionType(symbol, compilation))
         {
             return null;
         }
@@ -173,12 +173,12 @@ public sealed class ForbiddenBrandIdentifierAnalyzer : DiagnosticAnalyzer
     }
 
     /// <summary>
-    /// 判断符号是否为 Tw.Core 程序集内唯一允许保留品牌分段的异常类型
+    /// 判断符号是否为治理规则唯一批准保留品牌分段的异常类型
     /// </summary>
     /// <param name="symbol">准备判断例外条件的声明符号</param>
     /// <param name="compilation">用于解析 System.Exception 元数据类型的当前编译</param>
     /// <returns>仅当符号满足批准异常类型的全部语义条件时返回 true</returns>
-    private static bool IsApprovedTwException(ISymbol symbol, Compilation compilation)
+    private static bool IsApprovedExceptionType(ISymbol symbol, Compilation compilation)
     {
         if (symbol is not INamedTypeSymbol namedType ||
             namedType.Arity != 0 ||
