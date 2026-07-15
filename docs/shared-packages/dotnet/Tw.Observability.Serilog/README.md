@@ -21,11 +21,20 @@ using var logger = new LoggerConfiguration()
 
 ## 脱敏边界
 
-属性名包含 `password`、`secret`、`token` 或 `connectionstring` 时，标量值会按 `SensitiveDataKind.Token` 交给 `IDataMasker` 处理。属性名匹配不区分大小写。
+属性名会按非字母数字分隔符、大小写转换和缩写边界拆分为语义词，匹配不区分大小写。下列敏感语义可位于属性名的任意词位置：
+
+- 单词：`password`、`secret`、`token`、`authorization`、`credential`、`cookie`
+- 连续短语：`connection string`、`api key`、`private key`、`authorization header`、`cookie header`
+
+例如 `PasswordHash`、`ClientSecretValue`、`TokenPayload`、`ConnectionStringValue`、`ApiKeyValue` 和 `PrivateKeyPem` 的标量值都会按 `SensitiveDataKind.Token` 交给 `IDataMasker` 处理。
+
+为避免把规则或实现元数据误判为敏感值，以下语义后缀属于明确的 benign 元数据边界：`PasswordPolicy`、`AuthorizationPolicy`、`CredentialProvider`、`PrivateKeyAlgorithm`、`ConnectionStringBuilder` 和 `CookiePolicy`。普通词中的字母片段也不会被当作完整敏感词，例如 `SecretariatName`、`TokenizationCount` 和 `ApiKeyboardLayout` 不会被脱敏。
+
+benign 元数据边界只忽略后缀本身，前缀仍会继续检查。例如 `TokenPasswordPolicy` 因前缀包含完整的 `token` 语义词，仍会被脱敏。
 
 ## 注意事项
 
 - `LoggerConfiguration` 或 `IDataMasker` 为 `null` 时抛出 `ArgumentNullException`
 - 当前 enricher 只处理敏感标量属性；结构、序列和非敏感属性保持不变
 - 调用方仍需避免把原始敏感载荷写入消息模板正文
-- 本包不提供脱敏规则配置，规则与具体遮蔽算法由 `Tw.Security` 负责
+- 本包不提供属性名匹配规则配置，具体遮蔽算法由注入的 `IDataMasker` 负责

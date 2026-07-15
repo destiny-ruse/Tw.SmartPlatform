@@ -26,9 +26,9 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
     };
 
     /// <summary>
-    /// 允许作为属性名语义后缀的单个敏感词
+    /// 属性名任意语义位置都需要识别的单个敏感词
     /// </summary>
-    private static readonly HashSet<string> SensitiveSuffixes = new(StringComparer.OrdinalIgnoreCase)
+    private static readonly HashSet<string> SensitiveWords = new(StringComparer.OrdinalIgnoreCase)
     {
         "password",
         "secret",
@@ -37,6 +37,31 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
         "credential",
         "cookie"
     };
+
+    /// <summary>
+    /// 属性名任意语义位置都需要识别的敏感短语
+    /// </summary>
+    private static readonly string[][] SensitivePhrases =
+    [
+        ["connection", "string"],
+        ["api", "key"],
+        ["private", "key"],
+        ["authorization", "header"],
+        ["cookie", "header"]
+    ];
+
+    /// <summary>
+    /// 明确描述规则或实现元数据而非敏感值的属性名后缀
+    /// </summary>
+    private static readonly string[][] BenignMetadataSuffixes =
+    [
+        ["password", "policy"],
+        ["authorization", "policy"],
+        ["credential", "provider"],
+        ["private", "key", "algorithm"],
+        ["connection", "string", "builder"],
+        ["cookie", "policy"]
+    ];
 
     /// <summary>
     /// 对日志事件中的受控敏感标量属性执行脱敏
@@ -76,16 +101,20 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
             return false;
         }
 
-        if (SensitiveSuffixes.Contains(words[^1]))
+        var searchWordCount = words.Count;
+        foreach (var suffix in BenignMetadataSuffixes)
         {
-            return true;
+            if (!HasSuffix(words, suffix))
+            {
+                continue;
+            }
+
+            searchWordCount -= suffix.Length;
+            break;
         }
 
-        return HasSuffix(words, "connection", "string")
-            || HasSuffix(words, "api", "key")
-            || HasSuffix(words, "private", "key")
-            || HasSuffix(words, "authorization", "header")
-            || HasSuffix(words, "cookie", "header");
+        return words.Take(searchWordCount).Any(SensitiveWords.Contains)
+            || SensitivePhrases.Any(phrase => ContainsSequence(words, searchWordCount, phrase));
     }
 
     /// <summary>
@@ -168,16 +197,62 @@ public sealed class RedactingLogEventEnricher(IDataMasker dataMasker) : ILogEven
     }
 
     /// <summary>
-    /// 判断语义词列表是否以指定双词组合结束
+    /// 判断语义词列表是否以指定元数据组合结束
     /// </summary>
     /// <param name="words">属性名语义词列表</param>
-    /// <param name="first">倒数第二个词</param>
-    /// <param name="second">最后一个词</param>
+    /// <param name="suffix">允许保留的元数据后缀</param>
     /// <returns>后缀匹配时返回 <see langword="true"/></returns>
-    private static bool HasSuffix(IReadOnlyList<string> words, string first, string second)
+    private static bool HasSuffix(IReadOnlyList<string> words, IReadOnlyList<string> suffix)
     {
-        return words.Count >= 2
-            && string.Equals(words[^2], first, StringComparison.OrdinalIgnoreCase)
-            && string.Equals(words[^1], second, StringComparison.OrdinalIgnoreCase);
+        if (words.Count < suffix.Count)
+        {
+            return false;
+        }
+
+        var start = words.Count - suffix.Count;
+        for (var index = 0; index < suffix.Count; index++)
+        {
+            if (!string.Equals(words[start + index], suffix[index], StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// 判断指定范围的语义词列表任意位置是否包含敏感短语
+    /// </summary>
+    /// <param name="words">属性名语义词列表</param>
+    /// <param name="wordCount">参与匹配的语义词数量</param>
+    /// <param name="sequence">需要连续匹配的敏感短语</param>
+    /// <returns>任意位置完整匹配短语时返回 <see langword="true"/></returns>
+    private static bool ContainsSequence(
+        IReadOnlyList<string> words,
+        int wordCount,
+        IReadOnlyList<string> sequence)
+    {
+        for (var start = 0; start <= wordCount - sequence.Count; start++)
+        {
+            var matches = true;
+            for (var index = 0; index < sequence.Count; index++)
+            {
+                if (string.Equals(words[start + index], sequence[index], StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                matches = false;
+                break;
+            }
+
+            if (matches)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
