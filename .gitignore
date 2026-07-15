@@ -37,3 +37,4 @@ __pycache__/
 *.bin
 *.npy
 *.npz
+/artifacts
