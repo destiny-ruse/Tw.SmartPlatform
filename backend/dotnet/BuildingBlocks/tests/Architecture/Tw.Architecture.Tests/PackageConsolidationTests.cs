@@ -1,6 +1,8 @@
 using System.Xml.Linq;
 using System.Text.Json.Nodes;
 using AwesomeAssertions;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Xunit;
 
 namespace Tw.Architecture.Tests;
@@ -10,6 +12,32 @@ namespace Tw.Architecture.Tests;
 /// </summary>
 public sealed partial class PackageConsolidationTests
 {
+    /// <summary>
+    /// 验证项目引用不会指向拓扑清单中的淘汰包
+    /// </summary>
+    [Fact]
+    public void ProjectReferences_DoNotTargetRetiredPackages()
+    {
+        var retiredPackageIds = RepositoryLayout.Topology.RetiredPackages
+            .Select(package => package.PackageId)
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var violations = Directory.GetFiles(RepositoryLayout.DotnetRoot, "*.csproj", SearchOption.AllDirectories)
+            .Where(path => !IsBuildOutput(path))
+            .SelectMany(projectPath => MsBuildProjectItems.Read(projectPath, "ProjectReference")
+                .SelectMany(reference => reference.ItemSpecs)
+                .Select(reference => new
+                {
+                    ProjectPath = projectPath,
+                    Reference = reference,
+                    PackageId = Path.GetFileNameWithoutExtension(reference)
+                }))
+            .Where(reference => retiredPackageIds.Contains(reference.PackageId))
+            .Select(reference => $"{RepositoryLayout.RepositoryRelativePath(reference.ProjectPath)} -> {reference.Reference}")
+            .ToArray();
+
+        violations.Should().BeEmpty("ProjectReference entries must target retained packages");
+    }
+
     /// <summary>
     /// 验证所有保留运行时项目存在且使用批准的有效根命名空间
     /// </summary>
@@ -195,25 +223,56 @@ public sealed partial class PackageConsolidationTests
     /// 验证淘汰项目删除后不会遗留原有的 runtime 或 test 项目目录
     /// </summary>
     [Fact]
-    public void RemovedRetiredProjects_DoNotLeaveProjectDirectoriesBehind()
+    public void RetiredPackageDirectories_DoNotExist()
     {
         var staleDirectories = RepositoryLayout.Topology.RetiredPackages
             .SelectMany(RetiredProjectFiles)
-            .Where(projectPath => !File.Exists(projectPath) && Directory.Exists(Path.GetDirectoryName(projectPath)!))
-            .Select(RepositoryLayout.RepositoryRelativePath)
+            .Select(Path.GetDirectoryName)
+            .Where(directory => directory is not null && Directory.Exists(directory))
+            .Select(directory => RepositoryLayout.RepositoryRelativePath(directory!))
             .ToArray();
 
         staleDirectories.Should().BeEmpty("retiring a project requires deleting its complete runtime or test project directory");
     }
 
     /// <summary>
+    /// 验证生产源码不再声明淘汰命名空间，同时保留 Configuration.Json 功能子命名空间
+    /// </summary>
+    [Fact]
+    public void RetiredNamespaces_DoNotRemainInSource()
+    {
+        var retiredNamespaces = RepositoryLayout.Topology.RetiredPackages
+            .SelectMany(package => package.RetiredNamespaces)
+            .Where(namespaceName => !string.Equals(namespaceName, "Tw.Configuration.Json", StringComparison.Ordinal))
+            .ToHashSet(StringComparer.Ordinal);
+        var violations = Directory.GetFiles(RepositoryLayout.BuildingBlocksSrc, "*.cs", SearchOption.AllDirectories)
+            .Where(path => !IsBuildOutput(path))
+            .SelectMany(path => CSharpSyntaxTree.ParseText(File.ReadAllText(path), path: path)
+                .GetRoot()
+                .DescendantNodes()
+                .OfType<BaseNamespaceDeclarationSyntax>()
+                .Select(declaration => new
+                {
+                    Path = path,
+                    Namespace = FullNamespaceName(declaration)
+                }))
+            .Where(declaration => retiredNamespaces.Any(retired =>
+                string.Equals(declaration.Namespace, retired, StringComparison.Ordinal)
+                || declaration.Namespace.StartsWith($"{retired}.", StringComparison.Ordinal)))
+            .Select(declaration => $"{RepositoryLayout.RepositoryRelativePath(declaration.Path)}: {declaration.Namespace}")
+            .ToArray();
+
+        violations.Should().BeEmpty("retired namespace boundaries must be removed from owned source declarations");
+    }
+
+    /// <summary>
     /// 验证 BuildingBlocks 中每条项目引用均指向现存项目文件
     /// </summary>
     [Fact]
-    public void BuildingBlocks_ProjectReferences_Resolve()
+    public void ProjectReferences_ResolveToExistingProjects()
     {
-        var violations = Directory.GetFiles(RepositoryLayout.BuildingBlocksSrc, "*.csproj", SearchOption.AllDirectories)
-            .Concat(Directory.GetFiles(RepositoryLayout.BuildingBlocksTests, "*.csproj", SearchOption.AllDirectories))
+        var violations = Directory.GetFiles(RepositoryLayout.DotnetRoot, "*.csproj", SearchOption.AllDirectories)
+            .Where(path => !IsBuildOutput(path))
             .SelectMany(FindUnresolvedProjectReferences)
             .ToArray();
 
@@ -389,4 +448,20 @@ public sealed partial class PackageConsolidationTests
     {
         return Path.Combine(root, relativePath.Replace('/', Path.DirectorySeparatorChar));
     }
+
+    /// <summary>
+    /// 组合嵌套命名空间声明并返回完整命名空间名称
+    /// </summary>
+    /// <param name="declaration">待解析的命名空间声明</param>
+    /// <returns>包含外层命名空间的完整名称</returns>
+    private static string FullNamespaceName(BaseNamespaceDeclarationSyntax declaration)
+    {
+        return string.Join(
+            ".",
+            declaration.AncestorsAndSelf()
+                .OfType<BaseNamespaceDeclarationSyntax>()
+                .Reverse()
+                .Select(namespaceDeclaration => namespaceDeclaration.Name.ToString()));
+    }
+
 }

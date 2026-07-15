@@ -1,13 +1,14 @@
 schema_version: "1.0.0"
 package: Tw.Cli
 owner: dotnet-framework
-responsibility: 提供项目创建、能力接入、契约校验、依赖审计和诊断的命令行入口。
+responsibility: 提供项目创建、能力接入、契约校验，以及基于仓库拓扑清单的依赖审计和诊断命令入口。
 in_scope:
   - `tw new` 项目创建入口
   - `tw add capability` 能力接入入口
   - `tw validate contracts` 契约校验入口
-  - `tw audit dependencies` 依赖审计入口
-  - `tw diagnose` 诊断入口
+  - `tw audit dependencies` 对淘汰包、测试依赖和分层依赖执行审计
+  - `tw diagnose` 报告项目库存、解决方案一致性、项目引用和锁文件状态
+  - 通过 `dotnet restore --locked-mode` 判定 NuGet 锁图是否陈旧
 out_of_scope:
   - 业务运行时代码
   - 微服务内的领域逻辑
