@@ -1,26 +1,362 @@
 packages:
+  Tw.Analyzers:
+    card: .tw-memory/cards/packages/Tw.Analyzers.generated.md
+    path: backend/dotnet/tools/src/Tw.Analyzers
+    public_api_card: .tw-memory/cards/public-apis/Tw.Analyzers.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Analyzers
+  Tw.Application:
+    card: .tw-memory/cards/packages/Tw.Application.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Application/Tw.Application
+    public_api_card: .tw-memory/cards/public-apis/Tw.Application.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Application
+  Tw.Application.Contracts:
+    card: .tw-memory/cards/packages/Tw.Application.Contracts.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Application/Tw.Application.Contracts
+    public_api_card: .tw-memory/cards/public-apis/Tw.Application.Contracts.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Application.Contracts
   Tw.AspNetCore:
     card: .tw-memory/cards/packages/Tw.AspNetCore.generated.md
-    path: backend/dotnet/BuildingBlocks/src/Tw.AspNetCore
+    path: backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore
     public_api_card: .tw-memory/cards/public-apis/Tw.AspNetCore.generated.md
     source_refs:
     - charter:package-charter:Tw.AspNetCore
+  Tw.AspNetCore.Grpc:
+    card: .tw-memory/cards/packages/Tw.AspNetCore.Grpc.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore.Grpc
+    public_api_card: .tw-memory/cards/public-apis/Tw.AspNetCore.Grpc.generated.md
+    source_refs:
+    - charter:package-charter:Tw.AspNetCore.Grpc
+  Tw.AspNetCore.Localization:
+    card: .tw-memory/cards/packages/Tw.AspNetCore.Localization.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore.Localization
+    public_api_card: .tw-memory/cards/public-apis/Tw.AspNetCore.Localization.generated.md
+    source_refs:
+    - charter:package-charter:Tw.AspNetCore.Localization
+  Tw.AspNetCore.Mvc:
+    card: .tw-memory/cards/packages/Tw.AspNetCore.Mvc.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore.Mvc
+    public_api_card: .tw-memory/cards/public-apis/Tw.AspNetCore.Mvc.generated.md
+    source_refs:
+    - charter:package-charter:Tw.AspNetCore.Mvc
+  Tw.AspNetCore.Mvc.NewtonsoftJson:
+    card: .tw-memory/cards/packages/Tw.AspNetCore.Mvc.NewtonsoftJson.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore.Mvc.NewtonsoftJson
+    public_api_card: .tw-memory/cards/public-apis/Tw.AspNetCore.Mvc.NewtonsoftJson.generated.md
+    source_refs:
+    - charter:package-charter:Tw.AspNetCore.Mvc.NewtonsoftJson
+  Tw.AspNetCore.Swashbuckle:
+    card: .tw-memory/cards/packages/Tw.AspNetCore.Swashbuckle.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Web/Tw.AspNetCore.Swashbuckle
+    public_api_card: .tw-memory/cards/public-apis/Tw.AspNetCore.Swashbuckle.generated.md
+    source_refs:
+    - charter:package-charter:Tw.AspNetCore.Swashbuckle
+  Tw.AspNetCore.TestBase:
+    card: .tw-memory/cards/packages/Tw.AspNetCore.TestBase.generated.md
+    path: backend/dotnet/BuildingBlocks/src/TestBase/Tw.AspNetCore.TestBase
+    public_api_card: .tw-memory/cards/public-apis/Tw.AspNetCore.TestBase.generated.md
+    source_refs:
+    - charter:package-charter:Tw.AspNetCore.TestBase
+  Tw.Auditing:
+    card: .tw-memory/cards/packages/Tw.Auditing.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Auditing/Tw.Auditing
+    public_api_card: .tw-memory/cards/public-apis/Tw.Auditing.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Auditing
+  Tw.Auditing.Contracts:
+    card: .tw-memory/cards/packages/Tw.Auditing.Contracts.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Auditing/Tw.Auditing.Contracts
+    public_api_card: .tw-memory/cards/public-apis/Tw.Auditing.Contracts.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Auditing.Contracts
+  Tw.Authorization:
+    card: .tw-memory/cards/packages/Tw.Authorization.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Application/Tw.Authorization
+    public_api_card: .tw-memory/cards/public-apis/Tw.Authorization.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Authorization
+  Tw.BackgroundJobs:
+    card: .tw-memory/cards/packages/Tw.BackgroundJobs.generated.md
+    path: backend/dotnet/BuildingBlocks/src/BackgroundJobs/Tw.BackgroundJobs
+    public_api_card: .tw-memory/cards/public-apis/Tw.BackgroundJobs.generated.md
+    source_refs:
+    - charter:package-charter:Tw.BackgroundJobs
+  Tw.BackgroundJobs.Abstractions:
+    card: .tw-memory/cards/packages/Tw.BackgroundJobs.Abstractions.generated.md
+    path: backend/dotnet/BuildingBlocks/src/BackgroundJobs/Tw.BackgroundJobs.Abstractions
+    public_api_card: .tw-memory/cards/public-apis/Tw.BackgroundJobs.Abstractions.generated.md
+    source_refs:
+    - charter:package-charter:Tw.BackgroundJobs.Abstractions
+  Tw.BackgroundJobs.Quartz:
+    card: .tw-memory/cards/packages/Tw.BackgroundJobs.Quartz.generated.md
+    path: backend/dotnet/BuildingBlocks/src/BackgroundJobs/Tw.BackgroundJobs.Quartz
+    public_api_card: .tw-memory/cards/public-apis/Tw.BackgroundJobs.Quartz.generated.md
+    source_refs:
+    - charter:package-charter:Tw.BackgroundJobs.Quartz
+  Tw.Caching:
+    card: .tw-memory/cards/packages/Tw.Caching.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Caching/Tw.Caching
+    public_api_card: .tw-memory/cards/public-apis/Tw.Caching.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Caching
+  Tw.Caching.FusionCache:
+    card: .tw-memory/cards/packages/Tw.Caching.FusionCache.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Caching/Tw.Caching.FusionCache
+    public_api_card: .tw-memory/cards/public-apis/Tw.Caching.FusionCache.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Caching.FusionCache
+  Tw.Cli:
+    card: .tw-memory/cards/packages/Tw.Cli.generated.md
+    path: backend/dotnet/tools/src/Tw.Cli
+    public_api_card: .tw-memory/cards/public-apis/Tw.Cli.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Cli
+  Tw.Configuration:
+    card: .tw-memory/cards/packages/Tw.Configuration.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Configuration/Tw.Configuration
+    public_api_card: .tw-memory/cards/public-apis/Tw.Configuration.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Configuration
+  Tw.Configuration.Nacos:
+    card: .tw-memory/cards/packages/Tw.Configuration.Nacos.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Configuration/Tw.Configuration.Nacos
+    public_api_card: .tw-memory/cards/public-apis/Tw.Configuration.Nacos.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Configuration.Nacos
   Tw.Core:
     card: .tw-memory/cards/packages/Tw.Core.generated.md
-    path: backend/dotnet/BuildingBlocks/src/Tw.Core
+    path: backend/dotnet/BuildingBlocks/src/Foundation/Tw.Core
     public_api_card: .tw-memory/cards/public-apis/Tw.Core.generated.md
     source_refs:
     - charter:package-charter:Tw.Core
+  Tw.Data:
+    card: .tw-memory/cards/packages/Tw.Data.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Data/Tw.Data
+    public_api_card: .tw-memory/cards/public-apis/Tw.Data.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Data
+  Tw.Data.SqlSugar:
+    card: .tw-memory/cards/packages/Tw.Data.SqlSugar.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Data/Tw.Data.SqlSugar
+    public_api_card: .tw-memory/cards/public-apis/Tw.Data.SqlSugar.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Data.SqlSugar
+  Tw.Data.SqlSugar.TestBase:
+    card: .tw-memory/cards/packages/Tw.Data.SqlSugar.TestBase.generated.md
+    path: backend/dotnet/BuildingBlocks/src/TestBase/Tw.Data.SqlSugar.TestBase
+    public_api_card: .tw-memory/cards/public-apis/Tw.Data.SqlSugar.TestBase.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Data.SqlSugar.TestBase
+  Tw.DependencyInjection:
+    card: .tw-memory/cards/packages/Tw.DependencyInjection.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Foundation/Tw.DependencyInjection
+    public_api_card: .tw-memory/cards/public-apis/Tw.DependencyInjection.generated.md
+    source_refs:
+    - charter:package-charter:Tw.DependencyInjection
+  Tw.DependencyInjection.Abstractions:
+    card: .tw-memory/cards/packages/Tw.DependencyInjection.Abstractions.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Foundation/Tw.DependencyInjection.Abstractions
+    public_api_card: .tw-memory/cards/public-apis/Tw.DependencyInjection.Abstractions.generated.md
+    source_refs:
+    - charter:package-charter:Tw.DependencyInjection.Abstractions
+  Tw.DistributedLocking:
+    card: .tw-memory/cards/packages/Tw.DistributedLocking.generated.md
+    path: backend/dotnet/BuildingBlocks/src/DistributedLocking/Tw.DistributedLocking
+    public_api_card: .tw-memory/cards/public-apis/Tw.DistributedLocking.generated.md
+    source_refs:
+    - charter:package-charter:Tw.DistributedLocking
+  Tw.DistributedLocking.Redis:
+    card: .tw-memory/cards/packages/Tw.DistributedLocking.Redis.generated.md
+    path: backend/dotnet/BuildingBlocks/src/DistributedLocking/Tw.DistributedLocking.Redis
+    public_api_card: .tw-memory/cards/public-apis/Tw.DistributedLocking.Redis.generated.md
+    source_refs:
+    - charter:package-charter:Tw.DistributedLocking.Redis
+  Tw.Domain:
+    card: .tw-memory/cards/packages/Tw.Domain.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Application/Tw.Domain
+    public_api_card: .tw-memory/cards/public-apis/Tw.Domain.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Domain
+  Tw.EventBus:
+    card: .tw-memory/cards/packages/Tw.EventBus.generated.md
+    path: backend/dotnet/BuildingBlocks/src/EventBus/Tw.EventBus
+    public_api_card: .tw-memory/cards/public-apis/Tw.EventBus.generated.md
+    source_refs:
+    - charter:package-charter:Tw.EventBus
+  Tw.EventBus.Cap:
+    card: .tw-memory/cards/packages/Tw.EventBus.Cap.generated.md
+    path: backend/dotnet/BuildingBlocks/src/EventBus/Tw.EventBus.Cap
+    public_api_card: .tw-memory/cards/public-apis/Tw.EventBus.Cap.generated.md
+    source_refs:
+    - charter:package-charter:Tw.EventBus.Cap
+  Tw.EventBus.Cap.TestBase:
+    card: .tw-memory/cards/packages/Tw.EventBus.Cap.TestBase.generated.md
+    path: backend/dotnet/BuildingBlocks/src/TestBase/Tw.EventBus.Cap.TestBase
+    public_api_card: .tw-memory/cards/public-apis/Tw.EventBus.Cap.TestBase.generated.md
+    source_refs:
+    - charter:package-charter:Tw.EventBus.Cap.TestBase
+  Tw.Excel:
+    card: .tw-memory/cards/packages/Tw.Excel.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Excel/Tw.Excel
+    public_api_card: .tw-memory/cards/public-apis/Tw.Excel.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Excel
+  Tw.Excel.MiniExcel:
+    card: .tw-memory/cards/packages/Tw.Excel.MiniExcel.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Excel/Tw.Excel.MiniExcel
+    public_api_card: .tw-memory/cards/public-apis/Tw.Excel.MiniExcel.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Excel.MiniExcel
+  Tw.ExceptionHandling:
+    card: .tw-memory/cards/packages/Tw.ExceptionHandling.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Foundation/Tw.ExceptionHandling
+    public_api_card: .tw-memory/cards/public-apis/Tw.ExceptionHandling.generated.md
+    source_refs:
+    - charter:package-charter:Tw.ExceptionHandling
+  Tw.Features:
+    card: .tw-memory/cards/packages/Tw.Features.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Application/Tw.Features
+    public_api_card: .tw-memory/cards/public-apis/Tw.Features.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Features
+  Tw.Gateway:
+    card: .tw-memory/cards/packages/Tw.Gateway.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Gateway/Tw.Gateway
+    public_api_card: .tw-memory/cards/public-apis/Tw.Gateway.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Gateway
+  Tw.Gateway.Yarp:
+    card: .tw-memory/cards/packages/Tw.Gateway.Yarp.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Gateway/Tw.Gateway.Yarp
+    public_api_card: .tw-memory/cards/public-apis/Tw.Gateway.Yarp.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Gateway.Yarp
+  Tw.Grpc:
+    card: .tw-memory/cards/packages/Tw.Grpc.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Grpc/Tw.Grpc
+    public_api_card: .tw-memory/cards/public-apis/Tw.Grpc.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Grpc
+  Tw.Http:
+    card: .tw-memory/cards/packages/Tw.Http.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Http/Tw.Http
+    public_api_card: .tw-memory/cards/public-apis/Tw.Http.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Http
+  Tw.IdGeneration:
+    card: .tw-memory/cards/packages/Tw.IdGeneration.generated.md
+    path: backend/dotnet/BuildingBlocks/src/IdGeneration/Tw.IdGeneration
+    public_api_card: .tw-memory/cards/public-apis/Tw.IdGeneration.generated.md
+    source_refs:
+    - charter:package-charter:Tw.IdGeneration
+  Tw.IdGeneration.Yitter:
+    card: .tw-memory/cards/packages/Tw.IdGeneration.Yitter.generated.md
+    path: backend/dotnet/BuildingBlocks/src/IdGeneration/Tw.IdGeneration.Yitter
+    public_api_card: .tw-memory/cards/public-apis/Tw.IdGeneration.Yitter.generated.md
+    source_refs:
+    - charter:package-charter:Tw.IdGeneration.Yitter
+  Tw.Idempotency:
+    card: .tw-memory/cards/packages/Tw.Idempotency.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Idempotency/Tw.Idempotency
+    public_api_card: .tw-memory/cards/public-apis/Tw.Idempotency.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Idempotency
+  Tw.Identity.OpenIddict:
+    card: .tw-memory/cards/packages/Tw.Identity.OpenIddict.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Application/Tw.Identity.OpenIddict
+    public_api_card: .tw-memory/cards/public-apis/Tw.Identity.OpenIddict.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Identity.OpenIddict
+  Tw.Json.Abstractions:
+    card: .tw-memory/cards/packages/Tw.Json.Abstractions.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Foundation/Tw.Json.Abstractions
+    public_api_card: .tw-memory/cards/public-apis/Tw.Json.Abstractions.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Json.Abstractions
+  Tw.Json.Newtonsoft:
+    card: .tw-memory/cards/packages/Tw.Json.Newtonsoft.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Foundation/Tw.Json.Newtonsoft
+    public_api_card: .tw-memory/cards/public-apis/Tw.Json.Newtonsoft.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Json.Newtonsoft
   Tw.Localization:
     card: .tw-memory/cards/packages/Tw.Localization.generated.md
-    path: backend/dotnet/BuildingBlocks/src/Tw.Localization
+    path: backend/dotnet/BuildingBlocks/src/Localization/Tw.Localization
     public_api_card: .tw-memory/cards/public-apis/Tw.Localization.generated.md
     source_refs:
     - charter:package-charter:Tw.Localization
-  Tw.Localization.AspNetCore:
-    card: .tw-memory/cards/packages/Tw.Localization.AspNetCore.generated.md
-    path: backend/dotnet/BuildingBlocks/src/Tw.Localization.AspNetCore
-    public_api_card: .tw-memory/cards/public-apis/Tw.Localization.AspNetCore.generated.md
+  Tw.MultiTenancy:
+    card: .tw-memory/cards/packages/Tw.MultiTenancy.generated.md
+    path: backend/dotnet/BuildingBlocks/src/MultiTenancy/Tw.MultiTenancy
+    public_api_card: .tw-memory/cards/public-apis/Tw.MultiTenancy.generated.md
     source_refs:
-    - charter:package-charter:Tw.Localization.AspNetCore
+    - charter:package-charter:Tw.MultiTenancy
+  Tw.Observability:
+    card: .tw-memory/cards/packages/Tw.Observability.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Observability/Tw.Observability
+    public_api_card: .tw-memory/cards/public-apis/Tw.Observability.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Observability
+  Tw.Observability.OpenTelemetry:
+    card: .tw-memory/cards/packages/Tw.Observability.OpenTelemetry.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Observability/Tw.Observability.OpenTelemetry
+    public_api_card: .tw-memory/cards/public-apis/Tw.Observability.OpenTelemetry.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Observability.OpenTelemetry
+  Tw.Observability.Serilog:
+    card: .tw-memory/cards/packages/Tw.Observability.Serilog.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Observability/Tw.Observability.Serilog
+    public_api_card: .tw-memory/cards/public-apis/Tw.Observability.Serilog.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Observability.Serilog
+  Tw.Resilience:
+    card: .tw-memory/cards/packages/Tw.Resilience.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Resilience/Tw.Resilience
+    public_api_card: .tw-memory/cards/public-apis/Tw.Resilience.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Resilience
+  Tw.Security:
+    card: .tw-memory/cards/packages/Tw.Security.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Foundation/Tw.Security
+    public_api_card: .tw-memory/cards/public-apis/Tw.Security.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Security
+  Tw.Settings:
+    card: .tw-memory/cards/packages/Tw.Settings.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Application/Tw.Settings
+    public_api_card: .tw-memory/cards/public-apis/Tw.Settings.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Settings
+  Tw.Sharding:
+    card: .tw-memory/cards/packages/Tw.Sharding.generated.md
+    path: backend/dotnet/BuildingBlocks/src/Sharding/Tw.Sharding
+    public_api_card: .tw-memory/cards/public-apis/Tw.Sharding.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Sharding
+  Tw.Templates:
+    card: .tw-memory/cards/packages/Tw.Templates.generated.md
+    path: backend/dotnet/tools/src/Tw.Templates
+    public_api_card: .tw-memory/cards/public-apis/Tw.Templates.generated.md
+    source_refs:
+    - charter:package-charter:Tw.Templates
+  Tw.TestBase:
+    card: .tw-memory/cards/packages/Tw.TestBase.generated.md
+    path: backend/dotnet/BuildingBlocks/src/TestBase/Tw.TestBase
+    public_api_card: .tw-memory/cards/public-apis/Tw.TestBase.generated.md
+    source_refs:
+    - charter:package-charter:Tw.TestBase
+  Tw.TextTemplating:
+    card: .tw-memory/cards/packages/Tw.TextTemplating.generated.md
+    path: backend/dotnet/BuildingBlocks/src/TextTemplating/Tw.TextTemplating
+    public_api_card: .tw-memory/cards/public-apis/Tw.TextTemplating.generated.md
+    source_refs:
+    - charter:package-charter:Tw.TextTemplating
+  Tw.TextTemplating.Scriban:
+    card: .tw-memory/cards/packages/Tw.TextTemplating.Scriban.generated.md
+    path: backend/dotnet/BuildingBlocks/src/TextTemplating/Tw.TextTemplating.Scriban
+    public_api_card: .tw-memory/cards/public-apis/Tw.TextTemplating.Scriban.generated.md
+    source_refs:
+    - charter:package-charter:Tw.TextTemplating.Scriban
 schema_version: 1.0.0

@@ -84,5 +84,25 @@ class RepoPaths:
         return self.root / "backend/dotnet/BuildingBlocks/src"
 
     @property
+    def dotnet_tools_root(self) -> Path:
+        """Return the root that contains packageable .NET tool projects."""
+        return self.root / "backend/dotnet/tools/src"
+
+    @property
+    def dotnet_topology(self) -> Path:
+        """Return the approved .NET package topology manifest."""
+        return self.root / "backend/dotnet/BuildingBlocks/building-blocks-topology.json"
+
+    @property
+    def shared_package_docs_root(self) -> Path:
+        """Return the root of shared-package documentation."""
+        return self.root / "docs/shared-packages"
+
+    @property
+    def dotnet_package_docs_root(self) -> Path:
+        """Return the root of governed .NET package documentation."""
+        return self.shared_package_docs_root / "dotnet"
+
+    @property
     def frontend_packages_root(self) -> Path:
         return self.root / "frontend/packages"

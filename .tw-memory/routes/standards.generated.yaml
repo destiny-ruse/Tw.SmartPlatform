@@ -301,61 +301,61 @@ standards:
   sha256: 0302cc1034e626bda423e9ed739f73357261f7e013f3f18f4185c502e16afaf7
   start_line: 31
   title: 函数、模块与组件
-- end_line: 50
+- end_line: 54
   level: 2
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#注释与说明
-  sha256: 1e61d65197219f96ee2a1d23a46b336a1109eccda3e6765243daaae871f54a70
+  sha256: 49da6ed75e297334e785200cce698013e88bd3e92a42b0a29b00b0ef24d24326
   start_line: 43
   title: 注释与说明
-- end_line: 65
+- end_line: 69
   level: 3
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#文档注释
-  sha256: 1af7143e2a3801b6b8049c46ad79c84e3889ed4b625ff5120d392e8746e92e96
-  start_line: 51
+  sha256: 829b1adce2d3f0918ffc1c752e3f4e7a0b3ed96c5cfc2d37f2a5b5c92d0ac6f5
+  start_line: 55
   title: 文档注释
-- end_line: 87
+- end_line: 91
   level: 3
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#内部注释
   sha256: c166f7193fdb45aaa0ff0419a4c2b623b58b591165fbe15e6764bdb238cccac9
-  start_line: 66
+  start_line: 70
   title: 内部注释
-- end_line: 102
+- end_line: 106
   level: 2
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#错误处理
   sha256: 17229ed1efa96b810c39036bdab450049f1fce31cfbd1b78c78ca1e80658a3a1
-  start_line: 88
+  start_line: 92
   title: 错误处理
-- end_line: 115
+- end_line: 119
   level: 2
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#日志
   sha256: 28c56b5e7fe8db5d466f02a5d0a0790005843700a8c63cf4fe8f1f46f5ef1e0e
-  start_line: 103
+  start_line: 107
   title: 日志
-- end_line: 123
+- end_line: 127
   level: 2
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#配置
   sha256: c7b117c02c526b802c5dde8ab3a25a5a7f981e9173e3960b35943791a3047720
-  start_line: 116
+  start_line: 120
   title: 配置
-- end_line: 131
+- end_line: 135
   level: 2
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#国际化
   sha256: 93ddc50a83643c6b5307f36061e1f16bb5c0ec3c859015cbe400ee9357fbe670
-  start_line: 124
+  start_line: 128
   title: 国际化
-- end_line: 143
+- end_line: 147
   level: 2
   path: docs/engineering-standards/03-project-and-code/coding-standards.md
   segment_id: docs/engineering-standards/03-project-and-code/coding-standards.md#检查清单
   sha256: 632d7c1125e3fd82c28c5cc3e6a0113f2dee3f2ddad0b0d9ab86440e17035ab4
-  start_line: 132
+  start_line: 136
   title: 检查清单
 - end_line: 2
   level: 1
@@ -455,54 +455,54 @@ standards:
   sha256: b5f9f1b55dc76523ad2dff0bb12bc742b1ca4780f995de30e724d7453af5f4e8
   start_line: 7
   title: 适用范围
-- end_line: 23
+- end_line: 25
   level: 2
   path: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md
   segment_id: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md#规范要求
-  sha256: 893bad67d59007860ecad44f28218e484b9da82b35fd83f9ca912b78fc526ca8
+  sha256: 7c80c0cf1c49471098f8bc885027cdcfee0f1e4ec2aad40fcc546c2d10261dde
   start_line: 11
   title: 规范要求
-- end_line: 31
+- end_line: 33
   level: 2
   path: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md
   segment_id: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md#分层与依赖
   sha256: 29cf89fef8313685a3718ba3bc5eb56ef35037ec7ac8deefafd0ebb4b4f993eb
-  start_line: 24
+  start_line: 26
   title: 分层与依赖
-- end_line: 51
+- end_line: 53
   level: 2
   path: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md
   segment_id: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md#共享包服务注册
   sha256: 589e9e60af46c82352385daa6077e960d19c3e17c0fbc655289cd483b71c06cb
-  start_line: 32
+  start_line: 34
   title: 共享包服务注册
-- end_line: 59
+- end_line: 61
   level: 2
   path: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md
   segment_id: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md#异步、异常与配置
   sha256: f78375e8916c481870615090ba2e9fe36694364b1808b4a8655dba7079b97454
-  start_line: 52
+  start_line: 54
   title: 异步、异常与配置
-- end_line: 83
+- end_line: 87
   level: 2
   path: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md
   segment_id: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md#DocFX-XML-文档注释
-  sha256: db595e0d22904f2ad80287812f93f958a29dfdffd2dd392a59ec5a1435c3e047
-  start_line: 60
+  sha256: 54fefb7db0447ba2aea5258884c3341d72f7a9d75197dd425be039056fb56c49
+  start_line: 62
   title: DocFX XML 文档注释
-- end_line: 94
+- end_line: 98
   level: 2
   path: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md
   segment_id: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md#常见反模式
   sha256: 51c818ee92ff42b435be8d462adcc375de86787a03af6763a5b3a2a2ef73f9f7
-  start_line: 84
+  start_line: 88
   title: 常见反模式
-- end_line: 104
+- end_line: 109
   level: 2
   path: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md
   segment_id: docs/engineering-standards/03-project-and-code/language-specific/dotnet-core.md#检查清单
-  sha256: da610c705c7b2377ff9f3a30966247d830b501565627bfec00b6e78d1a657d9c
-  start_line: 95
+  sha256: 18585ad23a88e1fca090b0bad6db7ba73931271a2a75b220323bc603c7f515b6
+  start_line: 99
   title: 检查清单
 - end_line: 2
   level: 1
@@ -970,50 +970,50 @@ standards:
   level: 2
   path: docs/engineering-standards/03-project-and-code/shared-package-charter.md
   segment_id: docs/engineering-standards/03-project-and-code/shared-package-charter.md#适用范围
-  sha256: 49faf1f144e4b168ce8577c159d625324cbe43ce646abb0f73cfbf90bf89b501
+  sha256: 95010b1b13b575fd41bf69683441161563607f6504c65981465279bf7873225d
   start_line: 7
   title: 适用范围
-- end_line: 23
+- end_line: 25
   level: 2
   path: docs/engineering-standards/03-project-and-code/shared-package-charter.md
   segment_id: docs/engineering-standards/03-project-and-code/shared-package-charter.md#规范要求
-  sha256: 853f72b29a1adf5218f5abd17cdfabcdd2eef04c47265d6352fb41cc1978ca6d
+  sha256: 5188aa7a5c58ae14733c586945f857715675182e4688a2c6d862ffcd4078958d
   start_line: 11
   title: 规范要求
-- end_line: 36
+- end_line: 38
   level: 2
   path: docs/engineering-standards/03-project-and-code/shared-package-charter.md
   segment_id: docs/engineering-standards/03-project-and-code/shared-package-charter.md#采纳前破坏性变更
   sha256: 898cc8c8ed583586d2e749fc6f6255615ceec94aaa940f46af185e3c546a405f
-  start_line: 24
+  start_line: 26
   title: 采纳前破坏性变更
-- end_line: 43
+- end_line: 45
   level: 2
   path: docs/engineering-standards/03-project-and-code/shared-package-charter.md
   segment_id: docs/engineering-standards/03-project-and-code/shared-package-charter.md#新增包流程
   sha256: 7a9f6b20dba1e3de1d8bc7cee6bb0869f44b283f465abaed0edd609edc5ae4e4
-  start_line: 37
+  start_line: 39
   title: 新增包流程
-- end_line: 48
+- end_line: 51
   level: 2
   path: docs/engineering-standards/03-project-and-code/shared-package-charter.md
   segment_id: docs/engineering-standards/03-project-and-code/shared-package-charter.md#重叠处理
-  sha256: dc49aeb7f0c010ca216eadbadc179fe346c1efd42ecdc96981851fed9d084db1
-  start_line: 44
+  sha256: 21051c06a3a4843bf89e54852be75446bd217aa3113a8ddce059dcdcb036c75f
+  start_line: 46
   title: 重叠处理
-- end_line: 55
+- end_line: 58
   level: 2
   path: docs/engineering-standards/03-project-and-code/shared-package-charter.md
   segment_id: docs/engineering-standards/03-project-and-code/shared-package-charter.md#能力使用文档
   sha256: d5e238ada581a38289a35419348709e2fd2e88929748ed17f1faaef0ad9240f4
-  start_line: 49
+  start_line: 52
   title: 能力使用文档
-- end_line: 64
+- end_line: 67
   level: 2
   path: docs/engineering-standards/03-project-and-code/shared-package-charter.md
   segment_id: docs/engineering-standards/03-project-and-code/shared-package-charter.md#检查清单
   sha256: a8b948a342840b74086214dd1f58eafe5a7e440b97f65b79418e96a86078d822
-  start_line: 56
+  start_line: 59
   title: 检查清单
 - end_line: 2
   level: 1
@@ -1715,17 +1715,17 @@ standards:
   sha256: 10f51b3d2f7b5eb6a06db5e13e9d6dd1ec341138f624b20aab08333024bea77f
   start_line: 80
   title: 交付与运行规范
-- end_line: 89
+- end_line: 90
   level: 3
   path: docs/engineering-standards/README.md
   segment_id: docs/engineering-standards/README.md#治理规范
-  sha256: 360bfa6c073c2964d71253afcb2e59f982d4c112b45d2ab3e18113ea532270dd
+  sha256: 0ac18adfd68b5b08531ef38edb32762f260ff34c45ee932aa274c92ff94685fe
   start_line: 86
   title: 治理规范
-- end_line: 94
+- end_line: 95
   level: 2
   path: docs/engineering-standards/README.md
   segment_id: docs/engineering-standards/README.md#例外处理
   sha256: baff35209322ff589b61253a3cf6a4aa77c82757e5f593ffaec7f588e790d071
-  start_line: 90
+  start_line: 91
   title: 例外处理

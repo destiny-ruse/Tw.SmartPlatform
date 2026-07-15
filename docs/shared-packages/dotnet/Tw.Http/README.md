@@ -2,6 +2,10 @@
 
 `Tw.Http` 提供出站 HTTP 请求头名称与可信传播策略。公开 API 位于 `Tw.Http` 和 `Tw.Http.HeaderPropagation` 命名空间。
 
+## 稳定性
+
+本包处于 `experimental` 阶段。进入 `stable` 前必须冻结可信请求头列表、租户传播条件、多值边界、出站客户端注册和重试失败语义。
+
 ## 能力边界
 
 - `HttpHeaderNames` 提供平台约定的 Correlation 与租户请求头名称。

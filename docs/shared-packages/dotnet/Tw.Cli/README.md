@@ -2,6 +2,10 @@
 
 `Tw.Cli` 是仓库级 `tw` 命令行工具，用于项目创建、依赖审计、契约校验和仓库诊断。依赖审计与诊断都从 `backend/dotnet/BuildingBlocks/building-blocks-topology.json` 读取淘汰包映射，不在 CLI 中维护第二份清单。
 
+## 稳定性
+
+本工具处于 `experimental` 阶段。命令名称、usage 退出码 `2`、locked restore 超时退出码 `124` 和其他子进程非零退出码是当前自动化契约。
+
 ## 安装
 
 ```powershell

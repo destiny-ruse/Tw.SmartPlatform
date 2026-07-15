@@ -27,3 +27,7 @@ services.AddIdentityOpenIddict(options =>
 - Identity Center 宿主必须在调用 `AddIdentityOpenIddict` 前注册真实 adapter；本包使用 `TryAddScoped`，不会覆盖宿主实现
 - 签名证书名称不得是证书内容、私钥或密钥值
 - 本包不实现用户管理、客户端管理、权限 grant 存储或业务权限判断
+
+## 稳定性
+
+当前状态为 `experimental`。转为 `stable` 前，必须补齐真实 issuer、validator 与证书解析 adapter，并以集成测试覆盖授权码、客户端凭据、refresh token、签名密钥轮换以及无效 issuer/audience 的拒绝路径。

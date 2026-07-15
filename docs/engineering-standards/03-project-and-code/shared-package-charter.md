@@ -6,7 +6,7 @@
 
 ## 适用范围
 
-适用于 `backend/dotnet/BuildingBlocks/src` 下的 .NET 公共构建块，以及 `frontend/packages` 下的前端共享包。
+适用于 `backend/dotnet/BuildingBlocks/src` 下的 .NET 公共构建块、`backend/dotnet/tools/src` 下可独立打包的 `Tw.Analyzers`、`Tw.Cli`、`Tw.Templates`，以及 `frontend/packages` 下的前端共享包。
 
 ## 规范要求
 
@@ -16,7 +16,7 @@
 - 包名、命名空间、依赖名、命令名、错误码、协议名和 `public_capabilities` 中的能力标识可以保留原文。
 - `in_scope`、`out_of_scope`、`public_capabilities` 必须为非空列表。
 - `out_of_scope` 必须声明本包不承担的能力边界。
-- `.NET` 包的 `package` 必须等于 `.csproj` 文件名去扩展名。
+- `.NET` 公共构建块和可独立打包工具的 `package` 必须等于 `.csproj` 文件名去扩展名。
 - 前端共享包的 `package` 必须等于 `package.json` 的 `name`。
 - `dependency_rules.forbid` 声明禁止依赖；`dependency_rules.allow` 非空时声明允许依赖。
 - `stability` 取值为 `experimental`、`stable`、`deprecated`，缺省为 `stable`。
@@ -45,8 +45,9 @@
 
 ## 重叠处理
 
-- `public_capabilities` 命名空间重叠必须重新划分。
-- 职责语义重叠必须在代码评审中裁决，处理结论必须反映到相关包 charter。
+- `public_capabilities` 中忽略大小写并折叠空白后完全相同的能力标识不得由多个包声明。
+- 前缀关系不作为机器重复判定，例如 `Tw.Data` 与 `Tw.Data.SqlSugar` 是不同能力标识。
+- 职责语义重叠和前缀相关能力必须在代码评审中裁决，处理结论必须反映到相关包 charter。
 
 ## 能力使用文档
 

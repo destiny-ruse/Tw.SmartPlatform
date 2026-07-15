@@ -3,7 +3,9 @@ repos:
     hooks:
       - id: tw-memory-check
         name: tw-memory check
-        entry: python -m tw_memory check --staged
-        language: system
+        entry: python -I tools/scripts/run_tw_memory.py check --staged
+        language: python
+        additional_dependencies:
+          - PyYAML>=6.0
         pass_filenames: false
         always_run: true

@@ -24,3 +24,7 @@ await unitOfWork.CommitAsync(cancellationToken);
 ```
 
 调用方负责提交或回滚，并在作用域结束时异步释放工作单元。`Required` 作用域会复用当前活动工作单元。
+
+## 稳定性
+
+当前状态为 `experimental`。转为 `stable` 前，必须以真实 SqlSugar provider 验证连接解析、嵌套工作单元复用、提交、回滚、异常释放和并发作用域隔离，并覆盖 CAP Outbox 使用的事务边界。

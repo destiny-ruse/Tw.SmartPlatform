@@ -18,8 +18,29 @@ This standard defines mandatory governance gates for the Tw .NET framework.
 
 ```powershell
 dotnet test backend/dotnet/BuildingBlocks/tests/Architecture/Tw.Architecture.Tests/Tw.Architecture.Tests.csproj
-python -m pytest tools/tests/test_charter.py
+$env:PYTHONPATH = (Resolve-Path tools/src).Path
+python -m pytest tools/tests
+python -m tw_memory check --root .
 dotnet test backend/dotnet/Tw.SmartPlatform.slnx
 ```
 
-治理检查由架构测试、Python charter 校验和解决方案测试承载。`backend/dotnet/Build` 只保存中央包版本 `.props` 与必要锁定文件。
+治理检查由架构测试、完整 Python 工具测试、`tw_memory` 仓库事实校验和解决方案测试承载。`backend/dotnet/Build` 只保存中央包版本 `.props` 与必要锁定文件。
+
+## Isolated Pre-commit Gate
+
+仓库必须使用以下 local hook 执行提交边界检查：
+
+```yaml
+- repo: local
+  hooks:
+    - id: tw-memory-check
+      name: tw-memory check
+      entry: python -I tools/scripts/run_tw_memory.py check --staged
+      language: python
+      additional_dependencies:
+        - PyYAML>=6.0
+      pass_filenames: false
+      always_run: true
+```
+
+`language: python` 为 hook 创建隔离环境并只安装外部 YAML 依赖。`-I` 屏蔽调用方的 `PYTHONPATH` 和用户 site-packages；`tools/scripts/run_tw_memory.py` 依据自身绝对路径加载 `tools/src`，因此不依赖系统安装的 `tw-memory`。

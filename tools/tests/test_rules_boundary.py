@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from tests.conftest import write_text
+from conftest import write_text
 from tw_memory.rules_boundary import (
     find_formal_standard_refs,
     find_rules_boundary_violations,

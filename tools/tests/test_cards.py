@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
+
+import pytest
 
 from conftest import write_text
 from tw_memory.cards import render_package_card, render_public_api_card
-from tw_memory.charter import load_charter
+from tw_memory.charter import DependencyRules, load_charter
 
 CHARTER = """schema_version: memory.charter.v1
 package: Tw.Core
@@ -36,12 +39,12 @@ def test_render_package_card_uses_fixed_slots(tmp_path: Path) -> None:
 
     card = render_package_card(
         "Tw.Core",
-        "backend/dotnet/BuildingBlocks/src/Tw.Core",
+        "backend/dotnet/BuildingBlocks/src/Foundation/Tw.Core",
         charter,
         ["manual:package-charter:Tw.Core"],
     )
 
-    assert "标识：Tw.Core / backend/dotnet/BuildingBlocks/src/Tw.Core / platform-team" in card
+    assert "标识：Tw.Core / backend/dotnet/BuildingBlocks/src/Foundation/Tw.Core / platform-team" in card
     assert "职责：跨服务复用的基础原语与无框架依赖工具。" in card
     assert "不适用范围：" in card
     assert "source_refs:" in card
@@ -56,9 +59,38 @@ def test_render_public_api_card_includes_public_capability(tmp_path: Path) -> No
 
     card = render_public_api_card(
         "Tw.Core",
-        "backend/dotnet/BuildingBlocks/src/Tw.Core",
+        "backend/dotnet/BuildingBlocks/src/Foundation/Tw.Core",
         charter,
         ["manual:package-charter:Tw.Core"],
     )
 
     assert "- Tw.Core.Primitives" in card
+    assert "包参考文档：" in card
+    assert "关联文档来自 docs/shared-packages" in card
+    assert "使用文档：" not in card
+
+
+@pytest.mark.parametrize(
+    "dependency_rules",
+    [
+        DependencyRules(forbid=[], allow=[]),
+        DependencyRules(forbid=[""], allow=[""]),
+    ],
+)
+def test_render_package_card_uses_none_for_empty_dependency_rules_without_trailing_whitespace(
+    tmp_path: Path,
+    dependency_rules: DependencyRules,
+) -> None:
+    charter_path = write_text(tmp_path / "package-charter.yaml", CHARTER)
+    charter = replace(load_charter(charter_path), dependency_rules=dependency_rules)
+
+    card = render_package_card(
+        "Tw.Core",
+        "backend/dotnet/BuildingBlocks/src/Foundation/Tw.Core",
+        charter,
+        ["manual:package-charter:Tw.Core"],
+    )
+
+    assert "- forbid: none" in card.splitlines()
+    assert "- allow: none" in card.splitlines()
+    assert all(line == line.rstrip() for line in card.splitlines())

@@ -18,3 +18,7 @@ The package owns documentation-time OpenAPI behavior only. Runtime authenticatio
 ```csharp
 services.AddOpenApiIntegration(new OpenApiRegistrationOptions("v1", "Billing API", "v1", []));
 ```
+
+## Stability
+
+The package is currently `experimental`. Promotion to `stable` requires generated-document contract tests for error responses, JWT metadata, Newtonsoft support, XML comments, and long-ID schemas, plus compatibility checks against a representative generated client.

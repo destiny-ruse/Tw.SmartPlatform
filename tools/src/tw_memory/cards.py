@@ -12,6 +12,11 @@ def _bullets_or_none(items: list[str]) -> str:
     return _bullets(items) if items else "- none"
 
 
+def _inline_or_none(items: list[str]) -> str:
+    normalized = [item.strip() for item in items if item.strip()]
+    return ", ".join(normalized) if normalized else "none"
+
+
 def render_package_card(
     package: str,
     path: str,
@@ -33,8 +38,8 @@ def render_package_card(
 {_bullets(charter.out_of_scope)}
 
 依赖边界：
-- forbid: {", ".join(charter.dependency_rules.forbid)}
-- allow: {", ".join(charter.dependency_rules.allow)}
+- forbid: {_inline_or_none(charter.dependency_rules.forbid)}
+- allow: {_inline_or_none(charter.dependency_rules.allow)}
 
 稳定性：{charter.stability}
 兼容性：{compatibility}
@@ -70,8 +75,8 @@ def render_public_api_card(
 DI 注册入口：
 {_bullets_or_none(api.di_registrations)}
 
-使用文档：
-{_bullets_or_none(api.usage_docs)}
+包参考文档：
+{_bullets_or_none(api.package_docs)}
 
 契约关联：
 - none
@@ -79,7 +84,7 @@ DI 注册入口：
 消费提示：
 - 公开能力来自 package-charter.yaml
 - 实现公开 API 来自当前包源码
-- 使用文档来自 docs/shared-packages
+- 关联文档来自 docs/shared-packages
 
 source_refs:
 {_bullets(source_refs)}

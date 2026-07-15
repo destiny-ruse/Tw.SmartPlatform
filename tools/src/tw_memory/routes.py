@@ -3,9 +3,17 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from tw_memory.yaml_io import dump_yaml
+import yaml
+
+from tw_memory.generated_io import write_generated_text
 
 
-def write_route(path: Path, schema_version: str, entries: dict[str, Any]) -> None:
+def write_route(root: Path, path: Path, schema_version: str, entries: dict[str, Any]) -> None:
     """Write a deterministic generated route YAML document."""
-    dump_yaml(path, {"schema_version": schema_version, **entries})
+    text = yaml.safe_dump(
+        {"schema_version": schema_version, **entries},
+        allow_unicode=True,
+        sort_keys=True,
+        default_flow_style=False,
+    )
+    write_generated_text(root, path, text)

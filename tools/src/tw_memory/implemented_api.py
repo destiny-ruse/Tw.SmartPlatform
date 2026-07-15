@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import os
 import re
+import stat
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
+from xml.etree import ElementTree
 
 from tw_memory.generated_io import repo_relative
 from tw_memory.packages import DiscoveredPackage
@@ -19,6 +22,10 @@ _DI_REGISTRATION = re.compile(
     r"IServiceCollection\s+(?P<name>Add[A-Za-z0-9_]*)\s*\("
 )
 _IGNORED_DIRS = {"bin", "obj"}
+
+
+class PackageApiError(ValueError):
+    """A package project model cannot be evaluated within its governed boundary."""
 
 
 @dataclass(frozen=True)
@@ -44,15 +51,15 @@ class PackageApi:
     public_namespaces: list[str]
     public_types: list[PublicType]
     di_registrations: list[str]
-    usage_docs: list[str]
+    package_docs: list[str]
     source_files: list[Path]
-    usage_doc_paths: list[Path]
+    package_doc_paths: list[Path]
 
 
 def collect_package_api(root: Path, package: DiscoveredPackage) -> PackageApi:
     """Collect implemented public API facts for a discovered package."""
     if package.ecosystem == "dotnet":
-        public_types, di_registrations, source_files = _collect_dotnet_public_api(root, package.root_dir)
+        public_types, di_registrations, source_files = _collect_dotnet_public_api(root, package.project_file)
     else:
         public_types, di_registrations, source_files = [], [], []
 
@@ -62,24 +69,24 @@ def collect_package_api(root: Path, package: DiscoveredPackage) -> PackageApi:
         for namespace in _di_namespaces(di_registrations)
         if namespace not in namespaces
     )
-    usage_doc_paths = _usage_doc_paths(root, package)
+    package_doc_paths = _package_doc_paths(root, package)
 
     return PackageApi(
         public_namespaces=sorted(namespaces),
         public_types=public_types,
         di_registrations=di_registrations,
-        usage_docs=[repo_relative(root, path) for path in usage_doc_paths],
+        package_docs=[repo_relative(root, path) for path in package_doc_paths],
         source_files=source_files,
-        usage_doc_paths=usage_doc_paths,
+        package_doc_paths=package_doc_paths,
     )
 
 
-def _collect_dotnet_public_api(root: Path, package_root: Path) -> tuple[list[PublicType], list[str], list[Path]]:
+def _collect_dotnet_public_api(root: Path, project_file: Path) -> tuple[list[PublicType], list[str], list[Path]]:
     public_types: list[PublicType] = []
     di_registrations: list[str] = []
     source_files: set[Path] = set()
 
-    for source_file in sorted(package_root.rglob("*.cs")):
+    for source_file in _compile_source_files(project_file):
         if _is_ignored(source_file):
             continue
 
@@ -124,8 +131,77 @@ def _collect_dotnet_public_api(root: Path, package_root: Path) -> tuple[list[Pub
     )
 
 
+def _compile_source_files(project_file: Path) -> list[Path]:
+    project_root = project_file.parent.resolve()
+    project = ElementTree.fromstring(project_file.read_text(encoding="utf-8"))
+    default_compile_items = True
+    for element in project.iter():
+        tag = element.tag.rsplit("}", 1)[-1]
+        if tag in {"EnableDefaultItems", "EnableDefaultCompileItems"} and element.text:
+            if element.text.strip().casefold() == "false":
+                default_compile_items = False
+
+    source_files: set[Path] = set()
+    if default_compile_items:
+        for path in project_root.rglob("*.cs"):
+            if _is_ignored(path):
+                continue
+            source_files.add(_validated_source_path(project_root, path, "default Compile item"))
+    for element in project.iter():
+        if element.tag.rsplit("}", 1)[-1] != "Compile":
+            continue
+        for path in _expand_msbuild_paths(
+            project_root,
+            element.attrib.get("Include", ""),
+            attribute="Include",
+        ):
+            source_files.add(path)
+        excluded = {
+            path
+            for attribute in ("Remove", "Exclude")
+            for path in _expand_msbuild_paths(
+                project_root,
+                element.attrib.get(attribute, ""),
+                attribute=attribute,
+            )
+        }
+        source_files.difference_update(excluded)
+    return sorted(path for path in source_files if path.is_file() and path.suffix.casefold() == ".cs")
+
+
+def _expand_msbuild_paths(project_root: Path, value: str, *, attribute: str) -> list[Path]:
+    paths: set[Path] = set()
+    for raw_pattern in value.split(";"):
+        pattern = raw_pattern.strip().replace("\\", "/")
+        if not pattern:
+            continue
+        parts = PurePosixPath(pattern).parts
+        if (
+            "$(" in pattern
+            or PurePosixPath(pattern).is_absolute()
+            or PureWindowsPath(pattern).is_absolute()
+            or ".." in parts
+            or any(character in pattern for character in "*?[")
+            or any(part.casefold() in _IGNORED_DIRS for part in parts)
+        ):
+            raise PackageApiError(f"unsafe Compile {attribute} path {raw_pattern!r}")
+        paths.add(_validated_source_path(project_root, project_root / pattern, f"Compile {attribute}"))
+    return sorted(paths)
+
+
+def _validated_source_path(project_root: Path, source_path: Path, label: str) -> Path:
+    resolved = source_path.resolve()
+    try:
+        resolved.relative_to(project_root)
+    except ValueError as error:
+        raise PackageApiError(
+            f"{label} {source_path} escapes package project directory {project_root}"
+        ) from error
+    return resolved
+
+
 def _is_ignored(path: Path) -> bool:
-    return any(part in _IGNORED_DIRS for part in path.parts)
+    return any(part.casefold() in _IGNORED_DIRS for part in path.parts)
 
 
 def _type_kind(modifiers: str, kind: str) -> str:
@@ -143,13 +219,89 @@ def _di_namespaces(registrations: list[str]) -> list[str]:
     return namespaces
 
 
-def _usage_doc_paths(root: Path, package: DiscoveredPackage) -> list[Path]:
-    docs_root = _usage_docs_root(root, package)
-    if not docs_root.exists():
+def _package_doc_paths(root: Path, package: DiscoveredPackage) -> list[Path]:
+    docs_root = _package_docs_root(root, package)
+    _validate_package_docs_directory_chain(root, docs_root)
+    if not os.path.lexists(docs_root):
         return []
-    return sorted(path for path in docs_root.rglob("*.md") if path.is_file())
+    package_docs: list[Path] = []
+    for current_value, directory_names, file_names in os.walk(docs_root, followlinks=False):
+        current = Path(current_value)
+        _validate_package_docs_directory_chain(root, current)
+        for name in sorted(directory_names):
+            child = current / name
+            if _is_reparse_point(child):
+                raise PackageApiError(
+                    f"package documentation directory {child} must not be a symlink or reparse point"
+                )
+            _validate_package_docs_directory_chain(root, child)
+        for name in sorted(file_names):
+            path = current / name
+            if path.suffix.casefold() != ".md":
+                continue
+            _validate_package_doc_file(root, docs_root, path)
+            package_docs.append(path)
+    return sorted(package_docs)
 
 
-def _usage_docs_root(root: Path, package: DiscoveredPackage) -> Path:
+def _package_docs_root(root: Path, package: DiscoveredPackage) -> Path:
     language = "dotnet" if package.ecosystem == "dotnet" else package.ecosystem
     return root / "docs/shared-packages" / language / package.canonical_key
+
+
+def _is_reparse_point(path: Path) -> bool:
+    metadata = path.lstat()
+    attributes = getattr(metadata, "st_file_attributes", 0)
+    reparse_flag = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+    return stat.S_ISLNK(metadata.st_mode) or bool(attributes & reparse_flag)
+
+
+def _validate_package_docs_directory_chain(root: Path, directory: Path) -> None:
+    repo_absolute = Path(os.path.abspath(root))
+    directory_absolute = Path(os.path.abspath(directory))
+    try:
+        relative = directory_absolute.relative_to(repo_absolute)
+    except ValueError as error:
+        raise PackageApiError(
+            f"package documentation directory {directory} escapes repository {root}"
+        ) from error
+
+    repo_resolved = root.resolve()
+    current = repo_absolute
+    for part in relative.parts:
+        current /= part
+        if not os.path.lexists(current):
+            continue
+        if _is_reparse_point(current):
+            raise PackageApiError(
+                f"package documentation directory {current} must not be a symlink or reparse point"
+            )
+        if not stat.S_ISDIR(current.lstat().st_mode):
+            raise PackageApiError(f"package documentation path {current} must be a directory")
+        try:
+            current.resolve(strict=True).relative_to(repo_resolved)
+        except (OSError, RuntimeError, ValueError) as error:
+            raise PackageApiError(
+                f"package documentation directory {current} escapes repository: {error}"
+            ) from error
+
+
+def _validate_package_doc_file(root: Path, docs_root: Path, path: Path) -> None:
+    _validate_package_docs_directory_chain(root, path.parent)
+    if _is_reparse_point(path):
+        raise PackageApiError(
+            f"package documentation file {path} must not be a symlink or reparse point"
+        )
+    if not stat.S_ISREG(path.lstat().st_mode):
+        raise PackageApiError(f"package documentation file {path} must be a regular file")
+    try:
+        relative = path.resolve(strict=True).relative_to(docs_root.resolve(strict=True))
+        path.resolve(strict=True).relative_to(root.resolve())
+    except (OSError, RuntimeError, ValueError) as error:
+        raise PackageApiError(
+            f"package documentation file {path} escapes its package documentation root: {error}"
+        ) from error
+    if not relative.parts:
+        raise PackageApiError(
+            f"package documentation file {path} must be below {docs_root}"
+        )

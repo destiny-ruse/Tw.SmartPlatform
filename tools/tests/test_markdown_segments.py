@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from tests.conftest import write_text
+from conftest import write_text
 from tw_memory.markdown_segments import segment_markdown
 
 

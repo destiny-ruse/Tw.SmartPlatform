@@ -1,0 +1,23 @@
+# Package: Tw.Analyzers
+
+标识：Tw.Analyzers / backend/dotnet/tools/src/Tw.Analyzers / dotnet-framework
+职责：提供 .NET 框架品牌标识符分段治理的 Roslyn 编译期诊断。
+
+适用范围：
+- 声明符号中 Tw、Abp 和 Furion 品牌分段的 TWGOV001 编译期诊断
+
+不适用范围：
+- 运行时业务能力
+- 服务启动和依赖注入注册
+- 退役包检查和依赖边界检查，在专用 Roslyn 诊断实现前由 Tw.Cli 和架构测试承担
+
+依赖边界：
+- forbid: runtime framework packages
+- allow: Microsoft.CodeAnalysis.CSharp, Microsoft.CodeAnalysis.Analyzers
+
+稳定性：experimental
+兼容性：TWGOV001 的诊断 ID 保持稳定，诊断触发条件随治理规则同步调整。
+迁移指针：
+
+source_refs:
+- charter:package-charter:Tw.Analyzers

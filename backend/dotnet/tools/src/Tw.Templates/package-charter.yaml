@@ -3,10 +3,10 @@ package: Tw.Templates
 owner: dotnet-framework
 responsibility: 提供 service、gateway、building-block 和 contract-package 的官方 `dotnet new` 模板。
 in_scope:
-  - `tw-service` 模板
-  - `tw-gateway` 模板
-  - `tw-building-block` 模板
-  - `tw-contract-package` 模板
+  - "`tw-service` 模板"
+  - "`tw-gateway` 模板"
+  - "`tw-building-block` 模板"
+  - "`tw-contract-package` 模板"
 out_of_scope:
   - 模板生成后的业务功能实现
   - 运行时框架包兼容壳

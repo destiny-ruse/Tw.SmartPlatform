@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from tw_memory.generated_io import repo_relative
+from tw_memory.generated_io import repo_relative, write_generated_text
 from tw_memory.hashing import sha256_normalized
 
 
@@ -31,9 +31,8 @@ def make_source_entry(
     }
 
 
-def write_source_index(path: Path, entries: list[dict[str, str]]) -> None:
+def write_source_index(root: Path, path: Path, entries: list[dict[str, str]]) -> None:
     """Write a deterministic source-index JSON document."""
-    path.parent.mkdir(parents=True, exist_ok=True)
     data = {
         "schema_version": "1.0.0",
         "sources": {
@@ -42,7 +41,7 @@ def write_source_index(path: Path, entries: list[dict[str, str]]) -> None:
         },
     }
     text = json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True)
-    path.write_text(f"{text}\n", encoding="utf-8", newline="\n")
+    write_generated_text(root, path, f"{text}\n")
 
 
 def load_source_index(path: Path) -> dict[str, Any]:
